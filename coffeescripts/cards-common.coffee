@@ -9236,6 +9236,166 @@ exportObj.basicCardData = ->
                 "Stealth Device"
             ]
         }
+        {
+            id: 57
+            faction: "Galactic Empire"
+            pilot: "Soontir Fel"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Afterburners"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 58
+            faction: "Galactic Empire"
+            pilot: "Alpha Squadron Pilot"
+            suffix: " x2"
+            ship: "TIE Interceptor"
+            threat: 3
+            upgrades: [
+                "Ablative Plating"
+            ]
+        }
+        {
+            id: 59
+            faction: "Galactic Empire"
+            pilot: "Turr Phennir"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 60
+            faction: "Galactic Empire"
+            pilot: "Saber Squadron Ace"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 61
+            faction: "Galactic Empire"
+            pilot: "Lieutenant Kasarbi"
+            ship: "Alpha-Class Star Wing"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Heavy Laser Cannon"
+                "Advanced Slam"
+                "Xg-1 Assault Configuration"
+            ]
+        }
+        {
+            id: 62
+            faction: "Galactic Empire"
+            pilot: "Nu Squadron Pilot"
+            ship: "Alpha-Class Star Wing"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Proton Torpedos"
+                "Advanced Slam"
+                "Os-1 Arsenal Loadout"
+            ]
+        }
+        {
+            id: 63
+            faction: "Galactic Empire"
+            pilot: "Major Vynder"
+            ship: "Alpha-Class Star Wing"
+            threat: 2
+            upgrades: [
+                "Saturation Salvo"
+                "Barrage Rockets"
+                "Advanced Slam"
+                "Os-1 Arsenal Loadout"
+            ]
+        }
+        {
+            id: 64
+            faction: "Galactic Empire"
+            pilot: "Rho Squadron Pilot"
+            ship: "Alpha-Class Star Wing"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Ion Cannon"
+                "Homing Missiles"
+                "Advanced Slam"
+                "Xg-1 Assault Configuration"
+            ]
+        }
+        {
+            id: 65
+            faction: "Galactic Empire"
+            pilot: '"Deathrain"'
+            ship: "TIE Punisher"
+            threat: 2
+            upgrades: [
+                "Trajectory Simulator"
+                "Homing Missiles"
+                "Bomblet Generator"
+                "Ablative Plating"
+            ]
+        }
+        {
+            id: 65
+            faction: "Galactic Empire"
+            pilot: '"Deathrain"'
+            ship: "TIE Punisher"
+            threat: 2
+            upgrades: [
+                "Trajectory Simulator"
+                "Homing Missiles"
+                "Bomblet Generator"
+                "Ablative Plating"
+            ]
+        }
+        {
+            id: 66
+            faction: "Galactic Empire"
+            pilot: "Cutlass Squadron Pilot"
+            ship: "TIE Punisher"
+            threat: 2
+            upgrades: [
+                "Trajectory Simulator"
+                "Ion Missiles"
+                "Skilled Bombardier"
+                "Proton Bombs"
+            ]
+        }
+        {
+            id: 67
+            faction: "Galactic Empire"
+            pilot: '"Redline"'
+            ship: "TIE Punisher"
+            threat: 2
+            upgrades: [
+                "Debris Gambit"
+                "Cluster Missiles"
+            ]
+        }
+        {
+            id: 68
+            faction: "Galactic Empire"
+            pilot: "Cutlass Squadron Pilot"
+            ship: "TIE Punisher"
+            threat: 2
+            upgrades: [
+                "Advanced Sensors"
+                "Proton Rockets"
+                "Connor Nets"
+            ]
+        }
     ]
 
 
