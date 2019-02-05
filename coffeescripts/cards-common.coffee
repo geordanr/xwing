@@ -9941,6 +9941,18 @@ exportObj.basicCardData = ->
                 "Engine Upgrade"
             ]
         }
+        {
+            id: 114
+            faction: "Rebel Alliance"
+            pilot: "Arvel Crynyd"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Intimidation"
+                "Proton Rockets"
+                "Hull Upgrade"
+            ]
+        }
     ]
 
 
