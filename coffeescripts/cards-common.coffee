@@ -9222,6 +9222,18 @@ exportObj.basicCardData = ->
                 "Homing Missiles"
             ]
         }
+        {
+            id: 56
+            faction: "Galactic Empire"
+            pilot: "Baron of the Empire"
+            ship: "TIE Advanced Prototype"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Proton Rockets"
+                "Stealth Device"
+            ]
+        }
     ]
 
 
