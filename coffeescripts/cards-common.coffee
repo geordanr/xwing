@@ -9475,6 +9475,261 @@ exportObj.basicCardData = ->
                 "ISB Slicer"
             ]
         }
+        {
+            id: 77
+            faction: "Rebel Alliance"
+            pilot: "Luke Skywalker"
+            ship: "X-Wing"
+            threat: 3
+            upgrades: [
+                "Instinctive Aim"
+                "Proton Torpedoes"
+                "R2-D2"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 78
+            faction: "Rebel Alliance"
+            pilot: "Red Squadron Veteran"
+            ship: "X-Wing"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "R5 Astromech"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 79
+            faction: "Rebel Alliance"
+            pilot: "Jek Porkins"
+            ship: "X-Wing"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "R5-D8"
+                "Afterburners"
+                "Hull Upgrade"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 80
+            faction: "Rebel Alliance"
+            pilot: "Blue Squadron Escort"
+            ship: "X-Wing"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "R3 Astromech"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 81
+            faction: "Rebel Alliance"
+            pilot: "Wedge Antilles"
+            ship: "X-Wing"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Proton Torpedoes"
+                "R4 Astromech"
+                "Shield Upgrade"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 82
+            faction: "Rebel Alliance"
+            pilot: "Biggs Darklighter"
+            ship: "X-Wing"
+            threat: 2
+            upgrades: [
+                "Selfless"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 83
+            faction: "Rebel Alliance"
+            pilot: "Thane Kyrell"
+            ship: "X-Wing"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Ion Torpedoes"
+                "R2 Astromech"
+                "Afterburners"
+                "Hull Upgrade"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 84
+            faction: "Rebel Alliance"
+            pilot: "Garven Dreis"
+            ship: "X-Wing"
+            threat: 2
+            upgrades: [
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 85
+            faction: "Rebel Alliance"
+            pilot: "Norra Wexley"
+            ship: "Y-Wing"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Ion Cannon Turret"
+                "Veterna Turret Gunner"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 86
+            faction: "Rebel Alliance"
+            pilot: "Evaan Verlaine"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "Ion Cannon Turret"
+            ]
+        }
+        {
+            id: 87
+            faction: "Rebel Alliance"
+            pilot: "Gold Squadron Veteran"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "Proton Torpedoes"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 88
+            faction: "Rebel Alliance"
+            pilot: "Horton Salm"
+            ship: "Y-Wing"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Ion Cannon Turret"
+                "Veteran Turret Gunner"
+                "R5 Astromech"
+            ]
+        }
+        {
+            id: 89
+            faction: "Rebel Alliance"
+            pilot: '"Dutch" Vander'
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 90
+            faction: "Rebel Alliance"
+            pilot: "Gray Squadron Bomber"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Ion Cannon Turret"
+                "Proton Bomb"
+                "R5 Astromech"
+            ]
+        }
+        {
+            id: 91
+            faction: "Rebel Alliance"
+            pilot: "Esege Tuketu"
+            ship: "K-Wing"
+            threat: 3
+            upgrades: [
+                "Trajectory Simulator"
+                "Ion Missiles"
+                "Perceptive Copilot"
+                "Conner Nets"
+                "Proton Bombs"
+                "Advanced SLAM"
+            ]
+        }
+        {
+            id: 92
+            faction: "Rebel Alliance"
+            pilot: "Miranda Doni"
+            ship: "K-Wing"
+            threat: 2
+            upgrades: [
+                "Proton Bombs"
+                "Advanced SLAM"
+            ]
+        }
+        {
+            id: 93
+            faction: "Rebel Alliance"
+            pilot: "Warden Squadron Pilot"
+            ship: "K-Wing"
+            threat: 2
+            upgrades: [
+                "Barrage Rocktes"
+                "Bomblet Generator"
+            ]
+        }
+        {
+            id: 94
+            faction: "Rebel Alliance"
+            pilot: "Braylen Stramm"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Trick Shot"
+                "Jamming Beam"
+            ]
+        }
+        {
+            id: 95
+            faction: "Rebel Alliance"
+            pilot: "Blade Squadron Veteran"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Tractor Beam"
+            ]
+        }
+        {
+            id: 96
+            faction: "Rebel Alliance"
+            pilot: "Ten Numb"
+            ship: "B-Wing"
+            threat: 3
+            upgrades: [
+                "Squad Leader"
+                "Advanced Sensors"
+                "Heavy Laser Cannon"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 97
+            faction: "Rebel Alliance"
+            pilot: "Blue Squadron Pilot"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Advanced Sensors"
+            ]
+        }
     ]
 
 
