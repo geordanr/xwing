@@ -1182,7 +1182,6 @@ class exportObj.SquadBuilder
                 @isHyperspace = false
                 @isQuickbuild = false
                 @isCustom = true
-                @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'quickbuild'
