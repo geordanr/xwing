@@ -50,7 +50,7 @@ exportObj.cardLoaders.Italiano = () ->
         "Ben Teene":
            display_name: """Ben Teene"""
            text: """Dopo che hai effettuato un attacco, se il difensore è nel tuo %SINGLETURRETARC%, assegna la condizione <strong>Sconquassato</strong> al difensore."""
-        "Benthic Two-Tubes":
+        "Benthic Two Tubes":
            display_name: """Benthic Due Tubi"""
            text: """Dopo che hai effettuato un’azione %FOCUS%, puoi trasferire 1 tuo segnalino concentrazione a una nave amica a gittata 1-2."""
         "Biggs Darklighter":
@@ -224,7 +224,7 @@ exportObj.cardLoaders.Italiano = () ->
         "Edon Kappehl":
            display_name: """Edon Kappehl"""
            text: """Dopo che hai eseguito completamente una manovra blu o bianca, se non hai sganciato o lanciato un congegno in questo round, puoi sganciare 1 congegno."""
-        "Edrio Two-Tubes":
+        "Edrio Two Tubes":
            display_name: """Edrio Due Tubi"""
            text: """Prima di attivarti, se sei concentrato,puoi effettuare 1 azione."""
         "Ello Asty":

@@ -1345,7 +1345,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
               [ 3, 2, 2, 2, 3, 0, 0, 0, 0, 0]
               [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
-              [ 0, 1, 2, 1, 0, 3, 0, 0, 0, 0]
+              [ 0, 3, 2, 3, 0, 3, 0, 0, 0, 0]
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
@@ -1381,6 +1381,7 @@ exportObj.basicCardData = ->
             attack: 3
             agility: 1
             hull: 6
+            large: true
             shields: 4
             actions: [
                 "Focus"
@@ -1577,7 +1578,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Edrio Two-Tubes"
+            name: "Edrio Two Tubes"
             id: 8
             unique: true
             faction: "Rebel Alliance"
@@ -2022,7 +2023,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Benthic Two-Tubes"
+            name: "Benthic Two Tubes"
             id: 36
             unique: true
             faction: "Rebel Alliance"

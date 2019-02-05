@@ -405,7 +405,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Autopilot Drone":
            display_name: """Autopilot Drone"""
            text: """<strong>Rigged Energy Cells:</strong> A Rendszer fázis alatt, ha nem vagy dokkolva, elvesztesz 1&nbsp;%CHARGE% jelzőt. Az aktivációs fázis végén, ha már nincs %CHARGE% jelződ, megsemmisülsz. Mielőtt levennéd a hajód minden 0-1-es távolságban lévő hajó elszenved 1&nbsp;%CRIT% sérülést."""
-        "Benthic Two-Tubes":
+        "Benthic Two Tubes":
            display_name: """Benthic Two Tubes"""
            text: """Miután végrehajtottál egy %FOCUS% akciót, átrakhatod 1 fókusz jelződ egy baráti hajóra 1-2-es távolságban."""
         "Biggs Darklighter":
@@ -489,7 +489,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Drea Renthal":
            display_name: """Drea Renthal"""
            text: """Amikor egy baráti nem-limitált hajó végrehajt egy támadást, ha a védekező benne van a tűzívedben, a támadó újradobhatja 1 támadókockáját."""
-        "Edrio Two-Tubes":
+        "Edrio Two Tubes":
            display_name: """Edrio Two Tubes"""
            text: """Mielőtt aktiválódnál és van fókuszod, végrehajthatsz egy akciót."""
         "Emon Azzameen":
