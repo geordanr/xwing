@@ -9284,13 +9284,13 @@ exportObj.basicCardData = ->
         {
             id: 61
             faction: "Galactic Empire"
-            pilot: "Lieutenant Kasarbi"
+            pilot: "Lieutenant Karsabi"
             ship: "Alpha-Class Star Wing"
             threat: 2
             upgrades: [
                 "Outmaneuver"
                 "Heavy Laser Cannon"
-                "Advanced Slam"
+                "Advanced SLAM"
                 "Xg-1 Assault Configuration"
             ]
         }
@@ -9303,7 +9303,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Fire-Control System"
                 "Proton Torpedos"
-                "Advanced Slam"
+                "Advanced SLAM"
                 "Os-1 Arsenal Loadout"
             ]
         }
@@ -9316,7 +9316,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Saturation Salvo"
                 "Barrage Rockets"
-                "Advanced Slam"
+                "Advanced SLAM"
                 "Os-1 Arsenal Loadout"
             ]
         }
@@ -9330,21 +9330,8 @@ exportObj.basicCardData = ->
                 "Fire-Control System"
                 "Ion Cannon"
                 "Homing Missiles"
-                "Advanced Slam"
+                "Advanced SLAM"
                 "Xg-1 Assault Configuration"
-            ]
-        }
-        {
-            id: 65
-            faction: "Galactic Empire"
-            pilot: '"Deathrain"'
-            ship: "TIE Punisher"
-            threat: 2
-            upgrades: [
-                "Trajectory Simulator"
-                "Homing Missiles"
-                "Bomblet Generator"
-                "Ablative Plating"
             ]
         }
         {
@@ -9363,6 +9350,19 @@ exportObj.basicCardData = ->
         {
             id: 66
             faction: "Galactic Empire"
+            pilot: '"Deathrain"'
+            ship: "TIE Punisher"
+            threat: 2
+            upgrades: [
+                "Trajectory Simulator"
+                "Homing Missiles"
+                "Bomblet Generator"
+                "Ablative Plating"
+            ]
+        }
+        {
+            id: 67
+            faction: "Galactic Empire"
             pilot: "Cutlass Squadron Pilot"
             ship: "TIE Punisher"
             threat: 2
@@ -9374,7 +9374,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 67
+            id: 68
             faction: "Galactic Empire"
             pilot: '"Redline"'
             ship: "TIE Punisher"
@@ -9385,7 +9385,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 68
+            id: 69
             faction: "Galactic Empire"
             pilot: "Cutlass Squadron Pilot"
             ship: "TIE Punisher"
@@ -9397,7 +9397,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 69
+            id: 70
             faction: "Galactic Empire"
             pilot: "Captain Oicunn"
             ship: "VT-49 Decimator"
@@ -9409,7 +9409,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 70
+            id: 71
             faction: "Galactic Empire"
             pilot: "Rear Admiral Chiraneau"
             ship: "VT-49 Decimator"
@@ -9421,7 +9421,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 71
+            id: 72
             faction: "Galactic Empire"
             pilot: "Patrol Leader"
             ship: "VT-49 Decimator"
@@ -9433,7 +9433,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 72
+            id: 73
             faction: "Galactic Empire"
             pilot: '"Vizier"'
             ship: "TIE Reaper"
@@ -9443,7 +9443,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 73
+            id: 74
             faction: "Galactic Empire"
             pilot: "Scarif Base Pilot"
             ship: "TIE Reaper"
@@ -9454,7 +9454,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 74
+            id: 75
             faction: "Galactic Empire"
             pilot: "Major Vermeil"
             ship: "TIE Reaper"
@@ -9465,7 +9465,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 75
+            id: 76
             faction: "Galactic Empire"
             pilot: "Captain Feroph"
             ship: "TIE Reaper"
