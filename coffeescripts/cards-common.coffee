@@ -9132,7 +9132,7 @@ exportObj.basicCardData = ->
         {
             id: 48
             faction: "Galactic Empire"
-            pilot: '"Deathfire"'
+            pilot: "Deathfire"
             ship: "TIE Bomber"
             threat: 2
             upgrades: [
@@ -9141,6 +9141,98 @@ exportObj.basicCardData = ->
                 "Seismic Charges"
                 "Proximity Mines"
                 "Electronic Baffle"
+            ]
+        }
+        {
+            id: 49
+            faction: "Galactic Empire"
+            pilot: "Major Rhymer"
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Intimidation"
+                "Adv. Proton Torpedoes"
+                "Cluster Missiles"
+            ]
+        }
+        {
+            id: 50
+            faction: "Galactic Empire"
+            pilot: "Scimitar Squadron Pilot x2"
+            ship: "TIE Bomber"
+            threat: 3
+            upgrades: [
+                "Ion Missiles"
+                "Proton Bombs"
+            ]
+        }
+        {
+            id: 51
+            faction: "Galactic Empire"
+            pilot: "Captain Jonus"
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 52
+            faction: "Galactic Empire"
+            pilot: "Gamma Squadron Ace"
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Concussion Missiles"
+                "Skilled Bombardier"
+                "Bomblet Generator"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 53
+            faction: "Galactic Empire"
+            pilot: "Grand Inquisitor"
+            ship: "TIE Advanced Prototype"
+            threat: 3
+            upgrades: [
+                "Supernatural Reflexes"
+                "Concussion Missiles"
+            ]
+        }
+        {
+            id: 54
+            faction: "Galactic Empire"
+            pilot: "Inquisitor"
+            ship: "TIE Advanced Prototype"
+            threat: 2
+            upgrades: [
+                "Instinctive Aim"
+                "Cluster Missiles"
+                "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 55
+            faction: "Galactic Empire"
+            pilot: "Seventh Sister"
+            ship: "TIE Advanced Prototype"
+            threat: 2
+            upgrades: [
+                "Homing Missiles"
+            ]
+        }
+        {
+            id: 56
+            faction: "Galactic Empire"
+            pilot: "Baron of the Empire"
+            ship: "TIE Advanced Prototype"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Proton Rockets"
+                "Stealth Device"
             ]
         }
     ]
