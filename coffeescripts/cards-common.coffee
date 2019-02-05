@@ -9189,6 +9189,17 @@ exportObj.basicCardData = ->
                 "Shield Upgrade"
             ]
         }
+        {
+            id: 53
+            faction: "Galactic Empire"
+            pilot: "Grand Inquisitor"
+            ship: "TIE Advanced Prototype"
+            threat: 3
+            upgrades: [
+                "Supernatural Reflexes"
+                "Concussion Missiles"
+            ]
+        }
     ]
 
 
