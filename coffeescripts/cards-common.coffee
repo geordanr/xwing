@@ -9131,7 +9131,7 @@ exportObj.basicCardData = ->
         {
             id: 48
             faction: "Galactic Empire"
-            pilot: '"Deathfire"'
+            pilot: "Deathfire"
             ship: "TIE Bomber"
             threat: 2
             upgrades: [
@@ -9173,6 +9173,19 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Proton Torpedoes"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 52
+            faction: "Galactic Empire"
+            pilot: "Gamma Squadron Ace"
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Concussion Missiles"
+                "Skilled Bombardier"
+                "Bomblet Generator"
                 "Shield Upgrade"
             ]
         }
