@@ -9762,6 +9762,185 @@ exportObj.basicCardData = ->
                 "Advanced Sensors"
             ]
         }
+        {
+            id: 98
+            faction: "Rebel Alliance"
+            pilot: "Norra Wexley"
+            ship: "ARC-170"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Seasoned Navigator"
+                "Veteran Tail Gunner"
+                "R3 Astromech"
+                "Ablative Plating"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 99
+            faction: "Rebel Alliance"
+            pilot: "Garven Dreis"
+            ship: "ARC-170"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Proton Torpedoes"
+                "Perceptive Copilot"
+                "Veteran Tail Gunner"
+            ]
+        }
+        {
+            id: 100
+            faction: "Rebel Alliance"
+            pilot: "Shara Bey"
+            ship: "ARC-170"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Proton Torpedoes"
+                "Perceptive Copilot"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 101
+            faction: "Rebel Alliance"
+            pilot: "Ibtisam"
+            ship: "ARC-170"
+            threat: 2
+            upgrades: [
+                "Elusive"
+            ]
+        }
+        {
+            id: 102
+            faction: "Rebel Alliance"
+            pilot: "Wullffwarro"
+            ship: "Auzituck Gunship"
+            threat: 3
+            upgrades: [
+                "Selfless"
+                'GNK "Gonk" Droid'
+                "Novice Technician"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 103
+            faction: "Rebel Alliance"
+            pilot: "Lowhhrick"
+            ship: "Auzituck Gunship"
+            threat: 2
+        }
+        {
+            id: 104
+            faction: "Rebel Alliance"
+            pilot: "Kashyyyk Defender"
+            ship: "Auzituck Gunship"
+            threat: 2
+            upgrades: [
+                "Novice Technician"
+            ]
+        }
+        {
+            id: 106
+            faction: "Rebel Alliance"
+            pilot: "Corran Horn"
+            ship: "E-Wing"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "Fire-Control System"
+                "Proton Torpedoes"
+                "R2 Astromech"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 107
+            faction: "Rebel Alliance"
+            pilot: "Rogue Squadron Escort"
+            ship: "E-Wing"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Collision Detector"
+                "Proton Torpedoes"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 108
+            faction: "Rebel Alliance"
+            pilot: "Gavin Darklighter"
+            ship: "E-Wing"
+            threat: 3
+            upgrades: [
+                "Crack Shot"
+                "Fire-Control System"
+                "Ion Torpedoes"
+                "R4 Astromech"
+            ]
+        }
+        {
+            id: 109
+            faction: "Rebel Alliance"
+            pilot: "Knave Squadron Escort"
+            ship: "E-Wing"
+            threat: 2
+        }
+        {
+            id: 110
+            faction: "Rebel Alliance"
+            pilot: "Jan Ors"
+            ship: "HWK-290"
+            threat: 3
+            upgrades: [
+                "Trick Shot"
+                "Perceptive Copilot"
+                "Seismic Charges"
+                "Cloaking Device"
+                "Engine Upgrade"
+                "Moldy Crow"
+            ]
+        }
+        {
+            id: 111
+            faction: "Rebel Alliance"
+            pilot: "Roark Garnet"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Seismic Charges"
+                "Hull Upgrade"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 112
+            faction: "Rebel Alliance"
+            pilot: "Kyle Katarn"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Moldy Crow"
+            ]
+        }
+        {
+            id: 113
+            faction: "Rebel Alliance"
+            pilot: "Rebel Scout"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Proton Bombs"
+                "Seismic Charges"
+                "Sabine Wren"
+                "Engine Upgrade"
+            ]
+        }
     ]
 
 
