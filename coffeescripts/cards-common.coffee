@@ -9212,6 +9212,16 @@ exportObj.basicCardData = ->
                 "Munitions Failsafe"
             ]
         }
+        {
+            id: 55
+            faction: "Galactic Empire"
+            pilot: "Seventh Sister"
+            ship: "TIE Advanced Prototype"
+            threat: 2
+            upgrades: [
+                "Homing Missiles"
+            ]
+        }
     ]
 
 
