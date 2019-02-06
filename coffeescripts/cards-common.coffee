@@ -9991,12 +9991,97 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             pilot: "Phoenix Squadron Pilot"
             suffix: " x2"
+            linkedId: 117
             ship: "A-Wing"
             threat: 3
             upgrades: [
                 "Proton Rockets"
             ]
         }
+        {
+            id: 118
+            faction: "Rebel Alliance"
+            pilot: "Fenn Rau"
+            ship: "Sheathipede-Class Shuttle"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Seasoned Navigator"
+                "R4 Astromech"
+                "Stealth Device"
+                "Phantom"
+            ]
+        }
+        {
+            id: 119
+            faction: "Rebel Alliance"
+            pilot: "Ezra Bridger"
+            ship: "Sheathipede-Class Shuttle"
+            threat: 2
+            upgrades: [
+                "Heightened Perception"
+                '"Chopper"'
+                "Afterburners"
+                "Phantom"
+            ]
+        }
+        {
+            id: 120
+            faction: "Rebel Alliance"
+            pilot: "Captain Rex"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Juke"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 121
+            faction: "Rebel Alliance"
+            pilot: "Sabine Wren"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Conner Nets"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 122
+            faction: "Rebel Alliance"
+            pilot: "Ezra Bridger"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Supernatural Reflexes"
+                '"Zeb" Orrelios'
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 123
+            faction: "Rebel Alliance"
+            pilot: '"Zeb" Orrelios'
+            ship: "TIE Fighter"
+            threat: 1
+        }
+        {
+            id: 124
+            faction: "Rebel Alliance"
+            pilot: "Cassian Andor"
+            ship: "U-Wing"
+            threat: 3
+            upgrades: [
+                "Fire-Control System"
+                "Jyn Erso"
+                "Baze Malbus"
+                "Pivot Wing"
+            ]
+        }
+        
     ]
 
 
