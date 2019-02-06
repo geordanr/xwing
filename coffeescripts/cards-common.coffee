@@ -9976,6 +9976,17 @@ exportObj.basicCardData = ->
                 "Cluster Missiles"
             ]
         }
+        {
+            id: 117
+            faction: "Rebel Alliance"
+            pilot: "Phoenix Squadron Pilot"
+            suffix: " x2"
+            ship: "A-Wing"
+            threat: 3
+            upgrades: [
+                "Proton Rockets"
+            ]
+        }
     ]
 
 
