@@ -8772,6 +8772,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Black Squadron Ace"
             suffix: " (x2)"
+            linkedId: 14
             ship: "TIE Fighter"
             threat: 3
             upgrades: [
@@ -8784,6 +8785,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Obsidian Squadron Pilot"
             suffix: " (x2)"
+            linkedId: 15
             ship: "TIE Fighter"
             threat: 3
             upgrades: [
@@ -8796,6 +8798,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Academy Pilot"
             suffix: " (x2)"
+            linkedId: 16
             ship: "TIE Fighter"
             threat: 2
         }
@@ -9066,6 +9069,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Planetary Sentinel"
             suffix: " x2"
+            linkedId: 39
             ship: "TIE Striker"
             threat: 3
             upgrades: [
@@ -9192,6 +9196,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Scimitar Squadron Pilot"
             suffix: " x2"
+            linkedId: 50
             ship: "TIE Bomber"
             threat: 3
             upgrades: [
@@ -9285,6 +9290,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Alpha Squadron Pilot"
             suffix: " x2"
+            linkedId: 58
             ship: "TIE Interceptor"
             threat: 3
             upgrades: [
@@ -9842,6 +9848,10 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Novice Technician"
             ]
+        }
+        {
+            id: 105
+            skip: true
         }
         {
             id: 106
