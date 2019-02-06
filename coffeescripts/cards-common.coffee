@@ -9953,6 +9953,18 @@ exportObj.basicCardData = ->
                 "Hull Upgrade"
             ]
         }
+        {
+            id: 115
+            faction: "Rebel Alliance"
+            pilot: "Green Squadron Pilot"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "Concussion Missiles"
+                "Shield Upgrade"
+            ]
+        }
     ]
 
 
