@@ -9965,6 +9965,17 @@ exportObj.basicCardData = ->
                 "Shield Upgrade"
             ]
         }
+        {
+            id: 116
+            faction: "Jake Farrell"
+            pilot: "Green Squadron Pilot"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Cluster Missiles"
+            ]
+        }
     ]
 
 
