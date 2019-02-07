@@ -10001,7 +10001,7 @@ exportObj.basicCardData = ->
         {
             id: 118
             faction: "Rebel Alliance"
-            pilot: "Fenn Rau"
+            pilot: "Fenn Rau (Sheathipede)"
             ship: "Sheathipede-Class Shuttle"
             threat: 3
             upgrades: [
@@ -10015,12 +10015,12 @@ exportObj.basicCardData = ->
         {
             id: 119
             faction: "Rebel Alliance"
-            pilot: "Ezra Bridger"
+            pilot: "Ezra Bridger (Sheathipede)"
             ship: "Sheathipede-Class Shuttle"
             threat: 2
             upgrades: [
                 "Heightened Perception"
-                '"Chopper"'
+                '"Chopper" (Astromech)'
                 "Afterburners"
                 "Phantom"
             ]
@@ -10040,7 +10040,7 @@ exportObj.basicCardData = ->
         {
             id: 121
             faction: "Rebel Alliance"
-            pilot: "Sabine Wren"
+            pilot: "Sabine Wren (TIE Fighter)"
             ship: "TIE Fighter"
             threat: 2
             upgrades: [
@@ -10052,7 +10052,7 @@ exportObj.basicCardData = ->
         {
             id: 122
             faction: "Rebel Alliance"
-            pilot: "Ezra Bridger"
+            pilot: "Ezra Bridger (TIE Fighter)"
             ship: "TIE Fighter"
             threat: 2
             upgrades: [
@@ -10064,7 +10064,7 @@ exportObj.basicCardData = ->
         {
             id: 123
             faction: "Rebel Alliance"
-            pilot: '"Zeb" Orrelios'
+            pilot: '"Zeb" Orrelios (TIE Fighter)'
             ship: "TIE Fighter"
             threat: 1
         }
@@ -10081,7 +10081,416 @@ exportObj.basicCardData = ->
                 "Pivot Wing"
             ]
         }
-        
+        {
+            id: 125
+            faction: "Rebel Alliance"
+            pilot: "Bohdi Rook"
+            ship: "U-Wing"
+            threat: 2
+            upgrades: [
+                "Cassian Andor"
+                "Pivot Wing"
+            ]
+        }
+        {
+            id: 126
+            faction: "Rebel Alliance"
+            pilot: "Heff Tobber"
+            ship: "U-Wing"
+            threat: 3
+            upgrades: [
+                "Fire-Control System"
+                "Ion Cannon Turret"
+                "Bistan"
+                "Perceptive Copilot"
+                "Pivot Wing"
+            ]
+        }
+        {
+            id: 127
+            faction: "Rebel Alliance"
+            pilot: "Blue Squadron Scout"
+            ship: "U-Wing"
+            threat: 2
+            upgrades: [
+                "Advanced Sensors"
+                "Tactical Officer"
+                "Pivot Wing"
+            ]
+        }
+        {
+            id: 128
+            faction: "Rebel Alliance"
+            pilot: "Han Solo"
+            ship: "YT-1300"
+            threat: 4
+            upgrades: [
+                "Lone Wolf"
+                "Chewbacca"
+                "Millennium Falcon"
+            ]
+        }
+        {
+            id: 129
+            faction: "Rebel Alliance"
+            pilot: "Chewbacca"
+            ship: "YT-1300"
+            threat: 6
+            upgrades: [
+                "Predator"
+                "C-3PO"
+                "Leia Organa"
+                "R2-D2"
+                "Han Solo"
+                "Luke Skywalker"
+                "Engine Upgrade"
+                "Millennium Falcon"
+            ]
+        }
+        {
+            id: 130
+            faction: "Rebel Alliance"
+            pilot: "Lando Calrissian"
+            ship: "YT-1300"
+            threat: 5
+            upgrades: [
+                "Swarm Tactics"
+                "Concussion Missiles"
+                "Nien Numb"
+                "Engine Upgrade"
+                "Millennium Falcon"
+            ]
+        }
+        {
+            id: 131
+            faction: "Rebel Alliance"
+            pilot: "Outer Rim Smuggler"
+            ship: "YT-1300"
+            threat: 4
+            upgrades: [
+                "Homing Missiles"
+                "Novice Technician"
+                "Veteran Turret Gunner"
+                "Feedback Array"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 132
+            faction: "Rebel Alliance"
+            pilot: "Airen Cracken"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Swarm Tactics"
+                "Cluster Missiles"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 133
+            faction: "Rebel Alliance"
+            pilot: "Bandit Squadron Pilot"
+            ship: "Z-95 Headhunter"
+            threat: 1
+        }
+        {
+            id: 134
+            faction: "Rebel Alliance"
+            pilot: "Lieutenant Blount"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Proton Rockets"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 135
+            faction: "Rebel Alliance"
+            pilot: "Tala Squadron Pilot"
+            ship: "Z-95 Headhunter"
+            threat: 1
+            upgrades: [
+                "Selfless"
+            ]
+        }
+        {
+            id: 136
+            faction: "Rebel Alliance"
+            pilot: "Hera Syndulla"
+            ship: "Attack Shuttle"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Ion Cannon Turret"
+                "Phantom"
+            ]
+        }
+        {
+            id: 137
+            faction: "Rebel Alliance"
+            pilot: "Sabine Wren"
+            ship: "Attack Shuttle"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Dorsal Turret"
+                "Phantom"
+            ]
+        }
+        {
+            id: 138
+            faction: "Rebel Alliance"
+            pilot: "Dash Rendar"
+            ship: "YT-2400"
+            threat: 5
+            upgrades: [
+                "Expert Handling"
+                "Trick Shot"
+                "Perceptive Copilot"
+                "Rigged Cargo Chute"
+                "Outrider"
+            ]
+        }
+        {
+            id: 139
+            faction: "Rebel Alliance"
+            pilot: "Leebo"
+            ship: "YT-2400"
+            threat: 4
+            upgrades: [
+                "Outrider"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 140
+            faction: "Rebel Alliance"
+            pilot: "Wild Space Fringer"
+            ship: "YT-2400"
+            threat: 4
+            upgrades: [
+                "Concussion Missiles"
+                "Veteran Turret Gunner"
+                "Contraband Cybernetics"
+            ]
+        }
+        {
+            id: 141
+            faction: "Rebel Alliance"
+            pilot: "Magva Yarro"
+            ship: "U-Wing"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Saw Gerrera"
+                "Advanced Sensors"
+                "Shield Upgrade"
+                "Pivot Wing"
+            ]
+        }
+        {
+            id: 142
+            faction: "Rebel Alliance"
+            pilot: "Saw Gerrera"
+            ship: "U-Wing"
+            threat: 2
+            upgrades: [
+                "Magva Yarro"
+                "Pivot Wing"
+            ]
+        }
+        {
+            id: 143
+            faction: "Rebel Alliance"
+            pilot: "Benthic Two Tubes"
+            ship: "U-Wing"
+            threat: 2
+            upgrades: [
+                "Advanced Sensors"
+                "Pivot Wing"
+            ]
+        }
+        {
+            id: 144
+            faction: "Rebel Alliance"
+            pilot: "Partisan Renegade"
+            ship: "U-Wing"
+            threat: 2
+            upgrades: [
+                "Advanced Sensors"
+                "Deadman's Switch"
+                "Pivot Wing"
+            ]
+        }
+        {
+            id: 145
+            faction: "Rebel Alliance"
+            pilot: "Kullbee Sperado"
+            ship: "X-Wing"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "R2 Astromech"
+                "Deadman's Switch"
+                "Afterburners"
+                "Hull Upgrade"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 146
+            faction: "Rebel Alliance"
+            pilot: "Edrio Two Tubes"
+            ship: "X-Wing"
+            threat: 2
+            upgrades: [
+                "Trick Shot"
+                "R4 Astromech"
+                "Deadman's Switch"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 147
+            faction: "Rebel Alliance"
+            pilot: "Leevan Tenza"
+            ship: "X-Wing"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "R2 Astromech"
+                "Deadman's Switch"
+                "Afterburners"
+                "Shield Upgrade"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 148
+            faction: "Rebel Alliance"
+            pilot: "Cavern Angels Zealot"
+            ship: "X-Wing"
+            threat: 2
+            upgrades: [
+                "R2 Astromech"
+                "Deadman's Switch"
+                "Servomotor S-Foils"
+            ]
+        }
+        {
+            id: 149
+            faction: "Rebel Alliance"
+            pilot: "Kanan Jarrus"
+            suffix: " + Phantom"
+            linkedId: 150
+            ship: "VCX-100"
+            threat: 6
+            upgrades: [
+                "Ion Cannon Turret"
+                "Hera Syndulla"
+                '"Chopper" (Crew)'
+                "Ezra Bridger"
+                "Ghost"
+            ]
+        }
+        {
+            id: 150
+            faction: "Rebel Alliance"
+            pilot: '"Zeb" Orrelios'
+            suffix: " + Ghost"
+            linkedId: 149
+            ship: "Attack Shuttle"
+            threat: 6
+            upgrades: [
+                "Phantom"
+            ]
+        }
+        {
+            id: 151
+            faction: "Rebel Alliance"
+            pilot: "Hera Syndulla (VCX-100)"
+            suffix: " + Phantom"
+            linkedId: 152
+            ship: "VCX-100"
+            threat: 6
+            upgrades: [
+                "Elusive"
+                "Dorsal Turret"
+                "Kanan Jarrus"
+                "Ghost"
+            ]
+        }
+        {
+            id: 152
+            faction: "Rebel Alliance"
+            pilot: "Ezra Bridger"
+            suffix: " + Ghost"
+            linkedId: 151
+            ship: "Attack Shuttle"
+            threat: 6
+            upgrades: [
+                "Supernatural Reflexes"
+                "Dorsal Turret"
+                "Phantom"
+            ]
+        }
+        {
+            id: 153
+            faction: "Rebel Alliance"
+            pilot: '"Chopper"'
+            suffix: " + Phantom"
+            linkedId: 154
+            ship: "VCX-100"
+            threat: 6
+            upgrades: [
+                "Ion Cannon Turret"
+                '"Zeb" Orrelios'
+                "Ghost"
+            ]
+        }
+        {
+            id: 154
+            faction: "Rebel Alliance"
+            pilot: "AP-5"
+            suffix: " + Ghost"
+            linkedId: 153
+            ship: "Sheathipede-Class Shuttle"
+            threat: 6
+            upgrades: [
+                "R4 Astromech"
+                "Phantom"
+            ]
+        }
+        {
+            id: 155
+            faction: "Rebel Alliance"
+            pilot: "Lothal Rebel"
+            suffix: " + Phantom"
+            linkedId: 156
+            ship: "VCX-100"
+            threat: 4
+            upgrades: [
+                "Dorsal Turret"
+                "Lando Calrissian"
+                "Ghost"
+            ]
+        }
+        {
+            id: 156
+            faction: "Rebel Alliance"
+            pilot: '"Zeb" Orrelios (Sheathipede)'
+            suffix: " + Ghost"
+            linkedId: 155
+            ship: "Sheathipede-Class Shuttle"
+            threat: 4
+            upgrades: [
+                "R5 Astromech"
+                "Phantom"
+            ]
+        }
     ]
 
 
