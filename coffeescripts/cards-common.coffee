@@ -10491,6 +10491,16 @@ exportObj.basicCardData = ->
                 "Phantom"
             ]
         }
+        {
+            id: 157
+            faction: "First Order"
+            pilot: '"Midnight"'
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Afterburners"
+            ]
+        }
     ]
 
 
