@@ -10501,6 +10501,16 @@ exportObj.basicCardData = ->
                 "Afterburners"
             ]
         }
+        {
+            id: 157
+            faction: "First Order"
+            pilot: '"Static"'
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+            ]
+        }
     ]
 
 
