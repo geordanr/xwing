@@ -10590,6 +10590,16 @@ exportObj.basicCardData = ->
                 "Afterburners"
             ]
         }
+        {
+            id: 166
+            faction: "First Order"
+            pilot: "Commander Malarus"
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Advanced Optics"
+            ]
+        }
     ]
 
 
