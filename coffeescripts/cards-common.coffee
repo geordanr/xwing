@@ -10600,6 +10600,17 @@ exportObj.basicCardData = ->
                 "Advanced Optics"
             ]
         }
+        {
+            id: 167
+            faction: "First Order"
+            pilot: "TN-3465"
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Targeting Synchronizer"
+                "Shield Upgrade"
+            ]
+        }
     ]
 
 
