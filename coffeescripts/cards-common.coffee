@@ -10579,6 +10579,17 @@ exportObj.basicCardData = ->
                 "Shield Upgrade"
             ]
         }
+        {
+            id: 165
+            faction: "First Order"
+            pilot: "Epsilon Squadron Cadet"
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Targeting Synchronizer"
+                "Afterburners"
+            ]
+        }
     ]
 
 
