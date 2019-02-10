@@ -10502,7 +10502,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 157
+            id: 158
             faction: "First Order"
             pilot: '"Static"'
             ship: "TIE/FO"
