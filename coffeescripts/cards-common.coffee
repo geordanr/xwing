@@ -10511,6 +10511,18 @@ exportObj.basicCardData = ->
                 "Outmaneuver"
             ]
         }
+        {
+            id: 159
+            faction: "First Order"
+            pilot: "Omega Squadron Ace"
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Fanatical"
+                "Hull Upgrade"
+            ]
+        }
     ]
 
 
