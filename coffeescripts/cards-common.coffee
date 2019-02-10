@@ -10611,6 +10611,15 @@ exportObj.basicCardData = ->
                 "Shield Upgrade"
             ]
         }
+        {
+            id: 168
+            faction: "First Order"
+            pilot: "Lieutenant Rivas"
+            ship: "TIE/FO"
+            threat: 1
+            upgrades: [
+            ]
+        }
     ]
 
 
