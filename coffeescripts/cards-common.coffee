@@ -10523,6 +10523,17 @@ exportObj.basicCardData = ->
                 "Hull Upgrade"
             ]
         }
+        {
+            id: 160
+            faction: "First Order"
+            pilot: '"Scorch"'
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Fanatical"
+                "Hull Upgrade"
+            ]
+        }
     ]
 
 
