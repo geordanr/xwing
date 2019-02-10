@@ -10534,6 +10534,17 @@ exportObj.basicCardData = ->
                 "Hull Upgrade"
             ]
         }
+        {
+            id: 161
+            faction: "First Order"
+            pilot: '"Longshot"'
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Predator"
+            ]
+        }
     ]
 
 
