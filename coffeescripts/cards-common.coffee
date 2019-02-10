@@ -10545,6 +10545,17 @@ exportObj.basicCardData = ->
                 "Predator"
             ]
         }
+        {
+            id: 162
+            faction: "First Order"
+            pilot: "Zeta Squadron Pilot"
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Advanced Optics"
+                "Shield Upgrade"
+            ]
+        }
     ]
 
 
