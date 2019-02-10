@@ -10567,6 +10567,18 @@ exportObj.basicCardData = ->
                 "Advanced Optics"
             ]
         }
+        {
+            id: 164
+            faction: "First Order"
+            pilot: '"Null"'
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Swarm Tactics"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
     ]
 
 
