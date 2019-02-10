@@ -10556,6 +10556,17 @@ exportObj.basicCardData = ->
                 "Shield Upgrade"
             ]
         }
+        {
+            id: 163
+            faction: "First Order"
+            pilot: '"Muse"'
+            ship: "TIE/FO"
+            threat: 2
+            upgrades: [
+                "Squad Leader"
+                "Advanced Optics"
+            ]
+        }
     ]
 
 
