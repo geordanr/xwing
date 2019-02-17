@@ -10495,7 +10495,7 @@ exportObj.basicCardData = ->
             id: 157
             faction: "First Order"
             pilot: '"Midnight"'
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Afterburners"
@@ -10505,7 +10505,7 @@ exportObj.basicCardData = ->
             id: 158
             faction: "First Order"
             pilot: '"Static"'
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -10515,7 +10515,7 @@ exportObj.basicCardData = ->
             id: 159
             faction: "First Order"
             pilot: "Omega Squadron Ace"
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -10527,7 +10527,7 @@ exportObj.basicCardData = ->
             id: 160
             faction: "First Order"
             pilot: '"Scorch"'
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Fanatical"
@@ -10538,7 +10538,7 @@ exportObj.basicCardData = ->
             id: 161
             faction: "First Order"
             pilot: '"Longshot"'
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -10549,7 +10549,7 @@ exportObj.basicCardData = ->
             id: 162
             faction: "First Order"
             pilot: "Zeta Squadron Pilot"
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Advanced Optics"
@@ -10560,7 +10560,7 @@ exportObj.basicCardData = ->
             id: 163
             faction: "First Order"
             pilot: '"Muse"'
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Squad Leader"
@@ -10571,7 +10571,7 @@ exportObj.basicCardData = ->
             id: 164
             faction: "First Order"
             pilot: '"Null"'
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Swarm Tactics"
@@ -10583,7 +10583,7 @@ exportObj.basicCardData = ->
             id: 165
             faction: "First Order"
             pilot: "Epsilon Squadron Cadet"
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Targeting Synchronizer"
@@ -10594,7 +10594,7 @@ exportObj.basicCardData = ->
             id: 166
             faction: "First Order"
             pilot: "Commander Malarus"
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Advanced Optics"
@@ -10604,7 +10604,7 @@ exportObj.basicCardData = ->
             id: 167
             faction: "First Order"
             pilot: "TN-3465"
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 2
             upgrades: [
                 "Targeting Synchronizer"
@@ -10615,7 +10615,7 @@ exportObj.basicCardData = ->
             id: 168
             faction: "First Order"
             pilot: "Lieutenant Rivas"
-            ship: "TIE/FO"
+            ship: "TIE/FO Fighter"
             threat: 1
             upgrades: [
             ]
