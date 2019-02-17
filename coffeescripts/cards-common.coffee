@@ -10620,6 +10620,191 @@ exportObj.basicCardData = ->
             upgrades: [
             ]
         }
+        {
+            id: 169
+            faction: "First Order"
+            pilot: '"Quickdraw"'
+            ship: "TIE/SF Fighter"
+            threat: 3
+            upgrades: [
+                "Juke"
+                "Collision Detector"
+                "Hotshot Gunner"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 170
+            faction: "First Order"
+            pilot: "Zeta Squadron Survivor"
+            ship: "TIE/SF Fighter"
+            threat: 2
+            upgrades: [
+                "Pattern Analyzer"
+                "Ion Missiles"
+                "Special Forces Gunner"
+            ]
+        }
+        {
+            id: 171
+            faction: "First Order"
+            pilot: '"Backdraft"'
+            ship: "TIE/SF Fighter"
+            threat: 3
+            upgrades: [
+                "Pattern Analyzer"
+                "Collision Detector"
+                "Ion Missiles"
+                "Special Forces Gunner"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 172
+            faction: "First Order"
+            pilot: "Omega Squadron Expert"
+            ship: "TIE/SF Fighter"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Special Forces Gunner"
+            ]
+        }
+        {
+            id: 173
+            faction: "First Order"
+            pilot: "Kylo Ren"
+            ship: "TIE/VN Silencer"
+            threat: 4
+            upgrades: [
+                "Hate"
+                "Predictive Shot"
+                "Primed Thrusters"
+                "Advanced Proton Torpedoes"
+            ]
+        }
+        {
+            id: 174
+            faction: "First Order"
+            pilot: '"Recoil"'
+            ship: "TIE/VN Silencer"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Proton Torpedoes"
+            ]
+        }
+        {
+            id: 175
+            faction: "First Order"
+            pilot: "First Order Test Pilot"
+            ship: "TIE/VN Silencer"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 176
+            faction: "First Order"
+            pilot: '"Blackout"'
+            ship: "TIE/VN Silencer"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 177
+            faction: "First Order"
+            pilot: '"Avenger"'
+            ship: "TIE/VN Silencer"
+            threat: 3
+            upgrades: [
+                "Primed Thrusters"
+                "Advanced Proton Torpedoes"
+            ]
+        }
+        {
+            id: 178
+            faction: "First Order"
+            pilot: "Sienar-Jaemus Engineer"
+            ship: "TIE/VN Silencer"
+            threat: 2
+        }
+        {
+            id: 179
+            faction: "First Order"
+            pilot: "Lieutenant Tavson"
+            ship: "Upsilon-Class Command Shuttle"
+            threat: 4
+            upgrades: [
+                "Advanced Sensors"
+                "Ion Cannon"
+                "Kylo Ren"
+                "Supreme Leader Snoke"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 180
+            faction: "First Order"
+            pilot: "Lieutenant Dormitz"
+            ship: "Upsilon-Class Command Shuttle"
+            threat: 3
+            upgrades: [
+                "Biohexacrypt Codes"
+                "Hyperspace Tracking Data"
+                "Tractor Beam"
+            ]
+        }
+        {
+            id: 181
+            faction: "First Order"
+            pilot: "Starkiller Base Pilot"
+            ship: "Upsilon-Class Command Shuttle"
+            threat: 2
+        }
+        {
+            id: 182
+            faction: "First Order"
+            pilot: "Major Stridan"
+            ship: "Upsilon-Class Command Shuttle"
+            threat: 4
+            upgrades: [
+                "Biohexacrypt Codes"
+                "Pattern Analyzer"
+                "Tractor Beam"
+                "Captain Phasma"
+                "General Hux"
+            ]
+        }
+        {
+            id: 183
+            faction: "First Order"
+            pilot: "Captain Cardinal"
+            ship: "Upsilon-Class Command Shuttle"
+            threat: 3
+            upgrades: [
+                "Ion Cannon"
+                "Petty Officer Thanisson"
+            ]
+        }
+        {
+            id: 184
+            faction: "First Order"
+            pilot: "Petty Officer Thanisson"
+            ship: "Upsilon-Class Command Shuttle"
+            threat: 3
+            upgrades: [
+                "Captain Phasma"
+                "Tactical Scrambler"
+            ]
+        }
+
     ]
 
 
