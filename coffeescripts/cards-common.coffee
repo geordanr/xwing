@@ -10804,7 +10804,636 @@ exportObj.basicCardData = ->
                 "Tactical Scrambler"
             ]
         }
-
+        {
+            id: 185
+            faction: "Scum and Villainy"
+            pilot: "Boba Fett"
+            ship: "Firespray-31"
+            threat: 4
+            upgrades: [
+                "Lone Wolf"
+                "Perceptive Copilot"
+                "Inertial Dampeners"
+                "Seismic Charge"
+                "Slave I"
+            ]
+        }
+        {
+            id: 186
+            faction: "Scum and Villainy"
+            pilot: "Kath Scarlet"
+            ship: "Firespray-31"
+            threat: 3
+            upgrades: [
+                "Marauder"
+            ]
+        }
+        {
+            id: 187
+            faction: "Scum and Villainy"
+            pilot: "Krassis Treux"
+            ship: "Firespray-31"
+            threat: 3
+            upgrades: [
+                "Concussion Missiles"
+            ]
+        }
+        {
+            id: 188
+            faction: "Scum and Villainy"
+            pilot: "Emon Azzameen"
+            ship: "Firespray-31"
+            threat: 4
+            upgrades: [
+                "Elusive"
+                "Perceptive Copilot"
+                "Inertial Dampeners"
+                "Proximity Mines"
+                "Seismic Charge"
+                "Andrasta"
+            ]
+        }
+        {
+            id: 189
+            faction: "Scum and Villainy"
+            pilot: "Koshka Frost"
+            ship: "Firespray-31"
+            threat: 3
+            upgrades: [
+                "Perceptive Copilot"
+            ]
+        }
+        {
+            id: 190
+            faction: "Scum and Villainy"
+            pilot: "Bounty Hunter"
+            ship: "Firespray-31"
+            threat: 3
+            upgrades: [
+                "Perceptive Copilot"
+                "Inertial Dampeners"
+                "Seismic Charge"
+            ]
+        }
+        {
+            id: 191
+            faction: "Scum and Villainy"
+            pilot: "Fenn Rau"
+            ship: "Fang Fighter"
+            threat: 3
+            upgrades: [
+                "Daredevil"
+                "Afterburners"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 192
+            faction: "Scum and Villainy"
+            pilot: "Kad Solus"
+            ship: "Fang Fighter"
+            threat: 2
+            upgrades: [
+                "Fearless"
+            ]
+        }
+        {
+            id: 193
+            faction: "Scum and Villainy"
+            pilot: "Zealous Recruit"
+            ship: "Fang Fighter"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+            ]
+        }
+        {
+            id: 194
+            faction: "Scum and Villainy"
+            pilot: "Joy Rekkoff"
+            ship: "Fang Fighter"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Ion Torpedoes"
+                "Afterburners"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 195
+            faction: "Scum and Villainy"
+            pilot: "Old Teroch"
+            ship: "Fang Fighter"
+            threat: 2
+        }
+        {
+            id: 196
+            faction: "Scum and Villainy"
+            pilot: "Skull Squadron Pilot"
+            ship: "Fang Fighter"
+            threat: 2
+            upgrades: [
+                "Fearless"
+            ]
+        }
+        {
+            id: 197
+            faction: "Scum and Villainy"
+            pilot: "Ahhav"
+            ship: "Mining Guild TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Afterburners"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 198
+            faction: "Scum and Villainy"
+            pilot: "Mining Guild Surveyor"
+            ship: "Mining Guild TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Swarm Tactics"
+                "Trick Shot"
+                "Shield Upgrade"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 199
+            faction: "Scum and Villainy"
+            pilot: "Overseer Yushyn"
+            ship: "Mining Guild TIE Fighter"
+            threat: 1
+        }
+        {
+            id: 200
+            faction: "Scum and Villainy"
+            pilot: "Captain Seevor"
+            ship: "Mining Guild TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 201
+            faction: "Scum and Villainy"
+            pilot: "Foreman Proach"
+            ship: "Mining Guild TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Swarm Tactics"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 202
+            faction: "Scum and Villainy"
+            pilot: "Mining Guild Sentry"
+            ship: "Mining Guild TIE Fighter"
+            threat: 1
+        }
+        {
+            id: 203
+            faction: "Scum and Villainy"
+            pilot: "Ketsu Onyo"
+            ship: "Lancer-Class Pursuit Craft"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "Rigged Cargo Chute"
+                "Shield Upgrade"
+                "Shadow Caster"
+            ]
+        }
+        {
+            id: 204
+            faction: "Scum and Villainy"
+            pilot: "Sabine Wren"
+            ship: "Lancer-Class Pursuit Craft"
+            threat: 3
+            upgrades: [
+                "Fearless"
+                "Ketsu Onyo"
+                "Shadow Caster"
+            ]
+        }
+        {
+            id: 205
+            faction: "Scum and Villainy"
+            pilot: "Asajj Ventress"
+            ship: "Lancer-Class Pursuit Craft"
+            threat: 4
+            upgrades: [
+                "Sense"
+                "Veteran Turret Gunner"
+                "Deadman's Switch"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 206
+            faction: "Scum and Villainy"
+            pilot: "Shadowport Hunter"
+            ship: "Lancer-Class Pursuit Craft"
+            threat: 3
+            upgrades: [
+                "Maul"
+                "Contraband Cybernetics"
+            ]
+        }
+        {
+            id: 207
+            faction: "Scum and Villainy"
+            pilot: "Talonbane Cobra"
+            ship: "Kihraxz Fighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Cluster Missiles"
+                "Inertial Dampeners"
+                "Afterburners"
+                "Electronic Baffle"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 208
+            faction: "Scum and Villainy"
+            pilot: "Viktor Hel"
+            ship: "Kihraxz Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 209
+            faction: "Scum and Villainy"
+            pilot: "Graz"
+            ship: "Kihraxz Fighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Concussion Missiles"
+                "Contraband Cybernetics"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 210
+            faction: "Scum and Villainy"
+            pilot: "Black Sun Ace"
+            ship: "Kihraxz Fighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 211
+            faction: "Scum and Villainy"
+            pilot: "Captain Jostero"
+            ship: "Kihraxz Fighter"
+            threat: 3
+            upgrades: [
+                "Ion Missiles"
+                "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 212
+            faction: "Scum and Villainy"
+            pilot: "Cartel Marauder"
+            ship: "Kihraxz Fighter"
+            threat: 2
+            upgrades: [
+                "Concussion Missiles"
+                "Hull Upgrade"
+                "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 213
+            faction: "Scum and Villainy"
+            pilot: "Kavil"
+            ship: "Y-Wing"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Dorsal Turret"
+                "Genius"
+                "Proton Bombs"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 214
+            faction: "Scum and Villainy"
+            pilot: "Hired Gun"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Ion Cannon Turret"
+                "Veteran Turret Gunner"
+                "R3 Astromech"
+                "Conner Nets"
+            ]
+        }
+        {
+            id: 215
+            faction: "Scum and Villainy"
+            pilot: "Drea Renthal"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "Ion Cannon Turret"
+                "Hotshot Gunner"
+            ]
+        }
+        {
+            id: 216
+            faction: "Scum and Villainy"
+            pilot: "Crymorah Goon"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Dorsal Turret"
+                "Ion Torpedoes"
+                "R3 Astromech"
+                "Inertial Dampeners"
+                "Proximity Mines"
+            ]
+        }
+        {
+            id: 217
+            faction: "Scum and Villainy"
+            pilot: "Dace Bonearm"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Feedback Array"
+                "Conner Nets"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 218
+            faction: "Scum and Villainy"
+            pilot: "Palob Godalhi"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Debris Gambit"
+                "Juke"
+                "Contraband Cybernetics"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 219
+            faction: "Scum and Villainy"
+            pilot: "Torkil Mux"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Cloaking Device"
+                "Proximity Mines"
+            ]
+        }
+        {
+            id: 220
+            faction: "Scum and Villainy"
+            pilot: "Spice Runner"
+            suffix: " (x2)"
+            ship: "HWK-290"
+            threat: 3
+            linkedId: 220
+            upgrades: [
+                "Deadman's Switch"
+                "Proton Bombs"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 221
+            faction: "Scum and Villainy"
+            pilot: "Constable Zuvio"
+            ship: "Quadjumper"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Rigged Cargo Chute"
+                "Conner Nets"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 222
+            faction: "Scum and Villainy"
+            pilot: "Jakku Gunrunner"
+            suffix: " (x2)"
+            linkedId: 222
+            ship: "Quadjumper"
+            threat: 3
+            upgrades: [
+                "Novice Technician"
+                "Proximity Mines"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 223
+            faction: "Scum and Villainy"
+            pilot: "Sarco Plank"
+            ship: "Quadjumper"
+            threat: 2
+            upgrades: [
+                "Unkar Plutt"
+                "Feedback Array"
+                "Seismic Charges"
+                "Hull Upgrade"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 224
+            faction: "Scum and Villainy"
+            pilot: "Unkar Plutt"
+            ship: "Quadjumper"
+            threat: 2
+            upgrades: [
+                "Novice Technician"
+                "Contraband Cybernetics"
+                "Proximity Mines"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 225
+            faction: "Scum and Villainy"
+            pilot: "Prince Xizor"
+            ship: "StarViper"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Fire-Control System"
+                "Shield Upgrade"
+                "Virago"
+            ]
+        }
+        {
+            id: 226
+            faction: "Scum and Villainy"
+            pilot: "Black Sun Enforcer"
+            ship: "StarViper"
+            threat: 2
+            upgrades: [
+                "Collision Detector"
+            ]
+        }
+        {
+            id: 227
+            faction: "Scum and Villainy"
+            pilot: "Guri"
+            ship: "StarViper"
+            threat: 3
+            upgrades: [
+                "Daredevil"
+                "Advanced Sensors"
+                "Advanced Proton Torpedoes"
+            ]
+        }
+        {
+            id: 228
+            faction: "Scum and Villainy"
+            pilot: "Dalan Oberos"
+            ship: "StarViper"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Fire-Control System"
+                "Proton Torpedoes"
+                "Contraband Cybernetics"
+            ]
+        }
+        {
+            id: 229
+            faction: "Scum and Villainy"
+            pilot: "Black Sun Assassin"
+            ship: "StarViper"
+            threat: 2
+            upgrades: [
+                "Fearless"
+            ]
+        }
+        {
+            id: 230
+            faction: "Scum and Villainy"
+            pilot: "Serissu"
+            ship: "M3-A Interceptor"
+            threat: 2
+            upgrades: [
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 231
+            faction: "Scum and Villainy"
+            pilot: "Genesis Red"
+            ship: "M3-A Interceptor"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Concussion Missiles"
+                "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 232
+            faction: "Scum and Villainy"
+            pilot: "Quinn Jast"
+            ship: "M3-A Interceptor"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Advanced Proton Torpedoes"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 233
+            faction: "Scum and Villainy"
+            pilot: "Laetin A'shera"
+            ship: "M3-A Interceptor"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Cluster Missiles"
+                "Munitions Failsafe"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 234
+            faction: "Scum and Villainy"
+            pilot: "Inaldra"
+            ship: "M3-A Interceptor"
+            threat: 2
+            upgrades: [
+                "Ion Cannon"
+                "Hull Upgrade"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 235
+            faction: "Scum and Villainy"
+            pilot: "Tansarii Point Veteran"
+            suffix: " (x2)"
+            linkedId: 235
+            ship: "M3-A Interceptor"
+            threat: 3
+            upgrades: [
+                "Crack Shot"
+                "Heavy Laser Cannon"
+            ]
+        }
+        {
+            id: 236
+            faction: "Scum and Villainy"
+            pilot: "Sunny Bounder"
+            ship: "M3-A Interceptor"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Cluster Missiles"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 237
+            faction: "Scum and Villainy"
+            pilot: "Cartel Spacer"
+            suffix: " (x2)"
+            linkedId: 237
+            ship: "M3-A Interceptor"
+            threat: 3
+            upgrades: [
+                "Ion Torpedoes"
+                "Munitions Failsafe"
+            ]
+        }
     ]
 
 
