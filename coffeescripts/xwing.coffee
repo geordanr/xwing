@@ -3368,13 +3368,14 @@ class Ship
                         everythingadded &= @upgrades[i].lastSetValid
 
                 for deferred_id in deferred_ids
+                    deferred_id_added = false
                     for upgrade, i in @upgrades
                         if upgrade.isOccupied() or upgrade.slot != exportObj.upgradesById[deferred_id].slot
-                            everythingadded = false
                             continue
                         upgrade.setById deferred_id
-                        everythingadded &= upgrade.lastSetValid
+                        deferred_id_added = upgrade.lastSetValid
                         break
+                    everythingadded &= deferred_id_added
 
                 if conferredaddon_pairs?
                     conferredaddon_pairs = conferredaddon_pairs.split ','
