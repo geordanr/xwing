@@ -11434,6 +11434,379 @@ exportObj.basicCardData = ->
                 "Munitions Failsafe"
             ]
         }
+        {
+            id: 238
+            faction: "Scum and Villainy"
+            pilot: "Tel Trevura"
+            ship: "Jumpmaster 5000"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                'GNK "Gonk" Droid'
+                "Proton Torpedoes"
+                "Deadman's Switch"
+            ]
+        }
+        {
+            id: 239
+            faction: "Scum and Villainy"
+            pilot: "Contracted Scout"
+            ship: "Jumpmaster 5000"
+            threat: 2
+            upgrades: [
+                "Ion Torpedoes"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 240
+            faction: "Scum and Villainy"
+            pilot: "Dengar"
+            ship: "Jumpmaster 5000"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Proton Torpedoes"
+                "R4 Astromech"
+                "Contraband Cybernetics"
+                "Punishing One"
+            ]
+        }
+        {
+            id: 241
+            faction: "Scum and Villainy"
+            pilot: "Manaroo"
+            ship: "Jumpmaster 5000"
+            threat: 3
+            upgrades: [
+                "Intimidation"
+                "Perceptive Copilot"
+                "Proton Torpedoes"
+                "Feedback Array"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 242
+            faction: "Scum and Villainy"
+            pilot: "N'dru Suhlak"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Lone Wolf"
+                "Homing Missiles"
+                "Cloaking Device"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 243
+            faction: "Scum and Villainy"
+            pilot: "Black Sun Soldier"
+            suffix: " (x2)"
+            linkedId: 243
+            ship: "Z-95 Headhunter"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Concussion Missiles"
+                "Deadman's Switch"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 244
+            faction: "Scum and Villainy"
+            pilot: "Kaa'to Leeachos"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "Concussion Missiles"
+                "Contraband Cybernetics"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 245
+            faction: "Scum and Villainy"
+            pilot: "Binayre Pirate"
+            ship: "Z-95 Headhunter"
+            threat: 1
+        }
+        {
+            id: 246
+            faction: "Scum and Villainy"
+            pilot: "4-LOM"
+            ship: "G-1A Starfighter"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Advanced Sensors"
+                "0-0-0"
+                "Zuckus"
+                "BT-1"
+                "Mist Hunter"
+            ]
+        }
+        {
+            id: 247
+            faction: "Scum and Villainy"
+            pilot: "Zuckuss"
+            ship: "G-1A Starfighter"
+            threat: 2
+            upgrades: [
+                "Lone Wolf"
+                "Tractor Beam"
+                "4-LOM"
+                "Mist Hunter"
+            ]
+        }
+        {
+            id: 248
+            faction: "Scum and Villainy"
+            pilot: "Gand Findsman"
+            ship: "G-1A Starfighter"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Freelancer Slicer"
+                "Deadman's Switch"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 249
+            faction: "Scum and Villainy"
+            pilot: "Moralo Eval"
+            ship: "YV-666"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "Cluster Missiles"
+                "Latts Razzi"
+                "Dengar"
+                "Contraband Cybernetics"
+            ]
+        }
+        {
+            id: 250
+            faction: "Scum and Villainy"
+            pilot: "Latts Razzi"
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Boba Fett"
+                "Bossk"
+                "Dengar"
+                "Feedback Array"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 251
+            faction: "Scum and Villainy"
+            pilot: "Trandoshan Slaver"
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Hotshot Gunner"
+                "Jabba the Hutt"
+                "Contraband Cybernetics"
+                "Rigged Cargo Chute"
+            ]
+        }
+        {
+            id: 252
+            faction: "Scum and Villainy"
+            pilot: "Bossk"
+            suffix: " + Nashtah Pup"
+            linkedId: 253
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Marksmanship"
+                "Greedo"
+                "Hound's Tooth"
+            ]
+        }
+        {
+            id: 253
+            faction: "Scum and Villainy"
+            pilot: "Nashtah Pup"
+            suffix: " + Bossk"
+            linkedId: 252
+            ship: "YV-666"
+            threat: 3
+        }
+        {
+            id: 254
+            faction: "Scum and Villainy"
+            pilot: "Trandoshan Slaver"
+            suffix: " + Nashtah Pup"
+            linkedId: 255
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Deadman's Switch"
+                "Hound's Tooth"
+            ]
+        }
+        {
+            id: 255
+            faction: "Scum and Villainy"
+            pilot: "Nashtah Pup"
+            suffix: " + Trandoshan Slaver"
+            linkedId: 254
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 256
+            faction: "Scum and Villainy"
+            pilot: "Torani Kulda"
+            ship: "M12-L Kimogila Fighter"
+            threat: 3
+            upgrades: [
+                "Saturation Salvo"
+                "Proton Torpedoes"
+                "Cluster Missiles"
+                "R4 Astromech"
+                "Inertial Dampeners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 257
+            faction: "Scum and Villainy"
+            pilot: "Dalan Oberos"
+            ship: "M12-L Kimogila Fighter"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "R5-TK"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 258
+            faction: "Scum and Villainy"
+            pilot: "Cartel Executioner"
+            ship: "M12-L Kimogila Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "R5-P8"
+                "Contraband Cybernetics"
+            ]
+        }
+        {
+            id: 259
+            faction: "Scum and Villainy"
+            pilot: "Dalan Oberos"
+            ship: "M12-L Kimogila Fighter"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "R5-TK"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 260
+            faction: "Scum and Villainy"
+            pilot: "Captain Nym"
+            ship: "Scurrg H-6 Bomber"
+            threat: 3
+            upgrades: [
+                "Squad Leader"
+                "Trajectory Simulator"
+                "R4 Astromech"
+                "Bomblet Generator"
+                "Havoc"
+            ]
+        }
+        {
+            id: 261
+            faction: "Scum and Villainy"
+            pilot: "Sol Sixxa"
+            ship: "Scurrg H-6 Bomber"
+            threat: 3
+            upgrades: [
+                "Ion Cannon Turret"
+                "Skilled Bombardier"
+                "Conner Nets"
+                "Proximity Mines"
+            ]
+        }
+        {
+            id: 262
+            faction: "Scum and Villainy"
+            pilot: "Lok Revenant"
+            ship: "Scurrg H-6 Bomber"
+            threat: 2
+            upgrades: [
+                "Dorsal Turret"
+                "Bomblet Generator"
+            ]
+        }
+        {
+            id: 263
+            faction: "Scum and Villainy"
+            pilot: "IG-88A"
+            suffix: " + IG-88D"
+            linkedId: 264
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Advanced Sensors"
+                "IG-2000"
+            ]
+        }
+        {
+            id: 264
+            faction: "Scum and Villainy"
+            pilot: "IG-88D"
+            suffix: " + IG-88A"
+            linkedId: 263
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Advanced Sensors"
+                "IG-2000"
+            ]
+        }
+        {
+            id: 265
+            faction: "Scum and Villainy"
+            pilot: "IG-88B"
+            suffix: " + IG-88C"
+            linkedId: 266
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Fire-Control System"
+                "Ion Cannon"
+                "IG-2000"
+            ]
+        }
+        {
+            id: 266
+            faction: "Scum and Villainy"
+            pilot: "IG-88C"
+            suffix: " + IG-88B"
+            linkedId: 265
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Fire-Control System"
+                "Ion Cannon"
+                "IG-2000"
+            ]
+        }
     ]
 
 
