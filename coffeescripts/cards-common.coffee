@@ -12089,7 +12089,7 @@ exportObj.basicCardData = ->
         {
             id: 291
             faction: "Resistance"
-            pilot: "Han Solo"
+            pilot: "Han Solo (Resistance)"
             ship: "Scavenged YT-1300"
             threat: 3
             upgrades: [
@@ -12113,7 +12113,7 @@ exportObj.basicCardData = ->
         {
             id: 293
             faction: "Resistance"
-            pilot: "Chewbacca"
+            pilot: "Chewbacca (Resistance)"
             ship: "Scavenged YT-1300"
             threat: 4
             upgrades: [
