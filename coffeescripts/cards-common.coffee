@@ -11130,7 +11130,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Expert Handling"
                 "Dorsal Turret"
-                "Genius"
+                '"Genius"'
                 "Proton Bombs"
                 "Afterburners"
             ]
