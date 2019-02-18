@@ -6423,7 +6423,7 @@ exportObj.basicCardData = ->
             ship: "Vulture-class Droid Fighter"
             skill: 3
             points: 100
-            restricted: 3
+            max_per_squad: 3
             slots: [
                 "Missile"
                 "Configuration"
@@ -6437,7 +6437,7 @@ exportObj.basicCardData = ->
             ship: "Vulture-class Droid Fighter"
             skill: 1
             points: 100
-            restricted: 2
+            max_per_squad: 2
             slots: [
                 "Missile"
                 "Configuration"
