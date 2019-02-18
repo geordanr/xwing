@@ -11130,7 +11130,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Expert Handling"
                 "Dorsal Turret"
-                "Genius"
+                '"Genius"'
                 "Proton Bombs"
                 "Afterburners"
             ]
@@ -11432,6 +11432,707 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Ion Torpedoes"
                 "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 238
+            faction: "Scum and Villainy"
+            pilot: "Tel Trevura"
+            ship: "Jumpmaster 5000"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                'GNK "Gonk" Droid'
+                "Proton Torpedoes"
+                "Deadman's Switch"
+            ]
+        }
+        {
+            id: 239
+            faction: "Scum and Villainy"
+            pilot: "Contracted Scout"
+            ship: "Jumpmaster 5000"
+            threat: 2
+            upgrades: [
+                "Ion Torpedoes"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 240
+            faction: "Scum and Villainy"
+            pilot: "Dengar"
+            ship: "Jumpmaster 5000"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Proton Torpedoes"
+                "R4 Astromech"
+                "Contraband Cybernetics"
+                "Punishing One"
+            ]
+        }
+        {
+            id: 241
+            faction: "Scum and Villainy"
+            pilot: "Manaroo"
+            ship: "Jumpmaster 5000"
+            threat: 3
+            upgrades: [
+                "Intimidation"
+                "Perceptive Copilot"
+                "Proton Torpedoes"
+                "Feedback Array"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 242
+            faction: "Scum and Villainy"
+            pilot: "N'dru Suhlak"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Lone Wolf"
+                "Homing Missiles"
+                "Cloaking Device"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 243
+            faction: "Scum and Villainy"
+            pilot: "Black Sun Soldier"
+            suffix: " (x2)"
+            linkedId: 243
+            ship: "Z-95 Headhunter"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Concussion Missiles"
+                "Deadman's Switch"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 244
+            faction: "Scum and Villainy"
+            pilot: "Kaa'to Leeachos"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "Concussion Missiles"
+                "Contraband Cybernetics"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 245
+            faction: "Scum and Villainy"
+            pilot: "Binayre Pirate"
+            ship: "Z-95 Headhunter"
+            threat: 1
+        }
+        {
+            id: 246
+            faction: "Scum and Villainy"
+            pilot: "4-LOM"
+            ship: "G-1A Starfighter"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Advanced Sensors"
+                "0-0-0"
+                "Zuckus"
+                "BT-1"
+                "Mist Hunter"
+            ]
+        }
+        {
+            id: 247
+            faction: "Scum and Villainy"
+            pilot: "Zuckuss"
+            ship: "G-1A Starfighter"
+            threat: 2
+            upgrades: [
+                "Lone Wolf"
+                "Tractor Beam"
+                "4-LOM"
+                "Mist Hunter"
+            ]
+        }
+        {
+            id: 248
+            faction: "Scum and Villainy"
+            pilot: "Gand Findsman"
+            ship: "G-1A Starfighter"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Freelancer Slicer"
+                "Deadman's Switch"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 249
+            faction: "Scum and Villainy"
+            pilot: "Moralo Eval"
+            ship: "YV-666"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "Cluster Missiles"
+                "Latts Razzi"
+                "Dengar"
+                "Contraband Cybernetics"
+            ]
+        }
+        {
+            id: 250
+            faction: "Scum and Villainy"
+            pilot: "Latts Razzi"
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Boba Fett"
+                "Bossk"
+                "Dengar"
+                "Feedback Array"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 251
+            faction: "Scum and Villainy"
+            pilot: "Trandoshan Slaver"
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Hotshot Gunner"
+                "Jabba the Hutt"
+                "Contraband Cybernetics"
+                "Rigged Cargo Chute"
+            ]
+        }
+        {
+            id: 252
+            faction: "Scum and Villainy"
+            pilot: "Bossk"
+            suffix: " + Nashtah Pup"
+            linkedId: 253
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Marksmanship"
+                "Greedo"
+                "Hound's Tooth"
+            ]
+        }
+        {
+            id: 253
+            faction: "Scum and Villainy"
+            pilot: "Nashtah Pup"
+            suffix: " + Bossk"
+            linkedId: 252
+            ship: "YV-666"
+            threat: 3
+        }
+        {
+            id: 254
+            faction: "Scum and Villainy"
+            pilot: "Trandoshan Slaver"
+            suffix: " + Nashtah Pup"
+            linkedId: 255
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Deadman's Switch"
+                "Hound's Tooth"
+            ]
+        }
+        {
+            id: 255
+            faction: "Scum and Villainy"
+            pilot: "Nashtah Pup"
+            suffix: " + Trandoshan Slaver"
+            linkedId: 254
+            ship: "YV-666"
+            threat: 3
+            upgrades: [
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 256
+            faction: "Scum and Villainy"
+            pilot: "Torani Kulda"
+            ship: "M12-L Kimogila Fighter"
+            threat: 3
+            upgrades: [
+                "Saturation Salvo"
+                "Proton Torpedoes"
+                "Cluster Missiles"
+                "R4 Astromech"
+                "Inertial Dampeners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 257
+            faction: "Scum and Villainy"
+            pilot: "Dalan Oberos"
+            ship: "M12-L Kimogila Fighter"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "R5-TK"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 258
+            faction: "Scum and Villainy"
+            pilot: "Cartel Executioner"
+            ship: "M12-L Kimogila Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "R5-P8"
+                "Contraband Cybernetics"
+            ]
+        }
+        {
+            id: 259
+            faction: "Scum and Villainy"
+            pilot: "Dalan Oberos"
+            ship: "M12-L Kimogila Fighter"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "R5-TK"
+                "Inertial Dampeners"
+            ]
+        }
+        {
+            id: 260
+            faction: "Scum and Villainy"
+            pilot: "Captain Nym"
+            ship: "Scurrg H-6 Bomber"
+            threat: 3
+            upgrades: [
+                "Squad Leader"
+                "Trajectory Simulator"
+                "R4 Astromech"
+                "Bomblet Generator"
+                "Havoc"
+            ]
+        }
+        {
+            id: 261
+            faction: "Scum and Villainy"
+            pilot: "Sol Sixxa"
+            ship: "Scurrg H-6 Bomber"
+            threat: 3
+            upgrades: [
+                "Ion Cannon Turret"
+                "Skilled Bombardier"
+                "Conner Nets"
+                "Proximity Mines"
+            ]
+        }
+        {
+            id: 262
+            faction: "Scum and Villainy"
+            pilot: "Lok Revenant"
+            ship: "Scurrg H-6 Bomber"
+            threat: 2
+            upgrades: [
+                "Dorsal Turret"
+                "Bomblet Generator"
+            ]
+        }
+        {
+            id: 263
+            faction: "Scum and Villainy"
+            pilot: "IG-88A"
+            suffix: " + IG-88D"
+            linkedId: 264
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Advanced Sensors"
+                "IG-2000"
+            ]
+        }
+        {
+            id: 264
+            faction: "Scum and Villainy"
+            pilot: "IG-88D"
+            suffix: " + IG-88A"
+            linkedId: 263
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Advanced Sensors"
+                "IG-2000"
+            ]
+        }
+        {
+            id: 265
+            faction: "Scum and Villainy"
+            pilot: "IG-88B"
+            suffix: " + IG-88C"
+            linkedId: 266
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Fire-Control System"
+                "Ion Cannon"
+                "IG-2000"
+            ]
+        }
+        {
+            id: 266
+            faction: "Scum and Villainy"
+            pilot: "IG-88C"
+            suffix: " + IG-88B"
+            linkedId: 265
+            ship: "Aggressor"
+            threat: 6
+            upgrades: [
+                "Fire-Control System"
+                "Ion Cannon"
+                "IG-2000"
+            ]
+        }
+        {
+            id: 267
+            faction: "Resistance"
+            pilot: "L'ulo L'ampar"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Primed Thrusters"
+                "Homing Missiles"
+            ]
+        }
+        {
+            id: 268
+            faction: "Resistance"
+            pilot: "Greer Sonnel"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 269
+            faction: "Resistance"
+            pilot: "Green Squadron Expert"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Heroic"
+                "Primed Thursters"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 270
+            faction: "Resistance"
+            pilot: "Tallissan Lintra"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Ferrosphere Paint"
+            ]
+        }
+        {
+            id: 271
+            faction: "Resistance"
+            pilot: "Zari Bangel"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 272
+            faction: "Resistance"
+            pilot: "Blue Squadron Recruit"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Primed Thrusters"
+                "Homing Missiles"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 273
+            faction: "Resistance"
+            pilot: "Poe Dameron"
+            ship: "T-70 X-Wing"
+            threat: 4
+            upgrades: [
+                "Proton Torpedoes"
+                "BB-8"
+                "Black One"
+                "Integrated S-Foils"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 274
+            faction: "Resistance"
+            pilot: "Jessika Pava"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "R5 Astromech"
+                "Integrated S-Foils"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 275
+            faction: "Resistance"
+            pilot: "Black Squadron Ace"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Proton Torpedoes"
+                "M9-G8"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 276
+            faction: "Resistance"
+            pilot: "Ello Asty"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Integrated S-Foils"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 277
+            faction: "Resistance"
+            pilot: "Joph Seastriker"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "R2 Astromech"
+                "Integrated S-Foils"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 278
+            faction: "Resistance"
+            pilot: "Jaycris Tubbs"
+            ship: "T-70 X-Wing"
+            threat: 2
+        }
+        {
+            id: 279
+            faction: "Resistance"
+            pilot: "Nien Nunb"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Integrated S-Foils"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 280
+            faction: "Resistance"
+            pilot: "Lieutenant Bastian"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Targeting Synchronizer"
+                "Proton Torpedoes"
+                "R3 Astromech"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 281
+            faction: "Resistance"
+            pilot: "Red Squadron Expert"
+            ship: "T-70 X-Wing"
+            threat: 2
+        }
+        {
+            id: 282
+            faction: "Resistance"
+            pilot: "Temmin Wexley"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Proton Torpedoes"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 283
+            faction: "Resistance"
+            pilot: "Kare Kun"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Integrated S-Foils"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 284
+            faction: "Resistance"
+            pilot: "Blue Squadron Rookie"
+            ship: "T-70 X-Wing"
+            threat: 2
+            upgrades: [
+                "BB Astromech"
+            ]
+        }
+        {
+            id: 285
+            faction: "Resistance"
+            pilot: "Finch Dallow"
+            ship: "MG-100 StarFortress"
+            threat: 4
+            upgrades: [
+                "Advanced Optics"
+                "Paige Tico"
+                "Proton Bombs"
+                "Ablative Plating"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 286
+            faction: "Resistance"
+            pilot: "Cat"
+            ship: "MG-100 StarFortress"
+            threat: 3
+            upgrades: [
+                "Skilled Bombardier"
+                "Conner Nets"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 287
+            faction: "Resistance"
+            pilot: "Cobalt Squadron Bomber"
+            ship: "MG-100 StarFortress"
+            threat: 3
+            upgrades: [
+                "Trajectory Simulator"
+                "Proton Bombs"
+                "Ablative Plating"
+            ]
+        }
+        {
+            id: 288
+            faction: "Resistance"
+            pilot: "Edon Kappehl"
+            ship: "MG-100 StarFortress"
+            threat: 4
+            upgrades: [
+                "Pattern Analyzer"
+                "Seasoned Navigator"
+                "Skilled Bombardier"
+                "Conner Nets"
+                "Proton Bombs"
+            ]
+        }
+        {
+            id: 289
+            faction: "Resistance"
+            pilot: "Vennie"
+            ship: "MG-100 StarFortress"
+            threat: 4
+            upgrades: [
+                "Advanced Optics"
+                "Rose Tico"
+                "Finn"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 290
+            faction: "Resistance"
+            pilot: "Ben Teene"
+            ship: "MG-100 StarFortress"
+            threat: 3
+            upgrades: [
+                "Conner Nets"
+                "Proton Bombs"
+            ]
+        }
+        {
+            id: 291
+            faction: "Resistance"
+            pilot: "Han Solo (Resistance)"
+            ship: "Scavenged YT-1300"
+            threat: 3
+            upgrades: [
+                "Chewbacca"
+            ]
+        }
+        {
+            id: 292
+            faction: "Resistance"
+            pilot: "Rey"
+            ship: "Scavenged YT-1300"
+            threat: 5
+            upgrades: [
+                "Finn"
+                "BB-8"
+                "Inertial Dampeners"
+                "Engine Upgrade"
+                "Rey's Millennium Falcon"
+            ]
+        }
+        {
+            id: 293
+            faction: "Resistance"
+            pilot: "Chewbacca (Resistance)"
+            ship: "Scavenged YT-1300"
+            threat: 4
+            upgrades: [
+                "Rey"
+                "Engine Upgrade"
+                "Rey's Millennium Falcon"
+            ]
+        }
+        {
+            id: 294
+            faction: "Resistance"
+            pilot: "Resistance Sympathizer"
+            ship: "Scavenged YT-1300"
+            threat: 4
+            upgrades: [
+                "Debris Gambit"
+                "C-3PO"
+                "Chewbacca"
+                "Han Solo"
             ]
         }
     ]
