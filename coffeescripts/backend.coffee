@@ -434,11 +434,11 @@ class exportObj.SquadBuilderBackend
                 </div>
                 <div class="btn-group squad-display-mode">
                     <button class="btn btn-inverse show-all-squads">All</button>
-                    <button class="btn show-standard-squads">Standard</button>
-                    <button class="btn show-epic-squads">Epic</button>
-                    <button class="btn show-team-epic-squads">Team<span class="hidden-phone"> Epic</span></button>
+                    <button class="btn show-extended-squads">Extended</button>
+                    <button class="btn show-hyperspace-squads">Hyperspace</button>
+                    <button class="btn show-quickbuild-squads">Quickbuild</button>
                 </div>
-                <button class="btn btn reload-all">Reload all squads (this might take a while)</button>
+                <button class="btn btn reload-all">Reload<span class="hidden-phone"> all squads (this might take a while)</span></button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
@@ -512,9 +512,6 @@ class exportObj.SquadBuilderBackend
                              li.find('.squad-delete-confirm').fadeIn 'fast'
                     @number_of_selected_squads_to_be_deleted += 1
 
-        # Hide selection of Standard/epic/team epic as those modes do not exist.
-        @squad_list_modal.find('div.squad-display-mode').hide()
-
         @show_all_squads_button = $ @squad_list_modal.find('.show-all-squads')
         @show_all_squads_button.click (e) =>
             unless @squad_display_mode == 'all'
@@ -523,32 +520,32 @@ class exportObj.SquadBuilderBackend
                 @show_all_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').show()
 
-        @show_standard_squads_button = $ @squad_list_modal.find('.show-standard-squads')
-        @show_standard_squads_button.click (e) =>
-            unless @squad_display_mode == 'standard'
-                @squad_display_mode = 'standard'
+        @show_extended_squads_button = $ @squad_list_modal.find('.show-extended-squads')
+        @show_extended_squads_button.click (e) =>
+            unless @squad_display_mode == 'extended'
+                @squad_display_mode = 'extended'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
-                @show_standard_squads_button.addClass 'btn-inverse'
+                @show_extended_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
-                    $(elem).toggle (($(elem).data().squad.serialized.search(/v\d+!e/) == -1) and ($(elem).data().squad.serialized.search(/v\d+!t/) == -1))
+                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+!s/) != -1
 
-        @show_epic_squads_button = $ @squad_list_modal.find('.show-epic-squads')
-        @show_epic_squads_button.click (e) =>
-            unless @squad_display_mode == 'epic'
-                @squad_display_mode = 'epic'
+        @show_hyperspace_squads_button = $ @squad_list_modal.find('.show-hyperspace-squads')
+        @show_hyperspace_squads_button.click (e) =>
+            unless @squad_display_mode == 'hyperspace'
+                @squad_display_mode = 'hyperspace'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
-                @show_epic_squads_button.addClass 'btn-inverse'
+                @show_hyperspace_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
-                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+!e/) != -1
+                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+!h/) != -1
 
-        @show_team_epic_squads_button = $ @squad_list_modal.find('.show-team-epic-squads')
-        @show_team_epic_squads_button.click (e) =>
-            unless @squad_display_mode == 'team-epic'
-                @squad_display_mode = 'team-epic'
+        @show_quickbuild_squads_button = $ @squad_list_modal.find('.show-quickbuild-squads')
+        @show_quickbuild_squads_button.click (e) =>
+            unless @squad_display_mode == 'quickbuild'
+                @squad_display_mode = 'quickbuild'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
-                @show_team_epic_squads_button.addClass 'btn-inverse'
+                @show_quickbuild_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
-                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+!t/) != -1
+                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+!q/) != -1
 
         @save_as_modal = $ document.createElement('DIV')
         @save_as_modal.addClass 'modal hide fade hidden-print'
