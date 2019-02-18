@@ -1551,7 +1551,7 @@ class exportObj.SquadBuilder
                 if exportObj.pilots[quickbuild.pilot] in @uniques_in_use.Pilot
                     allowed_quickbuilds_containing_uniques_in_use.push quickbuild.id
                     continue
-                if exportObj.pilots[quickbuild.pilot].max_per_squad? and @countPilots(pilot.canonical_name) >= pilot.max_per_squad
+                if exportObj.pilots[quickbuild.pilot]?.max_per_squad? and @countPilots(exportObj.pilots[quickbuild.pilot].canonical_name) >= exportObj.pilots[quickbuild.pilot].max_per_squad
                     allowed_quickbuilds_containing_uniques_in_use.push quickbuild.id
                     continue
                 if quickbuild.upgrades? 
