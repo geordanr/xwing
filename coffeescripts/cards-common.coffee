@@ -1448,7 +1448,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
             ]
-         "Naboo Royal N-1 Starfighter":
+        "Naboo Royal N-1 Starfighter":
            name: "Naboo Royal N-1 Starfighter"               
            xws: "Naboo Royal N-1 Starfighter".canonicalize()
            factions: ["Galactic Republic"]
@@ -1461,17 +1461,42 @@ exportObj.basicCardData = ->
              "Lock"
              "Barrel Roll"
              "Boost"
-            ]
-            actionsred: [
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-              [ 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
-              [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
-              [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
-              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-            ]
+           ]
+           actionsred: [
+           ]
+           maneuvers: [
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+             [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
+             [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
+             [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+           ]
+        "Hyena-Class Droid Bomber":
+           name: "Hyena-Class Droid Bomber"               
+           xws: "Hyena-Class Droid Bomber".canonicalize()
+           factions: ["Separatist Alliance"]
+           attack: 2
+           agility: 2
+           hull: 5
+           shields: 0
+           actions: [
+             "Calculate"
+             "Lock"
+             "Barrel Roll"
+             "R> Lock"
+           ]
+           actionsred: [
+             "Reload"
+           ]
+           maneuvers: [
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 1, 3, 1, 3, 1, 0, 0, 0, 0, 0]
+             [ 2, 1, 2, 1, 2, 3, 0, 0, 3, 3]
+             [ 1, 0, 2, 0, 1, 0, 0, 0, 0, 0]
+             [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+           ]
         
     # name field is for convenience only
     pilotsById: [
@@ -6642,6 +6667,169 @@ exportObj.basicCardData = ->
                 "Torpedo"
             ]
         }
+        {
+            name: "Generic PS 1"
+            id: 324
+            faction: "Separatist Alliance"
+            ship: "Hyena-Class Droid Bomber"
+            skill: 1
+            points: 100
+            slots: [
+                "System"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Device"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Generic PS 3"
+            id: 325
+            faction: "Separatist Alliance"
+            ship: "Hyena-Class Droid Bomber"
+            skill: 3
+            points: 100
+            slots: [
+                "System"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Device"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Unique PS 4"
+            id: 326
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Hyena-Class Droid Bomber"
+            skill: 4
+            points: 100
+            slots: [
+                "System"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Device"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Unique PS 3"
+            id: 327
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Hyena-Class Droid Bomber"
+            skill: 3
+            points: 100
+            slots: [
+                "System"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Device"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Pilot PS 3"
+            id: 328
+            max_per_squad: 3
+            faction: "Separatist Alliance"
+            ship: "Hyena-Class Droid Bomber"
+            skill: 3
+            points: 100
+            slots: [
+                "System"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Device"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Pilot PS 1"
+            id: 329
+            max_per_squad: 2
+            faction: "Separatist Alliance"
+            ship: "Hyena-Class Droid Bomber"
+            skill: 1
+            points: 100
+            slots: [
+                "System"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Device"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Pilot PS 1"
+            id: 330
+            max_per_squad: 2
+            faction: "Galactic Republic"
+            ship: "Naboo Royal N-1 Starfighter"
+            skill: 1
+            points: 100
+            slots: [
+                "System"
+                "Astromech"
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Unique PS 3"
+            id: 331
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Naboo Royal N-1 Starfighter"
+            skill: 3
+            points: 100
+            slots: [
+                "System"
+                "Astromech"
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Unique PS 4"
+            id: 332
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Naboo Royal N-1 Starfighter"
+            skill: 4
+            points: 100
+            slots: [
+                "System"
+                "Astromech"
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Unique PS 5"
+            id: 333
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Naboo Royal N-1 Starfighter"
+            skill: 5
+            points: 100
+            slots: [
+                "System"
+                "Astromech"
+                "Torpedo"
+            ]
+        }
+
     ]
 
 
