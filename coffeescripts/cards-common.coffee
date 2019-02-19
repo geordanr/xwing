@@ -1448,6 +1448,30 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
             ]
+         "Naboo Royal N-1 Starfighter":
+           name: "Naboo Royal N-1 Starfighter"               
+           xws: "Naboo Royal N-1 Starfighter".canonicalize()
+           factions: ["Galactic Republic"]
+           attack: 2
+           agility: 2
+           hull: 3
+           shields: 2
+           actions: [
+             "Focus"
+             "Lock"
+             "Barrel Roll"
+             "Boost"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
+              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+            ]
         
     # name field is for convenience only
     pilotsById: [
@@ -6588,6 +6612,34 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Modification"
+            ]
+        }
+        {
+            name: "Anakin Skywalker"
+            id: 322
+            faction: "Galactic Republic"
+            ship: "Naboo Royal N-1 Starfighter"
+            skill: 4
+            force: 1
+            points: 100
+            slots: [
+                "Force"
+                "System"
+                "Astromech"
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Generic PS 2"
+            id: 323
+            faction: "Galactic Republic"
+            ship: "Naboo Royal N-1 Starfighter"
+            skill: 2
+            points: 100
+            slots: [
+                "System"
+                "Astromech"
+                "Torpedo"
             ]
         }
     ]
