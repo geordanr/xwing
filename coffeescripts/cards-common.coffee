@@ -6642,6 +6642,7 @@ exportObj.basicCardData = ->
         {
             name: "Anakin Skywalker"
             id: 322
+            unique: true
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
             skill: 4
@@ -6649,7 +6650,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
-                "System"
+                "Sensor"
                 "Astromech"
                 "Torpedo"
             ]
@@ -6662,7 +6663,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Astromech"
                 "Torpedo"
             ]
@@ -6675,7 +6676,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -6685,14 +6686,14 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Generic PS 3"
+            name: "Bombardment Drone"
             id: 325
             faction: "Separatist Alliance"
             ship: "Hyena-Class Droid Bomber"
             skill: 3
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -6710,7 +6711,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -6728,7 +6729,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -6746,7 +6747,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -6764,7 +6765,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -6782,7 +6783,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Astromech"
                 "Torpedo"
             ]
@@ -6796,7 +6797,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Astromech"
                 "Torpedo"
             ]
@@ -6810,7 +6811,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Astromech"
                 "Torpedo"
             ]
@@ -6824,7 +6825,7 @@ exportObj.basicCardData = ->
             skill: 5
             points: 100
             slots: [
-                "System"
+                "Sensor"
                 "Astromech"
                 "Torpedo"
             ]
