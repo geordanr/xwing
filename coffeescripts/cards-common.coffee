@@ -11679,7 +11679,7 @@ exportObj.basicCardData = ->
             id: 238
             faction: "Scum and Villainy"
             pilot: "Tel Trevura"
-            ship: "Jumpmaster 5000"
+            ship: "JumpMaster 5000"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -11692,7 +11692,7 @@ exportObj.basicCardData = ->
             id: 239
             faction: "Scum and Villainy"
             pilot: "Contracted Scout"
-            ship: "Jumpmaster 5000"
+            ship: "JumpMaster 5000"
             threat: 2
             upgrades: [
                 "Ion Torpedoes"
@@ -11703,7 +11703,7 @@ exportObj.basicCardData = ->
             id: 240
             faction: "Scum and Villainy"
             pilot: "Dengar"
-            ship: "Jumpmaster 5000"
+            ship: "JumpMaster 5000"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -11717,7 +11717,7 @@ exportObj.basicCardData = ->
             id: 241
             faction: "Scum and Villainy"
             pilot: "Manaroo"
-            ship: "Jumpmaster 5000"
+            ship: "JumpMaster 5000"
             threat: 3
             upgrades: [
                 "Intimidation"
