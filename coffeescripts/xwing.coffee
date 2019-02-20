@@ -1788,10 +1788,10 @@ class exportObj.SquadBuilder
                     #logic to determine how many dots to use for uniqueness
                     if data.pilot.unique?
                         uniquedots = "&middot;&nbsp;"
-                    else if data.pilot.restricted?
+                    else if data.pilot.max_per_squad?
                         count = 0
                         uniquedots = ""
-                        while (count < data.pilot.restricted)
+                        while (count < data.pilot.max_per_squad)
                             uniquedots = uniquedots.concat("&middot;")
                             ++count
                         uniquedots = uniquedots.concat("&nbsp;")
@@ -1889,10 +1889,10 @@ class exportObj.SquadBuilder
                     #logic to determine how many dots to use for uniqueness
                     if data.unique?
                         uniquedots = "&middot;&nbsp;"
-                    else if data.restricted?
+                    else if data.max_per_squad?
                         count = 0
                         uniquedots = ""
-                        while (count < data.restricted)
+                        while (count < data.max_per_squad)
                             uniquedots = uniquedots.concat("&middot;")
                             ++count
                         uniquedots = uniquedots.concat("&nbsp;")
@@ -1988,10 +1988,10 @@ class exportObj.SquadBuilder
                     #logic to determine how many dots to use for uniqueness
                     if pilot.unique?
                         uniquedots = "&middot;&nbsp;"
-                    else if pilot.restricted?
+                    else if pilot.max_per_squad?
                         count = 0
                         uniquedots = ""
-                        while (count < data.restricted)
+                        while (count < data.max_per_squad)
                             uniquedots = uniquedots.concat("&middot;")
                             ++count
                         uniquedots = uniquedots.concat("&nbsp;")
@@ -2963,16 +2963,7 @@ class Ship
         @copy_button = $ @row.find('button.copy-pilot')
         @copy_button.click (e) =>
             clone = @builder.ships[@builder.ships.length - 1]
-            
-            # Restricted Check
-            if this.pilot.restricted
-                count = 0
-                # for ship in @builder.ships
-                    # shipname = ship.pilot.name
-                if count < this.pilot.restricted
-                    clone.copyFrom(this)
-            else
-                clone.copyFrom(this)
+            clone.copyFrom(this)
                 
         @copy_button.hide()
 

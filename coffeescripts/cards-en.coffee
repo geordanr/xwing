@@ -1140,6 +1140,8 @@ exportObj.cardLoaders.English = () ->
            text: """After you defend or perform an attack, you may choose a friendly ship at range 1-2 in your %LEFTARC% or %RIGHTARC%. If you do, transfer 1 green token to that ship."""
         '"Tucker"':
            text: """After a friedly ship at range 1-2 performs an attack against an enemy ship in your %FRONTARC%, you may perform a %FOCUS% action."""
+        "Bombardment Drone":
+           text: """If you would drop a device, you may launch that device instead, using the same template. %LINEBREAK% NETWORKED CALCULATIONS: While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result."""
         
 
     upgrade_translations =
