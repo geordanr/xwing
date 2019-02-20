@@ -1468,7 +1468,7 @@ exportObj.basicCardData = ->
              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
              [ 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
              [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
-             [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
+             [ 1, 2, 2, 2, 1, 0, 0, 0, 3, 3]
              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
            ]
@@ -5901,6 +5901,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -5916,6 +5917,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -5931,6 +5933,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -5946,6 +5949,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -5960,6 +5964,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -5975,6 +5980,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -5995,6 +6001,7 @@ exportObj.basicCardData = ->
         {
             name: '"Sinker"'
             id: 280
+            unique: true
             faction: "Galactic Republic"
             ship: "ARC-170"
             skill: 3
@@ -6518,6 +6525,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -6533,6 +6541,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -6548,6 +6557,7 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Astromech"
                 "Configuration"
                 "Modification"
             ]
@@ -8795,9 +8805,60 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 "Calculate" in ship.effectiveStats().actions or "Calculate" in ship.effectiveStats().actionsred
        }
-
-
-]
+       {
+            name: "Dedicated"
+            id: 210
+            faction: "Galactic Republic"
+            slot: "Talent"
+            points: 100
+            restriction_func: (ship) ->
+                not ship.pilot.unique
+       }
+       {
+            name: "Synchronized Console"
+            id: 211
+            faction: "Galactic Republic"
+            slot: "Modification"
+            points: 100
+            restriction_func: (ship) ->
+                "Lock" in ship.effectiveStats().actions or "Lock" in ship.effectiveStats().actionsred
+       }
+       {
+            name: "Battle Meditation"
+            id: 212
+            faction: "Galactic Republic"
+            slot: "Force"
+            points: 100
+            modifier_func: (stats) ->
+                stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
+       }
+       {
+            name: "R4-P Astromech"
+            id: 213
+            faction: "Galactic Republic"
+            slot: "Astromech"
+            charge: 2
+            points: 100
+       }
+       {
+            name: "R4-P17"
+            id: 214
+            unique: true
+            faction: "Galactic Republic"
+            slot: "Astromech"
+            charge: 2
+            points: 100
+       }
+       {
+            name: "Spare Parts Canisters"
+            id: 215
+            slot: "Modification"
+            charge: 1
+            points: 100
+            restriction_func: (ship) ->
+                ("Astromech" in ship.pilot.slots) and (not ship.isSlotOccupied "Astromech" )
+       }
+    ]
 
 
     conditionsById: [

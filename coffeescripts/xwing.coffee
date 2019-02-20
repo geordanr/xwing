@@ -2989,6 +2989,8 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i> """
                 when 'Evade'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i> """
+                when 'F-Evade'
+                    """<i class="xwing-miniatures-font force xwing-miniatures-font-evade"></i> """
                 when 'Barrel Roll'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i> """
                 when 'Lock'
@@ -2997,6 +2999,8 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i> """
                 when 'Coordinate'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i> """
+                when 'F-Coordinate'
+                    """<i class="xwing-miniatures-font force xwing-miniatures-font-coordinate"></i> """
                 when 'Jam'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i> """
                 when 'Reinforce'
@@ -3481,6 +3485,13 @@ class Ship
             continue if upgrade == upgrade_obj or upgrade.slot != upgrade_obj.slot
             return true unless upgrade.isOccupied()
         false
+    
+    isSlotOccupied: (slot_name) ->
+        for upgrade in @upgrades
+            if upgrade.slot == slot_name
+                return true unless upgrade.isOccupied()
+        false
+
 
     toXWS: ->
         xws =
