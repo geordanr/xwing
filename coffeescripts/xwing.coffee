@@ -111,7 +111,6 @@ class exportObj.SquadBuilder
             bid_goal: 5
             ships_or_upgrades: 3
         @total_points = 0
-        @isCustom = false
         @isHyperspace = false
         @isQuickbuild = false
         @maxSmallShipsOfOneType = null
@@ -206,7 +205,6 @@ class exportObj.SquadBuilder
                         <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
                         <option value="quickbuild">Quickbuild</option>
-                        <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
@@ -531,8 +529,7 @@ class exportObj.SquadBuilder
             @onGameTypeChanged @game_type_selector.val()
         @desired_points_input = $ @points_container.find('.desired-points')
         @desired_points_input.change (e) =>
-            @game_type_selector.val 'custom'
-            @onGameTypeChanged 'custom'
+            @onPointsUpdated 
         @points_remaining_span = $ @points_container.find('.points-remaining')
         @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
@@ -1167,27 +1164,18 @@ class exportObj.SquadBuilder
             when 'standard'
                 @isHyperspace = false
                 @isQuickbuild = false
-                @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'hyperspace'
                 @isHyperspace = true
                 @isQuickbuild = false
-                @isCustom = false
                 @desired_points_input.val 200
-                @maxSmallShipsOfOneType = null
-                @maxLargeShipsOfOneType = null
-            when 'custom'
-                @isHyperspace = false
-                @isQuickbuild = false
-                @isCustom = true
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'quickbuild'
                 @isHyperspace = false
                 @isQuickbuild = true
-                @isCustom = false
                 @desired_points_input.val 8
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
@@ -1333,7 +1321,7 @@ class exportObj.SquadBuilder
 
     serialize: ->
 
-        serialization_version = 5
+        serialization_version = 6
         game_type_abbrev = switch @game_type_selector.val()
             when 'standard'
                 's'
@@ -1341,9 +1329,8 @@ class exportObj.SquadBuilder
                 'h'
             when 'quickbuild'
                 'q'
-            when 'custom'
-                "c=#{$.trim @desired_points_input.val()}"
-        """v#{serialization_version}!#{game_type_abbrev}!#{( ship.toSerialized() for ship in @ships when ship.pilot? and (not @isQuickbuild or ship.primary) ).join ';'}"""
+        selected_points = "#{$.trim @desired_points_input.val()}"
+        """v#{serialization_version}!#{game_type_abbrev}=#{selected_points}!#{( ship.toSerialized() for ship in @ships when ship.pilot? and (not @isQuickbuild or ship.primary) ).join ';'}"""
 
     loadFromSerialized: (serialized) ->
         @suppress_automatic_new_ship = true
@@ -1359,23 +1346,39 @@ class exportObj.SquadBuilder
             # version 4 is the final version of 1st edition x-wing, and has been the first few weeks of YASB 2.0
             # version 5 is the current version
             switch version
-                when 3, 4, 5
+                when 3, 4, 5, 6
                     # parse out game type
                     [ game_type_abbrev, serialized_ships ] = matches[2].split('!')
-                    switch game_type_abbrev
-                        when 's'
-                            @game_type_selector.val 'standard'
-                            @game_type_selector.change()
-                        when 'h'
-                            @game_type_selector.val 'hyperspace'
-                            @game_type_selector.change()
-                        when 'q'
-                            @game_type_selector.val 'quickbuild'
-                            @game_type_selector.change()
-                        else
-                            @game_type_selector.val 'custom'
-                            @desired_points_input.val parseInt(game_type_abbrev.split('=')[1])
-                            @desired_points_input.change()
+                    if version == 6 
+                        desired_points = parseInt(game_type_abbrev.split('=')[1])
+                        game_type_abbrev = game_type_abbrev.split('=')[0]  
+                        switch game_type_abbrev
+                            when 's'
+                                @game_type_selector.val 'standard'
+                                @game_type_selector.change()
+                            when 'h'
+                                @game_type_selector.val 'hyperspace'
+                                @game_type_selector.change()
+                            when 'q'
+                                @game_type_selector.val 'quickbuild'
+                                @game_type_selector.change()
+                        @desired_points_input.val desired_points
+                        @desired_points_input.change()
+                    else 
+                        switch game_type_abbrev
+                            when 's'
+                                @game_type_selector.val 'standard'
+                                @game_type_selector.change()
+                            when 'h'
+                                @game_type_selector.val 'hyperspace'
+                                @game_type_selector.change()
+                            when 'q'
+                                @game_type_selector.val 'quickbuild'
+                                @game_type_selector.change()
+                            else
+                                @game_type_selector.val 'standard'
+                                @desired_points_input.val parseInt(game_type_abbrev.split('=')[1])
+                                @desired_points_input.change()
                     ships_with_unmet_dependencies = []
                     for serialized_ship in serialized_ships.split(';')
                         unless serialized_ship == ''
@@ -1495,7 +1498,7 @@ class exportObj.SquadBuilder
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
                 if (@isItemAvailable(ship_data, true))
-                    if not ship_data.huge or @isCustom
+                    if not ship_data.huge
                         if ship_data.display_name
                             ships.push
                                 id: ship_data.name
