@@ -526,7 +526,8 @@ class exportObj.SquadBuilder
         @total_points_span = $ @points_container.find('.total-points')
         @game_type_selector = $ @status_container.find('.game-type-selector')
         @game_type_selector.change (e) =>
-            @onGameTypeChanged @game_type_selector.val()
+            $(window).trigger 'xwing:gameTypeChanged', @game_type_selector.val()
+            # @onGameTypeChanged @game_type_selector.val()
         @desired_points_input = $ @points_container.find('.desired-points')
         @desired_points_input.change (e) =>
             @onPointsUpdated $.noop
@@ -993,7 +994,6 @@ class exportObj.SquadBuilder
 
         $(window).on 'xwing-backend:authenticationChanged', (e) =>
             @resetCurrentSquad()
-
         .on 'xwing-collection:created', (e, collection) =>
             # console.log "#{@faction}: collection was created"
             @collection = collection
@@ -1013,6 +1013,8 @@ class exportObj.SquadBuilder
             if faction == @faction
                 @tab.tab('show')
                 cb this
+        .on 'xwing:gameTypeChanged', (e, gameType, cb) =>
+            @onGameTypeChanged gameType, cb
 
         @obstacles_select.change (e) =>
             if @obstacles_select.val().length > 3
@@ -1158,6 +1160,7 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     onGameTypeChanged: (gametype, cb=$.noop) =>
+        @game_type_selector.val gametype
         oldHyperspace = @isHyperspace
         oldQuickbuild = @isQuickbuild
         switch gametype
@@ -1181,7 +1184,8 @@ class exportObj.SquadBuilder
                 @maxLargeShipsOfOneType = null
         if (oldHyperspace != @isHyperspace) or (oldQuickbuild != @isQuickbuild)
             @newSquadFromScratch($.trim(@current_squad.name))
-        @onPointsUpdated cb
+        #@onPointsUpdated cb
+        cb()
 
     onPointsUpdated: (cb=$.noop) =>
         @total_points = 0
@@ -1242,6 +1246,7 @@ class exportObj.SquadBuilder
 
 [url=#{@getPermaLink()}]View in Yet Another Squad Builder 2.0[/url]
 """
+        
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
 
