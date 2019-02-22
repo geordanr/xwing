@@ -18,6 +18,7 @@ exportObj.translations.English =
         "Jam": '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>'
         "Calculate": '<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>'
         "Coordinate": '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>'
+        "F-Coordinate": '<i class="xwing-miniatures-font force xwing-miniatures-font-coordinate"></i>'
         "Cloak": '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>'
         "Slam": '<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>'
         "R> Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>'
@@ -1134,6 +1135,8 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform a %BARRELROLL% action, you may perform a red %LOCK% action. """
         '"Odd Ball"':
            text: """After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your %BULLSEYEARC%, you may acquire a lock on that ship. """
+        '"Sinker"':
+           text: """While a friendly ship at range 1-2 in your %LEFTARC% or %RIGHTARC% performs a primary attack, it may reroll 1 attack die. """
         '"Swoop"':
            text: """After a friendly small or medium ship fully executes a speed 3-4 maneuver, if it is at range 0-1, it may perform a red %BOOST% action."""
         '"Axe"':
@@ -1754,9 +1757,21 @@ exportObj.cardLoaders.English = () ->
         "Impervium Plating":
            text: """ Before you would be dealt a faceup Ship damage card, you may spend 1 %CHARGE% to discard it instead. """
         "Grappling Struts":
-           text: """<strong>Closed: </strong> Setup: Equip this side faceup. %LINEBREAK% While you execute a manuever, if you overlap an asteroid or debris cloud and there are 1 or fewer other friendly ships at range 0 of that obstacle, you may flip this card. %LINEBREAK% <b>Open:</b> You ignore obstacles at range 0 and while you move through them. After you reveal your dial, if you reveal a maneuver other than a [2 %STRAIGHT%] and are at range 0 of an asteroid or debris cloud, skip your Execute Maneuver step and remove 1 stress token; if you revealed a right or left maneuver, rotate your ship 90º in that direction. After you execute a maneuver, flip this card."""
+           text: """<strong>Closed: </strong> Setup: Equip this side faceup. %LINEBREAK% While you execute a manuever, if you overlap an asteroid or debris cloud and there are 1 or fewer other friendly ships at range 0 of that obstacle, you may flip this card. %LINEBREAK% <b>Open:</b> You ignore obstacles at range 0 and while you move through them. After you reveal your dial, if you reveal a maneuver other than a [2 %STRAIGHT%] and are at range 0 of an asteroid or debris cloud, skip your Execute Maneuver step and remove 1 stress token; if you revealed a right or left maneuver, rotate your ship 90º in that direction. After you execute a maneuver, flip this card. """
         "Energy-Shell Charges":
-           text: """ <strong>Attack (%CALCULATE%):</strong> Spend 1 %CHARGE%. While you perform this attack, you may spend 1 calculate token to change 1 %FOCUS% result to a %CRIT% result. %LINEBREAK% <strong>Action:</strong> Reload this card."""
+           text: """ <strong>Attack (%CALCULATE%):</strong> Spend 1 %CHARGE%. While you perform this attack, you may spend 1 calculate token to change 1 %FOCUS% result to a %CRIT% result. %LINEBREAK% <strong>Action:</strong> Reload this card. """
+        "Dedicated":
+           text: """ While another friendly ship in your %LEFTARC% or %RIGHTARC% at range 0-2 defends, if it is limited or has the Dedicated upgrade and you are not strained, you may gain 1 strain token. If you do, the defender rerolls 1 of their blank results. """
+        "Synchronized Console":
+           text: """ After you perform an attack, you may choose a friendly ship at range 1 or a friendly ship with the Synchronized Console upgrade at range 1-3 and spend a lock you have on the defender. If you do, the friendly ship you chose may acquire a lock on the defender. """
+        "Battle Meditation":
+           text: """ You cannot coordinate limited ships. %LINEBREAK% While you perform a purple %COORDINATE% action, you may coordinate 1 additional friendly non-limited ship of the same type. Both ships must perform the same action."""
+        "R4-P Astromech":
+           text: """ Before you execute a basic maneuver, you may spend 1 %CHARGE%. If you do, while you execute that maneuver, reduce its difficulty. """
+        "R4-P17":
+           text: """ After you fully execute a red maneuver, you may spend 1 %CHARGE% to perform an action, even while stressed. """
+        "Spare Parts Canisters":
+           text: """ Action: Spend 1 %CHARGE% to recover 1 charge on one of your equipped %ASTROMECH% upgrades. %LINEBREAK% Action: Spend 1 %CHARGE% to drop 1 spare parts, then break all locks assigned to you. """
             
         
     condition_translations =
