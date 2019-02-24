@@ -111,8 +111,9 @@ class exportObj.SquadBuilder
             bid_goal: 5
             ships_or_upgrades: 3
         @total_points = 0
-        @isHyperspace = false
-        @isQuickbuild = false
+        # a squad given in the link is loaded on construction of that builder. It will set all gamemodes of already existing builders accordingly, but we did not exists back than. So we copy over the gamemode
+        @isHyperspace = exportObj.builders[0]?.isHyperspace ? false
+        @isQuickbuild = exportObj.builders[0]?.isQuickbuild ? false
         @maxSmallShipsOfOneType = null
         @maxLargeShipsOfOneType = null
 
@@ -125,6 +126,7 @@ class exportObj.SquadBuilder
         @current_obstacles = []
 
         @setupUI()
+        @game_type_selector.val (exportObj.builders[0] ? @).game_type_selector.val()
         @setupEventHandlers()
 
         window.setInterval @updatePermaLink, 250
@@ -135,6 +137,7 @@ class exportObj.SquadBuilder
             @resetCurrentSquad(true)
             @loadFromSerialized $.getParameterByName('d')
         else
+            @
             @resetCurrentSquad()
             @addShip()
 
@@ -200,7 +203,7 @@ class exportObj.SquadBuilder
                     </div>
                 </div>
                 <div class="span4 points-display-container">
-                    Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
+                    Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="200">
                     <select class="game-type-selector">
                         <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
@@ -1053,7 +1056,7 @@ class exportObj.SquadBuilder
             if faction == @faction
                 @tab.tab('show')
                 cb this
-        .on 'xwing:gameTypeChanged', (e, gameType, cb) =>
+        .on 'xwing:gameTypeChanged', (e, gameType, cb=$.noop) =>
             @onGameTypeChanged gameType, cb
 
         @obstacles_select.change (e) =>
@@ -1223,7 +1226,9 @@ class exportObj.SquadBuilder
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
         if (oldHyperspace != @isHyperspace) or (oldQuickbuild != @isQuickbuild)
+            old_id = @current_squad.id
             @newSquadFromScratch($.trim(@current_squad.name))
+            @current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
         #@onPointsUpdated cb
         cb()
 
@@ -1368,8 +1373,13 @@ class exportObj.SquadBuilder
                 'h'
             when 'quickbuild'
                 'q'
-        selected_points = "#{$.trim @desired_points_input.val()}"
+        selected_points = $.trim @desired_points_input.val()
         """v#{serialization_version}!#{game_type_abbrev}=#{selected_points}!#{( ship.toSerialized() for ship in @ships when ship.pilot? and (not @isQuickbuild or ship.primary) ).join ';'}"""
+
+    changeGameTypeOnSquadLoad: (gametype) ->
+        if @game_type_selector.val() != gametype
+            $(window).trigger 'xwing:gameTypeChanged', gametype
+
 
     loadFromSerialized: (serialized) ->
         @suppress_automatic_new_ship = true
@@ -1383,40 +1393,35 @@ class exportObj.SquadBuilder
             version = parseInt matches[1]
             # version 1-3 are 1st edition only (may be removed here)
             # version 4 is the final version of 1st edition x-wing, and has been the first few weeks of YASB 2.0
-            # version 5 is the current version
+            # version 5 is the first version for 2nd edtition x-wing only, it features extended (=standard), hyperspace, quickbuild and custom mode
+            # version 6 is the current version, the difference to version 5 is, that custom (=extended with != 200 points) has been removed and points are specified for all modes. 
             switch version
                 when 3, 4, 5, 6
                     # parse out game type
-                    [ game_type_abbrev, serialized_ships ] = matches[2].split('!')
+                    [ game_type_and_point_abbrev, serialized_ships ] = matches[2].split('!')
                     if version == 6 
-                        desired_points = parseInt(game_type_abbrev.split('=')[1])
-                        game_type_abbrev = game_type_abbrev.split('=')[0]  
+                        desired_points = parseInt(game_type_and_point_abbrev.split('=')[1])
+                        game_type_abbrev = game_type_and_point_abbrev.split('=')[0]  
                         switch game_type_abbrev
                             when 's'
-                                @game_type_selector.val 'standard'
-                                @game_type_selector.change()
+                                @changeGameTypeOnSquadLoad 'standard'
                             when 'h'
-                                @game_type_selector.val 'hyperspace'
-                                @game_type_selector.change()
+                                @changeGameTypeOnSquadLoad 'hyperspace'
                             when 'q'
-                                @game_type_selector.val 'quickbuild'
-                                @game_type_selector.change()
+                                @changeGameTypeOnSquadLoad 'quickbuild'
                         @desired_points_input.val desired_points
                         @desired_points_input.change()
                     else 
-                        switch game_type_abbrev
+                        switch game_type_and_point_abbrev
                             when 's'
-                                @game_type_selector.val 'standard'
-                                @game_type_selector.change()
+                                @changeGameTypeOnSquadLoad 'standard'
                             when 'h'
-                                @game_type_selector.val 'hyperspace'
-                                @game_type_selector.change()
+                                @changeGameTypeOnSquadLoad 'hyperspace'
                             when 'q'
-                                @game_type_selector.val 'quickbuild'
-                                @game_type_selector.change()
+                                @changeGameTypeOnSquadLoad 'quickbuild'
                             else
-                                @game_type_selector.val 'standard'
-                                @desired_points_input.val parseInt(game_type_abbrev.split('=')[1])
+                                @changeGameTypeOnSquadLoad 'standard'
+                                @desired_points_input.val parseInt(game_type_and_point_abbrev.split('=')[1])
                                 @desired_points_input.change()
                     ships_with_unmet_dependencies = []
                     for serialized_ship in serialized_ships.split(';')
@@ -3412,7 +3417,7 @@ class Ship
                     conferredaddon_pairs = []
 
 
-            when 4, 5
+            when 4, 5, 6
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
                 # version 5 is the same as version 4, but title and mod has been dropped (as they are treated as upgrades anyways). Thus, we may differ by length
                 if (serialized.split ':').length == 3
