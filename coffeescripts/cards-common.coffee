@@ -5283,6 +5283,7 @@ exportObj.basicCardData = ->
         {
             name: '"Longshot"'
             id: 234
+            skip: true
             unique: true
             faction: "First Order"
             ship: "TIE/FO Fighter"
