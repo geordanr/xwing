@@ -5888,7 +5888,11 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Force"
+                "Tactical Relay"
+                "Crew"
+                "Device"
                 "Modification"
+                "Title"
             ]
         }
         {
@@ -6415,7 +6419,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "General Grevious"
+            name: "General Grievous"
             id: 305
             faction: "Separatist Alliance"
             ship: "Belbullab-22 Starfighter"
@@ -6553,7 +6557,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Republic"
             ship: "Delta-7 Aethersprite"
-            skill: 5
+            skill: 4
             force: 3
             points: 100
             slots: [
@@ -6841,7 +6845,62 @@ exportObj.basicCardData = ->
                 "Torpedo"
             ]
         }
-
+        {
+            name: "Count Dooku"
+            id: 334
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Sith Infiltrator"
+            skill: 3
+            force: 3
+            darkside: true
+            points: 100
+            slots: [
+                "Force"
+                "Tactical Relay"
+                "Crew"
+                "Device"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "D-66"
+            id: 335
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Sith Infiltrator"
+            skill: 3
+            points: 100
+            slots: [
+                "Talent"
+                "Tactical Relay"
+                "Crew"
+                "Device"
+                "Modification"
+                "Title"
+            ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Lock"
+                ]
+        }
+        {
+            name: "Dark Courier"
+            id: 336
+            faction: "Separatist Alliance"
+            ship: "Sith Infiltrator"
+            skill: 2
+            points: 100
+            slots: [
+                "Tactical Relay"
+                "Crew"
+                "Device"
+                "Modification"
+                "Title"
+            ]
+        }
     ]
 
 
@@ -8719,7 +8778,7 @@ exportObj.basicCardData = ->
             name: "Brilliant Evasion"
             id: 199
             slot: "Force"
-            points: 0
+            points: 100
        }
        {
             name: "Calibrated Laser Targeting"
@@ -8859,6 +8918,84 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ("Astromech" in ship.pilot.slots) and (not ship.isSlotOccupied "Astromech" )
        }
+       {
+            name: "Scimitar"
+            id: 216
+            unique: true
+            ship: "Sith Infiltrator"
+            slot: "Title"
+            faction: "Separatist Alliance"
+            points: 100
+            modifier_func: (stats) ->
+                stats.actionsred.push 'Cloak' if 'Cloak' not in stats.actionsred
+                stats.actions.push 'Jam' if 'Jam' not in stats.actions
+       }
+       {
+            name: "Chancellor Palpatine"
+            id: 217
+            unique: true
+            slot: "Crew"
+            force: 1
+            points: 100
+            modifier_func: (stats) ->
+                stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
+            restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.faction == "Galactic Republic" or "Separatist Alliance"
+       }
+       {
+            name: "Count Dooku"
+            id: 218
+            unique: true
+            slot: "Crew"
+            force: 1
+            faction: "Separatist Alliance"
+            points: 100
+       }
+       {
+            name: "General Grievous"
+            id: 219
+            unique: true
+            slot: "Crew"
+            charge: 1
+            faction: "Separatist Alliance"
+            points: 100
+       }
+       {
+            name: "K2-B4"
+            id: 220
+            unique: true
+            slot: "Tactical Relay"
+            faction: "Separatist Alliance"
+            points: 100
+       }
+       {
+            name: "DRK-1 Probe Droids"
+            id: 221
+            slot: "Device"
+            faction: "Separatist Alliance"
+            charge: 2
+            points: 100
+            applies_condition: '''DRK-1 Probe Droid'''.canonicalize()
+       }
+       {
+            name: "Kraken"
+            id: 222
+            unique: true
+            slot: "Tactical Relay"
+            faction: "Separatist Alliance"
+            points: 100
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+       }
+       {
+            name: "TV-94"
+            id: 223
+            unique: true
+            slot: "Tactical Relay"
+            faction: "Separatist Alliance"
+            points: 100
+       }
     ]
 
 
@@ -8919,6 +9056,10 @@ exportObj.basicCardData = ->
         {
             name: 'Rattled'
             id: 12
+        }
+        {
+            name: 'DRK-1 Probe Droid'
+            id: 13
         }
     ]
 
