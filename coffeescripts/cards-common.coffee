@@ -12583,6 +12583,178 @@ exportObj.basicCardData = ->
                 "Han Solo"
             ]
         }
+        {
+            id: 295
+            faction: "Rebel Alliance"
+            pilot: "Thane Kyrell"
+            ship: "X-Wing"
+            threat: 2
+            upgrades: [
+                "Stealth Device"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 296
+            faction: "Galactic Empire"
+            pilot: "Iden Versio"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "Lone Wolf"
+            ]
+        }
+        {
+            id: 297
+            faction: "Scum and Villainy"
+            pilot: "Skull Squadron Pilot"
+            ship: "Fang Fighter"
+            threat: 3
+            upgrades: [
+                "Marksmanship"
+                "Advanced Proton Torpedoes"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 298
+            faction: "Scum and Villainy"
+            pilot: "Foreman Proach"
+            ship: "Mining Guild TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Fearless"
+                "Crack Shot"
+            ]
+        }
+        {
+            id: 299
+            faction: "First Order"
+            pilot: '"Blackout"'
+            ship: "TIE/VN Silencer"
+            threat: 3
+            upgrades: [
+                "Trick Shot"
+            ]
+        }
+        {
+            id: 300
+            faction: "Resistance"
+            pilot: "Greer Sonnel"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Marksmanship"
+                "Primed Thrusters"
+            ]
+        }
+        {
+            id: 301
+            faction: "Scum and Villainy"
+            pilot: "Han Solo (Scum)"
+            ship: "Customized YT-1300"
+            linkedId: 302
+            suffix: " + Escape craft"
+            threat: 5
+            upgrades: [
+                "Elusive"
+                "Chewbacca"
+                "Lando's Millennium Falcon"
+                "Agile Gunner"
+                "Tactical Scrambler"
+                "Rigged Cargo Chute"
+            ]
+        }
+        {
+            id: 302
+            faction: "Scum and Villainy"
+            pilot: "Outer Rim Pioneer"
+            ship: "Escape Craft"
+            linkedId: 301
+            suffix: " + Han Solo"
+            threat: 5
+            upgrades: [
+                "Tobias Beckett"
+            ]
+        }
+        {
+            id: 303
+            faction: "Scum and Villainy"
+            pilot: "Lando Calrissian (Scum)"
+            ship: "Customized YT-1300"
+            linkedId: 304
+            suffix: " + L3-37"
+            threat: 4
+            upgrades: [
+                "Han Solo (Scum)"
+                "Qi'ra"
+                "Lando's Millennium Falcon"
+            ]
+        }
+        {
+            id: 304
+            faction: "Scum and Villainy"
+            pilot: "L3-37 (Escape Craft)"
+            ship: "Escape Craft"
+            linkedId: 303
+            suffix: " + Lando Calrissian"
+            threat: 4
+            upgrades: [
+            ]
+        }
+        {
+            id: 305
+            faction: "Scum and Villainy"
+            pilot: "L3-37"
+            ship: "Customized YT-1300"
+            linkedId: 306
+            suffix: " + Lando Calrissian"
+            threat: 5
+            upgrades: [
+                "Han Solo (Scum)"
+                "Qi'ra"
+                "Hull Upgrade"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 306
+            faction: "Scum and Villainy"
+            pilot: "Lando Calrissian (Scum) (Escape Craft)"
+            ship: "Escape Craft"
+            linkedId: 305
+            suffix: " + L3-37"
+            threat: 5
+            upgrades: [
+                "Elusive"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 307
+            faction: "Scum and Villainy"
+            pilot: "Freighter Captain"
+            ship: "Customized YT-1300"
+            linkedId: 308
+            suffix: " + Autopilot drone"
+            threat: 3
+            upgrades: [
+                "Lando's Millennium Falcon"
+            ]
+        }
+        {
+            id: 308
+            faction: "Scum and Villainy"
+            pilot: "Autopilot Drone"
+            ship: "Escape Craft"
+            linkedId: 307
+            suffix: " + YT-1300"
+            threat: 3
+            upgrades: [
+                "Afterburners"
+            ]
+        }
     ]
 
 
