@@ -10055,7 +10055,7 @@ exportObj.basicCardData = ->
         {
             id: 84
             faction: "Rebel Alliance"
-            pilot: "Garven Dreis"
+            pilot: "Garven Dreis (X-Wing)"
             ship: "X-Wing"
             threat: 2
             upgrades: [
@@ -10065,7 +10065,7 @@ exportObj.basicCardData = ->
         {
             id: 85
             faction: "Rebel Alliance"
-            pilot: "Norra Wexley"
+            pilot: "Norra Wexley (Y-Wing)"
             ship: "Y-Wing"
             threat: 3
             upgrades: [
