@@ -9082,7 +9082,7 @@ exportObj.basicCardData = ->
         {
             id: 1
             faction: "Galactic Empire"
-            pilot: "Black Squadron Ace"
+            pilot: "Black Squadron Ace (T-70)"
             ship: "TIE Fighter"
             threat: 2
             upgrades: [
@@ -9835,6 +9835,7 @@ exportObj.basicCardData = ->
         }
         {
             id: 66
+            skip: true
             faction: "Galactic Empire"
             pilot: '"Deathrain"'
             ship: "TIE Punisher"
@@ -10532,7 +10533,7 @@ exportObj.basicCardData = ->
         {
             id: 125
             faction: "Rebel Alliance"
-            pilot: "Bohdi Rook"
+            pilot: "Bodhi Rook"
             ship: "U-Wing"
             threat: 2
             upgrades: [
@@ -10705,7 +10706,7 @@ exportObj.basicCardData = ->
         {
             id: 139
             faction: "Rebel Alliance"
-            pilot: "Leebo"
+            pilot: '"Leebo"'
             ship: "YT-2400"
             threat: 4
             upgrades: [
@@ -11279,7 +11280,7 @@ exportObj.basicCardData = ->
         {
             id: 187
             faction: "Scum and Villainy"
-            pilot: "Krassis Treux"
+            pilot: "Krassis Trelix"
             ship: "Firespray-31"
             threat: 3
             upgrades: [
@@ -11463,7 +11464,7 @@ exportObj.basicCardData = ->
         {
             id: 204
             faction: "Scum and Villainy"
-            pilot: "Sabine Wren"
+            pilot: "Sabine Wren (Scum)"
             ship: "Lancer-Class Pursuit Craft"
             threat: 3
             upgrades: [
@@ -11765,7 +11766,7 @@ exportObj.basicCardData = ->
         {
             id: 228
             faction: "Scum and Villainy"
-            pilot: "Dalan Oberos"
+            pilot: "Dalan Oberos (StarViper)"
             ship: "StarViper"
             threat: 3
             upgrades: [
@@ -12084,7 +12085,7 @@ exportObj.basicCardData = ->
             pilot: "Nashtah Pup"
             suffix: " + Bossk"
             linkedId: 252
-            ship: "YV-666"
+            ship: "Z-95 Headhunter"
             threat: 3
         }
         {
@@ -12106,7 +12107,7 @@ exportObj.basicCardData = ->
             pilot: "Nashtah Pup"
             suffix: " + Trandoshan Slaver"
             linkedId: 254
-            ship: "YV-666"
+            ship: "Z-95 Headhunter"
             threat: 3
             upgrades: [
                 "Proton Rockets"
@@ -12153,6 +12154,7 @@ exportObj.basicCardData = ->
         }
         {
             id: 259
+            skip: true
             faction: "Scum and Villainy"
             pilot: "Dalan Oberos"
             ship: "M12-L Kimogila Fighter"

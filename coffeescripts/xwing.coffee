@@ -1605,10 +1605,10 @@ class exportObj.SquadBuilder
                     for upgrade in quickbuild.upgrades
                         if exportObj.upgrades[upgrade] in @uniques_in_use.Upgrade
                             # check, if unique is used by this ship or it's linked ship
-                            if ship_selector == null or not (upgrade in exportObj.quickbuildsById[ship_selector.quickbuildId].upgrades or upgrade in exportObj.quickbuildsById[ship_selector.linkedShip?.quickbuildId]?.upgrades)
+                            if ship_selector == null or not (upgrade in exportObj.quickbuildsById[ship_selector.quickbuildId].upgrades or (ship_selector.linkedShip and upgrade in (exportObj.quickbuildsById[ship_selector.linkedShip?.quickbuildId].upgrades ? [])))
                                 allowed_quickbuilds_containing_uniques_in_use.push quickbuild.id
                                 break
-
+            
             retval = ({id: quickbuild.id, text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then exportObj.pilots[quickbuild.pilot].skill + ' - ' else ''}#{if exportObj.pilots[quickbuild.pilot].display_name then exportObj.pilots[quickbuild.pilot].display_name else quickbuild.pilot}#{quickbuild.suffix} (#{quickbuild.threat})", points: quickbuild.threat, ship: quickbuild.ship, disabled: quickbuild.id in allowed_quickbuilds_containing_uniques_in_use} for quickbuild in quickbuilds_matching_ship_and_faction)
 
         if sorted
@@ -2726,6 +2726,7 @@ class Ship
                     quickbuild = exportObj.quickbuildsById[parseInt id]
                     new_pilot = exportObj.pilots[quickbuild.pilot]
                     @data = exportObj.ships[quickbuild.ship]
+                    @builder.isUpdatingPoints = true # prevents unneccesary validations while still adding stuff
                     if new_pilot?.unique?
                         await @builder.container.trigger 'xwing:claimUnique', [ new_pilot, 'Pilot', defer() ]
                     @pilot = new_pilot
@@ -2758,6 +2759,8 @@ class Ship
                         @linkedShip.setPilotById quickbuild.linkedId
                         @linkedShip.primary = false
                     @primary = true
+                    @builder.isUpdatingPoints = false
+                    @builder.container.trigger 'xwing:pointsUpdated'
 
                 else
                     @copy_button.hide()
