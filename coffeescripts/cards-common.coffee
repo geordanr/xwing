@@ -5349,7 +5349,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             ship: "Upsilon-Class Command Shuttle"
             skill: 2
-            points: 60
+            points: 70
             slots: [
                 "Tech"
                 "Tech"
@@ -8650,7 +8650,7 @@ exportObj.basicCardData = ->
             id: 185
             slot: "Tech"
             faction: "First Order"
-            points: 2
+            points: 10
             restriction_func: (ship) ->
                 ship.data.large?
        }
