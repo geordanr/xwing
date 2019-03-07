@@ -3593,7 +3593,7 @@ class Ship
         upgrade_obj = {}
 
         for upgrade in @upgrades
-            if upgrade?.data?
+            if upgrade?.data? and (not upgrade?.data?.ignorecollection?)
                 upgrade.toXWS upgrade_obj
 
         if Object.keys(upgrade_obj).length > 0
