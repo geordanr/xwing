@@ -2123,12 +2123,27 @@ class exportObj.SquadBuilder
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-sources').show()
+                    
+                    #logic to determine how many dots to use for uniqueness
+                    if data.unique?
+                        uniquedots = "&middot;&nbsp;"
+                    else if data.max_per_squad?
+                        count = 0
+                        uniquedots = ""
+                        while (count < data.max_per_squad)
+                            uniquedots = uniquedots.concat("&middot;")
+                            ++count
+                        uniquedots = uniquedots.concat("&nbsp;")
+                    else
+                        uniquedots = ""
+                    
+                    
                     if @collection?.counts?
                         addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.name] ? 0
                         @info_container.find('.info-collection').text """You have #{addon_count} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
-                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    @info_container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     if data.pointsarray? 
                         point_info = "<i>Point cost " + data.pointsarray + " when "
                         if data.variableagility? and data.variableagility
