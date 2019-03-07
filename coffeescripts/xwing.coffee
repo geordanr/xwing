@@ -3377,7 +3377,7 @@ class Ship
             conferred_addons = []
             for upgrade in @upgrades
                 conferred_addons = conferred_addons.concat(upgrade?.conferredAddons ? [])
-            upgrades = """#{upgrade?.data?.id ? -1 for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
+            upgrades = """#{upgrade?.data?.id ? "" for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
 
             serialized_conferred_addons = []
             for addon in conferred_addons
