@@ -6901,6 +6901,20 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
+        {
+            name: "DFS-311"
+            id: 337
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 1
+            points: 200
+            unique: true
+            slots: [
+                "Missile"
+                "Configuration"
+                "Modification"
+            ]
+        }
     ]
 
 
@@ -8943,7 +8957,8 @@ exportObj.basicCardData = ->
                 stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
             restriction_func: (ship) ->
                 builder = ship.builder
-                return true if builder.faction == "Galactic Republic" or "Separatist Alliance"
+                return true if builder.faction == ("Galactic Republic" or "Separatist Alliance")
+                false
        }
        {
             name: "Count Dooku"
@@ -8999,6 +9014,16 @@ exportObj.basicCardData = ->
             slot: "Tactical Relay"
             faction: "Separatist Alliance"
             points: 200
+       }
+       {
+            name: "Discord Missiles"
+            id: 224
+            slot: "Missile"
+            faction: "Separatist Alliance"
+            charge: 1
+            max_per_squad: 3
+            points: 200
+            applies_condition: '''Buzz Droid Swarm'''.canonicalize()
        }
     ]
 
@@ -9064,6 +9089,10 @@ exportObj.basicCardData = ->
         {
             name: 'DRK-1 Probe Droid'
             id: 13
+        }
+        {
+            name: 'Buzz Droid Swarm'
+            id: 14
         }
     ]
 
