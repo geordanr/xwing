@@ -1698,7 +1698,6 @@ class exportObj.SquadBuilder
 
         return """
                     <div class="print-dials-container">
-                        <h5 class="print-dials-header">Maneuver Dials:</h5>
                         #{dialHTML}
                     </div>
                 """
