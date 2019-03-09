@@ -100,6 +100,7 @@ exportObj.translations.English =
     byCSSSelector:
         # Warnings
         '.unreleased-content-used .translated': 'This squad uses unreleased content!'
+        '.loading-failed-container .translated': 'It appears that you followed a broken link. No squad could be loaded!'
         '.collection-invalid .translated': 'You cannot field this list with your collection!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Extended'

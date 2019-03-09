@@ -171,6 +171,7 @@ class exportObj.SquadBuilder
             if squad_name == default_squad_name
                 @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
+
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
@@ -211,6 +212,7 @@ class exportObj.SquadBuilder
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning loading-failed-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                 </div>
                 <div class="span5 pull-right button-container">
@@ -577,6 +579,7 @@ class exportObj.SquadBuilder
         @points_remaining_span = $ @points_container.find('.points-remaining')
         @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
+        @loading_failed_container = $ @points_container.find('.loading-failed-container')
         @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -1399,6 +1402,10 @@ class exportObj.SquadBuilder
                 when 3, 4, 5, 6
                     # parse out game type
                     [ game_type_and_point_abbrev, serialized_ships ] = matches[2].split('!')
+                    # check if there are serialized ships to load
+                    if !serialized_ships? # something went wrong, we can't load that serialization
+                        @loading_failed_container.toggleClass 'hidden', false
+                        return
                     if version == 6 
                         desired_points = parseInt(game_type_and_point_abbrev.split('=')[1])
                         game_type_abbrev = game_type_and_point_abbrev.split('=')[0]  
