@@ -1127,12 +1127,12 @@ class exportObj.SquadBuilder
 
 
             # Notes, if present
-            @printable_container.find('.printable-body').append $.trim """
-                <h5 class="print-notes">Notes:</h5>
-                <pre class="print-notes"></pre>
-                <div class="version">Points Version: Mar 1st, 2019</div>
-            """
             if $.trim(@notes.val()) != ''
+                @printable_container.find('.printable-body').append $.trim """
+                    <h5 class="print-notes">Notes:</h5>
+                    <pre class="print-notes"></pre>
+                    <div class="version">Points Version: Mar 1st, 2019</div>
+                """            
                 @printable_container.find('.printable-body pre.print-notes').text @notes.val()
 
             # Obstacles
