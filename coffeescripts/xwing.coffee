@@ -1098,9 +1098,8 @@ class exportObj.SquadBuilder
                     if @list_modal.find('.toggle-skip-text-print').prop('checked')
                         for text in @printable_container.find('.upgrade-text, .fancy-pilot-text')
                             text.hidden = true
-                    if not @list_modal.find('.toggle-maneuver-print').prop('checked')
-                        for dial in @printable_container.find('.fancy-dial')
-                            dial.hidden = true
+                    if @list_modal.find('.toggle-maneuver-print').prop('checked')
+                        @printable_container.find('.printable-body').append @getSquadDialsAsHTML()
                     expanded_hull_and_shield = @list_modal.find('.toggle-expanded-shield-hull-print').prop('checked')
                     for container in @printable_container.find('.expanded-hull-or-shield')
                         container.hidden = not expanded_hull_and_shield
@@ -1682,6 +1681,29 @@ class exportObj.SquadBuilder
             (this_upgrade_obj.adjustment_func(upgrade) for upgrade in retval)
         else
             retval
+
+    getSquadDialsAsHTML: () ->
+        dialHTML = ""
+        added_dials = {}
+        for ship in @ships
+            if ship.pilot? # There is always one "empty" ship at the bottom of each squad, that we want to skip. 
+                maneuvers_unmodified = ship.data.maneuvers
+                maneuvers_modified = ship.effectiveStats().maneuvers
+                if not added_dials[ship.data.name]? or not (maneuvers_modified.toString() in added_dials[ship.data.name]) # we only want to add each dial once per ship (if two ships share a dial, add two copies of the dial)
+                    added_dials[ship.data.name] = (added_dials[ship.data.name] ? []).concat [maneuvers_modified.toString()] # save maneuver as string, as that is easier to compare than arrays (if e.g. two ships of same type, one with and one without R4 are in a squad, we add 2 dials)
+                    dialHTML += '<div class="fancy-dial">' + 
+                                """<h4 class="ship-name-dial">#{if ship.data.display_name? then ship.data.display_name else ship.data.name}""" +
+                                """#{if maneuvers_modified.toString() != maneuvers_unmodified.toString() then " (upgraded)" else ""}</h4>""" +
+                                @getManeuverTableHTML(maneuvers_modified, maneuvers_unmodified) + '</div>'
+
+        return """
+                    <div class="print-dials-container">
+                        <h5 class="print-dials-header">Maneuver Dials:</h5>
+                        #{dialHTML}
+                    </div>
+                """
+                # dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
+
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -3236,14 +3258,15 @@ class Ship
                 </div>
             </div>
         """
-
-        dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
-
-        html += $.trim """
-            <div class="fancy-dial">
-                #{dialHTML}
-            </div>
-            """
+        
+        #  Maneuver Dials have been moved at the bottom of the squad, rather than beeing added to each ship
+        # dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
+        # 
+        # html += $.trim """
+        #     <div class="fancy-dial">
+        #         #{dialHTML}
+        #     </div>
+        #     """
         
         if @pilot.text
             html += $.trim """
