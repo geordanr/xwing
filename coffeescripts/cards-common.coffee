@@ -8930,7 +8930,7 @@ exportObj.basicCardData = ->
             charge: 1
             points: 200
             restriction_func: (ship) ->
-                ("Astromech" in ship.pilot.slots) and (not ship.isSlotOccupied "Astromech" )
+                ("Astromech" in ship.pilot.slots or ship.upgrades) and (not ship.isSlotOccupied "Astromech" )
        }
        {
             name: "Scimitar"
@@ -8957,7 +8957,7 @@ exportObj.basicCardData = ->
                 stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
             restriction_func: (ship) ->
                 builder = ship.builder
-                return true if builder.faction == ("Galactic Republic" or "Separatist Alliance")
+                return true if builder.faction == "Galactic Republic" or builder.faction == "Separatist Alliance"
                 false
        }
        {
@@ -12992,6 +12992,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%CREW%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>')
             .replace(/%DUALCARD%/g, '<span class="card-restriction">Dual card.</span>')
             .replace(/%ELITE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-elite"></i>')
+            .replace(/%TACTICALRELAY%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>')
             .replace(/%EVADE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>')
             .replace(/%FOCUS%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>')
             .replace(/%HARDPOINT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>')

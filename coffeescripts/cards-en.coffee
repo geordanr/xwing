@@ -48,6 +48,8 @@ exportObj.translations.English =
         "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
         "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
+        "Tactical Relay": '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>'
+
     slot:
         "Astromech": "Astromech"
         "Force": "Force"
@@ -67,6 +69,8 @@ exportObj.translations.English =
         "Device": "Device"
         "Tech": "Tech"
         "Title": "Title"
+        "Tactical Relay": "Tactical Relay"
+    
     sources: # needed?
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
