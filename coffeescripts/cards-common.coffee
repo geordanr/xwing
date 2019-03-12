@@ -9025,6 +9025,14 @@ exportObj.basicCardData = ->
             points: 200
             applies_condition: '''Buzz Droid Swarm'''.canonicalize()
        }
+       {
+            name: "Clone Commander Cody"
+            id: 225
+            unique: true
+            slot: "Crew"
+            faction: "Galactic Republic"
+            points: 200
+       }
     ]
 
 
