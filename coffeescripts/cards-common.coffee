@@ -6577,6 +6577,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Missile"
                 "Modification"
             ]
         }
@@ -6590,6 +6591,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Missile"
                 "Modification"
             ]
         }
@@ -6603,6 +6605,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Missile"
                 "Modification"
             ]
         }
@@ -6616,6 +6619,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Missile"
                 "Modification"
             ]
         }
@@ -6628,6 +6632,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 200
             slots: [
+                "Missile"
                 "Modification"
             ]
         }
@@ -6640,6 +6645,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Missile"
                 "Modification"
             ]
         }
@@ -6651,6 +6657,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 200
             slots: [
+                "Missile"
                 "Modification"
             ]
         }
