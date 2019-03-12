@@ -62,6 +62,7 @@ exportObj.translations.Deutsch =
     byCSSSelector:
         # Warnings
         '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
+        '.loading-failed-container .translated': 'Du scheinst einem defekten Link gefolgt zu sein. Es konnte kein Squad geladen werden!'
         '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'

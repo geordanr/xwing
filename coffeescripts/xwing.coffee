@@ -171,6 +171,7 @@ class exportObj.SquadBuilder
             if squad_name == default_squad_name
                 @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
+
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
@@ -211,6 +212,7 @@ class exportObj.SquadBuilder
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning loading-failed-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                 </div>
                 <div class="span5 pull-right button-container">
@@ -577,6 +579,7 @@ class exportObj.SquadBuilder
         @points_remaining_span = $ @points_container.find('.points-remaining')
         @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
+        @loading_failed_container = $ @points_container.find('.loading-failed-container')
         @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -1095,9 +1098,8 @@ class exportObj.SquadBuilder
                     if @list_modal.find('.toggle-skip-text-print').prop('checked')
                         for text in @printable_container.find('.upgrade-text, .fancy-pilot-text')
                             text.hidden = true
-                    if not @list_modal.find('.toggle-maneuver-print').prop('checked')
-                        for dial in @printable_container.find('.fancy-dial')
-                            dial.hidden = true
+                    if @list_modal.find('.toggle-maneuver-print').prop('checked')
+                        @printable_container.find('.printable-body').append @getSquadDialsAsHTML()
                     expanded_hull_and_shield = @list_modal.find('.toggle-expanded-shield-hull-print').prop('checked')
                     for container in @printable_container.find('.expanded-hull-or-shield')
                         container.hidden = not expanded_hull_and_shield
@@ -1125,12 +1127,12 @@ class exportObj.SquadBuilder
 
 
             # Notes, if present
-            @printable_container.find('.printable-body').append $.trim """
-                <h5 class="print-notes">Notes:</h5>
-                <pre class="print-notes"></pre>
-                <div class="version">Points Version: Jan 28th, 2019</div>
-            """
             if $.trim(@notes.val()) != ''
+                @printable_container.find('.printable-body').append $.trim """
+                    <h5 class="print-notes">Notes:</h5>
+                    <pre class="print-notes"></pre>
+                    <div class="version">Points Version: Mar 1st, 2019</div>
+                """            
                 @printable_container.find('.printable-body pre.print-notes').text @notes.val()
 
             # Obstacles
@@ -1399,6 +1401,10 @@ class exportObj.SquadBuilder
                 when 3, 4, 5, 6
                     # parse out game type
                     [ game_type_and_point_abbrev, serialized_ships ] = matches[2].split('!')
+                    # check if there are serialized ships to load
+                    if !serialized_ships? # something went wrong, we can't load that serialization
+                        @loading_failed_container.toggleClass 'hidden', false
+                        return
                     if version == 6 
                         desired_points = parseInt(game_type_and_point_abbrev.split('=')[1])
                         game_type_abbrev = game_type_and_point_abbrev.split('=')[0]  
@@ -1675,6 +1681,28 @@ class exportObj.SquadBuilder
             (this_upgrade_obj.adjustment_func(upgrade) for upgrade in retval)
         else
             retval
+
+    getSquadDialsAsHTML: () ->
+        dialHTML = ""
+        added_dials = {}
+        for ship in @ships
+            if ship.pilot? # There is always one "empty" ship at the bottom of each squad, that we want to skip. 
+                maneuvers_unmodified = ship.data.maneuvers
+                maneuvers_modified = ship.effectiveStats().maneuvers
+                if not added_dials[ship.data.name]? or not (maneuvers_modified.toString() in added_dials[ship.data.name]) # we only want to add each dial once per ship (if two ships share a dial, add two copies of the dial)
+                    added_dials[ship.data.name] = (added_dials[ship.data.name] ? []).concat [maneuvers_modified.toString()] # save maneuver as string, as that is easier to compare than arrays (if e.g. two ships of same type, one with and one without R4 are in a squad, we add 2 dials)
+                    dialHTML += '<div class="fancy-dial">' + 
+                                """<h4 class="ship-name-dial">#{if ship.data.display_name? then ship.data.display_name else ship.data.name}""" +
+                                """#{if maneuvers_modified.toString() != maneuvers_unmodified.toString() then " (upgraded)" else ""}</h4>""" +
+                                @getManeuverTableHTML(maneuvers_modified, maneuvers_unmodified) + '</div>'
+
+        return """
+                    <div class="print-dials-container">
+                        #{dialHTML}
+                    </div>
+                """
+                # dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
+
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -3229,14 +3257,15 @@ class Ship
                 </div>
             </div>
         """
-
-        dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
-
-        html += $.trim """
-            <div class="fancy-dial">
-                #{dialHTML}
-            </div>
-            """
+        
+        #  Maneuver Dials have been moved at the bottom of the squad, rather than beeing added to each ship
+        # dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
+        # 
+        # html += $.trim """
+        #     <div class="fancy-dial">
+        #         #{dialHTML}
+        #     </div>
+        #     """
         
         if @pilot.text
             html += $.trim """

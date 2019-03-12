@@ -10634,7 +10634,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Swarm Tactics"
                 "Concussion Missiles"
-                "Nien Numb"
+                "Nien Nunb"
                 "Engine Upgrade"
                 "Millennium Falcon"
             ]
