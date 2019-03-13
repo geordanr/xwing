@@ -6922,6 +6922,90 @@ exportObj.basicCardData = ->
                 "Modification"
             ]
         }
+        {
+            name: '"Odd Ball (ARC-170)"'
+            id: 338
+            unique: true
+            faction: "Galactic Republic"
+            ship: "ARC-170"
+            skill: 5
+            points: 200
+            slots: [
+                "Talent"
+                "Torpedo"
+                "Crew"
+                "Gunner"
+                "Astromech"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Jag"'
+            id: 339
+            unique: true
+            faction: "Galactic Republic"
+            ship: "ARC-170"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Torpedo"
+                "Crew"
+                "Gunner"
+                "Astromech"
+                "Modification"
+            ]
+        }
+        {
+            name: "Squad Seven Veteran"
+            id: 340
+            faction: "Galactic Republic"
+            ship: "ARC-170"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Torpedo"
+                "Crew"
+                "Gunner"
+                "Astromech"
+                "Modification"
+            ]
+        }
+        {
+            name: "104th Battalion Pilot"
+            id: 341
+            faction: "Galactic Republic"
+            ship: "ARC-170"
+            skill: 2
+            points: 200
+            slots: [
+                "Talent"
+                "Torpedo"
+                "Crew"
+                "Gunner"
+                "Astromech"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Wolffe"'
+            id: 342
+            unique: true
+            faction: "Galactic Republic"
+            ship: "ARC-170"
+            skill: 4
+            charge: 1
+            points: 200
+            slots: [
+                "Talent"
+                "Torpedo"
+                "Crew"
+                "Gunner"
+                "Astromech"
+                "Modification"
+            ]
+        }
     ]
 
 
@@ -9036,6 +9120,22 @@ exportObj.basicCardData = ->
             name: "Clone Commander Cody"
             id: 225
             unique: true
+            slot: "Gunner"
+            faction: "Galactic Republic"
+            points: 200
+       }
+       {
+            name: "R4-P44"
+            id: 226
+            unique: true
+            faction: "Galactic Republic"
+            slot: "Astromech"
+            points: 200
+       }
+       {
+            name: "Seventh Fleet Gunner"
+            id: 227
+            charge: 1
             slot: "Gunner"
             faction: "Galactic Republic"
             points: 200
