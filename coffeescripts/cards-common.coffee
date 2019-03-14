@@ -1337,6 +1337,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Evade"
                 "Lock"
+                "Barrel Roll"
                 "R> Evade"
             ]
             actionsred: [
