@@ -9022,7 +9022,13 @@ exportObj.basicCardData = ->
             charge: 1
             points: 200
             restriction_func: (ship) ->
-                ("Astromech" in ship.pilot.slots or ship.upgrades) and (not ship.isSlotOccupied "Astromech" )
+                if "Astromech" in ship.pilot.slots
+                    if not ship.isSlotOccupied "Astromech"
+                        return true
+                else if ship.doesSlotExist "Astromech"
+                    if not ship.isSlotOccupied "Astromech"
+                        return true
+                false
        }
        {
             name: "Scimitar"

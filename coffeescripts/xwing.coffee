@@ -3600,6 +3600,13 @@ class Ship
             continue if upgrade == upgrade_obj or upgrade.slot != upgrade_obj.slot
             return true unless upgrade.isOccupied()
         false
+
+    doesSlotExist: (slot) ->
+        for upgrade in @upgrades
+            if slot == upgrade.slot
+                return true
+        false
+    
     
     isSlotOccupied: (slot_name) ->
         for upgrade in @upgrades
