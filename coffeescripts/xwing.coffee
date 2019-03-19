@@ -103,6 +103,8 @@ class exportObj.SquadBuilder
                 []
             Upgrade:
                 []
+            Slot:
+                []
         @suppress_automatic_new_ship = false
         @tooltip_currently_displaying = null
         @randomizer_options =
@@ -1486,6 +1488,10 @@ class exportObj.SquadBuilder
                         # else
                         #     throw new Error("Unique #{type} '#{unique.name}' already claimed as #{otherslot}")
 
+            # Solitary Check
+            if unique.solitary?
+                @uniques_in_use['Slot'].push unique.slot
+
             @uniques_in_use[type].push unique
         else
             throw new Error("Unique #{type} '#{unique.name}' already claimed")
@@ -1497,13 +1503,21 @@ class exportObj.SquadBuilder
             # Release all uniques with the same canonical name and base name
             for type, uniques of @uniques_in_use
                 # Removing stuff in a loop sucks, so we'll construct a new list
-                @uniques_in_use[type] = []
-                for u in uniques
-                    if u.canonical_name.getXWSBaseName() != unique.canonical_name.getXWSBaseName()
-                        # Keep this one
-                        @uniques_in_use[type].push u
-                    # else
-                    #     console.log "Releasing #{u.name} (#{type}) with canonical name #{unique.canonical_name}"
+                if type == 'Slot'
+                    if unique.solitary?
+                        @uniques_in_use[type] = []
+                        for u in uniques
+                            if u != unique.slot
+                                # Keep this one
+                                @uniques_in_use[type].push u.slot
+                else
+                    @uniques_in_use[type] = []
+                    for u in uniques
+                        if u.canonical_name.getXWSBaseName() != unique.canonical_name.getXWSBaseName()
+                            # Keep this one
+                            @uniques_in_use[type].push u
+                        # else
+                        #     console.log "Releasing #{u.name} (#{type}) with canonical name #{unique.canonical_name}"
         else
             throw new Error("Unique #{type} '#{unique.name}' not in use")
         cb()
@@ -1661,8 +1675,8 @@ class exportObj.SquadBuilder
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad))
-
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or upgrade.slot not in @uniques_in_use['Slot']))
+        
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
             eligible_upgrades.removeItem equipped_upgrade
