@@ -20,6 +20,7 @@ exportObj.toXWSFaction =
 exportObj.toXWSUpgrade =
     'Modification': 'modification'
     'Force':'force-power'
+    'Tactical Relay':'tacticalrelay'
 
 exportObj.fromXWSUpgrade =
     'amd': 'Astromech'
@@ -29,6 +30,7 @@ exportObj.fromXWSUpgrade =
     'system': 'Sensor'
     'mod': 'Modification'
     'force-power':'Force'
+    'tacticalrelay':'Tactical Relay'
 
 SPEC_URL = 'https://github.com/elistevens/xws-spec'
 

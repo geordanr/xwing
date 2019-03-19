@@ -9099,6 +9099,7 @@ exportObj.basicCardData = ->
             name: "K2-B4"
             id: 220
             unique: true
+            solitary: true
             slot: "Tactical Relay"
             faction: "Separatist Alliance"
             points: 200
@@ -9117,6 +9118,7 @@ exportObj.basicCardData = ->
             id: 222
             unique: true
             slot: "Tactical Relay"
+            solitary: true
             faction: "Separatist Alliance"
             points: 200
             modifier_func: (stats) ->
@@ -9126,6 +9128,7 @@ exportObj.basicCardData = ->
             name: "TV-94"
             id: 223
             unique: true
+            solitary: true
             slot: "Tactical Relay"
             faction: "Separatist Alliance"
             points: 200
