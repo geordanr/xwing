@@ -1167,7 +1167,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you defend, you may spend 1 calculate token to perform an action."""
         "DFS-311":
            text: """ At the start of the Engagement Phase, you may transfer 1 of your calculate tokens to another friendly ship at range 0-3. %LINEBREAK% NETWORKED CALCULATIONS: While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result. """
-        '"Odd Ball (ARC-170)"':
+        '"Odd Ball" (ARC-170)':
            text: """After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your %BULLSEYEARC%, you may acquire a lock on that ship. """
         '"Jag"':
            text: """After a friendly ship at range 1-2 in your %LEFTARC% or %RIGHTARC% defends, you may acquire a lock on the attacker. """
@@ -1824,6 +1824,10 @@ exportObj.cardLoaders.English = () ->
            text: """ While another friendly ship performs a primary attack, if the defender is in your firing arc, you may spend 1 %CHARGE%. If you do, the attacker rolls 1 additional die, to a maximum of 4. During the System Phase, you may gain 1 disarm token to recover 1 %CHARGE%. """
         "R4-P44":
            text: """ After you fully execute a red maeuver, if there is an enemy ship in your %BULLSEYEARC%, gain 1 calculate token. """
+        "Treacherous":
+           text: """ While you defend, you may choose a ship obstructing the attack and spend 1 %CHARGE%. If you do, cancel 1 %HIT% or %CRIT% result, and the ship you chose gains 1 strain token. %LINEBREAK% After a ship at range 0-3 is destroyed, recover 1 %CHARGE%. """
+        "Soulless One":
+           text: """ While you defend, if the attacker is outside your firing arc, you may reroll 1 defense die. """
             
         
     condition_translations =

@@ -6429,6 +6429,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Tactical Relay"
                 "Modification"
             ]
         }
@@ -6442,6 +6443,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Tactical Relay"
                 "Modification"
             ]
         }
@@ -6453,6 +6455,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 200
             slots: [
+                "Tactical Relay"
                 "Modification"
             ]
             ship_override:
@@ -6474,7 +6477,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 200
             slots: [
-                "Configuration"
+                "Tactical Relay"
                 "Modification"
             ]
         }
@@ -6924,7 +6927,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Odd Ball (ARC-170)"'
+            name: '"Odd Ball" (ARC-170)'
             id: 338
             unique: true
             faction: "Galactic Republic"
@@ -7004,6 +7007,20 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Gunner"
                 "Astromech"
+                "Modification"
+            ]
+        }
+        {
+            name: "Separatist Drone"
+            id: 343
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Configuration"
                 "Modification"
             ]
         }
@@ -9146,6 +9163,24 @@ exportObj.basicCardData = ->
             slot: "Gunner"
             faction: "Galactic Republic"
             points: 200
+       }
+       {
+            name: "Treacherous"
+            id: 228
+            charge: 1
+            slot: "Talent"
+            faction: "Separatist Alliance"
+            points: 200
+       }
+       {
+            name: "Soulless One"
+            id: 229
+            slot: "Title"
+            unique: true
+            faction: "Separatist Alliance"
+            points: 200
+            modifier_func: (stats) ->
+                stats.hull += 2
        }
     ]
 
