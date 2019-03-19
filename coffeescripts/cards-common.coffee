@@ -5897,7 +5897,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Anakin Skylwaker"
+            name: "Anakin Skywalker"
             id: 273
             unique: true
             faction: "Galactic Republic"
@@ -6663,7 +6663,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Anakin Skywalker"
+            name: "Anakin Skywalker (N-1 Starfighter)"
             id: 322
             unique: true
             faction: "Galactic Republic"
@@ -6873,7 +6873,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "D-66"
+            name: "O-66"
             id: 335
             unique: true
             faction: "Separatist Alliance"
