@@ -8940,7 +8940,7 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             ship: "Delta-7 Aethersprite"
             points: "*"
-            pointsarray: [4,4,4,4,6,8,10]
+            pointsarray: [0,0,2,4,6,8,10]
             variableinit: true
             unequips_upgrades: [ "Modification" ]
             also_occupies_upgrades: [ "Modification" ]
