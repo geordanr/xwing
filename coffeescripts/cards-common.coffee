@@ -13370,7 +13370,13 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'TIE/FO Fighter', faction: 'First Order'},
     {name: 'TIE/VN Silencer', faction: 'First Order'},
     {name: 'TIE/SF Fighter', faction: 'First Order'},
-    {name: 'Upsilon-Class Command Shuttle', faction: 'First Order'}
+    {name: 'Upsilon-Class Command Shuttle', faction: 'First Order'},
+    {name: 'Delta-7 Aethersprite', faction: 'Galactic Republic'},
+    {name: 'ARC-170', faction: 'Galactic Republic'},
+    {name: 'V-19 Torrent', faction: 'Galactic Republic'},
+    {name: 'Vulture-class Droid Fighter', faction: 'Separatist Alliance'},
+    {name: 'Sith Infiltrator', faction: 'Separatist Alliance'},
+    {name: 'Belbullab-22 Starfighter', faction: 'Separatist Alliance'}
 ]
 
 # Used to exclude pilots from included ships
