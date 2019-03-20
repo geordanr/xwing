@@ -307,7 +307,7 @@ class exportObj.SquadBuilder
             </div>
             <div class="modal-footer hidden-print">
                 <label class="vertical-space-checkbox hidden-phone">
-                    Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
+                    Add Space for Cards<input type="checkbox" class="toggle-vertical-space" />
                 </label>
                 <label class="maneuver-print-checkbox hidden-phone">
                     Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" checked="checked" />
@@ -316,16 +316,16 @@ class exportObj.SquadBuilder
                     Expand Shield and Hull <input type="checkbox" class="toggle-expanded-shield-hull-print" />
                 </label>
                 <label class="color-print-checkbox hidden-phone">
-                    Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
+                    Print Color <input type="checkbox" class="toggle-color-print" checked="checked" />
                 </label>
                 <label class="color-skip-text-checkbox hidden-phone">
-                    Skip texts <input type="checkbox" class="toggle-skip-text-print" />
+                    Skip Card Text <input type="checkbox" class="toggle-skip-text-print" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                 </label>
                 <label class="obstacles-checkbox hidden-phone">
-                    Include obstacle/damage deck choices <input type="checkbox" class="toggle-obstacles" />
+                    Include Obstacle Choices <input type="checkbox" class="toggle-obstacles" />
                 </label>
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
@@ -786,6 +786,9 @@ class exportObj.SquadBuilder
                         <option class="core2asteroid3-select" value="core2asteroid3">Force Awakens Asteroid 3</option>
                         <option class="core2asteroid4-select" value="core2asteroid4">Force Awakens Asteroid 4</option>
                         <option class="core2asteroid5-select" value="core2asteroid5">Force Awakens Asteroid 5</option>
+                        <option class="gascloud1-select" value="gascloud1">Gas Cloud 1</option>
+                        <option class="gascloud2-select" value="gascloud2">Gas Cloud 2</option>
+                        <option class="gascloud3-select" value="gascloud3">Gas Cloud 3</option>
                     </select>
                 </div>
                 <div class="obstacle-image-container" style="display:none;">
@@ -1120,6 +1123,10 @@ class exportObj.SquadBuilder
                             'resistance'
                         when 'First Order'
                             'firstorder'
+                        when 'Galactic Republic'
+                            'galacticrepublic'
+                        when 'Separatist Alliance'
+                            'separatistalliance'
                     @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
 
             # Conditions
@@ -1144,8 +1151,6 @@ class exportObj.SquadBuilder
                     <div class="obstacles">
                         <div>Mark the three obstacles you are using.</div>
                         <img class="obstacle-silhouettes" src="images/xws-obstacles.png" />
-                        <div>Mark which damage deck you are using.</div>
-                        <div><i class="fa fa-square-o"></i>Original Core Set&nbsp;&nbsp&nbsp;<i class="fa fa-square-o"></i>The Force Awakens Core Set</div>
                     </div>
                 """
 

@@ -4505,7 +4505,7 @@ exportObj.manifestByExpansion =
         }
     ]
 
-    'Servants of Strike Squadron Pack': [
+    'Servants of Strife Squadron Pack': [
         {
             name: 'Belbullab-22 Starfighter'
             type: 'ship'
