@@ -6017,7 +6017,6 @@ exportObj.basicCardData = ->
             skill: 3
             points: 54
             slots: [
-                "Talent"
                 "Torpedo"
                 "Crew"
                 "Gunner"
@@ -6616,7 +6615,6 @@ exportObj.basicCardData = ->
             skill: 3
             points: 32
             slots: [
-                "Talent"
                 "Missile"
                 "Modification"
             ]
@@ -6968,7 +6966,6 @@ exportObj.basicCardData = ->
             skill: 3
             points: 49
             slots: [
-                "Talent"
                 "Torpedo"
                 "Crew"
                 "Gunner"
@@ -7000,7 +6997,6 @@ exportObj.basicCardData = ->
             skill: 2
             points: 42
             slots: [
-                "Talent"
                 "Torpedo"
                 "Crew"
                 "Gunner"
