@@ -889,6 +889,7 @@ class exportObj.SquadBuilder
                 <span class="info-sources"></span>
                 <br />
                 <span class="info-collection"></span>
+                <span class="info-solitary"><br />Solitary</span>
                 <table>
                     <tbody>
                         <tr class="info-ship">
@@ -1675,7 +1676,7 @@ class exportObj.SquadBuilder
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or upgrade.slot not in @uniques_in_use['Slot']))
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
         
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
@@ -1892,6 +1893,7 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
                     @info_container.find('tr.info-ship').show()
+                    @info_container.find('.info-solitary').hide()
 
                     if data.data.large?
                         @info_container.find('tr.info-base td.info-data').text "Large"
@@ -1993,6 +1995,7 @@ class exportObj.SquadBuilder
                     ship = exportObj.ships[data.ship]
                     @info_container.find('tr.info-ship td.info-data').text data.ship
                     @info_container.find('tr.info-ship').show()
+                    @info_container.find('.info-solitary').hide
                     
                     if ship.large?
                         @info_container.find('tr.info-base td.info-data').text "Large"
@@ -2091,7 +2094,9 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-text').html pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.ship
                     @info_container.find('tr.info-ship').show()
-                    
+                    @info_container.find('.info-solitary').hide()
+
+
                     if ship.large?
                         @info_container.find('tr.info-base td.info-data').text "Large"
                     else if ship.medium?
@@ -2195,6 +2200,11 @@ class exportObj.SquadBuilder
                         else if data.variablebase? and data.variablebase
                             point_info += " base size is small, medium or large"
                         point_info += "</i><br/><br/>"
+
+                    if data.solitary?
+                        @info_container.find('.info-solitary').show()
+                    else
+                        @info_container.find('.info-solitary').hide()
 
                     @info_container.find('p.info-text').html (point_info ? '') + (data.text ? '')
                     @info_container.find('tr.info-ship').hide()

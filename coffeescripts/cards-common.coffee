@@ -4180,7 +4180,8 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 builder = ship.builder
                 for t, things of builder.uniques_in_use
-                    return true if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
 
         }
@@ -7488,7 +7489,8 @@ exportObj.basicCardData = ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
                 for t, things of builder.uniques_in_use
-                    return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
        }
        {
@@ -7631,7 +7633,8 @@ exportObj.basicCardData = ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
                 for t, things of builder.uniques_in_use
-                    return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
        }
        {
@@ -7763,7 +7766,8 @@ exportObj.basicCardData = ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
                 for t, things of builder.uniques_in_use
-                    return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
        }
        {
@@ -12944,6 +12948,148 @@ exportObj.basicCardData = ->
             threat: 3
             upgrades: [
                 "Afterburners"
+            ]
+        }
+        {
+            id: 309
+            faction: "Galactic Republic"
+            pilot: "Obi-Wan Kenobi"
+            ship: "Delta-7 Aethersprite"
+            threat: 3
+            upgrades: [
+                "Predictive Shot"
+                "R4-P17"
+                "Spare Parts Canisters"
+                "Calibrated Laser Targeting"
+            ]
+        }
+        {
+            id: 310
+            faction: "Galactic Republic"
+            pilot: "Saesee Tiin"
+            ship: "Delta-7 Aethersprite"
+            threat: 3
+            upgrades: [
+                "Supernatural Reflexes"
+                "R4-P Astromech"
+                "Delta-7B"
+            ]
+        }
+        {
+            id: 311
+            faction: "Galactic Republic"
+            pilot: "Mace Windu"
+            ship: "Delta-7 Aethersprite"
+            threat: 4
+            upgrades: [
+                "Supernatural Reflexes"
+                "R2 Astromech"
+                "Delta-7B"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 312
+            faction: "Galactic Republic"
+            pilot: "Plo Koon"
+            ship: "Delta-7 Aethersprite"
+            threat: 3
+            upgrades: [
+                "Battle Meditation"
+                "Sense"
+                "R4-P Astromech"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 313
+            faction: "Galactic Republic"
+            pilot: "Jedi Knight"
+            ship: "Delta-7 Aethersprite"
+            threat: 2
+            upgrades: [
+                "Delta-7B"
+            ]
+        }
+        {
+            id: 314
+            faction: "Galactic Republic"
+            pilot: '"Tucker"'
+            ship: "V-19 Torrent"
+            threat: 2
+            upgrades: [
+                "Concussion Missiles"
+                "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 315
+            faction: "Galactic Republic"
+            pilot: "Gold Squadron Trooper"
+            ship: "V-19 Torrent"
+            threat: 2
+            upgrades: [
+                "Cluster Missiles"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 316
+            faction: "Galactic Republic"
+            pilot: '"Swoop"'
+            ship: "V-19 Torrent"
+            threat: 2
+            upgrades: [
+                "Composure"
+                "Synchronized Console"
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 317
+            faction: "Galactic Republic"
+            pilot: "Blue Squadron Protector"
+            ship: "V-19 Torrent"
+            threat: 2
+            upgrades: [
+                "Dedicated"
+                "Synchronized Console"
+            ]
+        }
+        {
+            id: 318
+            faction: "Galactic Republic"
+            pilot: '"Odd Ball"'
+            ship: "V-19 Torrent"
+            threat: 3
+            upgrades: [
+                "Saturation Salvo"
+                "Cluster Missiles"
+                "Afterburners"
+                "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 319
+            faction: "Galactic Republic"
+            pilot: '"Kickback"'
+            ship: "V-19 Torrent"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Synchronized Console"
+            ]
+        }
+        {
+            id: 320
+            faction: "Galactic Republic"
+            pilot: '"Axe"'
+            ship: "V-19 Torrent"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Homing Missiles"
             ]
         }
     ]
