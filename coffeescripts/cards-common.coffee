@@ -13447,7 +13447,6 @@ exportObj.hyperspaceUpgradeExclusions = [
     '"Chopper" (Astromech)',
     '"Zeb" Orrelios'
     '"Chopper" (Crew)',
-    'Cassian Andor',
     'Hera Syndulla',
     'Jyn Erso',
     'Kanan Jarrus',
