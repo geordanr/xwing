@@ -4180,7 +4180,8 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 builder = ship.builder
                 for t, things of builder.uniques_in_use
-                    return true if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
 
         }
@@ -7488,7 +7489,8 @@ exportObj.basicCardData = ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
                 for t, things of builder.uniques_in_use
-                    return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
        }
        {
@@ -7631,7 +7633,8 @@ exportObj.basicCardData = ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
                 for t, things of builder.uniques_in_use
-                    return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
        }
        {
@@ -7763,7 +7766,8 @@ exportObj.basicCardData = ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
                 for t, things of builder.uniques_in_use
-                    return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                    if t != 'Slot'
+                        return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
                 false
        }
        {
