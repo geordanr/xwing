@@ -6503,7 +6503,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Hadr Chall Prototype"
+            name: "Haor Chall Prototype"
             id: 310
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
@@ -6885,7 +6885,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "O-66"
+            name: "0-66"
             id: 335
             unique: true
             faction: "Separatist Alliance"
@@ -13122,6 +13122,81 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Juke"
                 "Homing Missiles"
+            ]
+        }
+        {
+            id: 321
+            faction: "Galactic Republic"
+            pilot: '"Wolffe"'
+            ship: "ARC-170"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "R4-P44"
+                "Veteran Tail Gunner"
+                "Perceptive Copilot"
+            ]
+        }
+        {
+            id: 322
+            faction: "Galactic Republic"
+            pilot: '"Sinker"'
+            ship: "ARC-170"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+            ]
+        }
+        {
+            id: 323
+            faction: "Galactic Republic"
+            pilot: "104th Battalion Pilot"
+            ship: "ARC-170"
+            threat: 2
+            upgrades: [
+                "Dedicated"
+                "R4-P Astromech"
+            ]
+        }
+        {
+            id: 324
+            faction: "Galactic Republic"
+            pilot: '"Odd Ball" (ARC-170)'
+            ship: "ARC-170"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Seasoned Navigator"
+                "Clone Commander Cody"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 325
+            faction: "Galactic Republic"
+            pilot: '"Jag"'
+            ship: "ARC-170"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Ion Torpedoes"
+                "R2 Astromech"
+                "Seventh Fleet Gunner"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 326
+            faction: "Galactic Republic"
+            pilot: "Squad Seven Veteran"
+            ship: "ARC-170"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Proton Torpedoes"
+                "R4-P Astromech"
+                "Novice Technician"
+                "Seventh Fleet Gunner"
             ]
         }
     ]

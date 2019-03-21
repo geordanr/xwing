@@ -68,8 +68,8 @@ for k, ship in ship_translations.items():
 output_text += "\n\n    pilot_translations =\n"
 
 # Cards that add or require actions refere to them via ID, so we need them
-actions_by_id = {1: "%BOOST%", 2: "%FOCUS%", 3: "%EVADE%", 4: "%LOCK%", 5: "%BARRELROLL%",
-                 8: "%COORDINATE%", 9: "%CALCULATE%", 12: "%RELOAD%", 13: "%SLAM%", 14: "%ROTATEARC%"}
+actions_by_id = {1: "%BOOST%", 2: "%FOCUS%", 3: "%EVADE%", 4: "%LOCK%", 5: "%BARRELROLL%", 7: "%CLOAK%",
+                 8: "%COORDINATE%", 9: "%CALCULATE%", 10: "%JAM%", 12: "%RELOAD%", 13: "%SLAM%", 14: "%ROTATEARC%"}
 
 # create pilot translations
 for card_en in cards_en:
@@ -201,10 +201,10 @@ for card_en in cards_en:
         manual_stuff += ('%s: Found upgrade name multiple times:\n' % card_en["name"])
     upgrade_name_list[card_en["name"]] = True
 
-    # check for variable point costs
-    if card_en["cost"] == "*":
-        manual_stuff += ('%s: Variable costs. Added default phrase, you may want to specify on what the point costs depend.\n' % card_en["name"])
-        card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
+    # check for variable point costs (is now handled by the builder)
+    # if card_en["cost"] == "*":
+    #    manual_stuff += ('%s: Variable costs. Added default phrase, you may want to specify on what the point costs depend.\n' % card_en["name"])
+    #    card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to check for double-sided cards
     if "(" in card_en["name"]:
@@ -292,7 +292,7 @@ output_text = output_text.replace('–', "-")
 output_text = output_text.replace('•', '')
 
 # Add known typos to the ToDo
-known_typos = json.load(open('known_typos.json', encoding="utf8"))[lang]
+known_typos = json.load(open('known_typos.json'))[lang]
 if known_typos:
     manual_stuff += "Be aware of the following typos! You need to fix them before merging:\n"
 for typo in known_typos:
