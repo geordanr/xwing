@@ -13199,6 +13199,184 @@ exportObj.basicCardData = ->
                 "Seventh Fleet Gunner"
             ]
         }
+        {
+            id: 327
+            faction: "Scum and Villainy"
+            pilot: "Black Sun Soldier"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Cluster Missiles"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 328
+            faction: "Scum and Villainy"
+            pilot: "Binayre Pirate"
+            ship: "Z-95 Headhunter"
+            threat: 1
+            upgrades: [
+                "Deadman's Switch"
+            ]
+        }
+        {
+            id: 329
+            faction: "Scum and Villainy"
+            pilot: "N'dru Suhlak"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Outmaneuver"
+                "Hull Upgrade"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 330
+            faction: "Scum and Villainy"
+            pilot: "Kaa'to Leeachos"
+            ship: "Z-95 Headhunter"
+            threat: 2
+            upgrades: [
+                "Saturation Salvo"
+                "Cluster Missiles"
+                "Concussion Missiles"
+                "Deadman's Switch"
+                "Munitions Failsafe"
+            ]
+        }
+        {
+            id: 331
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Scout"
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Conner Nets"
+            ]
+        }
+        {
+            id: 332
+            faction: "Galactic Empire"
+            pilot: "Planetary Sentinel"
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Proton Bombs"
+                "Skilled Bombardier"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 333
+            faction: "Galactic Empire"
+            pilot: '"Duchess"'
+            ship: "TIE Striker"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Conner Nets"
+                "Afterburners"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 334
+            faction: "Galactic Empire"
+            pilot: '"Countdown"'
+            ship: "TIE Striker"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Proton Bombs"
+                "Skilled Bombardier"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 335
+            faction: "Galactic Empire"
+            pilot: '"Pure Sabacc"'
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Trick Shot"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 336
+            skip: true
+            faction: "Galactic Empire"
+            pilot: "Planetary Sentinel"
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Proton Bombs"
+                "Skilled Bombardier"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 337
+            faction: "Separatist Alliance"
+            pilot: "0-66"
+            ship: "Sith Infiltrator"
+            threat: 3
+            upgrades: [
+                "Chancellor Palpatine"
+                "Shield Upgrade"
+                "Scimitar"
+            ]
+        }
+        {
+            id: 338
+            faction: "Separatist Alliance"
+            pilot: "Dark Courier"
+            ship: "Sith Infiltrator"
+            threat: 3
+            upgrades: [
+                "Count Dooku"
+                "General Grievous"
+                "K2-B4"
+                "Scimitar"
+            ]
+        }
+        {
+            id: 339
+            faction: "Separatist Alliance"
+            pilot: "Darth Maul"
+            ship: "Sith Infiltrator"
+            threat: 4
+            upgrades: [
+                "Hate"
+                "Heavy Laser Cannon"
+                "Perceptive Copilot"
+                "DRK-1 Probe Droids"
+                "Shield Upgrade"
+                "Scimitar"
+            ]
+        }
+        {
+            id: 340
+            faction: "Separatist Alliance"
+            pilot: "Count Dooku"
+            ship: "Sith Infiltrator"
+            threat: 4
+            upgrades: [
+                "Brilliant Evasion"
+                "Predictive Shot"
+                "Ion Torpedoes"
+                "General Grievous"
+                "Hull Upgrade"
+                "Scimitar"
+            ]
+        }
     ]
 
 
