@@ -6885,7 +6885,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "O-66"
+            name: "0-66"
             id: 335
             unique: true
             faction: "Separatist Alliance"

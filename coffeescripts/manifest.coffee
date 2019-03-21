@@ -4710,7 +4710,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'O-66'
+            name: '0-66'
             type: 'pilot'
             count: 1
         }
