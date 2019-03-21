@@ -4532,6 +4532,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Skakoan Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: 'Feethan Ottraw Autopilot'
             type: 'pilot'
             count: 1
@@ -4562,11 +4567,6 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Treacherous'
-            type: 'upgrade'
-            count: 1
-        }
-        {
             name: 'Soulless One'
             type: 'upgrade'
             count: 1
@@ -4574,12 +4574,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Grappling Struts'
             type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Impervium Plating'
-            type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'TV-94'
@@ -4594,17 +4589,47 @@ exportObj.manifestByExpansion =
         {
             name: 'Composure'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Crack Shot'
             type: 'upgrade'
-            count: 1
+            count: 2
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'Juke'
             type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
             count: 1
+        }
+        {
+            name: 'Marksmanship'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Swarm Tactics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Treacherous'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'Trick Shot'
@@ -4612,14 +4637,29 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Marksmanship'
+            name: 'Concussion Missiles'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
-            name: 'Swarm Tactics'
+            name: 'Cluster Missiles'
             type: 'upgrade'
-            count: 1
+            count: 2
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Energy-Shell Charges'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'Cluster Missiles'
@@ -4627,14 +4667,34 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Proton Rockets'
+            name: 'Afterburners'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Electronic Baffle'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Impervium Plating'
             type: 'upgrade'
             count: 1
         }
         {
-            name: 'Energy-Shell Charges'
+            name: 'Munitions Failsafe'
             type: 'upgrade'
-            count: 1
+            count: 2
+        }
+        {
+            name: 'Static Discharge Vanes'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Stealth Device'
+            type: 'upgrade'
+            count: 3
         }
     ]
 
@@ -4875,6 +4935,121 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 1
         }
+        {
+            name: 'Predictive Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Composure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Dedicated'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Expert Handling'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marksmanship'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Saturation Salvo'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Swarm Tactics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trick Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Afterburners'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Electronic Baffle'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Munitions Failsafe'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Spare Parts Canisters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Static Discharge Vanes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Stealth Device'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Synchronized Console'
+            type: 'upgrade'
+            count: 3
+        }
     ]
 
     'ARC-170 Starfighter Expansion': [
@@ -5053,11 +5228,6 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Concussion Missiles'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Spare Parts Canisters'
             type: 'upgrade'
             count: 1
         }

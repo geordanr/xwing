@@ -7040,7 +7040,6 @@ exportObj.basicCardData = ->
             id: 344
             faction: "Separatist Alliance"
             ship: "Belbullab-22 Starfighter"
-            unique: true
             skill: 3
             points: 41
             slots: [
@@ -13447,7 +13446,6 @@ exportObj.hyperspaceUpgradeExclusions = [
     '"Chopper" (Astromech)',
     '"Zeb" Orrelios'
     '"Chopper" (Crew)',
-    'Cassian Andor',
     'Hera Syndulla',
     'Jyn Erso',
     'Kanan Jarrus',
