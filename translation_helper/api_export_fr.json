@@ -9321,7 +9321,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>Tant que vous effectuez une attaque, si le défenseur n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou <focus> en un résultat <hit>.</smallbody><return> <return><sasmall><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</sasmall>",
+            "ability_text": "<smallbody>Tant que vous effectuez une attaque, si le défenseur n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou <focus> en un résultat <hit>.</smallbody><return> <return><shipability><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -9407,7 +9407,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>Tant que vous défendez, si l’attaquant n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou <focus> en un résultat <evade>.</smallbody><return><sasmall><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</sasmall>",
+            "ability_text": "<smallbody>Tant que vous défendez, si l’attaquant n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou <focus> en un résultat <evade>.</smallbody><return><shipability><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -9493,7 +9493,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>Après avoir entièrement exécuté une manœuvre à vitesse 1 en utilisant votre capacité <smallcaps>Ailerons Adaptables</smallcaps>, vous pouvez effectuer une action <coordinate>. Dans ce cas, sautez votre étape “Effectuer une action”.</smallbody><return><sasmall><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</sasmall>",
+            "ability_text": "<smallbody>Après avoir entièrement exécuté une manœuvre à vitesse 1 en utilisant votre capacité <smallcaps>Ailerons Adaptables</smallcaps>, vous pouvez effectuer une action <coordinate>. Dans ce cas, sautez votre étape “Effectuer une action”.</smallbody><return><shipability><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -9578,7 +9578,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Le TIE Reaper fut conçu pour déposer des troupes d’élite sur les points chauds des champs de bataille, comme les terrifiants Death Troopers du Directeur Krennic lors de la Bataille de Scarif.</flavor><return><sasmall><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</sasmall>",
+            "ability_text": "<flavor>Le TIE Reaper fut conçu pour déposer des troupes d’élite sur les points chauds des champs de bataille, comme les terrifiants Death Troopers du Directeur Krennic lors de la Bataille de Scarif.</flavor><return><shipability><sabold>Ailerons Adaptables :</sabold> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <bold>devez</bold> exécuter une manœuvre blanche [1<nonbreak><leftbank>], [1<nonbreak><straight>], ou [1<nonbreak><rightbank>].</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -33548,7 +33548,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a primary attack, if you are not in the defender’s firing arc, you may reroll up to 2<nonbreak>attack dice.",
+            "ability_text": "Tant que vous effectuez une attaque principale, si vous n’est pas dans l’arc de tir du défenseur, vous pouvez relancer jusqu’à 2 dés d’attaque.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -33597,7 +33597,7 @@
             "id": 492,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/3e4dee70764ead7ebe581246a0d4b85d.jpg",
             "initiative": 4,
-            "name": "•General Grievous",
+            "name": "•Général Grievous",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -33628,13 +33628,13 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "Ambitious Cyborg",
+            "subtitle": "Cyborg Ambitieux",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a primary attack, you may reroll 1 attack die for each calculating friendly ship at range<nonbreak>1 of the defender.",
+            "ability_text": "Tant que vous effectuez une attaque principale, vous pouvez relancer 1 dé d’attaque pour chaque vaisseau allié calculateur à portée<nonbreak>1 du défenseur.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -33714,13 +33714,13 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "Techno Union Foreman",
+            "subtitle": "Contremaître du Techno-Syndicat",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range<nonbreak>0–3 performs a primary attack, if the defender is in its <bullseye>, before the Neutralize Results step, the friendly ship may spend 1 calculate token to cancel 1 <evade> result.",
+            "ability_text": "Tant qu’un vaisseau allié à portée<nonbreak>0–3 effectue une attaque principale, si le défenseur est dans son <bullseye>, avant l’étape «<nonbreak>Neutraliser les résultats<nonbreak>», le vaisseau allié peut dépenser 1 marqueur de calcul pour annuler 1 résultat <evade>.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -33768,7 +33768,7 @@
             "id": 494,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/91a7a38482d28f21b2620d058800a8fe.jpg",
             "initiative": 2,
-            "name": "•Captain Sear",
+            "name": "•Capitaine Sear",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -33799,13 +33799,13 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "Kage Infiltrator",
+            "subtitle": "Infiltrateur Kage",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>With its powerful engines, devastating triple laser cannons, and high customizability, the Belbullab-22 is the chosen craft of several elite Separatist Alliance pilots, including the infamous General Grievous.</flavor>",
+            "ability_text": "<flavor>Doté de propulseurs puissants, armé de triples canons laser dévastateurs et modifiable à volonté, le chasseur Belbullab-22 a été adopté par de nombreux pilotes d'élite de l’Alliance Séparatiste, dont le tristement célèbre Général Grievous.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -33854,7 +33854,7 @@
             "id": 495,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/af0e63b7754ef598f1f36ed9a6c4b4ee.jpg",
             "initiative": 3,
-            "name": "Skakoan Ace",
+            "name": "As Skakoan",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -33891,7 +33891,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Unlike the more disposable fighters it also built for the Separatists, Feethan Ottraw Scalable Assemblies designed the Belbullab-22 with a solid mix of firepower, durability, and speed.</flavor>",
+            "ability_text": "<flavor>Contrairement aux chasseurs de conception fragile mais facilement remplaçables construits pour les Séparatistes, Feethan Ottraw Scalable Assemblies a également conçu le Belbullab-22, un appareil qui allie puissance de feu, résistance et vitesse.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -33939,7 +33939,7 @@
             "id": 496,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/91052cb8f4ba464f5ac4572a725f757b.jpg",
             "initiative": 1,
-            "name": "Feethan Ottraw Autopilot",
+            "name": "Pilote Automatique Feethan Ottraw",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -33976,7 +33976,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>As the Clone Wars escalate, the Separatist Alliance continues to develop the technology of droid starfighters, as well as the tactical droids that command them.</flavor><return><shipability><sabold>Networked Calculations:</sabold> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range<nonbreak>0–1 to change 1<nonbreak><focus> result to an <evade> or <hit> result.</shipability>",
+            "ability_text": "<flavor>Alors que la Guerre des Clones s’intensifie, l’Alliance Séparatiste continue d’améliorer la technologie des chasseurs droïdes, ainsi que les droïdes tactiques qui les dirigent.</flavor><return><shipability><sabold>Calculs en Réseau :</sabold> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée<nonbreak>0–1 pour changer 1 résultat<nonbreak><focus> en un résultat <evade> ou <hit>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -34018,7 +34018,7 @@
             "id": 497,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/df638358903b64e7b246b3a56fa68af7.jpg",
             "initiative": 3,
-            "name": "Separatist Drone",
+            "name": "Drone Séparatiste",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -34049,7 +34049,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The Trade Federation deployed countless Vulture Droids at the Battle of Naboo, and continues to use these inexpensive starfighters in the Clone Wars.</flavor><return><shipability><sabold>Networked Calculations:</sabold> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range<nonbreak>0–1 to change 1<nonbreak><focus> result to an <evade> or <hit> result.</shipability>",
+            "ability_text": "<flavor>La Fédération du Commerce a déployé d’innombrables droïdes Vulture lors de la Bataille de Naboo, et continue d’utiliser ces chasseurs peu coûteux durant la Guerre des Clones.</flavor><return><shipability><sabold>Calculs en Réseau :</sabold> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée<nonbreak>0–1 pour changer 1 résultat<nonbreak><focus> en un résultat <evade> ou <hit>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -34091,7 +34091,7 @@
             "id": 498,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/df075613c4c3dbe7803df6bfa5082262.jpg",
             "initiative": 1,
-            "name": "Trade Federation Drone",
+            "name": "Drone de la Fédération du Commerce",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -34122,7 +34122,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While a friendly ship at range 0–1 defends, it may spend 1 calculate token to change all <crit> results to <hit> results.</smallbody><return><shipability><sabold>Networked Calculations:</sabold> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range<nonbreak>0–1 to change 1<nonbreak><focus> result to an <evade> or <hit> result.</shipability>",
+            "ability_text": "<smallbody>Tant qu’un vaisseau allié à portée<nonbreak>0–1 défend, il peut dépenser 1 marqueur de calcul pour changer tous les résultats <crit> en résultats <hit>.</smallbody><return><shipability><sabold>Calculs en Réseau :</sabold> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée<nonbreak>0–1 pour changer 1 résultat<nonbreak><focus> en un résultat <evade> ou <hit>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -34188,13 +34188,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Preservation Programming",
+            "subtitle": "Programmation de Conservation",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While you perform an attack, if the defender is in your <bullseye>, you may reroll 1<nonbreak>blank result.</smallbody><return><shipability><sabold>Networked Calculations:</sabold> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range<nonbreak>0–1 to change 1<nonbreak><focus> result to an <evade> or <hit> result.</shipability>",
+            "ability_text": "<smallbody>Tant que vous effectuez une attaque, si le défenseur est dans votre <bullseye>, vous pouvez relancer 1 résultat vierge.</smallbody><return><shipability><sabold>Calculs en Réseau :</sabold> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée<nonbreak>0–1 pour changer 1 résultat<nonbreak><focus> en un résultat <evade> ou <hit>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -34236,7 +34236,7 @@
             "id": 500,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/fab82de87d230b77a5e4b2360ea9af93.jpg",
             "initiative": 3,
-            "name": "•••Precise Hunter",
+            "name": "•••Chasseur Méticuleux",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -34261,13 +34261,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Pinpoint Protocols",
+            "subtitle": "Protocole de Géolocalisation",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>At the start of the Engagement Phase, you may transfer 1 of your calculate tokens to another friendly ship at range<nonbreak>0–3.</smallbody><return><shipability><sabold>Networked Calculations:</sabold> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range<nonbreak>0–1 to change 1<nonbreak><focus> result to an <evade> or <hit> result.</shipability>",
+            "ability_text": "<smallbody>Au début de la phase d’engagement, vous pouvez transférer 1 de vos marqueurs de calcul à un autre vaisseau allié à portée<nonbreak>0–3.</smallbody><return><shipability><sabold>Calculs en Réseau :</sabold> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée<nonbreak>0–1 pour changer 1 résultat<nonbreak><focus> en un résultat <evade> ou <hit>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -34333,13 +34333,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Scouting Drone",
+            "subtitle": "Drone de Reconnaissance",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After an enemy ship in your <bullseye> at range<nonbreak>0–2 declares another friendly ship as the defender, you may perform a <calculate> or <targetlock> action.</smallbody><return><shipability><sabold>Networked Calculations:</sabold> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range<nonbreak>0–1 to change 1<nonbreak><focus> result to an <evade> or <hit> result.</shipability>",
+            "ability_text": "<smallbody>Après qu’un vaisseau ennemi dans votre <bullseye> à portée<nonbreak>0–2 a déclaré un autre vaisseau allié pour être le défenseur, vous pouvez effectuer une action <calculate> ou <targetlock>.</smallbody><return><shipability><sabold>Calculs en Réseau :</sabold> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée<nonbreak>0–1 pour changer 1 résultat<nonbreak><focus> en un résultat <evade> ou <hit>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -34381,7 +34381,7 @@
             "id": 502,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/18cdc19a9627a38d0ec2783ccd5cb183.jpg",
             "initiative": 1,
-            "name": "••Haor Chall Prototype",
+            "name": "••Prototype Haor Chall",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -34406,13 +34406,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Xi Char Offering",
+            "subtitle": "Offrande Xi Char",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform an attack, you may spend 2 <forcecharge> to perform a bonus primary attack against a different target. If your attack missed, you may perform that bonus primary attack against the same target instead.",
+            "ability_text": "Après avoir effectué une attaque, vous pouvez dépenser 2<nonbreak><forcecharge> pour effectuer une attaque principale bonus contre une cible différente. Si votre attaque était ratée, vous pouvez effectuer cette attaque principale bonus contre la même cible à la place.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -34459,7 +34459,7 @@
             "id": 503,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/04b1c1fea3735eb844455dd3278346d0.jpg",
             "initiative": 5,
-            "name": "•Darth Maul",
+            "name": "•Dark Maul",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 3,
@@ -34496,13 +34496,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Sith Assassin",
+            "subtitle": "Assassin Sith",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "After you defend, if the attacker is in your firing arc, you may spend 1<nonbreak><forcecharge> to remove 1 of your blue or red tokens.<return>After you perform an attack that hits, you may spend 1 <forcecharge> to perform an action.",
+            "ability_text": "Après avoir défendu, si l’attaquant est dans votre arc de tir, vous pouvez dépenser 1<nonbreak><forcecharge> pour retirer 1 de vos marqueurs bleus ou rouges.<return>Après avoir effectué une attaque qui touche, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -34549,7 +34549,7 @@
             "id": 504,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/65eabe68c7d1ae072442d8c8808414db.jpg",
             "initiative": 3,
-            "name": "•Count Dooku",
+            "name": "•Comte Dooku",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 3,
@@ -34586,13 +34586,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Darth Tyranus",
+            "subtitle": "Dark Tyranus",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "After you defend, you may spend 1 calculate token to perform an action.",
+            "ability_text": "Après avoir défendu, vous pouvez dépenser 1 marqueur de calcul pour effectuer une action.",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -34669,13 +34669,13 @@
                     "value": "4"
                 }
             ],
-            "subtitle": "Sinister Automaton",
+            "subtitle": "Automate Sinistre",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The vessel called the <untalic>Scimitar</untalic> was heavily modified, equipped with stealth technologies and advanced surveillance devices for infiltration and assassination missions.</flavor>",
+            "ability_text": "<flavor>Le Scimitar est un appareil lourdement modifié, équipé de technologies furtives et de dispositifs de surveillance avancés, afin de mener des missions d’infiltration et d’assassinat.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -34721,7 +34721,7 @@
             "id": 506,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/8b9c158df033daab2ea6acecd29c5c0d.jpg",
             "initiative": 2,
-            "name": "Dark Courier",
+            "name": "Messager Noir",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 3,
@@ -34758,7 +34758,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After you fully execute a maneuver, if there is an enemy ship in your <frontarc> at range<nonbreak>0–1 or in your <bullseye>, you may spend 1 <forcecharge> to remove 1<nonbreak>stress token.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Après avoir entièrement exécuté une manœuvre, s'il y a un vaisseau ennemi dans votre <frontarc> à portée<nonbreak>0–1 ou dans votre <bullseye>, vous pouvez dépenser 1<nonbreak><forcecharge> pour retirer 1 marqueur de stress.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -34851,13 +34851,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Hero of the Republic",
+            "subtitle": "Héros de la République",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While a friendly ship at range<nonbreak>0–2 defends, if it is not in the attacker’s <bullseye>, you may spend 1<nonbreak><forcecharge>. If you do, change 1<nonbreak><crit> result to a <hit> result or 1 <hit> result to a <focus> result.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Tant qu’un vaisseau allié à portée<nonbreak>0–2 défend, s’il n’est pas dans l’<bullseye> de l’attaquant, vous pouvez dépenser 1<nonbreak><forcecharge>. Dans ce cas, changez 1 résultat <crit> en un résultat <hit> ou 1 résultat <hit> en un résultat <focus>.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -34950,13 +34950,13 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "Wise Protector",
+            "subtitle": "Protectrice Réfléchie",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While a friendly ship at range<nonbreak>0–2 performs an attack, if the defender is in its <bullseye>, you may spend 1<nonbreak><forcecharge> to change 1<nonbreak><focus> result to a <hit> result or 1<nonbreak><hit> result to a <crit> result.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1 <forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Tant qu’un vaisseau allié à portée<nonbreak>0–2 effectue une attaque, si le défenseur est dans son <bullseye>, vous pouvez dépenser 1<nonbreak><forcecharge> pour changer 1 résultat <focus> en un résultat <hit> ou 1 résultat <hit> en un résultat <crit>.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35049,13 +35049,13 @@
                     "value": "1"
                 }
             ],
-            "subtitle": "Conflicted Padawan",
+            "subtitle": "Padawan Tourmentée",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After you fully execute a maneuver, you may choose a friendly ship at range<nonbreak>0–1 and spend 1<nonbreak><forcecharge>. That ship may perform an action, even if it is stressed.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Après avoir entièrement exécuté une manœuvre, vous pouvez choisir un vaisseau allié à portée<nonbreak>0–1 et dépenser 1<nonbreak><forcecharge>. Ce vaisseau peut effectuer une action, même s’il est stressé.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35148,13 +35148,13 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "“Snips\"",
+            "subtitle": "« Chipie »",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After a friendly ship at range<nonbreak>0–2 spends a focus token, you may spend 1<nonbreak><forcecharge>. If you do, that ship gains 1<nonbreak>focus token.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Après qu’un vaisseau allié à portée<nonbreak>0–2 a dépensé un marqueur de concentration, vous pouvez dépenser 1<nonbreak><forcecharge>. Dans ce cas, ce vaisseau allié gagne 1 marqueur de concentration.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35247,13 +35247,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Guardian of the Republic",
+            "subtitle": "Gardien de la République",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After you fully execute a red maneuver, recover 1<nonbreak><forcecharge>.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Après avoir entièrement exécuté une manœuvre rouge, récupérez 1<nonbreak><forcecharge>.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35346,13 +35346,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Harsh Traditionalist",
+            "subtitle": "Traditionnaliste Convaincu",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>At the start of the Engagement Phase, you may spend 1 <forcecharge> and choose another friendly ship at range 0–2. If you do, you may transfer 1 green token to it or transfer one orange token from it to yourself.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Au début de la phase d’engagement, vous pouvez dépenser 1<nonbreak><forcecharge> et choisir un autre vaisseau allié à portée<nonbreak>0–2. Dans ce cas, vous pouvez transférer 1 marqueur vert à ce vaisseau ou transférer 1 marqueur orange de ce vaisseau au vôtre.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35445,13 +35445,13 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "Serene Mentor",
+            "subtitle": "Mentor Serein",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After a friendly ship at range 0–2 reveals its dial, you may spend 1 <forcecharge>. If you do, set its dial to another maneuver of the same speed and difficulty.</smallbody><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<smallbody>Après qu’un vaisseau allié à portée<nonbreak>0–2 a révélé son cadran, vous pouvez dépenser 1<nonbreak><forcecharge>. Dans ce cas, réglez son cadran sur une autre manœuvre de même vitesse et de même difficulté.</smallbody><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35544,13 +35544,13 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "Prophetic Pilot",
+            "subtitle": "Pilote Prophétique",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>When the Clone Wars began, the Jedi Knights rallied to the cause of preserving the Republic, assuming command of legions of clone troopers and leading them in battle.</flavor><return><shipability><sabold>Fine-tuned Controls:</sabold> After you fully execute a maneuver, you may spend 1<nonbreak><forcecharge> to perform a <boost> or <barrelroll> action.</shipability>",
+            "ability_text": "<flavor>Lorsque la Guerre des Clones débuta, les chevaliers Jedi rallièrent la cause de la sauvegarde de la République, prenant le commandement de légions composées de soldats clones et les menant au combat.</flavor><return><shipability><sabold>Commandes Réactives :</sabold> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1<nonbreak><forcecharge> pour effectuer une action <boost> ou <barrelroll>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35607,7 +35607,7 @@
             "id": 515,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/d3bf6f2f5482c2b68a4d3d02cd758a68.jpg",
             "initiative": 3,
-            "name": "Jedi Knight",
+            "name": "Chevalier Jedi",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -35650,7 +35650,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your <bullseye>, you may acquire a lock on that ship.",
+            "ability_text": "Après avoir entièrement exécuté une manœuvre rouge ou effectué une action rouge, s'il y a un vaisseau ennemi dans votre <bullseye>, vous pouvez verrouiller ce vaisseau.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35729,7 +35729,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform a <barrelroll> action, you may perform a red <targetlock> action.",
+            "ability_text": "Après avoir effectué une action <barrelroll>, vous pouvez effectuer une action <targetlock> rouge.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35802,13 +35802,13 @@
                     "value": "5"
                 }
             ],
-            "subtitle": "Blue Four",
+            "subtitle": "Blue Quatre",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "After you defend or perform an attack, you may choose a friendly ship at range<nonbreak>1–2 in your <leftarc>  or <rightarc>. If you do, transfer 1 green token to that ship.",
+            "ability_text": "Après avoir défendu ou effectué une attaque, vous pouvez choisir un vaisseau allié à portée<nonbreak>1–2 situé dans votre <leftarc> ou <rightarc>. Dans ce cas, transférez 1 marqueur vert à ce vaisseau.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35881,13 +35881,13 @@
                     "value": "5"
                 }
             ],
-            "subtitle": "Blue Two",
+            "subtitle": "Blue Deux",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "After a friendly small or medium ship fully executes a speed 3–4 maneuver, if it is at range<nonbreak>0–1, it may perform a red <boost> action.",
+            "ability_text": "Après qu’un petit ou moyen vaisseau allié a entièrement exécuté une manœuvre à vitesse 3–4, s’il est à portée<nonbreak>0–1, il peut effectuer une action <boost> rouge.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -35965,7 +35965,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After a friendly ship at range<nonbreak>1–2 performs an attack against an enemy ship in your <frontarc>, you may perform a <focus><nonbreak>action.",
+            "ability_text": "Après qu’un vaisseau allié à portée<nonbreak>1–2 a effectué une attaque contre un vaisseau ennemi dans votre <frontarc>, vous pouvez effectuer une action<nonbreak><focus>.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36037,13 +36037,13 @@
                     "value": "5"
                 }
             ],
-            "subtitle": "Blue Five",
+            "subtitle": "Blue Cinq",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Blue Squadron’s elite clone pilots are trained to fly their V-19s in conjunction with Jedi and often support famous commanders such as Anakin Skywalker and Ahsoka Tano.</flavor>",
+            "ability_text": "<flavor>Les pilotes d’élite clones de l’Escadron Bleu sont capables de faire voler leur V-19 conjointement avec les appareils des Jedi et servent le plus souvent de soutien auprès d’illustres commandants comme Anakin Skywalker et Ahsoka Tano.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36091,7 +36091,7 @@
             "id": 521,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/74667d2878cb823d14035e91c8773816.jpg",
             "initiative": 3,
-            "name": "Blue Squadron Protector",
+            "name": "Protecteur de l’Escadron Bleu",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -36122,7 +36122,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The V-19 Torrent starfighter was designed to be a light escort to nimble Delta-7 interceptors flown by Jedi Knights, and has a unique flight profile to reflect this role.</flavor>",
+            "ability_text": "<flavor>Le chasseur Torrent V-19 a été conçu en tant que vaisseau léger d’escorte afin d’accompagner les intercepteurs Delta-7 pilotés par les chevaliers Jedi et bénéficie d’un profil aérodynamique unique lui permettant d’assurer parfaitement ce rôle.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36169,7 +36169,7 @@
             "id": 522,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/e4ba0b540259e9026142e6fa5e837685.jpg",
             "initiative": 2,
-            "name": "Gold Squadron Trooper ",
+            "name": "Soldat de l’Escadron Or",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -36200,7 +36200,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your <bullseye>, you may acquire a lock on that ship.",
+            "ability_text": "Après avoir entièrement exécuté une manœuvre rouge ou effectué une action rouge, s'il y a un vaisseau ennemi dans votre <bullseye>, vous pouvez verrouiller ce vaisseau.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36287,7 +36287,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a primary <frontarc> attack, you may spend 1 <standardcharge> to reroll 1<nonbreak>attack die. <return>While you perform a primary <reararc> attack, you may recover 1<nonbreak><standardcharge> to roll 1<nonbreak>additional attack die. ",
+            "ability_text": "Tant que vous effectuez une attaque principale <frontarc>, vous pouvez dépenser 1<nonbreak><standardcharge> pour relancer 1 dé d’attaque. Tant que vous effectuez une attaque principale <reararc>, vous pouvez récupérer 1<nonbreak><standardcharge> pour lancer 1 dé d’attaque supplémentaire.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36380,7 +36380,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After a friendly ship at range<nonbreak>1–2 in your <leftarc>  or <rightarc>  defends, you may acquire a lock on the attacker.",
+            "ability_text": "Après qu’un vaisseau allié à portée<nonbreak>1–2 situé dans votre <leftarc> ou <rightarc> a défendu, vous pouvez verrouiller l’attaquant.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36466,7 +36466,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range<nonbreak>1–2 in your <leftarc> or <rightarc> performs a primary attack, it may reroll 1<nonbreak>attack die.",
+            "ability_text": "Tant qu’un vaisseau allié à portée<nonbreak>1–2 situé dans votre <leftarc> ou <rightarc> effectue une attaque principale, il peut relancer 1 dé d’attaque.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36546,13 +36546,13 @@
                     "value": "3"
                 }
             ],
-            "subtitle": "Wolfpack Veteran",
+            "subtitle": "Vétéran de la Meute",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Clone Flight Seven serves as part of the Open Circle Fleet under legendary Jedi Generals such as Plo Koon and Obi-Wan Kenobi, and won glory at the battles of Coruscant and Cato Neimoidia.</flavor>",
+            "ability_text": "<flavor>Le Vol Clone Sept en tant qu’unité de la flotte Open Circle a servi auprès de généraux Jedi légendaires comme Plo Koon ou Obi-Wan Kenobi et a obtenu ses titres de gloire au cours des batailles de Coruscant et de Cato Neimoidia.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36596,7 +36596,7 @@
             "id": 527,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/3c9cad4a6c8cdb6a7749a76e1b42ec23.jpg",
             "initiative": 3,
-            "name": "Squad Seven Veteran",
+            "name": "Vétéran de l’Escadron Sept",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 2,
@@ -36639,7 +36639,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The ARC-170 was designed as a dominating heavy escort fighter with powerful front and rear lasers, ordnance, and an astromech for navigation. Squadrons of these mighty ships bolster the Republic Navy’s presence at any battle where they are deployed.</flavor>",
+            "ability_text": "<flavor>L’ARC-170 a été conçu en tant que chasseur d’escorte lourd, armé de canons laser à l’avant et à l’arrière, d’artillerie et d’un astromech de navigation. Les escadrons de ces redoutables chasseurs renforcent les forces de la Marine Républicaine au cours des batailles dans lesquelles ils sont déployés.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -36682,7 +36682,7 @@
             "id": 528,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/5081daee997a2a55de474dad2e8e4a07.jpg",
             "initiative": 2,
-            "name": "104th Battalion Pilot",
+            "name": "Pilote du 104ème Bataillon",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 2,
@@ -36725,7 +36725,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend, you may choose a ship obstructing the attack and spend 1 <standardcharge>. If you do, cancel 1 <hit> or <crit> result, and the ship you chose gains 1 strain token.<return>After a ship at range 0–3 is destroyed, recover 1 <standardcharge>.",
+            "ability_text": "Tant que vous défendez, vous pouvez choisir un vaisseau gênant l’attaque et dépenser 1<nonbreak><standardcharge>. Dans ce cas, annulez 1 résultat <hit> ou <crit> et le vaisseau que vous avez choisi gagne 1 marqueur de contrainte.<return>Après qu’un vaisseau à portée<nonbreak>0–3 a été détruit, récupérez 1<nonbreak><standardcharge>.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/a10d907fea50e32ab28d924c67486d37.png",
@@ -36740,7 +36740,7 @@
             "id": 529,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/406e6007268488c36fc9066fb0a5d70f.jpg",
             "initiative": null,
-            "name": "Treacherous",
+            "name": "Perfide",
             "restrictions": [
                 [
                     {
@@ -36771,7 +36771,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range<nonbreak>0–3 performs a primary attack against a defender in its <bullseye>, if there are 2<nonbreak>or fewer attack dice, it may spend 1<nonbreak>calculate token to add 1<nonbreak><hit><nonbreak>result.",
+            "ability_text": "Tant qu’un vaisseau allié à portée<nonbreak>0–3 effectue une attaque principale contre un défenseur situé dans son <bullseye>, s’il y a 2 dés d’attaque ou moins, il peut dépenser 1 marqueur de calcul pour ajouter 1 résultat <hit>.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/633a34a139c912116c1b034fc2765484.png",
@@ -36819,7 +36819,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the End Phase, you may choose up to 3<nonbreak>friendly ships at range<nonbreak>0–3. If you do, each of these ships does not remove 1<nonbreak>calculate token.",
+            "ability_text": "Pendant la phase de dénouement, vous pouvez choisir jusqu’à 3 vaisseaux alliés à portée<nonbreak>0–3. Dans ce cas, chacun de ces vaisseaux ne retire pas 1 marqueur de calcul.",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -36875,7 +36875,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody><smallcaps>Attack (<calculate>):</smallcaps> Spend 1<nonbreak><standardcharge>. While you perform this attack, you may spend 1<nonbreak>calculate token to change 1<nonbreak><focus> result to a <crit> result.<return><smallcaps>Action</smallcaps>: Reload this card.</smallbody>",
+            "ability_text": "<smallbody><smallcaps>Attaque (<calculate>) :</smallcaps> dépensez 1<nonbreak><standardcharge>. Tant que vous effectuez cette attaque, vous pouvez dépenser 1 marqueur de calcul pour changer 1 résultat <focus> en un résultat <crit>.<return><smallcaps>Action</smallcaps> : rechargez cette carte.</smallbody>",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/4b6213e5ed13735bb381df08bdd1398d.png",
@@ -36891,7 +36891,7 @@
             "id": 532,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/a0eeefcf98562fdbc606c8638c35b6db.jpg",
             "initiative": null,
-            "name": "Energy-Shell Charges",
+            "name": "Obus Énergétiques",
             "restrictions": [
                 [
                     {
@@ -36946,7 +36946,7 @@
             "weapon_range": "2 – 3"
         },
         {
-            "ability_text": "While you defend, if the attacker is outside your firing arc, you may reroll 1<nonbreak>defense die.",
+            "ability_text": "Tant que vous défendez, si l’attaquant est hors de votre arc de tir, vous pouvez relancer 1 dé de défense.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/36b33e7330846570087096cb55fba140.png",
@@ -37001,7 +37001,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Before you would be dealt a faceup <bitalic>Ship</bitalic> damage card, you may spend 1<nonbreak><standardcharge> to discard it instead.",
+            "ability_text": "Avant qu’une carte de dégât face visible <bitalic>Vaisseau</bitalic> ne vous soit attribuée, vous pouvez dépenser 1<nonbreak><standardcharge> pour la défausser à la place.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/93e0fe1b2931944d128126b854c4ad33.png",
@@ -37016,7 +37016,7 @@
             "id": 534,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/20769de45863e2bbb180f05e6ed1e0e3.jpg",
             "initiative": null,
-            "name": "Impervium Plating",
+            "name": "Blindage en Impervium",
             "restrictions": [
                 [
                     {
@@ -37047,7 +37047,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>You ignore obstacles at range<nonbreak>0 and while you move through them. After you reveal your dial, if you reveal a maneuver other than a [2<nonbreak><straight>] and are at range 0 of an asteroid or debris cloud, skip your Execute Maneuver step and remove 1 stress token; if you revealed a right or left maneuver, rotate your ship 90º in that direction. After you execute a maneuver, flip this card.</smallbody>",
+            "ability_text": "<smallbody>Ignorez les obstacles à portée<nonbreak>0 et tant que vous vous déplacez à travers. Après avoir révélé votre cadran, si vous avez révélé une manœuvre autre que [2<nonbreak><straight>] et êtes à portée<nonbreak>0 d’un astéroïde ou d’un nuage de débris, sautez votre étape «<nonbreak>Exécuter la manœuvre<nonbreak>» et retirez 1 marqueur de stress<nonbreak>; si vous avez révélé une manouvre à droite ou à gauche, faites pivoter votre vaisseau de 90° dans cette direction. Après avoir exécuté une manœuvre, retournez cette carte.</smallbody>",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/be82da17cfd39003fda380bead210eb9.png",
@@ -37063,7 +37063,7 @@
             "id": 535,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/55781f0b97bc691866379ff9e1d6d354.jpg",
             "initiative": null,
-            "name": "Grappling Struts (Open)",
+            "name": "Supports d’Ancrage (Dépliés)",
             "restrictions": [
                 [
                     {
@@ -37087,7 +37087,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend, if you are not in the attacker's <bullseye>, you may spend 1 <forcecharge> to change 2 of your <focus> results to <evade><nonbreak>results.",
+            "ability_text": "Tant que vous défendez, si vous n’êtes pas dans le <bullseye> de l’attaquant, vous pouvez dépenser 1<nonbreak><forcecharge> pour changer 2 de vos résultats <focus> en résultats <evade>.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/24b175ad35d035f33a35056b0d1d7a36.png",
@@ -37104,7 +37104,7 @@
             "id": 536,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/73bd7872a2c74e0402255f868d9d12bb.jpg",
             "initiative": null,
-            "name": "Brilliant Evasion",
+            "name": "As de la Manœuvre",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": null,
@@ -37118,7 +37118,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range<nonbreak>0–3 defends, it may spend 1 calculate token. If it does, add 1 <evade> result unless the attacker chooses to gain 1<nonbreak>strain token.",
+            "ability_text": "Tant qu’un vaisseau allié à portée<nonbreak>0–3 défend, il peut dépenser 1 marqueur de calcul. Dans ce cas, ajoutez 1 résultat <evade> sauf si l’attaquant choisit de gagner 1 marqueur de contrainte.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/2178079ef9488899e51e927b2e136572.png",
@@ -37166,7 +37166,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform a purple<nonbreak><coordinate><nonbreak>action, the ship you coordinated gains 1<nonbreak>stress token. Then, it gains 1<nonbreak>focus token or recovers 1<nonbreak><forcecharge>.",
+            "ability_text": "Après avoir effectué une action <coordinate> violette, le vaisseau que vous avez coordonné gagne 1 marqueur de stress. Puis il gagne 1 marqueur de concentration ou récupère 1<nonbreak><forcecharge>.",
             "available_actions": [
                 {
                     "base_action_id": 8,
@@ -37190,7 +37190,7 @@
             "id": 538,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/e0772c182d95e3abd540950c7689ab34.jpg",
             "initiative": null,
-            "name": "•Darth Sidious",
+            "name": "•Dark Sidious",
             "restrictions": [
                 [
                     {
@@ -37228,7 +37228,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>Before a ship at range<nonbreak>0–2 rolls attack or defense dice, if all of your <forcecharge> are active, you may spend 1 <forcecharge> and name a result. If the roll does not contain the named result, the ship must change 1<nonbreak>die to that result.</smallbody>",
+            "ability_text": "Avant qu’un vaisseau à portée<nonbreak>0–2 ne lance des dés d’attaque ou de défense, si toutes vos <forcecharge> sont actives, vous pouvez dépenser 1<nonbreak><forcecharge> et nommer un résultat. Si le lancer ne contient pas le résultat nommé, le vaisseau doit changer 1<nonbreak>dé pour ce résultat.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/a1920988dd8634d9780c6363e3f36f6e.png",
@@ -37243,7 +37243,7 @@
             "id": 539,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/a91424eea1db4aeaf24ab49d5a519e27.jpg",
             "initiative": null,
-            "name": "•Count Dooku",
+            "name": "•Comte Dooku",
             "restrictions": [
                 [
                     {
@@ -37274,7 +37274,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend, after the Neutralize Results step, if there are 2 or more <hit>/<crit> results, you may spend 1<nonbreak><standardcharge> to cancel 1 <hit> or <crit><nonbreak>result. <return>After a friendly ship is destroyed, recover 1<nonbreak><standardcharge>.",
+            "ability_text": "Tant que vous défendez, après l’étape «<nonbreak>Neutraliser les résultats<nonbreak>», s’il y a au moins 2 résultats <hit>/<crit>, vous pouvez dépenser 1<nonbreak><standardcharge> pour annuler 1 résultat <hit> ou <crit>.<return>Après qu’un vaisseau allié a été détruit, récupérez 1<nonbreak><standardcharge>.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/f3740c47b0253ec848c4cfcdde195393.png",
@@ -37289,7 +37289,7 @@
             "id": 540,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/3f6a042b2f8acfdcfcd1f05c28419fe3.jpg",
             "initiative": null,
-            "name": "•General Grievous",
+            "name": "•Général Grievous",
             "restrictions": [
                 [
                     {
@@ -37320,7 +37320,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the End Phase, you may spend 1<nonbreak><standardcharge> to drop or launch 1<nonbreak>DRK-1 probe droid using a speed 3 template.<return>This card’s <standardcharge> cannot be recovered.",
+            "ability_text": "Pendant la phase de dénouement, vous pouvez dépenser 1<nonbreak><standardcharge> pour larguer ou lancer 1 droïde sonde DRK-1 en utilisant un gabarit de vitesse 3.<return>Les <standardcharge> de cette carte ne peuvent pas être récupérées.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/44556cd042e536b41e7e89850e13081a.png",
@@ -37335,7 +37335,7 @@
             "id": 541,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/a69a3f1075a711b57cf7459e51647a7a.jpg",
             "initiative": null,
-            "name": "•DRK-1 Probe Droids",
+            "name": "•Droïdes Sondes DRK-1",
             "restrictions": [
                 [
                     {
@@ -37366,7 +37366,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody><smallcaps>Setup:</smallcaps> After the Place Forces step, you may cloak.<return>After you decloak, you may choose an enemy ship in your <bullseye>. If you do, it gains 1<nonbreak>jam token.</smallbody>",
+            "ability_text": "<smallbody><smallcaps>Mise en Place :</smallcaps> après l’étape «<nonbreak>Placer les forces<nonbreak>», vous pouvez vous occulter.<return>Après vous être désocculté, vous pouvez choisir un vaisseau ennemi dans votre <bullseye>. Dans ce cas, il gagne 1 marqueur de brouillage.</smallbody>",
             "available_actions": [
                 {
                     "base_action_id": 7,
@@ -37429,7 +37429,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>At the start of the Engagement Phase, you may spend 1<nonbreak>calculate token and 1<nonbreak><standardcharge> to launch 1<nonbreak>buzz droid swarm using the [3<nonbreak><leftbank>], [3<nonbreak><straight>], or [3<nonbreak><rightbank>] template.<return>This card’s <standardcharge> cannot be recovered.</smallbody>",
+            "ability_text": "<smallbody>Au début de la phase d’engagement, vous pouvez dépenser 1 marqueur de calcul et 1<nonbreak><standardcharge> pour lancer 1 nuée de droïdes buzz en utilisant le gabarit [3<nonbreak><leftbank>], [3<nonbreak><straight>] ou [3<nonbreak><rightbank>.<return>La <standardcharge> de cette carte ne peut pas être récupérée.</smallbody>",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/ee2f0b906cb4f1dbcafc274f44b76d3d.png",
@@ -37444,7 +37444,7 @@
             "id": 543,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/a2c1b72df5f0b429bf38fbd9ad61bc99.jpg",
             "initiative": null,
-            "name": "•••Discord Missiles",
+            "name": "•••Missiles Discorde",
             "restrictions": [
                 [
                     {
@@ -37475,7 +37475,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While another friendly ship in your <leftarc><nonbreak>or <rightarc> at range<nonbreak>0–2 defends, if it is limited or has the <smallcaps>Dedicated</smallcaps> upgrade and you are not strained, you may gain 1 strain token. If you do, the defender rerolls 1<nonbreak>of their blank results.",
+            "ability_text": "Tant qu’un autre vaisseau allié situé dans votre <leftarc> ou <rightarc> à portée<nonbreak>0–2 défend, s’il est limité ou possède l’amélioration <smallcaps>Dévoué</smallcaps> et que vous n’êtes pas contraint, vous pouvez gagner 1 marqueur de contrainte. Dans ce cas, le défenseur relance 1 de ses résultats vierges.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/31c6723d7e5670c257acfa8788160437.png",
@@ -37491,7 +37491,7 @@
             "id": 544,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/21b00eaf0d2f447db8fc7b2dc69222ab.jpg",
             "initiative": null,
-            "name": "Dedicated",
+            "name": "Dévoué",
             "restrictions": [
                 [
                     {
@@ -37524,7 +37524,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>You cannot coordinate limited ships.<return> While you perform a purple <coordinate> action, you may coordinate 1 additional friendly non-limited ship of the same type. Both ships must perform the same action.</smallbody>",
+            "ability_text": "<smallbody>Vous ne pouvez pas coordonner des vaisseaux limités.<return>Tant que vous effectuez une action <coordinate> violette, vous pouvez coordonner 1 vaisseau allié non-limité supplémentaire du même type. Les deux vaisseaux doivent effectuer la même action.</smallbody>",
             "available_actions": [
                 {
                     "base_action_id": 8,
@@ -37548,7 +37548,7 @@
             "id": 545,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/e9aed0602a75ddad090820e59036a7fd.jpg",
             "initiative": null,
-            "name": "Battle Meditation",
+            "name": "Méditation de Bataille",
             "restrictions": [
                 [
                     {
@@ -37572,7 +37572,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Before you execute a basic maneuver, you may spend 1<nonbreak><standardcharge>. If you do, while you execute that maneuver, reduce its difficulty.",
+            "ability_text": "Avant d’exécuter une manœuvre de base, vous pouvez dépenser 1<nonbreak><standardcharge>. Dans ce cas, tant que vous exécutez cette manœuvre, diminuez sa difficulté.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/26f6dd68ba6bb37fa5315f45a6237c88.png",
@@ -37588,7 +37588,7 @@
             "id": 546,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/081dbeb7591c8dfd1f752729b27bdf2a.jpg",
             "initiative": null,
-            "name": "R4-P Astromech",
+            "name": "Astromech R4-P",
             "restrictions": [
                 [
                     {
@@ -37619,7 +37619,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you fully execute a red maneuver, you may spend 1<nonbreak><standardcharge> to perform an action, even while stressed.",
+            "ability_text": "Après avoir entièrement exécuté une manœuvre rouge, vous pouvez dépenser 1<nonbreak><standardcharge> pour effectuer une action, même si vous êtes stressé.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/80c71951bb28b45b9ffdc84c9e7e69f8.png",
@@ -37665,7 +37665,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The Delta-7B was designed as a heavier variant of the Delta-7 <untalic>Aethersprite</untalic>-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</flavor>",
+            "ability_text": "<flavor>Le Delta-7B a été conçu comme une variante plus large de l’Intercepteur de classe <untalic>Aethersprite</untalic> Delta-7, reconnaissable à son emplacement repositionné pour droïde astromech. De nombreux généraux Jedi plébiscitent la puissance de feu et la résistance de cet appareil.</flavor>",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/515903e04a0d06a9200860698326896d.png",
@@ -37724,7 +37724,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a primary attack, if<nonbreak>the defender is in your <bullseye>, add 1<nonbreak><focus><nonbreak>result.",
+            "ability_text": "Tant que vous effectuez une attaque principale, si le défenseur est dans votre <bullseye>, ajoutez 1 résultat<nonbreak><focus>.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/f3e06326ab525e07f9a85363b6d69580.png",
@@ -37740,7 +37740,7 @@
             "id": 549,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/ffe9b36272a15f7c5e2ba2fa075d27dd.jpg",
             "initiative": null,
-            "name": "Calibrated Laser Targeting",
+            "name": "Visée Laser Calibrée",
             "restrictions": [
                 [
                     {
@@ -37765,7 +37765,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallcaps>Action:</smallcaps> Spend 1<nonbreak><standardcharge> to recover 1<nonbreak>charge on one of your equipped <astro> upgrades. <return><smallcaps>Action:</smallcaps> Spend 1<nonbreak><standardcharge> to drop 1 spare parts, then break all locks assigned to you.",
+            "ability_text": "<smallcaps>Action :</smallcaps> dépensez 1<nonbreak><standardcharge> pour récupérer 1<nonbreak>charge sur l’une de vos améliorations <astro> équipées.<return><smallcaps>Action :</smallcaps> dépensez 1<nonbreak><standardcharge> pour larguer 1 pièces détachées, puis rompez tous les verrouillages qui vous sont assignés.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/79d9f2b2bc32bd78ab67dc82eece696a.png",
@@ -37780,7 +37780,7 @@
             "id": 550,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/a61b812e2e74fab5435c9684462cd9d7.jpg",
             "initiative": null,
-            "name": "Spare Parts Canisters",
+            "name": "Caisses de Pièces Détachées",
             "restrictions": [
                 [
                     {
@@ -37811,7 +37811,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you fully execute a red maneuver, if there is an enemy ship in your <bullseye>, gain 1<nonbreak>calculate token.",
+            "ability_text": "Après avoir entièrement exécuté une manœuvre rouge, s’il y a un vaisseau ennemi dans votre <bullseye>, gagnez 1 marqueur de calcul.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/749fa54f44bc3327349aa3f8b1742a67.png",
@@ -37850,7 +37850,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform an attack that missed, if 1<nonbreak>or more <hit>/<crit> results were neutralized, the defender gains 1<nonbreak>strain token.",
+            "ability_text": "Après avoir effectué une attaque qui a raté, si au moins 1 résultat <hit>/<crit> a été neutralisé, le défenseur gagne 1 marqueur de contrainte.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/1da8e9de468d456f724d0c1f37e90d28.png",
@@ -37865,7 +37865,7 @@
             "id": 552,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/209d0df0333dc348c74c0e8a760ca741.jpg",
             "initiative": null,
-            "name": "•Clone Commander Cody",
+            "name": "•Commandant Clone Cody",
             "restrictions": [
                 [
                     {
@@ -37889,7 +37889,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While another friendly ship performs a primary attack, if the defender is in your firing arc, you may spend 1 <standardcharge>. If you do, the attacker rolls 1<nonbreak>additional die, to a maximum of 4. During the System Phase, you may gain 1 disarm token to recover 1 <standardcharge>.</smallbody>",
+            "ability_text": "<smallbody>Tant qu’un autre vaisseau allié effectue une attaque principale, si le défenseur est dans votre arc de tir, vous pouvez dépenser 1<nonbreak><standardcharge>. Dans ce cas, l’attaquant lance 1 dé supplémentaire, pour un maximum de 4. Pendant la phase de système, vous pouvez gagner 1 marqueur de désarmement pour récupérer 1<nonbreak><standardcharge>.</smallbody>",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/a532c1de311e8d0a288af8232495a007.png",
@@ -37904,7 +37904,7 @@
             "id": 553,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/8461a9f5c79195b802e8b04da922809f.jpg",
             "initiative": null,
-            "name": "Seventh Fleet Gunner",
+            "name": "Artilleur de la Septième Flotte",
             "restrictions": [
                 [
                     {
@@ -37935,7 +37935,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform an attack, you may choose a friendly ship at range 1 or a friendly ship with the <smallcaps>Synchronized Console</smallcaps> upgrade at range 1–3 and spend a lock you have on the defender. If you do, the friendly ship you chose may acquire a lock on the defender.",
+            "ability_text": "Après avoir effectué une attaque, vous pouvez choisir un vaisseau allié à portée<nonbreak>1 ou un vaisseau allié qui possède l’amélioration <smallcaps>Console Synchronisée</smallcaps> à portée<nonbreak>1–3 et dépenser un verrouillage que vous avez sur le défenseur. Dans ce cas, le vaisseau allié que vous avez choisi peut verrouiller le défenseur.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/e3e5bd38f39f904fbaaa75293e56fb38.png",
@@ -37951,7 +37951,7 @@
             "id": 554,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/f105bb42b6d3500c300e48ab695c1647.jpg",
             "initiative": null,
-            "name": "Synchronized Console",
+            "name": "Console Synchronisée",
             "restrictions": [
                 [
                     {
@@ -37993,7 +37993,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallcaps>Setup:</smallcaps> Equip this side faceup.<return>While you execute a maneuver, if you overlap an asteroid or debris cloud and there are 1 or fewer other friendly ships at range 0 of that obstacle, you may flip this card.",
+            "ability_text": "<smallcaps>Mise en Place :</smallcaps> à équiper avec cette face visible.<return>Tant que vous exécutez une manœuvre, si vous chevauchez un astéroïde ou un nuage de débris et qu’il y a 1 autre vaisseau allié ou moins à portée<nonbreak>0 de cet obstacle, vous pouvez retourner cette carte.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/ca74271f47c42b390ca0ba0b389144a5.png",
@@ -38009,7 +38009,7 @@
             "id": 555,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/24c35aeb94ef846dc498e4a59fb9bf73.jpg",
             "initiative": null,
-            "name": "Grappling Struts (Closed)",
+            "name": "Supports d’Ancrage (Repliés)",
             "restrictions": [
                 [
                     {
@@ -38033,7 +38033,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody><smallcaps>Setup:</smallcaps> Equip this side faceup.<return>After you defend, if the attacker is at range 0–2, you may spend 1 <forcecharge>. If you do, the attacker gains 1 stress token.<return>During the End Phase, you may flip this card.</smallbody>",
+            "ability_text": "<smallbody><smallcaps>Mise en Place :</smallcaps> à équiper avec cette face visible.<return>Après avoir défendu, si l’attaquant est à portée<nonbreak>0–2, vous pouvez dépenser 1<nonbreak><forcecharge>. Dans ce cas, l’attaquant gagne 1 marqueur de stress.<return>Pendant la phase de dénouement, vous pouvez retourner cette carte.</smallbody>",
             "available_actions": [
                 {
                     "base_action_id": 8,
@@ -38057,7 +38057,7 @@
             "id": 556,
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/d07f69ceb063c382e60ce33377e9bef7.jpg",
             "initiative": null,
-            "name": "•Chancellor Palpatine",
+            "name": "•Chancelier Palpatine",
             "restrictions": [
                 [
                     {
