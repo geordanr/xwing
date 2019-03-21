@@ -4562,7 +4562,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Hadr Chall Prototype'
+            name: 'Haor Chall Prototype'
             type: 'pilot'
             count: 2
         }
@@ -4773,7 +4773,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Hadr Chall Prototype'
+            name: 'Haor Chall Prototype'
             type: 'pilot'
             count: 1
         }

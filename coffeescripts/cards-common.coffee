@@ -6503,7 +6503,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Hadr Chall Prototype"
+            name: "Haor Chall Prototype"
             id: 310
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
