@@ -4532,6 +4532,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Skakoan Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: 'Feethan Ottraw Autopilot'
             type: 'pilot'
             count: 1
