@@ -102,6 +102,7 @@ exportObj.translations.English =
         '.unreleased-content-used .translated': 'This squad uses unreleased content!'
         '.loading-failed-container .translated': 'It appears that you followed a broken link. No squad could be loaded!'
         '.collection-invalid .translated': 'You cannot field this list with your collection!'
+        '.ship-number-invalid-container .translated': 'A tournament legal squad must contain 2-8 ships!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Extended'
         '.game-type-selector option[value="hyperspace"]': 'Hyperspace'

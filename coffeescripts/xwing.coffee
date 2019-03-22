@@ -216,6 +216,7 @@ class exportObj.SquadBuilder
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning loading-failed-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning ship-number-invalid-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
@@ -582,6 +583,7 @@ class exportObj.SquadBuilder
         @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
         @loading_failed_container = $ @points_container.find('.loading-failed-container')
+        @ship_number_invalid_container = $ @points_container.find('.ship-number-invalid-container')
         @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -1533,6 +1535,7 @@ class exportObj.SquadBuilder
             builder: this
             container: @ship_container
         @ships.push new_ship
+        @ship_number_invalid_container.toggleClass 'hidden', (@ships.length < 10 and @ships.length > 2) # bounds are 2..10 as we always have a "empty" ship at the bottom
         new_ship
 
 
@@ -1542,6 +1545,7 @@ class exportObj.SquadBuilder
             await @container.trigger 'xwing:pointsUpdated', defer()
             @current_squad.dirty = true
             @container.trigger 'xwing-backend:squadDirtinessChanged'
+            @ship_number_invalid_container.toggleClass 'hidden', (@ships.length < 10 and @ships.length > 2)
         cb()
 
     matcher: (item, term) ->
