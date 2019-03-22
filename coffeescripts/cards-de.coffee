@@ -64,7 +64,7 @@ exportObj.translations.Deutsch =
         '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
         '.loading-failed-container .translated': 'Du scheinst einem defekten Link gefolgt zu sein. Es konnte kein Squad geladen werden!'
         '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
-        '.ship-number-invalid-container .translated': 'Eine Turnierlegale Staffel muss 2-8 Schiffe haben!'
+        '.ship-number-invalid-container .translated': 'Eine turnierlegale Staffel muss aus  2-8 Schiffen bestehen!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
         '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
