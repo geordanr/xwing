@@ -13377,6 +13377,146 @@ exportObj.basicCardData = ->
                 "Scimitar"
             ]
         }
+        {
+            id: 341
+            faction: "Separatist Alliance"
+            pilot: "DFS-311"
+            ship: "Vulture-class Droid Fighter"
+            threat: 1
+            upgrades: [
+                "Grappling Struts"
+            ]
+        }
+        {
+            id: 342
+            faction: "Separatist Alliance"
+            pilot: "Precise Hunter"
+            ship: "Vulture-class Droid Fighter"
+            threat: 2
+            upgrades: [
+                "Concussion Missiles"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 343
+            faction: "Separatist Alliance"
+            pilot: "Separatist Drone"
+            ship: "Vulture-class Droid Fighter"
+            threat: 2
+            upgrades: [
+                "Energy-Shell Charges"
+                "Grappling Struts"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 344
+            faction: "Separatist Alliance"
+            pilot: "Haor Chall Prototype"
+            ship: "Vulture-class Droid Fighter"
+            threat: 2
+            upgrades: [
+                "Discord Missiles"
+                "Energy-Shell Charges"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 345
+            faction: "Separatist Alliance"
+            pilot: "Trade Federation Drone"
+            ship: "Vulture-class Droid Fighter"
+            threat: 1
+            upgrades: [
+                "Energy-Shell Charges"
+            ]
+        }
+        {
+            id: 346
+            faction: "Separatist Alliance"
+            pilot: "DFS-081"
+            ship: "Vulture-class Droid Fighter"
+            threat: 2
+            upgrades: [
+                "Proton Rockets"
+                "Grappling Struts"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 347
+            faction: "Separatist Alliance"
+            pilot: "Haor Chall Prototype"
+            ship: "Vulture-class Droid Fighter"
+            threat: 2
+            upgrades: [
+                "Energy-Shell Charges"
+                "Stealth Device"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 348
+            faction: "Separatist Alliance"
+            pilot: "General Grievous"
+            ship: "Belbullab-22 Starfighter"
+            threat: 3
+            upgrades: [
+                "Treacherous"
+                "Impervium Plating"
+                "Soulless One"
+                "TV-94"
+            ]
+        }
+        {
+            id: 349
+            faction: "Separatist Alliance"
+            pilot: "Wat Tambor"
+            ship: "Belbullab-22 Starfighter"
+            threat: 3
+            upgrades: [
+                "Intimidation"
+                "Kraken"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 350
+            faction: "Separatist Alliance"
+            pilot: "Skakoan Ace"
+            ship: "Belbullab-22 Starfighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 351
+            faction: "Separatist Alliance"
+            pilot: "Captain Sear"
+            ship: "Belbullab-22 Starfighter"
+            threat: 3
+            upgrades: [
+                "Daredevil"
+                "Impervium Plating"
+                "Kraken"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 352
+            faction: "Separatist Alliance"
+            pilot: "Feethan Ottraw Autopilot"
+            ship: "Belbullab-22 Starfighter"
+            threat: 2
+            upgrades: [
+                "Impervium Plating"
+                "TV-94"
+            ]
+        }
     ]
 
 
