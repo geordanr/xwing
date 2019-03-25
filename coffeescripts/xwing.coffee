@@ -2566,8 +2566,11 @@ class exportObj.SquadBuilder
     loadFromXWS: (xws, cb) ->
         success = null
         error = null
-
-        version_list = (parseInt x for x in xws.version.split('.'))
+        
+        if xws.version?
+            version_list = (parseInt x for x in xws.version.split('.'))
+        else
+            version_list = [0,2] # Version tag is optional, so let's just assume it is some 2.0 xws if no version is given
 
         switch
             # Not doing backward compatibility pre-1.x
