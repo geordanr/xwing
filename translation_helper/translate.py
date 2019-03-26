@@ -299,7 +299,7 @@ for typo in known_typos:
     manual_stuff += ('%s\n' % typo)
 
 # write output
-output_file = open("translation.coffee", "w", encoding="utf8")
+output_file = open("translation-%s.coffee"%lang, "w", encoding="utf8")
 output_file.write(output_text)
 output_file.close()
 
