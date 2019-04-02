@@ -561,8 +561,8 @@ exportObj.cardLoaders.English = () ->
         "Gideon Hask":
            display_name: """Gideon Hask"""
            text: """While you perform an attack against a damaged defender, roll 1 additional attack die."""
-        "Gold Squadron Trooper":
-           display_name: """Gold Squadron Trooper"""
+        "Gold Squadron Trooper ":
+           display_name: """Gold Squadron Trooper """
            text: """<i class = flavor_text>The V-19 Torrent starfighter was designed to be a light escort to nimble Delta-7 interceptors flown by Jedi Knights, and has a unique flight profile to reflect this role.</i>"""
         "Gold Squadron Veteran":
            display_name: """Gold Squadron Veteran"""
@@ -1164,7 +1164,7 @@ exportObj.cardLoaders.English = () ->
         '"Odd Ball"':
            display_name: """“Odd Ball”"""
            text: """After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your %BULLSEYEARC%, you may acquire a lock on that ship."""
-        '"Odd Ball" (ARC-170)':
+        ""Odd Ball" (ARC-170)":
            display_name: """“Odd Ball” (ARC-170)"""
            text: """After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your %BULLSEYEARC%, you may acquire a lock on that ship."""
         '"Pure Sabacc"':
@@ -1379,7 +1379,7 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Rebel only</i>%LINEBREAK%During the System Phase, you may choose 1 enemy ship at range 1-2 and guess aloud a bearing and speed, then look at that ship’s dial. If the chosen ship’s bearing and speed match your guess, you may set your dial to another maneuver."""
         "Chancellor Palpatine":
            display_name: """Chancellor Palpatine"""
-           text: """Chancellor Palpatine:%LINEBREAK%<i>Adds %COORDINATE%</i>%LINEBREAK%<i>Separatist Alliance or Galactic Republic only</i>%LINEBREAK%<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%After you defend, if the attacker is at range 0-2, you may spend 1 %FORCE%. If you do, the attacker gains 1 stress token.%LINEBREAK%During the End Phase, you may flip this card.%LINEBREAK%Darth Sidious%LINEBREAK%<i>Adds %COORDINATE%</i>%LINEBREAK%<i>Separatist Alliance or Galactic Republic only</i>%LINEBREAK%After you perform a purple&nbsp;%COORDINATE%&nbsp;action, the ship you coordinated gains 1&nbsp;stress token. Then, it gains 1&nbsp;focus token or recovers 1&nbsp;%FORCE%."""
+           text: """<i>Adds %COORDINATE%</i>%LINEBREAK%<i>Separatist Alliance or Galactic Republic only</i>%LINEBREAK%<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%After you defend, if the attacker is at range 0-2, you may spend 1 %FORCE%. If you do, the attacker gains 1 stress token.%LINEBREAK%During the End Phase, you may flip this card."""
         "Chewbacca":
            display_name: """Chewbacca"""
            text: """<i>Rebel only</i>%LINEBREAK%At the start of the Engagement Phase, you may spend 2 %CHARGE% to repair 1 faceup damage card."""
@@ -1431,6 +1431,9 @@ exportObj.cardLoaders.English = () ->
         "Daredevil":
            display_name: """Daredevil"""
            text: """<i>Requires %BOOST%</i>%LINEBREAK%<i>small ship only</i>%LINEBREAK%While you perform a white %BOOST% action, you may treat it as red to use the [1&nbsp;%TURNLEFT%] or [1&nbsp;%TURNRIGHT%] template instead."""
+        "Darth Sidious":
+           display_name: """Darth Sidious"""
+           text: """<i>Adds %COORDINATE%</i>%LINEBREAK%<i>Separatist Alliance or Galactic Republic only</i>%LINEBREAK%After you perform a purple&nbsp;%COORDINATE%&nbsp;action, the ship you coordinated gains 1&nbsp;stress token. Then, it gains 1&nbsp;focus token or recovers 1&nbsp;%FORCE%."""
         "Darth Vader":
            display_name: """Darth Vader"""
            text: """<i>Empire only</i>%LINEBREAK%At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0-2 and spend 1&nbsp;%FORCE%. If you do, that ship suffers 1&nbsp;%HIT% damage unless it chooses to remove 1 green token."""

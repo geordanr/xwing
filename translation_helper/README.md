@@ -37,7 +37,7 @@ cards, found in `phrase_translations.json`.
 
 For example, for German, run `python3 translate.py -l fr`.
 
-It will create a file named `translation_[LANGUAGE].coffee`, which contains
+It will create a file named `translation-[LANGUAGE].coffee`, which contains
 translations for pilots and upgrades.
 
 It also creates a `todo.txt`, telling you on which cards it may need some help. 
