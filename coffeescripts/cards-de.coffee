@@ -100,8 +100,8 @@ exportObj.translations.Deutsch =
         '.randomize-options' : 'Zufallsgenerator Optionen'
         '.notes-container > span' : 'Staffel Notizen'
         '.choose-obstacles' : 'Hindernisse wählen'
-        '.from-xws' : 'Importieren aus XWS-Datei (Beta)'
-        '.to-xws' : 'Exporitieren als XWS-Datei (Beta)'
+        '.from-xws' : 'Importieren aus XWS-Datei'
+        '.to-xws' : 'Exportieren als XWS-Datei'
         # New Squadron dialog
         '.discard' : 'Änderungen verwerfen'
         # Log in dialog
