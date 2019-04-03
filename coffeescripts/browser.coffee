@@ -155,6 +155,15 @@ class exportObj.CardBrowser
                                             to <input type="number" class="maximum-shields advanced-search-number-input" value="6" /> 
                                         </label>
                                     </div>
+                                    <div class = "advanced-search-agility-container">
+                                        <strong>Agility:</strong>
+                                        <label class = "advanced-search-label set-minimum-agility">
+                                            from <input type="number" class="minimum-agility advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-agility">
+                                            to <input type="number" class="maximum-agility advanced-search-number-input" value="3" /> 
+                                        </label>
+                                    </div>
                                     <div class = "advanced-search-base-size-container">
                                         <strong>Base size:</strong>
                                         <label class = "advanced-search-label toggle-small-base">
@@ -350,6 +359,8 @@ class exportObj.CardBrowser
         @maximum_hull = ($ @container.find('.xwing-card-browser .maximum-hull'))[0]
         @minimum_shields = ($ @container.find('.xwing-card-browser .minimum-shields'))[0]
         @maximum_shields = ($ @container.find('.xwing-card-browser .maximum-shields'))[0]
+        @minimum_agility = ($ @container.find('.xwing-card-browser .minimum-agility'))[0]
+        @maximum_agility = ($ @container.find('.xwing-card-browser .maximum-agility'))[0]
         @recurring_charge = ($ @container.find('.xwing-card-browser .has-recurring-charge-checkbox'))[0]
         @not_recurring_charge = ($ @container.find('.xwing-card-browser .has-not-recurring-charge-checkbox'))[0]
         @minimum_owned_copies = ($ @container.find('.xwing-card-browser .minimum-owned-copies'))[0]
@@ -391,6 +402,8 @@ class exportObj.CardBrowser
         @maximum_force.oninput = => @renderList @sort_selector.val()
         @minimum_shields.oninput = => @renderList @sort_selector.val()
         @maximum_shields.oninput = => @renderList @sort_selector.val()
+        @minimum_agility.oninput = => @renderList @sort_selector.val()
+        @maximum_agility.oninput = => @renderList @sort_selector.val()
         @minimum_owned_copies.oninput = => @renderList @sort_selector.val()
         @maximum_owned_copies.oninput = => @renderList @sort_selector.val()
 
@@ -903,6 +916,10 @@ class exportObj.CardBrowser
         # check for shields
         if @minimum_shields.value != "0" or @maximum_shields.value != "6"
             return false unless (card.data.shields? and card.data.shields >= @minimum_shields.value and card.data.shields <= @maximum_shields.value) or (card.orig_type == 'Pilot' and exportObj.ships[card.data.ship].shields >= @minimum_shields.value and exportObj.ships[card.data.ship].shields <= @maximum_shields.value )
+        
+        # check for agility
+        if @minimum_agility.value != "0" or @maximum_agility.value != "3"
+            return false unless (card.data.agility? and card.data.agility >= @minimum_agility.value and card.data.agility <= @maximum_agility.value) or (card.orig_type == 'Pilot' and exportObj.ships[card.data.ship].agility >= @minimum_agility.value and exportObj.ships[card.data.ship].agility <= @maximum_agility.value )
          
         # check for force
         if @minimum_force.value != "0" or @maximum_force.value != "3"
