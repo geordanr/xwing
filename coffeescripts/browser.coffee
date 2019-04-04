@@ -72,7 +72,6 @@ class exportObj.CardBrowser
                                         <label class = "advanced-search-label select-available-slots">
                                             <strong>Factions: </strong>
                                             <select class="advanced-search-selection faction-selection" multiple="1" data-placeholder="All factions"></select>
-                                            <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-point-selection-container">
@@ -112,7 +111,6 @@ class exportObj.CardBrowser
                                         <label class = "advanced-search-label select-available-slots">
                                             <strong>Available slots: </strong>
                                             <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
-                                            <span class="advanced-search-tooltip" tooltip="Search for pilots and ships having all selected slots available."> &#9432 </span>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-ini-container">
@@ -224,7 +222,6 @@ class exportObj.CardBrowser
                                         <label class = "advanced-search-label select-used-slots">
                                             <strong>Used slot: </strong>
                                             <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
-                                            <span class="advanced-search-tooltip" tooltip="Search for upgrades using any of the selected slots."> &#9432 </span>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-charge-container">
