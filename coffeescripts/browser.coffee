@@ -73,125 +73,143 @@ class exportObj.CardBrowser
                     </div>
                     <div class="span8">
                         <div class="well card-search-container">
-                            <input type="search" placeholder="Search for name, text or ship" class = "card-search-text">"""+ #TODO: Add more search input options here. 
-                            """
-                            <button class="btn btn-primary show-advanced-search">
-                                Advanced Search
-                            </button>
+                        <h3>Card Search</h3>
                             <div class="advanced-search-container">
-                                <div class= "advanced-search-faction-selection-container">
-                                    <strong>Faction:</strong>
-                                    <label class = "toggle-rebel-search advanced-search-label">
-                                        <input type="checkbox" class="rebel-checkbox advanced-search-checkbox" checked="checked" /> Rebel
+                                <div class = "well search-container general-search-container">
+                                    <h4>General</h4>
+                                    <lable class = "text-search advanced-search-label">
+                                    <strong>Textsearch: </strong>
+                                        <input type="search" placeholder="Search for name, text or ship" class = "card-search-text">
                                     </label>
-                                    <label class = "toggle-imperial-search advanced-search-label">
-                                        <input type="checkbox" class="imperial-checkbox advanced-search-checkbox" checked="checked" /> Imperial
-                                    </label>
-                                    <label class = "toggle-scum-search advanced-search-label">
-                                        <input type="checkbox" class="scum-checkbox advanced-search-checkbox" checked="checked" /> Scum
-                                    </label>
-                                    <label class = "toggle-fo-search advanced-search-label">
-                                        <input type="checkbox" class="fo-checkbox advanced-search-checkbox" checked="checked" /> First Order
-                                    </label>
-                                    <label class = "toggle-resistance-search advanced-search-label">
-                                        <input type="checkbox" class="resistance-checkbox advanced-search-checkbox" checked="checked" /> Resistance
-                                    </label>
-                                    <label class = "toggle-separatist-search advanced-search-label">
-                                        <input type="checkbox" class="separatist-checkbox advanced-search-checkbox" checked="checked" /> Separatist
-                                    </label>
-                                    <label class = "toggle-republic-search advanced-search-label">
-                                        <input type="checkbox" class="republic-checkbox advanced-search-checkbox" checked="checked" /> Republic
-                                    </label>
-                                    <label class = "toggle-factionless-search advanced-search-label">
-                                        <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
-                                        <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
-                                    </label>
+                                    <div class= "advanced-search-faction-selection-container">
+                                        <label class = "advanced-search-label select-available-slots">
+                                            <strong>Factions: </strong>
+                                            <select class="advanced-search-selection faction-selection" multiple="1" data-placeholder="All factions"></select>
+                                            <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-point-selection-container">
+                                        <strong>Point costs:</strong>
+                                        <label class = "advanced-search-label set-minimum-points">
+                                            from <input type="number" class="minimum-point-cost advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-points">
+                                            to <input type="number" class="maximum-point-cost advanced-search-number-input" value="200" /> 
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-collection-container">
+                                        <strong>Owned copies:</strong>
+                                        <label class = "advanced-search-label set-minimum-owned-copies">
+                                            from <input type="number" class="minimum-owned-copies advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-owened-copies">
+                                            to <input type="number" class="maximum-owned-copies advanced-search-number-input" value="100" /> 
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-misc-container">
+                                        <strong>Misc:</strong>
+                                        <label class = "advanced-search-label toggle-unique">
+                                            <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> Is unique
+                                        </label>
+                                        <label class = "advanced-search-label toggle-non-unique">
+                                            <input type="checkbox" class="non-unique-checkbox advanced-search-checkbox" /> Is not unique
+                                        </label>
+                                        <label class = "advanced-search-label toggle-hyperspace">
+                                            <input type="checkbox" class="hyperspace-checkbox advanced-search-checkbox" /> Hyperspace legal
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class = "advanced-search-point-selection-container">
-                                    <strong>Point costs:</strong>
-                                    <label class = "advanced-search-label set-minimum-points">
-                                        from <input type="number" class="minimum-point-cost advanced-search-number-input" value="0" /> 
-                                    </label>
-                                    <label class = "advanced-search-label set-maximum-points">
-                                        to <input type="number" class="maximum-point-cost advanced-search-number-input" value="200" /> 
-                                    </label>
-                                    <label class = "advanced-search-label toggle-variable-cost-search">
-                                        <input type="checkbox" class="variable-point-cost-checkbox advanced-search-checkbox" checked="checked" /> Variable point cost
-                                    </label>
+                                <div class = "well search-container ship-search-container">
+                                    <h4>Ships and Pilots</h4><span class="advanced-search-tooltip" tooltip="Selecting anything in here will hide all upgrades."> &#9432 </span>
+                                    <div class = "advanced-search-slot-available-container">
+                                        <label class = "advanced-search-label select-available-slots">
+                                            <strong>Available slots: </strong>
+                                            <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                            <span class="advanced-search-tooltip" tooltip="Search for pilots and ships having all selected slots available."> &#9432 </span>
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-ini-container">
+                                        <strong>Initiative:</strong>
+                                        <label class = "advanced-search-label set-minimum-ini">
+                                            from <input type="number" class="minimum-ini advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-ini">
+                                            to <input type="number" class="maximum-ini advanced-search-number-input" value="6" /> 
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-hull-container">
+                                        <strong>Hull:</strong>
+                                        <label class = "advanced-search-label set-minimum-hull">
+                                            from <input type="number" class="minimum-hull advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-hull">
+                                            to <input type="number" class="maximum-hull advanced-search-number-input" value="12" /> 
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-shields-container">
+                                        <strong>Shields:</strong>
+                                        <label class = "advanced-search-label set-minimum-shields">
+                                            from <input type="number" class="minimum-shields advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-shields">
+                                            to <input type="number" class="maximum-shields advanced-search-number-input" value="6" /> 
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-agility-container">
+                                        <strong>Agility:</strong>
+                                        <label class = "advanced-search-label set-minimum-agility">
+                                            from <input type="number" class="minimum-agility advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-agility">
+                                            to <input type="number" class="maximum-agility advanced-search-number-input" value="3" /> 
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-base-size-container">
+                                        <strong>Base size:</strong>
+                                        <label class = "advanced-search-label toggle-small-base">
+                                            <input type="checkbox" class="small-base-checkbox advanced-search-checkbox" checked="checked"/> Small
+                                        </label>
+                                        <label class = "advanced-search-label toggle-medium-base">
+                                            <input type="checkbox" class="medium-base-checkbox advanced-search-checkbox" checked="checked"/> Medium
+                                        </label>
+                                        <label class = "advanced-search-label toggle-large-base">
+                                            <input type="checkbox" class="large-base-checkbox advanced-search-checkbox" checked="checked"/> Large
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class = "advanced-search-collection-container">
-                                    <strong>Owned copies:</strong>
-                                    <label class = "advanced-search-label set-minimum-owned-copies">
-                                        from <input type="number" class="minimum-owned-copies advanced-search-number-input" value="0" /> 
-                                    </label>
-                                    <label class = "advanced-search-label set-maximum-owened-copies">
-                                        to <input type="number" class="maximum-owned-copies advanced-search-number-input" value="100" /> 
-                                    </label>
-                                </div>
-                                <div class = "advanced-search-slot-available-container">
-                                    <label class = "advanced-search-label select-available-slots">
-                                        <strong>Available slots: </strong>
-                                        <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
-                                        <span class="advanced-search-tooltip" tooltip="Search for pilots and ships having all selected slots available."> &#9432 </span>
-                                    </label>
-                                </div>
-                                <div class = "advanced-search-slot-used-container">
-                                    <label class = "advanced-search-label select-used-slots">
-                                        <strong>Used slot: </strong>
-                                        <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
-                                        <span class="advanced-search-tooltip" tooltip="Search for upgrades using any of the selected slots."> &#9432 </span>
-                                    </label>
-                                </div>
-                                <div class = "advanced-search-charge-container">
-                                    <strong>Charges:</strong>
-                                    <label class = "advanced-search-label set-minimum-charge">
-                                        from <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
-                                    </label>
-                                    <label class = "advanced-search-label set-maximum-charge">
-                                        to <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
-                                    </label>
-                                    <label class = "advanced-search-label has-recurring-charge">
-                                        <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> recurring
-                                    </label>
-                                    <label class = "advanced-search-label has-not-recurring-charge">
-                                        <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> not recurring
-                                    </label>
-                                </div>
-                                <div class = "advanced-search-ini-container">
-                                    <strong>Initiative:</strong>
-                                    <label class = "advanced-search-label set-minimum-ini">
-                                        from <input type="number" class="minimum-ini advanced-search-number-input" value="0" /> 
-                                    </label>
-                                    <label class = "advanced-search-label set-maximum-ini">
-                                        to <input type="number" class="maximum-ini advanced-search-number-input" value="6" /> 
-                                        <span class="advanced-search-tooltip" tooltip="Changing these values will also hide all upgrades. "> &#9432 </span>
-                                    </label>
-                                </div>
-                                <div class = "advanced-search-base-size-container">
-                                    <strong>Base size:</strong>
-                                    <label class = "advanced-search-label toggle-small-base">
-                                        <input type="checkbox" class="small-base-checkbox advanced-search-checkbox" checked="checked"/> Small
-                                    </label>
-                                    <label class = "advanced-search-label toggle-medium-base">
-                                        <input type="checkbox" class="medium-base-checkbox advanced-search-checkbox" checked="checked"/> Medium
-                                    </label>
-                                    <label class = "advanced-search-label toggle-large-base">
-                                        <input type="checkbox" class="large-base-checkbox advanced-search-checkbox" checked="checked"/> Large
-                                        <span class="advanced-search-tooltip" tooltip="Unchecking these boxes will also hide all upgrades"> &#9432 </span>
-                                    </label>
-                                </div>
-                                <div class = "advanced-search-misc-container">
-                                    <strong>Misc:</strong>
-                                    <label class = "advanced-search-label toggle-unique">
-                                        <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> Is unique
-                                    </label>
-                                    <label class = "advanced-search-label toggle-non-unique">
-                                        <input type="checkbox" class="non-unique-checkbox advanced-search-checkbox" /> Is not unique
-                                    </label>
-                                    <label class = "advanced-search-label toggle-hyperspace">
-                                        <input type="checkbox" class="hyperspace-checkbox advanced-search-checkbox" /> Hyperspace only
-                                        <span class="advanced-search-tooltip" tooltip="Check to search only hyperspace compatible cards."> &#9432 </span>
-                                    </label>
+                                <div class = "well search-container other-stuff-search-container">
+                                    <h4>Other Stuff</h4>
+                                    <div class = "advanced-search-slot-used-container">
+                                        <label class = "advanced-search-label select-used-slots">
+                                            <strong>Used slot: </strong>
+                                            <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                            <span class="advanced-search-tooltip" tooltip="Search for upgrades using any of the selected slots."> &#9432 </span>
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-charge-container">
+                                        <strong>Charges:</strong>
+                                        <label class = "advanced-search-label set-minimum-charge">
+                                            from <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-charge">
+                                            to <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
+                                        </label>
+                                        <label class = "advanced-search-label has-recurring-charge">
+                                            <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> recurring
+                                        </label>
+                                        <label class = "advanced-search-label has-not-recurring-charge">
+                                            <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> not recurring
+                                        </label>
+                                    <div class = "advanced-search-force-container">
+                                        <strong>Force:</strong>
+                                        <label class = "advanced-search-label set-minimum-force">
+                                            from <input type="number" class="minimum-force advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-force">
+                                            to <input type="number" class="maximum-force advanced-search-number-input" value="3" /> 
+                                        </label>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -289,10 +307,7 @@ class exportObj.CardBrowser
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
         @card_viewer_container.hide()
         @card_viewer_placeholder = $ @container.find('.xwing-card-browser .card-viewer-placeholder')
-        @advanced_search_button = ($ @container.find('.xwing-card-browser .show-advanced-search'))[0]
         @advanced_search_container = $ @container.find('.xwing-card-browser .advanced-search-container')
-        @advanced_search_container.hide()
-        @advanced_search_active = false
 
         @sort_selector = $ @container.find('select.sort-by')
         @sort_selector.select2
@@ -301,18 +316,18 @@ class exportObj.CardBrowser
         # TODO: Make added inputs easy accessible
 
         @card_search_text = ($ @container.find('.xwing-card-browser .card-search-text'))[0]
-        @faction_selectors = {}
-        @faction_selectors["Rebel Alliance"] = ($ @container.find('.xwing-card-browser .rebel-checkbox'))[0]
-        @faction_selectors["Scum and Villainy"] = ($ @container.find('.xwing-card-browser .scum-checkbox'))[0]
-        @faction_selectors["Galactic Empire"] = ($ @container.find('.xwing-card-browser .imperial-checkbox'))[0]
-        @faction_selectors["Resistance"] = ($ @container.find('.xwing-card-browser .resistance-checkbox'))[0]
-        @faction_selectors["First Order"] = ($ @container.find('.xwing-card-browser .fo-checkbox'))[0]
-        @faction_selectors["Separatist Alliance"] = ($ @container.find('.xwing-card-browser .separatist-checkbox'))[0]
-        @faction_selectors["Galactic Republic"] = ($ @container.find('.xwing-card-browser .republic-checkbox'))[0]
-        @faction_selectors[undefined] = ($ @container.find('.xwing-card-browser .factionless-checkbox'))[0]
+        @faction_selection = ($ @container.find('.xwing-card-browser select.faction-selection'))
+        for faction, pilot of exportObj.pilotsByFactionXWS
+            opt = $ document.createElement('OPTION')
+            opt.text faction
+            @faction_selection.append opt
+        factionless_option = $ document.createElement('OPTION')
+        factionless_option.text "Factionless"
+        @faction_selection.append factionless_option
+        @faction_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
         @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
-        @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
         @hyperspace_checkbox = ($ @container.find('.xwing-card-browser .hyperspace-checkbox'))[0]
         @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
         @non_unique_checkbox = ($ @container.find('.xwing-card-browser .non-unique-checkbox'))[0]
@@ -338,6 +353,14 @@ class exportObj.CardBrowser
         @maximum_charge = ($ @container.find('.xwing-card-browser .maximum-charge'))[0]
         @minimum_ini = ($ @container.find('.xwing-card-browser .minimum-ini'))[0]
         @maximum_ini = ($ @container.find('.xwing-card-browser .maximum-ini'))[0]
+        @minimum_force = ($ @container.find('.xwing-card-browser .minimum-force'))[0]
+        @maximum_force = ($ @container.find('.xwing-card-browser .maximum-force'))[0]
+        @minimum_hull = ($ @container.find('.xwing-card-browser .minimum-hull'))[0]
+        @maximum_hull = ($ @container.find('.xwing-card-browser .maximum-hull'))[0]
+        @minimum_shields = ($ @container.find('.xwing-card-browser .minimum-shields'))[0]
+        @maximum_shields = ($ @container.find('.xwing-card-browser .maximum-shields'))[0]
+        @minimum_agility = ($ @container.find('.xwing-card-browser .minimum-agility'))[0]
+        @maximum_agility = ($ @container.find('.xwing-card-browser .maximum-agility'))[0]
         @recurring_charge = ($ @container.find('.xwing-card-browser .has-recurring-charge-checkbox'))[0]
         @not_recurring_charge = ($ @container.find('.xwing-card-browser .has-not-recurring-charge-checkbox'))[0]
         @minimum_owned_copies = ($ @container.find('.xwing-card-browser .minimum-owned-copies'))[0]
@@ -356,16 +379,12 @@ class exportObj.CardBrowser
 
         @card_search_text.oninput = => @renderList @sort_selector.val()
         # TODO: Add a call to @renderList for added inputs, to start the actual search
-
-        @advanced_search_button.onclick = @toggleAdvancedSearch
         
-        for faction, checkbox of @faction_selectors
-            checkbox.onclick = => @renderList @sort_selector.val()
+        @faction_selection[0].onchange = => @renderList @sort_selector.val()
         for basesize, checkbox of @base_size_checkboxes
             checkbox.onclick = => @renderList @sort_selector.val()            
         @minimum_point_costs.oninput = => @renderList @sort_selector.val()
         @maximum_point_costs.oninput = => @renderList @sort_selector.val()
-        @variable_point_costs.onclick = => @renderList @sort_selector.val()
         @hyperspace_checkbox.onclick = => @renderList @sort_selector.val()
         @unique_checkbox.onclick = => @renderList @sort_selector.val()
         @non_unique_checkbox.onclick = => @renderList @sort_selector.val()
@@ -377,17 +396,18 @@ class exportObj.CardBrowser
         @maximum_charge.oninput = => @renderList @sort_selector.val()
         @minimum_ini.oninput = => @renderList @sort_selector.val()
         @maximum_ini.oninput = => @renderList @sort_selector.val()
+        @minimum_hull.oninput = => @renderList @sort_selector.val()
+        @maximum_hull.oninput = => @renderList @sort_selector.val()
+        @minimum_force.oninput = => @renderList @sort_selector.val()
+        @maximum_force.oninput = => @renderList @sort_selector.val()
+        @minimum_shields.oninput = => @renderList @sort_selector.val()
+        @maximum_shields.oninput = => @renderList @sort_selector.val()
+        @minimum_agility.oninput = => @renderList @sort_selector.val()
+        @maximum_agility.oninput = => @renderList @sort_selector.val()
         @minimum_owned_copies.oninput = => @renderList @sort_selector.val()
         @maximum_owned_copies.oninput = => @renderList @sort_selector.val()
 
 
-    toggleAdvancedSearch: () =>
-        if @advanced_search_active
-            @advanced_search_container.hide()
-        else 
-            @advanced_search_container.show()
-        @advanced_search_active = not @advanced_search_active
-        @renderList @sort_selector.val()
 
     prepareData: () ->
         @all_cards = []
@@ -782,24 +802,28 @@ class exportObj.CardBrowser
         # prevent the three virtual hardpoint cards from beeing displayed
         return false unless card.data.slot != "Hardpoint"
 
-        # check if advanced search is enabled
-        return true unless @advanced_search_active
-
-        # check if faction matches
-        return false unless @faction_selectors[card.data.faction].checked or card.orig_type == 'Ship' # checks if the faction tag of upgrades and pilots matches. ships have a factions list instead
-        if card.orig_type == 'Ship'
-            faction_matches = false
-            for faction in card.data.factions
-                if @faction_selectors[faction].checked
-                    faction_matches = true
-            return false unless faction_matches
+        
+        all_factions = (faction for faction, pilot of exportObj.pilotsByFactionXWS)
+        selected_factions = @faction_selection.val()
+        if selected_factions
+            if "Factionless" in selected_factions
+                selected_factions.push undefined
+            return false unless card.data.faction in selected_factions or card.orig_type == 'Ship'
+            if card.orig_type == 'Ship'
+               faction_matches = false
+               for faction in card.data.factions
+                   if faction in selected_factions
+                       faction_matches = true
+                       break
+               return false unless faction_matches
 
 
         # check if hyperspace only matches
         if @hyperspace_checkbox.checked
-            for faction, checkbox of @faction_selectors
-                hyperspace_legal = hyperspace_legal or (checkbox.checked and exportObj.hyperspaceCheck(card.data, faction, card.orig_type == 'Ship' ))
+            for faction in selected_factions ? all_factions
+                hyperspace_legal = hyperspace_legal or exportObj.hyperspaceCheck(card.data, faction, card.orig_type == 'Ship' )
             return false unless hyperspace_legal
+
 
         # check for slot requirements
         required_slots = @slot_available_selection.val()
@@ -807,8 +831,8 @@ class exportObj.CardBrowser
             slots = card.data.slots
             if card.orig_type == 'Ship'
                 slots = []
-                for faction, checkbox of @faction_selectors
-                    if checkbox.checked and faction != 'undefined' # yep. JS is ugly. If I define a[undefined] = b, it will assign: a[undefined] == b and a['undefined'] == b. If I now run a loop over key, content of a, it will give 'undefined' instead of undefined as key...
+                for faction in selected_factions ? all_factions
+                    if faction != undefined
                         for name, pilots of exportObj.pilotsByFactionCanonicalName[faction]
                             for pilot in pilots # there are sometimes multiple pilots with the same name, so we have another array layer here
                                 if pilot.ship == card.data.name
@@ -817,7 +841,27 @@ class exportObj.CardBrowser
                return false unless slots? and slot in slots
 
         # check if point costs matches
-        return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and (card.data.points == "*" or not card.data.points?))
+        if @minimum_point_costs.value > 0 or @maximum_point_costs.value < 200
+            return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (card.data.points == "*" or not card.data.points?)
+            if card.data.pointsarray?
+                matching_points = false
+                for points in card.data.pointsarray
+                    if points >= @minimum_point_costs.value and points <= @maximum_point_costs.value
+                        matching_points = true
+                        break
+                return false unless matching_points
+            if card.orig_type == 'Ship' # check if pilot matching points exist
+                matching_points = false
+                for faction in selected_factions ? all_factions
+                    for name, pilots of exportObj.pilotsByFactionCanonicalName[faction]
+                        for pilot in pilots
+                            if pilot.ship == card.data.name
+                                if pilot.points >= @minimum_point_costs.value and pilot.points <= @maximum_point_costs.value
+                                    matching_points = true
+                                    break
+                        break if matching_points
+                    break if matching_points            
+                return false unless matching_points
 
         # check if used slot matches
         used_slots = @slot_used_selection.val()
@@ -865,6 +909,22 @@ class exportObj.CardBrowser
                 size_matches = size_matches or not ship.medium and not ship.large and @base_size_checkboxes['small'].checked
             return false unless size_matches
 
+        # check for hull
+        if @minimum_hull.value != "0" or @maximum_hull.value != "12"
+            return false unless (card.data.hull? and card.data.hull >= @minimum_hull.value and card.data.hull <= @maximum_hull.value) or (card.orig_type == 'Pilot' and exportObj.ships[card.data.ship].hull >= @minimum_hull.value and exportObj.ships[card.data.ship].hull <= @maximum_hull.value )
+       
+        # check for shields
+        if @minimum_shields.value != "0" or @maximum_shields.value != "6"
+            return false unless (card.data.shields? and card.data.shields >= @minimum_shields.value and card.data.shields <= @maximum_shields.value) or (card.orig_type == 'Pilot' and exportObj.ships[card.data.ship].shields >= @minimum_shields.value and exportObj.ships[card.data.ship].shields <= @maximum_shields.value )
+        
+        # check for agility
+        if @minimum_agility.value != "0" or @maximum_agility.value != "3"
+            return false unless (card.data.agility? and card.data.agility >= @minimum_agility.value and card.data.agility <= @maximum_agility.value) or (card.orig_type == 'Pilot' and exportObj.ships[card.data.ship].agility >= @minimum_agility.value and exportObj.ships[card.data.ship].agility <= @maximum_agility.value )
+         
+        # check for force
+        if @minimum_force.value != "0" or @maximum_force.value != "3"
+            return false unless (card.data.force? and card.data.force >= @minimum_force.value and card.data.force <= @maximum_force.value) or (card.orig_type == 'Pilot' and exportObj.ships[card.data.ship].force >= @minimum_force.value and exportObj.ships[card.data.ship].force <= @maximum_force.value ) or (!card.data.force? and @minimum_force.value == "0")
+            
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
         return true
