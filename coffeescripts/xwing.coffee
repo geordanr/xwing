@@ -1988,6 +1988,8 @@ class exportObj.SquadBuilder
                     container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')')) for slot, state of slot_types).join(' ') or 'None')
                 
                     container.find('p.info-text').hide()
+                    container.find('p.info-maneuvers').show()
+                    container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
                 when 'Pilot'
                     container.find('.info-type').text type
                     container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')

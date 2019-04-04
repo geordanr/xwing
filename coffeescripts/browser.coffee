@@ -58,20 +58,7 @@ class exportObj.CardBrowser
         @container.append $.trim """
             <div class="container-fluid xwing-card-browser">
                 <div class="row-fluid">
-                    <div class="span12">
-                        <span class="translate sort-cards-by">Sort cards by</span>: <select class="sort-by">
-                            <option value="name">Name</option>
-                            <option value="source">Source</option>
-                            <option value="type-by-points">Type (by Points)</option>
-                            <option value="type-by-name" selected="1">Type (by Name)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span4 card-selector-container">
-
-                    </div>
-                    <div class="span8">
+                    <div class="span4">
                         <div class="well card-search-container">
                         <h3>Card Search</h3>
                             <div class="advanced-search-container">
@@ -120,6 +107,7 @@ class exportObj.CardBrowser
                                     </div>
                                 </div>
                                 <div class = "well search-container ship-search-container">
+                                    <h4>Ships and Pilots</h4>
                                     <div class = "advanced-search-slot-available-container">
                                         <label class = "advanced-search-label select-available-slots">
                                             <strong>Available slots: </strong>
@@ -266,6 +254,19 @@ class exportObj.CardBrowser
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="span4 card-selecting-area">
+                        <span class="translate sort-cards-by">Sort cards by</span>: <select class="sort-by">
+                            <option value="name">Name</option>
+                            <option value="source">Source</option>
+                            <option value="type-by-points">Type (by Points)</option>
+                            <option value="type-by-name" selected="1">Type (by Name)</option>
+                        </select>
+                        <div class="card-selector-container">
+
+                        </div>
+                    </div>
+                    <div class="span4">
                         <div class="well card-viewer-placeholder info-well">
                             <p class="translate select-a-card">Select a card from the list at the left.</p>
                         </div>
