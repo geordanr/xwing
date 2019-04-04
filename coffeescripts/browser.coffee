@@ -109,8 +109,20 @@ class exportObj.CardBrowser
                                     <h4>Ships and Pilots</h4>
                                     <div class = "advanced-search-slot-available-container">
                                         <label class = "advanced-search-label select-available-slots">
-                                            <strong>Available slots: </strong>
+                                            <strong>Slots: </strong>
                                             <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-actions-available-container">
+                                        <label class = "advanced-search-label select-available-actions">
+                                            <strong>Actions: </strong>
+                                            <select class="advanced-search-selection action-available-selection" multiple="1" data-placeholder="No actions selected"></select>
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-linkedactions-available-container">
+                                        <label class = "advanced-search-label select-available-linkedactions">
+                                            <strong>Linked actions: </strong>
+                                            <select class="advanced-search-selection linkedaction-available-selection" multiple="1" data-placeholder="No actions selected"></select>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-ini-container">
@@ -394,6 +406,20 @@ class exportObj.CardBrowser
             @slot_available_selection.append opt
         @slot_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @action_available_selection = ($ @container.find('.xwing-card-browser select.action-available-selection'))
+        for action in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload"].sort()
+            opt = $ document.createElement('OPTION')
+            opt.text action
+            @action_available_selection.append opt
+        @action_available_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @linkedaction_available_selection = ($ @container.find('.xwing-card-browser select.linkedaction-available-selection'))
+        for linkedaction in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload"].sort()
+            opt = $ document.createElement('OPTION')
+            opt.text linkedaction
+            @linkedaction_available_selection.append opt
+        @linkedaction_available_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
         @slot_used_selection = ($ @container.find('.xwing-card-browser select.slot-used-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
@@ -457,6 +483,8 @@ class exportObj.CardBrowser
         @unique_checkbox.onclick = => @renderList @sort_selector.val()
         @non_unique_checkbox.onclick = => @renderList @sort_selector.val()
         @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
+        @action_available_selection[0].onchange = => @renderList @sort_selector.val()
+        @linkedaction_available_selection[0].onchange = => @renderList @sort_selector.val()
         @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
         @recurring_charge.onclick = => @renderList @sort_selector.val()
         @not_recurring_charge.onclick = => @renderList @sort_selector.val()
@@ -686,6 +714,20 @@ class exportObj.CardBrowser
                                     slots.push.apply(slots, pilot.slots)
             for slot in required_slots
                return false unless slots? and slot in slots
+
+        # check for action requirements
+        required_actions = @action_available_selection.val()
+        required_linked_actions = @linkedaction_available_selection.val()
+        if required_actions or required_linked_actions
+            actions = card.data.actions ? []
+            actions = actions.concat (card.data.actionsred ? [])
+            if card.orig_type == 'Pilot'
+                actions = exportObj.ships[card.data.ship].actions
+                actions = actions.concat exportObj.ships[card.data.ship].actionsred
+        for action in required_actions ? []
+            return false unless actions? and ((action in actions) or (("F-" + action) in actions))
+        for action in required_linked_actions ? []
+            return false unless actions? and ((("R> " + action) in actions) or (("> " + action) in actions))
 
         # check if point costs matches
         if @minimum_point_costs.value > 0 or @maximum_point_costs.value < 200

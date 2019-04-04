@@ -1976,13 +1976,13 @@ class exportObj.SquadBuilder
                 
                     container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', action) for action in data.actions).join(', ')).replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">') #super ghetto quadruple replace for linked actions
                     container.find('tr.info-actions').show()
-        
+
                     if data.actionsred?
-                        container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', action) for action in data.actionsred).join(' ')
+                        container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', action) for action in data.actionsred).join(', ')
                         container.find('tr.info-actions-red').show()
                     else
                         container.find('tr.info-actions-red').hide()
-                
+
                     # Display all available slots, put brackets around slots that are only available for some pilots
                     container.find('tr.info-upgrades').show()
                     container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')')) for slot, state of slot_types).join(' ') or 'None')
