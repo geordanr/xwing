@@ -292,6 +292,7 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="reddit-list">
                     <p>Copy the below and paste it into your reddit post.</p>
+                    <p>Make sure that the post editor is set to markdown mode.</p>
                     <textarea></textarea><button class="btn btn-copy">Copy</button>
                 </div>
                 <div class="tts-list">
