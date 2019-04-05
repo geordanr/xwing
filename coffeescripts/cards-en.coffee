@@ -494,7 +494,7 @@ exportObj.cardLoaders.English = () ->
            text: """Before you activate, if you are focused, you may perform an action."""
         "Ello Asty":
            display_name: """Ello Asty"""
-           text: """After you reveal a red Tallon Roll [<lefttalon> or <righttalon>] maneuver, if you have 2 or fewer stress tokens, treat that maneuver as white.%LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
+           text: """After you reveal a red Tallon Roll [%TROLLLEFT% or %TROLLRIGHT%] maneuver, if you have 2 or fewer stress tokens, treat that maneuver as white.%LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
         "Emon Azzameen":
            display_name: """Emon Azzameen"""
            text: """If you would drop a device using a [1&nbsp;%STRAIGHT%] template, you may use the [3&nbsp;%TURNLEFT%], [3&nbsp;%STRAIGHT%], or [3&nbsp;%TURNRIGHT%] template instead."""
@@ -1100,7 +1100,7 @@ exportObj.cardLoaders.English = () ->
            text: """After another friendly ship is destroyed, you may perform an action, even while stressed.%LINEBREAK%<strong>Autothrusters:</strong> After you perform an action, you may perform a red %BARRELROLL% or red %BOOST% action."""
         '"Axe"':
            display_name: """“Axe”"""
-           text: """After you defend or perform an attack, you may choose a friendly ship at range&nbsp;1-2 in your <leftarc>  or <rightarc>. If you do, transfer 1 green token to that ship."""
+           text: """After you defend or perform an attack, you may choose a friendly ship at range&nbsp;1-2 in your %LEFTARC%  or %RIGHTARC%. If you do, transfer 1 green token to that ship."""
         '"Backdraft"':
            display_name: """“Backdraft”"""
            text: """While you perform a %SINGLETURRETARC% primary attack, if the defender is in your %REARARC%, roll 1 additional die.%LINEBREAK%<strong>Heavy Weapon Turret:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You <b>must</b> treat the %FRONTARC% requirement of your equipped %MISSILE% upgrades as %SINGLETURRETARC%."""
@@ -1136,7 +1136,7 @@ exportObj.cardLoaders.English = () ->
            text: """While a friendly ship at range 0-1 performs a primary attack, that ship may reroll 1 attack die."""
         '"Jag"':
            display_name: """“Jag”"""
-           text: """After a friendly ship at range&nbsp;1-2 in your <leftarc>  or <rightarc>  defends, you may acquire a lock on the attacker."""
+           text: """After a friendly ship at range&nbsp;1-2 in your %LEFTARC%  or %RIGHTARC%  defends, you may acquire a lock on the attacker."""
         '"Kickback"':
            display_name: """“Kickback”"""
            text: """After you perform a %BARRELROLL% action, you may perform a red %LOCK% action."""
@@ -1187,7 +1187,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform an attack against a defender in your %BULLSEYEARC%, roll 1 additional attack die."""
         '"Sinker"':
            display_name: """“Sinker”"""
-           text: """While a friendly ship at range&nbsp;1-2 in your <leftarc> or <rightarc> performs a primary attack, it may reroll 1&nbsp;attack die."""
+           text: """While a friendly ship at range&nbsp;1-2 in your %LEFTARC% or %RIGHTARC% performs a primary attack, it may reroll 1&nbsp;attack die."""
         '"Static"':
            display_name: """“Static”"""
            text: """While you perform a primary attack, you may spend your lock on the defender and a focus token to change all of your results to %CRIT% results."""
@@ -1445,7 +1445,7 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Adds <r>%EVADE%</r></i>%LINEBREAK%<i>small ship or medium ship only</i>%LINEBREAK%While you perform a red %EVADE% action, if there is an obstacle at range 0-1, treat the action as white instead."""
         "Dedicated":
            display_name: """Dedicated"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK%While another friendly ship in your <leftarc>&nbsp;or <rightarc> at range&nbsp;0-2 defends, if it is limited or has the <strong>Dedicated</strong> upgrade and you are not strained, you may gain 1 strain token. If you do, the defender rerolls 1&nbsp;of their blank results."""
+           text: """<i>Galactic Republic only</i>%LINEBREAK%While another friendly ship in your %LEFTARC%&nbsp;or %RIGHTARC% at range&nbsp;0-2 defends, if it is limited or has the <strong>Dedicated</strong> upgrade and you are not strained, you may gain 1 strain token. If you do, the defender rerolls 1&nbsp;of their blank results."""
         "Delta-7B":
            display_name: """Delta-7B"""
            text: """<i class = flavor_text>The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</i>"""

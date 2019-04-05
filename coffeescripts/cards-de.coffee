@@ -481,7 +481,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Bevor du aktiviert wirst, falls du fokussiert bist, darfst du eine Aktion durchführen."""
         "Ello Asty":
            display_name: """Ello Asty"""
-           text: """Nachdem du ein rotes Tallon-Rolle-Manöver [<lefttalon> oder <righttalon>] aufgedeckt hast, falls du 2 oder weniger Stressmarker hast, behandle jenes Manöver, als wäre es weiß.%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1 %CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
+           text: """Nachdem du ein rotes Tallon-Rolle-Manöver [%TROLLLEFT% oder %TROLLRIGHT%] aufgedeckt hast, falls du 2 oder weniger Stressmarker hast, behandle jenes Manöver, als wäre es weiß.%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1 %CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
         "Emon Azzameen":
            display_name: """Emon Azzameen"""
            text: """Falls du unter Verwendung der [1 %STRAIGHT%]-Schablone ein Gerät abwerfen würdest, darfst du stattdessen die [3 %TURNLEFT%]-, [3 %STRAIGHT%]- oder [3 %TURNRIGHT%]-Schablone verwenden."""
@@ -1087,7 +1087,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Nachdem ein anderes befreundetes Schiff zerstört worden ist, darfst du eine Aktion durchführen, auch solange du gestresst bist.%LINEBREAK%<strong>Automatische Schubdüsen:</strong> Nachdem du eine Aktion durchgeführt hast, darfst du eine rote %BARRELROLL%-Aktion oder eine rote %BOOST%-Aktion durchführen."""
         '"Axe"':
            display_name: """„Axe“"""
-           text: """Nachdem du verteidigt oder einen Angriff durchgeführt hast, darfst du ein befreundetes Schiff in Reichweite 1-2 in deinem <leftarc> oder <rightarc> wählen. Falls du das tust, transferiere 1 grünen Marker auf jenes Schiff."""
+           text: """Nachdem du verteidigt oder einen Angriff durchgeführt hast, darfst du ein befreundetes Schiff in Reichweite 1-2 in deinem %LEFTARC% oder %RIGHTARC% wählen. Falls du das tust, transferiere 1 grünen Marker auf jenes Schiff."""
         '"Backdraft"':
            display_name: """„Backdraft“"""
            text: """Solange du einen %SINGLETURRETARC%-Primärangriff durchführst, falls der Verteidiger in deinem %REARARC% ist, wirf 1 zusätzlichen Würfel.%LINEBREAK%<strong>Schwerer Geschützturm:</strong> Du kannst deinen %SINGLETURRETARC%-Anzeiger nur auf deinen %FRONTARC% oder %REARARC% rotieren. Du <b>musst</b> die %FRONTARC%-Voraussetzung deiner ausgerüsteten %MISSILE%-Aufwertungen behandeln, als wäre sie %SINGLETURRETARC%."""
@@ -1123,7 +1123,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange ein befreundetes Schiff in Reichweite 0-1 einen Primärangriff durchführt, darf jenes Schiff 1 Angriffswürfel neu werfen."""
         '"Jag"':
            display_name: """„Jag“"""
-           text: """Nachdem ein befreundetes Schiff in Reichweite 1-2 in deinem <leftarc> oder <rightarc> verteidigt hat, darfst du den Angreifer als Ziel erfassen."""
+           text: """Nachdem ein befreundetes Schiff in Reichweite 1-2 in deinem %LEFTARC% oder %RIGHTARC% verteidigt hat, darfst du den Angreifer als Ziel erfassen."""
         '"Kickback"':
            display_name: """„Kickback“"""
            text: """Nachdem du eine %BARRELROLL%-Aktion durchgeführt hast, darfst du eine rote %LOCK%-Aktion durchführen."""
@@ -1174,7 +1174,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange du einen Angriff gegen einen Verteidiger in deinem %BULLSEYEARC% durchführst, wirf 1 zusätzlichen Angriffswürfel."""
         '"Sinker"':
            display_name: """„Sinker“"""
-           text: """Solange ein befreundetes Schiff in Reichweite 1-2 in deinem <leftarc> oder <rightarc> einen Primärangriff durchführt, darf es 1 Angriffswürfel neu werfen."""
+           text: """Solange ein befreundetes Schiff in Reichweite 1-2 in deinem %LEFTARC% oder %RIGHTARC% einen Primärangriff durchführt, darf es 1 Angriffswürfel neu werfen."""
         '"Static"':
            display_name: """„Static“"""
            text: """Solange du einen Primärangriff durchführst, darfst du deine Zielerfassung auf dem Verteidiger und einen Fokusmarker ausgeben, um alle deine Ergebnisse in %CRIT%-Ergebnisse zu ändern."""
@@ -1430,7 +1430,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Fügt <r>%EVADE%</r> hinzu</i>%LINEBREAK%<i>Nur für kleines Schiff oder mittleres Schiff</i>%LINEBREAK%Solange du eine rote %EVADE%-Aktion durchführst, falls ein Hindernis in Reichweite 0-1 ist, behandle die Aktion stattdessen, als wäre sie weiß."""
         "Dedicated":
            display_name: """Pflichtbewusst"""
-           text: """<i>Nur für Galaktische Republik</i>%LINEBREAK%Solange ein anderes befreundetes Schiff in deinem <leftarc> oder <rightarc> in Reichweite 0-2 verteidigt, falls es limitiert ist oder die Aufwertung <strong>Pflichtbewusst</strong> hat und du nicht angestrengt bist, darfst du 1 Anstrengungsmarker erhalten. Falls du das tust, wirft der Verteidiger 1 seiner Leerseiten-Ergebnisse neu."""
+           text: """<i>Nur für Galaktische Republik</i>%LINEBREAK%Solange ein anderes befreundetes Schiff in deinem %LEFTARC% oder %RIGHTARC% in Reichweite 0-2 verteidigt, falls es limitiert ist oder die Aufwertung <strong>Pflichtbewusst</strong> hat und du nicht angestrengt bist, darfst du 1 Anstrengungsmarker erhalten. Falls du das tust, wirft der Verteidiger 1 seiner Leerseiten-Ergebnisse neu."""
         "Delta-7B":
            display_name: """Delta-7B"""
            text: """<i class = flavor_text>Der Delta-7B wurde als schwerere Variante des Abfangjägers der Aethersprite-Klasse konzipiert und unterscheidet sich optisch nur durch seinen verschobenen Astromech-Anschluss. Viele Jedi-Generäle bevorzugen ihn aufgrund seiner verbesserten Feuerkraft und Stabilität.</i>"""
