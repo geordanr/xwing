@@ -83,6 +83,7 @@ exportObj.translations.Deutsch =
         '.info-well .info-actions td.info-header': 'Aktionen'
         '.info-well .info-upgrades td.info-header': 'Aufwertungskarten'
         '.info-well .info-range td.info-header': 'Reichweite'
+        '.info-well .info-sources.info-header': 'Enthalten&nbsp;in'
         # Squadron edit buttons
         '.clear-squad' : 'Neue Staffel'
         '.save-list' : '<i class="fa fa-floppy-o"></i>&nbsp;Speichern'
@@ -1796,7 +1797,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Imperium</i>%LINEBREAK%Falls ein feindliches Schiff in Reichweite 0-1 einen Stressmarker erhalten würde, darfst du 1 %FORCE% ausgeben, um es stattdessen 1 Störsignal- oder 1 Fangstrahlmarker erhalten zu lassen."""
         "Shield Upgrade":
            display_name: """Verbesserte Schilde"""
-           text: """<i class = flavor_text>Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus """
+           text: """<i class = flavor_text>Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus lohnenswerte Investition. </i>"""
         "Skilled Bombardier":
            display_name: """Versierte Bombenschützin"""
            text: """Falls du ein Gerät abwerfen oder starten würdest, darfst du eine Schablone mit gleicher Flugrichtung und einer um 1 höheren oder niedrigeren Geschwindigkeit verwenden."""
