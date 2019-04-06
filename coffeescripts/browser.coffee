@@ -284,8 +284,6 @@ class exportObj.CardBrowser
                             <br />
                             <span class="info-type"></span>
                             <br />
-                            <span class="info-sources"></span>
-                            <br />
                             <span class="info-collection"></span>
                             <table>
                                 <tbody>
@@ -361,6 +359,9 @@ class exportObj.CardBrowser
                             </table>
                             <p class="info-text" />
                             <p class="info-maneuvers" />
+                            <br />
+                            <span class="info-header info-sources">Sources</span>: 
+                            <span class="info-data info-sources"></span>
                         </div>
                     </div>
                 </div>

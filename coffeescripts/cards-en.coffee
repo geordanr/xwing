@@ -120,6 +120,7 @@ exportObj.translations.English =
         '.info-well .info-actions td.info-header': 'Actions'
         '.info-well .info-upgrades td.info-header': 'Upgrades'
         '.info-well .info-range td.info-header': 'Range'
+        '.info-well .info-sources.info-header': 'Sources'
         # Squadron edit buttons
         '.clear-squad' : 'New Squad'
         '.save-list' : '<i class="fa fa-floppy-o"></i>&nbsp;Save'

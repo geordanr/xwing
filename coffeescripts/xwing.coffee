@@ -893,8 +893,6 @@ class exportObj.SquadBuilder
             <div class="well well-small info-well">
                 <span class="info-name"></span>
                 <br />
-                <span class="info-sources"></span>
-                <br />
                 <span class="info-collection"></span>
                 <span class="info-solitary"><br />Solitary</span>
                 <table>
@@ -979,6 +977,9 @@ class exportObj.SquadBuilder
                 </table>
                 <p class="info-text" />
                 <p class="info-maneuvers" />
+                <br />
+                <span class="info-header info-sources">Sources</span>: 
+                <span class="info-data info-sources"></span>
             </div>
         """
         @info_container.hide()
@@ -1925,7 +1926,7 @@ class exportObj.SquadBuilder
                     possible_inis.sort()
         
                     container.find('.info-type').text type
-                    container.find('.info-name').text data.name
+                    container.find('.info-name').html """#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     if @collection?.counts?
                         ship_count = @collection.counts?.ship?[data.name] ? 0
                         container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} in your collection."""
@@ -1992,9 +1993,13 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').hide()
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
+                    
+                    sources = (exportObj.translate(@language, 'sources', source) for source in data.sources).sort()
+                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not ('Loose Ships' in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate(@language, 'ui', 'unreleased')) else "Only available from 1st edition"
+                    container.find('.info-sources').show()
                 when 'Pilot'
                     container.find('.info-type').text type
-                    container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
+                    container.find('.info-sources.info-data').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     container.find('.info-sources').show()
                     if @collection?.counts?
                         pilot_count = @collection.counts?.pilot?[data.name] ? 0
@@ -2110,7 +2115,7 @@ class exportObj.SquadBuilder
                 when 'Quickbuild'
                     container.find('.info-type').text 'Quickbuild'
                     container.find('.info-sources').hide() # there are different sources for the pilot and the upgrade cards, so we won't display any
-                    container.find('.info-collection').text '' # same here, hard to give a single number telling a user how often he ones all required cards
+                    container.find('.info-collection').text '' # same here, hard to give a single number telling a user how often he ownes all required cards
                     
                     pilot = exportObj.pilots[data.pilot]
                     ship = exportObj.ships[data.ship]
@@ -2208,7 +2213,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
                     container.find('.info-type').text additional_opts.addon_type
-                    container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
+                    container.find('.info-sources.info-data').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     container.find('.info-sources').show()
                     
                     #logic to determine how many dots to use for uniqueness
@@ -3060,9 +3065,9 @@ class Ship
             select2_data = $(e.target).closest('.select2-result').data 'select2-data'
             @builder.showTooltip 'Ship', exportObj.ships[select2_data.id] if select2_data?.id?
         @ship_selector.data('select2').container.on 'mouseover', (e) =>
-            @builder.showTooltip 'Pilot', @pilot, @ if @pilot
+            @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
         @ship_selector.data('select2').container.on 'touchmove', (e) =>
-            @builder.showTooltip 'Ship', @pilot, @ if @pilot
+            @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
         # assign ship row an id for testing purposes
         @row.attr 'id', "row-#{@ship_selector.data('select2').container.attr('id')}"
 
