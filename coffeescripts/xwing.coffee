@@ -65,9 +65,11 @@ SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
     if base_stat?
-        """#{base_stat}#{if effective_stats[key] != base_stat then " (#{effective_stats[key]})" else ""}"""
-    else
+        """#{base_stat}#{if (effective_stats? and effective_stats[key]? and effective_stats[key] != base_stat) then " (#{effective_stats[key]})" else ""}"""
+    else if effective_stats? and effective_stats[key]?
         """0 (#{effective_stats[key]})"""
+    else
+        "0"
 
 getPrimaryFaction = (faction) ->
     switch faction
@@ -2001,6 +2003,17 @@ class exportObj.SquadBuilder
                     else
                         container.find('.info-collection').text ''
                         
+                    # if the pilot is already selected and has uprades, some stats may be modified
+                    if additional_opts?.effectiveStats?
+                        console.log(additional_opts)
+                        effective_stats = additional_opts.effectiveStats()
+                        extra_actions = $.grep effective_stats.actions, (el, i) ->
+                            el not in (data.ship_override?.actions ? additional_opts.data.actions)
+                        extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
+                            el not in (data.ship_override?.actionsred ? additional_opts.data.actionsred)
+                    else
+                        extra_actions = []
+                        extra_actions_red = []
                     #logic to determine how many dots to use for uniqueness
                     if data.unique?
                         uniquedots = "&middot;&nbsp;"
@@ -2031,41 +2044,43 @@ class exportObj.SquadBuilder
                     container.find('tr.info-base').show()
 
                     
-                    container.find('tr.info-skill td.info-data').text data.skill
+                    container.find('tr.info-skill td.info-data').text statAndEffectiveStat(data.skill, effective_stats, 'skill')
                     container.find('tr.info-skill').show()
                     
-                    container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
-                    container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
-
-                    container.find('tr.info-attack-fullfront td.info-data').text(ship.attackf)
-                    container.find('tr.info-attack-fullfront').toggle(ship.attackf?)
-                    
-                    container.find('tr.info-attack-bullseye').hide()
-                    
-                    container.find('tr.info-attack-back td.info-data').text(ship.attackb)
-                    container.find('tr.info-attack-back').toggle(ship.attackb?)
-                    container.find('tr.info-attack-turret td.info-data').text(ship.attackt)
-                    container.find('tr.info-attack-turret').toggle(ship.attackt?)
-                    container.find('tr.info-attack-doubleturret td.info-data').text(ship.attackdt)
-                    container.find('tr.info-attack-doubleturret').toggle(ship.attackdt?)
-                    
 #                    for cls in container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
-#                        container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
-                    container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-frontarc')
+#                        container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                    container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-attack')
 
-                    container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
+                    container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.ship_override?.attack ? ship.attack), effective_stats, 'attack')
+                    container.find('tr.info-attack').toggle(ship.attack? or effective_stats?.attack?)
+
+                    container.find('tr.info-attack-fullfront td.info-data').text statAndEffectiveStat((data.ship_override?.attackf ? ship.attackf), effective_stats, 'attackf')
+                    container.find('tr.info-attack-fullfront').toggle(ship.attackf? or effective_stats?.attackf?)
+
+                    container.find('tr.info-attack-bullseye').hide()
+
+                    container.find('tr.info-attack-back td.info-data').text statAndEffectiveStat((data.ship_override?.attackb ? ship.attackb), effective_stats, 'attackb')
+                    container.find('tr.info-attack-back').toggle(ship.attackb? or effective_stats?.attackb?)
+
+                    container.find('tr.info-attack-turret td.info-data').text statAndEffectiveStat((data.ship_override?.attackt ? ship.attackt), effective_stats, 'attackt')
+                    container.find('tr.info-attack-turret').toggle(ship.attackt? or effective_stats?.attackt?)
+
+                    container.find('tr.info-attack-doubleturret td.info-data').text statAndEffectiveStat((data.ship_override?.attackdt ? ship.attackdt), effective_stats, 'attackdt')
+                    container.find('tr.info-attack-doubleturret').toggle(ship.attackdt? or effective_stats?.attackdt?)
+
+                    container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy')
                     container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                     container.find('tr.info-range').hide()
                     container.find('td.info-rangebonus').hide()
-                    container.find('tr.info-agility td.info-data').text(data.ship_override?.agility ? ship.agility)
+                    container.find('tr.info-agility td.info-data').text statAndEffectiveStat((data.ship_override?.agility ? ship.agility), effective_stats, 'agility')
                     container.find('tr.info-agility').show()
-                    container.find('tr.info-hull td.info-data').text(data.ship_override?.hull ? ship.hull)
+                    container.find('tr.info-hull td.info-data').text statAndEffectiveStat((data.ship_override?.hull ? ship.hull), effective_stats, 'hull')
                     container.find('tr.info-hull').show()
-                    container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
+                    container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields')
                     container.find('tr.info-shields').show()
 
-                    if effective_stats?.force? or data.force?
-                        container.find('tr.info-force td.info-data').html ((data.ship_override?.force ? data.force)+ '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                    if (effective_stats?.force? and effective_stats.force > 0) or data.force?
+                        container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.ship_override?.force ? data.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                         container.find('tr.info-force').show()
                     else
                         container.find('tr.info-force').hide()
@@ -2079,13 +2094,11 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-charge').hide()
 
-                    container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
-    
-                    if ships[data.ship].actionsred?
-                        container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actionsred ? exportObj.ships[data.ship].actionsred)).join(', ')
-                        container.find('tr.info-actions-red').show()
-                    else
-                        container.find('tr.info-actions-red').hide()
+                    container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', a) for a in (data.ship_override?.actions ? ship.actions).concat( ("#{exportObj.translate @language, 'action', action}" for action in extra_actions))).join ', ').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
+
+                    if ship.actionsred?
+                        container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in (data.ship_override?.actionsred ? ship.actionsred).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ', '       
+                    container.find('tr.info-actions-red').toggle(ship.actionsred?)
 
                     container.find('tr.info-actions').show()
                     if @isQuickbuild
@@ -3086,11 +3099,11 @@ class Ship
             if @builder.isQuickbuild
                 @builder.showTooltip 'Quickbuild', exportObj.quickbuildsById[select2_data.id], {ship: @data?.name} if select2_data?.id?
             else
-                @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data?.name} if select2_data?.id?
+                @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
-            @builder.showTooltip 'Pilot', @pilot if @pilot
+            @builder.showTooltip 'Pilot', @pilot, @ if @pilot
         @pilot_selector.data('select2').container.on 'touchmove', (e) =>
-            @builder.showTooltip 'Ship', @pilot if @pilot
+            @builder.showTooltip 'Ship', @pilot, @ if @pilot
             ###if @data? 
                 scrollTo(0,$('#info-container').offset().top - 10,'smooth')###
 
