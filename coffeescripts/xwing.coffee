@@ -2005,7 +2005,6 @@ class exportObj.SquadBuilder
                         
                     # if the pilot is already selected and has uprades, some stats may be modified
                     if additional_opts?.effectiveStats?
-                        console.log(additional_opts)
                         effective_stats = additional_opts.effectiveStats()
                         extra_actions = $.grep effective_stats.actions, (el, i) ->
                             el not in (data.ship_override?.actions ? additional_opts.data.actions)
@@ -3057,6 +3056,13 @@ class Ship
 
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
+        @ship_selector.data('select2').results.on 'mousemove-filtered', (e) =>
+            select2_data = $(e.target).closest('.select2-result').data 'select2-data'
+            @builder.showTooltip 'Ship', exportObj.ships[select2_data.id] if select2_data?.id?
+        @ship_selector.data('select2').container.on 'mouseover', (e) =>
+            @builder.showTooltip 'Pilot', @pilot, @ if @pilot
+        @ship_selector.data('select2').container.on 'touchmove', (e) =>
+            @builder.showTooltip 'Ship', @pilot, @ if @pilot
         # assign ship row an id for testing purposes
         @row.attr 'id', "row-#{@ship_selector.data('select2').container.attr('id')}"
 
