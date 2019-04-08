@@ -1341,6 +1341,7 @@ class exportObj.SquadBuilder
         @backend_status.fadeOut 'slow'
         @current_squad.dirty = false
         @container.trigger 'xwing-backend:squadDirtinessChanged'
+        @container.trigger 'xwing-backend:squadNameChanged'
 
     onSquadDirtinessChanged: () =>
         @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
@@ -1911,7 +1912,7 @@ class exportObj.SquadBuilder
                 when 'Ship'
             # we get all pilots for the ship, to display stuff like available slots which are treated as pilot properties, not ship properties (which makes sense, as they depend on the pilot, e.g. talent or force slots)
                     possible_inis = []
-                    slot_types = {} # one number per slot: 0: not available for that ship. 1: always available for that ship. 2: available for some pilots on that ship. -1: undefined
+                    slot_types = {} # one number per slot: 0: not available for that ship. 1: always available for that ship. 2: available for some pilots on that ship. 3: slot two times availabel for that ship 4: slot one or two times available (depending on pilot) 5: slot zero to two times available -1: undefined
                     for slot of exportObj.upgradesBySlotCanonicalName
                         slot_types[slot] = -1
                     for name, pilot of exportObj.pilots
@@ -1920,18 +1921,31 @@ class exportObj.SquadBuilder
                         if not (pilot.skill in possible_inis)
                             possible_inis.push(pilot.skill)
                         for slot, state of slot_types
-                            if slot in pilot.slots
-                                switch state
-                                    when -1
-                                        slot_types[slot] = 1
-                                    when 0
-                                        slot_types[slot] = 2
-                            else 
-                                switch state
-                                    when -1
-                                        slot_types[slot] = 0
-                                    when 1
-                                        slot_types[slot] = 2
+                            switch pilot.slots.filter((item) => item == slot).length
+                                when 1
+                                    switch state
+                                        when -1
+                                            slot_types[slot] = 1
+                                        when 0
+                                            slot_types[slot] = 2
+                                        when 3
+                                            slot_types[slot] = 4
+                                when 0
+                                    switch state
+                                        when -1
+                                            slot_types[slot] = 0
+                                        when 1
+                                            slot_types[slot] = 2
+                                        when 3,4
+                                            slot_types[slot] = 5
+                                when 2
+                                    switch state
+                                        when -1
+                                            slot_types[slot] = 3
+                                        when 0,2
+                                            slot_types[slot] = 5
+                                        when 1
+                                            slot_types[slot] = 4
                                 
                     possible_inis.sort()
         
@@ -1998,7 +2012,7 @@ class exportObj.SquadBuilder
 
                     # Display all available slots, put brackets around slots that are only available for some pilots
                     container.find('tr.info-upgrades').show()
-                    container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')')) for slot, state of slot_types).join(' ') or 'None')
+                    container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')' else (if state == 3 then (exportObj.translate(@language, 'sloticon', slot) + exportObj.translate(@language, 'sloticon', slot)) else (if state == 4 then (exportObj.translate(@language, 'sloticon', slot) + '(' + exportObj.translate(@language, 'sloticon', slot) + ')') else (if state == 5 then '(' + exportObj.translate(@language, 'sloticon', slot) + exportObj.translate(@language, 'sloticon', slot) + ')'))))) for slot, state of slot_types).join(' ') or 'None')
                 
                     container.find('p.info-text').hide()
                     container.find('p.info-maneuvers').show()
