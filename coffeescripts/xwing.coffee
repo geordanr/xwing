@@ -824,7 +824,7 @@ class exportObj.SquadBuilder
             if @backend? and not @backend_save_list_button.hasClass('disabled')
                 additional_data =
                     points: @total_points
-                    description: @describeSquad()
+                    description: @describeSquad() + ', Squad saved: ' + (new Date()).toLocaleString()
                     cards: @listCards()
                     notes: @notes.val().substr(0, 1024)
                     obstacles: @getObstacles()
@@ -1346,6 +1346,10 @@ class exportObj.SquadBuilder
         @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
         @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
         @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
+        if @ships.length > 1
+            $('meta[property="og:description"]').attr("content", "X-Wing Squadron by YASB 2.0: " + @current_squad.name + ": " + @describeSquad())
+        else
+            $('meta[property="og:description"]').attr("content", "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
 
     onSquadNameChanged: () =>
         if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
@@ -1355,6 +1359,12 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.text ''
         @squad_name_placeholder.append short_name
         @squad_name_input.val @current_squad.name
+        return unless @container.is(':visible') 
+        if @current_squad.name != "Unnamed Squadron" and @current_squad.name != "Unsaved Squadron"
+            if (document.title != "YASB 2.0 - " + @current_squad.name) 
+                document.title = "YASB 2.0 - " + @current_squad.name
+        else
+            document.title = "YASB 2.0"
 
     removeAllShips: ->
         while @ships.length > 0
@@ -2450,7 +2460,7 @@ class exportObj.SquadBuilder
                 meth()
 
     describeSquad: ->
-        ((ship.pilot.name for ship in @ships when ship.pilot?).join ', ') + ', Squad saved: ' + (new Date()).toLocaleString()
+        ((ship.pilot.name for ship in @ships when ship.pilot?).join ', ') #+ ', Squad saved: ' + (new Date()).toLocaleString()
 
     listCards: ->
         card_obj = {}
