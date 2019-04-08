@@ -9281,6 +9281,7 @@ exportObj.basicCardData = ->
         {
             name: 'Rattled'
             id: 12
+            unique: true
         }
         {
             name: 'DRK-1 Probe Droid'
