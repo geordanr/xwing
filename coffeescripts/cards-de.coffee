@@ -1894,22 +1894,26 @@ exportObj.cardLoaders.Deutsch = () ->
             
     condition_translations =
         'Suppressive Fire':
-           text: '''While you perform an attack against a ship other than <strong>Captain Rex</strong>, roll 1 fewer attack die. %LINEBREAK% After <strong>Captain Rex</strong> defends, remove this card.  %LINEBREAK% At the end of the Combat Phase, if <strong>Captain Rex</strong> did not perform an attack this phase, remove this card. %LINEBREAK% After <strong>Captain Rex</strong> is destroyed, remove this card.'''
+           display_name: 'Sperrfeuer'
+           text: '''Solange du einen Angriff gegen ein anderes Schiff als <strong>Captain Rex</strong> durchführst, wirf 1 Angriffswürfel weniger. %LINEBREAK%Nachdem <strong>Captain Rex</strong> verteidigt hat, entferne diese Karte. <strong>Captain Rex</strong>Am Ende der Kampfphase, falls <strong>Captain Rex</strong> in dieser Phase keinen Angriff durchgeführt hat, entferne diese Karte. %LINEBREAK%Nachdem <strong>Captain Rex</strong> zerstört worden ist, entferne diese Karte.'''
         'Hunted':
-           text: '''After you are destroyed, you must choose another friendly ship and assign this condition to it, if able.'''
+           display_name: 'Gejagt'
+           text: '''Nachdem du zerstört worden bist, musst du ein anderes befreundetes Schiff wählen und ihm diesen Zustand zuordnen, falls möglich.'''
         'Listening Device':
-           text: '''During the System Phase, if an enemy ship with the <strong>Informant</strong> upgrade is at range 0-2, flip your dial faceup.'''
+           display_name: 'Abhörgerät'
+           text: '''Während der Systemphase, falls ein feindliches Schiff mit der Aufwertung <strong>Informant</strong> in Reichweite 0-2 ist, drehe dein Rad auf die offene Seite.'''
         'Optimized Prototype':
-           text: '''While you perform a %FRONTARC% primary attack against a ship locked by a friendly ship with the <strong>Director Krennic</strong> upgrade, you may spend 1 %HIT%/%CRIT%/%FOCUS% result. If you do, choose one: the defender loses 1 shield or the defender flips 1 of its facedown damage cards.'''
+           display_name: 'Optimierter Prototyp'
+           text: '''Solange du einen %FRONTARC%-Primärangriff gegen ein Schiff durchführst, das von einem befreundeten Schiff mit der Aufwertung <strong>Direktor Krennic</strong> als Ziel erfasst ist, darfst du 1 %HIT%/%CRIT%/%FOCUS%-Ergebnis ausgeben. Falls du das tust, wähle 1 der folgenden Optionen: Der Verteidiger verliert 1 Schild oder der Verteidiger dreht 1 seiner verdeckten Schadenskarten um.'''
         'Proton Bomb':
            display_name: """Protonenbombe"""
-           text: '''(Bomb Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, erleidet jedes Schiff in Reichweite 0–1 1 %CRIT%-Schaden.'''
+           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, erleidet jedes Schiff in Reichweite 0–1 1 %CRIT%-Schaden.'''
         'Seismic Charge':
            display_name: """Seismische Bombe"""
-           text: '''(Bomb Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wähle 1 Hindernis in Reichweite 0–1. Jedes Schiff in Reichweite 0–1 zu jenem Hindernis erleidet 1 %HIT%-Schaden. Dann entferne jenes Hindernis.'''
+           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wähle 1 Hindernis in Reichweite 0–1. Jedes Schiff in Reichweite 0–1 zu jenem Hindernis erleidet 1 %HIT%-Schaden. Dann entferne jenes Hindernis.'''
         'Bomblet':
            display_name: """Streubombe"""
-           text: '''(Bomb Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wirft jedes Schiff in Reichweite 0–1 2 Angriffswürfel. Jedes Schiff erleidet 1 %HIT%-Schaden für jedes %HIT%/%CRIT% Ergebnis.'''
+           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wirft jedes Schiff in Reichweite 0–1 2 Angriffswürfel. Jedes Schiff erleidet 1 %HIT%-Schaden für jedes %HIT%/%CRIT% Ergebnis.'''
         'Loose Cargo':
            display_name: """Freie Fracht"""
            text: '''(Debris Token) - Freie Fracht ist eine Trümmerwolke..'''
@@ -1919,5 +1923,11 @@ exportObj.cardLoaders.Deutsch = () ->
         'Proximity Mine':
            display_name: """Annäherungsmine"""
            text: '''(Mine Token) - Nachdem sich ein Schiff durch dieses Gerät hindurchbewegt oder mit ihm überschnitten hat, detoniert es. Sobald dieses Gerät detoniert, wirft jenes Schiff 2 Angriffswürfel. Jenes Schiff erleidet dann 1 %HIT%-Schaden sowie 1 %HIT%/%CRIT%-Schaden für jedes passende Ergebnis.'''
+        'Rattled':
+           display_name: 'Aus der Fassung'
+           text: 'Nachdem eine Bombe oder Mine in Reichweite 0-1 detoniert ist, erleide 1 %CRIT% Schaden. Dann entferne diese Karte. %LINEBREAK% <strong>Aktion:</strong> Falls keine Bomben oder Minen in Reichweite 0-1 sind, entferne diese Karte.'
+        '''I'll Show You the Dark Side''': 
+           display_name: 'Ich zeige dir die dunkle Seite'
+           text: 'Sobald diese Karte zugeordnet wird, falls keine offene Schadenskarte darauf liegt, sucht der Spieler, der sie zugeordnet hat, im Schadensstapel nach 1 <strong>Pilot</strong>-Schadenskarte und platziert sie offen auf dieser Karte. Dann mische den Schadensstapel. %LINEBREAK%Sobald du 1 %CRIT%-Schaden erleiden würdest, wird dir stattdessen die offene Schadenskarte auf dieser Karte zugeteilt. Dann entferne diese Karte. '
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
