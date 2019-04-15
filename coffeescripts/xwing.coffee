@@ -2136,7 +2136,7 @@ class exportObj.SquadBuilder
                         container.find('tr.info-upgrades').show()
                         container.find('tr.info-upgrades td.info-data').html((exportObj.translate(@language, 'sloticon', slot) for slot in data.slots).join(' ') or 'None')
                     container.find('p.info-maneuvers').show()
-                    container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
+                    container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats?.maneuvers ? ship.maneuvers, ship.maneuvers))
                 when 'Quickbuild'
                     container.find('.info-type').text 'Quickbuild'
                     container.find('.info-sources').hide() # there are different sources for the pilot and the upgrade cards, so we won't display any
