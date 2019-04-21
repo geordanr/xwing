@@ -11356,7 +11356,7 @@ exportObj.basicCardData = ->
                 "Hate"
                 "Predictive Shot"
                 "Primed Thrusters"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
             ]
         }
         {
@@ -11400,7 +11400,7 @@ exportObj.basicCardData = ->
             threat: 3
             upgrades: [
                 "Primed Thrusters"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
             ]
         }
         {
@@ -11986,7 +11986,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Daredevil"
                 "Advanced Sensors"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
             ]
         }
         {
@@ -12042,7 +12042,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Crack Shot"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
                 "Afterburners"
             ]
         }
@@ -12841,7 +12841,7 @@ exportObj.basicCardData = ->
             threat: 3
             upgrades: [
                 "Marksmanship"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
                 "Afterburners"
             ]
         }

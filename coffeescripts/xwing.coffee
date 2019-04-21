@@ -1647,7 +1647,7 @@ class exportObj.SquadBuilder
                     for other in (exportObj.pilotsByUniqueName[include_pilot_pilot.canonical_name.getXWSBaseName()] or [])
                         if other?
                             uniques_in_use_by_pilot_in_use.push other
-                for include_upgrade_name in include_quickbuild.upgrades
+                for include_upgrade_name in include_quickbuild.upgrades ? []
                     include_upgrade = exportObj.upgrades[include_upgrade_name]
                     if include_upgrade.unique? 
                         uniques_in_use_by_pilot_in_use.push other
@@ -1670,13 +1670,17 @@ class exportObj.SquadBuilder
                     continue
                 if quickbuild.upgrades? 
                     for upgrade in quickbuild.upgrades
-                        if exportObj.upgrades[upgrade].unique? and exportObj.upgrades[upgrade] in @uniques_in_use.Upgrade and not (exportObj.upgrades[upgrade] in uniques_in_use_by_pilot_in_use)
+                        upgradedata = exportObj.upgrades[upgrade]
+                        if not upgradedata?
+                            console.log("There was an Issue including the upgrade " + upgrade + " in some quickbuild. Please report that Issue!")
+                            continue
+                        if upgradedata.unique? and upgradedata in @uniques_in_use.Upgrade and not (upgradedata in uniques_in_use_by_pilot_in_use)
                             # check, if unique is used by this ship or it's linked ship
                             if ship_selector == null or not (upgrade in exportObj.quickbuildsById[ship_selector.quickbuildId].upgrades or (ship_selector.linkedShip and upgrade in (exportObj.quickbuildsById[ship_selector.linkedShip?.quickbuildId].upgrades ? [])))
                                 allowed_quickbuilds_containing_uniques_in_use.push quickbuild.id
                                 break
                         # check if solitary type is already claimed
-                        if exportObj.upgrades[upgrade].solitary? and exportObj.upgrades[upgrade].slot in @uniques_in_use['Slot'] and not (exportObj.upgrades[upgrade].slot in uniques_in_use_by_pilot_in_use)
+                        if upgradedata.solitary? and upgradedata.slot in @uniques_in_use['Slot'] and not (upgradedata.slot in uniques_in_use_by_pilot_in_use)
                             allowed_quickbuilds_containing_uniques_in_use.push quickbuild.id
                             break
             
