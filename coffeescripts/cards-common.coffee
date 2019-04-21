@@ -9100,15 +9100,12 @@ exportObj.basicCardData = ->
             id: 217
             unique: true
             slot: "Crew"
+            faction: ["Galactic Republic", "Separatist Alliance"]
             force: 1
             points: 14
             modifier_func: (stats) ->
                 stats.force += 1
                 stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
-            restriction_func: (ship) ->
-                builder = ship.builder
-                return true if builder.faction == "Galactic Republic" or builder.faction == "Separatist Alliance"
-                false
        }
        {
             name: "Count Dooku"
