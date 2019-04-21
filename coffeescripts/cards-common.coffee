@@ -7504,6 +7504,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 11
            unique: true
+           faction: ["Scum and Villainy", "Rebel Alliance"]
            force: 1
            modifier_func: (stats) ->
                 stats.force += 1
@@ -7652,6 +7653,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 5
            unique: true
+           faction: ["Scum and Villainy", "Galactic Empire"]
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
@@ -7785,6 +7787,7 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 2
            unique: true
+           faction: ["Scum and Villainy", "Galactic Empire"]
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"

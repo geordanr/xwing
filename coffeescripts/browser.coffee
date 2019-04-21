@@ -684,7 +684,13 @@ class exportObj.CardBrowser
         if selected_factions
             if "Factionless" in selected_factions
                 selected_factions.push undefined
-            return false unless card.data.faction in selected_factions or card.orig_type == 'Ship'
+            return false unless card.data.faction in selected_factions or card.orig_type == 'Ship' or card.data.faction instanceof Array
+            if card.data.faction instanceof Array
+               faction_matches = false
+               for faction in card.data.faction
+                   if faction in selected_factions
+                       faction_matches = true
+                       break
             if card.orig_type == 'Ship'
                faction_matches = false
                for faction in card.data.factions
