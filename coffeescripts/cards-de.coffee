@@ -1802,7 +1802,7 @@ exportObj.cardLoaders.Deutsch = () ->
            display_name: """Versierte Bombenschützin"""
            text: """Falls du ein Gerät abwerfen oder starten würdest, darfst du eine Schablone mit gleicher Flugrichtung und einer um 1 höheren oder niedrigeren Geschwindigkeit verwenden."""
         "Spare Parts Canisters":
-           display_name: """%ASTROMECH% Ersatzteilkanister"""
+           display_name: """Astromech Ersatzteilkanister"""
            text: """<strong>Aktion:</strong> Gib 1 %CHARGE% aus, um 1 Ladung von 1  deiner ausgerüsteten %ASTROMECH%-Aufwertungen wiederherzustellen. %LINEBREAK%<strong>Aktion:</strong> Gib 1 %CHARGE% aus, um 1 Ersatzteil abzuwerfen, dann verliere alle Zielerfassungen, die dir zugeordnet sind."""
         "Special Forces Gunner":
            display_name: """Bordschütze der Spezialeinheiten"""
