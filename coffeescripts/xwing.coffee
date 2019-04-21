@@ -24,7 +24,12 @@ exportObj.toTTS = (txt) ->
     else 
         txt.replace(/\(.*\)/g,"").replace("�",'"').replace("�",'"')
 
-    
+exportObj.slotsMatching = (slota, slotb) ->
+    return true if slota == slotb
+    return false if slota != 'Hardpoint' and slotb != 'Hardpoint'
+    return true if slota == 'Torpedo' or slota == 'Cannon' or slota == 'Missile'
+    return true if slotb == 'Torpedo' or slotb == 'Cannon' or slotb == 'Missile'
+    return false
 
 $.isMobile = ->
     navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
@@ -1726,7 +1731,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         upgrades_in_use = (upgrade.data for upgrade in ship.upgrades)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (@isItemAvailable(upgrade)))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when exportObj.slotsMatching(upgrade.slot, slot) and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (@isItemAvailable(upgrade)))
 
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
@@ -2897,7 +2902,7 @@ class Ship
                     for upgrade_name in autoequip
                         auto_equip_upgrade = exportObj.upgrades[upgrade_name]
                         for upgrade in @upgrades
-                            if upgrade.slot == auto_equip_upgrade.slot
+                            if exportObj.slotsMatching(upgrade.slot, auto_equip_upgrade.slot)
                                 upgrade.setData auto_equip_upgrade
                 if same_ship
                     for _ in [1..2] # try this twice, as upgrades added in the first run may add new slots that are filled in the second run.
@@ -3607,7 +3612,7 @@ class Ship
                                 everythingadded = false
                             continue
                         for upgrade_selection in @upgrades
-                            if upgrade.slot == upgrade_selection.slot and not upgrade_selection.isOccupied()
+                            if exportObj.slotsMatching(upgrade.slot, upgrade_selection.slot) and not upgrade_selection.isOccupied()
                                 upgrade_selection.setById upgrade_id
                                 if upgrade_selection.lastSetValid
                                     upgrade_ids.splice(i,1) # added successfully, remove from list
@@ -3706,7 +3711,7 @@ class Ship
     
     isSlotOccupied: (slot_name) ->
         for upgrade in @upgrades
-            if upgrade.slot == slot_name
+            if exportObj.slotsMatching(upgrade.slot, slot_name)
                 return true unless upgrade.isOccupied()
         false
 
