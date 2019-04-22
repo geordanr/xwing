@@ -24,7 +24,12 @@ exportObj.toTTS = (txt) ->
     else 
         txt.replace(/\(.*\)/g,"").replace("�",'"').replace("�",'"')
 
-    
+exportObj.slotsMatching = (slota, slotb) ->
+    return true if slota == slotb
+    return false if slota != 'Hardpoint' and slotb != 'Hardpoint'
+    return true if slota == 'Torpedo' or slota == 'Cannon' or slota == 'Missile'
+    return true if slotb == 'Torpedo' or slotb == 'Cannon' or slotb == 'Missile'
+    return false
 
 $.isMobile = ->
     navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
@@ -1421,9 +1426,10 @@ class exportObj.SquadBuilder
             # version 1-3 are 1st edition only (may be removed here)
             # version 4 is the final version of 1st edition x-wing, and has been the first few weeks of YASB 2.0
             # version 5 is the first version for 2nd edtition x-wing only, it features extended (=standard), hyperspace, quickbuild and custom mode
-            # version 6 is the current version, the difference to version 5 is, that custom (=extended with != 200 points) has been removed and points are specified for all modes. 
+            # version 6 has the only difference to version 5 is, that custom (=extended with != 200 points) has been removed and points are specified for all modes. 
+            # version 7 is the current version, arbitrary ordering of upgrades is additionally supported
             switch version
-                when 3, 4, 5, 6
+                when 3, 4, 5, 6, 7
                     # parse out game type
                     [ game_type_and_point_abbrev, serialized_ships ] = matches[2].split('!')
                     # check if there are serialized ships to load
@@ -1647,7 +1653,7 @@ class exportObj.SquadBuilder
                     for other in (exportObj.pilotsByUniqueName[include_pilot_pilot.canonical_name.getXWSBaseName()] or [])
                         if other?
                             uniques_in_use_by_pilot_in_use.push other
-                for include_upgrade_name in include_quickbuild.upgrades
+                for include_upgrade_name in include_quickbuild.upgrades ? []
                     include_upgrade = exportObj.upgrades[include_upgrade_name]
                     if include_upgrade.unique? 
                         uniques_in_use_by_pilot_in_use.push other
@@ -1670,13 +1676,17 @@ class exportObj.SquadBuilder
                     continue
                 if quickbuild.upgrades? 
                     for upgrade in quickbuild.upgrades
-                        if exportObj.upgrades[upgrade].unique? and exportObj.upgrades[upgrade] in @uniques_in_use.Upgrade and not (exportObj.upgrades[upgrade] in uniques_in_use_by_pilot_in_use)
+                        upgradedata = exportObj.upgrades[upgrade]
+                        if not upgradedata?
+                            console.log("There was an Issue including the upgrade " + upgrade + " in some quickbuild. Please report that Issue!")
+                            continue
+                        if upgradedata.unique? and upgradedata in @uniques_in_use.Upgrade and not (upgradedata in uniques_in_use_by_pilot_in_use)
                             # check, if unique is used by this ship or it's linked ship
                             if ship_selector == null or not (upgrade in exportObj.quickbuildsById[ship_selector.quickbuildId].upgrades or (ship_selector.linkedShip and upgrade in (exportObj.quickbuildsById[ship_selector.linkedShip?.quickbuildId].upgrades ? [])))
                                 allowed_quickbuilds_containing_uniques_in_use.push quickbuild.id
                                 break
                         # check if solitary type is already claimed
-                        if exportObj.upgrades[upgrade].solitary? and exportObj.upgrades[upgrade].slot in @uniques_in_use['Slot'] and not (exportObj.upgrades[upgrade].slot in uniques_in_use_by_pilot_in_use)
+                        if upgradedata.solitary? and upgradedata.slot in @uniques_in_use['Slot'] and not (upgradedata.slot in uniques_in_use_by_pilot_in_use)
                             allowed_quickbuilds_containing_uniques_in_use.push quickbuild.id
                             break
             
@@ -1721,7 +1731,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         upgrades_in_use = (upgrade.data for upgrade in ship.upgrades)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (@isItemAvailable(upgrade)))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when exportObj.slotsMatching(upgrade.slot, slot) and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (@isItemAvailable(upgrade)))
 
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
@@ -2627,6 +2637,12 @@ class exportObj.SquadBuilder
                 @suppress_automatic_new_ship = true
                 @removeAllShips()
 
+                success = true
+                error = ""
+
+                serialized_squad = "v7!s=200!" # serialization version 7, standard squad, 200 points
+                # serialization schema SHIPID:UPGRADEID,UPGRADEID,...,UPGRADEID:;SHIPID:UPGRADEID,...
+
                 for pilot in xws.pilots
                     new_ship = @addShip()
                     # we add some backward compatibility here, to allow imports from Launch Bay Next Squad Builder
@@ -2642,28 +2658,20 @@ class exportObj.SquadBuilder
                         error = "Pilot without identifier"
                         break
 
-                    # pilotsByUniqueName is a weired thing, containing most pilots by xws name, but does weired stuff on pilots that exist multiple times. 
+                    # add pilot id
                     if exportObj.pilotsByUniqueName[pilotxws] and exportObj.pilotsByUniqueName[pilotxws].length == 1
-                        shipname =  exportObj.pilotsByUniqueName[pilotxws][0].ship
+                        serialized_squad +=  exportObj.pilotsByUniqueName[pilotxws][0].id
                     
                     else
                         for key, possible_pilots of exportObj.pilotsByUniqueName
                             for possible_pilot in possible_pilots
                                 if (possible_pilot.xws and possible_pilot.xws == pilotxws) or (not possible_pilot.xws and key == pilotxws)
-                                    shipname = possible_pilot.ship
+                                    serialized_squad += possible_pilot.id
+                                    break
 
+                    serialized_squad += ":"
 
-                    #for ship_name, ship_data of exportObj.ships
-                    #    if @matcher(ship_data.xws, pilot.ship)
-                    #        shipnameXWS =
-                    #            id: ship_data.name
-                    #            xws: ship_data.xws
-                    # console.log "#{pilot.xws}"
-                    try
-                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilotxws] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilotxws]) when p.ship == shipname)[0], true
-                    catch err
-                        console.error err.message 
-                        continue
+                    # add upgrade ids
                     # Turn all the upgrades into a flat list so we can keep trying to add them
                     addons = []
                     for upgrade_type, upgrade_canonicals of pilot.upgrades ? {}
@@ -2671,65 +2679,22 @@ class exportObj.SquadBuilder
                             # console.log upgrade_type, upgrade_canonical
                             slot = null
                             slot = exportObj.fromXWSUpgrade[upgrade_type] ? upgrade_type.capitalize()
-                            addon = exportObj.upgradesBySlotXWSName[slot][upgrade_canonical] ?= exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
-                            if addon?
-                                # console.log "-> #{upgrade_type} #{addon.name} #{slot}"
-                                addons.push
-                                    type: slot
-                                    data: addon
-                                    slot: slot
+                            upgrade = exportObj.upgradesBySlotXWSName[slot][upgrade_canonical] ?= exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
+                            if not upgrade?
+                                console.log("Failed to load xws upgrade: " + upgrade_canonical)
+                                error += "Skipped upgrade " + upgrade_canonical
+                                success = false
+                                continue
+                            serialized_squad += upgrade.id
+                            serialized_squad += ","
+                    serialized_squad += ":;"
 
-                    if addons.length > 0
-                        for _ in [0...1000]
-                            # Try to add an addon.  If it's not eligible, requeue it and
-                            # try it again later, as another addon might allow it.
-                            addon = addons.shift()
-                            # console.log "Adding #{addon.data.name} to #{new_ship}..."
+                @loadFromSerialized(serialized_squad)
 
-                            addon_added = false
-                            # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
-                            for upgrade, i in new_ship.upgrades
-                                continue if upgrade.slot != addon.slot or upgrade.data?
-                                upgrade.setData addon.data
-                                addon_added = true
-                                break
+                @current_squad.dirty = true
+                @container.trigger 'xwing-backend:squadNameChanged'
+                @container.trigger 'xwing-backend:squadDirtinessChanged'
 
-                            if addon_added
-                                # console.log "Successfully added #{addon.data.name} to #{new_ship}"
-                                if addons.length == 0
-                                    # console.log "Done with addons for #{new_ship}"
-                                    break
-                            else
-                                # Can't add it, requeue unless there are no other addons to add
-                                # in which case this isn't valid
-                                if addons.length == 0
-                                    success = false
-                                    error = "Could not add #{addon.data.name} to #{new_ship}"
-                                    break
-                                else
-                                    # console.log "Could not add #{addon.data.name} to #{new_ship}, trying later"
-                                    addons.push addon
-
-                        if addons.length > 0
-                            success = false
-                            error = "Could not add all upgrades"
-                            break
-
-                @suppress_automatic_new_ship = false
-                # Finally, the unassigned ship
-                @addShip()
-
-                success = true
-            else
-                success = false
-                error = "Invalid or unsupported XWS version"
-
-        if success
-            @current_squad.dirty = true
-            @container.trigger 'xwing-backend:squadNameChanged'
-            @container.trigger 'xwing-backend:squadDirtinessChanged'
-
-        # console.log "success: #{success}, error: #{error}"
 
         cb
             success: success
@@ -2937,7 +2902,7 @@ class Ship
                     for upgrade_name in autoequip
                         auto_equip_upgrade = exportObj.upgrades[upgrade_name]
                         for upgrade in @upgrades
-                            if upgrade.slot == auto_equip_upgrade.slot
+                            if exportObj.slotsMatching(upgrade.slot, auto_equip_upgrade.slot)
                                 upgrade.setData auto_equip_upgrade
                 if same_ship
                     for _ in [1..2] # try this twice, as upgrades added in the first run may add new slots that are filled in the second run.
@@ -3571,9 +3536,10 @@ class Ship
 
             when 4, 5, 6
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
-                # version 5 is the same as version 4, but title and mod has been dropped (as they are treated as upgrades anyways). Thus, we may differ by length
+                # conferredaddons are upgrade slots added by e.g. titles 
+                # version 5 is the same as version 4, but title and mod has been dropped (as they are treated as upgrades anyways). Thus, we may differ by length 
                 if (serialized.split ':').length == 3
-                    # version 5
+                    # version 5,6
                     [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
                 else 
                     # version 4
@@ -3624,6 +3590,36 @@ class Ship
                                 everythingadded &= conferred_addon.lastSetValid
                             else
                                 throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
+
+            when 7
+                # version 7 is an further extension of version 6, allowing arbitrary order of upgrades. It currently ignores conferredaddons (upgrades in slots added by titles etc), probably we can drop the special case handling for them and include them into the usual upgrade list?
+                [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':' 
+                upgrade_ids = upgrade_ids.split ','
+                # set the pilot
+                @setPilotById parseInt(pilot_id), true
+                # make sure the pilot is valid 
+                return false unless @validate
+
+                # iterate over upgrades to be added, and remove all that have been successfully added
+                for _ in [1 ... 3] # try adding each upgrade a few times, as the required slots might be added in by titles etc and are not yet available on the first try
+                    for i in [upgrade_ids.length - 1 ... -1]
+                        upgrade_id = upgrade_ids[i]
+                        upgrade = exportObj.upgradesById[upgrade_id]
+                        if not upgrade? 
+                            upgrade_ids.splice(i,1) # Remove unknown or empty ID
+                            if upgrade_id != ""
+                                console.log("Unknown upgrade id " + upgrade_id + " could not be added. Please report that error")
+                                everythingadded = false
+                            continue
+                        for upgrade_selection in @upgrades
+                            if exportObj.slotsMatching(upgrade.slot, upgrade_selection.slot) and not upgrade_selection.isOccupied()
+                                upgrade_selection.setById upgrade_id
+                                if upgrade_selection.lastSetValid
+                                    upgrade_ids.splice(i,1) # added successfully, remove from list
+                                break
+                everythingadded &= upgrade_ids.length == 0
+
+                            
 
         @updateSelections()
         everythingadded
@@ -3715,7 +3711,7 @@ class Ship
     
     isSlotOccupied: (slot_name) ->
         for upgrade in @upgrades
-            if upgrade.slot == slot_name
+            if exportObj.slotsMatching(upgrade.slot, slot_name)
                 return true unless upgrade.isOccupied()
         false
 

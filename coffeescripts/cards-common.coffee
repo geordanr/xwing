@@ -7504,6 +7504,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 11
            unique: true
+           faction: ["Scum and Villainy", "Rebel Alliance"]
            force: 1
            modifier_func: (stats) ->
                 stats.force += 1
@@ -7652,6 +7653,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 5
            unique: true
+           faction: ["Scum and Villainy", "Galactic Empire"]
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
@@ -7785,6 +7787,7 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 2
            unique: true
+           faction: ["Scum and Villainy", "Galactic Empire"]
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
@@ -8631,6 +8634,7 @@ exportObj.basicCardData = ->
             slot: "Hardpoint"
             points: 0
             ignorecollection: true
+            faction: []
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -8643,6 +8647,7 @@ exportObj.basicCardData = ->
             id: 169
             slot: "Hardpoint"
             ignorecollection: true
+            faction: []
             points: 0
             confersAddons: [
                 {
@@ -8656,6 +8661,7 @@ exportObj.basicCardData = ->
             id: 170
             slot: "Hardpoint"
             ignorecollection: true
+            faction: []
             points: 0
             confersAddons: [
                 {
@@ -9100,15 +9106,12 @@ exportObj.basicCardData = ->
             id: 217
             unique: true
             slot: "Crew"
+            faction: ["Galactic Republic", "Separatist Alliance"]
             force: 1
             points: 14
             modifier_func: (stats) ->
                 stats.force += 1
                 stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
-            restriction_func: (ship) ->
-                builder = ship.builder
-                return true if builder.faction == "Galactic Republic" or builder.faction == "Separatist Alliance"
-                false
        }
        {
             name: "Count Dooku"
@@ -11356,7 +11359,7 @@ exportObj.basicCardData = ->
                 "Hate"
                 "Predictive Shot"
                 "Primed Thrusters"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
             ]
         }
         {
@@ -11400,7 +11403,7 @@ exportObj.basicCardData = ->
             threat: 3
             upgrades: [
                 "Primed Thrusters"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
             ]
         }
         {
@@ -11986,7 +11989,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Daredevil"
                 "Advanced Sensors"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
             ]
         }
         {
@@ -12042,7 +12045,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Crack Shot"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
                 "Afterburners"
             ]
         }
@@ -12841,7 +12844,7 @@ exportObj.basicCardData = ->
             threat: 3
             upgrades: [
                 "Marksmanship"
-                "Advanced Proton Torpedoes"
+                "Adv. Proton Torpedoes"
                 "Afterburners"
             ]
         }
