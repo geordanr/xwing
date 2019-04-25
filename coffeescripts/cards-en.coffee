@@ -1296,7 +1296,7 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Adds 1 shield</i> %LINEBREAK% During the End Phase, you may spend 1&nbsp;%CHARGE% to perform a red %BOOST% action.%LINEBREAK%Add %MODIFICATION% slot."""
         "Soulless One":
            display_name: """Soulless One"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%While you defend, if the attacker is outside your firing arc, you may reroll 1&nbsp;defense die."""
+           text: """<i>Separatist Alliance only</i>%LINEBREAK%<i>Adds 2 Hull</i>%LINEBREAK%While you defend, if the attacker is outside your firing arc, you may reroll 1&nbsp;defense die."""
         "Ablative Plating":
            display_name: """Ablative Plating"""
            text: """<i>large ship or medium ship only</i>%LINEBREAK%Before you would suffer damage from an obstacle or from a friendly bomb detonating, you may spend 1&nbsp;%CHARGE%. If you do, prevent 1 damage."""
