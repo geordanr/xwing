@@ -1498,6 +1498,54 @@ exportObj.basicCardData = ->
              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
              [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
            ]
+        "Resistance Transport Pod":
+           name: "Resistance Transport Pod"               
+           xws: "Resistance Transport Pod".canonicalize()
+           factions: ["Galactic Republic"]
+           attack: 2
+           agility: 2
+           hull: 3
+           shields: 1
+           actions: [
+             "Focus"
+           ]
+           actionsred: [
+             "Lock"
+             "Barrel Roll"
+             "Jam"
+           ]
+           maneuvers: [
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+           ]
+        "Resistance Transport":
+           name: "Resistance Transport"               
+           xws: "Resistance Transport".canonicalize()
+           factions: ["Galactic Republic"]
+           attack: 2
+           agility: 1
+           hull: 5
+           shields: 3
+           actions: [
+             "Focus"
+             "Lock"
+           ]
+           actionsred: [
+             "Coordinate"
+             "Jam"
+           ]
+           maneuvers: [
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+           ]
         
     # name field is for convenience only
     pilotsById: [
@@ -6835,7 +6883,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unique PS 4"
+            name: "Padme Amidala"
             id: 332
             unique: true
             faction: "Galactic Republic"
@@ -7048,7 +7096,30 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
-        }    ]
+        }  
+        {
+            name: "Rose Tico"
+            id: 345
+            faction: "Galactic Republic"
+            ship: "Resistance Transport Pod"
+            skill: 3
+            points: 200
+            unique: true
+            slots: [
+            ]
+        }    
+        {
+            name: "Pammich Nerro Goode"
+            id: 346
+            faction: "Galactic Republic"
+            ship: "Resistance Transport"
+            skill: 3
+            points: 200
+            unique: true
+            slots: [
+            ]
+        }    
+    ]
 
 
     upgradesById: [
@@ -9224,6 +9295,53 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.hull += 2
        }
+       {
+           name: "Plasma Torpedoes"
+           id: 230
+           slot: "Torpedo"
+           points: 200
+           attack: 3
+           range: """2-3"""
+           rangebonus: true 
+           charge: 2
+       }
+       {
+           name: "Autoblaster"
+           id: 231
+           slot: "Cannon"
+           points: 200
+           attack: 2
+           range: """1-2"""
+       }
+       {
+           name: "R2-C4"
+           id: 232
+           slot: "Astromech"
+           points: 200
+           faction: "Galactic Republic"
+           unique: true
+       }
+       {
+           name: "GA-97"
+           id: 233
+           slot: "Crew"
+           points: 200
+           charges: 5
+           recurring: true
+           faction: "Galactic Republic"
+           unique: true
+           modifier_func: (stats) ->
+               stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+            applies_condition: '''It's the Resistance'''.canonicalize()
+       }
+       {
+           name: "Kaydel Connix"
+           id: 234
+           slot: "Crew"
+           points: 200
+           faction: "Galactic Republic"
+           unique: true
+       }
     ]
 
 
@@ -9293,6 +9411,11 @@ exportObj.basicCardData = ->
         {
             name: 'Buzz Droid Swarm'
             id: 14
+        }
+        {
+            name: """It's the Resistance"""
+            id: 15
+            unique: true
         }
     ]
 
