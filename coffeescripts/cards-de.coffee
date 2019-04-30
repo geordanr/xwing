@@ -1278,7 +1278,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Abschaum</i>%LINEBREAK%Nachdem du ein Wende­­manöver (%TURNLEFT% oder %TURNRIGHT%) oder Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufgedeckt hast, darfst du dein Rad auf das Manöver derselben Geschwindigkeit und Flugrichtung in der anderen Orientierung einstellen.%LINEBREAK%Füge den %TORPEDO%-Slot hinzu."""
         "Soulless One":
            display_name: """Seelenlose"""
-           text: """<i>Nur für Separatistenallianz</i>%LINEBREAK%Solange du verteidigst, falls der Angreifer außerhalb deines Feuerwinkels ist, darfst du 1 Verteidigungswürfel neu werfen."""
+           text: """<i>Nur für Separatistenallianz %LINEBREAK% Fügt 2 Hüllenpunkte hinzu </i>%LINEBREAK% Solange du verteidigst, falls der Angreifer außerhalb deines Feuerwinkels ist, darfst du 1 Verteidigungswürfel neu werfen."""
         "Virago":
            display_name: """Virago"""
            text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um eine rote %BOOST%-Aktion durchzuführen.%LINEBREAK%Füge den %MODIFICATION%-Slot hinzu."""
