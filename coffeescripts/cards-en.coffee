@@ -310,7 +310,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Black Squadron Scout"""
            text: """<i class = flavor_text>These heavily armed atmospheric craft employ their specialized moveable wings to gain additional speed and maneuverability.</i>%LINEBREAK% <sasmall><strong>Adaptive Ailerons:</strong> Before you reveal your dial, if you are not stressed, you <b>must</b> execute a white [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], or [1&nbsp;%BANKRIGHT%] maneuver.</sasmall>"""
         "Black Squadron Ace (T-70)":
-           display_name: """Black Squadron Ace (T-70)"""
+           display_name: """Black Squadron Ace"""
            text: """<i class = flavor_text>During the Cold War, Poe Dameron’s Black Squadron conducted daring covert operations against the First Order in defiance of treaties ratified by the New Republic Senate.</i>%LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
         "Black Squadron Scout":
            display_name: """Black Squadron Scout"""
@@ -415,7 +415,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Chewbacca"""
            text: """Before you would be dealt a faceup damage card, you may spend 1&nbsp;%CHARGE% to be dealt the card facedown instead."""
         "Chewbacca (Resistance)":
-           display_name: """Chewbacca (Resistance)"""
+           display_name: """Chewbacca"""
            text: """After a friendly ship at range 0-3 is destroyed, before that ship is removed, you may perform an action. Then you may perform a bonus attack."""
         "Cobalt Squadron Bomber":
            display_name: """Cobalt Squadron Bomber"""
@@ -460,7 +460,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Dace Bonearm"""
            text: """After an enemy ship at range 0-3 receives at least 1 ion token, you may spend 3&nbsp;%CHARGE%. If you do, that ship gains 2 additional ion tokens."""
         "Dalan Oberos (StarViper)":
-           display_name: """Dalan Oberos (StarViper)"""
+           display_name: """Dalan Oberos"""
            text: """After you fully execute a maneuver, you may gain 1 stress token to rotate your ship 90º.%LINEBREAK% <strong>Microthrusters:</strong> While you perform a barrel roll, you <b>must</b> use the %BANKLEFT% or %BANKRIGHT% template instead of the %STRAIGHT% template."""
         "Dalan Oberos":
            display_name: """Dalan Oberos"""
@@ -514,16 +514,16 @@ exportObj.cardLoaders.English = () ->
            display_name: """Ezra Bridger"""
            text: """While you defend or perform an attack, if you are stressed, you may spend 1&nbsp;%FORCE% to change up to 2 of your %FOCUS% results to %EVADE% or %HIT% results.%LINEBREAK%<strong>Locked and Loaded:</strong> While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus primary %REARARC% attack."""
         "Ezra Bridger (Sheathipede)":
-           display_name: """Ezra Bridger (Sheathipede)"""
+           display_name: """Ezra Bridger"""
            text: """While you defend or perform an attack, if you are stressed, you may spend 1&nbsp;%FORCE% to change up to 2 of your %FOCUS% results to %EVADE% /%HIT% results. %LINEBREAK%<strong>Comms Shuttle:</strong> While you are docked, your carrier ship gains %COORDINATE%. Before your carrier ship activates, it may perform a %COORDINATE% action."""
         "Ezra Bridger (TIE Fighter)":
-           display_name: """Ezra Bridger (TIE Fighter)"""
+           display_name: """Ezra Bridger"""
            text: """While you defend or perform an attack, if you are stressed, you may spend 1&nbsp;%FORCE% to change up to 2 of your %FOCUS% results to %EVADE% or %HIT% results."""
         "Feethan Ottraw Autopilot":
            display_name: """Feethan Ottraw Autopilot"""
            text: """<i class = flavor_text>Unlike the more disposable fighters it also built for the Separatists, Feethan Ottraw Scalable Assemblies designed the Belbullab-22 with a solid mix of firepower, durability, and speed.</i>"""
         "Fenn Rau (Sheathipede)":
-           display_name: """Fenn Rau (Sheathipede)"""
+           display_name: """Fenn Rau"""
            text: """After an enemy ship in your firing arc engages, if you are not stressed, you may gain 1 stress token. If you do, that ship cannot spend tokens to modify dice while it performs an attack during this phase.%LINEBREAK%<strong>Comms Shuttle:</strong> While you are docked, your carrier ship gains %COORDINATE%. Before your carrier ship activates, it may perform a %COORDINATE% action."""
         "Fenn Rau":
            display_name: """Fenn Rau"""
@@ -547,7 +547,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Gand Findsman"""
            text: """<i class = flavor_text>The legendary Findsmen of Gand worship the enshrouding mists of their home planet, using signs, augurs, and mystical rituals to track their quarry.</i>"""
         "Garven Dreis (X-Wing)":
-           display_name: """Garven Dreis (X-Wing)"""
+           display_name: """Garven Dreis"""
            text: """After you spend a focus token, you may choose 1 friendly ship at range 1-3. That ship gains 1 focus token."""
         "Garven Dreis":
            display_name: """Garven Dreis"""
@@ -595,10 +595,10 @@ exportObj.cardLoaders.English = () ->
            display_name: """Han Solo"""
            text: """After you roll dice, if you are at range 0-1 of an obstacle, you may reroll all of your dice. This does not count as rerolling for the purpose of other effects."""
         "Han Solo (Scum)":
-           display_name: """Han Solo (Scum)"""
+           display_name: """Han Solo"""
            text: """While you defend or perform a primary attack, if the attack is obstructed by an obstacle, you may roll 1 additional die."""
         "Han Solo (Resistance)":
-           display_name: """Han Solo (Resistance)"""
+           display_name: """Han Solo"""
            text: """<strong>Setup:</strong> You can be placed anywhere in the play area beyond range 3 of enemy ships."""
         "Heff Tobber":
            display_name: """Heff Tobber"""
@@ -607,7 +607,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Hera Syndulla"""
            text: """After you reveal a red or blue maneuver, you may set your dial to another maneuver of the same difficulty.%LINEBREAK%<strong>Locked and Loaded:</strong> While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus primary %REARARC% attack."""
         "Hera Syndulla (VCX-100)":
-           display_name: """Hera Syndulla (VCX-100)"""
+           display_name: """Hera Syndulla"""
            text: """After you reveal a red or blue maneuver, you may set your dial to another maneuver of the same difficulty.%LINEBREAK%<strong>Tail Gun:</strong> While you have a docked ship, you have a primary %REARARC% weapon with an attack value equal to your docked ship’s primary %FRONTARC% attack value."""
         "Hired Gun":
            display_name: """Hired Gun"""
@@ -715,7 +715,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """L3-37"""
            text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "L3-37 (Escape Craft)":
-           display_name: """L3-37 (Escape Craft)"""
+           display_name: """L3-37"""
            text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers.%LINEBREAK%<strong>Co-Pilot:</strong> While you are docked, your carrier ship has your pilot ability in addition to its own."""
         "Laetin A'shera":
            display_name: """Laetin A’shera"""
@@ -724,10 +724,10 @@ exportObj.cardLoaders.English = () ->
            display_name: """Lando Calrissian"""
            text: """After you fully execute a blue maneuver, you may choose a friendly ship at range 0-3. That ship may perform an action."""
         "Lando Calrissian (Scum)":
-           display_name: """Lando Calrissian (Scum)"""
+           display_name: """Lando Calrissian"""
            text: """After you roll dice, if you are not stressed, you may gain 1 stress token to reroll all of your blank results."""
         "Lando Calrissian (Scum) (Escape Craft)":
-           display_name: """Lando Calrissian (Scum) (Escape Craft)"""
+           display_name: """Lando Calrissian"""
            text: """After you roll dice, if you are not stressed, you may gain 1 stress token to reroll all of your blank results.%LINEBREAK%<strong>Co-Pilot:</strong> While you are docked, your carrier ship has your pilot ability in addition to its own."""
         "Latts Razzi":
            display_name: """Latts Razzi"""
@@ -817,7 +817,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Nien Nunb"""
            text: """After you gain a stress token, if there is an enemy ship in your %FRONTARC% at range 0-1, you may remove that stress token.%LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
         "Norra Wexley (Y-Wing)":
-           display_name: """Norra Wexley (Y-Wing)"""
+           display_name: """Norra Wexley"""
            text: """While you defend, if there is an enemy ship at range 0-1, add 1&nbsp;%EVADE% result to your dice results."""
         "Norra Wexley":
            display_name: """Norra Wexley"""
@@ -935,10 +935,10 @@ exportObj.cardLoaders.English = () ->
            display_name: """Sabine Wren"""
            text: """Before you activate, you may perform a %BARRELROLL% or %BOOST% action.%LINEBREAK%<strong>Locked and Loaded:</strong> While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus primary %REARARC% attack."""
         "Sabine Wren (TIE Fighter)":
-           display_name: """Sabine Wren (TIE Fighter)"""
+           display_name: """Sabine Wren"""
            text: """Before you activate, you may perform a %BARRELROLL% or %BOOST% action."""
         "Sabine Wren (Scum)":
-           display_name: """Sabine Wren (Scum)"""
+           display_name: """Sabine Wren"""
            text: """While you defend, if the attacker is in your %SINGLETURRETARC% at range 0-2, you may add 1&nbsp;%FOCUS% result to your dice results."""
         "Saesee Tiin":
            display_name: """Saesee Tiin"""
@@ -1175,7 +1175,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """“Odd Ball”"""
            text: """After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your %BULLSEYEARC%, you may acquire a lock on that ship."""
         '"Odd Ball" (ARC-170)':
-           display_name: """“Odd Ball” (ARC-170)"""
+           display_name: """“Odd Ball”"""
            text: """After you fully execute a red maneuver or perform a red action, if there is an enemy ship in your %BULLSEYEARC%, you may acquire a lock on that ship."""
         '"Pure Sabacc"':
            display_name: """“Pure Sabacc”"""
@@ -1223,10 +1223,10 @@ exportObj.cardLoaders.English = () ->
            display_name: """“Zeb” Orrelios"""
            text: """While you defend, %CRIT% results are neutralized before %HIT% results.%LINEBREAK%<strong>Locked and Loaded:</strong> While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus primary %REARARC% attack."""
         '"Zeb" Orrelios (Sheathipede)':
-           display_name: """“Zeb” Orrelios (Sheathipede)"""
+           display_name: """“Zeb” Orrelios"""
            text: """While you defend, %CRIT% results are neutralized before %HIT% results.%LINEBREAK%<strong>Comms Shuttle:</strong> While you are docked, your carrier ship gains %COORDINATE%. Before your carrier ship activates, it may perform a %COORDINATE% action."""
         '"Zeb" Orrelios (TIE Fighter)':
-           display_name: """“Zeb” Orrelios (TIE Fighter)"""
+           display_name: """“Zeb” Orrelios"""
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
         "Bombardment Drone":
            text: """If you would drop a device, you may launch that device instead, using the same template. %LINEBREAK% NETWORKED CALCULATIONS: While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result."""
@@ -1236,6 +1236,21 @@ exportObj.cardLoaders.English = () ->
         "Precise Hunter":
            display_name: """Precise Hunter"""
            text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, you may reroll 1&nbsp;blank result.%LINEBREAK%<strong>Networked Calculations:</strong> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range&nbsp;0-1 to change 1&nbsp;%FOCUS% result to an %EVADE% or %HIT% result."""
+        "Rose Tico":
+           display_name: """Rose Tico"""
+           text: """While you defend or perform an attack, you may reroll up to 1 of your results for each other friendly ship in the attack arc."""
+        "Pammich Nerro Goode":
+           display_name: """Pammich Nerro Goode"""
+           text: """While you have 2 or fewer stress tokens, you may execute red maneuvers even while stressed."""
+        "Padmé Amidala":
+           display_name: """Padmé Amidala"""
+           text: """While an enemy ship in your %FRONTARC% defends or performs an attack, that ship can modify only 1 %FOCUS% result (other results can still be modified). %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+        "Anakin Skywalker (N-1 Starfighter)":
+           display_name: """Anakin Skywalker"""
+           text: """Before you reveal your maneuver, you may spend 1 %FORCE% to barrel roll (this is not an action). %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+        "DBS-404":
+           display_name: """DBS-404"""
+           text: """You can perform primary attacks at range 0. While you perform an attack at attack range 0-1, you <strong>must</strong> roll 1 additional die. After the attack hits, suffer 1 %CRIT% damage. %LINEBREAK%<strong>Networked Calculations:</strong> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range&nbsp;0-1 to change 1&nbsp;%FOCUS% result to an %EVADE% or %HIT% result."""
 
 
 
@@ -1305,7 +1320,7 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Adds 1 shield</i> %LINEBREAK% During the End Phase, you may spend 1&nbsp;%CHARGE% to perform a red %BOOST% action.%LINEBREAK%Add %MODIFICATION% slot."""
         "Soulless One":
            display_name: """Soulless One"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%<i>Adds 2 Hull</i>%LINEBREAK%While you defend, if the attacker is outside your firing arc, you may reroll 1&nbsp;defense die."""
+           text: """<i>Separatist Alliance only %LINEBREAK% Adds 2 Hull</i>%LINEBREAK% While you defend, if the attacker is outside your firing arc, you may reroll 1&nbsp;defense die."""
         "Ablative Plating":
            display_name: """Ablative Plating"""
            text: """<i>large ship or medium ship only</i>%LINEBREAK%Before you would suffer damage from an obstacle or from a friendly bomb detonating, you may spend 1&nbsp;%CHARGE%. If you do, prevent 1 damage."""
@@ -1375,7 +1390,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """C-3PO"""
            text: """<i>Adds %CALCULATE%</i>%LINEBREAK%<i>Rebel only</i>%LINEBREAK%Before rolling defense dice, you may spend 1 calculate token to guess aloud a number 1 or higher. If you do and you roll exactly that many %EVADE% results, add 1&nbsp;%EVADE% result.%LINEBREAK%After you perform the %CALCULATE% action, gain 1 calculate token."""
         "C-3PO (Resistance)":
-           display_name: """C-3PO (Resistance)"""
+           display_name: """C-3PO"""
            text: """<i>Adds %CALCULATE% ,  <r>%COORDINATE%</r></i>%LINEBREAK%<i>Resistance only</i>%LINEBREAK%While you coordinate, you can choose friendly ships beyond range 2 if they have&nbsp;%CALCULATE% on their action bar.%LINEBREAK%After you perform the&nbsp;%CALCULATE% or&nbsp;%COORDINATE% action, gain 1&nbsp;calculate token."""
         "Cad Bane":
            display_name: """Cad Bane"""
@@ -1396,10 +1411,10 @@ exportObj.cardLoaders.English = () ->
            display_name: """Chewbacca"""
            text: """<i>Rebel only</i>%LINEBREAK%At the start of the Engagement Phase, you may spend 2 %CHARGE% to repair 1 faceup damage card."""
         "Chewbacca (Scum)":
-           display_name: """Chewbacca (Scum)"""
+           display_name: """Chewbacca"""
            text: """<i>Scum only</i>%LINEBREAK%At the start of the End Phase, you may spend 1 focus token to repair 1 of your faceup damage cards."""
         "Chewbacca (Resistance)":
-           display_name: """Chewbacca (Resistance)"""
+           display_name: """Chewbacca"""
            text: """<i>Resistance only</i>%LINEBREAK%<strong>Setup:</strong> Lose 1&nbsp;%CHARGE%.%LINEBREAK%After a friendly ship at range&nbsp;0-3 is dealt 1&nbsp;damage card, recover 1&nbsp;%CHARGE%.%LINEBREAK%While you perform an attack, you may spend 2&nbsp;%CHARGE% to change 1&nbsp;%FOCUS% result to a&nbsp;%CRIT% result."""
         "Ciena Ree":
            display_name: """Ciena Ree"""
@@ -1545,10 +1560,10 @@ exportObj.cardLoaders.English = () ->
            display_name: """Han Solo"""
            text: """<i>Rebel only</i>%LINEBREAK%During the Engagement Phase, at initiative 7, you may perform a %SINGLETURRETARC% attack. You cannot attack from that %SINGLETURRETARC% again this round."""
         "Han Solo (Scum)":
-           display_name: """Han Solo (Scum)"""
+           display_name: """Han Solo"""
            text: """<i>Scum only</i>%LINEBREAK%Before you engage, you may perform a red %FOCUS% action."""
         "Han Solo (Resistance)":
-           display_name: """Han Solo (Resistance)"""
+           display_name: """Han Solo"""
            text: """<i>Adds <r>%EVADE%</r></i>%LINEBREAK%<i>Resistance only</i>%LINEBREAK%After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1."""
         "Hate":
            display_name: """Hate"""
@@ -1652,7 +1667,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Lando Calrissian"""
            text: """<i>Rebel only</i>%LINEBREAK%<strong>Action:</strong> Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
         "Lando Calrissian (Scum)":
-           display_name: """Lando Calrissian (Scum)"""
+           display_name: """Lando Calrissian"""
            text: """<i>Scum only</i>%LINEBREAK%After you roll dice, you may spend 1 green token to reroll up to 2 of your results."""
         "Lando's Millennium Falcon":
            display_name: """Lando’s Millennium Falcon"""
@@ -1749,7 +1764,7 @@ exportObj.cardLoaders.English = () ->
         "R2-C4":
            text: """While you perform an attack, you may spend 1 evade token to change 1 %FOCUS% result to a %HIT% result."""
         "R2-D2 (Crew)":
-           display_name: """R2-D2 (Crew)"""
+           display_name: """R2-D2"""
            text: """<i>Rebel only</i>%LINEBREAK%During the End Phase, if you are damaged and not shielded, you may roll 1 attack die to recover 1 shield. On a %HIT% result, expose 1 of your damage cards."""
         "R2-D2":
            display_name: """R2-D2"""
@@ -1908,10 +1923,10 @@ exportObj.cardLoaders.English = () ->
            display_name: """Zuckuss"""
            text: """<i>Scum only</i>%LINEBREAK%While you perform an attack, if you are not stressed, you may choose 1 defense die and gain 1 stress token. If you do, the defender must reroll that die."""
         '"Chopper" (Crew)':
-           display_name: """“Chopper” (Crew)"""
+           display_name: """“Chopper”"""
            text: """<i>Rebel only</i>%LINEBREAK%During the Perform Action step, you may perform 1 action, even while stressed. After you perform an action while stressed, suffer 1&nbsp;%HIT% damage unless you expose 1 of your damage cards."""
         '"Chopper" (Astromech)':
-           display_name: """“Chopper” (Astromech)"""
+           display_name: """“Chopper”"""
            text: """<i>Rebel only</i>%LINEBREAK%<strong>Action:</strong> Spend 1 non-recurring &nbsp;%CHARGE% from another equipped upgrade to recover 1 shield. %LINEBREAK%<strong>Action:</strong> Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
         '"Genius"':
            display_name: """“Genius”"""
@@ -1919,6 +1934,24 @@ exportObj.cardLoaders.English = () ->
         '"Zeb" Orrelios':
            display_name: """“Zeb” Orrelios"""
            text: """<i>Rebel only</i>%LINEBREAK%You can perform primary attacks at range 0. Enemy ships at range 0 can perform primary attacks against you."""
+        "GA-97":
+           display_name: """GA-97"""
+           text: """<strong>Setup</strong>: Before lacing forces, you may spend 3-5 %CHARGE%. If you do, choose another friendly ship and assign the <strong>It's the Resistance</strong> condition to it."""
+        "Kaydel Connix":
+           display_name: """Kaydel Connix"""
+           text: """After you reveal your dial, you may set your dial to a basic maneuver of the next higher speed. While you execute that maneuver, increase its' difficulty."""
+        "Autoblasters":
+           display_name: """Autoblasters"""
+           text: """<strong>Attack:</strong> If the defender is in your %BULLSEYEARC%, roll 1 additional die. During the Neutralize Results step, if you are not in the defender's %FRONTARC%, %EVADE% results do not cancel %CRIT% results. """
+        "R2-C4":
+           display_name: """R2-C4"""
+           text: """While you perform an attack, you may spend 1 evade token to change 1 %FOCUS% result to a %HIT% result. """
+        "Plasma Torpedoes":
+           display_name: """Plasma Torpedoes"""
+           text: """<strong>Attack (%LOCK%):</strong> Spend 1 %CHARGE%. During the Neutralize Results step, %CRIT% results are cancelled before %HIT% results. After the attack hits, the defender loses 1 shield. """
+        "Electro-Proton Bomb":
+           display_name: """Electro-Proton Bomb"""
+           text: """<strong>Bomb</strong>%LINEBREAK%During the System Phase, you may spend 1 %CHARGE% to drop an Electro-Proton Bomb with the [1 %STRAIGHT%] template. Then place 1 fuse marker on that device. %LINEBREAK%This card’s %CHARGE% cannot be recovered."""
 
         "Hardpoint: Cannon":
            text: """Adds a %CANNON% slot"""
@@ -1957,7 +1990,9 @@ exportObj.cardLoaders.English = () ->
            text: '''INIT: 0 %LINEBREAK% AGILITY: 3 %LINEBREAK% HULL: 1 %LINEBREAK% (Remote) - While a friendly ship locks an object or jams an enemy ship, it may measure range from you. %LINEBREAK% After an enemy ship overlaps you, that ship rolls 1 attack die. On a %FOCUS% result, you suffer 1 %HIT% damage. %LINEBREAK% System Phase: At your initiative, you may relocate using a [2 %BANKLEFT%], [2 %STRAIGHT%] or [2 %BANKRIGHT%] template.'''
         'Buzz Droid Swarm':
            text: '''INIT: 0 %LINEBREAK% AGILITY: 3 %LINEBREAK% HULL: 1 %LINEBREAK% (Remote) - After an enemy ship moves through or overlaps you, relocate to its front or rear guides (you are at range 0 of this ship). You cannot overlap an object this way. If you cannot be placed at either set of guides, you and that ship each suffere 1 %HIT% damage. %LINEBREAK% Engagement Phase: At your initiative, each enemy ship at range 0 suffers 1 %CRIT% damage.'''
-        """It's the Resistance""":
-           text: '''<strong>Setup:</strong> Start in reserve. %LINEBREAK%When you deploy, you are placed within range 1 of any table edge and beyond range 3 of any enemy ship. %LINEBREAK%At the start of the round, if all of the friendly <strong>GA-97</strong>'s %CHARGE% are active, you <strong>must</strong>deploy. Then remove this card. After the friendly <strong>GA-97</strong> is destroyed, you <strong>must</strong> deploy. Then gain 1 disarm token and remove this card.'''
+        '''It's the Resistance''':
+           text: '''<strong>Setup:</strong> Start in reserve. %LINEBREAK% When you deploy, you are placed within range 1 of any table edge and beyond range 3 of any enemy ship. %LINEBREAK% At the start of the round, if all of the friendly <strong>GA-97</strong>'s %CHARGE% are active, you <strong>must</strong> deploy. Then remove this card. After the friendly <strong>GA-97</strong> is destroyed, you <strong>must</strong> deploy. Then gain 1 disarm token and remove this card.'''
+        'Electro-Proton Bomb':
+           text: '''(Bomb Token) - At the end of the Activation Phase this device detonates. When this device detonates, each ship at range 0–2 rolls 4 attack dice. Each ship loses 1 shield for each blank result, gains 1 ion token for each %FOCUS%/%HIT% result, and gains 1 disarm token for each %CRIT% result. '''
             
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations

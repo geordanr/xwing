@@ -1501,7 +1501,7 @@ exportObj.basicCardData = ->
         "Resistance Transport Pod":
            name: "Resistance Transport Pod"               
            xws: "Resistance Transport Pod".canonicalize()
-           factions: ["Galactic Republic"]
+           factions: ["Resistance"]
            attack: 2
            agility: 2
            hull: 3
@@ -1516,16 +1516,15 @@ exportObj.basicCardData = ->
            ]
            maneuvers: [
              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+             [ 3, 2, 2, 2, 3, 0, 0, 0, 0, 0]
+             [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0]
+             [ 0, 3, 1, 3, 0, 3, 0, 0, 0, 0]
+             [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
            ]
         "Resistance Transport":
            name: "Resistance Transport"               
            xws: "Resistance Transport".canonicalize()
-           factions: ["Galactic Republic"]
+           factions: ["Resistance"]
            attack: 2
            agility: 1
            hull: 5
@@ -1539,12 +1538,11 @@ exportObj.basicCardData = ->
              "Jam"
            ]
            maneuvers: [
-             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-             [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 3, 2, 2, 2, 3, 0, 0, 0, 0, 0, 3, 0, 3 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 3, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
            ]
         
     # name field is for convenience only
@@ -6721,6 +6719,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (N-1 Starfighter)"
+            canonical_name: 'Anakin Skywalker'.canonicalize()
+            xws: "anakinskywalker-nabooroyaln1starfighter"
             id: 322
             unique: true
             faction: "Galactic Republic"
@@ -6783,7 +6783,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unique PS 4"
+            name: "DBS-404"
             id: 326
             unique: true
             faction: "Separatist Alliance"
@@ -6877,13 +6877,14 @@ exportObj.basicCardData = ->
             skill: 3
             points: 200
             slots: [
+                "Talent"
                 "Sensor"
                 "Astromech"
                 "Torpedo"
             ]
         }
         {
-            name: "Padme Amidala"
+            name: "Padmé Amidala"
             id: 332
             unique: true
             faction: "Galactic Republic"
@@ -6891,6 +6892,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 200
             slots: [
+                "Talent"
                 "Sensor"
                 "Astromech"
                 "Torpedo"
@@ -6905,6 +6907,7 @@ exportObj.basicCardData = ->
             skill: 5
             points: 200
             slots: [
+                "Talent"
                 "Sensor"
                 "Astromech"
                 "Torpedo"
@@ -7096,29 +7099,49 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
-        }  
+        }    
         {
             name: "Rose Tico"
             id: 345
-            faction: "Galactic Republic"
+            unique: true
+            faction: "Resistance"
             ship: "Resistance Transport Pod"
             skill: 3
             points: 200
-            unique: true
             slots: [
+                "Talent"
+                "Crew"
+                "Modification"
             ]
-        }    
+        }
+        {
+            name: "Logistics Division Pilot"
+            id: 346
+            faction: "Resistance"
+            ship: "Resistance Transport"
+            skill: 1
+            points: 200
+            slots: [
+                "Cannon"
+                "Crew"
+                "Modification"
+            ]
+        }
         {
             name: "Pammich Nerro Goode"
-            id: 346
-            faction: "Galactic Republic"
+            id: 347
+            unique: true
+            faction: "Resistance"
             ship: "Resistance Transport"
             skill: 3
             points: 200
-            unique: true
             slots: [
+                "Talent"
+                "Cannon"
+                "Crew"
+                "Modification"
             ]
-        }    
+        }
     ]
 
 
@@ -9296,8 +9319,45 @@ exportObj.basicCardData = ->
                 stats.hull += 2
        }
        {
+            name: "GA-97"
+            id: 230
+            slot: "Crew"
+            points: 200
+            charge: 5
+            recurring: true
+            faction: "Resistance"
+            unique: true
+            modifier_func: (stats) ->
+               stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+            applies_condition: '''It's the Resistance'''.canonicalize()
+       }
+       {
+            name: "Kaydel Connix"
+            id: 231
+            slot: "Crew"
+            points: 200
+            faction: "Resistance"
+            unique: true
+       }
+       {
+           name: "Autoblasters"
+           id: 232
+           slot: "Cannon"
+           points: 200
+           attack: 2
+           range: """1-2"""
+       }
+       {
+           name: "R2-C4"
+           id: 233
+           unique: true
+           slot: "Astromech"
+           points: 200
+           faction: "Galactic Republic"
+       }
+       {
            name: "Plasma Torpedoes"
-           id: 230
+           id: 234
            slot: "Torpedo"
            points: 200
            attack: 3
@@ -9306,41 +9366,16 @@ exportObj.basicCardData = ->
            charge: 2
        }
        {
-           name: "Autoblaster"
-           id: 231
-           slot: "Cannon"
-           points: 200
-           attack: 2
-           range: """1-2"""
-       }
-       {
-           name: "R2-C4"
-           id: 232
-           slot: "Astromech"
-           points: 200
-           faction: "Galactic Republic"
-           unique: true
-       }
-       {
-           name: "GA-97"
-           id: 233
-           slot: "Crew"
-           points: 200
-           charges: 5
-           recurring: true
-           faction: "Galactic Republic"
-           unique: true
-           modifier_func: (stats) ->
-               stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
-            applies_condition: '''It's the Resistance'''.canonicalize()
-       }
-       {
-           name: "Kaydel Connix"
-           id: 234
-           slot: "Crew"
-           points: 200
-           faction: "Galactic Republic"
-           unique: true
+            name: "Electro-Proton Bomb"
+            id: 235
+            slot: "Device"
+            points: 200
+            charge: 1
+            unequips_upgrades: [ "Modification" ]
+            also_occupies_upgrades: [ "Modification" ]
+            applies_condition: 'Electro-Proton Bomb'.canonicalize()
+            restriction_func: (ship) ->
+                "Reload" in ship.effectiveStats().actions or "Reload" in ship.effectiveStats().actionsred
        }
     ]
 
@@ -9413,9 +9448,12 @@ exportObj.basicCardData = ->
             id: 14
         }
         {
-            name: """It's the Resistance"""
+            name: '''It's the Resistance'''
             id: 15
-            unique: true
+        }
+        {
+            name: 'Electro-Proton Bomb'
+            id: 16
         }
     ]
 
@@ -10232,7 +10270,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Advanced Sensors"
                 "Proton Rockets"
-                "Connor Nets"
+                "Conner Nets"
             ]
         }
         {

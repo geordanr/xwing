@@ -3104,7 +3104,7 @@ class Ship
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Pilot', @pilot, @ if @pilot
         @pilot_selector.data('select2').container.on 'touchmove', (e) =>
-            @builder.showTooltip 'Ship', @pilot, @ if @pilot
+            @builder.showTooltip 'Pilot', @pilot, @ if @pilot
             ###if @data? 
                 scrollTo(0,$('#info-container').offset().top - 10,'smooth')###
 
