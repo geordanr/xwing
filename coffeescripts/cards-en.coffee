@@ -861,7 +861,7 @@ exportObj.cardLoaders.English = () ->
         "Overseer Yushyn":
            display_name: """Overseer Yushyn"""
            text: """Before a friendly ship at range 1 would gain a disarm token, if that ship is not stressed, you may spend 1&nbsp;%CHARGE%. If you do, that ship gains 1 stress token instead.%LINEBREAK%<strong>Notched Stabilizers:</strong> While you move, you ignore asteroids."""
-        "Padme Amidala":
+        "Padmé Amidala":
            display_name: """Padmé Amidala"""
            text: """While an enemy ship in your %FRONTARC% defends or performs an attack that ship can modify only 1 %EVADE% result (other results can still be modified). %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Palob Godalhi":
@@ -1348,7 +1348,7 @@ exportObj.cardLoaders.English = () ->
         "Agile Gunner":
            display_name: """Agile Gunner"""
            text: """During the End Phase, you may rotate your %SINGLETURRETARC% indicator."""
-        "Autoblaster":
+        "Autoblasters":
            text: """<strong>Attack:</strong>If the defender is in your %BULLSEYEARC%, roll 1 additional die. During the Neutralize Results step, if you are not in the defenders %FRONTARC%, %EVADE% results do not cancel %CRIT% results."""
         "BB Astromech":
            display_name: """BB Astromech"""

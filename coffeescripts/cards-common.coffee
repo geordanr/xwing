@@ -11653,7 +11653,7 @@ exportObj.basicCardData = ->
                 "Lone Wolf"
                 "Perceptive Copilot"
                 "Inertial Dampeners"
-                "Seismic Charge"
+                "Seismic Charges"
                 "Slave I"
             ]
         }
@@ -11688,7 +11688,7 @@ exportObj.basicCardData = ->
                 "Perceptive Copilot"
                 "Inertial Dampeners"
                 "Proximity Mines"
-                "Seismic Charge"
+                "Seismic Charges"
                 "Andrasta"
             ]
         }
@@ -11711,7 +11711,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Perceptive Copilot"
                 "Inertial Dampeners"
-                "Seismic Charge"
+                "Seismic Charges"
             ]
         }
         {
@@ -12383,7 +12383,7 @@ exportObj.basicCardData = ->
                 "Elusive"
                 "Advanced Sensors"
                 "0-0-0"
-                "Zuckus"
+                "Zuckuss"
                 "BT-1"
                 "Mist Hunter"
             ]
@@ -12409,7 +12409,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Fire-Control System"
-                "Freelancer Slicer"
+                "Freelance Slicer"
                 "Deadman's Switch"
                 "Electronic Baffle"
             ]
