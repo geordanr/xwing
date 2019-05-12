@@ -2659,7 +2659,9 @@ class exportObj.SquadBuilder
                         break
 
                     # add pilot id
-                    if exportObj.pilotsByUniqueName[pilotxws] and exportObj.pilotsByUniqueName[pilotxws].length == 1
+                    if exportObj.pilotsByFactionXWS[xws_faction][pilotxws]? 
+                        serialized_squad +=  exportObj.pilotsByFactionXWS[xws_faction][pilotxws][0].id
+                    else if exportObj.pilotsByUniqueName[pilotxws] and exportObj.pilotsByUniqueName[pilotxws].length == 1 and (exportObj.pilotsByUniqueName[pilotxws].xws == pilotxws)
                         serialized_squad +=  exportObj.pilotsByUniqueName[pilotxws][0].id
                     
                     else
