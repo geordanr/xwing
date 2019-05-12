@@ -4111,12 +4111,7 @@ class GenericAddon
         false
 
     toXWS: (upgrade_dict) ->
-        upgrade_type = switch @type
-            when 'Upgrade'
-                exportObj.toXWSUpgrade[@slot] ? @slot.canonicalize()
-            else
-                exportObj.toXWSUpgrade[@type] ?  @type.canonicalize()
-        (upgrade_dict[upgrade_type] ?= []).push (@data.xws ? @data.canonical_name)
+        (upgrade_dict[exportObj.toXWSUpgrade[@data.slot] ? @data.slot.canonicalize()] ?= []).push (@data.xws ? @data.canonical_name)
 
 class exportObj.Upgrade extends GenericAddon
     constructor: (args) ->
