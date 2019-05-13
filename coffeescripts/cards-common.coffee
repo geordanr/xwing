@@ -6749,7 +6749,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Generic PS 1"
+            name: "Techno Union Bomber"
             id: 324
             faction: "Separatist Alliance"
             ship: "Hyena-Class Droid Bomber"
@@ -6771,6 +6771,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Hyena-Class Droid Bomber"
             skill: 3
+            max_per_squad: 3
             points: 200
             slots: [
                 "Sensor"
@@ -6801,8 +6802,25 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unique PS 3"
+            name: "Separatist Bomber"
             id: 327
+            faction: "Separatist Alliance"
+            ship: "Hyena-Class Droid Bomber"
+            skill: 3
+            points: 200
+            slots: [
+                "Sensor"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Device"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "DBS-32C"
+            id: 328
             unique: true
             faction: "Separatist Alliance"
             ship: "Hyena-Class Droid Bomber"
@@ -6819,25 +6837,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Pilot PS 3"
-            id: 328
-            max_per_squad: 3
-            faction: "Separatist Alliance"
-            ship: "Hyena-Class Droid Bomber"
-            skill: 3
-            points: 200
-            slots: [
-                "Sensor"
-                "Torpedo"
-                "Missile"
-                "Missile"
-                "Device"
-                "Device"
-                "Configuration"
-            ]
-        }
-        {
-            name: "Pilot PS 1"
+            name: "Baktoid Prototype"
             id: 329
             max_per_squad: 2
             faction: "Separatist Alliance"
@@ -9377,6 +9377,44 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 "Reload" in ship.effectiveStats().actions or "Reload" in ship.effectiveStats().actionsred
        }
+       {
+            name: "Delayed Fuses"
+            id: 236
+            slot: "Modification"
+            points: 200
+       }
+       {
+            name: "Landing Struts"
+            id: 237
+            ship: "Hyena-Class Droid Bomber"
+            slot: "Configuration"
+            points: 200
+       }
+       {
+           name: "Diamond-Boron Missiles"
+           id: 238
+           slot: "Missile"
+           points: 200
+           attack: 3
+           range: """2-3"""
+           rangebonus: true 
+           charge: 3
+           restriction_func: (ship, upgrade_obj) ->
+               ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+           validation_func: (ship, upgrade_obj) ->
+               upgrade_obj.occupiesAnotherUpgradeSlot()
+           also_occupies_upgrades: [ 'Missile' ]
+       }
+       {
+            name: "TA-175"
+            id: 239
+            unique: true
+            slot: "Tactical Relay"
+            solitary: true
+            faction: "Separatist Alliance"
+            points: 200
+       }
+
     ]
 
 

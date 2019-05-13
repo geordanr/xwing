@@ -2659,7 +2659,9 @@ class exportObj.SquadBuilder
                         break
 
                     # add pilot id
-                    if exportObj.pilotsByUniqueName[pilotxws] and exportObj.pilotsByUniqueName[pilotxws].length == 1
+                    if exportObj.pilotsByFactionXWS[xws_faction][pilotxws]? 
+                        serialized_squad +=  exportObj.pilotsByFactionXWS[xws_faction][pilotxws][0].id
+                    else if exportObj.pilotsByUniqueName[pilotxws] and exportObj.pilotsByUniqueName[pilotxws].length == 1
                         serialized_squad +=  exportObj.pilotsByUniqueName[pilotxws][0].id
                     
                     else
@@ -4111,12 +4113,7 @@ class GenericAddon
         false
 
     toXWS: (upgrade_dict) ->
-        upgrade_type = switch @type
-            when 'Upgrade'
-                exportObj.toXWSUpgrade[@slot] ? @slot.canonicalize()
-            else
-                exportObj.toXWSUpgrade[@type] ?  @type.canonicalize()
-        (upgrade_dict[upgrade_type] ?= []).push (@data.xws ? @data.canonical_name)
+        (upgrade_dict[exportObj.toXWSUpgrade[@data.slot] ? @data.slot.canonicalize()] ?= []).push (@data.xws ? @data.canonical_name)
 
 class exportObj.Upgrade extends GenericAddon
     constructor: (args) ->
