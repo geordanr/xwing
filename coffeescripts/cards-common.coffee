@@ -6762,6 +6762,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Device"
                 "Device"
+                "Modification"
                 "Configuration"
             ]
         }
@@ -6780,6 +6781,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Device"
                 "Device"
+                "Modification"
                 "Configuration"
             ]
         }
@@ -6798,6 +6800,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Device"
                 "Device"
+                "Modification"
                 "Configuration"
             ]
         }
@@ -6815,6 +6818,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Device"
                 "Device"
+                "Modification"
                 "Configuration"
             ]
         }
@@ -6833,6 +6837,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Device"
                 "Device"
+                "Modification"
                 "Configuration"
             ]
         }
@@ -6851,6 +6856,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Device"
                 "Device"
+                "Modification"
                 "Configuration"
             ]
         }
