@@ -9038,7 +9038,6 @@ exportObj.basicCardData = ->
             points: '*'
             pointsarray: [0,2,4,6]
             variableagility: true
-            points: 6
        }
        {
             name: "Calibrated Laser Targeting"
