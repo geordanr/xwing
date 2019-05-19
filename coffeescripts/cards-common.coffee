@@ -4216,7 +4216,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             ship: "Z-95 Headhunter"
-            skill: 1
+            skill: 0
             points: 6
             slots: [
                 "Missile"
