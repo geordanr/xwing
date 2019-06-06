@@ -7930,7 +7930,6 @@ exportObj.basicCardData = ->
            name: "Supernatural Reflexes"
            id: 74
            slot: "Force"
-           points: '*'
            pointsarray: [4,4,4,8,16,24,32]
            variableinit: true
            restriction_func: (ship) ->
@@ -8224,7 +8223,6 @@ exportObj.basicCardData = ->
            name: "Engine Upgrade"
            id: 107
            slot: "Modification"
-           points: '*'
            pointsarray: [2,4,7]
            variablebase: true
            restriction_func: (ship) ->
@@ -8323,7 +8321,6 @@ exportObj.basicCardData = ->
            name: "Expert Handling"
            id: 120
            slot: "Talent"
-           points: '*'
            pointsarray: [2,4,6]
            variablebase: true
            restriction_func: (ship) ->
@@ -8405,7 +8402,6 @@ exportObj.basicCardData = ->
            name: "Squad Leader"
            id: 131
            slot: "Talent"
-           points: "*"
            pointsarray: [2,4,6,8,10,12,14] 
            variableinit: true
            unique: true
@@ -8775,7 +8771,6 @@ exportObj.basicCardData = ->
            name: "Hull Upgrade"
            id: 164
            slot: "Modification"
-           points: '*'
            pointsarray: [2,3,5,7]
            variableagility: true
            modifier_func: (stats) ->
@@ -8785,7 +8780,6 @@ exportObj.basicCardData = ->
            name: "Shield Upgrade"
            id: 165
            slot: "Modification"
-           points: '*'
            pointsarray: [3,4,6,8]
            variableagility: true
            modifier_func: (stats) ->
@@ -8795,7 +8789,6 @@ exportObj.basicCardData = ->
            name: "Stealth Device"
            id: 166
            slot: "Modification"
-           points: '*'
            pointsarray: [3,4,6,8]
            variableagility: true
            charge: 1
@@ -8917,7 +8910,6 @@ exportObj.basicCardData = ->
             name: "Primed Thrusters"
             id: 178
             slot: "Tech"
-            points: "*"
             pointsarray: [4,5,6,7,8,9,10]
             variableinit: true
             restriction_func: (ship) ->
@@ -9081,7 +9073,6 @@ exportObj.basicCardData = ->
             name: "BB-8"
             id: 195
             slot: "Astromech"
-            points: "*"
             pointsarray: [2,3,4,5,6,7,8]
             variableinit: true
             charge: 2
@@ -9092,7 +9083,6 @@ exportObj.basicCardData = ->
             name: "BB Astromech"
             id: 196
             slot: "Astromech"
-            points: "*"
             pointsarray: [0,1,2,3,4,5,6]
             variableinit: true
             charge: 2
@@ -9117,7 +9107,6 @@ exportObj.basicCardData = ->
             name: "Brilliant Evasion"
             id: 199
             slot: "Force"
-            points: '*'
             pointsarray: [0,2,4,6]
             variableagility: true
        }
@@ -9126,7 +9115,6 @@ exportObj.basicCardData = ->
             id: 200
             slot: "Configuration"
             ship: "Delta-7 Aethersprite"
-            points: "*"
             pointsarray: [0,0,2,4,6,8,10]
             variableinit: true
             unequips_upgrades: [ "Modification" ]
@@ -9137,7 +9125,6 @@ exportObj.basicCardData = ->
             id: 201
             slot: "Configuration"
             ship: "Delta-7 Aethersprite"
-            points: "*"
             pointsarray: [12,13,14,15,16,17,18]
             variableinit: true
             modifier_func: (stats) ->
@@ -9233,7 +9220,6 @@ exportObj.basicCardData = ->
             id: 212
             faction: "Galactic Republic"
             slot: "Force"
-            points: "*"
             pointsarray: [3,5,7,9,11,13,15]
             variableinit: true
             modifier_func: (stats) ->
