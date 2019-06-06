@@ -6736,7 +6736,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Generic PS 2"
+            name: "Bravo Flight Officer"
             id: 323
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
@@ -6861,13 +6861,14 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Pilot PS 1"
+            name: "Naboo Handmaiden"
             id: 330
             max_per_squad: 2
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
             skill: 1
             points: 200
+            applies_condition: '''Decoyed'''.canonicalize()
             slots: [
                 "Sensor"
                 "Astromech"
@@ -6875,7 +6876,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unique PS 3"
+            name: "Dineé Ellberger"
             id: 331
             unique: true
             faction: "Galactic Republic"
@@ -6905,7 +6906,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unique PS 5"
+            name: "Ric Olié"
             id: 333
             unique: true
             faction: "Galactic Republic"
@@ -7131,6 +7132,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Cannon"
                 "Crew"
+                "Crew"
                 "Modification"
             ]
         }
@@ -7146,9 +7148,89 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Cannon"
                 "Crew"
+                "Crew"
                 "Modification"
             ]
         }
+        {
+            name: "Vi Moradi"
+            id: 348
+            unique: true
+            faction: "Resistance"
+            ship: "Resistance Transport Pod"
+            skill: 1
+            points: 200
+            applies_condition: '''Compromising Intel'''.canonicalize()
+            slots: [
+                "Talent"
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "BB-8"
+            id: 349
+            unique: true
+            faction: "Resistance"
+            ship: "Resistance Transport Pod"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Crew"
+                "Modification"
+            ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                ]
+        }
+        {
+            name: "Finn"
+            id: 350
+            unique: true
+            faction: "Resistance"
+            ship: "Resistance Transport Pod"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Cova Nell"
+            id: 351
+            unique: true
+            faction: "Resistance"
+            ship: "Resistance Transport"
+            skill: 4
+            points: 200
+            slots: [
+                "Talent"
+                "Cannon"
+                "Crew"
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Nodin Chavdri"
+            id: 352
+            unique: true
+            faction: "Resistance"
+            ship: "Resistance Transport"
+            skill: 2
+            points: 200
+            slots: [
+                "Cannon"
+                "Crew"
+                "Crew"
+                "Modification"
+            ]
+        }
+        
     ]
 
 
@@ -9420,6 +9502,76 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             points: 200
        }
+       {
+            name: "Passive Sensors"
+            id: 240
+            slot: "Sensor"
+            points: 200
+       }
+       {
+            name: "R2-A6"
+            id: 241
+            slot: "Astromech"
+            faction: "Galactic Republic"
+            points: 200
+       }
+       {
+            name: "Amilyn Holdo"
+            id: 242
+            slot: "Crew"
+            faction: "Resistance"
+            points: 200
+       }
+       {
+            name: "Larma D'Acy"
+            id: 243
+            slot: "Crew"
+            faction: "Resistance"
+            points: 200
+       }
+       {
+            name: "Leia Organa (Resistance)"
+            id: 244
+            slot: "Crew"
+            faction: "Resistance"
+            force: 1
+            points: 200
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Crew" ]
+            modifier_func: (stats) ->
+                stats.force += 1
+                stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
+       }
+       {
+            name: "Korr Sella"
+            id: 245
+            slot: "Crew"
+            faction: "Resistance"
+            points: 200
+       }
+       {
+            name: "PZ-4CO"
+            id: 246
+            slot: "Crew"
+            faction: "Resistance"
+            points: 200
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+       }
+       {
+            name: "Angled Deflectors"
+            id: 247
+            slot: "Modification"
+            points: 200
+            modifier_func: (stats) ->
+                stats.shields -= 1
+                stats.actions.push 'Reinforce' if 'Reinforce' not in stats.actions
+            restriction_func: (ship) ->                
+                (not ship.data.large?) and ship.data.shields?
+       }
 
     ]
 
@@ -9498,6 +9650,14 @@ exportObj.basicCardData = ->
         {
             name: 'Electro-Proton Bomb'
             id: 16
+        }
+        {
+            name: 'Decoyed'
+            id: 17
+        }
+        {
+            name: 'Compromising Intel'
+            id: 18
         }
     ]
 
@@ -13927,6 +14087,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%CANNON%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>')
             .replace(/%CARGO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>')
             .replace(/%CLOAK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>')
+            .replace(/%F-COORDINATE%/g, '<i class="xwing-miniatures-font force xwing-miniatures-font-coordinate"></i>')
             .replace(/%COORDINATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>')
             .replace(/%CRIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crit"></i>')
             .replace(/%CREW%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>')
