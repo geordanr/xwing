@@ -2751,11 +2751,16 @@ class Ship
                         if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
                             other_upgrades[upgrade.slot] ?= []
                             other_upgrades[upgrade.slot].push upgrade
-
+                            
+                    delayed_upgrades = {}
                     for upgrade in @upgrades
                         other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
                         if other_upgrade?
                             upgrade.setById other_upgrade.data.id
+                            if not upgrades.lastSetValid
+                                delayed_upgrades[other_upgrade.data.id] = upgrade
+                    for id, upgrade of delayed_upgrades
+                        upgrade.setById id
             else
                 return
         else if @builder.isQuickbuild        
@@ -2777,14 +2782,17 @@ class Ship
             # Exact clone, so we can copy things over directly
             @setPilotById other.pilot.id, true
 
-            # set up non-conferred addons
-            other_conferred_addons = []
+            delayed_upgrades = {}
             #console.log "Looking for conferred upgrades..."
             for other_upgrade, i in other.upgrades
                 # console.log "Examining upgrade #{other_upgrade}"
-                if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique and i < @upgrades.length and ((not other_upgrade.data.max_per_squad?) or @builder.countUpgrades(other_upgrade.data.canonical_name) < other_upgrade.data.max_per_squad)
+                if other_upgrade.data? and not other_upgrade.data.unique and i < @upgrades.length and ((not other_upgrade.data.max_per_squad?) or @builder.countUpgrades(other_upgrade.data.canonical_name) < other_upgrade.data.max_per_squad)
                     #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
                     @upgrades[i].setById other_upgrade.data.id
+                    if not @upgrades[i].lastSetValid
+                        delayed_upgrades[i] = other_upgrade.data.id
+            for i, id of delayed_upgrades
+                @upgrades[i].setById id
 
 
         @updateSelections()
@@ -2907,11 +2915,15 @@ class Ship
                             if exportObj.slotsMatching(upgrade.slot, auto_equip_upgrade.slot)
                                 upgrade.setData auto_equip_upgrade
                 if same_ship
-                    for _ in [1..2] # try this twice, as upgrades added in the first run may add new slots that are filled in the second run.
-                        for upgrade in @upgrades
-                            old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
-                            if old_upgrade?
-                                upgrade.setById old_upgrade.data.id
+                    delayed_upgrades = {}
+                    for upgrade in @upgrades
+                        old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
+                        if old_upgrade?
+                            upgrade.setById old_upgrade.data.id
+                            if not upgrade.lastSetValid
+                                delayed_upgrades[old_upgrade.data.id] = upgrade
+                    for id, upgrade of delayed_upgrades
+                        upgrade.setById id
             else
                 @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
