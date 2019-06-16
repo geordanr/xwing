@@ -287,8 +287,16 @@ class exportObj.CardBrowser
                             <span class="info-collection"></span>
                             <table>
                                 <tbody>
+                                    <tr class="info-ship">
+                                        <td class="info-header">Ship</td>
+                                        <td class="info-data"></td>
+                                    </tr>
+                                    <tr class="info-base">
+                                        <td class="info-header">Base</td>
+                                        <td class="info-data"></td>
+                                    </tr>
                                     <tr class="info-skill">
-                                        <td class="info-header">Skill</td>
+                                        <td class="info-header">Initiative</td>
                                         <td class="info-data info-skill"></td>
                                     </tr>
                                     <tr class="info-energy">
