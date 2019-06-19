@@ -7329,6 +7329,7 @@ exportObj.basicCardData = ->
             skill: 6
             points: 200
             slots: [
+                "Talent"
                 "Modification"
             ]
         }
@@ -9773,6 +9774,21 @@ exportObj.basicCardData = ->
                 stats.actions.push 'Reinforce' if 'Reinforce' not in stats.actions
             restriction_func: (ship) ->                
                 (not ship.data.large?) and ship.data.shields?
+       }
+       {
+            name: "Ensnare"
+            id: 248
+            slot: "Talent"
+            points: 200
+            ship: "Nantex-Class Starfighter"
+       }
+       {
+            name: "Targeting Computer"
+            id: 249
+            slot: "Modification"
+            points: 200
+            modifier_func: (stats) ->
+                stats.actions.push 'Lock' if 'Lock' not in stats.actions
        }
 
     ]
