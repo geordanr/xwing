@@ -1544,6 +1544,50 @@ exportObj.basicCardData = ->
                 [ 0, 3, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
            ]
+        "Nantex-Class Starfighter":
+           name: "Nantex-Class Starfighter"               
+           xws: "Nantex-Class Starfighter".canonicalize()
+           factions: ["Separatist Alliance"]
+           attackbull: 3
+           attackt: 2
+           agility: 3
+           hull: 4
+           actions: [
+             "Focus"
+             "Evade"
+           ]
+           maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 3, 3, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
+        "BTL-B Y-Wing":
+           name: "BTL-B Y-Wing"               
+           xws: "BTL-B Y-Wing".canonicalize()
+           factions: ["Galactic Republic"]
+           attack: 2
+           agility: 1
+           hull: 5
+           shields: 3
+           actions: [
+             "Focus"
+             "Lock"
+           ]
+           actionsred: [
+             "Barrel Roll"
+             "Reload"
+           ]
+           maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
         
     # name field is for convenience only
     pilotsById: [
@@ -7230,6 +7274,178 @@ exportObj.basicCardData = ->
                 "Modification"
             ]
         }
+        {
+            name: "Stalgasin Hive Guard"
+            id: 353
+            faction: "Separatist Alliance"
+            ship: "Nantex-Class Starfighter"
+            skill: 3
+            points: 200
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Petranaki ???"
+            id: 354
+            faction: "Separatist Alliance"
+            ship: "Nantex-Class Starfighter"
+            skill: 4
+            points: 200
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Ini 2 Unique"
+            unique: true
+            id: 355
+            faction: "Separatist Alliance"
+            ship: "Nantex-Class Starfighter"
+            skill: 2
+            points: 200
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Chertek"
+            unique: true
+            id: 356
+            faction: "Separatist Alliance"
+            ship: "Nantex-Class Starfighter"
+            skill: 4
+            points: 200
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Sun Fac"
+            unique: true
+            id: 357
+            faction: "Separatist Alliance"
+            ship: "Nantex-Class Starfighter"
+            skill: 6
+            points: 200
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Berwer Kart"
+            unique: true
+            id: 358
+            faction: "Separatist Alliance"
+            ship: "Nantex-Class Starfighter"
+            skill: 5
+            points: 200
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Annakin Skywalker (Y-Wing)"
+            unique: true
+            id: 359
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 6
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
+        {
+            name: "Shadow Squadron Veteran"
+            id: 360
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 3
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
+        {
+            name: "Red Squadron Bomber"
+            id: 361
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 2
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
+        {
+            name: "Ini 2 Unique"
+            id: 362
+            unique: true
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 2
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
+        {
+            name: "Another Ini 2 Unique"
+            id: 363
+            unique: true
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 2
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
+        {
+            name: "Ini 3 Unique"
+            id: 364
+            unique: true
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 3
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
+        {
+            name: "Ini 4 Unique"
+            id: 365
+            unique: true
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 4
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
+        {
+            name: "Ini 5 Unique"
+            id: 366
+            unique: true
+            faction: "Galactic Republic"
+            ship: "BTL-B Y-Wing"
+            skill: 5
+            points: 200
+            slots: [
+                "Modification"
+                "Turret"
+            ]
+        }
         
     ]
 
@@ -10306,7 +10522,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Soontir Fel"
             ship: "TIE Interceptor"
-            threat: 2
+            threat: 3
             upgrades: [
                 "Outmaneuver"
                 "Afterburners"

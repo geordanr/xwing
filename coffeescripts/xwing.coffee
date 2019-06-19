@@ -1990,6 +1990,15 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-turret').toggle(data.attackt?)
                     container.find('tr.info-attack-doubleturret').toggle(data.attackdt?)
                 
+                    container.find('tr.info-ship').hide()                    
+                    if data.large?
+                        container.find('tr.info-base td.info-data').text "Large"
+                    else if data.medium?
+                        container.find('tr.info-base td.info-data').text "Medium"
+                    else
+                        container.find('tr.info-base td.info-data').text "Small"
+                    container.find('tr.info-base').show()
+
                 
                 
                     for cls in container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
