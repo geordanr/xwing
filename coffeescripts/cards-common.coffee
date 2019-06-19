@@ -10306,7 +10306,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             pilot: "Soontir Fel"
             ship: "TIE Interceptor"
-            threat: 2
+            threat: 3
             upgrades: [
                 "Outmaneuver"
                 "Afterburners"
