@@ -7345,7 +7345,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Annakin Skywalker (Y-Wing)"
+            name: "Anakin Skywalker (Y-Wing)"
             unique: true
             id: 359
             faction: "Galactic Republic"

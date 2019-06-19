@@ -1287,7 +1287,32 @@ exportObj.cardLoaders.English = () ->
         "Vi Moradi":
            display_name: """Vi Moradi"""
            text: """<strong>Setup:</strong> After placing forces, assign the <strong>Compromising Intel</strong> condition to 1 enemy ship."""
-
+        "Shadow Squadron Veteran":
+           text: """<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Red Squadron Bomber":
+           text: """<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Ini 2 Unique":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Ini 3 Unique":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Ini 4 Unique":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Ini 5 Unique":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Another Ini 2 Unique":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Anakin Skywalker (Y-Wing)":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Plated Hull:</strong> While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
+        "Sun Fac":
+           text: """While you perform a primary [...] the defender is tractored [...] attack die%LINEBREAK% <strong>Pinpoint Tractor Array:</strong>You cannot rotate your %SINGLETURRETARC% to your %REARARC%. After you execute a maneuver, you may gain 1 tractor token to perform a %ROTATEARC% action."""
+        "Stalgasin Hive Guard":
+           text: """<strong>Pinpoint Tractor Array:</strong>You cannot rotate your %SINGLETURRETARC% to your %REARARC%. After you execute a maneuver, you may gain 1 tractor token to perform a %ROTATEARC% action."""
+        "Petranaki ???":
+           text: """<strong>Pinpoint Tractor Array:</strong>You cannot rotate your %SINGLETURRETARC% to your %REARARC%. After you execute a maneuver, you may gain 1 tractor token to perform a %ROTATEARC% action."""
+        "Berwer Kart":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Pinpoint Tractor Array:</strong>You cannot rotate your %SINGLETURRETARC% to your %REARARC%. After you execute a maneuver, you may gain 1 tractor token to perform a %ROTATEARC% action."""
+        "Chertek":
+           text: """Unknown pilot ability%LINEBREAK%<strong>Pinpoint Tractor Array:</strong>You cannot rotate your %SINGLETURRETARC% to your %REARARC%. After you execute a maneuver, you may gain 1 tractor token to perform a %ROTATEARC% action."""
 
     upgrade_translations =
         "0-0-0":
