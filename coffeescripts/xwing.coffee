@@ -2104,8 +2104,9 @@ class exportObj.SquadBuilder
 
                     container.find('tr.info-attack-fullfront td.info-data').text statAndEffectiveStat((data.ship_override?.attackf ? ship.attackf), effective_stats, 'attackf')
                     container.find('tr.info-attack-fullfront').toggle(ship.attackf? or effective_stats?.attackf?)
-
-                    container.find('tr.info-attack-bullseye').hide()
+                    
+                    container.find('tr.info-attack-bullseye td.info-data').text statAndEffectiveStat((data.ship_override?.attackbull ? ship.attackbull), effective_stats, 'attackbull')
+                    container.find('tr.info-attack-bullseye').toggle(ship.attackbull? or effective_stats?.attackbull?)
 
                     container.find('tr.info-attack-back td.info-data').text statAndEffectiveStat((data.ship_override?.attackb ? ship.attackb), effective_stats, 'attackb')
                     container.find('tr.info-attack-back').toggle(ship.attackb? or effective_stats?.attackb?)
