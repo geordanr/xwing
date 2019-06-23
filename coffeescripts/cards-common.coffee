@@ -9773,7 +9773,7 @@ exportObj.basicCardData = ->
                 stats.shields -= 1
                 stats.actions.push 'Reinforce' if 'Reinforce' not in stats.actions
             restriction_func: (ship) ->                
-                (not ship.data.large?) and ship.data.shields?
+                ship.data.shields > 0 and not ship.data.large?
        }
        {
             name: "Ensnare"
