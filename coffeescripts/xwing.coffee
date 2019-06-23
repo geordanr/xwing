@@ -1990,7 +1990,8 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-turret').toggle(data.attackt?)
                     container.find('tr.info-attack-doubleturret').toggle(data.attackdt?)
                 
-                    container.find('tr.info-ship').hide()                    
+                    container.find('tr.info-ship').hide()        
+                    container.find('.info-solitary').hide()         
                     if data.large?
                         container.find('tr.info-base td.info-data').text "Large"
                     else if data.medium?
@@ -2081,7 +2082,7 @@ class exportObj.SquadBuilder
                     ship = exportObj.ships[data.ship]
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
-                    container.find('.info-solitary').hide
+                    container.find('.info-solitary').hide()
                     
                     if ship.large?
                         container.find('tr.info-base td.info-data').text "Large"
