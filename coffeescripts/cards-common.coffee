@@ -6876,6 +6876,10 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Configuration"
             ]
+            ship_override:
+                actionsred: [
+                    "Jam"
+                ]
         }
         {
             name: "Baktoid Prototype"
