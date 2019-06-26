@@ -6915,7 +6915,7 @@ exportObj.basicCardData = ->
         {
             name: "Dineé Ellberger"
             id: 331
-            xws: "dineeellberger"
+            xws: "dineeellberger-nabooroyaln1starfighter"
             unique: true
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
@@ -6931,7 +6931,7 @@ exportObj.basicCardData = ->
         {
             name: "Padmé Amidala"
             id: 332
-            xws: "padmeamidala"
+            xws: "padmeamidala-nabooroyaln1starfighter"
             unique: true
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
@@ -6947,7 +6947,7 @@ exportObj.basicCardData = ->
         {
             name: "Ric Olié"
             id: 333
-            xws: "ricolie"
+            xws: "ricolie-nabooroyaln1starfighter"
             unique: true
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
