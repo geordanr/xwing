@@ -148,7 +148,6 @@ class exportObj.SquadBuilderBackend
                 li.data 'builder', builder
                 li.data 'selectedForDeletion', false
                 list_ul.append li
-                console.log(squad)
                 if squad.additional_data?.archived?
                     li.hide()
                 else
