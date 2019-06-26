@@ -6876,6 +6876,10 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Configuration"
             ]
+            ship_override:
+                actionsred: [
+                    "Jam"
+                ]
         }
         {
             name: "Baktoid Prototype"
@@ -9789,8 +9793,14 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.shields -= 1
                 stats.actions.push 'Reinforce' if 'Reinforce' not in stats.actions
-            restriction_func: (ship) ->                
-                ship.data.shields > 0 and not ship.data.large?
+            restriction_func: (ship) ->  
+                return false unless not ship.data.large
+                return true if ship.effectiveStats().shields > 0 
+                return false if ship.effectiveStats().shields < 0
+                # once the angled deflectors are added, the shield value may drop down to 0
+                for upgrade in ship.upgrades
+                   return true if upgrade.data?.id == 247
+                return false
        }
        {
             name: "Ensnare"
