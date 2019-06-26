@@ -3081,8 +3081,9 @@ class Ship
             @builder.showTooltip 'Ship', exportObj.ships[select2_data.id] if select2_data?.id?
         @ship_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
-        @ship_selector.data('select2').container.on 'touchmove', (e) =>
+        @ship_selector.data('select2').container.on 'touchstart', (e) =>
             @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
+
         # assign ship row an id for testing purposes
         @row.attr 'id', "row-#{@ship_selector.data('select2').container.attr('id')}"
 
@@ -3128,10 +3129,8 @@ class Ship
                 @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Pilot', @pilot, @ if @pilot
-        @pilot_selector.data('select2').container.on 'touchmove', (e) =>
+        @pilot_selector.data('select2').container.on 'touchstart', (e) =>
             @builder.showTooltip 'Pilot', @pilot, @ if @pilot
-            ###if @data? 
-                scrollTo(0,$('#info-container').offset().top - 10,'smooth')###
 
         @pilot_selector.data('select2').container.hide()
 
@@ -3861,10 +3860,8 @@ class GenericAddon
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id], {addon_type: @type} if select2_data?.id?
         @selector.data('select2').container.on 'mouseover', (e) =>
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
-        @selector.data('select2').container.on 'touchmove', (e) =>
+        @selector.data('select2').container.on 'touchstart', (e) =>
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
-            ###if @data?
-                scrollTo(0,$('#info-container').offset().top - 10,'smooth')###
 
     setById: (id) ->
         @setData @dataById[parseInt id]
