@@ -6915,6 +6915,7 @@ exportObj.basicCardData = ->
         {
             name: "Dineé Ellberger"
             id: 331
+            xws: "dineeellberger-nabooroyaln1starfighter"
             unique: true
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
@@ -6930,6 +6931,7 @@ exportObj.basicCardData = ->
         {
             name: "Padmé Amidala"
             id: 332
+            xws: "padmeamidala-nabooroyaln1starfighter"
             unique: true
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
@@ -6945,6 +6947,7 @@ exportObj.basicCardData = ->
         {
             name: "Ric Olié"
             id: 333
+            xws: "ricolie-nabooroyaln1starfighter"
             unique: true
             faction: "Galactic Republic"
             ship: "Naboo Royal N-1 Starfighter"
@@ -9793,14 +9796,8 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.shields -= 1
                 stats.actions.push 'Reinforce' if 'Reinforce' not in stats.actions
-            restriction_func: (ship) ->  
-                return false unless not ship.data.large
-                return true if ship.effectiveStats().shields > 0 
-                return false if ship.effectiveStats().shields < 0
-                # once the angled deflectors are added, the shield value may drop down to 0
-                for upgrade in ship.upgrades
-                   return true if upgrade.data?.id == 247
-                return false
+            restriction_func: (ship) ->                
+                ship.data.shields > 0 and not ship.data.large?
        }
        {
             name: "Ensnare"
