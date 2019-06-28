@@ -1454,7 +1454,8 @@ class exportObj.SquadBuilder
                         @desired_points_input.val desired_points
                         @desired_points_input.change()
                     else 
-                        switch game_type_and_point_abbrev
+                        game_type_abbrev = game_type_and_point_abbrev.split('=')[0]
+                        switch game_type_abbrev
                             when 's'
                                 @changeGameTypeOnSquadLoad 'standard'
                             when 'h'
