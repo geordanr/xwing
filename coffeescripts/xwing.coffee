@@ -830,7 +830,7 @@ class exportObj.SquadBuilder
             if @backend? and not @backend_save_list_button.hasClass('disabled')
                 additional_data =
                     points: @total_points
-                    description: @describeSquad()
+                    description: @describeSquad() + ', Squad saved: ' + (new Date()).toLocaleString()
                     cards: @listCards()
                     notes: @notes.val().substr(0, 1024)
                     obstacles: @getObstacles()
@@ -2496,7 +2496,7 @@ class exportObj.SquadBuilder
                 meth()
 
     describeSquad: ->
-        if @getNotes().trim() == '' then  ((ship.pilot.name for ship in @ships when ship.pilot?).join ', ') else @getNotes()
+        ((ship.pilot.name for ship in @ships when ship.pilot?).join ', ') #+ ', Squad saved: ' + (new Date()).toLocaleString()
 
     listCards: ->
         card_obj = {}
@@ -3497,11 +3497,20 @@ class Ship
         if @builder.isQuickbuild
             """#{@quickbuildId}:"""
         else
-            upgrades = """#{upgrade?.data?.id ? "" for upgrade, i in @upgrades}"""
+            # Skip conferred upgrades
+            conferred_addons = []
+            for upgrade in @upgrades
+                conferred_addons = conferred_addons.concat(upgrade?.conferredAddons ? [])
+            upgrades = """#{upgrade?.data?.id ? "" for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
+
+            serialized_conferred_addons = []
+            for addon in conferred_addons
+                serialized_conferred_addons.push addon.toSerialized()
 
             [
                 @pilot.id,
                 upgrades,
+                serialized_conferred_addons.join(','),
             ].join ':'
 
 
