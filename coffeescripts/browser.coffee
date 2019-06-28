@@ -710,10 +710,11 @@ class exportObj.CardBrowser
 
         # check if hyperspace only matches
         if @hyperspace_checkbox.checked
-            for faction in selected_factions ? all_factions
+            # check all factions specified by the card (which might be a single faction or an array of factions), or all selected factions if card does not specify any
+            for faction in (if card.data.faction? then (if Array.isArray(card.data.faction) then card.data.faction else [card.data.faction]) else (selected_factions ? all_factions))
+                continue unless faction in (selected_factions ? all_factions) # e.g. ships should only be displayed if a legal faction is selected
                 hyperspace_legal = hyperspace_legal or exportObj.hyperspaceCheck(card.data, faction, card.orig_type == 'Ship' )
             return false unless hyperspace_legal
-
 
         # check for slot requirements
         required_slots = @slot_available_selection.val()

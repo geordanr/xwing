@@ -9546,6 +9546,7 @@ exportObj.basicCardData = ->
             name: "DRK-1 Probe Droids"
             id: 221
             slot: "Device"
+            unique: true
             faction: "Separatist Alliance"
             charge: 2
             points: 5
