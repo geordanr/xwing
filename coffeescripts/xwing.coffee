@@ -1246,10 +1246,15 @@ class exportObj.SquadBuilder
                 @desired_points_input.val 8
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
-        if (oldHyperspace != @isHyperspace) or (oldQuickbuild != @isQuickbuild)
+        if oldQuickbuild != @isQuickbuild
             old_id = @current_squad.id
             @newSquadFromScratch($.trim(@current_squad.name))
             @current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
+        else if oldHyperspace != @isHyperspace
+            if @isHyperspace == true
+                old_id = @current_squad.id
+                @newSquadFromScratch($.trim(@current_squad.name)) # need to change this to a new function to check hyperspace and remove
+                @current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
         #@onPointsUpdated cb
         cb()
 
