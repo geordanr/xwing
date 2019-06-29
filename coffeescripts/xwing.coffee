@@ -3583,7 +3583,6 @@ class Ship
                                 upgrade_selection.setById upgrade_id
                                 if upgrade_selection.lastSetValid
                                     upgrade_ids.splice(i,1) # added successfully, remove from list
-                                    console.log(upgrade_ids)
                                 break
                 everythingadded &= upgrade_ids.length == 0
 
