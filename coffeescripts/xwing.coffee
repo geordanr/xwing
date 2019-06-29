@@ -3583,6 +3583,7 @@ class Ship
                                 upgrade_selection.setById upgrade_id
                                 if upgrade_selection.lastSetValid
                                     upgrade_ids.splice(i,1) # added successfully, remove from list
+                                    console.log(upgrade_ids)
                                 break
                 everythingadded &= upgrade_ids.length == 0
 
@@ -3829,7 +3830,12 @@ class GenericAddon
             @rescindAddons()
             @deoccupyOtherUpgrades()
             if new_data?.unique? or new_data?.solitary?
-                await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
+                try
+                    await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
+                catch alreadyClaimed
+                    @ship.builder.container.trigger 'xwing:pointsUpdated'
+                    @lastSetValid = false
+                    return
             # Need to make a copy of the data, but that means I can't just check equality
             @data = @unadjusted_data = new_data
 
