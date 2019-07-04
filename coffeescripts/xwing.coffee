@@ -3829,7 +3829,12 @@ class GenericAddon
             @rescindAddons()
             @deoccupyOtherUpgrades()
             if new_data?.unique? or new_data?.solitary?
-                await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
+                try
+                    await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
+                catch alreadyClaimed
+                    @ship.builder.container.trigger 'xwing:pointsUpdated'
+                    @lastSetValid = false
+                    return
             # Need to make a copy of the data, but that means I can't just check equality
             @data = @unadjusted_data = new_data
 
