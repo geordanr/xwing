@@ -246,28 +246,6 @@ body
         position: relative
         bottom: $fancy-pilot-header-height * 0.16
 
-
-		
-    .fancy-dial
-      float: right
-      padding: 5px
-      margin-left: $fancy-pilot-header-height * 2
-      table-layout: fixed
-
-    .fancy-dial table > tbody > tr > td
-      border: 2px solid #d6c9d2
-
-    .fancy-dial table > tbody > tr > td:first-child
-      color: white
-      text-align: center
-      padding: 3px
-      background-color: #888888
-      background-image: linear-gradient(rgba(45, 45, 45, .2) 50%, transparent 50%, transparent)
-      background-size: 5px 5px
-
-    .fancy-dial table > tbody > tr > td ~ td
-      background-color: #a29199
-
     .fancy-pilot-text
       margin-left: $fancy-pilot-header-height * 2
       padding: 5px
@@ -381,6 +359,33 @@ body
       margin-right: 0.365in
       clear: both
 
+  .print-dials-container
+    overflow: auto 
+    text-align: center
+    page-break-inside: avoid
+
+    .fancy-dial
+      padding: 5px
+      table-layout: fixed
+      display: inline-block
+
+      .ship-name-dial
+        color: black
+  
+    .fancy-dial table > tbody > tr > td
+      border: 2px solid #d6c9d2
+  
+    .fancy-dial table > tbody > tr > td:first-child
+      color: white
+      text-align: center
+      padding: 3px
+      background-color: #888888
+      background-image: linear-gradient(rgba(45, 45, 45, .2) 50%, transparent 50%, transparent)
+      background-size: 5px 5px
+  
+    .fancy-dial table > tbody > tr > td ~ td
+      background-color: #a29199
+  
   .printable-footer
     position: fixed
     bottom: 0
@@ -418,6 +423,9 @@ body
       text-align: right
 
   .print-notes
+    color: black
+    
+  .version
     color: black
 
   .qrcode-container

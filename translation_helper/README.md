@@ -26,21 +26,25 @@ If you don't, all ships in your language will be named "CHANGE ME"...;-)
 You also want to translate some common phrases that yasb wants to add to the
 cards, found in `phrase_translations.json`.
 
-3. Run the translate script with the following command:
+3. Create Translation
+3a. Save last Translation
+
+   mv ./translation-[LANGUAGE].coffee ./translation-[LANGUAGE].old.coffee
+
+3b. Run the translate script with the following command:
 
    python3 translate.py -l [YOUR LANGUAGE]
 
 For example, for German, run `python3 translate.py -l fr`.
 
-It will create a file named `translation_[LANGUAGE].coffee`, which contains
+It will create a file named `translation-[LANGUAGE].coffee`, which contains
 translations for pilots and upgrades.
 
 It also creates a `todo.txt`, telling you on which cards it may need some help. 
 
 4. Merge the translation file into the existing translation:
 
-   touch empty
-   git merge-file ../coffescript/cards-[LANGUAGE].coffe ./empty ./translation.coffee
+   git merge-file ../coffescript/cards-[LANGUAGE].coffe ./translation-[LANGUAGE].old.coffee ./translation-[LANGUAGE].coffee 
 
 This will merge the new translation into the existing one for your language (so e.g. new cards will be added). If the merge does not recognice any matches, make sure the line endings match ;-)
 Proceed as usual for git merges.

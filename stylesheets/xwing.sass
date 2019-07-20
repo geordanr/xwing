@@ -1,5 +1,3 @@
-$xwing_icons_png: '../images/xwing-icons.png'
-
 $pilot_skill_color: #CD6D2D
 $attack_color: #EF232B
 $energy_color: #C7B5E2
@@ -102,6 +100,9 @@ i.xwing-miniatures-font-focus
 
 i.xwing-miniatures-font
 //  color: black 
+
+i.xwing-miniatures-font-rebel, i.xwing-miniatures-font-empire, i.xwing-miniatures-font-scum, i.xwing-miniatures-font-rebel-outline, i.xwing-miniatures-font-firstorder, i.xwing-miniatures-font-republic, i.xwing-miniatures-font-separatists
+  font-size: 2.0em !important
 
 i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180
   @extend .card-icon
@@ -220,12 +221,16 @@ r
 
 .info-maneuvers table > tbody > tr > td ~ td
   background-color: #a29199
-
+  
 .info-name
   font-family: BankGothicHD
   font-size: 1.5em
 
-.info-type, .info-sources
+.info-solitary
+  font-family: BankGothicHD
+  font-size: 1em
+
+.info-type, .info-data.info-sources
   font-family: BankGothicHD
   font-size: 1.2em
 
@@ -269,7 +274,6 @@ ul.squad-list
   color: black
 
 .icon
-  background-image: url($xwing_icons_png)
   background-repeat: no-repeat
   vertical-align: middle
 
@@ -325,6 +329,16 @@ ul.nav
 input[type=number]
   width: 3em
 
+input[type=search].card-search-text
+  width: 90%
+  min-width: 100px
+  max-width: 230px
+
+.advanced-search-selection
+  width: 90%
+  min-width: 100px
+  max-width: 230px
+
 .force
   color: $force_color
 
@@ -352,6 +366,9 @@ input[type=number]
 
 .xwing-card-browser .result-not-in-collection
   color: #a00
+
+.misc-settings-infoline
+  color: green
 
 .select2-results
   .select2-result-not-in-collection
@@ -381,6 +398,11 @@ li.squad-summary
 .show-advanced-search
   margin-bottom: 10px
 
+.search-container
+  margin: 3px
+
+.card-search-container
+  color: black
 
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:focus,

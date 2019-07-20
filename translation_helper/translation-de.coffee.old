@@ -1,173 +1,3 @@
-###
-    X-Wing Squad Builder 2.0
-    Stephen Kim <raithos@gmail.com>
-    https://raithos.github.io
-    German translation by
-    - Patrick Mischke https://github.com/patschke
-###
-
-exportObj = exports ? this
-
-exportObj.codeToLanguage ?= {}
-exportObj.codeToLanguage.de = 'Deutsch'
-
-exportObj.translations ?= {}
-# This is here mostly as a template for other languages.
-exportObj.translations.Deutsch =
-    slot:
-        "Astromech": "Astromech"
-        "Force": "Macht-Fähigkeit"
-        "Bomb": "Bomb" # which slot is this? Bombs belong to the device slot, right?
-        "Cannon": "Kanone"
-        "Crew": "Mannschaft"
-        "Missile": "Rakete"
-        "Sensor": "Sensor"
-        "Torpedo": "Torpedo"
-        "Turret": "Geschütz"
-        "Hardpoint": "Bewaffnung"
-        "Illicit": "Schmuggelware"
-        "Configuration": "Konfiguration"
-        "Talent": "Talent"
-        "Modification": "Modifikation"
-        "Gunner": "Bordschütze"
-        "Device": "Vorrichtung"
-        "Tech": "Tech"
-        "Title": "Titel"
-    sources: # needed?
-        "Second Edition Core Set": "Grundspiel zweite Edition"
-        "Rebel Alliance Conversion Kit": "Konvertierungsset „Rebellenallianz“"
-        "Galactic Empire Conversion Kit": "Konvertierungsset „Galaktisches Imperium“"
-        "Scum and Villainy Conversion Kit": "Konvertierungsset „Abschaum und Kriminelle“"
-        "T-65 X-Wing Expansion Pack": "T-65-X-Flügler Erweiterung"
-        "BTL-A4 Y-Wing Expansion Pack": "BTL-A4-Y-Flügler Erweiterung"
-        "TIE/ln Fighter Expansion Pack": "TIE/ln-Jäger Erweiterung"
-        "TIE Advanced x1 Expansion Pack": "TIE-x1-Turbojäger Erweiterung"
-        "Slave 1 Expansion Pack": "Sklave 1 Erweiterung"
-        "Fang Fighter Expansion Pack": "Fangjäger Erweiterung"
-        "Lando's Millennium Falcon Expansion Pack": "Landos Millennium Falke Erweiterung"
-        "Saw's Renegades Expansion Pack": "Saws Rebellenmiliz Erweiterung"
-        "TIE Reaper Expansion Pack": "TIE-Schnitter Erweiterung"
-    ui:
-        shipSelectorPlaceholder: "Wähle ein Schiff"
-        pilotSelectorPlaceholder: "Wähle einen Piloten"
-        upgradePlaceholder: (translator, language, slot) ->
-            "Keine #{translator language, 'slot', slot} Aufwertungskarte"
-        modificationPlaceholder: "Keine Modifikation"
-        titlePlaceholder: "Kein Titel"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Aufwertungskarte"
-        unreleased: "unveröffentlicht"
-        epic: "episch"
-        limited: "limitiert"
-    byCSSSelector:
-        # Warnings
-        '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
-        '.loading-failed-container .translated': 'Du scheinst einem defekten Link gefolgt zu sein. Es konnte kein Squad geladen werden!'
-        '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
-        '.ship-number-invalid-container .translated': 'Eine turnierlegale Staffel muss aus  2-8 Schiffen bestehen!'
-        # Type selector
-        '.game-type-selector option[value="standard"]': 'Standard'
-        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="custom"]': 'Benutzerdefiniert'
-        # Card browser
-        '.select2-choice' : '<span>Typ (nach Namen)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
-        '.xwing-card-browser option[value="name"]': 'Name'
-        '.xwing-card-browser option[value="source"]': 'Quelle'
-        '.xwing-card-browser option[value="type-by-points"]': 'Typ (nach Punkten)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Typ (nach Namen)'
-        '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte von der Liste auf der linken Seite.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sortiere Karten nach'
-        # Info well
-        '.info-well .info-ship td.info-header': 'Schiff'
-        '.info-well .info-skill td.info-header': 'Initiative'
-        '.info-well .info-actions td.info-header': 'Aktionen'
-        '.info-well .info-upgrades td.info-header': 'Aufwertungskarten'
-        '.info-well .info-range td.info-header': 'Reichweite'
-        '.info-well .info-sources.info-header': 'Enthalten&nbsp;in'
-        # Squadron edit buttons
-        '.clear-squad' : 'Neue Staffel'
-        '.save-list' : '<i class="fa fa-floppy-o"></i>&nbsp;Speichern'
-        '.save-list-as' : '<i class="fa fa-files-o"></i>&nbsp;Speichern unter…'
-        '.delete-list' : '<i class="fa fa-trash-o"></i>&nbsp;Löschen'
-        '.backend-list-my-squads' : 'Staffel laden'
-        '.delete-squad' : 'Löschen'
-        '.delete-squad' : 'Laden'
-        '.show-standard-squads' : 'Standard'
-        '.show-epic-squads' : 'Episch'
-        '.show-team-epic-squads' : 'Team Episch'
-        '.show-all-squads' : 'Alle'
-        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Drucken/Als </span>Text ansehen'
-        '.randomize' : '<i class="fa fa-random"></i>&nbsp;Zufall!'
-        '.randomize-options' : 'Zufallsgenerator Optionen'
-        '.notes-container > span' : 'Staffel Notizen'
-        '.choose-obstacles' : 'Hindernisse wählen'
-        '.from-xws' : 'Importieren aus XWS-Datei'
-        '.to-xws' : 'Exportieren als XWS-Datei'
-        # New Squadron dialog
-        '.discard' : 'Änderungen verwerfen'
-        # Log in dialog
-        '.login-help' : 'Was ist OAuth?'
-        '.oauth-explanation' :
-            """<p><a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> ist ein Authentifizierungsservice, der es dir erlaubt dich auf Webseiten anzumelden, ohne einen Nutzerkonto anlegen zu müssen. Stattdessen wählst du einen Anbieter, bei dem du bereits eine Nutzerkonto hast (z.B. Google oder Facebook), und dieser bestätigt deine Identität. Auf diese Weise kann YASB dich beim nächsten Besuch wiedererkennen. </p>
-            <p>Das beste hieran ist, dass du dir nicht ständig neue Nutzernamen und Passwörter überlegen musst. Keine Sorge, YASB sammelt keine persönlichen Daten von diesen Anbietern über dich. Teilweise kann ich nicht verhindern, dass ein Minimum an persönlichen Daten übertragen wird, diese werden ignoriert. Alles was gespeichert wird ist eine Identifikationsnummer, anhand der du beim nächsten Besuch wiedererkannt wirst - und die zu dieser ID gehörenden Staffellisten natürlich.</p>
-            <p>Um mehr zu erfahren, schau dir <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">diese Einführung in OAuth (englisch)</a> an.</p>""" # this translation will remove an "Got it!" button. It would not work, if I just add it here, as the connection to the java-script is lost. 
-        '.login-in-progress':"""<em>Die OAuth Anmeldung ist in Arbeit. Bitte beende die Anmeldung bei angegebenen Anbierter über das soeben erstellte Fenster. </em>"""
-        # Print/View modal
-        '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
-        '.vertical-space-checkbox' : """Lasse beim Drucken Platz für Schadens-/Aufwertungskarten <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Farbig drucken <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Drucken'
-        '.select-simple-view' : 'Einfach'
-        '.select-fancy-view' : 'Schick'
-        '.close-print-dialog' : 'Schließen'
-        # Randomizer options
-        '.do-randomize' : 'Auswürfeln!'
-        # Top tab bar
-        '#browserTab' : 'Kartendatenbank'
-        '#aboutTab' : 'Impressum'
-        # Obstacles
-        '.choose-obstacles' : 'Wähle Hindernisse'
-        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Dies ist eine Beta-Funktion, aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
-        '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
-        '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
-        '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
-        '.coreasteroid3-select' : 'Grundspiel Asteroid 3'
-        '.coreasteroid4-select' : 'Grundspiel Asteroid 4'
-        '.coreasteroid5-select' : 'Grundspiel Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Trümmerwolke 0'
-        '.yt2400debris1-select' : 'YT2400 Trümmerwolke 1'
-        '.yt2400debris2-select' : 'YT2400 Trümmerwolke 2'
-        '.vt49decimatordebris0-select' : 'VT49 Trümmerwolke 0'
-        '.vt49decimatordebris1-select' : 'VT49 Trümmerwolke 1'
-        '.vt49decimatordebris2-select' : 'VT49 Trümmerwolke 2'
-        '.core2asteroid0-select' : 'Erwachen der Macht Asteroid 0'
-        '.core2asteroid1-select' : 'Erwachen der Macht Asteroid 1'
-        '.core2asteroid2-select' : 'Erwachen der Macht Asteroid 2'
-        '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
-        '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
-        '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
-        # Collection
-        '.collection': '<i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung'
-        '.checkbox-check-collection' : 'Überprüfe Staffeln auf Verfügbarkeit <input class="check-collection" type="checkbox">'
-
-    singular:
-        'pilots': 'Pilot'
-        'modifications': 'Modifikation'
-        'titles': 'Titel'
-        'ships' : 'Schiff'
-    types:
-        'Pilot': 'Pilot'
-        'Modification': 'Modifikation'
-        'Title': 'Titel'
-        'Ship': 'Schiff'
-
-
-exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.Deutsch = () ->
-    exportObj.cardLanguage = 'Deutsch'
-
-    # Rename ships
     exportObj.renameShip """YT-1300""", """Modifizierter leichter YT-1300-Frachter"""
     exportObj.renameShip """StarViper""", """Angriffsplattform der Sternenviper-Klasse"""
     exportObj.renameShip """Scurrg H-6 Bomber""", """Scurrg-H-6-Bomber"""
@@ -222,10 +52,7 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip """MG-100 StarFortress""", """MG-100-SternenFestung"""
     exportObj.renameShip """Mining Guild TIE Fighter""", """Modifizierter TIE/ln-Jäger"""
     exportObj.renameShip """Scavenged YT-1300""", """YT-1300 vom Schrottplatz"""
-    exportObj.renameShip """V-19 Torrent""", """V-19-Torrent-Sternenjäger"""    
-    exportObj.renameShip """Belbullab-22 Starfighter""", """Bellbullab-22 Sternenjäger"""
-    exportObj.renameShip """Vulture-class Droid Fighter""", """Droidenjäger der Vulture-Klasse"""
-    exportObj.renameShip """Sith Infiltrator""", """Sith-Infiltrator"""
+
 
     pilot_translations =
         "0-66":
@@ -295,8 +122,8 @@ exportObj.cardLoaders.Deutsch = () ->
            display_name: """Fliegerass der schwarzen Staffel"""
            text: """<i class = flavor_text>In der Schlacht von Yavin begleiteten die Elite­-piloten der schwarzen Staffel mit ihren TIE/ln-Jägern Darth Vader auf seinem vernichtenden Schlag gegen die Rebellion.</i>"""
         "Black Squadron Ace (T-70)":
-           display_name: """Fliegerass der schwarzen Staffel (T-70)"""
-           text: """<i class = flavor_text>Während des Kalten Krieges führte Poe Damerons schwarze Staffel gewagte Geheimoperationen gegen die Erste Ordnung durch und verstieß dabei gegen Verträge, die vom Senat der Neuen Republik ratifiziert worden waren.</i>%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1&nbsp;%CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
+           display_name: """Fliegerassder schwarzen Staffel (T-70)"""
+           text: """<i class = flavor_text>Während des Kalten Krieges führte Poe Damerons schwarze Staffel gewagte Geheimoperationen gegen die Erste Ordnung durch und verstieß dabei gegen Verträge, die vom Senat der Neuen Republik ratifiziert worden waren.</i>%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1 %CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
         "Black Squadron Scout":
            display_name: """Aufklärer der schwarzen Staffel"""
            text: """<i class = flavor_text>Schwenkbare Tragflächen verleihen dem schwerbewaffneten Atmosphärenflieger zusätzliche Geschwindigkeit und Manövrierbarkeit.</i>%LINEBREAK% <strong>Adaptive Querruder:</strong> Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, <b>musst</b> du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
@@ -304,10 +131,10 @@ exportObj.cardLoaders.Deutsch = () ->
            display_name: """Fliegerass der Schwarzen Sonne"""
            text: """<i class = flavor_text>Der Kihraxz-Angriffsjäger wurde eigens für das Verbrechersyndikat Schwarze Sonne entwickelt, dessen hochbezahlte Fliegerasse ein leistungsstarkes, wendiges Schiff verlangten, das ihren Fähigkeiten entsprach.</i>"""
         "Black Sun Assassin":
-           display_name: """Attentäter der Schwarzen Sonne"""
+           display_name: """Attentäter der """
            text: """<i class = flavor_text>Ein Attentat kann mit einem Schuss im Dunkeln oder mit einem vergifteten Getränk verübt werden. Aussagekräftiger ist jedoch eine brennende Raumfähre, die hilflos vom Himmel trudelt. </i>%LINEBREAK%<strong>Mikrodüsen:</strong> Solange du eine Fassrolle durchführst, <b>musst</b> du die %BANKLEFT%- oder %BANKRIGHT%-Schablone anstatt der %STRAIGHT%-Schablone verwenden."""
         "Black Sun Enforcer":
-           display_name: """Vollstrecker der Schwarzen Sonne"""
+           display_name: """Vollstrecker der """
            text: """<i class = flavor_text>Prinz Xizor persönlich entwickelte die Angriffsplattform der SternenViper-Klasse in Zusammenarbeit mit MandalMotors und schuf so einen der vorzüglichsten Sternenjäger der Galaxis. </i>%LINEBREAK%<strong>Mikrodüsen:</strong> Solange du eine Fassrolle durchführst, <b>musst</b> du die %BANKLEFT%- oder %BANKRIGHT%-Schablone anstatt der %STRAIGHT%-Schablone verwenden."""
         "Black Sun Soldier":
            display_name: """Kampfpilot der Schwarzen Sonne"""
@@ -331,7 +158,7 @@ exportObj.cardLoaders.Deutsch = () ->
            display_name: """Anfängerpilot der blauen Staffel"""
            text: """<i class = flavor_text>Incom-FreiTek setzte bei der Entwicklung des T-70-X-Flüglers auf eine Verbesserung der taktischen Flexibilität des altehrwürdigen T-65-Modells. Sein moderner Droidenport ist mit fast allen gängigen Astromechs kompatibel, und dank seiner modularen Waffenkapseln kann er für jeden Einsatz mit maßgeschneiderter Bewaffnung ausgestattet werden.</i>%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1 %CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
         "Blue Squadron Scout":
-           display_name: """Aufklärer der blauen Staffel"""
+           display_name: """Aufklärer der blauen """
            text: """<i class = flavor_text>Der UT-60D-U-Flügler deckt den Bedarf der Rebellion an schnellen, unverwüstlichen Truppentransportern. Meistens wird er eingesetzt, um Soldaten im Schutz der Dunkelheit oder inmitten eines tobenden Gefechts an ihren Einsatzort zu befördern. </i>"""
         "Boba Fett":
            display_name: """Boba Fett"""
@@ -482,7 +309,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Bevor du aktiviert wirst, falls du fokussiert bist, darfst du eine Aktion durchführen."""
         "Ello Asty":
            display_name: """Ello Asty"""
-           text: """Nachdem du ein rotes Tallon-Rolle-Manöver [%TROLLLEFT% oder %TROLLRIGHT%] aufgedeckt hast, falls du 2 oder weniger Stressmarker hast, behandle jenes Manöver, als wäre es weiß.%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1 %CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
+           text: """Nachdem du ein rotes Tallon-Rolle-Manöver [<lefttalon> oder <righttalon>] aufgedeckt hast, falls du 2 oder weniger Stressmarker hast, behandle jenes Manöver, als wäre es weiß.%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1 %CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
         "Emon Azzameen":
            display_name: """Emon Azzameen"""
            text: """Falls du unter Verwendung der [1 %STRAIGHT%]-Schablone ein Gerät abwerfen würdest, darfst du stattdessen die [3 %TURNLEFT%]-, [3 %STRAIGHT%]- oder [3 %TURNRIGHT%]-Schablone verwenden."""
@@ -517,7 +344,7 @@ exportObj.cardLoaders.Deutsch = () ->
            display_name: """Finch Dallow"""
            text: """Bevor du eine Bombe abwerfen würdest, darfst du sie stattdessen so auf der Spielfläche platzieren, dass sie dich berührt."""
         "First Order Test Pilot":
-           display_name: """Testpilot der Ersten Ordnung"""
+           display_name: """Testpilotder Ersten Ordnung"""
            text: """<i class = flavor_text>Extreme Schubkraft und präzises Handling sind die Hauptmerkmale des TIE-Dämpfers, der sein volles Vernichtungspotential nur in den Händen eines wahren Spitzenpiloten entfaltet. Jeder andere wäre schnell überfordert und würde die Kontrolle über das wendige Schiff verlieren.</i>%LINEBREAK%<strong>Automatische Schubdüsen:</strong> Nachdem du eine Aktion durchgeführt hast, darfst du eine rote %BARRELROLL%-Aktion oder eine rote %BOOST%-Aktion durchführen."""
         "Foreman Proach":
            display_name: """Vorarbeiter Proach"""
@@ -549,7 +376,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Gideon Hask":
            display_name: """Gideon Hask"""
            text: """Solange du einen Angriff gegen einen beschädigten Verteidiger durchführst, wirf 1 zusätzlichen Angriffswürfel."""
-        "Gold Squadron Trooper":
+        "Gold Squadron Trooper ":
            display_name: """Truppler der Gold-Staffel"""
            text: """<i class = flavor_text>Der V-19-Torrent-Sternenjäger wurde als leichter Begleitflieger für den grazilen Delta-7-Abfangjäger der Jedi-Ritter konzipiert und hat ein außergewöhnliches Flugprofil, das dieser Rolle gerecht wird.</i>"""
         "Gold Squadron Veteran":
@@ -752,7 +579,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i class = flavor_text>Der VCX-100 ist ein weiteres Erfolgsmodell der Corellianischen Ingenieursgesellschaft, geräumiger und mit mehr Ausstattungsoptionen als die beliebte YT-Serie.</i>%LINEBREAK%<strong>Heckgeschütz:</strong> Solange du ein angedocktes Schiff hast, hast du eine %REARARC%-Primärwaffe mit einem Angriffswert in Höhe des Angriffswertes der %FRONTARC%-Primärwaffe deines angedockten Schiffes."""
         "Lowhhrick":
            display_name: """Lowhhrick"""
-           text: """Nachdem ein befreundetes Schiff in Reichweite 0-1 zum Verteidiger geworden ist, darfst du 1 Verstärkungsmarker ausgeben. Falls du das tust, erhält jenes Schiff 1 Ausweichmarker."""
+           text: """Solange du einen Primärangriff durchführst, falls du beschädigt bist, darfst du 1 zusätzlichen Angriffswürfel werfen."""
         "Luke Skywalker":
            display_name: """Luke Skywalker"""
            text: """Nachdem du zum Verteidiger geworden bist (bevor Würfel geworfen werden), darfst du 1 %FORCE% wiederherstellen."""
@@ -823,7 +650,7 @@ exportObj.cardLoaders.Deutsch = () ->
            display_name: """Der alte Teroch"""
            text: """Zu Beginn der Kampfphase darfst du 1 feindliches Schiff in Reichweite 1 wählen. Falls du das tust und du in seinem %FRONTARC% bist, entfernt es alle seine grünen Marker.%LINEBREAK%<strong>Concordianischer Wirbel:</strong> Solange du verteidigst, falls die Angriffsreichweite 1 ist und du im %FRONTARC% des Angreifers bist, ändere 1 Ergebnis in ein %EVADE%-Ergebnis."""
         "Omega Squadron Ace":
-           display_name: """Fliegerass der Omega-Staffel"""
+           display_name: """Fliegerassder Omega-Staffel"""
            text: """<i class = flavor_text>Nur die fähigsten und loyalsten Piloten der Ersten Ordnung dienen in den geheimen Staffeln, die im Schatten des Kalten Krieges verdeckte Operationen gegen die Neue Republik durchführen.</i>"""
         "Omega Squadron Expert":
            display_name: """Elitepilot der Omega-Staffel"""
@@ -1064,7 +891,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i class = flavor_text>Serienmäßig bietet der YT-2400 reichlich Laderaum. Allerdings opfern die meisten Besitzer einen Teil davon, um Platz für modifizierte Waffensysteme und extragroße Triebwerke zu schaffen.</i>%LINEBREAK%<strong>Toter Winkel:</strong> Solange du einen Primärangriff in Reichweite 0-1 durchführst, wende den Bonus für Reichweite 0-1 nicht an und wirf 1 Angriffswürfel weniger."""
         "Wullffwarro":
            display_name: """Wullffwarro"""
-           text: """Solange du einen Primärangriff durchführst, falls du beschädigt bist, darfst du 1 zusätzlichen Angriffswürfel werfen."""
+           text: """Nachdem ein befreundetes Schiff in Reichweite 0-1 zum Verteidiger geworden ist, darfst du 1 Verstärkungsmarker ausgeben. Falls du das tust, erhält jenes Schiff 1 Ausweichmarker."""
         "Zari Bangel":
            display_name: """Zari Bangel"""
            text: """Du überspringst deinen Schritt „Aktion durchführen“ nicht, nachdem du ein Manöver teilweise ausgeführt hast.%LINEBREAK%<strong>Optimierte Gyrostabilisatoren:</strong> Du kannst deinen %SINGLETURRETARC%-Anzeiger nur auf deinen %FRONTARC% oder %REARARC% rotieren. Nachdem du eine Aktion durchgeführt hast, darfst du eine rote %BOOST%- oder eine rote %ROTATEARC%-Aktion durchführen."""
@@ -1088,7 +915,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Nachdem ein anderes befreundetes Schiff zerstört worden ist, darfst du eine Aktion durchführen, auch solange du gestresst bist.%LINEBREAK%<strong>Automatische Schubdüsen:</strong> Nachdem du eine Aktion durchgeführt hast, darfst du eine rote %BARRELROLL%-Aktion oder eine rote %BOOST%-Aktion durchführen."""
         '"Axe"':
            display_name: """„Axe“"""
-           text: """Nachdem du verteidigt oder einen Angriff durchgeführt hast, darfst du ein befreundetes Schiff in Reichweite 1-2 in deinem %LEFTARC% oder %RIGHTARC% wählen. Falls du das tust, transferiere 1 grünen Marker auf jenes Schiff."""
+           text: """Nachdem du verteidigt oder einen Angriff durchgeführt hast, darfst du ein befreundetes Schiff in Reichweite 1-2 in deinem <leftarc> oder <rightarc> wählen. Falls du das tust, transferiere 1 grünen Marker auf jenes Schiff."""
         '"Backdraft"':
            display_name: """„Backdraft“"""
            text: """Solange du einen %SINGLETURRETARC%-Primärangriff durchführst, falls der Verteidiger in deinem %REARARC% ist, wirf 1 zusätzlichen Würfel.%LINEBREAK%<strong>Schwerer Geschützturm:</strong> Du kannst deinen %SINGLETURRETARC%-Anzeiger nur auf deinen %FRONTARC% oder %REARARC% rotieren. Du <b>musst</b> die %FRONTARC%-Voraussetzung deiner ausgerüsteten %MISSILE%-Aufwertungen behandeln, als wäre sie %SINGLETURRETARC%."""
@@ -1124,10 +951,11 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange ein befreundetes Schiff in Reichweite 0-1 einen Primärangriff durchführt, darf jenes Schiff 1 Angriffswürfel neu werfen."""
         '"Jag"':
            display_name: """„Jag“"""
-           text: """Nachdem ein befreundetes Schiff in Reichweite 1-2 in deinem %LEFTARC% oder %RIGHTARC% verteidigt hat, darfst du den Angreifer als Ziel erfassen."""
+           text: """Nachdem ein befreundetes Schiff in Reichweite 1-2 in deinem <leftarc> oder <rightarc> verteidigt hat, darfst du den Angreifer als Ziel erfassen."""
         '"Kickback"':
            display_name: """„Kickback“"""
-           text: """Nachdem du eine %BARRELROLL%-Aktion durchgeführt hast, darfst du eine rote %LOCK%-Aktion durchführen."""
+           text: """Nachdem du eine %BARRELROLL%-Aktion durchgeführt hast, darfst du eine rote %LOCK%-Aktion durchführen.
+"""
         '"Leebo"':
            display_name: """„Leebo“"""
            text: """Nachdem du verteidigt oder einen Angriff durchgeführt hast, falls du einen Berechnungsmarker ausgegeben hast, erhalte 1 Berechnungsmarker.%LINEBREAK%<strong>Toter Winkel:</strong> Solange du einen Primärangriff in Reichweite 0-1 durchführst, wende den Bonus für Reichweite 0-1 nicht an und wirf 1 Angriffswürfel weniger."""
@@ -1149,11 +977,11 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Null"':
            display_name: """„Null“"""
            text: """Solange du nicht beschädigt bist, behandle deinen Initiativwert, als wäre er 7."""
-        '"Odd Ball" (ARC-170)':
-           display_name: """„Odd Ball“"""
-           text: """Nachdem du ein rotes Manöver vollständig ausgeführt oder eine rote Aktion durchgeführt hast, falls ein feindliches Schiff in deinem %BULLSEYEARC% ist, darfst du jenes Schiff als Ziel erfassen."""
         '"Odd Ball"':
            display_name: """„Odd Ball“"""
+           text: """Nachdem du ein rotes Manöver vollständig ausgeführt oder eine rote Aktion durchgeführt hast, falls ein feindliches Schiff in deinem %BULLSEYEARC% ist, darfst du jenes Schiff als Ziel erfassen."""
+        ""Odd Ball" (ARC-170)":
+           display_name: """„Odd Ball“ (ARC-170)"""
            text: """Nachdem du ein rotes Manöver vollständig ausgeführt oder eine rote Aktion durchgeführt hast, falls ein feindliches Schiff in deinem %BULLSEYEARC% ist, darfst du jenes Schiff als Ziel erfassen."""
         '"Pure Sabacc"':
            display_name: """„Voller Sabacc“"""
@@ -1175,7 +1003,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange du einen Angriff gegen einen Verteidiger in deinem %BULLSEYEARC% durchführst, wirf 1 zusätzlichen Angriffswürfel."""
         '"Sinker"':
            display_name: """„Sinker“"""
-           text: """Solange ein befreundetes Schiff in Reichweite 1-2 in deinem %LEFTARC% oder %RIGHTARC% einen Primärangriff durchführt, darf es 1 Angriffswürfel neu werfen."""
+           text: """Solange ein befreundetes Schiff in Reichweite 1-2 in deinem <leftarc> oder <rightarc> einen Primärangriff durchführt, darf es 1 Angriffswürfel neu werfen."""
         '"Static"':
            display_name: """„Static“"""
            text: """Solange du einen Primärangriff durchführst, darfst du deine Zielerfassung auf dem Verteidiger und einen Fokusmarker ausgeben, um alle deine Ergebnisse in %CRIT%-Ergebnisse zu ändern."""
@@ -1278,7 +1106,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Abschaum</i>%LINEBREAK%Nachdem du ein Wende­­manöver (%TURNLEFT% oder %TURNRIGHT%) oder Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufgedeckt hast, darfst du dein Rad auf das Manöver derselben Geschwindigkeit und Flugrichtung in der anderen Orientierung einstellen.%LINEBREAK%Füge den %TORPEDO%-Slot hinzu."""
         "Soulless One":
            display_name: """Seelenlose"""
-           text: """<i>Nur für Separatistenallianz %LINEBREAK% Fügt 2 Hüllenpunkte hinzu </i>%LINEBREAK% Solange du verteidigst, falls der Angreifer außerhalb deines Feuerwinkels ist, darfst du 1 Verteidigungswürfel neu werfen."""
+           text: """<i>Nur für Separatistenallianz</i>%LINEBREAK%Solange du verteidigst, falls der Angreifer außerhalb deines Feuerwinkels ist, darfst du 1 Verteidigungswürfel neu werfen."""
         "Virago":
            display_name: """Virago"""
            text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um eine rote %BOOST%-Aktion durchzuführen.%LINEBREAK%Füge den %MODIFICATION%-Slot hinzu."""
@@ -1365,7 +1193,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Während der Systemphase darfst du 1 feindliches Schiff in Reichweite 1-2 wählen und laut eine Flugrichtung und Geschwindigkeit raten, dann sieh dir das Rad jenes Schiffes an. Falls du die Flugrichtung und Geschwindigkeit des gewählten Schiffes richtig geraten hast, darfst du dein Rad auf ein anderes Manöver einstellen."""
         "Chancellor Palpatine":
            display_name: """Kanzler Palpatine"""
-           text: """<i>Fügt %COORDINATE% hinzu</i>%LINEBREAK%<i>Nur für Separatistenallianz oder Galaktische Republik</i>%LINEBREAK%Kanzler Palpatine:%LINEBREAK%<strong>Aufbau:</strong> Rüste diese Seite offen aus. %LINEBREAK%Nachdem du verteidigt hast, falls der Angreifer in Reichweite 0-2 ist, darfst du 1 %FORCE% ausgeben. Falls du das tust, erhält der Angreifer 1 Stressmarker.%LINEBREAK%Während der Endphase darfst du diese Karte umdrehen.%LINEBREAK%Darth Sidious:%LINEBREAK%Nachdem du eine violette &nbsp;%COORDINATE%&nbsp;-Aktion durchgeführt hast, erhält das von dir koordinierte Schiff 1&nbsp;Stressmarker. Dann erhält es 1 _x001F_Fokusmarker oder es stellt 1&nbsp;%FORCE% wieder her."""
+           text: """<i>Fügt %COORDINATE% hinzu</i>%LINEBREAK%<i>Nur für Separatistenallianz oder Galaktische Republik</i>%LINEBREAK%<strong>Aufbau:</strong> Rüste diese Seite offen aus. %LINEBREAK%Nachdem du verteidigt hast, falls der Angreifer in Reichweite 0-2 ist, darfst du 1 %FORCE% ausgeben. Falls du das tust, erhält der Angreifer 1 Stressmarker.%LINEBREAK%Während der Endphase darfst du diese Karte umdrehen."""
         "Chewbacca":
            display_name: """Chewbacca"""
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Zu Beginn der Kampfphase darfst du 2 %CHARGE% ausgeben, um 1 offene Schadenskarte zu reparieren."""
@@ -1392,7 +1220,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<strong>Angriff (</strong>%LOCK%<strong>):</strong> Gib 1 %CHARGE% aus. Nach diesem Angriff darfst du diesen Angriff als Bonusangriff gegen ein anderes Ziel in Reichweite 0-1 des Verteidigers durchführen, wobei du die %LOCK%-Voraussetzung ignorierst."""
         "Collision Detector":
            display_name: """Kollisionssensor"""
-           text: """Solange du Schub gibst oder eine Fassrolle fliegst, kannst du dich durch Hindernisse hindurch­bewegen und sie überschneiden.%LINEBREAK%Nachdem du dich durch ein Hindernis hindurchbewegt oder es überschnitten hast, darfst du 1&nbsp;%CHARGE% ausgeben, um seine Effekte bis zum Ende der Runde zu ignorieren."""
+           text: """Solange du Schub gibst oder eineFassrolle fliegst, kannst du dichdurch Hindernisse hindurch­bewegen und sie überschneiden.%LINEBREAK%Nachdem du dich durch ein Hindernis hindurchbewegt oder es überschnitten hast, darfst du 1 %CHARGE% ausgeben, um seine Effekte bis zum Ende der Runde zu ignorieren."""
         "Composure":
            display_name: """Gelassenheit"""
            text: """<i>Benötigt <r>%FOCUS%</r> oder %FOCUS%</i>%LINEBREAK%Nachdem eine deiner Aktionen scheitert, falls du keine grünen Marker hast, darfst du eine %FOCUS%-Aktion durchführen."""
@@ -1417,6 +1245,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Daredevil":
            display_name: """Draufgänger"""
            text: """<i>Benötigt %BOOST%</i>%LINEBREAK%<i>Nur für kleines Schiff</i>%LINEBREAK%Solange du eine weiße %BOOST%-Aktion durchführst, darfst du sie behandeln, als wäre sie rot, um stattdessen die [1 %TURNLEFT%]- oder [1 %TURNRIGHT%]-Schablone zu verwenden."""
+        "Darth Sidious":
+           display_name: """Darth Sidious"""
+           text: """<i>Fügt %COORDINATE% hinzu</i>%LINEBREAK%<i>Nur für Separatistenallianz oder Galaktische Republik</i>%LINEBREAK%Nachdem du eine violette  %COORDINATE% -Aktion durchgeführt hast, erhält das von dir koordinierte Schiff 1 Stressmarker. Dann erhält es 1 Fokusmarker oder es stellt 1 %FORCE% wieder her."""
         "Darth Vader":
            display_name: """Darth Vader"""
            text: """<i>Nur für Imperium</i>%LINEBREAK%Zu Beginn der Kampfphase darfst du 1 Schiff in deinem Feuerwinkel in Reichweite 0-2 wählen und 1 %FORCE% ausgeben. Falls du das tust, erleidet jenes Schiff 1 %HIT%-Schaden, es sei denn, es entscheidet sich dafür, 1 grünen Marker zu"""
@@ -1431,16 +1262,13 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Fügt <r>%EVADE%</r> hinzu</i>%LINEBREAK%<i>Nur für kleines Schiff oder mittleres Schiff</i>%LINEBREAK%Solange du eine rote %EVADE%-Aktion durchführst, falls ein Hindernis in Reichweite 0-1 ist, behandle die Aktion stattdessen, als wäre sie weiß."""
         "Dedicated":
            display_name: """Pflichtbewusst"""
-           text: """<i>Nur für Galaktische Republik</i>%LINEBREAK%Solange ein anderes befreundetes Schiff in deinem %LEFTARC% oder %RIGHTARC% in Reichweite 0-2 verteidigt, falls es limitiert ist oder die Aufwertung <strong>Pflichtbewusst</strong> hat und du nicht angestrengt bist, darfst du 1 Anstrengungsmarker erhalten. Falls du das tust, wirft der Verteidiger 1 seiner Leerseiten-Ergebnisse neu."""
+           text: """<i>Nur für Galaktische Republik</i>%LINEBREAK%Solange ein anderes befreundetes Schiff in deinem <leftarc> oder <rightarc> in Reichweite 0-2 verteidigt, falls es limitiert ist oder die Aufwertung <strong>Pflichtbewusst</strong> hat und du nicht angestrengt bist, darfst du 1 Anstrengungsmarker erhalten. Falls du das tust, wirft der Verteidiger 1 seiner Leerseiten-Ergebnisse neu."""
         "Delta-7B":
            display_name: """Delta-7B"""
            text: """<i class = flavor_text>Der Delta-7B wurde als schwerere Variante des Abfangjägers der Aethersprite-Klasse konzipiert und unterscheidet sich optisch nur durch seinen verschobenen Astromech-Anschluss. Viele Jedi-Generäle bevorzugen ihn aufgrund seiner verbesserten Feuerkraft und Stabilität.</i>"""
         "Dengar":
            display_name: """Dengar"""
            text: """<i>Nur für Abschaum</i>%LINEBREAK%Nachdem du verteidigt hast, falls der Angreifer in deinem Feuerwinkel ist, darfst du 1 %CHARGE% ausgeben. Falls du das tust, wirf 1 Angriffswürfel, es sei denn, der Angreifer entscheidet sich dafür, 1 grünen Marker zu entfernen. Bei einem %HIT%- oder %CRIT%-Ergebnis erleidet der Angreifer 1 %HIT%-Schaden."""
-        "Discord Missiles":
-           display_name: """Diskordanzraketen"""
-           text: """<i>Nur für Separatistenallianz</i>%LINEBREAK%Zu Beginn der Kampfphase darfst du 1&nbsp;Berechnungsmarker und 1&nbsp;%CHARGE% ausgeben, um unter Verwendung der [3&nbsp;%BANKLEFT%]-, [3&nbsp;%STRAIGHT%] oder [3&nbsp;%BANKRIGHT%]-Schablone 1&nbsp;Buzz- Droidenschwarm zu starten.%LINEBREAK%Die %CHARGE% dieser Karte kann nicht wiederhergestellt werden."""
         "Director Krennic":
            display_name: """Direktor Krennic"""
            text: """<i>Fügt %LOCK% hinzu</i>%LINEBREAK%<i>Nur für Imperium</i>%LINEBREAK%<strong>Aufbau:</strong> Bevor die Streitkräfte platziert werden, ordne den Zustand <strong>Optimierter Prototyp</strong> einem anderen befreundeten Schiff zu."""
@@ -1461,7 +1289,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Benötigt %CALCULATE% oder <r>%CALCULATE%</r></i>%LINEBREAK%<i>Nur für Separatistenallianz</i>%LINEBREAK%<strong>Angriff (%CALCULATE%):</strong> Gib 1 %CHARGE% aus. Solange du diesen Angriff durchführst, darfst du 1 Berechnungsmarker ausgegeben, um 1 %FOCUS%-Ergebnis in ein %CRIT%-Ergebnis zu ändern.%LINEBREAK%<strong>Aktion</strong>: Lade diese Karte nach."""
         "Engine Upgrade":
            display_name: """Verbessertes Triebwerk"""
-           text: """<i>Fügt %BOOST% hinzu</i>%LINEBREAK%<i>Benötigt <r>%BOOST%</r></i>%LINEBREAK%<i class = flavor_text>Große Armeen wie das Militär des Galaktischen Imperiums haben meist standardisierte Triebwerke. Freischaffende Piloten und kleinere Organisationen ersetzen oft Energiekopplungen, bauen zusätzliche Düsen ein oder nutzen Hochleistungskraftstoffe, um noch mehr aus ihren Triebwerken herauszuholen.</i>"""
+           text: """<i>Fügt %BOOST% hinzu</i>%LINEBREAK%<i>Benötigt <r>%BOOST%</r></i>%LINEBREAK%<i class = flavor_text>Große Armeen wie das Militär des Galaktischen Imperiums haben meist standardisierte Triebwerke. Freischaffende Piloten und kleinere Organisationen ersetzen oft Energiekopplungen, """
         "Expert Handling":
            display_name: """Flugkunst"""
            text: """<i>Fügt %BARRELROLL% hinzu</i>%LINEBREAK%<i>Benötigt <r>%BARRELROLL%</r></i>%LINEBREAK%<i class = flavor_text>Auch schwere Jäger können in eine Fassrolle gezwungen werden, wobei es einen erfahrenen Piloten braucht, um die Maschine nicht übermäßig zu belasten und dem Feind kein leichtes Ziel zu bieten.</i>"""
@@ -1507,9 +1335,12 @@ exportObj.cardLoaders.Deutsch = () ->
         "Grand Moff Tarkin":
            display_name: """Großmoff Tarkin"""
            text: """<i>Benötigt %LOCK% oder <r>%LOCK%</r></i>%LINEBREAK%<i>Nur für Imperium</i>%LINEBREAK%Während der Systemphase darfst du 2 %CHARGE% ausgeben. Falls du das tust, darf jedes befreundete Schiff ein Schiff, das du als Ziel erfasst hast, als Ziel erfassen."""
-        "Grappling Struts":
-           display_name: """Laufkrallen"""
-           text: """Geschlossen:%LINEBREAK%<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK%Solange du ein Manöver ausführst, falls du einen Asteroiden oder eine Trümmerwolke überschneidest und 1 oder weniger andere befreundete Schiffe in Reichweite 0 jenes Hindernisses sind, darfst du diese Karte umdrehen.%LINEBREAK%Geöffnet:%LINEBREAK%Du ignorierst Hindernisse in Reichweite&nbsp;0 und solange du dich durch sie hindurchbewegst. Nachdem du dein Rad aufgedeckt hast, falls du ein anderes Manöver als [2&nbsp;%STRAIGHT%] aufgedeckt hast und in Reichweite 0 eines Asteroiden oder einer Trümmerwolke bist, überspringe deinen Schritt „Manöver ausführen“ und entferne 1_x001F_ Stressmarker; falls du ein rechtes oder linkes Manöver aufgedeckt hast, drehe dein Schiff um 90° in jene Richtung. Nachdem du ein Manöver ausgeführt hast, drehe diese Karte um."""
+        "Grappling Struts (Closed)":
+           display_name: """Laufkrallen (geschlossen)"""
+           text: """<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK%Solange du ein Manöver ausführst, falls du einen Asteroiden oder eine Trümmerwolke überschneidest und 1 oder weniger andere befreundete Schiffe in Reichweite 0 jenes Hindernisses sind, darfst du diese Karte umdrehen."""
+        "Grappling Struts (Open)":
+           display_name: """Laufkrallen (Geöffnet)"""
+           text: """Du ignorierst Hindernisse in Reichweite 0 und solange du dich durch sie hindurchbewegst. Nachdem du dein Rad aufgedeckt hast, falls du ein anderes Manöver als [2 %STRAIGHT%] aufgedeckt hast und in Reichweite 0 eines Asteroiden oder einer Trümmerwolke bist, überspringe deinen Schritt „Manöver ausführen“ und entferne 1  Stressmarker; falls du ein rechtes oder linkes Manöver aufgedeckt hast, drehe dein Schiff um 90° in jene Richtung. Nachdem du ein Manöver ausgeführt hast, drehe diese Karte um."""
         "Greedo":
            display_name: """Greedo"""
            text: """<i>Nur für Abschaum</i>%LINEBREAK%Solange du einen Angriff durchführst, darfst du 1 %CHARGE% ausgeben, um 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis zu ändern.%LINEBREAK%Solange du verteidigst, falls deine %CHARGE% aktiv ist, darf der Angreifer 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis ändern."""
@@ -1566,10 +1397,13 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<strong>Aufbau:</strong> Nachdem die Streitkräfte platziert worden sind, wähle 1 feindliches Schiff und ordne ihm den Zustand Abhörgerät zu."""
         "Instinctive Aim":
            display_name: """Instinktives Zielen"""
-           text: """Solange du einen Spezialangriff durchführst, darfst du 1&nbsp;%FORCE% ausgeben, um die %FOCUS%- oder %LOCK%-Voraussetzung zu ignorieren."""
-        "Integrated S-Foils":
-           display_name: """Integrierte S-Flügel"""
-           text: """<strong>Geöffnet: </strong>Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Geschlossen: </strong><i>Fügt %BARRELROLL% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BARRELROLL%</r> hinzu</i>%LINEBREAK%Solange du einen Primärangriff durchführst, falls der Verteidiger nicht in deinem %BULLSEYEARC% ist, wirf 1&nbsp;Angriffswürfel weniger.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+           text: """Solange du einen Spezialangriff durchführst, darfst du 1 %FORCE% ausgeben, um die %FOCUS%- oder %LOCK%-Voraussetzung zu ignorieren."""
+        "Integrated S-foils (Closed)":
+           display_name: """Integrierte S-Flügel (geschlossen)"""
+           text: """<i>Fügt %BARRELROLL% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BARRELROLL%</r> hinzu</i>%LINEBREAK%Solange du einen Primärangriff durchführst, falls der Verteidiger nicht in deinem %BULLSEYEARC% ist, wirf 1 Angriffswürfel weniger.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+        "Integrated S-foils (Open)":
+           display_name: """Integrierte S-Flügel (geöffnet)"""
+           text: """Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Intimidation":
            display_name: """Furchteinflößend"""
            text: """Solange ein feindliches Schiff in Reichweite 0 verteidigt, wirft es 1 Verteidigungswürfel weniger."""
@@ -1614,7 +1448,10 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Erste Ordnung</i>%LINEBREAK%<strong>Aktion:</strong> Wähle 1 feindliches Schiff in Reichweite 1-3. Falls du das tust, gib 1 %FORCE% aus, um jenem Schiff den Zustand <strong>Ich zeige dir die dunkle Seite</strong> zuzuordnen."""
         "L3-37":
            display_name: """L3-37"""
-           text: """<i>Nur für Abschaum</i>%LINEBREAK%<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK%Solange du verteidigst, darfst du diese Karte umdrehen. Fall du das tust, muss der Angreifer alle Angriffswürfel neu werfen. %LINEBREAK% Programmierung von L3-37: Falls du keine Schilde hast, verringere die Schwierigkeit deiner Drehmanöver (%BANKLEFT% und %BANKRIGHT%)."""
+           text: """<i>Nur für Abschaum</i>%LINEBREAK%<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK%Solange du verteidigst, darfst du diese Karte umdrehen. Fall du das tust, muss der Angreifer alle Angriffswürfel neu werfen."""
+        "L3-37's Programming":
+           display_name: """Programmierung von L3-37"""
+           text: """<i>Nur für Abschaum</i>%LINEBREAK%Falls du keine Schilde hast, verringere die Schwierigkeit deiner Drehmanöver (%BANKLEFT% und %BANKRIGHT%)."""
         "Lando Calrissian":
            display_name: """Lando Calrissian"""
            text: """<i>Nur für Rebellen</i>%LINEBREAK%<strong>Aktion:</strong> Wirf 2 Verteidigungswürfel. Erhalte 1 Fokusmarker für jedes %FOCUS%-Ergebnis. Erhalte 1 Ausweichmarker für jedes %EVADE%-Ergebnis. Falls beide Ergebnisse Leerseiten sind, wählt der Gegenspieler Fokus- oder Ausweichmarker. Du erhältst 1 Marker"""
@@ -1680,10 +1517,13 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Nachdem du eine %FOCUS%-Aktion durchgeführt hast, erhalte 1 Fokusmarker."""
         "Petty Officer Thanisson":
            display_name: """Unteroffizier Thanisson"""
-           text: """<i>Nur für Erste Ordnung</i>%LINEBREAK%Während der Aktivierungs- oder Kampfphase, nachdem ein feindliches Schiff in deinem %FRONTARC% in Reichweite 0-1 einen roten oder orangefarbenen Marker erhalten hat, falls du nicht gestresst bist, darfst du 1&nbsp;Stressmarker erhalten. Falls du das tust, erhält jenes Schiff 1 zusätzlichen Marker von der Art des soeben erhaltenen."""
-        "Pivot Wing":
-           display_name: """Schwenkflügel"""
-           text: """<strong>Geschlossen:</strong> Solange du verteidigst, wirf 1&nbsp;Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein [0&nbsp;%STOP%]-Manöver ausgeführt hast, darfst du dein Schiff um 90° oder um 180° drehen.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Geöffnet:</strong> Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+           text: """<i>Nur für Erste Ordnung</i>%LINEBREAK%Während der Aktivierungs- oder Kampfphase, nachdem ein feindliches Schiff in deinem %FRONTARC% in Reichweite 0-1 einen roten oder orangefarbenen Marker erhalten hat, falls du nicht gestresst bist, darfst du 1 Stressmarker erhalten. Falls du das tust, erhält jenes Schiff 1 zusätzlichen Marker von der Art des soeben erhaltenen."""
+        "Pivot Wing (Closed)":
+           display_name: """Schwenkflügel (geschlossen)"""
+           text: """Solange du verteidigst, wirf 1 Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein [0 %STOP%]-Manöver ausgeführt hast, darfst du dein Schiff um 90° oder um 180° drehen.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+        "Pivot Wing (Open)":
+           display_name: """Schwenkflügel (geöffnet)"""
+           text: """Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Predator":
            display_name: """Jagdinstinkt"""
            text: """Solange du einen Primärangriff durchführst, falls der Verteidiger in deinem %BULLSEYEARC% ist, darfst du 1 Angriffswürfel neu werfen."""
@@ -1786,9 +1626,12 @@ exportObj.cardLoaders.Deutsch = () ->
         "Sense":
            display_name: """Gespür"""
            text: """Während der Systemphase darfst du 1 Schiff in Reichweite 0-1 wählen und sein Rad ansehen. Falls du 1 %FORCE% ausgibst, darfst du stattdessen ein Schiff in Reichweite 0-3 wählen."""
-        "Servomotor S-Foils":
-           display_name: """Servomotorische S-Flügel"""
-           text: """<strong>Geschlossen:</strong><i>Fügt %FOCUS%-><r>%BOOST%</r> hinzu</i>%LINEBREAK%<i>Fügt %BOOST% hinzu</i>%LINEBREAK%Solange du einen Primärangriff durchführst, wirf 1&nbsp;Angriffswürfel weniger.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Geöffnet:</strong>Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+        "Servomotor S-foils (Closed)":
+           display_name: """Servomotorische S-Flügel (geschlossen)"""
+           text: """<i>Fügt %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BOOST%</r> hinzu</i>%LINEBREAK%Solange du einen Primärangriff durchführst, wirf 1 Angriffswürfel weniger.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+        "Servomotor S-foils (Open)":
+           display_name: """Servomotorische S-Flügel (geöffnet)"""
+           text: """Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Seventh Fleet Gunner":
            display_name: """Kanonier der siebten Flotte"""
            text: """<i>Nur für Galaktische Republik</i>%LINEBREAK%Solange ein anderes befreundetes Schiff einen Primärangriff durchführt, falls der Verteidiger in deinem Feuerwinkel ist, darfst du 1 %CHARGE% ausgeben. Falls du das tust, wirft der Angreifer 1 zusätzlichen Angriffswürfel, bis zu einem Maximum von 4. Während der Systemphase darfst du 1  Entwaffnet-Marker erhalten, um 1 %CHARGE% wiederherzustellen."""
@@ -1797,12 +1640,12 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Imperium</i>%LINEBREAK%Falls ein feindliches Schiff in Reichweite 0-1 einen Stressmarker erhalten würde, darfst du 1 %FORCE% ausgeben, um es stattdessen 1 Störsignal- oder 1 Fangstrahlmarker erhalten zu lassen."""
         "Shield Upgrade":
            display_name: """Verbesserte Schilde"""
-           text: """<i class = flavor_text>Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus lohnenswerte Investition. </i>"""
+           text: """<i class = flavor_text>Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus """
         "Skilled Bombardier":
            display_name: """Versierte Bombenschützin"""
            text: """Falls du ein Gerät abwerfen oder starten würdest, darfst du eine Schablone mit gleicher Flugrichtung und einer um 1 höheren oder niedrigeren Geschwindigkeit verwenden."""
         "Spare Parts Canisters":
-           display_name: """Astromech Ersatzteilkanister"""
+           display_name: """%ASTROMECH% Ersatzteilkanister"""
            text: """<strong>Aktion:</strong> Gib 1 %CHARGE% aus, um 1 Ladung von 1  deiner ausgerüsteten %ASTROMECH%-Aufwertungen wiederherzustellen. %LINEBREAK%<strong>Aktion:</strong> Gib 1 %CHARGE% aus, um 1 Ersatzteil abzuwerfen, dann verliere alle Zielerfassungen, die dir zugeordnet sind."""
         "Special Forces Gunner":
            display_name: """Bordschütze der Spezialeinheiten"""
@@ -1875,59 +1718,13 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Während des Schrittes „Aktion durchführen“ darfst du 1 Aktion durchführen, auch solange du gestresst bist. Nachdem du eine Aktion durchgeführt hast, solange du gestresst bist, erleide 1 %HIT%-Schaden, es sei denn, du legst 1 deiner Schadenskarten offen."""
         '"Chopper" (Astromech)':
            display_name: """„Chopper“ (Astromech)"""
-           text: """<i>Nur für Rebellen</i>%LINEBREAK%<strong>Aktion:</strong> Gib 1 nicht-wiederkehrende %CHARGE% von einer anderen ausgerüsteten Aufwertung aus, um 1 Schild wiederherzustellen.%LINEBREAK%<strong>Aktion:</strong> Gib 2 Schilde aus, um 1 nicht-wiederkehrende %CHARGE% von einer ausgerüsteten Aufwertung wiederherzustellen."""
+           text: """<i>Nur für Rebellen</i>%LINEBREAK%<strong>Aktion:</strong> Gib 1 nicht-wiederkehrende %CHARGE% von einer anderen ausgerüsteten Aufwertung aus, um 1 Schild wiederherzustellen."""
         '"Genius"':
            display_name: """„Genie“"""
            text: """<i>Nur für Abschaum</i>%LINEBREAK%Nachdem du ein Manöver vollständig ausgeführt hast, falls du in dieser Runde noch kein Gerät abgeworfen oder gestartet hast, darfst du 1 Bombe abwerfen."""
         '"Zeb" Orrelios':
            display_name: """„Zeb“ Orrelios"""
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Du kannst Primärangriffe in Reichweite 0 durchführen. Feindliche Schiffe in Reichweite 0 können Primärangriffe gegen dich durchführen."""
-
-
-        "Hardpoint: Cannon":
-           text: """Fügt einen %CANNON% Slot hinzu"""
-        "Hardpoint: Missile":
-           text: """Fügt einen %MISSILE% Slot hinzu"""
-        "Hardpoint: Torpedo":
-           text: """Fügt einen %TORPEDO% Slot hinzu"""
-
-            
-    condition_translations =
-        'Suppressive Fire':
-           display_name: 'Sperrfeuer'
-           text: '''Solange du einen Angriff gegen ein anderes Schiff als <strong>Captain Rex</strong> durchführst, wirf 1 Angriffswürfel weniger. %LINEBREAK%Nachdem <strong>Captain Rex</strong> verteidigt hat, entferne diese Karte. <strong>Captain Rex</strong>Am Ende der Kampfphase, falls <strong>Captain Rex</strong> in dieser Phase keinen Angriff durchgeführt hat, entferne diese Karte. %LINEBREAK%Nachdem <strong>Captain Rex</strong> zerstört worden ist, entferne diese Karte.'''
-        'Hunted':
-           display_name: 'Gejagt'
-           text: '''Nachdem du zerstört worden bist, musst du ein anderes befreundetes Schiff wählen und ihm diesen Zustand zuordnen, falls möglich.'''
-        'Listening Device':
-           display_name: 'Abhörgerät'
-           text: '''Während der Systemphase, falls ein feindliches Schiff mit der Aufwertung <strong>Informant</strong> in Reichweite 0-2 ist, drehe dein Rad auf die offene Seite.'''
-        'Optimized Prototype':
-           display_name: 'Optimierter Prototyp'
-           text: '''Solange du einen %FRONTARC%-Primärangriff gegen ein Schiff durchführst, das von einem befreundeten Schiff mit der Aufwertung <strong>Direktor Krennic</strong> als Ziel erfasst ist, darfst du 1 %HIT%/%CRIT%/%FOCUS%-Ergebnis ausgeben. Falls du das tust, wähle 1 der folgenden Optionen: Der Verteidiger verliert 1 Schild oder der Verteidiger dreht 1 seiner verdeckten Schadenskarten um.'''
-        'Proton Bomb':
-           display_name: """Protonenbombe"""
-           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, erleidet jedes Schiff in Reichweite 0–1 1 %CRIT%-Schaden.'''
-        'Seismic Charge':
-           display_name: """Seismische Bombe"""
-           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wähle 1 Hindernis in Reichweite 0–1. Jedes Schiff in Reichweite 0–1 zu jenem Hindernis erleidet 1 %HIT%-Schaden. Dann entferne jenes Hindernis.'''
-        'Bomblet':
-           display_name: """Streubombe"""
-           text: '''(Bomben Token) - Am Ende der Aktivierungsphase detoniert dieses Gerät. Sobald dieses Gerät detoniert, wirft jedes Schiff in Reichweite 0–1 2 Angriffswürfel. Jedes Schiff erleidet 1 %HIT%-Schaden für jedes %HIT%/%CRIT% Ergebnis.'''
-        'Loose Cargo':
-           display_name: """Freie Fracht"""
-           text: '''(Debris Token) - Freie Fracht ist eine Trümmerwolke..'''
-        'Conner Net':
-           display_name: """Connernetz"""
-           text: '''(Mine Token) - Nachdem ein Schiff sich durch dieses Gerät hindurchbewegt oder sich mit ihm überschnitten hat, detoniert es. Sobald dieses Gerät detoniert, erleidet das Schiff 1 %HIT%-Schaden und erhält 3 Ionenmarker.'''
-        'Proximity Mine':
-           display_name: """Annäherungsmine"""
-           text: '''(Mine Token) - Nachdem sich ein Schiff durch dieses Gerät hindurchbewegt oder mit ihm überschnitten hat, detoniert es. Sobald dieses Gerät detoniert, wirft jenes Schiff 2 Angriffswürfel. Jenes Schiff erleidet dann 1 %HIT%-Schaden sowie 1 %HIT%/%CRIT%-Schaden für jedes passende Ergebnis.'''
-        'Rattled':
-           display_name: 'Aus der Fassung'
-           text: 'Nachdem eine Bombe oder Mine in Reichweite 0-1 detoniert ist, erleide 1 %CRIT% Schaden. Dann entferne diese Karte. %LINEBREAK% <strong>Aktion:</strong> Falls keine Bomben oder Minen in Reichweite 0-1 sind, entferne diese Karte.'
-        '''I'll Show You the Dark Side''': 
-           display_name: 'Ich zeige dir die dunkle Seite'
-           text: 'Sobald diese Karte zugeordnet wird, falls keine offene Schadenskarte darauf liegt, sucht der Spieler, der sie zugeordnet hat, im Schadensstapel nach 1 <strong>Pilot</strong>-Schadenskarte und platziert sie offen auf dieser Karte. Dann mische den Schadensstapel. %LINEBREAK%Sobald du 1 %CRIT%-Schaden erleiden würdest, wird dir stattdessen die offene Schadenskarte auf dieser Karte zugeteilt. Dann entferne diese Karte. '
-
-    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
+        "Discord Missiles":
+           display_name: """Diskordanzraketen"""
+           text: """<i>Nur für Separatistenallianz</i>%LINEBREAK%Zu Beginn der Kampfphase darfst du 1 Berechnungsmarker und 1 %CHARGE% ausgeben, um unter Verwendung der [3 %BANKLEFT%]-, [3 %STRAIGHT%] oder [3 %BANKRIGHT%]-Schablone 1 Buzz- Droidenschwarm zu starten.%LINEBREAK%Die %CHARGE% dieser Karte kann nicht wiederhergestellt werden."""
