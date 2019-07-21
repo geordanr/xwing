@@ -1723,7 +1723,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Leia Organa":
            display_name: """Leia Organa"""
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du 3 %CHARGE% ausgeben. Während dieser Phase verringert jedes befreundete Schiff die Schwierigkeit seiner roten Manöver."""
-        "Leia Organa":
+        "Leia Organa (Resistance)":
            display_name: """Leia Organa"""
            text: """<i>Fügt %COORDINATE% hinzu</i>%LINEBREAK%<i>Nur für Widerstand</i>%LINEBREAK%Nachdem ein befreundetes Schiff sein Rad aufgedeckt hat, darfst du 1&nbsp;%FORCE%ausgeben. Falls du das tust, verringert jenes Schiff die Schwierigkeit jenes Manövers."""
         "Lone Wolf":
