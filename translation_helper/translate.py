@@ -68,7 +68,7 @@ for k, ship in ship_translations.items():
 output_text += "\n\n    pilot_translations =\n"
 
 # Cards that add or require actions refere to them via ID, so we need them
-actions_by_id = {1: "%BOOST%", 2: "%FOCUS%", 3: "%EVADE%", 4: "%LOCK%", 5: "%BARRELROLL%", 7: "%CLOAK%",
+actions_by_id = {1: "%BOOST%", 2: "%FOCUS%", 3: "%EVADE%", 4: "%LOCK%", 5: "%BARRELROLL%", 6: "%REINFORCE%", 7: "%CLOAK%",
                  8: "%COORDINATE%", 9: "%CALCULATE%", 10: "%JAM%", 12: "%RELOAD%", 13: "%SLAM%", 14: "%ROTATEARC%"}
 
 # create pilot translations
