@@ -1442,7 +1442,10 @@ class exportObj.SquadBuilder
                      [g, parseInt(p), s]
                 else
                     [ game_type_and_point_abbrev, s ] = matches[2].split('!')
-                    p = parseInt(game_type_and_point_abbrev.split('=')[1])
+                    if parseInt(game_type_and_point_abbrev.split('=')[1])
+                        p = parseInt(game_type_and_point_abbrev.split('=')[1])
+                    else
+                        p = 200
                     g = game_type_and_point_abbrev.split('=')[0]
                     [ g, p, s ]
 
@@ -3481,7 +3484,7 @@ class Ship
     toSerialized: ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
         if @builder.isQuickbuild
-            """#{@quickbuildId}:"""
+            """#{@quickbuildId}X"""
         else
             upgrades = """#{upgrade?.data?.id ? "" for upgrade, i in @upgrades}""".replace(/,/g, "W")
             [
