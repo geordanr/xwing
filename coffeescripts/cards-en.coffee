@@ -1804,6 +1804,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Petty Officer Thanisson"""
            text: """<i>First Order only</i>%LINEBREAK%During the Activation or Engagement Phase, after an enemy ship in your %FRONTARC% at range 0-1 gains a red or orange token, if you are not stressed, you may gain 1 stress token. If you do, that ship gains 1 additional token of the type that it gained."""
         "Plasma Torpedoes":
+           display_name: """Plasma Torpedoes"""
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. During the Neutralize Results step, %CRIT% results are cancelled before %HIT% results. After this attack hits, the defender loses 1 shield."""
         "Pivot Wing":
            display_name: """Pivot Wing"""
@@ -2022,9 +2023,6 @@ exportObj.cardLoaders.English = () ->
         "R2-C4":
            display_name: """R2-C4"""
            text: """While you perform an attack, you may spend 1 evade token to change 1 %FOCUS% result to a %HIT% result. """
-        "Plasma Torpedoes":
-           display_name: """Plasma Torpedoes"""
-           text: """<strong>Attack (%LOCK%):</strong> Spend 1 %CHARGE%. During the Neutralize Results step, %CRIT% results are cancelled before %HIT% results. After the attack hits, the defender loses 1 shield. """
         "Electro-Proton Bomb":
            display_name: """Electro-Proton Bomb"""
            text: """<strong>Bomb</strong>%LINEBREAK%During the System Phase, you may spend 1 %CHARGE% to drop an Electro-Proton Bomb with the [1 %STRAIGHT%] template. Then place 1 fuse marker on that device. %LINEBREAK%This card’s %CHARGE% cannot be recovered."""
