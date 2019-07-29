@@ -5821,7 +5821,7 @@ exportObj.manifestByExpansion =
 
     'TIE/SF Fighter Expansion Pack': [
         {
-            name: 'TIE/VN Silencer'
+            name: 'TIE/SF Fighter'
             type: 'ship'
             count: 1
         }
