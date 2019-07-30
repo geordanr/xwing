@@ -9756,6 +9756,7 @@ exportObj.basicCardData = ->
        {
             name: "Leia Organa (Resistance)"
             id: 244
+            xws: "leiaorgana-resistance"
             unique: true
             slot: "Crew"
             faction: "Resistance"
