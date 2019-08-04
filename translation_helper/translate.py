@@ -62,13 +62,14 @@ output_text = ""
 
 # create ship translations
 for k, ship in ship_translations.items():
-    output_text += '    exportObj.renameShip """%s""", """%s"""\n' % (ship['name_yasb'], ship['name_' + lang])
+    if ship['name_' + lang] != 'CHANGE ME':
+        output_text += '    exportObj.renameShip """%s""", """%s"""\n' % (ship['name_yasb'], ship['name_' + lang])
 
 output_text += "\n\n    pilot_translations =\n"
 
 # Cards that add or require actions refere to them via ID, so we need them
-actions_by_id = {1: "%BOOST%", 2: "%FOCUS%", 3: "%EVADE%", 4: "%LOCK%", 5: "%BARRELROLL%",
-                 8: "%COORDINATE%", 9: "%CALCULATE%", 12: "%RELOAD%", 13: "%SLAM%", 14: "%ROTATEARC%"}
+actions_by_id = {1: "%BOOST%", 2: "%FOCUS%", 3: "%EVADE%", 4: "%LOCK%", 5: "%BARRELROLL%", 6: "%REINFORCE%", 7: "%CLOAK%",
+                 8: "%COORDINATE%", 9: "%CALCULATE%", 10: "%JAM%", 12: "%RELOAD%", 13: "%SLAM%", 14: "%ROTATEARC%"}
 
 # create pilot translations
 for card_en in cards_en:
@@ -200,10 +201,10 @@ for card_en in cards_en:
         manual_stuff += ('%s: Found upgrade name multiple times:\n' % card_en["name"])
     upgrade_name_list[card_en["name"]] = True
 
-    # check for variable point costs
-    if card_en["cost"] == "*":
-        manual_stuff += ('%s: Variable costs. Added default phrase, you may want to specify on what the point costs depend.\n' % card_en["name"])
-        card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
+    # check for variable point costs (is now handled by the builder)
+    # if card_en["cost"] == "*":
+    #    manual_stuff += ('%s: Variable costs. Added default phrase, you may want to specify on what the point costs depend.\n' % card_en["name"])
+    #    card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to check for double-sided cards
     if "(" in card_en["name"]:
@@ -221,6 +222,8 @@ output_text = output_text.replace('<leftbank>', '%BANKLEFT%')
 output_text = output_text.replace('<rightbank>', '%BANKRIGHT%')
 output_text = output_text.replace('<leftturn>', '%TURNLEFT%')
 output_text = output_text.replace('<rightturn>', '%TURNRIGHT%')
+output_text = output_text.replace('<lefttalon>', '%TROLLLEFT%')
+output_text = output_text.replace('<righttalon>', '%TROLLRIGHT%')
 output_text = output_text.replace('<straight>', '%STRAIGHT%')
 output_text = output_text.replace('<kturn>', '%KTURN%')
 output_text = output_text.replace('<leftsloop>', '%SLOOPLEFT%')
@@ -257,6 +260,7 @@ output_text = output_text.replace('<evade>', '%EVADE%')
 output_text = output_text.replace('<focus>', '%FOCUS%')
 output_text = output_text.replace('<reinforce>', '%REINFORCE%')
 output_text = output_text.replace('<calculate>', '%CALCULATE%')
+output_text = output_text.replace('<rotate>', '%ROTATEARC%')
 output_text = output_text.replace('<standardcharge>', '%CHARGE%')
 output_text = output_text.replace('<forcecharge>', '%FORCE%')
 output_text = output_text.replace('<torpedo>', '%TORPEDO%')
@@ -275,6 +279,8 @@ output_text = output_text.replace('<astro>', '%ASTROMECH%')
 output_text = output_text.replace('<bullseye>', '%BULLSEYEARC%')
 output_text = output_text.replace('<frontarc>', '%FRONTARC%')
 output_text = output_text.replace('<reararc>', '%REARARC%')
+output_text = output_text.replace('<rightarc>', '%RIGHTARC%')
+output_text = output_text.replace('<leftarc>', '%LEFTARC%')
 output_text = output_text.replace('<fullfront>', '%FULLFRONTARC%')
 output_text = output_text.replace('<fullrear>', '%FULLREARARC%')
 output_text = output_text.replace('<turretarc>', '%SINGLETURRETARC%')
@@ -290,14 +296,14 @@ output_text = output_text.replace('–', "-")
 output_text = output_text.replace('•', '')
 
 # Add known typos to the ToDo
-known_typos = json.load(open('known_typos.json', encoding="utf8"))[lang]
+known_typos = json.load(open('known_typos.json'))[lang]
 if known_typos:
     manual_stuff += "Be aware of the following typos! You need to fix them before merging:\n"
 for typo in known_typos:
     manual_stuff += ('%s\n' % typo)
 
 # write output
-output_file = open("translation.coffee", "w", encoding="utf8")
+output_file = open("translation-%s.coffee"%lang, "w", encoding="utf8")
 output_file.write(output_text)
 output_file.close()
 

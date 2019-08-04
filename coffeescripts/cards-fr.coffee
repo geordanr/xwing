@@ -15,46 +15,6 @@ exportObj.codeToLanguage.fr = 'Français'
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
 exportObj.translations['Français'] =
-    action: #do not change this anymore. We use Icons instead of words
-        "Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>'
-        "Boost": '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>'
-        "Evade": '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>'
-        "Focus": '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>'
-        "Lock": '<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>'
-        "Reload": '<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>'
-        "Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>'
-        "Reinforce": '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>'
-        "Jam": '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>'
-        "Calculate": '<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>'
-        "Coordinate": '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>'
-        "Cloak": '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>'
-        "Slam": '<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>'
-        "R> Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>'
-        "R> Focus": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-focus"></i>'
-        "R> Lock": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-lock"></i>'
-        "> Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>'
-        "R> Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-rotatearc"></i>'
-        "R> Evade": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-evade"></i>'
-        "R> Calculate": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-calculate"></i>'
-    sloticon:
-        "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
-        "Force": '<i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>'
-        "Bomb": '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>'
-        "Cannon": '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>'
-        "Crew": '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>'
-        "Talent": '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>'
-        "Missile": '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>'
-        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-sensor"></i>'
-        "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
-        "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
-        "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
-        "Configuration": '<i class="xwing-miniatures-font xwing-miniatures-font-configuration"></i>'
-        "Modification": '<i class="xwing-miniatures-font xwing-miniatures-font-modification"></i>'
-        "Gunner": '<i class="xwing-miniatures-font xwing-miniatures-font-gunner"></i>'
-        "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
-        "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
-        "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
-        "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
     slot:
         "Astromech": "Astromech"
         "Force": "Pouvoir de la Force"
@@ -106,7 +66,7 @@ exportObj.translations['Français'] =
         '.collection-invalid .translated': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
-        '.game-type-selector option[value="second_edition"]': 'Seconde Édition'
+        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
         '.game-type-selector option[value="custom"]': 'Personnalisé'
         # Card browser
         '.select2-choice' : '<span>Type (par nom)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
@@ -173,21 +133,16 @@ exportObj.translations['Français'] =
         'pilots': 'Pilote'
         'modifications': 'Modification'
         'titles': 'Titres'
+        'ships' : 'Ship'
     types:
         'Pilot': 'Pilote'
         'Modification': 'Modification'
         'Title': 'Titre'
+        'Ship': 'Ship'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Français'] = () ->
     exportObj.cardLanguage = 'Français'
-
-    # Assumes cards-common has been loaded
-    basic_cards = exportObj.basicCardData()
-    exportObj.canonicalizeShipNames basic_cards
-
-    # English names are loaded by default, so no update is needed
-    exportObj.ships = basic_cards.ships
 
     exportObj.renameShip """YT-1300""", """Cargo Léger YT-1300 modifié"""
     exportObj.renameShip """StarViper""", """StarViper"""
@@ -462,7 +417,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Autopilot Drone":
            display_name: """Drone Automatique"""
            text: """<i class = flavor_text>Il est parfois utile d'ignorer les avertissements de sécurité préconisés par les fabricants…</i>%LINEBREAK%Cellules Énergétiques Bidouillées&nbsp;: pendant la phase de système, si vous n'êtes pas arrimé, perdez 1 &nbsp;%CHARGE%. À la fin de la phase d'activation, vous êtes détruit si vous avez 0 %CHARGE%. Avant de retirer votre figurine, chaque vaisseau à porté 0-1 subit 1 dégât %CRIT%."""
-        "Benthic Two-Tubes":
+        "Benthic Two Tubes":
            display_name: """Benthic Deux-Tubes"""
            text: """Après avoir effectué une action %FOCUS%, vous pouvez transférer 1 de vos marqueurs de concentration à un vaisseau allié à portée 1-2."""
         "Biggs Darklighter":
@@ -546,7 +501,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Drea Renthal":
            display_name: """Drea Renthal"""
            text: """Tant qu'un vaisseau allié non-limité effectue une attaque, si le défenseur est dans votre arc de tir, l'attaquant peut relancer 1 dé d'attaque."""
-        "Edrio Two-Tubes":
+        "Edrio Two Tubes":
            display_name: """Edrio Deux-Tubes"""
            text: """Avant votre activation, si vous êtes concentré, vous pouvez effectuer une action."""
         "Emon Azzameen":
@@ -1431,8 +1386,6 @@ exportObj.cardLoaders['Français'] = () ->
            text: '''During the System Phase, if an enemy ship with the <strong>Informant</strong> upgrade is at range 0-2, flip your dial faceup.'''
         'Optimized Prototype':
            text: '''While you perform a %FRONTARC% primary attack against a ship locked by a friendly ship with the <strong>Director Krennic</strong> upgrade, you may spend 1 %HIT%/%CRIT%/%FOCUS% result. If you do, choose one: the defender loses 1 shield or the defender flips 1 of its facedown damage cards.'''
-        '''I'll Show You the Dark Side''': 
-           text: ''' ??? '''
         'Proton Bomb':
            display_name: "Bombe à protons"
            text: '''(Bombe) - À la fin de la Phase d'activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, chaque vaisseau à portée 0–1 subit 1 dégât %CRIT%.'''
@@ -1452,4 +1405,4 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: 'Mine de proximité'
            text: '''(Mine) - Après qu'un vaisseau a chevauché ou s'est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau lance 2 dés d'attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
        
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, 
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, 

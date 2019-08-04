@@ -4,22 +4,40 @@
     https://raithos.github.io
 ###
 
-DFL_LANGUAGE = 'English'
+DFL_LANGUAGE = 'English' # fallback and default language
+SND_LANGUAGE = 'Magyar' # second fallback
 
 builders = []
 
 exportObj = exports ? this
 
 exportObj.loadCards = (language) ->
+    # Load cards
+    basic_cards = exportObj.basicCardData()
+    exportObj.canonicalizeShipNames basic_cards
+    exportObj.ships = basic_cards.ships
+
+    # Set up the common card data (e.g. stats)
+    exportObj.setupCommonCardData basic_cards
+
+    # Load languages in following order: polish, english, selected language. 
+    # This way it is assured, that if no data is available for the selected language, 
+    # english will be displayed instead, and if no english data is available polish. 
+    # This is the common order of spoiler/releases. 
+    exportObj.cardLoaders[SND_LANGUAGE]()
+    exportObj.cardLoaders[DFL_LANGUAGE]()
     exportObj.cardLoaders[language]()
 
 exportObj.translate = (language, category, what, args...) ->
     try
         translation = exportObj.translations[language][category][what]
     catch all
-        console.log(category)
-        console.log(what)
-        throw all
+        # Most likely some translation did not exist. If we are already in default language, that's bad. 
+        # Otherwise we just continue and try to get the english translation in belows else block.
+        if not all instanceof TypeError or language == DFL_LANGUAGE
+            console.log(category)
+            console.log(what)
+            throw all
     if translation?
         if translation instanceof Function
             # pass this function in case we need to do further translation inside the function
@@ -27,7 +45,10 @@ exportObj.translate = (language, category, what, args...) ->
         else
             translation
     else
-        what
+        if language != DFL_LANGUAGE
+            exportObj.translate DFL_LANGUAGE, category, what, args...
+        else
+            what
 
 exportObj.setupTranslationSupport = ->
     do (builders) ->

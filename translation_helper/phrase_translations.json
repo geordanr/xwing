@@ -15,7 +15,9 @@
       "Galactic Empire": "Imperium",
       "contains": "Staffel, die %s enthält",
       "Resistance": "Widerstand",
-      "First Order": "Erste Ordnung"
+      "First Order": "Erste Ordnung",
+      "Separatist Alliance" :  "Separatistenallianz",
+      "Galactic Republic" :  "Galaktische Republik"
     },
     {
       "language": "en",
@@ -44,7 +46,9 @@
       "contains": "Squad including %s",
       "contains_COMMENT": "translation of restriction to specific cards, e.g. 'Squad including' Darth Vader",
       "Resistance": "Resistance",
-      "First Order": "First Order"
+      "First Order": "First Order",
+      "Separatist Alliance": "Separatist Alliance",
+      "Galactic Republic": "Galactic Republic"
     },
     {
       "language": "es",
@@ -61,7 +65,9 @@
       "Galactic Empire": "Imperio",
       "contains": "Escuadrón que incluya a %s",
       "Resistance": "CHANGE ME",
-      "First Order": "CHANGE ME"
+      "First Order": "CHANGE ME",
+      "Separatist Alliance": "Separatist Alliance",
+      "Galactic Republic": "Galactic Republic"
     },
     {
       "language": "fr",
@@ -78,7 +84,9 @@
       "Galactic Empire": "Empire Galactique",
       "contains": "contient %s",
       "Resistance": "CHANGE ME",
-      "First Order": "CHANGE ME"
+      "First Order": "CHANGE ME",
+      "Separatist Alliance": "Separatist Alliance",
+      "Galactic Republic": "Galactic Republic"
     },
     {
       "language": "it",
@@ -95,7 +103,9 @@
       "Galactic Empire": "CHANGE ME",
       "contains": "CHANGE ME%s",
       "Resistance": "CHANGE ME",
-      "First Order": "CHANGE ME"
+      "First Order": "CHANGE ME",
+      "Separatist Alliance": "Separatist Alliance",
+      "Galactic Republic": "Galactic Republic"
     },
     {
       "language": "pl",
@@ -112,7 +122,9 @@
       "Galactic Empire": "CHANGE ME",
       "contains": "CHANGE ME%s",
       "Resistance": "CHANGE ME",
-      "First Order": "CHANGE ME"
+      "First Order": "CHANGE ME",
+      "Separatist Alliance": "Separatist Alliance",
+      "Galactic Republic": "Galactic Republic"
     },
     {
       "language": "pt",
@@ -129,7 +141,9 @@
       "Galactic Empire": "CHANGE ME",
       "contains": "CHANGE ME%s",
       "Resistance": "CHANGE ME",
-      "First Order": "CHANGE ME"
+      "First Order": "CHANGE ME",
+      "Separatist Alliance": "Separatist Alliance",
+      "Galactic Republic": "Galactic Republic"
     }
   ]
 }

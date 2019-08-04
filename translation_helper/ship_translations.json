@@ -409,16 +409,6 @@
     "name_pt": "CHANGE ME",
     "name_fr": "TIE Reaper"
   },
-  "45": {
-    "name_yasb": "JumpMaster 5000",
-    "name_de": "JumpMaster 5000",
-    "name_en": "JumpMaster 5000",
-    "name_es": "Saltador Maestro 5000",
-    "name_it": "CHANGE ME",
-    "name_pl": "CHANGE ME",
-    "name_pt": "CHANGE ME",
-    "name_fr": "JumpMaster 5000"
-  },
   "44": {
     "name_yasb": "M3-A Interceptor",
     "name_de": "M3-A-Abfangjäger",
@@ -428,6 +418,16 @@
     "name_pl": "CHANGE ME",
     "name_pt": "CHANGE ME",
     "name_fr": "Intercepteur M3-A"
+  },
+  "45": {
+    "name_yasb": "JumpMaster 5000",
+    "name_de": "JumpMaster 5000",
+    "name_en": "JumpMaster 5000",
+    "name_es": "Saltador Maestro 5000",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "JumpMaster 5000"
   },
   "47": {
     "name_yasb": "Customized YT-1300",
@@ -470,9 +470,9 @@
     "name_fr": "CHANGE ME"
   },
   "51": {
-    "name_yasb": "Upsilon-Class Shuttle",
+    "name_yasb": "Upsilon-Class Command Shuttle",
     "name_de": "Kommandoshuttle der Ypsilon-Klasse",
-    "name_en": "Upsilon-Class Shuttle",
+    "name_en": "Upsilon-Class Command Shuttle",
     "name_es": "CHANGE ME",
     "name_it": "CHANGE ME",
     "name_pl": "CHANGE ME",
@@ -480,7 +480,7 @@
     "name_fr": "CHANGE ME"
   },
   "52": {
-    "name_yasb": "TIE Silencer",
+    "name_yasb": "TIE/VN Silencer",
     "name_de": "TIE/vn-Dämpfer",
     "name_en": "TIE/vn Silencer",
     "name_es": "CHANGE ME",
