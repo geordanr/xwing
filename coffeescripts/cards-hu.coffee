@@ -74,7 +74,7 @@ exportObj.translations.Magyar =
         '.info-well .info-actions td.info-header': 'Akciók'
         '.info-well .info-upgrades td.info-header': 'Fejlesztések'
         '.info-well .info-range td.info-header': 'Távolság'
-		'.info-well .info-sources.info-header': 'Források'
+        '.info-well .info-sources td.info-header':  'Források'
         # Squadron edit buttons
         '.clear-squad' : 'Új raj'
         '.save-list' : '<i class="fa fa-floppy-o"></i>&nbsp;Mentés'
