@@ -1584,19 +1584,21 @@ class exportObj.SquadBuilder
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
                 if (@isItemAvailable(ship_data, true))
                     if not ship_data.huge
-                        if ship_data.display_name
+                        if ship_data.icon
                             ships.push
                                 id: ship_data.name
                                 name: ship_data.name
                                 display_name: ship_data.display_name
-                                text: ship_data.display_name
+                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
+                                icon: ship_data.icon
                         else                        
                             ships.push
                                 id: ship_data.name
                                 name: ship_data.name
-                                text: ship_data.name
+                                display_name: ship_data.display_name
+                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
         if sorted
@@ -2986,16 +2988,18 @@ class Ship
 
     updateSelections: ->
         if @pilot?
-            if exportObj.ships[@pilot.ship].display_name
+            if exportObj.ships[@pilot.ship].icon
                 @ship_selector.select2 'data',
                     id: @pilot.ship
-                    text: exportObj.ships[@pilot.ship].display_name
+                    text: if exportObj.ships[@pilot.ship].display_name then exportObj.ships[@pilot.ship].display_name else @pilot.ship
                     xws: exportObj.ships[@pilot.ship].xws
+                    icon: exportObj.ships[@pilot.ship].icon
             else
                 @ship_selector.select2 'data',
                     id: @pilot.ship
-                    text: @pilot.ship
+                    text: if exportObj.ships[@pilot.ship].display_name then exportObj.ships[@pilot.ship].display_name else @pilot.ship
                     xws: exportObj.ships[@pilot.ship].xws
+
             @pilot_selector.select2 'data',
                 id: @pilot.id
                 text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then @pilot.skill + ' - ' else ''}#{if @pilot.display_name then @pilot.display_name else @pilot.name}#{if @quickbuildId != -1 then exportObj.quickbuildsById[@quickbuildId].suffix else ""} (#{if @quickbuildId != -1 then (if @primary then exportObj.quickbuildsById[@quickbuildId].threat else 0) else @pilot.points})"
