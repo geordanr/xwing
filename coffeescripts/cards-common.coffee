@@ -192,7 +192,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Interceptor":
             name: "TIE Interceptor"
-            icon: "TIE Interceptor"
+            icon: "tieininterceptor"
             xws: "TIE/IN Interceptor".canonicalize()
             factions: [ "Galactic Empire" ]
             attack: 3
