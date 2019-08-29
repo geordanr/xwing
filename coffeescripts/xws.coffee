@@ -50,8 +50,8 @@ class exportObj.XWSManager
         @container.html $.trim """
             <div class="row-fluid">
                 <div class="span9 indent">
-                    <button class="btn btn-primary from-xws">Import from XWS (beta)</button>
-                    <button class="btn btn-primary to-xws">Export to XWS (beta)</button>
+                    <button class="btn btn-primary from-xws">Import from XWS</button>
+                    <button class="btn btn-primary to-xws">Export to XWS</button>
                 </div>
             </div>
         """
@@ -62,7 +62,7 @@ class exportObj.XWSManager
         @xws_export_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>XWS Export (Beta!)</h3>
+                <h3>XWS Export</h3>
             </div>
             <div class="modal-body">
                 <ul class="nav nav-pills">
@@ -72,13 +72,13 @@ class exportObj.XWSManager
                 <div class="tab-content">
                     <div class="tab-pane" id="xws-text">
                         Copy and paste this into an XWS-compliant application to transfer your list.
-                        <i>(This is in beta, and the <a href="#{SPEC_URL}">spec</a> is still being defined, so it may not work!)</i>
+                        <i>XWS is a way to share X-Wing squads between applications, e.g. YASB and LaunchBay Next</i>
                         <div class="container-fluid">
                             <textarea class="xws-content"></textarea>
                         </div>
                     </div>
                     <div class="tab-pane" id="xws-qrcode">
-                        Below is a QR Code of XWS.  <i>This is still very experimental!</i>
+                        Below is a QR Code of XWS</i>
                         <div id="xws-qrcode-container"></div>
                     </div>
                 </div>
@@ -94,11 +94,11 @@ class exportObj.XWSManager
         @xws_import_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>XWS Import (Beta!)</h3>
+                <h3>XWS Import</h3>
             </div>
             <div class="modal-body">
                 Paste XWS here to load a list exported from another application.
-                <i>(This is in beta, and the <a href="#{SPEC_URL}">spec</a> is still being defined, so it may not work!)</i>
+                <i>XWS is a way to share X-Wing squads between applications, e.g. YASB and LaunchBay Next</i>
                 <div class="container-fluid">
                     <textarea class="xws-content" placeholder="Paste XWS here..."></textarea>
                 </div>
