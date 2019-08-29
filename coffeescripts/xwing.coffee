@@ -2643,7 +2643,7 @@ class exportObj.SquadBuilder
                 success = true
                 error = ""
 
-                serialized_squad = "v8Zs=200Z" # serialization version 7, standard squad, 200 points
+                serialized_squad = "v8ZsZ200Z" # serialization version 7, standard squad, 200 points
                 # serialization schema SHIPID:UPGRADEID,UPGRADEID,...,UPGRADEID:;SHIPID:UPGRADEID,...
 
                 for pilot in xws.pilots
