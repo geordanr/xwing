@@ -14131,6 +14131,240 @@ exportObj.basicCardData = ->
                 "TV-94"
             ]
         }
+        {
+            id: 353
+            faction: "Resistance"
+            pilot: "Cova Nell"
+            ship: "Resistance Transport"
+            threat: 3
+            upgrades: [
+                "Composure"
+                "Leia Organa (Resistance)"
+                "Korr Sella"
+            ]
+        }
+        {
+            id: 354
+            faction: "Resistance"
+            pilot: "Pammich Nerro Goode"
+            ship: "Resistance Transport"
+            threat: 2
+            upgrades: [
+                "Autoblasters"
+                "R5-X3"
+                "Kaydel Connix"
+                "Spare Parts Canisters"
+            ]
+        }
+        {
+            id: 355
+            faction: "Resistance"
+            pilot: "Nodin Chavdri"
+            ship: "Resistance Transport"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "R2-HA"
+                "Angled Deflectors"
+            ]
+        }
+        {
+            id: 356
+            faction: "Resistance"
+            pilot: "Logistics Division Pilot"
+            ship: "Resistance Transport"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "Larma D'Acy"
+                "Amilyn Holdo"
+            ]
+        }
+        {
+            id: 357
+            faction: "Resistance"
+            pilot: "Rose Tico"
+            ship: "Resistance Transport Pod"
+            threat: 1
+            upgrades: [
+                "PZ-4CO"
+            ]
+        }
+        {
+            id: 358
+            faction: "Resistance"
+            pilot: "Finn"
+            ship: "Resistance Transport Pod"
+            threat: 1
+            upgrades: [
+                "Predator"
+            ]
+        }
+        {
+            id: 359
+            faction: "Resistance"
+            pilot: "BB-8"
+            ship: "Resistance Transport Pod"
+            threat: 2
+            upgrades: [
+                "Autoblasters"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 360
+            faction: "Resistance"
+            pilot: "Vi Moradi"
+            ship: "Resistance Transport Pod"
+            threat: 1
+            upgrades: [
+                "GA-97"
+            ]
+        }
+        {
+            id: 361
+            faction: "Galactic Republic"
+            pilot: "Padmé Amidala"
+            ship: "Naboo Royal N-1 Starfighter"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Collision Detector"
+            ]
+        }
+        {
+            id: 362
+            faction: "Galactic Republic"
+            pilot: "Dineé Ellberger"
+            ship: "Naboo Royal N-1 Starfighter"
+            threat: 2
+            upgrades: [
+                "Passive Sensors"
+                "R3 Astromech"
+                "Plasma Torpedoes"
+            ]
+        }
+        {
+            id: 363
+            faction: "Galactic Republic"
+            pilot: "Bravo Flight Officer"
+            ship: "Naboo Royal N-1 Starfighter"
+            threat: 2
+            upgrades: [
+                "Passive Sensors"
+                "R2-C4"
+                "Proton Torpedoes"
+            ]
+        }
+        {
+            id: 364
+            faction: "Galactic Republic"
+            pilot: "Anakin Skywalker (N-1 Starfighter)"
+            ship: "Naboo Royal N-1 Starfighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Proton Torpedoes"
+                "Heightened Perception"
+                "R2 Astromech"
+                "Collision Detector"
+            ]
+        }
+        {
+            id: 365
+            faction: "Galactic Republic"
+            pilot: "Ric Olié"
+            ship: "Naboo Royal N-1 Starfighter"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "R2-A6"
+            ]
+        }
+        {
+            id: 366
+            faction: "Galactic Republic"
+            pilot: "Naboo Handmaiden"
+            ship: "Naboo Royal N-1 Starfighter"
+            threat: 2
+            upgrades: [
+                "Plasma Torpedoes"
+                "R5 Astromech"
+            ]
+        }
+        {
+            id: 367
+            faction: "Separatist Alliance"
+            pilot: "Baktoid Prototype"
+            ship: "Hyena-Class Droid Bomber"
+            threat: 2
+            upgrades: [
+                "Passive Sensors"
+                "Barrage Rockets"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 368
+            faction: "Separatist Alliance"
+            pilot: "Bombardment Drone"
+            ship: "Hyena-Class Droid Bomber"
+            threat: 2
+            upgrades: [
+                "Trajectory Simulator"
+                "Delayed Fuses"
+                "Bomblet Generator"
+            ]
+        }
+        {
+            id: 369
+            faction: "Separatist Alliance"
+            pilot: "DBS-32C"
+            ship: "Hyena-Class Droid Bomber"
+            threat: 2
+            upgrades: [
+                "TA-175"
+                "Stealth Device"
+                "Landing Struts"
+            ]
+        }
+        {
+            id: 370
+            faction: "Separatist Alliance"
+            pilot: "DBS-404"
+            ship: "Hyena-Class Droid Bomber"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Plasma Torpedoes"
+                "Afterburners"
+                "Landing Struts"
+            ]
+        }
+        {
+            id: 371
+            faction: "Separatist Alliance"
+            pilot: "Separatist Bomber"
+            ship: "Hyena-Class Droid Bomber"
+            threat: 2
+            upgrades: [
+                "Passive Sensors"
+                "Diamond-Boron Missiles"
+            ]
+        }
+        {
+            id: 372
+            faction: "Separatist Alliance"
+            pilot: "Techno Union Bomber"
+            ship: "Hyena-Class Droid Bomber"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "Electro-Proton Bomb"
+                "Delayed Fuses"
+            ]
+        }
+
     ]
 
 
