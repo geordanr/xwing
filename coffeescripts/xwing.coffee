@@ -1253,22 +1253,24 @@ class exportObj.SquadBuilder
         else if oldHyperspace != @isHyperspace
             if @isHyperspace == true
                 old_id = @current_squad.id
-                @newSquadFromScratch($.trim(@current_squad.name)) # need to change this to a new function to check hyperspace and remove
-                @current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
+                #@newSquadFromScratch($.trim(@current_squad.name)) # need to change this to a new function to check hyperspace and remove
+                #@current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
+                @container.trigger 'xwing:pointsUpdated', cb
         #@onPointsUpdated cb
         cb()
 
     onPointsUpdated: (cb=$.noop) =>
-        @total_points = 0
+        tot_points = 0
         unreleased_content_used = false
         # validating may remove the ship, if not only some upgrade, but the pilot himself is not valid. Thus iterate backwards over the array, so that is probably fine?
         for i in [@ships.length - 1 ... -1]
             ship = @ships[i]
             ship.validate()
             continue unless ship # if the ship has been removed, we no longer care about it
-            @total_points += ship.getPoints()
+            tot_points += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
+        @total_points = tot_points
         @total_points_span.text @total_points
         points_left = parseInt(@desired_points_input.val()) - @total_points
         @points_remaining_span.text points_left
@@ -2643,7 +2645,7 @@ class exportObj.SquadBuilder
                 success = true
                 error = ""
 
-                serialized_squad = "v8Zs=200Z" # serialization version 7, standard squad, 200 points
+                serialized_squad = "v8ZsZ200Z" # serialization version 7, standard squad, 200 points
                 # serialization schema SHIPID:UPGRADEID,UPGRADEID,...,UPGRADEID:;SHIPID:UPGRADEID,...
 
                 for pilot in xws.pilots
@@ -3634,20 +3636,26 @@ class Ship
         # until everything checks out
         # If there is no explicit validation_func, use restriction_func
         # Returns true, if nothing has been changed, and false otherwise
+
+        # check if we are an empty selection, which is always valid
+        if not @pilot?
+            return true 
         unchanged = true
         max_checks = 128 # that's a lot of addons
         for i in [0...max_checks]
             valid = true
             pilot_func = @pilot?.validation_func ? @pilot?.restriction_func ? undefined
-            if pilot_func? and not pilot_func(this, @pilot)
-                # we go ahead and happily remove ourself. Of course, when calling a method like validate on an object, you have to expect that it will dissappears, right?
+            if (pilot_func? and not pilot_func(this, @pilot)) or not (@builder.isItemAvailable(@pilot))
+                # we go ahead and happily remove ourself. Of course, when calling a method like validate on an object, you have to expect that it will dissappear, right?
                 @builder.removeShip this 
                 return false # no need to check anything further, as we do not exist anymore 
             # everything is limited in X-Wing 2.0, so we need to check if any upgrade is equipped more than once
             equipped_upgrades = []
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
-                if ((func? and not func(this, upgrade)) or (upgrade?.data? and upgrade.data in equipped_upgrades)) and not @builder.isQuickbuild # check restriction func, check limited (is upgrade already in equipped_upgrades?), ignore building rules for Quickbuild
+                # check if either a) validation func not met or b) upgrade already equipped (in 2.0 everything is limited) or c) upgrade is not available (e.g. not Hyperspace legal)
+                # ignore those checks if this is a quickbuild squad, as quickbuild does whatever it wants to do...
+                if ((func? and not func(this, upgrade)) or (upgrade?.data? and (upgrade.data in equipped_upgrades or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
