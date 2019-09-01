@@ -416,14 +416,14 @@ class exportObj.CardBrowser
         @slot_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @action_available_selection = ($ @container.find('.xwing-card-browser select.action-available-selection'))
-        for action in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload"].sort()
+        for action in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam"].sort()
             opt = $ document.createElement('OPTION')
             opt.text action
             @action_available_selection.append opt
         @action_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @linkedaction_available_selection = ($ @container.find('.xwing-card-browser select.linkedaction-available-selection'))
-        for linkedaction in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload"].sort()
+        for linkedaction in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam"].sort()
             opt = $ document.createElement('OPTION')
             opt.text linkedaction
             @linkedaction_available_selection.append opt
@@ -738,8 +738,8 @@ class exportObj.CardBrowser
             actions = card.data.actions ? []
             actions = actions.concat (card.data.actionsred ? [])
             if card.orig_type == 'Pilot'
-                actions = exportObj.ships[card.data.ship].actions
-                actions = actions.concat exportObj.ships[card.data.ship].actionsred
+                actions = card.data.ship_override?.actions ? exportObj.ships[card.data.ship].actions
+                actions = actions.concat (card.data.ship_override?.actionsred ? exportObj.ships[card.data.ship].actionsred)
         for action in required_actions ? []
             return false unless actions? and ((action in actions) or (("F-" + action) in actions))
         for action in required_linked_actions ? []
