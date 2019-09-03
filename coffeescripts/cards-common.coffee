@@ -7365,8 +7365,13 @@ exportObj.basicCardData = ->
             skill: 6
             points: 200
             slots: [
-                "Modification"
+                "Force"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         {
@@ -7377,8 +7382,12 @@ exportObj.basicCardData = ->
             skill: 3
             points: 200
             slots: [
-                "Modification"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         {
@@ -7389,12 +7398,16 @@ exportObj.basicCardData = ->
             skill: 2
             points: 200
             slots: [
-                "Modification"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         {
-            name: "Ini 2 Unique"
+            name: "R2-D2"
             id: 362
             unique: true
             faction: "Galactic Republic"
@@ -7402,12 +7415,16 @@ exportObj.basicCardData = ->
             skill: 2
             points: 200
             slots: [
-                "Modification"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         {
-            name: "Another Ini 2 Unique"
+            name: '"Goji"'
             id: 363
             unique: true
             faction: "Galactic Republic"
@@ -7415,12 +7432,16 @@ exportObj.basicCardData = ->
             skill: 2
             points: 200
             slots: [
-                "Modification"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         {
-            name: "Ini 3 Unique"
+            name: '"Broadside"'
             id: 364
             unique: true
             faction: "Galactic Republic"
@@ -7428,12 +7449,16 @@ exportObj.basicCardData = ->
             skill: 3
             points: 200
             slots: [
-                "Modification"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         {
-            name: "Ini 4 Unique"
+            name: '"Matchstick"'
             id: 365
             unique: true
             faction: "Galactic Republic"
@@ -7441,12 +7466,17 @@ exportObj.basicCardData = ->
             skill: 4
             points: 200
             slots: [
-                "Modification"
+                "Talent"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         {
-            name: "Ini 5 Unique"
+            name: '"Odd Ball" (Y-Wing)'
             id: 366
             unique: true
             faction: "Galactic Republic"
@@ -7454,8 +7484,13 @@ exportObj.basicCardData = ->
             skill: 5
             points: 200
             slots: [
-                "Modification"
+                "Talent"
                 "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Modification"
             ]
         }
         
