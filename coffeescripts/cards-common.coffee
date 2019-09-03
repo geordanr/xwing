@@ -7297,18 +7297,19 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Petranaki ???"
+            name: "Petranaki Arena Ace"
             id: 354
             faction: "Separatist Alliance"
             ship: "Nantex-Class Starfighter"
             skill: 4
             points: 200
             slots: [
+                "Talent"
                 "Modification"
             ]
         }
         {
-            name: "Ini 2 Unique"
+            name: "Gorgol"
             unique: true
             id: 355
             faction: "Separatist Alliance"
@@ -7328,6 +7329,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 200
             slots: [
+                "Talent"
                 "Modification"
             ]
         }
@@ -7353,6 +7355,7 @@ exportObj.basicCardData = ->
             skill: 5
             points: 200
             slots: [
+                "Talent"
                 "Modification"
             ]
         }
@@ -9851,6 +9854,64 @@ exportObj.basicCardData = ->
             points: 200
             modifier_func: (stats) ->
                 stats.actions.push 'Lock' if 'Lock' not in stats.actions
+       }
+       {
+            name: "Precognitive Reflexes"
+            id: 250
+            slot: "Force"
+            points: 200
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.medium ? false))
+       }
+       {
+            name: "Foresight"
+            slot: "Force"
+            points: 200
+            id: 251
+            attackbull: 2
+            range: """1-3"""
+            rangebonus: true 
+       }
+       {
+            name: "C1-10P"
+            id: 252
+            slot: "Astromech"
+            charge: 2
+            points: 200
+            faction: "Galactic Republic"
+       }
+       {
+            name: "Ahsoka Tano"
+            id: 253
+            slot: "Gunner"
+            points: 200
+            faction: "Galactic Republic"
+            force: 1
+            modifier_func: (stats) ->
+                stats.force += 1
+       }
+       {
+            name: "C-3PO (Republic)"
+            id: 254
+            slot: "Crew"
+            xws: "c3po-republic"
+            points: 200
+            faction: "Galactic Republic"
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+       }
+       {
+            name: "Gravitic Deflection"
+            id: 255
+            slot: "Talent"
+            points: 200
+            ship: "Nantex-Class Starfighter"
+       }
+       {
+            name: "Snap Shot"
+            id: 256
+            slot: "Talent"
+            points: 200
        }
 
     ]
