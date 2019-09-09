@@ -7425,6 +7425,11 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Lock"
+                ]
         }
         {
             name: '"Goji"'
