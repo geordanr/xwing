@@ -7293,7 +7293,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 34
             slots: [
-                "Modification"
+                "Talent"
             ]
         }
         {
@@ -9852,7 +9852,8 @@ exportObj.basicCardData = ->
             name: "Ensnare"
             id: 248
             slot: "Talent"
-            points: 200
+            pointsarray: [10,10,10,10,10,16,24]
+            variableinit: true
             ship: "Nantex-Class Starfighter"
        }
        {
@@ -9867,7 +9868,7 @@ exportObj.basicCardData = ->
             name: "Precognitive Reflexes"
             id: 250
             slot: "Force"
-            pointsarray: [10,10,10,10,10,16,24]
+            pointsarray: [3,3,3,4,7,10,13]
             variableinit: true
             restriction_func: (ship) ->
                 not ((ship.data.large ? false) or (ship.data.medium ? false))
