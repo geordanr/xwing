@@ -6019,7 +6019,135 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
-
+    'BTL-B Y-Wing Expansion Pack': [
+        {
+            name: 'BTL-B Y-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Anakin Skywalker (Y-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '“Oddball”'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '“Matchstick”'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '“Broadside”'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'R2-D2'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '“Goji”'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shadow Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Bomber'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Precognitive Reflexes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ahsoka Tano'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'C-3PO (Republic)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'C1-10P'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Targeting Computer'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    'Nantex-class Starfighter Expansion Pack': [
+        {
+            name: 'Nantex-Class Starfighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Sun Fac'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Berwer Kret'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Chertek'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gorgol'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Petranaki Arena Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Stalgasin Hive Guard'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ensnare'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Gravitic Deflection'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Snap Shot'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
     'Loose Ships': [
         {
             name: 'A-Wing'
