@@ -7347,7 +7347,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Berwer Kart"
+            name: "Berwer Kret"
             unique: true
             id: 358
             faction: "Separatist Alliance"

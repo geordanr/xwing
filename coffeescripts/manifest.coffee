@@ -6031,17 +6031,17 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: '“Oddball”'
+            name: '"Odd Ball" (Y-Wing)'
             type: 'pilot'
             count: 1
         }
         {
-            name: '“Matchstick”'
+            name: '"Matchstick"'
             type: 'pilot'
             count: 1
         }
         {
-            name: '“Broadside”'
+            name: '"Broadside"'
             type: 'pilot'
             count: 1
         }
@@ -6051,7 +6051,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: '“Goji”'
+            name: '"Goji"'
             type: 'pilot'
             count: 1
         }
