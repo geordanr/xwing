@@ -7366,6 +7366,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 6
+            force: 3
             points: 60
             slots: [
                 "Force"
