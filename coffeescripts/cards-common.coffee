@@ -7291,7 +7291,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Nantex-Class Starfighter"
             skill: 3
-            points: 200
+            points: 34
             slots: [
                 "Modification"
             ]
@@ -7302,10 +7302,10 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Nantex-Class Starfighter"
             skill: 4
-            points: 200
+            points: 38
             slots: [
                 "Talent"
-                "Modification"
+                "Talent"
             ]
         }
         {
@@ -7315,9 +7315,9 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Nantex-Class Starfighter"
             skill: 2
-            points: 200
+            points: 36
             slots: [
-                "Modification"
+                "Talent"
             ]
         }
         {
@@ -7327,10 +7327,10 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Nantex-Class Starfighter"
             skill: 4
-            points: 200
+            points: 39
             slots: [
                 "Talent"
-                "Modification"
+                "Talent"
             ]
         }
         {
@@ -7340,10 +7340,10 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Nantex-Class Starfighter"
             skill: 6
-            points: 200
+            points: 54
             slots: [
                 "Talent"
-                "Modification"
+                "Talent"
             ]
         }
         {
@@ -7353,10 +7353,10 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Nantex-Class Starfighter"
             skill: 5
-            points: 200
+            points: 40
             slots: [
                 "Talent"
-                "Modification"
+                "Talent"
             ]
         }
         {
@@ -7366,7 +7366,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 6
-            points: 200
+            points: 60
             slots: [
                 "Force"
                 "Turret"
@@ -7383,8 +7383,9 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 3
-            points: 200
+            points: 35
             slots: [
+                "Talent"
                 "Turret"
                 "Torpedo"
                 "Gunner"
@@ -7399,7 +7400,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 2
-            points: 200
+            points: 33
             slots: [
                 "Turret"
                 "Torpedo"
@@ -7416,12 +7417,13 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 2
-            points: 200
+            points: 35
             slots: [
+                "Talent"
                 "Turret"
                 "Torpedo"
                 "Gunner"
-                "Astromech"
+                "Crew"
                 "Device"
                 "Modification"
             ]
@@ -7438,7 +7440,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 2
-            points: 200
+            points: 34
             slots: [
                 "Turret"
                 "Torpedo"
@@ -7455,8 +7457,9 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 3
-            points: 200
+            points: 36
             slots: [
+                "Talent"
                 "Turret"
                 "Torpedo"
                 "Gunner"
@@ -7472,7 +7475,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 4
-            points: 200
+            points: 43
             slots: [
                 "Talent"
                 "Turret"
@@ -7490,7 +7493,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 5
-            points: 200
+            points: 44
             slots: [
                 "Talent"
                 "Turret"
@@ -9856,7 +9859,7 @@ exportObj.basicCardData = ->
             name: "Targeting Computer"
             id: 249
             slot: "Modification"
-            points: 200
+            points: 3
             modifier_func: (stats) ->
                 stats.actions.push 'Lock' if 'Lock' not in stats.actions
        }
@@ -9864,14 +9867,15 @@ exportObj.basicCardData = ->
             name: "Precognitive Reflexes"
             id: 250
             slot: "Force"
-            points: 200
+            pointsarray: [10,10,10,10,10,16,24]
+            variableinit: true
             restriction_func: (ship) ->
                 not ((ship.data.large ? false) or (ship.data.medium ? false))
        }
        {
             name: "Foresight"
             slot: "Force"
-            points: 200
+            points: 4
             id: 251
             attackbull: 2
             range: """1-3"""
@@ -9882,14 +9886,14 @@ exportObj.basicCardData = ->
             id: 252
             slot: "Astromech"
             charge: 2
-            points: 200
+            points: 7
             faction: "Galactic Republic"
        }
        {
             name: "Ahsoka Tano"
             id: 253
             slot: "Gunner"
-            points: 200
+            points: 12
             faction: "Galactic Republic"
             force: 1
             modifier_func: (stats) ->
@@ -9900,7 +9904,7 @@ exportObj.basicCardData = ->
             id: 254
             slot: "Crew"
             xws: "c3po-republic"
-            points: 200
+            points: 8
             faction: "Galactic Republic"
             modifier_func: (stats) ->
                 stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
@@ -9909,14 +9913,16 @@ exportObj.basicCardData = ->
             name: "Gravitic Deflection"
             id: 255
             slot: "Talent"
-            points: 200
+            points: 5
             ship: "Nantex-Class Starfighter"
        }
        {
             name: "Snap Shot"
             id: 256
             slot: "Talent"
-            points: 200
+            pointsarray: [7,8,9]
+            variablebase: true
+            
        }
 
     ]
