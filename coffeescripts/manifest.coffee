@@ -6183,6 +6183,351 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Punishing One Expansion Pack': [
+        {
+            name: 'JumpMaster 5000'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Dengar'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Manaroo'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tel Trevura'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Contracted Scout'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'R2 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5-P8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '0-0-0'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Informant'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Latts Razzi'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Dengar'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Punishing One'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Contraband Cybernetics'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Perceptive Copilot'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    'M3-A Interceptor Expansion Pack': [
+        {
+            name: 'M3-A Interceptor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Genesis Red'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Inaldra'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Laetin A'shera"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Quinn Jast'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Serissu'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sunny Bounder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Spacer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tansarii Point Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jamming Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    'Ghost Expansion Pack': [
+        {
+            name: 'VCX-100'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Sheathipede-Class Shuttle'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'AP-5'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Fenn Rau (Sheathipede)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Ezra Bridger (Sheathipede)"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Zeb" Orrelios (Sheathipede)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Hera Syndulla (VCX-100)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kanan Jarrus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Chopper"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lothal Rebel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Chopper" (Astromech)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Chopper" (Crew)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hera Syndulla'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Kanan Jarrus'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Maul'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Zeb" Orrelios'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hate'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Predictive Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Agile Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tactical Scrambler'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Collision Detector'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ghost'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Phantom'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Dorsal Turret'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Inquisitors' TIE Expansion Pack": [
+        {
+            name: 'TIE Advanced Prototype'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Grand Inquisitor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Seventh Sister'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Inquisitor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Baron of the Empire'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Hate'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Predictive Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Heightened Perception'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Afterburners'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+
+
     'Loose Ships': [
         {
             name: 'A-Wing'
@@ -6196,11 +6541,6 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'E-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'VCX-100'
             type: 'ship'
             count: 2
         }
@@ -6225,22 +6565,12 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Sheathipede-Class Shuttle'
-            type: 'ship'
-            count: 2
-        }
-        {
             name: 'YT-2400'
             type: 'ship'
             count: 2
         }
         {
             name: 'Alpha-Class Star Wing'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE Advanced Prototype'
             type: 'ship'
             count: 3
         }
@@ -6305,17 +6635,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'M3-A Interceptor'
-            type: 'ship'
-            count: 4
-        }
-        {
             name: 'G-1A Starfighter'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'JumpMaster 5000'
             type: 'ship'
             count: 2
         }
