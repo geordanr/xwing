@@ -12,7 +12,7 @@ def choose_by_language(input_json, chosen_language):
 
 
 # We may want to actually load them from the api...
-languages = ['de', 'en', 'fr', 'es', 'it', 'pl', 'pt']
+languages = ['de', 'en', 'fr', 'es', 'it', 'pl', 'pt', 'zh']
 
 # The user can decide whether to download all JSON files or to select one
 # language.
@@ -84,9 +84,9 @@ for card_en in cards_en:
     if str(card_en["id"]) in renamed_cards:
         # rename english card
         card_en["name"] = renamed_cards[str(card_en["id"])]
-        if re.findall(".*?( \(.*\)).*", card_en["name"]):
+        # if re.findall(".*?( \(.*\)).*", card_en["name"]):
             # rename translated card, add the (...) to the translated name
-            card_translation["name"] += re.sub(".*?( \(.*\)).*", r"\1", card_en["name"])
+            # card_translation["name"] += re.sub(".*?( \(.*\)).*", r"\1", card_en["name"])
 
     card_en["name"] = card_en["name"].replace('’', "'")
 
