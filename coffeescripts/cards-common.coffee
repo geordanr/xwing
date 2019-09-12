@@ -9924,6 +9924,9 @@ exportObj.basicCardData = ->
             slot: "Talent"
             pointsarray: [7,8,9]
             variablebase: true
+            attack: 2
+            range: """2"""
+            rangebonus: true
             
        }
 
