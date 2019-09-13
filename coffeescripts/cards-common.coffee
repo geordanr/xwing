@@ -10220,6 +10220,7 @@ exportObj.basicCardData = ->
                 "Fire-Control System"
                 "Afterburners"
                 "Shield Upgrade"
+                "Cluster Missiles"
             ]
         }
         {
