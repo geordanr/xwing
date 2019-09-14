@@ -7361,6 +7361,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (Y-Wing)"
+            xws: "anakinskywalker-btlbywing"
             unique: true
             id: 359
             faction: "Galactic Republic"
@@ -7489,6 +7490,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Odd Ball" (Y-Wing)'
+            xws: "oddball-btlbywing"
             id: 366
             unique: true
             faction: "Galactic Republic"
