@@ -7361,6 +7361,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (Y-Wing)"
+            xws: "anakinskywalker-btlbywing"
             unique: true
             id: 359
             faction: "Galactic Republic"
@@ -7489,6 +7490,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Odd Ball" (Y-Wing)'
+            xws: "oddball-btlbywing"
             id: 366
             unique: true
             faction: "Galactic Republic"
@@ -9886,6 +9888,7 @@ exportObj.basicCardData = ->
        {
             name: "C1-10P"
             id: 252
+            unique: true
             slot: "Astromech"
             charge: 2
             points: 7
@@ -9894,6 +9897,7 @@ exportObj.basicCardData = ->
        {
             name: "Ahsoka Tano"
             id: 253
+            unique: true
             slot: "Gunner"
             points: 12
             faction: "Galactic Republic"
@@ -9904,6 +9908,7 @@ exportObj.basicCardData = ->
        {
             name: "C-3PO (Republic)"
             id: 254
+            unique: true
             slot: "Crew"
             xws: "c3po-republic"
             points: 8
@@ -10220,6 +10225,7 @@ exportObj.basicCardData = ->
                 "Fire-Control System"
                 "Afterburners"
                 "Shield Upgrade"
+                "Cluster Missiles"
             ]
         }
         {
