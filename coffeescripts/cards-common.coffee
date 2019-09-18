@@ -10016,10 +10016,12 @@ exportObj.basicCardData = ->
         {
             name: 'Decoyed'
             id: 17
+            unique: true
         }
         {
             name: 'Compromising Intel'
             id: 18
+            unique: true
         }
     ]
 
