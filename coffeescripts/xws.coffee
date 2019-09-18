@@ -48,8 +48,8 @@ class exportObj.XWSManager
     setupUI: ->
         @container.addClass 'hidden-print'
         @container.html $.trim """
-            <div class="row-fluid">
-                <div class="span9 indent">
+            <div class="row-fluid span9">
+                <div>
                     <button class="btn btn-primary from-xws">Import from XWS</button>
                     <button class="btn btn-primary to-xws">Export to XWS</button>
                 </div>
