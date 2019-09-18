@@ -10016,10 +10016,12 @@ exportObj.basicCardData = ->
         {
             name: 'Decoyed'
             id: 17
+            unique: true
         }
         {
             name: 'Compromising Intel'
             id: 18
+            unique: true
         }
     ]
 
@@ -14845,7 +14847,7 @@ exportObj.hyperspaceCheck = (data, faction='', shipCheck=false) ->
             return false
         for ship in exportObj.hyperspaceShipInclusions
             # checks against name for ship itself or ship name/faction for pilot inclusions
-            if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name || ship.name in data.ship))
+            if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name || (Array.isArray(data.ship) and ship.name in data.ship)))
                 return true
         return false
     else
