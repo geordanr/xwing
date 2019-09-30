@@ -5944,11 +5944,6 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Passive Sensors'
-            type: 'upgrade'
-            count: 1
-        }
-        {
             name: 'Plasma Torpedoes'
             type: 'upgrade'
             count: 1
