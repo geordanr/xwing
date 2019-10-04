@@ -22,7 +22,7 @@ exportObj.translations.Magyar =
         "Talent": "Talentum"
         "Modification": "Módosítás"
         "Gunner": "Fegyverzet kezelő"
-        "Device": "Eszköz"
+        "Device": "Töltet"
         "Tech": "Tech"
         "Title": "Nevesítés"
     sources: # needed?
@@ -74,7 +74,7 @@ exportObj.translations.Magyar =
         '.info-well .info-actions td.info-header': 'Akciók'
         '.info-well .info-upgrades td.info-header': 'Fejlesztések'
         '.info-well .info-range td.info-header': 'Távolság'
-		'.info-well .info-sources.info-header': 'Források'
+        '.info-well .info-sources.info-header':  'Források'
         # Squadron edit buttons
         '.clear-squad' : 'Új raj'
         '.save-list' : '<i class="fa fa-floppy-o"></i>&nbsp;Mentés'
@@ -1107,7 +1107,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """<strong>Full Throttle:</strong> Miután teljesen végrehajtasz egy 3-5 sebességű manővert, végrehajthatsz egy %EVADE% akciót."""
         "BB-8":
            display_name: """BB-8"""
-           text: """A Rendszer fázis alatt végrahjthatsz egy piros %BARRELROLL% vagy %BOOST% akciót."""
+           text: """A Rendszer fázis alatt végrehajthatsz egy piros %BARRELROLL% vagy %BOOST% akciót."""
         "Finn":
            display_name: """Finn"""
            text: """Amikor védekezel vagy támadást hajtasz végre, adj a dobáshoz 1 üres eredményt vagy kaphatsz 1 túlterhelés jelzőt, hogy üres helyett fókusz eredményt adhass hozzá."""
@@ -1124,6 +1124,30 @@ exportObj.cardLoaders.Magyar = () ->
            text: """<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
         "Red Squadron Bomber":
            text: """<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
+        '"Goji"':
+           text: """Amikor egy baráti hajó 0-3-as távolságban védekezik, további 1 védőkockával dobhat minden tőle 0-1 távolságban lévő baráti bomba vagy akna után. %LINEBREAK%<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
+        '"Broadside"':
+           text: """Amikor végrehajtasz egy %SINGLETURRETARC% támadást, ha a %SINGLETURRETARC% a %LEFTARC% vagy %RIGHTARC% tűzívedben van, 1 üres eredményed %FOCUS% eredményre változtathatsz. %LINEBREAK%<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
+        '"Matchstick"':
+           text: """Amikor végrehajtasz egy elsődleges vagy %SINGLETURRETARC% támadást, újradobhatsz 1 támadókockát minden egyes rajtad lévő piros jelző után. %LINEBREAK%<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
+        '"Odd Ball" (Y-Wing)':
+           text: """Miután teljesen végrehajtasz egy piros manővert vagy piros akciót, ha van egy ellenséges hajó a %BULLSEYEARC% tűzívedben, feltehetsz egy bemérőt arra a hajóra.%LINEBREAK%<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
+        "R2-D2":
+           text: """Az Ütközet fázis elején, ha van ellenséges hajó a %REARARC% tűzívedben, kapsz 1 %CALCULATE% jelzőt.%LINEBREAK%<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
+        "Anakin Skywalker (Y-Wing)":
+           text: """Miután teljesen végrehajthatsz egy manővert, ha van ellenséges hajó a %FRONTARC% tűzívedben 0-1-es távolságban, elkölthetsz 1 %FORCE% jelzőt, hogy levegyél egy stress jelzőt.%LINEBREAK%<strong>Plated Hull:</strong> Amikor védekezel, ha nincs kritikus sérülésed, változtass 1 %CRIT% eredményt %HIT% eredményre."""
+        "Sun Fac":
+           text: """Amikor végrehajthatsz egy elsődleges támadást, ha a védekezőn vonósugár jelző van, dobj 1-gyel több kockával%LINEBREAK% <strong>Pinpoint Tractor Array:</strong> A %SINGLETURRETARC% fegyveredet nem forgathatod a %REARARC% tűzívedbe. Miután végrehajtasz egy manővert, kaphatsz 1 vonósugár jelzőt, hogy végrehajts egy %ROTATEARC% akciót."""
+        "Stalgasin Hive Guard":
+           text: """<strong>Pinpoint Tractor Array:</strong> A %SINGLETURRETARC% fegyveredet nem forgathatod a %REARARC% tűzívedbe. Miután végrehajtasz egy manővert, kaphatsz 1 vonósugár jelzőt, hogy végrehajts egy %ROTATEARC% akciót."""
+        "Petranaki Arena Ace":
+           text: """<strong>Pinpoint Tractor Array:</strong> A %SINGLETURRETARC% fegyveredet nem forgathatod a %REARARC% tűzívedbe. Miután végrehajtasz egy manővert, kaphatsz 1 vonósugár jelzőt, hogy végrehajts egy %ROTATEARC% akciót."""
+        "Berwer Kret":
+           text: """Miután végrehajtasz egy támadást, ami talált, minden baráti hajó, aminek van %CALCULATE% az akciósávján és bemérő jelzője a védekezőn, végrehajthat egy piros %CALCULATE% akciót  %LINEBREAK%<strong>Pinpoint Tractor Array:</strong> A %SINGLETURRETARC% fegyveredet nem forgathatod a %REARARC% tűzívedbe. Miután végrehajtasz egy manővert, kaphatsz 1 vonósugár jelzőt, hogy végrehajts egy %ROTATEARC% akciót."""
+        "Chertek":
+           text: """Amikor végrehajtasz egy elsődleges támadást, ha a védekezőn vonósugár jelző van, újradobhatsz akár 2 támadókockát. %LINEBREAK%<strong>Pinpoint Tractor Array:</strong> A %SINGLETURRETARC% fegyveredet nem forgathatod a %REARARC% tűzívedbe. Miután végrehajtasz egy manővert, kaphatsz 1 vonósugár jelzőt, hogy végrehajts egy %ROTATEARC% akciót."""
+        "Gorgol":
+           text: """A Rendszer fázis alatt, kaphatsz 1 'inaktív fegyverzet' jelzőt, hogy válassz egy baráti hajót 1-2-es távolságban. Ha így teszel, az kap 1 vonósugár jelzőt, hogy megjavítsa 1 felfordított <strong>Ship</strong> sérüléskártyáját. %LINEBREAK%<strong>Pinpoint Tractor Array:</strong> A %SINGLETURRETARC% fegyveredet nem forgathatod a %REARARC% tűzívedbe. Miután végrehajtasz egy manővert, kaphatsz 1 vonósugár jelzőt, hogy végrehajts egy %ROTATEARC% akciót."""
 
 
     upgrade_translations =
@@ -1664,7 +1688,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Chewbacca (Resistance)":
            text: """<strong>Felhelyezés:</strong>: elvesztesz el 1&nbsp;%CHARGE% jelzőt. %LINEBREAK% Miután egy baráti hajó 0-3-as távolságban felhúz 1 sérülés kártyát, állítsd helyre 1&nbsp;%CHARGE% jelzőt. Amikor támadást hajtasz végre elkölthetsz 2&nbsp;%CHARGE% jelzőt, hogy 1&nbsp;%FOCUS% eredményed %CRIT% eredményre változtass."""
         "Paige Tico":
-           text: """Miután véggrehajtasz egy elsődleges támadást, ledobhatsz egy bombát vagy forgathatod a %SINGLETURRETARC% tűzívedet. Miután megsemmisültél ledobhatsz 1 bombát."""
+           text: """Miután végrehajtasz egy elsődleges támadást, ledobhatsz egy bombát vagy forgathatod a %SINGLETURRETARC% tűzívedet. Miután megsemmisültél ledobhatsz 1 bombát."""
         "R2-HA":
            text: """Amikor védekezel, elköltheted a támadón lévő bemérődet, hogy újradobd bármennyi védőkockádat."""
         "C-3PO (Resistance)":
@@ -1797,10 +1821,30 @@ exportObj.cardLoaders.Magyar = () ->
         "Korr Sella":
            display_name: """Korr Sella"""
            text: """<i>csak Ellenállás</i>%LINEBREAK%Miutá teljesen végrehajtasz egy kék manővert, vedd le az összes stressz jelződ."""
+        "Precognitive Reflexes":
+           display_name: """Precognitive Reflexes"""
+           text: """Miután felfeded a tárcsád, elkölthetsz 1 %FORCE% jelzőt, hogy végrehajts egy %BARRELROLL% vagy %BOOST% akciót. Ha így olyan akciót hajtasz végre, ami nincs az akciósávodon , kapsz 1 túlterhelés jelzőt.%LINEBREAK% Ha így teszel, nem hajthatsz végre másik akciót az aktivációd alatt."""
+        "Foresight":
+           display_name: """Foresight"""
+           text: """Miután egy ellenséges hajó végrehajt egy manővert, elkölthetsz 1 %FORCE% jelzőt, hogy végrehajts egy támadást ellene, mint bónusz támadás%LINEBREAK% <strong>Támadás:</strong> Megváltoztathatsz 1 %FOCUS% eredményt egy %HIT% eredményre; más kockamódosítást nem tehetsz."""
         "Angled Deflectors":
            display_name: """Angled Deflectors"""
            text: """<i>Legalább 1 pajzzsal rendelkező kis és közepes hajó.</i>%LINEBREAK%<i>Kapott akció: %REINFORCE%, vegyél le 1 pajzsot.</i>"""
-		   
+        "C1-10P":
+           display_name: """C1-10P"""
+           text: """<strong>C1-10P: </strong>Felhelyezés: Ez az oldal legyen felfelé. %LINEBREAK% Miután végrehajtasz egy manővert, elkölthetsz 1 %CHARGE% jelzőt, hogy végrehajts egy piros %EVADE% akciót, még ha stresszes is  vagy. %LINEBREAK% A Vége fázis alatt, ha ennek a kártyának 0 aktív %CHARGE% jelzője van, fordítsd meg. %LINEBREAK% <strong>C1-10P (hibás):</strong> Miután végrehajtasz egy manővert, választanod <strong>kell</strong> egy hajtót 0-1-es távolságban, ami kap egy zavarás jelzőt."""
+        "Ahsoka Tano":
+           display_name: """Ahsoka Tano"""
+           text: """Miután végrehajtasz egy manővert, elkölthetsz 1 %FORCE% jelzőt, hogy válassz egy tűzívedben lévő baráti hajót 1-3-as távolságban. Ha így teszel, az végrehajthat egy piros %FOCUS% akciót még ha stresses is."""
+        "C-3PO (Republic)":
+           display_name: """C-3PO"""
+           text: """Amikor védekezel és van %CALCULATE% jelződ, újradobhatsz 1 védekezőkockát. %LINEBREAK% Miután végrehajtottál egy %CALCULATE% akciót, kapsz 1 %CALCULATE% jelzőt."""
+        "Gravitic Deflection":
+           display_name: """Gravitic Deflection"""
+           text: """Amikor védekezel, újradobhatsz 1 védőkockát minden a támadási tűzívben lévő vonósugarazott hajó után."""
+        "Snap Shot":
+           display_name: """Snap Shot"""
+           text: """Miután egy ellenséges hajó végrehajt egy manővert, végrehajthatsz egy támadást ellene, mint bónusz támadás. <br> <strong>Támadás:</strong> A kockáid nem módosíthatók."""
 
     condition_translations =
         'Suppressive Fire':
