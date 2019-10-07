@@ -1553,6 +1553,7 @@ exportObj.basicCardData = ->
            attackt: 2
            agility: 3
            hull: 4
+           shields: 0
            actions: [
              "Focus"
              "Evade"
