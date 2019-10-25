@@ -23,12 +23,11 @@ html
 
   body
     // body layout
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-123324723-1&aip=1')
     script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js&aip=1','ga');
-      ga('create', 'UA-123324723-1', 'raithos.github.io');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
     .tabbable.hidden-print
       ul.nav.nav-pills
@@ -171,41 +170,41 @@ html
 
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
           $('#rebelTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/rebels'
-              title: 'Rebel Alliance'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/rebels'
+              page_title: 'Rebel Alliance'
           $('#empireTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/empire'
-              title: 'Galactic Empire'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/empire'
+              page_title: 'Galactic Empire'
           $('#scumTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/scum'
-              title: 'Scum and Villainy'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/scum'
+              page_title: 'Scum and Villainy'
           $('#resistanceTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/resistance'
-              title: 'Resistance'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/resistance'
+              page_title: 'Resistance'
           $('#firstorderTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/firstorder'
-              title: 'First Order'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/firstorder'
+              page_title: 'First Order'
           $('#firstorderTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/republic'
-              title: 'Galactic Republic'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/republic'
+              page_title: 'Galactic Republic'
           $('#firstorderTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/separatist'
-              title: 'Separatist Alliance'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/separatist'
+              page_page_title: 'Separatist Alliance'
           $('#browserTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/browser'
-              title: 'Card Browser'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/browser'
+              page_title: 'Card Browser'
           $('#aboutTab').click (e) ->
-            ga 'send', 'pageview',
-              page: '/about'
-              title: 'About'
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/about'
+              page_title: 'About'
 
           window.rebel_sb = new window.SquadBuilder
               tab: '#rebelTab'
@@ -258,44 +257,44 @@ html
 
           switch $.getParameterByName 'f'
             when 'Rebel Alliance'
-                ga 'send', 'pageview',
-                  page: '/rebels'
-                  title: 'Rebel Alliance'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/rebels'
+                  page_page_title: 'Rebel Alliance'
                 $('#rebelTab').tab 'show'
             when 'Galactic Empire'
-                ga 'send', 'pageview',
-                  page: '/empire'
-                  title: 'Galactic Empire'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/empire'
+                  page_title: 'Galactic Empire'
                 $('#empireTab').tab 'show'
             when 'Scum and Villainy'
-                ga 'send', 'pageview',
-                  page: '/scum'
-                  title: 'Scum and Villainy'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/scum'
+                  page_title: 'Scum and Villainy'
                 $('#scumTab').tab 'show'
             when 'Resistance'
-                ga 'send', 'pageview',
-                  page: '/resistance'
-                  title: 'Resistance'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/resistance'
+                  page_title: 'Resistance'
                 $('#resistanceTab').tab 'show'
             when 'First Order'
-                ga 'send', 'pageview',
-                  page: '/firstorder'
-                  title: 'First Order'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/firstorder'
+                  page_title: 'First Order'
                 $('#firstorderTab').tab 'show'
             when 'Galactic Republic'
-                ga 'send', 'pageview',
-                  page: '/republic'
-                  title: 'Galactic Republic'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/republic'
+                  page_title: 'Galactic Republic'
                 $('#republicTab').tab 'show'
             when 'Separatist Alliance'
-                ga 'send', 'pageview',
-                  page: '/separatist'
-                  title: 'Separatist Alliance'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/separatist'
+                  page_title: 'Separatist Alliance'
                 $('#separatistTab').tab 'show'
             else
-                ga 'send', 'pageview',
-                  page: '/rebels'
-                  title: 'Rebel Alliance'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/default'
+                  page_title: 'Rebel Alliance'
                 $('#rebelTab').tab 'show'
 
           window.backend = new SquadBuilderBackend
