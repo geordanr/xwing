@@ -9441,6 +9441,7 @@ exportObj.basicCardData = ->
        {
             name: "R5-X3"
             id: 205
+            unique: true
             slot: "Astromech"
             faction: "Resistance"
             charge: 2
