@@ -7044,6 +7044,7 @@ exportObj.basicCardData = ->
             name: '"Odd Ball" (ARC-170)'
             id: 338
             xws: "oddball-arc170starfighter" 
+            canonical_name: '"Odd Ball"'.canonicalize()
             unique: true
             faction: "Galactic Republic"
             ship: "ARC-170"
@@ -7362,6 +7363,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (Y-Wing)"
+            canonical_name: 'Anakin Skywalker'.canonicalize()
             xws: "anakinskywalker-btlbywing"
             unique: true
             id: 359
@@ -7494,6 +7496,7 @@ exportObj.basicCardData = ->
             xws: "oddball-btlbywing"
             id: 366
             unique: true
+            canonical_name: '"Odd Ball"'.canonicalize()
             faction: "Galactic Republic"
             ship: "BTL-B Y-Wing"
             skill: 5
