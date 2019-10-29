@@ -4,31 +4,6 @@ exportObj.codeToLanguage.en = 'English'
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
 exportObj.translations.English =
-    action: #do not change this anymore. We use Icons instead of words
-        "Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>'
-        "Boost": '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>'
-        "Evade": '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>'
-        "F-Evade": '<i class="xwing-miniatures-font force xwing-miniatures-font-evade"></i>'
-        "Focus": '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>'
-        "*Focus": '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>'
-        "Lock": '<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>'
-        "Reload": '<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>'
-        "Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>'
-        "Reinforce": '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>'
-        "Jam": '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>'
-        "Calculate": '<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>'
-        "Coordinate": '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>'
-        "F-Coordinate": '<i class="xwing-miniatures-font force xwing-miniatures-font-coordinate"></i>'
-        "Cloak": '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>'
-        "Slam": '<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>'
-        "R> Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>'
-        "R> Boost": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-boost"></i>'
-        "R> Focus": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-focus"></i>'
-        "R> Lock": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-lock"></i>'
-        "> Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>'
-        "R> Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-rotatearc"></i>'
-        "R> Evade": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-evade"></i>'
-        "R> Calculate": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-calculate"></i>'
     sloticon:
         "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
         "Force": '<i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>'
@@ -48,6 +23,10 @@ exportObj.translations.English =
         "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
         "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
+        "Team": '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>'
+        "Cargo": '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>'
+        "Command": '<i class="xwing-miniatures-font xwing-miniatures-font-command"></i>'
+        "HardpointShip": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
         "Tactical Relay": '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>'
 
     slot:
@@ -60,6 +39,7 @@ exportObj.translations.English =
         "Sensor": "Sensor"
         "Torpedo": "Torpedo"
         "Turret": "Turret"
+        "HardpointShip": "Hardpoint"
         "Hardpoint": "Hardpoint"
         "Illicit": "Illicit"
         "Configuration": "Configuration"
@@ -1319,6 +1299,41 @@ exportObj.cardLoaders.English = () ->
         "Gorgol":
            text: """During the System Phase, you may gain 1 disarm token and choose a friendly ship at range 1-2. If you do, it gains 1 tractor token, then repairs 1 of its faceup <strong>Ship</strong> trait damage cards. %LINEBREAK%<strong>Pinpoint Tractor Array:</strong> You cannot rotate your %SINGLETURRETARC% to your %REARARC%. After you execute a maneuver, you may gain 1 tractor token to perform a %ROTATEARC% action."""
 
+            
+        # Epic Ships
+        "Republic Judiciary":
+           display_name: """Republic Judiciary"""
+           text: """<i class = flavor_text>The Galactic Republic uses small, swift warships such as the CR90 corvette to respond rapidly to Separatist incursions across the galaxy.</i> %LINEBREAK% <strong>Broadside Batteries:</strong> You can acquire locks and perform primary attacks at range 1-4."""
+        "Alderaanian Guard":
+           display_name: """Alderaanian Guard"""
+           text: """<i class = flavor_text>A craft used since before the Clone Wars, the CR90 corvette is favored by the Royal House of Alderaan for its versatility.</i> %LINEBREAK% <strong>Broadside Batteries:</strong> You can acquire locks and perform primary attacks at range 1-4."""
+        "Outer Rim Patrol":
+           display_name: """Outer Rim Patrol"""
+           text: """<i class = flavor_text>The <untalic>Raider</untalic>-class corvette is one of the Empire's smallest warships, often used for reconnaissance missions, surgical strikes, or suppressing enemy starfighters with its powerful ordnance.</i> %LINEBREAK% <strong>Concentrated Batteries:</strong> While you perform a primary, %TORPEDO%, or %MISSILE% attack, if the defender is in your %BULLSEYEARC%, roll 1 additional die."""
+        "First Order Collaborators":
+           display_name: """First Order Collaborators"""
+           text: """<i class = flavor_text>The First Order's supporters make use of former Imperial vessels, such as the <untalic>Raider</untalic>-class corvette. Though it has outlived the regime that created it, this craft still spreads terror across the galaxy.</i> %LINEBREAK% <strong>Concentrated Batteries:</strong> While you perform a primary, %TORPEDO%, or %MISSILE% attack, if the defender is in your %BULLSEYEARC%, roll 1 additional die."""
+        "Echo Base Evacuees":
+           display_name: """Echo Base Evacuees"""
+           text: """<i class = flavor_text>The GR-75 medium transport acquitted itself well at battles such as the evacuation of Hoth, where several of these ships were pivotal to the Rebel forces' escape.</i> %LINEBREAK% <strong>Resupply Craft:</strong> After another friendly ship at range 0-1 performs an action, you may spend 1 %ENERGY%. If you do, it removes 1 orange or red token, or recovers 1 shield."""
+        "New Republic Volunteers":
+           display_name: """New Republic Volunteers"""
+           text: """<i class = flavor_text>In use since the Galactic Civil War, groups within the New Republic still utilize the GR-75 medium transport for supply and aid missions.</i> %LINEBREAK% <strong>Resupply Craft:</strong> After another friendly ship at range 0-1 performs an action, you may spend 1 %ENERGY%. If you do, it removes 1 orange or red token, or recovers 1 shield."""
+        "Outer Rim Garrison":
+           display_name: """Outer Rim Garrison"""
+           text: """<i class = flavor_text>Capable of carrying TIE fighters and operating independently for long periods of time, the <untalic>Gozanti</untalic>-class cruiser is a common sight in the skies of downtrodden worlds across the Outer Rim.</i> %LINEBREAK% <strong>Docking Clamps:</strong> You can dock up to 4 small ships."""
+        "First Order Sympathizers":
+           display_name: """First Order Sympathizers"""
+           text: """<i class = flavor_text>The First Order's swift rise to power rests upon ruthless innovation. However, sympathizers often repurpose Imperial designs, like the venerable <untalic>Gozanti</untalic>-class cruiser, in surveillance and patrol operations.</i> %LINEBREAK% <strong>Docking Clamps:</strong> You can dock up to 4 small ships."""
+        "Separatist Privateers":
+           display_name: """Separatist Privateers"""
+           text: """<i class = flavor_text>The Separatist Alliance makes use of all manner of unsavory contacts in its fight against the Galactic Republic, including corsairs and criminal cartels.</i> %LINEBREAK% <strong>Overdrive Burners:</strong> While you defend, if your revealed maneuver is speed 3-5, roll 1 additional defense die."""
+        "Syndicate Smugglers":
+           display_name: """Syndicate Smugglers"""
+           text: """<i class = flavor_text>Vessels like the C-ROC Cruiser allow criminal operations across the Outer Rim to move massive amounts of illicit materials, or project power that can bully small colonies into compliance.</i> %LINEBREAK% <strong>Overdrive Burners:</strong> While you defend, if your revealed maneuver is speed 3-5, roll 1 additional defense die."""
+            
+            
+
     upgrade_translations =
         "0-0-0":
            display_name: """0-0-0"""
@@ -2074,15 +2089,124 @@ exportObj.cardLoaders.English = () ->
         "Snap Shot":
            display_name: """Snap Shot"""
            text: """After an enemy ship executes a maneuver, you may perform this attack against it as a bonus attack. %LINEBREAK% <strong>Attack:</strong> Your dice cannot be modified."""
+
+        # Epic upgrades
+        "Admiral Ozzel":
+           display_name: """Admiral Ozzel"""
+           text: """While a friendly large or huge ship at range 0-3 executes a maneuver, it may suffer 1 %HIT% damage to execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead."""
+        "Azmorigan":
+           display_name: """Azmorigan"""
+           text: """During the End Phase, you may choose up to 2 friendly ships at range 0-1. If you do, each of these ships does not remove 1 calculate or evade token."""
+        "Captain Needa":
+           display_name: """Captain Needa"""
+           text: """After a friendly ship at range 0-4 reveals its dial, you may spend 1 %CHARGE%. If you do, it sets its dial to another maneuver of the same difficulty and speed."""
+        "Strategic Commander":
+           display_name: """Strategic Commander"""
+           text: """After a friendly ship at range 0-4 reveals its dial, you may spend 1 %CHARGE%. If you do, it sets its dial to another maneuver of the same difficulty and speed."""
+        "Carlist Rieekan":
+           display_name: """Carlist Rieekan"""
+           text: """After a friendly ship at range 0-2 is destroyed, you may choose a friendly ship at range 0-2. If you do, it may perform a red %EVADE% action."""
+        "Jan Dodonna":
+           display_name: """Jan Dodonna"""
+           text: """Friendly ships at range 0-3 can spend your focus and evade tokens."""
+        "Raymus Antilles":
+           display_name: """Raymus Antilles"""
+           text: """After you are destroyed, each friendly ship at range 0-1 gains 1 focus token. After you are destroyed, you are not removed until the end of the End Phase."""
+        "Agent of the Empire":
+           display_name: """Agent of the Empire"""
+           text: """You are a <strong>wing leader</strong>. Your wingmates must be 2, 3, 4, or 5 TIE/ln fighters. %LINEBREAK% While you defend, up to 2 of your wingmates in the attack arc may suffer 1 %HIT% or %CRIT% damage to cancel a matching result."""
+        "First Order Elite":
+           display_name: """First Order Elite"""
+           text: """You are a <strong>wing leader</strong>. Your wingmates must be 2 or 3 TIE/fo fighters or TIE/sf fighters. %LINEBREAK% While you defend, up to 2 of your wingmates in the attack arc may suffer 1 %HIT% or %CRIT% damage to cancel a matching result."""
+        "Dreadnought Hunter":
+           display_name: """Dreadnought Hunter"""
+           text: """While you perform an attack against a huge ship, if the attack deals a faceup damage card to the defender and the defender is in your %BULLSEYEARC%, you may apply the <strong>Precision Shot</strong> effect even if you are not in the specified arc."""
+        "Ion Cannon Battery":
+           display_name: """Ion Cannon Battery"""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. If this attack hits, the defender suffers 1 %CRIT% damage, and all %HIT%/%CRIT% results inflict ion tokens instead of damage. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% """
+        "Targeting Battery":
+           display_name: """Targeting Battery"""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. After you perform this attack, you may acquire a lock on the defender. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% """
+        "Point-Defense Battery":
+           display_name: """Point-Defense Battery"""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% """
+        "Turbolaser Battery":
+           display_name: """Turbolaser Battery"""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack (%LOCK%): Spend 3 %ENERGY%. If this attack hits, add 3 %HIT% results. %LINEBREAK% <strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
+        "Bombardment Specialists":
+           display_name: """Bombardment Specialists"""
+           text: """Adds %LOCK% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% While you perform an attack, you may spend 1 calculate token to increase or decrease the range requirement by 1, to a limit of 0-5."""
+        "Comms Team":
+           display_name: """Comms Team"""
+           text: """Adds %COORDINATE% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%, %JAM% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% After you perform a %COORDINATE% action, you may spend up to 2 %ENERGY% to coordinate that many additional ships at range 0-1 of the ship you coordinated."""
+        "IG-RM Droids":
+           display_name: """IG-RM Droids"""
+           text: """While you perform an attack, if you are calculating, you may change 1 %HI% result to a %CRIT% result."""
+        "Gunnery Specialists":
+           display_name: """Gunnery Specialists"""
+           text: """Adds %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% While you perform a primary or %HARDPOINT% attack, you may spend 1 or more %ENERGY% to reroll that many attack dice."""
+        "Damage Control Team":
+           display_name: """Damage Control Team"""
+           text: """Adds %REINFORCE% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% Before you engage, you may spend 1 or more %ENERGY% to flip that many of your <strong>Offline</strong> upgrade cards.%LINEBREAK% Action: Spend 1 or more %ENERGY% to repair that many of your faceup <strong>Ship</strong> damage cards."""
+        "Sensor Experts":
+           display_name: """Sensor Experts"""
+           text: """Adds %LOCK% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% You can maintain up to 3 locks on different objects. %LINEBREAK% After you perform a %LOCK% action, you may spend up to 2 %ENERGY% to acquire a lock on that many other objects at range 0-1 of the object you locked, ignoring range restrictions."""
+        "Quick-Release Locks":
+           display_name: """Quick-Release Locks"""
+           text: """During the System Phase, you may spend 1 %CHARGE% to drop 1 cargo crate drift using the [2 %BANKLEFT%], [2 %STRAIGHT%], or [2 %BANKRIGHT%] template. %LINEBREAK% This card's %CHARGE% cannot be recovered."""
+        "Saboteur's Map":
+           display_name: """Saboteur's Map"""
+           text: """At the end of Setup, you may spend up to 1 %CHARGE% from each of your equipped <strong>Mine</strong> upgrades to place the corresponding device in the play area beyond range 2 of any enemy ship, strategic marker, or other device."""
+        "Scanner Baffler":
+           display_name: """Scanner Baffler"""
+           text: """At the end of Setup, you may choose any number of other friendly, non-huge ships in your deployment area at range 0-1. If you do, place those ships anywhere in the same deployment area."""
+        "Adaptive Shields":
+           display_name: """Adaptive Shields"""
+           text: """While another friendly ship at range 0-1 defends, if it is a smaller size than you, you may spend 1 shield or 2 %ENERGY% to cancel 1 %HIT% or %CRIT% result."""
+        "Boosted Scanners":
+           display_name: """Boosted Scanners"""
+           text: """While you lock, coordinate, or jam, you may spend up to 3 %ENERGY% to increase the range at which you can choose an object by 1 per %ENERGY% spent this way, to a maximum of range 5."""
+        "Tibanna Reserves":
+           display_name: """Tibanna Reserves"""
+           text: """Action: Spend 1 %CHARGE% to recover 2 %ENERGY%."""
+        "Toryn Farr":
+           display_name: """Toryn Farr"""
+           text: """After you coordinate a friendly ship, it may acquire a lock on a ship you are locking, ignoring range restrictions."""
+        "Dodonna's Pride":
+           display_name: """Dodonna's Pride"""
+           text: """Add %TEAM% and %CARGO% slots. Adds %EVADE% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%COORDINATE%</r>, %FOCUS% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%COORDINATE%</r>"""
+        "Jaina's Light":
+           display_name: """Jaina's Light"""
+           text: """While a friendly ship at range 0-2 defends, if the attack is obstructed by an obstacle, you may spend 1 %ENERGY%. If you do, the defender rolls 1 additional defense die."""
+        "Liberator":
+           display_name: """Liberator"""
+           text: """You can dock up to 2 small ships. %LINEBREAK% After a ship deploys from you, it may perform a %FOCUS% or %BARRELROLL% action."""
+        "Tantive IV":
+           display_name: """Tantive IV"""
+           text: """Add 2 %CREW% slots. %LINEBREAK% While you defend, if the attacker is in your %REARARC%, you may roll 1 additional defense die."""
+        "Thunderstrike":
+           display_name: """Thunderstrike"""
+           text: """Add %GUNNER% slot. %LINEBREAK% While you perform a bonus attack, if you have not attacked the defender this round, you may reroll 1 attack die."""
+        "Luminous":
+           display_name: """Luminous"""
+           text: """Setup: You are placed in reserve. %LINEBREAK% At the end of setup, you are placed in the play area at range 0-2 of a friendly ship."""
+        "Corvus":
+           display_name: """Corvus"""
+           text: """You can dock up to 2 small ships. %LINEBREAK% After you perform a %CALCULATE% action, gain 1 calculate token."""
+        "Broken Horn":
+           display_name: """Broken Horn"""
+           text: """Add %CREW% and %ILLICIT% slots. %LINEBREAK% If you are damaged, reduce the difficulty of your speed 3-5 maneuvers."""
+        "Merchant One":
+           display_name: """Merchant One"""
+           text: """Add %TURRET%, %TEAM%, and %CARGO% slots. %LINEBREAK% Bonus Attack: Perform a %TURRET% attack."""
+        "Insatiable Worrt":
+           display_name: """Insatiable Worrt"""
+           text: """Add %CARGO% slot. %LINEBREAK% During the End Phase, you may recover 1 additional shield or 1 additional %ENERGY%."""
+        "Corsair Refit":
+           display_name: """Corsair Refit"""
+           text: """Add %CANNON%, %TURRET%, and %MISSILE% slots. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY% to perform a %CANNON%, %TURRET%, or %MISSILE% attack."""
             
-
-        "Hardpoint: Cannon":
-           text: """Adds a %CANNON% slot"""
-        "Hardpoint: Missile":
-           text: """Adds a %MISSILE% slot"""
-        "Hardpoint: Torpedo":
-           text: """Adds a %TORPEDO% slot"""
-
+            
         
     condition_translations =
         'Suppressive Fire':

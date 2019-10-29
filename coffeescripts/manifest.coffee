@@ -6550,11 +6550,6 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'YT-1300'
-            type: 'ship'
-            count: 2
-        }
-        {
             name: 'Attack Shuttle'
             type: 'ship'
             count: 2
@@ -6676,6 +6671,31 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Scavenged YT-1300'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'Raider-class Corvette'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'CR90 Corellian Corvette'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'GR-75 Medium Transport'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'Gozanti-class Cruiser'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'C-ROC Cruiser'
             type: 'ship'
             count: 3
         }

@@ -2068,13 +2068,6 @@ exportObj.cardLoaders.Deutsch = () ->
 
 
 
-        "Hardpoint: Cannon":
-           text: """Fügt einen %CANNON% Slot hinzu"""
-        "Hardpoint: Missile":
-           text: """Fügt einen %MISSILE% Slot hinzu"""
-        "Hardpoint: Torpedo":
-           text: """Fügt einen %TORPEDO% Slot hinzu"""
-
             
     condition_translations =
         'Suppressive Fire':

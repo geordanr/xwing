@@ -14,9 +14,6 @@ String::canonicalize = ->
         .replace(/[^a-z0-9]/g, '')
         .replace(/\s+/g, '-')
 
-exportObj.hugeOnly = (ship) ->
-    ship.data.huge ? false
-
 # Returns an independent copy of the data which can be modified by translation
 # modules.
 exportObj.basicCardData = ->
@@ -1558,12 +1555,12 @@ exportObj.basicCardData = ->
              "Evade"
            ]
            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 2, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 2, 2, 2, 1, 0, 3, 3, 0, 0, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0]
+                [ 1, 2, 0, 2, 1, 0, 0, 0]
+                [ 1, 2, 2, 2, 1, 0, 0, 0]
+                [ 1, 2, 2, 2, 1, 0, 3, 3]
+                [ 0, 0, 1, 0, 0, 0, 0, 0]
+                [ 0, 0, 1, 0, 0, 3, 0, 0]
            ]
         "BTL-B Y-Wing":
            name: "BTL-B Y-Wing"               
@@ -1582,12 +1579,155 @@ exportObj.basicCardData = ->
              "Reload"
            ]
            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 3, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 2, 1, 0, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 3, 1, 1, 1, 3, 0]
+                [ 0, 0, 3, 0, 0, 3]
+                [ 0, 0, 0, 0, 0, 0]
+           ]
+
+        # Epic Section
+        "CR90 Corellian Corvette":
+           name: "CR90 Corellian Corvette"
+           xws: "CR90 Corellian Corvette".canonicalize()
+           icon: "cr90corvette"
+           factions: ["Galactic Republic", "Rebel Alliance"]
+           huge: true
+           attackl: 4
+           attackr: 4
+           agility: 0
+           hull: 18
+           shields: 7
+           shieldrecurr: 2
+           energy: 7
+           energyrecurr: 2
+           actions: [
+             "Focus"
+             "Reinforce"
+             "Lock"
+             "Jam"
+           ]
+           actionsred: [
+             "Coordinate"
+           ]
+           maneuvers: [
+                [ 0, 3, 3, 3, 0]
+                [ 0, 1, 1, 1, 0]
+                [ 0, 2, 2, 2, 0]
+                [ 0, 3, 2, 3, 0]
+                [ 0, 0, 3, 0, 0]
+                [ 0, 0, 3, 0, 0]
+           ]
+        "Raider-class Corvette":
+           name: "Raider-class Corvette"
+           xws: "Raider-class Corvette".canonicalize()
+           factions: ["Galactic Empire", "First Order"]
+           huge: true
+           attackf: 4
+           agility: 0
+           hull: 20
+           shields: 8
+           shieldrecurr: 2
+           energy: 6
+           energyrecurr: 2
+           actions: [
+             "Focus"
+             "Reinforce"
+             "Lock"
+             "Coordinate"
+             "Reload"
+           ]
+           maneuvers: [
+                [ 0, 3, 3, 3, 0]
+                [ 0, 2, 1, 2, 0]
+                [ 0, 1, 2, 1, 0]
+                [ 0, 3, 2, 3, 0]
+                [ 0, 0, 1, 0, 0]
+                [ 0, 0, 3, 0, 0]
+           ]
+        "GR-75 Medium Transport":
+           name: "GR-75 Medium Transport"
+           xws: "GR-75 Medium Transport".canonicalize()
+           factions: ["Rebel Alliance", "Resistance"]
+           huge: true
+           attack: 2
+           agility: 0
+           hull: 12
+           shields: 3
+           shieldrecurr: 1
+           energy: 4
+           energyrecurr: 1
+           actions: [
+             "Focus"
+             "Coordinate"
+             "Jam"
+           ]
+           actionsred: [
+             "Reinforce"
+             "Lock"
+           ]
+           maneuvers: [
+                [ 0, 3, 3, 3, 0]
+                [ 0, 2, 2, 2, 0]
+                [ 0, 1, 1, 1, 0]
+                [ 0, 0, 3, 0, 0]
+                [ 0, 0, 3, 0, 0]
+           ]
+        "Gozanti-class Cruiser":
+           name: "Gozanti-class Cruiser"
+           xws: "Gozanti-class Cruiser".canonicalize()
+           factions: ["Galactic Empire", "First Order"]
+           huge: true
+           attack: 3
+           agility: 0
+           hull: 11
+           shields: 5
+           shieldrecurr: 1
+           energy: 3
+           energyrecurr: 1
+           actions: [
+             "Focus"
+             "Reinforce"
+             "Lock"
+             "Coordinate"
+             "Jam"
+           ]
+           maneuvers: [
+                [ 0, 3, 3, 3, 0]
+                [ 0, 1, 2, 1, 0]
+                [ 0, 3, 2, 3, 0]
+                [ 0, 0, 2, 0, 0]
+                [ 0, 0, 3, 0, 0]
+           ]
+        "C-ROC Cruiser":
+           name: "C-ROC Cruiser"
+           xws: "C-ROC Cruiser".canonicalize()
+           factions: ["Separatist Alliance", "Scum and Villainy"]
+           huge: true
+           attack: 3
+           agility: 0
+           hull: 12
+           shields: 4
+           shieldrecurr: 1
+           energy: 4
+           energyrecurr: 1
+           actions: [
+             "Focus"
+             "Reinforce"
+             "Lock"
+             "Reload"
+           ]
+           actionsred: [
+             "Coordinate"
+           ]
+           maneuvers: [
+                [ 0, 3, 3, 3, 0]
+                [ 0, 1, 2, 1, 0]
+                [ 0, 1, 2, 1, 0]
+                [ 0, 3, 1, 3, 0]
+                [ 0, 0, 3, 0, 0]
+                [ 0, 0, 3, 0, 0]
            ]
         
     # name field is for convenience only
@@ -3818,7 +3958,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -3832,7 +3972,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -3846,7 +3986,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -3860,7 +4000,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -3873,7 +4013,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -3886,7 +4026,7 @@ exportObj.basicCardData = ->
             points: 31
             slots: [
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -3899,7 +4039,7 @@ exportObj.basicCardData = ->
             points: 30
             slots: [
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -3911,7 +4051,7 @@ exportObj.basicCardData = ->
             points: 28
             slots: [
                 "Modification"
-                "Hardpoint"
+                "HardpointShip"
               ]
         }
         {
@@ -5359,7 +5499,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -5687,7 +5827,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -5705,7 +5845,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -5722,7 +5862,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -5739,7 +5879,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -5757,7 +5897,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -5774,7 +5914,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -5790,7 +5930,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -6398,7 +6538,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -6416,7 +6556,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -6434,7 +6574,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -6452,7 +6592,7 @@ exportObj.basicCardData = ->
                 "Configuration"
                 "Tech"
                 "Title"
-                "Hardpoint"
+                "HardpointShip"
             ]
         }
         {
@@ -7507,6 +7647,208 @@ exportObj.basicCardData = ->
                 "Modification"
             ]
         }
+        {
+            name: "Republic Judiciary"
+            id: 367
+            faction: "Galactic Republic"
+            ship: "CR90 Corellian Corvette"
+            skill: 8
+            engagement: 0
+            points: 146
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Team"
+                "Team"
+                "Cargo"
+            ]
+        }
+        {
+            name: "Alderaanian Guard"
+            id: 368
+            faction: "Rebel Alliance"
+            ship: "CR90 Corellian Corvette"
+            skill: 8
+            engagement: 0
+            points: 146
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Team"
+                "Team"
+                "Cargo"
+                "Title"
+            ]
+        }
+        {
+            name: "Outer Rim Patrol"
+            id: 369
+            faction: "Galactic Empire"
+            ship: "Raider-class Corvette"
+            skill: 8
+            engagement: 0
+            points: 150
+            slots: [
+                "Command"
+                "Torpedo"
+                "Missile"
+                "Hardpoint"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Team"
+                "Cargo"
+                "Title"
+            ]
+        }
+        {
+            name: "First Order Collaborators"
+            id: 370
+            faction: "First Order"
+            ship: "Raider-class Corvette"
+            skill: 8
+            engagement: 0
+            points: 150
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Turret"
+                "Crew"
+                "Crew"
+                "Team"
+                "Cargo"
+                "Cargo"
+            ]
+        }
+        {
+            name: "Echo Base Evacuees"
+            id: 371
+            faction: "Rebel Alliance"
+            ship: "GR-75 Medium Transport"
+            skill: 7
+            engagement: 1
+            points: 55
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Turret"
+                "Crew"
+                "Crew"
+                "Team"
+                "Cargo"
+                "Cargo"
+                "Title"
+            ]
+        }
+        {
+            name: "New Republic Volunteers"
+            id: 372
+            faction: "Resistance"
+            ship: "GR-75 Medium Transport"
+            skill: 7
+            engagement: 1
+            points: 55
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Turret"
+                "Crew"
+                "Crew"
+                "Team"
+                "Cargo"
+                "Cargo"
+            ]
+        }
+        {
+            name: "Outer Rim Garrison"
+            id: 373
+            faction: "Galactic Empire"
+            ship: "Gozanti-class Cruiser"
+            skill: 7
+            engagement: 1
+            points: 60
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Team"
+                "Cargo"
+                "Cargo"
+                "Title"
+            ]
+        }
+        {
+            name: "First Order Sympathizers"
+            id: 374
+            faction: "First Order"
+            ship: "Gozanti-class Cruiser"
+            skill: 7
+            engagement: 1
+            points: 60
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Team"
+                "Cargo"
+                "Cargo"
+            ]
+        }
+        {
+            name: "Separatist Privateers"
+            id: 375
+            faction: "Separatist Alliance"
+            ship: "C-ROC Cruiser"
+            skill: 7
+            engagement: 1
+            points: 58
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Tactical Relay"
+                "Gunner"
+                "Team"
+                "Cargo"
+                "Device"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Syndicate Smugglers"
+            id: 376
+            faction: "Scum and Villainy"
+            ship: "C-ROC Cruiser"
+            skill: 7
+            engagement: 1
+            points: 58
+            slots: [
+                "Command"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Team"
+                "Cargo"
+                "Device"
+                "Illicit"
+                "Title"
+                "Configuration"
+            ]
+        }
+        
         
     ]
 
@@ -7559,7 +7901,7 @@ exportObj.basicCardData = ->
            slot: "Astromech"
            points: 2
            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium?)
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
            modifier_func: (stats) ->
                 for turn in [0 ... stats.maneuvers[1].length]
                     if turn > 4
@@ -8078,7 +8420,7 @@ exportObj.basicCardData = ->
            name: "Seasoned Navigator"
            id: 59
            slot: "Crew"
-           pointsarray: [2,3,4,5,6,7,8]
+           pointsarray: [2,3,4,5,6,7,8,8,9]
            variableinit: true
        }
        {
@@ -8213,7 +8555,7 @@ exportObj.basicCardData = ->
            pointsarray: [4,4,4,8,16,24,32]
            variableinit: true
            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium?)
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
        }
        {
            name: "Sense"
@@ -8366,7 +8708,7 @@ exportObj.basicCardData = ->
            unique: true
            charge: 2
            restriction_func: (ship) ->
-                not(ship.data.large?)
+                not (ship.data.large? or ship.data.huge?)
        }
        {
            name: "Contraband Cybernetics"
@@ -8391,7 +8733,7 @@ exportObj.basicCardData = ->
            name: "Inertial Dampeners"
            id: 95
            slot: "Illicit"
-           pointsarray: [2,3,4,5,6,7,8]
+           pointsarray: [2,3,4,5,6,7,8,8,9]
            variableinit: true
        }
        {
@@ -8492,7 +8834,7 @@ exportObj.basicCardData = ->
            points: 6
            charge: 2
            restriction_func: (ship) ->
-                not ((ship.data.large ? false) or (ship.data.medium ? false))
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
        }
        {
            name: "Electronic Baffle"
@@ -8577,7 +8919,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 3
            restriction_func: (ship) ->
-                "Boost" in ship.effectiveStats().actions and not (ship.data.large? or ship.data.medium?)
+                "Boost" in ship.effectiveStats().actions and not (ship.data.large? or ship.data.medium? or ship.data.huge?)
        }
        {
            name: "Debris Gambit"
@@ -8585,7 +8927,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 4
            restriction_func: (ship) ->
-                not (ship.data.large?)
+                not (ship.data.large? or ship.data.huge?)
            modifier_func: (stats) ->
                 stats.actionsred.push 'Evade' if 'Evade' not in stats.actionsred
        }
@@ -8628,7 +8970,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 7
            restriction_func: (ship) ->
-                not (ship.data.large?)
+                not (ship.data.large? or ship.data.huge?)
        }
        {
            name: "Lone Wolf"
@@ -8683,7 +9025,7 @@ exportObj.basicCardData = ->
            name: "Squad Leader"
            id: 131
            slot: "Talent"
-           pointsarray: [2,4,6,8,10,12,14] 
+           pointsarray: [2,4,6,8,10,12,14,16,18]
            variableinit: true
            unique: true
            modifier_func: (stats) ->
@@ -8694,7 +9036,7 @@ exportObj.basicCardData = ->
            name: "Swarm Tactics"
            id: 132
            slot: "Talent"
-           pointsarray: [3,3,3,3,3,4,5]
+           pointsarray: [3,3,3,3,3,4,5,6,7]
            variableinit: true
        }
        {
@@ -9087,46 +9429,16 @@ exportObj.basicCardData = ->
            ship: ["Attack Shuttle","Sheathipede-Class Shuttle"]
        }
        {
-            name: "Hardpoint: Cannon"
             id: 168
-            slot: "Hardpoint"
-            points: 0
-            ignorecollection: true
-            faction: []
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Cannon"
-                }
-            ]
+            skip: true
        }
        {
-            name: "Hardpoint: Torpedo"
             id: 169
-            slot: "Hardpoint"
-            ignorecollection: true
-            faction: []
-            points: 0
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Torpedo"
-                }
-            ]
+            skip: true
        }
        {
-            name: "Hardpoint: Missile"
             id: 170
-            slot: "Hardpoint"
-            ignorecollection: true
-            faction: []
-            points: 0
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Missile"
-                }
-            ]
+            skip: true
        }
        {
             name: "Black One"
@@ -9192,10 +9504,10 @@ exportObj.basicCardData = ->
             name: "Primed Thrusters"
             id: 178
             slot: "Tech"
-            pointsarray: [4,5,6,7,8,9,10]
+            pointsarray: [4,5,6,7,8,9,10,11,12]
             variableinit: true
             restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium?)
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
        }
        {
             name: "Kylo Ren"
@@ -9874,7 +10186,7 @@ exportObj.basicCardData = ->
             pointsarray: [3,3,3,4,7,10,13]
             variableinit: true
             restriction_func: (ship) ->
-                not ((ship.data.large ? false) or (ship.data.medium ? false))
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
        }
        {
             name: "Foresight"
@@ -9927,14 +10239,602 @@ exportObj.basicCardData = ->
             name: "Snap Shot"
             id: 256
             slot: "Talent"
-            pointsarray: [7,8,9]
+            pointsarray: [7,8,9,12]
             variablebase: true
             attack: 2
             range: """2"""
             rangebonus: true
             
        }
-
+       {
+            name: "Agent of the Empire"
+            id: 257
+            unique: true
+            faction: "Galactic Empire"
+            slot: "Command"
+            points: 4
+            ship: ["TIE Advanced","TIE Advanced Prototype"]
+            restriction_func: (ship) ->
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+       }
+       {
+            name: "First Order Elite"
+            id: 258
+            unique: true
+            faction: "First Order"
+            slot: "Command"
+            points: 4
+            restriction_func: (ship) ->
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+       }
+       {
+            name: "Veteran Wing Leader"
+            id: 259
+            slot: "Command"
+            points: 4
+            restriction_func: (ship) ->
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+       }
+       {
+            name: "Dreadnought Hunter"
+            id: 260
+            slot: "Command"
+            points: 10
+            max_per_squad: 2
+            restriction_func: (ship) ->
+                (not (ship.data.large? or ship.data.medium? or ship.data.huge?)) and (ship.pilot.skill > 3)
+       }
+       {
+            name: "Admiral Ozzel"
+            id: 261
+            unique: true
+            slot: "Command"
+            points: 6
+            faction: "Galactic Empire"
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Azmorigan"
+            id: 262
+            unique: true
+            slot: "Command"
+            points: 4
+            faction: "Scum and Villainy"
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Captain Needa"
+            id: 263
+            unique: true
+            faction: "Galactic Empire"
+            slot: "Command"
+            points: 8
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Carlist Rieekan"
+            id: 264
+            unique: true
+            faction: "Rebel Alliance"
+            slot: "Command"
+            points: 6
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            modifier_func: (stats) ->
+                stats.actionsred.push 'Evade' if 'Evade' not in stats.actionsred
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Jan Dodonna"
+            id: 265
+            unique: true
+            faction: "Rebel Alliance"
+            slot: "Command"
+            points: 4
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Raymus Antilles"
+            id: 266
+            unique: true
+            slot: "Command"
+            points: 12
+            faction: "Rebel Alliance"
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Stalwart Captain"
+            id: 267
+            unique: true
+            slot: "Command"
+            points: 6
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Strategic Commander"
+            id: 268
+            unique: true
+            slot: "Command"
+            charge: 3
+            points: 10
+            unequips_upgrades: [ "Crew" ]
+            also_occupies_upgrades: [ "Crew" ]
+            restriction_func: (ship) ->
+                ship.data.huge? and ship.doesSlotExist "Crew"
+       }
+       {
+            name: "Ion Cannon Battery"
+            id: 269
+            slot: "Hardpoint"
+            points: 6
+            attackt: 4
+            range: """2-4"""
+            modifier_func: (stats) ->
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+       }
+       {
+            name: "Targeting Battery"
+            id: 270
+            slot: "Hardpoint"
+            points: 9
+            attackt: 3
+            range: """2-5"""
+            modifier_func: (stats) ->
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+       }
+       {
+            name: "Ordnance Tubes"
+            id: 271
+            slot: "Hardpoint"
+            points: 2
+       }
+       {
+            name: "Point-Defense Battery"
+            id: 272
+            slot: "Hardpoint"
+            points: 10
+            attackdt: 2
+            range: """1-2"""
+            modifier_func: (stats) ->
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+       }
+       {
+            name: "Turbolaser Battery"
+            id: 273
+            slot: "Hardpoint"
+            points: 15
+            attackt: 3
+            range: """3-5"""
+            modifier_func: (stats) ->
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+            restriction_func: (ship) ->
+                ship.effectiveStats().energy > 4
+       }
+       {
+            name: "Toryn Farr"
+            id: 274
+            unique: true
+            faction: "Rebel Alliance"
+            slot: "Crew"
+            points: 4
+            modifier_func: (stats) ->
+                stats.actions.push 'Lock'
+                stats.actions.push 'R> Coordinate'
+            restriction_func: (ship) ->
+                ship.data.huge?
+       }
+       {
+            name: "Bombardment Specialists"
+            id: 275
+            slot: "Team"
+            points: 6
+            modifier_func: (stats) ->
+                stats.actions.push '*Lock'
+                stats.actions.push '> Calculate'
+       }
+       {
+            name: "Comms Team"
+            id: 276
+            slot: "Team"
+            points: 8
+            modifier_func: (stats) ->
+                stats.actions.push '*Coordinate'
+                stats.actions.push '> Calculate'
+                stats.actions.push '*Jam'
+                stats.actions.push '> Calculate'
+       }
+       {
+            name: "Damage Control Team"
+            id: 277
+            slot: "Team"
+            points: 3
+            modifier_func: (stats) ->
+                stats.actions.push '*Reinforce'
+                stats.actions.push '> Calculate'
+       }
+       {
+            name: "Gunnery Specialists"
+            id: 278
+            slot: "Team"
+            points: 8
+            modifier_func: (stats) ->
+                stats.actions.push '*Rotate Arc'
+                stats.actions.push '> Calculate'
+       }
+       {
+            name: "IG-RM Droids"
+            id: 279
+            slot: "Team"
+            faction: "Scum and Villainy"
+            points: 2
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+       }
+       {
+            name: "Ordnance Team"
+            id: 280
+            slot: "Team"
+            points: 4
+       }
+       {
+            name: "Sensor Experts"
+            id: 281
+            slot: "Team"
+            points: 10
+            modifier_func: (stats) ->
+                stats.actions.push '*Lock'
+                stats.actions.push '> Calculate'
+       }
+       {
+            name: "Adaptive Shields"
+            id: 282
+            slot: "Cargo"
+            points: 10
+       }
+       {
+            name: "Boosted Scanners"
+            id: 283
+            slot: "Cargo"
+            points: 8
+       }
+       {
+            id: 284
+            skip: true
+       }
+       {
+            name: "Tibanna Reserves"
+            id: 285
+            slot: "Cargo"
+            points: 3
+            charge: 3
+       }
+       {
+            name: "Optimized Power Core"
+            id: 286
+            slot: "Cargo"
+            points: 6
+       }
+       {
+            name: "Quick-Release Locks"
+            id: 287
+            slot: "Illicit"
+            charge: 2
+            points: 5
+            restriction_func: (ship) ->
+                ship.data.huge?
+       }
+       {
+            name: "Saboteur's Map"
+            id: 288
+            slot: "Illicit"
+            points: 3
+            restriction_func: (ship) ->
+                ship.data.huge?
+       }
+       {
+            name: "Scanner Baffler"
+            id: 289
+            slot: "Illicit"
+            points: 8
+            restriction_func: (ship) ->
+                ship.data.huge?
+       }
+       {
+            name: "Dodonna's Pride"
+            id: 290
+            slot: "Title"
+            unique: true
+            ship: "CR90 Corellian Corvette"
+            faction: "Rebel Alliance"
+            points: 8
+            modifier_func: (stats) ->
+                stats.shields -= 2
+                stats.actions.push '*Evade'
+                stats.actions.push 'R> Coordinate'
+                stats.actions.push '*Focus'
+                stats.actions.push 'R> Coordinate'
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Team'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Cargo'
+                }
+            ]
+       }
+       {
+            name: "Jaina's Light"
+            id: 291
+            slot: "Title"
+            unique: true
+            ship: "CR90 Corellian Corvette"
+            faction: "Rebel Alliance"
+            points: 6
+            modifier_func: (stats) ->
+                stats.shields += 1
+                stats.energy -= 1
+       }
+       {
+            name: "Liberator"
+            id: 292
+            slot: "Title"
+            unique: true
+            ship: "CR90 Corellian Corvette"
+            faction: "Rebel Alliance"
+            points: 5
+            modifier_func: (stats) ->
+                stats.energy += 1
+       }
+       {
+            name: "Tantive IV"
+            id: 293
+            slot: "Title"
+            unique: true
+            ship: "CR90 Corellian Corvette"
+            faction: "Rebel Alliance"
+            points: 6
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Crew'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Crew'
+                }
+            ]
+       }
+       {
+            name: "Bright Hope"
+            id: 294
+            slot: "Title"
+            unique: true
+            ship: "GR-75 Medium Transport"
+            faction: "Rebel Alliance"
+            points: 5
+       }
+       {
+            name: "Luminous"
+            id: 295
+            slot: "Title"
+            unique: true
+            ship: "GR-75 Medium Transport"
+            faction: "Rebel Alliance"
+            points: 12
+            modifier_func: (stats) ->
+                stats.shields -= 1
+                stats.energy += 2
+       }
+       {
+            name: "Quantum Storm"
+            id: 296
+            slot: "Title"
+            unique: true
+            ship: "GR-75 Medium Transport"
+            faction: "Rebel Alliance"
+            points: 3
+       }
+       {
+            name: "Assailer"
+            id: 297
+            slot: "Title"
+            unique: true
+            ship: "Raider-class Corvette"
+            faction: "Galactic Empire"
+            points: 7
+       }
+       {
+            name: "Corvus"
+            id: 298
+            slot: "Title"
+            unique: true
+            ship: "Raider-class Corvette"
+            faction: "Galactic Empire"
+            points: 3
+       }
+       {
+            name: "Impetuous"
+            id: 299
+            slot: "Title"
+            unique: true
+            ship: "Raider-class Corvette"
+            faction: "Galactic Empire"
+            points: 4
+       }
+       {
+            name: "Instigator"
+            id: 300
+            slot: "Title"
+            unique: true
+            ship: "Raider-class Corvette"
+            faction: "Galactic Empire"
+            points: 6
+       }
+       {
+            name: "Blood Crow"
+            id: 301
+            slot: "Title"
+            unique: true
+            ship: "Gozanti-class Cruiser"
+            faction: "Galactic Empire"
+            points: 5
+       }
+       {
+            name: "Requiem"
+            id: 302
+            slot: "Title"
+            unique: true
+            ship: "Gozanti-class Cruiser"
+            faction: "Galactic Empire"
+            points: 7
+       }
+       {
+            name: "Suppressor"
+            id: 303
+            slot: "Title"
+            unique: true
+            ship: "Gozanti-class Cruiser"
+            faction: "Galactic Empire"
+            points: 6
+       }
+       {
+            name: "Vector"
+            id: 304
+            slot: "Title"
+            unique: true
+            ship: "Gozanti-class Cruiser"
+            faction: "Galactic Empire"
+            points: 8
+       }
+       {
+            name: "Broken Horn"
+            id: 305
+            slot: "Title"
+            unique: true
+            ship: "C-ROC Cruiser"
+            faction: "Scum and Villainy"
+            points: 4
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Crew'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Illicit'
+                }
+            ]
+       }
+       {
+            name: "Merchant One"
+            id: 306
+            slot: "Title"
+            unique: true
+            ship: "C-ROC Cruiser"
+            faction: "Scum and Villainy"
+            points: 8
+            modifier_func: (stats) ->
+                stats.actionsred.push 'Evade' if 'Evade' not in stats.actionsred
+                stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Turret'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Team'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Cargo'
+                }
+            ]
+       }
+       {
+            name: "Insatiable Worrt"
+            id: 307
+            slot: "Title"
+            unique: true
+            ship: "C-ROC Cruiser"
+            faction: "Scum and Villainy"
+            points: 7
+            modifier_func: (stats) ->
+                stats.hull += 3
+                stats.shields -= 1
+                stats.energy -= 1
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Cargo'
+                }
+            ]
+       }
+       {
+            name: "Corsair Refit"
+            id: 308
+            slot: "Configuration"
+            ship: "C-ROC Cruiser"
+            max_per_squad: 2
+            points: 15
+            modifier_func: (stats) ->
+                stats.hull += 2
+                stats.shields -= 2
+                stats.energy += 1
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Cannon'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Turret'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Missile'
+                }
+            ]
+       }
+       {
+            name: "Thunderstrike"
+            id: 309
+            slot: "Title"
+            unique: true
+            ship: "CR90 Corellian Corvette"
+            faction: "Rebel Alliance"
+            points: 4
+            modifier_func: (stats) ->
+                stats.hull += 3
+                stats.shields -= 3
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Gunner'
+                }
+            ]
+       }
     ]
 
 
@@ -14677,6 +15577,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%TALENT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>')
             .replace(/%FORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i>')
             .replace(/%CHARGE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>')
+            .replace(/%ENERGY%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>')
             .replace(/%CALCULATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>')
             .replace(/%BANKLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankleft"></i>')
             .replace(/%BANKRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankright"></i>')
@@ -14837,6 +15738,23 @@ exportObj.hyperspaceUpgradeExclusions = [
 
     # FO
 ]
+
+exportObj.epicExclusionsList = [
+    'CR90 Corellian Corvette',
+    'Raider-class Corvette',
+    'GR-75 Medium Transport',
+    'Gozanti-class Cruiser',
+    'C-ROC Cruiser'
+]
+
+
+exportObj.epicExclusions = (data) ->
+    if data.ship? and (data.ship in exportObj.epicExclusionsList)
+        return false
+    else if data.slot? and (data.slot == "Command")
+        return false
+    else
+        return true
 
 # Ships/Pilots excluded unless in the included list (with further excluded pilots list for included ships, i.e u-wing)
 # while upgrades assumed included unless on the excluded list

@@ -26,7 +26,7 @@ exportObj.toTTS = (txt) ->
 
 exportObj.slotsMatching = (slota, slotb) ->
     return true if slota == slotb
-    return false if slota != 'Hardpoint' and slotb != 'Hardpoint'
+    return false if slota != 'HardpointShip' and slotb != 'HardpointShip'
     return true if slota == 'Torpedo' or slota == 'Cannon' or slota == 'Missile'
     return true if slotb == 'Torpedo' or slotb == 'Cannon' or slotb == 'Missile'
     return false
@@ -122,9 +122,8 @@ class exportObj.SquadBuilder
         @total_points = 0
         # a squad given in the link is loaded on construction of that builder. It will set all gamemodes of already existing builders accordingly, but we did not exists back than. So we copy over the gamemode
         @isHyperspace = exportObj.builders[0]?.isHyperspace ? false
+        @isEpic = exportObj.builders[0]?.isEpic ? false
         @isQuickbuild = exportObj.builders[0]?.isQuickbuild ? false
-        @maxSmallShipsOfOneType = null
-        @maxLargeShipsOfOneType = null
 
         @backend = null
         @current_squad = {}
@@ -217,6 +216,7 @@ class exportObj.SquadBuilder
                     <select class="game-type-selector">
                         <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
+                        <option value="epic">Epic</option>
                         <option value="quickbuild">Quickbuild</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
@@ -915,9 +915,9 @@ class exportObj.SquadBuilder
                             <td class="info-header">Initiative</td>
                             <td class="info-data info-skill"></td>
                         </tr>
-                        <tr class="info-energy">
-                            <td class="info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
-                            <td class="info-data info-energy"></td>
+                        <tr class="info-engagement">
+                            <td class="info-header">Engagement</td>
+                            <td class="info-data info-engagement"></td>
                         </tr>
                         <tr class="info-attack">
                             <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
@@ -929,6 +929,14 @@ class exportObj.SquadBuilder
                         </tr>
                         <tr class="info-attack-bullseye">
                             <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
+                            <td class="info-data info-attack"></td>
+                        </tr>
+                        <tr class="info-attack-left">
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-leftarc"></i></td>
+                            <td class="info-data info-attack"></td>
+                        </tr>
+                        <tr class="info-attack-right">
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-rightarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-back">
@@ -962,6 +970,10 @@ class exportObj.SquadBuilder
                         <tr class="info-charge">
                             <td class="info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
                             <td class="info-data info-charge"></td>
+                        </tr>
+                        <tr class="info-energy">
+                            <td class="info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
+                            <td class="info-data info-energy"></td>
                         </tr>
                         <tr class="info-range">
                             <td class="info-header">Range</td>
@@ -1226,43 +1238,39 @@ class exportObj.SquadBuilder
     onGameTypeChanged: (gametype, cb=$.noop) =>
         @game_type_selector.val gametype
         oldHyperspace = @isHyperspace
+        oldEpic = @isEpic
         oldQuickbuild = @isQuickbuild
+        @isHyperspace = false
+        @isEpic = false
+        @isQuickbuild = false
         switch gametype
             when 'standard'
-                @isHyperspace = false
-                @isQuickbuild = false
                 @desired_points_input.val 200
-                @maxSmallShipsOfOneType = null
-                @maxLargeShipsOfOneType = null
             when 'hyperspace'
                 @isHyperspace = true
-                @isQuickbuild = false
                 @desired_points_input.val 200
-                @maxSmallShipsOfOneType = null
-                @maxLargeShipsOfOneType = null
+            when 'epic'
+                @isEpic = true
+                @desired_points_input.val 500
             when 'quickbuild'
-                @isHyperspace = false
                 @isQuickbuild = true
                 @desired_points_input.val 8
-                @maxSmallShipsOfOneType = null
-                @maxLargeShipsOfOneType = null
         if oldQuickbuild != @isQuickbuild
             old_id = @current_squad.id
             @newSquadFromScratch($.trim(@current_squad.name))
             @current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
-        else if oldHyperspace != @isHyperspace
-            if @isHyperspace == true
-                old_id = @current_squad.id
-                #@newSquadFromScratch($.trim(@current_squad.name)) # need to change this to a new function to check hyperspace and remove
-                #@current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
-                @container.trigger 'xwing:pointsUpdated', cb
-        #@onPointsUpdated cb
+        else
+            old_id = @current_squad.id
+            @container.trigger 'xwing:pointsUpdated', cb
+            @container.trigger 'xwing:shipUpdated'
+        # @onPointsUpdated cb
         cb()
 
     onPointsUpdated: (cb=$.noop) =>
         tot_points = 0
         unreleased_content_used = false
         # validating may remove the ship, if not only some upgrade, but the pilot himself is not valid. Thus iterate backwards over the array, so that is probably fine?
+        
         for i in [@ships.length - 1 ... -1]
             ship = @ships[i]
             ship.validate()
@@ -1270,6 +1278,7 @@ class exportObj.SquadBuilder
             tot_points += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
+            
         @total_points = tot_points
         @total_points_span.text @total_points
         points_left = parseInt(@desired_points_input.val()) - @total_points
@@ -1410,6 +1419,8 @@ class exportObj.SquadBuilder
                 's'
             when 'hyperspace'
                 'h'
+            when 'epic'
+                'e'
             when 'quickbuild'
                 'q'
         selected_points = $.trim @desired_points_input.val()
@@ -1460,6 +1471,8 @@ class exportObj.SquadBuilder
                     @changeGameTypeOnSquadLoad 'standard'
                 when 'h'
                     @changeGameTypeOnSquadLoad 'hyperspace'
+                when 'e'
+                    @changeGameTypeOnSquadLoad 'epic'
                 when 'q'
                     @changeGameTypeOnSquadLoad 'quickbuild'
             @desired_points_input.val desired_points
@@ -1551,7 +1564,6 @@ class exportObj.SquadBuilder
         @ship_number_invalid_container.toggleClass 'hidden', (@ships.length < 10 and @ships.length > 2) # bounds are 2..10 as we always have a "empty" ship at the bottom
         new_ship
 
-
     removeShip: (ship, cb=$.noop) ->
         if ship?.destroy?
             await ship.destroy defer()
@@ -1560,7 +1572,7 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing-backend:squadDirtinessChanged'
             @ship_number_invalid_container.toggleClass 'hidden', (@ships.length < 10 and @ships.length > 2)
         cb()
-
+    
     matcher: (item, term) ->
         item.toUpperCase().indexOf(term.toUpperCase()) >= 0
 
@@ -1575,34 +1587,27 @@ class exportObj.SquadBuilder
 
     isItemAvailable: (item_data, shipCheck=false) ->
         # this method is not invoked to check availability for quickbuild squads, as they don't care about hyperspace. Keep that in mind when adding stuff here.
-        if (not @isHyperspace)
-            return true
-        else # hyperspace
+        if @isHyperspace
             return exportObj.hyperspaceCheck(item_data, @faction, shipCheck)
+        else if (not @isEpic)
+            return exportObj.epicExclusions(item_data)
+        else
+            return true
 
     getAvailableShipsMatching: (term='',sorted = true) ->
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
                 if (@isItemAvailable(ship_data, true))
-                    if not ship_data.huge
-                        if ship_data.icon
-                            ships.push
-                                id: ship_data.name
-                                name: ship_data.name
-                                display_name: ship_data.display_name
-                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
-                                canonical_name: ship_data.canonical_name
-                                xws: ship_data.xws
-                                icon: ship_data.icon
-                        else                        
-                            ships.push
-                                id: ship_data.name
-                                name: ship_data.name
-                                display_name: ship_data.display_name
-                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
-                                canonical_name: ship_data.canonical_name
-                                xws: ship_data.xws
+                    if @isEpic or (not @isEpic and not ship_data.huge)
+                        ships.push
+                            id: ship_data.name
+                            name: ship_data.name
+                            display_name: ship_data.display_name
+                            text: if ship_data.display_name then ship_data.display_name else ship_data.name
+                            canonical_name: ship_data.canonical_name
+                            xws: ship_data.xws
+                            icon: if ship_data.icon then ship_data.icon else ship_data.xws
         if sorted
             ships.sort exportObj.sortHelper
         return ships
@@ -1732,6 +1737,7 @@ class exportObj.SquadBuilder
 
         eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
         
+        
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
             eligible_upgrades.removeItem equipped_upgrade
@@ -1827,7 +1833,7 @@ class exportObj.SquadBuilder
                         outlineColor = "mediumblue" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
                         maneuverClass2 = "svg-modified-maneuver"
 
-                    if speed == 0
+                    if speed == 0 and turn == 2
                         outTable += """<rect class="svg-maneuver-stop #{maneuverClass} #{maneuverClass2}" x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
                     else                      
 
@@ -1910,6 +1916,28 @@ class exportObj.SquadBuilder
         outTable += "</tbody></table>"
         outTable
 
+    formatActions: (action) ->
+        color = ""
+        actionname = ""
+        prefix = ""
+        # Search and filter each type of action by its prefix and then reformat it for html
+        if action.search('F-') != -1 
+            color = "force "
+            actionname = action.toLowerCase().replace(/F-/gi, '').replace(/[^0-9a-z]/gi, '')
+        else if action.search('R> ') != -1
+            color = "red "
+            actionname = action.toLowerCase().replace(/R> /gi, '').replace(/[^0-9a-z]/gi, '')
+            prefix = """<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> """
+        else if action.search('> ') != -1
+            actionname = action.toLowerCase().replace(/> /gi, '').replace(/[^0-9a-z]/gi, '')
+            prefix = """<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> """
+        else
+            actionname = action.toLowerCase().replace(/[^0-9a-z]/gi, '')
+        return (prefix + """<i class="xwing-miniatures-font """ + color + """xwing-miniatures-font-""" + actionname + """"></i> """)
+
+    formatRedActions: (action) ->
+        return ("""<i class="xwing-miniatures-font red xwing-miniatures-font-""" + action.toLowerCase().replace(/[^0-9a-z]/gi, '') + """"></i> """)
+        
         
     showTooltip: (type, data, additional_opts, container = @info_container) ->
         if data != @tooltip_currently_displaying
@@ -1971,10 +1999,14 @@ class exportObj.SquadBuilder
                         first = false
                     container.find('tr.info-skill td.info-data').text inis
                     container.find('tr.info-skill').show()
+                    container.find('tr.info-engagement td.info-data').text inis
+                    container.find('tr.info-engagement').show()
                 
                     container.find('tr.info-attack td.info-data').text(data.attack)
                     container.find('tr.info-attack-bullseye td.info-data').text(data.attackbull)
                     container.find('tr.info-attack-fullfront td.info-data').text(data.attackf)
+                    container.find('tr.info-attack-left td.info-data').text(data.attackl)
+                    container.find('tr.info-attack-right td.info-data').text(data.attackr)
                     container.find('tr.info-attack-back td.info-data').text(data.attackb)
                     container.find('tr.info-attack-turret td.info-data').text(data.attackt)
                     container.find('tr.info-attack-doubleturret td.info-data').text(data.attackdt)
@@ -1982,6 +2014,8 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack').toggle(data.attack?)
                     container.find('tr.info-attack-bullseye').toggle(data.attackbull?)
                     container.find('tr.info-attack-fullfront').toggle(data.attackf?)
+                    container.find('tr.info-attack-left').toggle(data.attackl?)
+                    container.find('tr.info-attack-right').toggle(data.attackr?)
                     container.find('tr.info-attack-back').toggle(data.attackb?)
                     container.find('tr.info-attack-turret').toggle(data.attackt?)
                     container.find('tr.info-attack-doubleturret').toggle(data.attackdt?)
@@ -1992,6 +2026,8 @@ class exportObj.SquadBuilder
                         container.find('tr.info-base td.info-data').text "Large"
                     else if data.medium?
                         container.find('tr.info-base td.info-data').text "Medium"
+                    else if data.huge?
+                        container.find('tr.info-base td.info-data').text "Huge"
                     else
                         container.find('tr.info-base td.info-data').text "Small"
                     container.find('tr.info-base').show()
@@ -2002,27 +2038,45 @@ class exportObj.SquadBuilder
                         container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
                     container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.attack_icon ? 'xwing-miniatures-font-attack')
         
-                    container.find('tr.info-energy td.info-data').text(data.energy)
-                    container.find('tr.info-energy').toggle(data.energy?)
                     container.find('tr.info-range').hide()
                     container.find('tr.info-agility td.info-data').text(data.agility)
                     container.find('tr.info-agility').show()
                     container.find('tr.info-hull td.info-data').text(data.hull)
                     container.find('tr.info-hull').show()
-                    container.find('tr.info-shields td.info-data').text(data.shields)
-                    container.find('tr.info-shields').show()
-                
+                    
+                    if data.shieldrecurr?
+                        count = 0
+                        recurringicon = ''
+                        while count < data.shieldrecurr
+                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            ++count
+                        container.find('tr.info-shields td.info-data').html (data.shields + recurringicon)
+                    else
+                        container.find('tr.info-shields td.info-data').text(data.shields)
+                    container.find('tr.info-shields').toggle(data.shields?)
+
+                    if data.energyrecurr?
+                        count = 0
+                        recurringicon = ''
+                        while count < data.energyrecurr
+                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            ++count
+                        container.find('tr.info-energy td.info-data').html (data.energy + recurringicon)
+                    else
+                        container.find('tr.info-energy td.info-data').text(data.energy)
+                    container.find('tr.info-energy').toggle(data.energy?)
+                    
+                    
                     # One may want to check for force sensitive pilots and display the possible values here (like done for ini), but I'll skip this for now. 
                     container.find('tr.info-force').hide() 
         
                     container.find('tr.info-charge').hide()
         
-                
-                    container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', action) for action in data.actions).join(', ')).replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">') #super ghetto quadruple replace for linked actions
+                    container.find('tr.info-actions td.info-data').html (((@formatActions(action) for action in data.actions).join(', ')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked'))
                     container.find('tr.info-actions').show()
 
                     if data.actionsred?
-                        container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', action) for action in data.actionsred).join(', ')
+                        container.find('tr.info-actions-red td.info-data-red').html (@formatRedActions(action) for action in data.actionsred).join(', ')
                         container.find('tr.info-actions-red').show()
                     else
                         container.find('tr.info-actions-red').hide()
@@ -2084,13 +2138,21 @@ class exportObj.SquadBuilder
                         container.find('tr.info-base td.info-data').text "Large"
                     else if ship.medium?
                         container.find('tr.info-base td.info-data').text "Medium"
+                    else if ship.huge?
+                        container.find('tr.info-base td.info-data').text "Huge"
                     else
                         container.find('tr.info-base td.info-data').text "Small"
                     container.find('tr.info-base').show()
 
                     
-                    container.find('tr.info-skill td.info-data').text statAndEffectiveStat(data.skill, effective_stats, 'skill')
+                    container.find('tr.info-skill td.info-data').text data.skill
                     container.find('tr.info-skill').show()
+                    if data.engagement?
+                        container.find('tr.info-engagement td.info-data').text data.engagement
+                        container.find('tr.info-engagement').show()
+                    else
+                        container.find('tr.info-engagement').hide()
+                    
                     
 #                    for cls in container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
 #                        container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
@@ -2105,6 +2167,12 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-bullseye td.info-data').text statAndEffectiveStat((data.ship_override?.attackbull ? ship.attackbull), effective_stats, 'attackbull')
                     container.find('tr.info-attack-bullseye').toggle(ship.attackbull? or effective_stats?.attackbull?)
 
+                    container.find('tr.info-attack-left td.info-data').text statAndEffectiveStat((data.ship_override?.attackl ? ship.attackl), effective_stats, 'attackl')
+                    container.find('tr.info-attack-left').toggle(ship.attackl? or effective_stats?.attackl?)
+
+                    container.find('tr.info-attack-right td.info-data').text statAndEffectiveStat((data.ship_override?.attackr ? ship.attackr), effective_stats, 'attackr')
+                    container.find('tr.info-attack-right').toggle(ship.attackr? or effective_stats?.attackr?)
+                    
                     container.find('tr.info-attack-back td.info-data').text statAndEffectiveStat((data.ship_override?.attackb ? ship.attackb), effective_stats, 'attackb')
                     container.find('tr.info-attack-back').toggle(ship.attackb? or effective_stats?.attackb?)
 
@@ -2114,17 +2182,36 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-doubleturret td.info-data').text statAndEffectiveStat((data.ship_override?.attackdt ? ship.attackdt), effective_stats, 'attackdt')
                     container.find('tr.info-attack-doubleturret').toggle(ship.attackdt? or effective_stats?.attackdt?)
 
-                    container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy')
-                    container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                     container.find('tr.info-range').hide()
                     container.find('td.info-rangebonus').hide()
                     container.find('tr.info-agility td.info-data').text statAndEffectiveStat((data.ship_override?.agility ? ship.agility), effective_stats, 'agility')
                     container.find('tr.info-agility').show()
                     container.find('tr.info-hull td.info-data').text statAndEffectiveStat((data.ship_override?.hull ? ship.hull), effective_stats, 'hull')
                     container.find('tr.info-hull').show()
-                    container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields')
-                    container.find('tr.info-shields').show()
 
+                    if ship.shieldrecurr?
+                        count = 0
+                        recurringicon = ''
+                        while count < ship.shieldrecurr
+                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            ++count
+                        container.find('tr.info-shields td.info-data').html (statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields') + recurringicon)
+                    else
+                        container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields')
+                    container.find('tr.info-shields').toggle(data.ship_override?.shields? or ship.shields?)
+
+                    if ship.energyrecurr?
+                        count = 0
+                        recurringicon = ''
+                        while count < ship.energyrecurr
+                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            ++count
+                        container.find('tr.info-energy td.info-data').html (statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy') + recurringicon)
+                    else
+                        container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy')
+                    container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
+                    
+                    
                     if (effective_stats?.force? and effective_stats.force > 0) or data.force?
                         container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.ship_override?.force ? data.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                         container.find('tr.info-force').show()
@@ -2140,10 +2227,10 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-charge').hide()
 
-                    container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', a) for a in (data.ship_override?.actions ? ship.actions).concat( ("#{exportObj.translate @language, 'action', action}" for action in extra_actions))).join ', ').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
-
+                    container.find('tr.info-actions td.info-data').html ((@formatActions(a) for a in (data.ship_override?.actions ? ship.actions).concat("#{action}" for action in extra_actions)).join ', ').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
+                    
                     if ship.actionsred?
-                        container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in (data.ship_override?.actionsred ? ship.actionsred).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ', '       
+                        container.find('tr.info-actions-red td.info-data-red').html (@formatRedActions(a) for a in (data.ship_override?.actionsred ? ship.actionsred).concat( ("#{action}" for action in extra_actions_red))).join ', '       
                     container.find('tr.info-actions-red').toggle(ship.actionsred?)
 
                     container.find('tr.info-actions').show()
@@ -2191,10 +2278,11 @@ class exportObj.SquadBuilder
                         container.find('tr.info-base td.info-data').text "Small"
                     container.find('tr.info-base').show()
 
-                    
                     container.find('tr.info-skill td.info-data').text pilot.skill
                     container.find('tr.info-skill').show()
-                    
+                    container.find('tr.info-engagement td.info-data').text pilot.skill
+                    container.find('tr.info-engagement').show()
+
                     container.find('tr.info-attack td.info-data').text(pilot.ship_override?.attack ? ship.attack)
                     container.find('tr.info-attack').toggle(pilot.ship_override?.attack? or ship.attack?)
 
@@ -2203,6 +2291,10 @@ class exportObj.SquadBuilder
                     
                     container.find('tr.info-attack-bullseye').hide()
                     
+                    container.find('tr.info-attack-left td.info-data').text(ship.attackl)
+                    container.find('tr.info-attack-left').toggle(ship.attackl?)
+                    container.find('tr.info-attack-left td.info-data').text(ship.attackr)
+                    container.find('tr.info-attack-left').toggle(ship.attackr?)
                     container.find('tr.info-attack-back td.info-data').text(ship.attackb)
                     container.find('tr.info-attack-back').toggle(ship.attackb?)
                     container.find('tr.info-attack-turret td.info-data').text(ship.attackt)
@@ -2240,10 +2332,10 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-charge').hide()
 
-                    container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', action) for action in (pilot.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
+                    container.find('tr.info-actions td.info-data').html ((@formatActions(action) for action in (pilot.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
     
                     if ships[data.ship].actionsred?
-                        container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', action) for action in (pilot.ship_override?.actionsred ? exportObj.ships[data.ship].actionsred)).join(', ')
+                        container.find('tr.info-actions-red td.info-data-red').html (@formatRedActions(action) for action in (pilot.ship_override?.actionsred ? exportObj.ships[data.ship].actionsred)).join(', ')
                         container.find('tr.info-actions-red').show()
                     else
                         container.find('tr.info-actions-red').hide()
@@ -2285,7 +2377,7 @@ class exportObj.SquadBuilder
                         else if data.variableinit? and data.variableinit
                             point_info += "initiative is " + [0..data.pointsarray.length-1]
                         else if data.variablebase? and data.variablebase
-                            point_info += " base size is small, medium or large"
+                            point_info += " base size is small, medium, large or huge"
                         point_info += "</i><br/><br/>"
 
                     if data.solitary?
@@ -2298,6 +2390,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-ship').hide()
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
+                    container.find('tr.info-engagement').hide()
                     if data.energy?
                         container.find('tr.info-energy td.info-data').text data.energy
                         container.find('tr.info-energy').show()
@@ -2319,6 +2412,12 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-attack-turret').hide()
 
+                    if data.attackdt?
+                        container.find('tr.info-attack-doubleturret td.info-data').text data.attackdt
+                        container.find('tr.info-attack-doubleturret').show()
+                    else
+                        container.find('tr.info-attack-doubleturret').hide()
+                        
                     if data.attackbull?
                         container.find('tr.info-attack-bullseye td.info-data').text data.attackbull
                         container.find('tr.info-attack-bullseye').show()
@@ -2326,8 +2425,9 @@ class exportObj.SquadBuilder
                         container.find('tr.info-attack-bullseye').hide()
 
                     container.find('tr.info-attack-fullfront').hide()
+                    container.find('tr.info-attack-right').hide()
+                    container.find('tr.info-attack-left').hide()
                     container.find('tr.info-attack-back').hide()
-                    container.find('tr.info-attack-doubleturret').hide()
 
                     if data.recurring?
                         container.find('tr.info-charge td.info-data').html (data.charge + """<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>""")
@@ -2531,10 +2631,7 @@ class exportObj.SquadBuilder
                 validity = false unless ship_is_available and pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
-                        if upgrade.data.ignorecollection? #ignore hardpoints
-                            upgrade_is_available = true
-                        else
-                            upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
+                        upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
                         # console.log "#{@faction}: Upgrade #{upgrade.data.name} available: #{upgrade_is_available}"
                         validity = false unless upgrade_is_available
         validity
@@ -2758,7 +2855,6 @@ class Ship
                         if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
                             other_upgrades[upgrade.slot] ?= []
                             other_upgrades[upgrade.slot].push upgrade
-                            
                     delayed_upgrades = {}
                     for upgrade in @upgrades
                         other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
@@ -2992,17 +3088,11 @@ class Ship
 
     updateSelections: ->
         if @pilot?
-            if exportObj.ships[@pilot.ship].icon
-                @ship_selector.select2 'data',
-                    id: @pilot.ship
-                    text: if exportObj.ships[@pilot.ship].display_name then exportObj.ships[@pilot.ship].display_name else @pilot.ship
-                    xws: exportObj.ships[@pilot.ship].xws
-                    icon: exportObj.ships[@pilot.ship].icon
-            else
-                @ship_selector.select2 'data',
-                    id: @pilot.ship
-                    text: if exportObj.ships[@pilot.ship].display_name then exportObj.ships[@pilot.ship].display_name else @pilot.ship
-                    xws: exportObj.ships[@pilot.ship].xws
+            @ship_selector.select2 'data',
+                id: @pilot.ship
+                text: if exportObj.ships[@pilot.ship].display_name then exportObj.ships[@pilot.ship].display_name else @pilot.ship
+                xws: exportObj.ships[@pilot.ship].xws
+                icon: if exportObj.ships[@pilot.ship].icon then exportObj.ships[@pilot.ship].icon else exportObj.ships[@pilot.ship].xws
 
             @pilot_selector.select2 'data',
                 id: @pilot.id
@@ -3042,10 +3132,7 @@ class Ship
 
         shipResultFormatter = (object, container, query) ->
             # Append directly so we don't have to disable markup escaping
-            if object.icon?
-                $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.icon}"></i> #{object.text}"""
-            else
-                $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.xws}"></i> #{object.text}"""
+            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.icon}"></i> #{object.text}"""
             # If you return a string, Select2 will render it
             undefined
 
@@ -3170,94 +3257,39 @@ class Ship
         action_icons = []
         action_icons_red = []
         for action in effective_stats.actions
-            action_icons.push switch action
-                when 'Focus'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i> """
-                when '*Focus'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i> """
-                when 'Evade'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i> """
-                when 'F-Evade'
-                    """<i class="xwing-miniatures-font force xwing-miniatures-font-evade"></i> """
-                when 'Barrel Roll'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i> """
-                when 'Lock'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i> """
-                when 'Boost'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i> """
-                when 'Coordinate'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i> """
-                when 'F-Coordinate'
-                    """<i class="xwing-miniatures-font force xwing-miniatures-font-coordinate"></i> """
-                when 'Jam'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i> """
-                when 'Reinforce'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i> """
-                when 'Cloak'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i> """
-                when 'Slam'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i> """
-                when 'Rotate Arc'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i> """
-                when 'Reload'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i> """
-                when 'Calculate'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i> """
-                when "R> Lock"
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i>&nbsp;"""
-                when "R> Barrel Roll"
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-barrelroll"></i>&nbsp;"""
-                when "R> Boost"
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-boost"></i>&nbsp;"""
-                when "R> Focus"
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-focus"></i>&nbsp;"""
-                when "> Rotate Arc"
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack xwing-miniatures-font-rotatearc"></i>&nbsp;"""
-                when "R> Rotate Arc"
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i>&nbsp;"""
-                when "R> Evade"
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-evade"></i>&nbsp;"""
-                when "R> Calculate"
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-calculate"></i>&nbsp;"""
-                else
-                    """<span>&nbsp;#{action}<span>"""
+            color = "action "
+            actionname = ""
+            prefix = ""
+            suffix = ""
+            # Search and filter each type of action by its prefix and then reformat it for html
+            if action.search('F-') != -1 
+                color = "force "
+                actionname = action.toLowerCase().replace(/F-/gi, '').replace(/[^0-9a-z]/gi, '')
+            else if action.search('R> ') != -1
+                color = "red "
+                actionname = action.toLowerCase().replace(/R> /gi, '').replace(/[^0-9a-z]/gi, '')
+                prefix = """<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> """
+                suffix = "&nbsp;"
+            else if action.search('> ') != -1
+                actionname = action.toLowerCase().replace(/> /gi, '').replace(/[^0-9a-z]/gi, '')
+                prefix = """<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> """
+                suffix = "&nbsp;"
+            else
+                actionname = action.toLowerCase().replace(/[^0-9a-z]/gi, '')
+            action_icons.push (prefix + """<i class="xwing-miniatures-font """ + color + """xwing-miniatures-font-""" + actionname + """"></i> """ + suffix)
 
         for actionred in effective_stats.actionsred
-            action_icons_red.push switch actionred
-                when 'Focus'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-focus"></i>"""
-                when 'Evade'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-evade"></i>"""
-                when 'Barrel Roll'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>"""
-                when 'Lock'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-lock"></i>"""
-                when 'Boost'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-boost"></i>"""
-                when 'Coordinate'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-coordinate"></i>"""
-                when 'Jam'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-jam"></i>"""
-                when 'Reinforce'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-reinforce"></i>"""
-                when 'Cloak'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-cloak"></i>"""
-                when 'Slam'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-slam"></i>"""
-                when 'Rotate Arc'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-rotatearc"></i>"""
-                when 'Reload'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-reload"></i>"""
-                when 'Calculate'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-calculate"></i>"""
-                else
-                    """<span>&nbsp;#{action}<span>"""
+            action_icons.push ("""<i class="xwing-miniatures-font red xwing-miniatures-font-""" + actionred.toLowerCase().replace(/[^0-9a-z]/gi, '') + """"></i> """)
     
         action_bar = action_icons.join ' '
         action_bar_red = action_icons_red.join ' '
 
         attack_icon = @data.attack_icon ? 'xwing-miniatures-font-frontarc'
 
+        engagementHTML = if (@pilot.engagement?) then $.trim """
+            <span class="info-data info-skill">ENG #{@pilot.engagement}</span>
+        """ else ''
+            
         attackHTML = if (effective_stats.attack?) then $.trim """
             <i class="xwing-miniatures-font header-attack #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
@@ -3329,6 +3361,7 @@ class Ship
             <div class="fancy-pilot-stats">
                 <div class="pilot-stats-content">
                     <span class="info-data info-skill">INI #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
+                    #{engagementHTML}
                     #{attackHTML}
                     #{attackbHTML}
                     #{attackfHTML}
@@ -3345,7 +3378,7 @@ class Ship
                     <span class="info-data info-shields simple-hull-or-shield">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
                     #{forceHTML}
                     #{chargeHTML}
-                    &nbsp;
+                    <br>
                     #{action_bar}
                     &nbsp;&nbsp;
                     #{action_bar_red}
@@ -3607,7 +3640,6 @@ class Ship
 
     effectiveStats: ->
         stats =
-            skill: @pilot.skill
             attack: @pilot.ship_override?.attack ? @data.attack
             attackf: @pilot.ship_override?.attackf ? @data.attackf
             attackb: @pilot.ship_override?.attackb ? @data.attackb
@@ -3643,7 +3675,25 @@ class Ship
         if not @pilot?
             return true 
         unchanged = true
-        max_checks = 128 # that's a lot of addons
+        max_checks = 32 # that's a lot of addons
+        
+        if @builder.isEpic #Command Epic adding
+            if not ("Command" in @pilot.slots)
+                addCommand = true
+                for upgrade in @upgrades
+                    if ("Command" == upgrade.slot) and (this == upgrade.ship)
+                        addCommand = false
+                if addCommand == true
+                    @upgrades.push new exportObj.Upgrade
+                        ship: this
+                        container: @addon_container
+                        slot: "Command"
+        else #cleanup Command upgrades
+            for i in [@upgrades.length - 1 ... -1]
+                upgrade = @upgrades[i]
+                if upgrade.slot == "Command"
+                    upgrade.setById null
+
         for i in [0...max_checks]
             valid = true
             pilot_func = @pilot?.validation_func ? @pilot?.restriction_func ? undefined
@@ -3665,7 +3715,6 @@ class Ship
                     break
                 if upgrade?.data? and upgrade.data
                     equipped_upgrades.push(upgrade?.data)
-
             break if valid
         @updateSelections()
         unchanged
@@ -3678,8 +3727,7 @@ class Ship
         for upgrade in @upgrades
             if upgrade?.data? and not exportObj.isReleased upgrade.data
                 #console.log "#{upgrade.data.id} is unreleased"
-                unless upgrade.data.ignorecollection? #ignore hardpoints
-                    return true
+                return true
 
         false
 
@@ -3717,7 +3765,7 @@ class Ship
         upgrade_obj = {}
 
         for upgrade in @upgrades
-            if upgrade?.data? and (not upgrade?.data?.ignorecollection?)
+            if upgrade?.data?
                 upgrade.toXWS upgrade_obj
 
         if Object.keys(upgrade_obj).length > 0
@@ -3789,19 +3837,13 @@ class GenericAddon
             if @ship.builder.collection?
                 not_in_collection = false
                 if obj.id == @data?.id
-                    if @data.ignorecollection? #ignore hardpoints
-                        not_in_collection = false
-                    else
-                        # Currently selected card; mark as not in collection if it's neither
-                        # on the shelf nor on the table
-                        unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name)) 
-                            not_in_collection = true
+                    # Currently selected card; mark as not in collection if it's neither
+                    # on the shelf nor on the table
+                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name)) 
+                        not_in_collection = true
                 else
-                    if (obj.id == 168) or (obj.id == 169) or (obj.id == 170) #ignore hardpoints
-                        not_in_collection = false
-                    else
-                        # Not currently selected; check shelf only
-                        not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
+                    # Not currently selected; check shelf only
+                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
                 if not_in_collection then 'select2-result-not-in-collection' else ''
                     #and (@ship.builder.collection.checkcollection?) 
             else
@@ -3891,7 +3933,7 @@ class GenericAddon
                 else
                     throw new Error("Unexpected addon type for addon #{addon}")
                 @conferredAddons.push addon
-
+                
     rescindAddons: ->
         await
             for addon in @conferredAddons
@@ -3914,6 +3956,8 @@ class GenericAddon
                 data?.pointsarray[1]
             else if ship?.data.large?
                 data?.pointsarray[2]
+            else if ship?.data.huge?
+                data?.pointsarray[3]
         else if data?.variableinit?
             data?.pointsarray[ship.pilot.skill]
         else
@@ -3935,7 +3979,10 @@ class GenericAddon
 
     toHTML: (points) ->
         if @data?
-            upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
+            if @data.slot? and @data.slot == "HardpointShip"
+                upgrade_slot_font = "hardpoint"
+            else
+                upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
 
             match_array = @data.text?match(/(<span.*<\/span>)<br \/><br \/>(.*)/)
 

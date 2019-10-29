@@ -1623,12 +1623,6 @@ exportObj.cardLoaders.Magyar = () ->
            display_name: """“Zeb” Orrelios"""
            text: """<i>csak Lázadók</i>%LINEBREAK%Végrehajthatsz elsődleges támadást 0-ás távolságban. Az ellenséges hajók 0-ás távolságban végrehajthatnak elsődleges támadást ellened."""
 
-        "Hardpoint: Cannon":
-           text: """Kapsz egy %CANNON% fejlesztés helyet."""
-        "Hardpoint: Missile":
-           text: """Kapsz egy %MISSILE% fejlesztés helyet."""
-        "Hardpoint: Torpedo":
-           text: """Kapsz egy %TORPEDO% fejlesztés helyet."""
         "Black One":
            text: """<i>Kapott akció: %SLAM%</i> %LINEBREAK% Miután végrehajtasz egy %SLAM% akciót, elvesztesz 1&nbsp;%CHARGE% jelzőt. Ezután kaphatsz 1 ion jelzőt, hogy levedd az inaktív fegyverzet jelzőt. Ha a %CHARGE% nem aktív, nem hajthatsz végre %SLAM% akciót."""
         "Heroic":
