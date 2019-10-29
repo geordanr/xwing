@@ -996,7 +996,7 @@ class exportObj.SquadBuilder
                 <p class="info-text" />
                 <p class="info-maneuvers" />
                 <br />
-                <span class="info-header info-sources">Sources</span>: 
+                <span class="info-header info-sources">Sources:</span> 
                 <span class="info-data info-sources"></span>
             </div>
         """
@@ -1989,8 +1989,9 @@ class exportObj.SquadBuilder
                     if @collection?.counts?
                         ship_count = @collection.counts?.ship?[data.name] ? 0
                         container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} in your collection."""
+                        container.find('.info-collection').show()
                     else
-                        container.find('.info-collection').text ''
+                        container.find('.info-collection').hide()
                     first = true
                     inis = String(possible_inis[0])
                     for ini in possible_inis
@@ -2100,8 +2101,9 @@ class exportObj.SquadBuilder
                         pilot_count = @collection.counts?.pilot?[data.name] ? 0
                         ship_count = @collection.counts.ship?[data.ship] ? 0
                         container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
+                        container.find('.info-collection').show()
                     else
-                        container.find('.info-collection').text ''
+                        container.find('.info-collection').hide()
                         
                     # if the pilot is already selected and has uprades, some stats may be modified
                     if additional_opts?.effectiveStats?
@@ -2244,7 +2246,7 @@ class exportObj.SquadBuilder
                 when 'Quickbuild'
                     container.find('.info-type').text 'Quickbuild'
                     container.find('.info-sources').hide() # there are different sources for the pilot and the upgrade cards, so we won't display any
-                    container.find('.info-collection').text '' # same here, hard to give a single number telling a user how often he ownes all required cards
+                    container.find('.info-collection').hide() # same here, hard to give a single number telling a user how often he ownes all required cards
                     
                     pilot = exportObj.pilots[data.pilot]
                     ship = exportObj.ships[data.ship]
@@ -2367,8 +2369,9 @@ class exportObj.SquadBuilder
                     if @collection?.counts?
                         addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.name] ? 0
                         container.find('.info-collection').text """You have #{addon_count} in your collection."""
+                        container.find('.info-collection').show()
                     else
-                        container.find('.info-collection').text ''
+                        container.find('.info-collection').hide()
                     container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     if data.pointsarray? 
                         point_info = "<i>Point cost " + data.pointsarray + " when "
@@ -2457,6 +2460,47 @@ class exportObj.SquadBuilder
                     container.find('tr.info-actions-red').hide()
                     container.find('tr.info-upgrades').hide()
                     container.find('p.info-maneuvers').hide()
+                when 'MissingStuff'
+                    container.find('.info-type').text "List of Missing items"
+                    container.find('.info-sources').hide()
+                    container.find('.info-collection').hide()
+                    container.find('.info-name').html "Missing items"
+                    container.find('.info-name').show()
+                    container.find('.info-solitary').hide()
+                    missingStuffInfoText = "To field this squad you need the following additional items: <ul>"
+                    for item in data
+                        missingStuffInfoText += """<li><strong>#{(if item.display_name? then item.display_name else item.name)}</strong> ("""
+                        first = true
+                        for source in item.sources
+                            if not first
+                                missingStuffInfoText += ", "
+                            missingStuffInfoText += source
+                            first = false
+                        missingStuffInfoText += ")</li>"
+                    missingStuffInfoText +="</ul>"
+                    container.find('p.info-text').html missingStuffInfoText
+                    container.find('p.info-text').show()
+                    container.find('tr.info-ship').hide()
+                    container.find('tr.info-base').hide()
+                    container.find('tr.info-skill').hide()
+                    container.find('tr.info-agility').hide()
+                    container.find('tr.info-hull').hide()
+                    container.find('tr.info-shields').hide()
+                    container.find('tr.info-actions').hide()
+                    container.find('tr.info-actions-red').hide()
+                    container.find('tr.info-upgrades').hide()
+                    container.find('p.info-maneuvers').hide()
+                    container.find('tr.info-energy').hide()
+                    container.find('tr.info-attack').hide()
+                    container.find('tr.info-attack-turret').hide()
+                    container.find('tr.info-attack-bullseye').hide()
+                    container.find('tr.info-attack-fullfront').hide()
+                    container.find('tr.info-attack-back').hide()
+                    container.find('tr.info-attack-doubleturret').hide()
+                    container.find('tr.info-charge').hide()
+                    container.find('td.info-rangebonus').hide()
+                    container.find('tr.info-range').hide()
+                    container.find('tr.info-force').hide()
             container.show()
             @tooltip_currently_displaying = data
         
@@ -2614,13 +2658,14 @@ class exportObj.SquadBuilder
         # If the collection is uninitialized or empty, don't actually check it.
         if Object.keys(@collection?.expansions ? {}).length == 0
             # console.log "collection not ready or is empty"
-            return true 
+            return [true, []]
         @collection.reset()
         if @collection?.checks.collectioncheck != "true"
             # console.log "collection check not enabled"
-            return true
+            return [true, []]
         @collection.reset()
         validity = true
+        missingStuff = []
         for ship in @ships
             if ship.pilot?
                 # Try to get both the physical model and the pilot card.
@@ -2629,17 +2674,25 @@ class exportObj.SquadBuilder
                 # console.log "#{@faction}: Ship #{ship.pilot.ship} available: #{ship_is_available}"
                 # console.log "#{@faction}: Pilot #{ship.pilot.name} available: #{pilot_is_available}"
                 validity = false unless ship_is_available and pilot_is_available
+                missingStuff.push ship.data unless ship_is_available
+                missingStuff.push ship.pilot unless pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
                         upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
                         # console.log "#{@faction}: Upgrade #{upgrade.data.name} available: #{upgrade_is_available}"
                         validity = false unless upgrade_is_available
-        validity
+                        missingStuff.push upgrade.data unless upgrade_is_available
+        [validity, missingStuff]
 
     checkCollection: ->
         # console.log "#{@faction}: Checking validity of squad against collection..."
         if @collection?
-            @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
+            [squadPossible, missingStuff] = @isSquadPossibleWithCollection()
+            @collection_invalid_container.toggleClass 'hidden', squadPossible
+            @collection_invalid_container.on 'mouseover', (e) =>
+                @showTooltip 'MissingStuff', missingStuff
+            @collection_invalid_container.on 'touchstart', (e) =>
+                @showTooltip 'MissingStuff', missingStuff
 
     toXWS: ->
         # Often you will want JSON.stringify(builder.toXWS())
