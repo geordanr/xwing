@@ -1261,7 +1261,7 @@ class exportObj.SquadBuilder
             @current_squad.id = old_id # we want to keep the ID, so we allow people to use the save button
         else
             old_id = @current_squad.id
-            @container.trigger 'xwing:pointsUpdated', cb
+            @container.trigger 'xwing:pointsUpdated', $.noop
             @container.trigger 'xwing:shipUpdated'
         # @onPointsUpdated cb
         cb()
@@ -3745,7 +3745,8 @@ class Ship
             for i in [@upgrades.length - 1 ... -1]
                 upgrade = @upgrades[i]
                 if upgrade.slot == "Command"
-                    upgrade.setById null
+                    upgrade.destroy $.noop
+                    @upgrades.splice i,1
 
         for i in [0...max_checks]
             valid = true
