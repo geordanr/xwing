@@ -10277,7 +10277,7 @@ exportObj.basicCardData = ->
             name: "Veteran Wing Leader"
             id: 259
             slot: "Command"
-            points: 4
+            points: 2
             restriction_func: (ship) ->
                 not (ship.data.large? or ship.data.medium? or ship.data.huge?)
        }
