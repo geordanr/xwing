@@ -5695,12 +5695,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Rear Admiral Chiraneau'
+            name: 'Captain Oicunn'
             type: 'pilot'
             count: 1
         }
         {
-            name: 'Captain Oicunn'
+            name: 'Rear Admiral Chiraneau'
             type: 'pilot'
             count: 1
         }
@@ -5710,12 +5710,17 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Lone Wolf'
+            name: '0-0-0'
             type: 'upgrade'
             count: 1
         }
         {
             name: 'Agent Kallus'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BT-1'
             type: 'upgrade'
             count: 1
         }
@@ -5735,17 +5740,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Seventh Sister'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'BT-1'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: '0-0-0'
             type: 'upgrade'
             count: 1
         }
