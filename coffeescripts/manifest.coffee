@@ -5622,12 +5622,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Han Solo'
+            name: 'Chewbacca'
             type: 'pilot'
             count: 1
         }
         {
-            name: 'Chewbacca'
+            name: 'Han Solo'
             type: 'pilot'
             count: 1
         }
@@ -5652,6 +5652,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Informant'
             type: 'upgrade'
             count: 1
@@ -5667,22 +5672,17 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Millennium Falcon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Nien Nunb'
             type: 'upgrade'
             count: 1
         }
         {
-            name: 'Homing Missiles'
-            type: 'upgrade'
-            count: 1
-        }
-        {
             name: 'Swarm Tactics'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Millennium Falcon'
             type: 'upgrade'
             count: 1
         }
