@@ -10269,6 +10269,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             slot: "Command"
+            ship: ["TIE/SF Fighter","TIE/VN Silencer"]
             points: 4
             restriction_func: (ship) ->
                 not (ship.data.large? or ship.data.medium? or ship.data.huge?)
@@ -10500,6 +10501,9 @@ exportObj.basicCardData = ->
             id: 280
             slot: "Team"
             points: 4
+            modifier_func: (stats) ->
+                stats.actions.push '*Reload'
+                stats.actions.push '> Calculate'
        }
        {
             name: "Sensor Experts"
@@ -10660,6 +10664,18 @@ exportObj.basicCardData = ->
             ship: "GR-75 Medium Transport"
             faction: "Rebel Alliance"
             points: 3
+            modifier_func: (stats) ->
+                stats.energy += 1
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Team'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Cargo'
+                }
+            ]
        }
        {
             name: "Assailer"
@@ -10669,6 +10685,15 @@ exportObj.basicCardData = ->
             ship: "Raider-class Corvette"
             faction: "Galactic Empire"
             points: 7
+            modifier_func: (stats) ->
+                stats.shields -= 2
+                stats.hull += 2
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Gunner'
+                }
+            ]
        }
        {
             name: "Corvus"
@@ -10687,6 +10712,15 @@ exportObj.basicCardData = ->
             ship: "Raider-class Corvette"
             faction: "Galactic Empire"
             points: 4
+            modifier_func: (stats) ->
+                stats.shields -= 2
+                stats.energy += 2
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Crew'
+                }
+            ]
        }
        {
             name: "Instigator"
@@ -10696,6 +10730,12 @@ exportObj.basicCardData = ->
             ship: "Raider-class Corvette"
             faction: "Galactic Empire"
             points: 6
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Team'
+                }
+            ]
        }
        {
             name: "Blood Crow"
@@ -10705,6 +10745,15 @@ exportObj.basicCardData = ->
             ship: "Gozanti-class Cruiser"
             faction: "Galactic Empire"
             points: 5
+            modifier_func: (stats) ->
+                stats.shields -= 1
+                stats.energy += 2
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Gunner'
+                }
+            ]
        }
        {
             name: "Requiem"
@@ -10714,6 +10763,9 @@ exportObj.basicCardData = ->
             ship: "Gozanti-class Cruiser"
             faction: "Galactic Empire"
             points: 7
+            modifier_func: (stats) ->
+                stats.hull -= 1
+                stats.energy += 1
        }
        {
             name: "Suppressor"
@@ -10723,6 +10775,15 @@ exportObj.basicCardData = ->
             ship: "Gozanti-class Cruiser"
             faction: "Galactic Empire"
             points: 6
+            modifier_func: (stats) ->
+                stats.shields += 2
+                stats.hull -= 2
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Sensor'
+                }
+            ]
        }
        {
             name: "Vector"
@@ -10732,6 +10793,16 @@ exportObj.basicCardData = ->
             ship: "Gozanti-class Cruiser"
             faction: "Galactic Empire"
             points: 8
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Crew'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Cargo'
+                }
+            ]
        }
        {
             name: "Broken Horn"

@@ -2112,24 +2112,33 @@ exportObj.cardLoaders.English = () ->
         "Raymus Antilles":
            display_name: """Raymus Antilles"""
            text: """After you are destroyed, each friendly ship at range 0-1 gains 1 focus token. After you are destroyed, you are not removed until the end of the End Phase."""
+        "Stalwart Captain":
+           display_name: """Stalwart Captain"""
+           text: """After you are destroyed, you are not removed until the end of the End Phase."""
         "Agent of the Empire":
            display_name: """Agent of the Empire"""
            text: """You are a <strong>wing leader</strong>. Your wingmates must be 2, 3, 4, or 5 TIE/ln fighters. %LINEBREAK% While you defend, up to 2 of your wingmates in the attack arc may suffer 1 %HIT% or %CRIT% damage to cancel a matching result."""
         "First Order Elite":
            display_name: """First Order Elite"""
            text: """You are a <strong>wing leader</strong>. Your wingmates must be 2 or 3 TIE/fo fighters or TIE/sf fighters. %LINEBREAK% While you defend, up to 2 of your wingmates in the attack arc may suffer 1 %HIT% or %CRIT% damage to cancel a matching result."""
+        "Veteran Wing Leader":
+           display_name: """Veteran Wing Leader"""
+           text: """You are a <strong>wing leader</strong>. Your wingmates must be 2, 3, 4, or 5 other ships of your ship type. %LINEBREAK% While you defend, up to 2 of your wingmates in the attack arc may suffer 1 %HIT% or %CRIT% damage to cancel a matching result."""
         "Dreadnought Hunter":
            display_name: """Dreadnought Hunter"""
            text: """While you perform an attack against a huge ship, if the attack deals a faceup damage card to the defender and the defender is in your %BULLSEYEARC%, you may apply the <strong>Precision Shot</strong> effect even if you are not in the specified arc."""
         "Ion Cannon Battery":
            display_name: """Ion Cannon Battery"""
-           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. If this attack hits, the defender suffers 1 %CRIT% damage, and all %HIT%/%CRIT% results inflict ion tokens instead of damage. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% """
+           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. If this attack hits, the defender suffers 1 %CRIT% damage, and all %HIT%/%CRIT% results inflict ion tokens instead of damage. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
         "Targeting Battery":
            display_name: """Targeting Battery"""
-           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. After you perform this attack, you may acquire a lock on the defender. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% """
+           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. After you perform this attack, you may acquire a lock on the defender. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
+        "Ordnance Tubes":
+           display_name: """Ordnance Tubes"""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% You can perform %TORPEDO% and %MISSILE% attacks only as bonus attacks. You <strong>must</strong> treat the %FRONTARC% requirement of your equipped %TORPEDO% and %MISSILE% upgrades as %FULLFRONTARC%. %LINEBREAK% Bonus Attack: Perform a %TORPEDO% attack. %LINEBREAK% Bonus Attack: Perform a %MISSILE% attack. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% You must treat the %FRONTARC% requirement of your equipped %TORPEDO% and %MISSILE% upgrades as %BULLSEYEARC%. %LINEBREAK% Action: Spend 2 %ENERGY% to flip this card."""
         "Point-Defense Battery":
            display_name: """Point-Defense Battery"""
-           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% """
+           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
         "Turbolaser Battery":
            display_name: """Turbolaser Battery"""
            text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack (%LOCK%): Spend 3 %ENERGY%. If this attack hits, add 3 %HIT% results. %LINEBREAK% <strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
@@ -2148,6 +2157,9 @@ exportObj.cardLoaders.English = () ->
         "Damage Control Team":
            display_name: """Damage Control Team"""
            text: """Adds %REINFORCE% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% Before you engage, you may spend 1 or more %ENERGY% to flip that many of your <strong>Offline</strong> upgrade cards.%LINEBREAK% Action: Spend 1 or more %ENERGY% to repair that many of your faceup <strong>Ship</strong> damage cards."""
+        "Ordnance Team":
+           display_name: """Ordnance Team"""
+           text: """Adds %RELOAD% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% While you perform a %RELOAD% action, you may spend up to 3 %ENERGY% to reload that many additional %CHARGE% on your equipped %MISSILE%/%TORPEDO% upgrades. %LINEBREAK% After you perform a %RELOAD% action, you may spend 1 %ENERGY% to remove 1 disarm token."""
         "Sensor Experts":
            display_name: """Sensor Experts"""
            text: """Adds %LOCK% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% You can maintain up to 3 locks on different objects. %LINEBREAK% After you perform a %LOCK% action, you may spend up to 2 %ENERGY% to acquire a lock on that many other objects at range 0-1 of the object you locked, ignoring range restrictions."""
@@ -2166,6 +2178,9 @@ exportObj.cardLoaders.English = () ->
         "Boosted Scanners":
            display_name: """Boosted Scanners"""
            text: """While you lock, coordinate, or jam, you may spend up to 3 %ENERGY% to increase the range at which you can choose an object by 1 per %ENERGY% spent this way, to a maximum of range 5."""
+        "Optimized Power Core":
+           display_name: """Optimized Power Core"""
+           text: """After you execute a blue maneuver, recover 1 %ENERGY%."""
         "Tibanna Reserves":
            display_name: """Tibanna Reserves"""
            text: """Action: Spend 1 %CHARGE% to recover 2 %ENERGY%."""
@@ -2187,12 +2202,39 @@ exportObj.cardLoaders.English = () ->
         "Thunderstrike":
            display_name: """Thunderstrike"""
            text: """Add %GUNNER% slot. %LINEBREAK% While you perform a bonus attack, if you have not attacked the defender this round, you may reroll 1 attack die."""
+        "Bright Hope":
+           display_name: """Bright Hope"""
+           text: """You can reinforce only your %FULLFRONTARC%. %LINEBREAK% While you defend, if you are reinforced and the attacker is in your %FULLFRONTARC%, you may roll 1 additional defense die."""
         "Luminous":
            display_name: """Luminous"""
            text: """Setup: You are placed in reserve. %LINEBREAK% At the end of setup, you are placed in the play area at range 0-2 of a friendly ship."""
+        "Quantum Storm":
+           display_name: """Quantum Storm"""
+           text: """Add %TEAM% and %CARGO% slots .%LINEBREAK% After you fully execute a white maneuver, recover 1 %ENERGY%."""
+        "Assailer":
+           display_name: """Assailer"""
+           text: """Add %GUNNER% slot.%LINEBREAK%While you defend, if the attack range is 1, you may roll 1 additional defense die."""
         "Corvus":
            display_name: """Corvus"""
            text: """You can dock up to 2 small ships. %LINEBREAK% After you perform a %CALCULATE% action, gain 1 calculate token."""
+        "Impetuous":
+           display_name: """Impetuous"""
+           text: """Add %CREW% slot. %LINEBREAK% After you perform an attack, if the defender was destroyed, you may perform a %FOCUS% or %LOCK% action."""
+        "Instigator":
+           display_name: """Instigator"""
+           text: """Add %TEAM% slot. %LINEBREAK% While you perform an attack, if the defender has an orange or red token, you may reroll up to 2 attack dice."""
+        "Blood Crow":
+           display_name: """Blood Crow"""
+           text: """Add %GUNNER% slot. %LINEBREAK% While you perform an attack at attack range 1-2, you may add 1 %FOCUS% result."""
+        "Requiem":
+           display_name: """Requiem"""
+           text: """After a ship deploys from you, it may acquire a lock on one ship you are locking, ignoring range restrictions."""
+        "Suppressor":
+           display_name: """Suppressor"""
+           text: """Add %SENSOR% slot. %LINEBREAK% After you coordinate a friendly ship, you may spend 1 %ENERGY% to jam an enemy ship at range 0-2 of that ship, ignoring range restrictions."""
+        "Vector":
+           display_name: """Vector"""
+           text: """Add %CREW% and %CARGO% slots. %LINEBREAK% After a ship deploys from you, it may perform a %EVADE% or %BOOST% action."""
         "Broken Horn":
            display_name: """Broken Horn"""
            text: """Add %CREW% and %ILLICIT% slots. %LINEBREAK% If you are damaged, reduce the difficulty of your speed 3-5 maneuvers."""
