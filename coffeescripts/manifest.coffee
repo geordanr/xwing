@@ -5730,6 +5730,16 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Dauntless'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Fifth Brother'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'GNK "Gonk" Droid'
             type: 'upgrade'
             count: 1
@@ -5745,7 +5755,22 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Seventh Sister'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tactical Scrambler'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Veteran Turret Gunner'
             type: 'upgrade'
             count: 1
         }
