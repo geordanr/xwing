@@ -5652,6 +5652,16 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Engine Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Han Solo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Homing Missiles'
             type: 'upgrade'
             count: 1
@@ -5672,12 +5682,27 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Luke Skywalker'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Millennium Falcon'
             type: 'upgrade'
             count: 1
         }
         {
             name: 'Nien Nunb'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R2-D2 (Crew)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Rigged Cargo Chute'
             type: 'upgrade'
             count: 1
         }
