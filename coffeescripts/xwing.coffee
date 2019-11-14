@@ -1830,13 +1830,12 @@ class exportObj.SquadBuilder
                     outlineColor = "black"
                     maneuverClass2 = "svg-base-maneuver"
                     if maneuvers[speed][turn] != baseManeuvers[speed][turn]
-                        outlineColor = "mediumblue" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
+                        outlineColor = "DarkSlateGrey" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
                         maneuverClass2 = "svg-modified-maneuver"
 
                     if speed == 0 and turn == 2
                         outTable += """<rect class="svg-maneuver-stop #{maneuverClass} #{maneuverClass2}" x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
-                    else                      
-
+                    else
                         transform = ""
                         className = ""
                         switch turn

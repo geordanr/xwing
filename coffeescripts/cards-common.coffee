@@ -8363,7 +8363,6 @@ exportObj.basicCardData = ->
            faction: "Rebel Alliance"
            modifier_func: (stats) ->
                 for s, spd in (stats.maneuvers ? [])
-                    continue if spd == 0
                     if s[1] > 0 
                         if s[1] = 1
                             s[1] = 2
