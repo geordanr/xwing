@@ -8362,16 +8362,16 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            modifier_func: (stats) ->
-                for s, spd in (stats.maneuvers ? [])
-                    if s[1] > 0 
-                        if s[1] = 1
+                for s in (stats.maneuvers)
+                    if s[1] > 0
+                        if s[1] == 1
                             s[1] = 2
-                        else if s[1] = 3
+                        else if s[1] == 3
                             s[1] = 1
-                    if s[3] > 0 
-                        if s[3] = 1
+                    if s[3] > 0
+                        if s[3] == 1
                             s[3] = 2
-                        else if s[3] = 3
+                        else if s[3] == 3
                             s[3] = 1
        }
        {
