@@ -3370,12 +3370,14 @@ class Ship
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackdt ? @data.attackdt), effective_stats, 'attackdt')}</span>""" 
         else
             attackdtHTML = ''
-            
+
+        
         energyHTML = if (@pilot.ship_override?.energy? or @data.energy?) then $.trim """
             <i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i>
             <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}</span>
         """ else ''
-            
+        
+    
         forceHTML = if (@pilot.force?) then $.trim """
             <i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i>
             <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i></span>
@@ -3419,7 +3421,6 @@ class Ship
                     #{attackfHTML}
                     #{attacktHTML}
                     #{attackdtHTML}
-                    #{energyHTML}
                     <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>
                     <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>                    
                     #{hullIconHTML}
@@ -3428,6 +3429,7 @@ class Ship
                     #{shieldIconHTML}
                     <i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield simple-hull-or-shield"></i>
                     <span class="info-data info-shields simple-hull-or-shield">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
+                    #{energyHTML}
                     #{forceHTML}
                     #{chargeHTML}
                     <br>
