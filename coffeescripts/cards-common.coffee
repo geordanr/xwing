@@ -7825,7 +7825,6 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Crew"
                 "Tactical Relay"
-                "Gunner"
                 "Team"
                 "Cargo"
                 "Device"
