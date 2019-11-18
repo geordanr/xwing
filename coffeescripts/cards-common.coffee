@@ -1637,7 +1637,7 @@ exportObj.basicCardData = ->
              "Reinforce"
              "Lock"
              "Coordinate"
-             "Reload"
+             "Jam"
            ]
            maneuvers: [
                 [ 0, 3, 3, 3, 0]
