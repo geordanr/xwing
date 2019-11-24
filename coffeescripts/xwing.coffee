@@ -650,10 +650,6 @@ class exportObj.SquadBuilder
             <div class="modal-body">
                 <form>
                     <label>
-                        Desired Points
-                        <input type="number" class="randomizer-points" value="#{DEFAULT_RANDOMIZER_POINTS}" placeholder="#{DEFAULT_RANDOMIZER_POINTS}" />
-                    </label>
-                    <label>
                         Maximal desired bid
                         <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
                     </label>
@@ -698,7 +694,7 @@ class exportObj.SquadBuilder
                 @backend.warnUnsaved this, () =>
                     @randomize_button.click()
             else
-                points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
+                points = parseInt @desired_points_input.val()
                 points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
                 bid_goal = parseInt $(@randomizer_options_modal.find('.randomizer-bid-goal')).val()
                 bid_goal = DEFAULT_RANDOMIZER_BID_GOAL if (isNaN(bid_goal) or bid_goal < 0)
