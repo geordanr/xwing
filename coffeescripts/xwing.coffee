@@ -653,7 +653,7 @@ class exportObj.SquadBuilder
                         <input type="number" class="randomizer-points" value="#{DEFAULT_RANDOMIZER_POINTS}" placeholder="#{DEFAULT_RANDOMIZER_POINTS}" />
                     </label>
                     <label>
-                        Left bid to stop randomizing
+                        Maximal desired bid
                         <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
                     </label>
                     <label>
