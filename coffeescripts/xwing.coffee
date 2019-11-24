@@ -2369,7 +2369,7 @@ class exportObj.SquadBuilder
                     
                     
                     if @collection?.counts?
-                        addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.name] ? 0
+                        addon_count = @collection.counts?['upgrade']?[data.name] ? 0
                         container.find('.info-collection').text """You have #{addon_count} in your collection."""
                         container.find('.info-collection').show()
                     else
