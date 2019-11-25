@@ -119,6 +119,7 @@ class exportObj.SquadBuilder
             points: 200
             bid_goal: 5
             ships_or_upgrades: 3
+            collection_only: true
         @total_points = 0
         # a squad given in the link is loaded on construction of that builder. It will set all gamemodes of already existing builders accordingly, but we did not exists back than. So we copy over the gamemode
         @isHyperspace = exportObj.builders[0]?.isHyperspace ? false
@@ -649,17 +650,17 @@ class exportObj.SquadBuilder
             <div class="modal-body">
                 <form>
                     <label>
-                        Desired Points
-                        <input type="number" class="randomizer-points" value="#{DEFAULT_RANDOMIZER_POINTS}" placeholder="#{DEFAULT_RANDOMIZER_POINTS}" />
-                    </label>
-                    <label>
-                        Left bid to stop randomizing
+                        Maximal desired bid
                         <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
                     </label>
                     <label>
                         More upgrades
                         <input type="range" min="0" max="10" class="randomizer-ships-or-upgrades" value="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" placeholder="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" />
                         Less upgrades
+                    </label>
+                    <label>
+                        <input type="checkbox" class="randomizer-collection-only" checked="checked"/> 
+                        Only use items from collection
                     </label>
                     <label>
                         Sets and Expansions (default all)
@@ -685,6 +686,7 @@ class exportObj.SquadBuilder
         @randomizer_source_selector.select2
             width: "100%"
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @randomizer_collection_selector = ($ @randomizer_options_modal.find('.randomizer-collection-only'))[0]
 
         @randomize_button.click (e) =>
             e.preventDefault()
@@ -692,7 +694,7 @@ class exportObj.SquadBuilder
                 @backend.warnUnsaved this, () =>
                     @randomize_button.click()
             else
-                points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
+                points = parseInt @desired_points_input.val()
                 points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
                 bid_goal = parseInt $(@randomizer_options_modal.find('.randomizer-bid-goal')).val()
                 bid_goal = DEFAULT_RANDOMIZER_BID_GOAL if (isNaN(bid_goal) or bid_goal < 0)
@@ -701,7 +703,7 @@ class exportObj.SquadBuilder
                 timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
                 timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
                 #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}"
-                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, bid_goal, ships_or_upgrades)
+                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, bid_goal, ships_or_upgrades, @randomizer_collection_selector.checked)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
             e.preventDefault()
@@ -1594,27 +1596,28 @@ class exportObj.SquadBuilder
         else
             return true
 
-    getAvailableShipsMatching: (term='',sorted = true) ->
+    getAvailableShipsMatching: (term='',sorted = true, collection_only = false) ->
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
                 if (@isItemAvailable(ship_data, true))
                     if @isEpic or (not @isEpic and not ship_data.huge)
-                        ships.push
-                            id: ship_data.name
-                            name: ship_data.name
-                            display_name: ship_data.display_name
-                            text: if ship_data.display_name then ship_data.display_name else ship_data.name
-                            canonical_name: ship_data.canonical_name
-                            xws: ship_data.xws
-                            icon: if ship_data.icon then ship_data.icon else ship_data.xws
+                        if (not collection_only or (@collection? and (@collection.checks.collectioncheck == "true") and @collection.checkShelf('ship', ship_data.name)))
+                            ships.push
+                                id: ship_data.name
+                                name: ship_data.name
+                                display_name: ship_data.display_name
+                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
+                                canonical_name: ship_data.canonical_name
+                                xws: ship_data.xws
+                                icon: if ship_data.icon then ship_data.icon else ship_data.xws
         if sorted
             ships.sort exportObj.sortHelper
         return ships
 
-    getAvailableShipsMatchingAndCheapEnough: (points, term='', sorted=false) ->
+    getAvailableShipsMatchingAndCheapEnough: (points, term='', sorted=false, collection_only = false) ->
         # returns a list of ships that have at least one pilot cheaper than the given points value
-        possible_ships = @getAvailableShipsMatching(term, sorted)
+        possible_ships = @getAvailableShipsMatching(term, sorted, collection_only)
         cheap_ships = []
         for ship in possible_ships
             pilots = @getAvailablePilotsForShipIncluding(ship.name, null, '', true)
@@ -2366,7 +2369,7 @@ class exportObj.SquadBuilder
                     
                     
                     if @collection?.counts?
-                        addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.name] ? 0
+                        addon_count = @collection.counts?['upgrade']?[data.name] ? 0
                         container.find('.info-collection').text """You have #{addon_count} in your collection."""
                         container.find('.info-collection').show()
                     else
@@ -2523,12 +2526,12 @@ class exportObj.SquadBuilder
                 if idx < data.ships_or_upgrades or unused_addons.length == 0
                     # Add random ship
                     #console.log "Add ship"
-                    available_ships = @getAvailableShipsMatchingAndCheapEnough(data.max_points - @total_points)
+                    available_ships = @getAvailableShipsMatchingAndCheapEnough(data.max_points - @total_points, '', false, data.collection_only)
                     if available_ships.length == 0
                         if unused_addons.length > 0
                             idx = $.randomInt(unused_addons.length) + data.ships_or_upgrades
                         else 
-                            available_ships = @getAvailableShipsMatching('', false)
+                            available_ships = @getAvailableShipsMatching('', false, data.collection_only)
                     if available_ships.length > 0
                         ship_type = available_ships[$.randomInt available_ships.length].name
                         available_pilots = @getAvailablePilotsForShipIncluding(ship_type)
@@ -2536,7 +2539,7 @@ class exportObj.SquadBuilder
                             # edge case: It might have been a ship selected, that has only unique pilots - which all have been already selected 
                             return
                         pilot = available_pilots[$.randomInt available_pilots.length]
-                        if not pilot.disabled and (if @isQuickbuild then exportObj.pilots[exportObj.quickbuildsById[pilot.id].pilot] else exportObj.pilotsById[pilot.id]).sources.intersects(data.allowed_sources)
+                        if not pilot.disabled and (if @isQuickbuild then exportObj.pilots[exportObj.quickbuildsById[pilot.id].pilot] else exportObj.pilotsById[pilot.id]).sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('pilot', (if @isQuickbuild then exportObj.quickbuildsById[pilot.id] else pilot.name)))
                             new_ship = @addShip()
                             new_ship.setPilotById pilot.id
                 if idx >= data.ships_or_upgrades and unused_addons.length != 0
@@ -2545,7 +2548,7 @@ class exportObj.SquadBuilder
                     addon = unused_addons[idx - data.ships_or_upgrades]
                     switch addon.type
                         when 'Upgrade'
-                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship, addon,'', @dfl_filter_func, sorted = false) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
+                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship, addon,'', @dfl_filter_func, sorted = false) when (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('upgrade', upgrade.name))))
                             upgrade = available_upgrades[$.randomInt available_upgrades.length] if available_upgrades.length > 0
                             if upgrade and not upgrade.disabled
                                 addon.setById upgrade.id
@@ -2605,7 +2608,7 @@ class exportObj.SquadBuilder
         () =>
             @_randomizerLoopBody(data)
 
-    randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, bid_goal=5, ships_or_upgrades=3) ->
+    randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, bid_goal=5, ships_or_upgrades=3, collection_only=true) ->
         @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
         # Clear all existing ships
@@ -2618,6 +2621,7 @@ class exportObj.SquadBuilder
             ships_or_upgrades: ships_or_upgrades
             keep_running: true
             allowed_sources: allowed_sources ? exportObj.expansions
+            collection_only: @collection? and (@collection.checks.collectioncheck == "true") and collection_only
         stopHandler = () =>
             #console.log "*** TIMEOUT *** TIMEOUT *** TIMEOUT ***"
             data.keep_running = false
