@@ -389,8 +389,8 @@ exportObj.cardLoaders.English = () ->
            display_name: """Cassian Andor"""
            text: """At the start of the Activation Phase, you may choose 1 friendly ship at range 1-3. If you do, that ship removes 1 stress token."""
         "Cat":
-           display_name: """Cat"""
-           text: """While you perform a primary attack, if the defender is at range 0-1 of at least 1&nbsp;friendly device, roll 1 additional die."""
+           display_name: """Salami Cat"""
+           text: """While you perform a primary attack, if the defender is at range 0-1 of at least 1&nbsp;friendly device, roll 1 additional die.%LINEBREAK%<i>Dee Yun is the worst</i>"""
         "Cavern Angels Zealot":
            display_name: """Cavern Angels Zealot"""
            text: """<i class = flavor_text>Unlike most Rebel cells, Saw Gerrera’s partisans are willing to use extreme methods to undermine the Galactic Empire’s objectives in brutal battles that rage from Geonosis to Jedha.</i>"""
