@@ -2520,7 +2520,8 @@ class exportObj.SquadBuilder
                 unused_addons = []
                 for ship in @ships
                     for upgrade in ship.upgrades
-                        unused_addons.push upgrade unless upgrade.data?
+                        unused_addons.push upgrade unless upgrade.data? or (upgrade.occupied_by? and upgrade.occupied_by != null)
+                        
                 # 0 is ship, otherwise addon
                 idx = $.randomInt(data.ships_or_upgrades + unused_addons.length)
                 if idx < data.ships_or_upgrades or unused_addons.length == 0
