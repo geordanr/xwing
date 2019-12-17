@@ -1587,6 +1587,51 @@ exportObj.basicCardData = ->
                 [ 0, 0, 3, 0, 0, 3]
                 [ 0, 0, 0, 0, 0, 0]
            ]
+        "Fireball":
+           name: "Fireball"               
+           xws: "Fireball".canonicalize()
+           factions: ["Resistance"]
+           attack: 2
+           agility: 2
+           hull: 6
+           shields: 0
+           actions: [
+             "Focus"
+             "Evade"
+             "Barrel Roll"
+             "Slam"
+           ]
+           maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 1, 1, 3, 0, 0, 0, 3, 3 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
+        "TIE/Ba Interceptor":
+           name: "TIE/Ba Interceptor"               
+           xws: "TIE/Ba Interceptor".canonicalize()
+           factions: ["First Order"]
+           attack: 3
+           agility: 3
+           hull: 2
+           shields: 2
+           actions: [
+             "Focus"
+             "Evade"
+             "Lock"
+             "Barrel Roll"
+             "Boost"
+           ]
+           maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 2, 2, 0, 2, 2, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 3, 3, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
+           ]
 
         # Epic Section
         "CR90 Corellian Corvette":
@@ -2943,6 +2988,7 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Torpedo"
                 "Modification"
+                "Configuration"
             ]
         }
         {
@@ -2960,6 +3006,7 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Torpedo"
                 "Modification"
+                "Configuration"
             ]
         }
         {
@@ -2976,6 +3023,7 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Torpedo"
                 "Modification"
+                "Configuration"
             ]
         }
         {
@@ -2991,6 +3039,7 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Torpedo"
                 "Modification"
+                "Configuration"
             ]
         }
         {
@@ -7852,7 +7901,188 @@ exportObj.basicCardData = ->
                 "Configuration"
             ]
         }
-        
+        {
+            name: "Jarek Yeager"
+            id: 377
+            faction: "Resistance"
+            unique: true
+            ship: "Fireball"
+            skill: 5
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Astromech"
+                "Illicit"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "Kazuda Xiono"
+            id: 378
+            faction: "Resistance"
+            unique: true
+            ship: "Fireball"
+            skill: 4
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Astromech"
+                "Illicit"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "R1-J5"
+            id: 379
+            faction: "Resistance"
+            unique: true
+            ship: "Fireball"
+            skill: 1
+            points: 200
+            slots: [
+                "Missile"
+                "Astromech"
+                "Illicit"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "Colossus Station Mechanic"
+            id: 380
+            faction: "Resistance"
+            ship: "Fireball"
+            skill: 2
+            points: 200
+            slots: [
+                "Missile"
+                "Astromech"
+                "Illicit"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "Major Vonreg"
+            id: 381
+            faction: "First Order"
+            unique: true
+            skill: 6
+            ship: "TIE/Ba Interceptor"
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Holo"'
+            id: 382
+            faction: "First Order"
+            unique: true
+            skill: 5
+            ship: "TIE/Ba Interceptor"
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Modification"
+            ]
+        }
+        {
+            name: "Unnamed I4"
+            id: 383
+            faction: "First Order"
+            unique: true
+            skill: 4
+            ship: "TIE/Ba Interceptor"
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Modification"
+            ]
+        }
+        {
+            name: "Unnamed I3"
+            id: 384
+            faction: "First Order"
+            skill: 3
+            ship: "TIE/Ba Interceptor"
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Modification"
+            ]
+        }
+        {
+            name: "Captain Phasma"
+            id: 385
+            faction: "First Order"
+            unique: true
+            skill: 4
+            ship: "TIE/SF Fighter"
+            points: 200
+            slots: [
+                "Talent"
+                "Tech"
+                "Gunner"
+                "Missile"
+                "Sensor"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Rush"'
+            id: 386
+            faction: "First Order"
+            unique: true
+            skill: 2
+            ship: "TIE/VN Silencer"
+            points: 200
+            slots: [
+                "Tech"
+                "Torpedo"
+                "Missile"
+            ]
+        }
+        {
+            name: "Zizi Tlo"
+            id: 387
+            faction: "Resistance"
+            unique: true
+            skill: 5
+            charge: 1
+            recurring: true
+            ship: "RZ-2 A-Wing"
+            points: 200
+            slots: [
+                "Talent"
+                "Talent"
+                "Missile"
+                "Tech"
+            ]
+        }
+        {
+            name: "Ronith Blario"
+            id: 388
+            faction: "Resistance"
+            unique: true
+            skill: 2
+            ship: "RZ-2 A-Wing"
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Tech"
+            ]
+        }
         
     ]
 
@@ -9483,7 +9713,6 @@ exportObj.basicCardData = ->
             id: 175
             slot: "Configuration"
             points: 0
-            faction: "Resistance"
             ship: "T-70 X-Wing"
             modifier_func: (stats) ->
                 stats.actions.push 'Barrel Roll'
@@ -10909,6 +11138,46 @@ exportObj.basicCardData = ->
                     slot: 'Gunner'
                 }
             ]
+       }
+       {
+            name: "Coaxium Hyperfuel"
+            id: 310
+            slot: "Illicit"
+            points: 200
+            restriction_func: (ship) ->
+                "Slam" in ship.effectiveStats().actions
+       }
+       {
+            name: "Mag-Pulse Warheads"
+            id: 311
+            slot: "Missile"
+            points: 200
+            attack: 3
+            range: """1-3"""
+            rangebonus: true 
+            charge: 2
+       }
+       {
+            name: "R1-J5"
+            id: 312
+            slot: "Astromech"
+            faction: "Resistance"
+            unique: true
+            points: 200
+            charge: 3
+       }
+       {
+            name: "Stabilized S-Foils"
+            id: 313
+            slot: "Configuration"
+            ship: "B-Wing"
+            points: 200
+            modifier_func: (stats) ->
+                stats.actions.push '*Barrel Roll'
+                stats.actions.push 'R> Evade'
+                stats.actions.push '*Barrel Roll'
+                stats.actions.push 'R> Lock'
+                stats.actionsred.push 'Reload'
        }
     ]
 
