@@ -1312,6 +1312,16 @@ exportObj.cardLoaders.English = () ->
            text: """After you defend or perform an attack, you may spend 1 %CHARGE% to gain 1 focus or evade token. %LINEBREAK%<strong>Refined Gyrostabilizers:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. After you perform an action, you may perform a red %BOOST% or red %ROTATEARC% action."""
         "Ronith Blario":
            text: """While you defend or perform an attack, if the enemy ship is in another friendly ship's %SINGLETURRETARC%, you may spend 1 focus token from that friendly ship to change 1 of your %FOCUS% results to an %EVADE% or %HIT% result. %LINEBREAK%<strong>Refined Gyrostabilizers:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. After you perform an action, you may perform a red %BOOST% or red %ROTATEARC% action."""
+        "Gina Moonsong":
+           text: """At the start of the Engagement Phase, you <b>must</b> transfer 1 of your stress tokens to another friendly ship at range 0-2."""
+        "K-2SO":
+           text: """After you gain a stress token, gain 1 calculate token."""
+        "Alexsandr Kallus":
+           text: """While you defend, if the attacker modified any attack dice, you may roll 1 additional defense die."""
+        "Leia Organa":
+           text: """After a friendly ship fully executes a red maneuver, if it is at range 0-3, you may spend 1 %FORCE%. If you do, that ship gains 1 focus token or recovers 1 %FORCE%."""
+        "Paige Tico":
+           text: """After you drop a device, you may spend 1 %CHARGE% to drop an additional device."""
             
         # Epic Ships
         "Republic Judiciary":
@@ -2114,6 +2124,8 @@ exportObj.cardLoaders.English = () ->
         "Stabilized S-Foils":
            display_name: """Stabilized S-Foils"""
            text: """<strong>Closed: </strong><i>Adds <r>%RELOAD%</r>, %BARRELROLL% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i><r> %EVADE%</r></i>%LINEBREAK% Before you activate, if you are not critically damaged, you may flip this card. %LINEBREAK% <strong>Open:</strong> <i>Adds %BARRELROLL% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i><r> %LOCK%</r></i>%LINEBREAK% After you perform an attack, you may spend your lock on the defender to perform a bonus %CANNON% attack against that ship using a %CANNON% upgrade you have not attacked with this turn. %LINEBREAK% Before you activate, if you are not critically damaged, you may flip this card."""
+        "K-2SO":
+           text: """Adds %CALCULATE%, %JAM% %LINEBREAK% During the System Phase, you may choose a friendly ship at range 0-3. That ship gains 1 calculate token and 1 stress token."""
             
         # Epic upgrades
         "Admiral Ozzel":

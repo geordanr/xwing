@@ -8083,6 +8083,106 @@ exportObj.basicCardData = ->
                 "Tech"
             ]
         }
+        {
+            name: "Paige Tico"
+            id: 389
+            faction: "Resistance"
+            unique: true
+            skill: 5
+            ship: "MG-100 StarFortress"
+            points: 200
+            charge: 1
+            recurring: true
+            slots: [
+                "Sensor"
+                "Tech"
+                "Crew"
+                "Gunner"
+                "Gunner"
+                "Device"
+                "Device"
+                "Modification"
+            ]
+        }
+        {
+            name: "K-2SO"
+            id: 390
+            faction: "Rebel Alliance"
+            unique: true
+            skill: 3
+            ship: "U-Wing"
+            points: 200
+            slots: [
+                "Talent"
+                "Sensor"
+                "Crew"
+                "Crew"
+                "Modification"
+                "Configuration"
+            ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Lock"
+                ]
+        }
+        {
+            name: "Gina Moonsong"
+            id: 391
+            faction: "Rebel Alliance"
+            unique: true
+            skill: 5
+            ship: "B-Wing"
+            points: 200
+            slots: [
+                "Talent"
+                "Sensor"
+                "Cannon"
+                "Cannon"
+                "Torpedo"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Alexsandr Kallus"
+            id: 392
+            faction: "Rebel Alliance"
+            unique: true
+            skill: 4
+            ship: "VCX-100"
+            points: 200
+            slots: [
+                "Torpedo"
+                "Sensor"
+                "Turret"
+                "Crew"
+                "Crew"
+                "Modification"
+                "Gunner"
+                "Title"
+            ]
+        }
+        {
+            name: "Leia Organa"
+            id: 393
+            faction: "Rebel Alliance"
+            unique: true
+            skill: 5
+            ship: "YT-1300"
+            points: 200
+            force: 1
+            slots: [
+                "Force"
+                "Missile"
+                "Gunner"
+                "Crew"
+                "Crew"
+                "Modification"
+                "Modification"
+                "Title"
+            ]
+        }
         
     ]
 
@@ -11178,6 +11278,17 @@ exportObj.basicCardData = ->
                 stats.actions.push '*Barrel Roll'
                 stats.actions.push 'R> Lock'
                 stats.actionsred.push 'Reload'
+       }
+       {
+            name: "K-2SO"
+            id: 314
+            slot: "Crew"
+            faction: "Rebel Alliance"
+            unique: true
+            points: 200
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate'
+                stats.actions.push 'Jam'
        }
     ]
 
