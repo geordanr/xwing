@@ -8278,6 +8278,13 @@ exportObj.basicCardData = ->
                 "Modification"
                 "HardpointShip"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Evade"
+                    "Lock"
+                    "Barrel Roll"
+                ]
         }
         {
             name: "Nom Lumb"
