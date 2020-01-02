@@ -5287,7 +5287,7 @@ exportObj.basicCardData = ->
             ship: "TIE Striker"
             skill: 1
             points: 34
-            slots: [    
+            slots: [
                 "Gunner"
                 "Device"
                 "Modification"
@@ -5321,7 +5321,7 @@ exportObj.basicCardData = ->
             ship: "VT-49 Decimator"
             skill: 3
             points: 74
-            slots: [       
+            slots: [
                 "Talent"
                 "Torpedo"
                 "Crew"
@@ -5340,7 +5340,7 @@ exportObj.basicCardData = ->
             ship: "VT-49 Decimator"
             skill: 2
             points: 68
-            slots: [    
+            slots: [
                 "Torpedo"
                 "Crew"
                 "Crew"
@@ -8183,7 +8183,119 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
-        
+        {
+            name: "Fifth Brother"
+            id: 394
+            faction: "Galactic Empire"
+            unique: true
+            skill: 4
+            ship: "TIE Advanced Prototype"
+            points: 200
+            force: 2
+            slots: [
+                "Force"
+                "Sensor"
+                "Missile"
+            ]
+        }
+        {
+            name: '"Vagabond"'
+            id: 395
+            faction: "Galactic Empire"
+            unique: true
+            skill: 2
+            ship: "TIE Striker"
+            points: 200
+            slots: [
+                "Gunner"
+                "Device"
+                "Modification"
+            ]
+        }
+        {
+            name: "Morna Kee"
+            id: 396
+            faction: "Galactic Empire"
+            unique: true
+            skill: 4
+            ship: "VT-49 Decimator"
+            points: 200
+            charge: 3
+            slots: [
+                "Talent"
+                "Torpedo"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Device"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "Lieutenant LeHuse"
+            id: 397
+            faction: "First Order"
+            unique: true
+            skill: 5
+            ship: "TIE/SF Fighter"
+            points: 200
+            slots: [
+                "Talent"
+                "Tech"
+                "Gunner"
+                "Missile"
+                "Sensor"
+                "Modification"
+            ]
+        }
+        {
+            name: "Bossk (Z-95 Headhunter)"
+            xws: "bossk-z-95headhunter"
+            id: 398
+            faction: "Scum and Villainy"
+            unique: true
+            skill: 4
+            ship: "Z-95 Headhunter"
+            points: 200
+            slots: [
+                "Talent"
+                "Missile"
+                "Illicit"
+                "Modification"
+            ]
+        }
+        {
+            name: "G4R-GOR V/M"
+            id: 399
+            faction: "Scum and Villainy"
+            unique: true
+            skill: 0
+            ship: "M3-A Interceptor"
+            points: 200
+            slots: [
+                "Modification"
+                "HardpointShip"
+            ]
+        }
+        {
+            name: "Nom Lumb"
+            id: 400
+            faction: "Scum and Villainy"
+            unique: true
+            skill: 1
+            ship: "JumpMaster 5000"
+            points: 200
+            slots: [
+                "Torpedo"
+                "Crew"
+                "Gunner"
+                "Illicit"
+                "Modification"
+                "Title"
+            ]
+        }
     ]
 
 
