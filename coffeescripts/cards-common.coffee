@@ -16545,7 +16545,7 @@ exportObj.epicExclusions = (data) ->
 # while upgrades assumed included unless on the excluded list
 exportObj.hyperspaceCheck = (data, faction='', shipCheck=false) ->
     # check ship/pilot first
-    if (shipCheck or data.ship?)
+    if (shipCheck)
         if (data.name in exportObj.hyperspacePilotExclusions)
             return false
         for ship in exportObj.hyperspaceShipInclusions
