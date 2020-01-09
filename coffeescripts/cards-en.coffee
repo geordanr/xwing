@@ -2253,7 +2253,7 @@ exportObj.cardLoaders.English = () ->
            text: """Action: Spend 1 %CHARGE% to recover 2 %ENERGY%."""
         "Toryn Farr":
            display_name: """Toryn Farr"""
-           text: """After you coordinate a friendly ship, it may acquire a lock on a ship you are locking, ignoring range restrictions."""
+           text: """<i>Adds %LOCK% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%COORDINATE%</r> %LINEBREAK%After you coordinate a friendly ship, it may acquire a lock on a ship you are locking, ignoring range restrictions."""
         "Dodonna's Pride":
            display_name: """Dodonna's Pride"""
            text: """<i>Adds %EVADE% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%COORDINATE%</r>, %FOCUS% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%COORDINATE%</r> %LINEBREAK% Removes 2 shields</i> %LINEBREAK% Adds %TEAM% and %CARGO% slots."""
