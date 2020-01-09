@@ -1166,7 +1166,7 @@ class exportObj.SquadBuilder
                 @printable_container.find('.printable-body').append $.trim """
                     <h5 class="print-notes">Notes:</h5>
                     <pre class="print-notes"></pre>
-                    <div class="version">Points Version: July 2019</div>
+                    <div class="version">Points Version: 1.6 January 2020</div>
                 """            
                 @printable_container.find('.printable-body pre.print-notes').text @notes.val()
 
