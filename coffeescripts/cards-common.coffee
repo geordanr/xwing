@@ -11475,6 +11475,8 @@ exportObj.basicCardData = ->
             faction: "First Order"
             unequips_upgrades: [ "Modification" ]
             also_occupies_upgrades: [ "Modification" ]
+            restriction_func: (ship) ->
+                ship.doesSlotExist "Modification"
        }
        {
             name: "Proud Tradition"
