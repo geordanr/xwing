@@ -8100,7 +8100,7 @@ exportObj.basicCardData = ->
             unique: true
             skill: 2
             ship: "RZ-2 A-Wing"
-            points: 200
+            points: 34
             slots: [
                 "Talent"
                 "Missile"
@@ -8329,20 +8329,6 @@ exportObj.basicCardData = ->
                 "Illicit"
                 "Modification"
                 "Title"
-            ]
-        }
-        {
-            name: "Ronnith Blario"
-            id: 401
-            faction: "Resistance"
-            unique: true
-            skill: 2
-            ship: "RZ-2 A-Wing"
-            points: 34
-            slots: [
-                "Talent"
-                "Missile"
-                "Tech"
             ]
         }
     ]
@@ -11460,6 +11446,7 @@ exportObj.basicCardData = ->
             id: 316
             slot: "Device"
             points: 8
+            applies_condition: 'Cluster Mine'.canonicalize()
        }
        {
             name: "Ion Bombs"
@@ -11572,6 +11559,10 @@ exportObj.basicCardData = ->
             name: 'Compromising Intel'
             id: 18
             unique: true
+        }
+        {
+            name: 'Cluster Mine'
+            id: 19
         }
     ]
 
