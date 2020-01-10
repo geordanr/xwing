@@ -7778,7 +7778,7 @@ exportObj.basicCardData = ->
             ship: "Raider-class Corvette"
             skill: 8
             engagement: 0
-            points: 150
+            points: 146
             slots: [
                 "Command"
                 "Torpedo"
