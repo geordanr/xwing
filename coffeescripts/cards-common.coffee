@@ -11459,6 +11459,7 @@ exportObj.basicCardData = ->
             id: 318
             slot: "Tech"
             points: 9
+            charge: 2
             faction: "First Order"
             unequips_upgrades: [ "Modification" ]
             also_occupies_upgrades: [ "Modification" ]
