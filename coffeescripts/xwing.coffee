@@ -2551,7 +2551,7 @@ class exportObj.SquadBuilder
                     switch addon.type
                         when 'Upgrade'
                             available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship, addon,'', @dfl_filter_func, sorted = false) when (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('upgrade', upgrade.name))))
-                            upgrade = available_upgrades[$.randomInt available_upgrades.length] if available_upgrades.length > 0
+                            upgrade = if available_upgrades.length > 0 then available_upgrades[$.randomInt available_upgrades.length] else undefined
                             if upgrade and not upgrade.disabled
                                 addon.setById upgrade.id
                         else
