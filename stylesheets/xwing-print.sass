@@ -106,18 +106,20 @@ body
 
   .fancy-header
     border: $fancy-header-height solid #4e4e4e
-    color: white
+    color: white !important
     border-left-color: transparent
     border-top-color: transparent
     border-right-color: transparent
     font-family: EurostileStandard, Impact, sans-serif
 
     .squad-name
-      color: white !important
       position: absolute
-      font-size: $fancy-header-height * 0.8
-      margin-top: $fancy-header-height * 0.25
+      font-size: $fancy-header-height * 0.75
+      margin-top: $fancy-header-height * 0.2
       font-weight: 100
+    
+      .xwing-miniatures-font
+        font-size: $fancy-header-height * 0.7
 
     .squad-faction
       position: absolute
@@ -126,7 +128,7 @@ body
       font-weight: 100
 
       .xwing-miniatures-font
-        font-size: $fancy-header-height * 0.8
+        font-size: $fancy-header-height * 0.7
 
     .mask
       position: absolute
@@ -183,8 +185,8 @@ body
 
       .pilot-header-text
         position: absolute
-        font-size: $fancy-pilot-header-height * 0.8
-        margin-top: -($fancy-pilot-header-height * 0.8)
+        font-size: $fancy-pilot-header-height * 0.75
+        margin-top: -($fancy-pilot-header-height * 0.75)
         font-weight: 100
 
         .fancy-ship-type

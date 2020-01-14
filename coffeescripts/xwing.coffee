@@ -320,7 +320,7 @@ class exportObj.SquadBuilder
                     Add Space for Cards<input type="checkbox" class="toggle-vertical-space" />
                 </label>
                 <label class="maneuver-print-checkbox hidden-phone">
-                    Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" checked="checked" />
+                    Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" />
                 </label>
                 <label class="expanded-shield-hull-print-checkbox hidden-phone">
                     Expand Shield and Hull <input type="checkbox" class="toggle-expanded-shield-hull-print" />
@@ -1145,32 +1145,39 @@ class exportObj.SquadBuilder
                         when 'Scum and Villainy'
                             'scum'
                         when 'Resistance'
-                            'resistance'
+                            'rebel-outline'
                         when 'First Order'
                             'firstorder'
                         when 'Galactic Republic'
-                            'galacticrepublic'
+                            'republic'
                         when 'Separatist Alliance'
-                            'separatistalliance'
+                            'separatists'
                     @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
+                    # Type Note
+                    if @isHyperspace
+                        @printable_container.find('.squad-name').append """ <i class="xwing-miniatures-font xwing-miniatures-font-first-player-1"></i>"""
+                    if @isEpic
+                        @printable_container.find('.squad-name').append """ <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>""" 
+
+                    
+            # Notes, if present
+            @printable_container.find('.printable-body').append $.trim """
+                <div class="version">Points Version: 1.6 January 2020</div>
+            """            
+            if $.trim(@notes.val()) != ''
+                @printable_container.find('.printable-body').append $.trim """
+                    <h5 class="print-notes">Notes:</h5>
+                    <pre class="print-notes"></pre>
+                """            
+                @printable_container.find('.printable-body pre.print-notes').text @notes.val()
+            else
 
             # Conditions
             @printable_container.find('.printable-body').append $.trim """
                 <div class="print-conditions"></div>
             """
             @printable_container.find('.printable-body .print-conditions').html @condition_container.html()
-
-
-            # Notes, if present
-            @printable_container.find('.printable-body').append $.trim """
-                <h5 class="print-notes">Notes:</h5>
-                <pre class="print-notes"></pre>
-                <div class="version">Points Version: 1.6 January 2020</div>
-            """            
-            if $.trim(@notes.val()) != ''
-                @printable_container.find('.printable-body pre.print-notes').text @notes.val()
-            else
-
+                
             # Obstacles
             if @list_modal.find('.toggle-obstacles').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
