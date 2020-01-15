@@ -5164,6 +5164,11 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 1
         }
+        {
+            name: 'Veteran Tail Gunner'
+            type: 'upgrade'
+            count: 1
+        }
     ]
 
     'Delta-7 Aethersprite Expansion': [
