@@ -8234,6 +8234,7 @@ exportObj.basicCardData = ->
             ship: "TIE Striker"
             points: 35
             slots: [
+                "Talent"
                 "Gunner"
                 "Device"
                 "Modification"
