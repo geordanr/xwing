@@ -801,6 +801,9 @@ class exportObj.SquadBuilder
                         <option class="gascloud1-select" value="gascloud1">Gas Cloud 1</option>
                         <option class="gascloud2-select" value="gascloud2">Gas Cloud 2</option>
                         <option class="gascloud3-select" value="gascloud3">Gas Cloud 3</option>
+                        <option class="gascloud4-select" value="gascloud4">Gas Cloud 4</option>
+                        <option class="gascloud5-select" value="gascloud5">Gas Cloud 5</option>
+                        <option class="gascloud6-select" value="gascloud6">Gas Cloud 6</option>
                     </select>
                 </div>
                 <div class="obstacle-image-container" style="display:none;">
