@@ -128,7 +128,7 @@ exportObj.translations.Deutsch =
         '#aboutTab' : 'Impressum'
         # Obstacles
         '.choose-obstacles' : 'Wähle Hindernisse'
-        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Dies ist eine Beta-Funktion, aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
+        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
         '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
         '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
         '.coreasteroid2-select' : 'Grundspiel Asteroid 2'

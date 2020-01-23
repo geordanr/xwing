@@ -120,7 +120,7 @@ exportObj.translations['Español'] =
         '#aboutTab' : 'Acerca de'
         # Obstacles
         '.choose-obstacles' : 'Elegir Obstáculos'
-        '.choose-obstacles-description' : 'Elige hasta tres obstáculos para incluirlos el enlace para programas externos (función en modo Beta, aún no se muestran los obstáculos elegidos al imprimir).'
+        '.choose-obstacles-description' : 'Elige hasta tres obstáculos para incluirlos el enlace para programas externos (Aún no se muestran los obstáculos elegidos al imprimir).'
         '.coreasteroid0-select' : 'Asteroide del Core 0'
         '.coreasteroid1-select' : 'Asteroide del Core 1'
         '.coreasteroid2-select' : 'Asteroide del Core 2'
