@@ -824,11 +824,6 @@ class exportObj.SquadBuilder
             e.preventDefault()
             if @backend?
                 @backend.list this
-        #@backend_list_all_squads_button = $ @container.find('button.backend-list-all-squads')
-        #@backend_list_all_squads_button.click (e) =>
-        #    e.preventDefault()
-        #    if @backend?
-        #        @backend.list this, true
         @backend_save_list_button = $ @container.find('button.save-list')
         @backend_save_list_button.click (e) =>
             e.preventDefault()

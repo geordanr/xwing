@@ -158,12 +158,12 @@ class exportObj.SquadBuilderBackend
                             <h4>#{squad.name}</h4>
                         </div>
                         <div class="span3">
-                            <h5>#{squad.additional_data.points} Points</h5>
+                            <h5>#{squad.additional_data?.points} Points</h5>
                         </div>
                     </div>
                     <div class="row-fluid squad-description">
                         <div class="span8">
-                            #{squad.additional_data.description}
+                            #{squad.additional_data?.description}
                         </div>
                         <div class="span4">
                             <button class="btn load-squad">Load</button>
