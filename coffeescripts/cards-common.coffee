@@ -8280,7 +8280,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bossk (Z-95 Headhunter)"
-            xws: "bossk-z-95headhunter"
+            xws: "bossk-z95af4headhunter"
             id: 398
             faction: "Scum and Villainy"
             unique: true
