@@ -15107,6 +15107,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Proton Torpedoes"
                 "Lone Wolf"
+                "Targeting Computer"
             ]
         }
         {
