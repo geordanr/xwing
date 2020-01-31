@@ -16028,6 +16028,36 @@ exportObj.basicCardData = ->
                 "Delayed Fuses"
             ]
         }
+        {
+            id: 373
+            faction: "Galactic Republic"
+            pilot: "Plo Koon"
+            ship: "Delta-7 Aethersprite"
+            threat: 5
+            suffix: " and his Wingmates"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Synchronized Console"
+                "Brilliant Evasion"
+                "Delta-7B"
+            ]
+            linkedId: 374
+            wingleader: true
+        }
+        {
+            id: 374
+            faction: "Galactic Republic"
+            pilot: "Gold Squadron Trooper"
+            ship: "V-19 Torrent"
+            suffix: ", Plo Koons squad"
+            threat: 5
+            upgrades: [
+                "Concussion Missiles"
+                "Synchronized Console"
+            ]
+            linkedId: 373
+            wingmate: true
+        }
 
     ]
 

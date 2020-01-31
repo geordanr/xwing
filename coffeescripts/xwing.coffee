@@ -3039,8 +3039,10 @@ class Ship
                             @builder.addShip()
                         @linkedShip.linkedShip = this
                         @linkedShip.setPilotById quickbuild.linkedId
-                        @linkedShip.primary = false
-                    @primary = true
+                        # for pairs the first selected ship is master, so as we have been created first, we set the other ship to false
+                        # for wings the wingleader is always master, so we don't set the other ship to false, if we are just a wingmate
+                        @linkedShip.primary = false unless quickbuild.wingmate?
+                    @primary = true unless quickbuild.wingmate?
                     @builder.isUpdatingPoints = false
                     @builder.container.trigger 'xwing:pointsUpdated'
 
@@ -3178,6 +3180,8 @@ class Ship
                 <input class="ship-selector-container" type="hidden" />
                 <br />
                 <input type="hidden" class="pilot-selector-container" />
+                <br />
+                <input type="hidden" class="wingmate-selector-container" />
             </div>
             <div class="span1 points-display-container">
                 <span></span>
@@ -3192,6 +3196,7 @@ class Ship
 
         @ship_selector = $ @row.find('input.ship-selector-container')
         @pilot_selector = $ @row.find('input.pilot-selector-container')
+        @wingmate_selector = $ @row.find('input.wingmate-selector-container')
 
         shipResultFormatter = (object, container, query) ->
             # Append directly so we don't have to disable markup escaping
@@ -3284,6 +3289,57 @@ class Ship
             @builder.showTooltip 'Pilot', @pilot, @ if @pilot
 
         @pilot_selector.data('select2').container.hide()
+
+        if @builder.isQuickbuild
+            @wingmate_selector.select2
+                width: '100%'
+                placeholder: exportObj.translate @builder.language, 'ui', 'wingmateSelectorPlaceholder'
+                query: (query) =>
+                    query.callback
+                        more: false
+                        results: ["this", "is", "a", "test"]
+#                        results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), (if not @builder.isQuickbuild then @wingmate else @quickbuildId), query.term, true, @)
+                minimumResultsForSearch: if $.isMobile() then -1 else 0
+                formatResultCssClass: (obj) =>
+                    return '' # todo: return 'select2-result-not-in-collection' if number of wingmates exceeds collection
+#                    if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
+#                        not_in_collection = false
+#                        name = ""
+#                        if @builder.isQuickbuild
+#                            name = exportObj.quickbuildsById[obj.id]?.wingmate ? "unknown wingmate"
+#                        else
+#                            name = obj.name
+#                        if obj.id == @wingmate?.id
+#                            # Currently selected wingmate; mark as not in collection if it's neither
+#                            # on the shelf nor on the table
+#                            unless (@builder.collection.checkShelf('wingmate', name) or @builder.collection.checkTable('wingmate', name))
+#                                not_in_collection = true
+#                        else
+#                            # Not currently selected; check shelf only
+#                            not_in_collection = not @builder.collection.checkShelf('wingmate', name)
+#                        if not_in_collection then 'select2-result-not-in-collection' else ''
+#                    else
+#                        ''
+    
+            @wingmate_selector.on 'change', (e) =>
+                @setWingmates @wingmate_selector.select2('val')
+                @builder.current_squad.dirty = true
+                @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+                @builder.backend_status.fadeOut 'slow'
+            @wingmate_selector.data('select2').results.on 'mousemove-filtered', (e) =>
+                return
+                # TODO: show tooltip of wingmate
+#                select2_data = $(e.target).closest('.select2-result').data 'select2-data'
+#                if @builder.isQuickbuild
+#                    @builder.showTooltip 'Quickbuild', exportObj.quickbuildsById[select2_data.id], {ship: @data?.name} if select2_data?.id?
+#                else
+#                    @builder.showTooltip 'Pilot', exportObj.wingmatesById[select2_data.id] if select2_data?.id?
+#            @wingmate_selector.data('select2').container.on 'mouseover', (e) =>
+#                @builder.showTooltip 'Pilot', @wingmate, @ if @wingmate
+#            @wingmate_selector.data('select2').container.on 'touchstart', (e) =>
+#                @builder.showTooltip 'Pilot', @wingmate, @ if @wingmate
+#    
+            @wingmate_selector.data('select2').container.hide()
 
         @points_container = $ @row.find('.points-display-container')
         @points_container.fadeTo 0, 0
