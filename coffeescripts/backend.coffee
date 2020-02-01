@@ -448,6 +448,7 @@ class exportObj.SquadBuilderBackend
                     <button class="btn show-extended-squads">Extended</button>
                     <button class="btn show-hyperspace-squads">Hyperspace</button>
                     <button class="btn show-quickbuild-squads">Quickbuild</button>
+                    <button class="btn show-epic-squads">Epic</button>
                     <button class="btn show-archived-squads">Archived</button>
                 </div>
                 <button class="btn btn reload-all">Reload<span class="hidden-phone"> all squads (this might take a while)</span></button>
@@ -568,6 +569,15 @@ class exportObj.SquadBuilderBackend
                 @show_extended_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
                     $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Zs/) != -1
+
+        @show_epic_squads_button = $ @squad_list_modal.find('.show-epic-squads')
+        @show_epic_squads_button.click (e) =>
+            unless @squad_display_mode == 'epic'
+                @squad_display_mode = 'epic'
+                @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
+                @show_extended_squads_button.addClass 'btn-inverse'
+                @squad_list_modal.find('.squad-list li').each (idx, elem) ->
+                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Ze/) != -1
 
         @show_hyperspace_squads_button = $ @squad_list_modal.find('.show-hyperspace-squads')
         @show_hyperspace_squads_button.click (e) =>
