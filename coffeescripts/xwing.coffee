@@ -3712,7 +3712,7 @@ class Ship
     toSerialized: ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
         if @builder.isQuickbuild
-            """#{@quickbuildId}X"""
+            if (!@wingmates? || @wingmates.length == 0) then """#{@quickbuildId}X""" else """#{@quickbuildId}X#{@wingmates.length}"""
         else
             upgrades = """#{upgrade?.data?.id ? "" for upgrade, i in @upgrades}""".replace(/,/g, "W")
             [
@@ -3797,24 +3797,29 @@ class Ship
                 @setPilotById parseInt(pilot_id), true
                 # make sure the pilot is valid 
                 return false unless @validate
-
-                # iterate over upgrades to be added, and remove all that have been successfully added
-                for _ in [1 ... 3] # try adding each upgrade a few times, as the required slots might be added in by titles etc and are not yet available on the first try
-                    for i in [upgrade_ids.length - 1 ... -1]
-                        upgrade_id = upgrade_ids[i]
-                        upgrade = exportObj.upgradesById[upgrade_id]
-                        if not upgrade? 
-                            upgrade_ids.splice(i,1) # Remove unknown or empty ID
-                            if upgrade_id != ""
-                                console.log("Unknown upgrade id " + upgrade_id + " could not be added. Please report that error")
-                                everythingadded = false
-                            continue
-                        for upgrade_selection in @upgrades
-                            if exportObj.slotsMatching(upgrade.slot, upgrade_selection.slot) and not upgrade_selection.isOccupied()
-                                upgrade_selection.setById upgrade_id
-                                if upgrade_selection.lastSetValid
-                                    upgrade_ids.splice(i,1) # added successfully, remove from list
-                                break
+                
+                if !@builder.isQuickbuild
+                    # iterate over upgrades to be added, and remove all that have been successfully added
+                    for _ in [1 ... 3] # try adding each upgrade a few times, as the required slots might be added in by titles etc and are not yet available on the first try
+                        for i in [upgrade_ids.length - 1 ... -1]
+                            upgrade_id = upgrade_ids[i]
+                            upgrade = exportObj.upgradesById[upgrade_id]
+                            if not upgrade? 
+                                upgrade_ids.splice(i,1) # Remove unknown or empty ID
+                                if upgrade_id != ""
+                                    console.log("Unknown upgrade id " + upgrade_id + " could not be added. Please report that error")
+                                    everythingadded = false
+                                continue
+                            for upgrade_selection in @upgrades
+                                if exportObj.slotsMatching(upgrade.slot, upgrade_selection.slot) and not upgrade_selection.isOccupied()
+                                    upgrade_selection.setById upgrade_id
+                                    if upgrade_selection.lastSetValid
+                                        upgrade_ids.splice(i,1) # added successfully, remove from list
+                                    break
+                else 
+                    # we are in quickbuild. Number of wingmates might be provided as upgrade ID of a quickbuild
+                    if upgrade_ids.length > 0 && @wingmates.length > 0 # check if we are actually a wingleader
+                        @setWingmates(upgrade_ids[0])
                 everythingadded &= upgrade_ids.length == 0
 
                             
