@@ -4109,7 +4109,7 @@ class GenericAddon
             @ship.builder.container.trigger 'xwing:pointsUpdated'
 
     conferAddons: ->
-        if @data.confersAddons? and !@builder.isQuickbuild and @data.confersAddons.length > 0
+        if @data.confersAddons? and !@ship.builder.isQuickbuild and @data.confersAddons.length > 0
             for addon in @data.confersAddons
                 cls = addon.type
                 args =

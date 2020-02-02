@@ -16064,7 +16064,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             pilot: "Echo Base Evacuees"
             ship: "GR-75 Medium Transport"
-            threat: 7
+            threat: 4
             upgrades: [
                 "Bright Hope"
                 "Optimized Power Core"
@@ -16080,7 +16080,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             pilot: "Alderaanian Guard"
             ship: "CR90 Corellian Corvette"
-            threat: 8
+            threat: 9
             upgrades: [
                 "Dodonna's Pride"
                 "Comms Team"
@@ -16090,6 +16090,411 @@ exportObj.basicCardData = ->
                 "Ion Cannon Battery"
                 "Jan Dodonna"
                 "Toryn Farr"
+            ]
+        }
+        {
+            id: 377
+            faction: "Galactic Empire"
+            pilot: "Outer Rim Garrison"
+            ship: "Gozanti-class Cruiser"
+            threat: 5
+            upgrades: [
+                "Requiem"
+                "Optimized Power Core"
+                "Boosted Scanners"
+                "Sensor Experts"
+                "Comms Team"
+                "Dorsal Turret"
+                "Targeting Battery"
+                "Strategic Commander"
+            ]
+        }
+        {
+            id: 378
+            faction: "Galactic Empire"
+            pilot: "Outer Rim Patrol"
+            ship: "Raider-class Corvette"
+            threat: 9
+            upgrades: [
+                "Impetuous"
+                "Boosted Scanners"
+                "Bombardment Specialists"
+                "Ordnance Team"
+                "Concussion Missiles"
+                "Adv. Proton Torpedoes"
+                "Turbolaser Battery"
+                "Ordnance Tubes"
+                "Captain Needa"
+            ]
+        }
+        {
+            id: 379
+            faction: "Scum and Villainy"
+            pilot: "Syndicate Smugglers"
+            ship: "C-ROC Cruiser"
+            threat: 5
+            upgrades: [
+                "Merchant One"
+                "Quick-Release Locks"
+                "Tibanna Reserves"
+                "Adaptive Shields"
+                "IG-RM Droids"
+                "Comms Team"
+                "Dorsal Turret"
+                "Point-Defense Battery"
+                "Azmorigan"
+                "Novice Technician"
+            ]
+        }
+        {
+            id: 380
+            faction: "Resistance"
+            pilot: "Colossus Station Mechanic"
+            ship: "Fireball"
+            threat: 1
+            upgrades: [
+                "Kaz's Fireball"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Coaxium Hyperfuel"
+                "R1-J5"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 381
+            faction: "Resistance"
+            pilot: "Jarek Yeager"
+            ship: "Fireball"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Elusive"
+            ]
+        }
+        {
+            id: 382
+            faction: "Resistance"
+            pilot: "Kazuda Xiono"
+            ship: "Fireball"
+            threat: 2
+            upgrades: [
+                "Kaz's Fireball"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Coaxium Hyperfuel"
+                "R1-J5"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 383
+            faction: "Resistance"
+            pilot: "R1-J5"
+            ship: "Fireball"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Coaxium Hyperfuel"
+            ]
+        }
+        {
+            id: 384
+            faction: "Resistance"
+            pilot: "New Republic Volunteers"
+            ship: "GR-75 Medium Transport"
+            threat: 4
+            upgrades: [
+                "Tibanna Reserves"
+                "Boosted Scanners"
+                "Sensor Experts"
+                "Dorsal Turret"
+                "Ion Cannon Battery"
+                "Stalwart Captain"
+            ]
+        }
+        {
+            id: 385
+            faction: "First Order"
+            pilot: "Major Vonreg"
+            ship: "TIE/Ba Interceptor"
+            threat: 3
+            upgrades: [
+                "Mag-Pulse Warheads"
+                "Deuterium Power Cells"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 386
+            faction: "First Order"
+            pilot: '"Holo"'
+            ship: "TIE/Ba Interceptor"
+            threat: 3
+            upgrades: [
+                "Hull Upgrade"
+                "Munitions Failsafe"
+                "Mag-Pulse Warheads"
+                "Proud Tradition"
+            ]
+        }
+        {
+            id: 387
+            faction: "First Order"
+            pilot: '"Ember"'
+            ship: "TIE/Ba Interceptor"
+            threat: 3
+            upgrades: [
+                "Afterburners"
+                "Concussion Missiles"
+                "Predator"
+                "Elusive"
+            ]
+        }
+        {
+            id: 388
+            faction: "First Order"
+            pilot: "First Order Provocateur"
+            ship: "TIE/Ba Interceptor"
+            threat: 2
+            upgrades: [
+                "Snap Shot"
+            ]
+        }
+        {
+            id: 389
+            faction: "First Order"
+            pilot: "First Order Sympathizers"
+            ship: "Gozanti-class Cruiser"
+            threat: 4
+            upgrades: [
+                "Adaptive Shields"
+                "Gunnery Specialists"
+                "Damage Control Team"
+                "Point-Defense Battery"
+                "Strategic Commander"
+            ]
+        }
+        {
+            id: 390
+            faction: "First Order"
+            pilot: "First Order Collaborators"
+            ship: "Raider-class Corvette"
+            threat: 8
+            upgrades: [
+                "Boosted Scanners"
+                "Comms Team"
+                "Bombardment Specialists"
+                "Point-Defense Battery"
+                "Ion Cannon Battery"
+                "Stalwart Captain"
+                "Novice Technician"
+            ]
+        }
+        {
+            id: 391
+            faction: "Galactic Republic"
+            pilot: "Shadow Squadron Veteran"
+            ship: "BTL-B Y-Wing"
+            threat: 3
+            upgrades: [
+                "R5 Astromech"
+                "Proton Torpedoes"
+                "Ion Cannon Turret"
+                "Snap Shot"
+            ]
+        }
+        {
+            id: 392
+            faction: "Galactic Republic"
+            pilot: "Anakin Skywalker"
+            ship: "BTL-B Y-Wing"
+            threat: 4
+            upgrades: [
+                "Proton Bombs"
+                "R2 Astromech"
+                "Ahsoka Tano"
+                "Proton Torpedoes"
+                "Ion Cannon Turret"
+                "Precognitive Reflexes"
+            ]
+        }
+        {
+            id: 393
+            faction: "Galactic Republic"
+            pilot: "R2-D2"
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Proton Bombs"
+                "C-3PO"
+                "Ion Cannon Turret"
+            ]
+        }
+        {
+            id: 394
+            faction: "Galactic Republic"
+            pilot: '"Odd Ball"'
+            ship: "BTL-B Y-Wing"
+            threat: 3
+            upgrades: [
+                "Hull Upgrade"
+                "R3 Astromech"
+                "Proton Torpedoes"
+                "Ion Cannon Turret"
+                "Predator"
+            ]
+        }
+        {
+            id: 395
+            faction: "Galactic Republic"
+            pilot: '"Matchstick"'
+            ship: "BTL-B Y-Wing"
+            threat: 3
+            upgrades: [
+                "Shield Upgrade"
+                "Delayed Fuses"
+                "Proton Bombs"
+                "R2 Astromech"
+                "Ion Cannon Turret"
+                "Elusive"
+            ]
+        }
+        {
+            id: 396
+            faction: "Galactic Republic"
+            pilot: '"Broadside"'
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Hull Upgrade"
+                "R5 Astromech"
+                "Ion Cannon Turret"
+                "Snap Shot"
+            ]
+        }
+        {
+            id: 397
+            faction: "Galactic Republic"
+            pilot: '"Goji"'
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Afterburners"
+                "Electro-Proton Bomb"
+            ]
+        }
+        {
+            id: 398
+            faction: "Galactic Republic"
+            pilot: "Red Squadron Bomber"
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Delayed Fuses"
+                "Proton Bombs"
+                "R2 Astromech"
+                "Ion Cannon Turret"
+            ]
+        }
+        {
+            id: 399
+            faction: "Galactic Republic"
+            pilot: "Republic Judiciary"
+            ship: "CR90 Corellian Corvette"
+            threat: 9
+            upgrades: [
+                "Strategic Commander"
+                "Targeting Battery"
+                "Turbolaser Battery"
+                "Damage Control Team"
+                "Agile Gunner"
+                "Boosted Scanners"
+                "Gunnery Specialists"
+                "Seasoned Navigator"
+            ]
+        }
+        {
+            id: 400
+            faction: "Separatist Alliance"
+            pilot: "Stalgasin Hive Guard"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Gravitic Deflection"
+                "Ensnare"
+            ]
+        }
+        {
+            id: 401
+            faction: "Separatist Alliance"
+            pilot: "Sun Fac"
+            ship: "Nantex-Class Starfighter"
+            threat: 3
+            upgrades: [
+                "Shield Upgrade"
+                "Afterburners"
+                "Predator"
+                "Ensnare"
+            ]
+        }
+        {
+            id: 402
+            faction: "Separatist Alliance"
+            pilot: "Berwer Kret"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Hull Upgrade"
+                "Snap Shot"
+                "Ensnare"
+            ]
+        }
+        {
+            id: 403
+            faction: "Separatist Alliance"
+            pilot: "Chertek"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Juke"
+                "Gravitic Deflection"
+            ]
+        }
+        {
+            id: 404
+            faction: "Separatist Alliance"
+            pilot: "Gorgol"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Stealth Device"
+                "Shield Upgrade"
+                "Gravitic Deflection"
+            ]
+        }
+        {
+            id: 405
+            faction: "Separatist Alliance"
+            pilot: "Separatist Privateers"
+            ship: "C-ROC Cruiser"
+            threat: 6
+            upgrades: [
+                "Stalwart Captain"
+                "Turbolaser Battery"
+                "Dorsal Turret"
+                "Heavy Laser Cannon"
+                "Cluster Missiles"
+                "Bombardment Specialists"
+                "Boosted Scanners"
+                "Tibanna Reserves"
+                "Corsair Refit"
             ]
         }
     ]
