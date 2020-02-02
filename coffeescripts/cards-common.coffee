@@ -12574,7 +12574,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Expert Handling"
                 "Ion Cannon Turret"
-                "Veterna Turret Gunner"
+                "Veteran Turret Gunner"
                 "R3 Astromech"
             ]
         }
@@ -12633,7 +12633,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Ion Cannon Turret"
-                "Proton Bomb"
+                "Proton Bombs"
                 "R5 Astromech"
             ]
         }
@@ -16059,7 +16059,39 @@ exportObj.basicCardData = ->
             linkedId: 373
             wingmate: true
         }
-
+        {
+            id: 375
+            faction: "Rebel Alliance"
+            pilot: "Echo Base Evacuees"
+            ship: "GR-75 Medium Transport"
+            threat: 7
+            upgrades: [
+                "Bright Hope"
+                "Optimized Power Core"
+                "Adaptive Shields"
+                "Comms Team"
+                "Point-Defense Battery"
+                "Carlist Rieekan"
+                "Novice Technician"
+            ]
+        }
+        {
+            id: 376
+            faction: "Rebel Alliance"
+            pilot: "Alderaanian Guard"
+            ship: "CR90 Corellian Corvette"
+            threat: 8
+            upgrades: [
+                "Dodonna's Pride"
+                "Comms Team"
+                "Boosted Scanners"
+                "Sensor Experts"
+                "Turbolaser Battery"
+                "Ion Cannon Battery"
+                "Jan Dodonna"
+                "Toryn Farr"
+            ]
+        }
     ]
 
 

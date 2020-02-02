@@ -1594,8 +1594,10 @@ class exportObj.SquadBuilder
             getPrimaryFaction(faction) == @faction
 
     isItemAvailable: (item_data, shipCheck=false) ->
-        # this method is not invoked to check availability for quickbuild squads, as they don't care about hyperspace. Keep that in mind when adding stuff here.
-        if @isHyperspace
+        # this method is not even invoked by most quickbuild stuff to check availability for quickbuild squads, as the method was formerly just telling apart extended/hyperspace
+        if @isQuickbuild
+            return true
+        else if @isHyperspace
             return exportObj.hyperspaceCheck(item_data, @faction, shipCheck)
         else if (not @isEpic)
             return exportObj.epicExclusions(item_data)
@@ -1607,7 +1609,7 @@ class exportObj.SquadBuilder
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
                 if (@isItemAvailable(ship_data, true))
-                    if @isEpic or (not @isEpic and not ship_data.huge)
+                    if @isEpic or @isQuickbuild or (not @isEpic and not ship_data.huge)
                         if (not collection_only or (@collection? and (@collection.checks.collectioncheck == "true") and @collection.checkShelf('ship', ship_data.name)))
                             ships.push
                                 id: ship_data.name
@@ -3228,7 +3230,7 @@ class Ship
         # check if the wing is still valid, otherwise destroy it. 
         quickbuild = exportObj.quickbuildsById[@quickbuildId]
         if !(@wingmates.length in quickbuild.wingmates)
-            @destroy defer()
+            @destroy $.noop
         @wingmate_selector.val @wingmates.length
 
     joinWing: (ship) ->
@@ -3237,7 +3239,8 @@ class Ship
         # check if the wing is still valid, otherwise destroy the added ship
         quickbuild = exportObj.quickbuildsById[@quickbuildId]
         if !(@wingmates.length in quickbuild.wingmates)
-            ship.destroy defer()
+            ship.destroy $.noop
+            @removeFromWing(ship)
         @wingmate_selector.val @wingmates.length
 
 
@@ -3402,7 +3405,7 @@ class Ship
 #            @wingmate_selector.on 'touchstart', (e) =>
 #                @builder.showTooltip 'Pilot', @wingmate, @ if @wingmate
 #    
-            @wingmate_selector.parent().hide()
+        @wingmate_selector.parent().hide()
 
         @points_container = $ @row.find('.points-display-container')
         @points_container.fadeTo 0, 0
@@ -3877,7 +3880,7 @@ class Ship
                         ship: this
                         container: @addon_container
                         slot: "Command"
-        else #cleanup Command upgrades
+        else if !@builder.isQuickbuild #cleanup Command upgrades
             for i in [@upgrades.length - 1 ... -1]
                 upgrade = @upgrades[i]
                 if upgrade.slot == "Command"
@@ -4106,7 +4109,7 @@ class GenericAddon
             @ship.builder.container.trigger 'xwing:pointsUpdated'
 
     conferAddons: ->
-        if @data.confersAddons? and @data.confersAddons.length > 0
+        if @data.confersAddons? and !@builder.isQuickbuild and @data.confersAddons.length > 0
             for addon in @data.confersAddons
                 cls = addon.type
                 args =
