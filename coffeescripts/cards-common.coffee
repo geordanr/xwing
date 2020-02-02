@@ -16035,7 +16035,7 @@ exportObj.basicCardData = ->
             ship: "Delta-7 Aethersprite"
             threat: [5,6,7,8]
             wingmates: [2,3,4,5]
-            suffix: " and his Wingmates"
+            suffix: " and his wing"
             upgrades: [
                 "Veteran Wing Leader"
                 "Synchronized Console"
@@ -16050,7 +16050,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             pilot: "Gold Squadron Trooper"
             ship: "V-19 Torrent"
-            suffix: ", Plo Koons squad"
+            suffix: ", Plo Koons wing"
             threat: '*'
             upgrades: [
                 "Concussion Missiles"
@@ -16496,6 +16496,188 @@ exportObj.basicCardData = ->
                 "Tibanna Reserves"
                 "Corsair Refit"
             ]
+        }
+        {
+            id: 406
+            faction: "Galactic Empire"
+            pilot: "Darth Vader"
+            ship: "TIE Advanced"
+            threat: [6,7,8,9]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Agent of the Empire"
+                "Fire-Control System"
+                "Supernatural Reflexes"
+                "Cluster Missiles"
+            ]
+            linkedId: 407
+            wingleader: true
+        }
+        {
+            id: 407
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            ship: "TIE Fighter"
+            suffix: ", Darth Vaders wing"
+            threat: '*'
+            upgrades: [
+                "Crack Shot"
+            ]
+            linkedId: 406
+            wingmate: true
+        }
+        {
+            id: 408
+            faction: "Resistance"
+            pilot: "Poe Dameron"
+            ship: "T-70 X-Wing"
+            threat: [9,11,13,15]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Targeting Synchronizer"
+                "BB-8"
+                "Black One"
+            ]
+            linkedId: 409
+            wingleader: true
+        }
+        {
+            id: 409
+            faction: "Resistance"
+            pilot: "Black Squadron Ace (T-70)"
+            ship: "T-70 X-Wing"
+            suffix: ", Poe Damerons wing"
+            threat: '*'
+            upgrades: [
+                "Proton Torpedoes"
+            ]
+            linkedId: 408
+            wingmate: true
+        }
+        {
+            id: 410
+            faction: "First Order"
+            pilot: "Kylo Ren"
+            ship: "TIE Silencer"
+            threat: [6,8]
+            wingmates: [2,3]
+            suffix: " and his wing"
+            upgrades: [
+                "First Order Elite"
+                "Heightened Perception"
+                "Dreadnought Hunter"
+                "Proton Torpedoes"
+            ]
+            linkedId: 411
+            wingleader: true
+        }
+        {
+            id: 411
+            faction: "First Order"
+            pilot: "Omega Squadron Expert"
+            ship: "TIE/SF Fighter"
+            suffix: ", Kylo Rens wing"
+            threat: '*'
+            upgrades: [
+                "Ion Missiles"
+                "Special Forces Gunner"
+            ]
+            linkedId: 410
+            wingmate: true
+        }
+        {
+            id: 412
+            faction: "Separatist Alliance"
+            pilot: "General Grievous"
+            ship: "Belbullab-22 Starfighter"
+            threat: [5,6,7,8]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Kraken"
+                "Predator"
+                "Soulless One"
+            ]
+            linkedId: 413
+            wingleader: true
+        }
+        {
+            id: 413
+            faction: "Separatist Alliance"
+            pilot: "Separatist Drone"
+            ship: "Vulture-class Droid Fighter"
+            suffix: ", General Grievous wing"
+            threat: '*'
+            upgrades: [
+                "Energy-Shell Charges"
+            ]
+            linkedId: 412
+            wingmate: true
+        }
+        {
+            id: 414
+            faction: "Rebel Alliance"
+            pilot: "Luke Skywalker"
+            ship: "X-Wing"
+            threat: [8,10,12,14]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Proton Torpedoes"
+                "Instinctive Aim"
+                "R2-D2"
+                "Servomotor S-Foils"
+            ]
+            linkedId: 415
+            wingleader: true
+        }
+        {
+            id: 415
+            faction: "Rebel Alliance"
+            pilot: "Red Squadron Veteran"
+            ship: "X-Wing"
+            suffix: ", Luke Skywalkers wing"
+            threat: '*'
+            upgrades: [
+                "Proton Torpedoes"
+            ]
+            linkedId: 414
+            wingmate: true
+        }
+        {
+            id: 416
+            faction: "Scum and Villainy"
+            pilot: "Fenn Rau"
+            ship: "Fang Fighter"
+            threat: [8,10,12,14]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Fearless"
+                "Daredevil"
+                "Afterburners"
+            ]
+            linkedId: 417
+            wingleader: true
+        }
+        {
+            id: 417
+            faction: "Scum and Villainy"
+            pilot: "Skull Squadron Pilot"
+            ship: "Fang Fighter"
+            suffix: ", Fenn Raus wing"
+            threat: '*'
+            upgrades: [
+                "Fearless"
+            ]
+            linkedId: 416
+            wingmate: true
         }
     ]
 
