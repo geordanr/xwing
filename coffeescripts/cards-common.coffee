@@ -16033,7 +16033,8 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             pilot: "Plo Koon"
             ship: "Delta-7 Aethersprite"
-            threat: 5
+            threat: [5,6,7,8]
+            wingmates: [2,3,4,5]
             suffix: " and his Wingmates"
             upgrades: [
                 "Veteran Wing Leader"
@@ -16050,7 +16051,7 @@ exportObj.basicCardData = ->
             pilot: "Gold Squadron Trooper"
             ship: "V-19 Torrent"
             suffix: ", Plo Koons squad"
-            threat: 5
+            threat: '*'
             upgrades: [
                 "Concussion Missiles"
                 "Synchronized Console"
