@@ -64,7 +64,7 @@ class exportObj.CardBrowser
                             <div class="advanced-search-container">
                                 <div class = "well search-container general-search-container">
                                     <h4>General</h4>
-                                    <lable class = "text-search advanced-search-label">
+                                    <label class = "text-search advanced-search-label">
                                     <strong>Textsearch: </strong>
                                         <input type="search" placeholder="Search for name, text or ship" class = "card-search-text">
                                     </label>

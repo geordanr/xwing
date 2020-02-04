@@ -12574,7 +12574,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Expert Handling"
                 "Ion Cannon Turret"
-                "Veterna Turret Gunner"
+                "Veteran Turret Gunner"
                 "R3 Astromech"
             ]
         }
@@ -12633,7 +12633,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Ion Cannon Turret"
-                "Proton Bomb"
+                "Proton Bombs"
                 "R5 Astromech"
             ]
         }
@@ -16028,7 +16028,657 @@ exportObj.basicCardData = ->
                 "Delayed Fuses"
             ]
         }
-
+        {
+            id: 373
+            faction: "Galactic Republic"
+            pilot: "Plo Koon"
+            ship: "Delta-7 Aethersprite"
+            threat: [5,6,7,8]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Synchronized Console"
+                "Brilliant Evasion"
+                "Delta-7B"
+            ]
+            linkedId: 374
+            wingleader: true
+        }
+        {
+            id: 374
+            faction: "Galactic Republic"
+            pilot: "Gold Squadron Trooper"
+            ship: "V-19 Torrent"
+            suffix: ", Plo Koons wing"
+            threat: '*'
+            upgrades: [
+                "Concussion Missiles"
+                "Synchronized Console"
+            ]
+            linkedId: 373
+            wingmate: true
+        }
+        {
+            id: 375
+            faction: "Rebel Alliance"
+            pilot: "Echo Base Evacuees"
+            ship: "GR-75 Medium Transport"
+            threat: 4
+            upgrades: [
+                "Bright Hope"
+                "Optimized Power Core"
+                "Adaptive Shields"
+                "Comms Team"
+                "Point-Defense Battery"
+                "Carlist Rieekan"
+                "Novice Technician"
+            ]
+        }
+        {
+            id: 376
+            faction: "Rebel Alliance"
+            pilot: "Alderaanian Guard"
+            ship: "CR90 Corellian Corvette"
+            threat: 9
+            upgrades: [
+                "Dodonna's Pride"
+                "Comms Team"
+                "Boosted Scanners"
+                "Sensor Experts"
+                "Turbolaser Battery"
+                "Ion Cannon Battery"
+                "Jan Dodonna"
+                "Toryn Farr"
+            ]
+        }
+        {
+            id: 377
+            faction: "Galactic Empire"
+            pilot: "Outer Rim Garrison"
+            ship: "Gozanti-class Cruiser"
+            threat: 5
+            upgrades: [
+                "Requiem"
+                "Optimized Power Core"
+                "Boosted Scanners"
+                "Sensor Experts"
+                "Comms Team"
+                "Dorsal Turret"
+                "Targeting Battery"
+                "Strategic Commander"
+            ]
+        }
+        {
+            id: 378
+            faction: "Galactic Empire"
+            pilot: "Outer Rim Patrol"
+            ship: "Raider-class Corvette"
+            threat: 9
+            upgrades: [
+                "Impetuous"
+                "Boosted Scanners"
+                "Bombardment Specialists"
+                "Ordnance Team"
+                "Concussion Missiles"
+                "Adv. Proton Torpedoes"
+                "Turbolaser Battery"
+                "Ordnance Tubes"
+                "Captain Needa"
+            ]
+        }
+        {
+            id: 379
+            faction: "Scum and Villainy"
+            pilot: "Syndicate Smugglers"
+            ship: "C-ROC Cruiser"
+            threat: 5
+            upgrades: [
+                "Merchant One"
+                "Quick-Release Locks"
+                "Tibanna Reserves"
+                "Adaptive Shields"
+                "IG-RM Droids"
+                "Comms Team"
+                "Dorsal Turret"
+                "Point-Defense Battery"
+                "Azmorigan"
+                "Novice Technician"
+            ]
+        }
+        {
+            id: 380
+            faction: "Resistance"
+            pilot: "Colossus Station Mechanic"
+            ship: "Fireball"
+            threat: 1
+            upgrades: [
+                "Kaz's Fireball"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Coaxium Hyperfuel"
+                "R1-J5"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 381
+            faction: "Resistance"
+            pilot: "Jarek Yeager"
+            ship: "Fireball"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Elusive"
+            ]
+        }
+        {
+            id: 382
+            faction: "Resistance"
+            pilot: "Kazuda Xiono"
+            ship: "Fireball"
+            threat: 2
+            upgrades: [
+                "Kaz's Fireball"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Coaxium Hyperfuel"
+                "R1-J5"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 383
+            faction: "Resistance"
+            pilot: "R1-J5"
+            ship: "Fireball"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Advanced SLAM"
+                "Mag-Pulse Warheads"
+                "Coaxium Hyperfuel"
+            ]
+        }
+        {
+            id: 384
+            faction: "Resistance"
+            pilot: "New Republic Volunteers"
+            ship: "GR-75 Medium Transport"
+            threat: 4
+            upgrades: [
+                "Tibanna Reserves"
+                "Boosted Scanners"
+                "Sensor Experts"
+                "Dorsal Turret"
+                "Ion Cannon Battery"
+                "Stalwart Captain"
+            ]
+        }
+        {
+            id: 385
+            faction: "First Order"
+            pilot: "Major Vonreg"
+            ship: "TIE/Ba Interceptor"
+            threat: 3
+            upgrades: [
+                "Mag-Pulse Warheads"
+                "Deuterium Power Cells"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 386
+            faction: "First Order"
+            pilot: '"Holo"'
+            ship: "TIE/Ba Interceptor"
+            threat: 3
+            upgrades: [
+                "Hull Upgrade"
+                "Munitions Failsafe"
+                "Mag-Pulse Warheads"
+                "Proud Tradition"
+            ]
+        }
+        {
+            id: 387
+            faction: "First Order"
+            pilot: '"Ember"'
+            ship: "TIE/Ba Interceptor"
+            threat: 3
+            upgrades: [
+                "Afterburners"
+                "Concussion Missiles"
+                "Predator"
+                "Elusive"
+            ]
+        }
+        {
+            id: 388
+            faction: "First Order"
+            pilot: "First Order Provocateur"
+            ship: "TIE/Ba Interceptor"
+            threat: 2
+            upgrades: [
+                "Snap Shot"
+            ]
+        }
+        {
+            id: 389
+            faction: "First Order"
+            pilot: "First Order Sympathizers"
+            ship: "Gozanti-class Cruiser"
+            threat: 4
+            upgrades: [
+                "Adaptive Shields"
+                "Gunnery Specialists"
+                "Damage Control Team"
+                "Point-Defense Battery"
+                "Strategic Commander"
+            ]
+        }
+        {
+            id: 390
+            faction: "First Order"
+            pilot: "First Order Collaborators"
+            ship: "Raider-class Corvette"
+            threat: 8
+            upgrades: [
+                "Boosted Scanners"
+                "Comms Team"
+                "Bombardment Specialists"
+                "Point-Defense Battery"
+                "Ion Cannon Battery"
+                "Stalwart Captain"
+                "Novice Technician"
+            ]
+        }
+        {
+            id: 391
+            faction: "Galactic Republic"
+            pilot: "Shadow Squadron Veteran"
+            ship: "BTL-B Y-Wing"
+            threat: 3
+            upgrades: [
+                "R5 Astromech"
+                "Proton Torpedoes"
+                "Ion Cannon Turret"
+                "Snap Shot"
+            ]
+        }
+        {
+            id: 392
+            faction: "Galactic Republic"
+            pilot: "Anakin Skywalker"
+            ship: "BTL-B Y-Wing"
+            threat: 4
+            upgrades: [
+                "Proton Bombs"
+                "R2 Astromech"
+                "Ahsoka Tano"
+                "Proton Torpedoes"
+                "Ion Cannon Turret"
+                "Precognitive Reflexes"
+            ]
+        }
+        {
+            id: 393
+            faction: "Galactic Republic"
+            pilot: "R2-D2"
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Proton Bombs"
+                "C-3PO"
+                "Ion Cannon Turret"
+            ]
+        }
+        {
+            id: 394
+            faction: "Galactic Republic"
+            pilot: '"Odd Ball"'
+            ship: "BTL-B Y-Wing"
+            threat: 3
+            upgrades: [
+                "Hull Upgrade"
+                "R3 Astromech"
+                "Proton Torpedoes"
+                "Ion Cannon Turret"
+                "Predator"
+            ]
+        }
+        {
+            id: 395
+            faction: "Galactic Republic"
+            pilot: '"Matchstick"'
+            ship: "BTL-B Y-Wing"
+            threat: 3
+            upgrades: [
+                "Shield Upgrade"
+                "Delayed Fuses"
+                "Proton Bombs"
+                "R2 Astromech"
+                "Ion Cannon Turret"
+                "Elusive"
+            ]
+        }
+        {
+            id: 396
+            faction: "Galactic Republic"
+            pilot: '"Broadside"'
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Hull Upgrade"
+                "R5 Astromech"
+                "Ion Cannon Turret"
+                "Snap Shot"
+            ]
+        }
+        {
+            id: 397
+            faction: "Galactic Republic"
+            pilot: '"Goji"'
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Afterburners"
+                "Electro-Proton Bomb"
+            ]
+        }
+        {
+            id: 398
+            faction: "Galactic Republic"
+            pilot: "Red Squadron Bomber"
+            ship: "BTL-B Y-Wing"
+            threat: 2
+            upgrades: [
+                "Delayed Fuses"
+                "Proton Bombs"
+                "R2 Astromech"
+                "Ion Cannon Turret"
+            ]
+        }
+        {
+            id: 399
+            faction: "Galactic Republic"
+            pilot: "Republic Judiciary"
+            ship: "CR90 Corellian Corvette"
+            threat: 9
+            upgrades: [
+                "Strategic Commander"
+                "Targeting Battery"
+                "Turbolaser Battery"
+                "Damage Control Team"
+                "Agile Gunner"
+                "Boosted Scanners"
+                "Gunnery Specialists"
+                "Seasoned Navigator"
+            ]
+        }
+        {
+            id: 400
+            faction: "Separatist Alliance"
+            pilot: "Stalgasin Hive Guard"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Gravitic Deflection"
+                "Ensnare"
+            ]
+        }
+        {
+            id: 401
+            faction: "Separatist Alliance"
+            pilot: "Sun Fac"
+            ship: "Nantex-Class Starfighter"
+            threat: 3
+            upgrades: [
+                "Shield Upgrade"
+                "Afterburners"
+                "Predator"
+                "Ensnare"
+            ]
+        }
+        {
+            id: 402
+            faction: "Separatist Alliance"
+            pilot: "Berwer Kret"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Hull Upgrade"
+                "Snap Shot"
+                "Ensnare"
+            ]
+        }
+        {
+            id: 403
+            faction: "Separatist Alliance"
+            pilot: "Chertek"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Targeting Computer"
+                "Juke"
+                "Gravitic Deflection"
+            ]
+        }
+        {
+            id: 404
+            faction: "Separatist Alliance"
+            pilot: "Gorgol"
+            ship: "Nantex-Class Starfighter"
+            threat: 2
+            upgrades: [
+                "Stealth Device"
+                "Shield Upgrade"
+                "Gravitic Deflection"
+            ]
+        }
+        {
+            id: 405
+            faction: "Separatist Alliance"
+            pilot: "Separatist Privateers"
+            ship: "C-ROC Cruiser"
+            threat: 6
+            upgrades: [
+                "Stalwart Captain"
+                "Turbolaser Battery"
+                "Dorsal Turret"
+                "Heavy Laser Cannon"
+                "Cluster Missiles"
+                "Bombardment Specialists"
+                "Boosted Scanners"
+                "Tibanna Reserves"
+                "Corsair Refit"
+            ]
+        }
+        {
+            id: 406
+            faction: "Galactic Empire"
+            pilot: "Darth Vader"
+            ship: "TIE Advanced"
+            threat: [6,7,8,9]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Agent of the Empire"
+                "Fire-Control System"
+                "Supernatural Reflexes"
+                "Cluster Missiles"
+            ]
+            linkedId: 407
+            wingleader: true
+        }
+        {
+            id: 407
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            ship: "TIE Fighter"
+            suffix: ", Darth Vaders wing"
+            threat: '*'
+            upgrades: [
+                "Crack Shot"
+            ]
+            linkedId: 406
+            wingmate: true
+        }
+        {
+            id: 408
+            faction: "Resistance"
+            pilot: "Poe Dameron"
+            ship: "T-70 X-Wing"
+            threat: [9,11,13,15]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Targeting Synchronizer"
+                "BB-8"
+                "Black One"
+            ]
+            linkedId: 409
+            wingleader: true
+        }
+        {
+            id: 409
+            faction: "Resistance"
+            pilot: "Black Squadron Ace (T-70)"
+            ship: "T-70 X-Wing"
+            suffix: ", Poe Damerons wing"
+            threat: '*'
+            upgrades: [
+                "Proton Torpedoes"
+            ]
+            linkedId: 408
+            wingmate: true
+        }
+        {
+            id: 410
+            faction: "First Order"
+            pilot: "Kylo Ren"
+            ship: "TIE Silencer"
+            threat: [6,8]
+            wingmates: [2,3]
+            suffix: " and his wing"
+            upgrades: [
+                "First Order Elite"
+                "Heightened Perception"
+                "Dreadnought Hunter"
+                "Proton Torpedoes"
+            ]
+            linkedId: 411
+            wingleader: true
+        }
+        {
+            id: 411
+            faction: "First Order"
+            pilot: "Omega Squadron Expert"
+            ship: "TIE/SF Fighter"
+            suffix: ", Kylo Rens wing"
+            threat: '*'
+            upgrades: [
+                "Ion Missiles"
+                "Special Forces Gunner"
+            ]
+            linkedId: 410
+            wingmate: true
+        }
+        {
+            id: 412
+            faction: "Separatist Alliance"
+            pilot: "General Grievous"
+            ship: "Belbullab-22 Starfighter"
+            threat: [5,6,7,8]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Kraken"
+                "Predator"
+                "Soulless One"
+            ]
+            linkedId: 413
+            wingleader: true
+        }
+        {
+            id: 413
+            faction: "Separatist Alliance"
+            pilot: "Separatist Drone"
+            ship: "Vulture-class Droid Fighter"
+            suffix: ", General Grievous wing"
+            threat: '*'
+            upgrades: [
+                "Energy-Shell Charges"
+            ]
+            linkedId: 412
+            wingmate: true
+        }
+        {
+            id: 414
+            faction: "Rebel Alliance"
+            pilot: "Luke Skywalker"
+            ship: "X-Wing"
+            threat: [8,10,12,14]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Proton Torpedoes"
+                "Instinctive Aim"
+                "R2-D2"
+                "Servomotor S-Foils"
+            ]
+            linkedId: 415
+            wingleader: true
+        }
+        {
+            id: 415
+            faction: "Rebel Alliance"
+            pilot: "Red Squadron Veteran"
+            ship: "X-Wing"
+            suffix: ", Luke Skywalkers wing"
+            threat: '*'
+            upgrades: [
+                "Proton Torpedoes"
+            ]
+            linkedId: 414
+            wingmate: true
+        }
+        {
+            id: 416
+            faction: "Scum and Villainy"
+            pilot: "Fenn Rau"
+            ship: "Fang Fighter"
+            threat: [8,10,12,14]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Veteran Wing Leader"
+                "Fearless"
+                "Daredevil"
+                "Afterburners"
+            ]
+            linkedId: 417
+            wingleader: true
+        }
+        {
+            id: 417
+            faction: "Scum and Villainy"
+            pilot: "Skull Squadron Pilot"
+            ship: "Fang Fighter"
+            suffix: ", Fenn Raus wing"
+            threat: '*'
+            upgrades: [
+                "Fearless"
+            ]
+            linkedId: 416
+            wingmate: true
+        }
     ]
 
 
