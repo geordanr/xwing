@@ -7265,13 +7265,661 @@ exportObj.manifestByExpansion =
             count: 4
         }
     ]
-
-    'Loose Ships': [
+    "Major Vonreg's TIE Expansion Pack": [
+        {
+            name: 'TIE/Ba Interceptor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Major Vonreg'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Holo"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Ember"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'First Order Provocateur'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Mag-Pulse Warheads'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Munitions Failsafe'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proud Tradition'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Deuterium Power Cells'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Fireball Expansion Pack": [
+        {
+            name: 'Fireball'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Jarek Yeager'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kazuda Xiono'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'R1-J5'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Colossus Station Mechanic'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Mag-Pulse Warheads'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Coaxium Hyperfuel'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Advanced SLAM'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Targeting Computer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Snap Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Kaz's Fireball"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R1-J5'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "RZ-1 A-Wing Expansion Pack": [
         {
             name: 'A-Wing'
             type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Arvel Crynyd'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jake Farrell'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Green Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Phoenix Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "TIE/D Defender Expansion Pack": [
+        {
+            name: 'TIE Defender'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Rexler Brath'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Colonel Vessery'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Countess Ryad'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Onyx Squadron Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Delta Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Advanced Sensors'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "TIE/in Interceptor Expansion Pack": [
+        {
+            name: 'TIE Interceptor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Soontir Fel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Turr Phennir'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Saber Squadron Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Alpha Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Hound's Tooth Expansion Pack": [
+        {
+            name: 'YV-666'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Z-95 Headhunter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Bossk'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Moralo Eval'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Latts Razzi'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Trandoshan Slaver'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Bossk (Z-95 Headhunter)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nashtah Pup'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cikatro Vizago'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Freelance Slicer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'GNK "Gonk" Droid'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jabba the Hutt'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tactical Officer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bossk'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BT-1'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Greedo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Feedback Array'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ablative Plating'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Hound's Tooth"
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Hotshots and Aces Reinforcements Pack": [
+        {
+            name: 'Gina Moonsong'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'K-2SO'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Leia Organa'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Alexsandr Kallus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Fifth Brother'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Vagabond"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Morna Kee'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nom Lumb'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'G4R-GOR V/M'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Bossk (Z-95 Headhunter)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Paige Tico'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ronith Blario'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zizi Tlo'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Phasma'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant LeHuse'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Rush"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Composure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Snap Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Brilliant Evasion'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Foresight'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hate'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Precognitive Reflexes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Predictive Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Pattern Analyzer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Passive Sensors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Autoblasters'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Mag-Pulse Warheads'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Barrage Rockets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Diamond-Boron Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '0-0-0'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'K-2SO'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Maul'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Agile Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'BT-1'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Coaxium Hyperfuel'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Moldy Crow'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Angled Deflectors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Targeting Computer'
+            type: 'upgrade'
             count: 3
         }
+        {
+            name: 'Stabilized S-Foils'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    "Fully Loaded Devices Pack": [
+        {
+            name: 'Trajectory Simulator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Cluster Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Conner Nets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bomblet Generator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electro-Proton Bomb'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Delayed Fuses'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    "Never Tell Me the Odds Obstacles Pack": [
+        {
+            name: 'Rigged Cargo Chute'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Spare Parts Canisters'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+
+    'Loose Ships': [
         {
             name: 'Auzituck Gunship'
             type: 'ship'
@@ -7323,16 +7971,6 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'TIE Defender'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'TIE Interceptor'
-            type: 'ship'
-            count: 3
-        }
-        {
             name: 'TIE Phantom'
             type: 'ship'
             count: 2
@@ -7346,11 +7984,6 @@ exportObj.manifestByExpansion =
             name: 'Kihraxz Fighter'
             type: 'ship'
             count: 3
-        }
-        {
-            name: 'YV-666'
-            type: 'ship'
-            count: 2
         }
         {
             name: 'Aggressor'
@@ -7394,16 +8027,6 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'MG-100 StarFortress'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE/SF Fighter'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE/VN Silencer'
             type: 'ship'
             count: 3
         }
