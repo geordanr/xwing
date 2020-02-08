@@ -2425,6 +2425,18 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-attack-turret').hide()
 
+                    if data.attackr?
+                        container.find('tr.info-attack-right td.info-data').text data.attackl
+                        container.find('tr.info-attack-right').show()
+                    else
+                        container.find('tr.info-attack-right').hide()
+
+                    if data.attackl?
+                        container.find('tr.info-attack-left td.info-data').text data.attackr
+                        container.find('tr.info-attack-left').show()
+                    else
+                        container.find('tr.info-attack-right').hide()
+
                     if data.attackdt?
                         container.find('tr.info-attack-doubleturret td.info-data').text data.attackdt
                         container.find('tr.info-attack-doubleturret').show()
@@ -3498,6 +3510,18 @@ class Ship
         else
             attacktHTML = ''
             
+        if effective_stats.attackl?
+            attacklHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-leftarc"></i>
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackl ? @data.attackl), effective_stats, 'attackl')}</span>""" 
+        else
+            attacklHTML = ''
+            
+        if effective_stats.attackr?
+            attackrHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-rightarc"></i>
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackr ? @data.attackr), effective_stats, 'attackr')}</span>""" 
+        else
+            attackrHTML = ''
+            
         if effective_stats.attackdt?
             attackdtHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackdt ? @data.attackdt), effective_stats, 'attackdt')}</span>""" 
@@ -3553,6 +3577,8 @@ class Ship
                     #{attackbHTML}
                     #{attackfHTML}
                     #{attacktHTML}
+                    #{attacklHTML}
+                    #{attackrHTML}
                     #{attackdtHTML}
                     <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>
                     <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>                    
@@ -3836,6 +3862,8 @@ class Ship
             attackf: @pilot.ship_override?.attackf ? @data.attackf
             attackb: @pilot.ship_override?.attackb ? @data.attackb
             attackt: @pilot.ship_override?.attackt ? @data.attackt
+            attackl: @pilot.ship_override?.attackl ? @data.attackl
+            attackr: @pilot.ship_override?.attackr ? @data.attackr
             attackdt: @pilot.ship_override?.attackdt ? @data.attackdt
             energy: @pilot.ship_override?.energy ? @data.energy
             agility: @pilot.ship_override?.agility ? @data.agility
@@ -4203,6 +4231,18 @@ class GenericAddon
                     <span class="upgrade-attack-range">#{@data.range}</span>
                     <span class="info-data info-attack">#{@data.attackt}</span>
                     <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>
+                </div>
+            """ else if (@data.attackl?) then $.trim """
+                <div class="upgrade-attack">
+                    <span class="upgrade-attack-range">#{@data.range}</span>
+                    <span class="info-data info-attack">#{@data.attackl}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-leftarc"></i>
+                </div>
+            """ else if (@data.attackr?) then $.trim """
+                <div class="upgrade-attack">
+                    <span class="upgrade-attack-range">#{@data.range}</span>
+                    <span class="info-data info-attack">#{@data.attackr}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-rightarc"></i>
                 </div>
             """ else if (@data.attackbull?) then $.trim """
                 <div class="upgrade-attack">
