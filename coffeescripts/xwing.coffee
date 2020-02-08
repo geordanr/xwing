@@ -1151,11 +1151,11 @@ class exportObj.SquadBuilder
                         when 'Separatist Alliance'
                             'separatists'
                     @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
-                    # Type Note
-                    if @isHyperspace
-                        @printable_container.find('.squad-name').append """ <i class="xwing-miniatures-font xwing-miniatures-font-first-player-1"></i>"""
-                    if @isEpic
-                        @printable_container.find('.squad-name').append """ <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>""" 
+            # List type
+            if @isHyperspace
+                @printable_container.find('.squad-name').append """ <i class="xwing-miniatures-font xwing-miniatures-font-first-player-1"></i>"""
+            if @isEpic
+                @printable_container.find('.squad-name').append """ <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>""" 
 
                     
             # Notes, if present

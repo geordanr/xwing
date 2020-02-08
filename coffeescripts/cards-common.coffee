@@ -7956,7 +7956,7 @@ exportObj.basicCardData = ->
             points: 29
             slots: [
                 "Missile"
-                "Astromech"
+                "Crew"
                 "Illicit"
                 "Modification"
                 "Modification"
