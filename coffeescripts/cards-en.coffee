@@ -1492,7 +1492,7 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Attack (%FOCUS%):</strong> Spend 1&nbsp;%CHARGE%. If the defender is in your %BULLSEYEARC%, you may spend 1 or more %CHARGE% to reroll that many attack dice."""
         "Battle Meditation":
            display_name: """Battle Meditation"""
-           text: """<i>Adds %COORDINATE%</i>%LINEBREAK%<i>Galactic Republic only</i>%LINEBREAK%You cannot coordinate limited ships.%LINEBREAK% While you perform a purple %COORDINATE% action, you may coordinate 1 additional friendly non-limited ship of the same type. Both ships must perform the same action."""
+           text: """<i>Adds %F-COORDINATE%</i>%LINEBREAK%<i>Galactic Republic only</i>%LINEBREAK%You cannot coordinate limited ships.%LINEBREAK% While you perform a purple %COORDINATE% action, you may coordinate 1 additional friendly non-limited ship of the same type. Both ships must perform the same action."""
         "Baze Malbus":
            display_name: """Baze Malbus"""
            text: """<i>Rebel only</i>%LINEBREAK%While you perform a %FOCUS% action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0-1, to a maximum of 2."""
@@ -2197,7 +2197,7 @@ exportObj.cardLoaders.English = () ->
            text: """You are a <strong>wing leader</strong>. Your wingmates must be 2, 3, 4, or 5 other ships of your ship type. %LINEBREAK% While you defend, up to 2 of your wingmates in the attack arc may suffer 1 %HIT% or %CRIT% damage to cancel a matching result."""
         "Dreadnought Hunter":
            display_name: """Dreadnought Hunter"""
-           text: """While you perform an attack against a huge ship, if the attack deals a faceup damage card to the defender and the defender is in your %BULLSEYEARC%, you may apply the <strong>Precision Shot</strong> effect even if you are not in the specified arc."""
+           text: """<strong>Requires:</strong> Small ship and initiative 4 or higher.</i>%LINEBREAK%<i> While you perform an attack against a huge ship, if the attack deals a faceup damage card to the defender and the defender is in your %BULLSEYEARC%, you may apply the <strong>Precision Shot</strong> effect even if you are not in the specified arc."""
         "Ion Cannon Battery":
            display_name: """Ion Cannon Battery"""
            text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. If this attack hits, the defender suffers 1 %CRIT% damage, and all %HIT%/%CRIT% results inflict ion tokens instead of damage. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
