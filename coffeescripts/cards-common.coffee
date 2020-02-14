@@ -16561,7 +16561,7 @@ exportObj.basicCardData = ->
             id: 410
             faction: "First Order"
             pilot: "Kylo Ren"
-            ship: "TIE Silencer"
+            ship: "TIE/VN Silencer"
             threat: [6,8]
             wingmates: [2,3]
             suffix: " and his wing"
