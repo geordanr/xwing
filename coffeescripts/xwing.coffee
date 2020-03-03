@@ -4232,6 +4232,12 @@ class GenericAddon
                     <span class="info-data info-attack">#{@data.attackt}</span>
                     <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>
                 </div>
+            """ else if (@data.attackdt?) then $.trim """
+                <div class="upgrade-attack">
+                    <span class="upgrade-attack-range">#{@data.range}</span>
+                    <span class="info-data info-attack">#{@data.attackdt}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-doubleturretarc"></i>
+                </div>
             """ else if (@data.attackl?) then $.trim """
                 <div class="upgrade-attack">
                     <span class="upgrade-attack-range">#{@data.range}</span>
