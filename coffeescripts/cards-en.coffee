@@ -2221,7 +2221,7 @@ exportObj.cardLoaders.English = () ->
            text: """Adds %COORDINATE% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%, %JAM% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% After you perform a %COORDINATE% action, you may spend up to 2 %ENERGY% to coordinate that many additional ships at range 0-1 of the ship you coordinated."""
         "IG-RM Droids":
            display_name: """IG-RM Droids"""
-           text: """While you perform an attack, if you are calculating, you may change 1 %HI% result to a %CRIT% result."""
+           text: """While you perform an attack, if you are calculating, you may change 1 %HIT% result to a %CRIT% result."""
         "Gunnery Specialists":
            display_name: """Gunnery Specialists"""
            text: """Adds %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% While you perform a primary or %HARDPOINT% attack, you may spend 1 or more %ENERGY% to reroll that many attack dice."""
