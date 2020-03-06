@@ -2159,7 +2159,7 @@ exportObj.cardLoaders.English = () ->
         "Cluster Mines":
            text: """During the System Phase, you may spend 1 %CHARGE% to drop a Cluster Mine set using the [1 %STRAIGHT%] template. %LINEBREAK% This card's %CHARGE% cannot be recovered."""
         "Kaz's Fireball":
-           text: """<strong>Setup:</strong> When you resolve <strong>Explosion with Wings</strong>, you may search the damage deck and choose a damage card with the <b>Ship</b> trait: you are dealt that card instaed. Then, shuffle the damage deck. %LINEBREAK% You can perform actions of damage cards even while ionized."""
+           text: """<strong>Setup:</strong> When you resolve <strong>Explosion with Wings</strong>, you may search the damage deck and choose a damage card with the <b>Ship</b> trait: you are dealt that card instead. Then, shuffle the damage deck. %LINEBREAK% You can perform actions of damage cards even while ionized."""
             
         # Epic upgrades
         "Admiral Ozzel":
