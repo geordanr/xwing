@@ -10565,6 +10565,8 @@ exportObj.basicCardData = ->
             name: "Passive Sensors"
             id: 240
             slot: "Sensor"
+            charge: 1
+            recurring: true
             points: 3
        }
        {
