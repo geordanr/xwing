@@ -120,6 +120,7 @@ class exportObj.SquadBuilder
             bid_goal: 5
             ships_or_upgrades: 3
             collection_only: true
+            fill_zero_pts: false
         @total_points = 0
         # a squad given in the link is loaded on construction of that builder. It will set all gamemodes of already existing builders accordingly, but we did not exists back than. So we copy over the gamemode
         @isHyperspace = exportObj.builders[0]?.isHyperspace ? false
@@ -668,6 +669,10 @@ class exportObj.SquadBuilder
                         </select>
                     </label>
                     <label>
+                        <input type="checkbox" class="randomizer-fill-zero-pts" /> 
+                        Always fill 0-point slots
+                    </label>
+                    <label>
                         Maximum Seconds to Spend Randomizing
                         <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
                     </label>
@@ -687,6 +692,7 @@ class exportObj.SquadBuilder
             width: "100%"
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @randomizer_collection_selector = ($ @randomizer_options_modal.find('.randomizer-collection-only'))[0]
+        @randomizer_fill_zero_pts = ($ @randomizer_options_modal.find('.randomizer-fill-zero-pts'))[0]
 
         @randomize_button.click (e) =>
             e.preventDefault()
@@ -703,7 +709,7 @@ class exportObj.SquadBuilder
                 timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
                 timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
                 #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}"
-                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, bid_goal, ships_or_upgrades, @randomizer_collection_selector.checked)
+                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, bid_goal, ships_or_upgrades, @randomizer_collection_selector.checked, @randomizer_fill_zero_pts.checked)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
             e.preventDefault()
@@ -2618,6 +2624,17 @@ class exportObj.SquadBuilder
                     else
                         throw new Error("Unknown thing to remove #{thing_to_remove}")
 
+            if data.fill_zero_pts
+                for ship in @ships
+                    for addon in ship.upgrades
+                        continue unless not (addon.data? or (addon.occupied_by? and addon.occupied_by != null))
+                        available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship, addon,'', @dfl_filter_func, sorted = false) when (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources) and (upgrade.points < 1) and ((not data.collection_only) or @collection.checkShelf('upgrade', upgrade.name))))
+                        upgrade = if available_upgrades.length > 0 then available_upgrades[$.randomInt available_upgrades.length] else undefined
+                        if upgrade and not upgrade.disabled
+                            addon.setById upgrade.id
+                        
+
+
             window.clearTimeout data.timer
             # Update all selectors
             for ship in @ships
@@ -2629,7 +2646,7 @@ class exportObj.SquadBuilder
         () =>
             @_randomizerLoopBody(data)
 
-    randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, bid_goal=5, ships_or_upgrades=3, collection_only=true) ->
+    randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, bid_goal=5, ships_or_upgrades=3, collection_only=true, fill_zero_pts=false) ->
         @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
         # Clear all existing ships
@@ -2643,6 +2660,7 @@ class exportObj.SquadBuilder
             keep_running: true
             allowed_sources: allowed_sources ? exportObj.expansions
             collection_only: @collection? and (@collection.checks.collectioncheck == "true") and collection_only
+            fill_zero_pts: fill_zero_pts
         stopHandler = () =>
             #console.log "*** TIMEOUT *** TIMEOUT *** TIMEOUT ***"
             data.keep_running = false
