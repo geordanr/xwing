@@ -434,42 +434,44 @@ svg > g.maneuver.backwards
 
 // New! For accessibility
 
+$common-spacing: 10px
+
 // Make the top nav bar look distinct
 .main-top-nav-bar
 	background-color: #303030
 	padding-bottom: 1px
 	padding-left: 4px
-	margin-bottom: 10px
+	margin-bottom: $common-spacing
 
 // Center the faction buttons in the top navbar
 #rebelTab, #empireTab, #scumTab, #resistanceTab, #firstorderTab, #republicTab, #separatistTab
 	padding-top: 5px
 
-// Add consistent (10x, for now) padding to standardize the alignment of buttons in the UI
+// Add consistent ($common-spacing) padding to standardize the alignment of buttons in the UI
 #xws
-	margin-top: 10px
+	margin-top: $common-spacing
 
 .view-as-text
-	margin-right: 10px
+	margin-right: $common-spacing
 
 .obstacles-container
-	padding-left: 10px
+	padding-left: $common-spacing
 
 // Move the conditions container, again, to use consistent padding
 .conditions-container
 	margin-left: 15px
-	padding-left: 10px
+	padding-left: $common-spacing
 
 // Add some padding in between ship rows
 .row-fluid .ship
-	margin-top: 10px
-	padding-left: 10px
+	margin-top: $common-spacing
+	padding-left: $common-spacing
 
 // Style the squad points and name row to make it look distinct
 .squad-name-and-points-row
 	background-color: #101010
-	padding: 10px
-	margin-bottom: 10px
+	padding: $common-spacing
+	margin-bottom: $common-spacing
 
 // Allow some buttons to appear on the right
 .main-top-nav-bar-button-right
