@@ -106,7 +106,7 @@ class exportObj.XWSManager
             </div>
             <div class="modal-footer hidden-print">
                 <span class="xws-import-status"></span>&nbsp;
-                <button class="btn btn-primary import-xws">Import It!</button>
+                <button class="btn btn-danger import-xws">Import It!</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """

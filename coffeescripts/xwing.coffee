@@ -201,7 +201,7 @@ class exportObj.SquadBuilder
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
-            <div class="row-fluid">
+            <div class="row-fluid squad-name-and-points-row">
                 <div class="span3 squad-name-container">
                     <div class="display-name">
                         <span class="squad-name"></span>
