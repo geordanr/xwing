@@ -30,7 +30,7 @@ html
       gtag('js', new Date());
 
     .tabbable.hidden-print
-      ul.nav.nav-pills
+      ul.nav.nav-pills.main-top-nav-bar
         li
           a#rebelTab('data-toggle'="tab", href='#rebelContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel"></i>
         li
@@ -45,22 +45,10 @@ html
           a#republicTab('data-toggle'="tab", href='#republicContent') <i class="xwing-miniatures-font xwing-miniatures-font-republic"></i>
         li
           a#separatistTab('data-toggle'="tab", href='#separatistContent') <i class="xwing-miniatures-font xwing-miniatures-font-separatists"></i>
-        li
-          a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser
-        li
-          a#aboutTab('data-toggle'="tab", href='#aboutContent') About
-        // li
-          a(href='old', target='_blank') Old Version 
-        li.dropdown.language-picker
-          a.dropdown-toggle('data-toggle'='dropdown', href='#')
-            span.language-placeholder
-            b.caret
-          ul.dropdown-menu
-        li
-          a#auth-status(href='#')
-            i.fa.fa-spinner.fa-spin
-            span.payload
-        li
+
+        li.main-top-nav-bar-button-right
+          a(href='https://github.com/raithos/xwing/issues/new', target='_blank') Submit Bug/Feature Request 
+        li.main-top-nav-bar-button-right
           a#login-logout.hidden(href='#')
             span.hide-authenticated
               i.fa.fa-sign-in.hidden-phone.hidden-tablet
@@ -68,8 +56,21 @@ html
             span.show-authenticated
               i.fa.fa-sign-out.hidden-phone.hidden-tablet
               | Log Out
-        li
-          a(href='https://github.com/raithos/xwing/issues/new', target='_blank') Submit Bug/Feature Request 
+        li.main-top-nav-bar-button-right
+          a#auth-status(href='#')
+            i.fa.fa-spinner.fa-spin
+            span.payload
+        // li
+          a(href='old', target='_blank') Old Version 
+        li.dropdown.language-picker.main-top-nav-bar-button-right
+          a.dropdown-toggle('data-toggle'='dropdown', href='#')
+            span.language-placeholder
+            b.caret
+          ul.dropdown-menu      
+        li.main-top-nav-bar-button-right
+          a#aboutTab('data-toggle'="tab", href='#aboutContent') About    
+        li.main-top-nav-bar-button-right
+          a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser                      
 
       .tab-content
         .tab-pane#rebelContent

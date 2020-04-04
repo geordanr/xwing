@@ -50,7 +50,8 @@ class exportObj.XWSManager
         @container.html $.trim """
             <div class="row-fluid span9">
                 <div>
-                    <button class="btn btn-primary from-xws">Import from XWS</button>
+                    <!-- Import is marked in red since it creates something new -->
+                    <button class="btn btn-danger from-xws">Import from XWS</button>
                     <button class="btn btn-primary to-xws">Export to XWS</button>
                 </div>
             </div>
@@ -105,7 +106,7 @@ class exportObj.XWSManager
             </div>
             <div class="modal-footer hidden-print">
                 <span class="xws-import-status"></span>&nbsp;
-                <button class="btn btn-primary import-xws">Import It!</button>
+                <button class="btn btn-danger import-xws">Import It!</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """

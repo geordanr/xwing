@@ -431,3 +431,51 @@ svg > g.maneuver.backwards
 //    display: none
 //  .js .selectnav
 //    display: block
+
+// New! For accessibility
+
+$common-spacing: 10px
+
+// Make the top nav bar look distinct
+.main-top-nav-bar
+	background-color: #101010
+	padding-bottom: 1px
+	padding-left: 4px
+	margin-bottom: $common-spacing
+
+// Center the faction buttons in the top navbar
+#rebelTab, #empireTab, #scumTab, #resistanceTab, #firstorderTab, #republicTab, #separatistTab
+	padding-top: 5px
+
+// Add consistent ($common-spacing) padding to standardize the alignment of buttons in the UI
+#xws
+	margin-top: $common-spacing
+
+.view-as-text
+	margin-right: $common-spacing
+
+.obstacles-container
+	padding-left: $common-spacing
+
+// Move the conditions container, again, to use consistent padding
+.conditions-container
+	margin-left: 15px
+	padding-left: $common-spacing
+
+// Add some padding in between ship rows
+.row-fluid .ship
+	margin-top: $common-spacing
+	padding-left: $common-spacing
+
+// Style the squad points and name row to make it look distinct
+.squad-name-and-points-row
+	background-color: #151515
+	padding: $common-spacing
+	margin-bottom: $common-spacing
+	margin-left: -$common-spacing	
+
+// Allow some buttons to appear on the right
+.main-top-nav-bar-button-right
+	float: right !important
+
+
