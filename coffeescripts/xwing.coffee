@@ -225,7 +225,7 @@ class exportObj.SquadBuilder
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning loading-failed-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning ship-number-invalid-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning ship-number-invalid-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated">A tournament legal squad must contain 2-8 ships!</span></span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
@@ -1057,7 +1057,8 @@ class exportObj.SquadBuilder
         .on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
             @language = language
             old_dirty = @current_squad.dirty
-            @loadFromSerialized @pretranslation_serialized
+            if @pretranslation_serialized.length?
+                @loadFromSerialized @pretranslation_serialized
             for ship in @ships
                 ship.updateSelections()
             @current_squad.dirty = old_dirty
@@ -1081,7 +1082,7 @@ class exportObj.SquadBuilder
             @collection = collection
             # console.log "#{@faction}: Collection created, checking squad"
             @collection.onLanguageChange null, @language
-            @checkCollection()
+            # @checkCollection()
             @collection_button.removeClass 'hidden'
         .on 'xwing-collection:changed', (e, collection) =>
             # console.log "#{@faction}: Collection changed, checking squad"
@@ -1278,7 +1279,6 @@ class exportObj.SquadBuilder
             old_id = @current_squad.id
             @container.trigger 'xwing:pointsUpdated', $.noop
             @container.trigger 'xwing:shipUpdated'
-        # @onPointsUpdated cb
         cb()
 
     onPointsUpdated: (cb=$.noop) =>
@@ -1373,7 +1373,8 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.text @current_squad.name
         @current_obstacles = @current_squad.additional_data.obstacles
         @updateObstacleSelect(@current_squad.additional_data.obstacles)
-        @loadFromSerialized squad.serialized
+        if squad.serialized.length?
+            @loadFromSerialized squad.serialized
         @notes.val(squad.additional_data.notes ? '')
         @backend_status.fadeOut 'slow'
         @current_squad.dirty = false
@@ -1493,19 +1494,20 @@ class exportObj.SquadBuilder
             @desired_points_input.val desired_points
             @desired_points_input.change()
             ships_with_unmet_dependencies = []
-            for serialized_ship in serialized_ships.split(ship_splitter)
-                unless serialized_ship == ''
-                    new_ship = @addShip()
-                    # try to create ship. fromSerialized returns false, if some upgrade have been skipped as they are not legal until now (e.g. 0-0-0 but vader is not yet in the squad)
-                    # if not the entire ship is valid, we'll try again later - but keep the valid part added, so other ships may already see some upgrades
-                    if (not new_ship.fromSerialized version, serialized_ship) or not new_ship.pilot # also check, if the pilot has been set (the pilot himself was not invalid)
-                        ships_with_unmet_dependencies.push [new_ship, serialized_ship]
-            for ship in ships_with_unmet_dependencies
-                # 2nd attempt to load ships with unmet dependencies.
-                if not ship[0].pilot
-                    # create ship, if the ship was so invalid, that it in fact decided to not exist
-                    ship[0] = @addShip()
-                ship[0].fromSerialized version, ship[1]
+            if serialized_ships.length?
+                for serialized_ship in serialized_ships.split(ship_splitter)
+                    unless serialized_ship == ''
+                        new_ship = @addShip()
+                        # try to create ship. fromSerialized returns false, if some upgrade have been skipped as they are not legal until now (e.g. 0-0-0 but vader is not yet in the squad)
+                        # if not the entire ship is valid, we'll try again later - but keep the valid part added, so other ships may already see some upgrades
+                        if (not new_ship.fromSerialized version, serialized_ship) or not new_ship.pilot # also check, if the pilot has been set (the pilot himself was not invalid)
+                            ships_with_unmet_dependencies.push [new_ship, serialized_ship]
+                for ship in ships_with_unmet_dependencies
+                    # 2nd attempt to load ships with unmet dependencies.
+                    if not ship[0].pilot
+                        # create ship, if the ship was so invalid, that it in fact decided to not exist
+                        ship[0] = @addShip()
+                    ship[0].fromSerialized version, ship[1]
 
         @suppress_automatic_new_ship = false
         # Finally, the unassigned ship
@@ -3335,7 +3337,7 @@ class Ship
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
             query: (query) =>
-                @builder.checkCollection()
+                # @builder.checkCollection()
                 query.callback
                     more: false
                     results: @builder.getAvailableShipsMatching(query.term)
@@ -3374,7 +3376,7 @@ class Ship
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'pilotSelectorPlaceholder'
             query: (query) =>
-                @builder.checkCollection()
+                # @builder.checkCollection()
                 query.callback
                     more: false
                     results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), (if not @builder.isQuickbuild then @pilot else @quickbuildId), query.term, true, @)
@@ -4085,7 +4087,6 @@ class GenericAddon
                     # Not currently selected; check shelf only
                     not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
                 if not_in_collection then 'select2-result-not-in-collection' else ''
-                    #and (@ship.builder.collection.checkcollection?) 
             else
                 ''
         args.formatSelection = (obj, container) =>
@@ -4426,7 +4427,7 @@ class exportObj.Upgrade extends GenericAddon
             placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'upgradePlaceholder', @slot)
             allowClear: true
             query: (query) =>
-                @ship.builder.checkCollection()
+                # @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term, @filter_func)
@@ -4455,7 +4456,7 @@ class exportObj.QuickbuildUpgrade extends GenericAddon
             width: '50%'
             allowClear: false
             query: (query) =>
-                @ship.builder.checkCollection()
+                # @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: [{
