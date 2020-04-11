@@ -316,33 +316,39 @@ class exportObj.SquadBuilder
                 </div>
             </div>
             <div class="modal-footer hidden-print">
-                <label class="vertical-space-checkbox hidden-phone">
-                    Add Space for Cards<input type="checkbox" class="toggle-vertical-space" />
-                </label>
-                <label class="maneuver-print-checkbox hidden-phone">
-                    Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" />
-                </label>
-                <label class="expanded-shield-hull-print-checkbox hidden-phone">
-                    Expand Shield and Hull <input type="checkbox" class="toggle-expanded-shield-hull-print" />
-                </label>
-                <label class="color-print-checkbox hidden-phone">
-                    Print Color <input type="checkbox" class="toggle-color-print" checked="checked" />
-                </label>
-                <label class="color-skip-text-checkbox hidden-phone">
-                    Skip Card Text <input type="checkbox" class="toggle-skip-text-print" />
-                </label>
-                <label class="qrcode-checkbox hidden-phone">
-                    Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
-                </label>
-                <label class="obstacles-checkbox hidden-phone">
-                    Include Obstacle Choices <input type="checkbox" class="toggle-obstacles" />
-                </label>
+                <div class="row">
+                    <div class="column">
+                        <label class="color-skip-text-checkbox hidden-phone">
+                            Skip Card Text <input type="checkbox" class="toggle-skip-text-print" />
+                        </label>
+                        <label class="vertical-space-checkbox hidden-phone">
+                            Add Space for Cards <input type="checkbox" class="toggle-vertical-space" />
+                        </label>
+                        <label class="maneuver-print-checkbox hidden-phone">
+                            Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" />
+                        </label>
+                        <label class="expanded-shield-hull-print-checkbox hidden-phone">
+                            Expand Shield and Hull <input type="checkbox" class="toggle-expanded-shield-hull-print" />
+                        </label>
+                    </div>
+                    <div class="column">
+                        <label class="color-print-checkbox hidden-phone">
+                            Print Color <input type="checkbox" class="toggle-color-print" checked="checked" />
+                        </label>
+                        <label class="qrcode-checkbox hidden-phone">
+                            Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
+                        </label>
+                        <label class="obstacles-checkbox hidden-phone">
+                            Include Obstacle Choices <input type="checkbox" class="toggle-obstacles" />
+                        </label>
+                    </div>
+                </div>
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
                     <button class="btn select-fancy-view hidden-phone">Fancy</button>
                     <button class="btn select-simplecopy-view">Text</button>
+                    <button class="btn select-tts-view hidden-phone">TTS</button>
                     <button class="btn select-reddit-view">Reddit</button>
-                    <button class="btn select-tts-view">TTS</button>
                     <button class="btn select-bbcode-view">BBCode</button>
                     <button class="btn select-html-view">HTML</button>
                 </div>

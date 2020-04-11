@@ -445,9 +445,9 @@ class exportObj.SquadBuilderBackend
                 </div>
                 <div class="btn-group squad-display-mode">
                     <button class="btn btn-inverse show-all-squads">All</button>
-                    <button class="btn show-extended-squads">Extended</button>
-                    <button class="btn show-hyperspace-squads">Hyperspace</button>
-                    <button class="btn show-quickbuild-squads">Quickbuild</button>
+                    <button class="btn show-extended-squads">Ext<span class="hidden-phone">ended</span></button>
+                    <button class="btn show-hyperspace-squads">Hyper<span class="hidden-phone">space</span></button>
+                    <button class="btn show-quickbuild-squads">Quick<span class="hidden-phone">build</span></button>
                     <button class="btn show-epic-squads">Epic</button>
                     <button class="btn show-archived-squads">Archived</button>
                 </div>

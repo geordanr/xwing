@@ -12,8 +12,17 @@ $upgrade-circle-border-width: 5px
 .text-list-modal .modal-header
   overflow: hidden
 
+.row
+  display: flex
+
+.column
+  flex: 50%
+
 .modal-body 
-  height: calc(100vh - 200px)
+  max-height: calc(45vh)
+
+.modal.fade.in
+  top: 5%
 
 .fancy-header
   border: $fancy-header-height solid black
