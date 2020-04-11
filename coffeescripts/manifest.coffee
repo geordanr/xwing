@@ -8224,9 +8224,9 @@ class exportObj.Collection
                 </ul>
                 <div class="tab-content">
                     <div id="collection-expansions" class="tab-pane active container-fluid collection-content"></div>
-                    <div id="collection-ships" class="tab-pane active container-fluid collection-ship-content"></div>
-                    <div id="collection-pilots" class="tab-pane active container-fluid collection-pilot-content"></div>
-                    <div id="collection-upgrades" class="tab-pane active container-fluid collection-upgrade-content"></div>
+                    <div id="collection-ships" class="tab-pane container-fluid collection-ship-content"></div>
+                    <div id="collection-pilots" class="tab-pane container-fluid collection-pilot-content"></div>
+                    <div id="collection-upgrades" class="tab-pane container-fluid collection-upgrade-content"></div>
                     <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
                 </div>
             </div>
