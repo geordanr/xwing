@@ -26,7 +26,7 @@ He 'retired'. I took over.
 
 When will this be done?
 -----------------------
-Whenever FFG stops releaseing content for the game.
+Whenever FFG stops releasing content for the game.
 
 Building
 ========
@@ -45,7 +45,7 @@ Wanna help translating YASB into your language? See instructions in the
 Exporting Squads
 ===========
 
-https://yasb2-xws.herokuapp.com allows you to export squads you have created to xws format for use in other places. Take the url of the squad you have built, replace the "https://raithos.github.io/" part of the url with "https://yasb2-xws.herokuapp.com" and it will output your squad to be used for whatever.
+[Squad2xws](https://github.com/zacharyp/squad2xws) allows you to export squads you have created to xws format for use in other places. Take the url of the squad you have built, replace the "https://raithos.github.io/" part of the url with "https://squad2xws.herokuapp.com/yasb/xws" and it will output your squad in the xws format to be used for whatever.
 
 Credits
 -------
