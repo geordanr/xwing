@@ -14791,7 +14791,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Heroic"
-                "Primed Thursters"
+                "Primed Thrusters"
                 "Hull Upgrade"
             ]
         }
