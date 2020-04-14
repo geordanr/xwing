@@ -4343,7 +4343,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bossk"
-            canonical_name: 'Bossk'.canonicalize()
             id: 153
             unique: true
             faction: "Scum and Villainy"
