@@ -3979,9 +3979,9 @@ class Ship
 
         false
 
-    hasAnotherUnoccupiedSlotLike: (upgrade_obj) ->
+    hasAnotherUnoccupiedSlotLike: (upgrade_obj, upgradeslot) ->
         for upgrade in @upgrades
-            continue if upgrade == upgrade_obj or upgrade.slot != upgrade_obj.slot
+            continue if upgrade == upgrade_obj or upgrade.slot != upgradeslot
             return true unless upgrade.isOccupied()
         false
 
@@ -4405,9 +4405,9 @@ class GenericAddon
         upgrade.occupied_by = null
         upgrade.selector.select2 'enable', true
 
-    occupiesAnotherUpgradeSlot: ->
+    occupiesAnUpgradeSlot: (upgradeslot) ->
         for upgrade in @ship.upgrades
-            continue if upgrade.slot != @slot or upgrade == this or upgrade.data?
+            continue if upgrade.slot != upgradeslot or upgrade == this or upgrade.data?
             if upgrade.occupied_by? and upgrade.occupied_by == this
                 return true
         false
