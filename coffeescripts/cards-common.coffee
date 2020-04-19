@@ -11476,7 +11476,7 @@ exportObj.basicCardData = ->
             charge: 2
             faction: "First Order"
             restriction_func: (ship, upgrade_obj) ->
-                ship.doesSlotExist "Modification" and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Modification")
+                (ship.doesSlotExist "Modification") and (ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Modification"))
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Modification"
             also_occupies_upgrades: [ "Modification" ]
