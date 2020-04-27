@@ -11459,6 +11459,7 @@ exportObj.basicCardData = ->
             name: "Cluster Mines"
             id: 316
             slot: "Device"
+            charge: 1
             points: 8
             applies_condition: 'Cluster Mine'.canonicalize()
        }

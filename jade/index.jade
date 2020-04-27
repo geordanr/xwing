@@ -1,5 +1,6 @@
 doctype html
 - var now_ts = parseInt(new Date().getTime() / 1000)
+
 html
   head
     title YASB 2.0
@@ -16,10 +17,11 @@ html
     link(rel="stylesheet", href=`select2-3.4.0/select2.css?${now_ts}`)
 
     link(rel="stylesheet", href=`stylesheets/xwing.css?${now_ts}`)
-    link(rel="stylesheet", href=`stylesheets/xwing-screen.css?${now_ts}`, media="screen,handheld")
+    link(rel="stylesheet", href=`stylesheets/xwing-screen.css?${now_ts}`, media="screen")
     link(rel="stylesheet", href=`stylesheets/xwing-print.css?${now_ts}`, media="print")
-    link(rel="stylesheet", href=`stylesheets/backgrounds.css?${now_ts}`, media="screen,handheld")
+    link(rel="stylesheet", href=`stylesheets/backgrounds.css?${now_ts}`, media="screen")
     link(rel="stylesheet", href=`bower_components/xwing-miniatures-font/xwing-miniatures.css?${now_ts}`, media="screen,handheld,print")
+
 
   body
     // body layout
@@ -124,8 +126,7 @@ html
 
                     Do you want to donate? Many people have bothered me to add one so here it is! Please don't feel obligated to donate for using this site just because this button is here. This site will always be free, and always 100% available for all people to use.
 
-                  a(href='https://paypal.me/raithos', target='_blank')
-                    button(class='btn btn-primary paypal') Donate?
+                  button(class='btn btn-primary paypal', onclick="window.location.href = 'https://paypal.me/raithos';", target='_blank') Donate?
                 
     .footer
       .msie8-hax
@@ -332,18 +333,17 @@ html
                   e.preventDefault()
                   window.location.href = window.location.href.replace(/^http:/, 'https:')
 
+    #xws
 
+    .font-hax
+      span(style="font-family: BankGothicHD")
+        | &nbsp;
+      span(style="font-family: kimberley")
+        | &nbsp;
+      span(style="font-family: XWing")
+        | &nbsp;
+      span(style="font-family: XWingShip")
+        | &nbsp;
+    img.hidden(src="images/xws-obstacles.png")
 
-#xws
-
-.font-hax
-  span(style="font-family: BankGothicHD")
-    | &nbsp;
-  span(style="font-family: kimberley")
-    | &nbsp;
-  span(style="font-family: XWing")
-    | &nbsp;
-  span(style="font-family: XWingShip")
-    | &nbsp;
-img.hidden(src="images/xws-obstacles.png")
 
