@@ -9,7 +9,7 @@ html
     link(rel="shortcut icon", type="image/x-icon", href="favicon.ico")
     link(rel="stylesheet", href=`bootstrap/css/bootstrap.min.css?${now_ts}`)
     link(rel="stylesheet", href=`bower_components/font-awesome/css/font-awesome.min.css?${now_ts}`)
-    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(property="og:url", content="http://raithos.github.io/")
     meta(property="og:image", content="http://raithos.github.io/images/preview.png")
     meta(property="og:description", content="YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
@@ -96,8 +96,7 @@ html
             .row-fluid
               .span8
                 h2 YASB for X-Wing 2.0
-                p
-                  :markdown
+                :markdown
                     YASB 2.0 is a simple, fast, no-frills squad builder for [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).  
                     
                     It is pure HTML, JavaScript, and CSS and requires no backend, and can be dropped into place on any website (with maybe a few CSS tweaks).
@@ -125,8 +124,8 @@ html
                     This builder is unofficial and is not affiliated with Fantasy Flight Games, Lucasfilm Ltd., or Disney.
 
                     Do you want to donate? Many people have bothered me to add one so here it is! Please don't feel obligated to donate for using this site just because this button is here. This site will always be free, and always 100% available for all people to use.
-
-                button(class='btn btn-primary paypal', onclick="window.open('https://paypal.me/raithos');") Donate?
+                p
+                    button(class='btn btn-primary paypal', onclick="window.open('https://paypal.me/raithos');") Donate?
 
     .footer
       .msie8-hax
