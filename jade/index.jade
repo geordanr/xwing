@@ -20,7 +20,7 @@ html
     link(rel="stylesheet", href=`stylesheets/xwing-screen.css?${now_ts}`, media="screen")
     link(rel="stylesheet", href=`stylesheets/xwing-print.css?${now_ts}`, media="print")
     link(rel="stylesheet", href=`stylesheets/backgrounds.css?${now_ts}`, media="screen")
-    link(rel="stylesheet", href=`bower_components/xwing-miniatures-font/xwing-miniatures.css?${now_ts}`, media="screen,handheld,print")
+    link(rel="stylesheet", href=`bower_components/xwing-miniatures-font/xwing-miniatures.css?${now_ts}`, media="screen,print")
 
 
   body
@@ -126,8 +126,8 @@ html
 
                     Do you want to donate? Many people have bothered me to add one so here it is! Please don't feel obligated to donate for using this site just because this button is here. This site will always be free, and always 100% available for all people to use.
 
-                  button(class='btn btn-primary paypal', onclick="window.location.href = 'https://paypal.me/raithos';", target='_blank') Donate?
-                
+                button(class='btn btn-primary paypal', onclick="window.open('https://paypal.me/raithos');") Donate?
+
     .footer
       .msie8-hax
 
