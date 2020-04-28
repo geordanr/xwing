@@ -50,6 +50,9 @@ class exportObj.SquadBuilderBackend
             twitter:
                 icon: 'fa fa-twitter-square'
                 text: 'Twitter'
+            discord:
+                icon: 'fa fa-discord-square'
+                text: 'Discord'
 
         @squad_display_mode = 'all'
 
