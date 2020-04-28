@@ -42,16 +42,16 @@ class exportObj.SquadBuilderBackend
 
         @method_metadata =
             google_oauth2:
-                icon: 'fa fa-google-plus-square'
+                icon: 'fa fa-google'
                 text: 'Google'
             facebook:
-                icon: 'fa fa-facebook-square'
+                icon: 'fa fa-facebook'
                 text: 'Facebook'
             twitter:
-                icon: 'fa fa-twitter-square'
+                icon: 'fa fa-twitter'
                 text: 'Twitter'
             discord:
-                icon: 'fa fa-discord-square'
+                icon: 'fa fa-discord'
                 text: 'Discord'
 
         @squad_display_mode = 'all'
@@ -653,7 +653,7 @@ class exportObj.SquadBuilderBackend
                     obstacles: builder.getObstacles()
                 builder.backend_save_list_as_button.addClass 'disabled'
                 builder.backend_status.html $.trim """
-                    <i class="fa fa-refresh fa-spin"></i>&nbsp;Saving squad...
+                    <i class="fa fa-sync fa-spin"></i>&nbsp;Saving squad...
                 """
                 builder.backend_status.show()
                 new_name = $.trim @save_as_input.val()
@@ -712,7 +712,7 @@ class exportObj.SquadBuilderBackend
             e.preventDefault()
             builder = @delete_modal.data 'builder'
             builder.backend_status.html $.trim """
-                <i class="fa fa-refresh fa-spin"></i>&nbsp;Deleting squad...
+                <i class="fa fa-sync fa-spin"></i>&nbsp;Deleting squad...
             """
             builder.backend_status.show()
             builder.backend_delete_list_button.addClass 'disabled'

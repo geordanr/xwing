@@ -33,7 +33,7 @@
     },
     "font-awesome": {
       "css": "css/*",
-      "fonts": "otfs/*"
+      "webfonts": "webfonts/*"
     }
   }
 }

@@ -8,7 +8,7 @@ html
 
     link(rel="shortcut icon", type="image/x-icon", href="favicon.ico")
     link(rel="stylesheet", href=`bootstrap/css/bootstrap.min.css?${now_ts}`)
-    link(rel="stylesheet", href=`bower_components/font-awesome/css/font-awesome.min.css?${now_ts}`)
+    link(rel="stylesheet", href=`bower_components/font-awesome/css/all.min.css?${now_ts}`)
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(property="og:url", content="http://raithos.github.io/")
     meta(property="og:image", content="http://raithos.github.io/images/preview.png")
@@ -53,14 +53,14 @@ html
         li.main-top-nav-bar-button-right
           a#login-logout.hidden(href='#')
             span.hide-authenticated
-              i.fa.fa-sign-in.hidden-phone.hidden-tablet
+              i.fa.fa-sign-in-alt.hidden-phone.hidden-tablet
               | Log In
             span.show-authenticated
-              i.fa.fa-sign-out.hidden-phone.hidden-tablet
+              i.fa.fa-sign-out-alt.hidden-phone.hidden-tablet
               | Log Out
         li.main-top-nav-bar-button-right
           a#auth-status(href='#')
-            i.fa.fa-spinner.fa-spin
+            i.fa.fa-sync.fa-spin
             span.payload
         // li
           a(href='old', target='_blank') Old Version 
