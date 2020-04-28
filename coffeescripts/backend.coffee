@@ -42,16 +42,16 @@ class exportObj.SquadBuilderBackend
 
         @method_metadata =
             google_oauth2:
-                icon: 'fa fa-google'
+                icon: 'fab fa-google'
                 text: 'Google'
             facebook:
-                icon: 'fa fa-facebook'
+                icon: 'fab fa-facebook'
                 text: 'Facebook'
             twitter:
-                icon: 'fa fa-twitter'
+                icon: 'fab fa-twitter'
                 text: 'Twitter'
             discord:
-                icon: 'fa fa-discord'
+                icon: 'fab fa-discord'
                 text: 'Discord'
 
         @squad_display_mode = 'all'

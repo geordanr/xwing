@@ -51,8 +51,8 @@ class exportObj.XWSManager
             <div class="row-fluid span9">
                 <div>
                     <!-- Import is marked in red since it creates something new -->
-                    <button class="btn btn-danger from-xws">Import from XWS</button>
-                    <button class="btn btn-primary to-xws">Export to XWS</button>
+                    <button class="btn btn-danger from-xws"><i class="fa fa-file-import"></i>&nbsp;Import from XWS</button>
+                    <button class="btn btn-primary to-xws"><i class="fa fa-file-export"></i>&nbsp;Export to XWS</button>
                 </div>
             </div>
         """

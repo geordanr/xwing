@@ -123,7 +123,7 @@ exportObj.translations.English =
         '#browserTab' : 'Card Browser'
         '#aboutTab' : 'About'
         # Obstacles
-        '.choose-obstacles' : 'Choose Obstacles'
+        '.choose-obstacles' : '<i class="fa fa-cloud"></i>&nbsp;Choose Obstacles'
         '.choose-obstacles-description' : 'Choose up to three obstacles to include in the permalink for use in external programs. (Support for displaying which obstacles were selected in the printout is not yet supported.)'
         '.coreasteroid0-select' : 'Core Asteroid 0'
         '.coreasteroid1-select' : 'Core Asteroid 1'

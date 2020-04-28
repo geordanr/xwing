@@ -895,7 +895,7 @@ class exportObj.SquadBuilder
                     </label>
                     <span class="obstacles-container">
                         <!-- Since this is an optional button, usually, it's shown in a different color -->
-                        <button class="btn btn-info choose-obstacles">Choose Obstacles</button>
+                        <button class="btn btn-info choose-obstacles"><i class="fa fa-cloud"></i>&nbsp;Choose Obstacles</button>
                     </span>
                  </div>
                <div class="span3 info-container" id="info-container" />
