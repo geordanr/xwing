@@ -212,16 +212,17 @@ class exportObj.SquadBuilder
                         <input type="text" maxlength="64" placeholder="Name your squad..." />
                         <button class="btn save"><i class="fa fa-pen-square"></i></button>
                     </div>
-                </div>
-                <div class="span4 points-display-container">
-                    Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="200">
+                    <br>
                     <select class="game-type-selector">
                         <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
                         <option value="epic">Epic</option>
                         <option value="quickbuild">Quickbuild</option>
                     </select>
-                    <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
+                </div>
+                <div class="span4 points-display-container">
+                    Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="200">
+                    <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left) <span class="points-destroyed red"></span></span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning loading-failed-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
@@ -596,6 +597,7 @@ class exportObj.SquadBuilder
         @desired_points_input.change (e) =>
             @onPointsUpdated $.noop
         @points_remaining_span = $ @points_container.find('.points-remaining')
+        @points_destroyed_span = $ @points_container.find('.points-destroyed')
         @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
         @loading_failed_container = $ @points_container.find('.loading-failed-container')
@@ -1289,6 +1291,7 @@ class exportObj.SquadBuilder
 
     onPointsUpdated: (cb=$.noop) =>
         tot_points = 0
+        points_dest = 0
         unreleased_content_used = false
         # validating may remove the ship, if not only some upgrade, but the pilot himself is not valid. Thus iterate backwards over the array, so that is probably fine?
         
@@ -1297,13 +1300,20 @@ class exportObj.SquadBuilder
             ship.validate()
             continue unless ship # if the ship has been removed, we no longer care about it
             tot_points += ship.getPoints()
+            if ship.destroystate == 1
+                points_dest += Math.ceil ship.getPoints() / 2
+            else if ship.destroystate == 2
+                points_dest += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
-            
+        
         @total_points = tot_points
+        @points_destroyed = points_dest
         @total_points_span.text @total_points
         points_left = parseInt(@desired_points_input.val()) - @total_points
+        points_destroyed = parseInt(@total_points)
         @points_remaining_span.text points_left
+        @points_destroyed_span.html if points_dest != 0 then """<i class="xwing-miniatures-font xwing-miniatures-font-hit"></i>#{points_dest}""" else ""
         @points_remaining_container.toggleClass 'red', (points_left < 0)
         @unreleased_content_used_container.toggleClass 'hidden', not unreleased_content_used
 
@@ -2924,6 +2934,7 @@ class Ship
         @primary = true # only the primary ship of a linked ship pair will contribute points and serialization id
         @upgrades = []
         @wingmates = [] # stores wingmates (quickbuild stuff only) 
+        @destroystate = null
 
         @setupUI()
 
@@ -3035,6 +3046,8 @@ class Ship
 
         # Show delete button
         @remove_button.fadeIn 'fast'
+        @copy_button.fadeIn 'fast'
+        @points_destroyed_button.fadeIn 'fast'
 
         # Ship background
         @row.addClass "ship-#{ship_type.toLowerCase().replace(/[^a-z0-9]/gi, '')}"
@@ -3307,6 +3320,9 @@ class Ship
         @row.addClass 'row-fluid ship'
         @row.insertBefore @builder.notes_container
 
+        if @pilot?
+            shipicon = if exportObj.ships[@pilot.ship].icon then exportObj.ships[@pilot.ship].icon else exportObj.ships[@pilot.ship].xws
+        
         @row.append $.trim '''
             <div class="span3">
                 <input class="ship-selector-container" type="hidden" />
@@ -3323,8 +3339,9 @@ class Ship
             </div>
             <div class="span6 addon-container" />
             <div class="span2 button-container">
-                <button class="btn btn-danger remove-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
-                <button class="btn copy-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Clone Pilot"><i class="far fa-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>
+                <button class="btn btn-danger remove-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
+                <button class="btn copy-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Clone Pilot"><i class="far fa-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>&nbsp;&nbsp;&nbsp;
+                <button class="btn points-destroyed side-button" points-state"><span class="visible-desktop visible-tablet visible-phone destroyed-type" data-toggle="tooltip" title="Destroyed Points"><i class="xwing-miniatures-font xwing-miniatures-font-title"></i></span><span class="hidden-desktop hidden-tablet visible-phone">: Destroyed</span></button>
             </div>
         '''
         @row.find('.button-container span').tooltip()
@@ -3466,6 +3483,22 @@ class Ship
                 
         @copy_button.hide()
 
+        @points_destroyed_button_span = $ @row.find('.destroyed-type')
+
+        @points_destroyed_button = $ @row.find('button.points-destroyed')
+        @points_destroyed_button.click (e) =>
+            if @destroystate == 1
+                @destroystate = 2
+                @points_destroyed_button_span.html '<i class="xwing-miniatures-font xwing-miniatures-font-crit"></i>'
+            else if @destroystate == 2
+                @destroystate = 0
+                @points_destroyed_button_span.html '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
+            else
+                @destroystate = 1
+                @points_destroyed_button_span.html '<i class="xwing-miniatures-font xwing-miniatures-font-hit"></i>'
+            @builder.onPointsUpdated()
+        @points_destroyed_button.hide()
+            
     teardownUI: ->
         @row.text ''
         @row.remove()
