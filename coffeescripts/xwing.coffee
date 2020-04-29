@@ -3339,8 +3339,8 @@ class Ship
             </div>
             <div class="span6 addon-container" />
             <div class="span2 button-container">
-                <button class="btn btn-danger remove-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
-                <button class="btn copy-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Clone Pilot"><i class="far fa-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-danger remove-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="hidden-desktop hidden-tablet visible-phone"> Remove Pilot</span></button>
+                <button class="btn copy-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Clone Pilot"><i class="far fa-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone"> Clone Pilot</span></button>&nbsp;&nbsp;&nbsp;
                 <button class="btn points-destroyed side-button" points-state"><span class="visible-desktop visible-tablet visible-phone destroyed-type" data-toggle="tooltip" title="Destroyed Points"><i class="xwing-miniatures-font xwing-miniatures-font-title"></i></span><span class="hidden-desktop hidden-tablet visible-phone">: Destroyed</span></button>
             </div>
         '''
