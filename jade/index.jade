@@ -6,6 +6,10 @@ html
     title YASB 2.0
     meta(charset="utf-8")
 
+    link(rel="apple-touch-icon", sizes="180x180", href="apple-touch-icon.png")
+    link(rel="icon", type="image/png", sizes="32x32", href="favicon-32x32.png")
+    link(rel="icon", type="image/png", sizes="16x16", href="favicon-16x16.png")
+    link(rel="manifest", href="site.webmanifest")
     link(rel="shortcut icon", type="image/x-icon", href="favicon.ico")
     link(rel="stylesheet", href=`bootstrap/css/bootstrap.min.css?${now_ts}`)
     link(rel="stylesheet", href=`bower_components/font-awesome/css/all.min.css?${now_ts}`)
@@ -63,7 +67,7 @@ html
             i.fa.fa-sync.fa-spin
             span.payload
         // li
-          a(href='old', target='_blank') Old Version 
+        //  a(href='old', target='_blank') Old Version 
         li.dropdown.language-picker.main-top-nav-bar-button-right
           a.dropdown-toggle('data-toggle'='dropdown', href='#')
             span.language-placeholder
@@ -95,22 +99,26 @@ html
           .container-fluid
             .row-fluid
               .span8
-                h2 YASB for X-Wing 2.0
+                .image-block
+                    img(src="android-chrome-192x192.png", height="100", width="100")
+                    h2 YASB for X-Wing 2.0
                 :markdown
                     YASB 2.0 is a simple, fast, no-frills squad builder for [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).  
-                    
+
                     It is pure HTML, JavaScript, and CSS and requires no backend, and can be dropped into place on any website (with maybe a few CSS tweaks).
 
-                    YASB 2.0  by Stephen Kim.
+                    YASB 2.0 updated and maintained by Stephen Kim.
 
                     2.0 launch data thanks to Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.
                     
                     Translation Team: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke
 
-                    Based on the amazing original 1.0 builder: https://geordanr.github.io/xwing/
+                    Site logo by Thomas Kohler
+
+                    Based on the amazing original [Yet Another Squad Builder](https://geordanr.github.io/xwing/)
 
                     Icons and fonts courtesy GeckoTH's excellent PSD, available on [A Few Maneuvers](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
-
+					
                     X-Wing symbols font courtesy [Hinny](https://github.com/Hinny) and [Josh Derksen](https://github.com/armoredgear7).
 
                     Fancy printout design inspired by TheKestrel on the FFG forums.
@@ -123,7 +131,7 @@ html
 
                     This builder is unofficial and is not affiliated with Fantasy Flight Games, Lucasfilm Ltd., or Disney.
 
-                    Do you want to donate? Many people have bothered me to add one so here it is! Please don't feel obligated to donate for using this site just because this button is here. This site will always be free, and always 100% available for all people to use.
+                    Do you want to donate? Many people have bothered me to add a donate button so here it is! Please don't feel obligated to donate for using this site just because this button is here. This site will always be free, and always 100% available for all people to use.
                 p
                     button(class='btn btn-primary paypal', onclick="window.open('https://paypal.me/raithos');") Donate?
 

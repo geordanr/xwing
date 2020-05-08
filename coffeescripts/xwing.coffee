@@ -2080,26 +2080,22 @@ class exportObj.SquadBuilder
                     container.find('tr.info-hull td.info-data').text(data.hull)
                     container.find('tr.info-hull').show()
                     
+                    recurringicon = ''
                     if data.shieldrecurr?
                         count = 0
-                        recurringicon = ''
                         while count < data.shieldrecurr
                             recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
                             ++count
-                        container.find('tr.info-shields td.info-data').html (data.shields + recurringicon)
-                    else
-                        container.find('tr.info-shields td.info-data').text(data.shields)
+                    container.find('tr.info-shields td.info-data').html (data.shields + recurringicon)
                     container.find('tr.info-shields').toggle(data.shields?)
 
+                    recurringicon = ''
                     if data.energyrecurr?
                         count = 0
-                        recurringicon = ''
                         while count < data.energyrecurr
                             recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
                             ++count
-                        container.find('tr.info-energy td.info-data').html (data.energy + recurringicon)
-                    else
-                        container.find('tr.info-energy td.info-data').text(data.energy)
+                    container.find('tr.info-energy td.info-data').html (data.energy + recurringicon)
                     container.find('tr.info-energy').toggle(data.energy?)
                     
                     
@@ -2226,26 +2222,22 @@ class exportObj.SquadBuilder
                     container.find('tr.info-hull td.info-data').text statAndEffectiveStat((data.ship_override?.hull ? ship.hull), effective_stats, 'hull')
                     container.find('tr.info-hull').show()
 
+                    recurringicon = ''
                     if ship.shieldrecurr?
                         count = 0
-                        recurringicon = ''
                         while count < ship.shieldrecurr
                             recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
                             ++count
-                        container.find('tr.info-shields td.info-data').html (statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields') + recurringicon)
-                    else
-                        container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields')
+                    container.find('tr.info-shields td.info-data').html (statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields') + recurringicon)
                     container.find('tr.info-shields').toggle(data.ship_override?.shields? or ship.shields?)
 
+                    recurringicon = ''
                     if ship.energyrecurr?
                         count = 0
-                        recurringicon = ''
                         while count < ship.energyrecurr
                             recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
                             ++count
-                        container.find('tr.info-energy td.info-data').html (statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy') + recurringicon)
-                    else
-                        container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy')
+                    container.find('tr.info-energy td.info-data').html (statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy') + recurringicon)
                     container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                     
                     
@@ -3589,9 +3581,16 @@ class Ship
             attackdtHTML = ''
 
         
+        recurringicon = ''
+        if @data.energyrecurr?
+            count = 0
+            while count < @data.energyrecurr
+                recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                ++count
+        
         energyHTML = if (@pilot.ship_override?.energy? or @data.energy?) then $.trim """
             <i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i>
-            <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}</span>
+            <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}#{recurringicon}</span>
         """ else ''
         
     
@@ -3601,24 +3600,31 @@ class Ship
         """ else ''
 
         if @pilot.charge?
+            recurringicon = ''
             if @pilot.recurring?
-                chargeHTML = $.trim """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i>
-                <span class="info-data info-charge">#{statAndEffectiveStat((@pilot.ship_override?.charge ? @pilot.charge), effective_stats, 'charge')}<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i></span>""" 
-            else
-                chargeHTML = $.trim """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i>
-                <span class="info-data info-charge">#{statAndEffectiveStat((@pilot.ship_override?.charge ? @pilot.charge), effective_stats, 'charge')}</span>""" 
+                recurringicon = """<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>"""
+            chargeHTML = $.trim """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i><span class="info-data info-charge">#{statAndEffectiveStat((@pilot.ship_override?.charge ? @pilot.charge), effective_stats, 'charge')}#{recurringicon}</span>"""
         else 
             chargeHTML = ''
 
+        shieldRECUR = ''
+        if @data.shieldrecurr?
+            count = 0
+            while count < @data.shieldrecurr
+                shieldRECUR += """<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>"""
+                ++count
+            
         shieldIconHTML = ''
         if effective_stats.shields
-            for _ in [1..(effective_stats.shields)]
+            for _ in [1..(effective_stats.shields - 1)]
                 shieldIconHTML += """<i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield expanded-hull-or-shield"></i>"""
+            shieldIconHTML += """<i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i>"""
 
         hullIconHTML = ''
         if effective_stats.hull
-            for _ in [1..(effective_stats.hull)]
+            for _ in [1..(effective_stats.hull - 1)]
                 hullIconHTML += """<i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull expanded-hull-or-shield"></i>"""
+            hullIconHTML += """<i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i>"""
 
         html = $.trim """
             <div class="fancy-pilot-header">
@@ -3643,11 +3649,9 @@ class Ship
                     <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>
                     <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>                    
                     #{hullIconHTML}
-                    <i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull simple-hull-or-shield"></i>
-                    <span class="info-data info-hull simple-hull-or-shield">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
+                    <span class="info-data info-hull">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
                     #{shieldIconHTML}
-                    <i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield simple-hull-or-shield"></i>
-                    <span class="info-data info-shields simple-hull-or-shield">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
+                    <span class="info-data info-shields">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}#{shieldRECUR}</span>
                     #{energyHTML}
                     #{forceHTML}
                     #{chargeHTML}
