@@ -156,6 +156,9 @@ exportObj.translations.English =
         'Modification': 'Modification'
         'Title': 'Title'
         'Ship': 'Ship'
+    rulestypes:
+        'glossary': 'Glossary'
+        'faq': 'FAQ'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.English = () ->
@@ -2347,9 +2350,9 @@ exportObj.cardLoaders.English = () ->
         'Proximity Mine':
            text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT% plus 1 %HIT%/%CRIT% damage for each matching result.%LINEBREAK%<i>Errata (since rules reference 1.0.2): Added: "1 %HIT% plus"</i>'''
         'DRK-1 Probe Droid':
-           text: '''INIT: 0 %LINEBREAK% AGILITY: 3 %LINEBREAK% HULL: 1 %LINEBREAK% (Remote) - While a friendly ship locks an object or jams an enemy ship, it may measure range from you. %LINEBREAK% After an enemy ship overlaps you, that ship rolls 1 attack die. On a %FOCUS% result, you suffer 1 %HIT% damage. %LINEBREAK% System Phase: At your initiative, you may relocate using a [2 %BANKLEFT%], [2 %STRAIGHT%] or [2 %BANKRIGHT%] template.'''
+           text: '''INIT: 0 <br>AGILITY: 3 <br>HULL: 1 %LINEBREAK% (Remote) - <strong>System Phase:</strong> The DRK-1 probe droid’s controlling player may choose a [2 %BANKLEFT%], [2 %STRAIGHT%] or [2 %BANKRIGHT%] template and any set of the DRK-1’s guides. The player then relocates the remote, placing the DRK-1 at the other end of the template. It can be placed overlapping an object this way. %LINEBREAK%If the DRK-1 overlaps a ship, use the position marker to denote the ship’s position, then place the ship on top of the remote. %LINEBREAK%<strong>Activation, Engagement, and End Phase:</strong> No effect. %LINEBREAK%<strong>Other Rules:</strong> While a ship locks an object or jams an enemy ship, it may measure range from a friendly DRK-1 probe droid. After an enemy ship executes a maneuver that causes it to overlap a DRK-1 probe droid, the ship’s controller rolls 1 attack die. On a %FOCUS% result, the DRK-1 probe droid suffers 1 %HIT% damage.'''
         'Buzz Droid Swarm':
-           text: '''INIT: 0 %LINEBREAK% AGILITY: 3 %LINEBREAK% HULL: 1 %LINEBREAK% (Remote) - After an enemy ship moves through or overlaps you, relocate to its front or rear guides (you are at range 0 of this ship). You cannot overlap an object this way. If you cannot be placed at either set of guides, you and that ship each suffer 1 %HIT% damage. %LINEBREAK% Engagement Phase: At your initiative, each enemy ship at range 0 suffers 1 %CRIT% damage.'''
+           text: '''INIT: 0 <br>AGILITY: 3 <br>HULL: 1 %LINEBREAK% (Remote) - <strong>System, Activation, and End Phase:</strong> No effect. %LINEBREAK%<strong>Engagement Phase:</strong> When you engage, each enemy ship at range 0 of the buzz droid swarm suffers 1 %CRIT% damage. %LINEBREAK%<strong>Other Rules:</strong> After an enemy ship overlaps or moves through a buzz droid swarm, the swarm’s controlling player relocates it by aligning the tab to that ship’s front or rear guides (this ship is at range 0 of the swarm). The swarm cannot be aligned to a set of the ship’s guides if doing so would cause it to overlap an object. If the swarm cannot be placed at a chosen set of guides, its controlling player must align it to the other set of the ship’s guides. If it cannot be aligned to the other set, the swarm and the enemy ship that overlapped or moved through it each suffer 1 %HIT% damage.'''
         '''It's the Resistance''':
            text: '''<strong>Setup:</strong> Start in reserve. %LINEBREAK% When you deploy, you are placed within range 1 of any table edge and beyond range 3 of any enemy ship. %LINEBREAK% At the start of the round, if all of the friendly <strong>GA-97</strong>'s %CHARGE% are active, you <strong>must</strong> deploy. Then remove this card. After the friendly <strong>GA-97</strong> is destroyed, you <strong>must</strong> deploy. Then gain 1 disarm token and remove this card.'''
         'Electro-Proton Bomb':
@@ -2360,5 +2363,7 @@ exportObj.cardLoaders.English = () ->
            text: '''During the System Phase, if the enemy <strong>Vi Morandi</strong> is at range 0-3, flip your dial faceup. %LINEBREAK% While you defend or perform an attack against the enemy <strong>Vi Morandi</strong>, you cannot spend focus tokens.'''
         'Cluster Mine':
            text: '''(Mine Tokens) - A Cluster Mine Set consists of 3 individual Cluster Mine devices. %LINEBREAK% When a Cluster Mines set is placed, the center Cluster Mine is placed as normal, then two additional Cluster Mines are placed in the recesses as shown. After a ship overlaps or moves through any individual Cluster Mine, it detonates. Other Cluster Mines in the set that were not overlapped or moved through do not detonate. %LINEBREAK% When each of these devices detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT%/%CRIT% damage for each matching result.'''
+        'Ion Bomb':
+           text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship at range 0–1 gains 3 ion tokens, and each remote at range 0–1 suffers 1 %HIT% damage.'''
             
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations

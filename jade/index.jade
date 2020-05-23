@@ -77,6 +77,8 @@ html
           a#aboutTab('data-toggle'="tab", href='#aboutContent') About    
         li.main-top-nav-bar-button-right
           a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser                      
+        li.main-top-nav-bar-button-right
+          a#rulesTab('data-toggle'="tab", href='#rulesBrowserContent') Rules
 
       .tab-content
         .tab-pane#rebelContent
@@ -95,6 +97,8 @@ html
           #separatist-builder
         .tab-pane#browserContent
           #card-browser
+        .tab-pane#rulesBrowserContent
+          #rules-browser
         .tab-pane#aboutContent
           .container-fluid
             .row-fluid
@@ -210,6 +214,10 @@ html
             gtag 'config', 'UA-123324723-1',
               page_path: '/browser'
               page_title: 'Card Browser'
+          $('#rulesTab').click (e) ->
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/rules-browser'
+              page_title: 'Rules'
           $('#aboutTab').click (e) ->
             gtag 'config', 'UA-123324723-1',
               page_path: '/about'
@@ -322,6 +330,9 @@ html
 
           window.browser = new CardBrowser
               container: '#card-browser'
+
+          window.browser = new RulesBrowser
+              container: '#rules-browser'
 
           window.backend.getSettings (settings) ->
               window.backend.getLanguagePreference settings, (language) ->
