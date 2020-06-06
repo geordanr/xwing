@@ -1601,6 +1601,8 @@ exportObj.basicCardData = ->
              "Barrel Roll"
              "Slam"
            ]
+           actionsred: [
+           ]
            maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
@@ -16326,7 +16328,7 @@ exportObj.basicCardData = ->
         {
             id: 392
             faction: "Galactic Republic"
-            pilot: "Anakin Skywalker"
+            pilot: "Anakin Skywalker (Y-Wing)"
             ship: "BTL-B Y-Wing"
             threat: 4
             upgrades: [
@@ -16353,7 +16355,7 @@ exportObj.basicCardData = ->
         {
             id: 394
             faction: "Galactic Republic"
-            pilot: '"Odd Ball"'
+            pilot: '"Odd Ball" (Y-Wing)'
             ship: "BTL-B Y-Wing"
             threat: 3
             upgrades: [
