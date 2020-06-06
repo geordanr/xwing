@@ -12692,7 +12692,7 @@ exportObj.basicCardData = ->
             ship: "K-Wing"
             threat: 2
             upgrades: [
-                "Barrage Rocktes"
+                "Barrage Rockets"
                 "Bomblet Generator"
             ]
         }
