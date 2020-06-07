@@ -12312,7 +12312,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Fire-Control System"
-                "Proton Torpedos"
+                "Proton Torpedoes"
                 "Advanced SLAM"
                 "Os-1 Arsenal Loadout"
             ]
