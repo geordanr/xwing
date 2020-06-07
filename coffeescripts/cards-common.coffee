@@ -13030,7 +13030,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Supernatural Reflexes"
-                """"Zeb" Orrelios"""
+                '"Zeb" Orrelios'
                 "Hull Upgrade"
             ]
         }
