@@ -92,7 +92,8 @@ exportObj.translations['Français'] =
         '.collection': '<i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Votre collection</a>'
         '.randomize' : 'Aléatoire !'
         '.randomize-options' : 'Options…'
-        '.notes-container > span' : 'Notes sur l\'escadron'
+        '.notes-container .notes-name' : 'Notes sur l\'escadron:'
+        '.notes-container .tag-name' : 'Tag:'        
         # Print/View modal
         '.bbcode-list' : 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea><button class="btn btn-copy">Copiez</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copiez</button>'

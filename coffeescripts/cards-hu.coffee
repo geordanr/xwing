@@ -84,7 +84,8 @@ exportObj.translations.Magyar =
         '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Nyomtatás/Szövegnézet </span>'
         '.randomize' : '<i class="fa fa-random"></i>&nbsp;Random!'
         '.randomize-options' : 'Randomizer opciók…'
-        '.notes-container > span' : 'Jegyzetek'
+        '.notes-container .notes-name' : 'Jegyzetek:'
+        '.notes-container .tag-name' : 'Tag:'        
         # Print/View modal
         '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Másolás</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Másolás</button>'

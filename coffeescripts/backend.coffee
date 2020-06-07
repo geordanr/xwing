@@ -141,6 +141,9 @@ class exportObj.SquadBuilderBackend
         # This counter keeps tracked of the number of squads marked to be deleted (to hide the delete-selected button if none is selected)
         @number_of_selected_squads_to_be_deleted = 0
 
+        #setup tag list
+        tag_list = []
+
         url = if all then "#{@server}/all" else "#{@server}/squads/list"
         $.get url, (data, textStatus, jqXHR) =>
             hasNotArchivedSquads = false
@@ -151,6 +154,10 @@ class exportObj.SquadBuilderBackend
                 li.data 'builder', builder
                 li.data 'selectedForDeletion', false
                 list_ul.append li
+                
+                if squad.additional_data?.tag? and (squad.additional_data?.tag != "") and (tag_list.indexOf(squad.additional_data.tag) == -1)
+                    tag_list.push squad.additional_data?.tag
+                
                 if squad.additional_data?.archived?
                     li.hide()
                 else
@@ -169,9 +176,21 @@ class exportObj.SquadBuilderBackend
                             #{squad.additional_data?.description}
                         </div>
                         <div class="span4">
-                            <button class="btn load-squad">Load</button>
+                            <button class="btn convert-squad"><i class="xwing-miniatures-font xwing-miniatures-font-first-player-1"></i></button>
                             &nbsp;
-                            <button class="btn btn-danger delete-squad">Delete</button>
+                            <button class="btn load-squad"><i class="fa fa-download"></i></button>
+                            &nbsp;
+                            <button class="btn btn-danger delete-squad"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="row-fluid squad-convert-confirm">
+                        <div class="span8">
+                            Convert to Extended?
+                        </div>
+                        <div class="span4">
+                            <button class="btn btn-danger confirm-convert-squad">Convert</button>
+                            &nbsp;
+                            <button class="btn cancel-convert-squad">Cancel</button>
                         </div>
                     </div>
                     <div class="row-fluid squad-delete-confirm">
@@ -185,8 +204,64 @@ class exportObj.SquadBuilderBackend
                         </div>
                     </div>
                 """
+                li.find('.squad-convert-confirm').hide()
                 li.find('.squad-delete-confirm').hide()
+                
+                if squad.serialized.search(/v\d+Zh/) == -1
+                    li.find('button.convert-squad').hide()
+                
+                li.find('button.convert-squad').click (e) =>
+                    e.preventDefault()
+                    button = $ e.target
+                    li = button.closest 'li'
+                    builder = li.data('builder')
+                    li.data 'selectedToConvert', true
+                    do (li) =>
+                        li.find('.squad-description').fadeOut 'fast', ->
+                            li.find('.squad-convert-confirm').fadeIn 'fast'
+                        
+                li.find('button.cancel-convert-squad').click (e) =>
+                    e.preventDefault()
+                    button = $ e.target
+                    li = button.closest 'li'
+                    builder = li.data('builder')
+                    li.data 'selectedToConvert', false
+                    do (li) =>
+                        li.find('.squad-convert-confirm').fadeOut 'fast', ->
+                            li.find('.squad-description').fadeIn 'fast'
 
+                li.find('button.confirm-convert-squad').click (e) =>
+                    e.preventDefault()
+                    button = $ e.target
+                    li = button.closest 'li'
+                    builder = li.data('builder')
+                    li.find('.cancel-convert-squad').fadeOut 'fast'
+                    li.find('.confirm-convert-squad').addClass 'disabled'
+                    li.find('.confirm-convert-squad').text 'Converting...'
+                    new_serialized = li.data('squad').serialized.replace('Zh','Zs')
+                    @save new_serialized, li.data('squad').id, li.data('squad').name, li.data('builder').faction, li.data('squad').additional_data, (results) =>
+                        if results.success
+                            li.data('squad').serialized = new_serialized 
+                            li.find('.squad-convert-confirm').fadeOut 'fast', ->
+                                li.find('.squad-description').fadeIn 'fast'
+                                li.find('button.convert-squad').fadeOut 'fast'
+                        else
+                            li.html $.trim """
+                                Error converting #{li.data('squad').name}: <em>#{results.error}</em>
+                            """
+                
+                li.find('button.load-squad').click (e) =>
+                    e.preventDefault()
+                    button = $ e.target
+                    li = button.closest 'li'
+                    builder = li.data('builder')
+                    @squad_list_modal.modal 'hide'
+                    if builder.current_squad.dirty
+                        @warnUnsaved builder, () ->
+                            builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
+                    else
+                        builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
+                    
                 li.find('button.load-squad').click (e) =>
                     e.preventDefault()
                     button = $ e.target
@@ -255,6 +330,24 @@ class exportObj.SquadBuilderBackend
                 list_ul.append $.trim """
                     <li>Nothing to see here. Go save a squad!</li>
                 """
+                
+            #setup Tags
+            @squad_list_tags.empty()
+            for tag in tag_list
+                tagclean = tag.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\s+/g, '-')
+                
+                @squad_list_tags.append $.trim """ 
+                    <button class="btn #{tagclean}">#{tag}</button>
+                """
+                tag_button = $ @squad_list_tags.find(".#{tagclean}")
+                tag_button.click (e) =>
+                    button = $ e.target
+                    buttontag = button.attr('class').replace('btn ','')
+                    @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
+                    @squad_list_tags.find('.btn').removeClass 'btn-inverse'
+                    button.addClass 'btn-inverse'
+                    @squad_list_modal.find('.squad-list li').each (idx, elem) ->
+                        $(elem).toggle ($(elem).data().squad.additional_data.tag? and (buttontag == $(elem).data().squad.additional_data.tag.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\s+/g, '-')))
 
             loading_pane.fadeOut 'fast'
             list_ul.fadeIn 'fast'
@@ -317,19 +410,19 @@ class exportObj.SquadBuilderBackend
         if name.length == 0
             @name_availability_container.text ''
             @name_availability_container.append $.trim """
-                <i class="fa fa-thumbs-down"> A name is required
+                <i class="fa fa-thumbs-down"></i> A name is required
             """
         else
             $.post "#{@server}/squads/namecheck", { name: name }, (data) =>
                 @name_availability_container.text ''
                 if data.available
                     @name_availability_container.append $.trim """
-                        <i class="fa fa-thumbs-up"> Name is available
+                        <i class="fa fa-thumbs-up"></i> Name is available
                     """
                     @save_as_save_button.removeClass 'disabled'
                 else
                     @name_availability_container.append $.trim """
-                        <i class="fa fa-thumbs-down"> You already have a squad with that name
+                        <i class="fa fa-thumbs-down"></i> You already have a squad with that name
                     """
                     @save_as_save_button.addClass 'disabled'
 
@@ -454,12 +547,18 @@ class exportObj.SquadBuilderBackend
                     <button class="btn show-epic-squads">Epic</button>
                     <button class="btn show-archived-squads">Archived</button>
                 </div>
+                <br />
+                <div class="btn-group tags-display">
+                </div>
+                <br />
                 <button class="btn btn reload-all">Reload<span class="hidden-phone"> all squads (this might take a while)</span></button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
         @squad_list_modal.find('ul.squad-list').hide()
 
+        @squad_list_tags = $ @squad_list_modal.find('div.tags-display')
+        
         # The delete multiple section only appeares, when somebody hits the delete button of one squad. 
         @squad_list_modal.find('div.delete-multiple-squads').hide() 
 
@@ -534,6 +633,7 @@ class exportObj.SquadBuilderBackend
                             cards: builder.listCards()
                             notes: builder.notes.val().substr(0, 1024)
                             obstacles: builder.getObstacles()
+                            tag: builder.tag.val().substr(0, 1024)
                         # console.log("saving " + builder.current_squad.name)
                         @save builder.serialize(), builder.current_squad.id, builder.current_squad.name, builder.faction, additional_data, squadProcessingStack.pop() ]
                         
@@ -561,6 +661,7 @@ class exportObj.SquadBuilderBackend
             unless @squad_display_mode == 'all'
                 @squad_display_mode = 'all'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
+                @squad_list_tags.find('.btn').removeClass 'btn-inverse'
                 @show_all_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').show()
 
@@ -569,6 +670,7 @@ class exportObj.SquadBuilderBackend
             unless @squad_display_mode == 'extended'
                 @squad_display_mode = 'extended'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
+                @squad_list_tags.find('.btn').removeClass 'btn-inverse'
                 @show_extended_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
                     $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Zs/) != -1
@@ -578,6 +680,7 @@ class exportObj.SquadBuilderBackend
             unless @squad_display_mode == 'epic'
                 @squad_display_mode = 'epic'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
+                @squad_list_tags.find('.btn').removeClass 'btn-inverse'
                 @show_epic_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
                     $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Ze/) != -1
@@ -587,6 +690,7 @@ class exportObj.SquadBuilderBackend
             unless @squad_display_mode == 'hyperspace'
                 @squad_display_mode = 'hyperspace'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
+                @squad_list_tags.find('.btn').removeClass 'btn-inverse'
                 @show_hyperspace_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
                     $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Zh/) != -1
@@ -596,6 +700,7 @@ class exportObj.SquadBuilderBackend
             unless @squad_display_mode == 'quickbuild'
                 @squad_display_mode = 'quickbuild'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
+                @squad_list_tags.find('.btn').removeClass 'btn-inverse'
                 @show_quickbuild_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
                     $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Zq/) != -1
@@ -607,6 +712,7 @@ class exportObj.SquadBuilderBackend
                 @show_archived_squads_button.addClass 'btn-inverse'
             else
                 @show_archived_squads_button.removeClass 'btn-inverse'
+            @squad_list_tags.find('.btn').removeClass 'btn-inverse'
             @squad_list_modal.find('.squad-list li').each (idx, elem) =>
                 $(elem).toggle (($(elem).data().squad.additional_data.archived?) == @show_archived)
 
@@ -651,6 +757,7 @@ class exportObj.SquadBuilderBackend
                     cards: builder.listCards()
                     notes: builder.getNotes()
                     obstacles: builder.getObstacles()
+                    tag: builder.getTag()
                 builder.backend_save_list_as_button.addClass 'disabled'
                 builder.backend_status.html $.trim """
                     <i class="fa fa-sync fa-spin"></i>&nbsp;Saving squad...

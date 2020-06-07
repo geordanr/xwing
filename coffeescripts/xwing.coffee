@@ -175,6 +175,7 @@ class exportObj.SquadBuilder
                 cards: []
                 notes: ''
                 obstacles: squad_obstacles
+                tag: ''
             faction: @faction
 
         if @total_points > 0
@@ -192,6 +193,7 @@ class exportObj.SquadBuilder
         @current_obstacles = []
         @resetCurrentSquad()
         @notes.val ''
+        @tag.val ''
 
     setupUI: ->
         DEFAULT_RANDOMIZER_POINTS = 200
@@ -212,7 +214,7 @@ class exportObj.SquadBuilder
                         <input type="text" maxlength="64" placeholder="Name your squad..." />
                         <button class="btn save"><i class="fa fa-pen-square"></i></button>
                     </div>
-                    <br>
+                    <br />
                     <select class="game-type-selector">
                         <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
@@ -307,7 +309,7 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="tts-list">
                     <p>Copy the below and paste it into the Tabletop Simulator.</p>
-                    <textarea></textarea><br><button class="btn btn-copy">Copy</button>
+                    <textarea></textarea><br /><button class="btn btn-copy">Copy</button>
                 </div>
                 <div class="bbcode-list">
                     <p>Copy the BBCode below and paste it into your forum post.</p>
@@ -848,6 +850,7 @@ class exportObj.SquadBuilder
                     cards: @listCards()
                     notes: @notes.val().substr(0, 1024)
                     obstacles: @getObstacles()
+                    tag: @tag.val().substr(0, 1024)
                 @backend_status.html $.trim """
                     <i class="fa fa-sync fa-spin"></i>&nbsp;Saving squad...
                 """
@@ -891,9 +894,12 @@ class exportObj.SquadBuilder
             <div class="row-fluid">
                 <div class="span9 ship-container">
                     <label class="notes-container show-authenticated">
-                        <span>Squad Notes:</span>
+                        <span class="notes-name">Squad Notes:</span>
                         <br />
                         <textarea class="squad-notes"></textarea>
+                        <br />
+                        <span class="tag-name">Tag:</span>
+                        <input type="search" class="squad-tag"></input>
                     </label>
                     <span class="obstacles-container">
                         <!-- Since this is an optional button, usually, it's shown in a different color -->
@@ -909,6 +915,7 @@ class exportObj.SquadBuilder
         @obstacles_container = content_container.find('.obstacles-container')
         @notes_container = $ content_container.find('.notes-container')
         @notes = $ @notes_container.find('textarea.squad-notes')
+        @tag = $ @notes_container.find('input.squad-tag')
 
         @info_container.append $.trim """
             <div class="well well-small info-well">
@@ -1235,8 +1242,11 @@ class exportObj.SquadBuilder
             @select_simple_view_button.click() if $(window).width() < 768 and @list_display_mode != 'simple'
 
          @notes.change @onNotesUpdated
+                
+         @tag.change @onNotesUpdated
 
          @notes.on 'keyup', @onNotesUpdated
+         @tag.on 'keyup', @onNotesUpdated
 
     getPermaLinkParams: (ignored_params=[]) =>
         params = {}
@@ -1392,6 +1402,7 @@ class exportObj.SquadBuilder
         if squad.serialized.length?
             @loadFromSerialized squad.serialized
         @notes.val(squad.additional_data.notes ? '')
+        @tag.val(squad.additional_data.tag ? '')
         @backend_status.fadeOut 'slow'
         @current_squad.dirty = false
         @container.trigger 'xwing-backend:squadDirtinessChanged'
@@ -2733,6 +2744,9 @@ class exportObj.SquadBuilder
     getNotes: ->
         @notes.val()
 
+    getTag: ->
+        @tag.val()
+        
     getObstacles: ->
         @current_obstacles
 
@@ -3685,7 +3699,7 @@ class Ship
                     #{energyHTML}
                     #{forceHTML}
                     #{chargeHTML}
-                    <br>
+                    <br />
                     #{action_bar}
                     &nbsp;&nbsp;
                     #{action_bar_red}
