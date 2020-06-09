@@ -8,7 +8,9 @@ module.exports = (grunt) ->
                     runtime: 'window'
                     sourceMap: true
                 files:
-                    'app/javascripts/xwing.js': ['coffeescripts/*.coffee']
+                    'app/javascripts/xwing.js': ['coffeescripts/system/*.coffee']
+                    'app/javascripts/xwingcontent.js': ['coffeescripts/content/*.coffee']
+                    'app/javascripts/translations.js': ['coffeescripts/translations/*.coffee']
         sass:
             compile:
                 expand: true
@@ -37,13 +39,14 @@ module.exports = (grunt) ->
                     sourceMapIn: 'app/javascripts/xwing.js.map'
                 files:
                     'app/javascripts/xwing.min.js': 'app/javascripts/xwing.js'
+                    'app/javascripts/xwingcontent.min.js': 'app/javascripts/xwingcontent.js'
+                    'app/javascripts/translations.min.js': 'app/javascripts/translations.js'
         copy:
             main:
                 expand: true
                 src: [
                     'fonts/**'
                     'bootstrap/**'
-                    'select2-3.4.0/**'
                     'images/**'
                 ]
                 dest: 'app/'
