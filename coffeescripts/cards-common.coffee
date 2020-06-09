@@ -16696,7 +16696,7 @@ exportObj.basicCardData = ->
             linkedId: 416
             wingmate: true
         }
-                {
+        {
             id: 418
             faction: "Rebel Alliance"
             pilot: "Gina Moonsong"
@@ -16718,7 +16718,7 @@ exportObj.basicCardData = ->
             threat: 4
             upgrades: [
                 "Chewbacca"
-                "MIllenium Falcon"
+                "Millennium Falcon"
                 "Lando Calrissian"
                 "Engine Upgrade"
                 "R2-D2"
@@ -16764,7 +16764,7 @@ exportObj.basicCardData = ->
         {
             id: 423
             faction: "Rebel Alliance"
-            pilot: "Alexsander Kallus"
+            pilot: "Alexsandr Kallus"
             ship: "VCX-100"
             threat: 4
             upgrades: [
@@ -16826,8 +16826,8 @@ exportObj.basicCardData = ->
         {
             id: 428
             faction: "Resistance"
-            pilot: "Blue Squadron Recruit"
-            ship: "Zizi Tlo"
+            pilot: "Zizi Tlo"
+            ship: "RZ-2 A-Wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -16916,7 +16916,7 @@ exportObj.basicCardData = ->
                 "Snap Shot"
                 "Afterburners"
                 "Dengar"
-                "Deadman’s Switch"
+                "Deadman's Switch"
             ]
         }
         {
@@ -16940,7 +16940,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Intimidation"
                 "Shield Upgrade"
-                "Deadman’s Switch"
+                "Deadman's Switch"
                 "Autoblasters"
             ]
         }
@@ -16994,7 +16994,7 @@ exportObj.basicCardData = ->
         {
             id: 442
             faction: "Galactic Empire"
-            pilot: "Vagabond"
+            pilot: '"Vagabond"'
             ship: "TIE Striker"
             threat: 3
             upgrades: [
