@@ -13113,7 +13113,7 @@ exportObj.basicCardData = ->
                 "Predator"
                 "C-3PO"
                 "Leia Organa"
-                "R2-D2"
+                "R2-D2 (Crew)"
                 "Han Solo"
                 "Luke Skywalker"
                 "Engine Upgrade"
@@ -14076,7 +14076,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             pilot: "Captain Jostero"
             ship: "Kihraxz Fighter"
-            threat: 3
+            threat: 2
             upgrades: [
                 "Ion Missiles"
                 "Munitions Failsafe"
@@ -14495,7 +14495,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Expert Handling"
-                "Concussion Missiles"
+                "Cluster Missiles"
                 "Contraband Cybernetics"
                 "Afterburners"
             ]
@@ -15106,7 +15106,7 @@ exportObj.basicCardData = ->
                 "Debris Gambit"
                 "C-3PO"
                 "Chewbacca"
-                "Han Solo"
+                "Han Solo (Resistance)"
             ]
         }
         {
@@ -15243,6 +15243,7 @@ exportObj.basicCardData = ->
                 "Qi'ra"
                 "Hull Upgrade"
                 "Outmaneuver"
+                "Lando's Millennium Falcon"
             ]
         }
         {
@@ -15849,7 +15850,7 @@ exportObj.basicCardData = ->
             ship: "Resistance Transport"
             threat: 2
             upgrades: [
-                "Proton Torpedoes"
+                "Plasma Torpedoes"
                 "R2-HA"
                 "Angled Deflectors"
             ]
@@ -16200,7 +16201,6 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Kaz's Fireball"
                 "Advanced SLAM"
-                "Mag-Pulse Warheads"
                 "Coaxium Hyperfuel"
                 "R1-J5"
                 "Outmaneuver"
@@ -16214,7 +16214,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Targeting Computer"
-                "Advanced SLAM"
+                "Afterburners"
                 "Mag-Pulse Warheads"
                 "Coaxium Hyperfuel"
             ]
