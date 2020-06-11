@@ -2616,6 +2616,13 @@ class exportObj.SquadBuilder
                     container.find('tr.info-force').hide()
             container.show()
             @tooltip_currently_displaying = data
+
+            # fix card viewer to view, if it is fully visible (it might not be e.g. on mobile devices. In that case keep it on its static position, so you can scroll to see it)
+            well = container.find('.info-well')
+            if $.isElementInView(well, true)
+                well.css('position','fixed')
+            else
+                well.css('position','static')
         
     _randomizerLoopBody: (data) =>
         if data.keep_running
