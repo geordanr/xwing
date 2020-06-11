@@ -37,6 +37,18 @@ $.isMobile = ->
 $.randomInt = (n) ->
     Math.floor(Math.random() * n)
 
+$.isElementInView = (element, fullyInView) ->
+    pageTop = $(window).scrollTop()
+    pageBottom = pageTop + $(window).height()
+    elementTop = $(element).offset().top
+    elementBottom = elementTop + $(element).height()
+
+    if fullyInView
+        return ((pageTop < elementTop) && (pageBottom > elementBottom))
+    else
+        return ((elementTop <= pageBottom) && (elementBottom >= pageTop))
+
+
 # ripped from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
 $.getParameterByName = (name) ->
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
@@ -935,9 +947,29 @@ class exportObj.SquadBuilder
         @notes = $ @notes_container.find('textarea.squad-notes')
         @tag = $ @notes_container.find('input.squad-tag')
 
-        @info_container.append $.trim """
+        @info_container.append $.trim @createInfoContainerUI()
+        @info_container.hide()
+
+        @print_list_button = $ @container.find('button.print-list')
+
+        @container.find('[rel=tooltip]').tooltip()
+
+        # obstacles
+        @obstacles_button = $ @container.find('button.choose-obstacles')
+        @obstacles_button.click (e) =>
+            e.preventDefault()
+            @showChooseObstaclesModal()
+
+        # conditions
+        @condition_container = $ document.createElement('div')
+        @condition_container.addClass 'conditions-container'
+        @container.append @condition_container
+
+    createInfoContainerUI: ->
+        return """
             <div class="card info-well">
                 <div class="info-name"></div>
+                <div class="info-type"></div>
                 <span class="info-collection"></span>
                 <span class="info-solitary"><br />Solitary</span>
                 <table class="table-sm">
@@ -948,7 +980,7 @@ class exportObj.SquadBuilder
                         </tr>
                         <tr class="info-base">
                             <td class="info-header">Base</td>
-                            <td class="info-data"></td>
+                            <td class="info-data"></td> 
                         </tr>
                         <tr class="info-skill">
                             <td class="info-header">Initiative</td>
@@ -1039,22 +1071,6 @@ class exportObj.SquadBuilder
                 <span class="info-data info-sources"></span>
             </div>
         """
-        @info_container.hide()
-
-        @print_list_button = $ @container.find('button.print-list')
-
-        @container.find('[rel=tooltip]').tooltip()
-
-        # obstacles
-        @obstacles_button = $ @container.find('button.choose-obstacles')
-        @obstacles_button.click (e) =>
-            e.preventDefault()
-            @showChooseObstaclesModal()
-
-        # conditions
-        @condition_container = $ document.createElement('div')
-        @condition_container.addClass 'conditions-container'
-        @container.append @condition_container
 
     setupEventHandlers: ->
         @container.on 'xwing:claimUnique', (e, unique, type, cb) =>
