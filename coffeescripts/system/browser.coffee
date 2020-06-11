@@ -280,97 +280,7 @@ class exportObj.CardBrowser
                         <div class="card card-viewer-placeholder info-well">
                             <p class="translate select-a-card">Select a card from the list at the left.</p>
                         </div>
-                        <div class="card card-viewer-container info-well">
-                            <span class="info-name"></span>
-                            <br />
-                            <span class="info-type"></span>
-                            <br />
-                            <span class="info-collection"></span>
-                            <table class="table-sm">
-                                <tbody>
-                                    <tr class="info-ship">
-                                        <td class="col-3 info-header">Ship</td>
-                                        <td class="col-9 info-data"></td>
-                                    </tr>
-                                    <tr class="info-base">
-                                        <td class="col-3 info-header">Base</td>
-                                        <td class="col-9 info-data"></td>
-                                    </tr>
-                                    <tr class="info-skill">
-                                        <td class="col-3 info-header">Initiative</td>
-                                        <td class="col-9 info-data info-skill"></td>
-                                    </tr>
-                                    <tr class="info-energy">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
-                                        <td class="col-9 info-data info-energy"></td>
-                                    </tr>
-                                    <tr class="info-attack">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
-                                        <td class="col-9 info-data info-attack"></td>
-                                    </tr>
-                                    <tr class="info-attack-fullfront">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i></td>
-                                        <td class="col-9 info-data info-attack"></td>
-                                    </tr>
-                                    <tr class="info-attack-bullseye">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
-                                        <td class="col-9 info-data info-attack"></td>
-                                    </tr>
-                                    <tr class="info-attack-back">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i></td>
-                                        <td class="col-9 info-data info-attack"></td>
-                                    </tr>
-                                    <tr class="info-attack-turret">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i></td>
-                                        <td class="col-9 info-data info-attack"></td>
-                                    </tr>
-                                    <tr class="info-attack-doubleturret">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i></td>
-                                        <td class="col-9 info-data info-attack"></td>
-                                    </tr>
-                                    <tr class="info-agility">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i></td>
-                                        <td class="col-9 info-data info-agility"></td>
-                                    </tr>
-                                    <tr class="info-hull">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i></td>
-                                        <td class="col-9 info-data info-hull"></td>
-                                    </tr>
-                                    <tr class="info-shields">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i></td>
-                                        <td class="col-9 info-data info-shields"></td>
-                                    </tr>
-                                    <tr class="info-force">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i></td>
-                                        <td class="col-9 info-data info-force"></td>
-                                    </tr>
-                                    <tr class="info-charge">
-                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
-                                        <td class="col-9 info-data info-charge"></td>
-                                    </tr>
-                                    <tr class="info-range">
-                                        <td class="col-3 info-header">Range</td>
-                                        <td class="col-9 info-data info-range"></td>
-                                    </tr>
-                                    <tr class="info-actions">
-                                        <td class="col-3 info-header">Actions</td>
-                                        <td class="col-9 info-data"></td>
-                                    </tr>
-                                    <tr class="info-actions-red">
-                                        <td></td>
-                                        <td class="col-9 info-data-red"></td>
-                                    </tr>
-                                    <tr class="info-upgrades">
-                                        <td class="col-3 info-header">Upgrades</td>
-                                        <td class="col-9 info-data"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="info-text" />
-                            <p class="info-maneuvers" />
-                            <br />
-                            <span class="info-header info-sources">Sources</span>: 
-                            <span class="info-data info-sources"></span>
+                        <div class="card card-viewer-container">
                         </div>
                     </div>
                 </div>
@@ -379,6 +289,7 @@ class exportObj.CardBrowser
 
         @card_selector_container = $ @container.find('.xwing-card-browser .card-selector-container')
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
+        @card_viewer_container.append $.trim exportObj.builders[0].createInfoContainerUI()
         @card_viewer_container.hide()
         @card_viewer_placeholder = $ @container.find('.xwing-card-browser .card-viewer-placeholder')
         @advanced_search_container = $ @container.find('.xwing-card-browser .advanced-search-container')
