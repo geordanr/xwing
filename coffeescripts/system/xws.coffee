@@ -46,24 +46,26 @@ class exportObj.XWSManager
         @setupHandlers()
 
     setupUI: ->
-        @container.addClass 'hidden-print'
+        @container.addClass 'd-print-none'
         @container.html $.trim """
-            <div class="row-fluid span9">
-                <div>
-                    <!-- Import is marked in red since it creates something new -->
-                    <button class="btn btn-danger from-xws"><i class="fa fa-file-import"></i>&nbsp;Import from XWS</button>
-                    <button class="btn btn-primary to-xws"><i class="fa fa-file-export"></i>&nbsp;Export to XWS</button>
-                </div>
+            <div class="row col-md-12 xws-space">
+                <!-- Import is marked in red since it creates something new -->
+                <button class="btn btn-danger from-xws"><i class="fa fa-file-import"></i>&nbsp;Import from XWS</button>
+                <button class="btn btn-primary to-xws"><i class="fa fa-file-export"></i>&nbsp;Export to XWS</button>
             </div>
         """
 
         @xws_export_modal = $ document.createElement 'DIV'
-        @xws_export_modal.addClass 'modal hide fade xws-modal hidden-print'
+        @xws_export_modal.addClass 'modal fade xws-modal d-print-none'
+        @xws_export_modal.tabindex = "-1"
+        @xws_export_modal.role = "dialog"
         @container.append @xws_export_modal
         @xws_export_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>XWS Export</h3>
+                <button type="button" class="close d-print-none" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <ul class="nav nav-pills">
@@ -84,18 +86,23 @@ class exportObj.XWSManager
                     </div>
                 </div>
             </div>
-            <div class="modal-footer hidden-print">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <div class="modal-footer d-print-none">
             </div>
+        </div>
+    </div>
         """
 
         @xws_import_modal = $ document.createElement 'DIV'
-        @xws_import_modal.addClass 'modal hide fade xws-modal hidden-print'
+        @xws_import_modal.addClass 'modal fade xws-modal d-print-none'
+        @xws_import_modal.tabindex = "-1"
+        @xws_import_modal.role = "dialog"
         @container.append @xws_import_modal
         @xws_import_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>XWS Import</h3>
+                <button type="button" class="close d-print-none" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 Paste XWS here to load a list exported from another application.
@@ -104,11 +111,12 @@ class exportObj.XWSManager
                     <textarea class="xws-content" placeholder="Paste XWS here..."></textarea>
                 </div>
             </div>
-            <div class="modal-footer hidden-print">
+            <div class="modal-footer d-print-none">
                 <span class="xws-import-status"></span>&nbsp;
                 <button class="btn btn-danger import-xws">Import It!</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
+        </div>
+    </div>
         """
 
     setupHandlers: ->

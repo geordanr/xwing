@@ -66,7 +66,7 @@ class exportObj.SquadBuilderBackend
         # Check initial authentication status
         @authenticate () =>
             @auth_status.hide()
-            @login_logout_button.removeClass 'hidden'
+            @login_logout_button.removeClass 'd-none'
 
         # Finally, hook up the builders
         for builder in @builders
@@ -163,44 +163,44 @@ class exportObj.SquadBuilderBackend
                 else
                     hasNotArchivedSquads = true
                 li.append $.trim """
-                    <div class="row-fluid">
-                        <div class="span9">
+                    <div class="row">
+                        <div class="col-md-9">
                             <h4>#{squad.name}</h4>
                         </div>
-                        <div class="span3">
+                        <div class="col-md-3">
                             <h5>#{squad.additional_data?.points} Points</h5>
                         </div>
                     </div>
-                    <div class="row-fluid squad-description">
-                        <div class="span8">
+                    <div class="row squad-description">
+                        <div class="col-md-9">
                             #{squad.additional_data?.description}
                         </div>
-                        <div class="span4">
-                            <button class="btn convert-squad"><i class="xwing-miniatures-font xwing-miniatures-font-first-player-1"></i></button>
+                        <div class="squad-buttons col-md-3">
+                            <button class="btn btn-modal convert-squad"><i class="xwing-miniatures-font xwing-miniatures-font-first-player-1"></i></button>
                             &nbsp;
-                            <button class="btn load-squad"><i class="fa fa-download"></i></button>
+                            <button class="btn btn-modal load-squad"><i class="fa fa-download"></i></button>
                             &nbsp;
                             <button class="btn btn-danger delete-squad"><i class="fa fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="row-fluid squad-convert-confirm">
-                        <div class="span8">
+                    <div class="row squad-convert-confirm">
+                        <div class="col-md-9">
                             Convert to Extended?
                         </div>
-                        <div class="span4">
+                        <div class="squad-buttons col-md-3">
                             <button class="btn btn-danger confirm-convert-squad">Convert</button>
                             &nbsp;
-                            <button class="btn cancel-convert-squad">Cancel</button>
+                            <button class="btn btn-modal cancel-convert-squad">Cancel</button>
                         </div>
                     </div>
-                    <div class="row-fluid squad-delete-confirm">
-                        <div class="span8">
+                    <div class="row squad-delete-confirm">
+                        <div class="col-md-9">
                             Really delete <em>#{squad.name}</em>?
                         </div>
-                        <div class="span4">
+                        <div class="col-md-3">
                             <button class="btn btn-danger confirm-delete-squad">Delete</button>
                             &nbsp;
-                            <button class="btn cancel-delete-squad">Cancel</button>
+                            <button class="btn btn-modal cancel-delete-squad">Cancel</button>
                         </div>
                     </div>
                 """
@@ -437,12 +437,16 @@ class exportObj.SquadBuilderBackend
             false
 
         @login_modal = $ document.createElement('DIV')
-        @login_modal.addClass 'modal hide fade hidden-print'
+        @login_modal.addClass 'modal fade d-print-none'
+        @login_modal.tabindex = "-1"
+        @login_modal.role = "dialog"
         $(document.body).append @login_modal
         @login_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Log in with OAuth</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <p>
@@ -459,7 +463,7 @@ class exportObj.SquadBuilderBackend
                     <p>
                         For more information, check out this <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">introduction to OAuth</a>.
                     </p>
-                    <button class="btn">Got it!</button>
+                    <button class="btn btn-modal">Got it!</button>
                 </div>
                 <ul class="login-providers inline"></ul>
                 <p>
@@ -469,9 +473,8 @@ class exportObj.SquadBuilderBackend
                     <em>OAuth login is in progress.  Please finish authorization at the specified provider using the window that was just created.</em>
                 </p>
             </div>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
+        </div>
+    </div>
         """
         oauth_explanation = $ @login_modal.find('.oauth-explanation')
         oauth_explanation.hide()
@@ -487,7 +490,7 @@ class exportObj.SquadBuilderBackend
             methods_ul = $ @login_modal.find('ul.login-providers')
             for method in data.methods
                 a = $ document.createElement('A')
-                a.addClass 'btn btn-inverse'
+                a.addClass 'btn btn-modal'
                 a.data 'url', "#{@server}/auth/#{method}"
                 a.append """<i class="#{@method_metadata[method].icon}"></i>&nbsp;#{@method_metadata[method].text}"""
                 a.click (e) =>
@@ -501,29 +504,39 @@ class exportObj.SquadBuilderBackend
             @ui_ready = true
 
         @reload_done_modal = $ document.createElement('DIV')
-        @reload_done_modal.addClass 'modal hide fade hidden-print'
+        @reload_done_modal.addClass 'modal fade d-print-none'
+        @reload_done_modal.tabindex = "-1"
+        @reload_done_modal.role = "dialog"
         $(document.body).append @reload_done_modal
         @reload_done_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Reload Done</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <p>All squads of that faction have been reloaded.</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" aria-hidden="true" data-dismiss="modal">Well done!</button>
+                <button class="btn btn-modal btn-primary" aria-hidden="true" data-dismiss="modal">Well done!</button>
             </div>
+        </div>
+    </div>
         """
 
         @squad_list_modal = $ document.createElement('DIV')
-        @squad_list_modal.addClass 'modal hide fade hidden-print squad-list'
+        @squad_list_modal.addClass 'modal fade d-print-none squad-list'
+        @squad_list_modal.tabindex = "-1"
+        @squad_list_modal.role = "dialog"
         $(document.body).append @squad_list_modal
         @squad_list_modal.append $.trim """
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
+                <h3 class="squad-list-header-placeholder d-none d-lg-block"></h3>
+                <h4 class="squad-list-header-placeholder d-lg-none"></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="squad-list-header-placeholder hidden-phone hidden-tablet"></h3>
-                <h4 class="squad-list-header-placeholder hidden-desktop"></h4>
             </div>
             <div class="modal-body">
                 <ul class="squad-list"></ul>
@@ -534,26 +547,25 @@ class exportObj.SquadBuilderBackend
                 </p>
             </div>
             <div class="modal-footer">
-                <div class="btn-group delete-multiple-squads">
-                    <button class="btn select-all">Select All</button>
-                    <button class="btn archive-selected">Archive Selected</button>
-                    <button class="btn btn-danger delete-selected">Delete Selected</button>
+                <div class="btn-group delete-multiple-squads full-row">
+                    <button class="btn btn-modal select-all">Select All</button>
+                    <button class="btn btn-modal archive-selected">Archive Selected</button>
+                    <button class="btn btn-modal btn-danger delete-selected">Delete Selected</button>
                 </div>
-                <div class="btn-group squad-display-mode">
-                    <button class="btn btn-inverse show-all-squads">All</button>
-                    <button class="btn show-extended-squads">Ext<span class="hidden-phone">ended</span></button>
-                    <button class="btn show-hyperspace-squads">Hyper<span class="hidden-phone">space</span></button>
-                    <button class="btn show-quickbuild-squads">Quick<span class="hidden-phone">build</span></button>
-                    <button class="btn show-epic-squads">Epic</button>
-                    <button class="btn show-archived-squads">Archived</button>
+                <div class="btn-group squad-display-mode full-row">
+                    <button class="btn btn-modal btn-inverse show-all-squads">All</button>
+                    <button class="btn btn-modal show-extended-squads"><span class="d-none d-lg-block">Extended</span><span class="d-lg-none">Ext</span></button>
+                    <button class="btn btn-modal show-hyperspace-squads"><span class="d-none d-lg-block">Hyperspace</span><span class="d-lg-none">Hyper</span></button>
+                    <button class="btn btn-modal show-quickbuild-squads"><span class="d-none d-lg-block">Quickbuild</span><span class="d-lg-none">QB</span></button>
+                    <button class="btn btn-modal show-epic-squads">Epic</button>
+                    <button class="btn btn-modal show-archived-squads">Archived</button>
+                    <button class="btn btn-modal reload-all">Reload Squads (Long!)</button>
                 </div>
-                <br />
-                <div class="btn-group tags-display">
+                <div class="btn-group tags-display full-row">
                 </div>
-                <br />
-                <button class="btn btn reload-all">Reload<span class="hidden-phone"> all squads (this might take a while)</span></button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
+        </div>
+    </div>
         """
         @squad_list_modal.find('ul.squad-list').hide()
 
@@ -717,12 +729,16 @@ class exportObj.SquadBuilderBackend
                 $(elem).toggle (($(elem).data().squad.additional_data.archived?) == @show_archived)
 
         @save_as_modal = $ document.createElement('DIV')
-        @save_as_modal.addClass 'modal hide fade hidden-print'
+        @save_as_modal.addClass 'modal fade d-print-none'
+        @save_as_modal.tabindex = "-1"
+        @save_as_modal.role = "dialog"
         $(document.body).append @save_as_modal
         @save_as_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Save Squad As...</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <label for="xw-be-squad-save-as">
@@ -733,8 +749,9 @@ class exportObj.SquadBuilderBackend
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary save" aria-hidden="true">Save</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
+        </div>
+    </div>
         """
         @save_as_modal.on 'shown', () =>
             # Because Firefox handles this badly
@@ -797,20 +814,26 @@ class exportObj.SquadBuilderBackend
         @name_availability_container = $ @save_as_modal.find('.name-availability')
 
         @delete_modal = $ document.createElement('DIV')
-        @delete_modal.addClass 'modal hide fade hidden-print'
+        @delete_modal.addClass 'modal fade d-print-none'
+        @delete_modal.tabindex = "-1"
+        @delete_modal.role = "dialog"
         $(document.body).append @delete_modal
         @delete_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Really Delete <span class="squad-name-placeholder"></span>?</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <p>Are you sure you want to delete this squad?</p>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger delete" aria-hidden="true">Yes, Delete <i class="squad-name-placeholder"></i></button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Never Mind</button>
+                <button class="btn btn-modal" data-dismiss="modal" aria-hidden="true">Never Mind</button>
             </div>
+        </div>
+    </div>
         """
 
         @delete_name_container = $ @delete_modal.find('.squad-name-placeholder')
@@ -840,20 +863,26 @@ class exportObj.SquadBuilderBackend
                     builder.backend_delete_list_button.removeClass 'disabled'
 
         @unsaved_modal = $ document.createElement('DIV')
-        @unsaved_modal.addClass 'modal hide fade hidden-print'
+        @unsaved_modal.addClass 'modal fade d-print-none'
+        @unsaved_modal.tabindex = "-1"
+        @unsaved_modal.role = "dialog"
         $(document.body).append @unsaved_modal
         @unsaved_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Unsaved Changes</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <p>You have not saved changes to this squad.  Do you want to go back and save?</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" aria-hidden="true" data-dismiss="modal">Go Back</button>
+                <button class="btn btn-modal btn-primary" aria-hidden="true" data-dismiss="modal">Go Back</button>
                 <button class="btn btn-danger discard" aria-hidden="true">Discard Changes</button>
             </div>
+        </div>
+    </div>
         """
         @unsaved_discard_button = $ @unsaved_modal.find('button.discard')
         @unsaved_discard_button.click (e) =>

@@ -147,7 +147,6 @@ class exportObj.SquadBuilder
             @resetCurrentSquad(true)
             @loadFromSerialized $.getParameterByName('d')
         else
-            @
             @resetCurrentSquad()
             @addShip()
 
@@ -204,8 +203,8 @@ class exportObj.SquadBuilder
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
-            <div class="row-fluid squad-name-and-points-row">
-                <div class="span3 squad-name-container">
+            <div class="row squad-name-and-points-row">
+                <div class="col-md-3 squad-name-container">
                     <div class="display-name">
                         <span class="squad-name"></span>
                         <i class="far fa-edit"></i>
@@ -222,28 +221,27 @@ class exportObj.SquadBuilder
                         <option value="quickbuild">Quickbuild</option>
                     </select>
                 </div>
-                <div class="span4 points-display-container">
+                <div class="col-md-4 points-display-container">
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="200">
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left) <span class="points-destroyed red"></span></span>
-                    <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning loading-failed-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning ship-number-invalid-container hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated">A tournament legal squad must contain 2-8 ships!</span></span>
+                    <span class="content-warning unreleased-content-used d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning loading-failed-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning collection-invalid d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning ship-number-invalid-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated">A tournament legal squad must contain 2-8 ships!</span></span>
                 </div>
-                <div class="span5 pull-right button-container">
-                    <div class="btn-group pull-right">
+                <div class="col-md-5 float-right button-container">
+                    <div class="btn-group float-right">
 
-                        <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text</button>
-                        <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="fa fa-print"></i>&nbsp;Print</button> -->
-                        <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tablet"></i>&nbsp;Your Collection</a>
+                        <button class="btn btn-primary view-as-text"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;Print/View as Text</span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
+                        <a class="btn btn-primary d-none collection"><span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Your Collection</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span></a>
                         <!-- Randomize button is marked as danger, since it creates a new squad -->
-                        <button class="btn btn-danger randomize" ><i class="fa fa-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
+                        <button class="btn btn-danger randomize"><span class="d-none d-lg-block"><i class="fa fa-random"></i> Randomize!</span><span class="d-lg-none"><i class="fa fa-random"></i></span></button>
                         <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="randomize-options">Randomizer Options</a></li>
-                            <li><a class="misc-settings">Misc Settings</a></li>
+                            <li><a class="dropdown-item randomize-options">Randomizer Options</a></li>
+                            <li><a class="dropdown-item misc-settings">Misc Settings</a></li>
                         </ul>
                         
 
@@ -251,8 +249,8 @@ class exportObj.SquadBuilder
                 </div>
             </div>
 
-            <div class="row-fluid">
-                <div class="span12">
+            <div class="row squad-save-buttons">
+                <div class="col-md-12">
                     <button class="show-authenticated btn btn-primary save-list"><i class="far fa-save"></i>&nbsp;Save</button>
                     <button class="show-authenticated btn btn-primary save-list-as"><i class="far fa-file"></i>&nbsp;Save As...</button>
                     <button class="show-authenticated btn btn-primary delete-list disabled"><i class="fa fa-trash"></i>&nbsp;Delete</button>
@@ -265,21 +263,18 @@ class exportObj.SquadBuilder
         @container.append @status_container
 
         @list_modal = $ document.createElement 'DIV'
-        @list_modal.addClass 'modal hide fade text-list-modal'
+        @list_modal.addClass 'modal fade text-list-modal'
+        @list_modal.tabindex = "-1"
+        @list_modal.role = "dialog"
         @container.append @list_modal
         @list_modal.append $.trim """
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-
-                <div class="hidden-phone hidden-print">
-                    <h3><span class="squad-name"></span> (<span class="total-points"></span>)<h3>
+                <div class="d-print-none">
+                    <h4 class="modal-title"><span class="squad-name"></span> (<span class="total-points"></span>)</h4>
                 </div>
-
-                <div class="visible-phone hidden-print">
-                    <h4><span class="squad-name"></span> (<span class="total-points"></span>)<h4>
-                </div>
-
-                <div class="visible-print">
+                <div class="d-none d-print-block">
                     <div class="fancy-header">
                         <div class="squad-name"></div>
                         <div class="squad-faction"></div>
@@ -293,74 +288,75 @@ class exportObj.SquadBuilder
                     </div>
                     <div class="fancy-under-header"></div>
                 </div>
-
+                <button type="button" class="close d-print-none" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="fancy-list hidden-phone"></div>
+                <div class="fancy-list"></div>
                 <div class="simple-list"></div>
                 <div class="simplecopy-list">
                     <p>Copy the below and paste it elsewhere.</p>
-                    <textarea></textarea><button class="btn btn-copy">Copy</button>
+                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
                 </div>
                 <div class="reddit-list">
                     <p>Copy the below and paste it into your reddit post.</p>
                     <p>Make sure that the post editor is set to markdown mode.</p>
-                    <textarea></textarea><button class="btn btn-copy">Copy</button>
+                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
                 </div>
                 <div class="tts-list">
                     <p>Copy the below and paste it into the Tabletop Simulator.</p>
-                    <textarea></textarea><br /><button class="btn btn-copy">Copy</button>
+                    <textarea></textarea><br /><button class="btn btn-modal btn-copy">Copy</button>
                 </div>
                 <div class="bbcode-list">
                     <p>Copy the BBCode below and paste it into your forum post.</p>
-                    <textarea></textarea><button class="btn btn-copy">Copy</button>
+                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
                 </div>
                 <div class="html-list">
-                    <textarea></textarea><button class="btn btn-copy">Copy</button>
+                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
                 </div>
             </div>
-            <div class="modal-footer hidden-print">
-                <div class="row">
-                    <div class="column">
-                        <label class="color-skip-text-checkbox hidden-phone">
+            <div class="container-fluid modal-footer d-print-none">
+                <div class="row full-row">
+                    <div class="col d-inline-block d-none d-sm-block right-col">
+                        <label class="color-skip-text-checkbox">
                             Skip Card Text <input type="checkbox" class="toggle-skip-text-print" />
-                        </label>
-                        <label class="vertical-space-checkbox hidden-phone">
+                        </label><br />
+                        <label class="vertical-space-checkbox">
                             Add Space for Cards <input type="checkbox" class="toggle-vertical-space" />
-                        </label>
-                        <label class="maneuver-print-checkbox hidden-phone">
+                        </label><br />
+                        <label class="maneuver-print-checkbox">
                             Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" />
-                        </label>
-                        <label class="expanded-shield-hull-print-checkbox hidden-phone">
+                        </label><br />
+                        <label class="expanded-shield-hull-print-checkbox">
                             Expand Shield and Hull <input type="checkbox" class="toggle-expanded-shield-hull-print" />
                         </label>
                     </div>
-                    <div class="column">
-                        <label class="color-print-checkbox hidden-phone">
+                    <div class="col d-inline-block d-none d-sm-block right-col">
+                        <label class="color-print-checkbox">
                             Print Color <input type="checkbox" class="toggle-color-print" checked="checked" />
-                        </label>
-                        <label class="qrcode-checkbox hidden-phone">
+                        </label><br />
+                        <label class="qrcode-checkbox">
                             Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
-                        </label>
-                        <label class="obstacles-checkbox hidden-phone">
+                        </label><br />
+                        <label class="obstacles-checkbox">
                             Include Obstacle Choices <input type="checkbox" class="toggle-obstacles" />
                         </label>
                     </div>
                 </div>
-                <div class="btn-group list-display-mode">
-                    <button class="btn select-simple-view">Simple</button>
-                    <button class="btn select-fancy-view hidden-phone">Fancy</button>
-                    <button class="btn select-simplecopy-view">Text</button>
-                    <button class="btn select-tts-view hidden-phone">TTS</button>
-                    <button class="btn select-reddit-view">Reddit</button>
-                    <button class="btn select-bbcode-view">BBCode</button>
-                    <button class="btn select-html-view">HTML</button>
+                <div class="row btn-group list-display-mode">
+                    <button class="btn btn-modal select-simple-view">Simple</button>
+                    <button class="btn btn-modal select-fancy-view d-none d-sm-block">Fancy</button>
+                    <button class="btn btn-modal select-simplecopy-view">Text</button>
+                    <button class="btn btn-modal select-tts-view d-none d-sm-block">TTS</button>
+                    <button class="btn btn-modal select-reddit-view">Reddit</button>
+                    <button class="btn btn-modal select-bbcode-view">BBCode</button>
+                    <button class="btn btn-modal select-html-view">HTML</button>
                 </div>
-                <button class="btn print-list hidden-phone"><i class="fa fa-print"></i>&nbsp;Print</button>
-                <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-modal print-list d-none d-sm-block"><i class="fa fa-print"></i>&nbsp;Print</button>
             </div>
+        </div>
+    </div>
         """
-        @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
+        @fancy_container = $ @list_modal.find('.fancy-list')
         @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
         @simple_container = $ @list_modal.find('div.modal-body .simple-list')
         @reddit_container = $ @list_modal.find('div.modal-body .reddit-list')
@@ -651,46 +647,52 @@ class exportObj.SquadBuilder
                 @squad_name_input.closest('div').hide()
 
         @randomizer_options_modal = $ document.createElement('DIV')
-        @randomizer_options_modal.addClass 'modal hide fade randomizer-modal'
+        @randomizer_options_modal.addClass 'modal fade randomizer-modal'
+        @randomizer_options_modal.tabindex = "-1"
+        @randomizer_options_modal.role = "dialog"
         $('body').append @randomizer_options_modal
         @randomizer_options_modal.append $.trim """
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>Random Squad Builder Options</h3>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label>
-                        Maximal desired bid
-                        <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
-                    </label>
-                    <label>
-                        More upgrades
-                        <input type="range" min="0" max="10" class="randomizer-ships-or-upgrades" value="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" placeholder="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" />
-                        Less upgrades
-                    </label>
-                    <label>
-                        <input type="checkbox" class="randomizer-collection-only" checked="checked"/> 
-                        Only use items from collection
-                    </label>
-                    <label>
-                        Sets and Expansions (default all)
-                        <select class="randomizer-sources" multiple="1" data-placeholder="Use all sets and expansions">
-                        </select>
-                    </label>
-                    <label>
-                        <input type="checkbox" class="randomizer-fill-zero-pts" /> 
-                        Always fill 0-point slots
-                    </label>
-                    <label>
-                        Maximum Seconds to Spend Randomizing
-                        <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
-                    </label>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary do-randomize" aria-hidden="true">Randomize!</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Random Squad Builder Options</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <label>
+                                Maximal desired bid
+                                <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
+                            </label><br />
+                            <label>
+                                More upgrades
+                                <input type="range" min="0" max="10" class="randomizer-ships-or-upgrades" value="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" placeholder="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" />
+                                Less upgrades
+                            </label><br />
+                            <label>
+                                <input type="checkbox" class="randomizer-collection-only" checked="checked"/> 
+                                Only use items from collection
+                            </label><br />
+                            <label>
+                                Sets and Expansions (default all)
+                                <select class="randomizer-sources" multiple="1" data-placeholder="Use all sets and expansions">
+                                </select>
+                            </label><br />
+                            <label>
+                                <input type="checkbox" class="randomizer-fill-zero-pts" /> 
+                                Always fill 0-point slots
+                            </label><br />
+                            <label>
+                                Maximum Seconds to Spend Randomizing
+                                <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
+                            </label>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary do-randomize" aria-hidden="true">Randomize!</button>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    </div>
+                </div>
             </div>
         """
         @randomizer_source_selector = $ @randomizer_options_modal.find('select.randomizer-sources')
@@ -718,7 +720,7 @@ class exportObj.SquadBuilder
                 ships_or_upgrades = DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES if (isNaN(ships_or_upgrades) or ships_or_upgrades < 0)
                 timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
                 timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
-                #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}"
+                # console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}"
                 @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, bid_goal, ships_or_upgrades, @randomizer_collection_selector.checked, @randomizer_fill_zero_pts.checked)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
@@ -731,16 +733,23 @@ class exportObj.SquadBuilder
             @randomizer_options_modal.modal()
 
         @misc_settings_modal = $ document.createElement('DIV')
-        @misc_settings_modal.addClass 'modal hide fade'
+        @misc_settings_modal.addClass 'modal fade'
+        @misc_settings_modal.tabindex = "-1"
+        @misc_settings_modal.role = "dialog"
         $('body').append @misc_settings_modal
         @misc_settings_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Miscellaneous Settings</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <label class = "toggle-initiative-prefix-names misc-settings-label">
                     <input type="checkbox" class="initiative-prefix-names-checkbox misc-settings-checkbox" /> Put INI as prefix in front of names. 
+                </label><br />
+                <label>
+                    <input type="checkbox" checked /> Is Dee Yun the worst?
                 </label>
             </div>
             <div class="modal-footer">
@@ -748,6 +757,8 @@ class exportObj.SquadBuilder
                 &nbsp;
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
+        </div>
+    </div>
         """
         @misc_settings_infoline = $ @misc_settings_modal.find('.misc-settings-infoline')
         @misc_settings_initiative_prefix = $ @misc_settings_modal.find('.initiative-prefix-names-checkbox')
@@ -787,9 +798,13 @@ class exportObj.SquadBuilder
             @misc_settings_initiative_prefix.prop('checked', exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix)
 
         @choose_obstacles_modal = $ document.createElement 'DIV'
-        @choose_obstacles_modal.addClass 'modal hide fade choose-obstacles-modal'
+        @choose_obstacles_modal.addClass 'modal fade choose-obstacles-modal'
+        @choose_obstacles_modal.tabindex = "-1"
+        @choose_obstacles_modal.role = "dialog"
         @container.append @choose_obstacles_modal
         @choose_obstacles_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
             <div class="modal-header">
                 <label class='choose-obstacles-description'>Choose up to three obstacles, to include in the permalink for use in external programs</label>
             </div>
@@ -826,9 +841,11 @@ class exportObj.SquadBuilder
                     <img class="obstacle-image" src="images/core2asteroid0.png" />
                 </div>
             </div>
-            <div class="modal-footer hidden-print">
+            <div class="modal-footer d-print-none">
                 <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
+        </div>
+    </div>
         """
         @obstacles_select = @choose_obstacles_modal.find('.obstacle-select')
         @obstacles_select_image = @choose_obstacles_modal.find('.obstacle-image-container')
@@ -891,9 +908,9 @@ class exportObj.SquadBuilder
         content_container.addClass 'container-fluid'
         @container.append content_container
         content_container.append $.trim """
-            <div class="row-fluid">
-                <div class="span9 ship-container">
-                    <label class="notes-container show-authenticated">
+            <div class="row">
+                <div class="col-md-9 ship-container">
+                    <label class="notes-container col-md-10">
                         <span class="notes-name">Squad Notes:</span>
                         <br />
                         <textarea class="squad-notes"></textarea>
@@ -901,12 +918,13 @@ class exportObj.SquadBuilder
                         <span class="tag-name">Tag:</span>
                         <input type="search" class="squad-tag"></input>
                     </label>
-                    <span class="obstacles-container">
+                </div>
+                <div class="col-md-3 info-container" id="info-container">
+                </div>
+                <div class="col-md-12 obstacles-container">
                         <!-- Since this is an optional button, usually, it's shown in a different color -->
                         <button class="btn btn-info choose-obstacles"><i class="fa fa-cloud"></i>&nbsp;Choose Obstacles</button>
-                    </span>
-                 </div>
-               <div class="span3 info-container" id="info-container" />
+                </div>
             </div>
         """
 
@@ -918,12 +936,11 @@ class exportObj.SquadBuilder
         @tag = $ @notes_container.find('input.squad-tag')
 
         @info_container.append $.trim """
-            <div class="well well-small info-well">
-                <span class="info-name"></span>
-                <br />
+            <div class="card info-well">
+                <div class="info-name"></div>
                 <span class="info-collection"></span>
                 <span class="info-solitary"><br />Solitary</span>
-                <table>
+                <table class="table-sm">
                     <tbody>
                         <tr class="info-ship">
                             <td class="info-header">Ship</td>
@@ -1098,13 +1115,13 @@ class exportObj.SquadBuilder
             # console.log "#{@faction}: Collection created, checking squad"
             @collection.onLanguageChange null, @language
             # @checkCollection()
-            @collection_button.removeClass 'hidden'
+            @collection_button.removeClass 'd-none'
         .on 'xwing-collection:changed', (e, collection) =>
             # console.log "#{@faction}: Collection changed, checking squad"
             @checkCollection()
         .on 'xwing-collection:destroyed', (e, collection) =>
             @collection = null
-            @collection_button.addClass 'hidden'
+            @collection_button.addClass 'd-none'
         .on 'xwing:pingActiveBuilder', (e, cb) =>
             cb(this) if @container.is(':visible')
         .on 'xwing:activateBuilder', (e, faction, cb) =>
@@ -1325,7 +1342,7 @@ class exportObj.SquadBuilder
         @points_remaining_span.text points_left
         @points_destroyed_span.html if points_dest != 0 then """<i class="xwing-miniatures-font xwing-miniatures-font-hit"></i>#{points_dest}""" else ""
         @points_remaining_container.toggleClass 'red', (points_left < 0)
-        @unreleased_content_used_container.toggleClass 'hidden', not unreleased_content_used
+        @unreleased_content_used_container.toggleClass 'd-none', not unreleased_content_used
 
         @fancy_total_points_container.text @total_points
 
@@ -1507,7 +1524,7 @@ class exportObj.SquadBuilder
 
             # check if there are serialized ships to load
             if !serialized_ships? # something went wrong, we can't load that serialization
-                @loading_failed_container.toggleClass 'hidden', false
+                @loading_failed_container.toggleClass 'd-none', false
                 return
             switch game_type_abbrev
                 when 's'
@@ -1605,7 +1622,7 @@ class exportObj.SquadBuilder
             builder: this
             container: @ship_container
         @ships.push new_ship
-        @ship_number_invalid_container.toggleClass 'hidden', (@ships.length < 10 and @ships.length > 2) # bounds are 2..10 as we always have a "empty" ship at the bottom
+        @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 2) # bounds are 2..10 as we always have a "empty" ship at the bottom
         new_ship
 
     removeShip: (ship, cb=$.noop) ->
@@ -1614,7 +1631,7 @@ class exportObj.SquadBuilder
             await @container.trigger 'xwing:pointsUpdated', defer()
             @current_squad.dirty = true
             @container.trigger 'xwing-backend:squadDirtinessChanged'
-            @ship_number_invalid_container.toggleClass 'hidden', (@ships.length < 10 and @ships.length > 2)
+            @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 2)
         cb()
     
     matcher: (item, term) ->
@@ -1649,9 +1666,9 @@ class exportObj.SquadBuilder
                         if (not collection_only or (@collection? and (@collection.checks.collectioncheck == "true") and @collection.checkShelf('ship', ship_data.name)))
                             ships.push
                                 id: ship_data.name
+                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
                                 name: ship_data.name
                                 display_name: ship_data.display_name
-                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
                                 icon: if ship_data.icon then ship_data.icon else ship_data.xws
@@ -2701,6 +2718,10 @@ class exportObj.SquadBuilder
     randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, bid_goal=5, ships_or_upgrades=3, collection_only=true, fill_zero_pts=false) ->
         @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
+        
+        if allowed_sources.length < 1
+            allowed_sources = null
+        
         # Clear all existing ships
         while @ships.length > 0
             @removeShip @ships[0]
@@ -2785,7 +2806,7 @@ class exportObj.SquadBuilder
         # console.log "#{@faction}: Checking validity of squad against collection..."
         if @collection?
             [squadPossible, missingStuff] = @isSquadPossibleWithCollection()
-            @collection_invalid_container.toggleClass 'hidden', squadPossible
+            @collection_invalid_container.toggleClass 'd-none', squadPossible
             @collection_invalid_container.on 'mouseover', (e) =>
                 @showTooltip 'MissingStuff', missingStuff
             @collection_invalid_container.on 'touchstart', (e) =>
@@ -3353,31 +3374,31 @@ class Ship
 
     setupUI: ->
         @row = $ document.createElement 'DIV'
-        @row.addClass 'row-fluid ship'
+        @row.addClass 'row ship'
         @row.insertBefore @builder.notes_container
 
         if @pilot?
             shipicon = if exportObj.ships[@pilot.ship].icon then exportObj.ships[@pilot.ship].icon else exportObj.ships[@pilot.ship].xws
         
         @row.append $.trim '''
-            <div class="span3">
-                <input class="ship-selector-container" type="hidden" />
+            <div class="col-md-3">
+                <input class="ship-selector-container" type="hidden"></input>
                 <br />
-                <input type="hidden" class="pilot-selector-container" />
+                <input type="hidden" class="pilot-selector-container"></input>
                 <br />
                 <label class="wingmate-label">
                 Wingmates: 
-                    <input type="number" class="wingmate-selector" />
+                    <input type="number" class="wingmate-selector"></input>
                 </label>
             </div>
-            <div class="span1 points-display-container">
-                <span></span>
+            <div class="col-md-1 points-display-container">
+                 <span></span>
             </div>
-            <div class="span6 addon-container" />
-            <div class="span2 button-container">
-                <button class="btn btn-danger remove-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="hidden-desktop hidden-tablet visible-phone"> Remove Pilot</span></button>
-                <button class="btn copy-pilot side-button"><span class="visible-desktop visible-tablet visible-phone" data-toggle="tooltip" title="Clone Pilot"><i class="far fa-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone"> Clone Pilot</span></button>&nbsp;&nbsp;&nbsp;
-                <button class="btn points-destroyed side-button" points-state"><span class="visible-desktop visible-tablet visible-phone destroyed-type" data-toggle="tooltip" title="Destroyed Points"><i class="xwing-miniatures-font xwing-miniatures-font-title"></i></span><span class="hidden-desktop hidden-tablet visible-phone">: Destroyed</span></button>
+            <div class="col-md-6 addon-container">  </div>
+            <div class="col-md-2 button-container">
+                <button class="btn btn-danger remove-pilot side-button"><span class="d-none d-sm-block" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="d.block d-sm-none"> Remove Pilot</span></button>
+                <button class="btn btn-light copy-pilot side-button"><span class="d-none d-sm-block" data-toggle="tooltip" title="Clone Pilot"><i class="far fa-copy"></i></span><span class="d.block d-sm-none"> Clone Pilot</span></button>&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-light points-destroyed side-button" points-state"><span class="destroyed-type" data-toggle="tooltip" title="Calculate Half/Full Points Destroyed"><i class="xwing-miniatures-font xwing-miniatures-font-title"></i></span></button>
             </div>
         '''
         @row.find('.button-container span').tooltip()
@@ -3387,19 +3408,18 @@ class Ship
         @wingmate_selector = $ @row.find('input.wingmate-selector')
 
         shipResultFormatter = (object, container, query) ->
-            # Append directly so we don't have to disable markup escaping
-            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.icon}"></i> #{object.text}"""
-            # If you return a string, Select2 will render it
-            undefined
+            return """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.icon}"></i> #{object.text}"""
 
+        shipSelectionFormatter = (object, container) ->
+            return """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.icon}"></i> #{object.text}"""
+            
         @ship_selector.select2
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
             query: (query) =>
-                # @builder.checkCollection()
-                query.callback
-                    more: false
-                    results: @builder.getAvailableShipsMatching(query.term)
+                data = {results: []}
+                data.results = @builder.getAvailableShipsMatching(query.term)
+                query.callback(data)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
             formatResultCssClass: (obj) =>
                 if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
@@ -3428,17 +3448,13 @@ class Ship
         @ship_selector.data('select2').container.on 'touchstart', (e) =>
             @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
 
-        # assign ship row an id for testing purposes
-        @row.attr 'id', "row-#{@ship_selector.data('select2').container.attr('id')}"
-
         @pilot_selector.select2
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'pilotSelectorPlaceholder'
             query: (query) =>
-                # @builder.checkCollection()
-                query.callback
-                    more: false
-                    results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), (if not @builder.isQuickbuild then @pilot else @quickbuildId), query.term, true, @)
+                data = {results: []}
+                data.results = @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), (if not @builder.isQuickbuild then @pilot else @quickbuildId), query.term, true, @)
+                query.callback(data)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
             formatResultCssClass: (obj) =>
                 if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
@@ -4514,10 +4530,9 @@ class exportObj.Upgrade extends GenericAddon
             placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'upgradePlaceholder', @slot)
             allowClear: true
             query: (query) =>
-                # @ship.builder.checkCollection()
-                query.callback
-                    more: false
-                    results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term, @filter_func)
+                data = {results: []}
+                data.results = @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term, @filter_func)
+                query.callback(data)
 
 class exportObj.RestrictedUpgrade extends exportObj.Upgrade
     constructor: (args) ->
@@ -4543,9 +4558,7 @@ class exportObj.QuickbuildUpgrade extends GenericAddon
             width: '50%'
             allowClear: false
             query: (query) =>
-                # @ship.builder.checkCollection()
-                query.callback
-                    more: false
+                data = {
                     results: [{
                             id: @upgrade.id
                             text: if @upgrade.display_name then @upgrade.display_name else @upgrade.name
@@ -4553,6 +4566,8 @@ class exportObj.QuickbuildUpgrade extends GenericAddon
                             name: @upgrade.name
                             display_name: @upgrade.display_name
                         }]
+                }
+                query.callback(data)
 
     getPoints: (args) ->
         0

@@ -23,26 +23,24 @@ class exportObj.RulesBrowser
     setupRuleUI: () ->
         @container.append $.trim """
             <div class="container-fluid xwing-rules-browser">
-                <div class="row-fluid">
-                    <div class="span4">
-                        <div class="well card-search-container">
-                            <h3>Rules Search</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-search-container">
+                            <h5 class="card-title">Rules Search</h5>
                             <div class="advanced-search-container">
-                                <div class = "well search-container general-search-container">
-                                    <h4 class="version">Version: </h4>
-                                    <label class = "text-search advanced-search-label">
-                                        <strong>Term: </strong>
-                                        <input type="search" placeholder="Search for game term or card" class = "rule-search-text">
-                                    </label>
-                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted version">Version: </h6>
+                                <label class = "text-search advanced-search-label">
+                                    <strong>Term: </strong>
+                                    <input type="search" placeholder="Search for game term or card" class = "rule-search-text">
+                                </label>
                             </div>
                             <div class="rules-container card-selector-container">
                             </div>
                         </div>
                     </div>
-                    <div class="span8">
-                        <div class="well card-viewer-container card-search-container">
-                            <span class="info-name"></span>
+                    <div class="col-md-8">
+                        <div class="card card-viewer-container card-search-container">
+                            <h4 class="card-title info-name"></h4>
                             <br />
                             <p class="info-text" />
                         </div>

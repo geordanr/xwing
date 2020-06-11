@@ -8122,11 +8122,11 @@ class exportObj.Collection
                 card_totals_by_type[type] = 0
                 card_different_by_type[type] = 0
                 contents = component_content.append $.trim """
-                    <div class="row-fluid">
-                        <div class="span12"><h5>#{type.capitalize()}</h5></div>
+                    <div class="row">
+                        <div class="col"><h5>#{type.capitalize()}</h5></div>
                     </div>
-                    <div class="row-fluid">
-                        <ul id="counts-#{type}" class="span12"></ul>
+                    <div class="row">
+                        <ul id="counts-#{type}" class="col"></ul>
                     </div>
                 """
                 ul = $ contents.find("ul#counts-#{type}")
@@ -8146,11 +8146,11 @@ class exportObj.Collection
             summary += """<li>#{type.capitalize()} - #{card_totals_by_type[type]} (#{card_different_by_type[type]} different)</li>"""
 
         component_content.append $.trim """
-            <div class="row-fluid">
-                <div class="span12"><h5>Summary</h5></div>
+            <div class="row">
+                <div class="col"><h5>Summary</h5></div>
             </div>
-            <div class = "row-fluid">
-                <ul id="counts-summary" class="span12">
+            <div class = "row">
+                <ul id="counts-summary" class="col">
                     #{summary}
                 </ul>
             </div>
@@ -8207,30 +8207,34 @@ class exportObj.Collection
             singletonsByType[type] = sorted_names
         
         @modal = $ document.createElement 'DIV'
-        @modal.addClass 'modal hide fade collection-modal hidden-print'
+        @modal.addClass 'modal fade collection-modal d-print-none'
+        @modal.tabindex = "-1"
+        @modal.role = "dialog"
         $('body').append @modal
         @modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4>Your Collection</h4>
+                <button type="button" class="close d-print-none" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a data-target="#collection-expansions" data-toggle="tab">Expansions</a><li>
-                    <li><a data-target="#collection-ships" data-toggle="tab">Ships</a><li>
-                    <li><a data-target="#collection-pilots" data-toggle="tab">Pilots</a><li>
-                    <li><a data-target="#collection-upgrades" data-toggle="tab">Upgrades</a><li>
-                    <li><a data-target="#collection-components" data-toggle="tab">Inventory</a><li>
+                <ul class="nav nav-pills mb-2" id="collectionTabs" role="tablist">
+                    <li class="nav-item active" id="collection-expansions-tab" role="presentation"><a data-target="#collection-expansions" class="nav-link" data-toggle="tab" role="tab" aria-controls="collection-expansions" aria-selected="true">Expansions</a><li>
+                    <li class="nav-item" id="collection-ships-tab" role="presentation"><a href="#collection-ships" class="nav-link" data-toggle="tab" role="tab" aria-controls="collection-ships" aria-selected="false">Ships</a><li>
+                    <li class="nav-item" id="collection-pilots-tab" role="presentation"><a href="#collection-pilots" class="nav-link" data-toggle="tab" role="tab" aria-controls="collection-pilots" aria-selected="false">Pilots</a><li>
+                    <li class="nav-item" id="collection-upgrades-tab" role="presentation"><a href="#collection-upgrades" class="nav-link" data-toggle="tab" role="tab" aria-controls="collection-upgrades" aria-selected="false">Upgrades</a><li>
+                    <li class="nav-item" id="collection-components-tab" role="presentation"><a href="#collection-components" class="nav-link" data-toggle="tab" role="tab" aria-controls="collection-components" aria-selected="false">Inventory</a><li>
                 </ul>
-                <div class="tab-content">
-                    <div id="collection-expansions" class="tab-pane active container-fluid collection-content"></div>
-                    <div id="collection-ships" class="tab-pane container-fluid collection-ship-content"></div>
-                    <div id="collection-pilots" class="tab-pane container-fluid collection-pilot-content"></div>
-                    <div id="collection-upgrades" class="tab-pane container-fluid collection-upgrade-content"></div>
-                    <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
+                <div class="tab-content" id="collectionTabContent">
+                    <div id="collection-expansions" role="tabpanel" aria-labelledby="collection-expansions-tab" class="tab-pane fade show active container-fluid collection-content"></div>
+                    <div id="collection-ships" role="tabpanel" aria-labelledby="collection-ships-tab" class="tab-pane fade container-fluid collection-ship-content"></div>
+                    <div id="collection-pilots" role="tabpanel" aria-labelledby="collection-pilots-tab" class="tab-pane fade container-fluid collection-pilot-content"></div>
+                    <div id="collection-upgrades" role="tabpanel" aria-labelledby="collection-upgrades-tab" class="tab-pane fade container-fluid collection-upgrade-content"></div>
+                    <div id="collection-components" role="tabpanel" aria-labelledby="collection-components-tab" class="tab-pane fade container-fluid collection-inventory-content"></div>
                 </div>
             </div>
-            <div class="modal-footer hidden-print">
+            <div class="modal-footer d-print-none">
                 <span class="collection-status"></span>
                 &nbsp;
                 <label class="checkbox-check-collection">
@@ -8239,6 +8243,8 @@ class exportObj.Collection
                 &nbsp;
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
+        </div>
+    </div>
         """
         @modal_status = $ @modal.find('.collection-status')
 
@@ -8254,8 +8260,8 @@ class exportObj.Collection
         for expansion in exportObj.expansions
             count = parseInt(@expansions[expansion] ? 0)
             row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
+                <div class="row">
+                    <div class="col">
                         <label>
                             <input class="expansion-count" type="number" size="3" value="#{count}" />
                             <span class="expansion-name">#{expansion}</span>
@@ -8274,8 +8280,8 @@ class exportObj.Collection
         for ship in singletonsByType.ship
             count = parseInt(@singletons.ship?[ship] ? 0)
             row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
+                <div class="row">
+                    <div class="col">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
                             <span class="ship-name">#{if exportObj.ships[ship].display_name then exportObj.ships[ship].display_name else ship}</span>
@@ -8294,8 +8300,8 @@ class exportObj.Collection
         for pilot in singletonsByType.pilot
             count = parseInt(@singletons.pilot?[pilot] ? 0)
             row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
+                <div class="row">
+                    <div class="col">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
                             <span class="pilot-name">#{if exportObj.pilots[pilot].display_name then exportObj.pilots[pilot].display_name else pilot}</span>
@@ -8314,8 +8320,8 @@ class exportObj.Collection
         for upgrade in singletonsByType.upgrade
             count = parseInt(@singletons.upgrade?[upgrade] ? 0)
             row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
+                <div class="row">
+                    <div class="col">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
                             <span class="upgrade-name">#{if exportObj.upgrades[upgrade].display_name then exportObj.upgrades[upgrade].display_name else upgrade}</span>

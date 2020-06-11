@@ -57,13 +57,13 @@ class exportObj.CardBrowser
     setupUI: () ->
         @container.append $.trim """
             <div class="container-fluid xwing-card-browser">
-                <div class="row-fluid">
-                    <div class="span4">
-                        <div class="well card-search-container">
-                        <h3>Card Search</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-search-container">
+                        <h5 class="card-title">Card Search</h5>
                             <div class="advanced-search-container">
-                                <div class = "well search-container general-search-container">
-                                    <h4>General</h4>
+                                <div class = "card search-container general-search-container">
+                                    <h6 class="card-subtitle mb-3 text-muted version">General</h6>
                                     <label class = "text-search advanced-search-label">
                                     <strong>Textsearch: </strong>
                                         <input type="search" placeholder="Search for name, text or ship" class = "card-search-text">
@@ -105,8 +105,8 @@ class exportObj.CardBrowser
                                         </label>
                                     </div>
                                 </div>
-                                <div class = "well search-container ship-search-container">
-                                    <h4>Ships and Pilots</h4>
+                                <div class = "card search-container ship-search-container">
+                                    <h6 class="card-subtitle mb-3 text-muted version">Ships and Pilots</h6>
                                     <div class = "advanced-search-slot-available-container">
                                         <label class = "advanced-search-label select-available-slots">
                                             <strong>Slots: </strong>
@@ -228,8 +228,8 @@ class exportObj.CardBrowser
                                         </label>
                                     </div>
                                 </div>
-                                <div class = "well search-container other-stuff-search-container">
-                                    <h4>Other Stuff</h4>
+                                <div class = "card search-container other-stuff-search-container">
+                                    <h6 class="card-subtitle mb-3 text-muted version">Other Stuff</h6>
                                     <div class = "advanced-search-slot-used-container">
                                         <label class = "advanced-search-label select-used-slots">
                                             <strong>Used slot: </strong>
@@ -244,6 +244,7 @@ class exportObj.CardBrowser
                                         <label class = "advanced-search-label set-maximum-charge">
                                             to <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
                                         </label>
+                                        <br />
                                         <label class = "advanced-search-label has-recurring-charge">
                                             <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> recurring
                                         </label>
@@ -264,7 +265,7 @@ class exportObj.CardBrowser
                             </div>
                         </div>
                     </div>
-                    <div class="span4 card-selecting-area">
+                    <div class="col-md-4 card-selecting-area">
                         <span class="translate sort-cards-by">Sort cards by</span>: <select class="sort-by">
                             <option value="name">Name</option>
                             <option value="source">Source</option>
@@ -275,93 +276,93 @@ class exportObj.CardBrowser
 
                         </div>
                     </div>
-                    <div class="span4">
-                        <div class="well card-viewer-placeholder info-well">
+                    <div class="col-md-4">
+                        <div class="card card-viewer-placeholder info-well">
                             <p class="translate select-a-card">Select a card from the list at the left.</p>
                         </div>
-                        <div class="well card-viewer-container info-well">
+                        <div class="card card-viewer-container info-well">
                             <span class="info-name"></span>
                             <br />
                             <span class="info-type"></span>
                             <br />
                             <span class="info-collection"></span>
-                            <table>
+                            <table class="table-sm">
                                 <tbody>
                                     <tr class="info-ship">
-                                        <td class="info-header">Ship</td>
-                                        <td class="info-data"></td>
+                                        <td class="col-3 info-header">Ship</td>
+                                        <td class="col-9 info-data"></td>
                                     </tr>
                                     <tr class="info-base">
-                                        <td class="info-header">Base</td>
-                                        <td class="info-data"></td>
+                                        <td class="col-3 info-header">Base</td>
+                                        <td class="col-9 info-data"></td>
                                     </tr>
                                     <tr class="info-skill">
-                                        <td class="info-header">Initiative</td>
-                                        <td class="info-data info-skill"></td>
+                                        <td class="col-3 info-header">Initiative</td>
+                                        <td class="col-9 info-data info-skill"></td>
                                     </tr>
                                     <tr class="info-energy">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
-                                        <td class="info-data info-energy"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
+                                        <td class="col-9 info-data info-energy"></td>
                                     </tr>
                                     <tr class="info-attack">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
-                                        <td class="info-data info-attack"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
+                                        <td class="col-9 info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-attack-fullfront">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i></td>
-                                        <td class="info-data info-attack"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i></td>
+                                        <td class="col-9 info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-attack-bullseye">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
-                                        <td class="info-data info-attack"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
+                                        <td class="col-9 info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-attack-back">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i></td>
-                                        <td class="info-data info-attack"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i></td>
+                                        <td class="col-9 info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-attack-turret">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i></td>
-                                        <td class="info-data info-attack"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i></td>
+                                        <td class="col-9 info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-attack-doubleturret">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i></td>
-                                        <td class="info-data info-attack"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i></td>
+                                        <td class="col-9 info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-agility">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i></td>
-                                        <td class="info-data info-agility"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i></td>
+                                        <td class="col-9 info-data info-agility"></td>
                                     </tr>
                                     <tr class="info-hull">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i></td>
-                                        <td class="info-data info-hull"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i></td>
+                                        <td class="col-9 info-data info-hull"></td>
                                     </tr>
                                     <tr class="info-shields">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i></td>
-                                        <td class="info-data info-shields"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i></td>
+                                        <td class="col-9 info-data info-shields"></td>
                                     </tr>
                                     <tr class="info-force">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i></td>
-                                        <td class="info-data info-force"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i></td>
+                                        <td class="col-9 info-data info-force"></td>
                                     </tr>
                                     <tr class="info-charge">
-                                        <td class="info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
-                                        <td class="info-data info-charge"></td>
+                                        <td class="col-3 info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
+                                        <td class="col-9 info-data info-charge"></td>
                                     </tr>
                                     <tr class="info-range">
-                                        <td class="info-header">Range</td>
-                                        <td class="info-data info-range"></td>
+                                        <td class="col-3 info-header">Range</td>
+                                        <td class="col-9 info-data info-range"></td>
                                     </tr>
                                     <tr class="info-actions">
-                                        <td class="info-header">Actions</td>
-                                        <td class="info-data"></td>
+                                        <td class="col-3 info-header">Actions</td>
+                                        <td class="col-9 info-data"></td>
                                     </tr>
                                     <tr class="info-actions-red">
                                         <td></td>
-                                        <td class="info-data-red"></td>
+                                        <td class="col-9 info-data-red"></td>
                                     </tr>
                                     <tr class="info-upgrades">
-                                        <td class="info-header">Upgrades</td>
-                                        <td class="info-data"></td>
+                                        <td class="col-3 info-header">Upgrades</td>
+                                        <td class="col-9 info-data"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -399,6 +400,7 @@ class exportObj.CardBrowser
         @faction_selection.append factionless_option
         @faction_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+        
         @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
         @hyperspace_checkbox = ($ @container.find('.xwing-card-browser .hyperspace-checkbox'))[0]
@@ -685,11 +687,10 @@ class exportObj.CardBrowser
     
         # prevent the three virtual hardpoint cards from beeing displayed
         return false unless card.data.slot != "Hardpoint"
-
         
         all_factions = (faction for faction, pilot of exportObj.pilotsByFactionXWS)
         selected_factions = @faction_selection.val()
-        if selected_factions
+        if selected_factions.length > 0
             if "Factionless" in selected_factions
                 selected_factions.push undefined
             return false unless card.data.faction in selected_factions or card.orig_type == 'Ship' or card.data.faction instanceof Array
@@ -707,7 +708,6 @@ class exportObj.CardBrowser
                        break
                return false unless faction_matches
 
-
         # check if hyperspace only matches
         if @hyperspace_checkbox.checked
             # check all factions specified by the card (which might be a single faction or an array of factions), or all selected factions if card does not specify any
@@ -718,7 +718,7 @@ class exportObj.CardBrowser
 
         # check for slot requirements
         required_slots = @slot_available_selection.val()
-        if required_slots
+        if required_slots.length > 0
             slots = card.data.slots
             if card.orig_type == 'Ship'
                 slots = []
@@ -734,7 +734,7 @@ class exportObj.CardBrowser
         # check for action requirements
         required_actions = @action_available_selection.val()
         required_linked_actions = @linkedaction_available_selection.val()
-        if required_actions or required_linked_actions
+        if (required_actions.length > 0) or (required_linked_actions.length > 0)
             actions = card.data.actions ? []
             actions = actions.concat (card.data.actionsred ? [])
             if card.orig_type == 'Pilot'
@@ -770,7 +770,7 @@ class exportObj.CardBrowser
 
         # check if used slot matches
         used_slots = @slot_used_selection.val()
-        if used_slots
+        if used_slots.length > 0
             return false unless card.data.slot?
             matches = false
             for slot in used_slots
@@ -779,6 +779,9 @@ class exportObj.CardBrowser
                     break
             return false unless matches
 
+
+            
+            
         # check for uniqueness
         return false unless not @unique_checkbox.checked or card.data.unique
         return false unless not @non_unique_checkbox.checked or not card.data.unique

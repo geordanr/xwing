@@ -6,25 +6,26 @@ html
     title YASB 2.0
     meta(charset="utf-8")
 
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(property="og:url", content="http://raithos.github.io/")
+    meta(property="og:image", content="http://raithos.github.io/images/preview.png")
+    meta(property="og:description", content="YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
+
     link(rel="apple-touch-icon", sizes="180x180", href="apple-touch-icon.png")
     link(rel="icon", type="image/png", sizes="32x32", href="favicon-32x32.png")
     link(rel="icon", type="image/png", sizes="16x16", href="favicon-16x16.png")
     link(rel="manifest", href="site.webmanifest")
     link(rel="shortcut icon", type="image/x-icon", href="favicon.ico")
-    link(rel="stylesheet", href=`bootstrap/css/bootstrap.min.css?${now_ts}`)
-    link(rel="stylesheet", href=`bower_components/font-awesome/css/all.min.css?${now_ts}`)
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(property="og:url", content="http://raithos.github.io/")
-    meta(property="og:image", content="http://raithos.github.io/images/preview.png")
-    meta(property="og:description", content="YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
-    link(href=`bootstrap/css/bootstrap-responsive.css?${now_ts}`, rel="stylesheet", media="screen")
-    link(rel="stylesheet", href=`select2-3.4.0/select2.css?${now_ts}`)
+
+    link(rel="stylesheet", href=`bower_components/select2/select2.css?${now_ts}`)
+    link(rel="stylesheet", href=`bootstrap/css/bootstrap.css?${now_ts}`)
 
     link(rel="stylesheet", href=`stylesheets/xwing.css?${now_ts}`)
     link(rel="stylesheet", href=`stylesheets/xwing-screen.css?${now_ts}`, media="screen")
     link(rel="stylesheet", href=`stylesheets/xwing-print.css?${now_ts}`, media="print")
     link(rel="stylesheet", href=`stylesheets/backgrounds.css?${now_ts}`, media="screen")
     link(rel="stylesheet", href=`bower_components/xwing-miniatures-font/xwing-miniatures.css?${now_ts}`, media="screen,print")
+    link(rel="stylesheet", href=`bower_components/font-awesome/css/all.min.css?${now_ts}`)
 
 
   body
@@ -35,74 +36,74 @@ html
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-    .tabbable.hidden-print
+    .tabbable.d-print-none
       ul.nav.nav-pills.main-top-nav-bar
-        li
-          a#rebelTab('data-toggle'="tab", href='#rebelContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel"></i>
-        li
-          a#empireTab('data-toggle'="tab", href='#empireContent') <i class="xwing-miniatures-font xwing-miniatures-font-empire"></i>
-        li
-          a#scumTab('data-toggle'="tab", href='#scumContent') <i class="xwing-miniatures-font xwing-miniatures-font-scum"></i>
-        li
-          a#resistanceTab('data-toggle'="tab", href='#resistanceContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel-outline"></i>
-        li
-          a#firstorderTab('data-toggle'="tab", href='#firstorderContent') <i class="xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
-        li
-          a#republicTab('data-toggle'="tab", href='#republicContent') <i class="xwing-miniatures-font xwing-miniatures-font-republic"></i>
-        li
-          a#separatistTab('data-toggle'="tab", href='#separatistContent') <i class="xwing-miniatures-font xwing-miniatures-font-separatists"></i>
+        li.nav-item
+          a#rebelTab.nav-link('data-toggle'="tab", href='#rebelContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel"></i>
+        li.nav-item
+          a#empireTab.nav-link('data-toggle'="tab", href='#empireContent') <i class="xwing-miniatures-font xwing-miniatures-font-empire"></i>
+        li.nav-item
+          a#scumTab.nav-link('data-toggle'="tab", href='#scumContent') <i class="xwing-miniatures-font xwing-miniatures-font-scum"></i>
+        li.nav-item
+          a#resistanceTab.nav-link('data-toggle'="tab", href='#resistanceContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel-outline"></i>
+        li.nav-item
+          a#firstorderTab.nav-link('data-toggle'="tab", href='#firstorderContent') <i class="xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
+        li.nav-item
+          a#republicTab.nav-link('data-toggle'="tab", href='#republicContent') <i class="xwing-miniatures-font xwing-miniatures-font-republic"></i>
+        li.nav-item
+          a#separatistTab.nav-link('data-toggle'="tab", href='#separatistContent') <i class="xwing-miniatures-font xwing-miniatures-font-separatists"></i>
 
-        li.main-top-nav-bar-button-right
-          a(href='https://github.com/raithos/xwing/issues/new', target='_blank') Submit Bug/Feature Request 
-        li.main-top-nav-bar-button-right
-          a#login-logout.hidden(href='#')
+        li.nav-item.float-right
+          a.nav-link(href='https://github.com/raithos/xwing/issues/new', target='_blank') Submit Bug/Feature Request 
+        li.nav-item.float-right
+          a#login-logout.d-none.nav-link(href='#')
             span.hide-authenticated
-              i.fa.fa-sign-in-alt.hidden-phone.hidden-tablet
+              i.fa.fa-sign-in-alt
               | Log In
             span.show-authenticated
-              i.fa.fa-sign-out-alt.hidden-phone.hidden-tablet
+              i.fa.fa-sign-out-alt
               | Log Out
-        li.main-top-nav-bar-button-right
-          a#auth-status(href='#')
+        li.nav-item.float-right
+          a#auth-status.nav-link(href='#')
             i.fa.fa-sync.fa-spin
             span.payload
-        // li
-        //  a(href='old', target='_blank') Old Version 
-        li.dropdown.language-picker.main-top-nav-bar-button-right
-          a.dropdown-toggle('data-toggle'='dropdown', href='#')
+        // li.nav-item.float-right
+        //  a.nav-link(href='old', target='_blank') Old Version 
+        li.dropdown.language-picker.nav-item.float-right
+          a.nav-link.dropdown-toggle('data-toggle'='dropdown', href='#')
             span.language-placeholder
             b.caret
           ul.dropdown-menu      
-        li.main-top-nav-bar-button-right
-          a#aboutTab('data-toggle'="tab", href='#aboutContent') About    
-        li.main-top-nav-bar-button-right
-          a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser                      
-        li.main-top-nav-bar-button-right
-          a#rulesTab('data-toggle'="tab", href='#rulesBrowserContent') Rules
+        li.nav-item.float-right
+          a#aboutTab.nav-link('data-toggle'="tab", href='#aboutContent') About    
+        li.nav-item.float-right
+          a#browserTab.nav-link('data-toggle'="tab", href='#browserContent') Card Browser                      
+        li.nav-item.float-right
+          a#rulesTab.nav-link('data-toggle'="tab", href='#rulesBrowserContent') Rules
 
       .tab-content
-        .tab-pane#rebelContent
+        .tab-pane.fade#rebelContent
           #rebel-builder
-        .tab-pane#empireContent
+        .tab-pane.fade#empireContent
           #empire-builder
-        .tab-pane#scumContent
+        .tab-pane.fade#scumContent
           #scum-builder
-        .tab-pane#resistanceContent
+        .tab-pane.fade#resistanceContent
           #resistance-builder
-        .tab-pane#firstorderContent
+        .tab-pane.fade#firstorderContent
           #firstorder-builder
-        .tab-pane#republicContent
+        .tab-pane.fade#republicContent
           #republic-builder
-        .tab-pane#separatistContent
+        .tab-pane.fade#separatistContent
           #separatist-builder
-        .tab-pane#browserContent
+        .tab-pane.fade#browserContent
           #card-browser
-        .tab-pane#rulesBrowserContent
+        .tab-pane.fade#rulesBrowserContent
           #rules-browser
-        .tab-pane#aboutContent
+        .tab-pane.fade#aboutContent
           .container-fluid
             .row-fluid
-              .span8
+              .span8.about
                 .image-block
                     img(src="android-chrome-192x192.png", height="100", width="100")
                     h2 YASB for X-Wing 2.0
@@ -142,7 +143,7 @@ html
     .footer
       .msie8-hax
 
-    #printable.visible-print
+    #printable.d-none.d-print-block
       .printable-header
       .printable-body
       .printable-footer
@@ -150,18 +151,19 @@ html
         strong.site-placeholder
 
     // JS linkages
-    script(src=`bower_components/jquery/js/jquery.min.js?${now_ts}`)
-    // script(src="http://code.jquery.com/jquery-migrate-1.2.1.js")
+    script(src=`bower_components/jquery/js/jquery.js?${now_ts}`)
     script(src=`bower_components/jquery-ajaxtransport-xdomainrequest/jquery.xdomainrequest.min.js?${now_ts}`)
-    script(src=`bootstrap/js/bootstrap.min.js?${now_ts}`)
-    script(src=`select2-3.4.0/select2.min.js?${now_ts}`)
     script(src=`bower_components/jquery.qrcode/js/jquery-qrcode.min.js?${now_ts}`)
+    script(src=`bower_components/select2/select2.js?${now_ts}`)
+
+    script(src=`https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js` integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    script(src=`bootstrap/js/bootstrap.js?${now_ts}`)
+	
+    script(src=`javascripts/translations.min.js?${now_ts}`)
     script(src=`javascripts/xwing.min.js?${now_ts}`)
     script(src=`javascripts/xwingcontent.min.js?${now_ts}`)
     script(src=`javascripts/translations.min.js?${now_ts}`)
-    // Additional stuff for Popups
-    //script(src=`selectnav/respond.min.js?${now_ts}`)
-
+	
     script
       :coffee-script
         $ ->
@@ -364,6 +366,5 @@ html
         | &nbsp;
       span(style="font-family: XWingShip")
         | &nbsp;
-    img.hidden(src="images/xws-obstacles.png")
 
 
