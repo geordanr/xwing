@@ -3624,6 +3624,7 @@ class Ship
             formatResult: shipResultFormatter
             formatSelection: shipResultFormatter
 
+            
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
         @ship_selector.data('select2').results.on 'mousemove-filtered', (e) =>
@@ -3633,6 +3634,11 @@ class Ship
             @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
         @ship_selector.data('select2').container.on 'touchstart', (e) =>
             @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
+            # Apparently removes keyboard prompt for Select2
+        @ship_selector.on 'select2:open', (e) =>
+            $('.select2-search input').prop('focus',false)
+        
+        
 
         @pilot_selector.select2
             width: '100%'
@@ -3661,7 +3667,7 @@ class Ship
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
-
+                    
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
             @builder.current_squad.dirty = true
@@ -3677,7 +3683,9 @@ class Ship
             @builder.showTooltip 'Pilot', @pilot, @ if @pilot
         @pilot_selector.data('select2').container.on 'touchstart', (e) =>
             @builder.showTooltip 'Pilot', @pilot, @ if @pilot
-
+        @pilot_selector.data('select2').container.on 'select2:open', (e) =>
+            $('.select2-search input').prop('focus',false)
+                        
         @pilot_selector.data('select2').container.hide()
 
         if @builder.isQuickbuild
@@ -4428,6 +4436,9 @@ class GenericAddon
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
         @selector.data('select2').container.on 'touchstart', (e) =>
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
+        @selector.data('select2').container.on 'select2:open', (e) =>
+            $('.select2-search input').prop('focus',false)
+                
 
     setById: (id) ->
         @setData @dataById[parseInt id]
