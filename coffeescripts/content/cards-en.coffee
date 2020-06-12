@@ -1735,6 +1735,9 @@ exportObj.cardLoaders.English = () ->
         "IG-88D":
            display_name: """IG-88D"""
            text: """<i>Adds %CALCULATE%</i>%LINEBREAK%<i>Scum only</i>%LINEBREAK%You have the pilot ability of each other friendly ship with the <strong>IG-2000</strong> upgrade.%LINEBREAK%After you perform a %CALCULATE% action, gain 1 calculate token."""
+        "Ion Bombs":
+           display_name: """Ion Bombs"""
+           text: """During the System Phase, you may spend 1 %CHARGE% to drop an Ion Bomb using the [1 %STRAIGHT%] template."""
         "ISB Slicer":
            display_name: """ISB Slicer"""
            text: """<i>Empire only</i>%LINEBREAK%During the End Phase, enemy ships at range 1-2 cannot remove jam tokens."""

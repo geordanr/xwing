@@ -11470,6 +11470,7 @@ exportObj.basicCardData = ->
             id: 317
             slot: "Device"
             points: 6
+            charge: 2
             applies_condition: 'Ion Bomb'.canonicalize()
        }
        {
