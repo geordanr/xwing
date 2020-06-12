@@ -2042,9 +2042,9 @@ class exportObj.SquadBuilder
         return ("""<i class="xwing-miniatures-font red xwing-miniatures-font-""" + action.toLowerCase().replace(/[^0-9a-z]/gi, '') + """"></i> """)
         
         
-    showTooltip: (type, data, additional_opts, container = @info_container) ->
+    showTooltip: (type, data, additional_opts, container = @info_container, force_update = false) ->
 
-        if data != @tooltip_currently_displaying
+        if data != @tooltip_currently_displaying or force_update
             switch type
                 when 'Ship'
             # we get all pilots for the ship, to display stuff like available slots which are treated as pilot properties, not ship properties (which makes sense, as they depend on the pilot, e.g. talent or force slots)
@@ -3482,12 +3482,12 @@ class Ship
         
         @ship_query_modal.click (e) =>
             if @pilot
-                @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship], null, @builder.mobile_tooltip_modal
+                @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship], null, @builder.mobile_tooltip_modal, true
                 @builder.mobile_tooltip_modal.modal 'show'
                 
         @pilot_query_modal.click (e) =>
             if @pilot
-                @builder.showTooltip 'Pilot', @pilot, (@ if @pilot), @builder.mobile_tooltip_modal
+                @builder.showTooltip 'Pilot', @pilot, (@ if @pilot), @builder.mobile_tooltip_modal, true
                 @builder.mobile_tooltip_modal.modal 'show'
             
             
@@ -4311,7 +4311,7 @@ class GenericAddon
         @upgrade_query_modal.click (e) =>
             if @data
                 console.log "#{@data.name}"
-                @ship.builder.showTooltip 'Addon', @data, ({addon_type: @type} if @data?) , @ship.builder.mobile_tooltip_modal
+                @ship.builder.showTooltip 'Addon', @data, ({addon_type: @type} if @data?) , @ship.builder.mobile_tooltip_modal, true
                 @ship.builder.mobile_tooltip_modal.modal 'show'
         
         @selector.on 'change', (e) =>
