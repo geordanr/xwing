@@ -308,19 +308,13 @@ $upgrade-circle-border-width: 5px
   margin-left: 10px
   background-repeat: no-repeat
 
-
-.select2-container .select2-choice abbr:hover
-    background-position: right 0px
-
-.select2-container .select2-choice abbr
-    width: 20px
-    height: 20px
-    right: 20px
-    top: 3px
-    background: url(../images/cancel.png) no-repeat
-        
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) 
     .select2-container .select2-choice abbr
+        width: 20px
+        height: 20px
+        right: 20px
+        top: 3px
         background-image: url(../images/cancel.png) !important
         background-size: 20px 20px !important
-    
+    .select2-container .select2-choice abbr:hover
+        background-position: right 0px
