@@ -18,7 +18,6 @@
     "tests"
   ],
   "dependencies": {
-    "xwing-miniatures-font": "2.6.5",
     "select2": "3.5.4",
     "jquery": "components/jquery#~3.5.1",
     "jquery-ajaxtransport-xdomainrequest": "~1.0.4",
