@@ -52,7 +52,7 @@ class exportObj.CardBrowser
         @setupUI()
         @setupHandlers()
 
-        @sort_selector.change()
+        # @renderList @sort_selector.val()
 
     setupUI: () ->
         @container.append $.trim """
@@ -383,11 +383,16 @@ class exportObj.CardBrowser
     setupHandlers: () ->
         @sort_selector.change (e) =>
             @renderList @sort_selector.val()
+        
+        #apparently @renderList takes a long time to load, so moving the loading to on button press
+        $("#browserTab").on 'click', (e) =>
+            @renderList @sort_selector.val()
 
         $(window).on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
+            #if @language != language
             @language = language
             @prepareData()
-            @renderList @sort_selector.val()
+            
         .on 'xwing-collection:created', (e, collection) =>
             @collection = collection
         .on 'xwing-collection:destroyed', (e, collection) =>
@@ -482,11 +487,14 @@ class exportObj.CardBrowser
         #
         # Renders multiselect to container
         # Selects previously selected card if there is one
-        @card_selector.remove() if @card_selector?
-        @card_selector = $ document.createElement('SELECT')
-        @card_selector.addClass 'card-selector'
-        @card_selector.attr 'size', 25
-        @card_selector_container.append @card_selector
+        
+        if @card_selector?
+            @card_selector.empty()
+        else
+            @card_selector = $ document.createElement('SELECT')
+            @card_selector.addClass 'card-selector'
+            @card_selector.attr 'size', 25
+            @card_selector_container.append @card_selector
 
         switch sort_by
             when 'type-by-name'
