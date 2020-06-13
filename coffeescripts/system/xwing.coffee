@@ -1177,6 +1177,7 @@ class exportObj.SquadBuilder
                 @current_squad.additional_data.obstacles = @current_obstacles
                 @current_squad.dirty = true
                 @container.trigger 'xwing-backend:squadDirtinessChanged'
+                @container.trigger 'xwing:pointsUpdated'
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -1412,8 +1413,20 @@ class exportObj.SquadBuilder
         @reddit_container.find('textarea').val $.trim """#{reddit_ships.join "    \n"}    \n**Total:** *#{@total_points}*    \n    \n[View in Yet Another Squad Builder 2.0](#{@getPermaLink()})"""
         @simplecopy_container.find('textarea').val $.trim """#{simplecopy_ships.join ""}    \nTotal: #{@total_points}    \n    \nView in Yet Another Squad Builder 2.0: #{@getPermaLink()}"""
         
-        @tts_container.find('textarea').val $.trim """#{tts_ships.join ""}"""
 
+        #Additional code to add obstacles to TTS
+        obstacles = @getObstacles()
+        if (obstacles? and obstacles.length > 0) and (tts_ships.length > 0)
+            tts_ships[tts_ships.length - 1] = tts_ships[tts_ships.length - 1].slice(0, -2)
+            tts_obstacles = ' |'
+            for obstacle in obstacles
+                if obstacle?
+                    tts_obstacles +=  """ #{obstacle} +"""
+            tts_obstacles = tts_obstacles.slice(0, -1)
+            tts_ships.push tts_obstacles
+
+        @tts_container.find('textarea').val $.trim """#{tts_ships.join ""}"""
+        
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]Total: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]View in Yet Another Squad Builder 2.0[/url]"""
 
         # console.log "#{@faction}: Squad updated, checking collection"
@@ -3914,7 +3927,6 @@ class Ship
                 upgrade_tts = upgrade.toTTSText()
                 tts += (" + " + upgrade_tts) if upgrade_tts?
         tts += " / "
-        tts
 
     toBBCode: ->
         bbcode = """[b]#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{if @quickbuildId != -1 then (if @primary then exportObj.quickbuildsById[@quickbuildId].threat else 0) else @pilot.points})[/b]"""
