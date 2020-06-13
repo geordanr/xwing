@@ -1421,7 +1421,7 @@ class exportObj.SquadBuilder
             tts_obstacles = ' |'
             for obstacle in obstacles
                 if obstacle?
-                    tts_obstacles +=  """ #{obstacle} +"""
+                    tts_obstacles +=  """ #{obstacle} /"""
             tts_obstacles = tts_obstacles.slice(0, -1)
             tts_ships.push tts_obstacles
 
@@ -3442,7 +3442,7 @@ class Ship
 
     setupUI: ->
         @row = $ document.createElement 'DIV'
-        @row.addClass 'row ship'
+        @row.addClass 'row ship mb-5 mb-sm-0'
         @row.insertBefore @builder.notes_container
 
         if @pilot?
