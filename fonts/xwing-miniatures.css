@@ -9,7 +9,9 @@
 i.xwing-miniatures-font {
   font-family: XWing;
   font-style: normal;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  font-display: swap;
+ }
 
 i.xwing-miniatures-font-agility:before {
   content: "^"; }
