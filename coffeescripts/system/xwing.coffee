@@ -1084,8 +1084,8 @@ class exportObj.SquadBuilder
                         </tr>
                     </tbody>
                 </table>
-                <p class="info-text" />
-                <p class="info-maneuvers" />
+                <p class="info-text"></p>
+                <p class="info-maneuvers"></p>
                 <br />
                 <span class="info-header info-sources">Sources:</span> 
                 <span class="info-data info-sources"></span>
