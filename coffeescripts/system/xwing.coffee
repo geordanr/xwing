@@ -1490,7 +1490,7 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.text ''
         @squad_name_placeholder.append short_name
         @squad_name_input.val @current_squad.name
-        return unless @container.is(':visible') 
+        return unless $.getParameterByName('f') == @faction
         if @current_squad.name != "Unnamed Squadron" and @current_squad.name != "Unsaved Squadron"
             if (document.title != "YASB 2.0 - " + @current_squad.name) 
                 document.title = "YASB 2.0 - " + @current_squad.name
