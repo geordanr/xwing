@@ -60,6 +60,13 @@ $.getParameterByName = (name) ->
     else
         return decodeURIComponent(results[1].replace(/\+/g, " "))
 
+jQuery.event.special.touchstart = setup: (_, ns, handle) ->
+  if ns.includes('noPreventDefault')
+    @addEventListener 'touchstart', handle, passive: false
+  else
+    @addEventListener 'touchstart', handle, passive: true
+  return
+    
 Array::intersects = (other) ->
     for item in this
         if item in other
