@@ -112,6 +112,10 @@ class exportObj.CardBrowser
                                             <strong>Slots: </strong>
                                             <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
                                         </label>
+                                        <br />
+                                        <label class = "advanced-search-label toggle-unique">
+                                            <input type="checkbox" class="duplicate-slots-checkbox advanced-search-checkbox" /> Has multiple of the chosen slots
+                                        </label>
                                     </div>
                                     <div class = "advanced-search-actions-available-container">
                                         <label class = "advanced-search-label select-available-actions">
@@ -236,6 +240,16 @@ class exportObj.CardBrowser
                                             <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
                                         </label>
                                     </div>
+                                    <div class = "advanced-search-slot-used-second-slot-container">
+                                        <label class = "advanced-search-label select-used-second-slots">
+                                            <strong>Used second slot: </strong>
+                                            <select class="advanced-search-selection slot-used-second-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                        </label>
+                                        <br />
+                                        <label class = "advanced-search-label has-a-second-slot">
+                                            <input type="checkbox" class="advanced-search-checkbox has-a-second-slot-checkbox" /> Show only upgrades with a second slot
+                                        </label>
+                                    </div>
                                     <div class = "advanced-search-charge-container">
                                         <strong>Charges:</strong>
                                         <label class = "advanced-search-label set-minimum-charge">
@@ -246,10 +260,10 @@ class exportObj.CardBrowser
                                         </label>
                                         <br />
                                         <label class = "advanced-search-label has-recurring-charge">
-                                            <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> recurring
+                                            <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> Recurring
                                         </label>
                                         <label class = "advanced-search-label has-not-recurring-charge">
-                                            <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> not recurring
+                                            <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> Not recurring
                                         </label>
                                     <div class = "advanced-search-force-container">
                                         <strong>Force:</strong>
@@ -328,6 +342,7 @@ class exportObj.CardBrowser
             @slot_available_selection.append opt
         @slot_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @duplicateslots = ($ @container.find('.xwing-card-browser .duplicate-slots-checkbox'))[0]
         @action_available_selection = ($ @container.find('.xwing-card-browser select.action-available-selection'))
         for action in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam"].sort()
             opt = $ document.createElement('OPTION')
@@ -348,6 +363,13 @@ class exportObj.CardBrowser
             opt.text slot
             @slot_used_selection.append opt
         @slot_used_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @slot_used_second_selection = ($ @container.find('.xwing-card-browser select.slot-used-second-selection'))
+        for slot of exportObj.upgradesBySlotCanonicalName
+            opt = $ document.createElement('OPTION')
+            opt.text slot
+            @slot_used_second_selection.append opt
+        @slot_used_second_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @minimum_charge = ($ @container.find('.xwing-card-browser .minimum-charge'))[0]
         @maximum_charge = ($ @container.find('.xwing-card-browser .maximum-charge'))[0]
@@ -373,6 +395,7 @@ class exportObj.CardBrowser
         @maximum_attackb = ($ @container.find('.xwing-card-browser .maximum-attackb'))[0]
         @minimum_attackbull = ($ @container.find('.xwing-card-browser .minimum-attackbull'))[0]
         @maximum_attackbull = ($ @container.find('.xwing-card-browser .maximum-attackbull'))[0]
+        @hassecondslot = ($ @container.find('.xwing-card-browser .has-a-second-slot-checkbox'))[0]
         @recurring_charge = ($ @container.find('.xwing-card-browser .has-recurring-charge-checkbox'))[0]
         @not_recurring_charge = ($ @container.find('.xwing-card-browser .has-not-recurring-charge-checkbox'))[0]
         @minimum_owned_copies = ($ @container.find('.xwing-card-browser .minimum-owned-copies'))[0]
@@ -410,11 +433,14 @@ class exportObj.CardBrowser
         @unique_checkbox.onclick = => @renderList @sort_selector.val()
         @non_unique_checkbox.onclick = => @renderList @sort_selector.val()
         @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
+        @duplicateslots.onclick = => @renderList @sort_selector.val()
         @action_available_selection[0].onchange = => @renderList @sort_selector.val()
         @linkedaction_available_selection[0].onchange = => @renderList @sort_selector.val()
         @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
-        @recurring_charge.onclick = => @renderList @sort_selector.val()
+        @slot_used_second_selection[0].onchange = => @renderList @sort_selector.val()
         @not_recurring_charge.onclick = => @renderList @sort_selector.val()
+        @recurring_charge.onclick = => @renderList @sort_selector.val()
+        @hassecondslot.onclick = => @renderList @sort_selector.val()
         @minimum_charge.oninput = => @renderList @sort_selector.val()
         @maximum_charge.oninput = => @renderList @sort_selector.val()
         @minimum_ini.oninput = => @renderList @sort_selector.val()
@@ -647,8 +673,14 @@ class exportObj.CardBrowser
                             for pilot in pilots # there are sometimes multiple pilots with the same name, so we have another array layer here
                                 if pilot.ship == card.data.name
                                     slots.push.apply(slots, pilot.slots)
+            
             for slot in required_slots
-               return false unless slots? and slot in slots
+                return false unless slots? and slot in slots
+                # check for duplciates
+                if @duplicateslots.checked
+                    hasDuplicates = slots.filter (x, i, self) ->
+                        (self.indexOf(x) == i && i != self.lastIndexOf(x)) and (x == slot)
+                    return false if hasDuplicates.length == 0
 
         # check for action requirements
         required_actions = @action_available_selection.val()
@@ -698,8 +730,20 @@ class exportObj.CardBrowser
                     break
             return false unless matches
 
+        # check if used second slot matches
+        used_second_slots = @slot_used_second_selection.val()
+        if used_second_slots.length > 0
+            return false unless card.data.also_occupies_upgrades?
+            matches = false
+            for slot in used_second_slots
+                for adds in card.data.also_occupies_upgrades
+                    if adds == slot
+                        matches = true
+                        break
+            return false unless matches
 
-            
+        # check if has a second slot
+        return false if not card.data.also_occupies_upgrades? and @hassecondslot.checked
             
         # check for uniqueness
         return false unless not @unique_checkbox.checked or card.data.unique
