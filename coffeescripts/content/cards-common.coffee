@@ -17123,6 +17123,54 @@ exportObj.basicCardData = ->
                 "Proton Torpedoes"
             ]
         }
+        {
+            id: 453
+            faction: "Galactic Empire"
+            pilot: "Seventh Sister"
+            ship: "TIE Advanced Prototype"
+            threat: 3
+            upgrades: [
+                "Predictive Shot"
+                "Proton Rockets"
+                "Afterburners"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 454
+            faction: "Galactic Empire"
+            pilot: "Inquisitor"
+            ship: "TIE Advanced Prototype"
+            threat: 2
+            upgrades: [
+                "Heightened Perception"
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 455
+            faction: "Galactic Empire"
+            pilot: "Grand Inquisitor"
+            ship: "TIE Advanced Prototype"
+            threat: 3
+            upgrades: [
+                "Hate"
+                "Proton Rockets"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 456
+            faction: "Galactic Empire"
+            pilot: "Baron of the Empire"
+            ship: "TIE Advanced Prototype"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Outmaneuver"
+                "Afterburners"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
