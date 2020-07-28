@@ -6598,6 +6598,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'First Order Sympathizers'
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: 'Outer Rim Patrol'
             type: 'pilot'
             count: 1
