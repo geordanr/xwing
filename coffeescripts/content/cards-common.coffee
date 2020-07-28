@@ -8179,7 +8179,7 @@ exportObj.basicCardData = ->
             unique: true
             skill: 4
             ship: "VCX-100"
-            points: 69
+            points: 68
             slots: [
                 "Talent"
                 "Torpedo"
@@ -17512,7 +17512,6 @@ exportObj.hyperspacePilotExclusions = [
     'Soontir Fel',
 
     # Scum and Villainy
-    'Nashtah Pup',
     'Old Teroch',
     'Foreman Proach',
     'Captain Seevor',
@@ -17658,7 +17657,6 @@ exportObj.hyperspaceUpgradeExclusions = [
     'Feedback Array',
     'Barrage Rockets',
     'Cluster Missiles',
-    'Diamond-Boron Missiles',
     'Homing Missiles',
     'Proton Rockets',
     'Afterburners',
