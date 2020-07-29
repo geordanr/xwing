@@ -17525,7 +17525,6 @@ exportObj.hyperspacePilotExclusions = [
     'Binayre Pirate',
 
     # Resistance
-    'Logistics Division Pilot',
     'Finn',
     "L'ulo L'ampar",
 
