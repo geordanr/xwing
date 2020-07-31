@@ -1634,6 +1634,105 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
            ]
+        "Xi-class Light Shuttle":
+           name: "Xi-class Light Shuttle"
+           xws: "Xi-class Light Shuttle".canonicalize()
+           factions: ["First Order"]
+           attack: 2
+           agility: 2
+           hull: 5
+           shields: 2
+           actions: [
+             "Focus"
+             "Jam"
+           ]
+           actionsred: [
+             "Lock"
+             "Coordinate"
+           ]
+           maneuvers: [
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 1, 1, 3, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
+        "HMP Droid Gunship":
+           name: "HMP Droid Gunship"
+           xws: "HMP Droid Gunship".canonicalize()
+           factions: ["Separatist Alliance"]
+           attackf: 2
+           agility: 1
+           hull: 5
+           shields: 3
+           actions: [
+             "Calculate"
+             "Lock"
+             "Reload"
+             "R> Calculate"
+           ]
+           actionsred: [
+             "Roll"
+           ]
+           maneuvers: [
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 3, 2, 3, 0, 0, 0, 0, 0, 0 ]
+                [ 2, 1, 2, 1, 2, 0, 0, 0, 0, 0 ]
+                [ 1, 3, 1, 3, 1, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
+        "LAAT/i Gunship":
+           name: "LAAT/i Gunship"
+           xws: "LAAT/i Gunship".canonicalize()
+           factions: ["Galactic Republic"]
+           attackt: 2
+           agility: 1
+           hull: 8
+           shields: 2
+           actions: [
+             "Focus"
+             "Lock"
+             "Rotate"
+             "Reload"
+           ]
+           actionsred: [
+             "Reinforce"
+           ]
+           maneuvers: [
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 1, 1, 3, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
+        "TIE/rb Heavy":
+           name: "TIE/rb Heavy"
+           xws: "TIE/rb Heavy".canonicalize()
+           factions: ["Galactic Empire"]
+           attackt: 2
+           agility: 1
+           hull: 8
+           actions: [
+             "Focus"
+             "Reinforce"
+             "Lock"
+             "Rotate"
+             "R> Calculate"
+           ]
+           actionsred: [
+             "Barrel Roll"
+           ]
+           maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 2, 1, 3, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 3, 1, 3, 3, 0, 0, 3, 3 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
 
         # Epic Section
         "CR90 Corellian Corvette":
@@ -8336,6 +8435,260 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
+        {
+            name: "First Order Courier"
+            id: 401
+            faction: "First Order"
+            unique: true
+            skill: 2
+            ship: "Xi-class Light Shuttle"
+            points: 200
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Agent Terex"
+            id: 402
+            faction: "First Order"
+            skill: 3
+            ship: "Xi-class Light Shuttle"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Unnamed I4"
+            id: 403
+            faction: "First Order"
+            unique: true
+            skill: 4
+            ship: "Xi-class Light Shuttle"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Commander Malarus"
+            id: 404
+            faction: "First Order"
+            unique: true
+            skill: 5
+            ship: "Xi-class Light Shuttle"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Generic I1"
+            id: 405
+            faction: "Separatist Alliance"
+            skill: 1
+            ship: "HMP Droid Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Unnamed I1"
+            id: 406
+            faction: "Separatist Alliance"
+            skill: 1
+            ship: "HMP Droid Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Separatist Predator"
+            id: 407
+            faction: "Separatist Alliance"
+            skill: 3
+            ship: "HMP Droid Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Unnamed I2"
+            id: 408
+            faction: "Separatist Alliance"
+            skill: 2
+            ship: "HMP Droid Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Unnamed I1"
+            id: 409
+            faction: "Separatist Alliance"
+            skill: 1
+            ship: "HMP Droid Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Unnamed I3"
+            id: 410
+            faction: "Separatist Alliance"
+            skill: 3
+            ship: "HMP Droid Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "Onderon Exterminator"
+            id: 411
+            faction: "Separatist Alliance"
+            skill: 3
+            max_per_squad: 2
+            ship: "HMP Droid Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: "212th Battalion Pilot"
+            id: 412
+            faction: "Galactic Republic"
+            skill: 2
+            ship: "LAAT/i Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Halo"'
+            id: 413
+            faction: "Galactic Republic"
+            skill: 2
+            unique: true
+            ship: "LAAT/i Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Warthog"'
+            id: 414
+            faction: "Galactic Republic"
+            skill: 3
+            unique: true
+            ship: "LAAT/i Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Hawk"'
+            id: 415
+            faction: "Galactic Republic"
+            skill: 4
+            unique: true
+            ship: "LAAT/i Gunship"
+            points: 200
+            slots: [
+                "Crew"
+                "Modification"
+            ]
+        }
+        {
+<<<<<<< HEAD
+            name: "Cardia Academy Pilot"
+            id: 416
+            faction: "Galactic Empire"
+            skill: 1
+            ship: "TIE/rb Heavy"
+            points: 200
+=======
+            name: "Lieutenant LeHuse"
+            id: 397
+            faction: "First Order"
+            unique: true
+            skill: 5
+            ship: "TIE/SF Fighter"
+            points: 38
+>>>>>>> 089e89ed1df163a1c9d9ba3be4f2779975b7eeb9
+            slots: [
+                "Crew"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Onyx Squadron Sentry"
+            id: 417
+            faction: "Galactic Empire"
+            skill: 3
+            ship: "TIE/rb Heavy"
+            points: 200
+            slots: [
+                "Talent"
+                "Cannon"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Lytham Dree"
+            id: 418
+            faction: "Galactic Empire"
+            skill: 3
+            unique: true
+            ship: "TIE/rb Heavy"
+            points: 200
+            slots: [
+                "Talent"
+                "Cannon"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: '"Rampage"'
+            id: 419
+            faction: "Galactic Empire"
+            skill: 4
+            unique: true
+            ship: "TIE/rb Heavy"
+            points: 200
+            slots: [
+                "Talent"
+                "Cannon"
+                "Modification"
+                "Configuration"
+            ]
+        }
+
     ]
 
 
@@ -8906,7 +9259,7 @@ exportObj.basicCardData = ->
            name: "Seasoned Navigator"
            id: 59
            slot: "Crew"
-           pointsarray: [2,3,4,5,6,7,8,8,9]
+           pointsarray: [2,3,4,5,6,7,8,9,10]
            variableinit: true
        }
        {
@@ -10202,7 +10555,7 @@ exportObj.basicCardData = ->
             id: 201
             slot: "Configuration"
             ship: "Delta-7 Aethersprite"
-            pointsarray: [15,15,15,15,18,21,24]
+            pointsarray: [6,9,12,15,18,21,24]
             variableinit: true
             modifier_func: (stats) ->
                 stats.attack += 1
@@ -10577,7 +10930,7 @@ exportObj.basicCardData = ->
             slot: "Sensor"
             charge: 1
             recurring: true
-            pointsarray: [2,2,2,2,2,4,6]
+            pointsarray: [2,2,2,2,2,4,6,7,8]
             variableinit: true
        }
        {
@@ -11496,6 +11849,101 @@ exportObj.basicCardData = ->
             slot: "Talent"
             faction: "First Order"
             points: 2
+       }
+       {
+            name: "Commander Pyre"
+            id: 320
+            slot: "Crew"
+            unique: true
+            faction: "First Order"
+            points: 200
+       }
+       {
+            name: "Clone Captain Rex"
+            id: 321
+            slot: "Crew"
+            unique: true
+            faction: "Galactic Republic"
+            points: 200
+       }
+       {
+            name: "Yoda"
+            id: 322
+            slot: "Crew"
+            unique: true
+            force: 2
+            faction: "Galactic Republic"
+            points: 200
+            modifier_func: (stats) ->
+                stats.force += 2
+                stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
+       }
+       {
+            name: "Repulsorlift Stabilizers"
+            id: 323
+            slot: "Config"
+            faction: "Separatist Alliance"
+            points: 200
+       }
+       {
+            name: "Agent Terex"
+            id: 324
+            slot: "Crew"
+            unique: true
+            faction: "First Order"
+            points: 200
+       }
+       {
+            name: "Plo Koon"
+            id: 325
+            slot: "Crew"
+            unique: true
+            force: 1
+            faction: "Galactic Republic"
+            points: 200
+            modifier_func: (stats) ->
+                stats.force += 1
+                stats.actions.push 'F-Reinforce' if 'F-Reinforce' not in stats.actions
+       }
+       {
+           name: "Multi-Missle Pods"
+           id: 326
+           slot: "Missile"
+           points: 200
+           attackf: 2
+           range: """1-2"""
+           rangebonus: true
+           charge: 5
+           restriction_func: (ship, upgrade_obj) ->
+               ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+           validation_func: (ship, upgrade_obj) ->
+               upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
+           also_occupies_upgrades: [ 'Missile' ]
+       }
+       {
+            name: "Kit Fisto"
+            id: 327
+            slot: "Crew"
+            unique: true
+            force: 1
+            faction: "Galactic Republic"
+            points: 200
+            modifier_func: (stats) ->
+                stats.force += 1
+                stats.actions.push 'F-Evade' if 'F-Evade' not in stats.actions
+       }
+       {
+            name: "Aayla Secura"
+            id: 328
+            slot: "Crew"
+            unique: true
+            force: 1
+            faction: "Galactic Republic"
+            points: 200
+            modifier_func: (stats) ->
+                stats.force += 1
+                stats.actions.push 'Focus'
+                stats.actions.push '> F-Coordinate'
        }
     ]
 
@@ -17391,6 +17839,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%KTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>')
             .replace(/%MISSILE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>')
             .replace(/%RECOVER%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>')
+            .replace(/%F-REINFORCE%/g, '<i class="xwing-miniatures-font force xwing-miniatures-font-reinforce"></i>')
             .replace(/%REINFORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>')
             .replace(/%REVERSESTRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reversestraight"></i>')
             .replace(/%REVERSEBANKLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reversebankleft"></i>')
