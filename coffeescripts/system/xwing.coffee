@@ -32,7 +32,8 @@ exportObj.slotsMatching = (slota, slotb) ->
     return false
 
 $.isMobile = ->
-    navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
+    return navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
+    
 
 $.randomInt = (n) ->
     Math.floor(Math.random() * n)
@@ -1239,7 +1240,7 @@ class exportObj.SquadBuilder
                     
             # Notes, if present
             @printable_container.find('.printable-body').append $.trim """
-                <div class="version">Points Version: 1.6 January 2020</div>
+                <div class="version">Points Version: 1.6.1 July 2020</div>
             """            
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
@@ -3537,6 +3538,10 @@ class Ship
             formatResult: shipResultFormatter
             formatSelection: shipResultFormatter
 
+        @ship_selector.on 'select2-focus', (e) =>
+            if $.isMobile()
+                $('.select2-container .select2-focusser').remove()
+                $('.select2-search input').prop('focus',false).removeClass('select2-focused')
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
         @ship_selector.data('select2').results.on 'mousemove-filtered', (e) =>
@@ -3574,7 +3579,10 @@ class Ship
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
-
+        @pilot_selector.on 'select2-focus', (e) =>
+            if $.isMobile()
+                $('.select2-container .select2-focusser').remove()
+                $('.select2-search input').prop('focus',false).removeClass('select2-focused')
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
             @builder.current_squad.dirty = true
@@ -4328,7 +4336,11 @@ class GenericAddon
                 console.log "#{@data.name}"
                 @ship.builder.showTooltip 'Addon', @data, ({addon_type: @type} if @data?) , @ship.builder.mobile_tooltip_modal, true
                 @ship.builder.mobile_tooltip_modal.modal 'show'
-        
+
+        @selector.on 'select2-focus', (e) =>
+            if $.isMobile()
+                $('.select2-container .select2-focusser').remove()
+                $('.select2-search input').prop('focus',false).removeClass('select2-focused')
         @selector.on 'change', (e) =>
             @setById @selector.select2('val')
             @ship.builder.current_squad.dirty = true
