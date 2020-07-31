@@ -8622,22 +8622,12 @@ exportObj.basicCardData = ->
             ]
         }
         {
-<<<<<<< HEAD
             name: "Cardia Academy Pilot"
             id: 416
             faction: "Galactic Empire"
             skill: 1
             ship: "TIE/rb Heavy"
             points: 200
-=======
-            name: "Lieutenant LeHuse"
-            id: 397
-            faction: "First Order"
-            unique: true
-            skill: 5
-            ship: "TIE/SF Fighter"
-            points: 38
->>>>>>> 089e89ed1df163a1c9d9ba3be4f2779975b7eeb9
             slots: [
                 "Crew"
                 "Modification"
