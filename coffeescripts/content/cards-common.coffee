@@ -10652,7 +10652,7 @@ exportObj.basicCardData = ->
             id: 212
             faction: "Galactic Republic"
             slot: "Force"
-            pointsarray: [0,2,4,6,8,10,12]
+            pointsarray: [4,4,4,4,6,8,10]
             variableinit: true
             modifier_func: (stats) ->
                 stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
