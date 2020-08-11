@@ -32,7 +32,7 @@ exportObj.slotsMatching = (slota, slotb) ->
     return false
 
 $.isMobile = ->
-    return navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
+    navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
     
 
 $.randomInt = (n) ->
@@ -235,7 +235,7 @@ class exportObj.SquadBuilder
                     </div>
                     <br />
                     <select class="game-type-selector">
-                        <option value="standard">Extended</option>
+                        <option value="standard" selected="1">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
                         <option value="epic">Epic</option>
                         <option value="quickbuild">Quickbuild</option>
@@ -280,6 +280,7 @@ class exportObj.SquadBuilder
                 </div>
             </div>
         '''
+
         @container.append @status_container
 
         @list_modal = $ document.createElement 'DIV'
@@ -608,6 +609,8 @@ class exportObj.SquadBuilder
         @points_container = $ @status_container.find('div.points-display-container')
         @total_points_span = $ @points_container.find('.total-points')
         @game_type_selector = $ @status_container.find('.game-type-selector')
+        @game_type_selector.select2
+            minimumResultsForSearch: -1
         @game_type_selector.change (e) =>
             $(window).trigger 'xwing:gameTypeChanged', @game_type_selector.val()
             # @onGameTypeChanged @game_type_selector.val()
@@ -1937,6 +1940,7 @@ class exportObj.SquadBuilder
                         when 1 then "white"
                         when 2 then "dodgerblue"
                         when 3 then "red"
+                        when 3 then "purple"
 
                      # we need this to change the color to b/w in case we want to print b/w
 
@@ -1944,6 +1948,7 @@ class exportObj.SquadBuilder
                         when 1 then "svg-white-maneuver"
                         when 2 then "svg-blue-maneuver"
                         when 3 then "svg-red-maneuver"
+                        when 3 then "svg-purple-maneuver"
 
                     outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
 
@@ -2403,7 +2408,8 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-fullfront td.info-data').text(ship.attackf)
                     container.find('tr.info-attack-fullfront').toggle(ship.attackf?)
                     
-                    container.find('tr.info-attack-bullseye').hide()
+                    container.find('tr.info-attack-bullseye td.info-data').text(ship.attackbull)
+                    container.find('tr.info-attack-bullseye').toggle(ship.attackbull?)
                     
                     container.find('tr.info-attack-left td.info-data').text(ship.attackl)
                     container.find('tr.info-attack-left').toggle(ship.attackl?)
@@ -3713,6 +3719,12 @@ class Ship
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
         """ else ''
         
+        if effective_stats.attackbull?
+            attackbullHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i>
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackbull ? @data.attackbull), effective_stats, 'attackbull')}</span>""" 
+        else
+            attackbullHTML = ''        
+        
         if effective_stats.attackb?
             attackbHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackb ? @data.attackb), effective_stats, 'attackb')}</span>""" 
@@ -3810,6 +3822,7 @@ class Ship
                     #{engagementHTML}
                     #{attackHTML}
                     #{attackbHTML}
+                    #{attackbullHTML}
                     #{attackfHTML}
                     #{attacktHTML}
                     #{attacklHTML}
@@ -4092,6 +4105,7 @@ class Ship
         stats =
             attack: @pilot.ship_override?.attack ? @data.attack
             attackf: @pilot.ship_override?.attackf ? @data.attackf
+            attackbull: @pilot.ship_override?.attackbull ? @data.attackbull
             attackb: @pilot.ship_override?.attackb ? @data.attackb
             attackt: @pilot.ship_override?.attackt ? @data.attackt
             attackl: @pilot.ship_override?.attackl ? @data.attackl
