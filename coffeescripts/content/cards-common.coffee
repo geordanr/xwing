@@ -3357,6 +3357,7 @@ exportObj.basicCardData = ->
                     "Calculate"
                     "Lock"
                     "Rotate Arc"
+                    "R-Boost"
                 ]
         }
         {
@@ -3425,6 +3426,7 @@ exportObj.basicCardData = ->
                 actions: [
                     "Calculate"
                     "Barrel Roll"
+                    "R-Coordinate"
                 ]
         }
         {
@@ -8879,7 +8881,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Jedi Knight"
+            name: "Jedi Knight (ETA-2)"
             id: 436
             faction: "Galactic Republic"
             skill: 4
