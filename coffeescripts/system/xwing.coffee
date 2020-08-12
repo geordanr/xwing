@@ -1021,16 +1021,16 @@ class exportObj.SquadBuilder
                             <td class="info-header">Engagement</td>
                             <td class="info-data info-engagement"></td>
                         </tr>
+                        <tr class="info-attack-bullseye">
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
+                            <td class="info-data info-attack"></td>
+                        </tr>
                         <tr class="info-attack">
                             <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-fullfront">
                             <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack-bullseye">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-left">
@@ -1084,10 +1084,6 @@ class exportObj.SquadBuilder
                         <tr class="info-actions">
                             <td class="info-header">Actions</td>
                             <td class="info-data"></td>
-                        </tr>
-                        <tr class="info-actions-red">
-                            <td></td>
-                            <td class="info-data-red"></td>
                         </tr>
                         <tr class="info-upgrades">
                             <td class="info-header">Upgrades</td>
@@ -2048,6 +2044,9 @@ class exportObj.SquadBuilder
         if action.search('F-') != -1 
             color = "force "
             actionname = action.toLowerCase().replace(/F-/gi, '').replace(/[^0-9a-z]/gi, '')
+        else if action.search('R-') != -1 
+            color = "red "
+            actionname = action.toLowerCase().replace(/R-/gi, '').replace(/[^0-9a-z]/gi, '')
         else if action.search('R> ') != -1
             color = "red "
             actionname = action.toLowerCase().replace(/R> /gi, '').replace(/[^0-9a-z]/gi, '')
@@ -2058,10 +2057,6 @@ class exportObj.SquadBuilder
         else
             actionname = action.toLowerCase().replace(/[^0-9a-z]/gi, '')
         return (prefix + """<i class="xwing-miniatures-font """ + color + """xwing-miniatures-font-""" + actionname + """"></i> """)
-
-    formatRedActions: (action) ->
-        return ("""<i class="xwing-miniatures-font red xwing-miniatures-font-""" + action.toLowerCase().replace(/[^0-9a-z]/gi, '') + """"></i> """)
-        
         
     showTooltip: (type, data, additional_opts, container = @info_container, force_update = false) ->
 
@@ -2197,12 +2192,6 @@ class exportObj.SquadBuilder
                     container.find('tr.info-actions td.info-data').html (((@formatActions(action) for action in data.actions).join(', ')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked'))
                     container.find('tr.info-actions').show()
 
-                    if data.actionsred?
-                        container.find('tr.info-actions-red td.info-data-red').html (@formatRedActions(action) for action in data.actionsred).join(', ')
-                        container.find('tr.info-actions-red').show()
-                    else
-                        container.find('tr.info-actions-red').hide()
-
                     # Display all available slots, put brackets around slots that are only available for some pilots
                     container.find('tr.info-upgrades').show()
                     container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')' else (if state == 3 then (exportObj.translate(@language, 'sloticon', slot) + exportObj.translate(@language, 'sloticon', slot)) else (if state == 4 then (exportObj.translate(@language, 'sloticon', slot) + '(' + exportObj.translate(@language, 'sloticon', slot) + ')') else (if state == 5 then ('(' + exportObj.translate(@language, 'sloticon', slot) + exportObj.translate(@language, 'sloticon', slot) + ')') else (if state == 6 then (exportObj.translate(@language, 'sloticon',slot) + exportObj.translate(@language, 'sloticon',slot) + exportObj.translate(@language, 'sloticon',slot)))))))) for slot, state of slot_types).join(' ') or 'None')
@@ -2231,11 +2220,8 @@ class exportObj.SquadBuilder
                         effective_stats = additional_opts.effectiveStats()
                         extra_actions = $.grep effective_stats.actions, (el, i) ->
                             el not in (data.ship_override?.actions ? additional_opts.data.actions)
-                        extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
-                            el not in (data.ship_override?.actionsred ? additional_opts.data.actionsred)
                     else
                         extra_actions = []
-                        extra_actions_red = []
                     #logic to determine how many dots to use for uniqueness
                     if data.unique?
                         uniquedots = "&middot;&nbsp;"
@@ -2348,10 +2334,6 @@ class exportObj.SquadBuilder
 
                     container.find('tr.info-actions td.info-data').html ((@formatActions(a) for a in (data.ship_override?.actions ? ship.actions).concat("#{action}" for action in extra_actions)).join ', ').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
                     
-                    if ship.actionsred?
-                        container.find('tr.info-actions-red td.info-data-red').html (@formatRedActions(a) for a in (data.ship_override?.actionsred ? ship.actionsred).concat( ("#{action}" for action in extra_actions_red))).join ', '       
-                    container.find('tr.info-actions-red').toggle(ship.actionsred?)
-
                     container.find('tr.info-actions').show()
                     if @isQuickbuild
                         container.find('tr.info-upgrades').hide()
@@ -2454,12 +2436,6 @@ class exportObj.SquadBuilder
 
                     container.find('tr.info-actions td.info-data').html ((@formatActions(action) for action in (pilot.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
     
-                    if ships[data.ship].actionsred?
-                        container.find('tr.info-actions-red td.info-data-red').html (@formatRedActions(action) for action in (pilot.ship_override?.actionsred ? exportObj.ships[data.ship].actionsred)).join(', ')
-                        container.find('tr.info-actions-red').show()
-                    else
-                        container.find('tr.info-actions-red').hide()
-
                     container.find('tr.info-actions').show()
                     container.find('tr.info-upgrades').show()
                     container.find('tr.info-upgrades td.info-data').html(((if exportObj.upgrades[upgrade].display_name? then exportObj.upgrades[upgrade].display_name else upgrade) for upgrade in (data.upgrades ? [])).join(', ') or 'None')
@@ -2518,10 +2494,6 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-energy').hide()
                     if data.attack?
-                        # Attack icons on upgrade cards don't get special icons
-                    #    for cls in container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
-                    #        container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
-                    #    container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-frontarc')
                         container.find('tr.info-attack td.info-data').text data.attack
                         container.find('tr.info-attack').show()
                     else
@@ -2557,7 +2529,12 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-attack-bullseye').hide()
 
-                    container.find('tr.info-attack-fullfront').hide()
+                    if data.attackf?
+                        container.find('tr.info-attack-fullfront td.info-data').text data.attackf
+                        container.find('tr.info-attack-fullfront').show()
+                    else
+                        container.find('tr.info-attack-fullfront').hide()
+                        
                     container.find('tr.info-attack-right').hide()
                     container.find('tr.info-attack-left').hide()
                     container.find('tr.info-attack-back').hide()
@@ -2587,7 +2564,6 @@ class exportObj.SquadBuilder
                     container.find('tr.info-hull').hide()
                     container.find('tr.info-shields').hide()
                     container.find('tr.info-actions').hide()
-                    container.find('tr.info-actions-red').hide()
                     container.find('tr.info-upgrades').hide()
                     container.find('p.info-maneuvers').hide()
                 when 'Rules'
@@ -2606,7 +2582,6 @@ class exportObj.SquadBuilder
                     container.find('tr.info-hull').hide()
                     container.find('tr.info-shields').hide()
                     container.find('tr.info-actions').hide()
-                    container.find('tr.info-actions-red').hide()
                     container.find('tr.info-upgrades').hide()
                     container.find('p.info-maneuvers').hide()
                     container.find('tr.info-energy').hide()
@@ -2647,7 +2622,6 @@ class exportObj.SquadBuilder
                     container.find('tr.info-hull').hide()
                     container.find('tr.info-shields').hide()
                     container.find('tr.info-actions').hide()
-                    container.find('tr.info-actions-red').hide()
                     container.find('tr.info-upgrades').hide()
                     container.find('p.info-maneuvers').hide()
                     container.find('tr.info-energy').hide()
@@ -3702,9 +3676,6 @@ class Ship
                 actionname = action.toLowerCase().replace(/[^0-9a-z]/gi, '')
             action_icons.push (prefix + """<i class="xwing-miniatures-font """ + color + """xwing-miniatures-font-""" + actionname + """"></i> """ + suffix)
 
-        for actionred in effective_stats.actionsred
-            action_icons.push ("""<i class="xwing-miniatures-font red xwing-miniatures-font-""" + actionred.toLowerCase().replace(/[^0-9a-z]/gi, '') + """"></i> """)
-    
         action_bar = action_icons.join ' '
         action_bar_red = action_icons_red.join ' '
 
@@ -3723,8 +3694,8 @@ class Ship
             attackbullHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackbull ? @data.attackbull), effective_stats, 'attackbull')}</span>""" 
         else
-            attackbullHTML = ''        
-        
+            attackbullHTML = ''
+            
         if effective_stats.attackb?
             attackbHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackb ? @data.attackb), effective_stats, 'attackb')}</span>""" 
@@ -3820,9 +3791,9 @@ class Ship
                 <div class="pilot-stats-content">
                     <span class="info-data info-skill">INI #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     #{engagementHTML}
+                    #{attackbullHTML}
                     #{attackHTML}
                     #{attackbHTML}
-                    #{attackbullHTML}
                     #{attackfHTML}
                     #{attacktHTML}
                     #{attacklHTML}
@@ -4119,7 +4090,6 @@ class Ship
             charge: @pilot.ship_override?.charge ? @pilot.charge
             darkside: (@pilot.ship_override?.darkside ? @pilot.darkside) ? false
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
-            actionsred: ((@pilot.ship_override?.actionsred ? @data.actionsred) ? []).slice 0
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
