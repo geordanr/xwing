@@ -8613,7 +8613,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Lytham Dree"
+            name: "Lyttan Dree"
             id: 418
             faction: "Galactic Empire"
             skill: 3
