@@ -2468,6 +2468,7 @@ exportObj.basicCardData = ->
                 actions: [
                     "Calculate"
                     "Lock"
+                    "R-Barrel Roll"
                     "Rotate Arc"
                 ]
         }
@@ -3444,6 +3445,7 @@ exportObj.basicCardData = ->
                 actions: [
                     "Calculate"
                     "Barrel Roll"
+                    "R-Coordinate"
                 ]
         }
         {
@@ -7241,6 +7243,7 @@ exportObj.basicCardData = ->
                 actions: [
                     "Calculate"
                     "Lock"
+                    "R-Barrel Roll"
                 ]
         }
         {
@@ -7468,6 +7471,9 @@ exportObj.basicCardData = ->
             ship_override:
                 actions: [
                     "Calculate"
+                    "R-Lock"
+                    "R-Barrel Roll"
+                    "R-Jam"
                 ]
         }
         {
@@ -7672,6 +7678,8 @@ exportObj.basicCardData = ->
                 actions: [
                     "Calculate"
                     "Lock"
+                    "R-Barrel Roll"
+                    "R-Reload"
                 ]
         }
         {
@@ -8187,6 +8195,7 @@ exportObj.basicCardData = ->
                 actions: [
                     "Calculate"
                     "Lock"
+                    "R-Coordinate"
                 ]
         }
         {
@@ -8391,6 +8400,7 @@ exportObj.basicCardData = ->
             ship: "Xi-class Light Shuttle"
             points: 200
             slots: [
+                "Talent"
                 "Crew"
                 "Modification"
             ]
@@ -8404,6 +8414,7 @@ exportObj.basicCardData = ->
             ship: "Xi-class Light Shuttle"
             points: 200
             slots: [
+                "Talent"
                 "Crew"
                 "Modification"
             ]
@@ -8418,6 +8429,7 @@ exportObj.basicCardData = ->
             ship: "Xi-class Light Shuttle"
             points: 200
             slots: [
+                "Talent"
                 "Crew"
                 "Modification"
             ]
