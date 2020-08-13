@@ -156,7 +156,9 @@ class exportObj.SquadBuilderBackend
                 list_ul.append li
                 
                 if squad.additional_data?.tag? and (squad.additional_data?.tag != "") and (tag_list.indexOf(squad.additional_data.tag) == -1)
-                    tag_list.push squad.additional_data?.tag
+                    tag_array = squad.additional_data?.tag.split(",")
+                    for tag_entry in tag_array
+                        tag_list.push tag_entry
                 
                 if squad.additional_data?.archived?
                     li.hide()
@@ -347,7 +349,14 @@ class exportObj.SquadBuilderBackend
                     @squad_list_tags.find('.btn').removeClass 'btn-inverse'
                     button.addClass 'btn-inverse'
                     @squad_list_modal.find('.squad-list li').each (idx, elem) ->
-                        $(elem).toggle ($(elem).data().squad.additional_data.tag? and (buttontag == $(elem).data().squad.additional_data.tag.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\s+/g, '-')))
+                        if $(elem).data().squad.additional_data.tag?
+                            tag_array = $(elem).data().squad.additional_data.tag.split(",")
+                            found_tag = false
+                            for tag in tag_array
+                                if buttontag == tag.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\s+/g, '-') then found_tag = true
+                            if found_tag then $(elem).show() else $(elem).hide()
+                        else
+                            $(elem).hide()
 
             loading_pane.fadeOut 'fast'
             list_ul.fadeIn 'fast'
