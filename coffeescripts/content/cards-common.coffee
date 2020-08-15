@@ -9267,7 +9267,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Galactic Empire"
            restriction_func: (ship) ->
-                ("Coordinate" or "R-Coordinate") in ship.effectiveStats().actions
+                ("Coordinate" in ship.effectiveStats().actions) or ("R-Coordinate" in ship.effectiveStats().actions)
        }
        {
            name: "Cikatro Vizago"
@@ -9370,7 +9370,7 @@ exportObj.basicCardData = ->
            charge: 2
            recurring: true
            restriction_func: (ship) ->
-                ("Lock" or "R-Lock") in ship.effectiveStats().actions
+                ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
        }
        {
            name: "Hera Syndulla"
@@ -9529,7 +9529,7 @@ exportObj.basicCardData = ->
            charge: 2
            recurring: true
            restriction_func: (ship) ->
-                ("Coordinate" or "R-Coordinate") in ship.effectiveStats().actions
+                ("Coordinate" in ship.effectiveStats().actions)  or ("R-Coordinate" in ship.effectiveStats().actions)
        }
        {
            name: "Magva Yarro"
@@ -9889,7 +9889,7 @@ exportObj.basicCardData = ->
            pointsarray: [12,9,7,7]
            variablebase: true
            restriction_func: (ship) ->
-                ("Rotate Arc" or "R-Rotate Arc") in ship.effectiveStats().actions
+                ("Rotate Arc" in ship.effectiveStats().actions)  or ("R-Rotate Arc" in ship.effectiveStats().actions)
        }
        {
            name: "Cloaking Device"
@@ -10016,7 +10016,7 @@ exportObj.basicCardData = ->
            slot: "Modification"
            points: 3
            restriction_func: (ship) ->
-                ("Slam" or "R-Slam") in ship.effectiveStats().actions
+                ("Slam" in ship.effectiveStats().actions)  or ("R-Slam" in ship.effectiveStats().actions)
        }
        {
            name: "Afterburners"
@@ -10095,7 +10095,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 1
            restriction_func: (ship) ->
-                ("Focus" or "R-Focus") in ship.effectiveStats().actions
+                ("Focus" in ship.effectiveStats().actions)  or ("R-Focus" in ship.effectiveStats().actions)
        }
        {
            name: "Crack Shot"
@@ -10110,7 +10110,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 2
            restriction_func: (ship) ->
-                "Boost" in ship.effectiveStats().actions and not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+                ("Boost" in ship.effectiveStats().actions) and not (ship.data.large? or ship.data.medium? or ship.data.huge?)
        }
        {
            name: "Debris Gambit"
@@ -10203,7 +10203,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 4
            restriction_func: (ship) ->
-                ("Reload" or "R-Reload") in ship.effectiveStats().actions
+                ("Reload" in ship.effectiveStats().actions)  or ("R-Reload" in ship.effectiveStats().actions)
        }
        {
            name: "Selfless"
@@ -10681,7 +10681,7 @@ exportObj.basicCardData = ->
             slot: "Tech"
             points: 4
             restriction_func: (ship) ->
-                ("Lock" or "R-Lock") in ship.effectiveStats().actions
+                ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
        }
        {
             name: "Primed Thrusters"
@@ -10918,7 +10918,7 @@ exportObj.basicCardData = ->
             points: 1
             faction: "First Order"
             restriction_func: (ship) ->
-                ("Lock" or "R-Lock") in ship.effectiveStats().actions
+                ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
        }
        {
             name: "Predictive Shot"
@@ -10976,7 +10976,7 @@ exportObj.basicCardData = ->
             charge: 1
             points: 5
             restriction_func: (ship) ->
-                ("Calculate" or "R-Calculate") in ship.effectiveStats().actions
+                ("Calculate" in ship.effectiveStats().actions)  or ("R-Calculate" in ship.effectiveStats().actions)
        }
        {
             name: "Dedicated"
@@ -10994,7 +10994,7 @@ exportObj.basicCardData = ->
             slot: "Modification"
             points: 1
             restriction_func: (ship) ->
-                ("Lock" or "R-Lock") in ship.effectiveStats().actions
+                ("Lock" in ship.effectiveStats().actions) or ("R-Lock" in ship.effectiveStats().actions)
        }
        {
             name: "Battle Meditation"
@@ -11229,7 +11229,7 @@ exportObj.basicCardData = ->
             points: 11
             charge: 1
             restriction_func: (ship, upgrade_obj) ->
-                (("Reload" or "R-Reload") in ship.effectiveStats().actions) and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Modification")
+                (("Reload" in ship.effectiveStats().actions) or ("R-Reload" in ship.effectiveStats().actions)) and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Modification")
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Modification"
             also_occupies_upgrades: [ "Modification" ]
