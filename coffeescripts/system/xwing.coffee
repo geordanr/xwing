@@ -4411,14 +4411,14 @@ class GenericAddon
         if data?.variableagility?
             data?.pointsarray[ship.data.agility]
         else if data?.variablebase?
-            if not (ship.data.medium? or ship.data.large?)
-                data?.pointsarray[0]
-            else if ship?.data.medium?
+            if ship?.data.medium?
                 data?.pointsarray[1]
             else if ship?.data.large?
                 data?.pointsarray[2]
             else if ship?.data.huge?
                 data?.pointsarray[3]
+            else
+                data?.pointsarray[0]
         else if data?.variableinit?
             data?.pointsarray[ship.pilot.skill]
         else
