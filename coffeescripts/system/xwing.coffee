@@ -235,7 +235,7 @@ class exportObj.SquadBuilder
                     </div>
                     <br />
                     <select class="game-type-selector">
-                        <option value="standard" selected="1">Extended</option>
+                        <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
                         <option value="epic">Epic</option>
                         <option value="quickbuild">Quickbuild</option>
@@ -612,8 +612,8 @@ class exportObj.SquadBuilder
         @game_type_selector.select2
             minimumResultsForSearch: -1
         @game_type_selector.change (e) =>
-            $(window).trigger 'xwing:gameTypeChanged', @game_type_selector.val()
-            # @onGameTypeChanged @game_type_selector.val()
+            # $(window).trigger 'xwing:gameTypeChanged', @game_type_selector.val()
+            @onGameTypeChanged @game_type_selector.val()
         @desired_points_input = $ @points_container.find('.desired-points')
         @desired_points_input.change (e) =>
             @onPointsUpdated $.noop
@@ -1168,6 +1168,8 @@ class exportObj.SquadBuilder
                 cb this
         .on 'xwing:gameTypeChanged', (e, gameType, cb=$.noop) =>
             @onGameTypeChanged gameType, cb
+            if @game_type_selector.val() != gameType
+                @game_type_selector.val(gameType).trigger('change')
 
         @obstacles_select.change (e) =>
             if @obstacles_select.val().length > 3
@@ -1330,7 +1332,6 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     onGameTypeChanged: (gametype, cb=$.noop) =>
-        @game_type_selector.val gametype
         oldHyperspace = @isHyperspace
         oldEpic = @isEpic
         oldQuickbuild = @isQuickbuild
