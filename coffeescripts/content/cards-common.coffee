@@ -8391,8 +8391,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Crew"
                 "Crew"
-                "Illicit"
-                "Illicit"
                 "Modification"
             ]
         }
@@ -8428,8 +8426,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Crew"
                 "Crew"
-                "Illicit"
-                "Illicit"
                 "Modification"
             ]
         }
@@ -8447,8 +8443,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Crew"
                 "Crew"
-                "Illicit"
-                "Illicit"
                 "Modification"
             ]
         }
