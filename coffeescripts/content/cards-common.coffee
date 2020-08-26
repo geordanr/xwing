@@ -5588,9 +5588,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -5916,9 +5916,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -5934,9 +5934,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -5951,9 +5951,9 @@ exportObj.basicCardData = ->
             points: 47
             slots: [
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -5968,9 +5968,9 @@ exportObj.basicCardData = ->
             points: 48
             slots: [
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -5986,9 +5986,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -6003,9 +6003,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -6019,9 +6019,9 @@ exportObj.basicCardData = ->
             points: 42
             slots: [
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -6627,9 +6627,9 @@ exportObj.basicCardData = ->
             recurring: true
             slots: [
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -6645,9 +6645,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -6663,9 +6663,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -6681,9 +6681,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -8388,6 +8388,11 @@ exportObj.basicCardData = ->
             ship: "Xi-class Light Shuttle"
             points: 200
             slots: [
+                "Tech"
+                "Crew"
+                "Crew"
+                "Illicit"
+                "Illicit"
                 "Modification"
             ]
         }
@@ -8401,12 +8406,17 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Tech"
                 "Crew"
+                "Crew"
+                "Illicit"
+                "Illicit"
                 "Modification"
             ]
         }
         {
-            name: "Unnamed I4"
+            name: "Gideon Hask (Xi Shuttle)"
+            canonical_name: "Gideon Hask".canonicalize()
             id: 403
             faction: "First Order"
             unique: true
@@ -8415,7 +8425,11 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Tech"
                 "Crew"
+                "Crew"
+                "Illicit"
+                "Illicit"
                 "Modification"
             ]
         }
@@ -8430,7 +8444,11 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Tech"
                 "Crew"
+                "Crew"
+                "Illicit"
+                "Illicit"
                 "Modification"
             ]
         }
@@ -8997,9 +9015,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -9016,9 +9034,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Astromech"
+                "Tech"
                 "Modification"
                 "Configuration"
-                "Tech"
                 "Title"
                 "HardpointShip"
             ]
@@ -12434,6 +12452,30 @@ exportObj.basicCardData = ->
             faction: "First Order"
             slot: "Crew"
             points: 200
+       }
+       {
+            name: "Commander Malarus"
+            id: 347
+            faction: "First Order"
+            slot: "Crew"
+            points: 200
+       }
+       {
+            name: "Automated Target Priority"
+            id: 348
+            slot: "Tech"
+            points: 200
+            restriction_func: (ship) ->
+                ship.pilot.skill < 4
+       }
+       {
+            name: "Sensor Buoy Suite"
+            id: 349
+            faction: "First Order"
+            slot: "Tech"
+            points: 200
+            restriction_func: (ship) ->
+                ship.data.large? or ship.data.medium?
        }
     ]
 
