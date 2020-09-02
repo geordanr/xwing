@@ -12491,6 +12491,38 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.large? or ship.data.medium?
        }
+       {
+            name: "Suppressive Gunner"
+            id: 350
+            slot: "Gunner"
+            points: 200
+       }
+       {
+            name: "Ghost Company"
+            id: 351
+            faction: "Galactic Republic"
+            unique: true
+            slot: "Crew"
+            points: 200
+            restriction_func: (ship, upgrade_obj) ->
+                (("Rotate Arc" in ship.effectiveStats().actions) or ("R-Rotate Arc" in ship.effectiveStats().actions)) and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Gunner")
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Gunner"
+            also_occupies_upgrades: [ "Gunner" ]
+       }
+       {
+            name: "Wolf Pack"
+            id: 352
+            faction: "Galactic Republic"
+            unique: true
+            slot: "Crew"
+            points: 200
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Gunner")
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Gunner"
+            also_occupies_upgrades: [ "Gunner" ]
+       }       
     ]
 
 
