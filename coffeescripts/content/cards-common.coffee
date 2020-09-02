@@ -1563,7 +1563,7 @@ exportObj.basicCardData = ->
            actions: [
              "Focus"
              "Lock"
-             "Rotate"
+             "Rotate Arc"
              "R-Reinforce"
              "Reload"
            ]
@@ -1588,7 +1588,7 @@ exportObj.basicCardData = ->
              "Reinforce"
              "Lock"
              "R-Barrel Roll"
-             "Rotate"
+             "Rotate Arc"
              "R> Calculate"
            ]
            maneuvers: [
@@ -8539,23 +8539,31 @@ exportObj.basicCardData = ->
             id: 412
             faction: "Galactic Republic"
             skill: 2
+            charge: 2
+            recurring: true
             ship: "LAAT/i Gunship"
             points: 200
             slots: [
                 "Crew"
+                "Crew"
+                "Gunner"
                 "Modification"
             ]
         }
         {
-            name: '"Halo"'
+            name: '"Hound"'
             id: 413
             faction: "Galactic Republic"
             skill: 2
             unique: true
+            charge: 2
+            recurring: true
             ship: "LAAT/i Gunship"
             points: 200
             slots: [
                 "Crew"
+                "Crew"
+                "Gunner"
                 "Modification"
             ]
         }
@@ -8565,10 +8573,15 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 3
             unique: true
+            charge: 2
+            recurring: true
             ship: "LAAT/i Gunship"
             points: 200
             slots: [
+                "Talent"
                 "Crew"
+                "Crew"
+                "Gunner"
                 "Modification"
             ]
         }
@@ -8577,11 +8590,16 @@ exportObj.basicCardData = ->
             id: 415
             faction: "Galactic Republic"
             skill: 4
+            charge: 2
+            recurring: true
             unique: true
             ship: "LAAT/i Gunship"
             points: 200
             slots: [
+                "Talent"
                 "Crew"
+                "Crew"
+                "Gunner"
                 "Modification"
             ]
         }
@@ -11635,7 +11653,7 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 4
             modifier_func: (stats) ->
-                stats.actions.push 'Lock'
+                stats.actions.push '*Lock'
                 stats.actions.push 'R> Coordinate'
             restriction_func: (ship) ->
                 ship.data.huge?
@@ -12291,7 +12309,7 @@ exportObj.basicCardData = ->
             points: 200
             modifier_func: (stats) ->
                 stats.force += 1
-                stats.actions.push 'Focus'
+                stats.actions.push '*Focus'
                 stats.actions.push '> F-Coordinate'
        }
        {
@@ -12303,7 +12321,7 @@ exportObj.basicCardData = ->
             points: 200
             modifier_func: (stats) ->
                 stats.actions.push 'Calculate'
-                stats.actions.push 'Barrel Roll'
+                stats.actions.push '*Barrel Roll'
                 stats.actions.push '> F-Coordinate'
        }
        {
@@ -12390,6 +12408,7 @@ exportObj.basicCardData = ->
             id: 340
             charge: 2
             unique: true
+            faction: "Galactic Republic"
             slot: "Astromech"
             points: 200
        }
@@ -12429,11 +12448,44 @@ exportObj.basicCardData = ->
             points: 200
        }
        {
-            name: "Commander Pyre"
+            name: '"Fives"'
             id: 346
-            faction: "First Order"
+            unique: true
+            faction: "Galactic Republic"
             slot: "Crew"
             points: 200
+       }
+       {
+            name: "Suppressive Gunner"
+            id: 347
+            slot: "Gunner"
+            points: 200
+       }
+       {
+            name: "Ghost Company"
+            id: 348
+            faction: "Galactic Republic"
+            unique: true
+            slot: "Crew"
+            points: 200
+            restriction_func: (ship, upgrade_obj) ->
+                (("Rotate Arc" in ship.effectiveStats().actions) or ("R-Rotate Arc" in ship.effectiveStats().actions)) and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Gunner")
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Gunner"
+            also_occupies_upgrades: [ "Gunner" ]
+       }
+       {
+            name: "Wolf Pack"
+            id: 349
+            faction: "Galactic Republic"
+            unique: true
+            slot: "Crew"
+            points: 200
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Gunner")
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Gunner"
+            also_occupies_upgrades: [ "Gunner" ]
        }
     ]
 
