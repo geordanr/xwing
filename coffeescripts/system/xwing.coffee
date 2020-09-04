@@ -3664,6 +3664,9 @@ class Ship
             if action.search('F-') != -1 
                 color = "force "
                 actionname = action.toLowerCase().replace(/F-/gi, '').replace(/[^0-9a-z]/gi, '')
+            else if action.search('R-') != -1 
+                color = "red "
+                actionname = action.toLowerCase().replace(/R-/gi, '').replace(/[^0-9a-z]/gi, '')
             else if action.search('R> ') != -1
                 color = "red "
                 actionname = action.toLowerCase().replace(/R> /gi, '').replace(/[^0-9a-z]/gi, '')
@@ -3678,7 +3681,6 @@ class Ship
             action_icons.push (prefix + """<i class="xwing-miniatures-font """ + color + """xwing-miniatures-font-""" + actionname + """"></i> """ + suffix)
 
         action_bar = action_icons.join ' '
-        action_bar_red = action_icons_red.join ' '
 
         attack_icon = @data.attack_icon ? 'xwing-miniatures-font-frontarc'
 
@@ -3811,8 +3813,6 @@ class Ship
                     #{chargeHTML}
                     <br />
                     #{action_bar}
-                    &nbsp;&nbsp;
-                    #{action_bar_red}
                 </div>
             </div>
         """
