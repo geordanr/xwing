@@ -12240,7 +12240,7 @@ exportObj.basicCardData = ->
        {
             name: "Clone Captain Rex"
             id: 321
-            slot: "Crew"
+            slot: "Gunner"
             unique: true
             faction: "Galactic Republic"
             points: 200
