@@ -18515,8 +18515,6 @@ exportObj.hyperspacePilotExclusions = [
     'Wedge Antilles',
     'Biggs Darklighter',
     'Kullbee Sperado',
-    'Leevan Tenza',
-    'Edrio Two Tubes',
     'Cavern Angels Zealot',
     'Outer Rim Smuggler',
     '"Chopper"',
