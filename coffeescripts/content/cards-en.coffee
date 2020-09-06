@@ -1357,7 +1357,7 @@ exportObj.cardLoaders.English = () ->
         "212th Battalion Pilot":
            text: """<strong>Fire Ordinance:</strong> While a friendly ship performs a non-%SINGLETURRETARC% attack, if the defender is in your turret arc you may spend 1 charge token, if you do the attacker may reroll up to 2 results."""
         '"Hawk"':
-           text: """At the start of the end phase if a friendly ship at range 0-1 has a revealed maneuver higher than this one it may gain 1 strain token to perform a boost action. %LINEBREAK%<strong>Fire Ordinance:</strong> While a friendly ship performs a non-%SINGLETURRETARC% attack, if the defender is in your turret arc you may spend 1 charge token, if you do the attacker may reroll up to 2 results."""
+           text: """At the start of the End Phase, each friendly ship at range 0-1 that has a revealed maneuver of speed 3-5 may gain 1 strain ttoken to perform a %BARRELROLL% or %BOOST% action. %LINEBREAK%<strong>Fire Ordinance:</strong> While a friendly ship performs a non-%SINGLETURRETARC% attack, if the defender is in your turret arc you may spend 1 charge token, if you do the attacker may reroll up to 2 results."""
         '"Hound"':
            text: """After a friendly ship in your %SINGLETURRETARC% gains a deplete or strain token, if you have no tokens of that type, you may transfer that token to yourself. %LINEBREAK%<strong>Fire Ordinance:</strong> While a friendly ship performs a non-%SINGLETURRETARC% attack, if the defender is in your turret arc you may spend 1 charge token, if you do the attacker may reroll up to 2 results."""
         '"Warthog"':
