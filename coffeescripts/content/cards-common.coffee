@@ -10245,7 +10245,7 @@ exportObj.basicCardData = ->
            name: "Squad Leader"
            id: 131
            slot: "Talent"
-           pointsarray: [2,4,6,8,10,12,14,16,18]
+           pointsarray: [2,4,6,8,10,12,14]
            variableinit: true
            unique: true
            modifier_func: (stats) ->
@@ -10255,7 +10255,7 @@ exportObj.basicCardData = ->
            name: "Swarm Tactics"
            id: 132
            slot: "Talent"
-           pointsarray: [3,3,3,3,3,4,5,6,7]
+           pointsarray: [3,3,3,3,3,4,5]
            variableinit: true
        }
        {
@@ -10716,7 +10716,7 @@ exportObj.basicCardData = ->
             name: "Primed Thrusters"
             id: 178
             slot: "Tech"
-            pointsarray: [4,5,6,7,8,9,10,11,12]
+            pointsarray: [4,5,6,7,8,9,10]
             variableinit: true
             restriction_func: (ship) ->
                 not (ship.data.large? or ship.data.medium? or ship.data.huge?)
@@ -11030,7 +11030,7 @@ exportObj.basicCardData = ->
             id: 212
             faction: "Galactic Republic"
             slot: "Force"
-            pointsarray: [4,4,4,4,6,8,10]
+            pointsarray: [0,0,2,4,6,8,10]
             variableinit: true
             modifier_func: (stats) ->
                 stats.actions.push 'F-Coordinate' if 'F-Coordinate' not in stats.actions
@@ -11308,7 +11308,7 @@ exportObj.basicCardData = ->
             slot: "Sensor"
             charge: 1
             recurring: true
-            pointsarray: [2,2,2,2,2,4,6,7,8]
+            pointsarray: [2,2,2,2,2,4,6,8,10]
             variableinit: true
        }
        {
@@ -18615,11 +18615,9 @@ exportObj.hyperspaceUpgradeExclusions = [
     "Qi'ra",
     'Tobias Beckett',
     'Han Solo (Scum)',
-    "Marauder",
     'Virago',
 
     # Resistance
-    'M9-G8',
     'C-3PO (Resistance)',
     'Chewbacca (Resistance)',
     'GA-97',
