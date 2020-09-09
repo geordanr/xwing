@@ -8446,17 +8446,19 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Generic I1"
+            name: "Baktoid Drone"
             id: 405
             faction: "Separatist Alliance"
             skill: 1
             ship: "HMP Droid Gunship"
             points: 200
             slots: [
+                "Cannon"
+                "Cannon"
                 "Missile"
                 "Missile"
-                "Crew"
-                "Modification"
+                "Tactical Relay"
+                "Device"
                 "Configuration"
             ]
         }
@@ -8473,15 +8475,17 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Cannon"
+                "Cannon"
                 "Missile"
                 "Missile"
-                "Crew"
-                "Modification"
+                "Tactical Relay"
+                "Device"
                 "Configuration"
             ]
         }
         {
-            name: "Limited I2"
+            name: "Geonosian Prototype"
             id: 408
             faction: "Separatist Alliance"
             skill: 2
@@ -8489,15 +8493,17 @@ exportObj.basicCardData = ->
             ship: "HMP Droid Gunship"
             points: 200
             slots: [
+                "Cannon"
+                "Cannon"
                 "Missile"
                 "Missile"
-                "Crew"
-                "Modification"
+                "Tactical Relay"
+                "Device"
                 "Configuration"
             ]
         }
         {
-            name: "Unnamed I1"
+            name: "DGS-047"
             id: 409
             faction: "Separatist Alliance"
             skill: 1
@@ -8505,31 +8511,36 @@ exportObj.basicCardData = ->
             ship: "HMP Droid Gunship"
             points: 200
             slots: [
+                "Cannon"
+                "Cannon"
                 "Missile"
                 "Missile"
-                "Crew"
-                "Modification"
+                "Tactical Relay"
+                "Device"
                 "Configuration"
             ]
         }
         {
-            name: "Unnamed I3"
+            name: "DGS-286"
             id: 410
             faction: "Separatist Alliance"
             skill: 3
+            unique: true
             ship: "HMP Droid Gunship"
             points: 200
             slots: [
                 "Talent"
+                "Cannon"
+                "Cannon"
                 "Missile"
                 "Missile"
-                "Crew"
-                "Modification"
+                "Tactical Relay"
+                "Device"
                 "Configuration"
             ]
         }
         {
-            name: "Onderon Exterminator"
+            name: "Onderon Oppressor"
             id: 411
             faction: "Separatist Alliance"
             skill: 3
@@ -8538,10 +8549,12 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Cannon"
+                "Cannon"
                 "Missile"
                 "Missile"
-                "Crew"
-                "Modification"
+                "Tactical Relay"
+                "Device"
                 "Configuration"
             ]
         }
@@ -12522,6 +12535,40 @@ exportObj.basicCardData = ->
                 upgrade_obj.occupiesAnUpgradeSlot "Gunner"
             also_occupies_upgrades: [ "Gunner" ]
        }       
+       {
+            name: "Kalani"
+            id: 353
+            charge: 3
+            unique: true
+            recurring: true
+            slot: "Tactical Relay"
+            solitary: true
+            faction: "Separatist Alliance"
+            points: 200
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+       }
+       {
+            name: "Synced Laser Cannons"
+            id: 354
+            slot: "Cannon"
+            points: 200
+            attack: 3
+            range: """2-3"""
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
+            also_occupies_upgrades: [ 'Cannon' ]
+       }
+       {
+            name: "Concussion Bombs"
+            id: 355
+            slot: "Device"
+            charge: 3
+            points: 200
+            applies_condition: 'Concussion Bomb'.canonicalize()
+       }
     ]
 
 
@@ -12617,6 +12664,10 @@ exportObj.basicCardData = ->
         {
             name: 'Ion Bomb'
             id: 20
+        }
+        {
+            name: 'Concussion Bomb'
+            id: 21
         }
     ]
 
