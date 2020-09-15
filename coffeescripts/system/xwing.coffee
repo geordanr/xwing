@@ -4455,49 +4455,38 @@ class GenericAddon
                 restriction_html = ''
                 text_str = @data.text
 
-            if @data.rangebonus?
-                attackrangebonus = """<span class="upgrade-attack-rangebonus"><i class="xwing-miniatures-font xwing-miniatures-font-rangebonusindicator"></i></span>"""
-            else
-                attackrangebonus = ''
-                
-            attackHTML = if (@data.attack?) then $.trim """
-                <div class="upgrade-attack">
-                    <span class="upgrade-attack-range">#{@data.range}</span>
-                    #{attackrangebonus}
-                    <span class="info-data info-attack">#{@data.attack}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>
-                </div>
-            """ else if (@data.attackt?) then $.trim """
-                <div class="upgrade-attack">
-                    <span class="upgrade-attack-range">#{@data.range}</span>
-                    <span class="info-data info-attack">#{@data.attackt}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>
-                </div>
-            """ else if (@data.attackdt?) then $.trim """
-                <div class="upgrade-attack">
-                    <span class="upgrade-attack-range">#{@data.range}</span>
-                    <span class="info-data info-attack">#{@data.attackdt}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-doubleturretarc"></i>
-                </div>
-            """ else if (@data.attackl?) then $.trim """
-                <div class="upgrade-attack">
-                    <span class="upgrade-attack-range">#{@data.range}</span>
-                    <span class="info-data info-attack">#{@data.attackl}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-leftarc"></i>
-                </div>
-            """ else if (@data.attackr?) then $.trim """
-                <div class="upgrade-attack">
-                    <span class="upgrade-attack-range">#{@data.range}</span>
-                    <span class="info-data info-attack">#{@data.attackr}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-rightarc"></i>
-                </div>
-            """ else if (@data.attackbull?) then $.trim """
-                <div class="upgrade-attack">
-                    <span class="upgrade-attack-range">#{@data.range}</span>
-                    <span class="info-data info-attack">#{@data.attackbull}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-bullseyearc"></i>
-                </div>
-            """ else ''
+            attackHTML = ""
+            if @data.range?
+                attackrangebonus = if (@data.rangebonus?) then """<span class="upgrade-attack-rangebonus"><i class="xwing-miniatures-font xwing-miniatures-font-rangebonusindicator"></i></span>""" else ''
+                attackStats = $.trim """
+                        <span class="upgrade-attack-range">#{@data.range}</span>
+                        #{attackrangebonus}
+                """
+                attackIcon = if (@data.attack?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attack}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>
+                """ else if (@data.attackt?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attackt}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>
+                """ else if (@data.attackdt?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attackdt}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-doubleturretarc"></i>
+                """ else if (@data.attackl?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attackl}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-leftarc"></i>
+                """ else if (@data.attackr?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attackr}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-rightarc"></i>
+                """ else if (@data.attackbull?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attackbull}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-bullseyearc"></i>
+                """ else ''
+                attackHTML = $.trim """
+                    <div class="upgrade-attack">
+                        #{attackStats}
+                        #{attackIcon}
+                    </div>
+                """
 
             if (@data.charge?)
                 if  (@data.recurring?)
