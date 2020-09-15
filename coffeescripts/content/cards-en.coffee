@@ -1680,7 +1680,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you drop, launch or place a bomb or mine, you may place 1 fuse marker on that device."""
         "Delta-7B":
            display_name: """Delta-7B"""
-           text: """<i class = flavor_text>The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</i>"""
+           text: """<i>Adds 1 attack and 2 shields. Removes 1 agility. %LINEBREAK%</i><i class = flavor_text>The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</i>"""
         "Dengar":
            display_name: """Dengar"""
            text: """<i>Scum only</i>%LINEBREAK%After you defend, if the attacker is in your firing arc, you may spend 1&nbsp;%CHARGE%. If you do, roll 1 attack die unless the attacker chooses to remove 1 green token. On a %HIT% or %CRIT% result, the attacker suffers 1&nbsp;%HIT% damage."""
