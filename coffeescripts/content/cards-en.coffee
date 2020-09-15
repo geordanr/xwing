@@ -2503,6 +2503,6 @@ exportObj.cardLoaders.English = () ->
         'Ion Bomb':
            text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship at range 0–1 gains 3 ion tokens, and each remote at range 0–1 suffers 1 %HIT% damage.'''
         'Concussion Bomb':
-           text: '''(Bomb Token) - BOOM BOOM.'''
+           text: '''(Bomb Token) - When this device detonates, each ship and remote at range 0–1 is dealt a facedown damage card. Then, each ship at range 0–1 must expose a damage card unless it gains a strain token.'''
             
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
