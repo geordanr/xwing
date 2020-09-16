@@ -8635,7 +8635,8 @@ exportObj.basicCardData = ->
             ship: "TIE/rb Heavy"
             points: 200
             slots: [
-                "Crew"
+                "Cannon"
+                "Cannon"
                 "Modification"
                 "Configuration"
             ]
@@ -8649,6 +8650,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Cannon"
                 "Cannon"
                 "Modification"
                 "Configuration"
@@ -8665,6 +8667,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Cannon"
+                "Cannon"
                 "Modification"
                 "Configuration"
             ]
@@ -8679,6 +8682,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Talent"
+                "Cannon"
                 "Cannon"
                 "Modification"
                 "Configuration"
@@ -12346,7 +12350,7 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.actions.push 'Calculate'
                 stats.actions.push '*Barrel Roll'
-                stats.actions.push '> F-Coordinate'
+                stats.actions.push '*R> Calculate'
        }
        {
             name: "Ion Limiter Override"
@@ -12568,6 +12572,18 @@ exportObj.basicCardData = ->
             charge: 3
             points: 200
             applies_condition: 'Concussion Bomb'.canonicalize()
+       }
+       {
+            name: "Target-Assist MGK-300"
+            id: 356
+            slot: "Configuration"
+            ship: "TIE/rb Heavy"
+            faction: "Galactic Empire"
+            points: 200
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate'
+                stats.actions.push '*Rotate Arc'
+                stats.actions.push '> Calculate'
        }
     ]
 
