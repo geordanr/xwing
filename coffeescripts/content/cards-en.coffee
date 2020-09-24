@@ -814,7 +814,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you defend, if there is an enemy ship at range 0-1, add 1&nbsp;%EVADE% result to your dice results."""
         "Norra Wexley":
            display_name: """Norra Wexley"""
-           text: """While you defend, if there is an enemy ship at range 0-1, you may add 1&nbsp;%EVADE% result to your dice results."""
+           text: """While you defend, if there is an enemy ship at range 0-1, add 1&nbsp;%EVADE% result to your dice results. %LINEBREAK% <i>Errata (since rules reference 1.0.2): Removed “you may”</i>"""
         "Nu Squadron Pilot":
            display_name: """Nu Squadron Pilot"""
            text: """<i class = flavor_text>With a design inspired by other Cygnus Spaceworks vessels, the Alpha-class star wing is a versatile craft assigned to Imperial Navy specialist units that need a starfighter they can outfit for multiple roles.</i>"""
@@ -1328,7 +1328,7 @@ exportObj.cardLoaders.English = () ->
         "K-2SO":
            text: """After you gain a stress token, gain 1 calculate token."""
         "Alexsandr Kallus":
-           text: """While you defend, if the attacker modified any attack dice, you may roll 1 additional defense die."""
+           text: """While you defend, if the attacker modified any attack dice, you may roll 1 additional defense die. %LINEBREAK%<strong>Tail Gun:</strong> While you have a docked ship, you have a primary %REARARC% weapon with an attack value equal to your docked ship’s primary %FRONTARC% attack value. <br><i>Errata (since rules reference 1.2.0): Added missing ship ability"""
         "Leia Organa":
            text: """After a friendly ship fully executes a red maneuver, if it is at range 0-3, you may spend 1 %FORCE%. If you do, that ship gains 1 focus token or recovers 1 %FORCE%."""
         "Paige Tico":
@@ -2523,6 +2523,10 @@ exportObj.cardLoaders.English = () ->
         'Ion Bomb':
            text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship at range 0–1 gains 3 ion tokens, and each remote at range 0–1 suffers 1 %HIT% damage.'''
         'Concussion Bomb':
-           text: '''(Bomb Token) - BOOM BOOM.'''
+           text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship and remote at range 0–1 is dealt 1 facedown damage card. Then, each ship at range 0–1 must expose 1 damage card unless it chooses to gain 1 strain token.'''
+        'Thermal Detonator':
+           text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship and remote at range 0–1 rolls 1 attack die. Each ship gains 1 strain token for each %FOCUS% result, and each ship and remote suffers 1 %HIT%/%CRIT% damage for each matching result.'''
+        'Sensor Buoy':
+           text: '''INIT: 0 <br>AGILITY: 3 <br>HULL: 2 %LINEBREAK% (Remote) - Sensor buoys are remotes that come in pairs (one red, and one blue, each with its own remote card), and are placed by the <strong>Sensor Buoy Suite</strong> upgrade card. Beyond being remotes and interacting with that card, they have no additional rules.'''
             
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations

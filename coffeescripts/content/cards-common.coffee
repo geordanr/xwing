@@ -12522,6 +12522,7 @@ exportObj.basicCardData = ->
             skip: true
             slot: "Configuration"
             points: 200
+            applies_condition: 'Thermal Detonator'.canonicalize()
        }
        {
             name: "R2-D2 (Republic)"
@@ -12598,6 +12599,7 @@ exportObj.basicCardData = ->
             points: 4
             restriction_func: (ship) ->
                 ship.data.large? or ship.data.medium?
+            applies_condition: 'Sensor Buoy'.canonicalize()
        }
        {
             name: "Suppressive Gunner"
@@ -12817,6 +12819,14 @@ exportObj.basicCardData = ->
         {
             name: 'Concussion Bomb'
             id: 21
+        }
+        {
+            name: 'Thermal Detonator'
+            id: 22
+        }
+        {
+            name: 'Sensor Buoy'
+            id: 23
         }
     ]
 
