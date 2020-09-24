@@ -8551,13 +8551,12 @@ exportObj.basicCardData = ->
             ship: "HMP Droid Gunship"
             points: 40
             slots: [
-                "Talent"
-                "Cannon"
-                "Cannon"
                 "Missile"
                 "Missile"
                 "Tactical Relay"
+                "Crew"
                 "Device"
+                "Modification"
                 "Configuration"
             ]
         }
@@ -18697,7 +18696,7 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'TIE/FO Fighter', faction: 'First Order'}
     {name: 'TIE/VN Silencer', faction: 'First Order'}
     {name: 'TIE/SF Fighter', faction: 'First Order'}
-    {name: '"Xi-class Light Shuttle"', faction: 'First Order'}
+    {name: 'Xi-class Light Shuttle', faction: 'First Order'}
     {name: 'Delta-7 Aethersprite', faction: 'Galactic Republic'}
     {name: 'ARC-170', faction: 'Galactic Republic'}
     {name: 'Naboo Royal N-1 Starfighter', faction: 'Galactic Republic'}
@@ -18708,7 +18707,7 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'Hyena-Class Droid Bomber', faction: 'Separatist Alliance'}
     {name: 'Sith Infiltrator', faction: 'Separatist Alliance'}
     {name: 'Nantex-Class Starfighter', faction: 'Separatist Alliance'}
-    {name: '"HMP Droid Gunship"', faction: 'Separatist Alliance'}
+    {name: 'HMP Droid Gunship', faction: 'Separatist Alliance'}
     {name: 'Belbullab-22 Starfighter', faction: 'Separatist Alliance'}
 ]
 

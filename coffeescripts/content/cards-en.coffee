@@ -1426,7 +1426,7 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Setup:</strong> After placing forces, choose any number of your equipped %ILLICIT% upgrades and equip them to friendly TIE/fo or TIE/sf fighters. Each ship can be assigned only 1 %ILLICIT% this way. %LINEBREAK% <strong>End of Game:</strong> Return all %ILLICIT% upgrades to their original ships."""
         "Commander Malarus (Xi Shuttle)":
            display_name: """Commander Malarus"""
-           text: """While a friendly ship at range 0-2 performs a primary attack, if it has 1 or more blank results, that ship <b>must</b> gain 1 strain token to reroll 1 bank result, if able."""
+           text: """While a friendly ship at range 0-2 performs a primary attack, if it has 1 or more blank results, that ship <b>must</b> gain 1 strain token to reroll 1 blank result, if able."""
         "Gideon Hask (Xi Shuttle)":
            display_name: """Gideon Hask"""
            text: """While you or a friendly small ship at range 0-2 performs a primary attack against a damaged defender, if the attacker rolled 2 or fewer attack dice, it may gain 1 strain token to roll 1 additiional attack die."""
