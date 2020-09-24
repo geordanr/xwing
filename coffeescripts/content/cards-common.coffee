@@ -12579,6 +12579,7 @@ exportObj.basicCardData = ->
        {
             name: "Commander Malarus"
             id: 347
+            unique: true
             faction: "First Order"
             slot: "Crew"
             points: 7
@@ -12621,6 +12622,9 @@ exportObj.basicCardData = ->
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Gunner"
             also_occupies_upgrades: [ "Gunner" ]
+            modifier_func: (stats) ->
+                stats.actions.push '*Rotate Arc'
+                stats.actions.push 'R> Focus'
        }
        {
             name: "Wolf Pack"
