@@ -814,7 +814,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you defend, if there is an enemy ship at range 0-1, add 1&nbsp;%EVADE% result to your dice results."""
         "Norra Wexley":
            display_name: """Norra Wexley"""
-           text: """While you defend, if there is an enemy ship at range 0-1, you may add 1&nbsp;%EVADE% result to your dice results."""
+           text: """While you defend, if there is an enemy ship at range 0-1, add 1&nbsp;%EVADE% result to your dice results. %LINEBREAK% <i>Errata (since rules reference 1.0.2): Removed “you may”</i>"""
         "Nu Squadron Pilot":
            display_name: """Nu Squadron Pilot"""
            text: """<i class = flavor_text>With a design inspired by other Cygnus Spaceworks vessels, the Alpha-class star wing is a versatile craft assigned to Imperial Navy specialist units that need a starfighter they can outfit for multiple roles.</i>"""
@@ -1328,7 +1328,7 @@ exportObj.cardLoaders.English = () ->
         "K-2SO":
            text: """After you gain a stress token, gain 1 calculate token."""
         "Alexsandr Kallus":
-           text: """While you defend, if the attacker modified any attack dice, you may roll 1 additional defense die."""
+           text: """While you defend, if the attacker modified any attack dice, you may roll 1 additional defense die. %LINEBREAK%<strong>Tail Gun:</strong> While you have a docked ship, you have a primary %REARARC% weapon with an attack value equal to your docked ship’s primary %FRONTARC% attack value. <br><i>Errata (since rules reference 1.2.0): Added missing ship ability"""
         "Leia Organa":
            text: """After a friendly ship fully executes a red maneuver, if it is at range 0-3, you may spend 1 %FORCE%. If you do, that ship gains 1 focus token or recovers 1 %FORCE%."""
         "Paige Tico":
@@ -1399,7 +1399,7 @@ exportObj.cardLoaders.English = () ->
         "DIS-T81":
            text: """ %LINEBREAK%<strong>Networked Calculations:</strong> While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range&nbsp;0-1 to change 1&nbsp;%FOCUS% result to an %EVADE% or %HIT% result."""
         "Lyttan Dree":
-           text: """While a friendly ship at range 0-2 performs an attack, if you are in the defender's %LEFTSIDEARC% or %RIGHTSIDEARC%, the attacker may reroll 1 attack die. %LINEBREAK% <strong>Rotating Cannons:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You must treat the %FRONTARC% requirement of your equipped %CANNON% upgrades as %SINGLETURRETARC%."""
+           text: """While a friendly ship at range 0-2 performs an attack, if you are in the defender's %LEFTARC% or %RIGHTARC%, the attacker may reroll 1 attack die. %LINEBREAK% <strong>Rotating Cannons:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You must treat the %FRONTARC% requirement of your equipped %CANNON% upgrades as %SINGLETURRETARC%."""
         '"Rampage"':
            text: """After you execute a speed 3-4 maneuver, you may choose a ship in your %SINGLETURRETARC% at range 0-1. If you do, that ship gains 1 strain token, or 2 strain tokens if you are damaged. %LINEBREAK% <strong>Rotating Cannons:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You must treat the %FRONTARC% requirement of your equipped %CANNON% upgrades as %SINGLETURRETARC%."""
         "Onyx Squadron Sentry":
@@ -1410,13 +1410,23 @@ exportObj.cardLoaders.English = () ->
            text: """After a friendly ship at range 0-2 performs an action during its activation, you may spend 2 %CHARGE%. If you do, that ship may perform a white action, treating it as red. %LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
         "Temmin Wexley (HoH)":
            text: """At the start of the Engagement Phase, each friendly T-70 X-wing at range 0-3 may gain 1 strain token to flip its equipped %CONFIGURATION% upgrade. If it does, that ship gains 1 calculate token. %LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
+        "C'ai Threnalli":
+           text: """After you fully execute a maneuver, if you moved through a friendly ship, you may perform an %EVADE% action. %LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
+        "Nimi Chereen":
+           text: """While you perform an attack, if the defender's initiative is higher than yours, you may change 1 blank result to a %FOCUS% result. %LINEBREAK%<strong>Weapon Hardpoint:</strong> You can equip 1&nbsp;%CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
         "Merl Cobben":
            text: """While a friendly ship at range 0-2 performs a primary attack, if you are in the defender's %BULLSEYEARC%, the defender rolls 1 fewer defense die. %LINEBREAK%<strong>Refined Gyrostabilizers:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. After you perform an action, you may perform a red %BOOST% or red %ROTATEARC% action."""
+        "Seftin Vanik":
+           text: """After you perform a %BOOST% action, you may transfer 1 evade token to a friendly ship at range 1. %LINEBREAK%<strong>Refined Gyrostabilizers:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. After you perform an action, you may perform a red %BOOST% or red %ROTATEARC% action."""
+        "Suralinda Javos":
+           text: """After you partially execute a maneuver, you may gain 1 strain token to rogate 90º or 180º. %LINEBREAK%<strong>Refined Gyrostabilizers:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. After you perform an action, you may perform a red %BOOST% or red %ROTATEARC% action."""
+        "Wrobie Tyce":
+           text: """After you defend at attack range 1, if the attacker modified its dice, the attacker gains 1 deplete token. %LINEBREAK%<strong>Refined Gyrostabilizers:</strong> You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. After you perform an action, you may perform a red %BOOST% or red %ROTATEARC% action."""
         "Agent Terex":
            text: """<strong>Setup:</strong> After placing forces, choose any number of your equipped %ILLICIT% upgrades and equip them to friendly TIE/fo or TIE/sf fighters. Each ship can be assigned only 1 %ILLICIT% this way. %LINEBREAK% <strong>End of Game:</strong> Return all %ILLICIT% upgrades to their original ships."""
         "Commander Malarus (Xi Shuttle)":
            display_name: """Commander Malarus"""
-           text: """While a friendly ship at range 0-2 performs a primary attack, if it has 1 or more blank results, that ship <b>must</b> gain 1 strain token to reroll 1 bank result, if able."""
+           text: """While a friendly ship at range 0-2 performs a primary attack, if it has 1 or more blank results, that ship <b>must</b> gain 1 strain token to reroll 1 blank result, if able."""
         "Gideon Hask (Xi Shuttle)":
            display_name: """Gideon Hask"""
            text: """While you or a friendly small ship at range 0-2 performs a primary attack against a damaged defender, if the attacker rolled 2 or fewer attack dice, it may gain 1 strain token to roll 1 additiional attack die."""
@@ -1680,7 +1690,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you drop, launch or place a bomb or mine, you may place 1 fuse marker on that device."""
         "Delta-7B":
            display_name: """Delta-7B"""
-           text: """<i class = flavor_text>The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</i>"""
+           text: """<i>Adds 1 attack and 2 shields. Removes 1 agility. %LINEBREAK%</i><i class = flavor_text>The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</i>"""
         "Dengar":
            display_name: """Dengar"""
            text: """<i>Scum only</i>%LINEBREAK%After you defend, if the attacker is in your firing arc, you may spend 1&nbsp;%CHARGE%. If you do, roll 1 attack die unless the attacker chooses to remove 1 green token. On a %HIT% or %CRIT% result, the attacker suffers 1&nbsp;%HIT% damage."""
@@ -2246,7 +2256,7 @@ exportObj.cardLoaders.English = () ->
         "Suppressive Gunner":
            text: """While you perform an attack, you may spend 1 %FOCUS% result. If you do, the defender gains 1 deplete token unless it chooses to suffer 1 %HIT% damage."""
         "Ghost Company":
-           text: """<i>Requires %ROTATEARC%</i> %LINEBREAK% After you perform a primary attack, if you are focused, you may perform a %SINGLETURRETARC% attack against a ship you have not attacked this round as a bonus attack."""
+           text: """<i>Requires %ROTATEARC%</i>, <i>Adds %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%FOCUS%</r></i> %LINEBREAK% After you perform a primary attack, if you are focused, you may perform a %SINGLETURRETARC% attack against a ship you have not attacked this round as a bonus attack."""
         "Wolf Pack":
            text: """After a friendly ship at range 0-3 defends, if the attacker is in your firing arc, the defender may gain 1 strain token to acquire a lock on the attacker."""
         "Yoda":
@@ -2259,14 +2269,16 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Adds %FOCUS% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <f>%COORDINATE%</f></i> %LINEBREAK% While an enemy ship in your %BULLSEYEARC% performs an attack, if the defender is friendly and at range 0-2, the defender may change 1 blank result to a %FOCUS% result."""
         "Repulsorlift Stabilizers":
            text: """<strong>Inactive: Setup:</strong> Equip this side faceup. Reduce the difficulty of your straight (%STRAIGHT%) maneuvers. %LINEBREAK% After you fully execute a maneuver, you may flip this card. %LINEBREAK%<strong>Active: </strong> After you reveal a bank (%BANKLEFT% or %BANKRIGHT%) or turn (%TURNLEFT% or %TURNRIGHT%), you <b>must</b> perform that maneuver as a slideslip, then flip this card. %LINEBREAK% After you fully execute a non-sideslip maneuver, you may flip this card."""
-        "Multi-Missle Pods":
+        "Multi-Missile Pods":
            text: """<strong>Attack (%CALCULATE% or %LOCK%):</strong> Spend 1 %CHARGE%. If the defender is in your %FRONTARC%, you may spend 1 %CHARGE% to roll 1 additional attack die. If the defender is in your %BULLSEYEARC%, you may spend up to 2 %CHARGE% to roll that many additional attack dice instead."""
         "Synced Laser Cannons":
            text: """<strong>Attack:</strong> If you are calculating, the defender does not apply the range bonus."""
         "Concussion Bombs":
            text: """During the System Phase, if any of this card's %CHARGE% are inactive, you <b>must</b> spend 1 %CHARGE% to drop 1 concussion bomb, if able. Otherwise, you may spend 1 %CHARGE% to drop 1 concussion bomb."""
         "Maneuver-Assist MGK-300":
-           text: """Reduce the difficulty of your 3 straight (%STRAIGHT%) and bank (%BANKLEFT% or %BANKRIGHT%) maneuvers."""
+           text: """<i>Adds %CALCULATE%, %BARRELROLL% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%CALCULATE%</r></i>%LINEBREAK% Reduce the difficulty of your 3 straight (%STRAIGHT%) and bank (%BANKLEFT% or %BANKRIGHT%) maneuvers."""
+        "Target-Assist MGK-300":
+           text: """<i>Adds %CALCULATE%, %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%</i>%LINEBREAK% Before you engage, if you have no green tokens and you are not stressed, gain 1 calculate token for each enemy ship at range 2-3 in your firing arc, to a maximum of 2."""
         "Deadeye Shot":
            text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, you may spend 1 %HIT% result or change 1 %CRIT% result to a %HIT% result. If you do, the defender exposes 1 of its damage cards."""
         "Ion Limiter Override":
@@ -2287,8 +2299,16 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform a %BOOST% action, you may spend 1 %FORCE% to use the turn template instead."""
         "Starbird Slash":
            text: """After you fully execute a maneuver, you may choose 1 enemy ship you moved through. That ship gains 1 strain token. Then, if you are in that ship's firing arc, you gain 1 strain token."""
+        "Backwards Tailslide":
+           text: """While you boost or barrel roll, if your equipped %CONFIGURATION% upgrade has the "(Closed)" side faceup, you can move through and overlap obstacles. %LINEBREAK% After you boost or barrel roll through an obstacle, if you are not at range 0 of it, gain 1 evade token. """
         "Overdrive Thruster":
            text: """While you perform a red %BOOST%. %BARRELROLL%, or %SLAM% action, you <b>must</b> use a template of 1 speed higher if able."""
+        "R2-D2 (Resistance)":
+           text: """During the End Phase, you may spend 1 %CHARGE% and 1 %SHIELD% to remove 1 red token. %LINEBREAK% During the End Phase, if you have no active %SHIELD%, you may spend 2 %CHARGE% to recover 1 %SHIELD% aqnd gain 1 deplete token."""
+        "R6-D8":
+           text: """While you perform an attack, you may reroll a number of attack dice up to the number of friendly ships at range 0-3 that have the defender in their %BULLSEYEARC%."""
+        "Underslung Blaster Cannon":
+           text: """After an enemy ship executes a maneuver, you may perform this attack against it as a bonus attack. %LINEBREAK% <strong>Attack (%LOCK%):</strong> Your dice can be modified only by spending a lock for the default effect."""
         "Commander Pyre":
            text: """<strong>Setup:</strong> After placing forces, choose an enemy ship. It gains 2 stress tokens. %LINEBREAK% While you defend, if the attacker is stressed, you may reroll 1 defense die."""
         "Commander Malarus":
@@ -2503,6 +2523,10 @@ exportObj.cardLoaders.English = () ->
         'Ion Bomb':
            text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship at range 0–1 gains 3 ion tokens, and each remote at range 0–1 suffers 1 %HIT% damage.'''
         'Concussion Bomb':
-           text: '''(Bomb Token) - When this device detonates, each ship and remote at range 0–1 is dealt a facedown damage card. Then, each ship at range 0–1 must expose a damage card unless it gains a strain token.'''
+           text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship and remote at range 0–1 is dealt 1 facedown damage card. Then, each ship at range 0–1 must expose 1 damage card unless it chooses to gain 1 strain token.'''
+        'Thermal Detonator':
+           text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship and remote at range 0–1 rolls 1 attack die. Each ship gains 1 strain token for each %FOCUS% result, and each ship and remote suffers 1 %HIT%/%CRIT% damage for each matching result.'''
+        'Sensor Buoy':
+           text: '''INIT: 0 <br>AGILITY: 3 <br>HULL: 2 %LINEBREAK% (Remote) - Sensor buoys are remotes that come in pairs (one red, and one blue, each with its own remote card), and are placed by the <strong>Sensor Buoy Suite</strong> upgrade card. Beyond being remotes and interacting with that card, they have no additional rules.'''
             
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
