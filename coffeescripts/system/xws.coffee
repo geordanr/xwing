@@ -129,6 +129,8 @@ class exportObj.XWSManager
         @to_xws_button.click (e) =>
             e.preventDefault()
             $(window).trigger 'xwing:pingActiveBuilder', (builder) =>
+                builder.showXWSModal 'bla'
+                return
                 textarea = $ @xws_export_modal.find('.xws-content')
                 textarea.attr 'readonly'
                 textarea.val JSON.stringify(builder.toXWS())
