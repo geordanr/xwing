@@ -50,7 +50,7 @@ exportObj.translations.English =
         "Tech": "Tech"
         "Title": "Title"
         "Tactical Relay": "Tactical Relay"
-    
+
     sources: # needed?
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
@@ -1431,7 +1431,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """Gideon Hask"""
            text: """While you or a friendly small ship at range 0-2 performs a primary attack against a damaged defender, if the attacker rolled 2 or fewer attack dice, it may gain 1 strain token to roll 1 additiional attack die."""
 
-            
+
         # Epic Ships
         "Republic Judiciary":
            display_name: """Republic Judiciary"""
@@ -1463,8 +1463,8 @@ exportObj.cardLoaders.English = () ->
         "Syndicate Smugglers":
            display_name: """Syndicate Smugglers"""
            text: """<i class = flavor_text>Vessels like the C-ROC Cruiser allow criminal operations across the Outer Rim to move massive amounts of illicit materials, or project power that can bully small colonies into compliance.</i> %LINEBREAK% <strong>Overdrive Burners:</strong> While you defend, if your revealed maneuver is speed 3-5, roll 1 additional defense die."""
-            
-            
+
+
 
     upgrade_translations =
         "0-0-0":
@@ -2208,7 +2208,7 @@ exportObj.cardLoaders.English = () ->
         "Angled Deflectors":
            display_name: """Angled Deflectors"""
            text: """<i>Requires: Small or Medium Ship with at least 1 shield %LINEBREAK% Adds %REINFORCE% </i>%LINEBREAK% <strong>Removes:</strong> 1 Shield """
-            
+
         "C1-10P":
            display_name: """C1-10P"""
            text: """<strong>C1-10P: </strong>Setup: Equip this side faceup. %LINEBREAK% After you execute a maneuver, you may spend 1 %CHARGE% to perform a red %EVADE% action, even while stressed. %LINEBREAK% During the End Phase, if this card has 0 active %CHARGE%, flip it. %LINEBREAK% <strong>C1-10P (Erratic):</strong> After you execute a maneuver, you <strong>must</strong> choose a ship at range 0-1. It gains 1 jam token."""
@@ -2257,7 +2257,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform an attack, you may spend 1 %FOCUS% result. If you do, the defender gains 1 deplete token unless it chooses to suffer 1 %HIT% damage."""
         "Ghost Company":
            text: """<i>Requires %ROTATEARC%</i>, <i>Adds %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%FOCUS%</r></i> %LINEBREAK% After you perform a primary attack, if you are focused, you may perform a %SINGLETURRETARC% attack against a ship you have not attacked this round as a bonus attack."""
-        "Wolf Pack":
+        "Wolfpack":
            text: """After a friendly ship at range 0-3 defends, if the attacker is in your firing arc, the defender may gain 1 strain token to acquire a lock on the attacker."""
         "Yoda":
            text: """<i>Adds <f>%COORDINATE%</f></i> %LINEBREAK% After another friendly ship at range 0-2 fully executes a purple maneuver or performs a purple action, you may spend 1 %FORCE%. If you do, that ship recovers 1 %FORCE%."""
@@ -2478,9 +2478,9 @@ exportObj.cardLoaders.English = () ->
         "Corsair Refit":
            display_name: """Corsair Refit"""
            text: """<i>Adds 2 hull and 1 energy. Removes 2 shields. %LINEBREAK%</i> Adds %CANNON%, %TURRET%, and %MISSILE% slots. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY% to perform a %CANNON%, %TURRET%, or %MISSILE% attack."""
-            
-            
-        
+
+
+
     condition_translations =
         'Suppressive Fire':
            text: '''While you perform an attack against a ship other than <strong>Captain Rex</strong>, roll 1 fewer attack die. %LINEBREAK% After <strong>Captain Rex</strong> defends, remove this card.  %LINEBREAK% At the end of the Combat Phase, if <strong>Captain Rex</strong> did not perform an attack this phase, remove this card. %LINEBREAK% After <strong>Captain Rex</strong> is destroyed, remove this card.'''
@@ -2492,7 +2492,7 @@ exportObj.cardLoaders.English = () ->
            text: '''After a bomb or mine at range 0-1 detonates, suffer 1 %CRIT%. Then, remove this card. %LINEBREAK% Action: If there are no bombs or mines at range 0-1, remove this card.'''
         'Optimized Prototype':
            text: '''While you perform a %FRONTARC% primary attack against a ship locked by a friendly ship with the <strong>Director Krennic</strong> upgrade, you may spend 1 %HIT%/%CRIT%/%FOCUS% result. If you do, choose one: the defender loses 1 shield or the defender flips 1 of its facedown damage cards.'''
-        '''I'll Show You the Dark Side''': 
+        '''I'll Show You the Dark Side''':
            text: ''' When this card is assigned, if there is no faceup damage card on it, the player who assigned it searches the damage deck for 1 Pilot damage card and places it faceup on this card. Then shuffle the damage deck. When you would suffer 1 %CRIT% damage, you are instead dealt the faceup damage card on this card. Then, remove this card. '''
         'Proton Bomb':
            text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship and remote at range 0–1 suffers 1 %CRIT% damage.%LINEBREAK%<i>Errata (Official Rulings Thread 03/2019): Added: "and remote"</i>'''
@@ -2528,5 +2528,5 @@ exportObj.cardLoaders.English = () ->
            text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship and remote at range 0–1 rolls 1 attack die. Each ship gains 1 strain token for each %FOCUS% result, and each ship and remote suffers 1 %HIT%/%CRIT% damage for each matching result.'''
         'Sensor Buoy':
            text: '''INIT: 0 <br>AGILITY: 3 <br>HULL: 2 %LINEBREAK% (Remote) - Sensor buoys are remotes that come in pairs (one red, and one blue, each with its own remote card), and are placed by the <strong>Sensor Buoy Suite</strong> upgrade card. Beyond being remotes and interacting with that card, they have no additional rules.'''
-            
+
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
