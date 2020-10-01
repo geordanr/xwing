@@ -55,42 +55,6 @@ class exportObj.XWSManager
             </div>
         """
 
-        @xws_export_modal = $ document.createElement 'DIV'
-        @xws_export_modal.addClass 'modal fade xws-modal d-print-none'
-        @xws_export_modal.tabindex = "-1"
-        @xws_export_modal.role = "dialog"
-        @container.append @xws_export_modal
-        @xws_export_modal.append $.trim """
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>XWS Export</h3>
-                <button type="button" class="close d-print-none" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                <ul class="nav nav-pills">
-                    <li><a id="xws-text-tab" href="#xws-text" data-toggle="tab">Text</a></li>
-                    <li><a id="xws-qrcode-tab" href="#xws-qrcode" data-toggle="tab">QR Code</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane" id="xws-text">
-                        Copy and paste this into an XWS-compliant application to transfer your list.
-                        <i>XWS is a way to share X-Wing squads between applications, e.g. YASB and LaunchBay Next</i>
-                        <div class="container-fluid">
-                            <textarea class="xws-content"></textarea>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="xws-qrcode">
-                        Below is a QR Code of XWS</i>
-                        <div id="xws-qrcode-container"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer d-print-none">
-            </div>
-        </div>
-    </div>
-        """
 
         @xws_import_modal = $ document.createElement 'DIV'
         @xws_import_modal.addClass 'modal fade xws-modal d-print-none'
@@ -130,20 +94,6 @@ class exportObj.XWSManager
             e.preventDefault()
             $(window).trigger 'xwing:pingActiveBuilder', (builder) =>
                 builder.showXWSModal 'bla'
-                return
-                textarea = $ @xws_export_modal.find('.xws-content')
-                textarea.attr 'readonly'
-                textarea.val JSON.stringify(builder.toXWS())
-                $('#xws-qrcode-container').text ''
-                $('#xws-qrcode-container').qrcode
-                    render: 'canvas'
-                    text: JSON.stringify(builder.toMinimalXWS())
-                    ec: 'L'
-                    size: 256
-                @xws_export_modal.modal 'show'
-                $('#xws-text-tab').tab 'show'
-                textarea.select()
-                textarea.focus()
 
         $('#xws-qrcode-container').click (e) ->
             window.open $('#xws-qrcode-container canvas')[0].toDataURL()
