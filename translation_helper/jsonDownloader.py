@@ -4,7 +4,7 @@ import json
 import requests
 
 # A list of all languages (can be expanded)
-languages = ['de', 'en', 'fr', 'es', 'it', 'pl', 'pt']
+languages = ['de', 'en', 'fr', 'es', 'it', 'pl', 'pt', 'zh']
 
 # The user can decide whether to download all JSON files or to select one
 # language.

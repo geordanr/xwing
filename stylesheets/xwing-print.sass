@@ -9,14 +9,10 @@ $pilot-circle-border-width: 0.0625in
 $upgrade-circle-diameter: $pilot-circle-diameter * 0.75
 $upgrade-circle-border-width: 0.0625in
 
-@page
-  size: 8.5in 11in
-  margin: 0.5in
-
 body
   -webkit-print-color-adjust: exact
   color-adjust: exact !important
-  background-color: transparent !important
+  background-color: white
   zoom: 75%
 
 .modal-backdrop
@@ -35,6 +31,11 @@ body
 
       .xwing-miniatures-font
         color: black
+      .red
+        -webkit-text-stroke: 0.5px black
+        color: white
+      .force
+        color: gray
 
     .fancy-dial
       .svg-maneuver-triangle.svg-base-maneuver
@@ -49,11 +50,15 @@ body
         stroke: gray
       .svg-maneuver-inner.svg-red-maneuver
         stroke: black
+      .svg-maneuver-inner.svg-purple-maneuver
+        stroke: grey
       .svg-maneuver-outer.svg-base-maneuver
         stroke: black
       .svg-maneuver-outer.svg-modified-maneuver
         stroke: gray
       .svg-maneuver-stop.svg-red-maneuver
+        fill: black !important
+      .svg-maneuver-stop.svg-purple-maneuver
         fill: black !important
       .svg-maneuver-stop.svg-white-maneuver
         fill: white !important
@@ -74,11 +79,11 @@ body
     .fancy-dial table > tbody > tr > td
       border: 2px solid gray !important
 
-    i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield, i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-forcecharge, i.xwing-miniatures-font-charge, i.xwing-miniatures-font-doubleturretarc, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-fullfrontarc
+    i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-energy, i.xwing-miniatures-font-shield, i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-forcecharge, i.xwing-miniatures-font-charge, i.xwing-miniatures-font-doubleturretarc, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-fullfrontarc
       background: white
     
     .upgrade-attack
-      .xwing-miniatures-font-attack, i.xwing-miniatures-font-doublearcturret, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-fullfrontarc 
+      .xwing-miniatures-font-attack, i.xwing-miniatures-font-doubleturretarc, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-fullfrontarc 
         background: black
         color: white
 
@@ -105,28 +110,29 @@ body
 
   .fancy-header
     border: $fancy-header-height solid #4e4e4e
-    color: white
+    color: white !important
     border-left-color: transparent
     border-top-color: transparent
     border-right-color: transparent
     font-family: EurostileStandard, Impact, sans-serif
 
     .squad-name
-      color: white
       position: absolute
-      font-size: $fancy-header-height * 0.8
-      margin-top: $fancy-header-height * 0.25
+      font-size: $fancy-header-height * 0.75
+      margin-top: $fancy-header-height * 0.1
       font-weight: 100
+    
+      .xwing-miniatures-font
+        font-size: $fancy-header-height * 0.7
 
     .squad-faction
       position: absolute
-      margin-top: $fancy-header-height * 0.2
+      margin-top: 0
       right: $header-circle-diameter * 1.75
       font-weight: 100
 
       .xwing-miniatures-font
-        color: white
-        font-size: $fancy-header-height * 0.8
+        font-size: $fancy-header-height * 0.7
 
     .mask
       position: absolute
@@ -183,8 +189,8 @@ body
 
       .pilot-header-text
         position: absolute
-        font-size: $fancy-pilot-header-height * 0.8
-        margin-top: -($fancy-pilot-header-height * 0.8)
+        font-size: $fancy-pilot-header-height * 0.75
+        margin-top: -($fancy-pilot-header-height * 1.3)
         font-weight: 100
 
         .fancy-ship-type
@@ -200,7 +206,7 @@ body
         top: -$fancy-pilot-header-height
         width: $pilot-circle-diameter
         background-color: white
-        height: $fancy-pilot-header-height * 2
+        height: $fancy-pilot-header-height * 2.2
         z-index: 999
 
       .outer-circle
@@ -239,8 +245,8 @@ body
         
         .xwing-miniatures-font
           vertical-align: middle
-        .red
-          -webkit-text-stroke: 0.1px white
+        .action
+          color: black
 
       .info-data, .xwing-miniatures-font
         position: relative
@@ -279,7 +285,7 @@ body
           display: inline-block
           vertical-align: middle
           width: $upgrade-circle-diameter
-          height: $upgrade-circle-diameter
+          height: $upgrade-circle-diameter * 1.1
           z-index: 999
           margin-right: 0.04in
 

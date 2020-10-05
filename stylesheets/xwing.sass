@@ -38,7 +38,27 @@ $charge_color: #C2B230
 body
   background-color: #202020
   font-family: EurostileStandard
-    
+  color: white
+  overflow-x: hidden
+  overflow-y: scroll
+  font-size: 0.9em
+
+.notes-container
+  padding-right: 0px
+  padding-left: 0px
+
+.btn
+  font-size: 1em
+
+.btn-inverse, .btn-modal:hover
+  font-size: 1em
+  background-color: #337ab7
+  color: white
+
+
+.button-container
+  padding-right: 0px
+
 button
   font-family: EurostileStandard
 
@@ -54,6 +74,12 @@ strong
 [tooltip]:hover:before
   opacity: 1
 
+.squad-description .span4
+  text-align: right
+
+.div .tags-display, .div .squad-display-mode
+  overflow-x: scroll
+
 em
   font-family: EurostileStandardOblique
   font-style: normal
@@ -63,20 +89,32 @@ strong em, em strong
   font-style: normal
   font-weight: normal
 
+.side-button
+  margin-top: 5px
+
+.points-destroyed
+  padding: 2.5px 8px
+
 .flavor_text 
   display: none
 
 .xwing-card-browser .flavor_text
   display: unset
 
-.ship-container > .row-fluid
+.ship-container > .row
   padding: 10px 0px
 
+.right-col
+  text-align: right
+    
+.full-row
+  width: 100%
+    
 .card-stat
   font-family: kimberley
   font-size: 1.5em
 
-.info-data.info-skill
+.info-data.info-skill, .info-data.info-engagement
   @extend .card-stat
   color: $pilot_skill_color
 
@@ -93,13 +131,16 @@ strong em, em strong
   cellspacing: 3px
     
 td.info-header
+  width: 50px
   padding: 3px
 
-i.xwing-miniatures-font-focus
-  font-size: 8px
-
 i.xwing-miniatures-font
-//  color: black 
+  position: relative
+  bottom: 0.2em
+    
+i.xwing-miniatures-font-focus
+  font-size: 0.8em
+
 
 i.xwing-miniatures-font-rebel, i.xwing-miniatures-font-empire, i.xwing-miniatures-font-scum, i.xwing-miniatures-font-rebel-outline, i.xwing-miniatures-font-firstorder, i.xwing-miniatures-font-republic, i.xwing-miniatures-font-separatists
   font-size: 2.0em !important
@@ -112,13 +153,15 @@ i.header-attack
   @extend .card-icon
   color: $attack_color
 
-i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-bullseyearc, i.xwing-miniatures-font-fullfrontarc
-  padding-left: 6px
-  padding-right: 6px
+i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-bullseyearc, i.xwing-miniatures-font-fullfrontarc, i.xwing-miniatures-font-rightarc, i.xwing-miniatures-font-leftarc
+  padding-left: 9px
+  padding-right: 9px
+  padding-bottom: 7px
 
 i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-doubleturretarc
-  padding-left: 9px
-  padding-right: 10px
+  padding-left: 11px
+  padding-right: 11px
+  padding-bottom: 7px
 
 i.xwing-miniatures-font-rangebonusindicator
   font-size: 1.1em
@@ -126,41 +169,44 @@ i.xwing-miniatures-font-rangebonusindicator
 i.header-energy
   @extend .card-icon
   color: $energy_color
-  padding-left: 5px
-  padding-right: 5px
+  padding-left: 9px
+  padding-right: 9px
+  padding-bottom: 8px
 
 i.header-agility
   @extend .card-icon
   color: $agility_color
-  padding-left: 5px
-  padding-right: 4px
+  padding-left: 7px
+  padding-right: 7px
+  padding-bottom: 6px
 
 i.header-hull
   @extend .card-icon
   color: $hull_color
-  padding-left: 7px
-  padding-right: 7px
+  padding-left: 10px
+  padding-right: 10px
+  padding-bottom: 7px
 
 i.header-shield
   @extend .card-icon
   color: $shields_color
-  padding-left: 6px
-  padding-right: 6.5px
-  padding-bottom: 2px
+  padding-left: 8px
+  padding-right: 8px
+  padding-bottom: 8px
 
 i.header-force
   @extend .card-icon
   color: $force_color
-  padding-left: 5px
-  padding-right: 5px
-  padding-bottom: 5px
+  padding-left: 7px
+  padding-right: 7px
+  padding-bottom: 7px
 
 i.header-charge
   @extend .card-icon
   color: $charge_color
-  padding-left: 7px
-  padding-right: 7px
-  padding-bottom: 3px
+  padding-left: 9px
+  padding-right: 9px
+  padding-bottom: 7px
 
 i.header-range
   vertical-align: middle
@@ -201,6 +247,8 @@ i.header-range
 r
   color: $attack_color 
 
+f
+  color: $force_color
 
 .info-maneuvers table
   table-layout: fixed
@@ -238,13 +286,17 @@ r
   font-family: BankGothicHD
   font-style: italic
 
+.info-container
+  padding-right: 0px
+
 .info-well
   color: black
-  margin-top: 10px
+  margin-bottom: 15px
+  margin-right: 15px
+  padding: 8px
 
 .info-well table > tbody > tr > td:first-child
   font-weight: bold
-  vertical-align: top
   padding-right: 5px
 
 .info-text
@@ -283,8 +335,15 @@ div.tab-content
 .squad-list > li:hover
   background-color: #ccc
 
+upgrade-text
+  float: left
+  width: 90%
+
 select.card-selector
   width: 100%
+
+.wingmate-label
+  float: right
 
 .fancy-list .info-data
   vertical-align: middle
@@ -328,11 +387,23 @@ ul.nav
 
 input[type=number]
   width: 3em
-
-input[type=search].card-search-text
+  font-size: 1em
+  -moz-appearance: textfield
+    
+input[type=search].card-search-text, input[type=search].rule-search-text
   width: 90%
   min-width: 100px
   max-width: 230px
+
+.desired-points
+  background-color: #151515
+  color: white
+  border: none
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+  background-color: #151515
 
 .advanced-search-selection
   width: 90%
@@ -370,7 +441,16 @@ input[type=search].card-search-text
 .misc-settings-infoline
   color: green
 
+span.select2-chosen > i.xwing-miniatures-font
+  font-size: 1.1em
+
+.upgrade-box > .select2-container .select2-choice
+  width: 100%
+  margin-right: -200px
+
 .select2-results
+  max-height: 250px !important
+
   .select2-result-not-in-collection
     color: #a00
 
@@ -404,10 +484,8 @@ li.squad-summary
 .card-search-container
   color: black
 
-.nav-tabs > .active > a,
-.nav-tabs > .active > a:focus,
-.nav-tabs > .active > a:hover
-  background-color: lightgray
+.squad-save-buttons
+  margin-bottom: 10px
 
 .collection-inventory-content
   ul
@@ -416,11 +494,105 @@ li.squad-summary
 svg > g.maneuver.backwards
   transform: translate(200px, 200px) rotate(180deg)
 
-//.selectnav 
-//  display: none
+// New! For accessibility
 
-//@media screen and (max-width: 600px) 
-//  .js #select2-results
-//    display: none
-//  .js .selectnav
-//    display: block
+$common-spacing: 10px
+
+// Center the faction buttons in the top navbar
+#rebelTab, #empireTab, #scumTab, #resistanceTab, #firstorderTab, #republicTab, #separatistTab
+	padding-top: 5px
+
+// Add consistent ($common-spacing) padding to standardize the alignment of buttons in the UI
+#xws
+	margin-top: $common-spacing
+
+.view-as-text
+
+.xws-space
+	padding-left: 30px
+
+// Make the top nav bar look distinct
+.main-top-nav-bar
+	background-color: #101010
+	padding-bottom: 1px
+	padding-left: 4px
+	margin-bottom: $common-spacing
+
+.tabbable > .nav 
+    display: table
+    width: 100%
+
+.main-top-nav-bar > .nav-item 
+  float: left
+
+.nav-pills .nav-link.active
+  background-color: #337ab7
+
+.nav-item > .nav-link
+  padding-left: 0.75em
+  padding-right: 0.75em
+  padding-bottom: 0.0em
+  color: #337ab7
+
+.nav-item > .nav-link:hover
+  color: #FFF
+  background-color: #337ab7
+
+a.dropdown-item:Hover
+  color: #FFF
+  background-color: #337ab7
+
+// Move the conditions container, again, to use consistent padding
+.conditions-container
+	padding-left: $common-spacing
+
+.upgrade-text
+    float: left
+    width: 80%
+    margin: 5px
+
+// Add some padding in between ship rows
+.row .ship
+	padding-top: $common-spacing * 0.5
+	padding-bottom: $common-spacing * 0.5
+
+h6
+    padding-top: 10px
+    
+.squad-tag
+    margin-top: 15px
+    margin-bottom: 15px
+
+    
+// Style the squad points and name row to make it look distinct
+.squad-name-and-points-row
+	background-color: #151515
+	margin-bottom: $common-spacing
+
+.squad-buttons
+    text-align: right
+
+// Scrollbar
+::-webkit-scrollbar
+  width: 5px
+::-webkit-scrollbar-track
+  background: inherit
+::-webkit-scrollbar-thumb
+  background: #888
+::-webkit-scrollbar-thumb:hover
+  background: #555
+
+.form-group
+    margin-bottom: 1px
+
+.ship-query-modal, .pilot-query-modal, .upgrade-query-modal
+    padding: 0px 12px
+    
+.input-group-addon
+  padding: 1px
+
+.addon-container
+  display: flex
+  flex-wrap: wrap
+.upgrade-box
+  width: 50%

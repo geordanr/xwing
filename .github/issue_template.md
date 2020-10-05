@@ -1,7 +1,7 @@
 ## YASB 2.0 Bug Report
+If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times. 
 
-**Note:** If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times. 
-**Note 2:** I have been told from someone at FFG that the 0-0-0 and BT-1 are actually Hyperspace legal for scum as well. Don't @ me.
+**Note 1:** If you can't log in on safari, you may need to set your cookies settings to accept 3rd party cookies.
 
 ### Expected Behavior
 
