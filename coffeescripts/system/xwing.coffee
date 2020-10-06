@@ -252,7 +252,7 @@ class exportObj.SquadBuilder
                 <div class="col-md-5 float-right button-container">
                     <div class="btn-group float-right">
 
-                        <button class="btn btn-primary view-as-text"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;Print/View as Text</span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
+                        <button class="btn btn-info view-as-text"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;Print/Export</span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
                         <a class="btn btn-primary d-none collection"><span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Your Collection</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span></a>
                         <!-- Randomize button is marked as danger, since it creates a new squad -->
                         <button class="btn btn-danger randomize"><span class="d-none d-lg-block"><i class="fa fa-random"></i> Randomize!</span><span class="d-lg-none"><i class="fa fa-random"></i></span></button>
@@ -274,14 +274,51 @@ class exportObj.SquadBuilder
                     <button class="show-authenticated btn btn-primary save-list"><i class="far fa-save"></i>&nbsp;Save</button>
                     <button class="show-authenticated btn btn-primary save-list-as"><i class="far fa-file"></i>&nbsp;Save As...</button>
                     <button class="show-authenticated btn btn-primary delete-list disabled"><i class="fa fa-trash"></i>&nbsp;Delete</button>
-                    <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated"><i class="fa fa-download"></i>&nbsp;Load Squad</button>
+                    <button class="show-authenticated btn btn-info backend-list-my-squads show-authenticated"><i class="fa fa-download"></i>&nbsp;Load Squad</button>
+                    <button class="btn btn-info import-squad"><i class="fa fa-file-import"></i>&nbsp;Import</button>
                     <button class="btn btn-danger clear-squad"><i class="fa fa-plus-circle"></i>&nbsp;New Squad</button>
                     <span class="show-authenticated backend-status"></span>
                 </div>
             </div>
         '''
-
         @container.append @status_container
+
+        @xws_import_modal = $ document.createElement 'DIV'
+        @xws_import_modal.addClass 'modal fade import-modal d-print-none'
+        @xws_import_modal.tabindex = "-1"
+        @xws_import_modal.role = "dialog"
+        @xws_import_modal.append $.trim """
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>XWS Import</h3>
+                <button type="button" class="close d-print-none" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                Import your list via XWS into YASB.<br>
+                <i>XWS is a common format to share lists between applications.</i>
+                <div class="container-fluid">
+                    <textarea class="xws-content" placeholder="Paste XWS here"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer d-print-none">
+                <span class="xws-import-status"></span>&nbsp;
+                <button class="btn btn-danger import-xws">Import</button>
+            </div>
+        </div>
+    </div>
+        """
+        @from_xws_button = @container.find('button.import-squad')
+        @from_xws_button.click (e) =>
+            e.preventDefault()
+            @xws_import_modal.find('.xws-import-status').text ' '
+            @xws_import_modal.modal 'show'
+
+        @load_xws_button = $ @xws_import_modal.find('button.import-xws')
+        @load_xws_button.click (e) =>
+            e.preventDefault()
+            exportObj.loadXWSButton(@xws_import_modal)
+        @container.append @xws_import_modal
 
         @list_modal = $ document.createElement 'DIV'
         @list_modal.addClass 'modal fade text-list-modal'
@@ -335,11 +372,10 @@ class exportObj.SquadBuilder
                     <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
                 </div>
                 <div class="xws-list">
-                    <p>Copy and paste this into an XWS-compliant application to transfer your list.
-                    <i>XWS is a way to share X-Wing squads between applications, e.g. YASB and LaunchBay Next</i></p>
-                    <div class="row">
-                    <div class="column"><textarea></textarea><br /><button class="btn btn-modal btn-copy">Copy</button></div>
-                    <div class="column qrcode-container" id="xws-qrcode-container"></div>
+                    <p>Copy and paste this into an XWS-compliant application.
+                    <div class="row full-row">
+                        <div class="col d-inline-block d-none d-sm-block"><textarea></textarea><br /><button class="btn btn-modal btn-copy">Copy</button></div>
+                        <div class="col d-inline-block d-none d-sm-block qrcode-container" id="xws-qrcode-container"></div>
                     </div>
                 </div>
             </div>
@@ -964,12 +1000,11 @@ class exportObj.SquadBuilder
                         <span class="tag-name">Tag:</span>
                         <input type="search" class="squad-tag"></input>
                     </label>
+                    <div class="obstacles-container">
+                            <button class="btn btn-info choose-obstacles"><i class="fa fa-cloud"></i>&nbsp;Choose Obstacles</button>
+                    </div>
                 </div>
                 <div class="col-md-3 info-container" id="info-container">
-                </div>
-                <div class="col-md-12 obstacles-container">
-                        <!-- Since this is an optional button, usually, it's shown in a different color -->
-                        <button class="btn btn-info choose-obstacles"><i class="fa fa-cloud"></i>&nbsp;Choose Obstacles</button>
                 </div>
             </div>
         """

@@ -42,8 +42,8 @@ class exportObj.XWSManager
     constructor: (args) ->
         @container = $ args.container
 
-        @setupUI()
-        @setupHandlers()
+        # @setupUI()
+        # @setupHandlers()
 
     setupUI: ->
         @container.addClass 'd-print-none'
@@ -101,28 +101,31 @@ class exportObj.XWSManager
         @load_xws_button = $ @xws_import_modal.find('button.import-xws')
         @load_xws_button.click (e) =>
             e.preventDefault()
-            import_status = $ @xws_import_modal.find('.xws-import-status')
-            import_status.text 'Loading...'
-            do (import_status) =>
-                try
-                    xws = JSON.parse @xws_import_modal.find('.xws-content').val()
-                catch e
-                    import_status.text 'Invalid JSON'
-                    return
+            exportObj.loadXWSButton(@xws_import_modal)
 
-                do (xws) =>
-                    $(window).trigger 'xwing:activateBuilder', [exportObj.fromXWSFaction[xws.faction], (builder) =>
-                        if builder.current_squad.dirty and builder.backend?
-                            @xws_import_modal.modal 'hide'
-                            builder.backend.warnUnsaved builder, =>
-                                builder.loadFromXWS xws, (res) =>
-                                    unless res.success
-                                        @xws_import_modal.modal 'show'
-                                        import_status.text res.error
-                        else
+exportObj.loadXWSButton = (xws_import_modal) ->
+        import_status = $ xws_import_modal.find('.xws-import-status')
+        import_status.text 'Loading...'
+        do (import_status) =>
+            try
+                xws = JSON.parse xws_import_modal.find('.xws-content').val()
+            catch e
+                import_status.text 'Invalid JSON'
+                return
+
+            do (xws) =>
+                $(window).trigger 'xwing:activateBuilder', [exportObj.fromXWSFaction[xws.faction], (builder) =>
+                    if builder.current_squad.dirty and builder.backend?
+                        xws_import_modal.modal 'hide'
+                        builder.backend.warnUnsaved builder, =>
                             builder.loadFromXWS xws, (res) =>
-                                if res.success
-                                    @xws_import_modal.modal 'hide'
-                                else
+                                unless res.success
+                                    @xws_import_modal.modal 'show'
                                     import_status.text res.error
-                    ]
+                    else
+                        builder.loadFromXWS xws, (res) =>
+                            if res.success
+                                @xws_import_modal.modal 'hide'
+                            else
+                                import_status.text res.error
+                ]

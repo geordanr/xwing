@@ -107,6 +107,7 @@ exportObj.translations.English =
         '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Save as…'
         '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Delete'
         '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Load Squad'
+        '.import-squad' : '<i class="fa fa-file-import"></i>&nbsp;Import'
         '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;Print/Export List</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
         '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Your Collection</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
         '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> Randomize!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'
