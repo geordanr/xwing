@@ -7642,6 +7642,263 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "X-class Light Shuttle Expansion Pack": [
+        {
+            name: 'Xi-class Light Shuttle'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Commander Malarus (Xi Shuttle)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gideon Hask (Xi Shuttle)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Agent Terex'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'First Order Courier'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Agent Terex'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Commander Malarus'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Commander Pyre'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tactical Officer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Contraband Cybernetics'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Deadman's Switch"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Inertial Dampeners'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Rigged Cargo Chute'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Deadeye Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Snap Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Automated Target Priority'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Sensor Buoy Suite"
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "LAAT/i Gunship Expansion Pack": [
+        {
+            name: 'LAAT/i Gunship'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: '"Hawk"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Warthog"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Hound"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '212th Battalion Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Aayla Secura'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Fives"'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Kit Fisto'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Plo Koon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Yoda'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ghost Company'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Wolfpack'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Agile Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Clone Captain Rex'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Suppressive Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Multi-Missile Pods'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Deadeye Shot'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "HMP Droid Gunship Expansion Pack": [
+        {
+            name: 'HMP Droid Gunship'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Onderon Oppressor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DGS-286'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Geonosian Prototype'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DGS-047'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Separatist Predator'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Baktoid Drone'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Synced Laser Cannons'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Repulsorlift Stabilizers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Concussion Bombs'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Multi-Missile Pods'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Delayed Fuses'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Kalani'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+
     "Hotshots and Aces Reinforcements Pack": [
         {
             name: 'Gina Moonsong'
