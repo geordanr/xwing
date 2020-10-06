@@ -1668,7 +1668,7 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
            ]
-    
+
         # Epic Section
         "CR90 Corellian Corvette":
            name: "CR90 Corellian Corvette"
@@ -12630,7 +12630,7 @@ exportObj.basicCardData = ->
                 stats.actions.push 'R> Focus'
        }
        {
-            name: "Wolf Pack"
+            name: "Wolfpack"
             id: 352
             faction: "Galactic Republic"
             unique: true
@@ -12641,7 +12641,7 @@ exportObj.basicCardData = ->
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Gunner"
             also_occupies_upgrades: [ "Gunner" ]
-       }       
+       }
        {
             name: "Kalani"
             id: 353
@@ -18773,7 +18773,7 @@ exportObj.hyperspacePilotExclusions = [
 
     # FO
     '"Quickdraw"'
-    
+
     # Galactic Republic
     '"Sinker"'
     '104th Battalion Pilot'
