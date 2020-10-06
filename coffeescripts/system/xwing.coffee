@@ -334,6 +334,14 @@ class exportObj.SquadBuilder
                 <div class="html-list">
                     <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
                 </div>
+                <div class="xws-list">
+                    <p>Copy and paste this into an XWS-compliant application to transfer your list.
+                    <i>XWS is a way to share X-Wing squads between applications, e.g. YASB and LaunchBay Next</i></p>
+                    <div class="row">
+                    <div class="column"><textarea></textarea><br /><button class="btn btn-modal btn-copy">Copy</button></div>
+                    <div class="column qrcode-container" id="xws-qrcode-container"></div>
+                    </div>
+                </div>
             </div>
             <div class="container-fluid modal-footer d-print-none">
                 <div class="row full-row">
@@ -371,6 +379,7 @@ class exportObj.SquadBuilder
                     <button class="btn btn-modal select-reddit-view">Reddit</button>
                     <button class="btn btn-modal select-bbcode-view">BBCode</button>
                     <button class="btn btn-modal select-html-view">HTML</button>
+                    <button class="btn btn-modal select-xws-view">XWS</button>
                 </div>
                 <button class="btn btn-modal print-list d-none d-sm-block"><i class="fa fa-print"></i>&nbsp;Print</button>
             </div>
@@ -389,6 +398,9 @@ class exportObj.SquadBuilder
         @tts_container = $ @list_modal.find('div.modal-body .tts-list')
         @tts_textarea = $ @tts_container.find('textarea')
         @tts_textarea.attr 'readonly', 'readonly'
+        @xws_container = $ @list_modal.find('div.modal-body .xws-list')
+        @xws_textarea = $ @xws_container.find('textarea')
+        @xws_textarea.attr 'readonly', 'readonly'
         @bbcode_container = $ @list_modal.find('div.modal-body .bbcode-list')
         @bbcode_textarea = $ @bbcode_container.find('textarea')
         @bbcode_textarea.attr 'readonly', 'readonly'
@@ -426,6 +438,7 @@ class exportObj.SquadBuilder
                 @simplecopy_container.hide()
                 @reddit_container.hide()
                 @tts_container.hide()
+                @xws_container.hide()
                 @bbcode_container.hide()
                 @htmlview_container.hide()
                 @toggle_vertical_space_container.hide()
@@ -451,6 +464,7 @@ class exportObj.SquadBuilder
                 @tts_container.hide()
                 @bbcode_container.hide()
                 @htmlview_container.hide()
+                @xws_container.hide()
                 @toggle_vertical_space_container.show()
                 @toggle_color_print_container.show()
                 @toggle_color_skip_text.show()
@@ -472,6 +486,7 @@ class exportObj.SquadBuilder
                 @bbcode_container.hide()
                 @tts_container.hide()
                 @htmlview_container.hide()
+                @xws_container.hide()
                 @simple_container.hide()
                 @fancy_container.hide()
                 @reddit_textarea.select()
@@ -497,6 +512,7 @@ class exportObj.SquadBuilder
                 @bbcode_container.hide()
                 @tts_container.hide()
                 @htmlview_container.hide()
+                @xws_container.hide()
                 @simple_container.hide()
                 @fancy_container.hide()
                 @simplecopy_textarea.select()
@@ -521,6 +537,7 @@ class exportObj.SquadBuilder
                 @tts_container.show()
                 @bbcode_container.hide()
                 @htmlview_container.hide()
+                @xws_container.hide()
                 @simple_container.hide()
                 @simplecopy_container.hide()
                 @reddit_container.hide()
@@ -548,6 +565,7 @@ class exportObj.SquadBuilder
                 @reddit_container.hide()
                 @tts_container.hide()
                 @htmlview_container.hide()
+                @xws_container.hide()
                 @simple_container.hide()
                 @fancy_container.hide()
                 @bbcode_textarea.select()
@@ -575,6 +593,7 @@ class exportObj.SquadBuilder
                 @htmlview_container.show()
                 @simple_container.hide()
                 @fancy_container.hide()
+                @xws_container.hide()
                 @html_textarea.select()
                 @html_textarea.focus()
                 @toggle_vertical_space_container.hide()
@@ -585,6 +604,10 @@ class exportObj.SquadBuilder
                 @toggle_qrcode_container.hide()
                 @toggle_obstacle_container.hide()
                 @btn_print_list.disabled = true;
+
+        @select_xws_view_button = $ @list_modal.find('.select-xws-view')
+        @select_xws_view_button.click (e) =>
+            @select_xws_view()
 
         if $(window).width() >= 768
             @simple_container.hide()
@@ -1433,9 +1456,17 @@ class exportObj.SquadBuilder
             tts_obstacles = tts_obstacles.slice(0, -1)
             tts_ships.push tts_obstacles
 
-        @tts_container.find('textarea').val $.trim """#{tts_ships.join ""}"""
+        @tts_textarea.val $.trim """#{tts_ships.join ""}"""
         
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]Total: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]View in Yet Another Squad Builder 2.0[/url]"""
+
+        @xws_textarea.val $.trim JSON.stringify(@toXWS())
+        $('#xws-qrcode-container').text ''
+        $('#xws-qrcode-container').qrcode
+            render: 'canvas'
+            text: JSON.stringify(@toMinimalXWS())
+            ec: 'L'
+            size: 256
 
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
@@ -1511,8 +1542,13 @@ class exportObj.SquadBuilder
         throw new Error("Ships not emptied") if @ships.length > 0
 
     showTextListModal: ->
-        # Display modal
+        # Display print/text view modal
         @list_modal.modal 'show'
+
+    showXWSModal: (xws) ->
+        # Display xws view modal
+        @select_xws_view()
+        @showTextListModal()
 
     showChooseObstaclesModal: ->
         @obstacles_select.val(@current_squad.additional_data.obstacles)
@@ -1612,6 +1648,33 @@ class exportObj.SquadBuilder
         @suppress_automatic_new_ship = false
         # Finally, the unassigned ship
         @addShip()
+
+
+    select_xws_view: () ->
+        @select_xws_view_button.blur()
+        unless @list_display_mode == 'xws'
+            @list_modal.find('.list-display-mode .btn').removeClass 'btn-inverse'
+            @select_xws_view_button.addClass 'btn-inverse'
+            @list_display_mode = 'xws'
+            @xws_container.show()
+            @bbcode_container.hide()
+            @htmlview_container.hide()
+            @simple_container.hide()
+            @simplecopy_container.hide()
+            @reddit_container.hide()
+            @fancy_container.hide()
+            @tts_container.hide()
+            @xws_textarea.select()
+            @xws_textarea.focus()
+            @toggle_vertical_space_container.hide()
+            @toggle_color_print_container.hide()
+            @toggle_color_skip_text.hide()
+            @toggle_maneuver_dial_container.hide()
+            @toggle_expanded_shield_hull_container.hide()
+            @toggle_qrcode_container.hide()
+            @toggle_obstacle_container.hide()
+            @btn_print_list.disabled = true;
+
 
     uniqueIndex: (unique, type) ->
         if type not of @uniques_in_use
