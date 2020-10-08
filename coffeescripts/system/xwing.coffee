@@ -2035,7 +2035,7 @@ class exportObj.SquadBuilder
                         when 1 then "white"
                         when 2 then "dodgerblue"
                         when 3 then "red"
-                        when 3 then "purple"
+                        when 4 then "purple"
 
                      # we need this to change the color to b/w in case we want to print b/w
 
@@ -2043,7 +2043,7 @@ class exportObj.SquadBuilder
                         when 1 then "svg-white-maneuver"
                         when 2 then "svg-blue-maneuver"
                         when 3 then "svg-red-maneuver"
-                        when 3 then "svg-purple-maneuver"
+                        when 4 then "svg-purple-maneuver"
 
                     outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
 

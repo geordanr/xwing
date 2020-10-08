@@ -1668,6 +1668,18 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
            ]
+        "Syliure-class Hyperspace Ring":
+           name: "Syliure-class Hyperspace Ring"
+           xws: "Syliure-class Hyperspace Ring".canonicalize()
+           factions: ["Galactic Republic"]
+           agility: 1
+           hull: 1
+           shields: 2
+           actions: [
+           ]
+           maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+           ]
 
         # Epic Section
         "CR90 Corellian Corvette":
@@ -4497,7 +4509,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             ship: "Z-95 Headhunter"
-            skill: 0
+            skill: "*"
             points: 6
             slots: [
                 "Missile"
@@ -8470,8 +8482,15 @@ exportObj.basicCardData = ->
             ]
         }
         {
+            name: "TransGalMeg Control Link"
             id: 406
-            skip: true
+            faction: "Galactic Republic"
+            skill: "*"
+            ship: "Syliure-class Hyperspace Ring"
+            points: 200
+            slots: [
+                "Configuration"
+            ]
         }
         {
             name: "Separatist Predator"
@@ -8954,7 +8973,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Jedi Knight (ETA-2)"
+            name: "Jedi General"
             id: 436
             faction: "Galactic Republic"
             skill: 4
@@ -8964,7 +8983,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
-                "Configuration"
             ]
         }
         {
@@ -8979,7 +8997,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
-                "Configuration"
             ]
         }
         {
@@ -8994,7 +9011,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
-                "Configuration"
             ]
         }
         {
@@ -9009,7 +9025,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
-                "Configuration"
             ]
         }
         {
@@ -9025,7 +9040,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
-                "Configuration"
             ]
         }
         {
@@ -9041,7 +9055,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
-                "Configuration"
             ]
         }
         {
@@ -12537,10 +12550,12 @@ exportObj.basicCardData = ->
             points: 200
        }
        {
-            name: "Evasive Maneuvers"
+            name: "Extreme Maneuvers"
             id: 341
-            slot: "Force"
             points: 200
+            slot: "Force"
+            restriction_func: (ship) ->
+                (("Boost" or "R-Boost") in ship.effectiveStats().actions) and (not (ship.data.large? or ship.data.medium? or ship.data.huge?))
        }
        {
             name: "Patience"
@@ -12726,6 +12741,19 @@ exportObj.basicCardData = ->
                 ship.data.name?.includes("X-Wing")
             modifier_func: (stats) ->
                 stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+       }
+       {
+            name: "Jedi Commander"
+            id: 361
+            points: 200
+            slot: "Command"
+       }
+       {
+            name: "Syliure-31 Hyperdrive"
+            id: 362
+            points: 200
+            slot: "Configuration"
+            ship: "Syliure-class Hyperspace Ring"
        }
     ]
 

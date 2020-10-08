@@ -1375,20 +1375,22 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform a %MISSILE% or %CANNON% attack, you may remove 1 tractor token from the defender to reroll up to 2 attack dice. %LINEBREAK%<strong>Networked Aim:</strong> You cannot spend your locks to reroll attack dice. While you perform an attack, you may reroll a number of attack dice up to the number of friendly locks on the defender."""
         "Onderon Oppressor":
            text: """After you barrel roll or sideslip, if you are stressed. Gain 1 calculate token. %LINEBREAK%<strong>Networked Aim:</strong> You cannot spend your locks to reroll attack dice. While you perform an attack, you may reroll a number of attack dice up to the number of friendly locks on the defender."""
-        "Jedi Knight (ETA-2)":
+        "Jedi General":
            text: """<strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
         "Yoda":
-           text: """  %LINEBREAK%<strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
+           text: """After another friendly ship at range 0-3 spends 1 or more %FORCE%, you may spend 1 %FORCE%. If you do, that ship recovers 1 %FORCE%. %LINEBREAK% <strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
         "Shaak Ti":
-           text: """  %LINEBREAK%<strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
+           text: """At the start of the End Phase, you may spend any number of %FORCE% to choose that many friendly ships at range 0-2. Each chosen ship does not remove 1 focus or evade token during this End Phase. %LINEBREAK% <strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
         "Aayla Secura":
-           text: """  %LINEBREAK%<strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
+           text: """While and enemy ship in your %FRONTARC% at range 0-1 performs an attack, the defender may change 1 blank result to a %FOCUS% result. %LINEBREAK% <strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
         "Obi-Wan Kenobi (ETA-2)":
            display_name: """Obi-Wan Kenobi"""
-           text: """After you or a friendly <b>Anakin Skywalker</b> at range 0-3 executes a maneuver, if there are more enemy ships than other friendly ships at range 0-1 of that ship, you may spend 1 %FORCE%. If you do, that ship gains 1 focus token. %LINEBREAK%<strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
+           text: """After you or a friendly <b>Anakin Skywalker</b> at range 0-3 executes a maneuver, if there are more enemy ships than other friendly ships at range 0-1 of that ship, you may spend 1 %FORCE%. If you do, that ship gains 1 focus token. %LINEBREAK% <strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
         "Anakin Skywalker (ETA-2)":
            display_name: """Anakin Skywalker"""
-           text: """After you or a friendly <b>Obi-Wan Kenobi</b> ship at range 0-3 executes a maneuver, if there are more enemy ships than other friendly ships at range 0-1 of that ship, you may spend 1 %FORCE%. If you do, that ship removes 1 red token of your choice. %LINEBREAK%<strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
+           text: """After you or a friendly <b>Obi-Wan Kenobi</b> ship at range 0-3 executes a maneuver, if there are more enemy ships than other friendly ships at range 0-1 of that ship, you may spend 1 %FORCE%. If you do, that ship removes 1 red token of your choice. %LINEBREAK% <strong>Intuitive Controls:</strong> During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
+        "TransGalMeg Control Link":
+           text: """<strong>Hyperspace Docking Ring:</strong> 1 Delta-7 Aethersprite, Eta-2 Actiss, or Nimbus-class V-wing can dock with you. %LINEBREAK% While a ship is docked with you, you gaiin that ship's initiative and are assigned that ship's dial. While you execute a maneuver, reduce its speed to 1. Before you execute an advanced maneuver, execute a white stationary maneuver (%STOP%) instead, then you may rotate 90º or 180º. %LINEBREAK% While no ship is docked with you, you are not assigned a maneuver dial and do note activate or engage."""
         "Wilhuff Tarkin":
            text: """During the System Phase, you may choose an object that you have locked at range 1. Another friendly ship at range 1-3 may acquire a lock on that object. %LINEBREAK%<strong>Twin Ion Engines:</strong> Ignore the "TIE" ship restriction on upgrade cards."""
         "Jango Fett":
@@ -2296,8 +2298,12 @@ exportObj.cardLoaders.English = () ->
            text: """After you activate, you may spend 1 %CHARGE% and gain 1 deplete token to repair 1 damage card, recover 1 shield or remove 1 device at range 0-1."""
         "Patience":
            text: """At the start of the Engagement Phase, if there is an enemy ship in your %FRONTARC%, you may gain 1 deplete token to revover 1 %FORCE%."""
-        "Evasive Maneuvers":
-           text: """While you perform a %BOOST% action, you may spend 1 %FORCE% to use the turn template instead."""
+        "Syliure-31 Hyperdrive":
+           text: """<strong>Setup:</strong> You can be placed anywhere in the play area beyond range 1 of obstacles, beyond range 3 of enemy ships, and beyond range 3 of the enemy table edge."""
+        "Jedi Commander":
+           text: """While your wingmates execute purple maneuvers, they treat those maneuvers as red instead. %LINEBREAK% While you defend, up to 2 of your wingmages in the attack arc may each suffer 1 %HIT%/%CRIT% damage to cancel 1 matching result."""
+        "Extreme Maneuvers":
+           text: """While you perform a %BOOST% action, you may spend 1 %FORCE% to use the turn (%TURNLEFT% or %TURNRIGHT%) template instead."""
         "Starbird Slash":
            text: """After you fully execute a maneuver, you may choose 1 enemy ship you moved through. That ship gains 1 strain token. Then, if you are in that ship's firing arc, you gain 1 strain token."""
         "Backwards Tailslide":
