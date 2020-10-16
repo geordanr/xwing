@@ -621,7 +621,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Végrehajthatsz egy %FRONTARC% speciális támadást a %REARARC% tűzívedből. Amikor speciális támadást hajtasz végre, újradobhatsz egy támadókockát."""
         "Kullbee Sperado":
            display_name: """Kullbee Sperado"""
-           text: """Miután végrehajtasz egy %BARRELROLL% vagy %BOOST% akciót, megfordíthatod a felszerelt %CONFIGURATION% fejlesztés kártyád."""
+           text: """Miután végrehajtasz egy %BARRELROLL% vagy %BOOST% akciót, megfordíthatod a felszerelt %CONFIG% fejlesztés kártyád."""
         "Kyle Katarn":
            display_name: """Kyle Katarn"""
            text: """Az Ütközet fázis elején átadhatod 1 fókusz jelződet egy tűzívedben lévő baráti hajónak."""
@@ -1172,7 +1172,7 @@ exportObj.cardLoaders.Magyar = () ->
         "K-2SO":
            text: """Miután kapsz egy stressz jelzőt, kapsz 1 %CALCULATE% jelzőt."""
         "Alexsandr Kallus":
-           text: """Amikor védekezel, ha a támadó támadókockát módosít, 1-gyel több védezekőkockával dobhatsz."""
+           text: """Amikor védekezel, ha a támadó támadókockát módosít, 1-gyel több védezekőkockával dobhatsz.%LINEBREAK%<strong>Tail Gun:</strong> ha van bedokkolt hajód, használhatod az elsődleges %REARARC% fegyvered, ugyanolyan támadási értékkel, mint a dokkolt hajó elsődleges %FRONTARC% támadási értéke."""
         "Leia Organa":
            text: """Miután egy baráti hajó teljesen végrehajt egy piros manővert, ha az 0-3-as távolságban van, elkölthetsz 1 %FORCE% jelzőt. Ha így teszel, az a hajó kap 1 %FOCUS% jelzőt vagy visszatölt 1 %FORCE% jelzőt."""
         "Paige Tico":
@@ -1193,19 +1193,19 @@ exportObj.cardLoaders.Magyar = () ->
         "Nom Lumb":
            text: """Miután védekező lettél, ha a támadó nincs a %SINGLETURRETARC% tűzívedben, át kell forgasd a %SINGLETURRETARC% tűzív jelződ, abba a standard tűzívbe, ahol a támadó van."""
         "Jarek Yeager":
-           text: """Amikor 2 vagy kevesebb stressz jelződ van, ha sérült vagy, végrehajthatsz piros alapmanővereket még stresszesen is. Ha kritikus sérülésed van, végrehajthatsz fejlett piros manővereket is, még stresszesen is. %LINEBREAK%<strong>Explosion with Wings:</strong> Kapsz 1 lefordított sérüléskártyát. Miután végrehajtasz egy %SLAM% akciót, felfordíthatsz 1 sérüléskártyát, hogy levegyél 1 'inaktív fegyverzet' jelzőt."""
+           text: """Amikor 2 vagy kevesebb stressz jelződ van, ha sérült vagy, végrehajthatsz piros alapmanővereket még stresszesen is. Ha kritikus sérülésed van, végrehajthatsz haladó piros manővereket is, még stresszesen is. %LINEBREAK%<strong>Explosion with Wings:</strong> Kapsz 1 lefordított sérüléskártyát. Miután végrehajtasz egy %SLAM% akciót, felfordíthatsz 1 sérüléskártyát, hogy levegyél 1 'inaktív fegyverzet' jelzőt."""
         "R1-J5":
            text: """Mielőtt felfordítasz 1 sérüléskártyád, nézd meg a lefordított sérüléskártyáid, válassz 1-et és azt fordítsd fel.%LINEBREAK%<strong>Explosion with Wings:</strong> Kapsz 1 lefordított sérüléskártyát. Miután végrehajtasz egy %SLAM% akciót, felfordíthatsz 1 sérüléskártyát, hogy levegyél 1 'inaktív fegyverzet' jelzőt."""
         "Colossus Station Mechanic":
            text: """<strong>Explosion with Wings:</strong> Kapsz 1 lefordított sérüléskártyát. Miután végrehajtasz egy %SLAM% akciót, felfordíthatsz 1 sérüléskártyát, hogy levegyél 1 'inaktív fegyverzet' jelzőt."""
         "212th Battalion Pilot":
-           text: """<strong>Fire Ordinance:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
+           text: """<strong>Fire Convergence:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
         '"Hawk"':
-           text: """A Vége fázis elején minden baráti hajó 0-1-es távolságban, ami 3-5 sebességű manővert fedett fel kaphat 1 'strain' jelzőt, hogy végrehajtson egy %BARRELROLL% vagy %BOOST% akciót.<br><strong>Fire Ordinance:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
+           text: """A Vége fázis elején minden baráti hajó 0-1-es távolságban, ami 3-5 sebességű manővert fedett fel kaphat 1 'strain' jelzőt, hogy végrehajtson egy %BARRELROLL% vagy %BOOST% akciót.<br><strong>Fire Convergence:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
         '"Hound"':
-           text: """Miután egy baráti hajó a %SINGLETURRETARC% tűzívedben kap egy 'deplete' vagy 'strain' jelzőt, ha még nincs olyan jelződ, átteheted azt magadhoz.<br><strong>Fire Ordinance:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
+           text: """Miután egy baráti hajó a %SINGLETURRETARC% tűzívedben kap egy 'deplete' vagy 'strain' jelzőt, ha még nincs olyan jelződ, átteheted azt magadhoz.<br><strong>Fire Convergence:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
         '"Warthog"':
-           text: """Miután te vagy egy baráti nem-limitált hajó 0-2-es távolságban megsemmisül az Ütközet fázisban, az a hajó a fázis végéig a pályán maradhat. <br><strong>Fire Ordinance:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
+           text: """Miután te vagy egy baráti nem-limitált hajó 0-2-es távolságban megsemmisül az Ütközet fázisban, az a hajó a fázis végéig a pályán maradhat. <br><strong>Fire Convergence:</strong> amikor egy baráti hajó végrehajt egy nem %SINGLETURRETARC% támadást, ha a védekező benne van a löveg tűzívedben, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, a támadó újradobhat akár 2 kockát is."""
         "Baktoid Drone":
            text: """%LINEBREAK%<strong>Networked Aim:</strong> Nem költheted el a bemérődet, hogy újradobd a támadókockáidat. Amikor végrehajtasz egy támadást, újradobhatsz annyi támadókockát, amennyi baráti bemérő van a védekezőn."""
         "Separatist Predator":
@@ -1218,20 +1218,22 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Amikor végrehajtasz egy %MISSILE% vagy %CANNON% támadást, levehetsz 1 vonósugár jelzőt a védekezőről, hogy újradobj akár 2 kockát is.<br><strong>Networked Aim:</strong> Nem költheted el a bemérődet, hogy újradobd a támadókockáidat. Amikor végrehajtasz egy támadást, újradobhatsz annyi támadókockát, amennyi baráti bemérő van a védekezőn."""
         "Onderon Oppressor":
            text: """Miután orsózol vagy oldalazol, ha stresszes vagy kapsz 1 %CALCULATE% jelzőt.<br><strong>Networked Aim:</strong> Nem költheted el a bemérődet, hogy újradobd a támadókockáidat. Amikor végrehajtasz egy támadást, újradobhatsz annyi támadókockát, amennyi baráti bemérő van a védekezőn."""
-        "Jedi Knight (ETA-2)":
+        "Jedi General":
            text: """<strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
         "Yoda":
-           text: """  %LINEBREAK%<strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
+           text: """Miután egy másik baráti hajó 0-3-as távolságban elkölt 1 vagy több %FORCE% jelzőt, elkölthetsz 1 %FORCE% jelzőt. Ha így teszel, az a hajó visszatölthet 1 %FORCE% jelzőt.<br><strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
         "Shaak Ti":
-           text: """  %LINEBREAK%<strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
+           text: """A Vége fázis elején elkölthetsz bármennyi %FORCE% jelzőt, hogy kiválassz ugyanannyi baráti hajót 0-2-es távolságból. Minden kiválasztott hajó megtarthat 1 %FOCUS% vagy %EVADE% jelzőjét a Vége fázis alatt.<br><strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
         "Aayla Secura":
-           text: """  %LINEBREAK%<strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
+           text: """Amikor egy ellenséges hajó a %FRONTARC% tűzívedben 0-1-es távolságban végrehajt egy támadást, a védekező kicserélhet 1 üres eredményt %FOCUS% eredményre.<br><strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
         "Obi-Wan Kenobi (ETA-2)":
            display_name: """Obi-Wan Kenobi"""
            text: """Miután te vagy egy baráti <b>Anakin Skywalker</b> hajó 0-3-as távolságban végrehajt egy manővert, ha több az ellenséges hajó, mint a baráti 0-1-es távolságban, elkölthetsz 1 %FORCE% jelzőt. Ha így teszel, az a hajó kap 1 %FOCUS% jelzőt.<br><strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
         "Anakin Skywalker (ETA-2)":
            display_name: """Anakin Skywalker"""
            text: """Miután te vagy egy baráti <b>Obi-Wan Kenobi</b> hajó 0-3-as távolságban végrehajt egy manővert, ha több az ellenséges hajó, mint a baráti 0-1-es távolságban, elkölthetsz 1 %FORCE% jelzőt. Ha így teszel, az a hajó levehet egy piros jelzőt.<br><strong>Intuitive Controls:</strong> A Rendszer fázis alatt végrehajthatsz egy lila %BARRELROLL% vagy lila %BOOST% akciót."""
+        "TransGalMeg Control Link":
+           text: """<strong>Hyperspace Docking Ring:</strong> 1 Delta-7 Aethersprite, Eta-2 Actis vagy Nimbus-class V-wing dokkolhat vele.<br>Amikor egy hajó be van dokkolva, megkapod a hajó kezdeményező értékét és tárcsáját. Amikor végrehajtasz egy manővert, csökkentsd annak sebességét 1-gyel. Mielőtt végrehajtasz egy haladó manővert, helyette hajtsál végre egy fehér megállás (%STOP%) manővert, majd elforgathatod a hajót 90 vagy 180 fokkal.<br>Amikor nincs bedokkolva hajó, nincs tárcsa hozzárendelésed, aktivációd és ütközeted."""
         "Wilhuff Tarkin":
            text: """A Rendszer fázis alatt választhatsz egy bemért objektumot 1-es távolságban. Másik baráti hajó 1-3-as távolságban rátehet egy bemérőt arra az objektumra During the System Phase, you may choose an object that you have locked at range 1. Another friendly ship at range 1-3 may acquire a lock on that object. %LINEBREAK%<strong>Twin Ion Engines:</strong> Ignore the "TIE" ship restriction on upgrade cards."""
         "Jango Fett":
@@ -1254,8 +1256,18 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Miután egy baráti hajó 0-2-es távolságban végrehajt egy akciót az aktivációs fázisában, elkölthetsz 2 %CHARGE% jelzőt. Ha így teszel, az a hajó végrehajthat egy fehér akciót pirosként kezelve.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
         "Temmin Wexley (HoH)":
            text: """Az Ütközet fázis elején minden baráti T-70 X-wing 0-3 távolságban kaphat 1 'strain' jelzőt, hogy megfordítsa a %CONFIGURATION% fejlesztését. Ha így tesz, az a hajó kap 1 %CALCULATE% jelzőt.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
+        "C'ai Threnalli":
+           text: """Miután teljesen végrehajtasz egy manővert, ha átmozogtál egy baráti hajón, végrehajthatsz egy %EVADE% akciót.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
+        "Nimi Chereen":
+           text: """Amikor végrehajtasz egy támadást, ha a védekező kezdeményező értéke magasabb, mint a tiéd, 1 üres eredményt %FOCUS% eredményre cserélhetsz.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
         "Merl Cobben":
            text: """Amikor egy baráti hajó 0-2-es távolságban végrehajt egy elsődleges támadást, ha benne vagy a védekező %BULLSEYEARC% tűzívében, a védekező 1-gyel kevesebb védekezőkockával dob.<br><strong>Refined Gyrostabilizers:</strong> A %SINGLETURRETARC% mutatódat csak %FRONTARC% vagy %REARARC% irányba forgathatod. Miután végrehajtasz egy akciót, végrehajthatsz egy piros %BOOST% vagy %ROTATEARC% akciót."""
+        "Seftin Vanik":
+           text: """Miután végrehajtasz egy %BOOST% akciót, átadhatsz 1 %EVADE% jelzőt egy baráti hajónak 1-es távolságban.<br><strong>Refined Gyrostabilizers:</strong> A %SINGLETURRETARC% mutatódat csak %FRONTARC% vagy %REARARC% irányba forgathatod. Miután végrehajtasz egy akciót, végrehajthatsz egy piros %BOOST% vagy %ROTATEARC% akciót."""
+        "Suralinda Javos":
+           text: """Miután részlegesen végrehajtasz egy manővert, kaphatsz 1 'strain' jelzőt, hogy elforgasd a hajód 90 vagy 180 fokkal.<br><strong>Refined Gyrostabilizers:</strong> A %SINGLETURRETARC% mutatódat csak %FRONTARC% vagy %REARARC% irányba forgathatod. Miután végrehajtasz egy akciót, végrehajthatsz egy piros %BOOST% vagy %ROTATEARC% akciót."""
+        "Wrobie Tyce":
+           text: """Miután védekezel 1-es távolságú támadás ellen, ha a támadó módosította a kockáit, a támadó kap 1 'delpete' jelzőt.<br><strong>Refined Gyrostabilizers:</strong> A %SINGLETURRETARC% mutatódat csak %FRONTARC% vagy %REARARC% irányba forgathatod. Miután végrehajtasz egy akciót, végrehajthatsz egy piros %BOOST% vagy %ROTATEARC% akciót."""
         "Agent Terex":
            text: """<strong>Felhelyezés:</strong> A hajók felhelyezése után válassz, bármennyi felszerelt %ILLICIT% fejlesztésed felszerelheted baráti TIE/fo vagy TIE/sf hajókra. Minden hajó csaj 1 %ILLICIT% fejlesztést kaphat ezen a módon.<br><strong>Játék vége:</strong> Tegyél vissza minden %ILLICIT% fejlesztést az eredeti hajóra."""
         "Commander Malarus (Xi Shuttle)":
@@ -1264,7 +1276,6 @@ exportObj.cardLoaders.Magyar = () ->
         "Gideon Hask (Xi Shuttle)":
            display_name: """Gideon Hask"""
            text: """Amikor te vagy egy baráti kis hajó 0-2-es távolságban végrehajt egy elsődleges támadást sérült védekező ellen, ha a támadó 2 vagy kevesebb támadókockával dobott, kaphat 1 'strain' jelzőt, hogy dobjon 1 további kockával."""
-
         # Epic Ships
         "Republic Judiciary":
            display_name: """Republic Judiciary"""
@@ -1296,8 +1307,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Syndicate Smugglers":
            display_name: """Syndicate Smugglers"""
            text: """<i class = flavor_text>Vessels like the C-ROC Cruiser allow criminal operations across the Outer Rim to move massive amounts of illicit materials, or project power that can bully small colonies into compliance.</i> %LINEBREAK% <strong>Overdrive Burners:</strong> While you defend, if your revealed maneuver is speed 3-5, roll 1 additional defense die."""
-            
-            
+
     upgrade_translations =
         "0-0-0":
            display_name: """0-0-0"""
@@ -1548,7 +1558,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Ion Bombs":
            display_name: """Ion Bombs"""
            text: """<strong>Bomba</strong><br>A Rendszer fázisban elkölthetsz 1&nbsp;%CHARGE% jelzőt, hogy kidobj egy Proton bombát az [1&nbsp;%STRAIGHT%] sablonnal."""
-        "ISB Slicer":
+           "ISB Slicer":
            display_name: """ISB Slicer"""
            text: """<i>csak Birodalom</i>%LINEBREAK%A Vége fázis alatt az ellenséges hajók 1-2-es távban nem vehetik le a zavarás jelzőket."""
         "Inertial Dampeners":
@@ -1871,8 +1881,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Impervium Plating":
            text: """Mielőtt egy felfordított <b>Ship</b> sérüléskártyát kapnál, elkölthetsz 1&nbsp;%CHARGE% jelzőt, hogy eldobd."""
         "Grappling Struts":
-           text: """<strong>Csukva: </strong> Felhelyezés: ezzel az oldalával helyezd fel. %LINEBREAK% Amikor végrehajtasz egy manővert, ha átfedésbe kerülsz egy aszteroidával vagy űrszeméttel és 1 vagy kevesebb másik baráti hajó van 0-ás távolságra attól az akadálytól, megfordíthatod ezt a kártyát. 
-		   %LINEBREAK% <b>Nyitva:</b> Hagyd figyelment kívül a 0-ás távolságnban lévő akadályokat amíg átmozogsz rajtuk. Miután felfeded a tárcsádat, ha más manővert fedtél fel mint [2 %STRAIGHT%] és 0-ás távolságra vagy egy aszteroidától vagy űrszeméttől, ugord át a 'Manőver végrehajtása' lépést és vegyél le 1 stresst jelzőt; ha jobb vagy bal manővert fedtél fel, forgasd a hajódat 90 fokkal abba az irányba. Miután végrehajtasz egy manővert fordítsd át ezt a kártyát."""
+           text: """<strong>Csukva: </strong> Felhelyezés: ezzel az oldalával helyezd fel.<br>Amikor végrehajtasz egy manővert, ha átfedésbe kerülsz egy aszteroidával vagy űrszeméttel és 1 vagy kevesebb másik baráti hajó van 0-ás távolságra attól az akadálytól, megfordíthatod ezt a kártyát.%LINEBREAK% <b>Nyitva:</b> Hagyd figyelment kívül a 0-ás távolságnban lévő akadályokat amíg átmozogsz rajtuk. Miután felfeded a tárcsádat, ha más manővert fedtél fel mint [2 %STRAIGHT%] és 0-ás távolságra vagy egy aszteroidától vagy űrszeméttől, ugord át a 'Manőver végrehajtása' lépést és vegyél le 1 stresst jelzőt; ha jobb vagy bal manővert fedtél fel, forgasd a hajódat 90 fokkal abba az irányba. Miután végrehajtasz egy manővert fordítsd át ezt a kártyát."""
         "Energy-Shell Charges":
            text: """<i>Követelmény: %CALCULATE% vagy <r>%CALCULATE%</r></i>%LINEBREAK%<i>csak Szeparatisták</i>%LINEBREAK% <strong>Támadás (%CALCULATE%):</strong> Költs el 1&nbsp;%CHARGE% jelzőt. Amikor végrehajtasz egy támadást, elkölthetsz 1&nbsp;%CALCULATE% jelzőt, hogy megváltoztass 1&nbsp;%FOCUS% eredményt %CRIT% eredményre.%LINEBREAK% <strong>Akció:</strong> Töltsd újra ezt a kártyát."""
         "Dedicated":
@@ -1882,8 +1891,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Battle Meditation":
            text: """<i>Kapott akció: %F-COORDINATE%</i><br><i>csak Köztársaság</i><br>Nem koordinálhatsz limitált hajót.<br>Amikor végrehajtasz egy lila %COORDINATE% akciót, koordinálhatsz 1 további ugyanolyan típusú nem limitált baráti hajót. Mindkét hajónak ugyanazt az akciót kell végrehajtania."""
         "Spare Parts Canisters":
-           text: """Akció: költs el 1&nbsp;%CHARGE% jelzőt, hogy visszatölts 1&nbsp;%CHARGE% jelzőt egy felszerelt %ASTROMECH% fejlesztéseden.%LINEBREAK%
-		   Akció: költs el 1&nbsp;%CHARGE% jelzőt, hogy kidobj 1 tartalék alkatrész jelzőt, aztán vegyél le minden rajtad lévő bemérőt."""
+           text: """Akció: költs el 1&nbsp;%CHARGE% jelzőt, hogy visszatölts 1&nbsp;%CHARGE% jelzőt egy felszerelt %ASTROMECH% fejlesztéseden.%LINEBREAK%Akció: költs el 1&nbsp;%CHARGE% jelzőt, hogy kidobj 1 tartalék alkatrész jelzőt, aztán vegyél le minden rajtad lévő bemérőt."""
         "Chancellor Palpatine":
            text: """<strong>Felhelyezés:</strong> Ezzel az oldalával szereld fel.%LINEBREAK% Miután védekeztél, ha a támadó 0-2-es távolságban van, elkölthetsz 1&nbsp;%FORCE% jelzőt. Ha így teszel, a támadó kap egy stressz jelzőt.%LINEBREAK% A vége fázisban megfordíthatod ezt a kártyát.%LINEBREAK% <strong>Darth Sidious:</strong> Miután végrehajtasz egy lila %COORDINATE% akciót, a koordinált hajó kap 1 stressz jelzőt, majd kap 1&nbsp;%FOCUS% jelzőt vagy visszatölt 1&nbsp;%FORCE% jelzőt."""
         "Count Dooku":
@@ -2022,7 +2030,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Suppressive Gunner":
            text: """Amikor végrehajtasz egy támadást, elkölthetsz 1 %FOCUS% jelzőt. Ha így teszel a védekező kap 1 kimerültség (deplete) jelzőt, hacsak nem szenved el 1 %HIT% sérülést."""
         "Ghost Company":
-           text: """<i>Követelmény: %ROTATEARC%</i><br>Miután végrehajtasz egy elsődleges támadást, ha fókuszált vagy, végrehajthatsz egy bónusz %SINGLETURRETARC% támadást egy olyan hajó ellen, amelyet még nem támadtál ebben a körben."""
+           text: """<i>Követelmény: %ROTATEARC%</i><br><i>Kapott akció: %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%FOCUS%</r></i><br>Miután végrehajtasz egy elsődleges támadást, ha fókuszált vagy, végrehajthatsz egy bónusz %SINGLETURRETARC% támadást egy olyan hajó ellen, amelyet még nem támadtál ebben a körben."""
         "Wolf Pack":
            text: """Miután egy baráti hajó 0-3-as távolságban védekezik, ha a támadó benne van a tűzívedben, a védekező kaphat 1 feszültség (strain) jelzőt, hogy feltegyen egy bemérőt a támadóra."""
         "Yoda":
@@ -2061,12 +2069,24 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Miután aktiválódsz, elkölthetsz 1 %CHARGE% jelzőt és kapsz 1 'deplete' jelzőt, hogy megjavíts 1 sérülés kártyát vagy visszatölts 1 pajzsot vagy levegyél 1 eszközt 0-1 távolságban."""
         "Patience":
            text: """Az Ütkozet fázis elején , ha van ellenséges hajó a %FRONTARC% tűzívedben, kaphatsz 1 'deplete' jelzőt, hogy visszaállíts 1 %FORCE% jelzőt."""
-        "Evasive Maneuvers":
+        "Syliure-31 Hyperdrive":
+           text: """<strong>Felhelyezés:</strong> Bárhova felhelyezhetd a játéktérre, 1-es távolságon túl az akadályoktól, 3-as távolságon túl az ellenséges hajóktól és 3-as távolságon túl az ellenség alapvonalától."""
+        "Jedi Commander":
+           text: """Amikor a kísérőid lila manővert hajtanak végre, kezeljék  pirosként<br>Amikor védekezel, akár 2 kísérőd a támadási tűzívben elszenvedhet 1 %HIT%/%CRIT% sérülést, hogy semlegesíts egy neki megfelelő eredményt."""
+        "Extreme Maneuvers":
            text: """Amikor végrehajtasz egy %BOOST% akciót, elkölthetsz 1 %FORCE% jelzőt, hogy a kanyar sablon használhasd hozzá."""
         "Starbird Slash":
            text: """Miután teljesen végrehajtasz egy manővert, választhatsz 1 ellenséges hajót, amin átmozogtál. Az a hajó kap 1 'strain' jelzőt. Aztán, ha benne vagy annak a hajónak a tűzívében kapsz egy 'strain' jelzőt."""
+        "Backwards Tailslide":
+           text: """Amikor gyorsítasz vagy orsózol, ha a felszerelt %CONFIGURATION% fejlesztésed a 'zárva' oldala van felfelé, átmozoghatsz vagy rámozoghatsz akadályra.<br>Miután átgyorsítasz vagy átorsózol egy akadályon, ha nem vagy 0 távolságban tőle, kapsz 1  %EVADE% jelzőt."""
         "Overdrive Thruster":
            text: """Amikor végrehajtasz egy piros %BOOST%, %BARRELROLL% vagy %SLAM% akciót, ha tudsz, 1-gyel gyorsabb sablont <b>kell</b> használnod."""
+        "R2-D2 (Resistance)":
+           text: """A Vége fázis alatt, elkölthetsz 1 %CHARGE% és 1 %SHIELD% jelzőt, hogy levegyél 1 piros jelzőt magadról.<br>A Vége fázis alatt, ha nincs aktív pajzsod, elkölthetsz 2 %CHARGE% jelzőt, hogy visszatölts 1 %SHIELD% jelzőt és kapj 1 'deplete' jelzőt."""
+        "R6-D8":
+           text: """Amikor végrehajtasz egy támadás, újradobhatsz annyi támadókockát, ahány 0-3-as távolságban lévő baráti hajónak a %BULLSEYEARC% tűzívében van a védekező."""
+        "Underslung Blaster Cannon":
+           text: """Miután egy ellenséges hajó végrehajt egy manővert, végrehajthatod ezt a támadást ellene, mint bónusz támadás.<br><strong>Támadás (%LOCK%):</strong> A kockáid csak a bemérő elköltésével módosíthatók alaphatásként. (?)"""
         "Commander Pyre":
            text: """<strong>Felhelyezés:</strong> A hajók felhelyezése után válassz egy ellenséges hajót. Az kap 2 stressz jelzőt<br>Amikor védekezel, ha a támadó stresszes, újradobhatsz 1 védekezőkockát."""
         "Commander Malarus":
@@ -2077,8 +2097,6 @@ exportObj.cardLoaders.Magyar = () ->
            text: """<strong>Felhelyezés:</strong> mielőt felhelyezed a hajóidat, helyezz 2 érzékelő bóját 2-es távolságon túl bármelyik pályaszéltől.<br>Mielőtt rád kerül a sor az Ütközet fázisban, rakhatsz egy bemérőt egy baráti érzékelő bójától 0-1 távolságban lévő hajóra, figyelmen kívül hagyva a távolság korlátozást."""
         "Kalani":
            text: """Miután egy ellenséges hajó végrehajt egy manővert, ha az benne van egy 0-3-as távolságban lévő baráti hajó %BULLSEYEARC% tűzívében, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, az a hajó feltehet egy bemérőt arra az ellenséges hajóra, aztán kap egy stressz jelzőt."""
-
-            
         # Epic upgrades
         "Admiral Ozzel":
            display_name: """Admiral Ozzel"""
@@ -2273,12 +2291,16 @@ exportObj.cardLoaders.Magyar = () ->
         'Decoyed':
            text: '''Amikor védekezel, minden baráti <strong>Naboo Handmaiden</strong> a támadó tűzívében elkölthet 1 %EVADE% jelzőt, hogy megváltoztass egy dobás eredményed %EVADE% eredményre.%LINEBREAK% Ha Naboo Royal N-1 Starfighter vagy, minden minden baráti <strong>Naboo Handmaiden</strong> a támadó tűzívében elkölthet 1 %EVADE% jelzőt, hogy hozzáadj 1 %EVADE% eredményt a dobásodhoz.'''
         'Compromising Intel':
-           text: '''A Rendszer fázis alatt, ha az ellenséges <strong>Vi Morandi</strong> 0-3-as távolságban van, fordítsd fel a tárcsád. Amikor védekezel vagy támadsz ellenséges <strong>Vi Morandi</strong> pilótát, nem költhetsz %FOCUS" jelzőt.'''
+           text: '''A Rendszer fázis alatt, ha az ellenséges <strong>Vi Morandi</strong> 0-3-as távolságban van, fordítsd fel a tárcsád. Amikor védekezel vagy támadsz ellenséges <strong>Vi Morandi</strong> pilótát, nem költhetsz %FOCUS% jelzőt.'''
         'Cluster Mine':
            text: '''(Akna jelzők) - Egy Cluster Mine készlet 3 különálló Cluster Mine eszközből áll.%LINEBREAK%Amikor egy Cluster Mine készlet lehelyezésre kerül, a középső elemet a szokásos módon tesszük le, majd a két további elemet elhelyezzük a középső elem oldalvájataiba illesztve. Miután egy hajó átmozog vagy átfedésbe kerül bármelyik különálló Cluster Mine elemmel, az felrobban. A többi elem, amelyeken nem mozogtak át vagy kerültek átfedésbe, nem robban fel. Amikor bármelyik elem felrobban, a hajó dob 2 támadó kockával és elszenved 1 %HIT%/%CRIT% sérülést a dobott eredmény szerint.'''
         'Ion Bomb':
-           text: '''(Bomba jelző) - Az Aktivációs fázis végén ez az eszköz felrobban. Amikor ez az eszköz felrobban, minden hajó 0–1 távolságban kap 3 ion jelzőt, és minden távérzékelő 0–1 távolságban elszenved 1 %HIT% sérülést.'''
+           text: '''(Bomb Token) - Az Aktivációs fázis végén ez az eszköz felrobban. Amikor ez az eszköz felrobban, minden hajó 0-1-es távolságban kap 3 ion jelzőt és minden távérzékelő 0-1-es távolságban elszenved 1 %HIT% sérülést.'''
         'Concussion Bomb':
-           text: '''(Bomb Token) - BOOM BOOM.'''
+           text: '''(Bomb Token) - Az Aktivációs fázis végén ez az eszköz felrobban. Amikor ez az eszköz felrobban, minden hajó 0-1-es távolságban kap 1 lefordított sérüléskártyát. Aztán minden  hajó 0-1-es távolságban felfordít 1 sérüléskártyát, hacsak nem kap 1 strain jelzőt.'''
+        'Thermal Detonator':
+           text: '''(Bomb Token) - Az Aktivációs fázis végén ez az eszköz felrobban. Amikor ez az eszköz felrobban, minden hajó és távérzékelő 0-1-es távolságban dob 1 támadókockával. Minden hajó kap 1 strain jelzőt minden %FOCUS% eredmény után és minden hajó és távérzékelő elszenved 1 a dobásnak megfelelő %HIT%/%CRIT% sérülést.'''
+        'Sensor Buoy':
+           text: '''INIT: 0 <br>MOZGÉKONYSÁG: 3 <br>HULL: 2 %LINEBREAK% (távérzékelő) - Sensor buoys are remotes that come in pairs (one red, and one blue, each with its own remote card), and are placed by the <strong>Sensor Buoy Suite</strong> upgrade card. Beyond being remotes and interacting with that card, they have no additional rules.'''
             
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
