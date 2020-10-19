@@ -93,6 +93,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 8
             shields: 5
+            keyword: ["Freighter"]
             actions: [
                 "Focus"
                 "Lock"
@@ -116,6 +117,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 8
             shields: 3
+            keyword: ["Freighter"]
             actions: [
                 "Focus"
                 "Lock"
@@ -161,7 +163,7 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus"
-                "R> Barrel Roll"
+                "R-> Barrel Roll"
                 "Lock"
                 "Barrel Roll"
             ]
@@ -227,11 +229,12 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 2
+            keyword: ["Freighter"]
             actions: [
                 "Focus"
-                "R> Rotate Arc"
+                "R-> Rotate Arc"
                 "Lock"
-                "R> Rotate Arc"
+                "R-> Rotate Arc"
                 "Rotate Arc"
                 "R-Boost"
                 "R-Jam"
@@ -275,7 +278,7 @@ exportObj.basicCardData = ->
             shields: 4
             actions: [
                 "Focus"
-                "R> Barrel Roll"
+                "R-> Barrel Roll"
                 "Lock"
                 "Barrel Roll"
             ]
@@ -298,7 +301,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "R> Lock"
+                "R-> Lock"
                 "R-Reload"
             ]
             maneuvers: [
@@ -365,9 +368,9 @@ exportObj.basicCardData = ->
                 "Evade"
                 "Lock"
                 "Barrel Roll"
-                "R> Lock"
+                "R-> Lock"
                 "Boost"
-                "R> Lock"
+                "R-> Lock"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -406,6 +409,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 6
             shields: 4
+            keyword: ["Freighter"]
             actions: [
                 "Focus"
                 "Lock"
@@ -455,9 +459,9 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "R> Focus"
+                "R-> Focus"
                 "Boost"
-                "R> Focus"
+                "R-> Focus"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0]
@@ -587,7 +591,7 @@ exportObj.basicCardData = ->
                 "Lock"
                 "R-Barrel Roll"
                 "Boost"
-                "R> Lock"
+                "R-> Lock"
                 "Reload"
             ]
             maneuvers: [
@@ -606,6 +610,7 @@ exportObj.basicCardData = ->
             hull: 10
             shields: 4
             large: true
+            keyword: ["Freighter"]
             actions: [
                 "Focus"
                 "Lock"
@@ -630,7 +635,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Evade"
                 "Barrel Roll"
-                "R> Evade"
+                "R-> Evade"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
@@ -652,9 +657,9 @@ exportObj.basicCardData = ->
                 "Evade"
                 "Lock"
                 "Barrel Roll"
-                "R> Focus"
+                "R-> Focus"
                 "Boost"
-                "R> Focus"
+                "R-> Focus"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -696,9 +701,9 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "R> Rotate Arc"
+                "R-> Rotate Arc"
                 "Lock"
-                "R> Rotate Arc"
+                "R-> Rotate Arc"
                 "R-Barrel Roll"
             ]
             maneuvers: [
@@ -743,9 +748,9 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "R> Focus"
+                "R-> Focus"
                 "Boost"
-                "R> Focus"
+                "R-> Focus"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -894,7 +899,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "R> Evade"
+                "R-> Evade"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -1180,6 +1185,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 8
             shields: 3
+            keyword: ["Freighter"]
             actions: [
                 "Focus"
                 "Lock"
@@ -1228,7 +1234,7 @@ exportObj.basicCardData = ->
                 "Evade"
                 "Lock"
                 "Barrel Roll"
-                "R> Evade"
+                "R-> Evade"
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -1295,7 +1301,7 @@ exportObj.basicCardData = ->
                 "Calculate"
                 "Lock"
                 "Barrel Roll"
-                "R> Calculate"
+                "R-> Calculate"
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -1317,9 +1323,9 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "R> Focus"
+                "R-> Focus"
                 "Boost"
-                "R> Focus"
+                "R-> Focus"
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -1363,7 +1369,7 @@ exportObj.basicCardData = ->
              "Calculate"
              "Lock"
              "Barrel Roll"
-             "R> Lock"
+             "R-> Lock"
              "R-Reload"
            ]
            maneuvers: [
@@ -1540,7 +1546,7 @@ exportObj.basicCardData = ->
              "Lock"
              "R-Barrel Roll"
              "Reload"
-             "R> Calculate"
+             "R-> Calculate"
            ]
            maneuvers: [
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -1588,7 +1594,7 @@ exportObj.basicCardData = ->
              "Lock"
              "R-Barrel Roll"
              "Rotate Arc"
-             "R> Calculate"
+             "R-> Calculate"
            ]
            maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -1610,9 +1616,9 @@ exportObj.basicCardData = ->
              "Evade"
              "Lock"
              "Barrel Roll"
-             "R> Evade"
+             "R-> Evade"
              "Boost"
-             "R> Calculate"
+             "R-> Calculate"
            ]
            maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -1630,12 +1636,13 @@ exportObj.basicCardData = ->
            agility: 3
            hull: 2
            shields: 2
+           keyword: ["TIE"]
            actions: [
              "Focus"
              "Lock"
              "R-Barrel Roll"
              "Boost"
-             "R> Lock"
+             "R-> Lock"
            ]
            maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -1887,7 +1894,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "X-Wing"
             skill: 5
-            lightside: true
+            keyword: ["Light Side"]
             force: 2
             points: 62
             slots: [
@@ -1955,6 +1962,7 @@ exportObj.basicCardData = ->
             ship: "X-Wing"
             skill: 2
             points: 43
+            keyword: ["Partisan"]
             slots: [
                 "Illicit"
                 "Torpedo"
@@ -1987,6 +1995,7 @@ exportObj.basicCardData = ->
             ship: "X-Wing"
             skill: 3
             points: 44
+            keyword: ["Partisan"]
             slots: [
                 "Illicit"
                 "Talent"
@@ -2009,6 +2018,7 @@ exportObj.basicCardData = ->
             ship: "X-Wing"
             skill: 4
             points: 46
+            keyword: ["Partisan"]
             slots: [
                 "Illicit"
                 "Talent"
@@ -2028,6 +2038,7 @@ exportObj.basicCardData = ->
             ship: "TIE Fighter"
             skill: 3
             points: 28
+            keyword: ["Mandalorian","Spectre"]
             slots: [
                 "Talent"
                 "Modification"
@@ -2042,9 +2053,10 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "TIE Fighter"
             skill: 3
-            lightside: true
+            keyword: ["Light Side"]
             force: 1
             points: 30
+            keyword: ["Light Side","Spectre"]
             slots: [
                 "Force"
                 "Modification"
@@ -2060,6 +2072,7 @@ exportObj.basicCardData = ->
             ship: "TIE Fighter"
             skill: 2
             points: 24
+            keyword: ["Spectre"]
             slots: [
                 "Modification"
             ]
@@ -2072,6 +2085,7 @@ exportObj.basicCardData = ->
             ship: "TIE Fighter"
             skill: 2
             points: 29
+            keyword: ["Clone"]
             slots: [
                 "Modification"
             ]
@@ -2365,6 +2379,7 @@ exportObj.basicCardData = ->
             ship: "U-Wing"
             skill: 3
             points: 50
+            keyword: ["Partisan"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -2383,6 +2398,7 @@ exportObj.basicCardData = ->
             ship: "U-Wing"
             skill: 4
             points: 52
+            keyword: ["Partisan"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -2401,6 +2417,7 @@ exportObj.basicCardData = ->
             ship: "U-Wing"
             skill: 2
             points: 46
+            keyword: ["Partisan"]
             slots: [
                 "Illicit"
                 "Sensor"
@@ -2432,6 +2449,7 @@ exportObj.basicCardData = ->
             ship: "U-Wing"
             skill: 1
             points: 43
+            keyword: ["Partisan"]
             slots: [
                 "Illicit"
                 "Sensor"
@@ -2467,6 +2485,7 @@ exportObj.basicCardData = ->
             ship: "YT-2400"
             skill: 3
             points: 76
+            keyword: ["Droid"]
             slots: [
                 "Talent"
                 "Missile"
@@ -2475,13 +2494,6 @@ exportObj.basicCardData = ->
                 "Title"
                 "Illicit"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "R-Barrel Roll"
-                    "Rotate Arc"
-                ]
         }
         {
             name: "Wild Space Fringer"
@@ -2802,6 +2814,7 @@ exportObj.basicCardData = ->
             ship: "VCX-100"
             skill: 5
             points: 72
+            keyword: ["Spectre"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -2821,7 +2834,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "VCX-100"
             skill: 3
-            lightside: true
+            keyword: ["Spectre"]
             force: 2
             points: 76
             slots: [
@@ -2844,6 +2857,7 @@ exportObj.basicCardData = ->
             ship: "VCX-100"
             skill: 2
             points: 67
+            keyword: ["Droid","Spectre"]
             slots: [
                 "Torpedo"
                 "Sensor"
@@ -2854,12 +2868,6 @@ exportObj.basicCardData = ->
                 "Gunner"
                 "Title"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "Reinforce"
-                ]
         }
         {
             name: "Lothal Rebel"
@@ -2887,6 +2895,7 @@ exportObj.basicCardData = ->
             ship: "Attack Shuttle"
             skill: 5
             points: 38
+            keyword: ["Spectre"]
             slots: [
                 "Talent"
                 "Crew"
@@ -2904,6 +2913,7 @@ exportObj.basicCardData = ->
             ship: "Attack Shuttle"
             skill: 3
             points: 41
+            keyword: ["Mandalorian","Spectre"]
             slots: [
                 "Talent"
                 "Crew"
@@ -2919,7 +2929,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Attack Shuttle"
             skill: 3
-            lightside: true
+            keyword: ["Light Side","Spectre"]
             force: 1
             points: 40
             slots: [
@@ -2939,6 +2949,7 @@ exportObj.basicCardData = ->
             ship: "Attack Shuttle"
             skill: 2
             points: 32
+            keyword: ["Spectre"]
             slots: [
                 "Crew"
                 "Modification"
@@ -2955,6 +2966,7 @@ exportObj.basicCardData = ->
             ship: "Sheathipede-Class Shuttle"
             skill: 6
             points: 50
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
@@ -2974,6 +2986,7 @@ exportObj.basicCardData = ->
             skill: 3
             force: 1
             points: 40
+            keyword: ["Light Side","Spectre"]
             slots: [
                 "Force"
                 "Crew"
@@ -2992,6 +3005,7 @@ exportObj.basicCardData = ->
             ship: "Sheathipede-Class Shuttle"
             skill: 2
             points: 33
+            keyword: ["Spectre"]
             slots: [
                 "Talent"
                 "Crew"
@@ -3008,6 +3022,7 @@ exportObj.basicCardData = ->
             ship: "Sheathipede-Class Shuttle"
             skill: 1
             points:32
+            keyword: ["Droid","Spectre"]
             slots: [
                 "Talent"
                 "Crew"
@@ -3015,11 +3030,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Title"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Coordinate"
-                ]
         }
         {
             name: "Braylen Stramm"
@@ -3166,6 +3176,7 @@ exportObj.basicCardData = ->
             ship: "Aggressor"
             skill: 4
             points: 66
+            keyword: ["Bounty Hunter","Droid"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -3185,6 +3196,7 @@ exportObj.basicCardData = ->
             ship: "Aggressor"
             skill: 4
             points: 62
+            keyword: ["Bounty Hunter","Droid"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -3204,6 +3216,7 @@ exportObj.basicCardData = ->
             ship: "Aggressor"
             skill: 4
             points: 63
+            keyword: ["Bounty Hunter","Droid"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -3223,6 +3236,7 @@ exportObj.basicCardData = ->
             ship: "Aggressor"
             skill: 4
             points: 62
+            keyword: ["Bounty Hunter","Droid"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -3355,6 +3369,7 @@ exportObj.basicCardData = ->
             ship: "Customized YT-1300"
             skill: 2
             points: 41
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Crew"
@@ -3364,13 +3379,6 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "Rotate Arc"
-                    "R-Boost"
-                ]
         }
         {
             name: "Freighter Captain"
@@ -3429,17 +3437,12 @@ exportObj.basicCardData = ->
             ship: "Escape Craft"
             skill: 2
             points: 26
+            keyword: ["Droid"]
             slots: [
                 "Talent"
                 "Crew"
                 "Modification"
               ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Barrel Roll"
-                    "R-Coordinate"
-                ]
         }
         {
             name: "Autopilot Drone"
@@ -3450,14 +3453,9 @@ exportObj.basicCardData = ->
             skill: 1
             charge: 3
             points: 12
+            keyword: ["Droid"]
             slots: [
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Barrel Roll"
-                    "R-Coordinate"
-                ]
         }
         {
             name: "Fenn Rau"
@@ -3467,6 +3465,7 @@ exportObj.basicCardData = ->
             ship: "Fang Fighter"
             skill: 6
             points: 68
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -3480,6 +3479,7 @@ exportObj.basicCardData = ->
             ship: "Fang Fighter"
             skill: 5
             points: 56
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -3493,6 +3493,7 @@ exportObj.basicCardData = ->
             ship: "Fang Fighter"
             skill: 4
             points: 54
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -3506,6 +3507,7 @@ exportObj.basicCardData = ->
             ship: "Fang Fighter"
             skill: 4
             points: 52
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -3518,6 +3520,7 @@ exportObj.basicCardData = ->
             ship: "Fang Fighter"
             skill: 4
             points: 47
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -3530,6 +3533,7 @@ exportObj.basicCardData = ->
             ship: "Fang Fighter"
             skill: 1
             points: 41
+            keyword: ["Mandalorian"]
             slots: [
                 "Torpedo"
               ]
@@ -3542,6 +3546,7 @@ exportObj.basicCardData = ->
             ship: "Firespray-31"
             skill: 5
             points: 86
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Cannon"
@@ -3599,6 +3604,7 @@ exportObj.basicCardData = ->
             ship: "Firespray-31"
             skill: 3
             points: 70
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Cannon"
@@ -3636,6 +3642,7 @@ exportObj.basicCardData = ->
             ship: "Firespray-31"
             skill: 2
             points: 62
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Cannon"
                 "Missile"
@@ -3654,6 +3661,7 @@ exportObj.basicCardData = ->
             ship: "G-1A Starfighter"
             skill: 3
             points: 49
+            keyword: ["Bounty Hunter","Droid"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -3662,13 +3670,6 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
               ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "Jam"
-                ]
-
         }
         {
             name: "Zuckuss"
@@ -3678,6 +3679,7 @@ exportObj.basicCardData = ->
             ship: "G-1A Starfighter"
             skill: 3
             points: 45
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -3694,6 +3696,7 @@ exportObj.basicCardData = ->
             ship: "G-1A Starfighter"
             skill: 1
             points: 41
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Sensor"
                 "Crew"
@@ -3767,6 +3770,7 @@ exportObj.basicCardData = ->
             charge: 1
             recurring: true
             points: 53
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -3806,6 +3810,7 @@ exportObj.basicCardData = ->
             ship: "JumpMaster 5000"
             skill: 3
             points: 45
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -3859,6 +3864,7 @@ exportObj.basicCardData = ->
             ship: "Kihraxz Fighter"
             skill: 4
             points: 46
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Missile"
@@ -3876,6 +3882,7 @@ exportObj.basicCardData = ->
             ship: "Kihraxz Fighter"
             skill: 4
             points: 44
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Missile"
@@ -3941,7 +3948,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 69
             force: 2
-            darkside: true
+            keyword: ["Bounty Hunter","Dark Side"]
             slots: [
                 "Force"
                 "Crew"
@@ -3959,6 +3966,7 @@ exportObj.basicCardData = ->
             ship: "Lancer-Class Pursuit Craft"
             skill: 5
             points: 67
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Crew"
@@ -3977,6 +3985,7 @@ exportObj.basicCardData = ->
             ship: "Lancer-Class Pursuit Craft"
             skill: 3
             points: 59
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
@@ -3993,6 +4002,7 @@ exportObj.basicCardData = ->
             ship: "Lancer-Class Pursuit Craft"
             skill: 2
             points: 55
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Crew"
                 "Illicit"
@@ -4102,6 +4112,7 @@ exportObj.basicCardData = ->
             ship: "M3-A Interceptor"
             skill: 3
             points: 31
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Modification"
@@ -4184,6 +4195,7 @@ exportObj.basicCardData = ->
             ship: "Quadjumper"
             skill: 2
             points: 29
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Tech"
                 "Crew"
@@ -4288,6 +4300,7 @@ exportObj.basicCardData = ->
             ship: "StarViper"
             skill: 5
             points: 64
+            keyword: ["Droid"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -4295,15 +4308,6 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
               ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "Barrel Roll"
-                    "R> Calculate"
-                    "Boost"
-                    "R> Calculate"
-                ]
         }
         {
             name: "Prince Xizor"
@@ -4330,6 +4334,7 @@ exportObj.basicCardData = ->
             ship: "StarViper"
             skill: 4
             points: 54
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -4396,6 +4401,7 @@ exportObj.basicCardData = ->
             ship: "YV-666"
             skill: 4
             points: 60
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Cannon"
@@ -4416,6 +4422,7 @@ exportObj.basicCardData = ->
             ship: "YV-666"
             skill: 3
             points: 56
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Cannon"
@@ -4469,6 +4476,7 @@ exportObj.basicCardData = ->
             ship: "Z-95 Headhunter"
             skill: 3
             points: 27
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Missile"
@@ -4666,7 +4674,7 @@ exportObj.basicCardData = ->
             skill: 5
             points: 52
             force: 2
-            darkside: true
+            keyword: ["Dark Side"]
             slots: [
                 "Force"
                 "Sensor"
@@ -4682,7 +4690,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 43
             force: 2
-            darkside: true
+            keyword: ["Dark Side"]
             slots: [
                 "Force"
                 "Sensor"
@@ -4697,7 +4705,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 36
             force: 1
-            darkside: true
+            keyword: ["Dark Side"]
             slots: [
                 "Force"
                 "Sensor"
@@ -4724,7 +4732,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Advanced"
             skill: 6
-            darkside: true
+            keyword: ["Dark Side","Sith"]
             points: 67
             force: 3
             slots: [
@@ -5661,7 +5669,7 @@ exportObj.basicCardData = ->
             ship: "TIE/VN Silencer"
             skill: 5
             force: 2
-            darkside: true
+            keyword: ["Dark Side"]
             points: 76
             applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
             slots: [
@@ -6228,7 +6236,7 @@ exportObj.basicCardData = ->
             ship: "Sith Infiltrator"
             skill: 5
             force: 3
-            darkside: true
+            keyword: ["Dark Side","Sith"]
             points: 65
             slots: [
                 "Force"
@@ -6251,6 +6259,7 @@ exportObj.basicCardData = ->
             skill: 6
             force: 3
             points: 62
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6267,6 +6276,7 @@ exportObj.basicCardData = ->
             skill: 4
             force: 2
             points: 43
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6283,6 +6293,7 @@ exportObj.basicCardData = ->
             skill: 4
             force: 1
             points: 38
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6299,6 +6310,7 @@ exportObj.basicCardData = ->
             skill: 3
             force: 2
             points: 44
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6314,6 +6326,7 @@ exportObj.basicCardData = ->
             skill: 3
             force: 1
             points: 37
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6330,6 +6343,7 @@ exportObj.basicCardData = ->
             skill: 5
             force: 3
             points: 49
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6344,6 +6358,7 @@ exportObj.basicCardData = ->
             ship: "Vulture-class Droid Fighter"
             skill: 1
             points: 20
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Configuration"
@@ -6358,6 +6373,7 @@ exportObj.basicCardData = ->
             ship: "ARC-170"
             skill: 3
             points: 54
+            keyword: ["Clone"]
             slots: [
                 "Torpedo"
                 "Crew"
@@ -6801,20 +6817,12 @@ exportObj.basicCardData = ->
             ship: "Belbullab-22 Starfighter"
             skill: 1
             points: 35
+            keyword: ["Droid"]
             slots: [
                 "Tactical Relay"
                 "Modification"
                 "Title"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "Barrel Roll"
-                    "R> Calculate"
-                    "Boost"
-                    "R> Calculate"
-                ]
         }
         {
             name: "Captain Sear"
@@ -6838,6 +6846,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 23
             max_per_squad: 3
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Configuration"
@@ -6852,6 +6861,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 21
             max_per_squad: 2
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Configuration"
@@ -6866,6 +6876,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 26
             unique: true
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Configuration"
@@ -6881,6 +6892,7 @@ exportObj.basicCardData = ->
             skill: 5
             force: 2
             points: 45
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6897,6 +6909,7 @@ exportObj.basicCardData = ->
             skill: 4
             force: 2
             points: 43
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6913,6 +6926,7 @@ exportObj.basicCardData = ->
             skill: 4
             force: 3
             points: 46
+            keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -6928,6 +6942,7 @@ exportObj.basicCardData = ->
             ship: "V-19 Torrent"
             skill: 4
             points: 30
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Missile"
@@ -6942,6 +6957,7 @@ exportObj.basicCardData = ->
             ship: "V-19 Torrent"
             skill: 5
             points: 31
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Missile"
@@ -6956,6 +6972,7 @@ exportObj.basicCardData = ->
             ship: "V-19 Torrent"
             skill: 3
             points: 28
+            keyword: ["Clone"]
             slots: [
                 "Missile"
                 "Modification"
@@ -6969,6 +6986,7 @@ exportObj.basicCardData = ->
             ship: "V-19 Torrent"
             skill: 3
             points: 29
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Missile"
@@ -6983,6 +7001,7 @@ exportObj.basicCardData = ->
             ship: "V-19 Torrent"
             skill: 2
             points: 27
+            keyword: ["Clone"]
             slots: [
                 "Missile"
                 "Modification"
@@ -6995,6 +7014,7 @@ exportObj.basicCardData = ->
             ship: "V-19 Torrent"
             skill: 3
             points: 26
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Missile"
@@ -7008,6 +7028,7 @@ exportObj.basicCardData = ->
             ship: "V-19 Torrent"
             skill: 2
             points: 25
+            keyword: ["Clone"]
             slots: [
                 "Missile"
                 "Modification"
@@ -7024,6 +7045,7 @@ exportObj.basicCardData = ->
             skill: 4
             force: 1
             points: 41
+            keyword: ["Light Side"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -7051,6 +7073,7 @@ exportObj.basicCardData = ->
             ship: "Hyena-Class Droid Bomber"
             skill: 1
             points: 25
+            keyword: ["Droid"]
             slots: [
                 "Torpedo"
                 "Missile"
@@ -7066,6 +7089,7 @@ exportObj.basicCardData = ->
             ship: "Hyena-Class Droid Bomber"
             skill: 3
             max_per_squad: 3
+            keyword: ["Droid"]
             points: 29
             slots: [
                 "Sensor"
@@ -7083,6 +7107,7 @@ exportObj.basicCardData = ->
             ship: "Hyena-Class Droid Bomber"
             skill: 4
             points: 30
+            keyword: ["Droid"]
             slots: [
                 "Torpedo"
                 "Missile"
@@ -7098,6 +7123,7 @@ exportObj.basicCardData = ->
             ship: "Hyena-Class Droid Bomber"
             skill: 3
             points: 28
+            keyword: ["Droid"]
             slots: [
                 "Torpedo"
                 "Missile"
@@ -7114,6 +7140,7 @@ exportObj.basicCardData = ->
             ship: "Hyena-Class Droid Bomber"
             skill: 3
             points: 40
+            keyword: ["Droid"]
             slots: [
                 "Sensor"
                 "Tactical Relay"
@@ -7125,7 +7152,7 @@ exportObj.basicCardData = ->
                      "Calculate"
                      "Lock"
                      "Barrel Roll"
-                     "R> Lock"
+                     "R-> Lock"
                      "R-Jam"
                 ]
         }
@@ -7137,6 +7164,7 @@ exportObj.basicCardData = ->
             ship: "Hyena-Class Droid Bomber"
             skill: 1
             points: 28
+            keyword: ["Droid"]
             slots: [
                 "Sensor"
                 "Missile"
@@ -7216,7 +7244,7 @@ exportObj.basicCardData = ->
             ship: "Sith Infiltrator"
             skill: 3
             force: 3
-            darkside: true
+            keyword: ["Dark Side","Sith"]
             points: 63
             slots: [
                 "Force"
@@ -7238,6 +7266,7 @@ exportObj.basicCardData = ->
             ship: "Sith Infiltrator"
             skill: 3
             points: 49
+            keyword: ["Droid"]
             slots: [
                 "Talent"
                 "Cannon"
@@ -7249,12 +7278,6 @@ exportObj.basicCardData = ->
                 "Title"
                 "Tactical Relay"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "R-Barrel Roll"
-                ]
         }
         {
             name: "Dark Courier"
@@ -7282,6 +7305,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 23
             unique: true
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Configuration"
@@ -7298,6 +7322,7 @@ exportObj.basicCardData = ->
             ship: "ARC-170"
             skill: 5
             points: 49
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -7315,6 +7340,7 @@ exportObj.basicCardData = ->
             ship: "ARC-170"
             skill: 3
             points: 48
+            keyword: ["Clone"]
             slots: [
                 "Torpedo"
                 "Crew"
@@ -7330,6 +7356,7 @@ exportObj.basicCardData = ->
             ship: "ARC-170"
             skill: 3
             points: 44
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -7346,6 +7373,7 @@ exportObj.basicCardData = ->
             ship: "ARC-170"
             skill: 2
             points: 42
+            keyword: ["Clone"]
             slots: [
                 "Torpedo"
                 "Crew"
@@ -7363,6 +7391,7 @@ exportObj.basicCardData = ->
             skill: 4
             charge: 1
             points: 50
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -7379,6 +7408,7 @@ exportObj.basicCardData = ->
             ship: "Vulture-class Droid Fighter"
             skill: 3
             points: 22
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Configuration"
@@ -7472,19 +7502,13 @@ exportObj.basicCardData = ->
             ship: "Resistance Transport Pod"
             skill: 3
             points: 26
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Tech"
                 "Crew"
                 "Modification"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "R-Lock"
-                    "R-Barrel Roll"
-                    "R-Jam"
-                ]
         }
         {
             name: "Finn"
@@ -7624,6 +7648,7 @@ exportObj.basicCardData = ->
             skill: 6
             force: 3
             points: 55
+            keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
                 "Turret"
@@ -7684,13 +7709,6 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "R-Barrel Roll"
-                    "R-Reload"
-                ]
         }
         {
             name: '"Goji"'
@@ -8010,6 +8028,7 @@ exportObj.basicCardData = ->
             ship: "Fireball"
             skill: 1
             points: 29
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Crew"
@@ -8018,13 +8037,6 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Evade"
-                    "Barrel Roll"
-                    "Slam"
-                ]
         }
         {
             name: "Colossus Station Mechanic"
@@ -8193,6 +8205,7 @@ exportObj.basicCardData = ->
             skill: 3
             ship: "U-Wing"
             points: 46
+            keyword: ["Droid"]
             slots: [
                 "Talent"
                 "Sensor"
@@ -8201,12 +8214,6 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Configuration"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Lock"
-                    "R-Coordinate"
-                ]
         }
         {
             name: "Gina Moonsong"
@@ -8272,7 +8279,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             unique: true
             skill: 4
-            darkside: true
+            keyword: ["Dark Side"]
             ship: "TIE Advanced Prototype"
             points: 42
             force: 2
@@ -8345,6 +8352,7 @@ exportObj.basicCardData = ->
             skill: 4
             ship: "Z-95 Headhunter"
             points: 29
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Missile"
@@ -8360,17 +8368,11 @@ exportObj.basicCardData = ->
             skill: 0
             ship: "M3-A Interceptor"
             points: 28
+            keyword: ["Droid"]
             slots: [
                 "Modification"
                 "HardpointShip"
             ]
-            ship_override:
-                actions: [
-                    "Calculate"
-                    "Evade"
-                    "Lock"
-                    "Barrel Roll"
-                ]
         }
         {
             name: "Nom Lumb"
@@ -8380,6 +8382,7 @@ exportObj.basicCardData = ->
             skill: 1
             ship: "JumpMaster 5000"
             points: 38
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Torpedo"
                 "Cannon"
@@ -8470,6 +8473,7 @@ exportObj.basicCardData = ->
             skill: 1
             ship: "HMP Droid Gunship"
             points: 34
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8498,6 +8502,7 @@ exportObj.basicCardData = ->
             skill: 3
             ship: "HMP Droid Gunship"
             points: 36
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8516,6 +8521,7 @@ exportObj.basicCardData = ->
             max_per_squad: 2
             ship: "HMP Droid Gunship"
             points: 35
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8534,6 +8540,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "HMP Droid Gunship"
             points: 35
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8552,6 +8559,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "HMP Droid Gunship"
             points: 42
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8570,6 +8578,7 @@ exportObj.basicCardData = ->
             max_per_squad: 2
             ship: "HMP Droid Gunship"
             points: 40
+            keyword: ["Droid"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8589,6 +8598,7 @@ exportObj.basicCardData = ->
             recurring: true
             ship: "LAAT/i Gunship"
             points: 51
+            keyword: ["Clone"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8609,6 +8619,7 @@ exportObj.basicCardData = ->
             recurring: true
             ship: "LAAT/i Gunship"
             points: 52
+            keyword: ["Clone"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8629,6 +8640,7 @@ exportObj.basicCardData = ->
             recurring: true
             ship: "LAAT/i Gunship"
             points: 54
+            keyword: ["Clone"]
             slots: [
                 "Missile"
                 "Missile"
@@ -8649,6 +8661,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "LAAT/i Gunship"
             points: 55
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Missile"
@@ -8884,7 +8897,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Loyalist Vanguard"
+            name: "Loyalist Volunteer"
             id: 430
             faction: "Galactic Republic"
             skill: 2
@@ -8897,7 +8910,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Shadow Squadron Scout"
+            name: "Shadow Squadron Escort"
             id: 431
             faction: "Galactic Republic"
             skill: 3
@@ -8926,13 +8939,15 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unnamed I4"
+            name: '"Klick"'
             id: 433
             faction: "Galactic Republic"
             skill: 4
             unique: true
             ship: "Nimbus-class V-Wing"
             points: 200
+            charge: 1
+            recurring: true
             slots: [
                 "Talent"
                 "Astromech"
@@ -8941,7 +8956,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unnamed I5"
+            name: '"Contrail"'
             id: 434
             faction: "Galactic Republic"
             skill: 5
@@ -8956,7 +8971,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Oddball" (V-Wing)'
+            name: '"Odd Ball" (V-Wing)'
             canonical_name: '"Oddball"'.canonicalize()
             id: 435
             faction: "Galactic Republic"
@@ -9035,6 +9050,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 200
+            keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -9050,6 +9066,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 200
+            keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
                 "Astromech"
@@ -9584,7 +9601,7 @@ exportObj.basicCardData = ->
            name: "Kanan Jarrus"
            id: 41
            slot: "Crew"
-           lightside: true
+           keyword: ["Light Side"]
            points: 12
            force: 1
            unique: true
@@ -9657,10 +9674,7 @@ exportObj.basicCardData = ->
                 stats.darkside = true
            restriction_func: (ship) ->
                 builder = ship.builder
-                return true if builder.faction == "Scum and Villainy"
-                for t, things of builder.uniques_in_use
-                    if t != 'Slot'
-                        return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("ezrabridger")
                 false
        }
        {
@@ -9802,10 +9816,7 @@ exportObj.basicCardData = ->
            faction: ["Scum and Villainy", "Galactic Empire"]
            restriction_func: (ship) ->
                 builder = ship.builder
-                return true if builder.faction == "Scum and Villainy"
-                for t, things of builder.uniques_in_use
-                    if t != 'Slot'
-                        return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
                 false
        }
        {
@@ -9936,10 +9947,7 @@ exportObj.basicCardData = ->
            faction: ["Scum and Villainy", "Galactic Empire"]
            restriction_func: (ship) ->
                 builder = ship.builder
-                return true if builder.faction == "Scum and Villainy"
-                for t, things of builder.uniques_in_use
-                    if t != 'Slot'
-                        return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
                 false
        }
        {
@@ -10476,7 +10484,7 @@ exportObj.basicCardData = ->
            modifier_func: (stats) ->
                 stats.actions.push 'Boost'
                 stats.actions.push '*Focus'
-                stats.actions.push 'R> Boost'
+                stats.actions.push 'R-> Boost'
        }
        {
            name: "Blank"
@@ -10820,7 +10828,7 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.actions.push 'Barrel Roll'
                 stats.actions.push '*Focus'
-                stats.actions.push 'R> Barrel Roll'
+                stats.actions.push 'R-> Barrel Roll'
        }
        {
             name: "Integrated S-Foils (Open)"
@@ -11085,7 +11093,7 @@ exportObj.basicCardData = ->
             pointsarray: [3,6,9]
             variablebase: true
             restriction_func: (ship) ->
-                ship.effectiveStats().darkside == true
+                ship.checkKeyword("Dark Side")
        }
        {
             name: "R5-X3"
@@ -11788,7 +11796,7 @@ exportObj.basicCardData = ->
             points: 4
             modifier_func: (stats) ->
                 stats.actions.push '*Lock'
-                stats.actions.push 'R> Coordinate'
+                stats.actions.push 'R-> Coordinate'
             restriction_func: (ship) ->
                 ship.data.huge?
        }
@@ -11922,9 +11930,9 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.shields -= 2
                 stats.actions.push '*Evade'
-                stats.actions.push 'R> Coordinate'
+                stats.actions.push 'R-> Coordinate'
                 stats.actions.push '*Focus'
-                stats.actions.push 'R> Coordinate'
+                stats.actions.push 'R-> Coordinate'
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -12290,9 +12298,9 @@ exportObj.basicCardData = ->
             points: 2
             modifier_func: (stats) ->
                 stats.actions.push '*Barrel Roll'
-                stats.actions.push 'R> Evade'
+                stats.actions.push 'R-> Evade'
                 stats.actions.push '*Barrel Roll'
-                stats.actions.push 'R> Lock'
+                stats.actions.push 'R-> Lock'
                 stats.actions.push 'R-Reload'
        }
        {
@@ -12457,7 +12465,7 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.actions.push 'Calculate'
                 stats.actions.push '*Barrel Roll'
-                stats.actions.push '*R> Calculate'
+                stats.actions.push '*R-> Calculate'
        }
        {
             name: "Ion Limiter Override"
@@ -12465,7 +12473,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 200
             restriction_func: (ship) ->
-               ship.data.name?.includes("TIE")
+                ship.checkKeyword("TIE")
        }
        {
             name: "Marg Sabl Closure"
@@ -12523,19 +12531,27 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             ship: "Nimbus-class V-Wing"
             points: 200
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Device'
+                }
+           ]
        }
        {
-            name: "Twin Ion Engines"
+            name: "Precision Ion Engines"
             id: 338
-            skip: true
             slot: "Modification"
             points: 200
+            charge: 2
+            restriction_func: (ship) ->
+                ship.checkKeyword("TIE") and (ship.data.agility == 3)
        }
        {
             name: "Thermal Detonators"
             id: 339
-            skip: true
-            slot: "Configuration"
+            slot: "Device"
+            charge: 4
             points: 200
             applies_condition: 'Thermal Detonator'.canonicalize()
        }
@@ -12561,6 +12577,8 @@ exportObj.basicCardData = ->
             id: 342
             slot: "Force"
             points: 200
+            restriction_func: (ship) ->
+                ship.checkKeyword("Light Side")
        }
        {
             name: "Deadeye Shot"
@@ -12576,7 +12594,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 200
             restriction_func: (ship) ->
-               ship.data.name?.includes("A-Wing")
+               ship.checkKeyword("A-Wing")
        }
        {
             name: "Overdrive Thruster"
@@ -12641,7 +12659,7 @@ exportObj.basicCardData = ->
             also_occupies_upgrades: [ "Gunner" ]
             modifier_func: (stats) ->
                 stats.actions.push '*Rotate Arc'
-                stats.actions.push 'R> Focus'
+                stats.actions.push 'R-> Focus'
        }
        {
             name: "Wolfpack"
@@ -12708,7 +12726,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 200
             restriction_func: (ship, upgrade_obj) ->
-                ship.data.name?.includes("X-Wing") and (not ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Configuration"))
+                ship.checkKeyword("X-Wing") and (not ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Configuration"))
        }
        {
             name: "R2-D2 (Resistance)"
@@ -12737,7 +12755,7 @@ exportObj.basicCardData = ->
             rangebonus: true
             faction: "Resistance"
             restriction_func: (ship) ->
-                ship.data.name?.includes("X-Wing")
+                ship.checkKeyword("X-Wing")
             modifier_func: (stats) ->
                 stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
        }
@@ -12753,6 +12771,31 @@ exportObj.basicCardData = ->
             points: 200
             slot: "Configuration"
             ship: "Syliure-class Hyperspace Ring"
+       }
+       {
+            name: 'Alpha-3E "Esk"'
+            id: 363
+            slot: "Configuration"
+            ship: "Nimbus-class V-Wing"
+            points: 200
+            charge: 2
+            recurring: true
+       }
+       {
+            name: "R7-A7"
+            id: 364
+            points: 200
+            unique: true
+            charge: 3
+            slot: "Astromech"
+            faction: "Galactic Republic"
+       }
+       {
+            name: "Q7 Astromech"
+            id: 365
+            points: 200
+            slot: "Astromech"
+            faction: "Galactic Republic"
        }
     ]
 
@@ -14621,6 +14664,7 @@ exportObj.basicCardData = ->
             pilot: "Cavern Angels Zealot"
             ship: "X-Wing"
             threat: 2
+            keyword: ["Partisan"]
             upgrades: [
                 "R2 Astromech"
                 "Deadman's Switch"

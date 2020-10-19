@@ -1558,7 +1558,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Ion Bombs":
            display_name: """Ion Bombs"""
            text: """<strong>Bomba</strong><br>A Rendszer fázisban elkölthetsz 1&nbsp;%CHARGE% jelzőt, hogy kidobj egy Proton bombát az [1&nbsp;%STRAIGHT%] sablonnal."""
-           "ISB Slicer":
+        "ISB Slicer":
            display_name: """ISB Slicer"""
            text: """<i>csak Birodalom</i>%LINEBREAK%A Vége fázis alatt az ellenséges hajók 1-2-es távban nem vehetik le a zavarás jelzőket."""
         "Inertial Dampeners":
@@ -2031,7 +2031,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Amikor végrehajtasz egy támadást, elkölthetsz 1 %FOCUS% jelzőt. Ha így teszel a védekező kap 1 kimerültség (deplete) jelzőt, hacsak nem szenved el 1 %HIT% sérülést."""
         "Ghost Company":
            text: """<i>Követelmény: %ROTATEARC%</i><br><i>Kapott akció: %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%FOCUS%</r></i><br>Miután végrehajtasz egy elsődleges támadást, ha fókuszált vagy, végrehajthatsz egy bónusz %SINGLETURRETARC% támadást egy olyan hajó ellen, amelyet még nem támadtál ebben a körben."""
-        "Wolf Pack":
+        "Wolfpack":
            text: """Miután egy baráti hajó 0-3-as távolságban védekezik, ha a támadó benne van a tűzívedben, a védekező kaphat 1 feszültség (strain) jelzőt, hogy feltegyen egy bemérőt a támadóra."""
         "Yoda":
            text: """<i>Kapott akció: <f>%COORDINATE%</f></i> <br>Miután egy másik baráti hajó 0-2-es távolságban teljesen végrehajt egy lila manővert vagy akciót, elkölthetsz 1 %FORCE% jelzőt. Ha így teszel, az a hajó visszatölthet 1 %FORCE% jelzőt."""
@@ -2043,7 +2043,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """<i>Kapott akció: %FOCUS% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <f>%COORDINATE%</f></i><br>Amikor egy ellenséges hajó a %BULLSEYEARC% tűzívedben végrehajt egy támadást, ha a védekező egy baráti hajó és 0-2 távolságban van, megváltoztatja egy üres eredményét %FOCUS% eredményre."""
         "Repulsorlift Stabilizers":
            text: """<strong>Inaktív: Felhelyezés:</strong> ezzel az oldalával szereld fel. Csökkentsd a nehézségét a (%STRAIGHT%) manővereidnek. <br> Miután teljesen végrehajtasz egy manővert, megfordíthatod ezt a kártyát. %LINEBREAK%<strong>Aktív: </strong> Miután felfedsz egy (%BANKLEFT% vagy %BANKRIGHT%) vagy (%TURNLEFT% vagy %TURNRIGHT%) manővert, azt oldalazva <b>kell</b> végrehajtanod, majd fordítsd meg ezt a kártyát.<br>Miután végrehajtottál egy nem oldalazó manővert, megfordíthatod ezt a kártyát."""
-        "Multi-Missle Pods":
+        "Multi-Missile Pods":
            text: """<strong>Támadás (%CALCULATE% vagy %LOCK%):</strong> Költs el 1 %CHARGE% jelzőt. Ha a védekező benne van a %FRONTARC% tűzívedben, elköthetsz 1 %CHARGE% jelzőt, hogy 1-gyel több támadókockával dobj. Ha a védekező benne van a %BULLSEYEARC% tűzívedben, elkölthetsz akár 2 %CHARGE% jelzőt, hogy annyival több támadókockával dobj."""
         "Synced Laser Cannons":
            text: """<strong>Támadás:</strong> ha van %CALCULATE% jelződ, a védekező nem alkalmazhatja a távolság bónuszt."""
@@ -2097,6 +2097,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """<strong>Felhelyezés:</strong> mielőt felhelyezed a hajóidat, helyezz 2 érzékelő bóját 2-es távolságon túl bármelyik pályaszéltől.<br>Mielőtt rád kerül a sor az Ütközet fázisban, rakhatsz egy bemérőt egy baráti érzékelő bójától 0-1 távolságban lévő hajóra, figyelmen kívül hagyva a távolság korlátozást."""
         "Kalani":
            text: """Miután egy ellenséges hajó végrehajt egy manővert, ha az benne van egy 0-3-as távolságban lévő baráti hajó %BULLSEYEARC% tűzívében, elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, az a hajó feltehet egy bemérőt arra az ellenséges hajóra, aztán kap egy stressz jelzőt."""
+
         # Epic upgrades
         "Admiral Ozzel":
            display_name: """Admiral Ozzel"""
