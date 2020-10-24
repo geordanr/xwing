@@ -8742,7 +8742,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Limited I3"
+            name: "Fearsome Predator"
             id: 420
             faction: "Separatist Alliance"
             max_per_squad: 3
@@ -8755,9 +8755,10 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Configuration"
             ]
+            applies_condition: '''Fearful Prey'''.canonicalize()
         }
         {
-            name: "Unnamed I3"
+            name: "DIS-347"
             id: 421
             faction: "Separatist Alliance"
             skill: 3
@@ -8787,7 +8788,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Limited I5"
+            name: "Phlac-Arphocc Prototype"
             id: 423
             faction: "Separatist Alliance"
             skill: 5
@@ -12496,7 +12497,8 @@ exportObj.basicCardData = ->
             slot: "Missile"
             attack: 3
             range: """1-3"""
-            rangebonus: true
+            limited: 2
+            max_per_squad: 2
             charge: 2
             points: 200
        }
@@ -12804,6 +12806,27 @@ exportObj.basicCardData = ->
             slot: "Astromech"
             faction: "Galactic Republic"
        }
+       {
+            name: "Intercept Booster"
+            id: 366
+            points: 200
+            slot: "Configuration"
+            ship: "Droid Tri-Fighter"
+            faction: "Separatist Alliance"
+            charge: 3
+            modifier_func: (stats) ->
+                stats.actions.push '*Slam'
+                stats.actions.push 'R-> Lock'
+       }
+       {
+            name: "Independent Calculations"
+            id: 367
+            points: 200
+            standardized: true
+            slot: "Modification"
+            restriction_func: (ship) ->
+                ship.pilot.text?.includes("Networked Calculations:")
+       }
     ]
 
 
@@ -12911,6 +12934,10 @@ exportObj.basicCardData = ->
         {
             name: 'Sensor Buoy'
             id: 23
+        }
+        {
+            name: 'Fearful Prey'
+            id: 24
         }
     ]
 

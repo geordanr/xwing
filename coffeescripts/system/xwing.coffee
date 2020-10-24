@@ -3161,63 +3161,49 @@ class Ship
         #console.log "Attempt to copy #{other?.pilot?.name}"
         return unless other.pilot? and other.data?
         #console.log "Setting pilot to ID=#{other.pilot.id}"
-        if other.pilot.unique or (other.pilot.max_per_squad? and @builder.countPilots(other.pilot.canonical_name) >= other.pilot.max_per_squad)
-            # Look for cheapest generic or available unique, otherwise do nothing
-            available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
-            if available_pilots.length > 0
-                @setPilotById available_pilots[0].id, true
-                # Can't just copy upgrades since slots may be different
-                # Similar to setPilot() when ship is the same
+        if @builder.isQuickbuild        
+            if not (other.pilot.unique or (other.pilot.max_per_squad? and @builder.countPilots(other.pilot.canonical_name) >= other.pilot.max_per_squad))
+                # check if any upgrades are unique. In that case the whole ship may not be copied
+                no_uniques_involved = true
+                for upgrade in other.upgrades
+                    if (upgrade.data?.unique? and upgrade.data.unique) or (upgrade.data?.max_per_squad? and @builder.countUpgrades(upgrade.data.canonical_name) >= upgrade.data.max_per_squad) or upgrade.data?.solitary?
+                        no_uniques_involved = false
+                        # select cheapest generic like above
+                        available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
+                        if available_pilots.length > 0
+                            @setPilotById available_pilots[0].id, true
+                            break
+                        else
+                            return
+                if no_uniques_involved
+                    @setPilotById other.quickbuildId
+        else 
+            if other.pilot.unique or (other.pilot.max_per_squad? and @builder.countPilots(other.pilot.canonical_name) >= other.pilot.max_per_squad)
+                # Look for cheapest generic or available unique, otherwise do nothing
+                available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
+                if available_pilots.length > 0
+                    @setPilotById available_pilots[0].id, true
 
-                if not @builder.isQuickbuild 
-                # In case of quick build upgrades are equipped when setPilotById is called, so no need to copy anything. 
-                    other_upgrades = {}
-                    for upgrade in other.upgrades
-                        if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
-                            other_upgrades[upgrade.slot] ?= []
-                            other_upgrades[upgrade.slot].push upgrade
-                    delayed_upgrades = {}
-                    for upgrade in @upgrades
-                        other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
-                        if other_upgrade?
-                            upgrade.setById other_upgrade.data.id
-                            if not upgrades.lastSetValid
-                                delayed_upgrades[other_upgrade.data.id] = upgrade
-                    for id, upgrade of delayed_upgrades
-                        upgrade.setById id
+                else
+                    return
             else
-                return
-        else if @builder.isQuickbuild        
-            # check if any upgrades are unique. In that case the whole ship may not be copied
-            no_uniques_involved = true
+                @setPilotById other.pilot.id, true
+
+            # Can't just copy upgrades since slots may be different
+            other_upgrades = {}
             for upgrade in other.upgrades
-                if (upgrade.data?.unique? and upgrade.data.unique) or (upgrade.data?.max_per_squad? and @builder.countUpgrades(upgrade.data.canonical_name) >= upgrade.data.max_per_squad) or upgrade.data?.solitary?
-                    no_uniques_involved = false
-                    # select cheapest generic like above
-                    available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
-                    if available_pilots.length > 0
-                        @setPilotById available_pilots[0].id, true
-                        break
-                    else
-                        return
-            if no_uniques_involved
-                @setPilotById other.quickbuildId
-        else
-            # Exact clone, so we can copy things over directly
-            @setPilotById other.pilot.id, true
-
+                if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
+                    other_upgrades[upgrade.slot] ?= []
+                    other_upgrades[upgrade.slot].push upgrade
             delayed_upgrades = {}
-            #console.log "Looking for conferred upgrades..."
-            for other_upgrade, i in other.upgrades
-                # console.log "Examining upgrade #{other_upgrade}"
-                if other_upgrade.data? and not other_upgrade.data.unique and i < @upgrades.length and ((not other_upgrade.data.max_per_squad?) or @builder.countUpgrades(other_upgrade.data.canonical_name) < other_upgrade.data.max_per_squad)
-                    #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
-                    @upgrades[i].setById other_upgrade.data.id
-                    if not @upgrades[i].lastSetValid
-                        delayed_upgrades[i] = other_upgrade.data.id
-            for i, id of delayed_upgrades
-                @upgrades[i].setById id
-
+            for upgrade in @upgrades
+                other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
+                if other_upgrade?
+                    upgrade.setById other_upgrade.data.id
+                    if not upgrades.lastSetValid
+                        delayed_upgrades[other_upgrade.data.id] = upgrade
+            for id, upgrade of delayed_upgrades
+                upgrade.setById id
 
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
