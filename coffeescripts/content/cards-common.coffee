@@ -7502,7 +7502,7 @@ exportObj.basicCardData = ->
             ship: "Resistance Transport Pod"
             skill: 3
             points: 26
-            keyword: ["Clone"]
+            keyword: ["Droid"]
             slots: [
                 "Talent"
                 "Tech"
@@ -7666,6 +7666,7 @@ exportObj.basicCardData = ->
             ship: "BTL-B Y-Wing"
             skill: 3
             points: 31
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Turret"
@@ -7683,6 +7684,7 @@ exportObj.basicCardData = ->
             ship: "BTL-B Y-Wing"
             skill: 2
             points: 29
+            keyword: ["Clone"]
             slots: [
                 "Turret"
                 "Torpedo"
@@ -7700,6 +7702,7 @@ exportObj.basicCardData = ->
             ship: "BTL-B Y-Wing"
             skill: 2
             points: 32
+            keyword: ["Droid"]
             slots: [
                 "Talent"
                 "Turret"
@@ -7718,6 +7721,7 @@ exportObj.basicCardData = ->
             ship: "BTL-B Y-Wing"
             skill: 2
             points: 29
+            keyword: ["Clone"]
             slots: [
                 "Turret"
                 "Torpedo"
@@ -7735,6 +7739,7 @@ exportObj.basicCardData = ->
             ship: "BTL-B Y-Wing"
             skill: 3
             points: 36
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Turret"
@@ -7753,6 +7758,7 @@ exportObj.basicCardData = ->
             ship: "BTL-B Y-Wing"
             skill: 4
             points: 43
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Turret"
@@ -7773,6 +7779,7 @@ exportObj.basicCardData = ->
             ship: "BTL-B Y-Wing"
             skill: 5
             points: 42
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Turret"
