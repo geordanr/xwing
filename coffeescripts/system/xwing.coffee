@@ -132,6 +132,11 @@ class exportObj.SquadBuilder
                 []
             Slot:
                 []
+        @standard_list =
+            Upgrade:
+                []
+            Ship:
+                []
         @suppress_automatic_new_ship = false
         @tooltip_currently_displaying = null
         @randomizer_options =
@@ -1418,6 +1423,13 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing:shipUpdated'
         cb()
 
+    addStandarized: (ship) ->
+        idx = @standard_list['Ship'].indexOf ship.data.name
+        if idx > -1
+            for ship_upgrade in ship.upgrades
+                if (ship_upgrade.slot == @standard_list['Upgrade'][idx].slot) and (not ship_upgrade.data? )
+                        ship_upgrade.setData @standard_list['Upgrade'][i]
+
     onPointsUpdated: (cb=$.noop) =>
         tot_points = 0
         points_dest = 0
@@ -1428,6 +1440,9 @@ class exportObj.SquadBuilder
             ship = @ships[i]
             ship.validate()
             continue unless ship # if the ship has been removed, we no longer care about it
+            # Standardized Loop, will integrate later for efficiency
+            @addStandarized(ship)
+
             tot_points += ship.getPoints()
             if ship.destroystate == 1
                 points_dest += Math.ceil ship.getPoints() / 2
@@ -1436,6 +1451,7 @@ class exportObj.SquadBuilder
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
         
+
         @total_points = tot_points
         @points_destroyed = points_dest
         @total_points_span.text @total_points
@@ -3327,7 +3343,6 @@ class Ship
                     @copy_button.hide()
                 @builder.container.trigger 'xwing:pointsUpdated'
                 @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
-            
 
     setPilot: (new_pilot, noautoequip = false) ->
         # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
@@ -3352,6 +3367,12 @@ class Ship
                 @setupAddons() if @pilot?
                 @copy_button.show()
                 @setShipType @pilot.ship
+                idx = @builder.standard_list['Ship'].indexOf @data.name
+                if idx > -1
+                    for upgrade in @upgrades
+                        if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
+                            upgrade.setData @builder.standard_list['Upgrade'][idx]
+                            break
                 if (@pilot.autoequip? or (exportObj.ships[@pilot.ship].autoequip? and not same_ship)) and not noautoequip
                     autoequip = (@pilot.autoequip ? []).concat(exportObj.ships[@pilot.ship].autoequip ? [])
                     for upgrade_name in autoequip
@@ -4340,6 +4361,8 @@ class GenericAddon
         @destroyed = true
         @rescindAddons()
         @deoccupyOtherUpgrades()
+        if @data?.standardized?
+            @removeStandardized(@ship.data.name,@data.name)
         @selector.select2 'destroy'
         @selectorwrap.remove()
         cb args
@@ -4447,12 +4470,31 @@ class GenericAddon
                 @unequipOtherUpgrades()
                 @occupyOtherUpgrades()
                 @conferAddons()
+                if @data.standardized?
+                    @addToStandardizedList()
             else
                 @deoccupyOtherUpgrades()
 
             # this will remove not allowed upgrades (is also done on pointsUpdated). We do it explicitly so we can tell if the setData was successfull
             @lastSetValid = @ship.validate()
             @ship.builder.container.trigger 'xwing:pointsUpdated'
+
+    addToStandardizedList: ->
+        # check first if standard combo exists and return if it does
+        idx = @ship.builder.standard_list['Upgrade'].indexOf @data
+        if idx > -1
+            if @ship.builder.standard_list['Ship'][idx].name? == @ship.data.name
+                return
+        @ship.builder.standard_list['Upgrade'].push @data
+        @ship.builder.standard_list['Ship'].push @ship.data.name
+
+    removeStandardized: ->
+        # removes the ship upgrade combo from the stanard list array
+        idx = @ship.builder.standard_list['Upgrade'].indexOf @data
+        if idx > -1
+            if @ship.builder.standard_list['Ship'][idx].name? == @ship.data.name
+                @ship.builder.standard_list['Upgrade'].splice idx,1 
+                @ship.builder.standard_list['Ship'].splice idx,1
 
     conferAddons: ->
         if @data.confersAddons? and !@ship.builder.isQuickbuild and @data.confersAddons.length > 0
