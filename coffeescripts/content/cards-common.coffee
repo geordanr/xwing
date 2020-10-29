@@ -1297,6 +1297,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 0
+            keyword: ["Networked Calculations"]
             actions: [
                 "Calculate"
                 "Lock"
@@ -1365,6 +1366,7 @@ exportObj.basicCardData = ->
            agility: 2
            hull: 5
            shields: 0
+           keyword: ["Networked Calculations"]
            actions: [
              "Calculate"
              "Lock"
@@ -1611,6 +1613,7 @@ exportObj.basicCardData = ->
            attack: 3
            agility: 3
            hull: 3
+           keyword: ["Networked Calculations"]
            actions: [
              "Calculate"
              "Evade"
@@ -8681,7 +8684,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Cardia Academy Pilot"
+            name: "Carida Academy Cadet"
             id: 416
             faction: "Galactic Empire"
             skill: 1
@@ -8834,10 +8837,10 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Separatist Hunter"
+            name: "Separatist Racketeer"
             id: 426
             faction: "Separatist Alliance"
-            skill: 1
+            skill: 2
             ship: "Firespray-31"
             points: 200
             slots: [
@@ -8875,6 +8878,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             unique: true
             skill: 5
+            charge: 4
             ship: "Firespray-31"
             points: 200
             slots: [
@@ -8887,6 +8891,7 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
+            applies_condition: ['''You'd Better Mean Business'''.canonicalize(),'You Should Thank Me'.canonicalize()]
         }
         {
             name: "Jango Fett"
@@ -12520,6 +12525,7 @@ exportObj.basicCardData = ->
        }
        {
             name: "Boba Fett (Separatist)"
+            canonical_name: 'Boba Fett'.canonicalize()
             id: 334
             slot: "Gunner"
             unique: true
@@ -12531,7 +12537,7 @@ exportObj.basicCardData = ->
             id: 335
             slot: "Crew"
             unique: true
-            faction: "Separatist Alliance"
+            faction: ["Scum and Villainy", "Separatist Alliance"]
             points: 200
        }
        {
@@ -12540,8 +12546,9 @@ exportObj.basicCardData = ->
             slot: "Crew"
             unique: true
             charge: 2
-            faction: "Separatist Alliance"
+            faction: ["Scum and Villainy", "Separatist Alliance"]
             points: 200
+            applies_condition: ['''You'd Better Mean Business'''.canonicalize(),'You Should Thank Me'.canonicalize()]
        }
        {
             name: 'Alpha-3B "Besh"'
@@ -12835,7 +12842,36 @@ exportObj.basicCardData = ->
             standardized: true
             slot: "Modification"
             restriction_func: (ship) ->
-                ship.pilot.text?.includes("Networked Calculations:")
+                ship.checkKeyword("Networked Calculations")
+       }
+       {
+            name: "Weapons Systems Officer"
+            id: 368
+            points: 200
+            slot: "Gunner"
+       }
+       {
+            name: "False Transponder Codes"
+            id: 369
+            points: 200
+            charge: 1
+            slot: "Illicit"
+       }
+       {
+            name: "Slave I (Separatist)"
+            canonical_name: 'Slave I'.canonicalize()
+            id: 370
+            points: 200
+            slot: "Title"
+            unique: true
+            faction: ["Scum and Villainy", "Separatist Alliance"]
+            ship: "Firespray-31"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Gunner"
+                }
+            ]
        }
     ]
 
@@ -12948,6 +12984,14 @@ exportObj.basicCardData = ->
         {
             name: 'Fearful Prey'
             id: 24
+        }
+        {
+            name: 'You Should Thank Me'
+            id: 25
+        }
+        {
+            name: '''You'd Better Mean Business'''
+            id: 26
         }
     ]
 

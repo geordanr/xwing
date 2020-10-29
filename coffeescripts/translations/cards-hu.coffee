@@ -1250,7 +1250,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Miután végrehajtasz egy 3-4-es sebességű manővert, választhatsz egy hajót a %SINGLETURRETARC% tűzívedben 0-1-es távolságban. Ha így teszel az a hajó kap egy 'strain' jelzőt vagy 2 'strain' jelzőt, ha sérült vagy.<br><strong>Rotating Cannons:</strong> A %SINGLETURRETARC% tűzívedet csak a %FRONTARC% vagy %REARARC% irányba forgathatod. A felszerelt %CANNON% %FRONTARC% követelményét %SINGLETURRETARC% tűzívként kell kezelned."""
         "Onyx Squadron Sentry":
            text: """%LINEBREAK% <strong>Rotating Cannons:</strong> A %SINGLETURRETARC% tűzívedet csak a %FRONTARC% vagy %REARARC% irányba forgathatod. A felszerelt %CANNON% %FRONTARC% követelményét %SINGLETURRETARC% tűzívként kell kezelned."""
-        "Cardia Academy Pilot":
+        "Carida Academy Cadet":
            text: """%LINEBREAK% <strong>Rotating Cannons:</strong> A %SINGLETURRETARC% tűzívedet csak a %FRONTARC% vagy %REARARC% irányba forgathatod. A felszerelt %CANNON% %FRONTARC% követelményét %SINGLETURRETARC% tűzívként kell kezelned."""
         "Poe Dameron (HoH)":
            text: """Miután egy baráti hajó 0-2-es távolságban végrehajt egy akciót az aktivációs fázisában, elkölthetsz 2 %CHARGE% jelzőt. Ha így teszel, az a hajó végrehajthat egy fehér akciót pirosként kezelve.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
