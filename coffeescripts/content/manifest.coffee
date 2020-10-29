@@ -7898,6 +7898,125 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Heralds of Hope Expansion Pack": [
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'RZ-2 A-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Poe Dameron (HoH)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Temmin Wexley (HoH)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wrobie Tyce'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Seftin Vanik'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Suralinda Javos'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Merl Cobben'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nimi Chereen'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'R2-D2 (Resistance)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Underslung Blaster Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overdrive Thruster'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Backwards Tailslide'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Starbird Slash'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "TIE/rb Heavy Expansion Pack": [
+        {
+            name: 'TIE/rb Heavy'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: '"Rampage"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lyttan Dree'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Onyx Squadron Sentry'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Carida Academy Cadet'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Target-Assist MGK-300'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Maneuver-Assist MGK-300'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Deadeye Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Limiter Override'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
     "Hotshots and Aces Reinforcements Pack": [
         {
