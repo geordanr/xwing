@@ -1589,6 +1589,7 @@ exportObj.basicCardData = ->
            attackt: 2
            agility: 1
            hull: 8
+           shields: 0
            medium: true
            actions: [
              "Focus"
@@ -1613,6 +1614,7 @@ exportObj.basicCardData = ->
            attack: 3
            agility: 3
            hull: 3
+           shields: 0
            keyword: ["Networked Calculations"]
            actions: [
              "Calculate"
@@ -1663,6 +1665,7 @@ exportObj.basicCardData = ->
            attack: 2
            agility: 3
            hull: 3
+           shields: 0
            actions: [
              "Focus"
              "Evade"
