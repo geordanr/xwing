@@ -12625,6 +12625,7 @@ exportObj.basicCardData = ->
             name: "Overdrive Thruster"
             id: 345
             ship: "T-70 X-Wing"
+            unique: true
             slot: "Modification"
             pointsarray: [0,1,2,3,4,5,6]
             variableinit: true
