@@ -1258,7 +1258,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Az Ütközet fázis elején minden baráti T-70 X-wing 0-3 távolságban kaphat 1 'strain' jelzőt, hogy megfordítsa a %CONFIGURATION% fejlesztését. Ha így tesz, az a hajó kap 1 %CALCULATE% jelzőt.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
         "C'ai Threnalli":
            text: """Miután teljesen végrehajtasz egy manővert, ha átmozogtál egy baráti hajón, végrehajthatsz egy %EVADE% akciót.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
-        "Nimi Chereen":
+        "Nimi Chireen":
            text: """Amikor végrehajtasz egy támadást, ha a védekező kezdeményező értéke magasabb, mint a tiéd, 1 üres eredményt %FOCUS% eredményre cserélhetsz.<br><strong>Weapon Hardpoint:</strong> Felszerelhetsz 1&nbsp;%CANNON%, %TORPEDO% vagy %MISSILE% fejlesztést."""
         "Merl Cobben":
            text: """Amikor egy baráti hajó 0-2-es távolságban végrehajt egy elsődleges támadást, ha benne vagy a védekező %BULLSEYEARC% tűzívében, a védekező 1-gyel kevesebb védekezőkockával dob.<br><strong>Refined Gyrostabilizers:</strong> A %SINGLETURRETARC% mutatódat csak %FRONTARC% vagy %REARARC% irányba forgathatod. Miután végrehajtasz egy akciót, végrehajthatsz egy piros %BOOST% vagy %ROTATEARC% akciót."""

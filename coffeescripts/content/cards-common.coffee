@@ -9181,7 +9181,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Nimi Chereen"
+            name: "Nimi Chireen"
             id: 448
             unique: true
             faction: "Resistance"
