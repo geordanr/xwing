@@ -7925,6 +7925,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: "C'ai Threnalli"
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: 'Seftin Vanik'
             type: 'pilot'
             count: 1
