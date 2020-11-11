@@ -18582,6 +18582,57 @@ exportObj.basicCardData = ->
                 "Afterburners"
             ]
         }
+        {
+            id: 457
+            faction: "First Order"
+            pilot: "First Order Courier"
+            ship: "Xi-class Light Shuttle"
+            threat: 2
+            upgrades: [
+                "Tactical Officer"
+                "Automated Target Priority"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 458
+            faction: "First Order"
+            pilot: "Gideon Hask"
+            ship: "Xi-class Light Shuttle"
+            threat: 2
+            upgrades: [
+                "Deadeye Shot"
+                "Sensor Buoy Suite"
+                "Commander Pyre"
+                "Rigged Cargo Chute"
+            ]
+        }
+        {
+            id: 459
+            faction: "First Order"
+            pilot: "Commander Malarus"
+            ship: "Xi-class Light Shuttle"
+            threat: 2
+            upgrades: [
+                "Snap Shot"
+                "Sensor Buoy Suite"
+                "Agent Terex"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 460
+            faction: "First Order"
+            pilot: "Agent Terex"
+            ship: "Xi-class Light Shuttle"
+            threat: 2
+            upgrades: [
+                "Inertial Dampeners"
+                "Deadman's Switch"
+                "Commander Malarus"
+                "Contraband Cybernetics"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
