@@ -10893,7 +10893,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             restriction_func: (ship) ->
-                "Coordinate" in ship.effectiveStats().actions
+                "Coordinate" in ship.effectiveStats().actions or "R-Coordinate" in ship.effectiveStats().actions
        }
        {
             name: "Fanatical"
