@@ -18597,7 +18597,7 @@ exportObj.basicCardData = ->
         {
             id: 458
             faction: "First Order"
-            pilot: "Gideon Hask"
+            pilot: "Gideon Hask (Xi Shuttle)"
             ship: "Xi-class Light Shuttle"
             threat: 2
             upgrades: [
