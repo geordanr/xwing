@@ -4276,13 +4276,15 @@ class Ship
     checkKeyword: (keyword) ->
         if @data.name?.includes(keyword)
             return true
-        else if @data.keyword?
-            for words in @data.keyword
-                if words == keyword
-                    return true
-        else if @pilot.keyword?
-            for words in @pilot.keyword
-                if words == keyword
+        for words in @data.keyword ? []
+            if words == keyword
+                return true
+        for words in @pilot.keyword ? []
+            if words == keyword
+                return true
+        for upgrade in @upgrades
+            for word in upgrade?.data?.keyword ? []
+                if word == keyword
                     return true
         false
 
