@@ -9690,9 +9690,9 @@ exportObj.basicCardData = ->
            unique: true
            faction: ["Scum and Villainy", "Rebel Alliance"]
            force: 1
+           keyword: ["Dark Side"] 
            modifier_func: (stats) ->
                 stats.force += 1
-                stats.darkside = true
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("ezrabridger")
