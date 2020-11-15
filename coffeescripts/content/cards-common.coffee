@@ -18633,6 +18633,58 @@ exportObj.basicCardData = ->
                 "Contraband Cybernetics"
             ]
         }
+        {
+            id: 461
+            faction: "Galactic Empire"
+            pilot: "Cardia Academy Cadet"
+            ship: "TIE/rb Heavy"
+            threat: 2
+            upgrades: [
+                "Snap Shot"
+                "Maneuver-Assists MGK-300"
+                "Synced Laser Cannons"
+            ]
+        }
+        {
+            id: 462
+            faction: "Galactic Empire"
+            pilot: "Lyttan Dree"
+            ship: "TIE/rb Heavy"
+            threat: 2
+            upgrades: [
+                "Deadye Shot"
+                "Ion Cannon"
+                "Heavy Laser Cannon"
+                "Maneuver-Assists MGK-300"
+            ]
+        }
+        {
+            id: 463
+            faction: "Galactic Empire"
+            pilot: "Onyx Squadron Sentry"
+            ship: "TIE/rb Heavy"
+            threat: 2
+            upgrades: [
+                "Ion Limiter Override"
+                "Shield Upgrade"
+                "Heavy Laser Cannon"
+                "Maneuver-Assists MGK-300"
+            ]
+        }
+        {
+            id: 464
+            faction: "Galactic Empire"
+            pilot: '"Rampage"'
+            ship: "TIE/rb Heavy"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Afterburners"
+                "Maneuver-Assists MGK-300"
+                "Synced Laser Cannons"
+                "Ablative Plating"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
