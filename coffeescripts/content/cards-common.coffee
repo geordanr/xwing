@@ -18610,7 +18610,7 @@ exportObj.basicCardData = ->
         {
             id: 459
             faction: "First Order"
-            pilot: "Commander Malarus"
+            pilot: "Commander Malarus (Xi Shuttle)"
             ship: "Xi-class Light Shuttle"
             threat: 2
             upgrades: [
