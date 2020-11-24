@@ -9023,6 +9023,7 @@ exportObj.basicCardData = ->
             skill: 4
             ship: "ETA-2 Actis"
             points: 41
+            force: 2
             keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
@@ -9039,6 +9040,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 48
+            force: 3
             keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
@@ -9056,6 +9058,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 44
+            force: 2
             keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
@@ -9073,6 +9076,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 51
+            force: 2
             keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
@@ -9090,6 +9094,7 @@ exportObj.basicCardData = ->
             skill: 5
             unique: true
             ship: "ETA-2 Actis"
+            force: 3
             points: 49
             keyword: ["Jedi", "Light Side"]
             slots: [
@@ -9107,6 +9112,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 6
             unique: true
+            force: 3
             ship: "ETA-2 Actis"
             points: 56
             keyword: ["Jedi", "Light Side", "Dark Side"]
