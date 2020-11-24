@@ -1669,7 +1669,7 @@ exportObj.basicCardData = ->
            actions: [
              "Focus"
              "Evade"
-             "Lock"
+             "F-Lock"
              "Barrel Roll"
              "Boost"
            ]
