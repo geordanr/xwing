@@ -18671,7 +18671,7 @@ exportObj.basicCardData = ->
         {
             id: 461
             faction: "Galactic Empire"
-            pilot: "Cardia Academy Cadet"
+            pilot: "Carida Academy Cadet"
             ship: "TIE/rb Heavy"
             threat: 2
             upgrades: [
