@@ -1306,7 +1306,7 @@ class exportObj.SquadBuilder
                     
             # Notes, if present
             @printable_container.find('.printable-body').append $.trim """
-                <div class="version">Points Version: 1.7.1 October 2020</div>
+                <div class="version">Points Version: 1.8.0 November 2020</div>
             """            
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """

@@ -3489,6 +3489,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Torpedo"
+                "Modification"
               ]
         }
         {
@@ -3503,6 +3504,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Torpedo"
+                "Modification"
               ]
         }
         {
@@ -3517,6 +3519,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Torpedo"
+                "Modification"
               ]
         }
         {
@@ -3530,6 +3533,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Torpedo"
+                "Modification"
               ]
         }
         {
@@ -3542,6 +3546,7 @@ exportObj.basicCardData = ->
             keyword: ["Mandalorian"]
             slots: [
                 "Torpedo"
+                "Modification"
               ]
         }
         {
@@ -8870,7 +8875,6 @@ exportObj.basicCardData = ->
             ship: "Firespray-31"
             points: 70
             slots: [
-                "Talent"
                 "Cannon"
                 "Missile"
                 "Crew"
@@ -9099,7 +9103,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 56
-            keyword: ["Jedi", "Light Side"]
+            keyword: ["Jedi", "Light Side", "Dark Side"]
             slots: [
                 "Force"
                 "Talent"
@@ -10854,7 +10858,7 @@ exportObj.basicCardData = ->
             name: "Finn"
             id: 174
             slot: "Gunner"
-            points: 6
+            points: 9
             unique: true
             faction: "Resistance"
        }
@@ -19042,7 +19046,6 @@ exportObj.hyperspacePilotExclusions = [
     'Soontir Fel'
     'Turr Phennir'
     'Scarif Base Pilot'
-    'Patrol Leader'
     'Grand Inquisitor'
     'Fifth Brother'
     'Seventh Sister'
@@ -19217,7 +19220,7 @@ exportObj.hyperspaceUpgradeExclusions = [
     'Mist Hunter'
     'Modly Crow'
     'Shadow Caster'
-    'Slave 1'
+    'Slave I'
     'Virago'
     'IG-2000'
 
