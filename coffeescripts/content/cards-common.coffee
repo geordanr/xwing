@@ -18676,7 +18676,7 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Snap Shot"
-                "Maneuver-Assists MGK-300"
+                "Maneuver-Assist MGK-300"
                 "Synced Laser Cannons"
             ]
         }
