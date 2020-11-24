@@ -5803,6 +5803,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Resistance"
             ship: "Scavenged YT-1300"
+            keyword: ["Light Side"]
             skill: 5
             points: 68
             force: 2
@@ -8765,6 +8766,7 @@ exportObj.basicCardData = ->
             points: 38
             slots: [
                 "Talent"
+                "Sensor"
                 "Missile"
                 "Modification"
                 "Configuration"
@@ -9021,6 +9023,7 @@ exportObj.basicCardData = ->
             skill: 4
             ship: "ETA-2 Actis"
             points: 41
+            keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
                 "Cannon"
@@ -9036,6 +9039,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 48
+            keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
                 "Force"
@@ -9052,6 +9056,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 44
+            keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
                 "Talent"
@@ -9068,6 +9073,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "ETA-2 Actis"
             points: 51
+            keyword: ["Jedi", "Light Side"]
             slots: [
                 "Force"
                 "Talent"
