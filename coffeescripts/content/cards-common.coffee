@@ -19128,7 +19128,7 @@ exportObj.hyperspacePilotExclusions = [
     # Galactic Republic
     '"Sinker"'
     '"Wolffe"'
-    '"Odd Ball"'
+    '"Odd Ball" (ARC-170)'
     '"Jag"'
     'Shadow Squadron Veteran'
     'Red Squadron Bomber'
