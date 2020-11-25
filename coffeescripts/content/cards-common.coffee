@@ -19336,7 +19336,6 @@ exportObj.hyperspaceUpgradeExclusions = [
     'Crack Shot'
     'Debris Gambit'
     'Elusive'
-    'Juke'
     'Intimidation'
     'Marksmanship'
     'Outmaneuver'
