@@ -12627,7 +12627,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Republic"
             slot: "Astromech"
-            pointsarray: [6,6,8,10]
+            pointsarray: [4,6,8,10]
             variableagility: true
        }
        {
@@ -19351,6 +19351,7 @@ exportObj.epicExclusionsList = [
     'GR-75 Medium Transport'
     'Gozanti-class Cruiser'
     'C-ROC Cruiser'
+    'Syliure-class Hyperspace Ring'
 ]
 
 
@@ -19358,6 +19359,8 @@ exportObj.epicExclusions = (data) ->
     if data.ship? and (data.ship in exportObj.epicExclusionsList)
         return false
     else if data.slot? and (data.slot == "Command")
+        return false
+    else if data.name? and (data.name in exportObj.epicExclusionsList)
         return false
     else
         return true

@@ -1836,16 +1836,15 @@ class exportObj.SquadBuilder
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
                 if (@isItemAvailable(ship_data, true))
-                    if @isEpic or @isQuickbuild or (not @isEpic and not ship_data.huge)
-                        if (not collection_only or (@collection? and (@collection.checks.collectioncheck == "true") and @collection.checkShelf('ship', ship_data.name)))
-                            ships.push
-                                id: ship_data.name
-                                text: if ship_data.display_name then ship_data.display_name else ship_data.name
-                                name: ship_data.name
-                                display_name: ship_data.display_name
-                                canonical_name: ship_data.canonical_name
-                                xws: ship_data.xws
-                                icon: if ship_data.icon then ship_data.icon else ship_data.xws
+                    if (not collection_only or (@collection? and (@collection.checks.collectioncheck == "true") and @collection.checkShelf('ship', ship_data.name)))
+                        ships.push
+                            id: ship_data.name
+                            text: if ship_data.display_name then ship_data.display_name else ship_data.name
+                            name: ship_data.name
+                            display_name: ship_data.display_name
+                            canonical_name: ship_data.canonical_name
+                            xws: ship_data.xws
+                            icon: if ship_data.icon then ship_data.icon else ship_data.xws
         if sorted
             ships.sort exportObj.sortHelper
         return ships
