@@ -19081,17 +19081,23 @@ exportObj.hyperspacePilotExclusions = [
 
 
     # Scum and Villainy
-    'Old Teroch'
+    'Boba Fett'
+    'Kath Scarlet'
+    'Emon Azzameen' 
+    'Koshka Frost'
+    'Krassis Trelix'
+    'Skull Squadron Pilot'
+    'Zealous Recruit'
     'Foreman Proach'
     'Captain Seevor'
-    'Lando Calrissian (Scum)'
     'Freighter Captain'
-    'Outer Rim Pioneer'
-    'L3-37 (Escape Craft)'
-    'Autopilot Drone'
     'Moralo Eval'
     'Trandoshan Slaver'
-    'Binayre Pirate'
+    'N’dru Suhlak'
+    'Bossk'
+    "Kaa'to Leeachos"
+    'Nashtah Pup'
+
 
     # Resistance
     'Green Squadron Expert'
