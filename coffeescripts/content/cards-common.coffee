@@ -6013,7 +6013,7 @@ exportObj.basicCardData = ->
             xws: "blacksquadronace-t70xwing"
             ship: "T-70 X-Wing"
             skill: 4
-            points: 47
+            points: 46
             slots: [
                 "Talent"
                 "Astromech"
@@ -8870,6 +8870,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett (Separatist)"
+            canonical_name: 'Boba Fett'.canonicalize()
             id: 427
             faction: "Separatist Alliance"
             unique: true
@@ -19131,7 +19132,6 @@ exportObj.hyperspacePilotExclusions = [
     '"Jag"'
     'Shadow Squadron Veteran'
     'Red Squadron Bomber'
-    '104th Battalion Pilot'
     'Anakin Skywalker'
     'Obi-Wan Kenobi'
     'Mace Windu'
@@ -19221,7 +19221,6 @@ exportObj.hyperspaceUpgradeExclusions = [
     'Cad Bane'
     'Cikatro Vizago'
     'IG-88D'
-    'Greedo'
     'Chewbacca (Scum)'
     'Ketsu Onyo'
     'Lando Calrissian (Scum)'
