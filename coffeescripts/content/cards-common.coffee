@@ -19091,10 +19091,9 @@ exportObj.hyperspacePilotExclusions = [
     'Foreman Proach'
     'Captain Seevor'
     'Freighter Captain'
-    'Moralo Eval'
     'Trandoshan Slaver'
     'N’dru Suhlak'
-    'Bossk'
+    'Bossk (Z-95 Headhunter)'
     "Kaa'to Leeachos"
     'Nashtah Pup'
 
