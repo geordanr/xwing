@@ -11084,7 +11084,7 @@ exportObj.basicCardData = ->
             name: "M9-G8"
             id: 197
             slot: "Astromech"
-            points: 7
+            points: 6
             unique: true
             faction: "Resistance"
        }
@@ -11468,7 +11468,7 @@ exportObj.basicCardData = ->
             id: 238
             unique: true
             slot: "Missile"
-            points: 6
+            points: 5
             attack: 3
             range: """2-3"""
             rangebonus: true
