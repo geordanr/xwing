@@ -19075,7 +19075,7 @@ exportObj.hyperspacePilotExclusions = [
     'Darth Vader'
     'Maarek Stele'
     'Ved Foslo'
-    'Zertik Storm'
+    'Zertik Strom'
     'Rear Admiral Chiraneau'
     'Morna Kee'
     'Captain Oicunn'
