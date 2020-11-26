@@ -9762,12 +9762,10 @@ exportObj.basicCardData = ->
            faction: "Rebel Alliance"
            modifier_func: (stats) ->
                 for s in (stats.maneuvers)
-                    if s[1] > 0
-                        if s[1] > 1
-                            s[1]--
-                    if s[3] > 0
-                        if s[3] > 1
-                            s[3]--
+                    if s[1] > 1
+                        s[1]--
+                    if s[3] > 1
+                        s[3]--
        }
        {
            name: "Novice Technician"
