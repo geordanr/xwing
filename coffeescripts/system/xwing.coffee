@@ -2051,16 +2051,16 @@ class exportObj.SquadBuilder
                 if maneuvers[speed][turn] > 0
 
                     color = switch maneuvers[speed][turn]
-                        when 1 then "white"
-                        when 2 then "dodgerblue"
+                        when 1 then "dodgerblue"
+                        when 2 then "white"
                         when 3 then "red"
                         when 4 then "purple"
 
                      # we need this to change the color to b/w in case we want to print b/w
 
                     maneuverClass = switch maneuvers[speed][turn]
-                        when 1 then "svg-white-maneuver"
-                        when 2 then "svg-blue-maneuver"
+                        when 1 then "svg-blue-maneuver"
+                        when 2 then "svg-white-maneuver"
                         when 3 then "svg-red-maneuver"
                         when 4 then "svg-purple-maneuver"
 
