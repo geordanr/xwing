@@ -9789,9 +9789,9 @@ exportObj.basicCardData = ->
        }
        {
            name: "R2-D2 (Crew)"
+           canonical_name: 'R2-D2'.canonicalize()
            id: 56
            slot: "Crew"
-           canonical_name: 'r2d2-crew'
            xws: "r2d2-crew"
            points: 8
            unique: true
@@ -11012,6 +11012,7 @@ exportObj.basicCardData = ->
        }
        {
             name: "C-3PO (Resistance)"
+            canonical_name: 'C-3PO'.canonicalize()
             id: 191
             slot: "Crew"
             xws: "c3po-crew"
@@ -11614,6 +11615,7 @@ exportObj.basicCardData = ->
        }
        {
             name: "C-3PO (Republic)"
+            canonical_name: 'C-3PO'.canonicalize()
             id: 254
             unique: true
             slot: "Crew"
@@ -12607,6 +12609,7 @@ exportObj.basicCardData = ->
        }
        {
             name: "R2-D2 (Republic)"
+            canonical_name: 'R2-D2'.canonicalize()
             id: 340
             charge: 2
             unique: true
@@ -12783,6 +12786,7 @@ exportObj.basicCardData = ->
        }
        {
             name: "R2-D2 (Resistance)"
+            canonical_name: 'R2-D2'.canonicalize()
             id: 358
             slot: "Astromech"
             points: 6
