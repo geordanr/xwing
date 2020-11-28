@@ -11499,8 +11499,8 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             unique: true
             modifier_func: (stats) ->
-            stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
-            applies_condition: '''It's the Resistance'''.canonicalize()
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+                applies_condition: '''It's the Resistance'''.canonicalize()
         }
         {
             name: "Kaydel Connix"
@@ -12757,7 +12757,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 1
             restriction_func: (ship) ->
-            ship.checkKeyword("A-Wing")
+                ship.checkKeyword("A-Wing")
         }
         {
             name: "Overdrive Thruster"
