@@ -9437,7 +9437,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             modifier_func: (stats) ->
-                    stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
         }
         {
             name: "Cassian Andor"
@@ -9495,7 +9495,7 @@ exportObj.basicCardData = ->
                 ["Action", "Coordinate"]
             ]
             restriction_func: (ship) ->
-                    ("Coordinate" in ship.effectiveStats().actions) or ("R-Coordinate" in ship.effectiveStats().actions)
+                ("Coordinate" in ship.effectiveStats().actions) or ("R-Coordinate" in ship.effectiveStats().actions)
         }
         {
             name: "Cikatro Vizago"
@@ -9514,7 +9514,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Empire"
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Death Troopers"
@@ -9527,9 +9527,9 @@ exportObj.basicCardData = ->
                 ["Slot", "Crew"]
             ]
             restriction_func: (ship, upgrade_obj) ->
-                    ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
-                    upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
+                upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
         }
         {
@@ -9541,7 +9541,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             applies_condition: 'Optimized Prototype'.canonicalize()
             modifier_func: (stats) ->
-                    stats.actions.push 'Lock' if 'Lock' not in stats.actions
+                stats.actions.push 'Lock' if 'Lock' not in stats.actions
         }
         {
             name: "Emperor Palpatine"
@@ -9555,12 +9555,12 @@ exportObj.basicCardData = ->
                 ["Slot", "Crew"]
             ]
             restriction_func: (ship, upgrade_obj) ->
-                    ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
-                    upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
+                upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Freelance Slicer"
@@ -9592,7 +9592,7 @@ exportObj.basicCardData = ->
             force: 1
             faction: "Galactic Empire"
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Grand Moff Tarkin"
@@ -9607,7 +9607,7 @@ exportObj.basicCardData = ->
                 ["Action", "Lock"]
             ]
             restriction_func: (ship) ->
-                    ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
+                ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
         }
         {
             name: "Hera Syndulla"
@@ -9625,7 +9625,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             modifier_func: (stats) ->
-                    stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
 
         }
         {
@@ -9655,9 +9655,9 @@ exportObj.basicCardData = ->
                 ["Slot", "Crew"]
             ]
             restriction_func: (ship, upgrade_obj) ->
-                    ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
-                    upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
+                upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
         }
         {
@@ -9678,7 +9678,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Ketsu Onyo"
@@ -9746,11 +9746,11 @@ exportObj.basicCardData = ->
                 ["or Unique", "Ezra Bridger"]
             ]
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
             restriction_func: (ship) ->
-                    builder = ship.builder
-                    return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("ezrabridger")
-                    false
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("ezrabridger")
+                false
         }
         {
             name: "Minister Tua"
@@ -9773,7 +9773,7 @@ exportObj.basicCardData = ->
                 ["Action", "Coordinate"]
             ]
             restriction_func: (ship) ->
-                    ("Coordinate" in ship.effectiveStats().actions)  or ("R-Coordinate" in ship.effectiveStats().actions)
+                ("Coordinate" in ship.effectiveStats().actions)  or ("R-Coordinate" in ship.effectiveStats().actions)
         }
         {
             name: "Magva Yarro"
@@ -9791,11 +9791,11 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             modifier_func: (stats) ->
-                    for s in (stats.maneuvers)
-                        if s[1] > 1
-                            s[1]--
-                        if s[3] > 1
-                            s[3]--
+                for s in (stats.maneuvers)
+                    if s[1] > 1
+                        s[1]--
+                    if s[3] > 1
+                        s[3]--
         }
         {
             name: "Novice Technician"
@@ -9859,7 +9859,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Empire"
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Tactical Officer"
@@ -9870,9 +9870,9 @@ exportObj.basicCardData = ->
                 ["Action", "R-Coordinate"]
             ]
             restriction_func: (ship) ->
-                    "R-Coordinate" in ship.effectiveStats().actions
+                "R-Coordinate" in ship.effectiveStats().actions
             modifier_func: (stats) ->
-                    stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
+                stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
         }
         {
             name: "Tobias Beckett"
@@ -9894,9 +9894,9 @@ exportObj.basicCardData = ->
                 ["or Unique", "Darth Vader"]
             ]
             restriction_func: (ship) ->
-                    builder = ship.builder
-                    return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
-                    false
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
+                false
         }
         {
             name: "Unkar Plutt"
@@ -9933,9 +9933,9 @@ exportObj.basicCardData = ->
                 ["Slot", "Device"]
             ]
             restriction_func: (ship, upgrade_obj) ->
-                    ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
-                    upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
+                upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Device" ]
         }
         {
@@ -9992,7 +9992,7 @@ exportObj.basicCardData = ->
                 ["Base", "Small"]
             ]
             restriction_func: (ship) ->
-                    not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
         }
         {
             name: "Sense"
@@ -10035,9 +10035,9 @@ exportObj.basicCardData = ->
                 ["or Unique", "Darth Vader"]
             ]
             restriction_func: (ship) ->
-                    builder = ship.builder
-                    return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
-                    false
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
+                false
         }
         {
             name: "Dengar"
@@ -10059,7 +10059,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Fifth Brother"
@@ -10070,7 +10070,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Empire"
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Greedo"
@@ -10115,7 +10115,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             modifier_func: (stats) ->
-                    stats.force += 1
+                stats.force += 1
         }
         {
             name: "Skilled Bombardier"
@@ -10132,7 +10132,7 @@ exportObj.basicCardData = ->
                 ["Attack", "Rear Arc"]
             ]
             restriction_func: (ship) ->
-                    ship.data.attackb?
+                ship.data.attackb?
         }
         {
             name: "Veteran Turret Gunner"
@@ -10144,7 +10144,7 @@ exportObj.basicCardData = ->
                 ["Action", "Rotate Arc"]
             ]
             restriction_func: (ship) ->
-                    ("Rotate Arc" in ship.effectiveStats().actions)  or ("R-Rotate Arc" in ship.effectiveStats().actions)
+                ("Rotate Arc" in ship.effectiveStats().actions)  or ("R-Rotate Arc" in ship.effectiveStats().actions)
         }
         {
             name: "Cloaking Device"
@@ -10158,7 +10158,7 @@ exportObj.basicCardData = ->
                 ["Base", "Medium"]
             ]
             restriction_func: (ship) ->
-                    not (ship.data.large? or ship.data.huge?)
+                not (ship.data.large? or ship.data.huge?)
         }
         {
             name: "Contraband Cybernetics"
@@ -10197,7 +10197,7 @@ exportObj.basicCardData = ->
                 ["Base", "Large"]
             ]
             restriction_func: (ship) ->
-                    ship.data.medium?  or ship.data.large?
+                ship.data.medium?  or ship.data.large?
         }
         {
             name: "Barrage Rockets"
@@ -10278,7 +10278,7 @@ exportObj.basicCardData = ->
                 ["Base", "Large"]
             ]
             restriction_func: (ship) ->
-                    ship.data.medium?  or ship.data.large?
+                ship.data.medium?  or ship.data.large?
         }
         {
             name: "Advanced SLAM"
@@ -10289,7 +10289,7 @@ exportObj.basicCardData = ->
                 ["Action", "Slam"]
             ]
             restriction_func: (ship) ->
-                    ("Slam" in ship.effectiveStats().actions)  or ("R-Slam" in ship.effectiveStats().actions)
+                ("Slam" in ship.effectiveStats().actions)  or ("R-Slam" in ship.effectiveStats().actions)
         }
         {
             name: "Afterburners"
@@ -10302,7 +10302,7 @@ exportObj.basicCardData = ->
                 ["Base", "Small"]
             ]
             restriction_func: (ship) ->
-                    not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
         }
         {
             name: "Electronic Baffle"
@@ -10320,9 +10320,9 @@ exportObj.basicCardData = ->
                 ["Action", "R-Boost"]
             ]
             restriction_func: (ship) ->
-                    "R-Boost" in ship.effectiveStats().actions
+                "R-Boost" in ship.effectiveStats().actions
             modifier_func: (stats) ->
-                    stats.actions.push 'Boost' if 'Boost' not in stats.actions
+                stats.actions.push 'Boost' if 'Boost' not in stats.actions
         }
         {
             name: "Munitions Failsafe"
@@ -10346,7 +10346,7 @@ exportObj.basicCardData = ->
                 ["Base", "Large"]
             ]
             restriction_func: (ship) ->
-                    ship.data.medium?  or ship.data.large?
+                ship.data.medium?  or ship.data.large?
         }
         {
             name: "Advanced Sensors"
@@ -10382,7 +10382,7 @@ exportObj.basicCardData = ->
                 ["Action", "Focus"]
             ]
             restriction_func: (ship) ->
-                    ("Focus" in ship.effectiveStats().actions)  or ("R-Focus" in ship.effectiveStats().actions)
+                ("Focus" in ship.effectiveStats().actions)  or ("R-Focus" in ship.effectiveStats().actions)
         }
         {
             name: "Crack Shot"
@@ -10401,7 +10401,7 @@ exportObj.basicCardData = ->
                 ["Base", "Small"]
             ]
             restriction_func: (ship) ->
-                    ("Boost" in ship.effectiveStats().actions) and not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+                ("Boost" in ship.effectiveStats().actions) and not (ship.data.large? or ship.data.medium? or ship.data.huge?)
         }
         {
             name: "Debris Gambit"
@@ -10413,9 +10413,9 @@ exportObj.basicCardData = ->
                 ["Base", "Medium"]
             ]
             restriction_func: (ship) ->
-                    not (ship.data.large? or ship.data.huge?)
+                not (ship.data.large? or ship.data.huge?)
             modifier_func: (stats) ->
-                    stats.actions.push 'R-Evade' if 'R-Evade' not in stats.actions
+                stats.actions.push 'R-Evade' if 'R-Evade' not in stats.actions
         }
         {
             name: "Elusive"
@@ -10428,7 +10428,7 @@ exportObj.basicCardData = ->
                 ["Base", "Medium"]
             ]
             restriction_func: (ship) ->
-                    not ship.data.large?
+                not ship.data.large?
         }
         {
             name: "Expert Handling"
@@ -10440,9 +10440,9 @@ exportObj.basicCardData = ->
                 ["Action", "R-Barrel Roll"]
             ]
             restriction_func: (ship) ->
-                    "R-Barrel Roll" in ship.effectiveStats().actions
+                "R-Barrel Roll" in ship.effectiveStats().actions
             modifier_func: (stats) ->
-                    stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
+                stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
         }
         {
             name: "Fearless"
@@ -10467,7 +10467,7 @@ exportObj.basicCardData = ->
                 ["Base", "Medium"]
             ]
             restriction_func: (ship) ->
-                    not (ship.data.large? or ship.data.huge?)
+                not (ship.data.large? or ship.data.huge?)
         }
         {
             name: "Lone Wolf"
@@ -10512,7 +10512,7 @@ exportObj.basicCardData = ->
                 ["Action", "Reload"]
             ]
             restriction_func: (ship) ->
-                    ("Reload" in ship.effectiveStats().actions)  or ("R-Reload" in ship.effectiveStats().actions)
+                ("Reload" in ship.effectiveStats().actions)  or ("R-Reload" in ship.effectiveStats().actions)
         }
         {
             name: "Selfless"
@@ -10529,7 +10529,7 @@ exportObj.basicCardData = ->
             variableinit: true
             unique: true
             modifier_func: (stats) ->
-                    stats.actions.push 'R-Coordinate' if 'R-Coordinate' not in stats.actions
+                stats.actions.push 'R-Coordinate' if 'R-Coordinate' not in stats.actions
         }
         {
             name: "Swarm Tactics"
@@ -10582,7 +10582,7 @@ exportObj.basicCardData = ->
             attackt: 2
             range: """1-2"""
             modifier_func: (stats) ->
-                    stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
         }
         {
             name: "Ion Cannon Turret"
@@ -10592,7 +10592,7 @@ exportObj.basicCardData = ->
             attackt: 3
             range: """1-2"""
             modifier_func: (stats) ->
-                    stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
         }
         {
             name: "Os-1 Arsenal Loadout"
@@ -10601,15 +10601,15 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             ship: "Alpha-Class Star Wing"
             confersAddons: [
-                    {
-                        type: exportObj.Upgrade
-                        slot: "Torpedo"
-                    }
-                    {
-                        type: exportObj.Upgrade
-                        slot: "Missile"
-                    }
-                ]
+                {
+                    type: exportObj.Upgrade
+                    slot: "Torpedo"
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Missile"
+                }
+            ]
         }
         {
             name: "Pivot Wing"
@@ -10631,9 +10631,9 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             ship: "X-Wing"
             modifier_func: (stats) ->
-                    stats.actions.push 'Boost'
-                    stats.actions.push '*Focus'
-                    stats.actions.push 'R-> Boost'
+                stats.actions.push 'Boost'
+                stats.actions.push '*Focus'
+                stats.actions.push 'R-> Boost'
         }
         {
             name: "Blank"
@@ -10647,10 +10647,10 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             ship: "Alpha-Class Star Wing"
             confersAddons: [
-                    {
-                        type: exportObj.Upgrade
-                        slot: "Cannon"
-                    }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Cannon"
+                }
             ]
         }
         {
@@ -10674,7 +10674,7 @@ exportObj.basicCardData = ->
                     type: exportObj.Upgrade
                     slot: "Device"
                 }
-                ]
+            ]
             modifier_func: (stats) ->
                     stats.actions.push 'Reload' if 'Reload' not in stats.actions
         }
@@ -10705,20 +10705,20 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Scurrg H-6 Bomber"
             unequips_upgrades: [
-                    'Crew'
+                'Crew'
             ]
             also_occupies_upgrades: [
-                    'Crew'
+                'Crew'
             ]
             confersAddons: [
-                    {
-                        type: exportObj.Upgrade
-                        slot: 'Sensor'
-                    }
-                    {
-                        type: exportObj.Upgrade
-                        slot: 'Astromech'
-                    }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Sensor'
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Astromech'
+                }
             ]
         }
         {
@@ -10760,7 +10760,7 @@ exportObj.basicCardData = ->
                     type: exportObj.Upgrade
                     slot: "Gunner"
                 }
-                ]
+            ]
         }
         {
             name: "Millennium Falcon"
@@ -10771,7 +10771,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "YT-1300"
             modifier_func: (stats) ->
-                    stats.actions.push 'Evade' if 'Evade' not in stats.actions
+                stats.actions.push 'Evade' if 'Evade' not in stats.actions
         }
         {
             name: "Mist Hunter"
@@ -10782,12 +10782,12 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "G-1A Starfighter"
             modifier_func: (stats) ->
-                    stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
+                stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
             confersAddons: [
-                    {
-                        type: exportObj.Upgrade
-                        slot: "Cannon"
-                    }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Cannon"
+                }
             ]
         }
         {
@@ -10798,7 +10798,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "HWK-290"
             modifier_func: (stats) ->
-                    stats.attack = 3
+                stats.attack = 3
         }
         {
             name: "Outrider"
@@ -10822,16 +10822,16 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "JumpMaster 5000"
             unequips_upgrades: [
-                    'Crew'
+                'Crew'
             ]
             also_occupies_upgrades: [
-                    'Crew'
+                'Crew'
             ]
             confersAddons: [
-                    {
-                        type: exportObj.Upgrade
-                        slot: 'Astromech'
-                    }
+                {
+                    type: exportObj.Upgrade
+                    slot: 'Astromech'
+                }
             ]
         }
         {
@@ -10856,7 +10856,7 @@ exportObj.basicCardData = ->
                     type: exportObj.Upgrade
                     slot: "Torpedo"
                 }
-                ]
+            ]
         }
         {
             name: "ST-321"
@@ -10876,13 +10876,13 @@ exportObj.basicCardData = ->
             charge: 2
             ship: "StarViper"
             modifier_func: (stats) ->
-                    stats.shields += 1
+                stats.shields += 1
             confersAddons: [
-                    {
-                        type: exportObj.Upgrade
-                        slot: "Modification"
-                    }
-                ]
+                {
+                    type: exportObj.Upgrade
+                    slot: "Modification"
+                }
+            ]
         }
         {
             name: "Hull Upgrade"
@@ -10891,7 +10891,7 @@ exportObj.basicCardData = ->
             pointsarray: [2,3,5,7]
             variableagility: true
             modifier_func: (stats) ->
-                    stats.hull += 1
+                stats.hull += 1
         }
         {
             name: "Shield Upgrade"
@@ -10900,7 +10900,7 @@ exportObj.basicCardData = ->
             pointsarray: [3,4,6,8]
             variableagility: true
             modifier_func: (stats) ->
-                    stats.shields += 1
+                stats.shields += 1
         }
         {
             name: "Stealth Device"
@@ -10910,7 +10910,7 @@ exportObj.basicCardData = ->
             variableagility: true
             charge: 1
             modifier_func: (stats) ->
-                    stats.agility += 1
+                stats.agility += 1
         }
         {
             name: "Phantom"
