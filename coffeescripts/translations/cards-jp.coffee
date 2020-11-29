@@ -31,7 +31,7 @@ exportObj.translations.日本人 =
         "Modification": "改造"
         "Gunner": "砲手"
         "Device": "ペイロード"
-		"Tactical-Relay":"タクティカルリレー"
+		  "Tactical-Relay":"タクティカルリレー"
         "Tech": "技術"
         "Title": "タイトル"
     sources: # needed?
