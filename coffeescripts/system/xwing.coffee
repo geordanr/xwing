@@ -1075,7 +1075,6 @@ class exportObj.SquadBuilder
                 <div class="info-name"></div>
                 <div class="info-type"></div>
                 <span class="info-collection"></span>
-                <span class="info-solitary"><br />Solitary</span>
                 <table class="table-sm">
                     <tbody>
                         <tr class="info-ship">
@@ -2269,7 +2268,6 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-doubleturret').toggle(data.attackdt?)
                 
                     container.find('tr.info-ship').hide()        
-                    container.find('.info-solitary').hide()         
                     if data.large?
                         container.find('tr.info-base td.info-data').text "Large"
                     else if data.medium?
@@ -2372,7 +2370,6 @@ class exportObj.SquadBuilder
                     ship = exportObj.ships[data.ship]
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
-                    container.find('.info-solitary').hide()
                     
                     if ship.large?
                         container.find('tr.info-base td.info-data').text "Large"
@@ -2508,8 +2505,6 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').show()
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
-                    container.find('.info-solitary').hide()
-
 
                     if ship.large?
                         container.find('tr.info-base td.info-data').text "Large"
@@ -2617,11 +2612,6 @@ class exportObj.SquadBuilder
                             point_info += " base size is small, medium, large or huge"
                         point_info += "</i>"
 
-                    if data.solitary?
-                        container.find('.info-solitary').show()
-                    else
-                        container.find('.info-solitary').hide()
-
                     restriction_info = @restriction_text(data)
                     if point_info? or (restriction_info != '')
                         if point_info? and (restriction_info != '')
@@ -2721,7 +2711,6 @@ class exportObj.SquadBuilder
                     container.find('.info-collection').hide()
                     container.find('.info-name').html data.name
                     container.find('.info-name').show()
-                    container.find('.info-solitary').hide()
                     container.find('p.info-restrictions').hide()
                     container.find('p.info-text').html data.text
                     container.find('p.info-text').show()
@@ -2751,7 +2740,6 @@ class exportObj.SquadBuilder
                     container.find('.info-collection').hide()
                     container.find('.info-name').html "Missing items"
                     container.find('.info-name').show()
-                    container.find('.info-solitary').hide()
                     missingStuffInfoText = "To field this squad you need the following additional items: <ul>"
                     for item in data
                         missingStuffInfoText += """<li><strong>#{(if item.display_name? then item.display_name else item.name)}</strong> ("""
