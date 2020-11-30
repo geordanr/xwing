@@ -3004,10 +3004,16 @@ class exportObj.SquadBuilder
                 else
                     othertext += comma + card.ship
                 comma = ', '
+            if card.solitary
+                othertext += comma + exportObj.translate(@language, 'faction', "Solitary")
+                comma = ', '
+            if card.standardized
+                othertext += comma + exportObj.translate(@language, 'faction', "Standardized")
+                comma = ', '
         text += othertext + uniquetext
         if text != ''
             data = 
-                text: "<i><b>" + exportObj.translate(@language, 'restrictions', "Requires") + ":</b> " + text + "</i>"
+                text: "<i><b>" + exportObj.translate(@language, 'restrictions', "Restrictions") + ":</b> " + text + "</i>"
             return exportObj.fixIcons(data)
         else
             return ''

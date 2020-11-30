@@ -30,7 +30,7 @@ exportObj.translations.English =
         "Tactical Relay": '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>'
 
     restrictions:
-        "Requires": "Requires"
+        "Restrictions": "Restrictions"
         "Initiative": "Initiative"
         "Agility": "Agility"
         "Non-Limited": "Non-Limited"
