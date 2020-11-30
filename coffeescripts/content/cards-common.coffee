@@ -19054,6 +19054,8 @@ exportObj.fixIcons = (data) ->
             .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>')
             .replace(/%LIMITED%/g, '<span class="card-restriction">Limited.</span>')
             .replace(/%CONFIGURATION%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-config"></i>')
+            .replace(/%AGILITY%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-agility"></i>')
+            .replace(/%HULL%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hull"></i>')
             .replace(/%LINEBREAK%/g, '<br /><br />')
 
 exportObj.canonicalizeShipNames = (card_data) ->

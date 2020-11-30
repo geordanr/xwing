@@ -2358,7 +2358,7 @@ class exportObj.SquadBuilder
                         
                     container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
 
-                    restriction_info = @restriction_text(data)
+                    restriction_info = @restriction_text(data) + @upgrade_effect(data)
                     if restriction_info != ''
                         container.find('p.info-restrictions').html restriction_info ? ''
                         container.find('p.info-restrictions').show()
@@ -2494,7 +2494,7 @@ class exportObj.SquadBuilder
                     container.find('.info-name').html """#{uniquedots}#{if pilot.display_name then pilot.display_name else pilot.name}#{if data.suffix? then data.suffix else ""}#{if exportObj.isReleased(pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
 
 
-                    restriction_info = @restriction_text(data)
+                    restriction_info = @restriction_text(data) + @upgrade_effect(data)
                     if restriction_info != ''
                         container.find('p.info-restrictions').html restriction_info ? ''
                         container.find('p.info-restrictions').show()
@@ -2612,7 +2612,7 @@ class exportObj.SquadBuilder
                             point_info += " base size is small, medium, large or huge"
                         point_info += "</i>"
 
-                    restriction_info = @restriction_text(data)
+                    restriction_info = @restriction_text(data) + @upgrade_effect(data)
                     if point_info? or (restriction_info != '')
                         if point_info? and (restriction_info != '')
                             point_info += "<br/>"
@@ -2937,6 +2937,75 @@ class exportObj.SquadBuilder
         if @waiting_for_backend?
             for meth in @waiting_for_backend
                 meth()
+
+    upgrade_effect: (card) ->
+        text = comma = ''
+        if card.modifier_func
+            statchange =
+                attack: 0
+                attackf: 0
+                attackbull: 0
+                attackb: 0
+                attackt: 0
+                attackl: 0
+                attackr: 0
+                attackdt: 0
+                energy: 0
+                agility: 0
+                hull: 0
+                shields: 0
+                force: 0
+                actions: []
+            card.modifier_func(statchange)
+            if statchange.attack != 0
+                text += comma + "%FRONTARC% (#{statchange.attack})"
+                comma = ', '
+            if statchange.attackf != 0
+                text += comma + "%FULLFRONTARC% (#{statchange.attackf})"
+                comma = ', '
+            if statchange.attackbull != 0
+                text += comma + "%BULLSEYEARC% (#{statchange.attackbull})"
+                comma = ', '
+            if statchange.attackb != 0
+                text += comma + "%REARARC% (#{statchange.attackb})"
+                comma = ', '
+            if statchange.attackt != 0
+                text += comma + "%SINGLETURRETARC% (#{statchange.attackt})"
+                comma = ', '
+            if statchange.attackl != 0
+                text += comma + "%LEFTARC% (#{statchange.attackl})"
+                comma = ', '
+            if statchange.attackr != 0
+                text += comma + "%RIGHTARC% (#{statchange.attackr})"
+                comma = ', '
+            if statchange.attackdt != 0
+                text += comma + "%DOUBLETURRETARC% (#{statchange.attackdt})"
+                comma = ', '
+            if statchange.energy != 0
+                text += comma + "%ENERGY% (#{statchange.energy})"
+                comma = ', '
+            if statchange.agility != 0
+                text += comma + "%AGILITY% (#{statchange.agility})"
+                comma = ', '
+            if statchange.hull != 0
+                text += comma + "%HULL% (#{statchange.hull})"
+                comma = ', '
+            if statchange.shields != 0
+                text += comma + "%SHIELD% (#{statchange.shields})"
+                comma = ', '
+            if statchange.actions.length > 0
+                text += comma + @formatActions(statchange.actions, ", ", [])
+                comma = ', '
+        if card.confersAddons
+            for addonname in card.confersAddons
+                text += comma + "%#{addonname.slot.toUpperCase().replace(/[^a-z0-9]/gi, '')}%" 
+                comma = ', '
+        if text != ''
+            data = 
+                text: "</br><b>Adds:</b> #{text}"
+            return exportObj.fixIcons(data)
+        else
+            return ''
 
     restriction_text: (card) ->
         uniquetext = comma = othertext = text = ''
@@ -4264,7 +4333,6 @@ class Ship
             shields: @pilot.ship_override?.shields ? @data.shields
             force: (@pilot.ship_override?.force ? @pilot.force) ? 0
             charge: @pilot.ship_override?.charge ? @pilot.charge
-            darkside: (@pilot.ship_override?.darkside ? @pilot.darkside) ? false
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
 
         # need a deep copy of maneuvers array
