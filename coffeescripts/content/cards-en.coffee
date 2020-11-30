@@ -29,6 +29,24 @@ exportObj.translations.English =
         "HardpointShip": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
         "Tactical Relay": '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>'
 
+    restrictions:
+        "Requires": "Requires"
+        "Initiative": "Initiative"
+        "Agility": "Agility"
+        "Non-Limited": "Non-Limited"
+        " or Squad Including": " or Squad Including"
+        "Ship": "Ship"
+        "Extra": "Extra"
+
+    faction:
+        "Rebel Alliance": "Rebel Alliance"
+        "Galactic Empire": "Galactic Empire"
+        "Scum and Villany": "Scum and Villany"
+        "Resistance": "Resistance"
+        "First Order": "First Order"
+        "Galactic Republic": "Galactic Republic"
+        "Separatist Alliance": "Separatist Alliance"
+
     slot:
         "Astromech": "Astromech"
         "Force": "Force"
@@ -1492,76 +1510,76 @@ exportObj.cardLoaders.English = () ->
     upgrade_translations =
         "0-0-0":
            display_name: """0-0-0"""
-           text: """<i>Scum or Squad including Darth Vader</i>%LINEBREAK%At the start of the Engagement Phase, you may choose 1 enemy ship at range 0-1. If you do, you gain 1 calculate token unless that ship chooses to gain 1 stress token."""
+           text: """At the start of the Engagement Phase, you may choose 1 enemy ship at range 0-1. If you do, you gain 1 calculate token unless that ship chooses to gain 1 stress token."""
         "4-LOM":
            display_name: """4-LOM"""
-           text: """<i>Scum only</i>%LINEBREAK%While you perform an attack, after rolling attack dice, you may name a type of green token. If you do, gain 2 ion tokens and, during this attack, the defender cannot spend tokens of the named type."""
+           text: """While you perform an attack, after rolling attack dice, you may name a type of green token. If you do, gain 2 ion tokens and, during this attack, the defender cannot spend tokens of the named type."""
         "Andrasta":
            display_name: """Andrasta"""
-           text: """<i>Adds %RELOAD%</i>%LINEBREAK%<i>Scum only</i>%LINEBREAK%Adds %DEVICE% slot."""
+           text: """<i>Adds %RELOAD%</i>%LINEBREAK%Adds %DEVICE% slot."""
         "Black One":
            display_name: """Black One"""
-           text: """<i>Adds %SLAM%</i>%LINEBREAK%<i>Resistance only</i>%LINEBREAK%After you perform a %SLAM% action, lose 1&nbsp;%CHARGE%. Then you may gain 1 ion token to remove 1 disarm token.%LINEBREAK%If your %CHARGE% is inactive, you cannot perform the %SLAM% action."""
+           text: """<i>Adds %SLAM%</i>%LINEBREAK%After you perform a %SLAM% action, lose 1&nbsp;%CHARGE%. Then you may gain 1 ion token to remove 1 disarm token.%LINEBREAK%If your %CHARGE% is inactive, you cannot perform the %SLAM% action."""
         "Dauntless":
            display_name: """Dauntless"""
-           text: """<i>Empire only</i>%LINEBREAK%After you partially execute a maneuver, you may perform 1 white action, treating that action as red."""
+           text: """After you partially execute a maneuver, you may perform 1 white action, treating that action as red."""
         "Ghost":
            display_name: """Ghost"""
-           text: """<i>Rebel only</i>%LINEBREAK%You can dock 1 attack shuttle or Sheathipede-class shuttle.%LINEBREAK%Your docked ships can deploy only from your rear guides."""
+           text: """You can dock 1 attack shuttle or Sheathipede-class shuttle.%LINEBREAK%Your docked ships can deploy only from your rear guides."""
         "Havoc":
            display_name: """Havoc"""
-           text: """<i>Scum only</i>%LINEBREAK%Remove %CREW% slot. Adds %SENSOR% and %ASTROMECH% slots."""
+           text: """Remove %CREW% slot. Adds %SENSOR% and %ASTROMECH% slots."""
         "Hound's Tooth":
            display_name: """Hound’s Tooth"""
-           text: """<i>Scum only</i>%LINEBREAK%1 Z-95-AF4 headhunter can dock with you."""
+           text: """1 Z-95-AF4 headhunter can dock with you."""
         "IG-2000":
            display_name: """IG-2000"""
-           text: """<i>Scum only</i>%LINEBREAK%You have the pilot ability of each other friendly ship with the <strong>IG-2000</strong> upgrade."""
+           text: """You have the pilot ability of each other friendly ship with the <strong>IG-2000</strong> upgrade."""
         "Marauder":
            display_name: """Marauder"""
-           text: """<i>Scum only</i>%LINEBREAK%While you perform a primary %REARARC% attack, you may reroll 1 attack die.%LINEBREAK%Adds %GUNNER% slot."""
+           text: """While you perform a primary %REARARC% attack, you may reroll 1 attack die.%LINEBREAK%Adds %GUNNER% slot."""
         "Millennium Falcon":
            display_name: """Millennium Falcon"""
-           text: """<i>Adds %EVADE%</i>%LINEBREAK%<i>Rebel only</i>%LINEBREAK%While you defend, if you are evading, you may reroll 1 defense die."""
+           text: """<i>Adds %EVADE%</i>%LINEBREAK%While you defend, if you are evading, you may reroll 1 defense die."""
         "Mist Hunter":
            display_name: """Mist Hunter"""
-           text: """<i>Adds %BARRELROLL%</i>%LINEBREAK%<i>Scum only</i>%LINEBREAK%Adds %CANNON% slot."""
+           text: """<i>Adds %BARRELROLL%</i>%LINEBREAK%Adds %CANNON% slot."""
         "Moldy Crow":
            display_name: """Moldy Crow"""
-           text: """<i>Rebel or Scum only</i>%LINEBREAK%Gain a %FRONTARC% primary weapon with a value of “3.”%LINEBREAK%During the End Phase, do not remove up to 2 focus tokens."""
+           text: """Gain a %FRONTARC% primary weapon with a value of “3.”%LINEBREAK%During the End Phase, do not remove up to 2 focus tokens."""
         "Outrider":
            display_name: """Outrider"""
-           text: """<i>Rebel only</i>%LINEBREAK% While you perform an attack that is obstructed by an obstacle, the defender rolls 1 fewer defense die. %LINEBREAK% After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens. %LINEBREAK% <i>Errata (since rules reference 1.0.2): changed "obstructed attack" to "an attack that is obstructed by an obstacle"</i>"""
+           text: """ While you perform an attack that is obstructed by an obstacle, the defender rolls 1 fewer defense die. %LINEBREAK% After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens. %LINEBREAK% <i>Errata (since rules reference 1.0.2): changed "obstructed attack" to "an attack that is obstructed by an obstacle"</i>"""
         "Phantom":
            display_name: """Phantom"""
-           text: """<i>Rebel only</i>%LINEBREAK%You can dock at range 0-1."""
+           text: """You can dock at range 0-1."""
         "Punishing One":
            display_name: """Punishing One"""
-           text: """<i>Scum only</i>%LINEBREAK%While you perform a primary attack, if the defender is in your %FRONTARC%, roll 1 additional attack die.%LINEBREAK%Remove %CREW% slot. Adds %ASTROMECH% slot."""
+           text: """While you perform a primary attack, if the defender is in your %FRONTARC%, roll 1 additional attack die.%LINEBREAK%Remove %CREW% slot. Adds %ASTROMECH% slot."""
         "ST-321":
            display_name: """ST-321"""
-           text: """<i>Empire only</i>%LINEBREAK%After you perform a %COORDINATE% action, you may choose an enemy ship at range 0-3 of the ship you coordinated. If you do, acquire a lock on that enemy ship, ignoring range restrictions."""
+           text: """After you perform a %COORDINATE% action, you may choose an enemy ship at range 0-3 of the ship you coordinated. If you do, acquire a lock on that enemy ship, ignoring range restrictions."""
         "Scimitar":
            display_name: """Scimitar"""
-           text: """<i>Adds <r>%CLOAK%</r> ,  %JAM%</i>%LINEBREAK%<i>Separatist Alliance only</i>%LINEBREAK%<strong>Setup:</strong> After the Place Forces step, you may cloak.%LINEBREAK%After you decloak, you may choose an enemy ship in your %BULLSEYEARC%. If you do, it gains 1&nbsp;jam token."""
+           text: """<i>Adds <r>%CLOAK%</r> ,  %JAM%</i>%LINEBREAK%<strong>Setup:</strong> After the Place Forces step, you may cloak.%LINEBREAK%After you decloak, you may choose an enemy ship in your %BULLSEYEARC%. If you do, it gains 1&nbsp;jam token."""
         "Shadow Caster":
            display_name: """Shadow Caster"""
-           text: """<i>Scum only</i>%LINEBREAK%After you perform an attack that hits, if the defender is in your %SINGLETURRETARC% and your %FRONTARC%, the defender gains 1 tractor token."""
+           text: """After you perform an attack that hits, if the defender is in your %SINGLETURRETARC% and your %FRONTARC%, the defender gains 1 tractor token."""
         "Slave I":
            display_name: """Slave I"""
-           text: """<i>Scum only</i>%LINEBREAK%After you reveal a turn (%TURNLEFT% or %TURNRIGHT%) or bank (%BANKLEFT% or %BANKRIGHT%) maneuver you may set your dial to the maneuver of the same speed and bearing in the other direction.%LINEBREAK%Adds %TORPEDO% slot.%LINEBREAK%<i>Errata (since rules reference 1.0.2): removed "you may gain 1 stress token. If you do,"</i>"""
+           text: """After you reveal a turn (%TURNLEFT% or %TURNRIGHT%) or bank (%BANKLEFT% or %BANKRIGHT%) maneuver you may set your dial to the maneuver of the same speed and bearing in the other direction.%LINEBREAK%Adds %TORPEDO% slot.%LINEBREAK%<i>Errata (since rules reference 1.0.2): removed "you may gain 1 stress token. If you do,"</i>"""
         "Virago":
            display_name: """Virago"""
            text: """<i>Adds 1 shield</i> %LINEBREAK% During the End Phase, you may spend 1&nbsp;%CHARGE% to perform a red %BOOST% action.%LINEBREAK%Adds %MODIFICATION% slot."""
         "Soulless One":
            display_name: """Soulless One"""
-           text: """<i>Separatist Alliance only %LINEBREAK% Adds 2 Hull</i>%LINEBREAK% While you defend, if the attacker is outside your firing arc, you may reroll 1&nbsp;defense die."""
+           text: """Adds 2 Hull</i>%LINEBREAK% While you defend, if the attacker is outside your firing arc, you may reroll 1&nbsp;defense die."""
         "Ablative Plating":
            display_name: """Ablative Plating"""
-           text: """<i>large ship or medium ship only</i>%LINEBREAK%Before you would suffer damage from an obstacle or from a friendly bomb detonating, you may spend 1&nbsp;%CHARGE%. If you do, prevent 1 damage."""
+           text: """Before you would suffer damage from an obstacle or from a friendly bomb detonating, you may spend 1&nbsp;%CHARGE%. If you do, prevent 1 damage."""
         "Admiral Sloane":
            display_name: """Admiral Sloane"""
-           text: """<i>Empire only</i>%LINEBREAK%After another friendly ship at range 0-3 defends, if it is destroyed, the attacker gains 2 stress tokens.%LINEBREAK%While a friendly ship at range 0-3 performs an attack against a stressed ship, it may reroll 1 attack die."""
+           text: """After another friendly ship at range 0-3 defends, if it is destroyed, the attacker gains 2 stress tokens.%LINEBREAK%While a friendly ship at range 0-3 performs an attack against a stressed ship, it may reroll 1 attack die."""
         "Adv. Proton Torpedoes":
            display_name: """Adv. Proton Torpedoes"""
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. Change 1&nbsp;%HIT% result to a %CRIT% result."""
@@ -1570,16 +1588,16 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform an attack, you may spend 1 focus token to change 1 of your blank results to a %HIT% result."""
         "Advanced SLAM":
            display_name: """Advanced SLAM"""
-           text: """<i>Requires %SLAM%</i>%LINEBREAK%After you perform a %SLAM% action, if you fully executed the maneuver, you may perform a white action on your action bar, treating that action as red."""
+           text: """After you perform a %SLAM% action, if you fully executed the maneuver, you may perform a white action on your action bar, treating that action as red."""
         "Advanced Sensors":
            display_name: """Advanced Sensors"""
            text: """After you reveal your dial, you may perform 1 action.%LINEBREAK%If you do, you cannot perform another action during your activation."""
         "Afterburners":
            display_name: """Afterburners"""
-           text: """<i>small ship only</i>%LINEBREAK%After you fully execute a speed 3-5 maneuver, you may spend 1&nbsp;%CHARGE% to perform a %BOOST% action, even while stressed."""
+           text: """After you fully execute a speed 3-5 maneuver, you may spend 1&nbsp;%CHARGE% to perform a %BOOST% action, even while stressed."""
         "Agent Kallus":
            display_name: """Agent Kallus"""
-           text: """<i>Empire only</i>%LINEBREAK%<strong>Setup:</strong> After placing forces, assign the <strong>Hunted</strong> condition to 1 enemy ship.%LINEBREAK%While you perform an attack against the ship with the <strong>Hunted</strong> condition, you may change 1 of your %FOCUS% results to a %HIT% result.%LINEBREAK%<i>Errata (since rules reference 1.1.0)</i>:"Added After placing forces,"</i>"""
+           text: """<strong>Setup:</strong> After placing forces, assign the <strong>Hunted</strong> condition to 1 enemy ship.%LINEBREAK%While you perform an attack against the ship with the <strong>Hunted</strong> condition, you may change 1 of your %FOCUS% results to a %HIT% result.%LINEBREAK%<i>Errata (since rules reference 1.1.0)</i>:"Added After placing forces,"</i>"""
         "Agile Gunner":
            display_name: """Agile Gunner"""
            text: """During the End Phase, you may rotate your %SINGLETURRETARC% indicator."""
@@ -1587,82 +1605,82 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Attack:</strong>If the defender is in your %BULLSEYEARC%, roll 1 additional die. During the Neutralize Results step, if you are not in the defenders %FRONTARC%, %EVADE% results do not cancel %CRIT% results."""
         "BB Astromech":
            display_name: """BB Astromech"""
-           text: """<i>Resistance only</i>%LINEBREAK%Before you execute a blue maneuver, you may spend 1&nbsp;%CHARGE% to perform a %BARRELROLL% action."""
+           text: """Before you execute a blue maneuver, you may spend 1&nbsp;%CHARGE% to perform a %BARRELROLL% action."""
         "BB-8":
            display_name: """BB-8"""
-           text: """<i>Resistance only</i>%LINEBREAK%Before you execute a blue maneuver, you may spend 1&nbsp;%CHARGE% to perform a&nbsp;%BARRELROLL% or&nbsp;%BOOST% action."""
+           text: """Before you execute a blue maneuver, you may spend 1&nbsp;%CHARGE% to perform a&nbsp;%BARRELROLL% or&nbsp;%BOOST% action."""
         "BT-1":
            display_name: """BT-1"""
-           text: """<i>Scum or Squad including Darth Vader only</i>%LINEBREAK%While you perform an attack, you may change 1&nbsp;%HIT% result to a %CRIT% result for each stress token the defender has."""
+           text: """While you perform an attack, you may change 1&nbsp;%HIT% result to a %CRIT% result for each stress token the defender has."""
         "Barrage Rockets":
            display_name: """Barrage Rockets"""
            text: """<strong>Attack (%FOCUS%):</strong> Spend 1&nbsp;%CHARGE%. If the defender is in your %BULLSEYEARC%, you may spend 1 or more %CHARGE% to reroll that many attack dice."""
         "Battle Meditation":
            display_name: """Battle Meditation"""
-           text: """<i>Adds %F-COORDINATE%</i>%LINEBREAK%<i>Galactic Republic only</i>%LINEBREAK%You cannot coordinate limited ships.%LINEBREAK% While you perform a purple %COORDINATE% action, you may coordinate 1 additional friendly non-limited ship of the same type. Both ships must perform the same action."""
+           text: """<i>Adds %F-COORDINATE%</i>%LINEBREAK%You cannot coordinate limited ships.%LINEBREAK% While you perform a purple %COORDINATE% action, you may coordinate 1 additional friendly non-limited ship of the same type. Both ships must perform the same action."""
         "Baze Malbus":
            display_name: """Baze Malbus"""
-           text: """<i>Rebel only</i>%LINEBREAK%While you perform a %FOCUS% action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0-1, to a maximum of 2."""
+           text: """While you perform a %FOCUS% action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0-1, to a maximum of 2."""
         "Biohexacrypt Codes":
            display_name: """Biohexacrypt Codes"""
-           text: """<i>Requires %LOCK% or <r>%LOCK%</r></i>%LINEBREAK%<i>First Order only</i>%LINEBREAK%While you coordinate or jam, if you have a lock on a ship, you may spend that lock to choose that ship, ignoring range restrictions."""
+           text: """While you coordinate or jam, if you have a lock on a ship, you may spend that lock to choose that ship, ignoring range restrictions."""
         "Bistan":
            display_name: """Bistan"""
-           text: """<i>Rebel only</i>%LINEBREAK%After you perform a primary attack, if you are focused, you may perform a bonus %SINGLETURRETARC% attack against a ship you have not already attacked this round."""
+           text: """After you perform a primary attack, if you are focused, you may perform a bonus %SINGLETURRETARC% attack against a ship you have not already attacked this round."""
         "Boba Fett":
            display_name: """Boba Fett"""
-           text: """<i>Scum only</i>%LINEBREAK%<strong>Setup:</strong> Start in reserve.%LINEBREAK%At the end of Setup, place yourself at range 0 of an obstacle and beyond range 3 of any enemy ship."""
+           text: """<strong>Setup:</strong> Start in reserve.%LINEBREAK%At the end of Setup, place yourself at range 0 of an obstacle and beyond range 3 of any enemy ship."""
         "Bomblet Generator":
            display_name: """Bomblet Generator"""
            text: """<strong>Bomb</strong>%LINEBREAK%During the System Phase, you may spend 1&nbsp;%CHARGE% to drop a Bomblet with the [1&nbsp;%STRAIGHT%] template.%LINEBREAK%At the start of the Activation Phase, you may spend 1 shield to recover 2 %CHARGE%."""
         "Bossk":
            display_name: """Bossk"""
-           text: """<i>Scum only</i>%LINEBREAK%After you perform a primary attack that misses, if you are not stressed, you <b>must</b> receive 1 stress token to perform a bonus primary attack against the same target."""
+           text: """After you perform a primary attack that misses, if you are not stressed, you <b>must</b> receive 1 stress token to perform a bonus primary attack against the same target."""
         "Brilliant Evasion":
            display_name: """Brilliant Evasion"""
            text: """While you defend, if you are not in the attacker's %BULLSEYEARC%, you may spend 1 %FORCE% to change 2 of your %FOCUS% results to %EVADE%&nbsp;results."""
         "C-3PO":
            display_name: """C-3PO"""
-           text: """<i>Adds %CALCULATE%</i>%LINEBREAK%<i>Rebel only</i>%LINEBREAK%Before rolling defense dice, you may spend 1 calculate token to guess aloud a number 1 or higher. If you do and you roll exactly that many %EVADE% results, add 1&nbsp;%EVADE% result.%LINEBREAK%After you perform the %CALCULATE% action, gain 1 calculate token."""
+           text: """<i>Adds %CALCULATE%</i>%LINEBREAK%Before rolling defense dice, you may spend 1 calculate token to guess aloud a number 1 or higher. If you do and you roll exactly that many %EVADE% results, add 1&nbsp;%EVADE% result.%LINEBREAK%After you perform the %CALCULATE% action, gain 1 calculate token."""
         "C-3PO (Resistance)":
            display_name: """C-3PO"""
-           text: """<i>Adds %CALCULATE% ,  <r>%COORDINATE%</r></i>%LINEBREAK%<i>Resistance only</i>%LINEBREAK%While you coordinate, you can choose friendly ships beyond range 2 if they have&nbsp;%CALCULATE% on their action bar.%LINEBREAK%After you perform the&nbsp;%CALCULATE% or&nbsp;%COORDINATE% action, gain 1&nbsp;calculate token."""
+           text: """<i>Adds %CALCULATE%, <r>%COORDINATE%</r></i>%LINEBREAK%While you coordinate, you can choose friendly ships beyond range 2 if they have&nbsp;%CALCULATE% on their action bar.%LINEBREAK%After you perform the&nbsp;%CALCULATE% or&nbsp;%COORDINATE% action, gain 1&nbsp;calculate token."""
         "Cad Bane":
            display_name: """Cad Bane"""
-           text: """<i>Scum only</i>%LINEBREAK%After you drop or launch a device, you may perform a red %BOOST% action."""
+           text: """After you drop or launch a device, you may perform a red %BOOST% action."""
         "Calibrated Laser Targeting":
            display_name: """Calibrated Laser Targeting"""
            text: """While you perform a primary attack, if&nbsp;the defender is in your %BULLSEYEARC%, add 1&nbsp;%FOCUS%&nbsp;result."""
         "Captain Phasma":
            display_name: """Captain Phasma"""
-           text: """<i>First Order only</i>%LINEBREAK%At the end of the Engagement Phase, each enemy ship at range 0-1 that is not stressed gains 1 stress token."""
+           text: """At the end of the Engagement Phase, each enemy ship at range 0-1 that is not stressed gains 1 stress token."""
         "Cassian Andor":
            display_name: """Cassian Andor"""
-           text: """<i>Rebel only</i>%LINEBREAK%During the System Phase, you may choose 1 enemy ship at range 1-2 and guess aloud a bearing and speed, then look at that ship’s dial. If the chosen ship’s bearing and speed match your guess, you may set your dial to another maneuver."""
+           text: """During the System Phase, you may choose 1 enemy ship at range 1-2 and guess aloud a bearing and speed, then look at that ship’s dial. If the chosen ship’s bearing and speed match your guess, you may set your dial to another maneuver."""
         "Chancellor Palpatine":
            display_name: """Chancellor Palpatine"""
-           text: """<i>Separatist Alliance or Galactic Republic only</i>%LINEBREAK%<i>Adds <f>%COORDINATE%</f></i>%LINEBREAK%Chancellor Palpatine:%LINEBREAK%<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%After you defend, if the attacker is at range 0-2, you may spend 1 %FORCE%. If you do, the attacker gains 1 stress token.%LINEBREAK%During the End Phase, you may flip this card.%LINEBREAK%Darth Sidious%LINEBREAK%After you perform a purple&nbsp;%COORDINATE%&nbsp;action, the ship you coordinated gains 1&nbsp;stress token. Then, it gains 1&nbsp;focus token or recovers 1&nbsp;%FORCE%."""
+           text: """<i>Adds <f>%COORDINATE%</f></i>%LINEBREAK%Chancellor Palpatine:%LINEBREAK%<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%After you defend, if the attacker is at range 0-2, you may spend 1 %FORCE%. If you do, the attacker gains 1 stress token.%LINEBREAK%During the End Phase, you may flip this card.%LINEBREAK%Darth Sidious%LINEBREAK%After you perform a purple&nbsp;%COORDINATE%&nbsp;action, the ship you coordinated gains 1&nbsp;stress token. Then, it gains 1&nbsp;focus token or recovers 1&nbsp;%FORCE%."""
         "Chewbacca":
            display_name: """Chewbacca"""
-           text: """<i>Rebel only</i>%LINEBREAK%At the start of the Engagement Phase, you may spend 2 %CHARGE% to repair 1 faceup damage card."""
+           text: """At the start of the Engagement Phase, you may spend 2 %CHARGE% to repair 1 faceup damage card."""
         "Chewbacca (Scum)":
            display_name: """Chewbacca"""
-           text: """<i>Scum only</i>%LINEBREAK%At the start of the End Phase, you may spend 1 focus token to repair 1 of your faceup damage cards."""
+           text: """At the start of the End Phase, you may spend 1 focus token to repair 1 of your faceup damage cards."""
         "Chewbacca (Resistance)":
            display_name: """Chewbacca"""
-           text: """<i>Resistance only</i>%LINEBREAK%<strong>Setup:</strong> Lose 1&nbsp;%CHARGE%.%LINEBREAK%After a friendly ship at range&nbsp;0-3 is dealt 1&nbsp;damage card, recover 1&nbsp;%CHARGE%.%LINEBREAK%While you perform an attack, you may spend 2&nbsp;%CHARGE% to change 1&nbsp;%FOCUS% result to a&nbsp;%CRIT% result."""
+           text: """<strong>Setup:</strong> Lose 1&nbsp;%CHARGE%.%LINEBREAK%After a friendly ship at range&nbsp;0-3 is dealt 1&nbsp;damage card, recover 1&nbsp;%CHARGE%.%LINEBREAK%While you perform an attack, you may spend 2&nbsp;%CHARGE% to change 1&nbsp;%FOCUS% result to a&nbsp;%CRIT% result."""
         "Ciena Ree":
            display_name: """Ciena Ree"""
-           text: """<i>Requires %COORDINATE% or <r>%COORDINATE%</r></i>%LINEBREAK%<i>Empire only</i>%LINEBREAK%After you perform a %COORDINATE% action, if the ship you coordinated performed a %BARRELROLL% or %BOOST% action, it may gain 1 stress token to rotate 90°."""
+           text: """After you perform a %COORDINATE% action, if the ship you coordinated performed a %BARRELROLL% or %BOOST% action, it may gain 1 stress token to rotate 90°."""
         "Cikatro Vizago":
            display_name: """Cikatro Vizago"""
-           text: """<i>Scum only</i>%LINEBREAK%During the End Phase, you may choose 2 %ILLICIT% upgrades equipped to friendly ships at range 0-1. If you do, you may exchange these upgrades.%LINEBREAK%<strong>End of Game:</strong> Return all %ILLICIT% upgrades to their original ships."""
+           text: """During the End Phase, you may choose 2 %ILLICIT% upgrades equipped to friendly ships at range 0-1. If you do, you may exchange these upgrades.%LINEBREAK%<strong>End of Game:</strong> Return all %ILLICIT% upgrades to their original ships."""
         "Cloaking Device":
            display_name: """Cloaking Device"""
-           text: """<i>small ship or medium ship only</i>%LINEBREAK%<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to perform a %CLOAK% action.%LINEBREAK%At the start of the Planning Phase, roll 1 attack die. On a %FOCUS% result, decloak or discard your cloak token."""
+           text: """<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to perform a %CLOAK% action.%LINEBREAK%At the start of the Planning Phase, roll 1 attack die. On a %FOCUS% result, decloak or discard your cloak token."""
         "Clone Commander Cody":
            display_name: """Clone Commander Cody"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK%After you perform an attack that missed, if 1&nbsp;or more %HIT%/%CRIT% results were neutralized, the defender gains 1&nbsp;strain token."""
+           text: """After you perform an attack that missed, if 1&nbsp;or more %HIT%/%CRIT% results were neutralized, the defender gains 1&nbsp;strain token."""
         "Cluster Missiles":
            display_name: """Cluster Missiles"""
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. After this attack, you may perform this attack as a bonus attack against a different target at range 0-1 of the defender, ignoring the %LOCK% requirement."""
@@ -1671,7 +1689,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you boost or barrel roll, you can move through and overlap obstacles.%LINEBREAK%After you move through or overlap an obstacle, you may spend 1&nbsp;%CHARGE% to ignore its effects until the end of the round."""
         "Composure":
            display_name: """Composure"""
-           text: """<i>Requires <r>%FOCUS%</r> or %FOCUS%</i>%LINEBREAK%After you fail an action, if you have no green tokens, you may perform a %FOCUS% action. If you do, you cannot perform additional actions this round. %LINEBREAK% <i>Errata (since rules reference 1.1.0): Added "If you do, you cannot perform additional actions this round."</i>"""
+           text: """After you fail an action, if you have no green tokens, you may perform a %FOCUS% action. If you do, you cannot perform additional actions this round. %LINEBREAK% <i>Errata (since rules reference 1.1.0): Added "If you do, you cannot perform additional actions this round."</i>"""
         "Concussion Missiles":
            display_name: """Concussion Missiles"""
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. After this attack hits, each ship at range 0-1 of the defender exposes 1 of its damage cards."""
@@ -1683,31 +1701,31 @@ exportObj.cardLoaders.English = () ->
            text: """Before you activate, you may spend 1&nbsp;%CHARGE%. If you do, until the end of the round, you can perform actions and execute red maneuvers, even while stressed."""
         "Count Dooku":
            display_name: """Count Dooku"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%Before a ship at range&nbsp;0-2 rolls attack or defense dice, if all of your %FORCE% are active, you may spend 1 %FORCE% and name a result. If the roll does not contain the named result, the ship must change 1&nbsp;die to that result."""
+           text: """Before a ship at range&nbsp;0-2 rolls attack or defense dice, if all of your %FORCE% are active, you may spend 1 %FORCE% and name a result. If the roll does not contain the named result, the ship must change 1&nbsp;die to that result."""
         "Crack Shot":
            display_name: """Crack Shot"""
            text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, before the Neutralize Results step, you may spend 1&nbsp;%CHARGE% to cancel 1&nbsp;%EVADE% result."""
         "DRK-1 Probe Droids":
            display_name: """DRK-1 Probe Droids"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%During the End Phase, you may spend 1&nbsp;%CHARGE% to drop or launch 1&nbsp;DRK-1 probe droid using a speed 3 template.%LINEBREAK%This card’s %CHARGE% cannot be recovered."""
+           text: """During the End Phase, you may spend 1&nbsp;%CHARGE% to drop or launch 1&nbsp;DRK-1 probe droid using a speed 3 template.%LINEBREAK%This card’s %CHARGE% cannot be recovered."""
         "Daredevil":
            display_name: """Daredevil"""
-           text: """<i>Requires %BOOST%</i>%LINEBREAK%<i>small ship only</i>%LINEBREAK%While you perform a white %BOOST% action, you may treat it as red to use the [1&nbsp;%TURNLEFT%] or [1&nbsp;%TURNRIGHT%] template instead."""
+           text: """While you perform a white %BOOST% action, you may treat it as red to use the [1&nbsp;%TURNLEFT%] or [1&nbsp;%TURNRIGHT%] template instead."""
         "Darth Vader":
            display_name: """Darth Vader"""
-           text: """<i>Empire only</i>%LINEBREAK%At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0-2 and spend 1&nbsp;%FORCE%. If you do, that ship suffers 1&nbsp;%HIT% damage unless it chooses to remove 1 green token."""
+           text: """At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0-2 and spend 1&nbsp;%FORCE%. If you do, that ship suffers 1&nbsp;%HIT% damage unless it chooses to remove 1 green token."""
         "Deadman's Switch":
            display_name: """Deadman’s Switch"""
            text: """After you are destroyed, each other ship at range 0-1 suffers 1&nbsp;%HIT% damage."""
         "Death Troopers":
            display_name: """Death Troopers"""
-           text: """<i>Empire only</i>%LINEBREAK%During the Activation Phase, enemy ships at range 0-1 cannot remove stress tokens."""
+           text: """During the Activation Phase, enemy ships at range 0-1 cannot remove stress tokens."""
         "Debris Gambit":
            display_name: """Debris Gambit"""
            text: """<i>Adds <r>%EVADE%</r></i>%LINEBREAK%<i>small ship or medium ship only</i>%LINEBREAK%While you perform a red %EVADE% action, if there is an obstacle at range 0-1, treat the action as white instead."""
         "Dedicated":
            display_name: """Dedicated"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK%While another friendly ship in your %LEFTARC%&nbsp;or %RIGHTARC% at range&nbsp;0-2 defends, if it is limited or has the <strong>Dedicated</strong> upgrade and you are not strained, you may gain 1 strain token. If you do, the defender rerolls 1&nbsp;of their blank results."""
+           text: """While another friendly ship in your %LEFTARC%&nbsp;or %RIGHTARC% at range&nbsp;0-2 defends, if it is limited or has the <strong>Dedicated</strong> upgrade and you are not strained, you may gain 1 strain token. If you do, the defender rerolls 1&nbsp;of their blank results."""
         "Delayed Fuses":
            display_name: """Delayed Fuses"""
            text: """After you drop, launch or place a bomb or mine, you may place 1 fuse marker on that device."""
@@ -1716,16 +1734,16 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Adds 1 attack and 2 shields. Removes 1 agility. %LINEBREAK%</i><i class = flavor_text>The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</i>"""
         "Dengar":
            display_name: """Dengar"""
-           text: """<i>Scum only</i>%LINEBREAK%After you defend, if the attacker is in your firing arc, you may spend 1&nbsp;%CHARGE%. If you do, roll 1 attack die unless the attacker chooses to remove 1 green token. On a %HIT% or %CRIT% result, the attacker suffers 1&nbsp;%HIT% damage."""
+           text: """After you defend, if the attacker is in your firing arc, you may spend 1&nbsp;%CHARGE%. If you do, roll 1 attack die unless the attacker chooses to remove 1 green token. On a %HIT% or %CRIT% result, the attacker suffers 1&nbsp;%HIT% damage."""
         "Diamond-Boron Missiles":
            display_name: """Diamond-Boron Missiles"""
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. After this attack hits, you may spend 1 %CHARGE%. If you do, each ship at range 0-1 of the defender with agility equal to or less than the defender's rolls 1 attack die and suffers 1 %HIT%/%CRIT% damage for each matching result. """
         "Director Krennic":
            display_name: """Director Krennic"""
-           text: """<i>Adds %LOCK%</i>%LINEBREAK%<i>Empire only</i>%LINEBREAK%<strong>Setup:</strong> Before placing forces, assign the <strong>Optimized Prototype</strong> condition to another friendly ship."""
+           text: """<i>Adds %LOCK%</i>%LINEBREAK%<strong>Setup:</strong> Before placing forces, assign the <strong>Optimized Prototype</strong> condition to another friendly ship."""
         "Discord Missiles":
            display_name: """Discord Missiles"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%At the start of the Engagement Phase, you may spend 1&nbsp;calculate token and 1&nbsp;%CHARGE% to launch 1&nbsp;buzz droid swarm using the [3&nbsp;%BANKLEFT%], [3&nbsp;%STRAIGHT%], or [3&nbsp;%BANKRIGHT%] template.%LINEBREAK%This card’s %CHARGE% cannot be recovered."""
+           text: """At the start of the Engagement Phase, you may spend 1&nbsp;calculate token and 1&nbsp;%CHARGE% to launch 1&nbsp;buzz droid swarm using the [3&nbsp;%BANKLEFT%], [3&nbsp;%STRAIGHT%], or [3&nbsp;%BANKRIGHT%] template.%LINEBREAK%This card’s %CHARGE% cannot be recovered."""
         "Dorsal Turret":
            display_name: """Dorsal Turret"""
            text: """<i>Adds %ROTATEARC%</i>%LINEBREAK%<strong>Attack</strong>"""
@@ -1734,42 +1752,42 @@ exportObj.cardLoaders.English = () ->
            text: """During the End Phase, you may suffer 1&nbsp;%HIT% damage to remove 1 red token."""
         "Elusive":
            display_name: """Elusive"""
-           text: """<i>small ship or medium ship only</i>%LINEBREAK%While you defend, you may spend 1&nbsp;%CHARGE% to reroll 1 defense die.%LINEBREAK%After you fully execute a red maneuver, recover 1&nbsp;%CHARGE%."""
+           text: """While you defend, you may spend 1&nbsp;%CHARGE% to reroll 1 defense die.%LINEBREAK%After you fully execute a red maneuver, recover 1&nbsp;%CHARGE%."""
         "Emperor Palpatine":
            display_name: """Emperor Palpatine"""
-           text: """<i>Empire only</i>%LINEBREAK%While another friendly ship defends or performs an attack, you may spend 1&nbsp;%FORCE% to modify 1 of its dice as though that ship had spent 1&nbsp;%FORCE%."""
+           text: """While another friendly ship defends or performs an attack, you may spend 1&nbsp;%FORCE% to modify 1 of its dice as though that ship had spent 1&nbsp;%FORCE%."""
         "Energy-Shell Charges":
            display_name: """Energy-Shell Charges"""
-           text: """<i>Requires %CALCULATE% or <r>%CALCULATE%</r></i>%LINEBREAK%<i>Separatist Alliance only</i>%LINEBREAK%<strong>Attack (%CALCULATE%):</strong> Spend 1&nbsp;%CHARGE%. While you perform this attack, you may spend 1&nbsp;calculate token to change 1&nbsp;%FOCUS% result to a %CRIT% result.%LINEBREAK%<strong>Action</strong>: Reload this card."""
+           text: """<strong>Attack (%CALCULATE%):</strong> Spend 1&nbsp;%CHARGE%. While you perform this attack, you may spend 1&nbsp;calculate token to change 1&nbsp;%FOCUS% result to a %CRIT% result.%LINEBREAK%<strong>Action</strong>: Reload this card."""
         "Engine Upgrade":
            display_name: """Engine Upgrade"""
-           text: """<i>Adds %BOOST%</i>%LINEBREAK%<i>Requires <r>%BOOST%</r></i>%LINEBREAK%<i class = flavor_text>Large military forces such as the Galactic Empire have standardized engines, but individual pilots and small organizations often replace the power couplings, add thrusters, or use high-performance fuel to get extra push out of their engines.</i>"""
+           text: """<i>Adds %BOOST%</i>%LINEBREAK%<i class = flavor_text>Large military forces such as the Galactic Empire have standardized engines, but individual pilots and small organizations often replace the power couplings, add thrusters, or use high-performance fuel to get extra push out of their engines.</i>"""
         "Ensnare":
            text: """At the end of the Activation Phase, if you are tractored, you may choose 1 ship in your %SINGLETURRETARC% arc at range 0-1. Transfer 1 tractor token to it."""
         "Expert Handling":
            display_name: """Expert Handling"""
-           text: """<i>Adds %BARRELROLL%</i>%LINEBREAK%<i>Requires <r>%BARRELROLL%</r></i>%LINEBREAK%<i class = flavor_text>While heavy fighters can often be coaxed into a barrel roll, seasoned pilots know how to do it without putting undue stress on their craft or leaving themselves open to attack.</i>"""
+           text: """<i>Adds %BARRELROLL%</i>%LINEBREAK%<i class = flavor_text>While heavy fighters can often be coaxed into a barrel roll, seasoned pilots know how to do it without putting undue stress on their craft or leaving themselves open to attack.</i>"""
         "Ezra Bridger":
            display_name: """Ezra Bridger"""
-           text: """<i>Rebel only</i>%LINEBREAK%After you perform a primary attack, you may spend 1&nbsp;%FORCE% to perform a bonus %SINGLETURRETARC% attack from a %SINGLETURRETARC% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
+           text: """After you perform a primary attack, you may spend 1&nbsp;%FORCE% to perform a bonus %SINGLETURRETARC% attack from a %SINGLETURRETARC% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
         "Fanatical":
            display_name: """Fanatical"""
-           text: """<i>First Order only</i>%LINEBREAK%While you perform a primary attack, if you are not shielded, you may change 1&nbsp;%FOCUS% result to a %HIT% result."""
+           text: """While you perform a primary attack, if you are not shielded, you may change 1&nbsp;%FOCUS% result to a %HIT% result."""
         "Fearless":
            display_name: """Fearless"""
-           text: """<i>Scum only</i>%LINEBREAK%While you perform a %FRONTARC% primary attack, if the attack range is 1 and you are in the defender’s %FRONTARC%, you may change 1 of your results to a %HIT% result."""
+           text: """While you perform a %FRONTARC% primary attack, if the attack range is 1 and you are in the defender’s %FRONTARC%, you may change 1 of your results to a %HIT% result."""
         "Feedback Array":
            display_name: """Feedback Array"""
            text: """Before you engage, you may gain 1 ion token and 1 disarm token. If you do, each ship at range 0 suffers 1&nbsp;%HIT% damage."""
         "Ferrosphere Paint":
            display_name: """Ferrosphere Paint"""
-           text: """<i>Resistance only</i>%LINEBREAK%After an enemy ship locks you, if you are not in that ship’s %BULLSEYEARC%, that ship gains 1 stress token."""
+           text: """After an enemy ship locks you, if you are not in that ship’s %BULLSEYEARC%, that ship gains 1 stress token."""
         "Fifth Brother":
            display_name: """Fifth Brother"""
-           text: """<i>Empire only</i>%LINEBREAK%While you perform an attack, you may spend 1&nbsp;%FORCE% to change 1 of your %FOCUS% results to a %CRIT% result."""
+           text: """While you perform an attack, you may spend 1&nbsp;%FORCE% to change 1 of your %FOCUS% results to a %CRIT% result."""
         "Finn":
            display_name: """Finn"""
-           text: """<i>Resistance only</i>%LINEBREAK%While you defend or perform a primary attack, if the enemy ship is in your %FRONTARC%, you may add 1 blank result to your roll (this die can be rerolled or otherwise modified)."""
+           text: """While you defend or perform a primary attack, if the enemy ship is in your %FRONTARC%, you may add 1 blank result to your roll (this die can be rerolled or otherwise modified)."""
         "Fire-Control System":
            display_name: """Fire-Control System"""
            text: """While you perform an attack, if you have a lock on the defender, you may reroll 1 attack die. If you do, you cannot spend your lock during this attack."""
@@ -1783,31 +1801,31 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Setup:</strong> Lose 1&nbsp;%CHARGE%.%LINEBREAK%<strong>Action:</strong> Recover 1&nbsp;%CHARGE%.%LINEBREAK%<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to recover 1 shield."""
         "General Grievous":
            display_name: """General Grievous"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%While you defend, after the Neutralize Results step, if there are 2 or more %HIT%/%CRIT% results, you may spend 1&nbsp;%CHARGE% to cancel 1 %HIT% or %CRIT%&nbsp;result. %LINEBREAK%After a friendly ship is destroyed, recover 1&nbsp;%CHARGE%."""
+           text: """While you defend, after the Neutralize Results step, if there are 2 or more %HIT%/%CRIT% results, you may spend 1&nbsp;%CHARGE% to cancel 1 %HIT% or %CRIT%&nbsp;result. %LINEBREAK%After a friendly ship is destroyed, recover 1&nbsp;%CHARGE%."""
         "General Hux":
            display_name: """General Hux"""
-           text: """<i>Requires %COORDINATE% or <r>%COORDINATE%</r></i>%LINEBREAK%<i>First Order only</i>%LINEBREAK%While you perform a white %COORDINATE% action, you may treat it as red. If you do, you may coordinate up to 2 additional ships of the same ship type, and each ship you coordinate must perform the same action, treating that action as red."""
+           text: """While you perform a white %COORDINATE% action, you may treat it as red. If you do, you may coordinate up to 2 additional ships of the same ship type, and each ship you coordinate must perform the same action, treating that action as red."""
         "Grand Inquisitor":
            display_name: """Grand Inquisitor"""
-           text: """<i>Empire only</i>%LINEBREAK%After an enemy ship at range 0-2 reveals its dial, you may spend 1&nbsp;%FORCE% to perform 1 white action on your action bar, treating that action as red."""
+           text: """After an enemy ship at range 0-2 reveals its dial, you may spend 1&nbsp;%FORCE% to perform 1 white action on your action bar, treating that action as red."""
         "Grand Moff Tarkin":
            display_name: """Grand Moff Tarkin"""
-           text: """<i>Requires %LOCK% or <r>%LOCK%</r></i>%LINEBREAK%<i>Empire only</i>%LINEBREAK%During the System Phase, you may spend 2 %CHARGE%. If you do, each friendly ship may acquire a lock on a ship that you have locked."""
+           text: """During the System Phase, you may spend 2 %CHARGE%. If you do, each friendly ship may acquire a lock on a ship that you have locked."""
         "Grappling Struts":
            display_name: """Grappling Struts"""
            text: """Closed:%LINEBREAK%<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%While you execute a maneuver, if you overlap an asteroid or debris cloud and there are 1 or fewer other friendly ships at range 0 of that obstacle, you may flip this card.%LINEBREAK%Open:%LINEBREAK%You ignore obstacles at range&nbsp;0 and while you move through them. After you reveal your dial, if you reveal a maneuver other than a [2&nbsp;%STRAIGHT%] and are at range 0 of an asteroid or debris cloud, skip your Execute Maneuver step and remove 1 stress token; if you revealed a right or left maneuver, rotate your ship 90º in that direction. After you execute a maneuver, flip this card."""
         "Greedo":
            display_name: """Greedo"""
-           text: """<i>Scum only</i>%LINEBREAK%While you perform an attack, you may spend 1&nbsp;%CHARGE% to change 1&nbsp;%HIT% result to a %CRIT% result.%LINEBREAK%While you defend, if your %CHARGE% is active, the attacker may change 1&nbsp;%HIT% result to a %CRIT% result."""
+           text: """While you perform an attack, you may spend 1&nbsp;%CHARGE% to change 1&nbsp;%HIT% result to a %CRIT% result.%LINEBREAK%While you defend, if your %CHARGE% is active, the attacker may change 1&nbsp;%HIT% result to a %CRIT% result."""
         "Han Solo":
            display_name: """Han Solo"""
-           text: """<i>Rebel only</i>%LINEBREAK%During the Engagement Phase, at initiative 7, you may perform a %SINGLETURRETARC% attack. You cannot attack from that %SINGLETURRETARC% again this round."""
+           text: """During the Engagement Phase, at initiative 7, you may perform a %SINGLETURRETARC% attack. You cannot attack from that %SINGLETURRETARC% again this round."""
         "Han Solo (Scum)":
            display_name: """Han Solo"""
-           text: """<i>Scum only</i>%LINEBREAK%Before you engage, you may perform a red %FOCUS% action."""
+           text: """Before you engage, you may perform a red %FOCUS% action."""
         "Han Solo (Resistance)":
            display_name: """Han Solo"""
-           text: """<i>Adds <r>%EVADE%</r></i>%LINEBREAK%<i>Resistance only</i>%LINEBREAK%After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1."""
+           text: """<i>Adds <r>%EVADE%</r></i>%LINEBREAK%After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1."""
         "Hate":
            display_name: """Hate"""
            text: """After you suffer 1 or more damage, recover that many %FORCE%."""
@@ -1819,10 +1837,10 @@ exportObj.cardLoaders.English = () ->
            text: """At the start of the Engagement Phase, you may spend 1&nbsp;%FORCE%. If you do, engage at initiative 7 instead of your standard initiative value this phase."""
         "Hera Syndulla":
            display_name: """Hera Syndulla"""
-           text: """<i>Rebel only</i>%LINEBREAK%You can execute red maneuvers even while stressed. After you fully execute a red maneuver, if you have 3 or more stress tokens, remove 1 stress token and suffer 1&nbsp;%HIT% damage."""
+           text: """You can execute red maneuvers even while stressed. After you fully execute a red maneuver, if you have 3 or more stress tokens, remove 1 stress token and suffer 1&nbsp;%HIT% damage."""
         "Heroic":
            display_name: """Heroic"""
-           text: """<i>Resistance only</i>%LINEBREAK%While you defend or perform an attack, if you have only blank results and have 2 or more results, you may reroll any number of your dice."""
+           text: """While you defend or perform an attack, if you have only blank results and have 2 or more results, you may reroll any number of your dice."""
         "Homing Missiles":
            display_name: """Homing Missiles"""
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. After you declare the defender, the defender may choose to suffer 1&nbsp;%HIT% damage. If it does, skip the Attack and Defense Dice steps and the attack is treated as hitting."""
@@ -1834,16 +1852,16 @@ exportObj.cardLoaders.English = () ->
            text: """<i class = flavor_text>For those who cannot afford an enhanced shield generator, bolting additional plates onto the hull of a ship can serve as an adequate substitute.</i>"""
         "Hyperspace Tracking Data":
            display_name: """Hyperspace Tracking Data"""
-           text: """<i>large ship only</i>%LINEBREAK%<i>First Order only</i>%LINEBREAK%<strong>Setup:</strong> Before placing forces, you may choose a number between 0 and 6. Treat your initiative as the chosen value during Setup.%LINEBREAK%After Setup, assign 1 focus or evade token to each friendly ship at range&nbsp;0-2."""
+           text: """<strong>Setup:</strong> Before placing forces, you may choose a number between 0 and 6. Treat your initiative as the chosen value during Setup.%LINEBREAK%After Setup, assign 1 focus or evade token to each friendly ship at range&nbsp;0-2."""
         "IG-88D":
            display_name: """IG-88D"""
-           text: """<i>Adds %CALCULATE%</i>%LINEBREAK%<i>Scum only</i>%LINEBREAK%You have the pilot ability of each other friendly ship with the <strong>IG-2000</strong> upgrade.%LINEBREAK%After you perform a %CALCULATE% action, gain 1 calculate token."""
+           text: """<i>Adds %CALCULATE%</i>%LINEBREAK%You have the pilot ability of each other friendly ship with the <strong>IG-2000</strong> upgrade.%LINEBREAK%After you perform a %CALCULATE% action, gain 1 calculate token."""
         "Ion Bombs":
            display_name: """Ion Bombs"""
            text: """During the System Phase, you may spend 1 %CHARGE% to drop an Ion Bomb using the [1 %STRAIGHT%] template."""
         "ISB Slicer":
            display_name: """ISB Slicer"""
-           text: """<i>Empire only</i>%LINEBREAK%During the End Phase, enemy ships at range 1-2 cannot remove jam tokens."""
+           text: """During the End Phase, enemy ships at range 1-2 cannot remove jam tokens."""
         "Impervium Plating":
            display_name: """Impervium Plating"""
            text: """Before you would be dealt a faceup <strong>Ship</strong> damage card, you may spend 1&nbsp;%CHARGE% to discard it instead."""
@@ -1876,87 +1894,87 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. If this attack hits, spend 1&nbsp;%HIT% or %CRIT% result to cause the defender to suffer 1&nbsp;%HIT% damage. All remaining %HIT%/%CRIT% results inflict ion tokens instead of damage."""
         "Jabba the Hutt":
            display_name: """Jabba the Hutt"""
-           text: """<i>Scum only</i>%LINEBREAK%During the End Phase, you may choose 1 friendly ship at range 0-2 and spend 1&nbsp;%CHARGE%. If you do, that ship recovers 1&nbsp;%CHARGE% on 1 of its equipped %ILLICIT% upgrades."""
+           text: """During the End Phase, you may choose 1 friendly ship at range 0-2 and spend 1&nbsp;%CHARGE%. If you do, that ship recovers 1&nbsp;%CHARGE% on 1 of its equipped %ILLICIT% upgrades."""
         "Jamming Beam":
            display_name: """Jamming Beam"""
            text: """<strong>Attack:</strong> If this attack hits, all %HIT%/%CRIT% results inflict jam tokens instead of damage."""
         "Juke":
            display_name: """Juke"""
-           text: """<i>small ship or medium ship only</i>%LINEBREAK%While you perform an attack, if you are evading, you may change 1 of the defender’s %EVADE% results to a %FOCUS% result."""
+           text: """While you perform an attack, if you are evading, you may change 1 of the defender’s %EVADE% results to a %FOCUS% result."""
         "Jyn Erso":
            display_name: """Jyn Erso"""
-           text: """<i>Rebel only</i>%LINEBREAK%If a friendly ship at range 0-3 would gain a focus token, it may gain 1 evade token instead."""
+           text: """If a friendly ship at range 0-3 would gain a focus token, it may gain 1 evade token instead."""
         "K2-B4":
            display_name: """K2-B4"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%While a friendly ship at range&nbsp;0-3 defends, it may spend 1 calculate token. If it does, add 1 %EVADE% result unless the attacker chooses to gain 1&nbsp;strain token."""
+           text: """While a friendly ship at range&nbsp;0-3 defends, it may spend 1 calculate token. If it does, add 1 %EVADE% result unless the attacker chooses to gain 1&nbsp;strain token."""
         "Kaydel Connix":
            text: """After you reveal your dial, you may set your dial to a basic maneuver of the next higher speed. While you execute that maneuver, increase its difficulty"""
         "Kanan Jarrus":
            display_name: """Kanan Jarrus"""
-           text: """<i>Rebel only</i>%LINEBREAK%After a friendly ship at range 0-2 fully executes a white maneuver, you may spend 1&nbsp;%FORCE% to remove 1 stress token from that ship."""
+           text: """After a friendly ship at range 0-2 fully executes a white maneuver, you may spend 1&nbsp;%FORCE% to remove 1 stress token from that ship."""
         "Ketsu Onyo":
            display_name: """Ketsu Onyo"""
-           text: """<i>Scum only</i>%LINEBREAK%At the start of the End Phase, you may choose 1 enemy ship at range 0-2 in your firing arc. If you do, that ship does not remove its tractor tokens."""
+           text: """At the start of the End Phase, you may choose 1 enemy ship at range 0-2 in your firing arc. If you do, that ship does not remove its tractor tokens."""
         "Kraken":
            display_name: """Kraken"""
-           text: """<i>Adds %CALCULATE%</i>%LINEBREAK%<i>Separatist Alliance only</i>%LINEBREAK%During the End Phase, you may choose up to 3&nbsp;friendly ships at range&nbsp;0-3. If you do, each of these ships does not remove 1&nbsp;calculate token."""
+           text: """<i>Adds %CALCULATE%</i>%LINEBREAK%During the End Phase, you may choose up to 3&nbsp;friendly ships at range&nbsp;0-3. If you do, each of these ships does not remove 1&nbsp;calculate token."""
         "Kylo Ren":
            display_name: """Kylo Ren"""
-           text: """<i>First Order only</i>%LINEBREAK%<strong>Action:</strong> Choose 1 enemy ship at range 1-3. If you do, spend 1&nbsp;%FORCE% to assign the <strong>I’ll Show You the Dark Side</strong> condition to that ship."""
+           text: """<strong>Action:</strong> Choose 1 enemy ship at range 1-3. If you do, spend 1&nbsp;%FORCE% to assign the <strong>I’ll Show You the Dark Side</strong> condition to that ship."""
         "L3-37":
            display_name: """L3-37"""
-           text: """<i>Scum only</i>%LINEBREAK%<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%While you defend, you may flip this card. If you do, the attacker must reroll all attack dice.%LINEBREAK%<strong>L3-37’s Programming:</strong> If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
+           text: """<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%While you defend, you may flip this card. If you do, the attacker must reroll all attack dice.%LINEBREAK%<strong>L3-37’s Programming:</strong> If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "Kylo Ren":
            display_name: """Kylo Ren"""
-           text: """<i>First Order only</i>%LINEBREAK%<strong>Action:</strong> Choose 1 enemy ship at range 1-3. If you do, spend 1&nbsp;%FORCE% to assign the <strong>I’ll Show You the Dark Side</strong> condition to that ship."""
+           text: """<strong>Action:</strong> Choose 1 enemy ship at range 1-3. If you do, spend 1&nbsp;%FORCE% to assign the <strong>I’ll Show You the Dark Side</strong> condition to that ship."""
         "Landing Struts":
            display_name: """Landing Struts"""
            text: """Closed:%LINEBREAK%<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%While you execute a maneuver, if you overlap an asteroid or debris cloud and there are 1 or fewer other friendly ships at range 0 of that obstacle, you may flip this card.%LINEBREAK%Open:%LINEBREAK%You ignore obstacles at range&nbsp;0 and while you move through them. After you reveal your dial, if you reveal a maneuver other than a [2&nbsp;%STRAIGHT%] and are at range 0 of an asteroid or debris cloud, skip your Execute Maneuver step and remove 1 stress token; if you revealed a right or left maneuver, rotate your ship 90º in that direction. After you execute a maneuver, flip this card."""
         "Lando Calrissian":
            display_name: """Lando Calrissian"""
-           text: """<i>Rebel only</i>%LINEBREAK%<strong>Action:</strong> Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
+           text: """<strong>Action:</strong> Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
         "Lando Calrissian (Scum)":
            display_name: """Lando Calrissian"""
-           text: """<i>Scum only</i>%LINEBREAK%After you roll dice, you may spend 1 green token to reroll up to 2 of your results."""
+           text: """After you roll dice, you may spend 1 green token to reroll up to 2 of your results."""
         "Lando's Millennium Falcon":
            display_name: """Lando’s Millennium Falcon"""
-           text: """<i>Scum only</i>%LINEBREAK%1 escape shuttle may dock with you.%LINEBREAK%While you have an escape shuttle docked, you may treat its shields as if they were on your ship card.%LINEBREAK%While you perform a primary attack against a stressed ship, roll 1 additional attack die. %LINEBREAK%<i>Errata (since rules reference 1.1.0): Replaced “spend" with "treat"</i>"""
+           text: """1 escape shuttle may dock with you.%LINEBREAK%While you have an escape shuttle docked, you may treat its shields as if they were on your ship card.%LINEBREAK%While you perform a primary attack against a stressed ship, roll 1 additional attack die. %LINEBREAK%<i>Errata (since rules reference 1.1.0): Replaced “spend" with "treat"</i>"""
         "Latts Razzi":
            display_name: """Latts Razzi"""
-           text: """<i>Scum only</i>%LINEBREAK%While you defend, if the attacker is stressed, you may remove 1 stress from the attacker to change 1 of your blank/%FOCUS% results to an %EVADE% result."""
+           text: """While you defend, if the attacker is stressed, you may remove 1 stress from the attacker to change 1 of your blank/%FOCUS% results to an %EVADE% result."""
         "Leia Organa":
            display_name: """Leia Organa"""
-           text: """<i>Rebel only</i>%LINEBREAK%At the start of the Activation Phase, you may spend 3 %CHARGE%. During this phase, each friendly ship reduces the difficulty of its red maneuvers."""
+           text: """At the start of the Activation Phase, you may spend 3 %CHARGE%. During this phase, each friendly ship reduces the difficulty of its red maneuvers."""
         "Lone Wolf":
            display_name: """Lone Wolf"""
            text: """While you defend or perform an attack, if there are no other friendly ships at range 0-2, you may spend 1&nbsp;%CHARGE% to reroll 1 of your dice."""
         "Luke Skywalker":
            display_name: """Luke Skywalker"""
-           text: """<i>Rebel only</i>%LINEBREAK%At the start of the Engagement Phase, you may spend 1&nbsp;%FORCE% to rotate your %SINGLETURRETARC% indicator."""
+           text: """At the start of the Engagement Phase, you may spend 1&nbsp;%FORCE% to rotate your %SINGLETURRETARC% indicator."""
         "M9-G8":
            display_name: """M9-G8"""
-           text: """<i>Resistance only</i>%LINEBREAK%While a ship you are locking performs an attack, you may choose 1 attack die. If you do, the attacker rerolls that die."""
+           text: """While a ship you are locking performs an attack, you may choose 1 attack die. If you do, the attacker rerolls that die."""
         "Magva Yarro":
            display_name: """Magva Yarro"""
-           text: """<i>Rebel only</i>%LINEBREAK%After you defend, if the attack hit, you may acquire a lock on the attacker."""
+           text: """After you defend, if the attack hit, you may acquire a lock on the attacker."""
         "Marksmanship":
            display_name: """Marksmanship"""
            text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, you may change 1&nbsp;%HIT% result to a %CRIT% result."""
         "Maul":
            display_name: """Maul"""
-           text: """<i>Scum or Squad including Ezra Bridger.</i>%LINEBREAK%After you suffer damage, you may gain 1 stress token to recover 1&nbsp;%FORCE%.%LINEBREAK%You can equip “Dark Side” upgrades."""
+           text: """After you suffer damage, you may gain 1 stress token to recover 1&nbsp;%FORCE%.%LINEBREAK%You can equip “Dark Side” upgrades."""
         "Minister Tua":
            display_name: """Minister Tua"""
-           text: """<i>Empire only</i>%LINEBREAK%At the start of the Engagement Phase, if you are damaged, you may perform a red %REINFORCE% action."""
+           text: """At the start of the Engagement Phase, if you are damaged, you may perform a red %REINFORCE% action."""
         "Moff Jerjerrod":
            display_name: """Moff Jerjerrod"""
-           text: """<i>Requires %COORDINATE% or <r>%COORDINATE%</r></i>%LINEBREAK%<i>Empire only</i>%LINEBREAK%During the System Phase, you may spend 2 %CHARGE%. If you do, choose the [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], or [1&nbsp;%BANKRIGHT%] template. Each friendly ship may perform a red %BOOST% action using that template."""
+           text: """During the System Phase, you may spend 2 %CHARGE%. If you do, choose the [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], or [1&nbsp;%BANKRIGHT%] template. Each friendly ship may perform a red %BOOST% action using that template."""
         "Munitions Failsafe":
            display_name: """Munitions Failsafe"""
            text: """While you perform a %TORPEDO% or %MISSILE% attack, after rolling attack dice, you may cancel all dice results to recover 1&nbsp;%CHARGE% you spent as a cost for the attack."""
         "Nien Nunb":
            display_name: """Nien Nunb"""
-           text: """<i>Rebel only</i>%LINEBREAK%Decrease the difficulty of your bank maneuvers (%BANKLEFT% and %BANKRIGHT%)."""
+           text: """Decrease the difficulty of your bank maneuvers (%BANKLEFT% and %BANKRIGHT%)."""
         "Novice Technician":
            display_name: """Novice Technician"""
            text: """At the end of the round, you may roll 1 attack die to repair 1 faceup damage card. Then on a %HIT% result, expose 1 damage card."""
@@ -1968,7 +1986,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform a %FRONTARC% attack, if you are not in the defender’s firing arc, the defender rolls 1 fewer defense die."""
         "Paige Tico":
            display_name: """Paige Tico"""
-           text: """<i>Resistance only</i>%LINEBREAK%After you perform a primary attack, you may drop 1 bomb or rotate your %SINGLETURRETARC%.%LINEBREAK%After you are destroyed, you may drop 1 bomb."""
+           text: """After you perform a primary attack, you may drop 1 bomb or rotate your %SINGLETURRETARC%.%LINEBREAK%After you are destroyed, you may drop 1 bomb."""
         "Pattern Analyzer":
            display_name: """Pattern Analyzer"""
            text: """While you fully execute a red maneuver, before the Check Difficulty step, you may perform 1 action."""
@@ -1977,7 +1995,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform a %FOCUS% action, gain 1 focus token."""
         "Petty Officer Thanisson":
            display_name: """Petty Officer Thanisson"""
-           text: """<i>First Order only</i>%LINEBREAK%During the Activation or Engagement Phase, after an enemy ship in your %FRONTARC% at range 0-1 gains a red or orange token, if you are not stressed, you may gain 1 stress token. If you do, that ship gains 1 additional token of the type that it gained."""
+           text: """During the Activation or Engagement Phase, after an enemy ship in your %FRONTARC% at range 0-1 gains a red or orange token, if you are not stressed, you may gain 1 stress token. If you do, that ship gains 1 additional token of the type that it gained."""
         "Plasma Torpedoes":
            display_name: """Plasma Torpedoes"""
            text: """<strong>Attack (%LOCK%):</strong> Spend 1&nbsp;%CHARGE%. During the Neutralize Results step, %CRIT% results are cancelled before %HIT% results. After this attack hits, the defender loses 1 shield."""
@@ -1992,7 +2010,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you declare an attack, if the defender is in your %BULLSEYEARC%, you may spend 1&nbsp;%FORCE%. If you do, during the Roll Defense Dice step, the defender cannot roll more defense dice than the number of your %HIT%/%CRIT% results."""
         "Primed Thrusters":
            display_name: """Primed Thrusters"""
-           text: """<i>small ship only</i>%LINEBREAK%While you have 2 or fewer stress tokens, you can perform %BARRELROLL% and %BOOST% actions even while stressed."""
+           text: """While you have 2 or fewer stress tokens, you can perform %BARRELROLL% and %BOOST% actions even while stressed."""
         "Proton Bombs":
            display_name: """Proton Bombs"""
            text: """<strong>Bomb</strong>%LINEBREAK%During the System Phase, you may spend 1&nbsp;%CHARGE% to drop a Proton Bomb using the [1&nbsp;%STRAIGHT%] template."""
@@ -2007,75 +2025,75 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Mine</strong>%LINEBREAK%During the System Phase, you may spend 1&nbsp;%CHARGE% to drop a Proximity Mine using the [1&nbsp;%STRAIGHT%] template.%LINEBREAK%This card’s %CHARGE% cannot be recovered."""
         "Qi'ra":
            display_name: """Qi’ra"""
-           text: """<i>Scum only</i>%LINEBREAK%While you move and perform attacks, you ignore obstacles that you are locking."""
+           text: """While you move and perform attacks, you ignore obstacles that you are locking."""
         "R2 Astromech":
            display_name: """R2 Astromech"""
            text: """After you reveal your dial, you may spend 1&nbsp;%CHARGE% and gain 1 disarm token to recover 1 shield."""
         "R2-C4":
-           text: """<i>Galactic Republic only</i>%LINEBREAK%While you perform an attack, you may spend 1 evade token to change 1 %FOCUS% result to a %HIT% result."""
+           text: """While you perform an attack, you may spend 1 evade token to change 1 %FOCUS% result to a %HIT% result."""
         "R2-D2 (Crew)":
            display_name: """R2-D2"""
-           text: """<i>Rebel only</i>%LINEBREAK%During the End Phase, if you are damaged and not shielded, you may roll 1 attack die to recover 1 shield. On a %HIT% result, expose 1 of your damage cards."""
+           text: """During the End Phase, if you are damaged and not shielded, you may roll 1 attack die to recover 1 shield. On a %HIT% result, expose 1 of your damage cards."""
         "R2-D2":
            display_name: """R2-D2"""
-           text: """<i>Rebel only</i>%LINEBREAK%After you reveal your dial, you may spend 1&nbsp;%CHARGE% and gain 1 disarm token to recover 1 shield."""
+           text: """After you reveal your dial, you may spend 1&nbsp;%CHARGE% and gain 1 disarm token to recover 1 shield."""
         "R2-HA":
            display_name: """R2-HA"""
-           text: """<i>Resistance only</i>%LINEBREAK%While you defend, you may spend your lock on the attacker to reroll any number of your defense dice."""
+           text: """While you defend, you may spend your lock on the attacker to reroll any number of your defense dice."""
         "R3 Astromech":
            display_name: """R3 Astromech"""
            text: """You can maintain up to 2 locks. Each lock must be on a different object.%LINEBREAK%After you perform a %LOCK% action, you may acquire a lock."""
         "R4 Astromech":
            display_name: """R4 Astromech"""
-           text: """<i>small ship only</i>%LINEBREAK%Decrease the difficulty of your speed 1-2 basic maneuvers (%TURNLEFT%, %BANKLEFT%, %STRAIGHT%, %BANKRIGHT%, %TURNRIGHT%)."""
+           text: """Decrease the difficulty of your speed 1-2 basic maneuvers (%TURNLEFT%, %BANKLEFT%, %STRAIGHT%, %BANKRIGHT%, %TURNRIGHT%)."""
         "R4-P Astromech":
            display_name: """R4-P Astromech"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK%Before you execute a basic maneuver, you may spend 1&nbsp;%CHARGE%. If you do, while you execute that maneuver, reduce its difficulty."""
+           text: """Before you execute a basic maneuver, you may spend 1&nbsp;%CHARGE%. If you do, while you execute that maneuver, reduce its difficulty."""
         "R4-P17":
            display_name: """R4-P17"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK%After you fully execute a red maneuver, you may spend 1&nbsp;%CHARGE% to perform an action, even while stressed."""
+           text: """After you fully execute a red maneuver, you may spend 1&nbsp;%CHARGE% to perform an action, even while stressed."""
         "R4-P44":
            display_name: """R4-P44"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK%After you fully execute a red maneuver, if there is an enemy ship in your %BULLSEYEARC%, gain 1&nbsp;calculate token."""
+           text: """After you fully execute a red maneuver, if there is an enemy ship in your %BULLSEYEARC%, gain 1&nbsp;calculate token."""
         "R5 Astromech":
            display_name: """R5 Astromech"""
            text: """<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to repair 1 facedown damage card.%LINEBREAK%<strong>Action:</strong> Repair 1 faceup <strong>Ship</strong> damage card."""
         "R5-D8":
            display_name: """R5-D8"""
-           text: """<i>Rebel only</i>%LINEBREAK%<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to repair 1 facedown damage card.%LINEBREAK%<strong>Action:</strong> Repair 1 faceup <strong>Ship</strong> damage card."""
+           text: """<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to repair 1 facedown damage card.%LINEBREAK%<strong>Action:</strong> Repair 1 faceup <strong>Ship</strong> damage card."""
         "R5-P8":
            display_name: """R5-P8"""
-           text: """<i>Scum only</i>%LINEBREAK%While you perform an attack against a defender in your %FRONTARC%, you may spend 1&nbsp;%CHARGE% to reroll 1 attack die. If the rerolled result is a %CRIT% result, suffer 1&nbsp;%CRIT% damage."""
+           text: """While you perform an attack against a defender in your %FRONTARC%, you may spend 1&nbsp;%CHARGE% to reroll 1 attack die. If the rerolled result is a %CRIT% result, suffer 1&nbsp;%CRIT% damage."""
         "R5-TK":
            display_name: """R5-TK"""
-           text: """<i>Scum only</i>%LINEBREAK%You can perform attacks against friendly ships."""
+           text: """You can perform attacks against friendly ships."""
         "R5-X3":
            display_name: """R5-X3"""
-           text: """<i>Resistance only</i>%LINEBREAK%Before you activate or engage, you may spend 1&nbsp;%CHARGE% to ignore obstacles until the end of this phase."""
+           text: """Before you activate or engage, you may spend 1&nbsp;%CHARGE% to ignore obstacles until the end of this phase."""
         "Rey":
            display_name: """Rey"""
-           text: """<i>Resistance only</i>%LINEBREAK%While you defend or perform an attack, if the enemy ship is in your %SINGLETURRETARC%, you may spend 1&nbsp;%FORCE% to change 1 of your blank results to a %EVADE% or %HIT% result."""
+           text: """While you defend or perform an attack, if the enemy ship is in your %SINGLETURRETARC%, you may spend 1&nbsp;%FORCE% to change 1 of your blank results to a %EVADE% or %HIT% result."""
         "Rey's Millennium Falcon":
            display_name: """Rey’s Millennium Falcon"""
-           text: """<i>Resistance only</i>%LINEBREAK%If you have 2 or fewer stress tokens, you can execute red Segnor’s Loop [%SLOOPLEFT% or %SLOOPRIGHT%] maneuvers and perform %BOOST% and&nbsp;%ROTATEARC% actions even while stressed."""
+           text: """If you have 2 or fewer stress tokens, you can execute red Segnor’s Loop [%SLOOPLEFT% or %SLOOPRIGHT%] maneuvers and perform %BOOST% and&nbsp;%ROTATEARC% actions even while stressed."""
         "Rigged Cargo Chute":
            display_name: """Rigged Cargo Chute"""
-           text: """<i>large ship or medium ship only</i>%LINEBREAK%<strong>Action:</strong> Spend 1&nbsp;%CHARGE%. Drop 1 loose cargo using the [1&nbsp;%STRAIGHT%] template."""
+           text: """<strong>Action:</strong> Spend 1&nbsp;%CHARGE%. Drop 1 loose cargo using the [1&nbsp;%STRAIGHT%] template."""
         "Rose Tico":
            display_name: """Rose Tico"""
-           text: """<i>Resistance only</i>%LINEBREAK%While you defend or perform an attack, you may spend 1 of your results to acquire a lock on the enemy ship."""
+           text: """While you defend or perform an attack, you may spend 1 of your results to acquire a lock on the enemy ship."""
         "Ruthless":
            display_name: """Ruthless"""
-           text: """<i>Empire only</i>%LINEBREAK%While you perform an attack, you may choose another friendly ship at range 0-1 of the defender. If you do, that ship suffers 1&nbsp;%HIT% damage and you may change 1 of your die results to a %HIT% result."""
+           text: """While you perform an attack, you may choose another friendly ship at range 0-1 of the defender. If you do, that ship suffers 1&nbsp;%HIT% damage and you may change 1 of your die results to a %HIT% result."""
         "Sabine Wren":
            display_name: """Sabine Wren"""
-           text: """<i>Rebel only</i>%LINEBREAK%<strong>Setup:</strong> Place 1 ion, 1 jam, 1 stress, and 1 tractor token on this card. %LINEBREAK%After a ship suffers the effect of a friendly bomb, you may remove 1 ion, jam, stress, or tractor token from this card. If you do, that ship gains a matching token."""
+           text: """<strong>Setup:</strong> Place 1 ion, 1 jam, 1 stress, and 1 tractor token on this card. %LINEBREAK%After a ship suffers the effect of a friendly bomb, you may remove 1 ion, jam, stress, or tractor token from this card. If you do, that ship gains a matching token."""
         "Saturation Salvo":
            display_name: """Saturation Salvo"""
-           text: """<i>Requires %RELOAD% or <r>%RELOAD%</r></i>%LINEBREAK%While you perform a %TORPEDO% or %MISSILE% attack, you may spend 1&nbsp;%CHARGE% from that upgrade. If you do, choose two defense dice. The defender must reroll those dice."""
+           text: """While you perform a %TORPEDO% or %MISSILE% attack, you may spend 1&nbsp;%CHARGE% from that upgrade. If you do, choose two defense dice. The defender must reroll those dice."""
         "Saw Gerrera":
            display_name: """Saw Gerrera"""
-           text: """<i>Rebel only</i>%LINEBREAK%While you perform an attack, you may suffer 1&nbsp;%HIT% damage to change all of your %FOCUS% results to %CRIT% results."""
+           text: """While you perform an attack, you may suffer 1&nbsp;%HIT% damage to change all of your %FOCUS% results to %CRIT% results."""
         "Seasoned Navigator":
            display_name: """Seasoned Navigator"""
            text: """After you reveal your dial, you may set your dial to another non-red maneuver of the same speed. While you execute that maneuver, increase its difficulty."""
@@ -2084,7 +2102,7 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Bomb</strong>%LINEBREAK%During the System Phase, you may spend 1&nbsp;%CHARGE% to drop a Seismic Charge with the [1&nbsp;%STRAIGHT%] template."""
         "Selfless":
            display_name: """Selfless"""
-           text: """<i>Rebel only</i>%LINEBREAK%While another friendly ship at range 0-1 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1&nbsp;%CRIT% damage to cancel 1&nbsp;%CRIT% result."""
+           text: """While another friendly ship at range 0-1 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1&nbsp;%CRIT% damage to cancel 1&nbsp;%CRIT% result."""
         "Sense":
            display_name: """Sense"""
            text: """During the System Phase, you may choose 1 ship at range 0-1 and look at its dial. If you spend 1&nbsp;%FORCE%, you may choose a ship at range 0-3 instead."""
@@ -2093,10 +2111,10 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Closed: </strong><i>Adds %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i>&nbsp;<r>%BOOST%</r></i>%LINEBREAK% While you perform a primary attack, roll 1 fewer attack die.%LINEBREAK%Before you activate, you may flip this card.%LINEBREAK%<strong>Open:</strong> Before you activate, you may flip this card."""
         "Seventh Fleet Gunner":
            display_name: """Seventh Fleet Gunner"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK%While another friendly ship performs a primary attack, if the defender is in your firing arc, you may spend 1 %CHARGE%. If you do, the attacker rolls 1&nbsp;additional die, to a maximum of 4. During the System Phase, you may gain 1 disarm token to recover 1 %CHARGE%."""
+           text: """While another friendly ship performs a primary attack, if the defender is in your firing arc, you may spend 1 %CHARGE%. If you do, the attacker rolls 1&nbsp;additional die, to a maximum of 4. During the System Phase, you may gain 1 disarm token to recover 1 %CHARGE%."""
         "Seventh Sister":
            display_name: """Seventh Sister"""
-           text: """<i>Empire only</i>%LINEBREAK%If an enemy ship at range 0-1 would gain a stress token, you may spend 1&nbsp;%FORCE% to have it gain 1 jam or tractor token instead."""
+           text: """If an enemy ship at range 0-1 would gain a stress token, you may spend 1&nbsp;%FORCE% to have it gain 1 jam or tractor token instead."""
         "Shield Upgrade":
            display_name: """Shield Upgrade"""
            text: """<i class = flavor_text>Deflector shields are a substantial line of defense on most starships beyond the lightest fighters. While enhancing a ship’s shield capacity can be costly, all but the most confident or reckless pilots see the value in this sort of investment.</i>"""
@@ -2108,7 +2126,7 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to recover 1&nbsp;charge on one of your equipped %ASTROMECH% upgrades. %LINEBREAK%<strong>Action:</strong> Spend 1&nbsp;%CHARGE% to drop 1 spare parts, then break all locks assigned to you."""
         "Special Forces Gunner":
            display_name: """Special Forces Gunner"""
-           text: """<i>First Order only</i>%LINEBREAK%While you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %FRONTARC%, you may roll 1&nbsp;additional attack die.%LINEBREAK%After you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %REARARC%, you may perform a bonus primary %SINGLETURRETARC% attack."""
+           text: """While you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %FRONTARC%, you may roll 1&nbsp;additional attack die.%LINEBREAK%After you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %REARARC%, you may perform a bonus primary %SINGLETURRETARC% attack."""
         "Squad Leader":
            display_name: """Squad Leader"""
            text: """<i>Adds <r>%COORDINATE%</r></i>%LINEBREAK%While you coordinate, the ship you choose can perform an action only if that action is also on your action bar."""
@@ -2120,36 +2138,36 @@ exportObj.cardLoaders.English = () ->
            text: """While you defend, if your %CHARGE% is active, roll 1 additional defense die.%LINEBREAK%After you suffer damage, lose 1&nbsp;%CHARGE%."""
         "Supernatural Reflexes":
            display_name: """Supernatural Reflexes"""
-           text: """<i>small ship only</i>%LINEBREAK%Before you activate, you may spend 1&nbsp;%FORCE% to perform a %BARRELROLL% or %BOOST% action. Then, if you performed an action you do not have on your action bar, suffer 1&nbsp;%HIT% damage."""
+           text: """Before you activate, you may spend 1&nbsp;%FORCE% to perform a %BARRELROLL% or %BOOST% action. Then, if you performed an action you do not have on your action bar, suffer 1&nbsp;%HIT% damage."""
         "Supreme Leader Snoke":
            display_name: """Supreme Leader Snoke"""
-           text: """<i>First Order only</i>%LINEBREAK%During the System Phase, you may choose any number of enemy ships beyond range 1. If you do, spend that many %FORCE% to flip each chosen ship’s dial faceup."""
+           text: """During the System Phase, you may choose any number of enemy ships beyond range 1. If you do, spend that many %FORCE% to flip each chosen ship’s dial faceup."""
         "Swarm Tactics":
            display_name: """Swarm Tactics"""
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship at range 1. If you do, that ship treats its initiative as equal to yours until the end of the round."""
         "Synchronized Console":
            display_name: """Synchronized Console"""
-           text: """<i>Requires %LOCK% or <r>%LOCK%</r></i>%LINEBREAK%<i>Galactic Republic only</i>%LINEBREAK%After you perform an attack, you may choose a friendly ship at range 1 or a friendly ship with the <strong>Synchronized Console</strong> upgrade at range 1-3 and spend a lock you have on the defender. If you do, the friendly ship you chose may acquire a lock on the defender."""
+           text: """After you perform an attack, you may choose a friendly ship at range 1 or a friendly ship with the <strong>Synchronized Console</strong> upgrade at range 1-3 and spend a lock you have on the defender. If you do, the friendly ship you chose may acquire a lock on the defender."""
         "TA-175":
            display_name: """TA-175"""
            text: """After a friendly ship at range 0-3 with %CALCULATE% on its action bar is destroyed, each friendly ship at range 0-3 with %CALCULATE% in its action bar gains 1 calculate token."""
         "TV-94":
            display_name: """TV-94"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%While a friendly ship at range&nbsp;0-3 performs a primary attack against a defender in its %BULLSEYEARC%, if there are 2&nbsp;or fewer attack dice, it may spend 1&nbsp;calculate token to add 1&nbsp;%HIT%&nbsp;result."""
+           text: """While a friendly ship at range&nbsp;0-3 performs a primary attack against a defender in its %BULLSEYEARC%, if there are 2&nbsp;or fewer attack dice, it may spend 1&nbsp;calculate token to add 1&nbsp;%HIT%&nbsp;result."""
         "Tactical Officer":
            display_name: """Tactical Officer"""
-           text: """<i>Adds %COORDINATE%</i>%LINEBREAK%<i>Requires <r>%COORDINATE%</r></i>%LINEBREAK%<i class = flavor_text>In the chaos of a starfighter battle, a single order can mean the difference between a victory and a massacre.</i>"""
+           text: """<i>Adds %COORDINATE%</i>%LINEBREAK%<i class = flavor_text>In the chaos of a starfighter battle, a single order can mean the difference between a victory and a massacre.</i>"""
         "Tactical Scrambler":
            display_name: """Tactical Scrambler"""
-           text: """<i>large ship or medium ship only</i>%LINEBREAK%While you obstruct an enemy ship’s attack, the defender rolls 1 additional defense die."""
+           text: """While you obstruct an enemy ship’s attack, the defender rolls 1 additional defense die."""
         "Targeting Computer":
            text: """<i>Adds %LOCK%</i>"""
         "Targeting Synchronizer":
            display_name: """Targeting Synchronizer"""
-           text: """<i>Requires %LOCK% or <r>%LOCK%</r></i>%LINEBREAK%While a friendly ship at range 1-2 performs an attack against a target you have locked, that ship ignores the&nbsp;%LOCK% attack requirement."""
+           text: """While a friendly ship at range 1-2 performs an attack against a target you have locked, that ship ignores the&nbsp;%LOCK% attack requirement."""
         "Tobias Beckett":
            display_name: """Tobias Beckett"""
-           text: """<i>Scum only</i>%LINEBREAK%<strong>Setup:</strong> After placing forces, you may choose 1 obstacle in the play area. If you do, place it anywhere in the play area beyond range 2 of any board edge or ship and beyond range 1 of other obstacles."""
+           text: """<strong>Setup:</strong> After placing forces, you may choose 1 obstacle in the play area. If you do, place it anywhere in the play area beyond range 2 of any board edge or ship and beyond range 1 of other obstacles."""
         "Tractor Beam":
            display_name: """Tractor Beam"""
            text: """<strong>Attack:</strong> If this attack hits, all %HIT%/%CRIT% results inflict tractor tokens instead of damage."""
@@ -2158,37 +2176,37 @@ exportObj.cardLoaders.English = () ->
            text: """During the System Phase, if you would drop or launch a bomb, you may launch it using the [5&nbsp;%STRAIGHT%] template instead."""
         "Treacherous":
            display_name: """Treacherous"""
-           text: """<i>Separatist Alliance only</i>%LINEBREAK%While you defend, you may choose a ship obstructing the attack and spend 1 %CHARGE%. If you do, cancel 1 %HIT% or %CRIT% result, and the ship you chose gains 1 strain token.%LINEBREAK%After a ship at range 0-3 is destroyed, recover 1 %CHARGE%."""
+           text: """While you defend, you may choose a ship obstructing the attack and spend 1 %CHARGE%. If you do, cancel 1 %HIT% or %CRIT% result, and the ship you chose gains 1 strain token.%LINEBREAK%After a ship at range 0-3 is destroyed, recover 1 %CHARGE%."""
         "Trick Shot":
            display_name: """Trick Shot"""
            text: """While you perform an attack that is obstructed by an obstacle, roll 1 additional attack die."""
         "Unkar Plutt":
            display_name: """Unkar Plutt"""
-           text: """<i>Scum only</i>%LINEBREAK%After you partially execute a maneuver, you may suffer 1&nbsp;%HIT% damage to perform 1 white action."""
+           text: """After you partially execute a maneuver, you may suffer 1&nbsp;%HIT% damage to perform 1 white action."""
         "Veteran Tail Gunner":
            display_name: """Veteran Tail Gunner"""
            text: """After you perform a primary %FRONTARC% attack, you may perform a bonus primary %REARARC% attack."""
         "Veteran Turret Gunner":
            display_name: """Veteran Turret Gunner"""
-           text: """<i>Requires <r>%ROTATEARC%</r> or %ROTATEARC%</i>%LINEBREAK%After you perform a primary attack, you may perform a bonus %SINGLETURRETARC% attack using a %SINGLETURRETARC% you did not already attack from this round."""
+           text: """After you perform a primary attack, you may perform a bonus %SINGLETURRETARC% attack using a %SINGLETURRETARC% you did not already attack from this round."""
         "Xg-1 Assault Configuration":
            display_name: """Xg-1 Assault Configuration"""
            text: """While you have exactly 1 disarm token, you can still perform %CANNON% attacks. While you perform a %CANNON% attack while disarmed, roll a maximum of 3 attack dice.%LINEBREAK%Adds %CANNON% slot."""
         "Zuckuss":
            display_name: """Zuckuss"""
-           text: """<i>Scum only</i>%LINEBREAK%While you perform an attack, if you are not stressed, you may choose 1 defense die and gain 1 stress token. If you do, the defender must reroll that die."""
+           text: """While you perform an attack, if you are not stressed, you may choose 1 defense die and gain 1 stress token. If you do, the defender must reroll that die."""
         '"Chopper" (Crew)':
            display_name: """“Chopper”"""
-           text: """<i>Rebel only</i>%LINEBREAK%During the Perform Action step, you may perform 1 action, even while stressed. After you perform an action while stressed, suffer 1&nbsp;%HIT% damage unless you expose 1 of your damage cards."""
+           text: """During the Perform Action step, you may perform 1 action, even while stressed. After you perform an action while stressed, suffer 1&nbsp;%HIT% damage unless you expose 1 of your damage cards."""
         '"Chopper" (Astromech)':
            display_name: """“Chopper”"""
-           text: """<i>Rebel only</i>%LINEBREAK%<strong>Action:</strong> Spend 1 non-recurring &nbsp;%CHARGE% from another equipped upgrade to recover 1 shield. %LINEBREAK%<strong>Action:</strong> Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
+           text: """<strong>Action:</strong> Spend 1 non-recurring &nbsp;%CHARGE% from another equipped upgrade to recover 1 shield. %LINEBREAK%<strong>Action:</strong> Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
         '"Genius"':
            display_name: """“Genius”"""
-           text: """<i>Scum only</i>%LINEBREAK%After you fully execute a maneuver, if you have not dropped or launched a device this round, you may drop 1 bomb."""
+           text: """After you fully execute a maneuver, if you have not dropped or launched a device this round, you may drop 1 bomb."""
         '"Zeb" Orrelios':
            display_name: """“Zeb” Orrelios"""
-           text: """<i>Rebel only</i>%LINEBREAK%You can perform primary attacks at range 0. Enemy ships at range 0 can perform primary attacks against you."""
+           text: """You can perform primary attacks at range 0. Enemy ships at range 0 can perform primary attacks against you."""
         "Kaydel Connix":
            display_name: """Kaydel Connix"""
            text: """After you reveal your dial, you may set your dial to a basic maneuver of the next higher speed. While you execute that maneuver, increase its' difficulty."""
@@ -2206,31 +2224,31 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Action:</strong> Spend 1 %CHARGE%. You can only perform this action in your Perform Action step. %LINEBREAK% While your %CHARGE% is inactive, you cannot be coordinated. Before you engage, if your %CHARGE% is inactive, you may perform a %CALCULATE% or %LOCK% action."""
         "R2-A6":
            display_name: """R2-A6"""
-           text: """<i>Galactic Republic only</i>%LINEBREAK% After you reveal your dial, you may set your dial to a maneuver of the same bearing of a speed 1 higher or lower."""
+           text: """ After you reveal your dial, you may set your dial to a maneuver of the same bearing of a speed 1 higher or lower."""
         "Amilyn Holdo":
            display_name: """Amilyn Holdo"""
-           text: """<i>Resistance only</i>%LINEBREAK% Before you engage, you may choose another friendly ship at range 1-2. You may transfer to that ship 1 token of a type that ship does not have. That ship may transfer 1 token to you of a type you do not have."""
+           text: """ Before you engage, you may choose another friendly ship at range 1-2. You may transfer to that ship 1 token of a type that ship does not have. That ship may transfer 1 token to you of a type you do not have."""
         "Larma D'Acy":
            display_name: """Larma D'Acy"""
-           text: """<i>Resistance only</i>%LINEBREAK% While you have 2 or fewer stress tokens, you can perform %REINFORCE%, %COORDINATE%, and %JAM% actions, even while stressed.%LINEBREAK% While you perform a white %REINFORCE%, %COORDINATE%, or %JAM% action, if you are stressed, treat that action as red."""
+           text: """ While you have 2 or fewer stress tokens, you can perform %REINFORCE%, %COORDINATE%, and %JAM% actions, even while stressed.%LINEBREAK% While you perform a white %REINFORCE%, %COORDINATE%, or %JAM% action, if you are stressed, treat that action as red."""
         "PZ-4CO":
            display_name: """PZ-4CO"""
-           text: """<i>Resistance only</i>%LINEBREAK% <i>Adds %CALCULATE%</i>%LINEBREAK% At the end of the Activation Phase, you may choose 1 friendly ship at range 1-2. If you do, transfer 1 calculate token to that ship. If your revealed maneuver is blue, you may transfer 1 focus token instead."""
+           text: """ <i>Adds %CALCULATE%</i>%LINEBREAK% At the end of the Activation Phase, you may choose 1 friendly ship at range 1-2. If you do, transfer 1 calculate token to that ship. If your revealed maneuver is blue, you may transfer 1 focus token instead."""
         "Leia Organa (Resistance)":
            display_name: """Leia Organa"""
-           text: """<i>Resistance only</i>%LINEBREAK% <i>Adds %F-COORDINATE%</i>%LINEBREAK% After a friendly ship reveals its dial, you may spend 1 %FORCE%. If you do, the chosen ship reduces the difficulty of that maneuver."""
+           text: """ <i>Adds %F-COORDINATE%</i>%LINEBREAK% After a friendly ship reveals its dial, you may spend 1 %FORCE%. If you do, the chosen ship reduces the difficulty of that maneuver."""
         "Korr Sella":
            display_name: """Korr Sella"""
-           text: """<i>Resistance only</i>%LINEBREAK% After you fully execute a blue maneuver, remove all of your stress tokens."""
+           text: """ After you fully execute a blue maneuver, remove all of your stress tokens."""
         "Precognitive Reflexes":
            display_name: """Precognitive Reflexes"""
-           text: """<i>Small ship only</i>%LINEBREAK%After you reveal your dial, you may spend 1 %FORCE% to perform a %BARRELROLL% or %BOOST% action. Then, if you performed an action you do not have on your action bar, gain 1 strain token. %LINEBREAK% If you do, you cannot perform another action during your activation."""
+           text: """After you reveal your dial, you may spend 1 %FORCE% to perform a %BARRELROLL% or %BOOST% action. Then, if you performed an action you do not have on your action bar, gain 1 strain token. %LINEBREAK% If you do, you cannot perform another action during your activation."""
         "Foresight":
            display_name: """Foresight"""
            text: """After an enemy ship executes a maneuver, you may spend 1 %FORCE% to perform this attack against it as a bonus attack. %LINEBREAK% <strong>Attack:</strong> You may change 1 %FOCUS% result to a %HIT% result; your dice cannot be modified otherwise."""
         "Angled Deflectors":
            display_name: """Angled Deflectors"""
-           text: """<i>Requires: Small or Medium Ship with at least 1 shield %LINEBREAK% Adds %REINFORCE% </i>%LINEBREAK% <strong>Removes:</strong> 1 Shield """
+           text: """Adds %REINFORCE% </i>%LINEBREAK% <strong>Removes:</strong> 1 Shield """
 
         "C1-10P":
            display_name: """C1-10P"""
@@ -2279,7 +2297,7 @@ exportObj.cardLoaders.English = () ->
         "Suppressive Gunner":
            text: """While you perform an attack, you may spend 1 %FOCUS% result. If you do, the defender gains 1 deplete token unless it chooses to suffer 1 %HIT% damage."""
         "Ghost Company":
-           text: """<i>Requires %ROTATEARC%</i>, <i>Adds %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%FOCUS%</r></i> %LINEBREAK% After you perform a primary attack, if you are focused, you may perform a %SINGLETURRETARC% attack against a ship you have not attacked this round as a bonus attack."""
+           text: """<i>Adds %ROTATEARC% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%FOCUS%</r></i> %LINEBREAK% After you perform a primary attack, if you are focused, you may perform a %SINGLETURRETARC% attack against a ship you have not attacked this round as a bonus attack."""
         "Wolfpack":
            text: """After a friendly ship at range 0-3 defends, if the attacker is in your firing arc, the defender may gain 1 strain token to acquire a lock on the attacker."""
         "Yoda":
@@ -2297,7 +2315,7 @@ exportObj.cardLoaders.English = () ->
         "Synced Laser Cannons":
            text: """<strong>Attack:</strong> If you are calculating, the defender does not apply the range bonus."""
         "Concussion Bombs":
-           text: """During the System Phase, if any of this card's %CHARGE% are inactive, you <b>must</b> spend 1 %CHARGE% to drop 1 concussion bomb, if able, using the [1 %STRAIGHT] template. Otherwise, you may spend 1 %CHARGE% to drop 1 concussion bomb. %LINEBREAK% <i>Errata (since rules reference 1.3.0): Added ""using the [1 %STRAIGHT] template"</i>"""
+           text: """During the System Phase, if any of this card's %CHARGE% are inactive, you <b>must</b> spend 1 %CHARGE% to drop 1 concussion bomb, if able, using the [1 %STRAIGHT%] template. Otherwise, you may spend 1 %CHARGE% to drop 1 concussion bomb. %LINEBREAK% <i>Errata (since rules reference 1.3.0): Added ""using the [1 %STRAIGHT%] template"</i>"""
         "Maneuver-Assist MGK-300":
            text: """<i>Adds %CALCULATE%, %BARRELROLL% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%CALCULATE%</r></i>%LINEBREAK% Reduce the difficulty of your 3 straight (%STRAIGHT%) and bank (%BANKLEFT% or %BANKRIGHT%) maneuvers."""
         "Target-Assist MGK-300":
@@ -2413,7 +2431,7 @@ exportObj.cardLoaders.English = () ->
            text: """You are a <strong>wing leader</strong>. Your wingmates must be 2, 3, 4, or 5 other ships of your ship type. %LINEBREAK% While you defend, up to 2 of your wingmates in the attack arc may suffer 1 %HIT% or %CRIT% damage to cancel a matching result."""
         "Dreadnought Hunter":
            display_name: """Dreadnought Hunter"""
-           text: """<strong>Requires:</strong> Small ship and initiative 4 or higher.</i>%LINEBREAK% While you perform an attack against a huge ship, if the attack deals a faceup damage card to the defender and the defender is in your %BULLSEYEARC%, you may apply the <strong>Precision Shot</strong> effect even if you are not in the specified arc."""
+           text: """While you perform an attack against a huge ship, if the attack deals a faceup damage card to the defender and the defender is in your %BULLSEYEARC%, you may apply the <strong>Precision Shot</strong> effect even if you are not in the specified arc."""
         "Ion Cannon Battery":
            display_name: """Ion Cannon Battery"""
            text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. If this attack hits, the defender suffers 1 %CRIT% damage, and all %HIT%/%CRIT% results inflict ion tokens instead of damage. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
@@ -2428,7 +2446,7 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK%<strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
         "Turbolaser Battery":
            display_name: """Turbolaser Battery"""
-           text: """<strong>Requires:</strong> 5 or more energy</i>%LINEBREAK%<i><strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack (%LOCK%): Spend 3 %ENERGY%. If this attack hits, add 3 %HIT% results. %LINEBREAK% <strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack (%LOCK%): Spend 3 %ENERGY%. If this attack hits, add 3 %HIT% results. %LINEBREAK% <strong>Offline: </strong> %LINEBREAK% After you engage, you may spend 2 %ENERGY% to flip this card."""
         "Bombardment Specialists":
            display_name: """Bombardment Specialists"""
            text: """Adds %LOCK% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> %CALCULATE%. %LINEBREAK% While you perform an attack, you may spend 1 calculate token to increase or decrease the range requirement by 1, to a limit of 0-5."""

@@ -21,7 +21,7 @@ exportObj.basicCardData = ->
         "X-Wing":
             name: "X-Wing"
             xws: "T-65 X-wing".canonicalize()
-            factions: [ "Rebel Alliance", ]
+            factions: [ "Rebel Alliance" ]
             attack: 3
             agility: 2
             hull: 4
@@ -249,7 +249,7 @@ exportObj.basicCardData = ->
         "Lambda-Class Shuttle":
             name: "Lambda-Class Shuttle"
             xws: "Lambda-class T-4a Shuttle".canonicalize()
-            factions: [ "Galactic Empire", ]
+            factions: [ "Galactic Empire" ]
             attack: 3
             attackb: 2
             agility: 1
@@ -271,7 +271,7 @@ exportObj.basicCardData = ->
         "B-Wing":
             name: "B-Wing"
             xws: "A/SF-01 B-wing".canonicalize()
-            factions: [ "Rebel Alliance", ]
+            factions: [ "Rebel Alliance" ]
             attack: 3
             agility: 1
             hull: 4
@@ -292,7 +292,7 @@ exportObj.basicCardData = ->
         "TIE Bomber":
             name: "TIE Bomber"
             xws: "TIE/sa Bomber".canonicalize()
-            factions: [ "Galactic Empire", ]
+            factions: [ "Galactic Empire" ]
             attack: 2
             agility: 2
             hull: 6
@@ -315,7 +315,7 @@ exportObj.basicCardData = ->
         "Z-95 Headhunter":
             name: "Z-95 Headhunter"
             xws: "Z-95-AF4 Headhunter".canonicalize()
-            factions: [ "Rebel Alliance", "Scum and Villainy", ]
+            factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attack: 2
             agility: 2
             hull: 2
@@ -335,7 +335,7 @@ exportObj.basicCardData = ->
         "TIE Defender":
             name: "TIE Defender"
             xws: "TIE/D Defender".canonicalize()
-            factions: [ "Galactic Empire", ]
+            factions: [ "Galactic Empire" ]
             attack: 3
             agility: 3
             hull: 3
@@ -358,7 +358,7 @@ exportObj.basicCardData = ->
         "E-Wing":
             name: "E-Wing"
             xws: "E-wing".canonicalize()
-            factions: [ "Rebel Alliance", ]
+            factions: [ "Rebel Alliance" ]
             attack: 3
             agility: 3
             hull: 3
@@ -383,7 +383,7 @@ exportObj.basicCardData = ->
         "TIE Phantom":
             name: "TIE Phantom"
             xws: "TIE/ph Phantom".canonicalize()
-            factions: [ "Galactic Empire", ]
+            factions: [ "Galactic Empire" ]
             attack: 3
             agility: 2
             hull: 3
@@ -404,7 +404,7 @@ exportObj.basicCardData = ->
         "YT-2400":
             name: "YT-2400"
             xws: "YT-2400 Light Freighter".canonicalize()
-            factions: [ "Rebel Alliance", ]
+            factions: [ "Rebel Alliance" ]
             attackdt: 4
             agility: 2
             hull: 6
@@ -427,7 +427,7 @@ exportObj.basicCardData = ->
         "VT-49 Decimator":
             name: "VT-49 Decimator"
             xws: "VT-49 Decimator".canonicalize()
-            factions: [ "Galactic Empire", ]
+            factions: [ "Galactic Empire" ]
             attackdt: 3
             agility: 0
             hull: 12
@@ -9322,8 +9322,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Base", "Small"]
             ]
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
             modifier_func: (stats) ->
                 for turn in [0 ... stats.maneuvers[1].length]
                     if turn > 4
@@ -9496,8 +9494,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "Coordinate"]
             ]
-            restriction_func: (ship) ->
-                ("Coordinate" in ship.effectiveStats().actions) or ("R-Coordinate" in ship.effectiveStats().actions)
         }
         {
             name: "Cikatro Vizago"
@@ -9528,8 +9524,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Slot", "Crew"]
             ]
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
@@ -9556,8 +9550,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Slot", "Crew"]
             ]
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
@@ -9608,8 +9600,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "Lock"]
             ]
-            restriction_func: (ship) ->
-                ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
         }
         {
             name: "Hera Syndulla"
@@ -9656,8 +9646,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Slot", "Crew"]
             ]
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
@@ -9744,15 +9732,11 @@ exportObj.basicCardData = ->
             force: 1
             keyword: ["Dark Side"] 
             restrictions: [
+                ["orUnique", "Ezra Bridger"]
                 ["Faction", "Scum and Villainy"]
-                ["or Unique", "Ezra Bridger"]
             ]
             modifier_func: (stats) ->
                 stats.force += 1
-            restriction_func: (ship) ->
-                builder = ship.builder
-                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("ezrabridger")
-                false
         }
         {
             name: "Minister Tua"
@@ -9774,8 +9758,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "Coordinate"]
             ]
-            restriction_func: (ship) ->
-                ("Coordinate" in ship.effectiveStats().actions)  or ("R-Coordinate" in ship.effectiveStats().actions)
         }
         {
             name: "Magva Yarro"
@@ -9871,8 +9853,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "R-Coordinate"]
             ]
-            restriction_func: (ship) ->
-                "R-Coordinate" in ship.effectiveStats().actions
             modifier_func: (stats) ->
                 stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
         }
@@ -9892,13 +9872,9 @@ exportObj.basicCardData = ->
             unique: true
             faction: ["Scum and Villainy", "Galactic Empire"]
             restrictions: [
+                ["orUnique", "Darth Vader"]
                 ["Faction", "Scum and Villainy"]
-                ["or Unique", "Darth Vader"]
             ]
-            restriction_func: (ship) ->
-                builder = ship.builder
-                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
-                false
         }
         {
             name: "Unkar Plutt"
@@ -9934,8 +9910,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Slot", "Device"]
             ]
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Device" ]
@@ -9993,8 +9967,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Base", "Small"]
             ]
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
         }
         {
             name: "Sense"
@@ -10033,13 +10005,9 @@ exportObj.basicCardData = ->
             unique: true
             faction: ["Scum and Villainy", "Galactic Empire"]
             restrictions: [
+                ["orUnique", "Darth Vader"]
                 ["Faction", "Scum and Villainy"]
-                ["or Unique", "Darth Vader"]
             ]
-            restriction_func: (ship) ->
-                builder = ship.builder
-                return true if builder.faction == "Scum and Villainy" or ship.checkListForUnique("darthvader")
-                false
         }
         {
             name: "Dengar"
@@ -10131,10 +10099,8 @@ exportObj.basicCardData = ->
             slot: "Gunner"
             points: 4
             restrictions: [
-                ["Attack", "Rear Arc"]
+                ["AttackArc", "Rear Arc"]
             ]
-            restriction_func: (ship) ->
-                ship.data.attackb?
         }
         {
             name: "Veteran Turret Gunner"
@@ -10145,8 +10111,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "Rotate Arc"]
             ]
-            restriction_func: (ship) ->
-                ("Rotate Arc" in ship.effectiveStats().actions)  or ("R-Rotate Arc" in ship.effectiveStats().actions)
         }
         {
             name: "Cloaking Device"
@@ -10156,11 +10120,8 @@ exportObj.basicCardData = ->
             unique: true
             charge: 2
             restrictions: [
-                ["Base", "Small"]
-                ["Base", "Medium"]
+                ["Base", "Small or Medium"]
             ]
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.huge?)
         }
         {
             name: "Contraband Cybernetics"
@@ -10195,11 +10156,8 @@ exportObj.basicCardData = ->
             points: 4
             charge: 1
             restrictions: [
-                ["Base", "Medium"]
-                ["Base", "Large"]
+                ["Base", "Medium or Large"]
             ]
-            restriction_func: (ship) ->
-                ship.data.medium?  or ship.data.large?
         }
         {
             name: "Barrage Rockets"
@@ -10213,8 +10171,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Slot", "Missile"]
             ]
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ 'Missile' ]
@@ -10276,11 +10232,8 @@ exportObj.basicCardData = ->
             points: 6
             charge: 2
             restrictions: [
-                ["Base", "Medium"]
-                ["Base", "Large"]
+                ["Base", "Medium or Large"]
             ]
-            restriction_func: (ship) ->
-                ship.data.medium?  or ship.data.large?
         }
         {
             name: "Advanced SLAM"
@@ -10290,8 +10243,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "Slam"]
             ]
-            restriction_func: (ship) ->
-                ("Slam" in ship.effectiveStats().actions)  or ("R-Slam" in ship.effectiveStats().actions)
         }
         {
             name: "Afterburners"
@@ -10303,8 +10254,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Base", "Small"]
             ]
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
         }
         {
             name: "Electronic Baffle"
@@ -10321,8 +10270,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "R-Boost"]
             ]
-            restriction_func: (ship) ->
-                "R-Boost" in ship.effectiveStats().actions
             modifier_func: (stats) ->
                 stats.actions.push 'Boost' if 'Boost' not in stats.actions
         }
@@ -10344,11 +10291,8 @@ exportObj.basicCardData = ->
             slot: "Modification"
             points: 2
             restrictions: [
-                ["Base", "Medium"]
-                ["Base", "Large"]
+                ["Base", "Medium or Large"]
             ]
-            restriction_func: (ship) ->
-                ship.data.medium?  or ship.data.large?
         }
         {
             name: "Advanced Sensors"
@@ -10383,8 +10327,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "Focus"]
             ]
-            restriction_func: (ship) ->
-                ("Focus" in ship.effectiveStats().actions)  or ("R-Focus" in ship.effectiveStats().actions)
         }
         {
             name: "Crack Shot"
@@ -10402,8 +10344,6 @@ exportObj.basicCardData = ->
                 ["Action", "Boost"]
                 ["Base", "Small"]
             ]
-            restriction_func: (ship) ->
-                ("Boost" in ship.effectiveStats().actions) and not (ship.data.large? or ship.data.medium? or ship.data.huge?)
         }
         {
             name: "Debris Gambit"
@@ -10411,11 +10351,8 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 4
             restrictions: [
-                ["Base", "Small"]
-                ["Base", "Medium"]
+                ["Base", "Small or Medium"]
             ]
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.huge?)
             modifier_func: (stats) ->
                 stats.actions.push 'R-Evade' if 'R-Evade' not in stats.actions
         }
@@ -10426,11 +10363,8 @@ exportObj.basicCardData = ->
             points: 3
             charge: 1
             restrictions: [
-                ["Base", "Small"]
-                ["Base", "Medium"]
+                ["Base", "Small or Medium"]
             ]
-            restriction_func: (ship) ->
-                not ship.data.large?
         }
         {
             name: "Expert Handling"
@@ -10441,8 +10375,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "R-Barrel Roll"]
             ]
-            restriction_func: (ship) ->
-                "R-Barrel Roll" in ship.effectiveStats().actions
             modifier_func: (stats) ->
                 stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
         }
@@ -10465,11 +10397,8 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 7
             restrictions: [
-                ["Base", "Small"]
-                ["Base", "Medium"]
+                ["Base", "Small or Medium"]
             ]
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.huge?)
         }
         {
             name: "Lone Wolf"
@@ -10513,8 +10442,6 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Action", "Reload"]
             ]
-            restriction_func: (ship) ->
-                ("Reload" in ship.effectiveStats().actions)  or ("R-Reload" in ship.effectiveStats().actions)
         }
         {
             name: "Selfless"
@@ -10798,6 +10725,7 @@ exportObj.basicCardData = ->
             slot: "Title"
             points: 16
             unique: true
+            faction: ["Rebel Alliance", "Scum and Villainy"]
             ship: "HWK-290"
             modifier_func: (stats) ->
                 stats.attack = 3
@@ -10993,11 +10921,8 @@ exportObj.basicCardData = ->
             slot: "Tech"
             points: 4
             restrictions: [
-                ["Faction", "Scum and Villainy"]
-                ["or Unique", "Ezra Bridger"]
+                ["Action", "Lock"]
             ]
-            restriction_func: (ship) ->
-                ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
         }
         {
             name: "Primed Thrusters"
@@ -11005,8 +10930,9 @@ exportObj.basicCardData = ->
             slot: "Tech"
             pointsarray: [4,5,6,7,8,9,10]
             variableinit: true
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+            restrictions: [
+                ["Base", "Small"]
+            ]
         }
         {
             name: "Kylo Ren"
@@ -11027,8 +10953,9 @@ exportObj.basicCardData = ->
             points: 6
             unique: true
             faction: "First Order"
-            restriction_func: (ship) ->
-                "Coordinate" in ship.effectiveStats().actions or "R-Coordinate" in ship.effectiveStats().actions
+            restrictions: [
+                ["Action", "Coordinate"]
+            ]
         }
         {
             name: "Fanatical"
@@ -11061,8 +10988,9 @@ exportObj.basicCardData = ->
             points: 13
             force: 1
             faction: "First Order"
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+            restrictions: [
+                ["Slot", "Crew"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
@@ -11075,8 +11003,9 @@ exportObj.basicCardData = ->
             slot: "Tech"
             faction: "First Order"
             points: 2
-            restriction_func: (ship) ->
-                ship.data.large?
+            restrictions: [
+                ["Base", "Large"]
+            ]
         }
         {
             name: "Advanced Optics"
@@ -11210,8 +11139,9 @@ exportObj.basicCardData = ->
             ship: "Delta-7 Aethersprite"
             pointsarray: [0,0,1,2,3,4,5]
             variableinit: true
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Modification")
+            restrictions: [
+                ["Slot", "Modification"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Modification"
             also_occupies_upgrades: [ "Modification" ]
@@ -11234,8 +11164,9 @@ exportObj.basicCardData = ->
             slot: "Tech"
             points: 1
             faction: "First Order"
-            restriction_func: (ship) ->
-                ("Lock" in ship.effectiveStats().actions)  or ("R-Lock" in ship.effectiveStats().actions)
+            restrictions: [
+                ["Action", "Lock"]
+            ]
         }
         {
             name: "Predictive Shot"
@@ -11249,8 +11180,9 @@ exportObj.basicCardData = ->
             slot: "Force"
             pointsarray: [3,6,9]
             variablebase: true
-            restriction_func: (ship) ->
-                ship.checkKeyword("Dark Side")
+            restrictions: [
+                ["Keyword", "Dark Side"]
+            ]
         }
         {
             name: "R5-X3"
@@ -11292,8 +11224,9 @@ exportObj.basicCardData = ->
             rangebonus: true
             charge: 1
             points: 5
-            restriction_func: (ship) ->
-                ("Calculate" in ship.effectiveStats().actions)  or ("R-Calculate" in ship.effectiveStats().actions)
+            restrictions: [
+                ["Action", "Calculate"]
+            ]
         }
         {
             name: "Dedicated"
@@ -11301,8 +11234,9 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             slot: "Talent"
             points: 1
-            restriction_func: (ship) ->
-                not ship.pilot.unique
+            restrictions: [
+                ["notUnique", false]
+            ]
         }
         {
             name: "Synchronized Console"
@@ -11310,8 +11244,9 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             slot: "Modification"
             points: 1
-            restriction_func: (ship) ->
-                ("Lock" in ship.effectiveStats().actions) or ("R-Lock" in ship.effectiveStats().actions)
+            restrictions: [
+                ["Action", "Lock"]
+            ]
         }
         {
             name: "Battle Meditation"
@@ -11346,14 +11281,9 @@ exportObj.basicCardData = ->
             slot: "Modification"
             charge: 1
             points: 4
-            restriction_func: (ship) ->
-                if "Astromech" in ship.pilot.slots
-                    if not ship.isSlotOccupied "Astromech"
-                        return true
-                else if ship.doesSlotExist "Astromech"
-                    if not ship.isSlotOccupied "Astromech"
-                        return true
-                false
+            restrictions: [
+                ["Equipped", "Astromech"]
+            ]
         }
         {
             name: "Scimitar"
@@ -11545,8 +11475,10 @@ exportObj.basicCardData = ->
             slot: "Device"
             points: 10
             charge: 1
-            restriction_func: (ship, upgrade_obj) ->
-                (("Reload" in ship.effectiveStats().actions) or ("R-Reload" in ship.effectiveStats().actions)) and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Modification")
+            restrictions: [
+                ["Action", "Rotate Arc"]
+                ["Slot", "Modification"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Modification"
             also_occupies_upgrades: [ "Modification" ]
@@ -11575,8 +11507,9 @@ exportObj.basicCardData = ->
             range: """2-3"""
             rangebonus: true
             charge: 3
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+            restrictions: [
+                ["Slot", "Missile"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ 'Missile' ]
@@ -11632,8 +11565,9 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             force: 1
             points: 17
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+            restrictions: [
+                ["Slot", "Crew"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ "Crew" ]
@@ -11665,11 +11599,13 @@ exportObj.basicCardData = ->
             slot: "Modification"
             pointsarray: [6,3,2,1]
             variableagility: true
+            restrictions: [
+                ["ShieldsGreaterThan", 0]
+                ["Base", "Small or Medium"]
+            ]
             modifier_func: (stats) ->
                 stats.shields -= 1
                 stats.actions.push 'Reinforce' if 'Reinforce' not in stats.actions
-            restriction_func: (ship) ->
-                ship.data.shields > 0 and not ship.data.large?
         }
         {
             name: "Ensnare"
@@ -11693,8 +11629,9 @@ exportObj.basicCardData = ->
             slot: "Force"
             pointsarray: [3,3,3,4,7,10,13]
             variableinit: true
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+            restrictions: [
+                ["Base", "Small"]
+            ]
         }
         {
             name: "Foresight"
@@ -11762,8 +11699,9 @@ exportObj.basicCardData = ->
             slot: "Command"
             points: 4
             ship: ["TIE Advanced","TIE Advanced Prototype"]
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+            restrictions: [
+                ["Base", "Small"]
+            ]
         }
         {
             name: "First Order Elite"
@@ -11773,16 +11711,18 @@ exportObj.basicCardData = ->
             slot: "Command"
             ship: ["TIE/SF Fighter","TIE/VN Silencer"]
             points: 4
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+            restrictions: [
+                ["Base", "Small"]
+            ]
         }
         {
             name: "Veteran Wing Leader"
             id: 259
             slot: "Command"
             points: 2
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.medium? or ship.data.huge?)
+            restrictions: [
+                ["Base", "Small"]
+            ]
         }
         {
             name: "Dreadnought Hunter"
@@ -11790,8 +11730,10 @@ exportObj.basicCardData = ->
             slot: "Command"
             points: 6
             max_per_squad: 2
-            restriction_func: (ship) ->
-                (not (ship.data.large? or ship.data.medium? or ship.data.huge?)) and (ship.pilot.skill > 3)
+            restrictions: [
+                ["Base", "Small"]
+                ["InitiativeGreaterThan", 3]
+            ]
         }
         {
             name: "Admiral Ozzel"
@@ -11800,8 +11742,10 @@ exportObj.basicCardData = ->
             slot: "Command"
             points: 6
             faction: "Galactic Empire"
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11813,8 +11757,10 @@ exportObj.basicCardData = ->
             slot: "Command"
             points: 4
             faction: "Scum and Villainy"
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11826,8 +11772,10 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             slot: "Command"
             points: 8
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11839,8 +11787,10 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             slot: "Command"
             points: 6
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11852,8 +11802,10 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             slot: "Command"
             points: 4
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11865,8 +11817,10 @@ exportObj.basicCardData = ->
             slot: "Command"
             points: 12
             faction: "Rebel Alliance"
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11877,8 +11831,10 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Command"
             points: 6
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11890,8 +11846,10 @@ exportObj.basicCardData = ->
             slot: "Command"
             charge: 3
             points: 6
-            restriction_func: (ship, upgrade_obj) ->
-                ship.data.huge? and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Crew")
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
@@ -11939,10 +11897,11 @@ exportObj.basicCardData = ->
             points: 13
             attackt: 3
             range: """3-5"""
+            restrictions: [
+                ["EnergyGreatterThan", 4]
+            ]
             modifier_func: (stats) ->
                 stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
-            restriction_func: (ship) ->
-                ship.effectiveStats().energy > 4
         }
         {
             name: "Toryn Farr"
@@ -11951,11 +11910,12 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             slot: "Crew"
             points: 4
+            restrictions: [
+                ["Base", "Huge"]
+            ]
             modifier_func: (stats) ->
                 stats.actions.push '*Lock'
                 stats.actions.push 'R-> Coordinate'
-            restriction_func: (ship) ->
-                ship.data.huge?
         }
         {
             name: "Bombardment Specialists"
@@ -12057,24 +12017,27 @@ exportObj.basicCardData = ->
             slot: "Illicit"
             charge: 2
             points: 5
-            restriction_func: (ship) ->
-                ship.data.huge?
+            restrictions: [
+                ["Base", "Huge"]
+            ]
         }
         {
             name: "Saboteur's Map"
             id: 288
             slot: "Illicit"
             points: 3
-            restriction_func: (ship) ->
-                ship.data.huge?
+            restrictions: [
+                ["Base", "Huge"]
+            ]
         }
         {
             name: "Scanner Baffler"
             id: 289
             slot: "Illicit"
             points: 8
-            restriction_func: (ship) ->
-                ship.data.huge?
+            restrictions: [
+                ["Base", "Huge"]
+            ]
         }
         {
             name: "Dodonna's Pride"
@@ -12425,8 +12388,9 @@ exportObj.basicCardData = ->
             id: 310
             slot: "Illicit"
             points: 1
-            restriction_func: (ship) ->
-                "Slam" in ship.effectiveStats().actions
+            restrictions: [
+                ["Action", "Slam"]
+            ]
         }
         {
             name: "Mag-Pulse Warheads"
@@ -12503,8 +12467,9 @@ exportObj.basicCardData = ->
             points: 9
             charge: 2
             faction: "First Order"
-            restriction_func: (ship, upgrade_obj) ->
-                (ship.doesSlotExist "Modification") and (ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Modification"))
+            restrictions: [
+                ["Slot", "Modification"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Modification"
             also_occupies_upgrades: [ "Modification" ]
@@ -12581,8 +12546,9 @@ exportObj.basicCardData = ->
             range: """1-2"""
             rangebonus: true
             charge: 5
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+            restrictions: [
+                ["Slot", "Missile"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ 'Missile' ]
@@ -12632,16 +12598,18 @@ exportObj.basicCardData = ->
             id: 330
             slot: "Talent"
             points: 3
-            restriction_func: (ship) ->
-                ship.checkKeyword("TIE")
+            restrictions: [
+                ["Keyword", "TIE"]
+            ]
         }
         {
             name: "Marg Sabl Closure"
             id: 331
             slot: "Talent"
             points: 1
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.huge?)
+            restrictions: [
+                ["Base", "Small or Medium"]
+            ]
         }
         {
             name: "XX-23 S-Thread Tracers"
@@ -12708,8 +12676,10 @@ exportObj.basicCardData = ->
             slot: "Modification"
             points: 3
             charge: 2
-            restriction_func: (ship) ->
-                ship.checkKeyword("TIE") and (ship.data.agility == 3)
+            restrictions: [
+                ["Keyword", "TIE"]
+                ["AgilityEquals", 3]
+            ]
         }
         {
             name: "Thermal Detonators"
@@ -12735,32 +12705,37 @@ exportObj.basicCardData = ->
             id: 341
             points: 4
             slot: "Force"
-            restriction_func: (ship) ->
-                (("Boost" or "R-Boost") in ship.effectiveStats().actions) and (not (ship.data.large? or ship.data.medium? or ship.data.huge?))
+            restrictions: [
+                ["Action", "Boost"]
+                ["Base", "Small"]
+            ]
         }
         {
             name: "Patience"
             id: 342
             slot: "Force"
             points: 2
-            restriction_func: (ship) ->
-                ship.checkKeyword("Light Side")
+            restrictions: [
+                ["Keyword", "Light Side"]
+            ]
         }
         {
             name: "Deadeye Shot"
             id: 343
             slot: "Talent"
             points: 1
-            restriction_func: (ship) ->
-                not (ship.data.large? or ship.data.huge?)
+            restrictions: [
+                ["Base", "Small or Medium"]
+            ]
         }
         {
             name: "Starbird Slash"
             id: 344
             slot: "Talent"
             points: 1
-            restriction_func: (ship) ->
-                ship.checkKeyword("A-Wing")
+            restrictions: [
+                ["Keyword", "A-Wing"]
+            ]
         }
         {
             name: "Overdrive Thruster"
@@ -12792,8 +12767,9 @@ exportObj.basicCardData = ->
             id: 348
             slot: "Tech"
             points: 1
-            restriction_func: (ship) ->
-                ship.pilot.skill < 4
+            restrictions: [
+                ["InitiativeLessThan", 4]
+            ]
         }
         {
             name: "Sensor Buoy Suite"
@@ -12801,8 +12777,9 @@ exportObj.basicCardData = ->
             faction: "First Order"
             slot: "Tech"
             points: 4
-            restriction_func: (ship) ->
-                ship.data.large? or ship.data.medium?
+            restrictions: [
+                ["Base", "Small"]
+            ]
             applies_condition: 'Sensor Buoy'.canonicalize()
         }
         {
@@ -12820,8 +12797,10 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             points: 5
-            restriction_func: (ship, upgrade_obj) ->
-                (("Rotate Arc" in ship.effectiveStats().actions) or ("R-Rotate Arc" in ship.effectiveStats().actions)) and ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Gunner")
+            restrictions: [
+                ["Action", "Rotate Arc"]
+                ["Slot", "Gunner"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Gunner"
             also_occupies_upgrades: [ "Gunner" ]
@@ -12836,8 +12815,9 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             points: 4
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Gunner")
+            restrictions: [
+                ["Slot", "Gunner"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Gunner"
             also_occupies_upgrades: [ "Gunner" ]
@@ -12862,8 +12842,9 @@ exportObj.basicCardData = ->
             points: 6
             attack: 3
             range: """2-3"""
-            restriction_func: (ship, upgrade_obj) ->
-                ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, upgrade_obj.slot)
+            restrictions: [
+                ["Slot", "Cannon"]
+            ]
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot upgrade_obj.slot
             also_occupies_upgrades: [ 'Cannon' ]
@@ -12893,8 +12874,10 @@ exportObj.basicCardData = ->
             id: 357
             slot: "Talent"
             points: 2
-            restriction_func: (ship, upgrade_obj) ->
-                ship.checkKeyword("X-Wing") and (not ship.hasAnotherUnoccupiedSlotLike(upgrade_obj, "Configuration"))
+            restrictions: [
+                ["Keyword", "X-Wing"]
+                ["Equipped", "Configuration"]
+            ]
         }
         {
             name: "R2-D2 (Resistance)"
@@ -12923,8 +12906,9 @@ exportObj.basicCardData = ->
             range: """1"""
             rangebonus: true
             faction: "Resistance"
-            restriction_func: (ship) ->
-                ship.checkKeyword("X-Wing")
+            restrictions: [
+                ["Keyword", "X-Wing"]
+            ]
             modifier_func: (stats) ->
                 stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
         }
@@ -12984,8 +12968,9 @@ exportObj.basicCardData = ->
             points: 4
             standardized: true
             slot: "Modification"
-            restriction_func: (ship) ->
-                ship.checkKeyword("Networked Calculations")
+            restrictions: [
+                ["Keyword", "Networked Calculations"]
+            ]
         }
         {
             name: "Weapons Systems Officer"
