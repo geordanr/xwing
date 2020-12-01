@@ -2527,14 +2527,13 @@ class exportObj.SquadBuilder
                     
                     container.find('tr.info-attack-bullseye td.info-data').text(ship.attackbull)
                     container.find('tr.info-attack-bullseye').toggle(ship.attackbull?)
-                    
                     container.find('tr.info-attack-left td.info-data').text(ship.attackl)
                     container.find('tr.info-attack-left').toggle(ship.attackl?)
-                    container.find('tr.info-attack-left td.info-data').text(ship.attackr)
-                    container.find('tr.info-attack-left').toggle(ship.attackr?)
-                    container.find('tr.info-attack-back td.info-data').text(ship.attackb)
+                    container.find('tr.info-attack-right td.info-data').text(ship.attackr)
+                    container.find('tr.info-attack-right').toggle(ship.attackr?)
+                    container.find('tr.info-attack-back td.info-data').text(ship.attackb?)
                     container.find('tr.info-attack-back').toggle(ship.attackb?)
-                    container.find('tr.info-attack-turret td.info-data').text(ship.attackt)
+                    container.find('tr.info-attack-turret td.info-data').text(ship.attackt?)
                     container.find('tr.info-attack-turret').toggle(ship.attackt?)
                     container.find('tr.info-attack-doubleturret td.info-data').text(ship.attackdt)
                     container.find('tr.info-attack-doubleturret').toggle(ship.attackdt?)
@@ -2645,13 +2644,13 @@ class exportObj.SquadBuilder
                         container.find('tr.info-attack-turret').hide()
 
                     if data.attackr?
-                        container.find('tr.info-attack-right td.info-data').text data.attackl
+                        container.find('tr.info-attack-right td.info-data').text data.attackr
                         container.find('tr.info-attack-right').show()
                     else
                         container.find('tr.info-attack-right').hide()
 
                     if data.attackl?
-                        container.find('tr.info-attack-left td.info-data').text data.attackr
+                        container.find('tr.info-attack-left td.info-data').text data.attackl
                         container.find('tr.info-attack-left').show()
                     else
                         container.find('tr.info-attack-right').hide()
@@ -2956,6 +2955,7 @@ class exportObj.SquadBuilder
                 shields: 0
                 force: 0
                 actions: []
+                maneuvers: [0, 0]
             card.modifier_func(statchange)
             if statchange.attack != 0
                 text += comma + "%FRONTARC% (#{statchange.attack})"
@@ -4469,7 +4469,7 @@ class Ship
                 when "AgilityEquals"
                     if not (effective_stats.agility == r[1]) then return false
                 when "notUnique"
-                    if not @pilot.unique? then return false
+                    if @pilot.unique? then return false
                 when "Faction"
                     if @builder.faction != r[1] then return false
         return true

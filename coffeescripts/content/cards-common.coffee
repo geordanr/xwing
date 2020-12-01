@@ -8832,7 +8832,6 @@ exportObj.basicCardData = ->
             ship: "Droid Tri-Fighter"
             points: 35
             slots: [
-                "Talent"
                 "Sensor"
                 "Missile"
                 "Modification"
@@ -9323,13 +9322,14 @@ exportObj.basicCardData = ->
                 ["Base", "Small"]
             ]
             modifier_func: (stats) ->
-                for turn in [0 ... stats.maneuvers[1].length]
-                    if turn > 4
-                        continue
-                    if stats.maneuvers[1][turn] > 1
-                        stats.maneuvers[1][turn]--
-                    if stats.maneuvers[2][turn] > 1
-                        stats.maneuvers[2][turn]--
+                if stats.maneuvers[1]?
+                    for turn in [0 ... stats.maneuvers[1].length]
+                        if turn > 4
+                            continue
+                        if stats.maneuvers[1][turn] > 1
+                            stats.maneuvers[1][turn]--
+                        if stats.maneuvers[2][turn] > 1
+                            stats.maneuvers[2][turn]--
         }
         {
             name: "R5 Astromech"
@@ -9775,11 +9775,12 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             modifier_func: (stats) ->
-                for s in (stats.maneuvers)
-                    if s[1] > 1
-                        s[1]--
-                    if s[3] > 1
-                        s[3]--
+                if stats.maneuvers[1]?
+                    for s in (stats.maneuvers)
+                        if s[1] > 1
+                            s[1]--
+                        if s[3] > 1
+                            s[3]--
         }
         {
             name: "Novice Technician"
@@ -12589,9 +12590,10 @@ exportObj.basicCardData = ->
                 stats.actions.push 'Calculate'
                 stats.actions.push '*Barrel Roll'
                 stats.actions.push '*R-> Calculate'
-                for turn in [1 ... 4]
-                    if stats.maneuvers[3][turn] > 1
-                        stats.maneuvers[3][turn]--
+                if stats.maneuvers[3]?
+                    for turn in [1 ... 4]
+                        if stats.maneuvers[3][turn] > 1
+                            stats.maneuvers[3][turn]--
         }
         {
             name: "Ion Limiter Override"
