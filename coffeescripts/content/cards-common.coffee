@@ -12780,7 +12780,7 @@ exportObj.basicCardData = ->
             slot: "Tech"
             points: 4
             restrictions: [
-                ["Base", "Small"]
+                ["Base", "Medium or Large"]
             ]
             applies_condition: 'Sensor Buoy'.canonicalize()
         }
