@@ -4422,9 +4422,19 @@ class Ship
         false
 
     hasAnotherUnoccupiedSlotLike: (upgrade_obj, upgradeslot) ->
+        if upgrade_obj?.data?.restrictions?
+            for r in upgrade_obj.data.restrictions
+                if r[0] == "Slot"
+                    extraslot = r[1]
+
         for upgrade in @upgrades
             continue if upgrade == upgrade_obj or upgrade.slot != upgradeslot
-            return true unless upgrade.isOccupied()
+            if upgrade.isOccupied()
+                if extraslot?
+                    if extraslot == upgradeslot
+                        return true
+            else
+                return true
         false
 
     restriction_check: (restrictions, upgrade_obj) ->
