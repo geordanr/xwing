@@ -12777,6 +12777,7 @@ exportObj.basicCardData = ->
             name: "Sensor Buoy Suite"
             id: 349
             faction: "First Order"
+            unique: true
             slot: "Tech"
             points: 4
             restrictions: [
