@@ -8216,7 +8216,7 @@ exportObj.manifestByExpansion =
     ]
     "Eta-2 Actis Expansion Pack": [
         {
-            name: 'Eta-2 Actis'
+            name: 'ETA-2 Actis'
             type: 'ship'
             count: 1
         }
