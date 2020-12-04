@@ -8226,12 +8226,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Anakin Skywalker (Eta-2)'
+            name: 'Anakin Skywalker (ETA-2)'
             type: 'pilot'
             count: 1
         }
         {
-            name: 'Obi-Wan Kenobi (Eta-2)'
+            name: 'Obi-Wan Kenobi (ETA-2)'
             type: 'pilot'
             count: 1
         }
@@ -8256,7 +8256,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'TransGelMag Control Link'
+            name: 'TransGalMeg Control Link'
             type: 'pilot'
             count: 1
         }
@@ -8325,11 +8325,6 @@ exportObj.manifestByExpansion =
         {
             name: 'Colicoid Interceptor'
             type: 'pilot'
-            count: 1
-        }
-        {
-            name: 'Fearful Prey'
-            type: 'upgrade'
             count: 1
         }
         {
