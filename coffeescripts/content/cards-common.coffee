@@ -4539,10 +4539,17 @@ exportObj.basicCardData = ->
                 ["Unique", "Hound's Tooth"]
             ]
             restriction_func: (ship) ->
-                builder = ship.builder            
+                builder = ship.builder
                 for t, things of builder.uniques_in_use
                     if t != 'Slot'
-                        return true if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)            
+                        if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                            for shiplist in ship.builder.ships
+                                for upgrade in shiplist.upgrades
+                                    if upgrade.data? and ship.pilot?
+                                        if upgrade.data.name == "Hound's Tooth"
+                                            ship.pilot.skill = shiplist.pilot.skill
+                                            break
+                            return true 
                 false
 
         }
