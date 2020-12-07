@@ -9,13 +9,11 @@
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
-exportObj.codeToLanguage.jp = '日本人'
+exportObj.codeToLanguage.jp = '日本語'
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.日本人 =
-# This is here mostly as a template for other languages.
-exportObj.translations.English =
+exportObj.translations.日本語 =
     sloticon:
         "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
         "Force": '<i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>'
@@ -98,7 +96,8 @@ exportObj.translations.English =
         # Type selector
         '.game-type-selector option[value="standard"]': 'エクステンデッド'
         '.game-type-selector option[value="hyperspace"]': 'ハイパースペース'
-        '.game-type-selector option[value="custom"]': 'カスタム'
+        '.game-type-selector option[value="epic"]': 'エピック'
+        '.game-type-selector option[value="quickbuild"]': 'Quickbuild'
         # Card browser
         '.xwing-card-browser option[value="name"]': '名前'
         '.xwing-card-browser option[value="source"]': '出典'
@@ -175,7 +174,7 @@ exportObj.translations.English =
         'faq': 'FAQ'
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.English = () ->
+exportObj.cardLoaders.日本語 = () ->
     exportObj.cardLanguage = '日本語'
 
     exportObj.renameShip """YT-1300""", """Modified YT-1300 Light Freighter"""

@@ -104,7 +104,8 @@ exportObj.translations.English =
         # Type selector
         '.game-type-selector option[value="standard"]': 'Extended'
         '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="custom"]': 'Custom'
+        '.game-type-selector option[value="Epic"]': 'Epic'
+        '.game-type-selector option[value="Quickbuild"]': 'Quick Build'
         # Card browser
         '.xwing-card-browser option[value="name"]': 'Name'
         '.xwing-card-browser option[value="source"]': 'Source'
