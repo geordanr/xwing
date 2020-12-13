@@ -1,18 +1,12 @@
-(Yet Another) X-Wing Miniatures Squad Builder
-=============================================
-
-[![Build Status](https://travis-ci.org/geordanr/xwing.png)](https://travis-ci.org/geordanr/xwing)
+Yet Another Squad Builder 2.0
+=============================
 
 What?
 -----
-This is a squad builder for Fantasy Flight Games' X-Wing Miniatures game, completely in HTML and JavaScript.  No backend is necessary.
+This is a squad builder for the Second Edition of the X-Wing Miniatures game by Atomic Mass Games (Formally owned by Fantasy Flight Games), completely in HTML and JavaScript.  No backend is necessary.
 It can theoretically be dropped into any existing site, but since it uses a lot of styling from [Twitter Bootstrap](http://twitter.github.com/bootstrap/) it may require some CSS trickery if you're using some other incompatible framework (e.g. [Foundation](http://foundation.zurb.com)).
 
-Can I save squads or share them on `$SOCIAL_NETWORK`?
------------------------------------------------------
-Saving: yes, if you provide a backend that adheres to the API.  See my [X-Wing Backend](https://github.com/geordanr/xwing-backend) project for an example.  Sharing, no.
-
-Aren't there other squad builders out there already?
+Isn't there already an Official Squadbuilder out?
 ----------------------------------------------------
 Yes.
 
@@ -57,11 +51,4 @@ Fancy printout design inspired by TheKestrel on the FFG forums.
 Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
 Squad name in the permalink and obstacles choice modal by [zacharyp](https://github.com/zacharyp).
 
-I'm bad at keeping this up to date; see the About section of the builder.
-
-CHANGELOG
-=========
-
-01 Aug 2018
------------
-Initial Relase of 2.0
+I'm not keeping ReadMe this up to date often; see the About section of the builder.
