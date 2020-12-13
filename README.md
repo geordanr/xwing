@@ -26,7 +26,7 @@ He 'retired'. I took over.
 
 When will this be done?
 -----------------------
-Whenever FFG stops releasing content for the game.
+Whenever X-Wing as a game is dead. Our hearts don't count.
 
 Building
 ========
