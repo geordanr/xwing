@@ -12999,7 +12999,7 @@ exportObj.basicCardData = ->
         {
             name: "Slave I (Separatist)"
             canonical_name: 'Slave I'.canonicalize()
-            xws: "slavei--swz82"
+            xws: "slavei-swz82"
             id: 370
             points: 3
             slot: "Title"
