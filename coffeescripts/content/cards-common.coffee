@@ -18818,6 +18818,177 @@ exportObj.basicCardData = ->
                 "Ablative Plating"
             ]
         }
+		{
+			id: 465,
+			faction: "Galactic Republic"
+			pilot: '"Odd Ball"'
+			ship: "Nimbus-class V-Wing"
+			threat: 2
+			upgrades: [
+				"Elusive"
+				"Ion Limiter Override"
+				"Q7 Astromech"
+				"Precision Ion Engines"
+			]
+        }
+		{
+			id: 466,
+			faction: "Galactic Republic"
+			pilot: "Wilhuff Tarkin"
+			ship: "Nimbus-class V-Wing"
+			threat: 2
+			upgrades: [
+				"R3 Astromech"
+				'Alpha-3E "Esk"'
+			]
+        }
+		{
+			id: 467,
+			faction: "Galactic Republic"
+			pilot: "Loyalist Volunteer"
+			ship: "Nimbus-class V-Wing"
+			threat: 1
+        }
+		{
+			id: 468,
+			faction: "Galactic Republic"
+			pilot: '"Contrail"'
+			ship: "Nimbus-class V-Wing"
+			threat: 4
+			upgrades: [
+				"Ion Limiter Override"
+				"R7-A7"
+				"Precision Ion Engines"
+			]
+        }
+		{
+			id: 469,
+			faction: "Galactic Republic"
+			pilot: '"Klick"'
+			ship: "Eta-2 Actis"
+			threat: 4,
+			upgrades: [
+				"R3 Astromech" 
+				"Thermal Detonators"
+				'Alpha-3E "Besh"'
+			]
+        }
+		{
+			id: 470,
+			faction: "Galactic Republic"
+			pilot: "Shadow Squadron Escort"
+			ship: "Nimbus-class V-Wing"
+			threat: 2
+			upgrades: [
+				"Outmaneuver" 
+				"R2 Astromech"
+				'Alpha-3E "Esk"'
+			]
+        } 
+	    {
+			id: 471,
+			faction: "Galactic Republic",
+			pilot: '"Anakin Skywalker"',
+			ship: "Eta-2 Actis",
+			threat: 4,
+			upgrades: [
+				"Marg Sabl Closure"
+				"Extreme Maneuvers"
+				"R2-D2 (Republic)"
+				"Afterburners"
+				"Shield Upgrade"
+			]
+        }
+		{
+			id: 472,
+			faction: "Galactic Republic",
+			pilot: '"Yoda"',
+			ship: "Eta-2 Actis",
+			threat: 3,
+			upgrades: [
+				"Heightened Perception"
+				"Patience"
+				"Sense"
+				"R2-D2 (Republic)"
+			]
+        }
+		{
+			id: 473,
+			faction: "Galactic Republic",
+			pilot: '"Obi-Wan Kenobi"',
+			ship: "Eta-2 Actis",
+			threat: 2,
+			upgrades: [
+				"Marg Sabl Closure"
+				"Patience"
+				"R5 Astromech"
+				"Hull Upgrade"
+			]
+        }
+    	{
+			id: 474,
+			faction: "Galactic Republic",
+			pilot: '"Aayla Sakura"',
+			ship: "Eta-2 Actis",
+			threat: 3,
+			upgrades: [
+				"Predator"
+				"Supernatural Reflexes"
+				"R3 Astromech"
+			]
+        }
+		{
+			id: 475,
+			faction: "Galactic Republic",
+			pilot: '"Shaak Ti"',
+			ship: "Eta-2 Actis",
+			threat: 2,
+			upgrades: [
+				"Elusive"
+				"Patience"
+			]
+        }
+		{
+			id: 476,
+			faction: "Galactic Republic",
+			pilot: '"Jedi General"',
+			ship: "ETA-2 Actis",
+			threat: 2,
+			upgrades: [
+				"Marg Sabl Closure"
+				"Extreme Maneuvers"
+			]
+        }
+		{
+			id: 477,
+			faction: "Galactic Republic",
+			pilot: "Aayla Sakura",
+			ship: "Eta-2 Actis",
+			threat: [5, 7, 8, 9],
+			wingmates: [2, 3, 4, 5],
+			suffix: " and her wing",
+			upgrades: [
+				"Jedi Commander"
+				"Supernatural Reflexes"
+				"Q7 Astromech"
+			]
+			linkedId: 474,
+			wingleader: true
+        }
+		{
+			id: 478,
+			faction: "Galactic Republic"
+			pilot: "Shadow Squadron Pilot"
+			ship: "Nimbus-class V-Wing"
+			suffix: ", Aayla Sakura's wing"
+			threat: '*'
+			upgrades: [
+				"Q7 Astromech"
+				'Alpha-3B "Besh"'
+			]
+			linkedId: 470
+			wingmate: true
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
