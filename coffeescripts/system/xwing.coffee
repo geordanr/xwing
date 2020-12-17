@@ -2938,7 +2938,7 @@ class exportObj.SquadBuilder
                 meth()
 
     upgrade_effect: (card) ->
-        text = comma = ''
+        removestext = text = comma = ''
         if card.modifier_func
             statchange =
                 attack: 0
@@ -3000,9 +3000,16 @@ class exportObj.SquadBuilder
             for addonname in card.confersAddons
                 text += comma + "%#{addonname.slot.toUpperCase().replace(/[^a-z0-9]/gi, '')}%" 
                 comma = ', '
+        if card.unequips_upgrades
+            comma = ''
+            for slot in card.unequips_upgrades
+                removestext += comma + "%#{slot.toUpperCase().replace(/[^a-z0-9]/gi, '')}%" 
+                comma = ', '
         if text != ''
             data = 
                 text: "</br><b>Adds:</b> #{text}"
+            if removestext != ''
+                data.text += "</br><b>Removes:</b> #{removestext}"
             return exportObj.fixIcons(data)
         else
             return ''
@@ -4448,11 +4455,11 @@ class Ship
                     switch r[1]
                         when "Small"
                             if @data.medium? or @data.large? or @data.huge? then return false
-                        when "Small, Medium"
+                        when "Small or Medium"
                             if @data.large? or @data.huge? then return false
                         when "Medium" 
                             if not (@data.medium?) then return false
-                        when "Medium, Large"
+                        when "Medium or Large"
                             if not (@data.medium? or @data.large?) then return false
                         when "Large" 
                             if not (@data.large?) then return false

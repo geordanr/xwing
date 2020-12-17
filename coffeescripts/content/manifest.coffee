@@ -8132,6 +8132,304 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Jango Fett's Slave I Expansion Pack": [
+        {
+            name: 'Firespray-31'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Jango Fett'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Boba Fett (Separatist)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Separatist Racketeer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Suppressive Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Weapons Systems Officer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Boba Fett (Separatist)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hondo Ohnaka'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jango Fett'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Zam Wesell'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'False Transponder Codes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ablative Plating'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thermal Detonators'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Deadeye Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Slave I (Separatist)'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Eta-2 Actis Expansion Pack": [
+        {
+            name: 'Eta-2 Actis'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Syliure-class Hyperspace Ring'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Anakin Skywalker (Eta-2)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Obi-Wan Kenobi (Eta-2)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Aayla Secura'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shaak Ti'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Yoda'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jedi General'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'TransGalMeg Control Link'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Extreme Maneuvers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Patience'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Syliure-31 Hyperdrive'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R2-D2 (Republic)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jedi Commander'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Droid Tri-Fighter Expansion Pack": [
+        {
+            name: 'Droid Tri-Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Phlac-Arphocc Prototype'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DIS-T81'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DIS-347'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Fearsome Predator'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Separatist Interceptor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Colicoid Interceptor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Intercept Booster'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Discord Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'XX-23 S-Thread Tracers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Independent Calculations'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fire-Control System'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Nimbus-class V-Wing Expansion Pack": [
+        {
+            name: 'Nimbus-class V-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: '"Contrail"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Odd Ball" (V-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Klick"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wilhuff Tarkin'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shadow Squadron Escort'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Loyalist Volunteer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'R7-A7'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Q7 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Alpha-3B "Besh"'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Alpha-3E "Esk"'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Precision Ion Engines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thermal Detonators'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Limiter Override'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
     "Hotshots and Aces Reinforcements Pack": [
         {

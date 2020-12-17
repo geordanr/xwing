@@ -820,7 +820,7 @@ exportObj.basicCardData = ->
             maneuvers: [
                 [ 0, 0, 3, 0, 0 ]
                 [ 0, 1, 1, 1, 0 ]
-                [ 2, 1, 1, 1, 1 ]
+                [ 2, 1, 1, 1, 2 ]
                 [ 0, 2, 2, 2, 0 ]
                 [ 0, 0, 2, 0, 0 ]
             ]
@@ -1657,9 +1657,9 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "ETA-2 Actis":
-            name: "ETA-2 Actis"
-            xws: "ETA-2 Actis".canonicalize()
+        "Eta-2 Actis":
+            name: "Eta-2 Actis"
+            xws: "Eta-2 Actis".canonicalize()
             factions: ["Galactic Republic"]
             attackbull: 3
             attack: 2
@@ -4539,10 +4539,17 @@ exportObj.basicCardData = ->
                 ["Unique", "Hound's Tooth"]
             ]
             restriction_func: (ship) ->
-                builder = ship.builder            
+                builder = ship.builder
                 for t, things of builder.uniques_in_use
                     if t != 'Slot'
-                        return true if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)            
+                        if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                            for shiplist in ship.builder.ships
+                                for upgrade in shiplist.upgrades
+                                    if upgrade.data? and ship.pilot?
+                                        if upgrade.data.name == "Hound's Tooth"
+                                            ship.pilot.skill = shiplist.pilot.skill
+                                            break
+                            return true 
                 false
 
         }
@@ -9026,7 +9033,7 @@ exportObj.basicCardData = ->
             id: 436
             faction: "Galactic Republic"
             skill: 4
-            ship: "ETA-2 Actis"
+            ship: "Eta-2 Actis"
             points: 41
             force: 2
             keyword: ["Jedi", "Light Side"]
@@ -9043,7 +9050,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 3
             unique: true
-            ship: "ETA-2 Actis"
+            ship: "Eta-2 Actis"
             points: 48
             force: 3
             keyword: ["Jedi", "Light Side"]
@@ -9061,7 +9068,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 4
             unique: true
-            ship: "ETA-2 Actis"
+            ship: "Eta-2 Actis"
             points: 44
             force: 2
             keyword: ["Jedi", "Light Side"]
@@ -9079,7 +9086,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 5
             unique: true
-            ship: "ETA-2 Actis"
+            ship: "Eta-2 Actis"
             points: 51
             force: 2
             keyword: ["Jedi", "Light Side"]
@@ -9092,14 +9099,14 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Obi-Wan Kenobi (ETA-2)"
+            name: "Obi-Wan Kenobi (Eta-2)"
             canonical_name: 'Obi-Wan Kenobi'.canonicalize()
             xws: "obiwankenobi-eta2actis"
             id: 440
             faction: "Galactic Republic"
             skill: 5
             unique: true
-            ship: "ETA-2 Actis"
+            ship: "Eta-2 Actis"
             force: 3
             points: 49
             keyword: ["Jedi", "Light Side"]
@@ -9112,7 +9119,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Anakin Skywalker (ETA-2)"
+            name: "Anakin Skywalker (Eta-2)"
             canonical_name: 'Anakin Skywalker'.canonicalize()
             xws: "anakinskywalker-eta2actis"
             id: 441
@@ -9120,7 +9127,7 @@ exportObj.basicCardData = ->
             skill: 6
             unique: true
             force: 3
-            ship: "ETA-2 Actis"
+            ship: "Eta-2 Actis"
             points: 56
             keyword: ["Jedi", "Light Side", "Dark Side"]
             slots: [
@@ -12778,10 +12785,11 @@ exportObj.basicCardData = ->
             name: "Sensor Buoy Suite"
             id: 349
             faction: "First Order"
+            unique: true
             slot: "Tech"
             points: 4
             restrictions: [
-                ["Base", "Small"]
+                ["Base", "Medium or Large"]
             ]
             applies_condition: 'Sensor Buoy'.canonicalize()
         }
@@ -19117,7 +19125,7 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'Naboo Royal N-1 Starfighter', faction: 'Galactic Republic'}
     {name: 'BTL-B Y-Wing', faction: 'Galactic Republic'}
     {name: 'V-19 Torrent', faction: 'Galactic Republic'}
-    {name: 'ETA-2 Actis', faction: 'Galactic Republic'}
+    {name: 'Eta-2 Actis', faction: 'Galactic Republic'}
     {name: 'Nimbus-class V-Wing', faction: 'Galactic Republic'}
     {name: 'LAAT/i Gunship', faction: 'Galactic Republic'}
     {name: 'Vulture-class Droid Fighter', faction: 'Separatist Alliance'}
