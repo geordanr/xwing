@@ -2957,6 +2957,7 @@ exportObj.basicCardData = ->
             points: 32
             keyword: ["Spectre"]
             slots: [
+                "Talent"
                 "Crew"
                 "Modification"
                 "Turret"
