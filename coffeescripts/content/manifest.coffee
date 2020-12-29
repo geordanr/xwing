@@ -7307,6 +7307,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Snap Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Proud Tradition'
             type: 'upgrade'
             count: 1

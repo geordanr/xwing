@@ -18991,6 +18991,20 @@ exportObj.basicCardData = ->
             linkedId: 470
             wingmate: true
         }
+        {
+            id: 479
+            faction: "Rebel Alliance"
+            pilot: "Han Solo"
+            ship: "YT-1300"
+            threat: 5
+            upgrades: [
+                "C-3PO"
+                "Leia Organa"
+                "Chewbacca"
+                "Rigged Cargo Chute"
+                "Millennium Falcon"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
