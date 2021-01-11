@@ -420,7 +420,7 @@ class exportObj.SquadBuilder
                     <button class="btn btn-modal select-simple-view">Simple</button>
                     <button class="btn btn-modal select-fancy-view d-none d-sm-block">Fancy</button>
                     <button class="btn btn-modal select-simplecopy-view">Text</button>
-                    <button class="btn btn-modal select-tts-view d-none d-sm-block">TTS</button>
+                    <button class="btn btn-modal select-tts-view">TTS</button>
                     <button class="btn btn-modal select-reddit-view">Reddit</button>
                     <button class="btn btn-modal select-bbcode-view">BBCode</button>
                     <button class="btn btn-modal select-html-view">HTML</button>
