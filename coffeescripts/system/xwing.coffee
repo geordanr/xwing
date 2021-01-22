@@ -2460,7 +2460,7 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-charge').hide()
 
-                    container.find('tr.info-actions td.info-data').html @formatActions(effective_stats?.actions ? ship.actions, ", ", data.keyword ? [])
+                    container.find('tr.info-actions td.info-data').html @formatActions(data.ship_override?.actions ? (effective_stats?.actions ? ship.actions), ", ", data.keyword ? [])
                     
                     container.find('tr.info-actions').show()
                     if @isQuickbuild
