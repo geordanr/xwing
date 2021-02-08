@@ -12928,6 +12928,7 @@ exportObj.basicCardData = ->
             name: "Jedi Commander"
             id: 361
             points: 5
+            ship: ["Eta-2 Actis","Delta-7 Aethersprite"]
             slot: "Command"
         }
         {

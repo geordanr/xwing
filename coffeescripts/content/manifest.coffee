@@ -8149,6 +8149,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Zam Wesell'
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: 'Boba Fett (Separatist)'
             type: 'pilot'
             count: 1
