@@ -12972,7 +12972,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             charge: 3
             modifier_func: (stats) ->
-                stats.actions.push '*Slam'
+                stats.actions.push 'Slam'
                 stats.actions.push 'R-> Lock'
         }
         {
