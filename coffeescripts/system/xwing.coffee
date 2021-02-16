@@ -2712,7 +2712,7 @@ class exportObj.SquadBuilder
                                     ++count
                         chargeHTML = $.trim """#{data.charge}#{recurringicon}"""
                         container.find('tr.info-charge td.info-data').html (chargeHTML)
-                        container.find('tr.info-charge').toggle(data.charge?)
+                    container.find('tr.info-charge').toggle(data.charge?)
 
                     if data.range?
                         container.find('tr.info-range td.info-data').text data.range
