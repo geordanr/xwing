@@ -2294,7 +2294,7 @@ class exportObj.SquadBuilder
                     if data.shieldrecurr?
                         count = 0
                         while count < data.shieldrecurr
-                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                             ++count
                     container.find('tr.info-shields td.info-data').html (data.shields + recurringicon)
                     container.find('tr.info-shields').show()
@@ -2303,7 +2303,7 @@ class exportObj.SquadBuilder
                     if data.energyrecurr?
                         count = 0
                         while count < data.energyrecurr
-                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                             ++count
                     container.find('tr.info-energy td.info-data').html (data.energy + recurringicon)
                     container.find('tr.info-energy').toggle(data.energy?)
@@ -2430,7 +2430,7 @@ class exportObj.SquadBuilder
                     if ship.shieldrecurr?
                         count = 0
                         while count < ship.shieldrecurr
-                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                             ++count
                     container.find('tr.info-shields td.info-data').html (statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields') + recurringicon)
                     container.find('tr.info-shields').show()
@@ -2439,14 +2439,14 @@ class exportObj.SquadBuilder
                     if ship.energyrecurr?
                         count = 0
                         while count < ship.energyrecurr
-                            recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                             ++count
                     container.find('tr.info-energy td.info-data').html (statAndEffectiveStat((data.ship_override?.energy ? ship.energy), effective_stats, 'energy') + recurringicon)
                     container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                     
                     
                     if (effective_stats?.force? and effective_stats.force > 0) or data.force?
-                        container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.ship_override?.force ? data.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                        container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.ship_override?.force ? data.force), effective_stats, 'force') + '<sup><i class="fas fa-caret-up"></i></sup>')
                         container.find('tr.info-force').show()
                     else
                         container.find('tr.info-force').hide()
@@ -2457,12 +2457,12 @@ class exportObj.SquadBuilder
                             if data.recurring > 0
                                 count = 0
                                 while count < data.recurring
-                                    recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                                    recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                                     ++count
                             else
                                 count = data.recurring
                                 while count < 0
-                                    recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                                    recurringicon += '<sub><i class="fas fa-caret-down"></i></sub>'
                                     ++count
                             container.find('tr.info-charge td.info-data').html (data.charge + recurringicon)
                         else
@@ -2565,16 +2565,25 @@ class exportObj.SquadBuilder
                     container.find('tr.info-shields').show()
 
                     if effective_stats?.force? or data.force?
-                        container.find('tr.info-force td.info-data').html ((pilot.ship_override?.force ? pilot.force)+ '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                        container.find('tr.info-force td.info-data').html ((pilot.ship_override?.force ? pilot.force)+ '<sup><i class="fas fa-caret-up"></i></sup>')
                         container.find('tr.info-force').show()
                     else
                         container.find('tr.info-force').hide()
 
                     if data.charge?
+                        recurringicon = ''
                         if data.recurring?
-                            container.find('tr.info-charge td.info-data').html (pilot.charge + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
-                        else
-                            container.find('tr.info-charge td.info-data').text pilot.charge
+                            if data.recurring > 0
+                                count = 0
+                                while count < data.recurring
+                                    recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                                    ++count
+                            else
+                                count = data.recurring
+                                while count < 0
+                                    recurringicon += '<sub><i class="fas fa-caret-down"></i></sub>'
+                                    ++count
+                        container.find('tr.info-charge td.info-data').html (pilot.charge + recurringicon)
                         container.find('tr.info-charge').show()
                     else
                         container.find('tr.info-charge').hide()
@@ -2688,10 +2697,19 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-left').hide()
                     container.find('tr.info-attack-back').hide()
 
+                    reucrringicon = ''
                     if data.recurring?
-                        container.find('tr.info-charge td.info-data').html (data.charge + """<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>""")
-                    else                
-                        container.find('tr.info-charge td.info-data').text data.charge
+                        if data.recurring > 0
+                            count = 0
+                            while count < data.recurring
+                                recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                                ++count
+                        else
+                            count = data.recurring
+                            while count < 0
+                                recurringicon += '<sub><i class="fas fa-caret-down"></i></sub>'
+                                ++count
+                    container.find('tr.info-charge td.info-data').html (data.charge + recurringicon)
                     container.find('tr.info-charge').toggle(data.charge?)                        
                     
                     if data.range?
@@ -2706,7 +2724,7 @@ class exportObj.SquadBuilder
                         container.find('td.info-rangebonus').hide()
                         
                         
-                    container.find('tr.info-force td.info-data').html (data.force + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                    container.find('tr.info-force td.info-data').html (data.force + '<sup><i class="fas fa-caret-up"></i></sup>')
                     container.find('tr.info-force').toggle(data.force?)                        
 
                     container.find('tr.info-agility').hide()
@@ -4002,7 +4020,7 @@ class Ship
         if @data.energyrecurr?
             count = 0
             while count < @data.energyrecurr
-                recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                 ++count
         
         energyHTML = if (@pilot.ship_override?.energy? or @data.energy?) then $.trim """
@@ -4013,13 +4031,22 @@ class Ship
     
         forceHTML = if (@pilot.force?) then $.trim """
             <i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i>
-            <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i></span>
+            <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}<sup><i class="fas fa-caret-up"></i></sup></span>
         """ else ''
 
         if @pilot.charge?
             recurringicon = ''
-            if @pilot.recurring?
-                recurringicon = """<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>"""
+            if  @pilot.recurring?
+                if @pilot.recurring > 0
+                    count = 0
+                    while count < @pilot.recurring
+                        recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                        ++count
+                else
+                    count = @pilot.recurring
+                    while count < 0
+                        recurringicon += '<sub><i class="fas fa-caret-down"></i></sub>'
+                        ++count
             chargeHTML = $.trim """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i><span class="info-data info-charge">#{statAndEffectiveStat((@pilot.ship_override?.charge ? @pilot.charge), effective_stats, 'charge')}#{recurringicon}</span>"""
         else 
             chargeHTML = ''
@@ -4028,7 +4055,7 @@ class Ship
         if @data.shieldrecurr?
             count = 0
             while count < @data.shieldrecurr
-                shieldRECUR += """<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>"""
+                shieldRECUR += """<sup><i class="fas fa-caret-up"></i></sup>"""
                 ++count
             
         shieldIconHTML = ''
@@ -4864,28 +4891,32 @@ class GenericAddon
                     </div>
                 """
 
-            if (@data.charge?)
-                if  (@data.recurring?)
-                    chargeHTML = $.trim """
-                        <div class="upgrade-charge">
-                            <span class="info-data info-charge">#{@data.charge}</span>
-                            <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i><i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>
-                        </div>
-                        """
-                else
-                    chargeHTML = $.trim """
-                        <div class="upgrade-charge">
-                            <span class="info-data info-charge">#{@data.charge}</span>
-                            <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>
-                        </div>
-                        """
+            if @data.charge?
+                recurringicon = ''
+                if  @data.recurring?
+                    if data.recurring > 0
+                        count = 0
+                        while count < data.recurring
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                            ++count
+                    else
+                        count = data.recurring
+                        while count < 0
+                            recurringicon += '<sub><i class="fas fa-caret-down"></i></sub>'
+                            ++count
+                chargeHTML = $.trim """
+                    <div class="upgrade-charge">
+                        <span class="info-data info-charge">#{@data.charge}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>#{recurringicon}
+                    </div>
+                    """
             else chargeHTML = $.trim ''
 
             if (@data.force?)
                 forceHTML = $.trim """
                     <div class="upgrade-force">
                         <span class="info-data info-force">#{@data.force}</span>
-                        <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i><i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i><sup><i class="fas fa-caret-up"></i></sup>
                     </div>
                     """
             else forceHTML = $.trim ''
