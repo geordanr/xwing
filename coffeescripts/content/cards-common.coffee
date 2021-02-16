@@ -11054,8 +11054,6 @@ exportObj.basicCardData = ->
             pointsarray: [3,4,6,8]
             variableagility: true
             charge: 1
-            modifier_func: (stats) ->
-                stats.agility += 1
         }
         {
             name: "Phantom"
