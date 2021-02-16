@@ -1474,6 +1474,37 @@ exportObj.cardLoaders.English = () ->
         "Jango Fett":
            text: """While you defend or perform a primary attack, if the difficulty of your revealed maneuver is less than that of the enemy ship's, you may change 1 of the enemy ship's %FOCUS% results to a blank result."""
 
+        "Hera Syndulla (B-Wing)":
+           display_name: """Hera Syndulla"""
+           text: """While another friendly ship at range 1-2 defends or performs an attack, you may transfer 1 of your focus tokens, evade tokens, or locks to that ship."""
+        "Hera Syndulla (A-Wing)":
+           display_name: """Hera Syndulla"""
+           text: """While another friendly ship at range 1-2 defends or performs an attack, you may transfer 1 of your focus tokens, evade tokens, or locks to that ship.%LINEBREAK%<strong>Vectored Thrusters:</strong> After you perform an action, you may perform a red %BOOST% action."""
+        "Wedge Antilles (A-Wing)":
+           display_name: """Wedge Antilles"""
+           text: """
+           %LINEBREAK%<strong>Vectored Thrusters:</strong> After you perform an action, you may perform a red %BOOST% action."""
+        "Sabine Wren (A-Wing)":
+           display_name: """Sabine Wren"""
+           text: """
+           %LINEBREAK%<strong>Vectored Thrusters:</strong> After you perform an action, you may perform a red %BOOST% action."""
+
+        "Vult Skerris":
+           text: """<strong>Action:</strong> Gain 1 strain token to recover 1 %CHARGE%. %LINEBREAK% Before you engage, you may spend 1 %CHARGE% to perform an action. %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+        "Gideon Hask (TIE Interceptor)":
+           display_name: """Gideon Hask"""
+           text: """While you perform an attack against a damaged defender, roll 1 additional attack die.%LINEBREAK%<strong>Autothrusters:</strong> After you perform an action, you may perform a red %BARRELROLL% or red %BOOST% action."""
+        "Ciena Ree":
+           text: """
+           %LINEBREAK%<strong>Autothrusters:</strong> After you perform an action, you may perform a red %BARRELROLL% or red %BOOST% action."""
+
+        "Kanan Jarrus (HWK-290)":
+           display_name: """Kanan Jarrus"""
+           text: """While you or a ship in your %SINGLETURRETARC% defends, you may spend 1 %FORCE%. If you do, the attacker rolls 1 fewer attack die."""
+        "Padric":
+           text: """After a friendly device that you have locked detonates, each enemy ship at range 0-1 of that device gains 1 strain token."""
+
+
         # Epic Ships
         "Republic Judiciary":
            display_name: """Republic Judiciary"""
@@ -2394,6 +2425,19 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform a special attack with the %LOCK% requirement, you may acquire a lock on the defender."""
         "False Transponder Codes":
            text: """After you acquire a lock on an object or an object acquires a lock on you, if you have 1 active %CHARGE%, lose 1 %CHARGE% and jam that object, ignoring range restrictions."""
+
+        "Vectored Cannons (RZ-1)":
+           text: """Gain a %SINGLETURRETARC% indicator. Treat the arc requirement of your %FRONTARC% primary attack as %SINGLETURRETARC%. %LINEBREAK% Replace your <strong>Vectored Thrusters</strong> ship ability with the following: %LINEBREAK%<strong>Vectored Cannons:</strong> During the System Phase, you may perform a red %BOOST% or red %ROTATEARC% action. You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%."""
+        "B6 Blade Wing Prototype":
+           text: """Attack (%LOCK%): Gain 1 ion token to perform this attack. If this attack hits, the defender suffers 1 additional %HIT%/%CRIT% damage for each matching uncanceled result after the first."""
+        "TIE Defender Elite":
+           text: """Decrease the difficulty of your turn (%TURNLEFT% or %TURNRIGHT%) maneuvers. Increase the difficulty of your Koiogran Turn (%KTURN%) maneuvers. Replace your <strong>Full Throttle</strong> ship ability with the following: %LINEBREAK% <strong>Advanced Fire Control:</strong> After you perform a %CANNON% or %MISSILE% attack, if you have a lock on the defender, you may perform a bonus primary attack agaisnt the defender."""
+        "Sensitive Controls":
+           text: """Replace your <strong>Autothrusters</strong> ship ability with the following: %LINEBREAK%<strong>Sensitive Controls:</strong> During the System Phase, you may perform a red %BARRELROLL% or red %BOOST% action."""
+        "Cutthroat":
+           text: """After another friendly ship at range 0-3 is destroyed, if that ship is limited or has the <strong>Cutthroat</strong> upgrade, you may remove 1 of your orange or red tokens, or recover 1 non-recurring %CHARGE% on your ship card or one of your equipped upgrade cards."""
+        "Tierfon Belly Run":
+           text: """You can perform special attacks even while at range 0 of asteroids. %LINEBREAK% While you defend, if you are at range 0 of an obstacle, attack dice cannot be rerolled."""
 
         # Epic upgrades
         "Admiral Ozzel":

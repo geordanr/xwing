@@ -2451,9 +2451,20 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-force').hide()
 
+                    recurringicon = ''
                     if data.charge?
                         if data.recurring?
-                            container.find('tr.info-charge td.info-data').html (data.charge + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                            if data.recurring > 0
+                                count = 0
+                                while count < data.recurring
+                                    recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                                    ++count
+                            else
+                                count = data.recurring
+                                while count < 0
+                                    recurringicon += '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>'
+                                    ++count
+                            container.find('tr.info-charge td.info-data').html (data.charge + recurringicon)
                         else
                             container.find('tr.info-charge td.info-data').text data.charge
                         container.find('tr.info-charge').show()

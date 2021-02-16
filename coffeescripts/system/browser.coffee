@@ -630,9 +630,6 @@ class exportObj.CardBrowser
             else
                 return false unless ship.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[ship].display_name and exportObj.ships[ship].display_name.toLowerCase().indexOf(search_text) > -1)
     
-        # prevent the three virtual hardpoint cards from beeing displayed
-        return false unless card.data.slot != "Hardpoint"
-        
         all_factions = (faction for faction, pilot of exportObj.pilotsByFactionXWS)
         selected_factions = @faction_selection.val()
         if selected_factions.length > 0
@@ -673,11 +670,13 @@ class exportObj.CardBrowser
                     if faction != undefined
                         for name, pilots of exportObj.pilotsByFactionCanonicalName[faction]
                             for pilot in pilots # there are sometimes multiple pilots with the same name, so we have another array layer here
-                                if pilot.ship == card.data.name
+                                if pilot.ship == card.data.name 
                                     slots.push.apply(slots, pilot.slots)
             
             for slot in required_slots
-                return false unless slots? and slot in slots
+                # special case for hardpoints
+                if not(((slot == "Torpedo") or (slot == "Missile") or (slot == "Cannon")) and ("HardpointShip" in slots))
+                    return false unless slots? and slot in slots
                 # check for duplciates
                 if @duplicateslots.checked
                     hasDuplicates = slots.filter (x, i, self) ->

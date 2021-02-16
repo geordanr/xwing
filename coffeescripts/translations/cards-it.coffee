@@ -1241,7 +1241,7 @@ exportObj.cardLoaders.Italiano = () ->
            text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Dopo che hai tirato i dadi, puoi spendere 1 segnalino verde per ripetere il tiro di un massimo di 2 tuoi dadi."""
         "Lando's Millennium Falcon":
            display_name: """Millennium Falcon di Lando"""
-           text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Puoi far attraccare 1 Facet. %LINEBREAK%Mentre possiedi una Facet attraccata, puoi spendere i suoi scudi come se fossero sulla tua carta nave.%LINEBREAK%Mentre effettui un attacco primario contro una nave in tensione, tira 1 dado di attacco aggiuntivo."""
+           text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Puoi far attraccare 1 Navetta di Fuga. %LINEBREAK%Mentre possiedi una Navetta di Fuga attraccata, puoi spendere i suoi scudi come se fossero sulla tua carta nave.%LINEBREAK%Mentre effettui un attacco primario contro una nave in tensione, tira 1 dado di attacco aggiuntivo."""
         "Latts Razzi":
            display_name: """Latts Razzi"""
            text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Mentre difendi, se l’attaccante è in tensione, puoi rimuovere 1 segnalino tensione dall’attaccante per cambiare 1 tuo risultato vuoto/%FOCUS% in 1 risultato %EVADE%."""
