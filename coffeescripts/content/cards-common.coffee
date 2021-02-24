@@ -3061,6 +3061,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Modification"
                 "Configuration"
+                "Title"
             ]
         }
         {
@@ -3079,6 +3080,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Modification"
                 "Configuration"
+                "Title"
             ]
         }
         {
@@ -3096,6 +3098,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Modification"
                 "Configuration"
+                "Title"
             ]
         }
         {
@@ -3112,6 +3115,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Modification"
                 "Configuration"
+                "Title"
             ]
         }
         {
@@ -8284,6 +8288,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Modification"
                 "Configuration"
+                "Title"
             ]
         }
         {
@@ -9314,6 +9319,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Modification"
                 "Configuration"
+                "Title"
             ]
         }
         {
@@ -9328,6 +9334,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -9342,6 +9349,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -9356,6 +9364,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -9481,7 +9490,71 @@ exportObj.basicCardData = ->
                 "Modification"
             ]
         }
-
+        {
+            name: "Derek Klivian"
+            id: 461
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "A-Wing"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Talent"
+                "Missile"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Shara Bey (A-Wing)"
+            id: 462
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "A-Wing"
+            skill: 4
+            points: 200
+            slots: [
+                "Talent"
+                "Talent"
+                "Missile"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Ahsoka Tano (A-Wing)"
+            id: 463
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "A-Wing"
+            skill: 5
+            force: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Talent"
+                "Missile"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Unnamed I3"
+            id: 464
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "B-Wing"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Sensor"
+                "Cannon"
+                "Cannon"
+                "Torpedo"
+                "Modification"
+                "Configuration"
+                "Title"
+            ]
+        }
     ]
 
 
@@ -13236,17 +13309,12 @@ exportObj.basicCardData = ->
             slot: "Title"
             ship: "B-Wing"
             faction: "Rebel Alliance"
-            attack: 3
-            range: 2-4
             confersAddons: [
                 {
                     type: exportObj.Upgrade
                     slot: "Gunner"
                 }
             ]
-            validation_func: (ship, upgrade_obj) ->
-                upgrade_obj.occupiesAnUpgradeSlot "Command"
-            also_occupies_upgrades: [ "Command" ]
         }
         {
             name: "TIE Defender Elite"
@@ -13290,6 +13358,47 @@ exportObj.basicCardData = ->
             slot: "Talent"
             ship: "Y-Wing"
         }
+        {
+            name: "B6 Blade Wing Prototype (Epic)"
+            id: 377
+            points: 200
+            slot: "Command"
+            ship: "B-Wing"
+            faction: "Rebel Alliance"
+            attack: 3
+            range: 2-4
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Gunner"
+                }
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Title"
+            also_occupies_upgrades: [ "Title" ]
+        }
+        {
+            name: "Hopeful"
+            id: 378
+            points: 200
+            slot: "Talent"
+            faction: "Rebel Alliance"
+        }
+        {
+            name: "Sabine Wren (Gunner)"
+            id: 379
+            points: 200
+            slot: "Gunner"
+            faction: "Rebel Alliance"
+        }
+        {
+            name: "Phoenix Squadron"
+            id: 380
+            points: 200
+            slot: "Command"
+            faction: "Rebel Alliance"
+        }
+        
     ]
 
 
@@ -19829,6 +19938,7 @@ exportObj.hyperspaceUpgradeExclusions = [
     # Galactic Republic
     'R2-A6'
     'R2-C4'
+    'R4-P17'
     'R4-P Astromech'
     'C1-10P'
     'Chancellor Palpatine'
