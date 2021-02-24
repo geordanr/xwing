@@ -2452,6 +2452,7 @@ exportObj.cardLoaders.English = () ->
         "Hopeful":
            text: """After another friendly ship at range 0-3 is destroyed, if that ship is limited or has the <strong>Hopeful</strong> upgrade, you may perform a %FOCUS% or %BOOST% action."""
         "Sabine Wren (Gunner)":
+           display_name: "Sabine Wren"
            text: """After you perform a special attack, you may choose a number of friendly ships at range 0-3 of the defender up to the number of damage cards dealt to the defender during that attack. Each chosen ship may remove 1 strain or stress token."""
 
         # Epic upgrades

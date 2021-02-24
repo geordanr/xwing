@@ -9305,6 +9305,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Hera Syndulla (B-Wing)"
+            canonical_name: 'Hera Syndulla'.canonicalize()
             id: 450
             unique: true
             faction: "Rebel Alliance"
@@ -9324,6 +9325,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Hera Syndulla (A-Wing)"
+            canonical_name: 'Hera Syndulla'.canonicalize()
             id: 451
             unique: true
             faction: "Rebel Alliance"
@@ -9339,6 +9341,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Wedge Antilles (A-Wing)"
+            canonical_name: 'Wedge Antilles'.canonicalize()
             id: 452
             unique: true
             faction: "Rebel Alliance"
@@ -9354,6 +9357,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sabine Wren (A-Wing)"
+            canonical_name: 'Sabine Wren'.canonicalize()
             id: 453
             unique: true
             faction: "Rebel Alliance"
@@ -9402,6 +9406,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gideon Hask (TIE Interceptor)"
+            canonical_name: 'Gideon Hask'.canonicalize()
             id: 456
             unique: true
             faction: "Galactic Empire"
@@ -9417,6 +9422,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kanan Jarrus (HWK-290)"
+            canonical_name: 'Kanan Jarrus'.canonicalize()
             id: 457
             unique: true
             faction: "Scum and Villainy"
@@ -9507,6 +9513,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Shara Bey (A-Wing)"
+            canonical_name: 'Shara Bey'.canonicalize()
             id: 462
             unique: true
             faction: "Rebel Alliance"
@@ -9522,6 +9529,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ahsoka Tano (A-Wing)"
+            canonical_name: 'Ahsoka Tano'.canonicalize()
             id: 463
             unique: true
             faction: "Rebel Alliance"
@@ -13360,6 +13368,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "B6 Blade Wing Prototype (Epic)"
+            canonical_name: 'B6 Blade Wing Prototype'.canonicalize()
             id: 377
             points: 200
             slot: "Command"
@@ -13386,6 +13395,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sabine Wren (Gunner)"
+            canonical_name: 'Sabine Wren'.canonicalize()
             id: 379
             points: 200
             slot: "Gunner"
