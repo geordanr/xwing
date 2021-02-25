@@ -97,7 +97,7 @@ exportObj.translations.日本語 =
         '.game-type-selector option[value="standard"]': 'エクステンデッド'
         '.game-type-selector option[value="hyperspace"]': 'ハイパースペース'
         '.game-type-selector option[value="epic"]': 'エピック'
-        '.game-type-selector option[value="quickbuild"]': 'Quickbuild'
+        '.game-type-selector option[value="quickbuild"]': 'クイックビルド'
         # Card browser
         '.xwing-card-browser option[value="name"]': '名前'
         '.xwing-card-browser option[value="source"]': '出典'
