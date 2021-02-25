@@ -4,8 +4,7 @@
     https://raithos.github.io
 ###
 
-DFL_LANGUAGE = 'English' # fallback and default language
-SND_LANGUAGE = 'Magyar' # second fallback
+DFL_LANGUAGE = 'English' # default language
 
 builders = []
 
@@ -20,12 +19,6 @@ exportObj.loadCards = (language) ->
     # Set up the common card data (e.g. stats)
     exportObj.setupCommonCardData basic_cards
 
-    # Load languages in following order: polish, english, selected language. 
-    # This way it is assured, that if no data is available for the selected language, 
-    # english will be displayed instead, and if no english data is available polish. 
-    # This is the common order of spoiler/releases. 
-    exportObj.cardLoaders[SND_LANGUAGE]()
-    exportObj.cardLoaders[DFL_LANGUAGE]()
     exportObj.cardLoaders[language]()
 
 exportObj.translate = (language, category, what, args...) ->

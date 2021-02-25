@@ -60,8 +60,8 @@ exportObj.translations.Magyar =
         # Type selector
         '.game-type-selector option[value="standard"]': 'Kiterjesztett'
         '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="custom"]': 'Egyéni'
-        '.game-type-selector option[value="Quickbuild"]': 'Quick Build'
+        '.game-type-selector option[value="Epic"]': 'Epic'
+        '.game-type-selector option[value="quickbuild"]': 'Quick Build'
         # Card browser
         '.xwing-card-browser option[value="name"]': 'Név'
         '.xwing-card-browser option[value="source"]': 'Forrás'
