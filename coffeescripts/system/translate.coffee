@@ -65,7 +65,7 @@ exportObj.setupTranslationSupport = ->
                     if currentfaction == builder.faction
                         builder.container.trigger 'xwing:afterLanguageLoad', language
                     else
-                        builder.container.trigger 'xwing:afterLanguageLoad', language, defer()
+                        await builder.container.trigger 'xwing:afterLanguageLoad', language, defer()
 
     exportObj.loadCards DFL_LANGUAGE
     $(exportObj).trigger 'xwing:languageChanged', DFL_LANGUAGE
