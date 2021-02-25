@@ -60,8 +60,12 @@ exportObj.setupTranslationSupport = ->
                 exportObj.loadCards language
                 for own selector, html of exportObj.translations[language].byCSSSelector
                     $(selector).html html
+                currentfaction = $.getParameterByName 'f'
                 for builder in builders
-                    builder.container.trigger 'xwing:afterLanguageLoad', language
+                    if currentfaction == builder.faction
+                        builder.container.trigger 'xwing:afterLanguageLoad', language
+                    else
+                        builder.container.trigger 'xwing:afterLanguageLoad', language, defer()
 
     exportObj.loadCards DFL_LANGUAGE
     $(exportObj).trigger 'xwing:languageChanged', DFL_LANGUAGE
