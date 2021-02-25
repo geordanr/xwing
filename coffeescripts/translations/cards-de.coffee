@@ -69,6 +69,7 @@ exportObj.translations.Deutsch =
         '.game-type-selector option[value="standard"]': 'Standard'
         '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
         '.game-type-selector option[value="custom"]': 'Benutzerdefiniert'
+        '.game-type-selector option[value="Quickbuild"]': 'Quick Build'        
         # Card browser
         '.select2-choice' : '<span>Typ (nach Namen)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
         '.xwing-card-browser option[value="name"]': 'Name'

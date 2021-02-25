@@ -63,13 +63,6 @@ $.getParameterByName = (name) ->
     else
         return decodeURIComponent(results[1].replace(/\+/g, " "))
 
-#jQuery.event.special.touchstart = setup: (_, ns, handle) ->
-#  if ns.includes('noPreventDefault')
-#    @addEventListener 'touchstart', handle, passive: false
-#  else
-#    @addEventListener 'touchstart', handle, passive: true
-#  return
-    
 Array::intersects = (other) ->
     for item in this
         if item in other
@@ -157,7 +150,7 @@ class exportObj.SquadBuilder
 
         @backend = null
         @current_squad = {}
-        @language = 'English'
+        @language = ' '
 
         @collection = null
 
@@ -3173,8 +3166,6 @@ class exportObj.SquadBuilder
             @collection_invalid_container.toggleClass 'd-none', squadPossible
             @collection_invalid_container.on 'mouseover', (e) =>
                 @showTooltip 'MissingStuff', missingStuff
-            @collection_invalid_container.on 'touchstart', (e) =>
-                @showTooltip 'MissingStuff', missingStuff
 
     toXWS: ->
         # Often you will want JSON.stringify(builder.toXWS())
@@ -3839,8 +3830,6 @@ class Ship
             @builder.showTooltip 'Ship', exportObj.ships[select2_data.id] if select2_data?.id?
         @ship_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
-        @ship_selector.data('select2').container.on 'touchstart', (e) =>
-            @builder.showTooltip 'Ship', exportObj.ships[@pilot.ship] if @pilot
 
         @pilot_selector.select2
             width: '100%'
@@ -3886,8 +3875,6 @@ class Ship
                 @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Pilot', @pilot, @ if @pilot
-        @pilot_selector.data('select2').container.on 'touchstart', (e) =>
-            @builder.showTooltip 'Pilot', @pilot, @ if @pilot
 
         @pilot_selector.data('select2').container.hide()
 
@@ -3906,8 +3893,6 @@ class Ship
 #                else
 #                    @builder.showTooltip 'Pilot', exportObj.wingmatesById[select2_data.id] if select2_data?.id?
 #            @wingmate_selector.on 'mouseover', (e) =>
-#                @builder.showTooltip 'Pilot', @wingmate, @ if @wingmate
-#            @wingmate_selector.on 'touchstart', (e) =>
 #                @builder.showTooltip 'Pilot', @wingmate, @ if @wingmate
 #    
         @wingmate_selector.parent().hide()
@@ -4712,8 +4697,6 @@ class GenericAddon
             select2_data = $(e.target).closest('.select2-result').data 'select2-data'
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id], {addon_type: @type} if select2_data?.id?
         @selector.data('select2').container.on 'mouseover', (e) =>
-            @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
-        @selector.data('select2').container.on 'touchstart', (e) =>
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
 
     setById: (id) ->
