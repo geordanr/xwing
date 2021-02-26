@@ -9545,7 +9545,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unnamed I3"
+            name: "Netrem Pollard"
             id: 464
             unique: true
             faction: "Rebel Alliance"
@@ -9563,8 +9563,101 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
+        {
+            name: "Commandant Goran"
+            id: 465
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 4
+            points: 200
+            slots: [
+                "Talent"
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Nash Windrider"
+            id: 466
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 2
+            points: 200
+            slots: [
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Lieutenant Lorrir"
+            id: 467
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Vult Skerris (TIE Interceptor)"
+            canonical_name: 'Vult Skerris'.canonicalize()
+            id: 468
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 5
+            points: 200
+            slots: [
+                "Talent"
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Darth Vader (TIE Defender)"
+            canonical_name: 'Darth Vader'.canonicalize()
+            id: 469
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Defender"
+            skill: 6
+            force: 3
+            points: 200
+            slots: [
+                "Force"
+                "Sensor"
+                "Cannon"
+                "Missile"            
+                "Configuration"
+            ]
+        }
+        {
+            name: "Captain Dobbs"
+            id: 470
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Defender"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Sensor"
+                "Cannon"
+                "Missile"            
+                "Configuration"
+            ]
+        }
     ]
-
 
     upgradesById: [
         {
@@ -13411,6 +13504,30 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Command"
             faction: "Rebel Alliance"
+        }
+        {
+            name: "Disciplined"
+            id: 381
+            points: 200
+            slot: "Talent"
+            faction: "Galactic Empire"
+        }
+        {
+            name: "Skystrike Academy Class"
+            id: 382
+            points: 200
+            max_per_squad: 2
+            slot: "Command"
+            faction: "Galactic Empire"
+        }
+        {
+            name: "Shadow Wing"
+            id: 383
+            points: 200
+            unique: true
+            slot: "Command"
+            faction: "Galactic Empire"
+            ship: ["Tie Fighter", "TIE Interceptor", "TIE Bomber"]
         }
         
     ]
