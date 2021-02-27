@@ -9431,6 +9431,7 @@ exportObj.basicCardData = ->
             force: 1
             points: 200
             slots: [
+                "Force"
                 "Crew"
                 "Device"
                 "Illicit"
@@ -9655,6 +9656,61 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Missile"            
                 "Configuration"
+            ]
+        }
+        {
+            name: "Jinta Security Officer"
+            id: 471
+            faction: "Scum and Villainy"
+            ship: "Y-Wing"
+            skill: 2
+            points: 200
+            slots: [
+                "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Illicit"
+                "Modification"
+            ]
+        }
+        {
+            name: "Amaxine Warrior"
+            id: 472
+            faction: "Scum and Villainy"
+            ship: "Y-Wing"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Illicit"
+                "Modification"
+            ]
+        }
+        {
+            name: "Gamut Key"
+            id: 473
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "HWK-290"
+            skill: 3
+            charge: 2
+            recurring: 1
+            points: 200
+            slots: [
+                "Talent"
+                "Crew"
+                "Device"
+                "Illicit"
+                "Modification"
+                "Modification"
+                "Title"
             ]
         }
     ]
@@ -13005,7 +13061,6 @@ exportObj.basicCardData = ->
             slot: "Missile"
             attack: 3
             range: """1-3"""
-            limited: 2
             rangebonus: true
             max_per_squad: 2
             charge: 2
@@ -13528,6 +13583,30 @@ exportObj.basicCardData = ->
             slot: "Command"
             faction: "Galactic Empire"
             ship: ["Tie Fighter", "TIE Interceptor", "TIE Bomber"]
+        }
+        {
+            name: "In It For The Money"
+            id: 384
+            points: 200
+            slot: "Command"
+            faction: "Scum and Villainy"
+        }
+        {
+            name: "Bounty"
+            id: 385
+            points: 200
+            slot: "Command"
+            faction: "Scum and Villainy"
+        }
+        {
+            name: "Gamut Key"
+            id: 386
+            unique: true
+            points: 200
+            slot: "Crew"
+            charge: 2
+            recurring: 1
+            faction: "Scum and Villainy"
         }
         
     ]

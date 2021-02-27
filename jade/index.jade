@@ -52,7 +52,8 @@ html
           a#republicTab.nav-link('data-toggle'="tab", href='#republicContent', title='Galactic Republic') <i class="xwing-miniatures-font xwing-miniatures-font-republic"></i>
         li.nav-item
           a#separatistTab.nav-link('data-toggle'="tab", href='#separatistContent', title='Seperatist Alliance') <i class="xwing-miniatures-font xwing-miniatures-font-separatists"></i>
-
+        li.nav-item
+          a#allTab.nav-link('data-toggle'="tab", href='#allContent', title='All') MultiFaction
         li.nav-item.float-right
           a.nav-link(href='https://github.com/raithos/xwing/issues/new', target='_blank') Submit Bug/Feature Request 
         li.nav-item.float-right
@@ -96,6 +97,8 @@ html
           #republic-builder
         .tab-pane.fade#separatistContent
           #separatist-builder
+        .tab-pane.fade#allContent
+          #all-builder
         .tab-pane.fade#browserContent
           #card-browser
         .tab-pane.fade#rulesBrowserContent
@@ -184,6 +187,8 @@ html
               window.location.replace '?f=Galactic Republic'
             when '#separatistContent'
               window.location.replace '?f=Separatist Alliance'
+            when '#allContent'
+              window.location.replace '?f=All'
 
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
           $('#rebelTab').click (e) ->
@@ -206,14 +211,18 @@ html
             gtag 'config', 'UA-123324723-1',
               page_path: '/firstorder'
               page_title: 'First Order'
-          $('#firstorderTab').click (e) ->
+          $('#republicTab').click (e) ->
             gtag 'config', 'UA-123324723-1',
               page_path: '/republic'
               page_title: 'Galactic Republic'
-          $('#firstorderTab').click (e) ->
+          $('#separatistTab').click (e) ->
             gtag 'config', 'UA-123324723-1',
               page_path: '/separatist'
               page_page_title: 'Separatist Alliance'
+          $('#allTab').click (e) ->
+            gtag 'config', 'UA-123324723-1',
+              page_path: '/all'
+              page_page_title: 'All'
           $('#browserTab').click (e) ->
             gtag 'config', 'UA-123324723-1',
               page_path: '/browser'
@@ -276,6 +285,13 @@ html
               printable_container: '#printable'
           window.registerBuilderForTranslation window.separatist_sb
 
+          window.all_sb = new window.SquadBuilder
+              tab: '#allTab'
+              faction: 'All'
+              container: '#all-builder'
+              printable_container: '#printable'
+          window.registerBuilderForTranslation window.all_sb
+
           switch $.getParameterByName 'f'
             when 'Rebel Alliance'
                 gtag 'config', 'UA-123324723-1',
@@ -312,6 +328,11 @@ html
                   page_path: '/separatist'
                   page_title: 'Separatist Alliance'
                 $('#separatistTab').tab 'show'
+            when 'All'
+                gtag 'config', 'UA-123324723-1',
+                  page_path: '/all'
+                  page_title: 'All'
+                $('#allTab').tab 'show'
             else
                 gtag 'config', 'UA-123324723-1',
                   page_path: '/default'
@@ -328,6 +349,7 @@ html
                 window.firstorder_sb
                 window.republic_sb
                 window.separatist_sb
+                window.all_sb
               ]
               login_logout_button: '#login-logout'
               auth_status: '#auth-status'
