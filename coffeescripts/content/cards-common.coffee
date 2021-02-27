@@ -11678,7 +11678,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 1
             restrictions: [
-                ["notUnique", false]
+                ["isUnique", false]
             ]
         }
         {
@@ -13590,6 +13590,10 @@ exportObj.basicCardData = ->
             points: 200
             slot: "Command"
             faction: "Scum and Villainy"
+            restrictions: [
+                ["isUnique", true]
+                ["Format", "Standard"]
+            ]
         }
         {
             name: "Bounty"
@@ -13597,6 +13601,10 @@ exportObj.basicCardData = ->
             points: 200
             slot: "Command"
             faction: "Scum and Villainy"
+            restrictions: [
+                ["isUnique", true]
+                ["Format", "Standard"]
+            ]
         }
         {
             name: "Gamut Key"

@@ -3081,8 +3081,13 @@ class exportObj.SquadBuilder
                         text += comma + exportObj.translate(@language, 'restrictions', "Initiative")+ " < #{r[1]}"
                     when "AgilityEquals"
                         text += comma + exportObj.translate(@language, 'restrictions', "Agility") + " = #{r[1]}"
-                    when "notUnique"
-                        text += comma + exportObj.translate(@language, 'restrictions', "Non-Limited")
+                    when "isUnique"
+                        if r[1] == true
+                            text += comma + exportObj.translate(@language, 'restrictions', "Limited")
+                        else
+                            text += comma + exportObj.translate(@language, 'restrictions', "Non-Limited")
+                    when "Format"
+                        text += comma + exportObj.translate(@language, 'restrictions', "#{r[1]} Ship")
                     when "Faction"
                         othertext += comma + exportObj.translate(@language, 'faction', "#{r[1]}")
                 comma = ', '
@@ -4514,8 +4519,15 @@ class Ship
                     if not (@pilot.skill < r[1]) then return false
                 when "AgilityEquals"
                     if not (effective_stats.agility == r[1]) then return false
-                when "notUnique"
-                    if @pilot.unique? then return false
+                    if not @pilot.unique? then return false
+                when "isUnique"
+                    if r[1] != @pilot.unique? then return false
+                when "Format"
+                    switch r[1]
+                        when "Epic"
+                            if not (@data.name in exportObj.epicExclusionsList) then return false
+                        when "Standard"
+                            if @data.name in exportObj.epicExclusionsList then return false
                 when "Faction"
                     if @builder.faction != r[1] then return false
         return true
