@@ -9431,6 +9431,7 @@ exportObj.basicCardData = ->
             force: 1
             points: 200
             slots: [
+                "Force"
                 "Crew"
                 "Device"
                 "Illicit"
@@ -9545,7 +9546,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unnamed I3"
+            name: "Netrem Pollard"
             id: 464
             unique: true
             faction: "Rebel Alliance"
@@ -9563,8 +9564,156 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
+        {
+            name: "Commandant Goran"
+            id: 465
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 4
+            points: 200
+            slots: [
+                "Talent"
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Nash Windrider"
+            id: 466
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 2
+            points: 200
+            slots: [
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Lieutenant Lorrir"
+            id: 467
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Vult Skerris (TIE Interceptor)"
+            canonical_name: 'Vult Skerris'.canonicalize()
+            id: 468
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 5
+            points: 200
+            slots: [
+                "Talent"
+                "Modification"
+                "Modification"
+                "Configuration"
+            ]
+        }
+        {
+            name: "Darth Vader (TIE Defender)"
+            canonical_name: 'Darth Vader'.canonicalize()
+            id: 469
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Defender"
+            skill: 6
+            force: 3
+            points: 200
+            slots: [
+                "Force"
+                "Sensor"
+                "Cannon"
+                "Missile"            
+                "Configuration"
+            ]
+        }
+        {
+            name: "Captain Dobbs"
+            id: 470
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Defender"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Sensor"
+                "Cannon"
+                "Missile"            
+                "Configuration"
+            ]
+        }
+        {
+            name: "Jinta Security Officer"
+            id: 471
+            faction: "Scum and Villainy"
+            ship: "Y-Wing"
+            skill: 2
+            points: 200
+            slots: [
+                "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Illicit"
+                "Modification"
+            ]
+        }
+        {
+            name: "Amaxine Warrior"
+            id: 472
+            faction: "Scum and Villainy"
+            ship: "Y-Wing"
+            skill: 3
+            points: 200
+            slots: [
+                "Talent"
+                "Turret"
+                "Torpedo"
+                "Gunner"
+                "Astromech"
+                "Device"
+                "Illicit"
+                "Modification"
+            ]
+        }
+        {
+            name: "Gamut Key"
+            id: 473
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "HWK-290"
+            skill: 3
+            charge: 2
+            recurring: 1
+            points: 200
+            slots: [
+                "Talent"
+                "Crew"
+                "Device"
+                "Illicit"
+                "Modification"
+                "Modification"
+                "Title"
+            ]
+        }
     ]
-
 
     upgradesById: [
         {
@@ -11529,7 +11678,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 1
             restrictions: [
-                ["notUnique", false]
+                ["isUnique", false]
             ]
         }
         {
@@ -12912,7 +13061,6 @@ exportObj.basicCardData = ->
             slot: "Missile"
             attack: 3
             range: """1-3"""
-            limited: 2
             rangebonus: true
             max_per_squad: 2
             charge: 2
@@ -13411,6 +13559,62 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Command"
             faction: "Rebel Alliance"
+        }
+        {
+            name: "Disciplined"
+            id: 381
+            points: 200
+            slot: "Talent"
+            faction: "Galactic Empire"
+        }
+        {
+            name: "Skystrike Academy Class"
+            id: 382
+            points: 200
+            max_per_squad: 2
+            slot: "Command"
+            faction: "Galactic Empire"
+        }
+        {
+            name: "Shadow Wing"
+            id: 383
+            points: 200
+            unique: true
+            slot: "Command"
+            faction: "Galactic Empire"
+            ship: ["Tie Fighter", "TIE Interceptor", "TIE Bomber"]
+        }
+        {
+            name: "In It For The Money"
+            id: 384
+            points: 200
+            slot: "Command"
+            faction: "Scum and Villainy"
+            restrictions: [
+                ["isUnique", true]
+                ["Format", "Standard"]
+            ]
+        }
+        {
+            name: "Bounty"
+            id: 385
+            points: 200
+            slot: "Command"
+            faction: "Scum and Villainy"
+            restrictions: [
+                ["isUnique", true]
+                ["Format", "Standard"]
+            ]
+        }
+        {
+            name: "Gamut Key"
+            id: 386
+            unique: true
+            points: 200
+            slot: "Crew"
+            charge: 2
+            recurring: 1
+            faction: "Scum and Villainy"
         }
         
     ]

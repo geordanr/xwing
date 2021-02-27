@@ -250,6 +250,7 @@ class exportObj.SquadBuilder
                     <span class="content-warning loading-failed-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning collection-invalid d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning ship-number-invalid-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated">A tournament legal squad must contain 2-8 ships!</span></span>
+                    <span class="content-warning multi-faction-warning-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated">Multi-Faction Lists are NEVER tournament legal!</span></span>
                 </div>
                 <div class="col-md-5 float-right button-container">
                     <div class="btn-group float-right">
@@ -684,6 +685,7 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
         @loading_failed_container = $ @points_container.find('.loading-failed-container')
         @ship_number_invalid_container = $ @points_container.find('.ship-number-invalid-container')
+        @multi_faction_warning_container = $ @points_container.find('.multi-faction-warning-container')
         @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -1295,6 +1297,8 @@ class exportObj.SquadBuilder
                             'republic'
                         when 'Separatist Alliance'
                             'separatists'
+                        when 'All'
+                            'first-player-4'
                     @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
             # List type
             if @isHyperspace
@@ -1796,6 +1800,7 @@ class exportObj.SquadBuilder
             container: @ship_container
         @ships.push new_ship
         @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 2) # bounds are 2..10 as we always have a "empty" ship at the bottom
+        @multi_faction_warning_container.toggleClass 'd-none', (@faction != "All")
         new_ship
 
     removeShip: (ship, cb=$.noop) ->
@@ -1805,19 +1810,26 @@ class exportObj.SquadBuilder
             @current_squad.dirty = true
             @container.trigger 'xwing-backend:squadDirtinessChanged'
             @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 2)
+            @multi_faction_warning_container.toggleClass 'd-none', (@faction != "All")
         cb()
     
     matcher: (item, term) ->
         item.toUpperCase().indexOf(term.toUpperCase()) >= 0
 
-    isOurFaction: (faction) ->
+    isOurFaction: (faction, alt_faction = '') ->
+        check_faction = @faction
+        if @faction == "All"
+            if alt_faction != ''
+                check_faction = alt_faction
+            else
+                return true
         if faction instanceof Array
             for f in faction
-                if getPrimaryFaction(f) == @faction
+                if getPrimaryFaction(f) == check_faction
                     return true
             false
         else
-            getPrimaryFaction(faction) == @faction
+            getPrimaryFaction(faction) == check_faction
 
     isItemAvailable: (item_data, shipCheck=false) ->
         # this method is not even invoked by most quickbuild stuff to check availability for quickbuild squads, as the method was formerly just telling apart extended/hyperspace
@@ -1966,7 +1978,9 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         upgrades_in_use = (upgrade.data for upgrade in ship.upgrades)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when exportObj.slotsMatching(upgrade.slot, slot) and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (@isItemAvailable(upgrade)))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when exportObj.slotsMatching(upgrade.slot, slot) and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction, ship.pilot.faction)) and (@isItemAvailable(upgrade)))
+
+        # available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when exportObj.slotsMatching(upgrade.slot, slot) and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or ((@faction != "All") and @isOurFaction(upgrade.faction)) or ((@faction == "All") and (not ship.pilot? or (ship.pilot.faction == upgrade.faction)))) and (@isItemAvailable(upgrade)))
 
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
@@ -3067,8 +3081,13 @@ class exportObj.SquadBuilder
                         text += comma + exportObj.translate(@language, 'restrictions', "Initiative")+ " < #{r[1]}"
                     when "AgilityEquals"
                         text += comma + exportObj.translate(@language, 'restrictions', "Agility") + " = #{r[1]}"
-                    when "notUnique"
-                        text += comma + exportObj.translate(@language, 'restrictions', "Non-Limited")
+                    when "isUnique"
+                        if r[1] == true
+                            text += comma + exportObj.translate(@language, 'restrictions', "Limited")
+                        else
+                            text += comma + exportObj.translate(@language, 'restrictions', "Non-Limited")
+                    when "Format"
+                        text += comma + exportObj.translate(@language, 'restrictions', "#{r[1]} Ship")
                     when "Faction"
                         othertext += comma + exportObj.translate(@language, 'faction', "#{r[1]}")
                 comma = ', '
@@ -4423,11 +4442,13 @@ class Ship
             equipped_upgrades = []
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? undefined
-                if upgrade?.data?.restrictions and (not func?)
-                    func = @restriction_check(upgrade.data.restrictions, upgrade)
+                if func?
+                    func_result = upgrade?.data?.validation_func(this, upgrade)
+                else if upgrade?.data?.restrictions
+                    func_result = @restriction_check(upgrade.data.restrictions, upgrade)
                 # check if either a) validation func not met or b) upgrade already equipped (in 2.0 everything is limited) or c) upgrade is not available (e.g. not Hyperspace legal)
                 # ignore those checks if this is a quickbuild squad, as quickbuild does whatever it wants to do...
-                if ((func? and not func) or (upgrade?.data? and (upgrade.data in equipped_upgrades or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
+                if ((func_result? and not func_result) or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
@@ -4452,19 +4473,9 @@ class Ship
         false
 
     hasAnotherUnoccupiedSlotLike: (upgrade_obj, upgradeslot) ->
-        if upgrade_obj?.data?.restrictions?
-            for r in upgrade_obj.data.restrictions
-                if r[0] == "Slot"
-                    extraslot = r[1]
-
         for upgrade in @upgrades
             continue if upgrade == upgrade_obj or upgrade.slot != upgradeslot
-            if upgrade.isOccupied()
-                if extraslot?
-                    if extraslot == upgradeslot
-                        return true
-            else
-                return true
+            return true unless upgrade.isOccupied()
         false
 
     restriction_check: (restrictions, upgrade_obj) ->
@@ -4508,8 +4519,15 @@ class Ship
                     if not (@pilot.skill < r[1]) then return false
                 when "AgilityEquals"
                     if not (effective_stats.agility == r[1]) then return false
-                when "notUnique"
-                    if @pilot.unique? then return false
+                    if not @pilot.unique? then return false
+                when "isUnique"
+                    if r[1] != @pilot.unique? then return false
+                when "Format"
+                    switch r[1]
+                        when "Epic"
+                            if not (@data.name in exportObj.epicExclusionsList) then return false
+                        when "Standard"
+                            if @data.name in exportObj.epicExclusionsList then return false
                 when "Faction"
                     if @builder.faction != r[1] then return false
         return true
