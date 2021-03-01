@@ -2447,10 +2447,10 @@ exportObj.cardLoaders.English = () ->
         "Zam Wesell":
            text: """<strong>Setup:</strong> Lose 2 %CHARGE%. %LINEBREAK% During the System Phase, you may assign 1 of your secret conditions to yourself facedown: <strong> %LINEBREAK% You Should Thank Me %LINEBREAK% You'd Better Mean Business. </strong>"""
         "Boba Fett (Separatist)":
-           display_name: "Boba Fett"
+           display_name: """Boba Fett"""
            text: """While you perform an attack, if there are no other ships in the attack arc, you may change 1 of your %FOCUS% results to a %HIT% result."""
         "Slave I (Separatist)":
-           display_name: "Slave I"
+           display_name: """Slave I"""
            text: """While you perform a %FRONTARC% attack, if you are in the defender's %FULLREARARC%, you may change 1 %HIT% result to a %CRIT% result."""
         "Weapons Systems Officer":
            text: """After you perform a special attack with the %LOCK% requirement, you may acquire a lock on the defender."""
@@ -2476,7 +2476,7 @@ exportObj.cardLoaders.English = () ->
         "Hopeful":
            text: """After another friendly ship at range 0-3 is destroyed, if that ship is limited or has the <strong>Hopeful</strong> upgrade, you may perform a %FOCUS% or %BOOST% action."""
         "Sabine Wren (Gunner)":
-           display_name: "Sabine Wren"
+           display_name: """Sabine Wren"""
            text: """After you perform a special attack, you may choose a number of friendly ships at range 0-3 of the defender up to the number of damage cards dealt to the defender during that attack. Each chosen ship may remove 1 strain or stress token."""
         "Disciplined":
            text: """After another friendly ship at range 0-3 is destroyed, if that ship is limited or has the <strong>Disciplined</strong> upgrade, you may perform a %LOCK% or %BARRELROLL% action."""

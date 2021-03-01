@@ -13582,7 +13582,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Command"
             faction: "Galactic Empire"
-            ship: ["Tie Fighter", "TIE Interceptor", "TIE Bomber"]
+            ship: ["TIE Fighter", "TIE Interceptor", "TIE Bomber"]
         }
         {
             name: "In It For The Money"
