@@ -289,6 +289,9 @@ class exportObj.CardBrowser
                         <div class="card-selector-container">
 
                         </div>
+                        <br>
+                        <div class="card-viewer-conditions-container">
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card card-viewer-placeholder info-well">
@@ -304,6 +307,8 @@ class exportObj.CardBrowser
         @card_selector_container = $ @container.find('.xwing-card-browser .card-selector-container')
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
         @card_viewer_container.append $.trim exportObj.builders[0].createInfoContainerUI()
+        @card_viewer_container.hide()
+        @card_viewer_conditions_container = $ @container.find('.xwing-card-browser .card-viewer-conditions-container')
         @card_viewer_container.hide()
         @card_viewer_placeholder = $ @container.find('.xwing-card-browser .card-viewer-placeholder')
         @advanced_search_container = $ @container.find('.xwing-card-browser .advanced-search-container')
@@ -583,6 +588,25 @@ class exportObj.CardBrowser
         exportObj.builders[0].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
 
         @card_viewer_container.show()
+
+        # Conditions
+        if data?.applies_condition?
+            conditions = new Set()
+            if data.applies_condition instanceof Array
+                for condition in data.applies_condition
+                    conditions.add(exportObj.conditionsByCanonicalName[condition])
+            else
+                conditions.add(exportObj.conditionsByCanonicalName[data.applies_condition])
+            @card_viewer_conditions_container.text ''
+            conditions.forEach (condition) =>
+                condition_container = $ document.createElement('div')
+                condition_container.addClass 'conditions-container d-flex flex-wrap'
+                condition_container.append conditionToHTML(condition)
+                @card_viewer_conditions_container.append condition_container
+            @card_viewer_conditions_container.show()
+        else
+            @card_viewer_conditions_container.hide()
+
         @card_viewer_placeholder.hide()
 
     addCardTo: (container, card) ->

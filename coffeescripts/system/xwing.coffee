@@ -4519,7 +4519,6 @@ class Ship
                     if not (@pilot.skill < r[1]) then return false
                 when "AgilityEquals"
                     if not (effective_stats.agility == r[1]) then return false
-                    if not @pilot.unique? then return false
                 when "isUnique"
                     if r[1] != @pilot.unique? then return false
                 when "Format"
