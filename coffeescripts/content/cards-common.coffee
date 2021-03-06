@@ -9539,7 +9539,7 @@ exportObj.basicCardData = ->
             force: 3
             points: 200
             slots: [
-                "Talent"
+                "Force"
                 "Talent"
                 "Missile"
                 "Configuration"
