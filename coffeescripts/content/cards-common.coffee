@@ -4350,6 +4350,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Dalan Oberos (StarViper)"
+            canonical_name: 'Dalan Oberos'.canonicalize()
             id: 149
             unique: true
             xws: "dalanoberos-starviperclassattackplatform"
