@@ -1390,7 +1390,7 @@ exportObj.cardLoaders.日本語 = () ->
         '"Hawk"':
            text: """終了フェイズの開始時、速度3-5のマニューバを公開したレンジ0-1の各友軍宇宙船は、ストレイン・トークンを1つ得て%BARRELROLL%あるいは%BOOST%アクションを実行しても良い。%LINEBREAK%<strong>Fire Convergence:</strong> 友軍宇宙船が%SINGLETURRETARC%ではない攻撃を実行する際、もし防御者が君の%SINGLETURRETARC%内にいるなら、君は%CHARGE%を1つ消費しても良い。もしそうするなら、攻撃者は攻撃ダイスを2個まで振り直しても良い。"""
         '"Hound"':
-           text: """君の%SINGLETURRETARC%内にいる友軍宇宙船がデプリートあるいはストレイン・トークンを得た後、もし君がそのタイプのトークンを持っていないなら、君はそのトークンを君自身に転送しても良い。%LINEBREAK%<strong>Fire Convergence:</strong> 友軍宇宙船が%SINGLETURRETARC%ではない攻撃を実行する際、もし防御者が君の%SINGLETURRETARC%内にいるなら、君は%CHARGE%を1つ消費しても良い。もしそうするなら、攻撃者は攻撃ダイスを2個まで振り直しても良い。"""
+           text: """君の%SINGLETURRETARC%内にいる友軍の小型宇宙船がデプリートあるいはストレイン・トークンを得た後、もし君がそのタイプのトークンを持っていないなら、君はそのトークンを君自身に転送しても良い。%LINEBREAK%<strong>Fire Convergence:</strong> 友軍宇宙船が%SINGLETURRETARC%ではない攻撃を実行する際、もし防御者が君の%SINGLETURRETARC%内にいるなら、君は%CHARGE%を1つ消費しても良い。もしそうするなら、攻撃者は攻撃ダイスを2個まで振り直しても良い。"""
         '"Warthog"':
            text: """君かレンジ0-2の非制限宇宙船がエンゲージメント・フェイズの間に破壊された後、その宇宙船はそのフェイズの終了まで取り除かれない。%LINEBREAK%<strong>Fire Convergence:</strong> 友軍宇宙船が%SINGLETURRETARC%ではない攻撃を実行する際、もし防御者が君の%SINGLETURRETARC%内にいるなら、君は%CHARGE%を1つ消費しても良い。もしそうするなら、攻撃者は攻撃ダイスを2個まで振り直しても良い。"""
         "Baktoid Drone":
@@ -1564,7 +1564,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """値が3の%FRONTARC%主武装攻撃を得る。%LINEBREAK%終了フェイズの間、2つまでフォーカス・トークンを取り除かない。"""
         "Outrider":
            display_name: """Outrider"""
-           text: """君が障害物によって妨害された攻撃を実行する際、防御者は防御ダイスを1つ少なく振る。%LINEBREAK%君がマニューバを完全に実行した後、もし君が障害物を通過するか、障害物に重なったとき、君は赤あるいはオレンジのトークンを1つ取り除く。"""
+           text: """君が障害物によって妨害された攻撃を実行する際、防御者は防御ダイスを1つ少なく振る。%LINEBREAK%君がマニューバを完全に実行した後、もし君が障害物を通過するか、障害物に重なったとき、君は赤あるいはオレンジのトークンを1つ取り除いても良い。"""
         "Phantom":
            display_name: """Phantom"""
            text: """君はレンジ0-1でドックできる。"""
