@@ -689,7 +689,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がストレス・トークンを受け取った後、君は攻撃ダイスを1つ振り、それを取り除いても良い。%HIT%の結果なら、%HIT%ダメージを1つ受ける。"""
         "Jessika Pava":
            display_name: """Jessika Pava"""
-           text: """君が防御するか攻撃を実行する際、君は%CHARGE%を1つあるいは君が装備した%ASTROMECH%の自動回復しない%CHARGE%を1つ消費して、レンジ0-1の他の友軍宇宙船につき1つまでダイスを振り直しても良い。%LINEBREAK%<strong>Weapon Hardpoint:</strong> 君は%CANNON%、%TORPEDO%あるいは%MISSILE%アップグレードを1つ装備できる。"""
+           text: """君が防御するか攻撃を実行する際、君は%CHARGE%を1つあるいは君が装備した%ASTROMECH%の自動変化しない%CHARGE%を1つ消費して、レンジ0-1の他の友軍宇宙船につき1つまでダイスを振り直しても良い。%LINEBREAK%<strong>Weapon Hardpoint:</strong> 君は%CANNON%、%TORPEDO%あるいは%MISSILE%アップグレードを1つ装備できる。"""
         "Joph Seastriker":
            display_name: """Joph Seastriker"""
            text: """君がシールドを1つ失った後、回避トークンを1つ得る。%LINEBREAK%<strong>Weapon Hardpoint:</strong> 君は%CANNON%、%TORPEDO%あるいは%MISSILE%アップグレードを1つ装備できる。"""
@@ -2215,7 +2215,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """アクションの実行ステップの間、君はストレス状態でも、アクションを1つ実行しても良い。君がストレス状態でアクションを実行した後、君のダメージ・カードを1枚エクスポーズしない限り、%HIT%ダメージを1つ受ける。"""
         '"Chopper" (Astromech)':
            display_name: """“Chopper”"""
-           text: """<strong>アクション:</strong> シールドを1つ回復するために、装備した他のアップグレードの自動回復しない%CHARGE%を1つ消費する。%LINEBREAK%<strong>アクション:</strong> 装備したアップグレードの自動回復しない%CHARGE%を1つ回復するために、シールドを2つ消費する。"""
+           text: """<strong>アクション:</strong> シールドを1つ回復するために、装備した他のアップグレードの自動変化しない%CHARGE%を1つ消費する。%LINEBREAK%<strong>アクション:</strong> 装備したアップグレードの自動変化しない%CHARGE%を1つ回復するために、シールドを2つ消費する。"""
         '"Genius"':
            display_name: """“Genius”"""
            text: """君がマニューバを完全に実行した後、もし君がこのラウンドデバイスを投下か射出していないなら、君は爆弾を1つ投下しても良い。"""
