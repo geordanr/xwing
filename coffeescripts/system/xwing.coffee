@@ -4528,7 +4528,7 @@ class Ship
                         when "Standard"
                             if @data.name in exportObj.epicExclusionsList then return false
                 when "Faction"
-                    if @builder.faction != r[1] then return false
+                    if @pilot.faction != r[1] then return false
         return true
 
     doesSlotExist: (slot) ->
