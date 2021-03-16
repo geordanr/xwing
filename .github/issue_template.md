@@ -2,7 +2,6 @@
 If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times. 
 
 **Note 1:** If you can't log in on safari, you may need to set your cookies settings to accept 3rd party cookies.
-**Note 2:** There is a minor problem with saving multi-faction lists that results in all your saved lists being inaccessible. it will be resolved in the next few days, sorry for the inconvience.
 
 ### Expected Behavior
 
