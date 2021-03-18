@@ -9714,6 +9714,26 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
+        {
+            name: "Tápusk"
+            id: 474
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "HWK-290"
+            skill: 5
+            charge: 2
+            recurring: 1
+            points: 200
+            slots: [
+                "Talent"
+                "Crew"
+                "Device"
+                "Illicit"
+                "Modification"
+                "Modification"
+                "Title"
+            ]
+        }
     ]
 
     upgradesById: [
