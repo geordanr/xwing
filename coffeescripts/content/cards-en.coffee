@@ -1517,8 +1517,7 @@ exportObj.cardLoaders.English = () ->
         "Ciena Ree":
            text: """After you perform an attack, if the defender was destroyed, gain 1 stress token. %LINEBREAK% After a friendly ship at range 0-3 is destroyed, remove 1 stress token. %LINEBREAK%<strong>Autothrusters:</strong> After you perform an action, you may perform a red %BARRELROLL% or red %BOOST% action."""
         "Lieutenant Lorrir":
-           text: """
-           %LINEBREAK%<strong>Autothrusters:</strong> After you perform an action, you may perform a red %BARRELROLL% or red %BOOST% action."""
+           text: """While you barrel roll, you must use the, you <b>must</b> use the (%BANKLEFT% or %BANKRIGHT%) template instead of the %STRAIGHT% template. %LINEBREAK%<strong>Autothrusters:</strong> After you perform an action, you may perform a red %BARRELROLL% or red %BOOST% action."""
 
         "Kanan Jarrus (HWK-290)":
            display_name: """Kanan Jarrus"""
