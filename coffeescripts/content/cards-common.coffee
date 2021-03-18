@@ -1833,6 +1833,33 @@ exportObj.basicCardData = ->
                 [ 0, 0, 3, 0, 0]
                 [ 0, 0, 3, 0, 0]
             ]
+        "Trident-class Assault Ship":
+            name: "Trident-class Assault Ship"
+            xws: "Trident-class Assault Ship".canonicalize()
+            factions: ["Separatist Alliance", "Scum and Villainy"]
+            huge: true
+            attack: 3
+            agility: 0
+            hull: 10
+            shields: 4
+            shieldrecurr: 1
+            energy: 3
+            energyrecurr: 2
+            actions: [
+                "Focus"
+                "R-Evade"
+                "R-Reinforce"
+                "Lock"
+                "R-Coordinate"
+            ]
+            maneuvers: [
+                [ 0, 3, 3, 3, 0]
+                [ 0, 2, 1, 2, 0]
+                [ 0, 2, 1, 2, 0]
+                [ 0, 3, 2, 3, 0]
+                [ 0, 0, 3, 0, 0]
+                [ 0, 0, 3, 0, 0]
+            ]
 
     # name field is for convenience only
     pilotsById: [
