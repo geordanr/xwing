@@ -9664,7 +9664,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Force"
-                "Sensor"
+                "Talent"
                 "Cannon"
                 "Missile"            
                 "Configuration"
@@ -13663,6 +13663,14 @@ exportObj.basicCardData = ->
             charge: 2
             recurring: 1
             faction: "Scum and Villainy"
+        }
+        {
+            name: "Interloper Turn"
+            id: 387
+            points: 200
+            slot: "Talent"
+            recurring: 1
+            ship: "TIE Defender"
         }
         
     ]
