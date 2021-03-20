@@ -1833,6 +1833,33 @@ exportObj.basicCardData = ->
                 [ 0, 0, 3, 0, 0]
                 [ 0, 0, 3, 0, 0]
             ]
+        "Trident-class Assault Ship":
+            name: "Trident-class Assault Ship"
+            xws: "Trident-class Assault Ship".canonicalize()
+            factions: ["Separatist Alliance", "Scum and Villainy"]
+            huge: true
+            attack: 3
+            agility: 0
+            hull: 10
+            shields: 4
+            shieldrecurr: 1
+            energy: 3
+            energyrecurr: 2
+            actions: [
+                "Focus"
+                "R-Evade"
+                "R-Reinforce"
+                "Lock"
+                "R-Coordinate"
+            ]
+            maneuvers: [
+                [ 0, 3, 3, 3, 0]
+                [ 0, 2, 1, 2, 0]
+                [ 0, 2, 1, 2, 0]
+                [ 0, 3, 2, 3, 0]
+                [ 0, 0, 3, 0, 0]
+                [ 0, 0, 3, 0, 0]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -4350,6 +4377,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Dalan Oberos (StarViper)"
+            canonical_name: 'Dalan Oberos'.canonicalize()
             id: 149
             unique: true
             xws: "dalanoberos-starviperclassattackplatform"
@@ -9636,7 +9664,7 @@ exportObj.basicCardData = ->
             points: 200
             slots: [
                 "Force"
-                "Sensor"
+                "Talent"
                 "Cannon"
                 "Missile"            
                 "Configuration"
@@ -9700,6 +9728,26 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "HWK-290"
             skill: 3
+            charge: 2
+            recurring: 1
+            points: 200
+            slots: [
+                "Talent"
+                "Crew"
+                "Device"
+                "Illicit"
+                "Modification"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "Tápusk"
+            id: 474
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "HWK-290"
+            skill: 5
             charge: 2
             recurring: 1
             points: 200
@@ -13615,6 +13663,14 @@ exportObj.basicCardData = ->
             charge: 2
             recurring: 1
             faction: "Scum and Villainy"
+        }
+        {
+            name: "Interloper Turn"
+            id: 387
+            points: 200
+            slot: "Talent"
+            recurring: 1
+            ship: "TIE Defender"
         }
         
     ]
