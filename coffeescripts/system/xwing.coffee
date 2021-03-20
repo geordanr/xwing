@@ -4500,7 +4500,7 @@ class Ship
                         when "Huge" 
                             if not (@data.huge?) then return false
                 when "Action"
-                    if not ((r[1] in effective_stats.actions) or ("*#{r[1]}" in effective_stats.actions) or ("R-#{r[1]}" in effective_stats.actions)) then return false
+                    if not ((r[1] in effective_stats.actions) or ("*#{r[1]}" in effective_stats.actions) or ("F-#{r[1]}" in effective_stats.actions) or ("R-#{r[1]}" in effective_stats.actions)) then return false
                 when "Keyword"
                     if not (@checkKeyword(r[1])) then return false
                 when "Equipped"
