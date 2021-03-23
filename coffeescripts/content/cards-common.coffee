@@ -19954,6 +19954,7 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'TIE/rb Heavy', faction: 'Galactic Empire'}
     {name: 'VT-49 Decimator', faction: 'Galactic Empire'}
     {name: 'Firespray-31', faction: 'Scum and Villainy'}
+    {name: 'Y-Wing', faction: 'Scum and Villainy'}
     {name: 'Mining Guild TIE Fighter', faction: 'Scum and Villainy'}
     {name: 'Fang Fighter', faction: 'Scum and Villainy'}
     {name: 'JumpMaster 5000', faction: 'Scum and Villainy'}
@@ -20042,9 +20043,13 @@ exportObj.hyperspacePilotExclusions = [
 
 
     # Scum and Villainy
+    'Drea Renthal'
+    'Kavil'
     'Leema Kai'
     'Arliz Hadrassian'
     'Padric'
+    'Hired Gun'
+    'Crymorah Goon'
     'Boba Fett'
     'Kath Scarlet'
     'Emon Azzameen' 
@@ -20055,7 +20060,7 @@ exportObj.hyperspacePilotExclusions = [
     'Spice Runner'
     'Contracted Scout'
     'Tansarii Point Veteran'
-    'Sunny Bounder'
+    'Cartel Spacer'
     'Foreman Proach'
     'Mining Guild Surveyor'
     'Mining Guild Sentry'
