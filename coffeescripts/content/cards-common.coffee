@@ -20183,7 +20183,6 @@ exportObj.hyperspaceUpgradeExclusions = [
     # Galactic Empire
     'Admiral Sloane'
     'Ciena Ree'
-    'Darth Vader'
     'Director Krennic'
     'Grand Inquisitor'
     'Grand Moff Tarkin'
