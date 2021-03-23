@@ -3153,7 +3153,7 @@ class exportObj.SquadBuilder
         else if @collection?.checks.collectioncheck != "true"
             # console.log "collection check not enabled"
             return [true, []]
-        # @collection.reset()
+        @collection.reset()
         validity = true
         missingStuff = []
         for ship in @ships
