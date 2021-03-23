@@ -2490,6 +2490,10 @@ exportObj.cardLoaders.English = () ->
            text: """At the start of the End Phase, you may spend 2 %CHARGE% to choose a ship at range 0-1 with 1 or more circular tokens. During the End Phase, circular tokens are not removed from that ship."""
         "Interloper Turn":
            text: """Before you execute a speed 1-2 turn (%TURNLEFT% or %TURNRIGHT%) or speed 1-2 Koiogran Turn (%KTURN%), if you are at range 0-1 of an asteroid, structure, or huge ship, you may gain 1 tractor token."""
+        "Protectorate Gleb":
+           text: """After you coordinate, you may transfer 1 orange or red token to the ship you coordinated."""
+        "R4-B11":
+           text: """While you perform an attack, you may remove 1 orange or red token from the defender to reroll any number of defense dice"""
 
         # Epic upgrades
         "Admiral Ozzel":

@@ -48,12 +48,15 @@ exportObj.setupTranslationSupport = ->
         $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
             if language of exportObj.translations
                 $('.language-placeholder').text language
+                currentfaction = $.getParameterByName 'f'
                 for builder in builders
-                    await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
+                    if currentfaction == builder.faction
+                        builder.container.trigger 'xwing:beforeLanguageLoad'
+                    else
+                        await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
                 exportObj.loadCards language
                 for own selector, html of exportObj.translations[language].byCSSSelector
                     $(selector).html html
-                currentfaction = $.getParameterByName 'f'
                 for builder in builders
                     if currentfaction == builder.faction
                         builder.container.trigger 'xwing:afterLanguageLoad', language

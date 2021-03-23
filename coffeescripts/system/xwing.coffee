@@ -1218,7 +1218,7 @@ class exportObj.SquadBuilder
             @collection = collection
             # console.log "#{@faction}: Collection created, checking squad"
             @collection.onLanguageChange null, @language
-            # @checkCollection()
+            @checkCollection()
             @collection_button.removeClass 'd-none'
         .on 'xwing-collection:changed', (e, collection) =>
             # console.log "#{@faction}: Collection changed, checking squad"
@@ -1309,7 +1309,7 @@ class exportObj.SquadBuilder
                     
             # Notes, if present
             @printable_container.find('.printable-body').append $.trim """
-                <div class="version">Points Version: 1.8.0 November 2020</div>
+                <div class="version">Points Version: 1.9.0 March 2021</div>
             """            
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
@@ -3146,16 +3146,14 @@ class exportObj.SquadBuilder
         @current_obstacles
 
     isSquadPossibleWithCollection: ->
-        # console.log "#{@faction}: isSquadPossibleWithCollection()"
         # If the collection is uninitialized or empty, don't actually check it.
         if Object.keys(@collection?.expansions ? {}).length == 0
             # console.log "collection not ready or is empty"
             return [true, []]
-        @collection.reset()
-        if @collection?.checks.collectioncheck != "true"
+        else if @collection?.checks.collectioncheck != "true"
             # console.log "collection check not enabled"
             return [true, []]
-        @collection.reset()
+        # @collection.reset()
         validity = true
         missingStuff = []
         for ship in @ships
@@ -4500,7 +4498,7 @@ class Ship
                         when "Huge" 
                             if not (@data.huge?) then return false
                 when "Action"
-                    if not ((r[1] in effective_stats.actions) or ("*#{r[1]}" in effective_stats.actions) or ("R-#{r[1]}" in effective_stats.actions)) then return false
+                    if not ((r[1] in effective_stats.actions) or ("*#{r[1]}" in effective_stats.actions) or ("F-#{r[1]}" in effective_stats.actions) or ("R-#{r[1]}" in effective_stats.actions)) then return false
                 when "Keyword"
                     if not (@checkKeyword(r[1])) then return false
                 when "Equipped"
