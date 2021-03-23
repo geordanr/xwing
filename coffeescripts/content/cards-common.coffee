@@ -5747,6 +5747,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Torpedo"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -5762,6 +5763,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Torpedo"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -6507,6 +6509,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Torpedo"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -6522,6 +6525,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Torpedo"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -6551,6 +6555,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Torpedo"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -6565,6 +6570,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Torpedo"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -8220,6 +8226,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Torpedo"
                 "Missile"
+                "Configuration"
             ]
         }
         {
@@ -9611,6 +9618,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 40
             slots: [
+                "Talent"
                 "Modification"
                 "Modification"
                 "Configuration"
