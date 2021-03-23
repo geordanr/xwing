@@ -9330,6 +9330,7 @@ exportObj.basicCardData = ->
             id: 450
             unique: true
             faction: "Rebel Alliance"
+            keyword: ["Spectre"]
             ship: "B-Wing"
             skill: 6
             points: 55
@@ -9351,8 +9352,9 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             ship: "A-Wing"
+            keyword: ["Spectre"]
             skill: 6
-            points: 41
+            points: 42
             slots: [
                 "Talent"
                 "Talent"
@@ -9382,9 +9384,10 @@ exportObj.basicCardData = ->
             id: 453
             unique: true
             faction: "Rebel Alliance"
+            keyword: ["Mandalorian"]
             ship: "A-Wing"
             skill: 3
-            points: 36
+            points: 37
             slots: [
                 "Talent"
                 "Talent"
@@ -9447,6 +9450,7 @@ exportObj.basicCardData = ->
             id: 457
             unique: true
             faction: "Scum and Villainy"
+            keyword: ["Light Side", "Jedi"]
             ship: "HWK-290"
             skill: 3
             force: 1
@@ -9553,12 +9557,13 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             ship: "A-Wing"
+            keyword: ["Light Side"]
             skill: 5
             force: 3
             points: 49
             slots: [
                 "Force"
-                "Talent"
+                "Force"
                 "Missile"
                 "Configuration"
             ]
@@ -9649,6 +9654,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Empire"
             ship: "TIE Defender"
+            keyword: ["Dark Side", "Sith"]
             skill: 6
             force: 3
             points: 115
@@ -19937,7 +19943,6 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'A-Wing', faction: 'Rebel Alliance'}
     {name: 'Y-Wing', faction: 'Rebel Alliance'}
     {name: 'VCX-100', faction: 'Rebel Alliance'}
-    {name: 'HWK-290', faction: 'Rebel Alliance'}
     {name: 'Sheathipede-Class Shuttle', faction: 'Rebel Alliance'}
     {name: 'TIE Advanced', faction: 'Galactic Empire'}
     {name: 'TIE Advanced Prototype', faction: 'Galactic Empire'}
@@ -20008,15 +20013,18 @@ exportObj.hyperspacePilotExclusions = [
     'Black Squadron Ace'
     'Obsidian Squadron Pilot'
     'Academy Pilot'
-    'Soontir Fel'
-    'Turr Phennir'
+    'Saber Squadron Ace'
+    'Alpha Squadron Pilot'
     'Scarif Base Pilot'
     'Grand Inquisitor'
     'Fifth Brother'
     'Seventh Sister'
     'Scarif Base Pilot'
+    'Darth Vader (TIE Defender)'
     'Colonel Vessery'
+    'Vult Skerris'
     'Countess Ryad'
+    'Captain Dobbs'
     'Rexler Brath'
     '"Rampage"'
     'Lyttan Dree'
