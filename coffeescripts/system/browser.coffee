@@ -699,7 +699,7 @@ class exportObj.CardBrowser
             
             for slot in required_slots
                 # special case for hardpoints
-                if not(((slot == "Torpedo") or (slot == "Missile") or (slot == "Cannon")) and ("HardpointShip" in slots))
+                if not(((slot == "Torpedo") or (slot == "Missile") or (slot == "Cannon")) and (slots? and ("HardpointShip" in slots)))
                     return false unless slots? and slot in slots
                 # check for duplciates
                 if @duplicateslots.checked
