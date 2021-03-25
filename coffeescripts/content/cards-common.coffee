@@ -10234,6 +10234,7 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 10
             unique: true
+            keyword: ["Dark Side"]
             faction: ["Scum and Villainy", "Rebel Alliance"]
             force: 1
             restrictions: [
@@ -13624,6 +13625,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Command"
             faction: "Rebel Alliance"
+            ship: "VCX-100"
         }
         {
             name: "Disciplined"
@@ -13639,6 +13641,7 @@ exportObj.basicCardData = ->
             max_per_squad: 2
             slot: "Command"
             faction: "Galactic Empire"
+            ship: ["TIE Fighter", "TIE Interceptor"]
         }
         {
             name: "Shadow Wing"
@@ -13657,7 +13660,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             restrictions: [
                 ["isUnique", true]
-                ["Format", "Standard"]
+                ["Base", "Standard"]
             ]
         }
         {
@@ -13668,7 +13671,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             restrictions: [
                 ["isUnique", true]
-                ["Format", "Standard"]
+                ["Base", "Standard"]
             ]
         }
         {
