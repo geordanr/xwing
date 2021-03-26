@@ -2075,7 +2075,7 @@ exportObj.basicCardData = ->
             ship: "TIE Fighter"
             skill: 3
             points: 28
-            keyword: ["Mandalorian","Spectre"]
+            keyword: ["Spectre"]
             slots: [
                 "Talent"
                 "Modification"
@@ -3008,7 +3008,7 @@ exportObj.basicCardData = ->
             ship: "Sheathipede-Class Shuttle"
             skill: 6
             points: 50
-            keyword: ["Mandalorian"]
+            keyword: ["Mandalorian","Spectre"]
             slots: [
                 "Talent"
                 "Crew"
@@ -4070,6 +4070,7 @@ exportObj.basicCardData = ->
             ship: "M12-L Kimogila Fighter"
             skill: 4
             points: 48
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -4088,6 +4089,7 @@ exportObj.basicCardData = ->
             skill: 3
             charge: 2
             points: 45
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -8328,6 +8330,7 @@ exportObj.basicCardData = ->
             skill: 4
             ship: "VCX-100"
             points: 68
+            keyword: ["Spectre"]
             slots: [
                 "Talent"
                 "Torpedo"
@@ -8945,6 +8948,7 @@ exportObj.basicCardData = ->
             skill: 3
             ship: "Firespray-31"
             points: 70
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Cannon"
                 "Missile"
@@ -8964,6 +8968,7 @@ exportObj.basicCardData = ->
             charge: 4
             ship: "Firespray-31"
             points: 76
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Cannon"
@@ -8984,6 +8989,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "Firespray-31"
             points: 79
+            keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Cannon"
@@ -9015,6 +9021,7 @@ exportObj.basicCardData = ->
             skill: 3
             ship: "Nimbus-class V-Wing"
             points: 29
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Astromech"
@@ -9047,6 +9054,7 @@ exportObj.basicCardData = ->
             points: 32
             charge: 1
             recurring: 1
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Astromech"
@@ -9062,6 +9070,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "Nimbus-class V-Wing"
             points: 33
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Astromech"
@@ -9079,6 +9088,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "Nimbus-class V-Wing"
             points: 32
+            keyword: ["Clone"]
             slots: [
                 "Talent"
                 "Astromech"
@@ -9625,6 +9635,8 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Interceptor"
             skill: 2
+            charge: 1
+            recurring: 1
             points: 40
             slots: [
                 "Talent"
@@ -12102,7 +12114,7 @@ exportObj.basicCardData = ->
             name: "Angled Deflectors"
             id: 247
             slot: "Modification"
-            pointsarray: [6,3,2,1]
+            pointsarray: [6,3,1,1]
             variableagility: true
             restrictions: [
                 ["ShieldsGreaterThan", 0]
@@ -12190,7 +12202,7 @@ exportObj.basicCardData = ->
             name: "Snap Shot"
             id: 256
             slot: "Talent"
-            pointsarray: [7,8,9,12]
+            pointsarray: [7,8,9,10]
             variablebase: true
             attack: 2
             range: """2"""
@@ -13422,7 +13434,7 @@ exportObj.basicCardData = ->
         {
             name: "Jedi Commander"
             id: 361
-            points: 5
+            points: 3
             ship: ["Eta-2 Actis","Delta-7 Aethersprite"]
             slot: "Command"
         }
@@ -20089,7 +20101,6 @@ exportObj.hyperspacePilotExclusions = [
     'Contracted Scout'
     'Tansarii Point Veteran'
     'Cartel Spacer'
-    'Foreman Proach'
     'Mining Guild Surveyor'
     'Mining Guild Sentry'
     'Freighter Captain'
@@ -20298,7 +20309,7 @@ exportObj.hyperspaceUpgradeExclusions = [
     'Veteran Tail Gunner'
     'Veteran Turret Gunner'
     'Cloaking Device'
-    'Coaxiium Hyperfuel'
+    'Coaxium Hyperfuel'
     'Feedback Array'
     'Inertial Dampeners'
     'Cluster Missiles'
