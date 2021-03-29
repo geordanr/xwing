@@ -13568,7 +13568,7 @@ exportObj.basicCardData = ->
         {
             name: "Sensitive Controls"
             id: 374
-            points: 0
+            points: 2
             slot: "Configuration"
             standardized: true
             restrictions: [
