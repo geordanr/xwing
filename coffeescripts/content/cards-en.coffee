@@ -2460,7 +2460,7 @@ exportObj.cardLoaders.English = () ->
         "B6 Blade Wing Prototype (Epic)":
            text: """Attack (%LOCK%): Gain 1 ion token to perform this attack. If this attack hits, the defender suffers 1 additional %HIT%/%CRIT% damage for each matching uncanceled result after the first."""
         "TIE Defender Elite":
-           text: """Decrease the difficulty of your turn (%TURNLEFT% or %TURNRIGHT%) maneuvers. Increase the difficulty of your Koiogran Turn (%KTURN%) maneuvers. Replace your <strong>Full Throttle</strong> ship ability with the following: %LINEBREAK% <strong>Advanced Fire Control:</strong> After you perform a %CANNON% or %MISSILE% attack, if you have a lock on the defender, you may perform a bonus primary attack agaisnt the defender."""
+           text: """Decrease the difficulty of your turn (%TURNLEFT% or %TURNRIGHT%) maneuvers. Increase the difficulty of your Koiogran Turn (%KTURN%) maneuvers. Replace your <strong>Full Throttle</strong> ship ability with the following: %LINEBREAK% <strong>Advanced Fire Control:</strong> After you perform a %CANNON% or %MISSILE% attack, if you have a lock on the defender, you may perform a bonus primary attack against the defender."""
         "Sensitive Controls":
            text: """Replace your <strong>Autothrusters</strong> ship ability with the following: %LINEBREAK%<strong>Sensitive Controls:</strong> During the System Phase, you may perform a red %BARRELROLL% or red %BOOST% action."""
         "Cutthroat":
