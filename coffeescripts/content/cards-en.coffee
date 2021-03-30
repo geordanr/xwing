@@ -1529,7 +1529,7 @@ exportObj.cardLoaders.English = () ->
         "Arliz Hadrassian":
            text: """While you perform a %FRONTARC% attack, if you are damaged, you may change 1 of your %FOCUS% results to a %CRIT% result. %LINEBREAK% While you defend, if you are damaged, you <b>must</b> change 1 of your %FOCUS% results to a blank result."""
         "Leema Kai":
-           text: """Before you engage, if you are not in any ship's %FRONTARC%, you may acquire a lock on an enemy ship in your %FULLFRONTARC%."""
+           text: """Before you engage, if you are not in any enemy ship's %FRONTARC%, you may acquire a lock on an enemy ship in your %FULLFRONTARC%."""
         "Padric":
            text: """After a friendly device that you have locked detonates, each enemy ship at range 0-1 of that device gains 1 strain token."""
 
