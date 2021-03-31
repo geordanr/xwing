@@ -591,7 +591,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Blue Squadron Scout'
             type: 'pilot'
-            count: 2
+            count: 1
         }
         {
             name: 'Esege Tuketu'
@@ -681,7 +681,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Wild Space Fringer'
             type: 'pilot'
-            count: 1
+            count: 2
         }
         {
             name: 'Crack Shot'
@@ -8436,6 +8436,592 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Ion Limiter Override'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Phoenix Cell Squadron Pack": [
+        {
+            name: 'A-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'B-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Hera Syndulla (B-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Netrem Pollard'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blade Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Hera Syndulla (A-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ahsoka Tano (A-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wedge Antilles (A-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sabine Wren (A-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shara Bey (A-Wing)'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Derek Klivian'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Green Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Phoenix Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Phoenix Squadron'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Deadeye Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hopeful'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Saturation Salvo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Starbird Slash'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tierfon Belly Run'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Extreme Maneuvers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Instinctive Aim'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Patience'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Sense'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Passive Sensors'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Autoblasters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Synced Laser Cannons'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Mag-Pulse Warheads'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'XX-23 S-Thread Tracers'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Sabine Wren (Gunner)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Suppressive Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Weapons Systems Officer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'B6 Blade Wing Prototype (Epic)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'B6 Blade Wing Prototype'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Stabilized S-Foils'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Vectored Cannons (RZ-1)'
+            type: 'upgrade'
+            count: 4
+        }
+    ]
+    "Skystrike Academy Squadron Pack": [
+        {
+            name: 'TIE Interceptor'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Defender'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Ciena Ree'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Vult Skerris (TIE Interceptor)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Commandant Goran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gideon Hask (TIE Interceptor)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Lorrir'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nash Windrider'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Saber Squadron Ace'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Alpha Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Darth Vader (TIE Defender)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Vult Skerris'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Dobbs'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Onyx Squadron Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Delta Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shadow Wing'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Skystrike Academy Class'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Composure'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Disciplined'
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: 'Interloper Turn'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Extreme Maneuvers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Instinctive Aim'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Sense'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Passive Sensors'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Autoblasters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Mag-Pulse Warheads'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'XX-23 S-Thread Tracers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Precision Ion Engines'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Static Discharge Vanes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Targeting Computer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Sensitive Controls'
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: 'TIE Defender Elite'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    "Fugitives and Collaborators Squadron Pack": [
+        {
+            name: 'Y-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'HWK-290'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Leema Kai'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Arliz Hadrassian'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Padric'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Amaxine Warrior'
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: 'Jinata Security Officer'
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: 'Gamut Key'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kanan Jarrus (HWK-290)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tápusk'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Spice Runner'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Bounty'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'In It For The Money'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cutthroat'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Deadeye Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Saturation Salvo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tierfon Belly Run'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Extreme Maneuvers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Patience'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Automated Target Priority'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Dorsal Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Gamut Key'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hondo Ohnaka'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jango Fett'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Protectorate Gleb'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Zam Wesell'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Boba Fett (Separatist)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Suppressive Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Weapons Systems Officer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: '"Genius"'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R4-B11'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5-TK'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Concussion Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thermal Detonators'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'False Transponder Codes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Engine Upgrade'
             type: 'upgrade'
             count: 1
         }
