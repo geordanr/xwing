@@ -946,12 +946,12 @@ exportObj.manifestByExpansion =
         {
             name: 'Seasoned Navigator'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Tactical Officer'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: '"Zeb" Orrelios'

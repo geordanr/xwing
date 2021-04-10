@@ -8350,6 +8350,7 @@ exportObj.basicCardData = ->
             unique: true
             skill: 5
             ship: "YT-1300"
+            keyword: ["Light Side"]
             points: 77
             force: 1
             slots: [
@@ -9812,7 +9813,7 @@ exportObj.basicCardData = ->
             name: "R2 Astromech"
             id: 2
             slot: "Astromech"
-            pointsarray: [3,4,5,8]
+            pointsarray: [3,3,5,8]
             variableagility: true
             charge: 2
         }

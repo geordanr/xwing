@@ -1499,7 +1499,7 @@ exportObj.cardLoaders.English = () ->
 
         "Darth Vader (TIE Defender)":
            display_name: """Darth Vader"""
-           text: """You cannot spend %FORCE% charges except while attacking. %LINEBREAK% When you perform an attack, you may spend 1 %FORCE% to change 1 blank result to a %HIT% result. %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+           text: """You cannot spend %FORCE% charges except while attacking. %LINEBREAK% While you perform an attack, you may spend 1 %FORCE% to change 1 blank result to a %HIT% result. %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Captain Dobbs":
            text: """While another friendly ship at range 0-1 defends, before the Neutralize Results step, if you are in the attack arc and are not ionized, you may gain 1 ion token to cancel 1 %HIT% result. %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Vult Skerris":
