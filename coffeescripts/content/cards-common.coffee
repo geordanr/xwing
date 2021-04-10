@@ -19861,7 +19861,7 @@ exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, 
                 exportObj.upgrades[upgrade_name][field] = translation
             catch e
                 console.error "Cannot find translation for attribute #{field} for upgrade #{upgrade_name}. Please report this Issue. "
-                # throw e
+                throw e
 
     for condition_name, translations of condition_translations
         exportObj.fixIcons translations
@@ -19870,7 +19870,7 @@ exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, 
                 exportObj.conditions[condition_name][field] = translation
             catch e
                 console.error "Cannot find translation for attribute #{field} for condition #{condition_name}. Please report this Issue. "
-                # throw e
+                throw e
 
     for pilot_name, translations of pilot_translations
         exportObj.fixIcons translations
@@ -19879,7 +19879,7 @@ exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, 
                 exportObj.pilots[pilot_name][field] = translation
             catch e
                 console.error "Cannot find translation for attribute #{field} for pilot #{pilot_name}. Please report this Issue. "
-                # throw e
+                throw e
 
 exportObj.fixIcons = (data) ->
     if data.text?
