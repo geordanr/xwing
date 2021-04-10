@@ -1191,14 +1191,15 @@ class exportObj.SquadBuilder
             @pretranslation_serialized = @serialize()
             cb()
         .on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
-            @language = language
-            old_dirty = @current_squad.dirty
-            if @pretranslation_serialized.length?
-                @loadFromSerialized @pretranslation_serialized
-            for ship in @ships
-                ship.updateSelections()
-            @current_squad.dirty = old_dirty
-            @pretranslation_serialized = undefined
+            if @language != language
+                @language = language
+                old_dirty = @current_squad.dirty
+                if @pretranslation_serialized.length?
+                    @loadFromSerialized @pretranslation_serialized
+                for ship in @ships
+                    ship.updateSelections()
+                @current_squad.dirty = old_dirty
+                @pretranslation_serialized = undefined
             cb()
         # Recently moved this here.  Did this ever work?
         .on 'xwing:shipUpdated', (e, cb=$.noop) =>

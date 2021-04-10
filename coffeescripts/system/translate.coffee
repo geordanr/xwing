@@ -40,9 +40,12 @@ exportObj.setupTranslationSupport = ->
         $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
             if language of exportObj.translations
                 $('.language-placeholder').text language
+                current_language = ""
                 for builder in builders
+                    current_language = builder.language
                     await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
-                exportObj.loadCards language
+                if language != current_language
+                    exportObj.loadCards language
                 for own selector, html of exportObj.translations[language].byCSSSelector
                     $(selector).html html
                 for builder in builders
@@ -56,6 +59,7 @@ exportObj.setupTranslationSupport = ->
     # Set up the common card data (e.g. stats)
     exportObj.setupCommonCardData basic_cards
 
+    exportObj.loadCards DFL_LANGUAGE
     $(exportObj).trigger 'xwing:languageChanged', DFL_LANGUAGE
 
 exportObj.setupTranslationUI = (backend) ->
