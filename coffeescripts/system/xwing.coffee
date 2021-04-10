@@ -1518,14 +1518,6 @@ class exportObj.SquadBuilder
         
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]Total: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]View in Yet Another Squad Builder 2.0[/url]"""
 
-        @xws_textarea.val $.trim JSON.stringify(@toXWS())
-        $('#xws-qrcode-container').text ''
-        $('#xws-qrcode-container').qrcode
-            render: 'canvas'
-            text: JSON.stringify(@toMinimalXWS())
-            ec: 'L'
-            size: 128
-
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
 
@@ -1571,6 +1563,7 @@ class exportObj.SquadBuilder
         @container.trigger 'xwing-backend:squadNameChanged'
 
     onSquadDirtinessChanged: () =>
+        @current_squad.name = $.trim(@squad_name_input.val())
         @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
         @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
         @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
@@ -1578,6 +1571,15 @@ class exportObj.SquadBuilder
             $('meta[property="og:description"]').attr("content", "X-Wing Squadron by YASB 2.0: " + @current_squad.name + ": " + @describeSquad())
         else
             $('meta[property="og:description"]').attr("content", "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
+        
+        # Moved XWS update to whenever the dirtyness changed rather than on points updated.
+        @xws_textarea.val $.trim JSON.stringify(@toXWS())
+        $('#xws-qrcode-container').text ''
+        $('#xws-qrcode-container').qrcode
+            render: 'canvas'
+            text: JSON.stringify(@toMinimalXWS())
+            ec: 'L'
+            size: 128
 
     onSquadNameChanged: () =>
         if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
@@ -3192,7 +3194,7 @@ class exportObj.SquadBuilder
             points: @total_points
             vendor:
                 yasb:
-                    builder: 'Yet Another Squad Builder 2.0'
+                    builder: 'YASB 2.0'
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
             version: '2.0.0'
