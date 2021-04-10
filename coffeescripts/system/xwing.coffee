@@ -2172,8 +2172,8 @@ class exportObj.SquadBuilder
         for action in actions
             color = ""
             prefix = seperation
-            if "Droid" in keyword
-                action = action.replace('Focus', 'Calculate')
+            # if "Droid" in keyword
+            #    action = action.replace('Focus', 'Calculate')
             # Search and filter each type of action by its prefix and then reformat it for html
             if action.search('> ') != -1
                 action = action.replace(/> /gi, '')
