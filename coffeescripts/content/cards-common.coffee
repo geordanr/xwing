@@ -20362,6 +20362,7 @@ exportObj.epicExclusionsList = [
     'Gozanti-class Cruiser'
     'C-ROC Cruiser'
     'Syliure-class Hyperspace Ring'
+    'Trident-class Assault Ship'
 ]
 
 
