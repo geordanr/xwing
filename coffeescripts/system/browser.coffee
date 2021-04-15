@@ -666,6 +666,7 @@ class exportObj.CardBrowser
                    if faction in selected_factions
                        faction_matches = true
                        break
+               return false unless faction_matches
             if card.orig_type == 'Ship'
                faction_matches = false
                for faction in card.data.factions
