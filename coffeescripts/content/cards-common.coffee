@@ -13718,6 +13718,7 @@ exportObj.basicCardData = ->
             name: "R4-B11"
             id: 389
             points: 3
+            unique: true
             slot: "Astromech"
             faction: "Scum and Villainy"
         }

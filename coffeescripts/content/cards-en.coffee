@@ -1499,7 +1499,7 @@ exportObj.cardLoaders.English = () ->
 
         "Darth Vader (TIE Defender)":
            display_name: """Darth Vader"""
-           text: """You cannot spend %FORCE% charges except while attacking. %LINEBREAK% While you perform an attack, you may spend 1 %FORCE% to change 1 blank result to a %HIT% result. %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+           text: """You cannot spend %FORCE% except while attacking. %LINEBREAK% While you perform an attack, you may spend 1 %FORCE% to change 1 blank result to a %HIT% result. %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Captain Dobbs":
            text: """While another friendly ship at range 0-1 defends, before the Neutralize Results step, if you are in the attack arc and are not ionized, you may gain 1 ion token to cancel 1 %HIT% result. %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Vult Skerris":
@@ -1919,7 +1919,7 @@ exportObj.cardLoaders.English = () ->
            text: """You have the pilot ability of each other friendly ship with the <strong>IG-2000</strong> upgrade.%LINEBREAK%After you perform a %CALCULATE% action, gain 1 calculate token."""
         "Ion Bombs":
            display_name: """Ion Bombs"""
-           text: """During the System Phase, you may spend 1 %CHARGE% to drop an Ion Bomb using the [1 %STRAIGHT%] template."""
+           text: """<strong>Bomb</strong>%LINEBREAK% During the System Phase, you may spend 1 %CHARGE% to drop an Ion Bomb using the [1 %STRAIGHT%] template."""
         "ISB Slicer":
            display_name: """ISB Slicer"""
            text: """During the End Phase, enemy ships at range 1-2 cannot remove jam tokens."""
@@ -2345,7 +2345,7 @@ exportObj.cardLoaders.English = () ->
         "Proud Tradition":
            text: """<strong>Proud Tradition</strong>%LINEBREAK%<strong>Setup:</strong> Equip this side faceup. %LINEBREAK% While you have 2 or fewer stress tokens, you may perform %FOCUS% actions even while stressed. After you perform an attack, if you are stressed, the defender may spend 1 focus token or suffer 1 %CRIT% damage to flip this card. %LINEBREAK% <strong>False Tradition</strong>%LINEBREAK% Treat your %FOCUS% actions as red."""
         "Cluster Mines":
-           text: """During the System Phase, you may spend 1 %CHARGE% to drop a Cluster Mine set using the [1 %STRAIGHT%] template. %LINEBREAK% This card's %CHARGE% cannot be recovered."""
+           text: """<strong>Mine</strong>%LINEBREAK% During the System Phase, you may spend 1 %CHARGE% to drop a Cluster Mine set using the [1 %STRAIGHT%] template. %LINEBREAK% This card's %CHARGE% cannot be recovered."""
         "Kaz's Fireball":
            text: """<strong>Setup:</strong> When you resolve <strong>Explosion with Wings</strong>, you may search the damage deck and choose a damage card with the <b>Ship</b> trait: you are dealt that card instead. Then, shuffle the damage deck. %LINEBREAK% You can perform actions of damage cards even while ionized."""
         "Agent Terex":
@@ -2425,7 +2425,7 @@ exportObj.cardLoaders.English = () ->
         'Alpha-3E "Esk"':
            text: """While you perform a primary attack, before rolling attack dice, you may spend 2 charges. If you do, your %CRIT% results inflict ion tokens instead of damage."""
         "Thermal Detonators":
-           text: """During the System Phase, you may spend up to 2 %CHARGE% to drop that many Thermal Detonators using the [1 %STRAIGHT%] or [2 %STRAIGHT%] template. Each must be placed using a different template. %LINEBREAK% When you reload this card, recover 1 additional %CHARGE%."""
+           text: """<strong>Bomb</strong>%LINEBREAK% During the System Phase, you may spend up to 2 %CHARGE% to drop that many Thermal Detonators using the [1 %STRAIGHT%] or [2 %STRAIGHT%] template. Each must be placed using a different template. %LINEBREAK% When you reload this card, recover 1 additional %CHARGE%."""
         "R7-A7":
            text: """While you perform an attack, you may spend 1 %CHARGE% to change 1 %HIT% result to a %CRIT% result."""
         "Q7 Astromech":
