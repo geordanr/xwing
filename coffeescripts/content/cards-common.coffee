@@ -19714,6 +19714,105 @@ exportObj.basicCardData = ->
                 "Millennium Falcon"
             ]
         }
+        {
+            id: 480 
+            faction: "Rebel Alliance"
+            pilot: "Blade Squadron Veteran"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Jamming Beam"
+                "Ion Cannon"
+            ]
+        }
+        {
+            id: 481 
+            faction: "Rebel Alliance"
+            pilot: "Blue Squadron Pilot"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Adv. Proton Torpedoes"
+            ]
+        }
+        {
+            id: 482 
+            faction: "Rebel Alliance"
+            pilot: "Blue Squadron Pilot"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Passive Sensors"
+                "Stabilized S-Foils"
+                "Autoblasters"
+            ]
+        }
+        {
+            id: 483 
+            faction: "Rebel Alliance"
+            pilot: "Netrem Pollard"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Debris Gambit"
+                "Stabilized S-Foils"
+                "Autoblasters"
+            ]
+        }
+        {
+            id: 484
+            faction: "Rebel Alliance"
+            pilot: "Ten Numb"
+            ship: "B-Wing"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 485
+            faction: "Rebel Alliance"
+            pilot: "Blade Squadron Veteran"
+            ship: "B-Wing"
+            threat: 3
+            upgrades: [
+                "Saturation Salvo"
+                "Plasma Torpedoes"
+                "Stabilized S-Foils"
+                "Passive Sensors"
+                "Shield Upgrade"
+                "Synced Laser Cannons"
+            ]
+        }
+        {
+            id: 486
+            faction: "Rebel Alliance"
+            pilot: "Braylen Stramm"
+            ship: "B-Wing"
+            threat: 3
+            upgrades: [
+                "Squad Leader"
+                "Jamming Beam"
+                "Heavy Laser Cannon"
+                "Electronic Baffle"
+            ]
+        }
+        {
+            id: 487
+            faction: "Rebel Alliance"
+            pilot: "Hera Syndulla (B-Wing)"
+            ship: "B-Wing"
+            threat: 3
+            upgrades: [
+                "B6 Blade Wing Prototype"
+                "Passive Sensors"
+                "Deadeye Shot"
+                "Sabine Wren (Gunner)"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
