@@ -19496,10 +19496,10 @@ exportObj.basicCardData = ->
             ship: "TIE/rb Heavy"
             threat: 2
             upgrades: [
-                "Deadye Shot"
+                "Deadeye Shot"
                 "Ion Cannon"
                 "Heavy Laser Cannon"
-                "Maneuver-Assists MGK-300"
+                "Maneuver-Assist MGK-300"
             ]
         }
         {
@@ -19512,7 +19512,7 @@ exportObj.basicCardData = ->
                 "Ion Limiter Override"
                 "Shield Upgrade"
                 "Heavy Laser Cannon"
-                "Maneuver-Assists MGK-300"
+                "Maneuver-Assist MGK-300"
             ]
         }
         {
@@ -19524,7 +19524,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Predator"
                 "Afterburners"
-                "Maneuver-Assists MGK-300"
+                "Maneuver-Assist MGK-300"
                 "Synced Laser Cannons"
                 "Ablative Plating"
             ]
@@ -20599,6 +20599,18 @@ exportObj.basicCardData = ->
         }
         {
             id: 552 
+            faction: "Resistance"
+            pilot: "Wrobie Tyce"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Starbird Slash"
+                "Elusive"
+                "Concussion Missiles"
+            ]
+        }
+        {
+            id: 553 
             faction: "Resistance"
             pilot: "Wrobie Tyce"
             ship: "RZ-2 A-Wing"
