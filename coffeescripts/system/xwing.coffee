@@ -3379,13 +3379,18 @@ class Ship
         if idx < 0
             throw new Error("Ship not registered with builder")
         @builder.ships.splice idx, 1
+        # remove all wingmates, if we are wingleader
         if @wingmates.length > 0
             @setWingmates(0)
-        else if @linkedShip != null
-            @linkedShip.linkedShip = null
-            if @linkedShip.wingmates?.length > 0
+        # check if there is a linked ship
+        if @linkedShip != null
+            # remove us from the wing, if we are part of a wing
+            if @linkedShip.wingmates?.length > 0 and this in @linkedShip.wingmates
                 @linkedShip.removeFromWing(this)
+            # we are not part of a wing, so we just want to also remove the linked ship
             else
+                # unlink us from the linked ship, so we are not in a infinite recursive trap (it will otherwise attempt to remove us)
+                @linkedShip.linkedShip = null
                 await @builder.removeShip @linkedShip, defer()
         cb()
 
@@ -3679,8 +3684,8 @@ class Ship
             # nothing to do, we already have correct number of wingmates. 
             return
         if !@wingmates? || @wingmates.length == 0
-            # if no wingmates are set yet, use the linked buddy
-            @wingmates = [@linkedShip]
+            # if no wingmates are set yet, create an empty list
+            @wingmates = []
         quickbuild = exportObj.quickbuildsById[@quickbuildId]
         while @wingmates.length < wingmates 
             # create more wingmates
@@ -3693,7 +3698,7 @@ class Ship
                 @builder.addShip()
             newMate.linkedShip = this # link new mate to us
             @wingmates.push(newMate)
-            newMate.setPilotById quickbuild.linkedId
+            newMate.setPilotById quickbuild.wingmateId
             # for pairs the first selected ship is master, so as we have been created first, we set the other ship to false
             # for wings the wingleader is always master, so we don't set the other ship to false, if we are just a wingmate
             newMate.primary = false
