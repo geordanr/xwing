@@ -20752,6 +20752,58 @@ exportObj.basicCardData = ->
                 "Agile Gunner"
             ]
         }
+        {
+            id: 564 
+            faction: "Separatist Alliance" 
+            pilot: "Zam Wesell"
+            ship: "Firespray-31"
+            threat: 4
+            upgrades: [
+                "Deadeye Shot"
+                "Jango Fett"
+                "False Transponder Codes"
+                "Hotshot Gunner"
+                "Slave I"
+            ]
+        }
+        {
+            id: 565 
+            faction: "Separatist Alliance" 
+            pilot: "Separatist Racketeer"
+            ship: "Firespray-31"
+            threat: 3
+            upgrades: [
+                "Jamming Beam"
+                "Thermal Detonators"
+                "Suppressive Gunner"
+                "Ablative Plating"
+            ]
+        }
+        {
+            id: 566 
+            faction: "Separatist Alliance" 
+            pilot: "Jango Fett"
+            ship: "Firespray-31"
+            threat: 4
+            upgrades: [
+                "Zam Wesell"
+                "False Transponder Codes"
+                "Boba Fett"
+                "Slave I"
+            ]
+        }
+        {
+            id: 567 
+            faction: "Separatist Alliance" 
+            pilot: "Boba Fett (Separatist)"
+            ship: "Firespray-31"
+            threat: 3
+            upgrades: [
+                "Debris Gambit"
+                "Hondo Ohnaka"
+                "Slave I"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
