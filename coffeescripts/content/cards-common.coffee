@@ -20697,6 +20697,61 @@ exportObj.basicCardData = ->
                 "Repulsorlift Stabilizers"
             ]
         }
+        {
+            id: 560 
+            faction: "Galactic Republic" 
+            pilot: "212th Battalion Pilot"
+            ship: "LAAT/i Gunship"
+            threat: 3
+            upgrades: [
+                "Multi-Missile Pods"
+                "Shield Upgrade"
+                "Suppressive Gunner"
+                "Ghost Company"
+            ]
+        }
+        {
+            id: 561 
+            faction: "Galactic Republic" 
+            pilot: '"Hawk"'
+            ship: "LAAT/i Gunship"
+            threat: 3
+            upgrades: [
+                "Deadeye Shot"
+                "Yoda"
+                "Ion Missiles"
+                "Clone Captain Rex"
+                '"Fives"'
+            ]
+        }
+        {
+            id: 562 
+            faction: "Galactic Republic" 
+            pilot: '"Warthog"'
+            ship: "LAAT/i Gunship"
+            threat: 3
+            upgrades: [
+                "Wolfpack"
+                "Multi-Missile Pods"
+                "Plo Koon"
+                "Suppressive Gunner"
+            ]
+        }
+        {
+            id: 563 
+            faction: "Galactic Republic" 
+            pilot: '"Hound"'
+            ship: "LAAT/i Gunship"
+            threat: 4
+            upgrades: [
+                "Concussion Missiles"
+                "Aayla Secura"
+                "Kit Fisto"
+                "Suppressive Gunner"
+                "Hull Upgrade"
+                "Agile Gunner"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
