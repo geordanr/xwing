@@ -20535,6 +20535,80 @@ exportObj.basicCardData = ->
                 "Hull Upgrade"
             ]
         }
+        {
+            id: 547 
+            faction: "Resistance"
+            pilot: "Blue Squadron Recruit"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Snap Shot"
+                "Concussion Missiles"
+                "Automated Target Priority"
+            ]
+        }
+        {
+            id: 548 
+            faction: "Resistance"
+            pilot: "Green Squadron Expert"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Snap Shot"
+                "Afterburners"
+                "Primed Thrusters"
+            ]
+        }
+        {
+            id: 549 
+            faction: "Resistance"
+            pilot: "Merl Cobben"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Deadeye Shot"
+                "Predator"
+                "Automated Target Priority"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 550 
+            faction: "Resistance"
+            pilot: "Seftin Vanik"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "Snap Shot"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 551 
+            faction: "Resistance"
+            pilot: "Suralinda Javos"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Starbird Slash"
+                "Snap Shot"
+                "Shield Upgrade"
+                "Ion Missiles"
+            ]
+        }
+        {
+            id: 552 
+            faction: "Resistance"
+            pilot: "Wrobie Tyce"
+            ship: "RZ-2 A-Wing"
+            threat: 2
+            upgrades: [
+                "Starbird Slash"
+                "Elusive"
+                "Concussion Missiles"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
