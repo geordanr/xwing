@@ -20621,6 +20621,82 @@ exportObj.basicCardData = ->
                 "Concussion Missiles"
             ]
         }
+        {
+            id: 554 
+            faction: "Separatist Alliance" 
+            pilot: "Baktoid Drone"
+            ship: "HMP Droid Gunship"
+            threat: 2
+            upgrades: [
+                "Delayed Fuses"
+                "Concussion Bombs"
+                "Ion Missiles"
+                "Repulsorlift Stabilizers"
+            ]
+        }
+        {
+            id: 555 
+            faction: "Separatist Alliance" 
+            pilot: "DGS-047"
+            ship: "HMP Droid Gunship"
+            threat: 2
+            upgrades: [
+                "Delayed Fuses"
+                "Concussion Bombs"
+                "Ion Missiles"
+                "Repulsorlift Stabilizers"
+            ]
+        }
+        {
+            id: 556 
+            faction: "Separatist Alliance" 
+            pilot: "Geonosian Prototype"
+            ship: "HMP Droid Gunship"
+            threat: 2
+            upgrades: [
+                "Synced Laser Cannons"
+                "Ion Missiles"
+                "Repulsorlift Stabilizers"
+            ]
+        }
+        {
+            id: 557 
+            faction: "Separatist Alliance" 
+            pilot: "Onderon Oppressor"
+            ship: "HMP Droid Gunship"
+            threat: 2
+            upgrades: [
+                "Multi-Missile Pods"
+                "Repulsorlift Stabilizers"
+            ]
+        }
+        {
+            id: 558 
+            faction: "Separatist Alliance" 
+            pilot: "Separatist Predator"
+            ship: "HMP Droid Gunship"
+            threat: 2
+            upgrades: [
+                "Multi-Missile Pods"
+                "Concussion Bombs"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 559 
+            faction: "Separatist Alliance" 
+            pilot: "DGS-286"
+            ship: "HMP Droid Gunship"
+            threat: 3
+            upgrades: [
+                "Multi-Missile Pods"
+                "Concussion Bombs"
+                "Shield Upgrade"
+                "Afterburners"
+                "Kalani"
+                "Repulsorlift Stabilizers"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
