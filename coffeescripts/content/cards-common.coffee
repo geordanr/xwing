@@ -20327,6 +20327,53 @@ exportObj.basicCardData = ->
             linkedId: 529
             wingmate: true
         }
+        {
+            id: 531
+            faction: "Scum and Villainy"
+            pilot: "Gamut Key"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Engine Upgrade"
+                "False Transponder Codes"
+            ]
+        }
+        {
+            id: 532
+            faction: "Scum and Villainy"
+            pilot: "Kanan Jarrus (HWK-290)"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Patience"
+                "Thermal Detonators"
+            ]
+        }
+        {
+            id: 533
+            faction: "Scum and Villainy"
+            pilot: "Spice Runner"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Hondo Ohnaka"
+                "Concussion Bombs"
+                "Engine Upgrade"
+                "False Transponder Codes"
+            ]
+        }
+        {
+            id: 534
+            faction: "Scum and Villainy"
+            pilot: "Tápusk"
+            ship: "HWK-290"
+            threat: 2
+            upgrades: [
+                "Cutthroat"
+                "Gamut Key"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
