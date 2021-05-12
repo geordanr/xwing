@@ -20374,6 +20374,73 @@ exportObj.basicCardData = ->
                 "Gamut Key"
             ]
         }
+        {
+            id: 535
+            faction: "Scum and Villainy"
+            pilot: "Amaxine Warrior"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Cutthroat"
+                "Thermal Detonators"
+                "R5 Astromech"
+            ]
+        }
+        {
+            id: 536
+            faction: "Scum and Villainy"
+            pilot: "Arliz Hadrassian"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "R5-TK"
+                "Suppressive Gunner"
+                "Thermal Detonators"
+            ]
+        }
+        {
+            id: 537
+            faction: "Scum and Villainy"
+            pilot: "Jinata Security Officer"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Automated Target Priority"
+                "Weapons Systems Officer"
+                "Proton Torpedoes"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 538
+            faction: "Scum and Villainy"
+            pilot: "Padric"
+            ship: "Y-Wing"
+            threat: 2
+            upgrades: [
+                "Dorsal Turret"
+                "Thermal Detonators"
+                '"Genius"'
+            ]
+        }
+        {
+            id: 539
+            faction: "Scum and Villainy"
+            pilot: "Leema Kai"
+            ship: "Y-Wing"
+            threat: 3
+            upgrades: [
+                "Marg Sabl Closure"
+                "Plasma Torpedoes"
+                "Saturation Salvo"
+                "Weapons Systems Officer"
+                "Targeting Synchronizer"
+                "R4-B11"
+                "Ion Cannon Turret"
+                "Concussion Bombs"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
