@@ -20024,6 +20024,125 @@ exportObj.basicCardData = ->
             ]
             linkedId: 503
         }
+        {
+            id: 506
+            faction: "Galactic Empire"
+            pilot: "Captain Dobbs"
+            ship: "TIE Defender"
+            threat: 3 
+            upgrades: [
+                "Disciplined"
+                "TIE Defender Elite"
+                "Tractor Beam"
+            ]
+        }
+        {
+            id: 507
+            faction: "Galactic Empire"
+            pilot: "Delta Squadron Pilot"
+            ship: "TIE Defender"
+            threat: 3 
+            upgrades: [
+                "Ion Cannon"
+            ]
+        }
+        {
+            id: 508
+            faction: "Galactic Empire"
+            pilot: "Delta Squadron Pilot"
+            ship: "TIE Defender"
+            threat: 3 
+            upgrades: [
+                "Autoblasters"
+                "TIE Defender Elite"
+            ]
+        }
+        {
+            id: 509
+            faction: "Galactic Empire"
+            pilot: "Onyx Squadron Ace"
+            ship: "TIE Defender"
+            threat: 3 
+            upgrades: [
+                "Interloper Turn"
+                "TIE Defender Elite"
+                "Tractor Beam"
+            ]
+        }
+        {
+            id: 510
+            faction: "Galactic Empire"
+            pilot: "Colonel Vessery"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "TIE Defender Elite"
+                "Tractor Beam"
+            ]
+        }
+        {
+            id: 511
+            faction: "Galactic Empire"
+            pilot: "Countess Ryad"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Predator"
+                "Advanced Sensors"
+                "Tractor Beam"
+                "Ion Missiles"
+            ]
+        }
+        {
+            id: 512
+            faction: "Galactic Empire"
+            pilot: "Onyx Squadron Ace"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "Advanced Sensors"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 513
+            faction: "Galactic Empire"
+            pilot: "Rexler Brath"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Elusive"
+                "Advanced Sensors"
+                "Ion Missiles"
+            ]
+        }
+        {
+            id: 514
+            faction: "Galactic Empire"
+            pilot: "Vult Skerris"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Daredevil"
+                "Mag-Pulse Warheads"
+                "Predator"
+                "TIE Defender Elite"
+            ]
+        }
+        {
+            id: 515
+            faction: "Galactic Empire"
+            pilot: "Darth Vader (TIE Defender)"
+            ship: "TIE Defender"
+            threat: 5
+            upgrades: [
+                "Sense"
+                "Mag-Pulse Warheads"
+                "TIE Defender Elite"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
