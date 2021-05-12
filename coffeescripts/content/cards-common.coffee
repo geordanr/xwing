@@ -18321,7 +18321,7 @@ exportObj.basicCardData = ->
                 "Brilliant Evasion"
                 "Delta-7B"
             ]
-            linkedId: 374
+            wingmateId: 374
             wingleader: true
         }
         {
@@ -18784,7 +18784,7 @@ exportObj.basicCardData = ->
                 "Supernatural Reflexes"
                 "Cluster Missiles"
             ]
-            linkedId: 407
+            wingmateId: 407
             wingleader: true
         }
         {
@@ -18814,7 +18814,7 @@ exportObj.basicCardData = ->
                 "BB-8"
                 "Black One"
             ]
-            linkedId: 409
+            wingmateId: 409
             wingleader: true
         }
         {
@@ -18844,7 +18844,7 @@ exportObj.basicCardData = ->
                 "Dreadnought Hunter"
                 "Proton Torpedoes"
             ]
-            linkedId: 411
+            wingmateId: 411
             wingleader: true
         }
         {
@@ -18875,7 +18875,7 @@ exportObj.basicCardData = ->
                 "Predator"
                 "Soulless One"
             ]
-            linkedId: 413
+            wingmateId: 413
             wingleader: true
         }
         {
@@ -18906,7 +18906,7 @@ exportObj.basicCardData = ->
                 "R2-D2"
                 "Servomotor S-Foils"
             ]
-            linkedId: 415
+            wingmateId: 415
             wingleader: true
         }
         {
@@ -18936,7 +18936,7 @@ exportObj.basicCardData = ->
                 "Daredevil"
                 "Afterburners"
             ]
-            linkedId: 417
+            wingmateId: 417
             wingleader: true
         }
         {
@@ -19683,7 +19683,7 @@ exportObj.basicCardData = ->
                 "Supernatural Reflexes"
                 "Q7 Astromech"
             ]
-            linkedId: 474
+            wingmateId: 474
             wingleader: true
         }
         {
@@ -19979,6 +19979,50 @@ exportObj.basicCardData = ->
                 "Deadeye Shot"
                 "XX-23 S-Thread Tracers"
             ]
+        }
+        {
+            id: 503
+            faction: "Rebel Alliance"
+            pilot: "Hera Syndulla"
+            ship: "VCX-100"
+            threat: [6, 7, 8, 9]
+            wingmates: [1, 2, 3, 4]
+            suffix: " + Phantom and her wing"
+            upgrades: [
+                "Phoenix Squadron"
+                "Sabine Wren (Gunner)"
+                "Dorsal Turret"
+                "Ghost"
+            ]
+            wingmateId: 504
+            wingleader: true
+            linkedId: 505
+        }
+        {
+            id: 504
+            faction: "Rebel Alliance"
+            pilot: "Phoenix Squadron Pilot"
+            ship: "A-Wing"
+            suffix: ", Heras wing"
+            threat: '*'
+            upgrades: [
+                "Hopeful"
+            ]
+            linkedId: 503
+            wingmate: true
+        }
+        {
+            id: 505
+            faction: "Rebel Alliance"
+            pilot: '"Zeb" Orrelios (Sheathipede)'
+            ship: "Sheathipede-Class Shuttle"
+            suffix: ", Heras wing"
+            threat: '*'
+            upgrades: [
+                '"Chopper" (Crew)'
+                "Phantom"
+            ]
+            linkedId: 503
         }
     ]
 
