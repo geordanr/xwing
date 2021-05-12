@@ -20143,6 +20143,190 @@ exportObj.basicCardData = ->
                 "TIE Defender Elite"
             ]
         }
+        {
+            id: 516
+            faction: "Galactic Empire"
+            pilot: "Alpha Squadron Pilot"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Hull Upgrade"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 517
+            faction: "Galactic Empire"
+            pilot: "Alpha Squadron Pilot"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Disciplined"
+                "Sensitive Controls"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 518
+            faction: "Galactic Empire"
+            pilot: "Alpha Squadron Pilot"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Shield Upgrade"
+                "Sensitive Controls"
+                "Targeting Computer"
+            ]
+        }
+        {
+            id: 519
+            faction: "Galactic Empire"
+            pilot: "Ciena Ree"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Disciplined"
+                "Sensitive Controls"
+            ]
+        }
+        {
+            id: 520
+            faction: "Galactic Empire"
+            pilot: "Commandant Goran"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Disciplined"
+                "Sensitive Controls"
+                "Marg Sabl Closure"
+            ]
+        }
+        {
+            id: 521
+            faction: "Galactic Empire"
+            pilot: "Lieutenant Lorrir"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Sensitive Controls"
+            ]
+        }
+        {
+            id: 522
+            faction: "Galactic Empire"
+            pilot: "Nash Windrider"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "Sensitive Controls"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 523
+            faction: "Galactic Empire"
+            pilot: "Saber Squadron Ace"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 524
+            faction: "Galactic Empire"
+            pilot: "Saber Squadron Ace"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "Sensitive Controls"
+                "Targeting Computer"
+            ]
+        }
+        {
+            id: 525
+            faction: "Galactic Empire"
+            pilot: "Turr Phennir"
+            ship: "TIE Interceptor"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 526
+            faction: "Galactic Empire"
+            pilot: "Gideon Hask (TIE Interceptor)"
+            ship: "TIE Interceptor"
+            threat: 3
+            upgrades: [
+                "Disciplined"
+                "Sensitive Controls"
+                "Targeting Computer"
+                "Elusive"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 527
+            faction: "Galactic Empire"
+            pilot: "Soontir Fel"
+            ship: "TIE Interceptor"
+            threat: 3
+            upgrades: [
+                "Daredevil"
+                "Afterburners"
+                "Predator"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 528
+            faction: "Galactic Empire"
+            pilot: "Vult Skerris (TIE Interceptor)"
+            ship: "TIE Interceptor"
+            threat: 3
+            upgrades: [
+                "Daredevil"
+                "Elusive"
+                "Predator"
+                "Sensitive Controls"
+            ]
+        }
+        {
+            id: 529
+            faction: "Galactic Empire"
+            pilot: "Commandant Goran"
+            ship: "TIE Interceptor"
+            threat: [4,5,6,7]
+            wingmates: [2,3,4,5]
+            suffix: " and his wing"
+            upgrades: [
+                "Skystrike Academy Class"
+                "Disciplined"
+                "Marg Sabl Closure"
+                "Sensitive Controls"
+            ]
+            wingmateId: 530
+            wingleader: true
+        }
+        {
+            id: 530
+            faction: "Galactic Republic"
+            pilot: "Academy Pilot"
+            ship: "TIE Fighter"
+            suffix: ", Commandant Gorans wing"
+            threat: '*'
+            upgrades: [
+                "Disciplined"
+            ]
+            linkedId: 529
+            wingmate: true
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
