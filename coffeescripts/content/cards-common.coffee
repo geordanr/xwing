@@ -19813,6 +19813,173 @@ exportObj.basicCardData = ->
                 "Sabine Wren (Gunner)"
             ]
         }
+        {
+            id: 488
+            faction: "Rebel Alliance"
+            pilot: "Phoenix Squadron Pilot"
+            ship: "A-Wing"
+            threat: 1
+            upgrades: [
+                "Hopeful"
+            ]
+        }
+        {
+            id: 489
+            faction: "Rebel Alliance"
+            pilot: "Phoenix Squadron Pilot"
+            ship: "A-Wing"
+            threat: 1
+            upgrades: [
+                "Elusive"
+            ]
+        }
+        {
+            id: 490
+            faction: "Rebel Alliance"
+            pilot: "Phoenix Squadron Pilot"
+            ship: "A-Wing"
+            threat: 1
+            upgrades: [
+                "Marg Sabl Closure"
+            ]
+        }
+        {
+            id: 491
+            faction: "Rebel Alliance"
+            pilot: "Ahsoka Tano (A-Wing)"
+            ship: "A-Wing"
+            threat: 1
+            upgrades: [
+                "Marg Sabl Closure"
+                "Patience"
+                "Sense"
+            ]
+        }
+        {
+            id: 492
+            faction: "Rebel Alliance"
+            pilot: "Arvel Crynyd"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Intimidation"
+                "Concussion Missiles"
+                "Juke"
+            ]
+        }
+        {
+            id: 493
+            faction: "Rebel Alliance"
+            pilot: "Derek Klivian"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Mag-Pulse Warheads"
+            ]
+        }
+        {
+            id: 494
+            faction: "Rebel Alliance"
+            pilot: "Green Squadron Pilot"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Outmaneuver"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 495
+            faction: "Rebel Alliance"
+            pilot: "Green Squadron Pilot"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Starbird Slash"
+                "Vectored Cannons (RZ-1)"
+                "Mag-Pulse Warheads"
+            ]
+        }
+        {
+            id: 496
+            faction: "Rebel Alliance"
+            pilot: "Hera Syndulla (A-Wing)"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Hopeful"
+            ]
+        }
+        {
+            id: 497
+            faction: "Rebel Alliance"
+            pilot: "Jake Farrell"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Cluster Missiles"
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 498
+            faction: "Rebel Alliance"
+            pilot: "Jake Farrell"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "Proton Rockets"
+                "Juke"
+            ]
+        }
+        {
+            id: 499
+            faction: "Rebel Alliance"
+            pilot: "Phoenix Squadron Pilot"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Daredevil"
+                "Proton Rockets"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 500
+            faction: "Rebel Alliance"
+            pilot: "Sabine Wren (A-Wing)"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+            ]
+        }
+        {
+            id: 501
+            faction: "Rebel Alliance"
+            pilot: "Shara Bey (A-Wing)"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Marg Sabl Closure"
+                "Vectored Cannons (RZ-1)"
+                "Starbird Slash"
+            ]
+        }
+        {
+            id: 502
+            faction: "Rebel Alliance"
+            pilot: "Wedge Antilles (A-Wing)"
+            ship: "A-Wing"
+            threat: 2
+            upgrades: [
+                "Deadeye Shot"
+                "XX-23 S-Thread Tracers"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
