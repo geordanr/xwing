@@ -19576,12 +19576,12 @@ exportObj.basicCardData = ->
             id: 469
             faction: "Galactic Republic"
             pilot: '"Klick"'
-            ship: "Eta-2 Actis"
+            ship: "Nimbus-class V-Wing"
             threat: 4
             upgrades: [
                 "R3 Astromech" 
                 "Thermal Detonators"
-                'Alpha-3E "Besh"'
+                'Alpha-3B "Besh"'
             ]
         }
         {
@@ -19599,7 +19599,7 @@ exportObj.basicCardData = ->
         {
             id: 471
             faction: "Galactic Republic"
-            pilot: '"Anakin Skywalker"'
+            pilot: "Anakin Skywalker (Eta-2)"
             ship: "Eta-2 Actis"
             threat: 4
             upgrades: [
@@ -19613,7 +19613,7 @@ exportObj.basicCardData = ->
         {
             id: 472
             faction: "Galactic Republic"
-            pilot: '"Yoda"'
+            pilot: "Yoda"
             ship: "Eta-2 Actis"
             threat: 3
             upgrades: [
@@ -19626,7 +19626,7 @@ exportObj.basicCardData = ->
         {
             id: 473
             faction: "Galactic Republic"
-            pilot: '"Obi-Wan Kenobi"'
+            pilot: "Obi-Wan Kenobi (Eta-2)"
             ship: "Eta-2 Actis"
             threat: 2
             upgrades: [
@@ -19639,7 +19639,7 @@ exportObj.basicCardData = ->
         {
             id: 474
             faction: "Galactic Republic"
-            pilot: '"Aayla Sakura"'
+            pilot: "Aayla Secura"
             ship: "Eta-2 Actis"
             threat: 3
             upgrades: [
@@ -19651,7 +19651,7 @@ exportObj.basicCardData = ->
         {
             id: 475
             faction: "Galactic Republic"
-            pilot: '"Shaak Ti"'
+            pilot: "Shaak Ti"
             ship: "Eta-2 Actis"
             threat: 2
             upgrades: [
@@ -19662,8 +19662,8 @@ exportObj.basicCardData = ->
         {
             id: 476
             faction: "Galactic Republic"
-            pilot: '"Jedi General"'
-            ship: "ETA-2 Actis"
+            pilot: "Jedi General"
+            ship: "Eta-2 Actis"
             threat: 2
             upgrades: [
                 "Marg Sabl Closure"
@@ -19673,7 +19673,7 @@ exportObj.basicCardData = ->
         {
             id: 477
             faction: "Galactic Republic"
-            pilot: "Aayla Sakura"
+            pilot: "Aayla Secura"
             ship: "Eta-2 Actis"
             threat: [5, 7, 8, 9]
             wingmates: [2, 3, 4, 5]
@@ -19683,21 +19683,21 @@ exportObj.basicCardData = ->
                 "Supernatural Reflexes"
                 "Q7 Astromech"
             ]
-            wingmateId: 474
+            wingmateId: 478
             wingleader: true
         }
         {
             id: 478
             faction: "Galactic Republic"
-            pilot: "Shadow Squadron Pilot"
+            pilot: "Shadow Squadron Escort"
             ship: "Nimbus-class V-Wing"
-            suffix: ", Aayla Sakura's wing"
+            suffix: ", Aayla Secura's wing"
             threat: '*'
             upgrades: [
                 "Q7 Astromech"
                 'Alpha-3B "Besh"'
             ]
-            linkedId: 470
+            linkedId: 477
             wingmate: true
         }
         {
