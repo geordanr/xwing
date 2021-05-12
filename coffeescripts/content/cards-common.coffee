@@ -20441,6 +20441,100 @@ exportObj.basicCardData = ->
                 "Concussion Bombs"
             ]
         }
+        {
+            id: 540 
+            faction: "Resistance"
+            pilot: "Blue Squadron Rookie"
+            ship: "T-70 X-Wing"
+            threat: 2
+            upgrades: [
+                "Automated Target Priority"
+                "R2 Astromech"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 541 
+            faction: "Resistance"
+            pilot: "Nimi Chireen"
+            ship: "T-70 X-Wing"
+            threat: 2
+            upgrades: [
+                "Automated Target Priority"
+                "Ion Cannon"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 542 
+            faction: "Resistance"
+            pilot: "Red Squadron Expert"
+            ship: "T-70 X-Wing"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Underslung Blaster Cannon"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 543 
+            faction: "Resistance"
+            pilot: "Black Squadron Ace (T-70)"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Deadeye Shot"
+                "R3 Astromech"
+                "Proton Torpedoes"
+                "Afterburners"
+                "Primed Thrusters"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 544 
+            faction: "Resistance"
+            pilot: "C'ai Threnalli"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Backwards Tailslide"
+                "R4 Astromech"
+                "Proton Torpedoes"
+                "Primed Thrusters"
+                "Integrated S-Foils"
+            ]
+        }
+        {
+            id: 545 
+            faction: "Resistance"
+            pilot: "Poe Dameron (HoH)"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Backwards Tailslide"
+                "R2-D2 (Resistance)"
+                "Black One"
+                "Overdrive Thruster"
+                "Integrated S-Foils"
+                "Daredevil"
+            ]
+        }
+        {
+            id: 546 
+            faction: "Resistance"
+            pilot: "Temmin Wexley (HoH)"
+            ship: "T-70 X-Wing"
+            threat: 3
+            upgrades: [
+                "Snap Shot"
+                "R6-D8"
+                "Underslung Blaster Cannon"
+                "Integrated S-Foils"
+                "Hull Upgrade"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
