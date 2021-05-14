@@ -19807,7 +19807,7 @@ exportObj.basicCardData = ->
             ship: "B-Wing"
             threat: 3
             upgrades: [
-                "B6 Blade Wing Prototype"
+                "B6 Blade Wing Prototype (Epic)"
                 "Passive Sensors"
                 "Deadeye Shot"
                 "Sabine Wren (Gunner)"
