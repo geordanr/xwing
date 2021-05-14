@@ -87,6 +87,12 @@ exportObj.translations.Deutsch =
         'Title': 'Titel'
         'Ship': 'Schiff'
 
+    gameterms:
+        'Small': 'Klein'
+        'Medium': 'Mittel'
+        'Large': 'Groß'
+        'Huge': 'Riesig'
+
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Deutsch = () ->

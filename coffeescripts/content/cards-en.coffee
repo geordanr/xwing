@@ -124,6 +124,12 @@ exportObj.translations.English =
         "Scan QR-Code": "Scan to open this list in the builder"
         "View in YASB": "View in Yet Another Squad Builder 2.0"
         "YASB advertisment": "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games."
+        collectionContentShips: (translator, number) ->
+            "You have #{number} ship #{if number == 1 then 'model' else 'models'} in your collection."
+        collectionContentShipsAndPilots: (translator, ships, pilots) ->
+            "You have #{ships} ship #{if ships == 1 then 'model' else 'models'} and #{pilots} pilot #{if ships == 1 then 'card' else 'cards'} in your collection."
+        collectionContentUpgrades: (translator, number) ->
+             """You have #{number} in your collection."""
 
     singular:
         'pilots': 'Pilot'

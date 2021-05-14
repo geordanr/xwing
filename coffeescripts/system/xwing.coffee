@@ -2038,7 +2038,7 @@ class exportObj.SquadBuilder
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
         if not maneuvers? or maneuvers.length == 0
-            return "Missing maneuver info."
+            return @uitranslation("Missing maneuver info.")
 
         # Preprocess maneuvers to see which bearings are never used so we
         # don't render them.
@@ -2242,10 +2242,10 @@ class exportObj.SquadBuilder
                     possible_inis.sort()
         
                     container.find('.info-type').text type
-                    container.find('.info-name').html """#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate('ui', 'unreleased')})"}"""
+                    container.find('.info-name').html """#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{@uitranslation('unreleased')})"}"""
                     if @collection?.counts?
                         ship_count = @collection.counts?.ship?[data.name] ? 0
-                        container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} in your collection."""
+                        container.find('.info-collection').text @uitranslation("collectionContentShips", ship_count)
                         container.find('.info-collection').show()
                     else
                         container.find('.info-collection').hide()
@@ -2280,13 +2280,13 @@ class exportObj.SquadBuilder
                 
                     container.find('tr.info-ship').hide()        
                     if data.large?
-                        container.find('tr.info-base td.info-data').text "Large"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Large")
                     else if data.medium?
-                        container.find('tr.info-base td.info-data').text "Medium"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Medium")
                     else if data.huge?
-                        container.find('tr.info-base td.info-data').text "Huge"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Huge")
                     else
-                        container.find('tr.info-base td.info-data').text "Small"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Small")
                     container.find('tr.info-base').show()
 
                 
@@ -2337,7 +2337,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
                     
                     sources = (exportObj.translate('sources', source) for source in data.sources).sort()
-                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not ('Loose Ships' in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else "Only available from 1st edition"
+                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not ('Loose Ships' in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
                     container.find('.info-sources').show()
                 when 'Pilot'
                     container.find('.info-type').text type
@@ -2346,7 +2346,7 @@ class exportObj.SquadBuilder
                     if @collection?.counts?
                         pilot_count = @collection.counts?.pilot?[data.name] ? 0
                         ship_count = @collection.counts.ship?[data.ship] ? 0
-                        container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
+                        container.find('.info-collection').text @uitranslation("collectionContentShipsAndPilots", ship_count, pilot_count)
                         container.find('.info-collection').show()
                     else
                         container.find('.info-collection').hide()
@@ -2383,13 +2383,13 @@ class exportObj.SquadBuilder
                     container.find('tr.info-ship').show()
                     
                     if ship.large?
-                        container.find('tr.info-base td.info-data').text "Large"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Large")
                     else if ship.medium?
-                        container.find('tr.info-base td.info-data').text "Medium"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Medium")
                     else if ship.huge?
-                        container.find('tr.info-base td.info-data').text "Huge"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Huge")
                     else
-                        container.find('tr.info-base td.info-data').text "Small"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Small")
                     container.find('tr.info-base').show()
 
                     
@@ -2495,7 +2495,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats?.maneuvers ? ship.maneuvers, ship.maneuvers))
                 when 'Quickbuild'
-                    container.find('.info-type').text 'Quickbuild'
+                    container.find('.info-type').text @uitranslation('Quickbuild')
                     container.find('.info-sources').hide() # there are different sources for the pilot and the upgrade cards, so we won't display any
                     container.find('.info-collection').hide() # same here, hard to give a single number telling a user how often he ownes all required cards
                     
@@ -2531,11 +2531,11 @@ class exportObj.SquadBuilder
                     container.find('tr.info-ship').show()
 
                     if ship.large?
-                        container.find('tr.info-base td.info-data').text "Large"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Large")
                     else if ship.medium?
-                        container.find('tr.info-base td.info-data').text "Medium"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Medium")
                     else
-                        container.find('tr.info-base td.info-data').text "Small"
+                        container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Small")
                     container.find('tr.info-base').show()
 
                     container.find('tr.info-skill td.info-data').text pilot.skill
@@ -2630,19 +2630,19 @@ class exportObj.SquadBuilder
                     
                     if @collection?.counts?
                         addon_count = @collection.counts?['upgrade']?[data.name] ? 0
-                        container.find('.info-collection').text """You have #{addon_count} in your collection."""
+                        container.find('.info-collection').text @uitranslation(collectionContentUpgrades, addon_count)
                         container.find('.info-collection').show()
                     else
                         container.find('.info-collection').hide()
-                    container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate('ui', 'unreleased')})"}"""
+                    container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{@uitranslation('unreleased')})"}"""
                     if data.pointsarray? 
-                        point_info = "<i><b>Point cost:</b> " + data.pointsarray + " when "
+                        point_info = "<i>" + @uitranslation("varPointCostsPoints", data.pointsarray)
                         if data.variableagility? and data.variableagility
-                            point_info += "agility is " + [0..data.pointsarray.length-1]
+                            point_info += @uitranslation("varPointCostsConditionAgility", [0..data.pointsarray.length-1])
                         else if data.variableinit? and data.variableinit
-                            point_info += "initiative is " + [0..data.pointsarray.length-1]
+                            point_info += @uitranslation("varPointCostsConditionIni", [0..data.pointsarray.length-1])
                         else if data.variablebase? and data.variablebase
-                            point_info += " base size is small, medium, large or huge"
+                            point_info += @uitranslation("varPointCostsConditionBase")
                         point_info += "</i>"
 
                     restriction_info = @restriction_text(data) + @upgrade_effect(data)
@@ -2779,12 +2779,12 @@ class exportObj.SquadBuilder
                     container.find('tr.info-range').hide()
                     container.find('tr.info-force').hide()
                 when 'MissingStuff'
-                    container.find('.info-type').text "List of Missing items"
+                    container.find('.info-type').text @uitranslation("List of Missing items")
                     container.find('.info-sources').hide()
                     container.find('.info-collection').hide()
-                    container.find('.info-name').html "Missing items"
+                    container.find('.info-name').html @uitranslation("Missing items")
                     container.find('.info-name').show()
-                    missingStuffInfoText = "To field this squad you need the following additional items: <ul>"
+                    missingStuffInfoText = @uitranslation("Missing Item List:")+"<ul>"
                     for item in data
                         missingStuffInfoText += """<li><strong>#{(if item.display_name? then item.display_name else item.name)}</strong> ("""
                         first = true
@@ -2973,7 +2973,7 @@ class exportObj.SquadBuilder
         #console.log "Timer set for #{timeout_ms}ms, timer is #{data.timer}"
         window.setTimeout @_makeRandomizerLoopFunc(data), 0
         @resetCurrentSquad()
-        @current_squad.name = 'Random Squad'
+        @current_squad.name = @uitranslation('Random Squad')
         @container.trigger 'xwing-backend:squadNameChanged'
 
     setBackend: (backend) ->
@@ -3052,9 +3052,9 @@ class exportObj.SquadBuilder
                 comma = ', '
         if text != ''
             data = 
-                text: "</br><b>Adds:</b> #{text}"
+                text: "</br><b>#{@uitranslation("Adds")}:</b> #{text}"
             if removestext != ''
-                data.text += "</br><b>Removes:</b> #{removestext}"
+                data.text += "</br><b>#{@uitranslation("Removes")}:</b> #{removestext}"
             return exportObj.fixIcons(data)
         else
             return ''
@@ -3205,6 +3205,7 @@ class exportObj.SquadBuilder
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
             version: '2.0.0'
+            # there is no point to have this version identifier, if we never actually increase it, right?
 
         for ship in @ships
             if ship.pilot?
@@ -3371,6 +3372,7 @@ class Ship
         @upgrades = []
         @wingmates = [] # stores wingmates (quickbuild stuff only) 
         @destroystate = null
+        @uitranslation = @builder.uitranslation
 
         @setupUI()
 
@@ -3766,7 +3768,7 @@ class Ship
         if @pilot?
             shipicon = if exportObj.ships[@pilot.ship].icon then exportObj.ships[@pilot.ship].icon else exportObj.ships[@pilot.ship].xws
         
-        @row.append $.trim '''
+        @row.append $.trim """
             <div class="col-md-3">
                 <div class="form-group d-flex">
                     <input class="ship-selector-container" type="hidden"></input>
@@ -3783,7 +3785,7 @@ class Ship
                     </div>
                 </div>
                 <label class="wingmate-label">
-                Wingmates: 
+                #{@uitranslation("Wingmates")}: 
                     <input type="number" class="wingmate-selector"></input>
                 </label>
             </div>
@@ -3792,11 +3794,11 @@ class Ship
             </div>
             <div class="col-md-6 addon-container">  </div>
             <div class="col-md-2 button-container">
-                <button class="btn btn-danger remove-pilot side-button"><span class="d-none d-sm-block" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="d-block d-sm-none"> Remove Pilot</span></button>
-                <button class="btn btn-light copy-pilot side-button"><span class="d-none d-sm-block" data-toggle="tooltip" title="Clone Pilot"><i class="far fa-copy"></i></span><span class="d-block d-sm-none"> Clone Pilot</span></button>&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-light points-destroyed side-button" points-state"><span class="destroyed-type" title="Points Destroyed"><i class="xwing-miniatures-font xwing-miniatures-font-title"></i></span></button>
+                <button class="btn btn-danger remove-pilot side-button"><span class="d-none d-sm-block" data-toggle="tooltip" title="#{@uitranslation("Remove Pilot")}"><i class="fa fa-times"></i></span><span class="d-block d-sm-none"> #{@uitranslation("Remove Pilot")}</span></button>
+                <button class="btn btn-light copy-pilot side-button"><span class="d-none d-sm-block" data-toggle="tooltip" title="#{@uitranslation("Clone Pilot")}"><i class="far fa-copy"></i></span><span class="d-block d-sm-none"> #{@uitranslation("Clone Pilot")}</span></button>&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-light points-destroyed side-button" points-state"><span class="destroyed-type" title="#{@uitranslation("Points Destroyed")}"><i class="xwing-miniatures-font xwing-miniatures-font-title"></i></span></button>
             </div>
-        '''
+        """
         @row.find('.button-container span').tooltip()
 
         @ship_selector = $ @row.find('input.ship-selector-container')
@@ -3970,9 +3972,9 @@ class Ship
 
     toString: ->
         if @pilot?
-            "Pilot #{if @pilot.display_name then @pilot.display_name else @pilot.name} flying #{if @data.display_name then @data.display_name else @data.name}"
+            @uitranslation("PilotFlyingShip", (if @pilot.display_name then @pilot.display_name else @pilot.name), (if @data.display_name then @data.display_name else @data.name))
         else
-            "Ship without pilot"
+            if @data.display_name then @data.display_name else @data.name
 
     toHTML: ->
         effective_stats = @effectiveStats()
@@ -4122,14 +4124,6 @@ class Ship
             </div>
         """
         
-        #  Maneuver Dials have been moved at the bottom of the squad, rather than beeing added to each ship
-        # dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
-        # 
-        # html += $.trim """
-        #     <div class="fancy-dial">
-        #         #{dialHTML}
-        #     </div>
-        #     """
         
         if @pilot.text
             html += $.trim """
@@ -4157,7 +4151,7 @@ class Ship
         
         html += $.trim """
             <div class="ship-points-total">
-                <strong>Ship Total: #{@getPoints()}, Half Points: #{HalfPoints}, Threshold: #{Threshold}</strong> 
+                <strong>#{@uitranslation("Ship Total")}: #{@getPoints()}, #{@uitranslation("Half Points")}: #{HalfPoints}, #{@uitranslation("Threshold")}: #{Threshold}</strong> 
             </div>
         """
 
@@ -4178,12 +4172,12 @@ class Ship
                 table_html += upgrade.toTableRow points
 
         # if @getPoints() != @pilot.points
-        table_html += """<tr class="simple-ship-total"><td colspan="2">Ship Total: #{@getPoints()}</td></tr>"""
+        table_html += """<tr class="simple-ship-total"><td colspan="2">#{@uitranslation("Ship Total")}: #{@getPoints()}</td></tr>"""
         
         halfPoints = Math.ceil @getPoints() / 2        
         threshold = Math.ceil (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
-        table_html += """<tr class="simple-ship-half-points"><td colspan="2">Half Points: #{halfPoints} Threshold: #{threshold}</td></tr>"""
+        table_html += """<tr class="simple-ship-half-points"><td colspan="2">#{@uitranslation("Half Points")}: #{halfPoints} #{@uitranslation("Threshold")}: #{threshold}</td></tr>"""
 
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
@@ -4204,7 +4198,7 @@ class Ship
         halfPoints = Math.ceil @getPoints() / 2        
         threshold = Math.ceil (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
-        simplecopy += """Ship total: #{@getPoints()}  Half Points: #{halfPoints}  Threshold: #{threshold}    \n    \n"""
+        simplecopy += """#{@uitranslation("Ship total")}: #{@getPoints()}  #{@uitranslation("Half Points")}: #{halfPoints}  #{@uitranslation("Threshold")}: #{threshold}    \n    \n"""
 
         simplecopy
         
@@ -4220,7 +4214,7 @@ class Ship
                 upgrade_reddit = upgrade.toRedditText points
                 reddit_upgrades.push upgrade_reddit if upgrade_reddit?
             reddit += reddit_upgrades.join "    "
-            reddit += """&nbsp;*Ship total: (#{@getPoints()})*    \n"""
+            reddit += """&nbsp;*#{@uitranslation("Ship total")}: (#{@getPoints()})*    \n"""
 
         reddit
 
