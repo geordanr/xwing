@@ -91,7 +91,7 @@ class exportObj.RulesBrowser
         
         for type in @ruletype
             optgroup = $ document.createElement('OPTGROUP')
-            optgroup.attr 'label', exportObj.translate(@language, 'rulestypes', type)
+            optgroup.attr 'label', exportObj.translate('rulestypes', type)
 
             rule_added = false
             for rule_name, rule_data of @all_rules[type]

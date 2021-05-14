@@ -476,10 +476,13 @@ class exportObj.SquadBuilderBackend
                 </div>
                 <ul class="login-providers inline"></ul>
                 <p>
-                    This will open a new window to let you authenticate with the chosen provider.  You may have to allow pop ups for this site.  (Sorry.)
+                    This will open a new window to let you authenticate with the chosen provider.  You may have to allow pop ups for this site.
+                </p>
+                <p>
+                    Due to a new feature in iOS systems OAuth won't work unless you enable "cross-site control".
                 </p>
                 <p class="login-in-progress">
-                    <em>OAuth login is in progress.  Please finish authorization at the specified provider using the window that was just created.</em>
+                    <em>OAuth login is in progress. Please finish authorization at the specified provider using the window that was just created.</em>
                 </p>
             </div>
         </div>

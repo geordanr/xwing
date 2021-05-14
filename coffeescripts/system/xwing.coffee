@@ -150,7 +150,9 @@ class exportObj.SquadBuilder
 
         @backend = null
         @current_squad = {}
-        @language = 'English'
+
+        # todo: remove? The translation file should take care of languge management. 
+        @language = exportObj.currentLanguage ? 'English'
 
         @collection = null
 
@@ -172,7 +174,7 @@ class exportObj.SquadBuilder
             @addShip()
 
     resetCurrentSquad: (initial_load=false) ->
-        default_squad_name = 'Unnamed Squadron'
+        default_squad_name = @uitranslation('Unnamed Squadron')
 
         squad_name = $.trim(@squad_name_input.val()) or default_squad_name
         if initial_load and $.trim $.getParameterByName('sn')
@@ -200,13 +202,13 @@ class exportObj.SquadBuilder
 
         if @total_points > 0
             if squad_name == default_squad_name
-                @current_squad.name = 'Unsaved Squadron'
+                @current_squad.name = @uitranslation('Unsaved Squadron')
             @current_squad.dirty = true
 
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
-    newSquadFromScratch: (squad_name = 'New Squadron') ->
+    newSquadFromScratch: (squad_name = @uitranslation('New Squadron')) ->
         @squad_name_input.val squad_name
         @removeAllShips()
         @addShip() if not @suppress_automatic_new_ship
@@ -214,6 +216,9 @@ class exportObj.SquadBuilder
         @resetCurrentSquad()
         @notes.val ''
         @tag.val ''
+
+    uitranslation: (what, args...) ->
+        exportObj.translate('ui', what, args)
 
     setupUI: ->
         DEFAULT_RANDOMIZER_POINTS = 200
@@ -232,39 +237,39 @@ class exportObj.SquadBuilder
                         <i class="far fa-edit"></i>
                     </div>
                     <div class="input-append">
-                        <input type="text" maxlength="64" placeholder="Name your squad..." />
+                        <input type="text" maxlength="64" placeholder="''' + @uitranslation("Name your squad...") + '''" />
                         <button class="btn save"><i class="fa fa-pen-square"></i></button>
                     </div>
                     <br />
                     <select class="game-type-selector">
-                        <option value="standard">Extended</option>
-                        <option value="hyperspace">Hyperspace</option>
-                        <option value="epic">Epic</option>
-                        <option value="quickbuild">Quickbuild</option>
+                        <option value="standard" class="translated" defaultText="Extended"></option>
+                        <option value="hyperspace" class="translated" defaultText="Hyperspace"></option>
+                        <option value="epic" class="translated" defaultText="Epic"</option>
+                        <option value="quickbuild" class="translated" defaultText="Quickbuild"></option>
                     </select>
                 </div>
                 <div class="col-md-4 points-display-container">
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="200">
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left) <span class="points-destroyed red"></span></span>
-                    <span class="content-warning unreleased-content-used d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning loading-failed-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning collection-invalid d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning ship-number-invalid-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated">A tournament legal squad must contain 2-8 ships!</span></span>
-                    <span class="content-warning multi-faction-warning-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated">Multi-Faction Lists are NEVER tournament legal!</span></span>
+                    <span class="content-warning unreleased-content-used d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Unreleased content warning"></span></span>
+                    <span class="content-warning loading-failed-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Broken squad link warning"></span></span>
+                    <span class="content-warning collection-invalid d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Collection warning"></span></span>
+                    <span class="content-warning ship-number-invalid-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Ship number warning"></span></span>
+                    <span class="content-warning multi-faction-warning-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Multi-Faction warning"></span></span>
                 </div>
                 <div class="col-md-5 float-right button-container">
                     <div class="btn-group float-right">
 
                         <button class="btn btn-info view-as-text"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;Print/Export</span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
-                        <a class="btn btn-primary d-none collection"><span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Your Collection</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span></a>
+                        <a class="btn btn-primary d-none collection"><span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> <span class="translated" defaultText="Your Collection"></span></span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span></a>
                         <!-- Randomize button is marked as danger, since it creates a new squad -->
-                        <button class="btn btn-danger randomize"><span class="d-none d-lg-block"><i class="fa fa-random"></i> Randomize!</span><span class="d-lg-none"><i class="fa fa-random"></i></span></button>
+                        <button class="btn btn-danger randomize"><span class="d-none d-lg-block"><i class="fa fa-random"></i> <span class="translated" defaultText="Randomize!"></span></span><span class="d-lg-none"><i class="fa fa-random"></i></span></button>
                         <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item randomize-options">Randomizer Options</a></li>
-                            <li><a class="dropdown-item misc-settings">Misc Settings</a></li>
+                            <li><a class="dropdown-item randomize-options translated" defaultText="Randomizer Options"></a></li>
+                            <li><a class="dropdown-item misc-settings translated" defaultText="Misc Settings"></a></li>
                         </ul>
                         
 
@@ -274,12 +279,12 @@ class exportObj.SquadBuilder
 
             <div class="row squad-save-buttons">
                 <div class="col-md-12">
-                    <button class="show-authenticated btn btn-primary save-list"><i class="far fa-save"></i>&nbsp;Save</button>
-                    <button class="show-authenticated btn btn-primary save-list-as"><i class="far fa-file"></i>&nbsp;Save As...</button>
-                    <button class="show-authenticated btn btn-primary delete-list disabled"><i class="fa fa-trash"></i>&nbsp;Delete</button>
-                    <button class="show-authenticated btn btn-info backend-list-my-squads show-authenticated"><i class="fa fa-download"></i>&nbsp;Load Squad</button>
-                    <button class="btn btn-info import-squad"><i class="fa fa-file-import"></i>&nbsp;Import</button>
-                    <button class="btn btn-danger clear-squad"><i class="fa fa-plus-circle"></i>&nbsp;New Squad</button>
+                    <button class="show-authenticated btn btn-primary save-list"><i class="far fa-save"></i>&nbsp;<span class="translated" defaultText="Save"></span></button>
+                    <button class="show-authenticated btn btn-primary save-list-as"><i class="far fa-file"></i>&nbsp;<span class="translated" defaultText="Save As..."></span></button>
+                    <button class="show-authenticated btn btn-primary delete-list disabled"><i class="fa fa-trash"></i>&nbsp;<span class="translated" defaultText="Delete"></span></button>
+                    <button class="show-authenticated btn btn-info backend-list-my-squads show-authenticated"><i class="fa fa-download"></i>&nbsp;<span class = "translated" defaultText="Load Squad"></span></button>
+                    <button class="btn btn-info import-squad"><i class="fa fa-file-import"></i>&nbsp;<span class="translated" defaulText="Import"></span></button>
+                    <button class="btn btn-danger clear-squad"><i class="fa fa-plus-circle"></i>&nbsp;<span class="translated" defaultText="New Squad"></span></button>
                     <span class="show-authenticated backend-status"></span>
                 </div>
             </div>
@@ -294,19 +299,18 @@ class exportObj.SquadBuilder
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>XWS Import</h3>
+                <h3 class="translated" defaultText="XWS Import"></h3>
                 <button type="button" class="close d-print-none" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                Import your list via XWS into YASB.<br>
-                <i>XWS is a common format to share lists between applications.</i>
+                <span class="translated" defaultText="XWS Import Dialog"></span>
                 <div class="container-fluid">
-                    <textarea class="xws-content" placeholder="Paste XWS here"></textarea>
+                    <textarea class="xws-content" placeholder='"""+@uitranslation("Paste XWS here")+"""'></textarea>
                 </div>
             </div>
             <div class="modal-footer d-print-none">
                 <span class="xws-import-status"></span>&nbsp;
-                <button class="btn btn-danger import-xws">Import</button>
+                <button class="btn btn-danger import-xws translated" defaultText="Import"></button>
             </div>
         </div>
     </div>
@@ -355,29 +359,29 @@ class exportObj.SquadBuilder
                 <div class="fancy-list"></div>
                 <div class="simple-list"></div>
                 <div class="simplecopy-list">
-                    <p>Copy the below and paste it elsewhere.</p>
-                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
+                    <span class="translated" defaultText="Copy below simple text"></span>
+                    <textarea></textarea><button class="btn btn-modal btn-copy translated" defaultText="Copy"></button>
                 </div>
                 <div class="reddit-list">
-                    <p>Copy the below and paste it into your reddit post.</p>
-                    <p>Make sure that the post editor is set to markdown mode.</p>
-                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
+                    <span class="translated" defaultText="Copy below markdown"></span>
+                    <textarea></textarea><button class="btn btn-modal btn-copy translated" defaultText="Copy"></button>
                 </div>
                 <div class="tts-list">
-                    <p>Copy the below and paste it into the Tabletop Simulator.</p>
-                    <textarea></textarea><br /><button class="btn btn-modal btn-copy">Copy</button>
+                    <span class="translated" defaultText="Copy below TTS"></span>
+                    <textarea></textarea><button class="btn btn-modal btn-copy translated" defaultText="Copy"></button>
                 </div>
                 <div class="bbcode-list">
-                    <p>Copy the BBCode below and paste it into your forum post.</p>
-                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
+                    <span class="translated" defaultText="Copy below BBCode"></span>
+                    <textarea></textarea><button class="btn btn-modal btn-copy translated" defaultText="Copy"></button>
                 </div>
                 <div class="html-list">
-                    <textarea></textarea><button class="btn btn-modal btn-copy">Copy</button>
+                    <span class="translated" defaultText="Copy below HTML"></span>
+                    <textarea></textarea><button class="btn btn-modal btn-copy translated" defaultText="Copy"></button>
                 </div>
                 <div class="xws-list">
-                    <p>Copy and paste this into an XWS-compliant application.
+                    <span class="translated" defaultText="Copy below XWS"></span>
                     <div class="row full-row">
-                        <div class="col d-inline-block d-none d-sm-block"><textarea></textarea><br /><button class="btn btn-modal btn-copy">Copy</button></div>
+                        <div class="col d-inline-block d-none d-sm-block"><textarea></textarea><br /><button class="btn btn-modal btn-copy translated" defaultText="Copy"></button></div>
                         <div class="col d-inline-block d-none d-sm-block qrcode-container" id="xws-qrcode-container"></div>
                     </div>
                 </div>
@@ -386,41 +390,41 @@ class exportObj.SquadBuilder
                 <div class="row full-row">
                     <div class="col d-inline-block d-none d-sm-block right-col">
                         <label class="color-skip-text-checkbox">
-                            Skip Card Text <input type="checkbox" class="toggle-skip-text-print" />
+                            <span class="translated" defaultText="Skip Card Text"></span> <input type="checkbox" class="toggle-skip-text-print" />
                         </label><br />
                         <label class="vertical-space-checkbox">
-                            Add Space for Cards <input type="checkbox" class="toggle-vertical-space" />
+                            <span class="translated" defaultText="Space for Cards"></span> <input type="checkbox" class="toggle-vertical-space" />
                         </label><br />
                         <label class="maneuver-print-checkbox">
-                            Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" />
+                            <span class="translated" defaultText="Include Maneuvers Chart"></span> <input type="checkbox" class="toggle-maneuver-print" />
                         </label><br />
                         <label class="expanded-shield-hull-print-checkbox">
-                            Expand Shield and Hull <input type="checkbox" class="toggle-expanded-shield-hull-print" />
+                            <span class="translated" defaultText="Expand Shield and Hull"></span> <input type="checkbox" class="toggle-expanded-shield-hull-print" />
                         </label>
                     </div>
                     <div class="col d-inline-block d-none d-sm-block right-col">
                         <label class="color-print-checkbox">
-                            Print Color <input type="checkbox" class="toggle-color-print" checked="checked" />
+                            <span class="translated" defaultText="Print Color"></span> <input type="checkbox" class="toggle-color-print" checked="checked" />
                         </label><br />
                         <label class="qrcode-checkbox">
-                            Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
+                            <span class="translated" defaultText="Include QR codes"></span> <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                         </label><br />
                         <label class="obstacles-checkbox">
-                            Include Obstacle Choices <input type="checkbox" class="toggle-obstacles" />
+                            <span class="transalted" defaultText="Include Obstacle Choices"></span> <input type="checkbox" class="toggle-obstacles" />
                         </label>
                     </div>
                 </div>
                 <div class="row btn-group list-display-mode">
-                    <button class="btn btn-modal select-simple-view">Simple</button>
-                    <button class="btn btn-modal select-fancy-view d-none d-sm-block">Fancy</button>
-                    <button class="btn btn-modal select-simplecopy-view">Text</button>
-                    <button class="btn btn-modal select-tts-view">TTS</button>
-                    <button class="btn btn-modal select-reddit-view">Reddit</button>
-                    <button class="btn btn-modal select-bbcode-view">BBCode</button>
-                    <button class="btn btn-modal select-html-view">HTML</button>
-                    <button class="btn btn-modal select-xws-view">XWS</button>
+                    <button class="btn btn-modal select-simple-view translated" defaultText="Simple"></button>
+                    <button class="btn btn-modal select-fancy-view d-none d-sm-block translated" defaultText="Fancy"></button>
+                    <button class="btn btn-modal select-simplecopy-view translated" defaultText="Text"></button>
+                    <button class="btn btn-modal select-tts-view translated" defaultText="TTS"></button>
+                    <button class="btn btn-modal select-reddit-view translated" defaultText="Reddit"></button>
+                    <button class="btn btn-modal select-bbcode-view translated" defaultText="BBCode"></button>
+                    <button class="btn btn-modal select-html-view translated" defaultText="HTML"></button>
+                    <button class="btn btn-modal select-xws-view translated" defaultText="XWS"></button>
                 </div>
-                <button class="btn btn-modal print-list d-none d-sm-block"><i class="fa fa-print"></i>&nbsp;Print</button>
+                <button class="btn btn-modal print-list d-none d-sm-block"><i class="fa fa-print"></i>&nbsp;<span class="translated" defaultText="Print"></span></button>
             </div>
         </div>
     </div>
@@ -741,7 +745,7 @@ class exportObj.SquadBuilder
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3>Random Squad Builder Options</h3>
+                        <h3 class="translated" defaultText="Random Squad Builder Options"></h3>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -1062,7 +1066,9 @@ class exportObj.SquadBuilder
             </div>
         </div>
     </div>
-        """        
+        """       
+        # translate all the UI we just created to current language
+        exportObj.translateUIElements(@container) 
         
     createInfoContainerUI: ->
         return """
@@ -2239,7 +2245,7 @@ class exportObj.SquadBuilder
                     possible_inis.sort()
         
                     container.find('.info-type').text type
-                    container.find('.info-name').html """#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    container.find('.info-name').html """#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate('ui', 'unreleased')})"}"""
                     if @collection?.counts?
                         ship_count = @collection.counts?.ship?[data.name] ? 0
                         container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} in your collection."""
@@ -2327,18 +2333,18 @@ class exportObj.SquadBuilder
 
                     # Display all available slots, put brackets around slots that are only available for some pilots
                     container.find('tr.info-upgrades').show()
-                    container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')' else (if state == 3 then (exportObj.translate(@language, 'sloticon', slot) + exportObj.translate(@language, 'sloticon', slot)) else (if state == 4 then (exportObj.translate(@language, 'sloticon', slot) + '(' + exportObj.translate(@language, 'sloticon', slot) + ')') else (if state == 5 then ('(' + exportObj.translate(@language, 'sloticon', slot) + exportObj.translate(@language, 'sloticon', slot) + ')') else (if state == 6 then (exportObj.translate(@language, 'sloticon',slot) + exportObj.translate(@language, 'sloticon',slot) + exportObj.translate(@language, 'sloticon',slot)))))))) for slot, state of slot_types).join(' ') or 'None')
+                    container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate('sloticon', slot) else (if state == 2 then '('+exportObj.translate('sloticon', slot)+')' else (if state == 3 then (exportObj.translate('sloticon', slot) + exportObj.translate('sloticon', slot)) else (if state == 4 then (exportObj.translate('sloticon', slot) + '(' + exportObj.translate('sloticon', slot) + ')') else (if state == 5 then ('(' + exportObj.translate('sloticon', slot) + exportObj.translate('sloticon', slot) + ')') else (if state == 6 then (exportObj.translate('sloticon',slot) + exportObj.translate('sloticon',slot) + exportObj.translate('sloticon',slot)))))))) for slot, state of slot_types).join(' ') or 'None')
                 
                     container.find('p.info-text').hide()
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
                     
-                    sources = (exportObj.translate(@language, 'sources', source) for source in data.sources).sort()
-                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not ('Loose Ships' in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate(@language, 'ui', 'unreleased')) else "Only available from 1st edition"
+                    sources = (exportObj.translate('sources', source) for source in data.sources).sort()
+                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not ('Loose Ships' in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else "Only available from 1st edition"
                     container.find('.info-sources').show()
                 when 'Pilot'
                     container.find('.info-type').text type
-                    container.find('.info-sources.info-data').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
+                    container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
                     container.find('.info-sources').show()
                     if @collection?.counts?
                         pilot_count = @collection.counts?.pilot?[data.name] ? 0
@@ -2364,7 +2370,7 @@ class exportObj.SquadBuilder
                     else
                         uniquedots = ""
                         
-                    container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate('ui', 'unreleased')})"}"""
 
                     restriction_info = @restriction_text(data) + @upgrade_effect(data)
                     if restriction_info != ''
@@ -2488,7 +2494,7 @@ class exportObj.SquadBuilder
                         container.find('tr.info-upgrades').hide()
                     else
                         container.find('tr.info-upgrades').show()
-                        container.find('tr.info-upgrades td.info-data').html((exportObj.translate(@language, 'sloticon', slot) for slot in data.slots).join(' ') or 'None')
+                        container.find('tr.info-upgrades td.info-data').html((exportObj.translate('sloticon', slot) for slot in data.slots).join(' ') or 'None')
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats?.maneuvers ? ship.maneuvers, ship.maneuvers))
                 when 'Quickbuild'
@@ -2512,7 +2518,7 @@ class exportObj.SquadBuilder
                     else
                         uniquedots = ""
                         
-                    container.find('.info-name').html """#{uniquedots}#{if pilot.display_name then pilot.display_name else pilot.name}#{if data.suffix? then data.suffix else ""}#{if exportObj.isReleased(pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    container.find('.info-name').html """#{uniquedots}#{if pilot.display_name then pilot.display_name else pilot.name}#{if data.suffix? then data.suffix else ""}#{if exportObj.isReleased(pilot) then "" else " (#{exportObj.translate('ui', 'unreleased')})"}"""
 
 
                     restriction_info = @restriction_text(data) + @upgrade_effect(data)
@@ -2608,7 +2614,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
                     container.find('.info-type').text additional_opts.addon_type
-                    container.find('.info-sources.info-data').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
+                    container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
                     container.find('.info-sources').show()
                     
                     #logic to determine how many dots to use for uniqueness
@@ -2631,7 +2637,7 @@ class exportObj.SquadBuilder
                         container.find('.info-collection').show()
                     else
                         container.find('.info-collection').hide()
-                    container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate('ui', 'unreleased')})"}"""
                     if data.pointsarray? 
                         point_info = "<i><b>Point cost:</b> " + data.pointsarray + " when "
                         if data.variableagility? and data.variableagility
@@ -3061,20 +3067,20 @@ class exportObj.SquadBuilder
         if card.restrictions
             for r in card.restrictions
                 if r[0] == "orUnique"
-                    uniquetext = exportObj.translate(@language, 'restrictions', " or Squad Including") + " #{r[1]}"
+                    uniquetext = exportObj.translate('restrictions', " or Squad Including") + " #{r[1]}"
                     continue
                 switch r[0]
                     when "Base"
-                        text += comma + "#{r[1]} " + exportObj.translate(@language, 'restrictions', "Ship")
+                        text += comma + "#{r[1]} " + exportObj.translate('restrictions', "Ship")
                     when "Action"
                         array = [r[1]]
                         text += comma + @formatActions(array,"", [])
                     when "Equipped"
                         text += comma + "%#{r[1].toUpperCase().replace(/[^a-z0-9]/gi, '')}% Equipped"
                     when "Slot"
-                        text += comma + exportObj.translate(@language, 'restrictions', "Extra") + " %#{r[1].toUpperCase().replace(/[^a-z0-9]/gi, '')}%"
+                        text += comma + exportObj.translate('restrictions', "Extra") + " %#{r[1].toUpperCase().replace(/[^a-z0-9]/gi, '')}%"
                     when "Keyword"
-                        text += comma + exportObj.translate(@language, 'restrictions', "#{r[1]}")
+                        text += comma + exportObj.translate('restrictions', "#{r[1]}")
                     when "AttackArc"
                         text += comma + "%REARARC%"
                     when "ShieldsGreaterThan"
@@ -3082,30 +3088,30 @@ class exportObj.SquadBuilder
                     when "EnergyGreatterThan"
                         text += comma + "%ENERGY% > #{r[1]}"
                     when "InitiativeGreaterThan"
-                        text += comma + exportObj.translate(@language, 'restrictions', "Initiative") + " > #{r[1]}"
+                        text += comma + exportObj.translate('restrictions', "Initiative") + " > #{r[1]}"
                     when "InitiativeLessThan"
-                        text += comma + exportObj.translate(@language, 'restrictions', "Initiative")+ " < #{r[1]}"
+                        text += comma + exportObj.translate('restrictions', "Initiative")+ " < #{r[1]}"
                     when "AgilityEquals"
-                        text += comma + exportObj.translate(@language, 'restrictions', "Agility") + " = #{r[1]}"
+                        text += comma + exportObj.translate('restrictions', "Agility") + " = #{r[1]}"
                     when "isUnique"
                         if r[1] == true
-                            text += comma + exportObj.translate(@language, 'restrictions', "Limited")
+                            text += comma + exportObj.translate('restrictions', "Limited")
                         else
-                            text += comma + exportObj.translate(@language, 'restrictions', "Non-Limited")
+                            text += comma + exportObj.translate('restrictions', "Non-Limited")
                     when "Format"
-                        text += comma + exportObj.translate(@language, 'restrictions', "#{r[1]} Ship")
+                        text += comma + exportObj.translate('restrictions', "#{r[1]} Ship")
                     when "Faction"
-                        othertext += comma + exportObj.translate(@language, 'faction', "#{r[1]}")
+                        othertext += comma + exportObj.translate('faction', "#{r[1]}")
                 comma = ', '
         if not card.skill
             if othertext == ''
                 if card.faction
                     if card.faction instanceof Array
                         for factionitem in card.faction
-                            othertext += comma + exportObj.translate(@language, 'faction', "#{factionitem}")
+                            othertext += comma + exportObj.translate('faction', "#{factionitem}")
                             comma = ' or '
                     else
-                        othertext += comma + exportObj.translate(@language, 'faction', "#{card.faction}")
+                        othertext += comma + exportObj.translate('faction', "#{card.faction}")
                     comma = ', '
             if card.ship
                 if card.ship instanceof Array
@@ -3116,15 +3122,15 @@ class exportObj.SquadBuilder
                     othertext += comma + card.ship
                 comma = ', '
             if card.solitary
-                othertext += comma + exportObj.translate(@language, 'faction', "Solitary")
+                othertext += comma + exportObj.translate('faction', "Solitary")
                 comma = ', '
             if card.standardized
-                othertext += comma + exportObj.translate(@language, 'faction', "Standardized")
+                othertext += comma + exportObj.translate('faction', "Standardized")
                 comma = ', '
         text += othertext + uniquetext
         if text != ''
             data = 
-                text: "<i><b>" + exportObj.translate(@language, 'restrictions', "Restrictions") + ":</b> " + text + "</i>"
+                text: "<i><b>" + exportObj.translate('restrictions', "Restrictions") + ":</b> " + text + "</i>"
             return exportObj.fixIcons(data)
         else
             return ''
@@ -3822,7 +3828,7 @@ class Ship
             
         @ship_selector.select2
             width: '100%'
-            placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
+            placeholder: exportObj.translate 'ui', 'shipSelectorPlaceholder'
             query: (query) =>
                 data = {results: []}
                 data.results = @builder.getAvailableShipsMatching(query.term)
@@ -3859,7 +3865,7 @@ class Ship
 
         @pilot_selector.select2
             width: '100%'
-            placeholder: exportObj.translate @builder.language, 'ui', 'pilotSelectorPlaceholder'
+            placeholder: exportObj.translate  'ui', 'pilotSelectorPlaceholder'
             query: (query) =>
                 data = {results: []}
                 data.results = @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), (if not @builder.isQuickbuild then @pilot else @quickbuildId), query.term, true, @)
@@ -5052,7 +5058,7 @@ class exportObj.Upgrade extends GenericAddon
     setupSelector: ->
         super
             width: '100%'
-            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'upgradePlaceholder', @slot)
+            placeholder: @placeholderMod_func(exportObj.translate 'ui', 'upgradePlaceholder', @slot)
             allowClear: true
             query: (query) =>
                 data = {results: []}

@@ -33,7 +33,7 @@ exportObj.translations.Deutsch =
         "Device": "Vorrichtung"
         "Tech": "Tech"
         "Title": "Titel"
-    sources: # needed?
+    sources: 
         "Second Edition Core Set": "Grundspiel zweite Edition"
         "Rebel Alliance Conversion Kit": "Konvertierungsset „Rebellenallianz“"
         "Galactic Empire Conversion Kit": "Konvertierungsset „Galaktisches Imperium“"
@@ -50,107 +50,29 @@ exportObj.translations.Deutsch =
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
-        upgradePlaceholder: (translator, language, slot) ->
-            "Keine #{translator language, 'slot', slot} Aufwertungskarte"
+        upgradePlaceholder: (translator, slot) ->
+            "Keine #{translator 'slot', slot} Aufwertungskarte"
         modificationPlaceholder: "Keine Modifikation"
         titlePlaceholder: "Kein Titel"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Aufwertungskarte"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} Aufwertungskarte"
         unreleased: "unveröffentlicht"
         epic: "episch"
-        limited: "limitiert"
-    byCSSSelector:
-        # Warnings
-        '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
-        '.loading-failed-container .translated': 'Du scheinst einem defekten Link gefolgt zu sein. Es konnte kein Squad geladen werden!'
-        '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
-        '.ship-number-invalid-container .translated': 'Eine turnierlegale Staffel muss aus  2-8 Schiffen bestehen!'
-        # Type selector
-        '.game-type-selector option[value="standard"]': 'Standard'
-        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="Epic"]': 'Epic'
-        '.game-type-selector option[value="quickbuild"]': 'Quick Build'        
-        # Card browser
-        '.xwing-card-browser option[value="name"]': 'Name'
-        '.xwing-card-browser option[value="source"]': 'Quelle'
-        '.xwing-card-browser option[value="type-by-points"]': 'Typ (nach Punkten)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Typ (nach Namen)'
-        '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte von der Liste auf der linken Seite.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sortiere Karten nach'
-        # Info well
-        '.info-well .info-ship td.info-header': 'Schiff'
-        '.info-well .info-skill td.info-header': 'Initiative'
-        '.info-well .info-actions td.info-header': 'Aktionen'
-        '.info-well .info-upgrades td.info-header': 'Aufwertungskarten'
-        '.info-well .info-range td.info-header': 'Reichweite'
-        '.info-well .info-sources.info-header': 'Enthalten&nbsp;in:'
-        # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Neue Staffel'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;Speichern'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Speichern unter…'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Löschen'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Staffel laden'
-        '.delete-squad' : 'Löschen'
-        '.delete-squad' : 'Laden'
-        '.show-standard-squads' : 'Standard'
-        '.show-epic-squads' : 'Episch'
-        '.show-team-epic-squads' : 'Team Episch'
-        '.show-all-squads' : 'Alle'
-        '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i> Drucken/Als Text ansehen</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
-        '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> Zufall!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'        
-        '.randomize-options' : 'Zufallsgenerator Optionen'
-        '.notes-container .notes-name' : 'Staffel Notizen:'
-        '.notes-container .tag-name' : 'Tag:'
-        '.choose-obstacles' : 'Hindernisse wählen'
-        '.from-xws' : 'Importieren aus XWS-Datei'
-        '.to-xws' : 'Exportieren als XWS-Datei'
-        # New Squadron dialog
-        '.discard' : 'Änderungen verwerfen'
-        # Log in dialog
-        '.login-help' : 'Was ist OAuth?'
-        '.oauth-explanation' :
-            """<p><a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> ist ein Authentifizierungsservice, der es dir erlaubt dich auf Webseiten anzumelden, ohne einen Nutzerkonto anlegen zu müssen. Stattdessen wählst du einen Anbieter, bei dem du bereits eine Nutzerkonto hast (z.B. Google oder Facebook), und dieser bestätigt deine Identität. Auf diese Weise kann YASB dich beim nächsten Besuch wiedererkennen. </p>
-            <p>Das beste hieran ist, dass du dir nicht ständig neue Nutzernamen und Passwörter überlegen musst. Keine Sorge, YASB sammelt keine persönlichen Daten von diesen Anbietern über dich. Teilweise kann ich nicht verhindern, dass ein Minimum an persönlichen Daten übertragen wird, diese werden ignoriert. Alles was gespeichert wird ist eine Identifikationsnummer, anhand der du beim nächsten Besuch wiedererkannt wirst - und die zu dieser ID gehörenden Staffellisten natürlich.</p>
-            <p>Um mehr zu erfahren, schau dir <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">diese Einführung in OAuth (englisch)</a> an.</p>""" # this translation will remove an "Got it!" button. It would not work, if I just add it here, as the connection to the java-script is lost. 
-        '.login-in-progress':"""<em>Die OAuth Anmeldung ist in Arbeit. Bitte beende die Anmeldung bei angegebenen Anbierter über das soeben erstellte Fenster. </em>"""
-        # Print/View modal
-        '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
-        '.vertical-space-checkbox' : """Lasse beim Drucken Platz für Schadens-/Aufwertungskarten <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Farbig drucken <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Drucken'
-        '.select-simple-view' : 'Einfach'
-        '.select-fancy-view' : 'Schick'
-        '.close-print-dialog' : 'Schließen'
-        # Randomizer options
-        '.do-randomize' : 'Auswürfeln!'
-        # Top tab bar
-        '#browserTab' : 'Kartendatenbank'
-        '#aboutTab' : 'Impressum'
-        # Obstacles
-        '.choose-obstacles' : 'Wähle Hindernisse'
-        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
-        '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
-        '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
-        '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
-        '.coreasteroid3-select' : 'Grundspiel Asteroid 3'
-        '.coreasteroid4-select' : 'Grundspiel Asteroid 4'
-        '.coreasteroid5-select' : 'Grundspiel Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Trümmerwolke 0'
-        '.yt2400debris1-select' : 'YT2400 Trümmerwolke 1'
-        '.yt2400debris2-select' : 'YT2400 Trümmerwolke 2'
-        '.vt49decimatordebris0-select' : 'VT49 Trümmerwolke 0'
-        '.vt49decimatordebris1-select' : 'VT49 Trümmerwolke 1'
-        '.vt49decimatordebris2-select' : 'VT49 Trümmerwolke 2'
-        '.core2asteroid0-select' : 'Erwachen der Macht Asteroid 0'
-        '.core2asteroid1-select' : 'Erwachen der Macht Asteroid 1'
-        '.core2asteroid2-select' : 'Erwachen der Macht Asteroid 2'
-        '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
-        '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
-        '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
-        # Collection
-        '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Deine Sammlung</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
-        '.checkbox-check-collection' : 'Überprüfe Staffeln auf Verfügbarkeit <input class="check-collection" type="checkbox">'
+        "Epic": "Episch"
+        "Quickbuild": "Schnellbau"
+        "Hyperspace": "Hyperspace"
+        "Extended": "Extended"
+        "limited": "limitiert"
+        "Unnamed Squadron": "Unbenannte Staffel"
+        "Unsaved Squadron": "Nicht gespeicherte Staffel"
+        "New Squadron": "Neue Staffel"
+        "Name your squad...": "Gib einen Namen ein..."
+        "Ship number warning": "Eine turnierlegale Staffel muss aus 2-8 Schiffen bestehen!"
+        "Your Collection": "Deine Sammlung"
+        "Randomize!": "Zufall!"
+        "Copy": "Kopieren"
+        "Print": "Drucken"
+        "Random Squad Builder Options": "Zufallsgeneratoreinstellungen"
 
     singular:
         'pilots': 'Pilot'

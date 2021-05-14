@@ -10,10 +10,36 @@ builders = []
 
 exportObj = exports ? this
 
+# TODO: create a reasonable scope for this (e.g. a translation class), so vars like currentLanguage
+# and methods like translateToLang are not within exportObj scope
+
+# try to set the current language according to the users choice
+try
+  (()->
+    exportObj.currentLanguage = DFL_LANGUAGE
+    # some browses just provide a single navigator.language, some provide an array navigator.languages 
+    languageCodes = [navigator.language].concat(navigator.languages)
+    for langc in languageCodes
+        # strip stuff like -US from en-US
+        langc = langc.split('-')[0]
+        if langc of exportObj.codeToLanguage
+            # assume that exportObj already exists. If it does not, we don't know which languages YASB supports
+            exportObj.currentLanguage = exportObj.codeToLanguage[langc]
+            break
+   )()
+catch all
+    exportObj.currentLanguage = DFL_LANGUAGE
+    throw all
+    
+
 exportObj.loadCards = (language) ->
     exportObj.cardLoaders[language]()
 
-exportObj.translate = (language, category, what, args...) ->
+exportObj.translate = (category, what, args...) -> 
+    exportObj.translateToLang(exportObj.currentLanguage, category, what, args...)
+
+# this method should be somewhat private, and not be called outside this file
+exportObj.translateToLang = (language, category, what, args...) ->
     try
         translation = exportObj.translations[language][category][what]
     catch all
@@ -26,13 +52,15 @@ exportObj.translate = (language, category, what, args...) ->
     if translation?
         if translation instanceof Function
             # pass this function in case we need to do further translation inside the function
-            translation exportObj.translate, language, args...
+            translation exportObj.translate, args...
         else
             translation
     else
         if language != DFL_LANGUAGE
-            exportObj.translate DFL_LANGUAGE, category, what, args...
+            console.log(language + ' translation for ' + String(what) + ' (category ' + String(category) + ') missing')
+            exportObj.translateToLang DFL_LANGUAGE, category, what, args...
         else
+            console.log('Default translation for ' + String(what) + ' (category ' + String(category) + ') missing')
             what
 
 exportObj.setupTranslationSupport = ->
@@ -46,8 +74,7 @@ exportObj.setupTranslationSupport = ->
                     await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
                 if language != current_language
                     exportObj.loadCards language
-                for own selector, html of exportObj.translations[language].byCSSSelector
-                    $(selector).html html
+                exportObj.translateUIElements()
                 for builder in builders
                     builder.container.trigger 'xwing:afterLanguageLoad', language
 
@@ -59,8 +86,15 @@ exportObj.setupTranslationSupport = ->
     # Set up the common card data (e.g. stats)
     exportObj.setupCommonCardData basic_cards
 
+    # do we need to load dfl as well? Not sure...
     exportObj.loadCards DFL_LANGUAGE
-    $(exportObj).trigger 'xwing:languageChanged', DFL_LANGUAGE
+    exportObj.loadCards exportObj.currentLanguage 
+    $(exportObj).trigger 'xwing:languageChanged', exportObj.currentLanguage
+
+exportObj.translateUIElements = (context=undefined) ->
+    # translate all UI elements that are marked as translateable
+    for translateableNode in $('.translated', context)
+        translateableNode.innerHTML = (exportObj.translate('ui', translateableNode.getAttribute('defaultText')))
 
 exportObj.setupTranslationUI = (backend) ->
     for language in Object.keys(exportObj.cardLoaders).sort()
@@ -69,6 +103,7 @@ exportObj.setupTranslationUI = (backend) ->
         do (language, backend) ->
             li.click (e) ->
                 backend.set('language', language) if backend?
+                exportObj.currentLanguage = language
                 $(exportObj).trigger 'xwing:languageChanged', language
         $('.language-picker .dropdown-menu').append li
 
