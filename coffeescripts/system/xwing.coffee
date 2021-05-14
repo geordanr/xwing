@@ -229,7 +229,7 @@ class exportObj.SquadBuilder
 
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
-        @status_container.append $.trim '''
+        @status_container.append $.trim """
             <div class="row squad-name-and-points-row">
                 <div class="col-md-3 squad-name-container">
                     <div class="display-name">
@@ -237,14 +237,14 @@ class exportObj.SquadBuilder
                         <i class="far fa-edit"></i>
                     </div>
                     <div class="input-append">
-                        <input type="text" maxlength="64" placeholder="''' + @uitranslation("Name your squad...") + '''" />
+                        <input type="text" maxlength="64" placeholder="#{@uitranslation("Name your squad...")}" />
                         <button class="btn save"><i class="fa fa-pen-square"></i></button>
                     </div>
                     <br />
                     <select class="game-type-selector">
-                        <option value="standard" class="translated" defaultText="Extended"></option>
+                        <option value="standard" class="translated" defaultText="Extended" selected="selected">#{@uitranslation("Extended")}</option>
                         <option value="hyperspace" class="translated" defaultText="Hyperspace"></option>
-                        <option value="epic" class="translated" defaultText="Epic"</option>
+                        <option value="epic" class="translated" defaultText="Epic"></option>
                         <option value="quickbuild" class="translated" defaultText="Quickbuild"></option>
                     </select>
                 </div>
@@ -288,7 +288,7 @@ class exportObj.SquadBuilder
                     <span class="show-authenticated backend-status"></span>
                 </div>
             </div>
-        '''
+        """
         @container.append @status_container
 
         @xws_import_modal = $ document.createElement 'DIV'

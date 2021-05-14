@@ -280,11 +280,11 @@ class exportObj.CardBrowser
                         </div>
                     </div>
                     <div class="col-md-4 card-selecting-area">
-                        <span class="translate sort-cards-by" defaultText="Sort cards by"></span>: <select class="sort-by">
+                        <span class="translate sort-cards-by" defaultText="Sort cards by"></span><span class="translated" defaultText="Sort by">:</span> <select class="sort-by">
                             <option value="name" class="translated" defaultText="Name"></option>
                             <option value="source" class="translated" defaultText="Source"></option>
                             <option value="type-by-points" class="translated" defaultText="Type (by Points)"></option>
-                            <option value="type-by-name" selected="1" class="translated" defaultText="Type (by Name)"></option>
+                            <option value="type-by-name" selected="1" class="translated" defaultText="Type (by Name)" selected="selected">#{exportObj.translate('ui', 'Type (by Name)')}</option>
                         </select>
                         <div class="card-selector-container">
 

@@ -14,6 +14,31 @@ exportObj.codeToLanguage.de = 'Deutsch'
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
 exportObj.translations.Deutsch =
+    sloticon:
+        "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
+        "Force": '<i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>'
+        "Bomb": '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>'
+        "Cannon": '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>'
+        "Crew": '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>'
+        "Talent": '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>'
+        "Missile": '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>'
+        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-sensor"></i>'
+        "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
+        "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
+        "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
+        "Configuration": '<i class="xwing-miniatures-font xwing-miniatures-font-configuration"></i>'
+        "Modification": '<i class="xwing-miniatures-font xwing-miniatures-font-modification"></i>'
+        "Gunner": '<i class="xwing-miniatures-font xwing-miniatures-font-gunner"></i>'
+        "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
+        "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
+        "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
+        "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
+        "Team": '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>'
+        "Cargo": '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>'
+        "Command": '<i class="xwing-miniatures-font xwing-miniatures-font-command"></i>'
+        "HardpointShip": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
+        "Tactical Relay": '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>'
+
     slot:
         "Astromech": "Astromech"
         "Force": "Macht-Fähigkeit"
@@ -48,16 +73,16 @@ exportObj.translations.Deutsch =
         "Saw's Renegades Expansion Pack": "Saws Rebellenmiliz Erweiterung"
         "TIE Reaper Expansion Pack": "TIE-Schnitter Erweiterung"
     ui:
-        shipSelectorPlaceholder: "Wähle ein Schiff"
-        pilotSelectorPlaceholder: "Wähle einen Piloten"
+        "shipSelectorPlaceholder": "Wähle ein Schiff"
+        "pilotSelectorPlaceholder": "Wähle einen Piloten"
         upgradePlaceholder: (translator, slot) ->
             "Keine #{translator 'slot', slot} Aufwertungskarte"
-        modificationPlaceholder: "Keine Modifikation"
-        titlePlaceholder: "Kein Titel"
+        "modificationPlaceholder": "Keine Modifikation"
+        "titlePlaceholder": "Kein Titel"
         upgradeHeader: (translator, slot) ->
             "#{translator 'slot', slot} Aufwertungskarte"
-        unreleased: "unveröffentlicht"
-        epic: "episch"
+        "unreleased": "unveröffentlicht"
+        "epic": "episch"
         "Epic": "Episch"
         "Quickbuild": "Schnellbau"
         "Hyperspace": "Hyperspace"
@@ -78,6 +103,10 @@ exportObj.translations.Deutsch =
         "Card Search": "Kartensuche"
         "from": "von"
         "to": "bis"
+        "Submit Bug/Feature Request": "Fehlermeldungen & Feedback"
+        "Card Browser": "Kartendatenbank"
+        "Rules": "Regeln"
+        "About": "Impressum"
 
     singular:
         'pilots': 'Pilot'
@@ -109,6 +138,14 @@ exportObj.translations.Deutsch =
         "Barrel Roll": "Fassrolle"
         "Focus": "Fokus"
 
+    restrictions:
+        "Restrictions": "Einschränkungen"
+        "Initiative": "Initiative"
+        "Agility": "Wendigkeit"
+        "Non-Limited": "Nicht limitiert"
+        " or Squad Including": " oder Staffel mit"
+        "Ship": "Schiff"
+        "Extra": "Extra"
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Deutsch = () ->
