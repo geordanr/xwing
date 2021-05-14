@@ -75,6 +75,9 @@ exportObj.translations.Deutsch =
         "Random Squad Builder Options": "Zufallsgeneratoreinstellungen"
         "Miscellaneous Settings": "Sonstige Einstellungen" 
         "View in YASB": "In YASB 2.0 öffnen"
+        "Card Search": "Kartensuche"
+        "from": "von"
+        "to": "bis"
 
     singular:
         'pilots': 'Pilot'
@@ -92,6 +95,19 @@ exportObj.translations.Deutsch =
         'Medium': 'Mittel'
         'Large': 'Groß'
         'Huge': 'Riesig'
+
+    faction:
+        "Rebel Alliance": "Rebellen-Allianz"
+        "Galactic Empire": "Galaktisches Imperium"
+        "Scum and Villainy": "Abschaum und Kriminelle"
+        "Resistance": "Widerstand"
+        "First Order": "Erste Ordnung"
+        "Galactic Republic": "Galaktische Republik"
+        "Separatist Alliance": "Separatisten-Allianz"
+
+    action:
+        "Barrel Roll": "Fassrolle"
+        "Focus": "Fokus"
 
 
 exportObj.cardLoaders ?= {}

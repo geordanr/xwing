@@ -45,7 +45,7 @@ class exportObj.CardBrowser
 
         # internals
         @currently_selected = null
-        @language = 'English'
+        @language = exportObj.currentLanguage ? 'English'
 
         @prepareData()
 
@@ -60,218 +60,218 @@ class exportObj.CardBrowser
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card card-search-container">
-                        <h5 class="card-title">Card Search</h5>
+                        <h5 class="card-title translated" defaultText="Card Search"></h5>
                             <div class="advanced-search-container">
                                 <div class = "card search-container general-search-container">
                                     <h6 class="card-subtitle mb-3 text-muted version">General</h6>
                                     <label class = "text-search advanced-search-label">
-                                    <strong>Textsearch: </strong>
-                                        <input type="search" placeholder="Search for name, text or ship" class = "card-search-text">
+                                    <strong class="translated" defaultText="Textsearch:"></strong>
+                                        <input type="search" placeholder="#{exportObj.translate('ui', "Placeholder Textsearch Browser")}" class = "card-search-text">
                                     </label>
                                     <div class= "advanced-search-faction-selection-container">
                                         <label class = "advanced-search-label select-available-slots">
-                                            <strong>Factions: </strong>
-                                            <select class="advanced-search-selection faction-selection" multiple="1" data-placeholder="All factions"></select>
+                                            <strong class="translated" defaultText="Factions:"></strong>
+                                            <select class="advanced-search-selection faction-selection" multiple="1" data-placeholder="#{exportObj.translate('ui', "All factions")}"></select>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-point-selection-container">
-                                        <strong>Point costs:</strong>
+                                        <strong class="translated" defaultText="Point costs:"></strong>
                                         <label class = "advanced-search-label set-minimum-points">
-                                            from <input type="number" class="minimum-point-cost advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-point-cost advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-points">
-                                            to <input type="number" class="maximum-point-cost advanced-search-number-input" value="200" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-point-cost advanced-search-number-input" value="200" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-collection-container">
-                                        <strong>Owned copies:</strong>
+                                        <strong class="translated" defaultText="Owned copies:"></strong>
                                         <label class = "advanced-search-label set-minimum-owned-copies">
-                                            from <input type="number" class="minimum-owned-copies advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-owned-copies advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-owened-copies">
-                                            to <input type="number" class="maximum-owned-copies advanced-search-number-input" value="100" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-owned-copies advanced-search-number-input" value="100" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-misc-container">
-                                        <strong>Misc:</strong>
+                                        <strong class="translated" defaultText="Misc:"></strong>
                                         <label class = "advanced-search-label toggle-unique">
-                                            <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> Is unique
+                                            <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> <span class="translated" defaultText="Is unique"></span>
                                         </label>
                                         <label class = "advanced-search-label toggle-non-unique">
-                                            <input type="checkbox" class="non-unique-checkbox advanced-search-checkbox" /> Is not unique
+                                            <input type="checkbox" class="non-unique-checkbox advanced-search-checkbox" /> <span class="translated" defaultText="Is not unique"></span>
                                         </label>
                                         <label class = "advanced-search-label toggle-hyperspace">
-                                            <input type="checkbox" class="hyperspace-checkbox advanced-search-checkbox" /> Hyperspace legal
+                                            <input type="checkbox" class="hyperspace-checkbox advanced-search-checkbox" />  <span class="translated" defaultText="Hyperspace legal"></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class = "card search-container ship-search-container">
-                                    <h6 class="card-subtitle mb-3 text-muted version">Ships and Pilots</h6>
+                                    <h6 class="card-subtitle mb-3 text-muted version translated" defaultText="Ships and Pilots"></h6>
                                     <div class = "advanced-search-slot-available-container">
                                         <label class = "advanced-search-label select-available-slots">
-                                            <strong>Slots: </strong>
-                                            <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                            <strong class="translated" defaultText="Slots:"></strong>
+                                            <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="#{exportObj.translate('ui', "noXYselected", "slots")}"></select>
                                         </label>
                                         <br />
                                         <label class = "advanced-search-label toggle-unique">
-                                            <input type="checkbox" class="duplicate-slots-checkbox advanced-search-checkbox" /> Has multiple of the chosen slots
+                                            <input type="checkbox" class="duplicate-slots-checkbox advanced-search-checkbox" /> #{exportObj.translate('ui', "Has multiple of the chosen slots")}
                                         </label>
                                     </div>
                                     <div class = "advanced-search-actions-available-container">
                                         <label class = "advanced-search-label select-available-actions">
-                                            <strong>Actions: </strong>
-                                            <select class="advanced-search-selection action-available-selection" multiple="1" data-placeholder="No actions selected"></select>
+                                            <strong class="translated" defaultText="Actions:"></strong>
+                                            <select class="advanced-search-selection action-available-selection" multiple="1" data-placeholder="#{exportObj.translate('ui', "noXYselected", "actions")}"></select>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-linkedactions-available-container">
                                         <label class = "advanced-search-label select-available-linkedactions">
-                                            <strong>Linked actions: </strong>
-                                            <select class="advanced-search-selection linkedaction-available-selection" multiple="1" data-placeholder="No actions selected"></select>
+                                            <strong class="translated" defaultText="Linked actions:"></strong>
+                                            <select class="advanced-search-selection linkedaction-available-selection" multiple="1" data-placeholder="#{exportObj.translate('ui', "noXYselected", "actions")}"></select>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-ini-container">
-                                        <strong>Initiative:</strong>
+                                        <strong class="translated" defaultText="Initiative:"></strong>
                                         <label class = "advanced-search-label set-minimum-ini">
-                                            from <input type="number" class="minimum-ini advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-ini advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-ini">
-                                            to <input type="number" class="maximum-ini advanced-search-number-input" value="6" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-ini advanced-search-number-input" value="6" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-hull-container">
-                                        <strong>Hull:</strong>
+                                        <strong class="translated" defaultText="Hull:"></strong>
                                         <label class = "advanced-search-label set-minimum-hull">
-                                            from <input type="number" class="minimum-hull advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-hull advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-hull">
-                                            to <input type="number" class="maximum-hull advanced-search-number-input" value="12" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-hull advanced-search-number-input" value="12" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-shields-container">
-                                        <strong>Shields:</strong>
+                                        <strong class="translated" defaultText="Shields:"></strong>
                                         <label class = "advanced-search-label set-minimum-shields">
-                                            from <input type="number" class="minimum-shields advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-shields advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-shields">
-                                            to <input type="number" class="maximum-shields advanced-search-number-input" value="6" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-shields advanced-search-number-input" value="6" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-agility-container">
-                                        <strong>Agility:</strong>
+                                        <strong class="translated" defaultText="Agility:"></strong>
                                         <label class = "advanced-search-label set-minimum-agility">
-                                            from <input type="number" class="minimum-agility advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-agility advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-agility">
-                                            to <input type="number" class="maximum-agility advanced-search-number-input" value="3" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-agility advanced-search-number-input" value="3" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-base-size-container">
-                                        <strong>Base size:</strong>
+                                        <strong class="translated" defaultText="Base size:"></strong>
                                         <label class = "advanced-search-label toggle-small-base">
-                                            <input type="checkbox" class="small-base-checkbox advanced-search-checkbox" checked="checked"/> Small
+                                            <input type="checkbox" class="small-base-checkbox advanced-search-checkbox" checked="checked"/> <span class="translated" defaultText="Small"></span>
                                         </label>
                                         <label class = "advanced-search-label toggle-medium-base">
-                                            <input type="checkbox" class="medium-base-checkbox advanced-search-checkbox" checked="checked"/> Medium
+                                            <input type="checkbox" class="medium-base-checkbox advanced-search-checkbox" checked="checked"/> <span class="translated" defaultText="Medium"></span>
                                         </label>
                                         <label class = "advanced-search-label toggle-large-base">
-                                            <input type="checkbox" class="large-base-checkbox advanced-search-checkbox" checked="checked"/> Large
+                                            <input type="checkbox" class="large-base-checkbox advanced-search-checkbox" checked="checked"/> <span class="translated" defaultText="Large"></span>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-attack-container">
-                                        <strong>Attack  <i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>:</strong>
+                                        <strong><i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>:</strong>
                                         <label class = "advanced-search-label set-minimum-attack">
-                                            from <input type="number" class="minimum-attack advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-attack advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-attack">
-                                            to <input type="number" class="maximum-attack advanced-search-number-input" value="5" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-attack advanced-search-number-input" value="5" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-attackt-container">
-                                        <strong>Attack  <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>:</strong>
+                                        <strong><i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>:</strong>
                                         <label class = "advanced-search-label set-minimum-attackt">
-                                            from <input type="number" class="minimum-attackt advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-attackt advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-attackt">
-                                            to <input type="number" class="maximum-attackt advanced-search-number-input" value="5" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-attackt advanced-search-number-input" value="5" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-attackdt-container">
-                                        <strong>Attack <i class="xwing-miniatures-font xwing-miniatures-font-doubleturretarc"></i>:</strong>
+                                        <strong><i class="xwing-miniatures-font xwing-miniatures-font-doubleturretarc"></i>:</strong>
                                         <label class = "advanced-search-label set-minimum-attackdt">
-                                            from <input type="number" class="minimum-attackdt advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-attackdt advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-attackdt">
-                                            to <input type="number" class="maximum-attackdt advanced-search-number-input" value="5" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-attackdt advanced-search-number-input" value="5" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-attackf-container">
-                                        <strong>Attack <i class="xwing-miniatures-font xwing-miniatures-font-fullfrontarc"></i>:</strong>
+                                        <strong><i class="xwing-miniatures-font xwing-miniatures-font-fullfrontarc"></i>:</strong>
                                         <label class = "advanced-search-label set-minimum-attackf">
-                                            from <input type="number" class="minimum-attackf advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-attackf advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-attackf">
-                                            to <input type="number" class="maximum-attackf advanced-search-number-input" value="5" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-attackf advanced-search-number-input" value="5" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-attackb-container">
-                                        <strong>Attack <i class="xwing-miniatures-font xwing-miniatures-font-reararc"></i>:</strong>
+                                        <strong><i class="xwing-miniatures-font xwing-miniatures-font-reararc"></i>:</strong>
                                         <label class = "advanced-search-label set-minimum-attackb">
-                                            from <input type="number" class="minimum-attackb advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-attackb advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-attackb">
-                                            to <input type="number" class="maximum-attackb advanced-search-number-input" value="5" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-attackb advanced-search-number-input" value="5" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-attackbull-container">
-                                        <strong>Attack <i class="xwing-miniatures-font xwing-miniatures-font-bullseyearc"></i>:</strong>
+                                        <strong><i class="xwing-miniatures-font xwing-miniatures-font-bullseyearc"></i>:</strong>
                                         <label class = "advanced-search-label set-minimum-attackbull">
-                                            from <input type="number" class="minimum-attackbull advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-attackbull advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-attackbull">
-                                            to <input type="number" class="maximum-attackbull advanced-search-number-input" value="5" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-attackbull advanced-search-number-input" value="5" /> 
                                         </label>
                                     </div>
                                 </div>
                                 <div class = "card search-container other-stuff-search-container">
-                                    <h6 class="card-subtitle mb-3 text-muted version">Other Stuff</h6>
+                                    <h6 class="card-subtitle mb-3 text-muted version translated" defaultText="Other Stuff"></h6>
                                     <div class = "advanced-search-slot-used-container">
                                         <label class = "advanced-search-label select-used-slots">
-                                            <strong>Used slot: </strong>
-                                            <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                            <strong class="translated" defaultText="Used slot:"></strong>
+                                            <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="#{exportObj.translate('ui', "noXYselected", "slots")}"></select>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-slot-used-second-slot-container">
                                         <label class = "advanced-search-label select-used-second-slots">
-                                            <strong>Used second slot: </strong>
-                                            <select class="advanced-search-selection slot-used-second-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                            <strong class="translated" defaultText="Used double-slot:"></strong>
+                                            <select class="advanced-search-selection slot-used-second-selection" multiple="1" data-placeholder="#{exportObj.translate('ui', "noXYselected", "slots")}"></select>
                                         </label>
                                         <br />
                                         <label class = "advanced-search-label has-a-second-slot">
-                                            <input type="checkbox" class="advanced-search-checkbox has-a-second-slot-checkbox" /> Show only upgrades with a second slot
+                                            <input type="checkbox" class="advanced-search-checkbox has-a-second-slot-checkbox" /> <span class="translated" defaultText="Only upgrades requiring multiple slots"></span>
                                         </label>
                                     </div>
                                     <div class = "advanced-search-charge-container">
-                                        <strong>Charges:</strong>
+                                        <strong class="translated" defaultText="Charges:"></strong>
                                         <label class = "advanced-search-label set-minimum-charge">
-                                            from <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-charge">
-                                            to <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
                                         </label>
                                         <br />
                                         <label class = "advanced-search-label has-recurring-charge">
-                                            <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> Recurring
+                                            <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> <span class="translated" defaultText="Recurring"></span>
                                         </label>
                                         <label class = "advanced-search-label has-not-recurring-charge">
-                                            <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> Not recurring
+                                            <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> <span class="translated" defaultText="Not recurring"></span>
                                         </label>
                                     <div class = "advanced-search-force-container">
-                                        <strong>Force:</strong>
+                                        <strong class="translated" defaultText="Force:"></strong>
                                         <label class = "advanced-search-label set-minimum-force">
-                                            from <input type="number" class="minimum-force advanced-search-number-input" value="0" /> 
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-force advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-force">
-                                            to <input type="number" class="maximum-force advanced-search-number-input" value="3" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-force advanced-search-number-input" value="3" /> 
                                         </label>
                                     </div>
                                     </div>
@@ -280,11 +280,11 @@ class exportObj.CardBrowser
                         </div>
                     </div>
                     <div class="col-md-4 card-selecting-area">
-                        <span class="translate sort-cards-by">Sort cards by</span>: <select class="sort-by">
-                            <option value="name">Name</option>
-                            <option value="source">Source</option>
-                            <option value="type-by-points">Type (by Points)</option>
-                            <option value="type-by-name" selected="1">Type (by Name)</option>
+                        <span class="translate sort-cards-by" defaultText="Sort cards by"></span>: <select class="sort-by">
+                            <option value="name" class="translated" defaultText="Name"></option>
+                            <option value="source" class="translated" defaultText="Source"></option>
+                            <option value="type-by-points" class="translated" defaultText="Type (by Points)"></option>
+                            <option value="type-by-name" selected="1" class="translated" defaultText="Type (by Name)"></option>
                         </select>
                         <div class="card-selector-container">
 
@@ -295,7 +295,7 @@ class exportObj.CardBrowser
                     </div>
                     <div class="col-md-4">
                         <div class="card card-viewer-placeholder info-well">
-                            <p class="translate select-a-card">Select a card from the list at the left.</p>
+                            <p class="translate select-a-card" defaultText="Select a card"></p>
                         </div>
                         <div class="card card-viewer-container">
                         </div>
@@ -323,10 +323,12 @@ class exportObj.CardBrowser
         @faction_selection = ($ @container.find('.xwing-card-browser select.faction-selection'))
         for faction, pilot of exportObj.pilotsByFactionXWS
             opt = $ document.createElement('OPTION')
-            opt.text faction
+            opt.val faction
+            opt.text exportObj.translate('faction', faction)
             @faction_selection.append opt
         factionless_option = $ document.createElement('OPTION')
-        factionless_option.text "Factionless"
+        factionless_option.val "Factionless"
+        factionless_option.text exportObj.translate('faction',"Factionless")
         @faction_selection.append factionless_option
         @faction_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
@@ -343,36 +345,42 @@ class exportObj.CardBrowser
         @slot_available_selection = ($ @container.find('.xwing-card-browser select.slot-available-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
-            opt.text slot
+            opt.val slot
+            opt.text exportObj.translate('slot', slot)
             @slot_available_selection.append opt
         @slot_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @duplicateslots = ($ @container.find('.xwing-card-browser .duplicate-slots-checkbox'))[0]
         @action_available_selection = ($ @container.find('.xwing-card-browser select.action-available-selection'))
+        # ToDo: This does not seem like the correct place to have a list of all actions. Don't we have that elsewhere?!
         for action in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam"].sort()
             opt = $ document.createElement('OPTION')
-            opt.text action
+            opt.text exportObj.translate('action', action)
+            opt.val action
             @action_available_selection.append opt
         @action_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @linkedaction_available_selection = ($ @container.find('.xwing-card-browser select.linkedaction-available-selection'))
         for linkedaction in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam"].sort()
             opt = $ document.createElement('OPTION')
-            opt.text linkedaction
+            opt.text exportObj.translate('action', linkedaction)
+            opt.val linkedaction
             @linkedaction_available_selection.append opt
         @linkedaction_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @slot_used_selection = ($ @container.find('.xwing-card-browser select.slot-used-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
-            opt.text slot
+            opt.text exportObj.translate('slot', slot)
+            opt.val slot
             @slot_used_selection.append opt
         @slot_used_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @slot_used_second_selection = ($ @container.find('.xwing-card-browser select.slot-used-second-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
-            opt.text slot
+            opt.text exportObj.translate('slot', slot)
+            opt.val slot
             @slot_used_second_selection.append opt
         @slot_used_second_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
@@ -405,6 +413,8 @@ class exportObj.CardBrowser
         @not_recurring_charge = ($ @container.find('.xwing-card-browser .has-not-recurring-charge-checkbox'))[0]
         @minimum_owned_copies = ($ @container.find('.xwing-card-browser .minimum-owned-copies'))[0]
         @maximum_owned_copies = ($ @container.find('.xwing-card-browser .maximum-owned-copies'))[0]
+
+        exportObj.translateUIElements(@container)
 
 
 
@@ -556,7 +566,7 @@ class exportObj.CardBrowser
             when 'source'
                 for source in @sources
                     optgroup = $ document.createElement('OPTGROUP')
-                    optgroup.attr 'label', source
+                    optgroup.attr 'label', exportObj.translate('sources', source)
                     
                     card_added = false
                     for card in @cards_by_source[source]

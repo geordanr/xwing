@@ -94,18 +94,18 @@ exportObj.translations.English =
         "First Order Conversion Kit": "First Order Conversion Kit"
         "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack"
     ui:
-        shipSelectorPlaceholder: "Select a ship"
-        pilotSelectorPlaceholder: "Select a pilot"
+        "shipSelectorPlaceholder": "Select a ship"
+        "pilotSelectorPlaceholder": "Select a pilot"
         upgradePlaceholder: (translator, slot) ->
             "No #{translator 'slot', slot} Upgrade"
-        modificationPlaceholder: "No Modification"
-        titlePlaceholder: "No Title"
+        "modificationPlaceholder": "No Modification"
+        "titlePlaceholder": "No Title"
         upgradeHeader: (translator, slot) ->
             "#{translator 'slot', slot} Upgrade"
-        unreleased: "unreleased"
-        epic: "epic"
+        "unreleased": "unreleased"
+        "epic": "epic"
         "Quickbuild": "Quick Build"
-        limited: "limited"
+        "limited": "limited"
         "Unreleased content warning": "This squad uses unreleased content!"
         "Broken squad link warning": "It appears that you followed a broken link. No squad could be loaded!"
         "Collection warning": "You cannot field this list with your collection!"
@@ -129,7 +129,22 @@ exportObj.translations.English =
         collectionContentShipsAndPilots: (translator, ships, pilots) ->
             "You have #{ships} ship #{if ships == 1 then 'model' else 'models'} and #{pilots} pilot #{if ships == 1 then 'card' else 'cards'} in your collection."
         collectionContentUpgrades: (translator, number) ->
-             """You have #{number} in your collection."""
+            "You have #{number} in your collection."
+        varPointCostsPoints: (translator, points) ->
+            "<b>Point cost:</b> #{points} when "
+        varPointCostsConditionAgility: (translator, values) ->
+            "agility is #{values}"
+        varPointCostsConditionIni: (translator, values) ->
+            "initiative is #{values}"
+        varPointCostsConditionBase: (translator, values) ->
+            "base size is small, medium, large or huge"
+        "Missing Item List:": "To field this squad you need the following additional items:" 
+        pilotFlyingShip: (translator, pilot, ship) ->
+            "Pilot #{pilot} flying #{ship}"
+        "Placeholder Textsearch Browser": "Search for name, text or ship"
+        noXYselected: (translator, xy) ->
+            "No #{translator('ui', xy)} selected"
+        "Select a card": "Select a card from the list at the left."
 
     singular:
         'pilots': 'Pilot'
@@ -144,6 +159,8 @@ exportObj.translations.English =
     rulestypes:
         'glossary': 'Glossary'
         'faq': 'FAQ'
+    action:
+        'Boost': 'Boost'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.English = () ->

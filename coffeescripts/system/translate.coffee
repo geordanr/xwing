@@ -6,6 +6,8 @@
 
 DFL_LANGUAGE = 'English' # default language
 
+SHOW_DEBUG_OUT_MISSING_TRANSLATIONS = false
+
 builders = []
 
 exportObj = exports ? this
@@ -43,12 +45,12 @@ exportObj.translateToLang = (language, category, what, args...) ->
     try
         translation = exportObj.translations[language][category][what]
     catch all
-        # Most likely some translation did not exist. If we are already in default language, that's bad. 
-        # Otherwise we just continue and try to get the english translation in belows else block.
-        if not all instanceof TypeError or language == DFL_LANGUAGE
-            console.log(category)
-            console.log(what)
-            throw all
+        # well, guess something went wrong - most likely some translation did not exist in the
+        # current language. If that isn't the default language, we'll try that next in belows else block
+        # otherwise we just use whatever is the in-code text of the requested translation.
+        # Anyway, we want to keep running, so better catch that exception and keep going...
+        if SHOW_DEBUG_OUT_MISSING_TRANSLATIONS
+            console.log(language + ' translation for ' + String(what) + ' (category ' + String(category) + ') missing')
     if translation?
         if translation instanceof Function
             # pass this function in case we need to do further translation inside the function
@@ -57,10 +59,8 @@ exportObj.translateToLang = (language, category, what, args...) ->
             translation
     else
         if language != DFL_LANGUAGE
-            console.log(language + ' translation for ' + String(what) + ' (category ' + String(category) + ') missing')
             exportObj.translateToLang DFL_LANGUAGE, category, what, args...
         else
-            console.log('Default translation for ' + String(what) + ' (category ' + String(category) + ') missing')
             what
 
 exportObj.setupTranslationSupport = ->
@@ -74,6 +74,7 @@ exportObj.setupTranslationSupport = ->
                     await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
                 if language != current_language
                     exportObj.loadCards language
+                # When we keep this in global scope we probably only need to run it once, not once per builder tab.
                 exportObj.translateUIElements()
                 for builder in builders
                     builder.container.trigger 'xwing:afterLanguageLoad', language
