@@ -118,7 +118,12 @@ exportObj.translations.English =
         "Copy below BBCode": "<p>Copy the BBCode below and paste it into your forum post.</p>"
         "Copy below HTML": "<p>Copy the below and paste it elsewhere.</p>"
         "Copy below XWS":"<p>Copy and paste this into an XWS-compliant application.</p>"
-
+        "Use INI prefix": "Put INI as prefix in front of names."
+        "Choose obstacles dialog": "Choose up to three obstacles, to include in the permalink for use in external programs"
+        "Mark obstacles": "Mark the three obstacles you are using."
+        "Scan QR-Code": "Scan to open this list in the builder"
+        "View in YASB": "View in Yet Another Squad Builder 2.0"
+        "YASB advertisment": "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games."
 
     singular:
         'pilots': 'Pilot'

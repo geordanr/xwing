@@ -260,7 +260,7 @@ class exportObj.SquadBuilder
                 <div class="col-md-5 float-right button-container">
                     <div class="btn-group float-right">
 
-                        <button class="btn btn-info view-as-text"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;Print/Export</span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
+                        <button class="btn btn-info view-as-text"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;<span class="translated" defaultText="Print/Export"></span></span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
                         <a class="btn btn-primary d-none collection"><span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> <span class="translated" defaultText="Your Collection"></span></span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span></a>
                         <!-- Randomize button is marked as danger, since it creates a new squad -->
                         <button class="btn btn-danger randomize"><span class="d-none d-lg-block"><i class="fa fa-random"></i> <span class="translated" defaultText="Randomize!"></span></span><span class="d-lg-none"><i class="fa fa-random"></i></span></button>
@@ -751,40 +751,40 @@ class exportObj.SquadBuilder
                     <div class="modal-body">
                         <form>
                             <label>
-                                Maximal desired bid
+                                <span class="translated" defaultText="Maximal desired bid"><span>
                                 <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
                             </label><br />
                             <label>
-                                Maximum Ship Count (0 for no limit)
+                                <span class="translated" defaultText="Maximum Ship Count"></span>
                                 <input type="number" class="randomizer-ship-limit" value="#{DEFAULT_RANDOMIZER_SHIP_LIMIT}" placeholder="#{DEFAULT_RANDOMIZER_SHIP_LIMIT}" />
                             </label><br />
                             <label>
-                                More upgrades
+                                <span class="translated" defaultText="More upgrades"></span>
                                 <input type="range" min="0" max="10" class="randomizer-ships-or-upgrades" value="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" placeholder="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" />
-                                Less upgrades
+                                <span class="translated" defaultText="Less upgrades"></span>
                             </label><br />
                             <label>
                                 <input type="checkbox" class="randomizer-collection-only" checked="checked"/> 
-                                Only use items from collection
+                                <span class="translated" defaultText="Limit to collection"></span>
                             </label><br />
                             <label>
-                                Sets and Expansions (default all)
-                                <select class="randomizer-sources" multiple="1" data-placeholder="Use all sets and expansions">
+                                <span class="translated" defaultText="Sets and Expansions"></span>
+                                <select class="randomizer-sources" multiple="1" data-placeholder='""" + @uitranslation('All sets and expansions') + """'>
                                 </select>
                             </label><br />
                             <label>
                                 <input type="checkbox" class="randomizer-fill-zero-pts" /> 
-                                Always fill 0-point slots
+                                <span class="translated" defaultText="Always fill 0-point slots"></span>
                             </label><br />
                             <label>
-                                Maximum Seconds to Spend Randomizing
+                                <span class="translated" defaultText="Maximum Seconds to Spend Randomizing"></span>
                                 <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
                             </label>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary do-randomize" aria-hidden="true">Randomize!</button>
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button class="btn btn-primary do-randomize translated" aria-hidden="true" defaultText="Randomize!"></button>
+                        <button class="btn translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
                     </div>
                 </div>
             </div>
@@ -837,21 +837,18 @@ class exportObj.SquadBuilder
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Miscellaneous Settings</h3>
+                <h3 class="translated" defaultText="Miscellaneous Settings"></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <label class = "toggle-initiative-prefix-names misc-settings-label">
-                    <input type="checkbox" class="initiative-prefix-names-checkbox misc-settings-checkbox" /> Put INI as prefix in front of names. 
+                    <input type="checkbox" class="initiative-prefix-names-checkbox misc-settings-checkbox" /> <span class="translated" defaultText="Use INI prefix"></span> 
                 </label><br />
-                <label>
-                    <input type="checkbox" checked /> Is Dee Yun the worst?
-                </label>
             </div>
             <div class="modal-footer">
                 <span class="misc-settings-infoline"></span>
                 &nbsp;
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
             </div>
         </div>
     </div>
@@ -879,12 +876,12 @@ class exportObj.SquadBuilder
             if @backend? 
                 if @misc_settings_initiative_prefix.prop('checked')
                     @backend.set 'showInitiativeInFrontOfPilotName', '1', (ds) =>
-                        @misc_settings_infoline.text "Changes Saved"
+                        @misc_settings_infoline.text @uitranslation("Changes Saved")
                         @misc_settings_infoline.fadeIn 100, =>
                             @misc_settings_infoline.fadeOut 3000
                 else 
                     @backend.deleteSetting 'showInitiativeInFrontOfPilotName', (dd) =>
-                        @misc_settings_infoline.text "Changes Saved"
+                        @misc_settings_infoline.text @uitranslation("Changes Saved")
                         @misc_settings_infoline.fadeIn 100, =>
                             @misc_settings_infoline.fadeOut 3000
 
@@ -902,35 +899,35 @@ class exportObj.SquadBuilder
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <label class='choose-obstacles-description'>Choose up to three obstacles, to include in the permalink for use in external programs</label>
+                <label class='choose-obstacles-description translated' defaultText="Choose obstacles dialog"></label>
             </div>
             <div class="modal-body">
                 <div class="obstacle-select-container" style="float:left">
                     <select multiple class='obstacle-select' size="18">
-                        <option class="coreasteroid0-select" value="coreasteroid0">Core Asteroid 0</option>
-                        <option class="coreasteroid1-select" value="coreasteroid1">Core Asteroid 1</option>
-                        <option class="coreasteroid2-select" value="coreasteroid2">Core Asteroid 2</option>
-                        <option class="coreasteroid3-select" value="coreasteroid3">Core Asteroid 3</option>
-                        <option class="coreasteroid4-select" value="coreasteroid4">Core Asteroid 4</option>
-                        <option class="coreasteroid5-select" value="coreasteroid5">Core Asteroid 5</option>
-                        <option class="yt2400debris0-select" value="yt2400debris0">YT2400 Debris 0</option>
-                        <option class="yt2400debris1-select" value="yt2400debris1">YT2400 Debris 1</option>
-                        <option class="yt2400debris2-select" value="yt2400debris2">YT2400 Debris 2</option>
-                        <option class="vt49decimatordebris0-select" value="vt49decimatordebris0">VT49 Debris 0</option>
-                        <option class="vt49decimatordebris1-select" value="vt49decimatordebris1">VT49 Debris 1</option>
-                        <option class="vt49decimatordebris2-select" value="vt49decimatordebris2">VT49 Debris 2</option>
-                        <option class="core2asteroid0-select" value="core2asteroid0">Force Awakens Asteroid 0</option>
-                        <option class="core2asteroid1-select" value="core2asteroid1">Force Awakens Asteroid 1</option>
-                        <option class="core2asteroid2-select" value="core2asteroid2">Force Awakens Asteroid 2</option>
-                        <option class="core2asteroid3-select" value="core2asteroid3">Force Awakens Asteroid 3</option>
-                        <option class="core2asteroid4-select" value="core2asteroid4">Force Awakens Asteroid 4</option>
-                        <option class="core2asteroid5-select" value="core2asteroid5">Force Awakens Asteroid 5</option>
-                        <option class="gascloud1-select" value="gascloud1">Gas Cloud 1</option>
-                        <option class="gascloud2-select" value="gascloud2">Gas Cloud 2</option>
-                        <option class="gascloud3-select" value="gascloud3">Gas Cloud 3</option>
-                        <option class="gascloud4-select" value="gascloud4">Gas Cloud 4</option>
-                        <option class="gascloud5-select" value="gascloud5">Gas Cloud 5</option>
-                        <option class="gascloud6-select" value="gascloud6">Gas Cloud 6</option>
+                        <option class="coreasteroid0-select" value="coreasteroid0"><span class="translated" defaultText="Core Asteroid"</span> 0</option>
+                        <option class="coreasteroid1-select" value="coreasteroid1"><span class="translated" defaultText="Core Asteroid"</span> 1</option>
+                        <option class="coreasteroid2-select" value="coreasteroid2"><span class="translated" defaultText="Core Asteroid"</span> 2</option>
+                        <option class="coreasteroid3-select" value="coreasteroid3"><span class="translated" defaultText="Core Asteroid"</span> 3</option>
+                        <option class="coreasteroid4-select" value="coreasteroid4"><span class="translated" defaultText="Core Asteroid"</span> 4</option>
+                        <option class="coreasteroid5-select" value="coreasteroid5"><span class="translated" defaultText="Core Asteroid"</span> 5</option>
+                        <option class="yt2400debris0-select" value="yt2400debris0"><span class="translated" defaultText="YT2400 Debris"</span> 0</option>
+                        <option class="yt2400debris1-select" value="yt2400debris1"><span class="translated" defaultText="YT2400 Debris"</span> 1</option>
+                        <option class="yt2400debris2-select" value="yt2400debris2"><span class="translated" defaultText="YT2400 Debris"</span> 2</option>
+                        <option class="vt49decimatordebris0-select" value="vt49decimatordebris0"><span class="translated" defaultText="VT49 Debris"</span> 0</option>
+                        <option class="vt49decimatordebris1-select" value="vt49decimatordebris1"><span class="translated" defaultText="VT49 Debris"</span> 1</option>
+                        <option class="vt49decimatordebris2-select" value="vt49decimatordebris2"><span class="translated" defaultText="VT49 Debris"</span> 2</option>
+                        <option class="core2asteroid0-select" value="core2asteroid0"><span class="translated" defaultText="Force Awakens Asteroid"</span> 0</option>
+                        <option class="core2asteroid1-select" value="core2asteroid1"><span class="translated" defaultText="Force Awakens Asteroid"</span> 1</option>
+                        <option class="core2asteroid2-select" value="core2asteroid2"><span class="translated" defaultText="Force Awakens Asteroid"</span> 2</option>
+                        <option class="core2asteroid3-select" value="core2asteroid3"><span class="translated" defaultText="Force Awakens Asteroid"</span> 3</option>
+                        <option class="core2asteroid4-select" value="core2asteroid4"><span class="translated" defaultText="Force Awakens Asteroid"</span> 4</option>
+                        <option class="core2asteroid5-select" value="core2asteroid5"><span class="translated" defaultText="Force Awakens Asteroid"</span> 5</option>
+                        <option class="gascloud1-select" value="gascloud1"><span class="translated" defaultText="Gas Cloud"</span> 1</option>
+                        <option class="gascloud2-select" value="gascloud2"><span class="translated" defaultText="Gas Cloud"</span> 2</option>
+                        <option class="gascloud3-select" value="gascloud3"><span class="translated" defaultText="Gas Cloud"</span> 3</option>
+                        <option class="gascloud4-select" value="gascloud4"><span class="translated" defaultText="Gas Cloud"</span> 4</option>
+                        <option class="gascloud5-select" value="gascloud5"><span class="translated" defaultText="Gas Cloud"</span> 5</option>
+                        <option class="gascloud6-select" value="gascloud6"><span class="translated" defaultText="Gas Cloud"</span> 6</option>
                     </select>
                 </div>
                 <div class="obstacle-image-container" style="display:none;">
@@ -938,7 +935,7 @@ class exportObj.SquadBuilder
                 </div>
             </div>
             <div class="modal-footer d-print-none">
-                <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn close-print-dialog translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
             </div>
         </div>
     </div>
@@ -965,7 +962,7 @@ class exportObj.SquadBuilder
                     obstacles: @getObstacles()
                     tag: @tag.val().substr(0, 1024)
                 @backend_status.html $.trim """
-                    <i class="fa fa-sync fa-spin"></i>&nbsp;Saving squad...
+                    <i class="fa fa-sync fa-spin"></i>&nbsp;<span class="translated" defaultText="Saving squad..."></span>
                 """
                 @backend_status.show()
                 @backend_save_list_button.addClass 'disabled'
@@ -974,11 +971,11 @@ class exportObj.SquadBuilder
                     @current_squad.dirty = false
                     if @current_squad.id?
                         @backend_status.html $.trim """
-                            <i class="fa fa-check"></i>&nbsp;Squad updated successfully.
+                            <i class="fa fa-check"></i>&nbsp;<span class="translated" defaultText="Squad updated successfully."></span>
                         """
                     else
                         @backend_status.html $.trim """
-                            <i class="fa fa-check"></i>&nbsp;New squad saved successfully.
+                            <i class="fa fa-check"></i>&nbsp;<span class="translated" defaultText="New squad saved successfully."></span>
                         """
                         @current_squad.id = results.id
                     @container.trigger 'xwing-backend:squadDirtinessChanged'
@@ -1007,15 +1004,15 @@ class exportObj.SquadBuilder
             <div class="row">
                 <div class="col-md-9 ship-container">
                     <label class="notes-container show-authenticated col-md-10">
-                        <span class="notes-name">Squad Notes:</span>
+                        <span class="notes-name translated" defaultText="Squad Notes:"></span>
                         <br />
                         <textarea class="squad-notes"></textarea>
                         <br />
-                        <span class="tag-name">Tag:</span>
+                        <span class="tag-name translated" defaultText="Tag:"></span>
                         <input type="search" class="squad-tag"></input>
                     </label>
                     <div class="obstacles-container">
-                            <button class="btn btn-info choose-obstacles"><i class="fa fa-cloud"></i>&nbsp;Choose Obstacles</button>
+                            <button class="btn btn-info choose-obstacles"><i class="fa fa-cloud"></i>&nbsp;<span class="translated" defaultText="Choose Obstacles"</span></button>
                     </div>
                 </div>
                 <div class="col-md-3 info-container" id="info-container">
@@ -1062,7 +1059,7 @@ class exportObj.SquadBuilder
                 """ + @createInfoContainerUI() + """
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-danger close-print-dialog translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
             </div>
         </div>
     </div>
@@ -1079,19 +1076,19 @@ class exportObj.SquadBuilder
                 <table class="table-sm">
                     <tbody>
                         <tr class="info-ship">
-                            <td class="info-header">Ship</td>
+                            <td class="info-header translated" defaultText="Ship"></td>
                             <td class="info-data"></td>
                         </tr>
                         <tr class="info-base">
-                            <td class="info-header">Base</td>
+                            <td class="info-header translated" defaultText="Base"></td>
                             <td class="info-data"></td> 
                         </tr>
                         <tr class="info-skill">
-                            <td class="info-header">Initiative</td>
+                            <td class="info-header translated" defaultText="Initiative"></td>
                             <td class="info-data info-skill"></td>
                         </tr>
                         <tr class="info-engagement">
-                            <td class="info-header">Engagement</td>
+                            <td class="info-header translated" defaultText="Engagement"></td>
                             <td class="info-data info-engagement"></td>
                         </tr>
                         <tr class="info-attack-bullseye">
@@ -1151,15 +1148,15 @@ class exportObj.SquadBuilder
                             <td class="info-data info-energy"></td>
                         </tr>
                         <tr class="info-range">
-                            <td class="info-header">Range</td>
+                            <td class="info-header translated" defaultText="Range"></td>
                             <td class="info-data info-range"></td><td class="info-rangebonus"><i class="xwing-miniatures-font red header-range xwing-miniatures-font-rangebonusindicator"></i></td>
                         </tr>
                         <tr class="info-actions">
-                            <td class="info-header">Actions</td>
+                            <td class="info-header translated" defaultText="Actions"></td>
                             <td class="info-data"></td>
                         </tr>
                         <tr class="info-upgrades">
-                            <td class="info-header">Upgrades</td>
+                            <td class="info-header translated" defaultText="Upgrades"></td>
                             <td class="info-data"></td>
                         </tr>
                     </tbody>
@@ -1168,7 +1165,7 @@ class exportObj.SquadBuilder
                 <p class="info-text"></p>
                 <p class="info-maneuvers"></p>
                 <br />
-                <span class="info-header info-sources">Sources:</span> 
+                <span class="info-header info-sources translated" defaultText="Sources:"></span> 
                 <span class="info-data info-sources"></span>
             </div>
         """
@@ -1316,11 +1313,11 @@ class exportObj.SquadBuilder
                     
             # Notes, if present
             @printable_container.find('.printable-body').append $.trim """
-                <div class="version">Points Version: 1.9.0 March 2021</div>
-            """            
+                <div class="version"><span class="translated" defaultText="Points Version:"></span> 1.9.0 March 2021</div>
+            """
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
-                    <h5 class="print-notes">Notes:</h5>
+                    <h5 class="print-notes translated" defaultText="Notes:"></h5>
                     <pre class="print-notes"></pre>
                 """            
                 @printable_container.find('.printable-body pre.print-notes').text @notes.val()
@@ -1336,7 +1333,7 @@ class exportObj.SquadBuilder
             if @list_modal.find('.toggle-obstacles').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
                     <div class="obstacles">
-                        <div>Mark the three obstacles you are using.</div>
+                        <div class="translated" defaultText="Mark obstacles"></div>
                         <img class="obstacle-silhouettes" src="images/xws-obstacles.png" />
                     </div>
                 """
@@ -1348,11 +1345,11 @@ class exportObj.SquadBuilder
                 <div class="qrcode-container">
                     <div class="permalink-container">
                         <div class="qrcode"></div>
-                        <div class="qrcode-text">Scan to open this list in the builder</div>
+                        <div class="qrcode-text translated" defaultText="Scan QR-Code"></div>
                     </div>
                     <div class="juggler-container">
                         <div class="qrcode"></div>
-                        <div class="qrcode-text">For List Juggler (When it's updated for 2.0)</div>
+                        <div class="qrcode-text translated" defaultText="List Juggler QR-Code"></div>
                     </div>
                 </div>
                 """
@@ -1503,11 +1500,11 @@ class exportObj.SquadBuilder
 <br />
 <b><i>Total: #{@total_points}</i></b>
 <br />
-<a href="#{@getPermaLink()}">View in Yet Another Squad Builder 2.0</a>
+<a href="#{@getPermaLink()}">#{@uitranslation("View in YASB")}</a>
         """
 
-        @reddit_container.find('textarea').val $.trim """#{reddit_ships.join "    \n"}    \n**Total:** *#{@total_points}*    \n    \n[View in Yet Another Squad Builder 2.0](#{@getPermaLink()})"""
-        @simplecopy_container.find('textarea').val $.trim """#{simplecopy_ships.join ""}    \nTotal: #{@total_points}    \n    \nView in Yet Another Squad Builder 2.0: #{@getPermaLink()}"""
+        @reddit_container.find('textarea').val $.trim """#{reddit_ships.join "    \n"}    \n**#{@uitranslation('Total')}:** *#{@total_points}*    \n    \n[#{@uitranslation('View in YASB')}](#{@getPermaLink()})"""
+        @simplecopy_container.find('textarea').val $.trim """#{simplecopy_ships.join ""}    \n#{@uitranslation('Total')}: #{@total_points}    \n    \n#{@uitranslation('View in YASB')}: #{@getPermaLink()}"""
         
 
         #Additional code to add obstacles to TTS
@@ -1523,7 +1520,7 @@ class exportObj.SquadBuilder
 
         @tts_textarea.val $.trim """#{tts_ships.join ""}"""
         
-        @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]Total: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]View in Yet Another Squad Builder 2.0[/url]"""
+        @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]#{@uitranslation('Total')}: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]#{@uitranslation('View in YASB')}[/url]"""
 
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
@@ -1575,9 +1572,9 @@ class exportObj.SquadBuilder
         @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
         @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
         if @ships.length > 1
-            $('meta[property="og:description"]').attr("content", "X-Wing Squadron by YASB 2.0: " + @current_squad.name + ": " + @describeSquad())
+            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2.0: ") + @current_squad.name + ": " + @describeSquad())
         else
-            $('meta[property="og:description"]').attr("content", "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
+            $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
         
         # Moved XWS update to whenever the dirtyness changed rather than on points updated.
         @xws_textarea.val $.trim JSON.stringify(@toXWS())
@@ -1597,7 +1594,7 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.append short_name
         @squad_name_input.val @current_squad.name
         return unless $.getParameterByName('f') == @faction
-        if @current_squad.name != "Unnamed Squadron" and @current_squad.name != "Unsaved Squadron"
+        if @current_squad.name != @uitranslation("Unnamed Squadron") and @current_squad.name != @uitranslation("Unsaved Squadron")
             if (document.title != "YASB 2.0 - " + @current_squad.name) 
                 document.title = "YASB 2.0 - " + @current_squad.name
         else
@@ -1606,7 +1603,7 @@ class exportObj.SquadBuilder
     removeAllShips: ->
         while @ships.length > 0
             @removeShip @ships[0]
-        throw new Error("Ships not emptied") if @ships.length > 0
+        throw new Error(@uitranslation("Ships not emptied")) if @ships.length > 0
 
     showTextListModal: ->
         # Display print/text view modal
@@ -2027,7 +2024,7 @@ class exportObj.SquadBuilder
                     added_dials[ship.data.name] = (added_dials[ship.data.name] ? []).concat [maneuvers_modified.toString()] # save maneuver as string, as that is easier to compare than arrays (if e.g. two ships of same type, one with and one without R4 are in a squad, we add 2 dials)
                     dialHTML += '<div class="fancy-dial">' + 
                                 """<h4 class="ship-name-dial">#{if ship.data.display_name? then ship.data.display_name else ship.data.name}""" +
-                                """#{if maneuvers_modified.toString() != maneuvers_unmodified.toString() then " (upgraded)" else ""}</h4>""" +
+                                """#{if maneuvers_modified.toString() != maneuvers_unmodified.toString() then " (" + @uitranslation(modified) + ")" else ""}</h4>""" +
                                 @getManeuverTableHTML(maneuvers_modified, maneuvers_unmodified) + '</div>'
 
         return """

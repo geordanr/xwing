@@ -73,6 +73,8 @@ exportObj.translations.Deutsch =
         "Copy": "Kopieren"
         "Print": "Drucken"
         "Random Squad Builder Options": "Zufallsgeneratoreinstellungen"
+        "Miscellaneous Settings": "Sonstige Einstellungen" 
+        "View in YASB": "In YASB 2.0 öffnen"
 
     singular:
         'pilots': 'Pilot'
