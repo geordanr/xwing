@@ -9786,20 +9786,3 @@ class exportObj.Collection
                 "rgb(#{i}, 255, #{i})"
             else
                 ''
-
-    onLanguageChange:
-        (e, language) =>
-            @language = language
-            if language != @old_language
-                @old_language = language
-                # console.log "language changed to #{language}"
-                do (language) =>
-                    @modal.find('.expansion-name').each ->
-                        # console.log "translating #{$(this).text()} (#{$(this).data('name')}) to #{language}"
-                        $(this).text exportObj.translate language, 'sources', $(this).data('name')
-                    @modal.find('.ship-name').each ->
-                        $(this).text (if exportObj.ships[$(this).data('name')].display_name then exportObj.ships[$(this).data('name')].display_name else $(this).data('name'))
-                    @modal.find('.pilot-name').each ->
-                        $(this).text (if exportObj.pilots[$(this).data('name')].display_name then exportObj.pilots[$(this).data('name')].display_name else $(this).data('name'))
-                    @modal.find('.upgrade-name').each ->
-                        $(this).text (if exportObj.upgrades[$(this).data('name')].display_name then exportObj.upgrades[$(this).data('name')].display_name else $(this).data('name'))
