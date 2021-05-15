@@ -145,6 +145,31 @@ exportObj.translations.English =
         noXYselected: (translator, xy) ->
             "No #{translator('ui', xy)} selected"
         "Select a card": "Select a card from the list at the left."
+        yourXYsquads: (translator, faction) ->
+            "Your #{translator('faction', faction)} Squads"
+        reallyDeleteSquadXY: (translator, squadname) -> 
+            "Really delete #{squadname}?"
+        "No saved squads": "Nothing to see here. Go save a squad!"
+        "name required": "A name is required"
+        "Name in use": "You already have a squad with that name"
+        "select OAuth provider": "Select one of the OAuth providers below to log in and start saving squads."
+        "OAuth explanation" : """
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> is an authorization system which lets you prove your identity at a web site without having to create a new account.  Instead, you tell some provider with whom you already have an account (e.g. Google or Facebook) to prove to this web site that you say who you are.  That way, the next time you visit, this site remembers that you're that user from Google.
+                    </p>
+                    <p>
+                        The best part about this is that you don't have to come up with a new username and password to remember.  And don't worry, I'm not collecting any data from the providers about you.  I've tried to set the scope of data to be as small as possible, but some places send a bunch of data at minimum.  I throw it away.  All I look at is a unique identifier (usually some giant number).
+                    </p>
+                    <p>
+                        For more information, check out this <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">introduction to OAuth</a>.
+                    </p>
+                    """
+        "Continue to OAuth provider": "This will open a new window to let you authenticate with the chosen provider. You may have to allow pop ups for this site."
+        "iOS requires cross-site control": """Due to a new feature in iOS systems OAuth won't work unless you enable "cross-site control"."""
+        "login in progress": "OAuth login is in progress. Please finish authorization at the specified provider using the window that was just created."
+        "Squads reloaded": "All squads of that faction have been reloaded."
+        "Sure to delete?": "Are you sure you want to delete this squad?"
+        "Unsaved Changes Warning": "You have not saved changes to this squad.  Do you want to go back and save?"
 
     singular:
         'pilots': 'Pilot'

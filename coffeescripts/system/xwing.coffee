@@ -283,7 +283,7 @@ class exportObj.SquadBuilder
                     <button class="show-authenticated btn btn-primary save-list-as"><i class="far fa-file"></i>&nbsp;<span class="translated" defaultText="Save As..."></span></button>
                     <button class="show-authenticated btn btn-primary delete-list disabled"><i class="fa fa-trash"></i>&nbsp;<span class="translated" defaultText="Delete"></span></button>
                     <button class="show-authenticated btn btn-info backend-list-my-squads show-authenticated"><i class="fa fa-download"></i>&nbsp;<span class = "translated" defaultText="Load Squad"></span></button>
-                    <button class="btn btn-info import-squad"><i class="fa fa-file-import"></i>&nbsp;<span class="translated" defaulText="Import"></span></button>
+                    <button class="btn btn-info import-squad"><i class="fa fa-file-import"></i>&nbsp;<span class="translated" defaultText="Import"></span></button>
                     <button class="btn btn-danger clear-squad"><i class="fa fa-plus-circle"></i>&nbsp;<span class="translated" defaultText="New Squad"></span></button>
                     <span class="show-authenticated backend-status"></span>
                 </div>
@@ -410,7 +410,7 @@ class exportObj.SquadBuilder
                             <span class="translated" defaultText="Include QR codes"></span> <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                         </label><br />
                         <label class="obstacles-checkbox">
-                            <span class="transalted" defaultText="Include Obstacle Choices"></span> <input type="checkbox" class="toggle-obstacles" />
+                            <span class="translated" defaultText="Include Obstacle Choices"></span> <input type="checkbox" class="toggle-obstacles" />
                         </label>
                     </div>
                 </div>

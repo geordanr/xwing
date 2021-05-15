@@ -364,7 +364,8 @@ html
 
           window.backend.getSettings (settings) ->
               window.backend.getLanguagePreference settings, (language) ->
-                $(window).trigger 'xwing:languageChanged', language
+                if(language != '')
+                  $(window).trigger 'xwing:languageChanged', language
 
           window.setupTranslationUI window.backend
 

@@ -107,6 +107,7 @@ exportObj.translations.Deutsch =
         "Card Browser": "Kartendatenbank"
         "Rules": "Regeln"
         "About": "Impressum"
+        "Remove Pilot": "Pilot entfernen"
 
     singular:
         'pilots': 'Pilot'

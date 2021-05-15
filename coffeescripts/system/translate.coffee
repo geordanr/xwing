@@ -74,7 +74,6 @@ exportObj.setupTranslationSupport = ->
                     await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
                 if language != current_language
                     exportObj.loadCards language
-                # When we keep this in global scope we probably only need to run it once, not once per builder tab.
                 exportObj.translateUIElements()
                 for builder in builders
                     builder.container.trigger 'xwing:afterLanguageLoad', language
@@ -93,6 +92,8 @@ exportObj.setupTranslationSupport = ->
     $(exportObj).trigger 'xwing:languageChanged', exportObj.currentLanguage
 
 exportObj.translateUIElements = (context=undefined) ->
+    # todo: remove 
+    console.log("Translating for context #{context} into #{exportObj.currentLanguage} requested")
     # translate all UI elements that are marked as translateable
     for translateableNode in $('.translated', context)
         translateableNode.innerHTML = (exportObj.translate('ui', translateableNode.getAttribute('defaultText')))
