@@ -369,9 +369,6 @@ html
 
           window.setupTranslationUI window.backend
 
-          window.xws = new XWSManager
-              container: '#xws'
-
           if (window.location.href.indexOf('https:') != 0) and ((navigator.userAgent.indexOf('MSIE 8') > -1) or (navigator.userAgent.indexOf('MSIE 9') > -1))
               $('.msie8-hax').html '''
                   Trouble logging in? Try clicking <a href="#">here</a> first.
@@ -379,8 +376,6 @@ html
               $('.msie8-hax a').click (e) ->
                   e.preventDefault()
                   window.location.href = window.location.href.replace(/^http:/, 'https:')
-
-    #xws
 
     .font-hax
       span(style="font-family: BankGothicHD")
