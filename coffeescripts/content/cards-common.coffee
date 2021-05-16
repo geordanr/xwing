@@ -19848,7 +19848,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             pilot: "Ahsoka Tano (A-Wing)"
             ship: "A-Wing"
-            threat: 1
+            threat: 2
             upgrades: [
                 "Marg Sabl Closure"
                 "Patience"
