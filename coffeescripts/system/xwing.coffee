@@ -783,7 +783,7 @@ class exportObj.SquadBuilder
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary do-randomize translated" aria-hidden="true" defaultText="Randomize!"></button>
+                        <button class="btn btn-primary do-randomize translated" aria-hidden="true" defaultText="Roll!"></button>
                         <button class="btn translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
                     </div>
                 </div>

@@ -147,6 +147,9 @@ exportObj.translations.Deutsch =
         " or Squad Including": " oder Staffel mit"
         "Ship": "Schiff"
         "Extra": "Extra"
+    rulestypes:
+        "faq": "FAQ"
+        "glossary": "Referenzhandbuch"
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Deutsch = () ->

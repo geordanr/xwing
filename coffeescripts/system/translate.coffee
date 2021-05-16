@@ -49,8 +49,7 @@ exportObj.translateToLang = (language, category, what, args...) ->
         # current language. If that isn't the default language, we'll try that next in belows else block
         # otherwise we just use whatever is the in-code text of the requested translation.
         # Anyway, we want to keep running, so better catch that exception and keep going...
-        if SHOW_DEBUG_OUT_MISSING_TRANSLATIONS
-            console.log(language + ' translation for ' + String(what) + ' (category ' + String(category) + ') missing')
+        translation = undefined
     if translation?
         if translation instanceof Function
             # pass this function in case we need to do further translation inside the function
@@ -58,6 +57,8 @@ exportObj.translateToLang = (language, category, what, args...) ->
         else
             translation
     else
+        if SHOW_DEBUG_OUT_MISSING_TRANSLATIONS
+            console.log(language + ' translation for ' + String(what) + ' (category ' + String(category) + ') missing')
         if language != DFL_LANGUAGE
             exportObj.translateToLang DFL_LANGUAGE, category, what, args...
         else
@@ -92,8 +93,6 @@ exportObj.setupTranslationSupport = ->
     $(exportObj).trigger 'xwing:languageChanged', exportObj.currentLanguage
 
 exportObj.translateUIElements = (context=undefined) ->
-    # todo: remove 
-    console.log("Translating for context #{context} into #{exportObj.currentLanguage} requested")
     # translate all UI elements that are marked as translateable
     for translateableNode in $('.translated', context)
         translateableNode.innerHTML = (exportObj.translate('ui', translateableNode.getAttribute('defaultText')))

@@ -9736,8 +9736,7 @@ class exportObj.Collection
             @modal_status.text 'Collection saved'
             @modal_status.fadeIn 100, =>
                 @modal_status.fadeOut 1000
-        .on 'xwing:languageChanged', @onLanguageChange
-
+                
         .on 'xwing:CollectionCheck', @onCollectionCheckSet
 
         $ @modal.find('input.expansion-count').change (e) =>

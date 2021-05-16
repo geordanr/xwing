@@ -12,7 +12,6 @@ exportObj.codeToLanguage ?= {}
 exportObj.codeToLanguage.es = 'Español'
 
 exportObj.translations ?= {}
-# This is here mostly as a template for other languages.
 exportObj.translations['Español'] =
     slot:
         "Astromech": "Astromecánico"
@@ -59,7 +58,6 @@ exportObj.translations['Español'] =
         unreleased: "sin publicar"
         epic: "épico"
         limited: "limitado"
-       
         'Unreleased content warning': 'Esta escuadra usa contenido aún no publicado!'
         'Collection warning': 'No puedes desplegar esta lista con tu colección!'
         # Type selector
@@ -69,11 +67,12 @@ exportObj.translations['Español'] =
         'Quickbuild': 'Quick Build'        
         # Card browser
         'Name': 'Nombre'
-        'Quelle': 'Fuente'
+        'Source': 'Fuente'
         'Type (by Points)': 'Tipo (por Puntos)'
         'Type (by Name)': 'Tipo (por Nombre)'
         'Select a card': 'Selecciona una carta de la lista de la izquierda.'
         'Sort cards by': 'Ordena las cartas por'
+        'Sort by': 'Ordena por'
         # Info well
         'Ship': 'Nave'
         'Initiative': 'Iniciativa'
@@ -86,7 +85,6 @@ exportObj.translations['Español'] =
         'Save As...' : 'Grabar como…'
         'Delete' : 'Borrar'
         'Load Squad' : 'Cargar Escuadrón'
-        'Delete' : 'Borrar'
         'All' : 'Todos'
         'Print/Export': 'Imprimir/Ver como texto'
         'Randomize!' : 'Aleatorio!'        
@@ -99,7 +97,7 @@ exportObj.translations['Español'] =
         # New Squadron dialog
         'Discard' : 'Descartar cambios'
         # Log in dialog
-        'What is OAuth?' : '¿Qué es OAuth?'
+        "What's this?" : '¿Qué es OAuth?'
         # Print/View modal
         'Copy' : 'Copiar'
         "Copy below BBCode": "<p>Copia el BBCode de debajo y pegalo en el post de tu foro.</p>"
@@ -110,7 +108,7 @@ exportObj.translations['Español'] =
         'Fancy' : 'Elaborada'
         'Close' : 'Cerrar'
         # Randomizer options
-        'Randomize!' : 'Aleatoriza!'
+        'Roll!' : 'Aleatoriza!'
         # Top tab bar
         'Card Browser' : 'Explorador de Cartas'
         'About' : 'Acerca de'

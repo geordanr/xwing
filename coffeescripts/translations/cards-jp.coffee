@@ -12,7 +12,6 @@ exportObj.codeToLanguage ?= {}
 exportObj.codeToLanguage.jp = '日本語'
 
 exportObj.translations ?= {}
-# This is here mostly as a template for other languages.
 exportObj.translations.日本語 =
     sloticon:
         "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
@@ -83,7 +82,7 @@ exportObj.translations.日本語 =
         "Hyperdrive": "ハイパードライブ"
         "Team": "チーム"
 
-    sources: # needed?
+    sources:
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
         "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
@@ -111,74 +110,60 @@ exportObj.translations.日本語 =
         limited: "制限"
     byCSSSelector:
         # Warnings
-        '.unreleased-content-used .translated': 'このスコードはリリース前のコンテンツを使用しています!'
-        '.loading-failed-container .translated': 'リンクが壊れていたようです。スコードをロードできませんでした!'
-        '.collection-invalid .translated': 'あなたのコレクションではこのリストを編成できません!'
-        '.ship-number-invalid-container .translated': 'トーナメントリーガルなスコードは2-8機の宇宙船が必要です!'
+        'Unreleased content warning': 'このスコードはリリース前のコンテンツを使用しています!'
+        'Broken squad link warning': 'リンクが壊れていたようです。スコードをロードできませんでした!'
+        'Collection warning': 'あなたのコレクションではこのリストを編成できません!'
+        'Ship number warning': 'トーナメントリーガルなスコードは2-8機の宇宙船が必要です!'
         # Type selector
-        '.game-type-selector option[value="standard"]': 'エクステンデッド'
-        '.game-type-selector option[value="hyperspace"]': 'ハイパースペース'
-        '.game-type-selector option[value="epic"]': 'エピック'
-        '.game-type-selector option[value="quickbuild"]': 'クイックビルド'
+        'Extended': 'エクステンデッド'
+        'Hyperspace': 'ハイパースペース'
+        'Epic': 'エピック'
+        'Quickbuild': 'クイックビルド'
         # Card browser
-        '.xwing-card-browser option[value="name"]': '名前'
-        '.xwing-card-browser option[value="source"]': '出典'
-        '.xwing-card-browser option[value="type-by-points"]': 'タイプ (ポイント順)'
-        '.xwing-card-browser option[value="type-by-name"]': 'タイプ (名前順)'
-        '.xwing-card-browser .translate.select-a-card': '左のリストからカードを選んでください'
-        '.xwing-card-browser .translate.sort-cards-by': 'ソート方法'
+        'Name': '名前'
+        'Source': '出典'
+        'Type (by Points)': 'タイプ (ポイント順)'
+        'Type (by Name)': 'タイプ (名前順)'
+        'Select a card': '左のリストからカードを選んでください'
+        'Sort cards by': 'ソート方法'
         # Info well
-        '.info-well .info-ship td.info-header': '宇宙船'
-        '.info-well .info-skill td.info-header': 'イニシアチブ'
-        '.info-well .info-actions td.info-header': 'アクション'
-        '.info-well .info-upgrades td.info-header': 'アップグレード'
-        '.info-well .info-range td.info-header': 'レンジ'
-        '.info-well .info-sources.info-header': '出典'
+        'Ship': '宇宙船'
+        'Initiative': 'イニシアチブ'
+        'Actions': 'アクション'
+        'Upgrades': 'アップグレード'
+        'Range': 'レンジ'
+        'Sources:': '出典:'
         # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;新しいスコード'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;セーブ'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;名前を付けてセーブ'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;削除'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;スコードのロード'
-        '.import-squad' : '<i class="fa fa-file-import"></i>&nbsp;インポート'
-        '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;リストの印刷/エクスポート</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
-        '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> あなたのコレクション</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
-        '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> ランダム!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'
-        '.randomize-options' : 'ランダマイザオプション…'
-        '.notes-container .notes-name' : 'スコードのノート:'
-        '.notes-container .tag-name' : 'タグ:'
+        'New Squad' : '新しいスコード'
+        'Save' : 'セーブ'
+        'Save As...' : '名前を付けてセーブ'
+        'Delete' : '削除'
+        'Load Squad' : 'スコードのロード'
+        'Import' : 'インポート'
+        'Print/Export' : 'リストの印刷/エクスポート'
+        'Your Collection': 'あなたのコレクション'
+        'Randomize!' : 'ランダム!'
+        'Randomizer Options' : 'ランダマイザオプション…'
+        'Squad Notes:' : 'スコードのノート:'
+        'Tag:' : 'タグ:'
         # Print/View modal
-        '.bbcode-list' : '以下のBBCodeをコピーして、フォーラムのポストにペーストしてください<textarea></textarea><button class="btn btn-copy">コピー</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">コピー</button>'
-        '.vertical-space-checkbox' : """カードごとのスペースを追加 <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """カラー印刷 <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;印刷'
+        'Copy below BBCode' : '以下のBBCodeをコピーして、フォーラムのポストにペーストしてください'
+        'Copy' : 'コピー'
+        'Space for Cards' : """カードごとのスペースを追加"""
+        'Print Color' : """カラー印刷"""
+        'Print' : '印刷'
         # Randomizer options
-        '.do-randomize' : 'ランダム!'
+        'Roll!' : 'ランダム!'
         # Top tab bar
-        '#browserTab' : 'カードブラウザ'
-        '#aboutTab' : '詳細'
+        'Card Browser' : 'カードブラウザ'
+        'About' : '詳細'
         # Obstacles
-        '.choose-obstacles' : '<i class="fa fa-cloud"></i>&nbsp;障害物の選択'
-        '.choose-obstacles-description' : '外部プログラムのリンクに含める障害物を3つまで選択します(選択した障害物をプリントアウトする機能は未サポートです)'
-        '.coreasteroid0-select' : 'コア・アステロイド 0'
-        '.coreasteroid1-select' : 'コア・アステロイド 1'
-        '.coreasteroid2-select' : 'コア・アステロイド 2'
-        '.coreasteroid3-select' : 'コア・アステロイド 3'
-        '.coreasteroid4-select' : 'コア・アステロイド 4'
-        '.coreasteroid5-select' : 'コア・アステロイド 5'
-        '.yt2400debris0-select' : 'YT2400・デブリ 0'
-        '.yt2400debris1-select' : 'YT2400・デブリ 1'
-        '.yt2400debris2-select' : 'YT2400・デブリ 2'
-        '.vt49decimatordebris0-select' : 'VT49・デブリ 0'
-        '.vt49decimatordebris1-select' : 'VT49・デブリ 1'
-        '.vt49decimatordebris2-select' : 'VT49・デブリ 2'
-        '.core2asteroid0-select' : 'フォースの覚醒・アステロイド 0'
-        '.core2asteroid1-select' : 'フォースの覚醒・アステロイド 1'
-        '.core2asteroid2-select' : 'フォースの覚醒・アステロイド 2'
-        '.core2asteroid3-select' : 'フォースの覚醒・アステロイド 3'
-        '.core2asteroid4-select' : 'フォースの覚醒・アステロイド 4'
-        '.core2asteroid5-select' : 'フォースの覚醒・アステロイド 5'
+        'Choose Obstacles' : '障害物の選択'
+        'Choose obstacles dialog' : '外部プログラムのリンクに含める障害物を3つまで選択します(選択した障害物をプリントアウトする機能は未サポートです)'
+        'Core Asteroid' : 'コア・アステロイド'
+        'YT2400 Debris' : 'YT2400・デブリ'
+        'VT49 Debris' : 'VT49・デブリ'
+        'Force Awakens Asteroid' : 'フォースの覚醒・アステロイド'
         # Collection
 
     singular:

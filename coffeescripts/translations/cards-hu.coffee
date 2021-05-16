@@ -4,7 +4,6 @@ exportObj.codeToLanguage ?= {}
 exportObj.codeToLanguage.hu = 'Magyar'
 
 exportObj.translations ?= {}
-# This is here mostly as a template for other languages.
 exportObj.translations.Magyar =
     slot:
         "Astromech": "Astromech"
@@ -25,7 +24,7 @@ exportObj.translations.Magyar =
         "Device": "Töltet"
         "Tech": "Tech"
         "Title": "Nevesítés"
-    sources: # needed?
+    sources:
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
         "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
@@ -53,74 +52,56 @@ exportObj.translations.Magyar =
         limited: "korlátozott"
     byCSSSelector:
         # Warnings
-        '.unreleased-content-used .translated': 'Ez a raj kiadatlan tartalmat használ!'
-        '.loading-failed-container .translated': 'It appears that you followed a broken link. No squad could be loaded!'
-        '.collection-invalid .translated': 'Ez a lista nem vihető pályára a készletedből!'
-        '.ship-number-invalid-container .translated': 'A tournament legal squad must contain 2-8 ships!'
+        'Unreleased content warning': 'Ez a raj kiadatlan tartalmat használ!'
+        'Broken squad link warning': 'It appears that you followed a broken link. No squad could be loaded!'
+        'Collection warning': 'Ez a lista nem vihető pályára a készletedből!'
+        'Ship number warning': 'A tournament legal squad must contain 2-8 ships!'
         # Type selector
-        '.game-type-selector option[value="standard"]': 'Kiterjesztett'
-        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="Epic"]': 'Epic'
-        '.game-type-selector option[value="quickbuild"]': 'Quick Build'
+        'Extended': 'Kiterjesztett'
+        'Hyperspace': 'Hyperspace'
+        'Epic': 'Epic'
+        'Quickbuild': 'Quick Build'
         # Card browser
-        '.xwing-card-browser option[value="name"]': 'Név'
-        '.xwing-card-browser option[value="source"]': 'Forrás'
-        '.xwing-card-browser option[value="type-by-points"]': 'Típus (pont szerint)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Típus (név szerint)'
-        '.xwing-card-browser .translate.select-a-card': 'Válassz a bal oldalon lévő kártyákból.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
+        'Name': 'Név'
+        'Source': 'Forrás'
+        'Type (by Points)': 'Típus (pont szerint)'
+        'Type (by Name)': 'Típus (név szerint)'
+        'Select a card': 'Válassz a bal oldalon lévő kártyákból.'
+        'Sort cards by': 'Sort cards by'
         # Info well
-        '.info-well .info-ship td.info-header': 'Hajó'
-        '.info-well .info-skill td.info-header': 'Kezdeményezés'
-        '.info-well .info-actions td.info-header': 'Akciók'
-        '.info-well .info-upgrades td.info-header': 'Fejlesztések'
-        '.info-well .info-range td.info-header': 'Távolság'
-        '.info-well .info-sources.info-header':  'Források'
+        'Ship': 'Hajó'
+        'Initiative': 'Kezdeményezés'
+        'Actions': 'Akciók'
+        'Upgrades': 'Fejlesztések'
+        'Range': 'Távolság'
+        'Sources:':  'Források:'
         # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Új raj'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;Mentés'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Mentés mint…'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Törlés'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Raj betöltés'
-        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Nyomtatás/Szövegnézet </span>'
-        '.randomize' : '<i class="fa fa-random"></i>&nbsp;Random!'
-        '.randomize-options' : 'Randomizer opciók…'
-        '.notes-container .notes-name' : 'Jegyzetek:'
-        '.notes-container .tag-name' : 'Tag:'        
+        'New Squad' : 'Új raj'
+        'Save' : 'Mentés'
+        'Save As...' : 'Mentés mint…'
+        'Delete' : 'Törlés'
+        'Load Squad' : 'Raj betöltés'
+        'Print/Export' : 'Nyomtatás/Szövegnézet'
+        'Randomize!' : 'Random!'
+        'Randomizer Options' : 'Randomizer opciók…'
+        'Squad Notes:' : 'Jegyzetek:'
+        'Tag:' : 'Tag:'        
         # Print/View modal
-        '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Másolás</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Másolás</button>'
-        '.vertical-space-checkbox' : """Hagyj helyet a sérülés és fejlesztéskártyáknak nyomtatáskor <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Színes nyomtatás <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Nyomtatás'
+        'Copy below BBCode' : '<p>Copy the BBCode below and paste it into your forum post.</p>'
+        'Copy' : 'Másolás'
+        'Space for Cards' : """Hagyj helyet a sérülés és fejlesztéskártyáknak nyomtatáskor"""
+        'Print Color' : """Színes nyomtatás"""
+        'Print' : 'Nyomtatás'
         # Randomizer options
-        '.do-randomize' : 'Randomize!'
+        'Roll!' : 'Randomize!'
         # Top tab bar
-        '#browserTab' : 'Kártya tallózó'
-        '#aboutTab' : 'Rólunk'
+        'Card Browser' : 'Kártya tallózó'
+        'About' : 'Rólunk'
         # Obstacles
-        '.choose-obstacles' : 'Válassz akadályt'
-        '.choose-obstacles-description' : 'Choose up to three obstacles to include in the permalink for use in external programs. (Support for displaying which obstacles were selected in the printout is not yet supported.)'
-        '.coreasteroid0-select' : 'Core Asteroid 0'
-        '.coreasteroid1-select' : 'Core Asteroid 1'
-        '.coreasteroid2-select' : 'Core Asteroid 2'
-        '.coreasteroid3-select' : 'Core Asteroid 3'
-        '.coreasteroid4-select' : 'Core Asteroid 4'
-        '.coreasteroid5-select' : 'Core Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Debris 0'
-        '.yt2400debris1-select' : 'YT2400 Debris 1'
-        '.yt2400debris2-select' : 'YT2400 Debris 2'
-        '.vt49decimatordebris0-select' : 'VT49 Debris 0'
-        '.vt49decimatordebris1-select' : 'VT49 Debris 1'
-        '.vt49decimatordebris2-select' : 'VT49 Debris 2'
-        '.core2asteroid0-select' : 'Force Awakens Asteroid 0'
-        '.core2asteroid1-select' : 'Force Awakens Asteroid 1'
-        '.core2asteroid2-select' : 'Force Awakens Asteroid 2'
-        '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
-        '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
-        '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
+        'Choose Obstacles' : 'Válassz akadályt'
+        'Choose obstacles dialog' : 'Choose up to three obstacles to include in the permalink for use in external programs. (Support for displaying which obstacles were selected in the printout is not yet supported.)'
         # Collection
-        '.collection': '<i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Gyűjteményed'
+        'Your Collection': 'Gyűjteményed'
 
     singular:
         'pilots': 'Pilóta'
