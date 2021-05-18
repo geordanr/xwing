@@ -1221,7 +1221,7 @@ class exportObj.SquadBuilder
             # console.log "#{@faction}: collection was created"
             @collection = collection
             # console.log "#{@faction}: Collection created, checking squad"
-            @collection.onLanguageChange null, @language
+            # @collection.onLanguageChange null, @language
             @checkCollection()
             @collection_button.removeClass 'd-none'
         .on 'xwing-collection:changed', (e, collection) =>
@@ -1474,7 +1474,7 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container.toggleClass 'd-none', not unreleased_content_used
 
         @fancy_total_points_container.text @total_points
-
+        
         # update text list
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
