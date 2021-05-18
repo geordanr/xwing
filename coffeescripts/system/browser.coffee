@@ -63,7 +63,7 @@ class exportObj.CardBrowser
                         <h5 class="card-title translated" defaultText="Card Search"></h5>
                             <div class="advanced-search-container">
                                 <div class = "card search-container general-search-container">
-                                    <h6 class="card-subtitle mb-3 text-muted version">General</h6>
+                                    <h6 class="card-subtitle mb-3 text-muted version translated" defaultText="General"></h6>
                                     <label class = "text-search advanced-search-label">
                                     <strong class="translated" defaultText="Textsearch:"></strong>
                                         <input type="search" placeholder="#{exportObj.translate('ui', "Placeholder Textsearch Browser")}" class = "card-search-text">
