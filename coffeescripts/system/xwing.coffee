@@ -2630,7 +2630,7 @@ class exportObj.SquadBuilder
                     
                     if @collection?.counts?
                         addon_count = @collection.counts?['upgrade']?[data.name] ? 0
-                        container.find('.info-collection').text @uitranslation(collectionContentUpgrades, addon_count)
+                        container.find('.info-collection').text @uitranslation("collectionContentUpgrades", addon_count)
                         container.find('.info-collection').show()
                     else
                         container.find('.info-collection').hide()
