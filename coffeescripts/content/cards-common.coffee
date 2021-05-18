@@ -19807,7 +19807,7 @@ exportObj.basicCardData = ->
             ship: "B-Wing"
             threat: 3
             upgrades: [
-                "B6 Blade Wing Prototype"
+                "B6 Blade Wing Prototype (Epic)"
                 "Passive Sensors"
                 "Deadeye Shot"
                 "Sabine Wren (Gunner)"
@@ -19848,7 +19848,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             pilot: "Ahsoka Tano (A-Wing)"
             ship: "A-Wing"
-            threat: 1
+            threat: 2
             upgrades: [
                 "Marg Sabl Closure"
                 "Patience"

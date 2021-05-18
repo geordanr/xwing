@@ -53,9 +53,9 @@ html
         li.nav-item
           a#separatistTab.nav-link('data-toggle'="tab", href='#separatistContent', title='Seperatist Alliance') <i class="xwing-miniatures-font xwing-miniatures-font-separatists"></i>
         li.nav-item
-          a#allTab.nav-link('data-toggle'="tab", href='#allContent', title='All') MultiFaction
+          a#allTab.nav-link('data-toggle'="tab", href='#allContent', title='All', class='translated', defaultText='MultiFaction')
         li.nav-item.float-right
-          a.nav-link(href='https://github.com/raithos/xwing/issues/new', target='_blank') Submit Bug/Feature Request 
+          a.nav-link(href='https://github.com/raithos/xwing/issues/new', target='_blank', class='translated', defaultText='Submit Bug/Feature Request') 
         li.nav-item.float-right
           a#login-logout.d-none.nav-link(href='#')
             span.hide-authenticated
@@ -76,11 +76,11 @@ html
             b.caret
           ul.dropdown-menu      
         li.nav-item.float-right
-          a#aboutTab.nav-link('data-toggle'="tab", href='#aboutContent') About    
+          a#aboutTab.nav-link('data-toggle'="tab", href='#aboutContent', class='translated', defaultText='About')
         li.nav-item.float-right
-          a#browserTab.nav-link('data-toggle'="tab", href='#browserContent') Card Browser                      
+          a#browserTab.nav-link('data-toggle'="tab", href='#browserContent', class='translated', defaultText='Card Browser')
         li.nav-item.float-right
-          a#rulesTab.nav-link('data-toggle'="tab", href='#rulesBrowserContent') Rules
+          a#rulesTab.nav-link('data-toggle'="tab", href='#rulesBrowserContent', class='translated', defaultText='Rules')
 
       .tab-content
         .tab-pane.fade#rebelContent
@@ -136,6 +136,8 @@ html
                     Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
 
                     Squad name in the permalink and obstacles choice modal by [zacharyp](https://github.com/zacharyp).
+
+                    Quick Build support by [patschke](https://github.com/patschke)
 
                     This builder is unofficial and is not affiliated with Fantasy Flight Games, Lucasfilm Ltd., or Disney.
 
@@ -362,12 +364,10 @@ html
 
           window.backend.getSettings (settings) ->
               window.backend.getLanguagePreference settings, (language) ->
-                $(window).trigger 'xwing:languageChanged', language
+                if(language != '')
+                  $(window).trigger 'xwing:languageChanged', language
 
           window.setupTranslationUI window.backend
-
-          window.xws = new XWSManager
-              container: '#xws'
 
           if (window.location.href.indexOf('https:') != 0) and ((navigator.userAgent.indexOf('MSIE 8') > -1) or (navigator.userAgent.indexOf('MSIE 9') > -1))
               $('.msie8-hax').html '''
@@ -376,8 +376,6 @@ html
               $('.msie8-hax a').click (e) ->
                   e.preventDefault()
                   window.location.href = window.location.href.replace(/^http:/, 'https:')
-
-    #xws
 
     .font-hax
       span(style="font-family: BankGothicHD")

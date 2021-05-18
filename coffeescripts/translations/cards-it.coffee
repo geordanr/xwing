@@ -5,6 +5,7 @@ exportObj.codeToLanguage.it = 'Italiano'
 
 exportObj.translations ?= {}
 exportObj.translations.Italiano =
+# translation of ui and universal game terms goes here...
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Italiano = () ->
