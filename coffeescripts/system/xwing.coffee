@@ -3432,21 +3432,29 @@ class Ship
             else
                 @setPilotById other.pilot.id, true
 
-            # Can't just copy upgrades since slots may be different
+            # filter out upgrades that can be copied
             other_upgrades = {}
             for upgrade in other.upgrades
                 if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
                     other_upgrades[upgrade.slot] ?= []
                     other_upgrades[upgrade.slot].push upgrade
+            # set them aside any upgrades that don't fill requirements due to additional slots and then attempt to fill them
             delayed_upgrades = {}
             for upgrade in @upgrades
                 other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
                 if other_upgrade?
                     upgrade.setById other_upgrade.data.id
-                    if not upgrades.lastSetValid
+                    if not upgrade.lastSetValid
                         delayed_upgrades[other_upgrade.data.id] = upgrade
             for id, upgrade of delayed_upgrades
                 upgrade.setById id
+            # Do one final pass on upgrades to see if there are any more upgrades we can assign
+            for upgrade in @upgrades
+                if not upgrade.isOccupied()
+                    other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
+                    if other_upgrade?
+                        upgrade.setById other_upgrade.data.id
+            
             @addStandardizedUpgrades()
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
@@ -4644,7 +4652,12 @@ class GenericAddon
         if @data?.unique?
             await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
         if @data?.standardized?
-            @removeStandardized()
+            isLastShip = true
+            for ship in @ship.builder.ships
+                if ship.data? and (@ship.data.name == ship.data.name) and (@ship != ship)
+                    isLastShip = false
+            if isLastShip == true
+                @removeStandardized()
         @destroyed = true
         @rescindAddons()
         @deoccupyOtherUpgrades()
