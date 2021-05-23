@@ -14,26 +14,55 @@ exportObj.codeToLanguage.de = 'Deutsch'
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
 exportObj.translations.Deutsch =
+    sloticon:
+        "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
+        "Force": '<i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>'
+        "Bomb": '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>'
+        "Cannon": '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>'
+        "Crew": '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>'
+        "Talent": '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>'
+        "Missile": '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>'
+        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-sensor"></i>'
+        "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
+        "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
+        "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
+        "Configuration": '<i class="xwing-miniatures-font xwing-miniatures-font-configuration"></i>'
+        "Modification": '<i class="xwing-miniatures-font xwing-miniatures-font-modification"></i>'
+        "Gunner": '<i class="xwing-miniatures-font xwing-miniatures-font-gunner"></i>'
+        "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
+        "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
+        "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
+        "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
+        "Team": '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>'
+        "Cargo": '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>'
+        "Command": '<i class="xwing-miniatures-font xwing-miniatures-font-command"></i>'
+        "HardpointShip": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
+        "Tactical Relay": '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>'
+
     slot:
         "Astromech": "Astromech"
         "Force": "Macht-Fähigkeit"
-        "Bomb": "Bomb" # which slot is this? Bombs belong to the device slot, right?
         "Cannon": "Kanone"
         "Crew": "Mannschaft"
         "Missile": "Rakete"
         "Sensor": "Sensor"
         "Torpedo": "Torpedo"
         "Turret": "Geschütz"
-        "Hardpoint": "Bewaffnung"
+        "Hardpoint": "Waffenaufhängung"
         "Illicit": "Schmuggelware"
         "Configuration": "Konfiguration"
         "Talent": "Talent"
         "Modification": "Modifikation"
         "Gunner": "Bordschütze"
         "Device": "Vorrichtung"
-        "Tech": "Tech"
+        "Tech": "Technik"
         "Title": "Titel"
-    sources: # needed?
+        "Command": "Kommando"
+        "Hyperdrive": "Hyperntrieb"
+        "Cargo": "Fracht"
+        "Team": "Team"
+        "Tactical Relay": "Taktische Leitung"
+    sources: 
         "Second Edition Core Set": "Grundspiel zweite Edition"
         "Rebel Alliance Conversion Kit": "Konvertierungsset „Rebellenallianz“"
         "Galactic Empire Conversion Kit": "Konvertierungsset „Galaktisches Imperium“"
@@ -47,110 +76,228 @@ exportObj.translations.Deutsch =
         "Lando's Millennium Falcon Expansion Pack": "Landos Millennium Falke Erweiterung"
         "Saw's Renegades Expansion Pack": "Saws Rebellenmiliz Erweiterung"
         "TIE Reaper Expansion Pack": "TIE-Schnitter Erweiterung"
+        "Sith Infiltrator Expansion Pack": "Sith Infiltrator Erweiterung"
     ui:
-        shipSelectorPlaceholder: "Wähle ein Schiff"
-        pilotSelectorPlaceholder: "Wähle einen Piloten"
-        upgradePlaceholder: (translator, language, slot) ->
-            "Keine #{translator language, 'slot', slot} Aufwertungskarte"
-        modificationPlaceholder: "Keine Modifikation"
-        titlePlaceholder: "Kein Titel"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Aufwertungskarte"
-        unreleased: "unveröffentlicht"
-        epic: "episch"
-        limited: "limitiert"
-    byCSSSelector:
-        # Warnings
-        '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
-        '.loading-failed-container .translated': 'Du scheinst einem defekten Link gefolgt zu sein. Es konnte kein Squad geladen werden!'
-        '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
-        '.ship-number-invalid-container .translated': 'Eine turnierlegale Staffel muss aus  2-8 Schiffen bestehen!'
-        # Type selector
-        '.game-type-selector option[value="standard"]': 'Standard'
-        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="Epic"]': 'Epic'
-        '.game-type-selector option[value="quickbuild"]': 'Quick Build'        
-        # Card browser
-        '.xwing-card-browser option[value="name"]': 'Name'
-        '.xwing-card-browser option[value="source"]': 'Quelle'
-        '.xwing-card-browser option[value="type-by-points"]': 'Typ (nach Punkten)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Typ (nach Namen)'
-        '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte von der Liste auf der linken Seite.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sortiere Karten nach'
-        # Info well
-        '.info-well .info-ship td.info-header': 'Schiff'
-        '.info-well .info-skill td.info-header': 'Initiative'
-        '.info-well .info-actions td.info-header': 'Aktionen'
-        '.info-well .info-upgrades td.info-header': 'Aufwertungskarten'
-        '.info-well .info-range td.info-header': 'Reichweite'
-        '.info-well .info-sources.info-header': 'Enthalten&nbsp;in:'
-        # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Neue Staffel'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;Speichern'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Speichern unter…'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Löschen'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Staffel laden'
-        '.delete-squad' : 'Löschen'
-        '.delete-squad' : 'Laden'
-        '.show-standard-squads' : 'Standard'
-        '.show-epic-squads' : 'Episch'
-        '.show-team-epic-squads' : 'Team Episch'
-        '.show-all-squads' : 'Alle'
-        '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i> Drucken/Als Text ansehen</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
-        '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> Zufall!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'        
-        '.randomize-options' : 'Zufallsgenerator Optionen'
-        '.notes-container .notes-name' : 'Staffel Notizen:'
-        '.notes-container .tag-name' : 'Tag:'
-        '.choose-obstacles' : 'Hindernisse wählen'
-        '.from-xws' : 'Importieren aus XWS-Datei'
-        '.to-xws' : 'Exportieren als XWS-Datei'
-        # New Squadron dialog
-        '.discard' : 'Änderungen verwerfen'
-        # Log in dialog
-        '.login-help' : 'Was ist OAuth?'
-        '.oauth-explanation' :
-            """<p><a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> ist ein Authentifizierungsservice, der es dir erlaubt dich auf Webseiten anzumelden, ohne einen Nutzerkonto anlegen zu müssen. Stattdessen wählst du einen Anbieter, bei dem du bereits eine Nutzerkonto hast (z.B. Google oder Facebook), und dieser bestätigt deine Identität. Auf diese Weise kann YASB dich beim nächsten Besuch wiedererkennen. </p>
-            <p>Das beste hieran ist, dass du dir nicht ständig neue Nutzernamen und Passwörter überlegen musst. Keine Sorge, YASB sammelt keine persönlichen Daten von diesen Anbietern über dich. Teilweise kann ich nicht verhindern, dass ein Minimum an persönlichen Daten übertragen wird, diese werden ignoriert. Alles was gespeichert wird ist eine Identifikationsnummer, anhand der du beim nächsten Besuch wiedererkannt wirst - und die zu dieser ID gehörenden Staffellisten natürlich.</p>
-            <p>Um mehr zu erfahren, schau dir <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">diese Einführung in OAuth (englisch)</a> an.</p>""" # this translation will remove an "Got it!" button. It would not work, if I just add it here, as the connection to the java-script is lost. 
-        '.login-in-progress':"""<em>Die OAuth Anmeldung ist in Arbeit. Bitte beende die Anmeldung bei angegebenen Anbierter über das soeben erstellte Fenster. </em>"""
-        # Print/View modal
-        '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
-        '.vertical-space-checkbox' : """Lasse beim Drucken Platz für Schadens-/Aufwertungskarten <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Farbig drucken <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Drucken'
-        '.select-simple-view' : 'Einfach'
-        '.select-fancy-view' : 'Schick'
-        '.close-print-dialog' : 'Schließen'
-        # Randomizer options
-        '.do-randomize' : 'Auswürfeln!'
-        # Top tab bar
-        '#browserTab' : 'Kartendatenbank'
-        '#aboutTab' : 'Impressum'
-        # Obstacles
-        '.choose-obstacles' : 'Wähle Hindernisse'
-        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
-        '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
-        '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
-        '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
-        '.coreasteroid3-select' : 'Grundspiel Asteroid 3'
-        '.coreasteroid4-select' : 'Grundspiel Asteroid 4'
-        '.coreasteroid5-select' : 'Grundspiel Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Trümmerwolke 0'
-        '.yt2400debris1-select' : 'YT2400 Trümmerwolke 1'
-        '.yt2400debris2-select' : 'YT2400 Trümmerwolke 2'
-        '.vt49decimatordebris0-select' : 'VT49 Trümmerwolke 0'
-        '.vt49decimatordebris1-select' : 'VT49 Trümmerwolke 1'
-        '.vt49decimatordebris2-select' : 'VT49 Trümmerwolke 2'
-        '.core2asteroid0-select' : 'Erwachen der Macht Asteroid 0'
-        '.core2asteroid1-select' : 'Erwachen der Macht Asteroid 1'
-        '.core2asteroid2-select' : 'Erwachen der Macht Asteroid 2'
-        '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
-        '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
-        '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
-        # Collection
-        '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Deine Sammlung</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
-        '.checkbox-check-collection' : 'Überprüfe Staffeln auf Verfügbarkeit <input class="check-collection" type="checkbox">'
+        "shipSelectorPlaceholder": "Wähle ein Schiff"
+        "pilotSelectorPlaceholder": "Wähle einen Piloten"
+        upgradePlaceholder: (translator, slot) ->
+            "Keine #{translator 'slot', slot} Aufwertungskarte"
+        "modificationPlaceholder": "Keine Modifikation"
+        "titlePlaceholder": "Kein Titel"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} Aufwertungskarte"
+        "unreleased": "unveröffentlicht"
+        "epic": "episch"
+        "Epic": "Episch"
+        "Quickbuild": "Schnellbau"
+        "Hyperspace": "Hyperraum"
+        "Extended": "Extended"
+        "limited": "limitiert"
+        "Unnamed Squadron": "Unbenannte Staffel"
+        "Unsaved Squadron": "Nicht gespeicherte Staffel"
+        "New Squadron": "Neue Staffel"
+        "Name your squad...": "Gib einen Namen ein…"
+        "Ship number warning": "Eine turnierlegale Staffel muss aus 2-8 Schiffen bestehen!"
+        "Your Collection": "Deine Sammlung"
+        "Randomize!": "Zufall!"
+        "Copy": "Kopieren"
+        "Print": "Drucken"
+        "Random Squad Builder Options": "Zufallsgeneratoreinstellungen"
+        "Miscellaneous Settings": "Sonstige Einstellungen" 
+        "View in YASB": "In YASB 2.0 öffnen"
+        "Card Search": "Kartensuche"
+        "from": "von"
+        "to": "bis"
+        "Submit Bug/Feature Request": "Fehlermeldungen & Feedback"
+        "Card Browser": "Kartendatenbank"
+        "Rules": "Regeln"
+        "About": "Impressum"
+        "Remove Pilot": "Pilot entfernen"
+        "Clone Pilot": "Pilot duplizieren"
+        "Wingmates": "Flügelmänner"
+        "Total": "Summe"
+        "X-Wing Squadron by YASB 2.0: ": "Staffel erstellt mit YASB 2.0"
+        "YASB advertisment": "YASB 2.0 ist ein übersichtlicher, einfach zu nutzender und quelloffener Staffeleditor für das X-Wing Miniaturenspiel von Asmodee"
+        "Points Destroyed": "Zerstörte Punkte"
+        "Ship total": "Summe Schiff"
+        "Ship Total": "Summe Schiff"
+        "Half Points": "Halbe Punktzahl"
+        "Threshold": "Grenzwert"
+        "Yes, Delete": "Ja, Löschen"
+        "Never Mind": "Upps, doch nicht"
+        "Really Delete": "Wirklich löschen"
+        "Sure to delete?": "Bist du dir sicher, dass du diese Staffel löschen möchtest?"
+        "Save": "Speichern"
+        "Unsaved Changes": "Ungespeicherte Änderungen"
+        "Go Back": "Zurück"
+        "Unsaved Changes Warning": "Du hast deine Änderungen an dieser Staffel noch nicht gespeichert. Möchtest du abbrechen und dies vorher tun?"
+        "Save Squad As...": "Speichern unter…"
+        "Recalculate Points": "Punkte neu berechnen"
+        "Archived": "Archiviert"
+        "QB":"SB"
+        "Hyper": "HR"
+        "Ext": "Erw"
+        "All": "Alle"
+        "Delete Selected": "Ausgewählte löschen"
+        "Archive Selected": "Ausgewählte archivieren"
+        "Select All": "Alle auswählen"
+        "Fetching squads...": "Lade Staffeln…"
+        "Well done!": "Sehr gut!"
+        "Squads reloaded": "Alle Staffeln dieser Fraktion wurden aktualisiert."
+        "login in progress": "OAuth Anmeldung in Bearbeitung. Bitte schließe die Anmeldung bei dem von dir gewählten Anbieter im soeben geöffneten Fenster ab."
+        "OAuth explanation" : """
+                    <p>
+                        <a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> (Open Authorization) ist ein Schnittstelle, die es dir ermöglicht dich bei verschiedenen Webseiten (z.B. hier bei YASB) anzumelden, ohne einen neuen Account anlegen zu müssen oder uns irgendwelche persönlichen Daten übermitteln zu müssen. Alles was du brauchst ist ein vorhandener Account bei einem der unten stehenden Anbieter, dem du sagst, dass du YASB nutzen möchtest. 
+is an authorization system which lets you prove your identity at a web site without having to create a new account.  Instead, you tell some provider with whom you already have an account (e.g. Google or Facebook) to prove to this web site that you say who you are.  That way, the next time you visit, this site remembers that you're that user from Google.
+                    </p>
+                    <p>
+                        Dieser Anbieter übermittelt dann eine eindeutige ID an YASB, unter der wir deine Staffeln und Sammlung speichern können, damit du beim nächsten Besuch auf sie zugreifen kannst. Wir können leider nicht verhindern, dass (je nach Anbieter) eventuell weitere Informationen außer dieser ID übertragen werden, den restlichen Kram werfen wir einfach sofort weg. 
+                    </p>
+                    <p>
+                        Mehr Informationen zum OAuth Verfahren findest du z.B. auf <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">unter diesem Link (englisch)</a>.
+                    </p>
+                    <p>
+                        Wenn du lieber gar keinen Account nutzen möchtest, kannst du eine Staffeln übrigens auch einfach speichern, indem du ein Lesezeichen setzt - und diese sogar über den Link teilen. Achtung: Du musst das Lesezeichen jedes mal erneuern, wenn du deine Staffel bearbeitest. 
+                    </p>
+                    """
+        "Continue to OAuth provider": "This will open a new window to let you authenticate with the chosen provider. You may have to allow pop ups for this site."
+        "Continue to OAuth provider": "Dies wird ein neues Fenster beim gewählten Anbieter öffnen. Es kann sein, dass du Pop-Ups erlauben musst."
+        "iOS requires cross-site control": """Unter iOS musst du eventuell erst "cross-site control" aktivieren, damit OAuth nutzen kannst."""
+        "select OAuth provider": "Wähle einen der untentstehenden OAuth Anbieter um dich einzuloggen und Staffeln speichern zu können."
+        "Log in with OAuth": "Anmeldung per OAuth"
+        "What's this?": "Was ist das?"
+        "Close": "Schließen"
+        "Roll!": "Auswürfeln!"
+        "Maximum Seconds to Spend Randomizing": "Höchstdauer in Sekunden"
+        "Always fill 0-point slots": "Leere Aufwertungen mit 0-Punkte Karten füllen"
+        "Sets and Expansions": "Erweiterungen"
+        "Limit to collection": "Auf Sammlung beschränken"
+        "Less upgrades": "Weniger Aufwertungskarten"
+        "More upgrades": "Mehr Aufwertungskarten"
+        "Maximum Ship Count": "Maximalzahl an Schiffen"
+        "Maximal desired bid": "Maximale offene Punkte"
+        "Upgrades": "Aufwertungsleiste"
+        "Range": "Reichweite"
+        "Actinons": "Aktionen"
+        "Sources:": "Quellen:" 
+        "Source": "Quelle" 
+        "Engagement": "Kampfwert"
+        "Rules search": "Regelsuche"
+        "Rules Search": "Regelsuche"
+        "Base": "Schiffsgröße"
+        "Ship": "Schiff"
+        "Initiative": "Initiativewert"
+        "Force:": "Machtwert:"
+        "Name": "Name"
+        "Sort by": "Sortiere nach"
+        "Type (by Points)": "Typ (nach Punkten)"
+        "Type (by Name)": "Typ (nach Name)"
+        "Recurring": "Wiederkehrend"
+        "Not recurring": "Nicht-Wiederkehrend"
+        "Charges:": "Ladungen:"
+        "Only upgrades requiring multiple slots": "Nur Aufwertungskarten mit mehreren (oder doppelten) Typen"
+        "Used double-slot:": "Doppelter Typ"
+        "Used slot:": "Aufwertungstyp"
+        "Large": "Groß"
+        "Medium": "Mittel"
+        "Small": "Klein"
+        "Huge": "Riesig"
+        "Base size:": "Schiffsgröße"
+        "Agility:": "Wendigkeit:"
+        "Shields:": "Schildwert"
+        "Hull:": "Hüllenwert"
+        "Initiative:": "Initiative:"
+        "Linked actions:": "Gekoppelte Aktionen:"
+        "Actions:": "Aktionen:"
+        "Actions": "Aktionen"
+        "actions": "Aktionen"
+        "Slots:": "Aufwertungsleiste:"
+        "slots": "Aufwertungsarten"
+        "Ships and Pilots": "Schiffe und Piloten"
+        "General": "Allgemein"
+        "Hyperspace legal": "Im Hyperraummodus erlaubt"
+        "Is not unique": "Nicht einzigartig"
+        "Is unique": "Einzigartig"
+        "Misc:": "Sonstiges:"
+        "Owned copies:": "Expemlare in deiner Sammlung:"
+        "Point costs:": "Kommandopunktekosten"
+        "Factions:": "Fraktionen"
+        "Textsearch:": "Volltextsuche"
+        "Squad Notes:": "Staffelnotizen"
+        "Tag:": "Kategorien:"
+        "Choose obstacles dialog": "Wähle bis zu drei Hindernisse."
+        "Mark obstacles": "Wähle bis zu drei Hindernisse"
+        "Choose Obstacles": "Hindernisse wählen"
+        "Scan QR-Code": "QR-Code scannen um im Staffeleditor zu öffnen"
+        "XWS": "XWS"
+        "HTML": "HTML"
+        "TTS": "TTS"
+        "Text": "Text"
+        "Reddit": "Reddit"
+        "BBCode": "BBCode"
+        "Fancy": "Schick"
+        "Simple": "Einfach"
+        "Include QR codes": "QR-Codes"
+        "Include Obstacle Choices": "Hindernisse"
+        "Print Color": "In Farbe drucken"
+        "Expand Shield and Hull": "Schild- und Hüllenpunkte einzeln"
+        "Space for Cards": "Platz für Aufwertungskarten"
+        "Include Maneuvers Chart": "Manövertabellen"
+        "Skip Card Text": "Keine Kartenfähigkeiten"
+        "Copy below simple text": "<p>Kopiere den Text und mach damit was du willst</p>"
+        "Copy below markdown": "<p>Kopiere den Text und füge ihn an einem Markdown-kompatiblem Ort ein.</p><p>Achte darauf, dass der Editor auch auf auf Markdown eingestellt ist!</p>"
+        "Copy below TTS": "<p>Dieses Format erlaubt dir deine Staffel in den Tabletop Simulator zu kopieren.</p>"
+        "Copy below BBCode": "<p>Kopiere untenstehenden BBCode für in deinen Foreneintarg.</p>"
+        "Copy below HTML": "<p>Kopiere untenstehenden HTML Code.</p>"
+        "Copy below XWS":"<p>Kopiere deine Staffel im XWS Format in eine XWS-Kompatible Anwendung.</p>"
+        "XWS Import": "Aus XWS Laden"
+        "New Squad": "Neue Staffel"
+        "Load Squad": "Staffel Laden"
+        "Delete": "Löschen"
+        "Save As...": "Speichern unter…"
+        "Misc Settings": "Allgemeine Optionen"
+        "Randomizer Options": "Zufallsgenerator-Optionen"
+        "Print/Export": "Drucken/Als Text"
+        "Unreleased content warning": "Diese Staffel enthält nicht veröffentlichten Inhalt"
+        "Broken squad link warning": "Du scheinst einem defekten Link gefolgt zu sein. Staffel konnte nicht geladen werden."
+        "Collection warning": "Du kannst diese Staffel mit deiner Sammlung nicht aufstellen!"
+        "Multi-Faction warning": "Mehrfraktionenlisten sind auf Turnieren nicht zulässig!"
+        "Discard Changes": "Änderungen Verwerfen"
+        "Got it!": "Verstanden!"
+        "Use INI prefix": "Initiative vor Pilotennamen"
+        "Term:": "Suchbegriff:"
+        "Version": "Version"
+        "New Squad Name": "Neuer Staffelname"
+        "Import": "Importieren"
+        "XWS Import Dialog": "Importiere deine Liste über das XWS Format in YASB.<br><i>XWS ist ein Format um X-Wing Staffeln zwischen Anwendungen zu übertragen.</i>"
+        "Other Stuff": "Sonstige Filterkriterien"
+        "MultiFaction": "Gemischt"
+        "Search for game term or card": "Suche nach Karten oder Schlagwörtern"
+        collectionContentShips: (translator, number) ->
+            "Du hast #{number} #{if number == 1 then 'Schiffsmodell' else 'Schiffsmodelle'} in deiner Sammlung."
+        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
+            "Du hast #{data[0]} #{if data[0] == 1 then 'Schiffsmodell' else 'Schiffsmodelle'} und #{data[1]} #{if data[1] == 1 then 'Pilotenkarte' else 'Pilotenkarten'} in deiner Sammlung."
+        collectionContentUpgrades: (translator, number) ->
+            "Du hast #{number} in deiner Sammlung."
+        varPointCostsPoints: (translator, points) ->
+            "<b>Kommandopunkte:</b> #{points} für "
+        varPointCostsConditionAgility: (translator, values) ->
+            "Wendigkeits #{values}"
+        varPointCostsConditionIni: (translator, values) ->
+            "Initiative #{values}"
+        varPointCostsConditionBase: (translator, values) ->
+            "Schiffsgröße klein, mittel, groß oder riesig"
+        "Missing Item List:": "Um diese Staffel aufstellen zu können fehlen dir:" 
+        pilotFlyingShip: (translator, pilot, ship) ->
+            "Pilot #{pilot} im #{ship}"
+        "Placeholder Textsearch Browser": "Suche nach Name, Kartentext oder Schiffen"
+        noXYselected: (translator, xy) ->
+            "Keine #{translator('ui', xy)} ausgewählt"
+        "Select a card": "Wähle eine Karte aus der Liste links."
+        yourXYsquads: (translator, faction) ->
+            "Deine #{translator('faction', faction)} Staffeln"
+        reallyDeleteSquadXY: (translator, squadname) -> 
+            "#{squadname} wirklich löschen?"
 
     singular:
         'pilots': 'Pilot'
@@ -163,6 +310,36 @@ exportObj.translations.Deutsch =
         'Title': 'Titel'
         'Ship': 'Schiff'
 
+    gameterms:
+        'Small': 'Klein'
+        'Medium': 'Mittel'
+        'Large': 'Groß'
+        'Huge': 'Riesig'
+
+    faction:
+        "Rebel Alliance": "Rebellen-Allianz"
+        "Galactic Empire": "Galaktisches Imperium"
+        "Scum and Villainy": "Abschaum und Kriminelle"
+        "Resistance": "Widerstand"
+        "First Order": "Erste Ordnung"
+        "Galactic Republic": "Galaktische Republik"
+        "Separatist Alliance": "Separatisten-Allianz"
+
+    action:
+        "Barrel Roll": "Fassrolle"
+        "Focus": "Fokus"
+
+    restrictions:
+        "Restrictions": "Einschränkungen"
+        "Initiative": "Initiative"
+        "Agility": "Wendigkeit"
+        "Non-Limited": "Nicht limitiert"
+        " or Squad Including": " oder Staffel mit"
+        "Ship": "Schiff"
+        "Extra": "Extra"
+    rulestypes:
+        "faq": "FAQ"
+        "glossary": "Referenzhandbuch"
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Deutsch = () ->

@@ -41,7 +41,7 @@ exportObj.translations.English =
     faction:
         "Rebel Alliance": "Rebel Alliance"
         "Galactic Empire": "Galactic Empire"
-        "Scum and Villany": "Scum and Villany"
+        "Scum and Villainy": "Scum and Villainy"
         "Resistance": "Resistance"
         "First Order": "First Order"
         "Galactic Republic": "Galactic Republic"
@@ -68,8 +68,13 @@ exportObj.translations.English =
         "Tech": "Tech"
         "Title": "Title"
         "Tactical Relay": "Tactical Relay"
+        "Command": "Command"
+        "Hyperdrive": "Hyperdrive"
+        "Team": "Team"
+        "Cargo": "Cargo"
 
-    sources: # needed?
+
+    sources: 
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
         "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
@@ -83,89 +88,88 @@ exportObj.translations.English =
         "Lando's Millennium Falcon Expansion Pack": "Lando's Millennium Falcon Expansion Pack"
         "Saw's Renegades Expansion Pack": "Saw's Renegades Expansion Pack"
         "TIE Reaper Expansion Pack": "TIE Reaper Expansion Pack"
+        "ARC-170 Starfighter Expansion": "ARC-170 Starfighter Expansion"
+        "Loose Ships": "Loose Ships"
+        "Fugitives and Collaborators Squadron Pack": "Fugitives and Collaborators Squadron Pack"
+        "First Order Conversion Kit": "First Order Conversion Kit"
+        "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack"
     ui:
-        shipSelectorPlaceholder: "Select a ship"
-        pilotSelectorPlaceholder: "Select a pilot"
-        upgradePlaceholder: (translator, language, slot) ->
-            "No #{translator language, 'slot', slot} Upgrade"
-        modificationPlaceholder: "No Modification"
-        titlePlaceholder: "No Title"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Upgrade"
-        unreleased: "unreleased"
-        epic: "epic"
-        limited: "limited"
-    byCSSSelector:
-        # Warnings
-        '.unreleased-content-used .translated': 'This squad uses unreleased content!'
-        '.loading-failed-container .translated': 'It appears that you followed a broken link. No squad could be loaded!'
-        '.collection-invalid .translated': 'You cannot field this list with your collection!'
-        '.ship-number-invalid-container .translated': 'A tournament legal squad must contain 2-8 ships!'
-        # Type selector
-        '.game-type-selector option[value="standard"]': 'Extended'
-        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="epic"]': 'Epic'
-        '.game-type-selector option[value="quickbuild"]': 'Quick Build'
-        # Card browser
-        '.xwing-card-browser option[value="name"]': 'Name'
-        '.xwing-card-browser option[value="source"]': 'Source'
-        '.xwing-card-browser option[value="type-by-points"]': 'Type (by Points)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)'
-        '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
-        # Info well
-        '.info-well .info-ship td.info-header': 'Ship'
-        '.info-well .info-skill td.info-header': 'Initiative'
-        '.info-well .info-actions td.info-header': 'Actions'
-        '.info-well .info-upgrades td.info-header': 'Upgrades'
-        '.info-well .info-range td.info-header': 'Range'
-        '.info-well .info-sources.info-header': 'Sources'
-        # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;New Squad'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;Save'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Save as…'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Delete'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Load Squad'
-        '.import-squad' : '<i class="fa fa-file-import"></i>&nbsp;Import'
-        '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;Print/Export List</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
-        '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Your Collection</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
-        '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> Randomize!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'
-        '.randomize-options' : 'Randomizer options…'
-        '.notes-container .notes-name' : 'Squad Notes:'
-        '.notes-container .tag-name' : 'Tag:'
-        # Print/View modal
-        '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
-        '.vertical-space-checkbox' : """Add space for cards <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Print'
-        # Randomizer options
-        '.do-randomize' : 'Randomize!'
-        # Top tab bar
-        '#browserTab' : 'Card Browser'
-        '#aboutTab' : 'About'
-        # Obstacles
-        '.choose-obstacles' : '<i class="fa fa-cloud"></i>&nbsp;Choose Obstacles'
-        '.choose-obstacles-description' : 'Choose up to three obstacles to include in the permalink for use in external programs. (Support for displaying which obstacles were selected in the printout is not yet supported.)'
-        '.coreasteroid0-select' : 'Core Asteroid 0'
-        '.coreasteroid1-select' : 'Core Asteroid 1'
-        '.coreasteroid2-select' : 'Core Asteroid 2'
-        '.coreasteroid3-select' : 'Core Asteroid 3'
-        '.coreasteroid4-select' : 'Core Asteroid 4'
-        '.coreasteroid5-select' : 'Core Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Debris 0'
-        '.yt2400debris1-select' : 'YT2400 Debris 1'
-        '.yt2400debris2-select' : 'YT2400 Debris 2'
-        '.vt49decimatordebris0-select' : 'VT49 Debris 0'
-        '.vt49decimatordebris1-select' : 'VT49 Debris 1'
-        '.vt49decimatordebris2-select' : 'VT49 Debris 2'
-        '.core2asteroid0-select' : 'Force Awakens Asteroid 0'
-        '.core2asteroid1-select' : 'Force Awakens Asteroid 1'
-        '.core2asteroid2-select' : 'Force Awakens Asteroid 2'
-        '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
-        '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
-        '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
-        # Collection
+        "shipSelectorPlaceholder": "Select a ship"
+        "pilotSelectorPlaceholder": "Select a pilot"
+        upgradePlaceholder: (translator, slot) ->
+            "No #{translator 'slot', slot} Upgrade"
+        "modificationPlaceholder": "No Modification"
+        "titlePlaceholder": "No Title"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} Upgrade"
+        "unreleased": "unreleased"
+        "epic": "epic"
+        "Quickbuild": "Quick Build"
+        "limited": "limited"
+        "Unreleased content warning": "This squad uses unreleased content!"
+        "Broken squad link warning": "It appears that you followed a broken link. No squad could be loaded!"
+        "Collection warning": "You cannot field this list with your collection!"
+        "Ship number warning": "A tournament legal squad must contain 2-8 ships!"
+        "Multi-Faction warning": "Multi-Faction Lists are NEVER tournament legal!"
+        "XWS Import Dialog": "Import your list via XWS into YASB.<br><i>XWS is a common format to share lists between applications.</i>"
+        "Copy below simple text": "<p>Copy the below and paste it elsewhere.</p>"
+        "Copy below markdown": "<p>Copy the below and paste it into your reddit post.</p><p>Make sure that the post editor is set to markdown mode.</p>"
+        "Copy below TTS": "<p>Copy the below and paste it into the Tabletop Simulator.</p>"
+        "Copy below BBCode": "<p>Copy the BBCode below and paste it into your forum post.</p>"
+        "Copy below HTML": "<p>Copy the below and paste it elsewhere.</p>"
+        "Copy below XWS":"<p>Copy and paste this into an XWS-compliant application.</p>"
+        "Use INI prefix": "Put INI as prefix in front of names."
+        "Choose obstacles dialog": "Choose up to three obstacles, to include in the permalink for use in external programs"
+        "Mark obstacles": "Mark the three obstacles you are using."
+        "Scan QR-Code": "Scan to open this list in the builder"
+        "View in YASB": "View in Yet Another Squad Builder 2.0"
+        "YASB advertisment": "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games."
+        collectionContentShips: (translator, number) ->
+            "You have #{number} ship #{if number == 1 then 'model' else 'models'} in your collection."
+        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
+            "You have #{data[0]} ship #{if data[0] == 1 then 'model' else 'models'} and #{data[1]} pilot #{if data[1] == 1 then 'card' else 'cards'} in your collection."
+        collectionContentUpgrades: (translator, number) ->
+            "You have #{number} in your collection."
+        varPointCostsPoints: (translator, points) ->
+            "<b>Point cost:</b> #{points} when "
+        varPointCostsConditionAgility: (translator, values) ->
+            "agility is #{values}"
+        varPointCostsConditionIni: (translator, values) ->
+            "initiative is #{values}"
+        varPointCostsConditionBase: (translator, values) ->
+            "base size is small, medium, large or huge"
+        "Missing Item List:": "To field this squad you need the following additional items:" 
+        pilotFlyingShip: (translator, pilot, ship) ->
+            "Pilot #{pilot} flying #{ship}"
+        "Placeholder Textsearch Browser": "Search for name, text or ship"
+        noXYselected: (translator, xy) ->
+            "No #{translator('ui', xy)} selected"
+        "Select a card": "Select a card from the list at the left."
+        yourXYsquads: (translator, faction) ->
+            "Your #{translator('faction', faction)} Squads"
+        reallyDeleteSquadXY: (translator, squadname) -> 
+            "Really delete #{squadname}?"
+        "No saved squads": "Nothing to see here. Go save a squad!"
+        "name required": "A name is required"
+        "Name in use": "You already have a squad with that name"
+        "select OAuth provider": "Select one of the OAuth providers below to log in and start saving squads."
+        "OAuth explanation" : """
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> is an authorization system which lets you prove your identity at a web site without having to create a new account.  Instead, you tell some provider with whom you already have an account (e.g. Google or Facebook) to prove to this web site that you say who you are.  That way, the next time you visit, this site remembers that you're that user from Google.
+                    </p>
+                    <p>
+                        The best part about this is that you don't have to come up with a new username and password to remember.  And don't worry, I'm not collecting any data from the providers about you.  I've tried to set the scope of data to be as small as possible, but some places send a bunch of data at minimum.  I throw it away.  All I look at is a unique identifier (usually some giant number).
+                    </p>
+                    <p>
+                        For more information, check out this <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">introduction to OAuth</a>.
+                    </p>
+                    """
+        "Continue to OAuth provider": "This will open a new window to let you authenticate with the chosen provider. You may have to allow pop ups for this site."
+        "iOS requires cross-site control": """Due to a new feature in iOS systems OAuth won't work unless you enable "cross-site control"."""
+        "login in progress": "OAuth login is in progress. Please finish authorization at the specified provider using the window that was just created."
+        "Squads reloaded": "All squads of that faction have been reloaded."
+        "Sure to delete?": "Are you sure you want to delete this squad?"
+        "Unsaved Changes Warning": "You have not saved changes to this squad.  Do you want to go back and save?"
 
     singular:
         'pilots': 'Pilot'
@@ -180,6 +184,8 @@ exportObj.translations.English =
     rulestypes:
         'glossary': 'Glossary'
         'faq': 'FAQ'
+    action:
+        'Boost': 'Boost'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.English = () ->
@@ -2413,7 +2419,7 @@ exportObj.cardLoaders.English = () ->
         "Commander Pyre":
            text: """<strong>Setup:</strong> After placing forces, choose an enemy ship. It gains 2 stress tokens. %LINEBREAK% While you defend, if the attacker is stressed, you may reroll 1 defense die."""
         "Commander Malarus":
-           text: """<strong>Setup:</strong> Equip this side face up. %LINEBREAK% While a friendly non-limited ship at range 0-1 performs a primary attack, that ship may reroll 1 blank result. If it does and the attack does not hit, you <b>must</b> flip thiss card. %LINEBREAK%<strong>Perfected:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, you <b>must</b> convert all %FOCUS% results to %HIT% results and gain 1 stress token. Then, if you have 2 or more stress tokens, suffer 1 %HIT% damage."""
+           text: """<strong>Setup:</strong> Equip this side face up. %LINEBREAK% While a friendly non-limited ship at range 0-1 performs a primary attack, that ship may reroll 1 blank result. If it does and the attack does not hit, you <b>must</b> flip this card. %LINEBREAK%<strong>Perfected:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, you <b>must</b> convert all %FOCUS% results to %HIT% results and gain 1 stress token. Then, if you have 2 or more stress tokens, suffer 1 %HIT% damage."""
         "Automated Target Priority":
            text: """While you perform an attack, you <b>must</b> choose a defender at the closest valid attack range. %LINEBREAK% After you perform an attack that missed, place 1 calculate token on this card. %LINEBREAK% Before you engage, you may remove 1 calculate token from this card to gain a matching token."""
         "Sensor Buoy Suite":

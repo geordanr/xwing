@@ -13,7 +13,7 @@ class exportObj.RulesBrowser
         @container = $ args.container
 
         # internals
-        @language = 'English'
+        @language = exportObj.currentLanguage ? 'English'
 
         @prepareRulesData()
 
@@ -26,12 +26,12 @@ class exportObj.RulesBrowser
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card card-search-container">
-                            <h5 class="card-title">Rules Search</h5>
+                            <h5 class="card-title translated" defaultText="Rules Search"></h5>
                             <div class="advanced-search-container">
-                                <h6 class="card-subtitle mb-2 text-muted version">Version: </h6>
+                                <h6 class="card-subtitle mb-2 text-muted version"><span class="translated" defaultText="Version"></span>: </h6>
                                 <label class = "text-search advanced-search-label">
-                                    <strong>Term: </strong>
-                                    <input type="search" placeholder="Search for game term or card" class = "rule-search-text">
+                                    <strong class="translated" defaultText="Term:"></strong>
+                                    <input type="search" placeholder="#{exportObj.translate('ui', "Search for game term or card")}" class = "rule-search-text">
                                 </label>
                             </div>
                             <div class="rules-container card-selector-container">
@@ -54,6 +54,8 @@ class exportObj.RulesBrowser
         @rule_viewer_container = $ @container.find('.xwing-rules-browser .card-viewer-container')
         @rule_viewer_container.hide()
         @advanced_search_container = $ @container.find('.xwing-rules-browser .advanced-search-container')
+
+        exportObj.translateUIElements(@container)
 
         # TODO: Make added inputs easy accessible
         
@@ -91,7 +93,7 @@ class exportObj.RulesBrowser
         
         for type in @ruletype
             optgroup = $ document.createElement('OPTGROUP')
-            optgroup.attr 'label', exportObj.translate(@language, 'rulestypes', type)
+            optgroup.attr 'label', exportObj.translate('rulestypes', type)
 
             rule_added = false
             for rule_name, rule_data of @all_rules[type]
