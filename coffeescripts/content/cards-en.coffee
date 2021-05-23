@@ -171,6 +171,31 @@ exportObj.translations.English =
         "Sure to delete?": "Are you sure you want to delete this squad?"
         "Unsaved Changes Warning": "You have not saved changes to this squad.  Do you want to go back and save?"
 
+    byCSSSelector:
+        '.coreasteroid1-select' : 'Core Asteroid 1'
+        '.coreasteroid2-select' : 'Core Asteroid 2'
+        '.coreasteroid3-select' : 'Core Asteroid 3'
+        '.coreasteroid4-select' : 'Core Asteroid 4'
+        '.coreasteroid5-select' : 'Core Asteroid 5'
+        '.yt2400debris0-select' : 'YT2400 Debris 0'
+        '.yt2400debris1-select' : 'YT2400 Debris 1'
+        '.yt2400debris2-select' : 'YT2400 Debris 2'
+        '.vt49decimatordebris0-select' : 'VT49 Debris 0'
+        '.vt49decimatordebris1-select' : 'VT49 Debris 1'
+        '.vt49decimatordebris2-select' : 'VT49 Debris 2'
+        '.core2asteroid0-select' : 'Force Awakens Asteroid 0'
+        '.core2asteroid1-select' : 'Force Awakens Asteroid 1'
+        '.core2asteroid2-select' : 'Force Awakens Asteroid 2'
+        '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
+        '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
+        '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
+        '.gascloud1-select' : 'Gas Cloud 1'
+        '.gascloud2-select' : 'Gas Cloud 2'
+        '.gascloud3-select' : 'Gas Cloud 3'
+        '.gascloud4-select' : 'Gas Cloud 4'
+        '.gascloud5-select' : 'Gas Cloud 5'
+        '.gascloud6-select' : 'Gas Cloud 6'
+
     singular:
         'pilots': 'Pilot'
         'modifications': 'Modification'

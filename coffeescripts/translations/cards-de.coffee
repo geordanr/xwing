@@ -275,7 +275,7 @@ is an authorization system which lets you prove your identity at a web site with
         "Search for game term or card": "Suche nach Karten oder Schlagwörtern"
         collectionContentShips: (translator, number) ->
             "Du hast #{number} #{if number == 1 then 'Schiffsmodell' else 'Schiffsmodelle'} in deiner Sammlung."
-        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
+        collectionContentShipsAndPilots: (translator, data) -> # data = 
             "Du hast #{data[0]} #{if data[0] == 1 then 'Schiffsmodell' else 'Schiffsmodelle'} und #{data[1]} #{if data[1] == 1 then 'Pilotenkarte' else 'Pilotenkarten'} in deiner Sammlung."
         collectionContentUpgrades: (translator, number) ->
             "Du hast #{number} in deiner Sammlung."
@@ -298,6 +298,32 @@ is an authorization system which lets you prove your identity at a web site with
             "Deine #{translator('faction', faction)} Staffeln"
         reallyDeleteSquadXY: (translator, squadname) -> 
             "#{squadname} wirklich löschen?"
+
+    byCSSSelector:
+        '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
+        '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
+        '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
+        '.coreasteroid3-select' : 'Grundspiel Asteroid 3'
+        '.coreasteroid4-select' : 'Grundspiel Asteroid 4'
+        '.coreasteroid5-select' : 'Grundspiel Asteroid 5'
+        '.yt2400debris0-select' : 'YT2400 Trümmerwolke 0'
+        '.yt2400debris1-select' : 'YT2400 Trümmerwolke 1'
+        '.yt2400debris2-select' : 'YT2400 Trümmerwolke 2'
+        '.vt49decimatordebris0-select' : 'VT49 Trümmerwolke 0'
+        '.vt49decimatordebris1-select' : 'VT49 Trümmerwolke 1'
+        '.vt49decimatordebris2-select' : 'VT49 Trümmerwolke 2'
+        '.core2asteroid0-select' : 'Erwachen der Macht Asteroid 0'
+        '.core2asteroid1-select' : 'Erwachen der Macht Asteroid 1'
+        '.core2asteroid2-select' : 'Erwachen der Macht Asteroid 2'
+        '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
+        '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
+        '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
+        '.gascloud1-select' : 'Gas Cloud 1'
+        '.gascloud2-select' : 'Gas Cloud 2'
+        '.gascloud3-select' : 'Gas Cloud 3'
+        '.gascloud4-select' : 'Gas Cloud 4'
+        '.gascloud5-select' : 'Gas Cloud 5'
+        '.gascloud6-select' : 'Gas Cloud 6'
 
     singular:
         'pilots': 'Pilot'
