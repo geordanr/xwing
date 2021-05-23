@@ -99,12 +99,12 @@ exportObj.translations.日本語 =
     ui:
         shipSelectorPlaceholder: "宇宙船を選択"
         pilotSelectorPlaceholder: "パイロットを選択"
-        upgradePlaceholder: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} アップグレード未設定"
+        upgradePlaceholder: (translator, slot) ->
+            "#{translator 'slot', slot} アップグレード未設定"
         modificationPlaceholder: "改造未設定"
         titlePlaceholder: "称号未設定"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} アップグレード"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} アップグレード"
         unreleased: "リリース前"
         epic: "エピック"
         limited: "制限"
@@ -1475,12 +1475,12 @@ exportObj.cardLoaders.日本語 = () ->
 
         "Hera Syndulla (B-Wing)":
            display_name: """Hera Syndulla"""
-           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。"""
+           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、ダイスの修正ステップの間、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。"""
         "Netrem Pollard":
            text: """君がバレル・ロールをした後、君はレンジ0-1の、ストレス状態ではない友軍宇宙船を1つ選んでも良い。その宇宙船はストレス・トークンを1つ得て、その後君は180度回転する。"""
         "Hera Syndulla (A-Wing)":
            display_name: """Hera Syndulla"""
-           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。%LINEBREAK%<strong>Vectored Thrusters:</strong> 君がアクションを実行した後、君は赤の%BOOST%アクションを実行しても良い。"""
+           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、ダイスの修正ステップの間、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。%LINEBREAK%<strong>Vectored Thrusters:</strong> 君がアクションを実行した後、君は赤の%BOOST%アクションを実行しても良い。"""
         "Wedge Antilles (A-Wing)":
            display_name: """Wedge Antilles"""
            text: """君が主武装攻撃を実行する際、もし防御者が君の%FRONTARC%にいるなら、防御者は防御ダイスを1つ少なく振る。%LINEBREAK%<strong>Vectored Thrusters:</strong> 君がアクションを実行した後、君は赤の%BOOST%アクションを実行しても良い。"""
@@ -2070,7 +2070,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が攻撃を宣言した後、もし防御者が君の%BULLSEYEARC%内にいるなら、君は%FORCE%を1つ消費しても良い。もしそうするなら、防御ダイスのロールステップの間、防御者は君の%HIT%/%CRIT%の結果よりも多く防御ダイスを振ることができない。"""
         "Primed Thrusters":
            display_name: """Primed Thrusters"""
-           text: """君のストレス・トークンが2つ以下の際、君は%BARRELROLL%あるいはブーストアクションをたとえストレス状態でも実行できる。"""
+           text: """君のストレス・トークンが2つ以下の際、君は%BARRELROLL%あるいは%BOOST%アクションをたとえストレス状態でも実行できる。"""
         "Proton Bombs":
            display_name: """Proton Bombs"""
            text: """<b>爆弾</b>%LINEBREAK%システム・フェイズの間に、君は%CHARGE%を1つ消費し、1%STRAIGHT%テンプレートを使ってProton Bombを投下しても良い。"""
