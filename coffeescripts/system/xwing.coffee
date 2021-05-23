@@ -1405,7 +1405,9 @@ class exportObj.SquadBuilder
         @ships.splice(oldpos, 1)
         @ships.splice(newpos, 0, selectedShip)
         @updatePermaLink
-        @container.trigger 'xwing-backend:squadDirtinessChanged'
+        if oldpos != newpos
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     updatePermaLink: () =>
         return unless @container.is(':visible') # gross but couldn't make clearInterval work
