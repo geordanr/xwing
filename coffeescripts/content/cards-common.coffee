@@ -21473,12 +21473,12 @@ exportObj.epicExclusions = (data) ->
 exportObj.hyperspaceCheck = (data, faction='', shipCheck=false) ->
     # check ship/pilot first
     if (shipCheck)
-        if (data.name in exportObj.hyperspacePilotExclusions)
-            return false
         for ship in exportObj.hyperspaceShipInclusions
             # checks against name for ship itself or ship name/faction for pilot inclusions
             if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name || (Array.isArray(data.ship) and ship.name in data.ship)))
                 return true
         return false
     else
+        if (data.name in exportObj.hyperspacePilotExclusions)
+            return false
         return data.name not in exportObj.hyperspaceUpgradeExclusions
