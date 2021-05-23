@@ -126,8 +126,8 @@ exportObj.translations.English =
         "YASB advertisment": "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games."
         collectionContentShips: (translator, number) ->
             "You have #{number} ship #{if number == 1 then 'model' else 'models'} in your collection."
-        collectionContentShipsAndPilots: (translator, ships, pilots) ->
-            "You have #{ships} ship #{if ships == 1 then 'model' else 'models'} and #{pilots} pilot #{if ships == 1 then 'card' else 'cards'} in your collection."
+        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
+            "You have #{data[0]} ship #{if data[0] == 1 then 'model' else 'models'} and #{data[1]} pilot #{if data[1] == 1 then 'card' else 'cards'} in your collection."
         collectionContentUpgrades: (translator, number) ->
             "You have #{number} in your collection."
         varPointCostsPoints: (translator, points) ->
