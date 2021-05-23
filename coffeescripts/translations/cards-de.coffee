@@ -275,7 +275,7 @@ is an authorization system which lets you prove your identity at a web site with
         "Search for game term or card": "Suche nach Karten oder Schlagwörtern"
         collectionContentShips: (translator, number) ->
             "Du hast #{number} #{if number == 1 then 'Schiffsmodell' else 'Schiffsmodelle'} in deiner Sammlung."
-        collectionContentShipsAndPilots: (translator, data) ->
+        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
             "Du hast #{data[0]} #{if data[0] == 1 then 'Schiffsmodell' else 'Schiffsmodelle'} und #{data[1]} #{if data[1] == 1 then 'Pilotenkarte' else 'Pilotenkarten'} in deiner Sammlung."
         collectionContentUpgrades: (translator, number) ->
             "Du hast #{number} in deiner Sammlung."
