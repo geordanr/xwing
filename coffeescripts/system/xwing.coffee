@@ -1002,7 +1002,7 @@ class exportObj.SquadBuilder
         @container.append content_container
         content_container.append $.trim """
             <div class="row">
-                <div id="sort" class="col-md-9 ship-container">
+                <div class="col-md-9 ship-container">
                     <label class="unsortable notes-container show-authenticated col-md-10">
                         <span class="notes-name translated" defaultText="Squad Notes:"></span>
                         <br />
