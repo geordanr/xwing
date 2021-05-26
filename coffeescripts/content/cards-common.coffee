@@ -21484,7 +21484,7 @@ exportObj.hyperspaceCheck = (data, faction='', shipCheck=false) ->
 exportObj.hyperspaceCheckBrowser = (data, faction='', type) ->
     # check ship/pilot first
     if type == 'Pilot'
-        return data.name not in exportObj.hyperspaceUpgradeExclusions
+        return data.name not in exportObj.hyperspacePilotExclusions
     else if type == 'Ship'
         for ship in exportObj.hyperspaceShipInclusions
             # checks against name for ship itself or ship name/faction for pilot inclusions
