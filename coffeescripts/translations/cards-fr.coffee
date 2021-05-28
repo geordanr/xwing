@@ -50,12 +50,12 @@ exportObj.translations['Français'] =
     ui:
         shipSelectorPlaceholder: "Choisissez un vaisseau"
         pilotSelectorPlaceholder: "Choisissez un pilot"
-        upgradePlaceholder: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} (sans amélioration)"
+        upgradePlaceholder: (translator, slot) ->
+            "#{translator 'slot', slot} (sans amélioration)"
         modificationPlaceholder: "Pas de modification"
         titlePlaceholder: "Pas de titre"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot}"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot}"
         unreleased: "inédit"
         epic: "épique"
         limited: "limité"

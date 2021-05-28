@@ -41,12 +41,12 @@ exportObj.translations.Magyar =
     ui:
         shipSelectorPlaceholder: "Válassz egy hajót"
         pilotSelectorPlaceholder: "Válassz egy pilótát"
-        upgradePlaceholder: (translator, language, slot) ->
-            "Nincs #{translator language, 'slot', slot} fejlesztés"
+        upgradePlaceholder: (translator, slot) ->
+            "Nincs #{translator 'slot', slot} fejlesztés"
         modificationPlaceholder: "Nincs módosítás"
         titlePlaceholder: "Nincs nevesítés"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} fejlesztés"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} fejlesztés"
         unreleased: "kiadatlan"
         epic: "epikus"
         limited: "korlátozott"

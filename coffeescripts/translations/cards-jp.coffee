@@ -99,12 +99,12 @@ exportObj.translations.日本語 =
     ui:
         shipSelectorPlaceholder: "宇宙船を選択"
         pilotSelectorPlaceholder: "パイロットを選択"
-        upgradePlaceholder: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} アップグレード未設定"
+        upgradePlaceholder: (translator, slot) ->
+            "#{translator 'slot', slot} アップグレード未設定"
         modificationPlaceholder: "改造未設定"
         titlePlaceholder: "称号未設定"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} アップグレード"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} アップグレード"
         unreleased: "リリース前"
         epic: "エピック"
         limited: "制限"
