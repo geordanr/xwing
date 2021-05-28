@@ -34,7 +34,7 @@ exportObj.fromXWSUpgrade =
     'system': 'Sensor'
     'mod': 'Modification'
     'force-power':'Force'
-    'tacticalrelay':'Tactical Relay'
+    'tactical-relay':'Tactical Relay'
 
 SPEC_URL = 'https://github.com/elistevens/xws-spec'
 

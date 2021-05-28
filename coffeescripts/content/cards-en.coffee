@@ -126,8 +126,8 @@ exportObj.translations.English =
         "YASB advertisment": "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games."
         collectionContentShips: (translator, number) ->
             "You have #{number} ship #{if number == 1 then 'model' else 'models'} in your collection."
-        collectionContentShipsAndPilots: (translator, ships, pilots) ->
-            "You have #{ships} ship #{if ships == 1 then 'model' else 'models'} and #{pilots} pilot #{if ships == 1 then 'card' else 'cards'} in your collection."
+        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
+            "You have #{data[0]} ship #{if data[0] == 1 then 'model' else 'models'} and #{data[1]} pilot #{if data[1] == 1 then 'card' else 'cards'} in your collection."
         collectionContentUpgrades: (translator, number) ->
             "You have #{number} in your collection."
         varPointCostsPoints: (translator, points) ->
@@ -170,6 +170,31 @@ exportObj.translations.English =
         "Squads reloaded": "All squads of that faction have been reloaded."
         "Sure to delete?": "Are you sure you want to delete this squad?"
         "Unsaved Changes Warning": "You have not saved changes to this squad.  Do you want to go back and save?"
+
+    byCSSSelector:
+        '.coreasteroid1-select' : 'Core Asteroid 1'
+        '.coreasteroid2-select' : 'Core Asteroid 2'
+        '.coreasteroid3-select' : 'Core Asteroid 3'
+        '.coreasteroid4-select' : 'Core Asteroid 4'
+        '.coreasteroid5-select' : 'Core Asteroid 5'
+        '.yt2400debris0-select' : 'YT2400 Debris 0'
+        '.yt2400debris1-select' : 'YT2400 Debris 1'
+        '.yt2400debris2-select' : 'YT2400 Debris 2'
+        '.vt49decimatordebris0-select' : 'VT49 Debris 0'
+        '.vt49decimatordebris1-select' : 'VT49 Debris 1'
+        '.vt49decimatordebris2-select' : 'VT49 Debris 2'
+        '.core2asteroid0-select' : 'Force Awakens Asteroid 0'
+        '.core2asteroid1-select' : 'Force Awakens Asteroid 1'
+        '.core2asteroid2-select' : 'Force Awakens Asteroid 2'
+        '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
+        '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
+        '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
+        '.gascloud1-select' : 'Gas Cloud 1'
+        '.gascloud2-select' : 'Gas Cloud 2'
+        '.gascloud3-select' : 'Gas Cloud 3'
+        '.gascloud4-select' : 'Gas Cloud 4'
+        '.gascloud5-select' : 'Gas Cloud 5'
+        '.gascloud6-select' : 'Gas Cloud 6'
 
     singular:
         'pilots': 'Pilot'
@@ -2419,7 +2444,7 @@ exportObj.cardLoaders.English = () ->
         "Commander Pyre":
            text: """<strong>Setup:</strong> After placing forces, choose an enemy ship. It gains 2 stress tokens. %LINEBREAK% While you defend, if the attacker is stressed, you may reroll 1 defense die."""
         "Commander Malarus":
-           text: """<strong>Setup:</strong> Equip this side face up. %LINEBREAK% While a friendly non-limited ship at range 0-1 performs a primary attack, that ship may reroll 1 blank result. If it does and the attack does not hit, you <b>must</b> flip thiss card. %LINEBREAK%<strong>Perfected:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, you <b>must</b> convert all %FOCUS% results to %HIT% results and gain 1 stress token. Then, if you have 2 or more stress tokens, suffer 1 %HIT% damage."""
+           text: """<strong>Setup:</strong> Equip this side face up. %LINEBREAK% While a friendly non-limited ship at range 0-1 performs a primary attack, that ship may reroll 1 blank result. If it does and the attack does not hit, you <b>must</b> flip this card. %LINEBREAK%<strong>Perfected:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, you <b>must</b> convert all %FOCUS% results to %HIT% results and gain 1 stress token. Then, if you have 2 or more stress tokens, suffer 1 %HIT% damage."""
         "Automated Target Priority":
            text: """While you perform an attack, you <b>must</b> choose a defender at the closest valid attack range. %LINEBREAK% After you perform an attack that missed, place 1 calculate token on this card. %LINEBREAK% Before you engage, you may remove 1 calculate token from this card to gain a matching token."""
         "Sensor Buoy Suite":
