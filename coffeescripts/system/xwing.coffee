@@ -904,30 +904,30 @@ class exportObj.SquadBuilder
             <div class="modal-body">
                 <div class="obstacle-select-container" style="float:left">
                     <select multiple class='obstacle-select' size="18">
-                        <option class="coreasteroid0-select" value="coreasteroid0"><span class="translated" defaultText="Core Asteroid"</span> 0</option>
-                        <option class="coreasteroid1-select" value="coreasteroid1"><span class="translated" defaultText="Core Asteroid"</span> 1</option>
-                        <option class="coreasteroid2-select" value="coreasteroid2"><span class="translated" defaultText="Core Asteroid"</span> 2</option>
-                        <option class="coreasteroid3-select" value="coreasteroid3"><span class="translated" defaultText="Core Asteroid"</span> 3</option>
-                        <option class="coreasteroid4-select" value="coreasteroid4"><span class="translated" defaultText="Core Asteroid"</span> 4</option>
-                        <option class="coreasteroid5-select" value="coreasteroid5"><span class="translated" defaultText="Core Asteroid"</span> 5</option>
-                        <option class="yt2400debris0-select" value="yt2400debris0"><span class="translated" defaultText="YT2400 Debris"</span> 0</option>
-                        <option class="yt2400debris1-select" value="yt2400debris1"><span class="translated" defaultText="YT2400 Debris"</span> 1</option>
-                        <option class="yt2400debris2-select" value="yt2400debris2"><span class="translated" defaultText="YT2400 Debris"</span> 2</option>
-                        <option class="vt49decimatordebris0-select" value="vt49decimatordebris0"><span class="translated" defaultText="VT49 Debris"</span> 0</option>
-                        <option class="vt49decimatordebris1-select" value="vt49decimatordebris1"><span class="translated" defaultText="VT49 Debris"</span> 1</option>
-                        <option class="vt49decimatordebris2-select" value="vt49decimatordebris2"><span class="translated" defaultText="VT49 Debris"</span> 2</option>
-                        <option class="core2asteroid0-select" value="core2asteroid0"><span class="translated" defaultText="Force Awakens Asteroid"</span> 0</option>
-                        <option class="core2asteroid1-select" value="core2asteroid1"><span class="translated" defaultText="Force Awakens Asteroid"</span> 1</option>
-                        <option class="core2asteroid2-select" value="core2asteroid2"><span class="translated" defaultText="Force Awakens Asteroid"</span> 2</option>
-                        <option class="core2asteroid3-select" value="core2asteroid3"><span class="translated" defaultText="Force Awakens Asteroid"</span> 3</option>
-                        <option class="core2asteroid4-select" value="core2asteroid4"><span class="translated" defaultText="Force Awakens Asteroid"</span> 4</option>
-                        <option class="core2asteroid5-select" value="core2asteroid5"><span class="translated" defaultText="Force Awakens Asteroid"</span> 5</option>
-                        <option class="gascloud1-select" value="gascloud1"><span class="translated" defaultText="Gas Cloud"</span> 1</option>
-                        <option class="gascloud2-select" value="gascloud2"><span class="translated" defaultText="Gas Cloud"</span> 2</option>
-                        <option class="gascloud3-select" value="gascloud3"><span class="translated" defaultText="Gas Cloud"</span> 3</option>
-                        <option class="gascloud4-select" value="gascloud4"><span class="translated" defaultText="Gas Cloud"</span> 4</option>
-                        <option class="gascloud5-select" value="gascloud5"><span class="translated" defaultText="Gas Cloud"</span> 5</option>
-                        <option class="gascloud6-select" value="gascloud6"><span class="translated" defaultText="Gas Cloud"</span> 6</option>
+                        <option class="coreasteroid0-select translated" value="coreasteroid0" defaultText="Core Asteroid 0"></option>
+                        <option class="coreasteroid1-select translated" value="coreasteroid1" defaultText="Core Asteroid 1"></option>
+                        <option class="coreasteroid2-select translated" value="coreasteroid2" defaultText="Core Asteroid 2"></option>
+                        <option class="coreasteroid3-select translated" value="coreasteroid3" defaultText="Core Asteroid 3"></option>
+                        <option class="coreasteroid4-select translated" value="coreasteroid4" defaultText="Core Asteroid 4"></option>
+                        <option class="coreasteroid5-select translated" value="coreasteroid5" defaultText="Core Asteroid 5"></option>
+                        <option class="yt2400debris0-select translated" value="yt2400debris0" defaultText="YT2400 Debris 0"></option>
+                        <option class="yt2400debris1-select translated" value="yt2400debris1" defaultText="YT2400 Debris 1"></option>
+                        <option class="yt2400debris2-select translated" value="yt2400debris2" defaultText="YT2400 Debris 2"></option>
+                        <option class="vt49decimatordebris0-select translated" value="vt49decimatordebris0" defaultText="VT49 Debris 0"></option>
+                        <option class="vt49decimatordebris1-select translated" value="vt49decimatordebris1" defaultText="VT49 Debris 1"></option>
+                        <option class="vt49decimatordebris2-select translated" value="vt49decimatordebris2" defaultText="VT49 Debris 2"></option>
+                        <option class="core2asteroid0-select translated" value="core2asteroid0" defaultText="Force Awakens Asteroid 0"></option>
+                        <option class="core2asteroid1-select translated" value="core2asteroid1" defaultText="Force Awakens Asteroid 1"></option>
+                        <option class="core2asteroid2-select translated" value="core2asteroid2" defaultText="Force Awakens Asteroid 2"></option>
+                        <option class="core2asteroid3-select translated" value="core2asteroid3" defaultText="Force Awakens Asteroid 3"></option>
+                        <option class="core2asteroid4-select translated" value="core2asteroid4" defaultText="Force Awakens Asteroid 4"></option>
+                        <option class="core2asteroid5-select translated" value="core2asteroid5" defaultText="Force Awakens Asteroid 5"></option>
+                        <option class="gascloud1-select translated" value="gascloud1"><span class="translated" defaultText="Gas Cloud 1"></span></option>
+                        <option class="gascloud2-select translated" value="gascloud2"><span class="translated" defaultText="Gas Cloud 2"></span></option>
+                        <option class="gascloud3-select translated" value="gascloud3"><span class="translated" defaultText="Gas Cloud 3"></span></option>
+                        <option class="gascloud4-select translated" value="gascloud4"><span class="translated" defaultText="Gas Cloud 4"></span></option>
+                        <option class="gascloud5-select translated" value="gascloud5"><span class="translated" defaultText="Gas Cloud 5"></span></option>
+                        <option class="gascloud6-select translated" value="gascloud6"><span class="translated" defaultText="Gas Cloud 6"></span></option>
                     </select>
                 </div>
                 <div class="obstacle-image-container" style="display:none;">

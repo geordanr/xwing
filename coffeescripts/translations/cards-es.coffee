@@ -122,6 +122,24 @@ exportObj.translations['Español'] =
         # Collection
         'Your Collection': 'Mi colección'
         'Check Collection' : 'Comprobar coincidencia con colección'
+        "Core Asteroid 0": "Asteroide del Core 0"
+        "Core Asteroid 1": "Asteroide del Core 1"
+        "Core Asteroid 2": "Asteroide del Core 2"
+        "Core Asteroid 3": "Asteroide del Core 3"
+        "Core Asteroid 4": "Asteroide del Core 4"
+        "Core Asteroid 5": "Asteroide del Core 5"
+        "VT49 Debris 0": "Desecho del VT49 0"
+        "VT49 Debris 1": "Desecho del VT49 1"
+        "VT49 Debris 2": "Desecho del VT49 2"
+        "YT2400 Debris 0": "Desecho del YT2400 0"
+        "YT2400 Debris 1": "Desecho del YT2400 1"
+        "YT2400 Debris 2": "Desecho del YT2400 2"
+        "Force Awakens Asteroid 0": "Asteroide del Despertar de la Fuerza 0"
+        "Force Awakens Asteroid 1": "Asteroide del Despertar de la Fuerza 1"
+        "Force Awakens Asteroid 2": "Asteroide del Despertar de la Fuerza 2"
+        "Force Awakens Asteroid 3": "Asteroide del Despertar de la Fuerza 3"
+        "Force Awakens Asteroid 4": "Asteroide del Despertar de la Fuerza 4"
+        "Force Awakens Asteroid 5": "Asteroide del Despertar de la Fuerza 5"
 
     singular:
         'pilots': 'Piloto'
