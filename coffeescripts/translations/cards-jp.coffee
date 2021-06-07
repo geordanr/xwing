@@ -99,12 +99,12 @@ exportObj.translations.日本語 =
     ui:
         shipSelectorPlaceholder: "宇宙船を選択"
         pilotSelectorPlaceholder: "パイロットを選択"
-        upgradePlaceholder: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} アップグレード未設定"
+        upgradePlaceholder: (translator, slot) ->
+            "#{translator 'slot', slot} アップグレード未設定"
         modificationPlaceholder: "改造未設定"
         titlePlaceholder: "称号未設定"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} アップグレード"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} アップグレード"
         unreleased: "リリース前"
         epic: "エピック"
         limited: "制限"
@@ -165,6 +165,32 @@ exportObj.translations.日本語 =
         'VT49 Debris' : 'VT49・デブリ'
         'Force Awakens Asteroid' : 'フォースの覚醒・アステロイド'
         # Collection
+
+    byCSSSelector:
+        '.coreasteroid0-select' : 'コア・アステロイド 0'
+        '.coreasteroid1-select' : 'コア・アステロイド 1'
+        '.coreasteroid2-select' : 'コア・アステロイド 2'
+        '.coreasteroid3-select' : 'コア・アステロイド 3'
+        '.coreasteroid4-select' : 'コア・アステロイド 4'
+        '.coreasteroid5-select' : 'コア・アステロイド 5'
+        '.yt2400debris0-select' : 'YT2400・デブリ 0'
+        '.yt2400debris1-select' : 'YT2400・デブリ 1'
+        '.yt2400debris2-select' : 'YT2400・デブリ 2'
+        '.vt49decimatordebris0-select' : 'VT49・デブリ 0'
+        '.vt49decimatordebris1-select' : 'VT49・デブリ 1'
+        '.vt49decimatordebris2-select' : 'VT49・デブリ 2'
+        '.core2asteroid0-select' : 'フォースの覚醒・アステロイド 0'
+        '.core2asteroid1-select' : 'フォースの覚醒・アステロイド 1'
+        '.core2asteroid2-select' : 'フォースの覚醒・アステロイド 2'
+        '.core2asteroid3-select' : 'フォースの覚醒・アステロイド 3'
+        '.core2asteroid4-select' : 'フォースの覚醒・アステロイド 4'
+        '.core2asteroid5-select' : 'フォースの覚醒・アステロイド 5'
+        '.gascloud1-select' : 'ガスクラウド 1'
+        '.gascloud2-select' : 'ガスクラウド 2'
+        '.gascloud3-select' : 'ガスクラウド 3'
+        '.gascloud4-select' : 'ガスクラウド 4'
+        '.gascloud5-select' : 'ガスクラウド 5'
+        '.gascloud6-select' : 'ガスクラウド 6'
 
     singular:
         'pilots': 'パイロット'
@@ -1475,12 +1501,12 @@ exportObj.cardLoaders.日本語 = () ->
 
         "Hera Syndulla (B-Wing)":
            display_name: """Hera Syndulla"""
-           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。"""
+           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、ダイスの修正ステップの間、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。"""
         "Netrem Pollard":
            text: """君がバレル・ロールをした後、君はレンジ0-1の、ストレス状態ではない友軍宇宙船を1つ選んでも良い。その宇宙船はストレス・トークンを1つ得て、その後君は180度回転する。"""
         "Hera Syndulla (A-Wing)":
            display_name: """Hera Syndulla"""
-           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。%LINEBREAK%<strong>Vectored Thrusters:</strong> 君がアクションを実行した後、君は赤の%BOOST%アクションを実行しても良い。"""
+           text: """他のレンジ1-2の友軍宇宙船が防御するか攻撃を実行する際、ダイスの修正ステップの間、君は君のフォーカス・トークン、回避トークンあるいはロックのうち1つをその宇宙船に転送しても良い。%LINEBREAK%<strong>Vectored Thrusters:</strong> 君がアクションを実行した後、君は赤の%BOOST%アクションを実行しても良い。"""
         "Wedge Antilles (A-Wing)":
            display_name: """Wedge Antilles"""
            text: """君が主武装攻撃を実行する際、もし防御者が君の%FRONTARC%にいるなら、防御者は防御ダイスを1つ少なく振る。%LINEBREAK%<strong>Vectored Thrusters:</strong> 君がアクションを実行した後、君は赤の%BOOST%アクションを実行しても良い。"""
@@ -1528,7 +1554,7 @@ exportObj.cardLoaders.日本語 = () ->
         "Arliz Hadrassian":
            text: """君が%FRONTARC%攻撃を実行する際、もし君がダメージ状態なら、君は君の%FOCUS%の結果1つを%CRIT%に変更しても良い。%LINEBREAK%君が防御する際、もし君がダメージ状態なら、君は君の%FOCUS%の結果1つを空白の結果に<b>変更しなければならない。</b>"""
         "Leema Kai":
-           text: """君がエンゲージする前に、もし君がいずれの敵宇宙船の%FRONTARC%にもいないのなら、君は君の%FULLFRONTARC%内の敵宇宙船へのロックを得ても良い。"""
+           text: """君がエンゲージする前に、もし君がいずれの敵宇宙船の%FRONTARC%内にもいないのなら、君は君の%FULLFRONTARC%内の敵宇宙船へのロックを得ても良い。"""
         "Padric":
            text: """君がロックした友軍デバイスが爆発した後、そのデバイスのレンジ0-1の各敵宇宙船はストレイン・トークンを1つ得る。"""
 
@@ -1573,7 +1599,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """エンゲージメント・フェイズの開始時、君はレンジ0-1の敵宇宙船を1つ選んでもよい。もしそうするなら、その宇宙船がストレス・トークンを1つ得ることを選ばない限り、カリキュレート・トークンを1つ得る。"""
         "4-LOM":
            display_name: """4-LOM"""
-           text: """%LINEBREAK%君が攻撃を実行する際、攻撃ダイスを振った後、君は緑のトークンのタイプを1つ宣言しても良い。もしそうするなら、イオン・トークンを2つ得て、この攻撃の間、防御者は宣言したタイプのトークンを消費できない。"""
+           text: """君が攻撃を実行する際、攻撃ダイスを振った後、君は緑のトークンのタイプを1つ宣言しても良い。もしそうするなら、イオン・トークンを2つ得て、この攻撃の間、防御者は宣言したタイプのトークンを消費できない。"""
         "Andrasta":
            display_name: """Andrasta"""
            text: """ """
@@ -1588,7 +1614,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君はAtack ShuttleあるいはSheathipede-class Shuttle1つをドックできる。%LINEBREAK%君はドックした宇宙船を、君の後ろのガイドからのみ配置できる。"""
         "Havoc":
            display_name: """Havoc"""
-           text: """%CREW%スロットを取り除き、%SENSOR%および%ASTROMECH%スロットを追加する。"""
+           text: """ """
         "Hound's Tooth":
            display_name: """Hound’s Tooth"""
            text: """Z-95-AF4 Headhunterを1つ君にドックできる。"""
@@ -1683,7 +1709,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が%FOCUS%アクションを実行する際、君はそれを赤として扱っても良い。もしそうするなら、君はレンジ0-1の敵宇宙船1つにつき追加のフォーカス・トークン(最大で2つまで)を得る。"""
         "Biohexacrypt Codes":
            display_name: """Biohexacrypt Codes"""
-           text: """君がコーディネートあるいはジャムを実行する際、もし君が宇宙船にロックを持っているなら、君はそのロックを消費し。距離の制限を無視してその宇宙船を選んでも良い。"""
+           text: """君がコーディネートあるいはジャムを実行する際、もし君が宇宙船にロックを持っているなら、君はそのロックを消費し、距離の制限を無視してその宇宙船を選んでも良い。"""
         "Bistan":
            display_name: """Bistan"""
            text: """君が主武装による攻撃を実行した後、君がフォーカス状態なら、君はボーナスの%SINGLETURRETARC%攻撃を、このラウンド君がまだ攻撃していない宇宙船に対して実行しても良い。"""
@@ -1749,7 +1775,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がブーストあるいはバレル・ロールをする際、君は障害物を通過することと、障害物に重なることができる。%LINEBREAK%君が障害物を通過するか、障害物に重なった後、君は%CHARGE%を1つ消費し、ラウンドの終了までその効果を無視しても良い。"""
         "Composure":
            display_name: """Composure"""
-           text: """<i><r>%FOCUS%</r>あるいは%FOCUS%が必要</i>%LINEBREAK%君がアクションを失敗した後、もし君が緑のトークンを持っていなければ、君は%FOCUS%アクションを実行しても良い。もしそうするなら、君はこのラウンド追加のアクションを実行できない。"""
+           text: """君がアクションを失敗した後、もし君が緑のトークンを持っていなければ、君は%FOCUS%アクションを実行しても良い。もしそうするなら、君はこのラウンド追加のアクションを実行できない。"""
         "Concussion Missiles":
            display_name: """Concussion Missiles"""
            text: """<b>攻撃 (%LOCK%):</b> %CHARGE%を1つ消費する。この攻撃が命中した後、防御者のレンジ0-1の全ての宇宙船はそのダメージ・カードのうち1つをエクスポーズする。"""
@@ -1788,7 +1814,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """レンジ0-2の%LEFTARC%あるいは%RIGHTARC%内にいる他の友軍宇宙船が防御する際、その宇宙船が制限宇宙船であるか<strong>Dedicated</strong>アップグレードを持っていて、君はストレイン状態でなければ、君はストレイン・トークンを1つ得ても良い。もしそうするなら、防御者は空白の結果の1つを振り直しても良い。"""
         "Delayed Fuses":
            display_name: """Delayed Fuses"""
-           text: """君が爆弾あるいは機雷を投下、投射あるいは設置した後、君はそのデバイスの上にヒューズ・マーカーを1つ置いても良い。"""
+           text: """君が爆弾あるいは機雷を投下、射出あるいは設置した後、君はそのデバイスの上にヒューズ・マーカーを1つ置いても良い。"""
         "Delta-7B":
            display_name: """Delta-7B"""
            text: """<i class = flavor_text>The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft’s greater firepower and durability.</i>"""
@@ -1918,7 +1944,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君は<strong>IG-2000</strong>アップグレードが付いた他の友軍の各パイロット能力を持つ。%LINEBREAK%君は%CALCULATE%アクションを実行した後、カリキュレート・トークンを1つ得る。"""
         "Ion Bombs":
            display_name: """Ion Bombs"""
-           text: """システム・フェイズの間、君は%CHARGE%を1つ消費し、[1 %STRAIGHT%]テンプレートを使ってIon Bombを投下しても良い。"""
+           text: """<b>爆弾</b>%LINEBREAK% システム・フェイズの間、君は%CHARGE%を1つ消費し、[1 %STRAIGHT%]テンプレートを使ってIon Bombを投下しても良い。"""
         "ISB Slicer":
            display_name: """ISB Slicer"""
            text: """終了フェイズの間、レンジ1-2の敵宇宙船はジャム・トークンを取り除くことはできない。"""
@@ -2070,7 +2096,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が攻撃を宣言した後、もし防御者が君の%BULLSEYEARC%内にいるなら、君は%FORCE%を1つ消費しても良い。もしそうするなら、防御ダイスのロールステップの間、防御者は君の%HIT%/%CRIT%の結果よりも多く防御ダイスを振ることができない。"""
         "Primed Thrusters":
            display_name: """Primed Thrusters"""
-           text: """君のストレス・トークンが2つ以下の際、君は%BARRELROLL%あるいはブーストアクションをたとえストレス状態でも実行できる。"""
+           text: """君のストレス・トークンが2つ以下の際、君は%BARRELROLL%あるいは%BOOST%アクションをたとえストレス状態でも実行できる。"""
         "Proton Bombs":
            display_name: """Proton Bombs"""
            text: """<b>爆弾</b>%LINEBREAK%システム・フェイズの間に、君は%CHARGE%を1つ消費し、1%STRAIGHT%テンプレートを使ってProton Bombを投下しても良い。"""
@@ -2102,7 +2128,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が防御する際、君は君の攻撃者へのロックを消費して、好きな数の防御ダイスを振り直しても良い。"""
         "R3 Astromech":
            display_name: """R3 Astromech"""
-           text: """君はロックを2つまで維持できる。それぞれのロックは違うオブジェクトに対してでなければならない。%LINEBREAK%君が%LOCK%アクションを実行した後、君はロックを1つ得る。"""
+           text: """君はロックを2つまで維持できる。それぞれのロックは違うオブジェクトに対してでなければならない。%LINEBREAK%君が%LOCK%アクションを実行した後、君はロックを1つ得ても良い。"""
         "R4 Astromech":
            display_name: """R4 Astromech"""
            text: """君の速度1-2の基本のマニューバ(%TURNLEFT%%BANKLEFT%%STRAIGHT%%BANKRIGHT%%TURNRIGHT%)の難易度を下げる。"""
@@ -2248,7 +2274,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が主武装による%FRONTARC%攻撃を実行した後、君はボーナスの主武装による%REARARC%攻撃を実行しても良い。"""
         "Veteran Turret Gunner":
            display_name: """Veteran Turret Gunner"""
-           text: """<i><r>%ROTATEARC%</r>あるいは%ROTATEARC%が必要</i>%LINEBREAK%君が主武装による攻撃を実行した後、君はこのラウンド使用していない%SINGLETURRETARC%を使用して、ボーナスの%SINGLETURRETARC%攻撃を実行しても良い。"""
+           text: """君が主武装による攻撃を実行した後、君はこのラウンド使用していない%SINGLETURRETARC%を使用して、ボーナスの%SINGLETURRETARC%攻撃を実行しても良い。"""
         "Xg-1 Assault Configuration":
            display_name: """Xg-1 Assault Configuration"""
            text: """君がちょうど1つの武装解除トークンを持っている際、君は武装解除状態でも%CANNON%攻撃を実行できる。君が武装解除状態で%CANNON%攻撃を実行する際、最大で3つの攻撃ダイスを振る。%LINEBREAK%%CANNON%スロットを追加する。"""
@@ -2345,7 +2371,7 @@ exportObj.cardLoaders.日本語 = () ->
         "Proud Tradition":
            text: """<strong>Proud Tradition</strong>%LINEBREAK%<b>セットアップ:</b> この面を表にして装備する。%LINEBREAK%君が2つ以下のストレス・トークンを持っている際、君はストレス状態でも%FOCUS%アクションを実行できる。君が攻撃を実行した後、もし君がストレス状態なら、防御者はフォーカス・トークンを1つ消費するか、%CRIT%ダメージを1つ受けこのカードを裏返しても良い。%LINEBREAK% <strong>False Tradition</strong>%LINEBREAK%君の%FOCUS%アクションは赤として扱う。"""
         "Cluster Mines":
-           text: """システム・フェイズの間に、君は%CHARGE%を1つ消費し、1%STRAIGHT%テンプレートを使ってCluster Mineのセットを投下しても良い。%LINEBREAK%このカードの%CHARGE%は回復できない。"""
+           text: """<b>機雷</b>%LINEBREAK% システム・フェイズの間に、君は%CHARGE%を1つ消費し、1%STRAIGHT%テンプレートを使ってCluster Mineのセットを投下しても良い。%LINEBREAK%このカードの%CHARGE%は回復できない。"""
         "Kaz's Fireball":
            text: """<b>セットアップ:</b> 君が<strong>Explosion with Wings</strong>を解決する時、君はダメージ・デッキをサーチし、<b>宇宙船</b>特性のダメージ・カードを1枚選んでも良い: 君は代わりにそのカードを受ける。その後、ダメージ・デッキをシャッフルする。%LINEBREAK%君はイオン状態でもダメージ・カードのアクションを実行できる。"""
         "Agent Terex":
@@ -2425,7 +2451,7 @@ exportObj.cardLoaders.日本語 = () ->
         'Alpha-3E "Esk"':
            text: """君が主武装による攻撃を実行する際、攻撃ダイスを振る前に、君は%CHARGE%を2つ消費しても良い。もしそうするなら、君の%CRIT%の結果はダメージの代わりにイオン・トークンを与える。"""
         "Thermal Detonators":
-           text: """システム・フェイズの間、君は%CHARGE%を2つまで消費し、同じ数のThermal Detonatorを[1%STRAIGHT%]あるいは[2%STRAIGHT%]テンプレートを使って投下しても良い。それぞれは違うテンプレートを使って設置されなければならない。%LINEBREAK%君がこのカードをリロードする時、追加で%CHARGE%が1つ回復する。"""
+           text: """<b>爆弾</b>%LINEBREAK% システム・フェイズの間、君は%CHARGE%を2つまで消費し、同じ数のThermal Detonatorを[1%STRAIGHT%]あるいは[2%STRAIGHT%]テンプレートを使って投下しても良い。それぞれは違うテンプレートを使って設置されなければならない。%LINEBREAK%君がこのカードをリロードする時、追加で%CHARGE%が1つ回復する。"""
         "R7-A7":
            text: """君が攻撃を実行する際、君は%CHARGE%を1つ消費し、%HIT%の結果を%CRIT%の結果に変更しても良い。"""
         "Q7 Astromech":

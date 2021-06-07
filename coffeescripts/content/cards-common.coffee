@@ -21471,10 +21471,21 @@ exportObj.epicExclusions = (data) ->
 # Ships/Pilots excluded unless in the included list (with further excluded pilots list for included ships, i.e u-wing)
 # while upgrades assumed included unless on the excluded list
 exportObj.hyperspaceCheck = (data, faction='', shipCheck=false) ->
-    # check ship/pilot first
     if (shipCheck)
         if (data.name in exportObj.hyperspacePilotExclusions)
             return false
+        for ship in exportObj.hyperspaceShipInclusions
+            if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name || (Array.isArray(data.ship) and ship.name in data.ship)))
+                return true
+        return false
+    else
+        return data.name not in exportObj.hyperspaceUpgradeExclusions
+
+exportObj.hyperspaceCheckBrowser = (data, faction='', type) ->
+    # check ship/pilot first
+    if type == 'Pilot'
+        return data.name not in exportObj.hyperspacePilotExclusions
+    else if type == 'Ship'
         for ship in exportObj.hyperspaceShipInclusions
             # checks against name for ship itself or ship name/faction for pilot inclusions
             if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name || (Array.isArray(data.ship) and ship.name in data.ship)))
