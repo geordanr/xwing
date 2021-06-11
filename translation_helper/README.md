@@ -4,6 +4,9 @@ This translation script is supposed to help you in translating YASB to your
 language.
 It won't do all the work, but helps a lot.
 
+THE TRANSLATION HELPER IS CURRENTLY NOT USEABLE, AS FFG CLOSED THE API
+
+
 ## How to use it?
 
 1. Grab the .json provided by FFG in your own language by running:

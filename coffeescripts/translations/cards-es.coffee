@@ -122,31 +122,24 @@ exportObj.translations['Español'] =
         # Collection
         'Your Collection': 'Mi colección'
         'Check Collection' : 'Comprobar coincidencia con colección'
-    byCSSSelector:        
-        '.coreasteroid0-select' : 'Asteroide del Core 0'
-        '.coreasteroid1-select' : 'Asteroide del Core 1'
-        '.coreasteroid2-select' : 'Asteroide del Core 2'
-        '.coreasteroid3-select' : 'Asteroide del Core 3'
-        '.coreasteroid4-select' : 'Asteroide del Core 4'
-        '.coreasteroid5-select' : 'Asteroide del Core 5'
-        '.yt2400debris0-select' : 'Desecho del YT2400 0'
-        '.yt2400debris1-select' : 'Desecho del YT2400 1'
-        '.yt2400debris2-select' : 'Desecho del YT2400 2'
-        '.vt49decimatordebris0-select' : 'Desecho del VT49 0'
-        '.vt49decimatordebris1-select' : 'Desecho del VT49 1'
-        '.vt49decimatordebris2-select' : 'Desecho del VT49 2'
-        '.core2asteroid0-select' : 'Asteroide del Despertar de la Fuerza 0'
-        '.core2asteroid1-select' : 'Asteroide del Despertar de la Fuerza 1'
-        '.core2asteroid2-select' : 'Asteroide del Despertar de la Fuerza 2'
-        '.core2asteroid3-select' : 'Asteroide del Despertar de la Fuerza 3'
-        '.core2asteroid4-select' : 'Asteroide del Despertar de la Fuerza 4'
-        '.core2asteroid5-select' : 'Asteroide del Despertar de la Fuerza 5'
-        '.gascloud1-select' : 'Gas Cloud 1'
-        '.gascloud2-select' : 'Gas Cloud 2'
-        '.gascloud3-select' : 'Gas Cloud 3'
-        '.gascloud4-select' : 'Gas Cloud 4'
-        '.gascloud5-select' : 'Gas Cloud 5'
-        '.gascloud6-select' : 'Gas Cloud 6'
+        "Core Asteroid 0": "Asteroide del Core 0"
+        "Core Asteroid 1": "Asteroide del Core 1"
+        "Core Asteroid 2": "Asteroide del Core 2"
+        "Core Asteroid 3": "Asteroide del Core 3"
+        "Core Asteroid 4": "Asteroide del Core 4"
+        "Core Asteroid 5": "Asteroide del Core 5"
+        "VT49 Debris 0": "Desecho del VT49 0"
+        "VT49 Debris 1": "Desecho del VT49 1"
+        "VT49 Debris 2": "Desecho del VT49 2"
+        "YT2400 Debris 0": "Desecho del YT2400 0"
+        "YT2400 Debris 1": "Desecho del YT2400 1"
+        "YT2400 Debris 2": "Desecho del YT2400 2"
+        "Force Awakens Asteroid 0": "Asteroide del Despertar de la Fuerza 0"
+        "Force Awakens Asteroid 1": "Asteroide del Despertar de la Fuerza 1"
+        "Force Awakens Asteroid 2": "Asteroide del Despertar de la Fuerza 2"
+        "Force Awakens Asteroid 3": "Asteroide del Despertar de la Fuerza 3"
+        "Force Awakens Asteroid 4": "Asteroide del Despertar de la Fuerza 4"
+        "Force Awakens Asteroid 5": "Asteroide del Despertar de la Fuerza 5"
 
     singular:
         'pilots': 'Piloto'

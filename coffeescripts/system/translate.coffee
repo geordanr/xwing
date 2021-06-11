@@ -75,8 +75,6 @@ exportObj.setupTranslationSupport = ->
                     await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
                 if language != current_language
                     exportObj.loadCards language
-                for own selector, html of exportObj.translations[language].byCSSSelector
-                    $(selector).html html
                 exportObj.translateUIElements()
                 for builder in builders
                     builder.container.trigger 'xwing:afterLanguageLoad', language
