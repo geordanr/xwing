@@ -751,7 +751,7 @@ class exportObj.SquadBuilder
                     <div class="modal-body">
                         <form>
                             <label>
-                                <span class="translated" defaultText="Maximal desired bid"><span>
+                                <span class="translated" defaultText="Maximal desired bid"></span>
                                 <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
                             </label><br />
                             <label>
@@ -789,6 +789,9 @@ class exportObj.SquadBuilder
                 </div>
             </div>
         """
+        # translate the UI we just created. 
+        exportObj.translateUIElements(@randomizer_options_modal)
+        
         @randomizer_source_selector = $ @randomizer_options_modal.find('select.randomizer-sources')
         for expansion in exportObj.expansions
             opt = $ document.createElement('OPTION')
