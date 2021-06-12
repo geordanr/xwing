@@ -1539,6 +1539,14 @@ class exportObj.SquadBuilder
             tts_ships.push tts_obstacles
 
         @tts_textarea.val $.trim """#{tts_ships.join ""}"""
+
+        @xws_textarea.val $.trim JSON.stringify(@toXWS())
+        $('#xws-qrcode-container').text ''
+        $('#xws-qrcode-container').qrcode
+            render: 'canvas'
+            text: JSON.stringify(@toMinimalXWS())
+            ec: 'L'
+            size: 128
         
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]#{@uitranslation('Total')}: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]#{@uitranslation('View in YASB')}[/url]"""
 
@@ -1596,14 +1604,7 @@ class exportObj.SquadBuilder
         else
             $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
         
-        # Moved XWS update to whenever the dirtyness changed rather than on points updated.
-        @xws_textarea.val $.trim JSON.stringify(@toXWS())
-        $('#xws-qrcode-container').text ''
-        $('#xws-qrcode-container').qrcode
-            render: 'canvas'
-            text: JSON.stringify(@toMinimalXWS())
-            ec: 'L'
-            size: 128
+
 
     onSquadNameChanged: () =>
         if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
