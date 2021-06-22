@@ -3973,8 +3973,10 @@ class Ship
 
         @copy_button = $ @row.find('button.copy-pilot')
         @copy_button.click (e) =>
-            clone = @builder.ships[@builder.ships.length - 1]
-            clone.copyFrom(this)
+            for ship in @builder.ships
+                if ship.row.hasClass("unsortable")
+                    ship.copyFrom(this)
+                    break
                 
         @copy_button.hide()
 
