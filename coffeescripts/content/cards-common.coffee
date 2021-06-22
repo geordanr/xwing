@@ -1853,12 +1853,12 @@ exportObj.basicCardData = ->
                 "R-Coordinate"
             ]
             maneuvers: [
-                [ 0, 3, 3, 3, 0]
-                [ 0, 2, 1, 2, 0]
-                [ 0, 2, 1, 2, 0]
-                [ 0, 3, 2, 3, 0]
-                [ 0, 0, 3, 0, 0]
-                [ 0, 0, 3, 0, 0]
+                [ 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0 ]
+                [ 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0 ]
+                [ 0, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
 
     # name field is for convenience only
@@ -9789,6 +9789,48 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
+        {
+            name: "Colicoid Destroyer"
+            id: 475
+            faction: "Separatist Alliance"
+            ship: "Trident-class Assault Ship"
+            skill: 8
+            engagement: 0
+            points: 90
+            slots: [
+                "Command"
+                "Torpedo"
+                "Hardpoint"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Team"
+                "Cargo"
+                "Title"
+            ]
+        }
+        {
+            name: "Lawless Pirates"
+            id: 476
+            faction: "Scum and Villainy"
+            ship: "Trident-class Assault Ship"
+            skill: 8
+            engagement: 0
+            points: 90
+            slots: [
+                "Command"
+                "Torpedo"
+                "Hardpoint"
+                "Hardpoint"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Team"
+                "Cargo"
+                "Title"
+            ]
+        }
     ]
 
     upgradesById: [
@@ -13723,7 +13765,248 @@ exportObj.basicCardData = ->
             slot: "Astromech"
             faction: "Scum and Villainy"
         }
-        
+        {
+            name: "Asajj Ventress (Command)"
+            id: 390
+            unique: true
+            slot: "Command"
+            points: 8
+            faction: ["Scum and Villainy", "Separatist Alliance"]
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+            force: 1
+            modifier_func: (stats) ->
+                stats.force += 1
+                stats.actions.push '*Focus'
+                stats.actions.push 'F-> Coordinate'
+        }
+        {
+            name: "General Grievous (Command)"
+            id: 391
+            unique: true
+            slot: "Command"
+            points: 5
+            faction: "Separatist Alliance"
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: "Hondo Ohnaka (Command)"
+            id: 392
+            unique: true
+            slot: "Command"
+            points: 7
+            charge: 2
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+            modifier_func: (stats) ->
+                stats.actions.push '*Coordinate'
+                stats.actions.push 'R-> Jam'
+        }
+        {
+            name: "Mar Tuuk"
+            id: 393
+            unique: true
+            slot: "Command"
+            points: 4
+            faction: "Separatist Alliance"
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: "Riff Tamson"
+            id: 394
+            unique: true
+            slot: "Command"
+            points: 6
+            faction: "Separatist Alliance"
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: "Zealous Captain"
+            id: 395
+            unique: true
+            slot: "Command"
+            points: 4
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: "Tractor Tentacles"
+            id: 396
+            slot: "Hardpoint"
+            points: 0
+            attackb: 2
+            range: """1-2"""
+            rangebonus: true
+            ship: "Trident-class Assault Ship"
+            restrictions: [
+                ["Base", "Huge"]
+            ]
+        }
+        {
+            name: "Drill Beak"
+            id: 397
+            slot: "Hardpoint"
+            points: 4
+            attackb: 3
+            range: """0-1"""
+            rangebonus: true
+            ship: "Trident-class Assault Ship"
+            restrictions: [
+                ["Slot", "Cargo"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Cargo"
+            also_occupies_upgrades: [ "Cargo" ]
+        }
+        {
+            name: "Enhanced Propulsion"
+            id: 398
+            slot: "Hardpoint"
+            points: 4
+            attackt: 3
+            range: """3-5"""
+            ship: "Trident-class Assault Ship"
+            restrictions: [
+                ["Slot", "Cargo"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Cargo"
+            also_occupies_upgrades: [ "Cargo" ]
+        }
+        {
+            name: "Proton Cannon Battery"
+            id: 399
+            slot: "Hardpoint"
+            points: 10
+            attackbull: 4
+            range: """2-5"""
+            restrictions: [
+                ["Slot", "Cargo"]
+                ["Base", "Huge"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Cargo"
+            also_occupies_upgrades: [ "Cargo" ]
+        }
+        {
+            name: "Droid Crew"
+            id: 400
+            slot: "Team"
+            points: 5
+            faction: "Separatist Alliance"
+            modifier_func: (stats) ->
+                stats.actions.push '*Calculate'
+                stats.actions.push 'R-> Lock'
+        }
+        {
+            name: "Tractor Technicians"
+            id: 401
+            slot: "Team"
+            points: 2
+            faction: "Separatist Alliance"
+        }
+        {
+            name: "Corsair Crew"
+            id: 402
+            slot: "Team"
+            points: 5
+            faction: "Separatist Alliance"
+            restrictions: [
+                ["Slot", "Gunner"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Gunner"
+            also_occupies_upgrades: [ "Gunner" ]
+        }
+        {
+            name: "Grappler"
+            id: 403
+            unique: true
+            slot: "Title"
+            ship: "Trident-class Assault Ship"
+            points: 3
+            modifier_func: (stats) ->
+                stats.hull += 2
+                stats.shields -= 1
+        }
+        {
+            name: "Nautolan's Revenge"
+            id: 404
+            unique: true
+            slot: "Title"
+            points: 2
+            ship: "Trident-class Assault Ship"
+            faction: "Scum and Villainy"
+            modifier_func: (stats) ->
+                stats.hull -= 2
+                stats.shields += 1
+                stats.energy += 1
+        }
+        {
+            name: "Neimoidian Grasp"
+            id: 405
+            unique: true
+            slot: "Title"
+            points: 2
+            ship: "Trident-class Assault Ship"
+            faction: "Separatist Alliance"
+            modifier_func: (stats) ->
+                stats.shields -= 2
+        }
+        {
+            name: "Trident"
+            id: 406
+            unique: true
+            slot: "Title"
+            points: 4
+            ship: "Trident-class Assault Ship"
+            faction: "Separatist Alliance"
+            modifier_func: (stats) ->
+                stats.energy += 1
+        }
+        {
+            name: "Tracking Torpedoes"
+            id: 407
+            slot: "Torpedo"
+            points: 8
+            attack: 4
+            charge: 3
+        }
     ]
 
 
