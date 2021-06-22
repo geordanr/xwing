@@ -925,12 +925,12 @@ class exportObj.SquadBuilder
                         <option class="core2asteroid3-select translated" value="core2asteroid3" defaultText="Force Awakens Asteroid 3"></option>
                         <option class="core2asteroid4-select translated" value="core2asteroid4" defaultText="Force Awakens Asteroid 4"></option>
                         <option class="core2asteroid5-select translated" value="core2asteroid5" defaultText="Force Awakens Asteroid 5"></option>
-                        <option class="gascloud1-select translated" value="gascloud1"><span class="translated" defaultText="Gas Cloud 1"></span></option>
-                        <option class="gascloud2-select translated" value="gascloud2"><span class="translated" defaultText="Gas Cloud 2"></span></option>
-                        <option class="gascloud3-select translated" value="gascloud3"><span class="translated" defaultText="Gas Cloud 3"></span></option>
-                        <option class="gascloud4-select translated" value="gascloud4"><span class="translated" defaultText="Gas Cloud 4"></span></option>
-                        <option class="gascloud5-select translated" value="gascloud5"><span class="translated" defaultText="Gas Cloud 5"></span></option>
-                        <option class="gascloud6-select translated" value="gascloud6"><span class="translated" defaultText="Gas Cloud 6"></span></option>
+                        <option class="gascloud1-select translated" value="gascloud1" defaultText="Gas Cloud 1"></option>
+                        <option class="gascloud2-select translated" value="gascloud2" defaultText="Gas Cloud 2"></option>
+                        <option class="gascloud3-select translated" value="gascloud3" defaultText="Gas Cloud 3"></option>
+                        <option class="gascloud4-select translated" value="gascloud4" defaultText="Gas Cloud 4"></option>
+                        <option class="gascloud5-select translated" value="gascloud5" defaultText="Gas Cloud 5"></option>
+                        <option class="gascloud6-select translated" value="gascloud6" defaultText="Gas Cloud 6"></option>
                     </select>
                 </div>
                 <div class="obstacle-image-container" style="display:none;">
@@ -1539,6 +1539,14 @@ class exportObj.SquadBuilder
             tts_ships.push tts_obstacles
 
         @tts_textarea.val $.trim """#{tts_ships.join ""}"""
+
+        @xws_textarea.val $.trim JSON.stringify(@toXWS())
+        $('#xws-qrcode-container').text ''
+        $('#xws-qrcode-container').qrcode
+            render: 'canvas'
+            text: JSON.stringify(@toMinimalXWS())
+            ec: 'L'
+            size: 128
         
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]#{@uitranslation('Total')}: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]#{@uitranslation('View in YASB')}[/url]"""
 
@@ -1596,14 +1604,7 @@ class exportObj.SquadBuilder
         else
             $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
         
-        # Moved XWS update to whenever the dirtyness changed rather than on points updated.
-        @xws_textarea.val $.trim JSON.stringify(@toXWS())
-        $('#xws-qrcode-container').text ''
-        $('#xws-qrcode-container').qrcode
-            render: 'canvas'
-            text: JSON.stringify(@toMinimalXWS())
-            ec: 'L'
-            size: 128
+
 
     onSquadNameChanged: () =>
         if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
