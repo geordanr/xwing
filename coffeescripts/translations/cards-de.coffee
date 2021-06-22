@@ -165,6 +165,8 @@ is an authorization system which lets you prove your identity at a web site with
         "iOS requires cross-site control": """Unter iOS musst du eventuell erst "cross-site control" aktivieren, damit OAuth nutzen kannst."""
         "select OAuth provider": "Wähle einen der untentstehenden OAuth Anbieter um dich einzuloggen und Staffeln speichern zu können."
         "Log in with OAuth": "Anmeldung per OAuth"
+        "Log In": "Anmelden"
+        "Log Out": "Abmelden"
         "What's this?": "Was ist das?"
         "Close": "Schließen"
         "Roll!": "Auswürfeln!"
