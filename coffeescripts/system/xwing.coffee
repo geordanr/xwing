@@ -893,6 +893,8 @@ class exportObj.SquadBuilder
             @misc_settings_modal.modal()
             @misc_settings_initiative_prefix.prop('checked', exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix)
 
+        exportObj.translateUIElements(@misc_settings_modal) 
+
         @choose_obstacles_modal = $ document.createElement 'DIV'
         @choose_obstacles_modal.addClass 'modal fade choose-obstacles-modal'
         @choose_obstacles_modal.tabindex = "-1"
