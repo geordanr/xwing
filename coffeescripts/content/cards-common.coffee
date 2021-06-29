@@ -13945,7 +13945,7 @@ exportObj.basicCardData = ->
             id: 402
             slot: "Team"
             points: 5
-            faction: "Separatist Alliance"
+            faction: "Scum"
             restrictions: [
                 ["Slot", "Gunner"]
             ]
