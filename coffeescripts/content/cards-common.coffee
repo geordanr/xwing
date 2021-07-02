@@ -12332,6 +12332,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             slot: "Command"
             points: 8
+            charge: 4
             restrictions: [
                 ["Slot", "Crew"]
                 ["Base", "Huge"]
