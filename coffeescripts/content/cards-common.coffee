@@ -13897,9 +13897,7 @@ exportObj.basicCardData = ->
             name: "Enhanced Propulsion"
             id: 398
             slot: "Hardpoint"
-            points: 4
-            attackt: 3
-            range: """3-5"""
+            points: 6
             ship: "Trident-class Assault Ship"
             restrictions: [
                 ["Slot", "Cargo"]
