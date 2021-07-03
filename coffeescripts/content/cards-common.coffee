@@ -13349,8 +13349,7 @@ exportObj.basicCardData = ->
             name: "Suppressive Gunner"
             id: 350
             slot: "Gunner"
-            points: 8
-            pointsarray: [8,7,6,3]
+            pointsarray: [8,7,6,5]
             variablebase: true
         }
         {
