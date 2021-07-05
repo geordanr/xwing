@@ -12332,6 +12332,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             slot: "Command"
             points: 8
+            charge: 4
             restrictions: [
                 ["Slot", "Crew"]
                 ["Base", "Huge"]
@@ -13348,8 +13349,7 @@ exportObj.basicCardData = ->
             name: "Suppressive Gunner"
             id: 350
             slot: "Gunner"
-            points: 8
-            pointsarray: [8,7,6,3]
+            pointsarray: [8,7,6,5]
             variablebase: true
         }
         {
@@ -13896,9 +13896,7 @@ exportObj.basicCardData = ->
             name: "Enhanced Propulsion"
             id: 398
             slot: "Hardpoint"
-            points: 4
-            attackt: 3
-            range: """3-5"""
+            points: 6
             ship: "Trident-class Assault Ship"
             restrictions: [
                 ["Slot", "Cargo"]
