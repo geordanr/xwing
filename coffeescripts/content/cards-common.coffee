@@ -14004,6 +14004,9 @@ exportObj.basicCardData = ->
             points: 8
             attack: 4
             charge: 3
+            restrictions: [
+                ["Base", "Huge"]
+            ]
         }
     ]
 
