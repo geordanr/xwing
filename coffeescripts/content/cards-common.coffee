@@ -13936,7 +13936,6 @@ exportObj.basicCardData = ->
             id: 401
             slot: "Team"
             points: 2
-            faction: "Separatist Alliance"
         }
         {
             name: "Corsair Crew"
