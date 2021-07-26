@@ -5858,11 +5858,6 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Collision Detector'
-            type: 'upgrade'
-            count: 1
-        }
-        {
             name: 'Adv. Proton Torpedoes'
             type: 'upgrade'
             count: 1
@@ -8731,7 +8726,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Daredevil'
             type: 'upgrade'
-            count: 3
+            count: 1
         }
         {
             name: 'Marg Sabl Closure'
