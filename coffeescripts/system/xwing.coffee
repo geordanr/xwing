@@ -2115,7 +2115,7 @@ class exportObj.SquadBuilder
                         maneuverClass2 = "svg-modified-maneuver"
 
                     if speed == 0 and turn == 2
-                        outTable += """<rect class="svg-maneuver-stop #{maneuverClass} #{maneuverClass2}" x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
+                        outTable += """<rect class="svg-maneuver-stop #{maneuverClass} #{maneuverClass2}" x="50" y="50" width="100" height="100" style="fill:#{color}; stroke-width:5; stroke:#{outlineColor}" />"""
                     else
                         transform = ""
                         className = ""
@@ -2123,61 +2123,74 @@ class exportObj.SquadBuilder
                             when 0
                                 # turn left
                                 linePath = "M160,180 L160,70 80,70"
+                                innerPath = "M160,175 L160,70 70,70"
                                 trianglePath = "M80,100 V40 L30,70 Z"
                             when 1
                                 # bank left
                                 linePath = "M150,180 S150,120 80,60"
+                                innerPath = "M150,175 S150,120 80,60"
                                 trianglePath = "M80,100 V40 L30,70 Z"
                                 transform = "transform='translate(-5 -15) rotate(45 70 90)' "
                             when 2
                                 # straight
                                 linePath = "M100,180 L100,100 100,80"
+                                innerPath = "M100,175 L100,120 100,70"
                                 trianglePath = "M70,80 H130 L100,30 Z"
                             when 3
                                 # bank right
                                 linePath = "M50,180 S50,120 120,60"
+                                innerPath = "M50,175 S50,120 120,60"
                                 trianglePath = "M120,100 V40 L170,70 Z"
                                 transform = "transform='translate(5 -15) rotate(-45 130 90)' "
                             when 4
                                 # turn right
                                 linePath = "M40,180 L40,70 120,70"
+                                innerPath = "M40,175 L40,70 130,70"
                                 trianglePath = "M120,100 V40 L170,70 Z"
                             when 5
                                 # k-turn/u-turn
                                 linePath = "M50,180 L50,100 C50,10 140,10 140,100 L140,120"
+                                innerPath = "M50,175 L50,100 C50,10 140,10 140,100 L140,130"
                                 trianglePath = "M170,120 H110 L140,180 Z"
                             when 6
                                 # segnor's loop left
                                 linePath = "M150,180 S150,120 80,60"
+                                innerPath = "M150,175 S150,120 85,65"
                                 trianglePath = "M80,100 V40 L30,70 Z"
                                 transform = "transform='translate(0 50)'"
                             when 7
                                 # segnor's loop right
                                 linePath = "M50,180 S50,120 120,60"
+                                innerPath = "M50,175 S50,120 115,65"
                                 trianglePath = "M120,100 V40 L170,70 Z"
                                 transform = "transform='translate(0 50)'"
                             when 8
                                 # tallon roll left
                                 linePath = "M160,180 L160,70 80,70"
+                                innerPath = "M160,175 L160,70 85,70"
                                 trianglePath = "M60,100 H100 L80,140 Z"
                             when 9
                                 # tallon roll right
                                 linePath = "M40,180 L40,70 120,70"
+                                innerPath = "M40,175 L40,70 115,70"
                                 trianglePath = "M100,100 H140 L120,140 Z"
                             when 10
                                 # backward left
                                 linePath = "M50,180 S50,120 120,60"
+                                innerPath = "M50,175 S50,120 120,60"
                                 trianglePath = "M120,100 V40 L170,70 Z"
                                 transform = "transform='translate(5 -15) rotate(-45 130 90)' "
                                 className = 'backwards'
                             when 11
                                 # backward straight
                                 linePath = "M100,180 L100,100 100,80"
+                                innerPath = "M100,175 L100,100 100,70"
                                 trianglePath = "M70,80 H130 L100,30 Z"
                                 className = 'backwards'
                             when 12
                                 # backward right
                                 linePath = "M150,180 S150,120 80,60"
+                                innerPath = "M150,175 S150,120 80,60"
                                 trianglePath = "M80,100 V40 L30,70 Z"
                                 transform = "transform='translate(-5 -15) rotate(45 70 90)' "
                                 className = 'backwards'
@@ -2186,7 +2199,7 @@ class exportObj.SquadBuilder
                           <g class="maneuver #{className}">
                             <path class = 'svg-maneuver-outer #{maneuverClass} #{maneuverClass2}' stroke-width='25' fill='none' stroke='#{outlineColor}' d='#{linePath}' />
                             <path class = 'svg-maneuver-triangle #{maneuverClass} #{maneuverClass2}' d='#{trianglePath}' fill='#{color}' stroke-width='5' stroke='#{outlineColor}' #{transform}/>
-                            <path class = 'svg-maneuver-inner #{maneuverClass} #{maneuverClass2}' stroke-width='15' fill='none' stroke='#{color}' d='#{linePath}' />
+                            <path class = 'svg-maneuver-inner #{maneuverClass} #{maneuverClass2}' stroke-width='15' fill='none' stroke='#{color}' d='#{innerPath}' />
                           </g>
                         """
 

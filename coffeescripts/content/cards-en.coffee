@@ -16,7 +16,7 @@ exportObj.translations.English =
         "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
         "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
         "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
-        "Configuration": '<i class="xwing-miniatures-font xwing-miniatures-font-configuration"></i>'
+        "Configuration": '<i class="xwing-miniatures-font xwing-miniatures-font-config"></i>'
         "Modification": '<i class="xwing-miniatures-font xwing-miniatures-font-modification"></i>'
         "Gunner": '<i class="xwing-miniatures-font xwing-miniatures-font-gunner"></i>'
         "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
@@ -2398,6 +2398,8 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform an attack, if there are no other ships in the attack arc, you may change 1 of your %FOCUS% results to a %HIT% result."""
         "R2-D2 (Republic)":
            text: """After you activate, you may spend 1 %CHARGE% and gain 1 deplete token to repair 1 damage card, recover 1 shield or remove 1 device at range 0-1."""
+        "Aayla Secura":
+           text: """While an enemy ship in your %BULLSEYEARC% performs an attack, if the defender is friendly and at range 0-2, the defender may change 1 blank result to a %FOCUS% result."""
         "Patience":
            text: """At the start of the Engagement Phase, if there is an enemy ship in your %FRONTARC%, you may gain 1 deplete token to recover 1 %FORCE%."""
         "Syliure-31 Hyperdrive":
@@ -2754,7 +2756,7 @@ exportObj.cardLoaders.English = () ->
         'Decoyed':
            text: '''While you defend, each friendly <strong>Naboo Handmaiden</strong> in the attack arc may spend 1 evade token to change one of your results to an %EVADE% result. %LINEBREAK% If you are a Naboo Royal N-1 Starfighter, each friendly <strong>Naboo Handmaiden</strong> in the attack arc may spend 1 evade token to add 1 %EVADE% result instead.'''
         'Compromising Intel':
-           text: '''During the System Phase, if the enemy <strong>Vi Moradi</strong> is at range 0-3, flip your dial faceup. %LINEBREAK% While you defend or perform an attack against the enemy <strong>Vi Morandi</strong>, you cannot spend focus tokens.'''
+           text: '''During the System Phase, if the enemy <strong>Vi Moradi</strong> is at range 0-3, flip your dial faceup. %LINEBREAK% While you defend or perform an attack against the enemy <strong>Vi Moradi</strong>, you cannot spend focus tokens.'''
         'Cluster Mine':
            text: '''(Mine Tokens) - A Cluster Mine Set consists of 3 individual Cluster Mine devices. %LINEBREAK% When a Cluster Mines set is placed, the center Cluster Mine is placed as normal, then two additional Cluster Mines are placed in the recesses as shown. %LINEBREAK% After a ship overlaps or moves through any individual Cluster Mine, it detonates. Other Cluster Mines in the set that were not overlapped or moved through do not detonate. %LINEBREAK% When each of these devices detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT%/%CRIT% damage for each matching result.'''
         'Ion Bomb':
