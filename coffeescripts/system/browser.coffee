@@ -723,12 +723,11 @@ class exportObj.CardBrowser
         required_linked_actions = @linkedaction_available_selection.val()
         if (required_actions.length > 0) or (required_linked_actions.length > 0)
             actions = card.data.actions ? []
-            actions = actions.concat (card.data.actionsred ? [])
             if card.orig_type == 'Pilot'
                 actions = card.data.ship_override?.actions ? exportObj.ships[card.data.ship].actions
                 actions = actions.concat (card.data.ship_override?.actionsred ? exportObj.ships[card.data.ship].actionsred)
         for action in required_actions ? []
-            return false unless actions? and ((action in actions) or (("F-" + action) in actions))
+            return false unless actions? and ((action in actions) or (("F-" + action) in actions) or (("R-" + action) in actions))
         for action in required_linked_actions ? []
             return false unless actions? and ((("R> " + action) in actions) or (("> " + action) in actions))
 
