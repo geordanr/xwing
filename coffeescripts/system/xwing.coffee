@@ -4928,6 +4928,9 @@ class GenericAddon
                 attackIcon = if (@data.attack?) then $.trim """
                         <span class="info-data info-attack">#{@data.attack}</span>
                         <i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>
+                """ else if (@data.attackf?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attackf}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-fullfrontarc"></i>
                 """ else if (@data.attackt?) then $.trim """
                         <span class="info-data info-attack">#{@data.attackt}</span>
                         <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>
