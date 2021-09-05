@@ -1590,7 +1590,12 @@ exportObj.cardLoaders.日本語 = () ->
         "Syndicate Smugglers":
            display_name: """Syndicate Smugglers"""
            text: """<i class = flavor_text>Vessels like the C-ROC Cruiser allow criminal operations across the Outer Rim to move massive amounts of illicit materials, or project power that can bully small colonies into compliance.</i> %LINEBREAK% <strong>Overdrive Burners:</strong> 君が防御する際、もし公開されたマニューバが速度3-5なら、防御ダイスを追加で1つ振る。"""
-
+        "Colicoid Destroyer":
+           display_name: """Colicoid Destroyer"""
+           text: """<i class = flavor_text>Designed by the Colicoid Creation Nest and equipped with powerful tentacles and a massive drill to tear through the hull of even the toughest starships and fortifications, the Trident-class Assault Ship is a terrifying testament to the threat posed by the Separatist Alliance.</i> %LINEBREAK% <b>Tractor Grasp:</b> 君が <b>Tractor Tentacles</b> 攻撃を実行し命中した後、防御者はトラクター・トークンを1つ得る。"""
+        "Lawless Pirates":
+           display_name: """Lawless Pirates"""
+           text: """<i class = flavor_text>The Separatist Alliance has close ties to certain mercenaries and criminal groups and, as the war rages on, its technology sometimes finds its way into unsavory hands.</i> %LINEBREAK%  <b>Tractor Grasp:</b> 君が <b>Tractor Tentacles</b> 攻撃を実行し命中した後、防御者はトラクター・トークンを1つ得る。"""
 
 
     upgrade_translations =
@@ -2479,7 +2484,7 @@ exportObj.cardLoaders.日本語 = () ->
         "Weapons Systems Officer":
            text: """君が%LOCK%が必要条件の特殊攻撃を実行した後、君は防御者へのロックを得ても良い。"""
         "False Transponder Codes":
-           text: """君があるオブジェクトに対してロックを得るか、あるオブジェクトが君に対してロックを得た後で、もし君がアクティブな%CHARGE%を1つ持っているなら、%CHARGE%を1つ消費し、距離の制限を無視してそのオブジェクトをジャムしても良い。"""
+           text: """君があるオブジェクトに対してロックを得るか、あるオブジェクトが君に対してロックを得た後で、もし君がアクティブな%CHARGE%を1つ持っているなら、%CHARGE%を1つ消費し、距離の制限を無視してそのオブジェクトをジャムする。"""
 
         "Vectored Cannons (RZ-1)":
            text: """%SINGLETURRETARC%インジケーターを得る。君の%FRONTARC%主武装攻撃のアーク必要条件を%SINGLETURRETARC%として扱う。%LINEBREAK% 君の<strong>Vectored Thrusters</strong>宇宙船能力を以下と置き換える。%LINEBREAK%<strong>Vectored Cannons:</strong>システム・フェイズの間、君は赤の%BOOST%アクションか赤の%ROTATEARC%アクションを行っても良い。君は君の%SINGLETURRETARC%インジケーターを%FRONTARC%か%REARARC%にのみ回転できる。"""
@@ -2678,6 +2683,63 @@ exportObj.cardLoaders.日本語 = () ->
         "Corsair Refit":
            display_name: """Corsair Refit"""
            text: """ボーナス攻撃: %ENERGY%を1つ消費し、%CANNON% %TURRET%あるいは%MISSILE%攻撃を実行する。"""
+        "Enhanced Propulsion":
+           display_name: """Enhanced Propulsion"""
+           text: """<b>セットアップ:</b> この面を表にして装備する。 %LINEBREAK% 終了フェイズの開始時、君は %ENERGY% を2つ消費し、白の[2 %STRAIGHT%], [1 %BANKLEFT%], あるいは [1 %BANKRIGHT%] を実行しても良い。 %LINEBREAK% """
+        "Drill Beak":
+           display_name: """Drill Beak"""
+           text: """<b>セットアップ:</b> この面を表にして装備する。 %LINEBREAK% 君はこの攻撃をレンジ0で実行できる。
+           %LINEBREAK% <b>ボーナス攻撃:</b> 1 %ENERGY%消費。もし攻撃レンジが0なら、全ての %HIT% の結果を %CRIT% の結果に変更する。"""
+        "Tractor Tentacles":
+           display_name: """Tractor Tentacles"""
+           text: """<b>セットアップ:</b> この面を表にして装備する。
+           %LINEBREAK% <b>ボーナス攻撃</b> %LINEBREAK% <b>ボーナス攻撃: </b> 1 %ENERGY% 消費。 %LINEBREAK% <b>ボーナス攻撃: </b> 1 %ENERGY% 消費。 %LINEBREAK% <b>ボーナス攻撃: </b> 1 %ENERGY% 消費。"""
+        "Tracking Torpedoes":
+           display_name: """Tracking Torpedoes"""
+           text: """システム・フェイズの間、君は %CHARGE% を3つまで消費し、同じ数の tracking torpedoes を、[%BANKLEFT% 3]、[%STRAIGHT% 4] および [%BANKRIGHT% 3]テンプレートを使用して射出しても良い。各デバイスは別々のテンプレートを使用しなければならない。その後、各デバイスは君がロックしているオブジェクトへのロックを、距離の制限を無視して得ても良い。"""
+        "Proton Cannon Battery":
+           display_name: """Proton Cannon Battery"""
+           text: """<b>Setup:</b> この面を表にして装備する。
+           %LINEBREAK% <b>ボーナス攻撃:</b> %HIT% の結果1つを %CRIT% の結果に変更する。%LINEBREAK% <b>ボーナス攻撃:</b> 1 %ENERGY% を消費。%HIT% の結果1つを %CRIT% の結果に変更する。"""
+        "Tractor Technicians":
+           display_name: """Tractor Technicians"""
+           text: """終了フェイズの間、レンジ0-1の他の各宇宙船は、それのトラクター・トークンを取り除くことができない。%LINEBREAK%トラクター状態のレンジ0-1の敵宇宙船がダイヤルを公開する前に、君は %ENERGY% を1つ消費しても良い。もし君がそうするなら、その宇宙船がこのアクティベーションでそのマニューバを実行する際、それはそのマニューバの速度を1つ下げる(最小で1)。"""
+        "Asajj Ventress (Command)":
+           display_name: """Asajj Ventress"""
+           text: """システム・フェイズの間、君は %FORCE% を1つ消費しても良い。もし君がそうするなら、君の %FRONTARC% 内レンジ0-1の各敵宇宙船は、それがジャム・トークンを1つ得ることを選ばない限り、ストレイン・トークンを1つ得る。"""
+        "Hondo Ohnaka (Command)":
+           display_name: """Hondo Ohnaka"""
+           text: """システム・フェイズの間、君は %CHARGE% を1つ消費してレンジ0-1の友軍宇宙船を1つ選んでも良い。勝利トークンかオブジェクティブ・トークンをその宇宙船カードから君の宇宙船カードに移動するか、君の宇宙船カードからその宇宙船カードに移動する。 """
+        "Zealous Captain":
+           display_name: """Zealous Captain"""
+           text: """エンゲージメント・フェイズの間、イニシアチブ4で、君は %ENERGY% を1つ消費し、ボーナスの %HARDPOINT% 攻撃を実行しても良い。"""
+        "General Grievous (Command)":
+           display_name: """General Grievous"""
+           text: """エンゲージメント・フェイズの間、イニシアチブ4で、君は %ENERGY% を1つ消費し、ボーナスの %HARDPOINT% 攻撃を実行しても良い。%LINEBREAK%君は友軍宇宙船に対して攻撃を実行できる。%LINEBREAK%君が攻撃を実行した後、もし防御者が破壊されたなら、そのレンジ0-2の各友軍宇宙船は、 %CALCULATE% アクションを実行しても良い。"""
+        "Mar Tuuk":
+           display_name: """Mar Tuuk"""
+           text: """<b>セットアップ:</b> 戦力を置いた設置した後に、それらのアクション・バーに %CALCULATE% がある友軍宇宙船ウイングを1つ選び、そのウイングをリザーブ状態にする。 %LINEBREAK% 終了フェイズの間、君はそのウイングを君のデプロイメント・エリア内かあるいは任意の敵宇宙船からレンジ2より離れた場所に置いても良い。その後、君は君からレンジ0-1の敵宇宙船を1つ選んでも良い。そのウイングの各宇宙船はその宇宙船へのロックを得る。"""
+        "Riff Tamson":
+           display_name: """Riff Tamson"""
+           text: """エンゲージメント・フェイズの間、イニシアチブ5で、君は %ENERGY% を1つ消費し、ボーナスの %HARDPOINT% 攻撃を実行しても良い。%LINEBREAK%君が攻撃を実行した後、もし防御者が1枚以上の表向きのダメージ・カードを受け取ったなら、それはストレイン・トークンを2つ得る。"""
+        "Corsair Crew":
+           display_name: """Corsair Crew"""
+           text: """君が標準宇宙船に攻撃を実行する際、君は %HIT% の結果を1つ消費しても良い。もし君がそうするなら、防御者はデプリート・トークンを1つ得る。"""
+        "Grappler":
+           display_name: """Grappler"""
+           text: """君が<b>Drill Beak</b>攻撃を攻撃レンジ1で実行する際、もし防御者がトラクター状態なら、代わりにそれをレンジ0で実行されるように扱う。"""
+        "Nautolan's Revenge":
+           display_name: """Nautolan's Revenge"""
+           text: """君がエンゲージする前に、君はカリキュレート・トークンを2つまで消費しても良い。もし君がそうするなら、同じ数の %ENERGY% を回復する。"""
+        "Droid Crew":
+           display_name: """Droid Crew"""
+           text: """君が白の %FOCUS% アクションを実行する際、それは代わりに赤として扱う。%LINEBREAK% 終了フェイズの開始時、全ての君の表向きの<b>クルー</b>ダメージ・カードを修理する。"""
+        "Trident":
+           display_name: """Trident"""
+           text: """君が宇宙船に重なるか、宇宙船が君に重なった後、もしそれがトラクター状態でなければ、君は %ENERGY% を1つ消費しても良い。もし君がそうするなら、それはトラクター・トークンを3つ得る。"""
+        "Neimoidian Grasp":
+           display_name: """Neimoidian Grasp"""
+           text: """君が攻撃を実行した後、君は赤の %EVADE% アクションを実行しても良い。%LINEBREAK%君が防御する際、もし君が回避状態なら、君は防御ダイスを追加で1つ振っても良い。"""
 
 
 
