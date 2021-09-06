@@ -21227,6 +21227,179 @@ exportObj.basicCardData = ->
                 "Slave I"
             ]
         }
+        {
+            id: 568 
+            faction: "Separatist Alliance" 
+            pilot: "Colicoid Interceptor"
+            ship: "Droid Tri-Fighter"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Independent Calculations"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 569 
+            faction: "Separatist Alliance" 
+            pilot: "DIS-347"
+            ship: "Droid Tri-Fighter"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Independent Calculations"
+                "Elusive"
+            ]
+        }
+        {
+            id: 570 
+            faction: "Separatist Alliance" 
+            pilot: "DIS-T81"
+            ship: "Droid Tri-Fighter"
+            threat: 2
+            upgrades: [
+                "Marg Sabl Closure"
+                "Discord Missiles"
+            ]
+        }
+        {
+            id: 571 
+            faction: "Separatist Alliance" 
+            pilot: "Fearsome Predator"
+            ship: "Droid Tri-Fighter"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+                "Intercept Booster"
+            ]
+        }
+        {
+            id: 572 
+            faction: "Separatist Alliance" 
+            pilot: "Phlac-Arphocc Prototype"
+            ship: "Droid Tri-Fighter"
+            threat: 2
+            upgrades: [
+                "XX-23 S-Thread Tracers"
+                "Intercept Booster"
+            ]
+        }
+        {
+            id: 573
+            faction: "Separatist Alliance" 
+            pilot: "Separatist Interceptor"
+            ship: "Droid Tri-Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Discord Missiles"
+                "Intercept Booster"
+            ]
+        }
+        {
+            id: 574
+            faction: "Galactic Empire"
+            pilot: "Delta Squadron Pilot"
+            ship: "TIE Defender"
+            threat: 3 
+            upgrades: [
+                "Tractor Beam"
+                "Ion Missiles"
+            ]
+        }
+        {
+            id: 575
+            faction: "Scum and Villainy"
+            pilot: "Lawless Pirates"
+            ship: "Trident-class Assault Ship"
+            threat: 9
+            upgrades: [
+                "Zealous Captain"
+                "Tractor Tentacles"
+                "Proton Cannon Battery"
+                "Novice Technician"
+                "Corsair Crew"
+                "Tibanna Reserves"
+                "Nautolan's Revenge"
+            ]
+        }
+        {
+            id: 576
+            faction: "Scum and Villainy"
+            pilot: "Lawless Pirates"
+            ship: "Trident-class Assault Ship"
+            threat: 10
+            upgrades: [
+                "Hondo Ohnaka (Command)"
+                "Tractor Tentacles"
+                "Drill Beak"
+                "Seasoned Navigator"
+                "Corsair Crew"
+                "Gunnery Specialists"
+                "Boosted Scanners"
+                "Grappler"
+            ]
+        }
+        {
+            id: 577
+            faction: "Separatist Alliance"
+            pilot: "Colicoid Destroyer"
+            ship: "Trident-class Assault Ship"
+            threat: 8
+            upgrades: [
+                "Tractor Tentacles"
+                "Drill Beak"
+                "Optimized Power Core"
+            ]
+        }
+        {
+            id: 578
+            faction: "Separatist Alliance"
+            pilot: "Colicoid Destroyer"
+            ship: "Trident-class Assault Ship"
+            threat: 9
+            upgrades: [
+                "Asajj Ventress (Command)" 
+                "Tractor Tentacles"
+                "Enhanced Propulsion"
+                "Seasoned Navigator"
+                "Droid Crew"
+                "Tractor Technicians"
+                "Trident"
+            ]
+        }
+        {
+            id: 579
+            faction: "Separatist Alliance"
+            pilot: "Colicoid Destroyer"
+            ship: "Trident-class Assault Ship"
+            threat: 10 
+            upgrades: [
+                "Riff Tamson"
+                "Tractor Tentacles"
+                "Proton Cannon Battery"
+                "Proton Torpedoes"
+                "Novice Technician"
+                "Hotshot Gunner"
+                "Droid Crew"
+                "Gunnery Specialists"
+                "Tibanna Reserves"
+                "Neimoidian Grasp"
+            ]
+        }
+        {
+            id: 580
+            faction: "Galactic Empire"
+            pilot: "Onyx Squadron Sentry"
+            ship: "TIE/rb Heavy"
+            threat: 3
+            upgrades: [
+                "Ablative Plating"
+                "Target-Assist MGK-300"
+                "Ion Limiter Override"
+                "Synced Laser Cannons"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
