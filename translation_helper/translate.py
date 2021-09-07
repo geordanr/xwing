@@ -139,6 +139,9 @@ for card_en in cards_en:
         # contain restrictions of same typ (e.g.  large or medium base), or of
         # faction + card (e.g.  scum or contains vader)
         for restriction in card_en["restrictions"]:
+            # we now automatically generate restriction statements in YASB, no need to add them to the card text
+            continue
+
             # if restricted to ship type (e.g.  titles), add a line to the
             # translation specifying the ship.  No longer needed, as we do not
             # change ship names, but ship display_names - so we keep the
