@@ -182,22 +182,22 @@ for card_en in cards_en:
                                  phrase_translations["contains"] % cards_translation_by_id[faction["kwargs"]["pk"]]["name"])
                 card_translation["ability_text"] = "<i>" + phrase_translations["only"] % factions + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
 
-    # try to find cards, that add actions
-    if card_en["available_actions"]:
-        actions = ""
-        for action in card_en["available_actions"]:
-            if actions:
-                actions += " %s  " % ','
-            actions += ("<r>%s</r>" if action["base_action_side_effect"] == "stress" else "%s") % actions_by_id[action["base_action_id"]]
-            # if the action can be linked into another action we need to
-            # process that one as well
-            linked = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked\"></i>"
-            linked_stress = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked red\"></i>"
-            if action["related_action_id"]:
-                actions += (linked_stress + "&nbsp;<r>%s</r>" if action["related_action_side_effect"] == "stress"
-                            else linked + "&nbsp;'%s") % actions_by_id[action["related_action_id"]]
-        card_translation["ability_text"] = "<i>" + phrase_translations["adds"] % actions + "</i>%LINEBREAK%" + \
-                                           card_translation["ability_text"]
+    # try to find cards, that add actions - will be automatically atted by YASB now
+    # if card_en["available_actions"]:
+    #     actions = ""
+    #     for action in card_en["available_actions"]:
+    #         if actions:
+    #             actions += " %s  " % ','
+    #         actions += ("<r>%s</r>" if action["base_action_side_effect"] == "stress" else "%s") % actions_by_id[action["base_action_id"]]
+    #         # if the action can be linked into another action we need to
+    #         # process that one as well
+    #         linked = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked\"></i>"
+    #         linked_stress = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked red\"></i>"
+    #         if action["related_action_id"]:
+    #             actions += (linked_stress + "&nbsp;<r>%s</r>" if action["related_action_side_effect"] == "stress"
+    #                         else linked + "&nbsp;'%s") % actions_by_id[action["related_action_id"]]
+    #     card_translation["ability_text"] = "<i>" + phrase_translations["adds"] % actions + "</i>%LINEBREAK%" + \
+    #                                        card_translation["ability_text"]
 
     # check for double names
     if card_en["name"] in upgrade_name_list:
