@@ -3088,9 +3088,9 @@ class exportObj.SquadBuilder
                 comma = ', '
         if text != ''
             data = 
-                text: "</br><b>#{@uitranslation("Adds")}:</b> #{text}"
+                text: "</br><b>#{@uitranslation("adds", text)}</b>"
             if removestext != ''
-                data.text += "</br><b>#{@uitranslation("Removes")}:</b> #{removestext}"
+                data.text += "</br><b>#{@uitranslation("removes", removestext)}</b>"
             return exportObj.fixIcons(data)
         else
             return ''

@@ -170,6 +170,10 @@ exportObj.translations.English =
         "Squads reloaded": "All squads of that faction have been reloaded."
         "Sure to delete?": "Are you sure you want to delete this squad?"
         "Unsaved Changes Warning": "You have not saved changes to this squad.  Do you want to go back and save?"
+        adds: (translator, data) -> # data will most likely be a string of some symbols, but you never know
+            "Adds: #{translator('ui', data)}"
+        removes: (translator, data) -> # data will most likely be a string of some symbols, but you never know
+            "Removes: #{translator('ui', data)}"
 
     singular:
         'pilots': 'Pilot'
