@@ -22178,12 +22178,15 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'Fireball', faction: 'Resistance'}
     {name: 'T-70 X-Wing', faction: 'Resistance'}
     {name: 'RZ-2 A-Wing', faction: 'Resistance'}
+    {name: 'BTA-NR2 Y-Wing', faction: 'Resistance'}
     {name: 'Resistance Transport', faction: 'Resistance'}
     {name: 'Resistance Transport Pod', faction: 'Resistance'}
     {name: 'TIE/Ba Interceptor', faction: 'First Order'}
     {name: 'TIE/FO Fighter', faction: 'First Order'}
     {name: 'TIE/VN Silencer', faction: 'First Order'}
     {name: 'TIE/SF Fighter', faction: 'First Order'}
+    {name: 'TIE/se Bomber', faction: 'First Order'}
+    {name: 'TIE/WI Whisper', faction: 'First Order'}
     {name: 'Xi-class Light Shuttle', faction: 'First Order'}
     {name: 'Delta-7 Aethersprite', faction: 'Galactic Republic'}
     {name: 'ARC-170', faction: 'Galactic Republic'}
