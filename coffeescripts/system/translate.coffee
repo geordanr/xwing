@@ -83,11 +83,15 @@ exportObj.setupTranslationSupport = ->
     do (builders) ->
         $(exportObj).on 'xwing:languageChanged', (e, language, priority=5, cb=$.noop) =>
             console.log("Change language to #{language} with priority #{priority} requested")
+            # check if priority is high enough to do anything
+            if priority == 'reload' # special case - just a reload, no priority change
+                null
             # check if a better choice than the requested one has already been made
-            if priority < exportObj.languagePriority
+            else if priority < exportObj.languagePriority
                 return
-            exportObj.languagePriority = priority
-            exportObj.currentLanguage = language
+            else
+                exportObj.languagePriority = priority
+                exportObj.currentLanguage = language
             if language of exportObj.translations
                 $('.language-placeholder').text language
                 current_language = ""
@@ -111,7 +115,7 @@ exportObj.setupTranslationSupport = ->
     # do we need to load dfl as well? Not sure...
     exportObj.loadCards DFL_LANGUAGE
     exportObj.loadCards exportObj.currentLanguage 
-    $(exportObj).trigger 'xwing:languageChanged', exportObj.currentLanguage
+    $(exportObj).trigger 'xwing:languageChanged', [exportObj.currentLanguage, 'reload']
 
 exportObj.translateUIElements = (context=undefined) ->
     # translate all UI elements that are marked as translateable
