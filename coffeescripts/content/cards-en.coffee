@@ -2753,7 +2753,7 @@ exportObj.cardLoaders.English = () ->
            %LINEBREAK% <strong>Bonus Attack</strong> %LINEBREAK% <strong>Bonus Attack:</strong> Spend 1 %ENERGY%. %LINEBREAK% <strong>Bonus Attack:</strong> Spend 1 %ENERGY%. %LINEBREAK% <strong>Bonus Attack:</strong> Spend 1 %ENERGY%."""
         "Tracking Torpedoes":
            display_name: """Tracking Torpedoes"""
-           text: """During the System Phase, you may spend up to 3 %CHARGE% to launch that many tracking torpedoes using the [%BANKLEFT% 3], [%STRAIGHT% 4], and [%BANKRIGHT% 3] templates. Each device must use a seperate tempalte. Then each device may acquire a lock on an object you have locked, ignoring range restrictions."""
+           text: """During the System Phase, you may spend up to 3 %CHARGE% to launch that many tracking torpedoes using the [%BANKLEFT% 3], [%STRAIGHT% 4], and [%BANKRIGHT% 3] templates. Each device must use a seperate tempalte. Then each device may acquire a lock on an object you have locked, ignoring range restrictions.%LINEBREAK% This card's %CHARGE% cannot be recovered."""
         "Proton Cannon Battery":
            display_name: """Proton Cannon Battery"""
            text: """<strong>Setup:</strong> Equip this side faceup.
