@@ -14491,7 +14491,7 @@ exportObj.basicCardData = ->
             name: "Wartime Loadout"
             id: 409
             slot: "Configuration"
-            points: 6
+            points: 4
             ship: "BTA-NR2 Y-Wing"
             restrictions: [
                 ["Slot", "Modification"]
