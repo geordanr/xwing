@@ -2346,7 +2346,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Modification"
                 "Device"
-                "Gunner"
             ]
         }
         {
@@ -2365,7 +2364,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Modification"
                 "Device"
-                "Gunner"
             ]
         }
         {
@@ -2384,7 +2382,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Modification"
                 "Device"
-                "Gunner"
             ]
         }
         {
@@ -2403,7 +2400,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Modification"
                 "Device"
-                "Gunner"
             ]
         }
         {
@@ -2421,7 +2417,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Modification"
                 "Device"
-                "Gunner"
             ]
         }
         {
@@ -2438,7 +2433,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Modification"
                 "Device"
-                "Gunner"
             ]
         }
         {
@@ -3390,7 +3384,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -3409,7 +3402,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -3427,7 +3419,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -3444,7 +3435,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -9585,7 +9575,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
             ]
@@ -9603,7 +9592,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
             ]
@@ -9621,7 +9609,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
             ]
@@ -9808,7 +9795,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
             ]
@@ -9825,7 +9811,6 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
-                "Gunner"
                 "Astromech"
                 "Device"
             ]
