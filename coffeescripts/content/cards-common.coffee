@@ -1696,9 +1696,9 @@ exportObj.basicCardData = ->
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "BTL-NR2 Y-Wing":
-            name: "BTL-NR2 Y-Wing"
-            xws: "BTL-NR2 Y-Wing".canonicalize()
+        "BTA-NR2 Y-Wing":
+            name: "BTA-NR2 Y-Wing"
+            xws: "BTA-NR2 Y-Wing".canonicalize()
             factions: ["Resistance"]
             attack: 2
             agility: 1
@@ -4440,7 +4440,7 @@ exportObj.basicCardData = ->
             keyword: ["Droid"]
             slots: [
                 "Talent"
-                "Sensor"
+                "Tech"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -4456,7 +4456,7 @@ exportObj.basicCardData = ->
             points: 51
             slots: [
                 "Talent"
-                "Sensor"
+                "Tech"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -4475,7 +4475,7 @@ exportObj.basicCardData = ->
             keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
-                "Sensor"
+                "Tech"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -4490,7 +4490,7 @@ exportObj.basicCardData = ->
             points: 49
             slots: [
                 "Talent"
-                "Sensor"
+                "Tech"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -4504,7 +4504,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 45
             slots: [
-                "Sensor"
+                "Tech"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -9918,7 +9918,7 @@ exportObj.basicCardData = ->
             id: 477
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 5
             points: 40
             charge: 1
@@ -9939,7 +9939,7 @@ exportObj.basicCardData = ->
             id: 478
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 4
             points: 37
             slots: [
@@ -9958,7 +9958,7 @@ exportObj.basicCardData = ->
             id: 479
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 4
             points: 34
             slots: [
@@ -9975,7 +9975,7 @@ exportObj.basicCardData = ->
             id: 480
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 3
             points: 33
             slots: [
@@ -9993,7 +9993,7 @@ exportObj.basicCardData = ->
             id: 481
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 3
             points: 33
             slots: [
@@ -10012,7 +10012,7 @@ exportObj.basicCardData = ->
             id: 482
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 2
             points: 34
             slots: [
@@ -10031,7 +10031,7 @@ exportObj.basicCardData = ->
             id: 483
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 1
             points: 33
             slots: [
@@ -10047,11 +10047,11 @@ exportObj.basicCardData = ->
         {
             name: "C'ai Threnalli (Y-Wing)"
             canonical_name: '''C'ai Threnalli'''.canonicalize()
-            xws: "caithrenalli-btlnr2ywing"
+            xws: "caithrenalli-btanr2ywing"
             id: 484
             unique: true
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 2
             points: 34
             slots: [
@@ -10069,7 +10069,7 @@ exportObj.basicCardData = ->
             name: "New Republic Patrol"
             id: 485
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-Wing"
             skill: 3
             points: 32
             slots: [
@@ -10087,8 +10087,8 @@ exportObj.basicCardData = ->
             name: "Kijimi Spice Runner"
             id: 486
             faction: "Resistance"
-            ship: "BTL-NR2 Y-Wing"
-            skill: 6
+            ship: "BTA-NR2 Y-Wing"
+            skill: 2
             points: 31
             slots: [
                 "Tech"
@@ -10117,6 +10117,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Missile"
                 "Tech"
+                "Tech"
                 "Configuration"
             ]
         }
@@ -10131,6 +10132,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Missile"
+                "Tech"
                 "Tech"
                 "Configuration"
             ]
@@ -10148,6 +10150,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Missile"
                 "Tech"
+                "Tech"
                 "Configuration"
             ]
         }
@@ -10164,6 +10167,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Missile"
                 "Tech"
+                "Tech"
                 "Configuration"
             ]
         }
@@ -10179,6 +10183,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Missile"
                 "Tech"
+                "Tech"
                 "Configuration"
             ]
         }
@@ -10192,6 +10197,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Missile"
+                "Tech"
                 "Tech"
                 "Configuration"
             ]
@@ -14501,6 +14507,7 @@ exportObj.basicCardData = ->
             id: 409
             slot: "Configuration"
             points: 6
+            ship: "BTA-NR2 Y-Wing"
             restrictions: [
                 ["Slot", "Modification"]
             ]
@@ -14538,6 +14545,7 @@ exportObj.basicCardData = ->
         {
             name: "DT-798"
             id: 412
+            unique: true
             faction: "First Order"
             slot: "Gunner"
             points: 5
