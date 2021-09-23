@@ -1326,7 +1326,7 @@ class exportObj.SquadBuilder
                     
             # Notes, if present
             @printable_container.find('.printable-body').append $.trim """
-                <div class="version"><span class="translated" defaultText="Points Version:"></span> 1.9.0 March 2021</div>
+                <div class="version"><span class="translated" defaultText="Points Version:"></span> 2.0.0 Sept 2021</div>
             """
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
@@ -2223,6 +2223,9 @@ class exportObj.SquadBuilder
             if action.search('F-') != -1 
                 color = "force "
                 action = action.replace(/F-/gi, '')
+            if action.search('W-') != -1 
+                prefix = "White "
+                action = action.replace(/W-/gi, '')
             else if action.search('R-') != -1 
                 color = "red "
                 action = action.replace(/R-/gi, '')
@@ -4555,7 +4558,14 @@ class Ship
                         when "Standard" 
                             if @data.huge? then return false
                 when "Action"
-                    if not ((r[1] in effective_stats.actions) or ("*#{r[1]}" in effective_stats.actions) or ("F-#{r[1]}" in effective_stats.actions) or ("R-#{r[1]}" in effective_stats.actions)) then return false
+                    if r[1].startsWith("W-")
+                        w = r[1].substring(2)
+                        if w in effective_stats.actions then return true
+                    else 
+                        for action in effective_stats.actions 
+                            if action.includes(r[1])
+                                return true
+                    return false
                 when "Keyword"
                     if not (@checkKeyword(r[1])) then return false
                 when "Equipped"
