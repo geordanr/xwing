@@ -15,9 +15,22 @@ exportObj = exports ? this
 # TODO: create a reasonable scope for this (e.g. a translation class), so vars like currentLanguage
 # and methods like translateToLang are not within exportObj scope
 
+# a language change event will only affect the current language, if it has higher priority than 
+# the current languagePriority.
+# -1: default language
+#  3: browser setting
+#  5: default priority (should not be used by now)
+#  8: parsed from html header (done in backend)
+# 10: backend setting
+# 100: manual selection
+exportObj.languagePriority = -1
+
 # try to set the current language according to the users choice
 try
   (()->
+    # we'll guess language from browser settings - unless a better choice has already been made
+    if exportObj.languagePriority > 3
+        return
     exportObj.currentLanguage = DFL_LANGUAGE
     # some browses just provide a single navigator.language, some provide an array navigator.languages 
     languageCodes = [navigator.language].concat(navigator.languages)
@@ -27,11 +40,13 @@ try
         if langc of exportObj.codeToLanguage
             # assume that exportObj already exists. If it does not, we don't know which languages YASB supports
             exportObj.currentLanguage = exportObj.codeToLanguage[langc]
+            # we successfully found a language the user is somewhat happy with. that's cool
+            exportObj.languagePriority = 3
             break
    )()
 catch all
     exportObj.currentLanguage = DFL_LANGUAGE
-    throw all
+    # throw all
     
 
 exportObj.loadCards = (language) ->
@@ -57,16 +72,22 @@ exportObj.translateToLang = (language, category, what, args...) ->
         else
             translation
     else
-        if SHOW_DEBUG_OUT_MISSING_TRANSLATIONS
-            console.log(language + ' translation for ' + String(what) + ' (category ' + String(category) + ') missing')
         if language != DFL_LANGUAGE
+            if SHOW_DEBUG_OUT_MISSING_TRANSLATIONS
+                console.log(language + ' translation for ' + String(what) + ' (category ' + String(category) + ') missing')
             exportObj.translateToLang DFL_LANGUAGE, category, what, args...
         else
             what
 
 exportObj.setupTranslationSupport = ->
     do (builders) ->
-        $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
+        $(exportObj).on 'xwing:languageChanged', (e, language, priority=5, cb=$.noop) =>
+            console.log("Change language to #{language} with priority #{priority} requested")
+            # check if a better choice than the requested one has already been made
+            if priority < exportObj.languagePriority
+                return
+            exportObj.languagePriority = priority
+            exportObj.currentLanguage = language
             if language of exportObj.translations
                 $('.language-placeholder').text language
                 current_language = ""
@@ -104,8 +125,8 @@ exportObj.setupTranslationUI = (backend) ->
         do (language, backend) ->
             li.click (e) ->
                 backend.set('language', language) if backend?
-                exportObj.currentLanguage = language
-                $(exportObj).trigger 'xwing:languageChanged', language
+                # setting a language manually has pretty high priority
+                $(exportObj).trigger 'xwing:languageChanged', [ language, 100 ]
         $('.language-picker .dropdown-menu').append li
 
 exportObj.registerBuilderForTranslation = (builder) ->

@@ -364,9 +364,8 @@ html
               container: '#rules-browser'
 
           window.backend.getSettings (settings) ->
-              window.backend.getLanguagePreference settings, (language) ->
-                if(language != '')
-                  $(window).trigger 'xwing:languageChanged', language
+              window.backend.getLanguagePreference settings, (language, priority) ->
+                $(window).trigger 'xwing:languageChanged', [ language, priority ]
 
           window.setupTranslationUI window.backend
 
