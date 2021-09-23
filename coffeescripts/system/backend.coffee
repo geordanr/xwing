@@ -965,11 +965,33 @@ class exportObj.SquadBuilderBackend
     getLanguagePreference: (settings, cb=$.noop) =>
         # check if user provided a language preference. If yes, this will override the browser preference queried in translate.coffee
         if settings?.language?
-            cb settings.language
-        # it's hacky either way: we can either not call our cb if we don't have a language preference, or trust that
-        # calling it with an empty preference is handled properly. (which indeed the index.jade will do)
+            # we found a language, provide it with priority 10
+            cb settings.language, 10
+        # otherwise we may parse a language out of the headers (reimplements commit d95bb5e93fbb75d0e6a4a7270f7a86cf86a62a0a)
         else
-            cb ''
+            await @getHeaders defer(headers)
+            if headers?.HTTP_ACCEPT_LANGUAGE?
+                # Need to parse out language preferences
+                # I'm going to be lazy and only output the first one we encounter
+                for language_range in headers.HTTP_ACCEPT_LANGUAGE.split(',')
+                    [ language_tag, quality ] = language_range.split ';'
+                    if language_tag == '*'
+                        # let's give that half bullshit priority
+                        cb 'English', -0.5
+                    else
+                        language_code = language_tag.split('-')[0]
+                        # check if the language code is available
+                        if langc of exportObj.codeToLanguage
+                            # yep - use as language with reasonable priority
+                            cb(exportObj.codeToLanguage[language_code], 8)
+                        else
+                            # bullshit priority - we can't support what the user wants
+                            # (maybe he gave another option though in his browser settings)
+                            cb 'English', -1
+                    break
+            else
+                # no headers, callback with bullshit priority
+                cb 'English', -1
 
     getCollectionCheck: (settings, cb=$.noop) =>
         if settings?.collectioncheck?
