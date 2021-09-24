@@ -9956,6 +9956,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 34
             slots: [
+                "Tech"
                 "Turret"
                 "Astromech"
                 "Device"
@@ -10090,7 +10091,7 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Device"
                 "Modification"
-                "Modification"
+                "Illicit"
                 "Configuration"
             ]
         }
@@ -10245,7 +10246,6 @@ exportObj.basicCardData = ->
             skill: 3
             points: 32
             slots: [
-                "Talent"
                 "Tech"
                 "Torpedo"
                 "Missile"
@@ -10264,7 +10264,6 @@ exportObj.basicCardData = ->
             skill: 2
             points: 36
             slots: [
-                "Talent"
                 "Tech"
                 "Torpedo"
                 "Missile"
@@ -12565,7 +12564,7 @@ exportObj.basicCardData = ->
             slot: "Sensor"
             charge: 1
             recurring: 1
-            pointsarray: [4,4,4,4,5,6,7,8,9]
+            pointsarray: [4,4,4,4,5,6,7]
             variableinit: true
         }
         {
@@ -13922,6 +13921,7 @@ exportObj.basicCardData = ->
             canonical_name: 'R2-D2'.canonicalize()
             id: 358
             slot: "Astromech"
+            xws: "r2d2-resistance"
             points: 6
             unique: true
             charge: 4
@@ -14455,7 +14455,7 @@ exportObj.basicCardData = ->
             id: 405
             unique: true
             slot: "Title"
-            points: 2
+            points: 5
             ship: "Trident-class Assault Ship"
             faction: "Separatist Alliance"
             modifier_func: (stats) ->
