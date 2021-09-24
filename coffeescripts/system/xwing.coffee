@@ -4564,7 +4564,7 @@ class Ship
                     else
                         check = false
                         for action in effective_stats.actions
-                            if action.includes(r[1])
+                            if action.includes(r[1]) and not action.includes(">")
                                 check = true
                         if check is false then return false
                 when "Keyword"
