@@ -826,4 +826,15 @@ i.xwing-miniatures-ship-yv666lightfreighter:before {
 i.xwing-miniatures-ship-z95af4headhunter:before {
   content: "z"; }
 
+i.xwing-miniatures-ship-btanr2ywing:before {
+  content: "\007b"; }
+
+i.xwing-miniatures-ship-tiesebomber:before {
+  content: "\0021"; }
+
+i.xwing-miniatures-ship-tiewiwhispermodifiedinterceptor:before {
+  content: "\0023"; }
+
+i.xwing-miniatures-ship-tridentclassassaultship:before {
+  content: "\0036"; }
 

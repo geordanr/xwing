@@ -2616,7 +2616,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "YT-2400"
             skill: 1
-            points: 70
+            points: 72
             slots: [
                 "Missile"
                 "Crew"
@@ -3384,6 +3384,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -3402,6 +3403,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -3419,6 +3421,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -3435,6 +3438,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
                 "Illicit"
@@ -7226,7 +7230,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Hyena-Class Droid Bomber"
             skill: 1
-            points: 25
+            points: 26
             keyword: ["Droid"]
             slots: [
                 "Torpedo"
@@ -8465,7 +8469,7 @@ exportObj.basicCardData = ->
             unique: true
             skill: 2
             ship: "TIE Striker"
-            points: 34
+            points: 32
             slots: [
                 "Talent"
                 "Gunner"
@@ -9575,6 +9579,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
             ]
@@ -9592,6 +9597,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
             ]
@@ -9609,6 +9615,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
             ]
@@ -9795,6 +9802,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
             ]
@@ -9811,6 +9819,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Turret"
                 "Torpedo"
+                "Missile"
                 "Astromech"
                 "Device"
             ]
