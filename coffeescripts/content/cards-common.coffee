@@ -10177,7 +10177,7 @@ exportObj.basicCardData = ->
             id: 492
             faction: "First Order"
             ship: "TIE/WI Whisper"
-            skill: 1
+            skill: 2
             points: 44
             slots: [
                 "Talent"
@@ -10288,7 +10288,7 @@ exportObj.basicCardData = ->
             id: 498
             faction: "First Order"
             ship: "TIE/Se Bomber"
-            skill: 1
+            skill: 2
             points: 31
             slots: [
                 "Tech"
@@ -14477,6 +14477,7 @@ exportObj.basicCardData = ->
         {
             name: "L4E-R5"
             id: 408
+            unique: true
             slot: "Astromech"
             points: 4
             faction: "Resistance"
@@ -22185,7 +22186,7 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'TIE/FO Fighter', faction: 'First Order'}
     {name: 'TIE/VN Silencer', faction: 'First Order'}
     {name: 'TIE/SF Fighter', faction: 'First Order'}
-    {name: 'TIE/se Bomber', faction: 'First Order'}
+    {name: 'TIE/Se Bomber', faction: 'First Order'}
     {name: 'TIE/WI Whisper', faction: 'First Order'}
     {name: 'Xi-class Light Shuttle', faction: 'First Order'}
     {name: 'Delta-7 Aethersprite', faction: 'Galactic Republic'}
