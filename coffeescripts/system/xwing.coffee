@@ -4560,12 +4560,13 @@ class Ship
                 when "Action"
                     if r[1].startsWith("W-")
                         w = r[1].substring(2)
-                        if w in effective_stats.actions then return true
-                    else 
-                        for action in effective_stats.actions 
+                        if w not in effective_stats.actions then return false
+                    else
+                        check = false
+                        for action in effective_stats.actions
                             if action.includes(r[1])
-                                return true
-                    return false
+                                check = true
+                        if check is false then return false
                 when "Keyword"
                     if not (@checkKeyword(r[1])) then return false
                 when "Equipped"
