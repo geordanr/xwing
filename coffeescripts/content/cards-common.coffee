@@ -14609,6 +14609,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Babu Frik"
+            unique: true
             id: 416
             faction: ["Scum and Villainy", "Resistance"]
             slot: "Illicit"
