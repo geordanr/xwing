@@ -2852,4 +2852,12 @@ exportObj.cardLoaders.English = () ->
         '''You'd Better Mean Business''':
            text: '''This condition is assigned facedown. Reveal it after you defend. %LINEBREAK% After you defend, you may spend 2 %CHARGE% from <strong>Zam Wesell</strong>. If you do, perform a bonus attack against the attacker. %LINEBREAK% At the end of the Engagement Phase, if this card is facedown and you are in an enemy ship's firing arc, you may reveal this card. If you do, <strong>Zam Wesell</strong> recovers 2 %CHARGE%. %LINEBREAK% At the start of the System Phase, remove this condition.'''
 
+    # in this file the display_name is often omitted, if it is identical to the name. I am too lazy to add those manually (though running the translation script would automatically do so). As this will pop up with every new card, I add those tags here
+    for name, data of pilot_translations
+        data['display_name'] = name unless 'display_name' in data
+    for name, data of upgrade_translations
+        data['display_name'] = name unless 'display_name' in data
+    for name, data of condition_translations
+        data['display_name'] = name unless 'display_name' in data
+
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations

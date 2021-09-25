@@ -291,6 +291,9 @@ exportObj.basicCardData = ->
                 [ 0, 3, 1, 3, 0, 0, 0, 0, 0, 0]
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
             ]
+            autoequip: [
+                'Stabilized S-Foils'
+            ]
         "TIE Bomber":
             name: "TIE Bomber"
             xws: "TIE/sa Bomber".canonicalize()
@@ -1315,6 +1318,9 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
             ]
+            autoequip: [
+                'Grappling Struts'
+            ]
         "Belbullab-22 Starfighter":
             name: "Belbullab-22 Starfighter"
             xws: "Belbullab-22 Starfighter".canonicalize()
@@ -1384,6 +1390,9 @@ exportObj.basicCardData = ->
                 [ 2, 0, 1, 0, 2, 0, 0, 0, 0, 0]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+            ]
+            autoequip: [
+                'Landing Struts'
             ]
         "Resistance Transport Pod":
             name: "Resistance Transport Pod"
@@ -1561,6 +1570,9 @@ exportObj.basicCardData = ->
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
             ]
+            autoequip: [
+                'Repulsorlift Stabilizers'
+            ]
         "LAAT/i Gunship":
             name: "LAAT/i Gunship"
             xws: "LAAT/i Gunship".canonicalize()
@@ -1609,6 +1621,9 @@ exportObj.basicCardData = ->
                 [ 3, 2, 2, 2, 3, 0, 0, 0, 3, 3 ]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+            ]
+            autoequip: [
+                'Maneuver-Assist MGK-300'
             ]
         "Droid Tri-Fighter":
             name: "Droid Tri-Fighter"
@@ -1659,6 +1674,9 @@ exportObj.basicCardData = ->
                 [ 2, 2, 1, 2, 2, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
+            ]
+            autoequip: [
+                'Alpha-3E "Esk"'
             ]
         "Eta-2 Actis":
             name: "Eta-2 Actis"
@@ -1744,6 +1762,9 @@ exportObj.basicCardData = ->
                 [ 2, 1, 1, 1, 2, 0, 3, 3, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
+            ]
+            autoequip: [
+                "Enhanced Jamming Suite"
             ]
         "TIE/Se Bomber":
             name: "TIE/Se Bomber"
@@ -1933,6 +1954,9 @@ exportObj.basicCardData = ->
                 [ 0, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+            ]
+            autoequip: [
+                'Tractor Tentacles'
             ]
 
     # name field is for convenience only
