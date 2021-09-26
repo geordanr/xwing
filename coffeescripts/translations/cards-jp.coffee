@@ -1557,6 +1557,53 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がエンゲージする前に、もし君がいずれの敵宇宙船の%FRONTARC%内にもいないのなら、君は君の%FULLFRONTARC%内の敵宇宙船へのロックを得ても良い。"""
         "Padric":
            text: """君がロックした友軍デバイスが爆発した後、そのデバイスのレンジ0-1の各敵宇宙船はストレイン・トークンを1つ得る。"""
+        "New Republic Patrol":
+           text: """%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Kijimi Spice Runner":
+           text: """%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Corus Kapellim":
+           text: """君がエンゲージする前に、君は君のファイアリング・アーク内レンジ0-1の宇宙船を1機選んでも良い。もしそうするなら、その宇宙船から君自身に緑のトークンを1つ転送する。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "C'ai Threnalli (Y-Wing)":
+           display_name: """C'ai Threnalli"""
+           text: """君がマニューバを完全に実行した後、もし君が友軍宇宙船を通過したなら、君は%EVADE%アクションを実行しても良い。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Lega Fossang":
+           text: """君が主武装あるいは%TURRET%攻撃を行う際、君はその攻撃アーク内の友軍のデバイスあるいはカリキュレート状態の友軍宇宙船につき1つ、攻撃ダイスを振り直しても良い。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Shasa Zaro":
+           text: """君が防御した後、君は君の%FULLREARARC%にいてレンジ0-2の友軍宇宙船と、君の緑のトークンのうち1つを選んでも良い。もしそうするなら、その宇宙船は一致するトークンを得る。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Teza Nasz":
+           text: """レンジ0-2の友軍宇宙船が攻撃を実行する際、もし防御者のそれぞれのサイドアーク(%LEFTARC%あるいは%RIGHTARC%)に、攻撃者の友軍である宇宙船がいるなら、攻撃者は攻撃ダイスを1つ振り直しても良い。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Wilsa Teshlo":
+           text: """君が攻撃を実行した後、もし防御者が表向きのダメージ・カードを受け取ったなら、防御者は、装備したアップグレードの1つから自動変化しない%CHARGE%を1つ選び、その%CHARGE%を失わない限り、ストレイン・トークンを1つ得る。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Aftab Ackbar":
+           text: """君が赤の基本マニューバを実行するか赤のアクションを実行した後、もし君がストレス・トークンをちょうど1つ持っているなら、君はストレイン・トークンを1つ得てそのストレス・トークンを取り除いても良い。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Zorii Bliss":
+           text: """レンジ1の宇宙船が、それのアクションの実行ステップにアクションを実行した後、もしそのアクションが君のアクション・バーにあるなら、君は%CHARGE%を1つ消費し、そのアクションを赤と扱って実行しても良い。%LINEBREAK%<strong>Intuitive Interface:</strong> 君が%TALENT%、%ILLICIT%、あるいは%MODIFICATION%アップグレードによってアクション・バーに追加されたアクションを実行した後、君は%CALCULATE%アクションを実行しても良い。"""
+        "Kylo Ren (TIE Whisper)":
+           display_name: """Kylo Ren"""
+           text: """君の%BULLSEYEARC%内の敵宇宙船が裏向きのダメージ・カードを受け取る前に、君は%FORCE%を1つ消費しても良い。もしそうするなら、それは代わりに表向きのダメージ・カードを受け取る。%LINEBREAK%<strong>Heavy Weapon Turret:</strong> 君は君の%SINGLETURRETARC%インジケーターを、%FRONTARC%か%REARARC%にだけローテートすることができる。君は装備した%MISSILE%アップグレードの%FRONTARC%必要条件を%SINGLETURRETARC%として<b>扱わなければならない</b>。"""
+        '"Wrath"':
+           text: """君が%BULLSEYEARC%攻撃を実行した後、もし君が1つ以上のロック以外の赤かオレンジのトークンを持っているなら、君は違うターゲットに対してボーナス攻撃を行っても良い。%LINEBREAK%<strong>Heavy Weapon Turret:</strong> 君は君の%SINGLETURRETARC%インジケーターを、%FRONTARC%か%REARARC%にだけローテートすることができる。君は装備した%MISSILE%アップグレードの%FRONTARC%必要条件を%SINGLETURRETARC%として<b>扱わなければならない</b>。"""
+        '"Nightfall"':
+           text: """君がマニューバを完全に実行するか、%BOOST%アクションを実行した後、君が通過した各宇宙船はジャム・トークンを2つ得る。%LINEBREAK%<strong>Heavy Weapon Turret:</strong> 君は君の%SINGLETURRETARC%インジケーターを、%FRONTARC%か%REARARC%にだけローテートすることができる。君は装備した%MISSILE%アップグレードの%FRONTARC%必要条件を%SINGLETURRETARC%として<b>扱わなければならない</b>。"""
+        '"Whirlwind"':
+           text: """君がエンゲージする前に、君は好きな数のジャム・トークンを取り除いても良く、その後、君は君を%FRONTARC%内に持つ敵宇宙船につき1つのフォーカス・トークンを得ても良い。%LINEBREAK%<strong>Heavy Weapon Turret:</strong> 君は君の%SINGLETURRETARC%インジケーターを、%FRONTARC%か%REARARC%にだけローテートすることができる。君は装備した%MISSILE%アップグレードの%FRONTARC%必要条件を%SINGLETURRETARC%として<b>扱わなければならない</b>。"""
+        "709th Legion Ace":
+           text: """%LINEBREAK%<strong>Heavy Weapon Turret:</strong> 君は君の%SINGLETURRETARC%インジケーターを、%FRONTARC%か%REARARC%にだけローテートすることができる。君は装備した%MISSILE%アップグレードの%FRONTARC%必要条件を%SINGLETURRETARC%として<b>扱わなければならない</b>。"""
+        "Red Fury Zealot":
+           text: """%LINEBREAK%<strong>Heavy Weapon Turret:</strong> 君は君の%SINGLETURRETARC%インジケーターを、%FRONTARC%か%REARARC%にだけローテートすることができる。君は装備した%MISSILE%アップグレードの%FRONTARC%必要条件を%SINGLETURRETARC%として<b>扱わなければならない</b>。"""
+        "Sienar-Jaemus Test Pilot":
+           text: """%LINEBREAK%<strong>Pursuit Thrusters:</strong> システム・フェイズの間、 君は%BOOST%アクションを実行しても良い。"""
+        "First Order Cadet":
+           text: """%LINEBREAK%<strong>Pursuit Thrusters:</strong> システム・フェイズの間、 君は%BOOST%アクションを実行しても良い。"""
+        '"Grudge"':
+           text: """レンジ0-2の友軍の爆弾あるいは機雷が爆発する際、それの効果の解決のために攻撃ダイスが振られるたびに、君はそれらのダイスのうち1つを振り直しても良い。%LINEBREAK%<strong>Pursuit Thrusters:</strong> システム・フェイズの間、 君は%BOOST%アクションを実行しても良い。"""
+        '"Dread"':
+           text: """君がリロードした後、君の%BULLSEYEARC%内の各宇宙船はデプリート・トークンを1つ得る。%LINEBREAK%<strong>Pursuit Thrusters:</strong> システム・フェイズの間、 君は%BOOST%アクションを実行しても良い。"""
+        '"Scorch" (TIE/Se Bomber)':
+           display_name: '''"Scorch"'''
+           text: """レンジ0-1の友軍宇宙船が主武装攻撃を行う際、それは%HIT%の結果を1つ消費しても良い。もしそうするなら、防御の後に、防御者はストレイン・トークンを1つ得る。%LINEBREAK%<strong>Pursuit Thrusters:</strong> システム・フェイズの間、 君は%BOOST%アクションを実行しても良い。"""
+        '"Breach"':
+           text: """君がマニューバを完全に実行するか、%BOOST%アクションを実行した後、もし君が敵宇宙船を通過したなら、君はその宇宙船へのロックを得ても良い。%LINEBREAK%<strong>Pursuit Thrusters:</strong> システム・フェイズの間、 君は%BOOST%アクションを実行しても良い。"""
 
 
         # Epic Ships
@@ -2214,7 +2261,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """もし君がデバイスを投下あるいは射出するとき、君は同じ向きで速度が1高いか低いテンプレートを使用しても良い。"""
         "Spare Parts Canisters":
            display_name: """Spare Parts Canisters"""
-           text: """<b>アクション:</b> 君は装備した%ASTROMECH%アップグレードの1つのチャージを1つ回復するために%CHARGE%を消費する。%LINEBREAK%<b>アクション:</b> %CHARGE%を1つ消費して、Spare Partsを投下し、その後君につけられたすべてのロックを破壊する。"""
+           text: """<b>アクション:</b> 君は装備した%ASTROMECH%アップグレードの1つのチャージを1つ回復するために%CHARGE%を消費する。%LINEBREAK%<b>アクション:</b> %CHARGE%を1つ消費して、Spare Partsを投下し、その後君につけられたすべてのロックを解除する。"""
         "Special Forces Gunner":
            display_name: """Special Forces Gunner"""
            text: """君が主武装による%FRONTARC%攻撃を実行する際、もし君の%SINGLETURRETARC%が%FRONTARC%にあるなら、君は攻撃ダイスを追加で1つ振っても良い。%LINEBREAK%君が主武装による%FRONTARC%攻撃を実行した後、もし君の%SINGLETURRETARC%が%REARARC%にあるなら、君はボーナスの%SINGLETURRETARC%攻撃を実行しても良い。"""
@@ -2525,6 +2572,32 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がコーディネートした後、君は君がコーディネートした宇宙船に、オレンジか赤のトークンを1つ転送しても良い。"""
         "R4-B11":
            text: """君が攻撃を実行する際、君は防御者からオレンジか赤のトークンを1つ取り除き、任意の数の防御ダイスを振り直させても良い。"""
+        "Wartime Loadout":
+           text: """%TORPEDO%スロット1つと%MISSILE%スロット1つを得る。君の宇宙船能力を以下と置き換える:  %LINEBREAK%<strong>Devastating Barrage:</strong> 君が%TORPEDO%あるいは%MISSILE%攻撃を行う際、もし防御者が君の%BULLSEYEARC%にいるなら、君の%CRIT%の結果は%EVADE%の結果でキャンセルできない。"""
+        "Watchful Astromech":
+           text: """君が%RELOAD%あるいは%ROTATEARC%アクションを実行した後、もし君が敵宇宙船のファイアリング・アーク内にいるなら、君は赤の%CALCULATE%アクションを実行しても良い"""
+        "L4E-R5":
+           text: """エンゲージメント・フェイズの開始時、君は君のファイアリング・アーク内の友軍宇宙船にカリキュレート・トークンを1つ転送しても良い。"""
+        "Overtuned Modulators":
+           text: """システム・フェイズの間、もし君がストレス状態でなければ、君は%CHARGE%を1つ消費し、カリキュレート・トークンを3つ得ても良い。%LINEBREAK%終了フェイズの間、もし君の%CHARGE%がアクティブでなければ、君が取り除く緑のトークンに1つにつき1つのストレイン・トークンを得る。"""
+        "Sensor Scramblers":
+           text: """<b>セットアップ:</b> クローク・トークンを1つ得る。%LINEBREAK% 君がクローク状態の際、他の宇宙船は君に対してロックを得ることができない。%LINEBREAK%終了フェイズの間、もし君がクローク状態で、レンジ0-3に敵宇宙船がいるなら、君は<b>デクロークしなければならない</b>。もしそうして、それがデクロークを失敗するなら、クローク・トークンを1つ失う。"""
+        "Enhanced Jamming Suite":
+           text: """君がジャムする際、君は君自身あるいは君以外の友軍宇宙船をジャムできる。%LINEBREAK%君が防御する際、もし攻撃者が緑のトークンを持っていないかあるいはその攻撃アーク内にジャム状態の宇宙船がいるなら、君は防御ダイスを1つ多く振っても良い。"""
+        "Compassion":
+           text: """レンジ0-2の他に友軍宇宙船が表向きの<b>パイロット</b>あるいは<b>クルー</b>のダメージ・カードを受け取ろうとする時、君は%FORCE%を1つ消費しても良い。もしそうするなら、そのダメージ・カードは代わりに捨て札にされ、そして君は裏向きのダメージ・カードを1枚受け取る。その後、もし君がダメージ・カードを2枚以上持っているなら、%CHARGE%を2つ回復する。"""
+        "Malice":
+           text: """君が攻撃を実行する際、君は%FORCE%を1つ消費し、%FOCUS%あるいは%HIT%の結果1つを%CRIT%に変更しても良い。もしそうするなら、君がその攻撃を実行した後、もし防御者が1枚以上の<b>パイロット</b>あるいは<b>クルー</b>ダメージ・カードを受け取ったなら、%FORCE%を2つ回復する。"""
+        "Shattering Shot":
+           text: """君が攻撃を実行する際、もし攻撃が障害物に妨害されるか、防御者が障害物のレンジ0にいるなら、君は%FORCE%を1つ消費し、%FOCUS%の結果を1つ追加しても良い。"""
+        "DT-798":
+           text: """エンゲージメント・フェイズの開始時に、君は君のファイアリング・アーク内の友軍宇宙船を1機選んでも良い。もしそうするなら、その宇宙船はストレイン・トークンを1つ得る。%LINEBREAK%君が攻撃を実行する際、君はその攻撃アーク内の、ロックではない赤のトークンかオレンジのトークンを1つでも持っている宇宙船の数につき1つ、ダイスを振り直しても良い。"""
+        "Feedback Ping":
+           text: """敵宇宙船がマニューバを実行した後、もしそれが友軍のデバイスのレンジ0-1にいるなら、君は距離の制限を無視してその宇宙船に対してロックを得ても良い。"""
+        "Electro-Chaff Missiles":
+           text: """システム・フェイズの間、君はこのカードから%CHARGE%を1つ消費し、[3 %BANKLEFT%]、[3 %BANKRIGHT%]、あるいは[4 %STRAIGHT%]テンプレートを使用して、electro-chaff cloudを1つ射出しても良い。その後それの上にフューズ・トークンを1つ置く。%LINEBREAK% このカードの%CHARGE%は回復できない。"""
+        "Babu Frik":
+           text: """君がロックではない赤のトークンかオレンジのトークンを受け取ろうとする前に、君は%CHARGE%を1つ消費し、代わりにそれをこのカードの上に置いても良い。システム・フェイズの間、もしこのカードの上1つ以上のトークンがあるなら、君は%CHARGE%を1つ<b>消費しなければならない</b>。もし君が消費できないなら、それらのトークンを取り除き、一致するトークンを得る。"""
 
         # Epic upgrades
         "Admiral Ozzel":
