@@ -2854,10 +2854,10 @@ exportObj.cardLoaders.English = () ->
 
     # in this file the display_name is often omitted, if it is identical to the name. I am too lazy to add those manually (though running the translation script would automatically do so). As this will pop up with every new card, I add those tags here
     for name, data of pilot_translations
-        data['display_name'] = name unless 'display_name' in data
+        data['display_name'] = name unless data.display_name?
     for name, data of upgrade_translations
-        data['display_name'] = name unless 'display_name' in data
+        data['display_name'] = name unless data.display_name?
     for name, data of condition_translations
-        data['display_name'] = name unless 'display_name' in data
+        data['display_name'] = name unless data.display_name?
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations

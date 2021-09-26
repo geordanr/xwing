@@ -8489,12 +8489,12 @@ exportObj.manifestByExpansion =
         {
             name: 'Shara Bey (A-Wing)'
             type: 'pilot'
-            count: 2
+            count: 1
         }
         {
             name: 'Derek Klivian'
             type: 'pilot'
-            count: 2
+            count: 1
         }
         {
             name: 'Green Squadron Pilot'
@@ -9021,6 +9021,296 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Fury of the First Order": [
+        {
+            name: 'TIE/Se Bomber'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE/WI Whisper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Kylo Ren (TIE Whisper)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Nightfall"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Whirlwind"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Wrath"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '709th Legion Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Fury Zealot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Breach"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dread"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Grudge"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Scorch" (TIE/Se Bomber)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'First Order Cadet'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Sienar-Jaemus Test Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Feedback Ping'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Limiter Override'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Compassion'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Malice'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Shattering Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Sensor Scramblers'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electro-Chaff Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'DT-798'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'First Order Ordnance Tech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Suppressive Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Concussion Bombs'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Delayed Fuses'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Engine Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Enhanced Jamming Suite'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    "BTA-NR2 Y-Wing Pack": [
+        {
+            name: 'BTA-NR2 Y-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Aftab Ackbar'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "C'ai Threnalli (Y-Wing)"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Corus Kapellim'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lega Fossang'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shasa Zaro'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Teza Nasz'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wilsa Teshlo'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zorii Bliss'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'New Republic Patrol'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Kijimi Spice Runner'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Babu Frik'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Concussion Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Delayed Fuses'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electro-Chaff Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Engine Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Expert Handling'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tierfon Belly Run'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'L4E-R5'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overtuned Modulators'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Wartime Loadout'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Watchful Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+
     "Trident-class Assault Ship Expansion Pack": [
         {
             name: 'Trident-class Assault Ship'
