@@ -2543,9 +2543,9 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Crew"
                 "Crew"
+                "Illicit"
                 "Modification"
                 "Configuration"
-                "Illicit"
             ]
         }
         {
@@ -2558,10 +2558,11 @@ exportObj.basicCardData = ->
             points: 46
             keyword: ["Partisan"]
             slots: [
-                "Illicit"
+                "Talent"
                 "Sensor"
                 "Crew"
                 "Crew"
+                "Illicit"
                 "Modification"
                 "Configuration"
             ]
@@ -2574,6 +2575,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 43
             slots: [
+                "Talent"
                 "Sensor"
                 "Crew"
                 "Crew"
@@ -2590,10 +2592,10 @@ exportObj.basicCardData = ->
             points: 43
             keyword: ["Partisan"]
             slots: [
-                "Illicit"
                 "Sensor"
                 "Crew"
                 "Crew"
+                "Illicit"
                 "Modification"
                 "Configuration"
             ]
@@ -8032,6 +8034,7 @@ exportObj.basicCardData = ->
                 "Hardpoint"
                 "Hardpoint"
                 "Crew"
+                "Crew"
                 "Team"
                 "Team"
                 "Cargo"
@@ -8052,6 +8055,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Hardpoint"
                 "Hardpoint"
+                "Crew"
                 "Crew"
                 "Team"
                 "Team"
@@ -8401,7 +8405,6 @@ exportObj.basicCardData = ->
             points: 46
             keyword: ["Droid"]
             slots: [
-                "Talent"
                 "Sensor"
                 "Crew"
                 "Crew"
