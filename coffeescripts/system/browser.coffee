@@ -726,6 +726,13 @@ class exportObj.CardBrowser
             if card.orig_type == 'Pilot'
                 actions = card.data.ship_override?.actions ? exportObj.ships[card.data.ship].actions
                 actions = actions.concat (card.data.ship_override?.actionsred ? exportObj.ships[card.data.ship].actionsred)
+                if card.data.keyword? and ("Droid" in card.data.keyword)
+                    # Droid conversion of Focus to Calculate
+                    new_actions = []
+                    for action in actions
+                        if action?
+                            new_actions.push action.replace("Focus","Calculate")
+                    actions = new_actions
         for action in required_actions ? []
             return false unless actions? and ((action in actions) or (("F-" + action) in actions) or (("R-" + action) in actions))
         for action in required_linked_actions ? []
