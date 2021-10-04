@@ -9190,7 +9190,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Enhanced Jamming Suite'
             type: 'upgrade'
-            count: 2
+            count: 1
         }
     ]
     "BTA-NR2 Y-Wing Pack": [
