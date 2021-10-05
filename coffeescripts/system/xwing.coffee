@@ -1498,6 +1498,82 @@ class exportObj.SquadBuilder
         @fancy_total_points_container.text @total_points
         
         # update text list
+        @updatePrintAndExportTexts()
+
+        # console.log "#{@faction}: Squad updated, checking collection"
+        @checkCollection()
+
+        # update conditions used
+        # this old version of phantomjs i'm using doesn't support Set
+        if Set?
+            conditions_set = new Set()
+            for ship in @ships
+                # shouldn't there be a set union
+                ship.getConditions().forEach (condition) ->
+                    conditions_set.add(condition)
+            conditions = []
+            conditions_set.forEach (condition) ->
+                conditions.push(condition)
+            conditions.sort (a, b) ->
+                if a.name.canonicalize() < b.name.canonicalize()
+                    -1
+                else if b.name.canonicalize() > a.name.canonicalize()
+                    1
+                else
+                    0
+            @condition_container.text ''
+            conditions.forEach (condition) =>
+                @condition_container.append conditionToHTML(condition)
+
+        cb @total_points
+
+
+    onSquadLoadRequested: (squad) =>
+        # console.log(squad.additional_data.obstacles)
+        @current_squad = squad
+        @backend_delete_list_button.removeClass 'disabled'
+        @current_obstacles = @current_squad.additional_data.obstacles
+        @updateObstacleSelect(@current_squad.additional_data.obstacles)
+        if squad.serialized.length?
+            @loadFromSerialized squad.serialized
+        @notes.val(squad.additional_data.notes ? '')
+        @tag.val(squad.additional_data.tag ? '')
+        @backend_status.fadeOut 'slow'
+        @current_squad.dirty = false
+        @container.trigger 'xwing-backend:squadNameChanged'
+        @container.trigger 'xwing-backend:squadDirtinessChanged'
+
+    onSquadDirtinessChanged: () =>
+        @current_squad.name = $.trim(@squad_name_input.val())
+        @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
+        @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
+        @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
+        if @ships.length > 1
+            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2.0: ") + @current_squad.name + ": " + @describeSquad())
+        else
+            $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
+        
+
+
+    onSquadNameChanged: () =>
+        if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
+            short_name = "#{@current_squad.name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
+        else
+            short_name = @current_squad.name
+        @squad_name_placeholder.text ''
+        @squad_name_placeholder.append short_name
+        @squad_name_input.val @current_squad.name
+        return unless $.getParameterByName('f') == @faction
+        if @current_squad.name != @uitranslation("Unnamed Squadron") and @current_squad.name != @uitranslation("Unsaved Squadron")
+            if (document.title != "YASB 2.0 - " + @current_squad.name) 
+                document.title = "YASB 2.0 - " + @current_squad.name
+        else
+            document.title = "YASB 2.0"
+        @updatePrintAndExportTexts()
+
+
+    updatePrintAndExportTexts: () =>
+        # update text list
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
         simplecopy_ships = []
@@ -1551,77 +1627,6 @@ class exportObj.SquadBuilder
             size: 128
         
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]#{@uitranslation('Total')}: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]#{@uitranslation('View in YASB')}[/url]"""
-
-        # console.log "#{@faction}: Squad updated, checking collection"
-        @checkCollection()
-
-        # update conditions used
-        # this old version of phantomjs i'm using doesn't support Set
-        if Set?
-            conditions_set = new Set()
-            for ship in @ships
-                # shouldn't there be a set union
-                ship.getConditions().forEach (condition) ->
-                    conditions_set.add(condition)
-            conditions = []
-            conditions_set.forEach (condition) ->
-                conditions.push(condition)
-            conditions.sort (a, b) ->
-                if a.name.canonicalize() < b.name.canonicalize()
-                    -1
-                else if b.name.canonicalize() > a.name.canonicalize()
-                    1
-                else
-                    0
-            @condition_container.text ''
-            conditions.forEach (condition) =>
-                @condition_container.append conditionToHTML(condition)
-
-        cb @total_points
-
-    onSquadLoadRequested: (squad) =>
-        # console.log(squad.additional_data.obstacles)
-        @current_squad = squad
-        @backend_delete_list_button.removeClass 'disabled'
-        @squad_name_input.val @current_squad.name
-        @squad_name_placeholder.text @current_squad.name
-        @current_obstacles = @current_squad.additional_data.obstacles
-        @updateObstacleSelect(@current_squad.additional_data.obstacles)
-        if squad.serialized.length?
-            @loadFromSerialized squad.serialized
-        @notes.val(squad.additional_data.notes ? '')
-        @tag.val(squad.additional_data.tag ? '')
-        @backend_status.fadeOut 'slow'
-        @current_squad.dirty = false
-        @container.trigger 'xwing-backend:squadDirtinessChanged'
-        @container.trigger 'xwing-backend:squadNameChanged'
-
-    onSquadDirtinessChanged: () =>
-        @current_squad.name = $.trim(@squad_name_input.val())
-        @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
-        @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
-        @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
-        if @ships.length > 1
-            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2.0: ") + @current_squad.name + ": " + @describeSquad())
-        else
-            $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
-        
-
-
-    onSquadNameChanged: () =>
-        if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
-            short_name = "#{@current_squad.name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
-        else
-            short_name = @current_squad.name
-        @squad_name_placeholder.text ''
-        @squad_name_placeholder.append short_name
-        @squad_name_input.val @current_squad.name
-        return unless $.getParameterByName('f') == @faction
-        if @current_squad.name != @uitranslation("Unnamed Squadron") and @current_squad.name != @uitranslation("Unsaved Squadron")
-            if (document.title != "YASB 2.0 - " + @current_squad.name) 
-                document.title = "YASB 2.0 - " + @current_squad.name
-        else
-            document.title = "YASB 2.0"
 
     removeAllShips: ->
         while @ships.length > 0
