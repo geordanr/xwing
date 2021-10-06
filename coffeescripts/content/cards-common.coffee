@@ -14533,6 +14533,7 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             points: 4
             ship: "BTA-NR2 Y-Wing"
+            standardized: true
             restrictions: [
                 ["Slot", "Modification"]
             ]
