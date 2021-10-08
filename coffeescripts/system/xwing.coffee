@@ -2381,7 +2381,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
                     
                     sources = (exportObj.translate('sources', source) for source in data.sources).sort()
-                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not ('Loose Ships' in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
+                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not (exportObj.translate('sources', 'Loose Ships') in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
                     container.find('.info-sources').show()
                 when 'Pilot'
                     container.find('.info-type').text type
@@ -4854,7 +4854,10 @@ class GenericAddon
                     if ship.data?.name == @ship.data.name
                         for upgrade in ship.upgrades
                             if upgrade.data?.name == nameToRemove
-                                upgrade.data = null
+                                # we can (and should) savely call setData to remove the Upgrade, to handle e.g. removal of added slots
+                                # infinite loop recursion is prevented since it's removed from standard_list already
+                                upgrade.setData null
+                                break
 
     conferAddons: ->
         if @data.confersAddons? and !@ship.builder.isQuickbuild and @data.confersAddons.length > 0
