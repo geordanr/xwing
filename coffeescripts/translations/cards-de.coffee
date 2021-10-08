@@ -81,7 +81,7 @@ exportObj.translations.Deutsch =
         "Saw's Renegades Expansion Pack": "Saws Rebellenmiliz Erweiterung"
         "TIE Reaper Expansion Pack": "TIE-Schnitter Erweiterung"
         "Sith Infiltrator Expansion Pack": "Sith Infiltrator Erweiterung"
-        "Hotshots and Aces Reinforcement Pack": "Draufgänger und Fliegerasse Erweiterungspack"
+        "Hotshots and Aces Reinforcements Pack": "Draufgänger und Fliegerasse Erweiterungspack"
         "Resistance Transport Expansion Pack": "Transporter des Widerstands Erweiterung" 
         "Guardians of the Republic Squadron Pack": "Wächter der Republik Staffelpack"
         "Fireball Expansion Kit": "Fireball Erweiterung"

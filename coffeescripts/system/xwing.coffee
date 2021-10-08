@@ -3643,7 +3643,7 @@ class Ship
                 for upgrade in @upgrades
                     if upgrade?.data?
                         old_upgrades[upgrade.slot] ?= []
-                        old_upgrades[upgrade.slot].push upgrade
+                        old_upgrades[upgrade.slot].push upgrade.data.id
             @resetPilot()
             @resetAddons()
             if new_pilot?
@@ -3663,15 +3663,20 @@ class Ship
                             if exportObj.slotsMatching(upgrade.slot, auto_equip_upgrade.slot)
                                 upgrade.setData auto_equip_upgrade
                 if same_ship
-                    delayed_upgrades = {}
-                    for upgrade in @upgrades
-                        old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
-                        if old_upgrade?
-                            upgrade.setById old_upgrade.data.id
-                            if not upgrade.lastSetValid
-                                delayed_upgrades[old_upgrade.data.id] = upgrade
-                    for id, upgrade of delayed_upgrades
-                        upgrade.setById id
+                    # two cycles, in case an old upgrade is adding slots that are required for other old upgrades
+                    for _ in [1..2]
+                        delayed_upgrades = {}
+                        for upgrade in @upgrades
+                            # check if there exits old upgrades for this slot - if so, try to add the first of them
+                            old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
+                            if old_upgrade?
+                                upgrade.setById old_upgrade
+                                if not upgrade.lastSetValid
+                                    # failed to add an upgrade, even though the required slot was there - retry later
+                                    # perhaps another card is providing an required restriction (e.g. an action)
+                                    delayed_upgrades[old_upgrade] = upgrade
+                        for id, upgrade of delayed_upgrades
+                            upgrade.setById id
             else
                 @copy_button.hide()
             @row.removeClass('unsortable')
