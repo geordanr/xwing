@@ -793,8 +793,8 @@ class exportObj.SquadBuilderBackend
                         builder.current_squad.id = results.id
                         builder.current_squad.name = new_name
                         builder.current_squad.dirty = false
-                        builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                         builder.container.trigger 'xwing-backend:squadNameChanged'
+                        builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                         builder.backend_status.html $.trim """
                             <i class="fa fa-check"></i>&nbsp;#{exportObj.translate('ui', 'New squad saved successfully.')}
                         """

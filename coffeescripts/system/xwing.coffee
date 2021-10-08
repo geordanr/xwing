@@ -1498,6 +1498,82 @@ class exportObj.SquadBuilder
         @fancy_total_points_container.text @total_points
         
         # update text list
+        @updatePrintAndExportTexts()
+
+        # console.log "#{@faction}: Squad updated, checking collection"
+        @checkCollection()
+
+        # update conditions used
+        # this old version of phantomjs i'm using doesn't support Set
+        if Set?
+            conditions_set = new Set()
+            for ship in @ships
+                # shouldn't there be a set union
+                ship.getConditions().forEach (condition) ->
+                    conditions_set.add(condition)
+            conditions = []
+            conditions_set.forEach (condition) ->
+                conditions.push(condition)
+            conditions.sort (a, b) ->
+                if a.name.canonicalize() < b.name.canonicalize()
+                    -1
+                else if b.name.canonicalize() > a.name.canonicalize()
+                    1
+                else
+                    0
+            @condition_container.text ''
+            conditions.forEach (condition) =>
+                @condition_container.append conditionToHTML(condition)
+
+        cb @total_points
+
+
+    onSquadLoadRequested: (squad) =>
+        # console.log(squad.additional_data.obstacles)
+        @current_squad = squad
+        @backend_delete_list_button.removeClass 'disabled'
+        @current_obstacles = @current_squad.additional_data.obstacles
+        @updateObstacleSelect(@current_squad.additional_data.obstacles)
+        if squad.serialized.length?
+            @loadFromSerialized squad.serialized
+        @notes.val(squad.additional_data.notes ? '')
+        @tag.val(squad.additional_data.tag ? '')
+        @backend_status.fadeOut 'slow'
+        @current_squad.dirty = false
+        @container.trigger 'xwing-backend:squadNameChanged'
+        @container.trigger 'xwing-backend:squadDirtinessChanged'
+
+    onSquadDirtinessChanged: () =>
+        @current_squad.name = $.trim(@squad_name_input.val())
+        @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
+        @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
+        @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
+        if @ships.length > 1
+            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2.0: ") + @current_squad.name + ": " + @describeSquad())
+        else
+            $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
+        
+
+
+    onSquadNameChanged: () =>
+        if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
+            short_name = "#{@current_squad.name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
+        else
+            short_name = @current_squad.name
+        @squad_name_placeholder.text ''
+        @squad_name_placeholder.append short_name
+        @squad_name_input.val @current_squad.name
+        return unless $.getParameterByName('f') == @faction
+        if @current_squad.name != @uitranslation("Unnamed Squadron") and @current_squad.name != @uitranslation("Unsaved Squadron")
+            if (document.title != "YASB 2.0 - " + @current_squad.name) 
+                document.title = "YASB 2.0 - " + @current_squad.name
+        else
+            document.title = "YASB 2.0"
+        @updatePrintAndExportTexts()
+
+
+    updatePrintAndExportTexts: () =>
+        # update text list
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
         simplecopy_ships = []
@@ -1551,77 +1627,6 @@ class exportObj.SquadBuilder
             size: 128
         
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}\n[b][i]#{@uitranslation('Total')}: #{@total_points}[/i][/b]\n\n[url=#{@getPermaLink()}]#{@uitranslation('View in YASB')}[/url]"""
-
-        # console.log "#{@faction}: Squad updated, checking collection"
-        @checkCollection()
-
-        # update conditions used
-        # this old version of phantomjs i'm using doesn't support Set
-        if Set?
-            conditions_set = new Set()
-            for ship in @ships
-                # shouldn't there be a set union
-                ship.getConditions().forEach (condition) ->
-                    conditions_set.add(condition)
-            conditions = []
-            conditions_set.forEach (condition) ->
-                conditions.push(condition)
-            conditions.sort (a, b) ->
-                if a.name.canonicalize() < b.name.canonicalize()
-                    -1
-                else if b.name.canonicalize() > a.name.canonicalize()
-                    1
-                else
-                    0
-            @condition_container.text ''
-            conditions.forEach (condition) =>
-                @condition_container.append conditionToHTML(condition)
-
-        cb @total_points
-
-    onSquadLoadRequested: (squad) =>
-        # console.log(squad.additional_data.obstacles)
-        @current_squad = squad
-        @backend_delete_list_button.removeClass 'disabled'
-        @squad_name_input.val @current_squad.name
-        @squad_name_placeholder.text @current_squad.name
-        @current_obstacles = @current_squad.additional_data.obstacles
-        @updateObstacleSelect(@current_squad.additional_data.obstacles)
-        if squad.serialized.length?
-            @loadFromSerialized squad.serialized
-        @notes.val(squad.additional_data.notes ? '')
-        @tag.val(squad.additional_data.tag ? '')
-        @backend_status.fadeOut 'slow'
-        @current_squad.dirty = false
-        @container.trigger 'xwing-backend:squadDirtinessChanged'
-        @container.trigger 'xwing-backend:squadNameChanged'
-
-    onSquadDirtinessChanged: () =>
-        @current_squad.name = $.trim(@squad_name_input.val())
-        @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
-        @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
-        @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
-        if @ships.length > 1
-            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2.0: ") + @current_squad.name + ": " + @describeSquad())
-        else
-            $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
-        
-
-
-    onSquadNameChanged: () =>
-        if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
-            short_name = "#{@current_squad.name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
-        else
-            short_name = @current_squad.name
-        @squad_name_placeholder.text ''
-        @squad_name_placeholder.append short_name
-        @squad_name_input.val @current_squad.name
-        return unless $.getParameterByName('f') == @faction
-        if @current_squad.name != @uitranslation("Unnamed Squadron") and @current_squad.name != @uitranslation("Unsaved Squadron")
-            if (document.title != "YASB 2.0 - " + @current_squad.name) 
-                document.title = "YASB 2.0 - " + @current_squad.name
-        else
-            document.title = "YASB 2.0"
 
     removeAllShips: ->
         while @ships.length > 0
@@ -2376,7 +2381,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
                     
                     sources = (exportObj.translate('sources', source) for source in data.sources).sort()
-                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not ('Loose Ships' in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
+                    container.find('.info-sources.info-data').text if (sources.length > 1) or (not (exportObj.translate('sources', 'Loose Ships') in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
                     container.find('.info-sources').show()
                 when 'Pilot'
                     container.find('.info-type').text type
@@ -3638,7 +3643,7 @@ class Ship
                 for upgrade in @upgrades
                     if upgrade?.data?
                         old_upgrades[upgrade.slot] ?= []
-                        old_upgrades[upgrade.slot].push upgrade
+                        old_upgrades[upgrade.slot].push upgrade.data.id
             @resetPilot()
             @resetAddons()
             if new_pilot?
@@ -3658,15 +3663,20 @@ class Ship
                             if exportObj.slotsMatching(upgrade.slot, auto_equip_upgrade.slot)
                                 upgrade.setData auto_equip_upgrade
                 if same_ship
-                    delayed_upgrades = {}
-                    for upgrade in @upgrades
-                        old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
-                        if old_upgrade?
-                            upgrade.setById old_upgrade.data.id
-                            if not upgrade.lastSetValid
-                                delayed_upgrades[old_upgrade.data.id] = upgrade
-                    for id, upgrade of delayed_upgrades
-                        upgrade.setById id
+                    # two cycles, in case an old upgrade is adding slots that are required for other old upgrades
+                    for _ in [1..2]
+                        delayed_upgrades = {}
+                        for upgrade in @upgrades
+                            # check if there exits old upgrades for this slot - if so, try to add the first of them
+                            old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
+                            if old_upgrade?
+                                upgrade.setById old_upgrade
+                                if not upgrade.lastSetValid
+                                    # failed to add an upgrade, even though the required slot was there - retry later
+                                    # perhaps another card is providing an required restriction (e.g. an action)
+                                    delayed_upgrades[old_upgrade] = upgrade
+                        for id, upgrade of delayed_upgrades
+                            upgrade.setById id
             else
                 @copy_button.hide()
             @row.removeClass('unsortable')
@@ -4849,7 +4859,10 @@ class GenericAddon
                     if ship.data?.name == @ship.data.name
                         for upgrade in ship.upgrades
                             if upgrade.data?.name == nameToRemove
-                                upgrade.data = null
+                                # we can (and should) savely call setData to remove the Upgrade, to handle e.g. removal of added slots
+                                # infinite loop recursion is prevented since it's removed from standard_list already
+                                upgrade.setData null
+                                break
 
     conferAddons: ->
         if @data.confersAddons? and !@ship.builder.isQuickbuild and @data.confersAddons.length > 0

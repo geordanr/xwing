@@ -33,13 +33,7 @@ Building
 Translation
 ===========
 
-Wanna help translating YASB into your language? See instructions in the
-`translation_helper/README.md` file.
-
-Exporting Squads
-===========
-
-[Squad2xws](https://github.com/zacharyp/squad2xws) allows you to export squads you have created to xws format for use in other places. Take the url of the squad you have built, replace the "https://raithos.github.io/" part of the url with "https://squad2xws.herokuapp.com/yasb/xws" and it will output your squad in the xws format to be used for whatever.
+Wanna help translating YASB into your language? You're welcome to do so! Write an issue to contact us so we can discuss how to get started. 
 
 Credits
 -------
@@ -51,4 +45,4 @@ Fancy printout design inspired by TheKestrel on the FFG forums.
 Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
 Squad name in the permalink and obstacles choice modal by [zacharyp](https://github.com/zacharyp).
 
-I'm not keeping ReadMe this up to date often; see the About section of the builder.
+I'm not keeping this ReadMe up to date often; see the About section of the builder.
