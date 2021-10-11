@@ -1529,7 +1529,6 @@ class exportObj.SquadBuilder
 
 
     onSquadLoadRequested: (squad) =>
-        # console.log(squad.additional_data.obstacles)
         @current_squad = squad
         @backend_delete_list_button.removeClass 'disabled'
         @current_obstacles = @current_squad.additional_data.obstacles
@@ -1544,7 +1543,7 @@ class exportObj.SquadBuilder
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     onSquadDirtinessChanged: () =>
-        @current_squad.name = $.trim(@squad_name_input.val())
+        #@current_squad.name = $.trim(@squad_name_input.val())
         @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
         @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
         @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
