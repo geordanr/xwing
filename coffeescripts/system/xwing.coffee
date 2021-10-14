@@ -3484,11 +3484,12 @@ class Ship
             # set them aside any upgrades that don't fill requirements due to additional slots and then attempt to fill them
             delayed_upgrades = {}
             for upgrade in @upgrades
-                other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
-                if other_upgrade?
-                    upgrade.setById other_upgrade.data.id
-                    if not upgrade.lastSetValid
-                        delayed_upgrades[other_upgrade.data.id] = upgrade
+                if not upgrade.isOccupied() # an earlier set double-slot upgrade may already use this slot
+                    other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
+                    if other_upgrade?
+                        upgrade.setById other_upgrade.data.id
+                        if not upgrade.lastSetValid
+                            delayed_upgrades[other_upgrade.data.id] = upgrade
             for id, upgrade of delayed_upgrades
                 upgrade.setById id
             # Do one final pass on upgrades to see if there are any more upgrades we can assign
