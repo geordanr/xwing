@@ -2558,7 +2558,6 @@ exportObj.basicCardData = ->
             points: 46
             keyword: ["Partisan"]
             slots: [
-                "Talent"
                 "Sensor"
                 "Crew"
                 "Crew"
