@@ -82,7 +82,6 @@ exportObj.translateToLang = (language, category, what, args...) ->
 exportObj.setupTranslationSupport = ->
     do (builders) ->
         $(exportObj).on 'xwing:languageChanged', (e, language, priority=5, cb=$.noop) =>
-            console.log("Change language to #{language} with priority #{priority} requested")
             # check if priority is high enough to do anything
             if priority == 'reload' # special case - just a reload, no priority change
                 null
