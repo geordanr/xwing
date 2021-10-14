@@ -13088,6 +13088,7 @@ exportObj.basicCardData = ->
             id: 288
             slot: "Illicit"
             points: 3
+            unique: true
             restrictions: [
                 ["Base", "Huge"]
             ]
