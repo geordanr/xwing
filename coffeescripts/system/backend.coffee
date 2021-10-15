@@ -124,12 +124,9 @@ class exportObj.SquadBuilderBackend
         data.additional_data["archived"] = true
         @save(data.serialized, data.id, data.name, faction, data.additional_data, cb)
 
-    list: (builder, all=false) ->
+    list: (builder) ->
         # TODO: Pagination
-        if all
-            @squad_list_modal.find('.modal-header .squad-list-header-placeholder').text("Everyone's #{builder.faction} Squads")
-        else
-            @squad_list_modal.find('.modal-header .squad-list-header-placeholder').text("Your #{builder.faction} Squads")
+        @squad_list_modal.find('.modal-header .squad-list-header-placeholder').text(exportObj.translate('ui', "yourXYsquads", builder.faction))
         list_ul = $ @squad_list_modal.find('ul.squad-list')
         list_ul.text ''
         list_ul.hide()
@@ -144,7 +141,7 @@ class exportObj.SquadBuilderBackend
         #setup tag list
         tag_list = []
 
-        url = if all then "#{@server}/all" else "#{@server}/squads/list"
+        url = "#{@server}/squads/list"
         $.get url, (data, textStatus, jqXHR) =>
             hasNotArchivedSquads = false
             for squad in data[builder.faction]
@@ -170,7 +167,7 @@ class exportObj.SquadBuilderBackend
                             <h4>#{squad.name}</h4>
                         </div>
                         <div class="col-md-3">
-                            <h5>#{squad.additional_data?.points} Points</h5>
+                            <h5>#{squad.additional_data?.points} #{exportObj.translate('ui', "Points")}</h5>
                         </div>
                     </div>
                     <div class="row squad-description">
@@ -186,23 +183,22 @@ class exportObj.SquadBuilderBackend
                         </div>
                     </div>
                     <div class="row squad-convert-confirm">
-                        <div class="col-md-9">
-                            Convert to Extended?
+                        <div class="col-md-9 translated" defaultText="Convert to Extended?">
                         </div>
                         <div class="squad-buttons col-md-3">
-                            <button class="btn btn-danger confirm-convert-squad">Convert</button>
+                            <button class="btn btn-danger confirm-convert-squad translated" defaultText="Convert"></button>
                             &nbsp;
-                            <button class="btn btn-modal cancel-convert-squad">Cancel</button>
+                            <button class="btn btn-modal cancel-convert-squad translated" defaultText="Cancel"></button>
                         </div>
                     </div>
                     <div class="row squad-delete-confirm">
                         <div class="col-md-9">
-                            Really delete <em>#{squad.name}</em>?
+                            #{exportObj.translate('ui', 'reallyDeleteSquadXY', "<em>#{squad.name}</em>")}
                         </div>
                         <div class="col-md-3">
-                            <button class="btn btn-danger confirm-delete-squad">Delete</button>
+                            <button class="btn btn-danger confirm-delete-squad translated" defaultText="Delete"></button>
                             &nbsp;
-                            <button class="btn btn-modal cancel-delete-squad">Cancel</button>
+                            <button class="btn btn-modal cancel-delete-squad translated" defaultText="Cancel"></button>
                         </div>
                     </div>
                 """
@@ -251,18 +247,6 @@ class exportObj.SquadBuilderBackend
                             li.html $.trim """
                                 Error converting #{li.data('squad').name}: <em>#{results.error}</em>
                             """
-                
-                li.find('button.load-squad').click (e) =>
-                    e.preventDefault()
-                    button = $ e.target
-                    li = button.closest 'li'
-                    builder = li.data('builder')
-                    @squad_list_modal.modal 'hide'
-                    if builder.current_squad.dirty
-                        @warnUnsaved builder, () ->
-                            builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
-                    else
-                        builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
                     
                 li.find('button.load-squad').click (e) =>
                     e.preventDefault()
@@ -330,7 +314,7 @@ class exportObj.SquadBuilderBackend
                             """
             if not hasNotArchivedSquads
                 list_ul.append $.trim """
-                    <li>Nothing to see here. Go save a squad!</li>
+                    <li class="translated" defaultText="No saved squads"></li>
                 """
                 
             #setup Tags
@@ -358,11 +342,13 @@ class exportObj.SquadBuilderBackend
                         else
                             $(elem).hide()
 
+            # some of the created html needs translation (e.g. buttons). Do that now.
+            exportObj.translateUIElements(list_ul)
             loading_pane.fadeOut 'fast'
             list_ul.fadeIn 'fast'
 
     authenticate: (cb=$.noop) ->
-        $(@auth_status.find('.payload')).text 'Checking auth status...'
+        $(@auth_status.find('.payload')).text exportObj.translate('ui', 'Checking auth status...')
         @auth_status.show()
         old_auth_state = @authenticated
 
@@ -392,7 +378,7 @@ class exportObj.SquadBuilderBackend
             @login_modal.modal 'show'
 
     logout: (cb=$.noop) ->
-        $(@auth_status.find('.payload')).text 'Logging out...'
+        $(@auth_status.find('.payload')).text exportObj.translate('ui', 'Logging out...')
         @auth_status.show()
         $.get "#{@server}/auth/logout", (data, textStatus, jqXHR) =>
             @authenticated = false
@@ -419,19 +405,19 @@ class exportObj.SquadBuilderBackend
         if name.length == 0
             @name_availability_container.text ''
             @name_availability_container.append $.trim """
-                <i class="fa fa-thumbs-down"></i> A name is required
+                <i class="fa fa-thumbs-down"></i> #{exportObj.translate('ui', "name required")}
             """
         else
             $.post "#{@server}/squads/namecheck", { name: name }, (data) =>
                 @name_availability_container.text ''
                 if data.available
                     @name_availability_container.append $.trim """
-                        <i class="fa fa-thumbs-up"></i> Name is available
+                        <i class="fa fa-thumbs-up"></i> #{exportObj.translate('ui', "Name is available")}
                     """
                     @save_as_save_button.removeClass 'disabled'
                 else
                     @name_availability_container.append $.trim """
-                        <i class="fa fa-thumbs-down"></i> You already have a squad with that name
+                        <i class="fa fa-thumbs-down"></i> #{exportObj.translate('ui', "Name in use")}
                     """
                     @save_as_save_button.addClass 'disabled'
 
@@ -454,32 +440,23 @@ class exportObj.SquadBuilderBackend
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Log in with OAuth</h3>
+                <h3 class="translated" defaultText="Log in with OAuth"></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <p>
-                    Select one of the OAuth providers below to log in and start saving squads.
-                    <a class="login-help" href="#">What's this?</a>
+                    <span class="translated" defaultText="select OAuth provider"></span>
+                    <a class="login-help translated" href="#" defaultText="What's this?"></a>
                 </p>
                 <div class="well well-small oauth-explanation">
-                    <p>
-                        <a href="http://en.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> is an authorization system which lets you prove your identity at a web site without having to create a new account.  Instead, you tell some provider with whom you already have an account (e.g. Google or Facebook) to prove to this web site that you say who you are.  That way, the next time you visit, this site remembers that you're that user from Google.
-                    </p>
-                    <p>
-                        The best part about this is that you don't have to come up with a new username and password to remember.  And don't worry, I'm not collecting any data from the providers about you.  I've tried to set the scope of data to be as small as possible, but some places send a bunch of data at minimum.  I throw it away.  All I look at is a unique identifier (usually some giant number).
-                    </p>
-                    <p>
-                        For more information, check out this <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">introduction to OAuth</a>.
-                    </p>
-                    <button class="btn btn-modal">Got it!</button>
+                    <span class="translated" defaultText="OAuth explanation"></span>
+                    <button class="btn btn-modal translated" defaultText="Got it!"></button>
                 </div>
                 <ul class="login-providers inline"></ul>
-                <p>
-                    This will open a new window to let you authenticate with the chosen provider.  You may have to allow pop ups for this site.  (Sorry.)
-                </p>
+                <p class="translated" defaultText="Continue to OAuth provider"></p>
+                <p class="translated" defaultText="iOS requires cross-site control"></p>
                 <p class="login-in-progress">
-                    <em>OAuth login is in progress.  Please finish authorization at the specified provider using the window that was just created.</em>
+                    <em class="translated" defaultText="login in progress"></em>
                 </p>
             </div>
         </div>
@@ -512,6 +489,9 @@ class exportObj.SquadBuilderBackend
                 methods_ul.append li
             @ui_ready = true
 
+        # this is dynamically created UI, so we need to translate it after creation
+        exportObj.translateUIElements(@login_modal)
+
         @reload_done_modal = $ document.createElement('DIV')
         @reload_done_modal.addClass 'modal fade d-print-none'
         @reload_done_modal.tabindex = "-1"
@@ -525,14 +505,17 @@ class exportObj.SquadBuilderBackend
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <p>All squads of that faction have been reloaded.</p>
+                <p class="translated" defaultText="Squads reloaded"></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-modal btn-primary" aria-hidden="true" data-dismiss="modal">Well done!</button>
+                <button class="btn btn-modal btn-primary translated" aria-hidden="true" data-dismiss="modal" defaultText="Well done!"></button>
             </div>
         </div>
     </div>
         """
+
+        # this is dynamically created UI, so we need to translate it after creation
+        exportObj.translateUIElements(@reload_done_modal)
 
         @squad_list_modal = $ document.createElement('DIV')
         @squad_list_modal.addClass 'modal fade d-print-none squad-list'
@@ -552,23 +535,23 @@ class exportObj.SquadBuilderBackend
                 <p class="pagination-centered squad-list-loading">
                     <i class="fa fa-spinner fa-spin fa-3x"></i>
                     <br />
-                    Fetching squads...
+                    <span class="translated" defaultText="Fetching squads..."></span>
                 </p>
             </div>
             <div class="modal-footer">
                 <div class="btn-group delete-multiple-squads full-row">
-                    <button class="btn btn-modal select-all">Select All</button>
-                    <button class="btn btn-modal archive-selected">Archive Selected</button>
-                    <button class="btn btn-modal btn-danger delete-selected">Delete Selected</button>
+                    <button class="btn btn-modal select-all translated" defaultText="Select All"></button>
+                    <button class="btn btn-modal archive-selected translated" defaultText="Archive Selected"></button>
+                    <button class="btn btn-modal btn-danger delete-selected translated" defaultText="Delete Selected"></button>
                 </div>
                 <div class="btn-group squad-display-mode full-row">
-                    <button class="btn btn-modal btn-inverse show-all-squads">All</button>
-                    <button class="btn btn-modal show-extended-squads"><span class="d-none d-lg-block">Extended</span><span class="d-lg-none">Ext</span></button>
-                    <button class="btn btn-modal show-hyperspace-squads"><span class="d-none d-lg-block">Hyperspace</span><span class="d-lg-none">Hyper</span></button>
-                    <button class="btn btn-modal show-quickbuild-squads"><span class="d-none d-lg-block">Quickbuild</span><span class="d-lg-none">QB</span></button>
-                    <button class="btn btn-modal show-epic-squads">Epic</button>
-                    <button class="btn btn-modal show-archived-squads">Archived</button>
-                    <button class="btn btn-modal reload-all">Reload Squads (Long!)</button>
+                    <button class="btn btn-modal btn-inverse show-all-squads translated" defaultText="All"></button>
+                    <button class="btn btn-modal show-extended-squads"><span class="d-none d-lg-block translated" defaultText="Extended"></span><span class="d-lg-none translated" defaultText="Ext"></span></button>
+                    <button class="btn btn-modal show-hyperspace-squads"><span class="d-none d-lg-block translated" defaultText="Hyperspace"></span><span class="d-lg-none translated" defaultText="Hyper"></span></button>
+                    <button class="btn btn-modal show-quickbuild-squads"><span class="d-none d-lg-block translated" defaultText="Quickbuild"></span><span class="d-lg-none translated" defaultText="QB"></span></button>
+                    <button class="btn btn-modal show-epic-squads translated" defaultText="Epic"></button>
+                    <button class="btn btn-modal show-archived-squads translated" defaultText="Archived"></button>
+                    <button class="btn btn-modal reload-all translated" defaultText="Recalculate Points"></button>
                 </div>
                 <div class="btn-group tags-display full-row">
                 </div>
@@ -583,6 +566,9 @@ class exportObj.SquadBuilderBackend
         # The delete multiple section only appeares, when somebody hits the delete button of one squad. 
         @squad_list_modal.find('div.delete-multiple-squads').hide() 
 
+        # this is dynamically created UI, so we need to translate it after creation
+        exportObj.translateUIElements(@squad_list_modal)
+
         @delete_selected_button = $ @squad_list_modal.find('button.delete-selected')
         @delete_selected_button.click (e) =>
             ul = @squad_list_modal.find('ul.squad-list') 
@@ -592,7 +578,7 @@ class exportObj.SquadBuilderBackend
                     do (li) =>
                         li.find('.cancel-delete-squad').fadeOut 'fast'
                         li.find('.confirm-delete-squad').addClass 'disabled'
-                        li.find('.confirm-delete-squad').text 'Deleting...'
+                        li.find('.confirm-delete-squad').text exportObj.translate('ui', 'Deleting...')
                         @delete li.data('squad').id, (results) =>
                             if results.success
                                 li.slideUp 'fast', ->
@@ -615,13 +601,13 @@ class exportObj.SquadBuilderBackend
                 if li.data 'selectedForDeletion'
                     do (li) =>
                         li.find('.confirm-delete-squad').addClass 'disabled'
-                        li.find('.confirm-delete-squad').text 'Archiving...'
+                        li.find('.confirm-delete-squad').text exportObj.translate('ui', 'Archiving...')
                         @archive li.data('squad'), li.data('builder').faction, (results) =>
                             if results.success
                                 li.slideUp 'fast', ->
                                     $(li).hide()
                                     $(li).find('.confirm-delete-squad').removeClass 'disabled'
-                                    $(li).find('.confirm-delete-squad').text 'Delete'
+                                    $(li).find('.confirm-delete-squad').text exportObj.translate('ui', 'Delete')
                                     $(li).data 'selectedForDeletion', false
                                     $(li).find('.squad-delete-confirm').fadeOut 'fast', ->
                                         $(li).find('.squad-description').fadeIn 'fast'
@@ -746,18 +732,18 @@ class exportObj.SquadBuilderBackend
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Save Squad As...</h3>
+                <h3 class="translated" defaultText="Save Squad As..."></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <label for="xw-be-squad-save-as">
-                    New Squad Name
+                    <span class="translated" defaultText="New Squad Name"></span>
                     <input id="xw-be-squad-save-as"></input>
                 </label>
                 <span class="name-availability"></span>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary save" aria-hidden="true">Save</button>
+                <button class="btn btn-primary save translated" aria-hidden="true" defaultText="Save"></button>
             </div>
         </div>
     </div>
@@ -786,7 +772,7 @@ class exportObj.SquadBuilderBackend
                     tag: builder.getTag()
                 builder.backend_save_list_as_button.addClass 'disabled'
                 builder.backend_status.html $.trim """
-                    <i class="fa fa-sync fa-spin"></i>&nbsp;Saving squad...
+                    <i class="fa fa-sync fa-spin"></i>&nbsp;#{exportObj.translate('ui', 'Saving squad...')}
                 """
                 builder.backend_status.show()
                 new_name = $.trim @save_as_input.val()
@@ -795,10 +781,10 @@ class exportObj.SquadBuilderBackend
                         builder.current_squad.id = results.id
                         builder.current_squad.name = new_name
                         builder.current_squad.dirty = false
-                        builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                         builder.container.trigger 'xwing-backend:squadNameChanged'
+                        builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                         builder.backend_status.html $.trim """
-                            <i class="fa fa-check"></i>&nbsp;New squad saved successfully.
+                            <i class="fa fa-check"></i>&nbsp;#{exportObj.translate('ui', 'New squad saved successfully.')}
                         """
                     else
                         builder.backend_status.html $.trim """
@@ -814,13 +800,16 @@ class exportObj.SquadBuilderBackend
             else
                 @name_availability_container.text ''
                 @name_availability_container.append $.trim """
-                    <i class="fa fa-spin fa-spinner"></i> Checking name availability...
+                    <i class="fa fa-spin fa-spinner"></i> #{exportObj.translate('ui', 'Checking name availability...')}
                 """
                 timer = @save_as_modal.data('timer')
                 window.clearInterval(timer) if timer?
                 @save_as_modal.data 'timer', window.setInterval(@nameCheck, 500)
 
         @name_availability_container = $ @save_as_modal.find('.name-availability')
+
+        # this is dynamically created UI, so we need to translate it after creation
+        exportObj.translateUIElements(@squad_list_modal)
 
         @delete_modal = $ document.createElement('DIV')
         @delete_modal.addClass 'modal fade d-print-none'
@@ -831,15 +820,15 @@ class exportObj.SquadBuilderBackend
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Really Delete <span class="squad-name-placeholder"></span>?</h3>
+                <h3><span class="translated" defaultText="Really Delete"></span> <span class="squad-name-placeholder"></span>?</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete this squad?</p>
+                <p class="translated" defaultText="Sure to delete?"></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger delete" aria-hidden="true">Yes, Delete <i class="squad-name-placeholder"></i></button>
-                <button class="btn btn-modal" data-dismiss="modal" aria-hidden="true">Never Mind</button>
+                <button class="btn btn-danger delete" aria-hidden="true"><span class="translated" defaultText="Yes, Delete"></span> <i class="squad-name-placeholder"></i></button>
+                <button class="btn btn-modal translated" data-dismiss="modal" aria-hidden="true" defaultText="Never Mind"></button>
             </div>
         </div>
     </div>
@@ -851,7 +840,7 @@ class exportObj.SquadBuilderBackend
             e.preventDefault()
             builder = @delete_modal.data 'builder'
             builder.backend_status.html $.trim """
-                <i class="fa fa-sync fa-spin"></i>&nbsp;Deleting squad...
+                <i class="fa fa-sync fa-spin"></i>&nbsp;#{exportObj.translate('ui', "Deleting squad...")}
             """
             builder.backend_status.show()
             builder.backend_delete_list_button.addClass 'disabled'
@@ -862,7 +851,7 @@ class exportObj.SquadBuilderBackend
                     builder.current_squad.dirty = true
                     builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                     builder.backend_status.html $.trim """
-                        <i class="fa fa-check"></i>&nbsp;Squad deleted.
+                        <i class="fa fa-check"></i>&nbsp;#{exportObj.translate('ui', "Squad deleted.")}
                     """
                 else
                     builder.backend_status.html $.trim """
@@ -870,6 +859,9 @@ class exportObj.SquadBuilderBackend
                     """
                     # Failed, so offer chance to delete again
                     builder.backend_delete_list_button.removeClass 'disabled'
+
+        # this is dynamically created UI, so we need to translate it after creation
+        exportObj.translateUIElements(@delete_modal)
 
         @unsaved_modal = $ document.createElement('DIV')
         @unsaved_modal.addClass 'modal fade d-print-none'
@@ -880,15 +872,15 @@ class exportObj.SquadBuilderBackend
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Unsaved Changes</h3>
+                <h3 class="translated" defaultText="Unsaved Changes"></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <p>You have not saved changes to this squad.  Do you want to go back and save?</p>
+                <p class="translated" defaultText="Unsaved Changes Warning"></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-modal btn-primary" aria-hidden="true" data-dismiss="modal">Go Back</button>
-                <button class="btn btn-danger discard" aria-hidden="true">Discard Changes</button>
+                <button class="btn btn-modal btn-primary translated" aria-hidden="true" data-dismiss="modal" defaultText="Go Back"></button>
+                <button class="btn btn-danger discard translated" aria-hidden="true" defaultText="Discard Changes"></button>
             </div>
         </div>
     </div>
@@ -899,6 +891,9 @@ class exportObj.SquadBuilderBackend
             @unsaved_modal.data('builder').current_squad.dirty = false
             @unsaved_modal.data('callback')()
             @unsaved_modal.modal 'hide'
+            
+        # this is dynamically created UI, so we need to translate it after creation
+        exportObj.translateUIElements(@unsaved_modal)
 
     setupHandlers: () ->
         $(window).on 'xwing-backend:authenticationChanged', (e, authenticated, backend) =>
@@ -956,9 +951,11 @@ class exportObj.SquadBuilderBackend
             cb data.headers
 
     getLanguagePreference: (settings, cb=$.noop) =>
-        # Check session, then headers
+        # check if user provided a language preference. If yes, this will override the browser preference queried in translate.coffee
         if settings?.language?
-            cb settings.language
+            # we found a language, provide it with priority 10
+            cb settings.language, 10
+        # otherwise we may parse a language out of the headers (reimplements commit d95bb5e93fbb75d0e6a4a7270f7a86cf86a62a0a)
         else
             await @getHeaders defer(headers)
             if headers?.HTTP_ACCEPT_LANGUAGE?
@@ -967,13 +964,22 @@ class exportObj.SquadBuilderBackend
                 for language_range in headers.HTTP_ACCEPT_LANGUAGE.split(',')
                     [ language_tag, quality ] = language_range.split ';'
                     if language_tag == '*'
-                        cb 'English'
+                        # let's give that half bullshit priority
+                        cb 'English', -0.5
                     else
                         language_code = language_tag.split('-')[0]
-                        cb(exportObj.codeToLanguage[language_code] ? 'English')
+                        # check if the language code is available
+                        if langc of exportObj.codeToLanguage
+                            # yep - use as language with reasonable priority
+                            cb(exportObj.codeToLanguage[language_code], 8)
+                        else
+                            # bullshit priority - we can't support what the user wants
+                            # (maybe he gave another option though in his browser settings)
+                            cb 'English', -1
                     break
             else
-                cb 'English'
+                # no headers, callback with bullshit priority
+                cb 'English', -1
 
     getCollectionCheck: (settings, cb=$.noop) =>
         if settings?.collectioncheck?

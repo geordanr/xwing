@@ -5,6 +5,7 @@ exportObj.codeToLanguage.pt = 'Português'
 
 exportObj.translations ?= {}
 exportObj.translations.Português =
+# ui translation goes here
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Português = () ->

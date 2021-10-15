@@ -20,12 +20,16 @@
   "dependencies": {
     "select2": "3.5.4",
     "jquery": "components/jquery#~3.5.1",
+    "jquery-ui": "1.12.1",
     "jquery-ajaxtransport-xdomainrequest": "~1.0.4",
     "jquery.qrcode": "~0.17.0",
     "font-awesome": "fontawesome#^5.13.0"
   },
   "exportsOverride": {
     "jquery": {
+      "js": "**/*.js"
+    },
+    "jquery-ui": {
       "js": "**/*.js"
     },
     "jquery.qrcode": {

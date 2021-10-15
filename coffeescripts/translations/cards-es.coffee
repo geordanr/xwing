@@ -12,7 +12,6 @@ exportObj.codeToLanguage ?= {}
 exportObj.codeToLanguage.es = 'Español'
 
 exportObj.translations ?= {}
-# This is here mostly as a template for other languages.
 exportObj.translations['Español'] =
     slot:
         "Astromech": "Astromecánico"
@@ -33,7 +32,7 @@ exportObj.translations['Español'] =
         "Device": "Dispositivo"
         "Tech": "Tecnología"
         "Title": "Título"
-    sources: # needed?
+    sources: 
         "Second Edition Core Set": "Caja Básica de la Segunda Edición"
         "Rebel Alliance Conversion Kit": "Kit de Conversión Alianza Rebelde"
         "Galactic Empire Conversion Kit": "Kit de Conversión Imperio Galáctico"
@@ -50,99 +49,97 @@ exportObj.translations['Español'] =
     ui:
         shipSelectorPlaceholder: "Elige una Nave"
         pilotSelectorPlaceholder: "Elige un Piloto"
-        upgradePlaceholder: (translator, language, slot) ->
-            "Sin #{translator language, 'slot', slot}"
+        upgradePlaceholder: (translator, slot) ->
+            "Sin #{translator 'slot', slot}"
         modificationPlaceholder: "Sin Modificación"
         titlePlaceholder: "Sin Título"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot}"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot}"
         unreleased: "sin publicar"
         epic: "épico"
         limited: "limitado"
-    byCSSSelector:
-        # Warnings
-        '.unreleased-content-used .translated': 'Esta escuadra usa contenido aún no publicado!'
-        '.collection-invalid .translated': 'No puedes desplegar esta lista con tu colección!'
+        'Unreleased content warning': 'Esta escuadra usa contenido aún no publicado!'
+        'Collection warning': 'No puedes desplegar esta lista con tu colección!'
         # Type selector
-        '.game-type-selector option[value="standard"]': 'Ampliada'
-        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="custom"]': 'Personalizada'
+        'Extended': 'Ampliada'
+        'Hyperspace': 'Hyperspace'
+        'Epic': 'Épico'
+        'Quickbuild': 'Quick Build'        
         # Card browser
-        '.select2-choice' : '<span>Tipo (por Nombre)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
-        '.xwing-card-browser option[value="name"]': 'Nombre'
-        '.xwing-card-browser option[value="source"]': 'Fuente'
-        '.xwing-card-browser option[value="type-by-points"]': 'Tipo (por Puntos)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Tipo (por Nombre)'
-        '.xwing-card-browser .translate.select-a-card': 'Selecciona una carta de la lista de la izquierda.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Ordena las cartas por'
+        'Name': 'Nombre'
+        'Source': 'Fuente'
+        'Type (by Points)': 'Tipo (por Puntos)'
+        'Type (by Name)': 'Tipo (por Nombre)'
+        'Select a card': 'Selecciona una carta de la lista de la izquierda.'
+        'Sort cards by': 'Ordena las cartas por'
+        'Sort by': 'Ordena por'
         # Info well
-        '.info-well .info-ship td.info-header': 'Nave'
-        '.info-well .info-skill td.info-header': 'Iniciativa'
-        '.info-well .info-actions td.info-header': 'Acciones'
-        '.info-well .info-upgrades td.info-header': 'Mejoras'
-        '.info-well .info-range td.info-header': 'Alcance'
+        'Ship': 'Nave'
+        'Initiative': 'Iniciativa'
+        'Actions': 'Acciones'
+        'Upgrades': 'Mejoras'
+        'Range': 'Alcance'
         # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Nuevo Escuadrón'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;Grabar'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Grabar como…'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Borrar'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Cargar Escuadrón'
-        '.delete-squad' : 'Borrar'
-        '.delete-squad' : 'Borrar'
-        '.show-standard-squads' : 'Ampliada'
-        '.show-epic-squads' : 'Épico'
-        '.show-team-epic-squads' : 'Épico por Equipos'
-        '.show-all-squads' : 'Todos'
-        '.view-as-text' : '<span class="d-none d-lg-block"><i class="fa fa-print"></i>Imprimir/Ver como texto</span><span class="d-lg-none"><i class="fa fa-print"></i></span>'
-        '.randomize' : '<span class="d-none d-lg-block"><i class="fa fa-random"></i> Aleatorio!</span><span class="d-lg-none"><i class="fa fa-random"></i></span>'        
-        '.randomize-options' : 'Opciones del aleatorizador…'
-        '.notes-container .notes-name' : 'Notas del Escuadrón:'
-        '.notes-container .tag-name' : 'Tag:'        
-        '.choose-obstacles' : 'Elige Obstáculos'
-        '.from-xws' : 'Importa de XWS (Beta)'
-        '.to-xws' : 'Exporta a XWS (Beta)'
+        'New Squad':'Nuevo Escuadrón'
+        'Save' : 'Grabar'
+        'Save As...' : 'Grabar como…'
+        'Delete' : 'Borrar'
+        'Load Squad' : 'Cargar Escuadrón'
+        'All' : 'Todos'
+        'Print/Export': 'Imprimir/Ver como texto'
+        'Randomize!' : 'Aleatorio!'        
+        'Randomizer Options' : 'Opciones del aleatorizador…'
+        'Squad Notes:' : 'Notas del Escuadrón:'
+        'Tag:' : 'Tag:'        
+        'Choose Obstacles' : 'Elige Obstáculos'
+        'XWS Import' : 'Importa de XWS'
+        'XWS Export' : 'Exporta a XWS'
         # New Squadron dialog
-        '.discard' : 'Descartar cambios'
+        'Discard' : 'Descartar cambios'
         # Log in dialog
-        '.login-help' : '¿Qué es OAuth?'
+        "What's this?" : '¿Qué es OAuth?'
         # Print/View modal
-        '.bbcode-list' : 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea><button class="btn btn-copy">Copiar</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copiar</button>'
-        '.vertical-space-checkbox' : """Añade espacio para cartas de daño/mejora cuando imprima. <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Imprimir en color <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Imprimir'
-        '.select-simple-view' : 'Sencilla'
-        '.select-fancy-view' : 'Elaborada'
-        '.close-print-dialog' : 'Cerrar'
+        'Copy' : 'Copiar'
+        "Copy below BBCode": "<p>Copia el BBCode de debajo y pegalo en el post de tu foro.</p>"
+        'Space for Cards' : "Añade espacio para cartas de daño/mejora cuando imprima."
+        'Print Color' : "Imprimir en color"
+        'Print' : 'Imprimir'
+        'Simple' : 'Sencilla'
+        'Fancy' : 'Elaborada'
+        'Close' : 'Cerrar'
         # Randomizer options
-        '.do-randomize' : 'Aleatoriza!'
+        'Roll!' : 'Aleatoriza!'
         # Top tab bar
-        '#browserTab' : 'Explorador de Cartas'
-        '#aboutTab' : 'Acerca de'
+        'Card Browser' : 'Explorador de Cartas'
+        'About' : 'Acerca de'
         # Obstacles
-        '.choose-obstacles' : 'Elegir Obstáculos'
-        '.choose-obstacles-description' : 'Elige hasta tres obstáculos para incluirlos el enlace para programas externos (Aún no se muestran los obstáculos elegidos al imprimir).'
-        '.coreasteroid0-select' : 'Asteroide del Core 0'
-        '.coreasteroid1-select' : 'Asteroide del Core 1'
-        '.coreasteroid2-select' : 'Asteroide del Core 2'
-        '.coreasteroid3-select' : 'Asteroide del Core 3'
-        '.coreasteroid4-select' : 'Asteroide del Core 4'
-        '.coreasteroid5-select' : 'Asteroide del Core 5'
-        '.yt2400debris0-select' : 'Desecho del YT2400 0'
-        '.yt2400debris1-select' : 'Desecho del YT2400 1'
-        '.yt2400debris2-select' : 'Desecho del YT2400 2'
-        '.vt49decimatordebris0-select' : 'Desecho del VT49 0'
-        '.vt49decimatordebris1-select' : 'Desecho del VT49 1'
-        '.vt49decimatordebris2-select' : 'Desecho del VT49 2'
-        '.core2asteroid0-select' : 'Asteroide del Despertar de la Fuerza 0'
-        '.core2asteroid1-select' : 'Asteroide del Despertar de la Fuerza 1'
-        '.core2asteroid2-select' : 'Asteroide del Despertar de la Fuerza 2'
-        '.core2asteroid3-select' : 'Asteroide del Despertar de la Fuerza 3'
-        '.core2asteroid4-select' : 'Asteroide del Despertar de la Fuerza 4'
-        '.core2asteroid5-select' : 'Asteroide del Despertar de la Fuerza 5'
+        'Choose Obstacles' : 'Elegir Obstáculos'
+        'Choose obstacles dialog' : 'Elige hasta tres obstáculos para incluirlos el enlace para programas externos (Aún no se muestran los obstáculos elegidos al imprimir).'
+        'Core Asteroid' : 'Asteroide del Core'
+        'YT2400 Debris' : 'Desecho del YT2400'
+        'VT49 Debris' : 'Desecho del VT49'
+        'Force Awakens Asteroid' : 'Asteroide del Despertar de la Fuerza'
         # Collection
-        '.collection': '<span class="d-none d-lg-block"><i class="fa fa-folder-open"></i> Mi colección</span><span class="d-lg-none"><i class="fa fa-folder-open"></i></span>'
-        '.checkbox-check-collection' : 'Comprobar coincidencia con colección <input class="check-collection" type="checkbox">'
+        'Your Collection': 'Mi colección'
+        'Check Collection' : 'Comprobar coincidencia con colección'
+        "Core Asteroid 0": "Asteroide del Core 0"
+        "Core Asteroid 1": "Asteroide del Core 1"
+        "Core Asteroid 2": "Asteroide del Core 2"
+        "Core Asteroid 3": "Asteroide del Core 3"
+        "Core Asteroid 4": "Asteroide del Core 4"
+        "Core Asteroid 5": "Asteroide del Core 5"
+        "VT49 Debris 0": "Desecho del VT49 0"
+        "VT49 Debris 1": "Desecho del VT49 1"
+        "VT49 Debris 2": "Desecho del VT49 2"
+        "YT2400 Debris 0": "Desecho del YT2400 0"
+        "YT2400 Debris 1": "Desecho del YT2400 1"
+        "YT2400 Debris 2": "Desecho del YT2400 2"
+        "Force Awakens Asteroid 0": "Asteroide del Despertar de la Fuerza 0"
+        "Force Awakens Asteroid 1": "Asteroide del Despertar de la Fuerza 1"
+        "Force Awakens Asteroid 2": "Asteroide del Despertar de la Fuerza 2"
+        "Force Awakens Asteroid 3": "Asteroide del Despertar de la Fuerza 3"
+        "Force Awakens Asteroid 4": "Asteroide del Despertar de la Fuerza 4"
+        "Force Awakens Asteroid 5": "Asteroide del Despertar de la Fuerza 5"
 
     singular:
         'pilots': 'Piloto'

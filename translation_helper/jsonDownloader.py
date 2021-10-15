@@ -28,7 +28,8 @@ else:
 prefix = args.prefix
 
 # url = 'http://localhost/api_export_de.json'
-url = 'https://squadbuilder.fantasyflightgames.com/api/cards/'
+# url = 'https://squadbuilder.fantasyflightgames.com/api/cards/'
+url = 'https://x-wing-api.fantasyflightgames.com/cards/upgrades/?format=json'
 
 # The API doesn't like python scripts, so we fool into thinking we're a browser
 headers = {'User-Agent': 'Mozilla/4.0'}

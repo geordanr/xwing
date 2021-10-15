@@ -13,7 +13,6 @@ exportObj.codeToLanguage ?= {}
 exportObj.codeToLanguage.fr = 'Français'
 
 exportObj.translations ?= {}
-# This is here mostly as a template for other languages.
 exportObj.translations['Français'] =
     slot:
         "Astromech": "Astromech"
@@ -34,7 +33,7 @@ exportObj.translations['Français'] =
         "Device": "Engin"
         "Tech": "Technologie"
         "Title": "Titre"
-    sources: # needed?
+    sources:
         "Second Edition Core Set": "Boîte de base 2.0"
         "Rebel Alliance Conversion Kit": "Kit de Conversion Alliance Rebelle"
         "Galactic Empire Conversion Kit": "Kit de Conversion Empire Galactique"
@@ -51,84 +50,68 @@ exportObj.translations['Français'] =
     ui:
         shipSelectorPlaceholder: "Choisissez un vaisseau"
         pilotSelectorPlaceholder: "Choisissez un pilot"
-        upgradePlaceholder: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} (sans amélioration)"
+        upgradePlaceholder: (translator, slot) ->
+            "#{translator 'slot', slot} (sans amélioration)"
         modificationPlaceholder: "Pas de modification"
         titlePlaceholder: "Pas de titre"
-        upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot}"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot}"
         unreleased: "inédit"
         epic: "épique"
         limited: "limité"
     byCSSSelector:
         # Warnings
-        '.unreleased-content-used .translated': 'Cet escadron utilise du contenu inédit !'
-        '.collection-invalid .translated': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
+        'Unreleased content warning': 'Cet escadron utilise du contenu inédit !'
+        'Collection warning': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
         # Type selector
-        '.game-type-selector option[value="standard"]': 'Standard'
-        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
-        '.game-type-selector option[value="custom"]': 'Personnalisé'
+        'Extended': 'Standard'
+        'Hyperspace': 'Hyperspace'
+        'Epic': 'Epic'
+        'Quickbuild': 'Quick Build'
         # Card browser
-        '.select2-choice' : '<span>Type (par nom)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
-        '.xwing-card-browser option[value="name"]': 'Nom'
-        '.xwing-card-browser option[value="source"]': 'Source'
-        '.xwing-card-browser option[value="type-by-points"]': 'Type (par points)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Type (par nom)'
-        '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte dans la liste à gauche.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Trier les cartes par'
+        'Name': 'Nom'
+        'Source': 'Source'
+        'Type (by Points)': 'Type (par points)'
+        'Type (by Name)': 'Type (par nom)'
+        'Select a card': 'Sélectionnez une carte dans la liste à gauche.'
+        'Sort cards by': 'Trier les cartes par'
+        'Sort by': 'Trier par'
         # Info well
-        '.info-well .info-ship td.info-header': 'Vaisseau'
-        '.info-well .info-skill td.info-header': 'Initiative'
-        '.info-well .info-actions td.info-header': 'Actions'
-        '.info-well .info-upgrades td.info-header': 'Améliorations'
-        '.info-well .info-range td.info-header': 'Portée'
+        'Ship': 'Vaisseau'
+        'Initiative': 'Initiative'
+        'Actions': 'Actions'
+        'Upgrades': 'Améliorations'
+        'Range': 'Portée'
         # Squadron edit buttons
-        '.clear-squad' : '<i class="fa fa-plus-circle"></i>&nbsp;Nouvel escadron'
-        '.save-list' : '<i class="far fa-save"></i>&nbsp;Enregistrer'
-        '.save-list-as' : '<i class="far fa-file"></i>&nbsp;Enregistrer sous…'
-        '.delete-list' : '<i class="fa fa-trash"></i>&nbsp;Supprimer'
-        '.backend-list-my-squads' : '<i class="fa fa-download"></i>&nbsp;Charger un escadron'
-        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Imprimer/</span>Exporter'
-        '.collection': '<i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Votre collection</a>'
-        '.randomize' : 'Aléatoire !'
-        '.randomize-options' : 'Options…'
-        '.notes-container .notes-name' : 'Notes sur l\'escadron:'
-        '.notes-container .tag-name' : 'Tag:'        
+        'New Squad' : 'Nouvel escadron'
+        'Save' : 'Enregistrer'
+        'Save As...' : 'Enregistrer sous…'
+        'Delete' : 'Supprimer'
+        'Load Squad' : 'Charger un escadron'
+        'Print/Export' : 'Imprimer/Exporter'
+        'Your Collection': 'Votre collection'
+        'Randomize!' : 'Aléatoire !'
+        'Randomizer Options' : 'Options…'
+        'Squad Notes:' : 'Notes sur l\'escadron:'
+        'Tag:' : 'Tag:'        
         # Print/View modal
-        '.bbcode-list' : 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea><button class="btn btn-copy">Copiez</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copiez</button>'
-        '.vertical-space-checkbox' : """Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Imprimer en couleur <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Imprimer'
+        'Copy below BBCode' : '<p>Copiez le BBCode ci-dessous et collez-le dans votre post.</p>'
+        'Copy' : 'Copiez'
+        'Space for Cards' : """Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression"""
+        'Print Color' : """Imprimer en couleur"""
+        'Print' : 'Imprimer'
         # Randomizer options
-        '.do-randomize' : 'Générer aléatoirement !'
+        'Roll!' : 'Générer aléatoirement!'
         # Top tab bar
-        '#browserTab' : 'Cartes'
-        '#aboutTab' : 'À propos'
+        'Card Browser' : 'Cartes'
+        'About' : 'À propos'
         # Obstacles
-        '.choose-obstacles' : 'Choisir des obstacles'
-        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.)'
-        '.coreasteroid0-select' : 'Core Asteroid 0'
-        '.coreasteroid1-select' : 'Core Asteroid 1'
-        '.coreasteroid2-select' : 'Core Asteroid 2'
-        '.coreasteroid3-select' : 'Core Asteroid 3'
-        '.coreasteroid4-select' : 'Core Asteroid 4'
-        '.coreasteroid5-select' : 'Core Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Debris 0'
-        '.yt2400debris1-select' : 'YT2400 Debris 1'
-        '.yt2400debris2-select' : 'YT2400 Debris 2'
-        '.vt49decimatordebris0-select' : 'VT49 Debris 0'
-        '.vt49decimatordebris1-select' : 'VT49 Debris 1'
-        '.vt49decimatordebris2-select' : 'VT49 Debris 2'
-        '.core2asteroid0-select' : 'Force Awakens Asteroid 0'
-        '.core2asteroid1-select' : 'Force Awakens Asteroid 1'
-        '.core2asteroid2-select' : 'Force Awakens Asteroid 2'
-        '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
-        '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
-        '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
-        # Import/Export
-        '.from-xws' : 'Importer depuis XWS (beta)'
-        '.to-xws' : 'Exporter vers XWS (beta)'
+        'Choose Obstacles' : 'Choisir des obstacles'
+        'Choose obstacles dialog' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.)'
+        'Core Asteroid' : 'Core Asteroid'
+        'YT2400 Debris' : 'YT2400 Debris'
+        'VT49 Debris' : 'VT49 Debris'
+        'Force Awakens Asteroid' : 'Force Awakens Asteroid'
 
     singular:
         'pilots': 'Pilote'
