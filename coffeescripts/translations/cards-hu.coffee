@@ -1929,7 +1929,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Integrated S-Foils":
            text: """<strong>Csukva: </strong><i>Kapott akció %BARRELROLL%, %FOCUS% &nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i>&nbsp;<r>%BARRELROLL%</r></i><br> Amikor végrehajtasz egy elsődleges támadást, ha a védekező nincs a %BULLSEYEARC% tűzívedben, 1-gyel kevesebb támadókockával dobj. Mielőtt aktiválódsz, megfordíthatod ezt a kártyát.<br> <b>Nyitva:</b> Mielőtt aktiválódsz, megfordíthatod ezt a kártyát."""
         "Targeting Synchronizer":
-           text: """<i>Követelmény: %LOCK%</i> <br> Amikor egy baráti hajó 1-2-es távolságban végrehajt egy támadást olyan célpont ellen, amit már bemértél, az a hajó figyelmen kívül hagyhatja a %LOCK% támadási követelményt."""
+           text: """<i>Követelmény: %LOCK%</i> <br> Amikor egy baráti hajó 1-2-es távolságban végrehajt egy támadást olyan célpont ellen, amit már bemértél, az a hajó hagyja figyelmen kívül a %LOCK% támadási követelményt."""
         "Primed Thrusters":
            text: """<i>csak kis hajó</i> <br>Amikor 2 vagy kevesebb stressz jelződ van, végrehajthatsz %BARRELROLL% és %BOOST% akciót még ha stresszes is vagy."""
         "Kylo Ren":
