@@ -2558,7 +2558,6 @@ exportObj.basicCardData = ->
             points: 46
             keyword: ["Partisan"]
             slots: [
-                "Talent"
                 "Sensor"
                 "Crew"
                 "Crew"
@@ -13089,6 +13088,7 @@ exportObj.basicCardData = ->
             id: 288
             slot: "Illicit"
             points: 3
+            unique: true
             restrictions: [
                 ["Base", "Huge"]
             ]

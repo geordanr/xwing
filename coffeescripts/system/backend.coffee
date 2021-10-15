@@ -247,18 +247,6 @@ class exportObj.SquadBuilderBackend
                             li.html $.trim """
                                 Error converting #{li.data('squad').name}: <em>#{results.error}</em>
                             """
-                
-                li.find('button.load-squad').click (e) =>
-                    e.preventDefault()
-                    button = $ e.target
-                    li = button.closest 'li'
-                    builder = li.data('builder')
-                    @squad_list_modal.modal 'hide'
-                    if builder.current_squad.dirty
-                        @warnUnsaved builder, () ->
-                            builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
-                    else
-                        builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
                     
                 li.find('button.load-squad').click (e) =>
                     e.preventDefault()

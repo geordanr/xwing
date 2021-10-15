@@ -1529,7 +1529,6 @@ class exportObj.SquadBuilder
 
 
     onSquadLoadRequested: (squad) =>
-        # console.log(squad.additional_data.obstacles)
         @current_squad = squad
         @backend_delete_list_button.removeClass 'disabled'
         @current_obstacles = @current_squad.additional_data.obstacles
@@ -1544,7 +1543,7 @@ class exportObj.SquadBuilder
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     onSquadDirtinessChanged: () =>
-        @current_squad.name = $.trim(@squad_name_input.val())
+        #@current_squad.name = $.trim(@squad_name_input.val())
         @backend_save_list_button.toggleClass 'disabled', not (@current_squad.dirty and @total_points > 0)
         @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
         @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
@@ -3485,11 +3484,12 @@ class Ship
             # set them aside any upgrades that don't fill requirements due to additional slots and then attempt to fill them
             delayed_upgrades = {}
             for upgrade in @upgrades
-                other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
-                if other_upgrade?
-                    upgrade.setById other_upgrade.data.id
-                    if not upgrade.lastSetValid
-                        delayed_upgrades[other_upgrade.data.id] = upgrade
+                if not upgrade.isOccupied() # an earlier set double-slot upgrade may already use this slot
+                    other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
+                    if other_upgrade?
+                        upgrade.setById other_upgrade.data.id
+                        if not upgrade.lastSetValid
+                            delayed_upgrades[other_upgrade.data.id] = upgrade
             for id, upgrade of delayed_upgrades
                 upgrade.setById id
             # Do one final pass on upgrades to see if there are any more upgrades we can assign
