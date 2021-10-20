@@ -10129,7 +10129,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/WI Whisper"
-            keyword: ["Dark Side"]
+            keyword: ["Dark Side", "Light Side"]
             skill: 5
             force: 3
             points: 63
