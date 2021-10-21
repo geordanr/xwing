@@ -2574,7 +2574,6 @@ exportObj.basicCardData = ->
             skill: 2
             points: 43
             slots: [
-                "Talent"
                 "Sensor"
                 "Crew"
                 "Crew"
@@ -8404,6 +8403,7 @@ exportObj.basicCardData = ->
             points: 46
             keyword: ["Droid"]
             slots: [
+                "Talent"
                 "Sensor"
                 "Crew"
                 "Crew"
@@ -10129,7 +10129,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/WI Whisper"
-            keyword: ["Dark Side","Light Side"]
+            keyword: ["Dark Side", "Light Side"]
             skill: 5
             force: 3
             points: 63
