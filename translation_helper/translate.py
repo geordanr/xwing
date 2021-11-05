@@ -289,6 +289,7 @@ output_text = output_text.replace('<fullrear>', '%FULLREARARC%')
 output_text = output_text.replace('<turretarc>', '%SINGLETURRETARC%')
 output_text = output_text.replace('<hit>', '%HIT%')
 output_text = output_text.replace('<crit>', '%CRIT%')
+output_text = output_text.replace('<energycharge>', '%ENERGY%')
 
 # Change quotes and some special chars in Names, to match the YASB scheme (e.g.
 # replace '“Zeb” Orrelios' with '"Zeb" Orrelios')
