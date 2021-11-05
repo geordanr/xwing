@@ -1632,7 +1632,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Erhalte eine %FRONTARC%-Primärwaffe mit einem Wert von 3.%LINEBREAK%Während der Endphase, entferne bis zu 2 Fokusmarker nicht."""
         "Nautolan's Revenge":
            display_name: """Rache der Nautolaner"""
-           text: """Bevor du kämpfst, darfst du bis zu 2 Berechnungsmarker ausgeben. Falls du das tust, stellst du ebenso viele <energycharge> wieder her."""
+           text: """Bevor du kämpfst, darfst du bis zu 2 Berechnungsmarker ausgeben. Falls du das tust, stellst du ebenso viele %ENERGY% wieder her."""
         "Neimoidian Grasp":
            display_name: """Neimoidianischer Griff"""
            text: """Nachdem du einen Angriff durchgeführt hast, darfst du eine rote %EVADE%-Aktion durchführen.%LINEBREAK%Solange du verteidigst, falls du ausweichst, darfst du 1 zusätzlichen Verteidigungs­würfel werfen."""
@@ -1668,7 +1668,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<strong>Aufbau:</strong> Du kannst auf der Spielfläche überall jenseits von Reichweite 1 zu Hindernissen, jenseits von Reichweite 3 zu feindlichen Schiffen und jenseits von Reichweite 3 zum feindlichen Spielflächenrand platziert werden."""
         "Trident":
            display_name: """Trident"""
-           text: """Nachdem du ein Schiff überschnitten hast oder ein Schiff dich überschnitten hat, falls es nicht gefangen ist, darfst du 1 <energycharge> ausgeben. Falls du das tust, erhält es 3 Fangstrahlmarker."""
+           text: """Nachdem du ein Schiff überschnitten hast oder ein Schiff dich überschnitten hat, falls es nicht gefangen ist, darfst du 1 %ENERGY% ausgeben. Falls du das tust, erhält es 3 Fangstrahlmarker."""
         "Virago":
            display_name: """Virago"""
            text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um eine rote %BOOST%-Aktion durchzuführen.%LINEBREAK%Füge den %MODIFICATION%-Slot hinzu."""
@@ -1697,13 +1697,13 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
            text: """Füge den&nbsp;%CREW%-Slot hinzu.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, falls der Verteidiger zerstört worden ist, darfst du eine %FOCUS%&nbsp;- oder &nbsp;%LOCK%&nbsp;-Aktion durchführen."""
         "Insatiable Worrt":
            display_name: """Gefräßiger Worrt"""
-           text: """Füge den&nbsp;<cargo>-Slot hinzu.%LINEBREAK%Während der Endphase darfst du 1 zusätzlichen&nbsp;additional schilde oder <energycharge> wiederherstellen."""
+           text: """Füge den&nbsp;<cargo>-Slot hinzu.%LINEBREAK%Während der Endphase darfst du 1 zusätzlichen&nbsp;additional schilde oder %ENERGY% wiederherstellen."""
         "Instigator":
            display_name: """Instigator"""
            text: """Füge den&nbsp;<team>-Slot hinzu.%LINEBREAK%Solange du einen Angriff durchführst, falls der Verteidiger einen orange-farbenen oder roten Marker hat, darfst du bis zu 2 Angriffswürfel neu werfen."""
         "Jaina's Light":
            display_name: """Jainas Licht"""
-           text: """Solange ein befreundetes Schiff in Reichweite 0-2 verteidigt, falls der Angriff durch ein Hindernis versperrt wird, darfst du 1 <energycharge> ausgeben. Falls du das tust, wirft der Verteidiger 1 zusätzlichen Verteidigungswürfel."""
+           text: """Solange ein befreundetes Schiff in Reichweite 0-2 verteidigt, falls der Angriff durch ein Hindernis versperrt wird, darfst du 1 %ENERGY% ausgeben. Falls du das tust, wirft der Verteidiger 1 zusätzlichen Verteidigungswürfel."""
         "Liberator":
            display_name: """Liberator"""
            text: """Du kannst bis zu 2 kleine Schiffe andocken.%LINEBREAK%Nachdem ein Schiff von dir abgesetzt worden ist, darf es eine %FOCUS%&nbsp;- oder&nbsp;%BARRELROLL%&nbsp;-Aktion durchführen."""
@@ -1715,13 +1715,13 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
            text: """Füge&nbsp;%TURRET%-, <team>-, und <cargo>&nbsp;-Slots hinzu.%LINEBREAK%<strong>Bonusangriff:</strong> Führe einen&nbsp;%TURRET%-Angriff durch."""
         "Quantum Storm":
            display_name: """Quantum Storm"""
-           text: """Füge&nbsp;<team>- und <cargo>-Slots hinzu.%LINEBREAK%Nachdem du ein weißes Manöver voll - ständig ausgeführt hast, stelle 1<energycharge> wieder her."""
+           text: """Füge&nbsp;<team>- und <cargo>-Slots hinzu.%LINEBREAK%Nachdem du ein weißes Manöver voll - ständig ausgeführt hast, stelle 1%ENERGY% wieder her."""
         "Requiem":
            display_name: """Requiem"""
            text: """Nachdem ein Schiff von dir abgesetzt worden ist, darf es ein Schiff, das du als Ziel erfasst hast, als Ziel erfassen, wobei es Reichweitenbeschränkungen ignoriert."""
         "Suppressor":
            display_name: """Suppressor"""
-           text: """Füge den&nbsp;%SENSOR%-Slot hinzu.%LINEBREAK%Nachdem du ein befreundetes Schiff koordiniert hast, darfst du 1 <energycharge> ausgeben, um einem feindlichen Schiff in Reichweite 0-2 jenes Schiffes ein Störsignal zu senden, wobei du Reich weiten-beschränkungen ignorierst."""
+           text: """Füge den&nbsp;%SENSOR%-Slot hinzu.%LINEBREAK%Nachdem du ein befreundetes Schiff koordiniert hast, darfst du 1 %ENERGY% ausgeben, um einem feindlichen Schiff in Reichweite 0-2 jenes Schiffes ein Störsignal zu senden, wobei du Reich weiten-beschränkungen ignorierst."""
         "Tantive IV":
            display_name: """Tantive IV"""
            text: """Füge 2&nbsp;%CREW%-Slots hinzu.%LINEBREAK%Solange du verteidigst, falls der Angreifer in deinem%REARARC% ist, darfst du 1 zusätzlichen Verteidigungswürfel werfen."""
@@ -1739,7 +1739,7 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
            text: """Bevor du Schaden durch ein Hindernis oder die Detonation einer befreundeten Bombe erleiden würdest, darfst du 1 %CHARGE% ausgeben. Falls du das tust, verhindere 1 Schaden."""
         "Adaptive Shields":
            display_name: """Adaptive Schilde"""
-           text: """Solange ein anderes befreundetes Schiff in Reichweite 0-1 verteidigt, falls es kleiner ist als du, darfst du 1 schilde oder 2&nbsp;<energycharge> ausgeben, um 1&nbsp;%HIT%&nbsp;oder&nbsp;%CRIT%-Ergebnis zu negieren."""
+           text: """Solange ein anderes befreundetes Schiff in Reichweite 0-1 verteidigt, falls es kleiner ist als du, darfst du 1 schilde oder 2&nbsp;%ENERGY% ausgeben, um 1&nbsp;%HIT%&nbsp;oder&nbsp;%CRIT%-Ergebnis zu negieren."""
         "Admiral Ozzel":
            display_name: """Admiral Ozzel"""
            text: """Solange ein befreundetes großes oder riesiges Schiff in Reichweite 0-3 ein Manöver ausführt, darf es 1&nbsp;%HIT% -Schaden erleiden, um stattdessen ein Manöver mit derselben Flugrichtung, derselben Schwierigkeit und einer um 1 höheren oder niedrigeren Geschwindigkeit auszuführen."""
@@ -1836,7 +1836,7 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
         "Boba Fett":
            display_name: """Boba Fett"""
            text: """<strong>Aufbau:</strong> Beginne in der Reserve.%LINEBREAK%Am Ende des Aufbaus platziere dich selbst in Reichweite 0 eines Hindernisses und jenseits von Reichweite 3 aller feindlichen Schiffe."""
-        "Boba Fett":
+        "Boba Fett (Separatist)":
            display_name: """Boba Fett"""
            text: """Solange du einen Angriff durchführst, falls keine anderen Schiffe im Angriffswinkel sind, darfst du 1&nbsp; deiner %FOCUS%Ergebnisse in ein %HIT%-Ergebnis ändern."""
         "Bombardment Specialists":
@@ -1847,7 +1847,7 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
            text: """<strong>Bombe</strong>%LINEBREAK%Während der Systemphase darfst du 1 %CHARGE% ausgeben, um unter Verwendung der [1 %STRAIGHT%]-Schablone eine Streubombe abzuwerfen.%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du 1 Schild ausgeben, um 2 %CHARGE% wiederherzustellen."""
         "Boosted Scanners":
            display_name: """Boosted Scanners"""
-           text: """Solange du ein Ziel erfasst, koordinierst oder ein Störsignal sendest, darfst du bis zu 3 &nbsp;<energycharge> ausgeben, um die Reichweite, in der du ein Objekt wählen darfst, um 1 pro ausgegebener <energycharge> zu erweitern, bis zu einem Maximum von Reichweite 5."""
+           text: """Solange du ein Ziel erfasst, koordinierst oder ein Störsignal sendest, darfst du bis zu 3 &nbsp;%ENERGY% ausgeben, um die Reichweite, in der du ein Objekt wählen darfst, um 1 pro ausgegebener %ENERGY% zu erweitern, bis zu einem Maximum von Reichweite 5."""
         "Bossk":
            display_name: """Bossk"""
            text: """Nachdem du einen Primärangriff durchgeführt hast, der verfehlt hat, falls du nicht gestresst bist, <b>musst</b> du 1 Stressmarker erhalten, um einen Bonus-Primärangriff gegen dasselbe Ziel durchzuführen."""
@@ -1932,7 +1932,7 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
         "Comms Team":
            display_name: """Kommunikationsteam"""
            text: """Nachdem du eine%COORDINATE%&nbsp;-
-Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um ebenso viele zusätzliche Schiffe in Reichweite 0-1 des Schiffes, das du koordiniert hast, zu koordinieren."""
+Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso viele zusätzliche Schiffe in Reichweite 0-1 des Schiffes, das du koordiniert hast, zu koordinieren."""
         "Composure":
            display_name: """Gelassenheit"""
            text: """Nachdem eine deiner Aktionen scheitert, falls du keine grünen Marker hast, darfst du eine %FOCUS%-Aktion durchführen."""
@@ -1965,7 +1965,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
            text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um unter Verwendung einer Schablone mit Geschwindigkeit 3 1 DRK-1-Sondendroiden abzuwerfen oder zu starten.%LINEBREAK%Die %CHARGE% dieser Karte können nicht wiederhergestellt werden."""
         "Damage Control Team":
            display_name: """Schadensbegrenzungsteam"""
-           text: """Bevor du kämpfst, darfst du 1 oder mehr<energycharge> ausgeben, um ebenso viele deiner <strong>Offline</strong>&nbsp;-Aufwertungen umzudrehen.%LINEBREAK%<strong>Aktion:</strong> Gib 1 oder mehr<energycharge> aus, um ebenso viele deiner offenen <strong>Schiff</strong>-Schadens-karten zu reparieren."""
+           text: """Bevor du kämpfst, darfst du 1 oder mehr%ENERGY% ausgeben, um ebenso viele deiner <strong>Offline</strong>&nbsp;-Aufwertungen umzudrehen.%LINEBREAK%<strong>Aktion:</strong> Gib 1 oder mehr%ENERGY% aus, um ebenso viele deiner offenen <strong>Schiff</strong>-Schadens-karten zu reparieren."""
         "Daredevil":
            display_name: """Draufgänger"""
            text: """Solange du eine weiße %BOOST%-Aktion durchführst, darfst du sie behandeln, als wäre sie rot, um stattdessen die [1 %TURNLEFT%]- oder [1 %TURNRIGHT%]-Schablone zu verwenden."""
@@ -2016,7 +2016,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
            text: """<strong>Angriff</strong>"""
         "Drill Beak":
            display_name: """Bohrschnabel"""
-           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%Du kannst diesen Angriff in Reichweite 0 durchführen.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 <energycharge> aus. Falls die Angriffsreichweite 0 ist, ändere alle %HIT%-Ergebnisse in %CRIT%-Ergebnisse."""
+           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%Du kannst diesen Angriff in Reichweite 0 durchführen.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 %ENERGY% aus. Falls die Angriffsreichweite 0 ist, ändere alle %HIT%-Ergebnisse in %CRIT%-Ergebnisse."""
         "Droid Crew":
            display_name: """Droidenmannschaft"""
            text: """Solange du eine weiße %FOCUS%-Aktion durchführst, behandle sie stattdessen, als wäre sie rot.%LINEBREAK%Zu Beginn der Endphase repariere alle deine offenen <strong>Crew</strong>-Schadenskarten."""
@@ -2040,7 +2040,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
            text: """<i class = flavor_text>Große Armeen wie das Militär des Galaktischen Imperiums haben meist standardisierte Triebwerke. Freischaffende Piloten und kleinere Organisationen ersetzen oft Energiekopplungen, """
         "Enhanced Propulsion":
            display_name: """Verbesserter Antrieb"""
-           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%Zu Beginn der Endphase darfst du 2 <energycharge> ausgeben, um ein weißes [2&nbsp;%STRAIGHT%]-, [1&nbsp;%BANKLEFT%]- oder [1&nbsp;%BANKRIGHT%]-Manöver auszuführen."""
+           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%Zu Beginn der Endphase darfst du 2 %ENERGY% ausgeben, um ein weißes [2&nbsp;%STRAIGHT%]-, [1&nbsp;%BANKLEFT%]- oder [1&nbsp;%BANKRIGHT%]-Manöver auszuführen."""
         "Ensnare":
            display_name: """Einfangen"""
            text: """Am Ende der Aktivierungsphase, falls du gefangen bist, darfst du 1&nbsp;Schiff in deinem %SINGLETURRETARC%&nbsp;-Winkel in Reichweite&nbsp;0-1 wählen. Transferiere 1&nbsp;Fangstrahlmarker auf es."""
@@ -2103,7 +2103,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
            text: """Solange du verteidigst, falls nach dem Schritt „Ergebnisse neutralisieren“ 2 oder mehr %HIT%/%CRIT%-Ergebnisse vorhanden sind, darfst du 1 %CHARGE% ausgeben, um 1 %HIT%- oder %CRIT% -Ergebnis zu negieren. %LINEBREAK%Nachdem ein befreundetes Schiff zerstört worden ist, stelle 1 %CHARGE% wieder her."""
         "General Grievous":
            display_name: """General Grievous"""
-           text: """Während der Kampfphase, bei Initiative 4, darfst du 1 <energycharge> ausgeben, um einen Bonus-<hardpoint>-Angriff durchzuführen.%LINEBREAK%Du kannst Angriffe gegen befreundete Schiffe durchführen.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, falls der Verteidiger zerstört worden ist, darf jedes befreundete Schiff in Reichweite 0-2 von ihm eine %CALCULATE%-Aktion durchführen."""
+           text: """Während der Kampfphase, bei Initiative 4, darfst du 1 %ENERGY% ausgeben, um einen Bonus-<hardpoint>-Angriff durchzuführen.%LINEBREAK%Du kannst Angriffe gegen befreundete Schiffe durchführen.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, falls der Verteidiger zerstört worden ist, darf jedes befreundete Schiff in Reichweite 0-2 von ihm eine %CALCULATE%-Aktion durchführen."""
         "General Hux":
            display_name: """General Hux"""
            text: """Solange du eine weiße %COORDINATE%-Aktion durchführst, darfst du sie behandeln, als wäre sie rot. Falls du das tust, darfst du bis zu 2 zusätzliche Schiffe desselben Schiffstyps koordinieren und jedes von dir koordinierte Schiff muss dieselbe Aktion durchführen, wobei es jene Aktion behandelt, als wäre sie rot."""
@@ -2127,7 +2127,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
            text: """Solange du einen Angriff durchführst, darfst du 1 %CHARGE% ausgeben, um 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis zu ändern.%LINEBREAK%Solange du verteidigst, falls deine %CHARGE% aktiv ist, darf der Angreifer 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis ändern."""
         "Gunnery Specialists":
            display_name: """Artillerie-Spezialisten"""
-           text: """Solange du einen Primär- oder <hardpoint>-Angriff durchführst, darfst du 1 oder mehr <energycharge> ausgeben, um ebenso viele Angriffswürfel neu zu werfen."""
+           text: """Solange du einen Primär- oder <hardpoint>-Angriff durchführst, darfst du 1 oder mehr %ENERGY% ausgeben, um ebenso viele Angriffswürfel neu zu werfen."""
         "Han Solo":
            display_name: """Han Solo"""
            text: """Während der Kampfphase, bei Initiative 7, darfst du einen %SINGLETURRETARC%-Angriff durchführen. Du kannst in dieser Runde nicht noch einmal aus jenem %SINGLETURRETARC% angreifen."""
@@ -2158,7 +2158,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
         "Hondo Ohnaka":
            display_name: """Hondo Ohnaka"""
            text: """<strong>Aktion:</strong> Wähle 2 Schiffe in Reichweite 1-3, die miteinander befreundet sind. Koordiniere 1 der gewählten Schiffe und sende dann dem anderen ein Störsignal, wobei du Reichweitenbeschränkungen ignorierst."""
-        "Hondo Ohnaka":
+        "Hondo Ohnaka (Command)":
            display_name: """Hondo Ohnaka"""
            text: """Während der Systemphase darfst du 1 %CHARGE% ausgeben und 1 befreundetes Schiff in Reichweite 0-1 wählen. Bewege 1 <victorymarker> oder <remote> von seiner Schiffskarte auf deine Schiffskarte oder von deiner Schiffskarte auf seine Schiffskarte."""
         "Hopeful":
@@ -2220,7 +2220,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
            text: """<strong>Angriff:</strong> Falls dieser Angriff trifft, gib 1 %HIT%- oder %CRIT%-Ergebnis aus, um den Verteidiger 1 %HIT%-Schaden erleiden zu lassen. Alle übrigen %HIT%/%CRIT%-Ergebnisse fügen Ionenmarker anstatt Schaden zu."""
         "Ion Cannon Battery":
            display_name: """Ionengeschütz-Batterie"""
-           text: """<strong>Online:</strong>Setup: Equip this side faceup. Bonus Attack: Spend 1 %ENERGY%. If this attack hits, the defender suffers 1 %CRIT% damage, and all %HIT%/%CRIT% results inflict ion tokens instead of damage. %LINEBREAK%<strong>Offline (Rückseite)</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2 &nbsp;<energycharge> ausgeben, um diese Karte umzudrehen."""
+           text: """<strong>Online:</strong>Setup: Equip this side faceup. Bonus Attack: Spend 1 %ENERGY%. If this attack hits, the defender suffers 1 %CRIT% damage, and all %HIT%/%CRIT% results inflict ion tokens instead of damage. %LINEBREAK%<strong>Offline (Rückseite)</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2 &nbsp;%ENERGY% ausgeben, um diese Karte umzudrehen."""
         "Ion Cannon Turret":
            display_name: """Ionengeschütz"""
            text: """<strong>Angriff:</strong> Falls dieser Angriff trifft, gib 1 %HIT%- oder %CRIT%-Ergebnis aus, um den Verteidiger 1 %HIT%-Schaden erleiden zu lassen. Alle übrigen %HIT%/%CRIT%-Ergebnisse fügen Ionenmarker anstatt Schaden zu."""
@@ -2364,14 +2364,15 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um 
            text: """Am Ende der Runde darfst du 1 Angriffswürfel werfen, um 1 offene Schadenskarte zu reparieren. Dann, bei einem %HIT%-Ergebnis, lege 1 Schadenskarte offen."""
         "Optimized Power Core":
            display_name: """Optimierter Energiekern"""
-           text: """Nachdem du ein blaues Manöver ausgeführt hast, stelle 1&nbsp;<energycharge> wieder her."""
+           text: """Nachdem du ein blaues Manöver ausgeführt hast, stelle 1&nbsp;%ENERGY% wieder her."""
         "Ordnance Team":
            display_name: """Munitionsteam"""
            text: """Solange du eine %RELOAD%-
-Aktion durchführst, darfst du bis zu 3&nbsp;<energycharge> ausgeben, um ebenso viele zusätzliche %CHARGE% auf deinen aus-gerüsteten %MISSILE%/%TORPEDO%-Aufwertungen nachzuladen.%LINEBREAK%Nachdem du eine %RELOAD%-Aktion durchgeführt hast, darfst du 1&nbsp;<energycharge>ausgeben, um 1 Entwaffnet- Marker zu entfernen."""
+Aktion durchführst, darfst du bis zu 3&nbsp;%ENERGY% ausgeben, um ebenso viele zusätzliche %CHARGE% auf deinen aus-gerüsteten %MISSILE%/%TORPEDO%-Aufwertungen nachzuladen.%LINEBREAK%Nachdem du eine %RELOAD%-Aktion durchgeführt hast, darfst du 1&nbsp;%ENERGY%ausgeben, um 1 Entwaffnet- Marker zu entfernen."""
         "Ordnance Tubes":
            display_name: """Abschussrohre"""
-           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% You can perform %TORPEDO% and %MISSILE% attacks only as bonus attacks. You <strong>must</strong> treat the %FRONTARC% requirement of your equipped %TORPEDO% and %MISSILE% upgrades as %FULLFRONTARC%. %LINEBREAK% Bonus Attack: Perform a %TORPEDO% attack. %LINEBREAK% Bonus Attack: Perform a %MISSILE% attack. %LINEBREAK%<strong>Offline</strong>%LINEBREAK%Du musst die%FRONTARC%&nbsp;-Bedingung deiner ausgerüsteten %TORPEDO%&nbsp;- und %MISSILE%&nbsp;-Aufwertungen behandeln, als wäre sie %BULLSEYEARC%. %LINEBREAK%<strong>Aktion:</strong> Gib 2&nbsp;<energycharge> aus, um diese Karte umzudrehen."""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% You can perform %TORPEDO% and %MISSILE% attacks only as bonus attacks. You <strong>must</strong> treat the %FRONTARC% requirement of your equipped %TORPEDO% and %MISSILE% upgrades as %FULLFRONTARC%. %LINEBREAK% Bonus Attack: Perform a %TORPEDO% attack. %LINEBREAK% Bonus Attack: Perform a %MISSILE% attack. %LINEBREAK%<strong>Offline</strong>%LINEBREAK%Du musst die%FRONTARC%&nbsp;-Bedingung deiner ausgerüsteten %TORPEDO%&nbsp;- und %MISSILE%&nbsp;-Aufwertungen behandeln, als wäre sie %BULLSEYEARC%. %LINEBREAK%<strong>Aktion:</strong> Gib 2&nbsp;%ENERGY% aus, um diese Karte umzudrehen."""
+        "Os-1 Arsenal Loadout":
            display_name: """Os-1-Waffenarsenal"""
            text: """Solange du genau 1 Entwaffnet-Marker hast, kannst du trotzdem %TORPEDO%- und %MISSILE%-Angriffe gegen Ziele durchführen, die du als Ziel erfasst hast. Falls du das tust, kannst du während des Angriffs deine Zielerfassung nicht ausgeben.%LINEBREAK%Füge %TORPEDO%- und %MISSILE%-Slots hinzu."""
         "Outmaneuver":
@@ -2415,7 +2416,7 @@ Aktion durchführst, darfst du bis zu 3&nbsp;<energycharge> ausgeben, um ebenso
            text: """Zu Beginn der Endphase, falls du verstärkt bist, darfst du 1 befreundetes Schiff in Reichweite 0 oder in deinem %LEFTARC% oder %RIGHTARC% in Reichweite 1 wählen. Jenes Schiff entfernt 1 Erschöpfungs- oder Anstrengungsmarker oder repariert 1 offene Schadenskarte."""
         "Point-Defense Battery":
            display_name: """Punktverteidigungs-Batterie"""
-           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK%<strong>Offline</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2&nbsp;<energycharge> ausgeben, um diese Karte umzudrehen."""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. %LINEBREAK%<strong>Offline</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2&nbsp;%ENERGY% ausgeben, um diese Karte umzudrehen."""
         "Precision Ion Engines":
            display_name: """Präzisions-Ionenantrieb"""
            text: """Bevor du eine Koiogran-­Wende (%KTURN%) mit Geschwindigkeit 1-3 ausführst, darfst du 1&nbsp;%CHARGE% ausgeben, um jenes Manöver stattdessen als Segnor-Looping (%SLOOPLEFT%&nbsp;oder&nbsp;%SLOOPRIGHT%) auszuführen."""
@@ -2439,7 +2440,7 @@ Aktion durchführst, darfst du bis zu 3&nbsp;<energycharge> ausgeben, um ebenso
            text: """<strong>Bombe</strong>%LINEBREAK%Während der Systemphase darfst du 1 %CHARGE% ausgeben, um unter Verwendung der [1 %STRAIGHT%]-Schablone eine Protonenbombe abzuwerfen."""
         "Proton Cannon Battery":
            display_name: """Protonengeschütz-Batterie"""
-           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%<strong>Bonusangriff:</strong> Ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 <energycharge> aus. Ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
+           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%<strong>Bonusangriff:</strong> Ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 %ENERGY% aus. Ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
         "Proton Rockets":
            display_name: """Protonenraketen"""
            text: """<strong>Angriff (</strong>%FOCUS%<strong>):</strong> Gib 1 %CHARGE% aus."""
@@ -2539,7 +2540,7 @@ sie überschneiden."""
            text: """Falls du 2 oder weniger Stressmarker hast, kannst du rote Segnor-Looping-Manöver [%SLOOPLEFT% oder %SLOOPRIGHT%] ausführen und %BOOST%- und %ROTATEARC%-Aktionen durchführen, auch solange du gestresst bist."""
         "Riff Tamson":
            display_name: """Riff Tamson"""
-           text: """Während der Kampfphase, bei Initiative 5, darfst du 1 <energycharge> ausgeben, um einen Bonus-<hardpoint>-Angriff durchzuführen.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, falls dem Verteidiger 1 oder mehrere offene Schadenskarten zugeteilt worden sind, erhält er 2 Anstrengungsmarker."""
+           text: """Während der Kampfphase, bei Initiative 5, darfst du 1 %ENERGY% ausgeben, um einen Bonus-<hardpoint>-Angriff durchzuführen.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, falls dem Verteidiger 1 oder mehrere offene Schadenskarten zugeteilt worden sind, erhält er 2 Anstrengungsmarker."""
         "Rigged Cargo Chute":
            display_name: """Manipulierte Frachtrampe"""
            text: """<strong>Aktion:</strong> Gib 1 %CHARGE% aus. Wirf unter Verwendung der [1 %STRAIGHT%]-Schablone 1 freie Fracht ab."""
@@ -2587,7 +2588,7 @@ sie überschneiden."""
            text: """<strong>Aufbau:</strong> Bevor die Streitkräfte platziert werden, platziere 2 Sensorbojen-­Remotes jenseits von Reichweite 2 zu den Spielflächenrändern.%LINEBREAK%Bevor du kämpfst, darfst du ein Schiff in Reichweite 0-1 zu einer befreundeten Sensorboje als Ziel erfassen, wobei du Reichweitenbeschränkungen ignorierst."""
         "Sensor Experts":
            display_name: """Sensor-Experten"""
-           text: """Du kannst bis zu 3 Zielerfassungen auf unterschiedlichen Objekte aufrechterhalten.Nachdem du eine %LOCK%&nbsp;Aktion durchgeführt hast, darfst du bis zu 2&nbsp;<energycharge> ausgeben, um ebenso viele andere Objekte in Reichweite 0-1 des Ziels als Ziel zu erfassen, wobei du Reich weiten beschränkungen ignorierst."""
+           text: """Du kannst bis zu 3 Zielerfassungen auf unterschiedlichen Objekte aufrechterhalten.Nachdem du eine %LOCK%&nbsp;Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso viele andere Objekte in Reichweite 0-1 des Ziels als Ziel zu erfassen, wobei du Reich weiten beschränkungen ignorierst."""
         "Servomotor S-Foils":
            display_name: """Servomotorische S-Flügel"""
            text: """<strong>Geschlossen:</strong>Solange du einen Primärangriff durchführst, wirf 1 Angriffswürfel weniger. Bevor du aktiviert wirst, darfst du diese Karte umdrehen. %LINEBREAK%<strong>Geöffnet:</strong>Die Zusätzlichen Aktionen stehen nicht zur Verfügung. Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
@@ -2674,7 +2675,7 @@ sie überschneiden."""
            text: """Bevor du kämpfst, falls du keine grünen Marker hast und nicht gestresst bist, erhältst du 1 Berechnungsmarker für jedes feindliche Schiff in Reichweite 2-3 in deinem Feuerwinkel, bis zu einem Maximum von 2."""
         "Targeting Battery":
            display_name: """Zielbatterie"""
-           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. After you perform this attack, you may acquire a lock on the defender. %LINEBREAK%<strong>Offline</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2&nbsp;<energycharge> ausgeben, um diese Karte umzudrehen."""
+           text: """<strong>Online: </strong> Setup: Equip this side faceup.%LINEBREAK% Bonus Attack: Spend 1 %ENERGY%. After you perform this attack, you may acquire a lock on the defender. %LINEBREAK%<strong>Offline</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2&nbsp;%ENERGY% ausgeben, um diese Karte umzudrehen."""
         "Targeting Computer":
            display_name: """Zielcomputer"""
            text: """<i class = flavor_text>Zielcomputer gehören zur Standardausstattung vieler Schiffe, vor allem wenn sie für den Abwurf von Sprengkörpern konzipiert sind. Bei leichten Jagdmaschinen und Transportern, die ohne Waffenzielsystem verkauft werden, lässt es sich problemlos nachrüsten.</i>"""
@@ -2686,7 +2687,7 @@ sie überschneiden."""
            text: """<strong>Bombe</strong>%LINEBREAK%Während der Systemphase darfst du bis zu 2&nbsp;%CHARGE% ausgeben, um ebenso viele Thermaldetonatoren unter Verwendung der [1&nbsp;%STRAIGHT%] oder [2&nbsp;%STRAIGHT%]-Schablone abzuwerfen. Jeder muss unter Verwendung einer anderen Schablone platziert werden.%LINEBREAK%Sobald du diese Karte nachlädst, stellst du 1&nbsp;zusätzliche&nbsp;%CHARGE% wieder her."""
         "Tibanna Reserves":
            display_name: """Tibanna-Vorräte"""
-           text: """<strong>Aktion:</strong> Gib 1 %CHARGE% aus, um 2 <energycharge> wiederherzustellen."""
+           text: """<strong>Aktion:</strong> Gib 1 %CHARGE% aus, um 2 %ENERGY% wiederherzustellen."""
         "Tierfon Belly Run":
            display_name: """Tierfon-Tiefflug"""
            text: """Du kannst Spezialangriffe durchführen, auch solange du in Reichweite 0 eines Asteroiden bist.%LINEBREAK%Solange du verteidigst, falls du in Reichweite 0 eines Hindernisses bist, können Angriffswürfel nicht neu geworfen werden."""
@@ -2704,10 +2705,10 @@ sie überschneiden."""
            text: """<strong>Angriff:</strong> Falls dieser Angriff trifft, fügen alle %HIT%/%CRIT%-Ergebnisse Fangstrahlmarker anstatt Schaden zu."""
         "Tractor Technicians":
            display_name: """Fangstrahltechniker"""
-           text: """Während der Endphase kann jedes andere Schiff in Reichweite 0-1 seine Fangstrahlmarker nicht entfernen.%LINEBREAK%Bevor ein gefangenes feindliches Schiff in Reichweite 0-1 sein Rad aufdeckt, darfst du 1 <energycharge> ausgeben. Falls du das tust, verringert jenes Schiff, solange es sein Manöver in dieser Aktivierung ausführt, die Geschwindigkeit jenes Manövers um 1 (Minimum: 1)."""
+           text: """Während der Endphase kann jedes andere Schiff in Reichweite 0-1 seine Fangstrahlmarker nicht entfernen.%LINEBREAK%Bevor ein gefangenes feindliches Schiff in Reichweite 0-1 sein Rad aufdeckt, darfst du 1 %ENERGY% ausgeben. Falls du das tust, verringert jenes Schiff, solange es sein Manöver in dieser Aktivierung ausführt, die Geschwindigkeit jenes Manövers um 1 (Minimum: 1)."""
         "Tractor Tentacles":
            display_name: """Fangtentakel"""
-           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%<strong>Bonusangriff</strong>%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 <energycharge> aus.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 <energycharge> aus.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 <energycharge> aus."""
+           text: """<b>Aufbau:</b> Rüste diese Seite offen aus.%LINEBREAK%<strong>Bonusangriff</strong>%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 %ENERGY% aus.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 %ENERGY% aus.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1 %ENERGY% aus."""
         "Trajectory Simulator":
            display_name: """Flugbahnsimulator"""
            text: """Während der Systemphase, falls du eine Bombe abwerfen oder starten würdest, darfst du sie stattdessen unter Verwendung der [5 %STRAIGHT%]-Schablone starten."""
@@ -2719,7 +2720,7 @@ sie überschneiden."""
            text: """Solange du einen Angriff durchführst, der durch ein Hindernis versperrt ist, wirf 1 zusätzlichen Angriffswürfel."""
         "Turbolaser Battery":
            display_name: """Turbolaser-Batterie (Offline)"""
-           text: """<strong>Offline</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2&nbsp;<energycharge> ausgeben, um diese Karte umzudrehen."""
+           text: """<strong>Offline</strong>%LINEBREAK%Nachdem du gekämpft hast, darfst du 2&nbsp;%ENERGY% ausgeben, um diese Karte umzudrehen."""
         "Underslung Blaster Cannon":
            display_name: """Unterbaute Blasterkanone"""
            text: """Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, darfst du diesen Angriff als Bonusangriff gegen jenes Schiff durchführen.%LINEBREAK%<strong>Angriff (%LOCK%):</strong> Deine Würfel können nur modifiziert werden, indem du eine Zielerfassung für den Standardeffekt ausgibst."""
@@ -2755,7 +2756,7 @@ sie überschneiden."""
            text: """<strong>Aufbau:</strong> Du verlierst 2&nbsp;%CHARGE%.%LINEBREAK%Während der Systemphase darfst du dir selbst 1&nbsp;deiner geheimen Zustände verdeckt zuordnen:%LINEBREAK%<strong>Du solltest mir danken</strong>%LINEBREAK%<strong>Wehe, du meinst es nicht ernst</strong>"""
         "Zealous Captain":
            display_name: """Fanatischer Captain"""
-           text: """Während der Kampfphase, bei Initiative 4, darfst du 1 <energycharge> ausgeben, um einen Bonus-<hardpoint>-Angriff durchzuführen."""
+           text: """Während der Kampfphase, bei Initiative 4, darfst du 1 %ENERGY% ausgeben, um einen Bonus-<hardpoint>-Angriff durchzuführen."""
         "Zuckuss":
            display_name: """Zuckuss"""
            text: """Solange du einen Angriff durchführst, falls du nicht gestresst bist, darfst du 1 Verteidigungswürfel wählen und 1 Stressmarker erhalten. Falls du das tust, muss der Verteidiger jenen Würfel neu werfen."""
@@ -2776,7 +2777,7 @@ sie überschneiden."""
            text: """Du kannst Primärangriffe in Reichweite 0 durchführen. Feindliche Schiffe in Reichweite 0 können Primärangriffe gegen dich durchführen."""
         "Corsair Refit":
            display_name: """Kaperer-Aufrüstung"""
-           text: """Füge&nbsp;%CANNON%-, %TURRET%-, und %MISSILE%-Slots hinzu.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1&nbsp;<energycharge> aus, um einen %CANNON%-, %TURRET%-, oder %MISSILE%-Angriff durchzuführen."""
+           text: """Füge&nbsp;%CANNON%-, %TURRET%-, und %MISSILE%-Slots hinzu.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1&nbsp;%ENERGY% aus, um einen %CANNON%-, %TURRET%-, oder %MISSILE%-Angriff durchzuführen."""
         "Dreadnought Hunter":
            display_name: """Dreadnought-Jäger"""
            text: """JägerSolange du einen Angriff gegen ein riesiges Schiff durchführst, falls der Angriff dem Verteidiger eine offene Schadenskarte zuteilt und der Verteidiger in deinem %BULLSEYEARC%, ist, darfst du den Effekt <b>Präzisionsschuss</b>  anwenden, selbst wenn du nicht in dem angegebenen Winkel bist."""
