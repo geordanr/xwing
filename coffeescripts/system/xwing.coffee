@@ -3379,14 +3379,15 @@ class exportObj.SquadBuilder
                             # console.log upgrade_type, upgrade_canonical
                             slot = null
                             slot = exportObj.fromXWSUpgrade[upgrade_type] ? upgrade_type.capitalize()
-                            upgrade = exportObj.upgradesBySlotXWSName[slot][upgrade_canonical] ?= exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
-                            if not upgrade?
-                                console.log("Failed to load xws upgrade: " + upgrade_canonical)
-                                error += "Skipped upgrade " + upgrade_canonical
-                                success = false
-                                continue
-                            serialized_squad += upgrade.id
-                            serialized_squad += "W"
+                            if upgrade_canonical?
+                                upgrade = exportObj.upgradesBySlotXWSName[slot][upgrade_canonical] ?= exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
+                                if not upgrade?
+                                    console.log("Failed to load xws upgrade: " + upgrade_canonical)
+                                    error += "Skipped upgrade " + upgrade_canonical
+                                    success = false
+                                    continue
+                                serialized_squad += upgrade.id
+                                serialized_squad += "W"
                     serialized_squad += "XY"
 
                 @loadFromSerialized(serialized_squad)
