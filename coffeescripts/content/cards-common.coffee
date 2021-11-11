@@ -11219,6 +11219,7 @@ exportObj.basicCardData = ->
             slot: "Illicit"
             points: 4
             charge: 1
+            applies_condition: '''Loose Cargo'''.canonicalize()
             restrictions: [
                 ["Base", "Medium or Large"]
             ]
@@ -12342,6 +12343,7 @@ exportObj.basicCardData = ->
             slot: "Modification"
             charge: 1
             points: 3
+            applies_condition: '''Spare Parts'''.canonicalize()
             restrictions: [
                 ["Equipped", "Astromech"]
             ]
@@ -14509,6 +14511,7 @@ exportObj.basicCardData = ->
             points: 8
             attack: 4
             charge: 3
+            applies_condition: '''Tracking Torpedoes'''.canonicalize()
             restrictions: [
                 ["Base", "Huge"]
             ]
@@ -14660,6 +14663,7 @@ exportObj.basicCardData = ->
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Device"
             also_occupies_upgrades: [ "Device" ]
+            applies_condition: '''Electro-Chaff Cloud'''.canonicalize()
         }
         {
             name: "Feedback Ping"
@@ -14790,6 +14794,18 @@ exportObj.basicCardData = ->
         {
             name: '''You'd Better Mean Business'''
             id: 26
+        }
+        {
+            name: '''Spare Parts'''
+            id: 27
+        }
+        {
+            name: '''Electro-Chaff Cloud'''
+            id: 28
+        }
+        {
+            name: '''Tracking Torpedoes'''
+            id: 29
         }
     ]
 
