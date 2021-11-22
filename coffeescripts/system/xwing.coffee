@@ -2714,6 +2714,12 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-attack').hide()
 
+                    if data.attackb?
+                        container.find('tr.info-attack-back td.info-data').text data.attackb
+                        container.find('tr.info-attack-back').show()
+                    else
+                        container.find('tr.info-attack-back').hide()
+
                     if data.attackt?
                         container.find('tr.info-attack-turret td.info-data').text data.attackt
                         container.find('tr.info-attack-turret').show()
@@ -2730,7 +2736,7 @@ class exportObj.SquadBuilder
                         container.find('tr.info-attack-left td.info-data').text data.attackl
                         container.find('tr.info-attack-left').show()
                     else
-                        container.find('tr.info-attack-right').hide()
+                        container.find('tr.info-attack-left').hide()
 
                     if data.attackdt?
                         container.find('tr.info-attack-doubleturret td.info-data').text data.attackdt
@@ -2750,9 +2756,6 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-attack-fullfront').hide()
                         
-                    container.find('tr.info-attack-right').hide()
-                    container.find('tr.info-attack-left').hide()
-                    container.find('tr.info-attack-back').hide()
 
                     if data.charge?
                         recurringicon = ''
@@ -4956,6 +4959,9 @@ class GenericAddon
                 """ else if (@data.attackf?) then $.trim """
                         <span class="info-data info-attack">#{@data.attackf}</span>
                         <i class="xwing-miniatures-font xwing-miniatures-font-fullfrontarc"></i>
+                """ else if (@data.attackb?) then $.trim """
+                        <span class="info-data info-attack">#{@data.attackb}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-backarc"></i>
                 """ else if (@data.attackt?) then $.trim """
                         <span class="info-data info-attack">#{@data.attackt}</span>
                         <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>
