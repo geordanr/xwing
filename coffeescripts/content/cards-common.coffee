@@ -21940,6 +21940,155 @@ exportObj.basicCardData = ->
                 "Synced Laser Cannons"
             ]
         }
+        {
+            id: 581
+            faction: "First Order"
+            pilot: "Kylo Ren (TIE Whisper)"
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Cluster Missiles"
+                "Malice"
+                "Enhanced Jamming Suite"
+            ]
+        }
+        {
+            id: 582
+            faction: "First Order"
+            pilot: '"Wrath"'
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Enhanced Jamming Suite"
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 583
+            faction: "First Order"
+            pilot: '"Whirlwind"'
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Sensor Scramblers"
+                "Ion Limiter Override"
+                "Proton Rockets"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 584
+            faction: "First Order"
+            pilot: "709th Legion Ace"
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Enhanced Jamming Suite"
+                "Homing Missiles"
+            ]
+        }
+        {
+            id: 585
+            faction: "First Order"
+            pilot: '"Nightfall"'
+            ship: "TIE/WI Whisper"
+            threat: 2
+            upgrades: [
+                "Ion Limiter Override"
+                "Sensor Scramblers"
+            ]
+        }
+        {
+            id: 586
+            faction: "First Order"
+            pilot: "Red Fury Zealot"
+            ship: "TIE/WI Whisper"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Enhanced Jamming Suite"
+            ]
+        }
+        {
+            id: 587
+            faction: "First Order"
+            pilot: '"Breach"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Proton Torpedoes"
+                "Advanced Optics"
+                "Engine Upgrade"
+            ]
+        }
+        {
+            id: 588
+            faction: "First Order"
+            pilot: '"Scorch"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Suppressive Gunner"
+                "Electro-Chaff Missiles"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 589
+            faction: "First Order"
+            pilot: '"Dread"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Feedback Ping"
+                "Concussion Bombs"
+                "Primed Thrusters"
+                "DT-798"
+                "Delayed Fuses"
+            ]
+        }
+        {
+            id: 590
+            faction: "First Order"
+            pilot: '"Grudge"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Proton Rockets"
+                "Ion Torpedoes"
+                "Engine Upgrade"
+            ]
+        }
+        {
+            id: 591
+            faction: "First Order"
+            pilot: "First Order Cadet"
+            ship: "TIE/Se Bomber"
+            threat: 2
+            upgrades: [
+                "Feedback Ping"
+                "Concussion Bombs"
+                "First Order Ordnance Tech"
+            ]
+        }
+        {
+            id: 592
+            faction: "First Order"
+            pilot: "Sienar-Jaemus Test Pilot"
+            ship: "TIE/Se Bomber"
+            threat: 2
+            upgrades: [
+                "Cluster Missiles"
+                "Suppressive Gunner"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
