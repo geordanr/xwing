@@ -21940,6 +21940,290 @@ exportObj.basicCardData = ->
                 "Synced Laser Cannons"
             ]
         }
+        {
+            id: 581
+            faction: "First Order"
+            pilot: "Kylo Ren (TIE Whisper)"
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Cluster Missiles"
+                "Malice"
+                "Enhanced Jamming Suite"
+            ]
+        }
+        {
+            id: 582
+            faction: "First Order"
+            pilot: '"Wrath"'
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Enhanced Jamming Suite"
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 583
+            faction: "First Order"
+            pilot: '"Whirlwind"'
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Sensor Scramblers"
+                "Ion Limiter Override"
+                "Proton Rockets"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 584
+            faction: "First Order"
+            pilot: "709th Legion Ace"
+            ship: "TIE/WI Whisper"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Enhanced Jamming Suite"
+                "Homing Missiles"
+            ]
+        }
+        {
+            id: 585
+            faction: "First Order"
+            pilot: '"Nightfall"'
+            ship: "TIE/WI Whisper"
+            threat: 2
+            upgrades: [
+                "Ion Limiter Override"
+                "Sensor Scramblers"
+            ]
+        }
+        {
+            id: 586
+            faction: "First Order"
+            pilot: "Red Fury Zealot"
+            ship: "TIE/WI Whisper"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Enhanced Jamming Suite"
+            ]
+        }
+        {
+            id: 587
+            faction: "First Order"
+            pilot: '"Breach"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Elusive"
+                "Proton Torpedoes"
+                "Advanced Optics"
+                "Engine Upgrade"
+            ]
+        }
+        {
+            id: 588
+            faction: "First Order"
+            pilot: '"Scorch"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Suppressive Gunner"
+                "Electro-Chaff Missiles"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 589
+            faction: "First Order"
+            pilot: '"Dread"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Feedback Ping"
+                "Concussion Bombs"
+                "Primed Thrusters"
+                "DT-798"
+                "Delayed Fuses"
+            ]
+        }
+        {
+            id: 590
+            faction: "First Order"
+            pilot: '"Grudge"'
+            ship: "TIE/Se Bomber"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Proton Rockets"
+                "Ion Torpedoes"
+                "Engine Upgrade"
+            ]
+        }
+        {
+            id: 591
+            faction: "First Order"
+            pilot: "First Order Cadet"
+            ship: "TIE/Se Bomber"
+            threat: 2
+            upgrades: [
+                "Feedback Ping"
+                "Concussion Bombs"
+                "First Order Ordnance Tech"
+            ]
+        }
+        {
+            id: 592
+            faction: "First Order"
+            pilot: "Sienar-Jaemus Test Pilot"
+            ship: "TIE/Se Bomber"
+            threat: 2
+            upgrades: [
+                "Cluster Missiles"
+                "Suppressive Gunner"
+            ]
+        }
+        {
+            id: 593
+            faction: "Resistance"
+            pilot: "Zorii Bliss"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Babu Frik"
+                "Proton Torpedoes"
+                "Wartime Loadout"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 594
+            faction: "Resistance"
+            pilot: "Teza Nasz"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Delayed Fuses"
+                "R2 Astromech"
+                "Engine Upgrade"
+                "Ion Cannon Turret"
+                "Concussion Bombs"
+            ]
+        }
+        {
+            id: 595
+            faction: "Resistance"
+            pilot: "Lega Fossang"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "Wartime Loadout"
+                "L4E-R5"
+            ]
+        }
+        {
+            id: 596
+            faction: "Resistance"
+            pilot: "Shasa Zaro"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Ion Cannon Turret"
+                "Concussion Bombs"
+                "Watchful Astromech"
+                "Wartime Loadout"
+            ]
+        }
+        {
+            id: 597
+            faction: "Resistance"
+            pilot: "C'ai Threnalli"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "Targeting Computer"
+                "R2 Astromech"
+                "Hull Upgrade"
+                "Engine Upgrade"
+            ]
+        }
+        {
+            id: 598
+            faction: "Resistance"
+            pilot: "Aftab Ackbar"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Wartime Loadout"
+                "Electro-Chaff Missiles"
+            ]
+        }
+        {
+            id: 599
+            faction: "Resistance"
+            pilot: "Corus Kapellim"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Ion Cannon Turret"
+                "Engine Upgrade"
+                "Overtuned Modulators"
+                "Targeting Computer"
+            ]
+        }
+        {
+            id: 600 
+            faction: "Resistance"
+            pilot: "New Republic Patrol"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Shield Upgrade"
+                "Ion Cannon Turret"
+                "Targeting Computer"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 601
+            faction: "Resistance"
+            pilot: "Kijimi Spice Runner"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Tierfon Belly Run"
+                "Engine Upgrade"
+                "Ion Cannon Turret"
+                "Targeting Computer"
+                "Overtuned Modulators"
+            ]
+        }
+        {
+            id: 602
+            faction: "Resistance"
+            pilot: "Wilsa Teshlo"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Engine Upgrade"
+                "R3 Astromech"
+                "Targeting Computer"
+                "Ion Cannon Turret"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->

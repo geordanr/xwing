@@ -174,6 +174,7 @@ exportObj.translations.English =
             "Adds: #{translator('ui', data)}"
         removes: (translator, data) -> # data will most likely be a string of some symbols, but you never know
             "Removes: #{translator('ui', data)}"
+        "Less upgrades": "Fewer upgrades"
 
     singular:
         'pilots': 'Pilot'
