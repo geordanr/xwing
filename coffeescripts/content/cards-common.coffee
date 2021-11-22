@@ -22089,6 +22089,141 @@ exportObj.basicCardData = ->
                 "Suppressive Gunner"
             ]
         }
+        {
+            id: 593
+            faction: "Resistance"
+            pilot: "Zorii Bliss"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Babu Frik"
+                "Proton Torpedoes"
+                "Wartime Loadout"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 594
+            faction: "Resistance"
+            pilot: "Teza Nasz"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 3
+            upgrades: [
+                "Expert Handling"
+                "Delayed Fuses"
+                "R2 Astromech"
+                "Engine Upgrade"
+                "Ion Cannon Turret"
+                "Concussion Bombs"
+            ]
+        }
+        {
+            id: 595
+            faction: "Resistance"
+            pilot: "Lega Fossang"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "Wartime Loadout"
+                "L4E-R5"
+            ]
+        }
+        {
+            id: 596
+            faction: "Resistance"
+            pilot: "Shasa Zaro"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Ion Cannon Turret"
+                "Concussion Bombs"
+                "Watchful Astromech"
+                "Wartime Loadout"
+            ]
+        }
+        {
+            id: 597
+            faction: "Resistance"
+            pilot: "C'ai Threnalli"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Expert Handling"
+                "Targeting Computer"
+                "R2 Astromech"
+                "Hull Upgrade"
+                "Engine Upgrade"
+            ]
+        }
+        {
+            id: 598
+            faction: "Resistance"
+            pilot: "Aftab Ackbar"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Wartime Loadout"
+                "Electro-Chaff Missiles"
+            ]
+        }
+        {
+            id: 599
+            faction: "Resistance"
+            pilot: "Corus Kapellim"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Ion Cannon Turret"
+                "Engine Upgrade"
+                "Overtuned Modulators"
+                "Targeting Computer"
+            ]
+        }
+        {
+            id: 600 
+            faction: "Resistance"
+            pilot: "New Republic Patrol"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Shield Upgrade"
+                "Ion Cannon Turret"
+                "Targeting Computer"
+                "R3 Astromech"
+            ]
+        }
+        {
+            id: 601
+            faction: "Resistance"
+            pilot: "Kijimi Spice Runner"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 2
+            upgrades: [
+                "Tierfon Belly Run"
+                "Engine Upgrade"
+                "Ion Cannon Turret"
+                "Targeting Computer"
+                "Overtuned Modulators"
+            ]
+        }
+        {
+            id: 602
+            faction: "Resistance"
+            pilot: "Wilsa Teshlo"
+            ship: "BTA-NR2 Y-Wing"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Engine Upgrade"
+                "R3 Astromech"
+                "Targeting Computer"
+                "Ion Cannon Turret"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
