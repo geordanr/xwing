@@ -251,6 +251,7 @@ is an authorization system which lets you prove your identity at a web site with
         "Rules Search": "Regelsuche"
         "Base": "Schiffsgröße"
         "Ship": "Schiff"
+        "Points": "Punkte"
         "Initiative": "Initiativewert"
         "Force:": "Machtwert:"
         "Name": "Name"

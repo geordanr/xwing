@@ -306,10 +306,10 @@ class exportObj.CardBrowser
 
         @card_selector_container = $ @container.find('.xwing-card-browser .card-selector-container')
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
-        @card_viewer_container.append $.trim exportObj.builders[0].createInfoContainerUI()
+        @card_viewer_container.append $.trim exportObj.builders[7].createInfoContainerUI()
         @card_viewer_container.hide()
         @card_viewer_conditions_container = $ @container.find('.xwing-card-browser .card-viewer-conditions-container')
-        @card_viewer_container.hide()
+        @card_viewer_conditions_container.hide()
         @card_viewer_placeholder = $ @container.find('.xwing-card-browser .card-viewer-placeholder')
         @advanced_search_container = $ @container.find('.xwing-card-browser .advanced-search-container')
 
@@ -595,7 +595,7 @@ class exportObj.CardBrowser
             add_opts = {addon_type: orig_type}
             orig_type = 'Addon'
 
-        exportObj.builders[0].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
+        exportObj.builders[7].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
 
         @card_viewer_container.show()
 
@@ -633,16 +633,16 @@ class exportObj.CardBrowser
 
     getCollectionNumber: (card) ->
         # returns number of copies of the given card in the collection, or -1 if no collection loaded
-        if not (exportObj.builders[0].collection? and exportObj.builders[0].collection.counts?)
+        if not (exportObj.builders[7].collection? and exportObj.builders[7].collection.counts?)
             return -1
         owned_copies = 0
         switch card.orig_type
             when 'Pilot'
-                owned_copies = exportObj.builders[0].collection.counts.pilot?[card.name] ? 0
+                owned_copies = exportObj.builders[7].collection.counts.pilot?[card.name] ? 0
             when 'Ship'
-                owned_copies = exportObj.builders[0].collection.counts.ship?[card.name] ? 0
+                owned_copies = exportObj.builders[7].collection.counts.ship?[card.name] ? 0
             else # type is e.g. astromech
-                owned_copies = exportObj.builders[0].collection.counts.upgrade?[card.name] ? 0
+                owned_copies = exportObj.builders[7].collection.counts.upgrade?[card.name] ? 0
         owned_copies
 
 
@@ -797,7 +797,7 @@ class exportObj.CardBrowser
         return false if card.data.charge and not card.data.recurring and not @not_recurring_charge.checked
 
         # check collection status
-        if exportObj.builders[0].collection?.counts? # ignore collection stuff, if no collection available
+        if exportObj.builders[7].collection?.counts? # ignore collection stuff, if no collection available
             owned_copies = @getCollectionNumber(card)
             return false unless owned_copies >= @minimum_owned_copies.value and owned_copies <= @maximum_owned_copies.value
 
@@ -865,3 +865,5 @@ class exportObj.CardBrowser
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
         return true
+
+
