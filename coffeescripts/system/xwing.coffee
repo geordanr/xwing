@@ -1095,6 +1095,10 @@ class exportObj.SquadBuilder
                             <td class="info-header translated" defaultText="Initiative"></td>
                             <td class="info-data info-skill"></td>
                         </tr>
+                        <tr class="info-points">
+                            <td class="info-header translated" defaultText="Points"></td>
+                            <td class="info-data info-points"></td>
+                        </tr>
                         <tr class="info-engagement">
                             <td class="info-header translated" defaultText="Engagement"></td>
                             <td class="info-data info-engagement"></td>
@@ -2245,14 +2249,17 @@ class exportObj.SquadBuilder
                 when 'Ship'
             # we get all pilots for the ship, to display stuff like available slots which are treated as pilot properties, not ship properties (which makes sense, as they depend on the pilot, e.g. talent or force slots)
                     possible_inis = []
+                    possible_costs = []
                     slot_types = {} # one number per slot: 0: not available for that ship. 1: always available for that ship. 2: available for some pilots on that ship. 3: slot two times availabel for that ship 4: slot one or two times available (depending on pilot) 5: slot zero to two times available 6: slot three times available (no mixed-case implemented) -1: undefined
                     for slot of exportObj.upgradesBySlotCanonicalName
                         slot_types[slot] = -1
                     for name, pilot of exportObj.pilots
-                        if pilot.ship != data.name 
+                        # skip all pilots with wrong ship or faction
+                        if pilot.ship != data.name or not @isOurFaction(pilot.faction) 
                             continue
                         if not (pilot.skill in possible_inis)
                             possible_inis.push(pilot.skill)
+                        possible_costs.push(pilot.points)
                         for slot, state of slot_types
                             switch pilot.slots.filter((item) => item == slot).length
                                 when 1
@@ -2300,6 +2307,15 @@ class exportObj.SquadBuilder
                         first = false
                     container.find('tr.info-skill td.info-data').text inis
                     container.find('tr.info-skill').show()
+
+                    # display point range for that ship (and faction) 
+                    point_range_text = "#{Math.min possible_costs...} - #{Math.max possible_costs...}"
+                    container.find('tr.info-points td.info-data').text point_range_text
+                    # don't display point range in Quickbuild (or ToDo: Display Threat range instead)
+                    if @isQuickbuild
+                        container.find('tr.info-points').hide()
+                    else
+                        container.find('tr.info-points').show()
                     
                     container.find('tr.info-engagement').hide()
                 
@@ -2443,6 +2459,7 @@ class exportObj.SquadBuilder
                         container.find('tr.info-engagement').show()
                     else
                         container.find('tr.info-engagement').hide()
+                    container.find('tr.info-points').hide()
                     
                     
 #                    for cls in container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
@@ -2583,6 +2600,7 @@ class exportObj.SquadBuilder
 
                     container.find('tr.info-skill td.info-data').text pilot.skill
                     container.find('tr.info-skill').show()
+                    container.find('tr.info-points').hide()
                     container.find('tr.info-engagement td.info-data').text pilot.skill
                     container.find('tr.info-engagement').show()
 
@@ -2702,6 +2720,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-ship').hide()
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
+                    container.find('tr.info-points').hide()
                     container.find('tr.info-engagement').hide()
                     if data.energy?
                         container.find('tr.info-energy td.info-data').text data.energy
@@ -2807,6 +2826,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-ship').hide()
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
+                    container.find('tr.info-points').hide()
                     container.find('tr.info-agility').hide()
                     container.find('tr.info-hull').hide()
                     container.find('tr.info-shields').hide()
@@ -2847,6 +2867,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-ship').hide()
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
+                    container.find('tr.info-points').hide()
                     container.find('tr.info-agility').hide()
                     container.find('tr.info-hull').hide()
                     container.find('tr.info-shields').hide()
