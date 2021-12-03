@@ -33,6 +33,11 @@ exportObj.manifestBySettings =
 exportObj.manifestByExpansion =
     'Second Edition Core Set': [
         {
+            name: 'coreasteroid0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
             name: 'X-Wing'
             type: 'ship'
             count: 1

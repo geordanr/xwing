@@ -935,8 +935,14 @@ class exportObj.SquadBuilder
                         <option class="gascloud6-select translated" value="gascloud6" defaultText="Gas Cloud 6"></option>
                     </select>
                 </div>
-                <div class="obstacle-image-container" style="display:none;">
-                    <img class="obstacle-image" src="images/core2asteroid0.png" />
+                <div>
+                    <div class="obstacle-image-container" style="display:none;">
+                        <img class="obstacle-image" src="images/core2asteroid0.png" />
+                    </div>
+                    <div class="obstacle-sources-container">
+                        <span class="info-header obstacle-sources translated" defaultText="Sources:"></span> 
+                        <span class="info-data obstacle-sources"></span>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer d-print-none">
@@ -947,6 +953,7 @@ class exportObj.SquadBuilder
         """
         @obstacles_select = @choose_obstacles_modal.find('.obstacle-select')
         @obstacles_select_image = @choose_obstacles_modal.find('.obstacle-image-container')
+        @obstacles_select_sources = @choose_obstacles_modal.find('.info-data.obstacle-sources')
 
         # Backend
 
@@ -1269,7 +1276,7 @@ class exportObj.SquadBuilder
                 else
                     new_selection = @current_obstacles
                 if new_selection.length > 0
-                    @showChooseObstaclesSelectImage(new_selection[0])
+                    @showChooseObstaclesSelectInformation(new_selection[0])
                 @current_squad.additional_data.obstacles = @current_obstacles
                 @current_squad.dirty = true
                 @container.trigger 'xwing-backend:squadDirtinessChanged'
@@ -1648,6 +1655,14 @@ class exportObj.SquadBuilder
     showChooseObstaclesModal: ->
         @obstacles_select.val(@current_squad.additional_data.obstacles)
         @choose_obstacles_modal.modal 'show'
+
+    showChooseObstaclesSelectInformation: (obstacle) ->
+        @showChooseObstaclesSelectImage obstacle
+        @showChooseObstaclesSelectSources obstacle
+
+    showChooseObstaclesSelectSources: (obstacle) ->
+        sources = exportObj.obstacles[obstacle]?.sources ? []
+        @obstacles_select_sources.text if (sources.length > 1) or (not (exportObj.translate('sources', 'Loose Ships') in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
 
     showChooseObstaclesSelectImage: (obstacle) ->
         @image_name = 'images/' + obstacle + '.png'
