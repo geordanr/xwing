@@ -22300,7 +22300,7 @@ exportObj.setupCommonCardData = (basic_cards) ->
                     when 'ship'
                         exportObj.ships[card.name].sources.push expansion
                     when 'obstacle'
-                        if card.name not in exportObj.obstacles
+                        if card.name not of exportObj.obstacles
                             exportObj.obstacles[card.name] = {sources: []}
                         exportObj.obstacles[card.name].sources.push expansion
                     else
