@@ -8,7 +8,7 @@ It can theoretically be dropped into any existing site, but since it uses a lot 
 
 Isn't there already an Official Squadbuilder out?
 ----------------------------------------------------
-Yes.
+Yes, but it is no longer supported by FFG/AMG
 
 So...?
 ------
