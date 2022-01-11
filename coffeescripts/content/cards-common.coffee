@@ -12493,9 +12493,9 @@ exportObj.basicCardData = ->
             recurring: 1
             faction: "Resistance"
             unique: true
+            applies_condition: '''It's The Resistance'''.canonicalize()
             modifier_func: (stats) ->
                 stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
-                applies_condition: '''It's the Resistance'''.canonicalize()
         }
         {
             name: "Kaydel Connix"
