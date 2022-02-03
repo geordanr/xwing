@@ -1090,6 +1090,10 @@ class exportObj.SquadBuilder
                 <span class="info-collection"></span>
                 <table class="table-sm">
                     <tbody>
+                        <tr class="info-faction">
+                            <td class="info-header translated" defaultText="Faction"></td>
+                            <td class="info-data"></td>
+                        </tr>
                         <tr class="info-ship">
                             <td class="info-header translated" defaultText="Ship"></td>
                             <td class="info-data"></td>
@@ -2353,6 +2357,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-attack-doubleturret').toggle(data.attackdt?)
                 
                     container.find('tr.info-ship').hide()        
+                    container.find('tr.info-faction').hide()        
                     if data.large?
                         container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Large")
                     else if data.medium?
@@ -2455,7 +2460,8 @@ class exportObj.SquadBuilder
                     ship = exportObj.ships[data.ship]
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
-                    
+                    container.find('tr.info-faction td.info-data').text data.faction 
+                    container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
                     if ship.large?
                         container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Large")
                     else if ship.medium?
@@ -2604,6 +2610,8 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').show()
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
+                    container.find('tr.info-faction td.info-data').text data.faction 
+                    container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
 
                     if ship.large?
                         container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Large")
@@ -2733,6 +2741,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').html (data.text ? '')
                     container.find('p.info-text').show()
                     container.find('tr.info-ship').hide()
+                    container.find('tr.info-faction').hide()
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
                     container.find('tr.info-points').hide()
@@ -2839,6 +2848,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').html data.text
                     container.find('p.info-text').show()
                     container.find('tr.info-ship').hide()
+                    container.find('tr.info-faction').hide()
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
                     container.find('tr.info-points').hide()
@@ -2880,6 +2890,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').html missingStuffInfoText
                     container.find('p.info-text').show()
                     container.find('tr.info-ship').hide()
+                    container.find('tr.info-faction').hide()
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
                     container.find('tr.info-points').hide()

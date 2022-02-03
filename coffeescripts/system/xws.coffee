@@ -37,7 +37,7 @@ exportObj.fromXWSUpgrade =
     'tactical-relay':'Tactical Relay'
 
 SPEC_URL = 'https://github.com/elistevens/xws-spec'
-SQUAD_TO_XWS_URL = 'http://squad2xws.herokuapp.com/translate/'
+SQUAD_TO_XWS_URL = 'https://squad2xws.herokuapp.com/translate/'
 
 exportObj.loadXWSButton = (xws_import_modal) ->
         import_status = $ xws_import_modal.find('.xws-import-status')
