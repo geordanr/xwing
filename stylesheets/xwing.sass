@@ -92,9 +92,6 @@ strong em, em strong
 .side-button
   margin-top: 5px
 
-.points-destroyed
-  padding: 2.5px 8px
-
 .flavor_text 
   display: none
 
@@ -287,7 +284,7 @@ f
 .info-container
   padding-right: 0px
 
-.info-well
+.info-well, .intro
   color: black
   margin-bottom: 15px
   margin-right: 15px
@@ -317,6 +314,12 @@ ul.squad-list
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
   padding-top: 5px
   text-align: center
+
+.points-display-container > .upgrade-points
+  font-size: 0.7em !important
+
+.points-display-container > div
+  background: #202020ad
 
 .points-display-container span
   padding: 5px 0px
@@ -385,7 +388,7 @@ ul.nav
         background-color: #333
 
 input[type=number]
-  width: 3em
+  width: 2em
   font-size: 1em
   -moz-appearance: textfield
     
@@ -395,7 +398,7 @@ input[type=search].card-search-text, input[type=search].rule-search-text
   max-width: 230px
 
 .desired-points
-  background-color: #151515
+  background-color: #282f40
   color: white
   border: none
 
@@ -482,8 +485,10 @@ li.squad-summary
 
 .card-search-container
   color: black
+  padding: 3px
 
 .squad-save-buttons
+  background: #282f40
   margin-bottom: 10px
 
 .collection-inventory-content
@@ -512,7 +517,7 @@ $common-spacing: 10px
 
 // Make the top nav bar look distinct
 .main-top-nav-bar
-	background-color: #101010
+	background-color: #282f40
 	padding-bottom: 1px
 	padding-left: 4px
 	margin-bottom: $common-spacing
@@ -523,6 +528,55 @@ $common-spacing: 10px
 
 .main-top-nav-bar > .nav-item 
   float: left
+
+#rebel-builder > .container-fluid > .squad-save-buttons, #rebel-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #d7373755
+
+#empire-builder > .container-fluid > .squad-save-buttons, #empire-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #2f4e9f55
+
+#scum-builder > .container-fluid > .squad-save-buttons, #scum-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #b79e3355
+
+#scum-builder > .container-fluid > .squad-save-buttons, #scum-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #b79e3355
+
+#resistance-builder > .container-fluid > .squad-save-buttons, #resistance-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #b7613355
+
+#firstorder-builder > .container-fluid > .squad-save-buttons, #firstorder-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #87242455
+
+#republic-builder > .container-fluid > .squad-save-buttons, #republic-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #a1774755
+
+#separatist-builder > .container-fluid > .squad-save-buttons, #separatist-builder > .container-fluid > .row > .ship-container > .obstacles-container
+  background-color: #363ca355
+
+#rebelTab.active
+  background-color: #d73737
+
+#empireTab.active
+  background-color: #2f4e9f
+
+#scumTab.active
+  background-color: #b79e33
+
+#resistanceTab.active
+  background-color: #b76133
+
+#firstorderTab.active
+  background-color: #872424
+
+#republicTab.active
+  background-color: #a17747
+
+#separatistTab.active
+  background-color: #363ca3
+
+.builder-title
+  margin-left: 0px
+  margin-right: 0px
 
 .nav-pills .nav-link.active
   background-color: #337ab7
@@ -565,7 +619,7 @@ h6
     
 // Style the squad points and name row to make it look distinct
 .squad-name-and-points-row
-	background-color: #151515
+	background-color: #282f40
 	margin-bottom: $common-spacing
 
 .squad-buttons

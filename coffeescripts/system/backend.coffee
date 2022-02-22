@@ -955,16 +955,17 @@ class exportObj.SquadBuilderBackend
         if settings?.language?
             # we found a language, provide it with priority 10
             cb settings.language, 10
-        # otherwise we may parse a language out of the headers (reimplements commit d95bb5e93fbb75d0e6a4a7270f7a86cf86a62a0a)
+        # otherwise we may parse a language out of the headers 
         else
             await @getHeaders defer(headers)
             if headers?.HTTP_ACCEPT_LANGUAGE?
                 # Need to parse out language preferences
-                # I'm going to be lazy and only output the first one we encounter
+                console.log "#{headers.HTTP_ACCEPT_LANGUAGE}"
                 for language_range in headers.HTTP_ACCEPT_LANGUAGE.split(',')
                     [ language_tag, quality ] = language_range.split ';'
+                    console.log "#{language_tag}, #{quality}"
                     if language_tag == '*'
-                        # let's give that half bullshit priority
+                        # let's give that half priority
                         cb 'English', -0.5
                     else
                         language_code = language_tag.split('-')[0]
