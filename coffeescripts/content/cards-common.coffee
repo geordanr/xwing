@@ -3268,7 +3268,6 @@ exportObj.basicCardData = ->
             pointsupg: 8
             keyword: ["Droid","Spectre"]
             slots: [
-                "Talent"
                 "Crew"
                 "Modification"
                 "Astromech"
