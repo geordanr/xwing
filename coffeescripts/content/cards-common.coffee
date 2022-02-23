@@ -7855,7 +7855,7 @@ exportObj.basicCardData = ->
                 "Gunner"
                 "Gunner"
                 "Astromech"
-                "Modifcation"
+                "Modification"
                 "Modification"
             ]
         }
