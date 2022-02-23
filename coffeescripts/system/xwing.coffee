@@ -4584,15 +4584,18 @@ class Ship
             equipped_upgrades = []
             @upgrade_points_total = 0
             for upgrade in @upgrades
-                @upgrade_points_total += upgrade.getPoints()
-
-            for upgrade in @upgrades
+                meets_restrictions = true
                 func = upgrade?.data?.validation_func ? undefined
                 if func?
-                    func_result = upgrade?.data?.validation_func(this, upgrade)
+                    meets_restrictions = meets_restrictions and upgrade?.data?.validation_func(this, upgrade)
+
+                restrictions = upgrade?.data?.restrictions ? undefined
+                if restrictions?
+                    # this will also check if we are within the max points for this pilot
+                    meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(upgrade.data), @upgrade_points_total)
 
                 # ignore those checks if this is a quickbuild squad
-                if ((func_result? and not func_result) or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
+                if ((not meets_restrictions) or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
@@ -4600,6 +4603,7 @@ class Ship
                     break
                 if upgrade?.data? and upgrade.data
                     equipped_upgrades.push(upgrade?.data)
+                @upgrade_points_total += upgrade.getPoints()
             break if valid
         @updateSelections()
         unchanged
