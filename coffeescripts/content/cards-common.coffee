@@ -15147,7 +15147,7 @@ exportObj.basicCardData = ->
         {
             name: "Intercept Booster"
             id: 366
-            points: 1
+            points: 0
             slot: "Configuration"
             ship: "Droid Tri-Fighter"
             faction: "Separatist Alliance"
