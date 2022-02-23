@@ -4335,7 +4335,7 @@ class Ship
         
         HalfPoints = Math.ceil @getPoints() / 2
         
-        Threshold = Math.ceil (effective_stats['hull'] + effective_stats['shields']) / 2
+        Threshold = Math.floor (effective_stats['hull'] + effective_stats['shields']) / 2
         
         html += $.trim """
             <div class="ship-points-total">
@@ -4363,7 +4363,7 @@ class Ship
         table_html += """<tr class="simple-ship-total"><td colspan="2">#{@uitranslation("Ship Total")}: #{@getPoints()}</td></tr>"""
         
         halfPoints = Math.ceil @getPoints() / 2        
-        threshold = Math.ceil (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
+        threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
         table_html += """<tr class="simple-ship-half-points"><td colspan="2">#{@uitranslation("Half Points")}: #{halfPoints} #{@uitranslation("Threshold")}: #{threshold}</td></tr>"""
 
@@ -4384,7 +4384,7 @@ class Ship
             simplecopy += """    \n"""
 
         halfPoints = Math.ceil @getPoints() / 2        
-        threshold = Math.ceil (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
+        threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
         simplecopy += """#{@uitranslation("Ship total")}: #{@getPoints()}  #{@uitranslation("Half Points")}: #{halfPoints}  #{@uitranslation("Threshold")}: #{threshold}    \n    \n"""
 
