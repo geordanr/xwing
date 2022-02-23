@@ -5166,7 +5166,7 @@ exportObj.basicCardData = ->
             pointsupg: 7
             slots: [
                 "Talent"
-                "Modification"
+                "Missile"
                 "Modification"
                 "Configuration"
             ]
@@ -7157,6 +7157,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Modification"
                 "Configuration"
+                "Missile"
                 "HardpointShip"
             ]
         }
