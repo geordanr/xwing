@@ -11161,6 +11161,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 8
             pointsupg: 20
+            unique: true
             slots: [
                 "Talent"
                 "Crew"
