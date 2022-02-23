@@ -138,8 +138,6 @@ class exportObj.SquadBuilder
         @randomizer_options =
             sources: null
             points: 20
-            bid_goal: 5
-            ships_or_upgrades: 3
             ship_limit: 0
             collection_only: true
             fill_zero_pts: false
@@ -226,8 +224,6 @@ class exportObj.SquadBuilder
     setupUI: ->
         DEFAULT_RANDOMIZER_POINTS = 20
         DEFAULT_RANDOMIZER_TIMEOUT_SEC = 4
-        DEFAULT_RANDOMIZER_BID_GOAL = 5
-        DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES = 3
         DEFAULT_RANDOMIZER_SHIP_LIMIT = 0
 
         @status_container = $ document.createElement 'DIV'
@@ -774,17 +770,8 @@ class exportObj.SquadBuilder
                     <div class="modal-body">
                         <form>
                             <label>
-                                <span class="translated" defaultText="Maximal desired bid"></span>
-                                <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
-                            </label><br />
-                            <label>
                                 <span class="translated" defaultText="Maximum Ship Count"></span>
                                 <input type="number" class="randomizer-ship-limit" value="#{DEFAULT_RANDOMIZER_SHIP_LIMIT}" placeholder="#{DEFAULT_RANDOMIZER_SHIP_LIMIT}" />
-                            </label><br />
-                            <label>
-                                <span class="translated" defaultText="More upgrades"></span>
-                                <input type="range" min="0" max="10" class="randomizer-ships-or-upgrades" value="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" placeholder="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" />
-                                <span class="translated" defaultText="Less upgrades"></span>
                             </label><br />
                             <label>
                                 <input type="checkbox" class="randomizer-collection-only" checked="checked"/> 
@@ -834,16 +821,12 @@ class exportObj.SquadBuilder
             else
                 points = parseInt @desired_points_input.val()
                 points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
-                bid_goal = parseInt $(@randomizer_options_modal.find('.randomizer-bid-goal')).val()
-                bid_goal = DEFAULT_RANDOMIZER_BID_GOAL if (isNaN(bid_goal) or bid_goal < 0)
                 ship_limit = parseInt $(@randomizer_options_modal.find('.randomizer-ship-limit')).val()
                 ship_limit = DEFAULT_RANDOMIZER_SHIP_LIMIT if (isNaN(ship_limit) or ship_limit < 0)
-                ships_or_upgrades = parseInt $(@randomizer_options_modal.find('.randomizer-ships-or-upgrades')).val()
-                ships_or_upgrades = DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES if (isNaN(ships_or_upgrades) or ships_or_upgrades < 0)
                 timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
                 timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
                 # console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}"
-                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, bid_goal, ship_limit, ships_or_upgrades, @randomizer_collection_selector.checked, @randomizer_fill_zero_pts.checked)
+                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, ship_limit, @randomizer_collection_selector.checked, @randomizer_fill_zero_pts.checked)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
             e.preventDefault()
@@ -2991,95 +2974,62 @@ class exportObj.SquadBuilder
         
     _randomizerLoopBody: (data) =>
         if data.keep_running
-            #console.log "Current points: #{@total_points} of #{data.max_points}, iteration=#{data.iterations} of #{data.max_iterations}, keep_running=#{data.keep_running}"
-            if data.max_points - @total_points <= data.bid_goal and @total_points <= data.max_points
-                # Hit bid range
-                #console.log "Points reached exactly"
+            if @total_points == data.max_points
+                # ToDo: Check if we meet the requirement of minimum 3 ships?
+                # Ships are done, now start equipping upgrades to them!
                 data.keep_running = false
-            else if @total_points < data.max_points
-                #console.log "Need to add something"
-                # Add something
-                # Possible options: ship or empty addon slot
-                unused_addons = []
+                if @isQuickbuild
+                    data.keep_running = false
+                    return
+                    
                 for ship in @ships
-                    for upgrade in ship.upgrades
-                        unused_addons.push upgrade unless upgrade.data? or (upgrade.occupied_by? and upgrade.occupied_by != null)
-                        
-                # 0 is ship, otherwise addon
-                idx = $.randomInt(data.ships_or_upgrades + unused_addons.length)
-                if idx < data.ships_or_upgrades or unused_addons.length == 0
-                    # Add random ship
-                    #console.log "Add ship"
-                    available_ships = @getAvailableShipsMatchingAndCheapEnough(data.max_points - @total_points, '', false, data.collection_only)
-                    if available_ships.length == 0
-                        if unused_addons.length > 0
-                            idx = $.randomInt(unused_addons.length) + data.ships_or_upgrades
-                        else 
-                            available_ships = @getAvailableShipsMatching('', false, data.collection_only)
-                    if (available_ships.length > 0) and ((@ships.length < data.ship_limit) or (data.ship_limit == 0))
-                        ship_type = available_ships[$.randomInt available_ships.length].name
-                        available_pilots = @getAvailablePilotsForShipIncluding(ship_type)
-                        if available_pilots.length == 0 
-                            # edge case: It might have been a ship selected, that has only unique pilots - which all have been already selected 
-                            return
-                        pilot = available_pilots[$.randomInt available_pilots.length]
-                        if not pilot.disabled and (if @isQuickbuild then exportObj.pilots[exportObj.quickbuildsById[pilot.id].pilot] else exportObj.pilotsById[pilot.id]).sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('pilot', (if @isQuickbuild then exportObj.quickbuildsById[pilot.id] else pilot.name)))
-                            new_ship = @addShip()
-                            new_ship.setPilotById pilot.id
-                if idx >= data.ships_or_upgrades and unused_addons.length != 0
-                    # Add upgrade
-                    #console.log "Add addon"
-                    addon = unused_addons[idx - data.ships_or_upgrades]
-                    switch addon.type
-                        when 'Upgrade'
-                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship, addon,'', @dfl_filter_func, sorted = false) when (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('upgrade', upgrade.name))))
-                            upgrade = if available_upgrades.length > 0 then available_upgrades[$.randomInt available_upgrades.length] else undefined
-                            if upgrade and not upgrade.disabled
-                                addon.setById upgrade.id
+                    expensive_slots = []
+                    while ship.upgrade_points_total < ship.pilot.pointsupg
+                        # we wan't to utilize newly added upgrade slots, so we will check for slots iteratively
+                        unused_addons = []
+                        for upgrade in ship.upgrades
+                            unused_addons.push upgrade unless upgrade.data? or (upgrade.occupied_by? and upgrade.occupied_by != null) or upgrade in expensive_slots
+                        if unused_addons.length == 0
+                            break # it's fine to not spend all points - otherwise few-slot ships will always receive the same upgrade(s)
+                        # select random slot
+                        addon = unused_addons[$.randomInt unused_addons.length]
+                        # select and equip random upgrade
+                        available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, ship, addon,'', @dfl_filter_func, sorted = false) when (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('upgrade', upgrade.name))) and not upgrade.disabled)
+                        if available_upgrades.length > 0
+                            upgrade =  available_upgrades[$.randomInt available_upgrades.length] 
+                            addon.setById upgrade.id
                         else
-                            throw new Error("Invalid addon type #{addon.type}")
+                            # that slot has only expensive stuff. ignore it in the future!
+                            expensive_slots.push addon
+                        
+            else if @total_points < data.max_points
+                # need to add more ships
+                # Add random ship
+                # try to find a ship that is cheap enough. If none exist, pick an expensive one and remove a random ship in the next iteration
+                available_ships = @getAvailableShipsMatchingAndCheapEnough(data.max_points - @total_points, '', false, data.collection_only)
+                if available_ships.length == 0
+                    available_ships = @getAvailableShipsMatching('', false, data.collection_only)
+                if (available_ships.length > 0) and ((@ships.length < data.ship_limit) or (data.ship_limit == 0))
+                    ship_type = available_ships[$.randomInt available_ships.length].name
+                    available_pilots = @getAvailablePilotsForShipIncluding(ship_type)
+                    if available_pilots.length == 0 
+                        # edge case: It might have been a ship selected, that has only unique pilots - which all have been already selected 
+                        return
+                    pilot = available_pilots[$.randomInt available_pilots.length]
+                    if not pilot.disabled and (if @isQuickbuild then exportObj.pilots[exportObj.quickbuildsById[pilot.id].pilot] else exportObj.pilotsById[pilot.id]).sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('pilot', (if @isQuickbuild then exportObj.quickbuildsById[pilot.id] else pilot.name)))
+                        new_ship = @addShip()
+                        new_ship.setPilotById pilot.id
 
             else
-                #console.log "Need to remove something"
-                # Remove something
-                removable_things = []
-                for ship in @ships
-                    for _ in [0...(11-data.ships_or_upgrades)]
-                        removable_things.push ship
-                    for upgrade in ship.upgrades
-                        removable_things.push upgrade if upgrade.data?
-                if removable_things.length > 0
-                    thing_to_remove = removable_things[$.randomInt removable_things.length]
-                    #console.log "Removing #{thing_to_remove}"
-                    if thing_to_remove instanceof Ship
-                        @removeShip thing_to_remove
-                    else if thing_to_remove instanceof GenericAddon
-                        thing_to_remove.setData null
-                    else
-                        throw new Error("Unknown thing to remove #{thing_to_remove}")
+                # need to remove a ship, cause we are too expensive
+                @removeShip @ships[$.randomInt @ships.length]
             # continue the "loop"
             window.setTimeout @_makeRandomizerLoopFunc(data), 0
         else
             #console.log "Clearing timer #{data.timer}, iterations=#{data.iterations}, keep_running=#{data.keep_running}"
-            # we have to stop randomizing, but should do a final check on our point costs.
+            # we have to stop randomizing, but should do a final check on our point costs. (in case our last step was adding something expensive)
             while @total_points > data.max_points
-                removable_things = []
-                for ship in @ships
-                    # removable_things.push ship
-                    for upgrade in ship.upgrades
-                        removable_things.push upgrade if upgrade.data?
-                if removable_things.length == 0
-                    for ship in @ships
-                        removable_things.push ship
-                if removable_things.length > 0
-                    thing_to_remove = removable_things[$.randomInt removable_things.length]
-                    #console.log "Removing #{thing_to_remove}"
-                    if thing_to_remove instanceof Ship
-                        @removeShip thing_to_remove
-                    else if thing_to_remove instanceof GenericAddon
-                        thing_to_remove.setData null
-                    else
-                        throw new Error("Unknown thing to remove #{thing_to_remove}")
+                @removeShip @ships[$.randomInt @ships.length]
 
             if data.fill_zero_pts
                 for ship in @ships
@@ -3090,8 +3040,6 @@ class exportObj.SquadBuilder
                         if upgrade and not upgrade.disabled
                             addon.setById upgrade.id
                         
-
-
             window.clearTimeout data.timer
             # Update all selectors
             for ship in @ships
@@ -3103,7 +3051,7 @@ class exportObj.SquadBuilder
         () =>
             @_randomizerLoopBody(data)
 
-    randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, bid_goal=5, ship_limit=0, ships_or_upgrades=3, collection_only=true, fill_zero_pts=false) ->
+    randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, ship_limit=0, collection_only=true, fill_zero_pts=false) ->
         @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
         
@@ -3116,9 +3064,7 @@ class exportObj.SquadBuilder
         throw new Error("Ships not emptied") if @ships.length > 0
         data =
             max_points: max_points
-            bid_goal: bid_goal
             ship_limit: ship_limit
-            ships_or_upgrades: ships_or_upgrades
             keep_running: true
             allowed_sources: allowed_sources ? exportObj.expansions
             collection_only: @collection? and (@collection.checks.collectioncheck == "true") and collection_only
