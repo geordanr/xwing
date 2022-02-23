@@ -11060,8 +11060,8 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Gauntlet Fighter"
             skill: 8
-            points: 27
-            pointsupg: 11
+            points: 8
+            pointsupg: 27
             unique: true
             force: 3
             keyword: ["Dark Side", "Sith"]
@@ -11956,7 +11956,7 @@ exportObj.basicCardData = ->
             name: "Minister Tua"
             id: 49
             slot: "Crew"
-            points: 7
+            points: 4
             unique: true
             faction: "Galactic Empire"
         }
@@ -12205,7 +12205,7 @@ exportObj.basicCardData = ->
             name: "Bossk"
             id: 78
             slot: "Gunner"
-            points: 8
+            points: 6
             unique: true
             faction: "Scum and Villainy"
         }
@@ -13347,8 +13347,7 @@ exportObj.basicCardData = ->
             id: 201
             slot: "Configuration"
             ship: "Delta-7 Aethersprite"
-            points: [6,6,10,14,17,20,24]
-            variablepoints: "Initiative"
+            points: 99
             modifier_func: (stats) ->
                 stats.attack += 1
                 stats.agility += -1
@@ -14634,7 +14633,7 @@ exportObj.basicCardData = ->
             ship: "Fireball"
             faction: "Resistance"
             unique: true
-            points: 1
+            points: 0
         }
         {
             name: "Cluster Mines"
@@ -14829,7 +14828,7 @@ exportObj.basicCardData = ->
             id: 334
             slot: "Gunner"
             unique: true
-            points: 6
+            points: 4
             faction: ["Scum and Villainy", "Separatist Alliance"]
         }
         {
@@ -14838,7 +14837,7 @@ exportObj.basicCardData = ->
             slot: "Crew"
             unique: true
             faction: ["Scum and Villainy", "Separatist Alliance"]
-            points: 6
+            points: 3
         }
         {
             name: "Zam Wesell"
@@ -14855,7 +14854,7 @@ exportObj.basicCardData = ->
             id: 337
             slot: "Configuration"
             ship: "Nimbus-class V-Wing"
-            points: 1
+            points: 0
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -15183,7 +15182,7 @@ exportObj.basicCardData = ->
             canonical_name: 'Slave I'.canonicalize()
             xws: "slavei-swz82"
             id: 370
-            points: 3
+            points: 0
             slot: "Title"
             unique: true
             faction: ["Scum and Villainy", "Separatist Alliance"]
@@ -16159,7 +16158,7 @@ exportObj.basicCardData = ->
         {
             name: "The Child"
             id: 453
-            points: 8
+            points: 6
             unique: true
             slot: "Crew"
             force: 2
@@ -16247,7 +16246,7 @@ exportObj.basicCardData = ->
             id: 462
             points: 6
             slot: "Modification"
-            faction: "Scum and Villainy"
+            faction: ["Scum and Villainy","Resistance"]
             restrictions: [
                 ["Base", "Small or Medium"]
             ]
@@ -16256,8 +16255,14 @@ exportObj.basicCardData = ->
             name: "Hotshot Tail Blaster"
             id: 463
             points: 2
+            attackr: 2
+            range: """0-1"""
+            rangebonus: true
+            charge: 2
             slot: "Illicit"
-            faction: ["Scum and Villainy","Galactic Empire"]
+            restrictions: [
+                ["Base", "Medium or Large"]
+            ]
         }
     ]
 

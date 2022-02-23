@@ -4574,9 +4574,9 @@ class Ship
                 for r in restrictions
                     if r[0] == "orUnique"
                         if @checkListForUnique(r[1].toLowerCase().replace(/[^0-9a-z]/gi, '').replace(/\s+/g, '-'))
-                            return false
-                        else
                             return true
+                        else
+                            return false
                     switch r[0]
                         when "Base"  
                             switch r[1]
