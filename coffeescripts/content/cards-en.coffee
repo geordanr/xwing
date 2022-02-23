@@ -109,7 +109,7 @@ exportObj.translations.English =
         "Unreleased content warning": "This squad uses unreleased content!"
         "Broken squad link warning": "It appears that you followed a broken link. No squad could be loaded!"
         "Collection warning": "You cannot field this list with your collection!"
-        "Ship number warning": "A tournament legal squad must contain 2-8 ships!"
+        "Ship number warning": "A tournament legal squad must contain 3-8 ships!"
         "Multi-Faction warning": "Multi-Faction Lists are NEVER tournament legal!"
         "XWS Import Dialog": "Import your list via XWS into YASB.<br><i>XWS is a common format to share lists between applications.</i>"
         "Copy below simple text": "<p>Copy the below and paste it elsewhere.</p>"

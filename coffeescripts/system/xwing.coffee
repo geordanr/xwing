@@ -1900,7 +1900,7 @@ class exportObj.SquadBuilder
             builder: this
             container: @ship_container
         @ships.push new_ship
-        @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 2) # bounds are 2..10 as we always have a "empty" ship at the bottom
+        @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 3) # bounds are 2..10 as we always have a "empty" ship at the bottom
         @multi_faction_warning_container.toggleClass 'd-none', (@faction != "All")
         new_ship
 
@@ -1910,7 +1910,7 @@ class exportObj.SquadBuilder
             await @container.trigger 'xwing:pointsUpdated', defer()
             @current_squad.dirty = true
             @container.trigger 'xwing-backend:squadDirtinessChanged'
-            @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 2)
+            @ship_number_invalid_container.toggleClass 'd-none', (@ships.length < 10 and @ships.length > 3)
             @multi_faction_warning_container.toggleClass 'd-none', (@faction != "All")
         cb()
     
