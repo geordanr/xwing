@@ -591,6 +591,9 @@ class exportObj.CardBrowser
             add_opts = {addon_type: orig_type}
             orig_type = 'Addon'
 
+        if orig_type == 'Pilot'
+            @card_viewer_container.find('tr.info-faction').show() # this information is not shown in the builder, since the faction is clear there, but usefull here. 
+
         @card_viewer_container.show()
         exportObj.builders[0].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
 

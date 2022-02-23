@@ -31,7 +31,167 @@ exportObj.manifestBySettings =
     'collectioncheck': true
         
 exportObj.manifestByExpansion =
+    # the original name in 1.0 YASB was "Core". we could use that for compatibility, but it might be confusing - so I opted against it
+    'First Edition Core Set': [
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'coreasteroid0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid2'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid3'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid4'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid5'
+            type: 'obstacle'
+            count: 1
+        }
+    ]
+    # the original name in 1.0 YASB was "The Force Awakens Core Set". we could use that for compatibility, but it might be confusing - so I opted against it
+    'First Edition Force Awakens Core Set': [
+        {
+            name: 'TIE/FO Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'core2asteroid0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid2'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid3'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid4'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid5'
+            type: 'obstacle'
+            count: 1
+        }
+    ]
+    'First Edition VT-49 Decimator Expansion Pack': [
+        {
+            name: 'VT-49 Decimator'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'vt49decimatordebris0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'vt49decimatordebris1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'vt49decimatordebris2'
+            type: 'obstacle'
+            count: 1
+        }
+    ]
+    'First Edition YT-2400 Freighter Expansion Pack': [
+        {
+            name: 'YT-2400'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'yt2400debris0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'yt2400debris1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'yt2400debris2'
+            type: 'obstacle'
+            count: 1
+        }
+    ]
     'Second Edition Core Set': [
+        {
+            name: 'coreasteroid2'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid4'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid5'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'yt2400debris2'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'vt49decimatordebris1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'vt49decimatordebris2'
+            type: 'obstacle'
+            count: 1
+        }
         {
             name: 'X-Wing'
             type: 'ship'
@@ -4716,6 +4876,21 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 3
         }
+        {
+            name: 'gascloud0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud2'
+            type: 'obstacle'
+            count: 1
+        }
     ]
 
     'Sith Infiltrator Expansion Pack': [
@@ -5080,6 +5255,21 @@ exportObj.manifestByExpansion =
             name: 'Synchronized Console'
             type: 'upgrade'
             count: 3
+        }
+        {
+            name: 'gascloud0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud2'
+            type: 'obstacle'
+            count: 1
         }
     ]
 
@@ -9788,6 +9978,81 @@ exportObj.manifestByExpansion =
         {
             name: 'Spare Parts Canisters'
             type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'coreasteroid0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'coreasteroid3'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid2'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid3'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid4'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'core2asteroid5'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'yt2400debris0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'yt2400debris1'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'vt49decimatordebris0'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud3'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud4'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud5'
+            type: 'obstacle'
             count: 1
         }
     ]

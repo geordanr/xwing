@@ -23879,6 +23879,9 @@ exportObj.setupCommonCardData = (basic_cards) ->
             condition_data.canonical_name = condition_data.name.canonicalize() unless condition_data.canonical_name?
             exportObj.conditions[condition_data.name] = condition_data
 
+    exportObj.obstacles = {}
+    # we just want to include obstacles in the manifest like we already do for other stuff. No information other than sources will be used
+
     # there is no exportObj.quickbuilds generated from basic_cards.quickbuildsById, as reference by pilot name might be ambigous (e.g. there are multiple Black Sq. Aces having different upgrades)
 
     exportObj.quickbuildsById = {}
@@ -23909,6 +23912,10 @@ exportObj.setupCommonCardData = (basic_cards) ->
                         exportObj.upgrades[card.name].sources.push expansion
                     when 'ship'
                         exportObj.ships[card.name].sources.push expansion
+                    when 'obstacle'
+                        if card.name not of exportObj.obstacles
+                            exportObj.obstacles[card.name] = {sources: []}
+                        exportObj.obstacles[card.name].sources.push expansion
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e
