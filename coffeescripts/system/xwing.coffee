@@ -4542,11 +4542,9 @@ class Ship
                 func = upgrade?.data?.validation_func ? undefined
                 if func?
                     meets_restrictions = meets_restrictions and upgrade?.data?.validation_func(this, upgrade)
-
                 restrictions = upgrade?.data?.restrictions ? undefined
                 # always perform this check, even if no special restrictions for this upgrade exists, to check for allowed points
                 meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(), @upgrade_points_total)
-
                 # ignore those checks if this is a quickbuild squad
                 if ((not meets_restrictions) or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
@@ -4575,7 +4573,7 @@ class Ship
 
     hasAnotherUnoccupiedSlotLike: (upgrade_obj, upgradeslot) ->
         for upgrade in @upgrades
-            continue if upgrade == upgrade_obj or upgrade.slot != upgradeslot
+            continue if upgrade == upgrade_obj or not exportObj.slotsMatching(upgrade.slot, upgradeslot)
             return true unless upgrade.isOccupied()
         false
 
@@ -4622,7 +4620,7 @@ class Ship
                         when "Equipped"
                             if not ((@doesSlotExist(r[1]) and not @hasAnotherUnoccupiedSlotLike(upgrade_obj, r[1]))) then return false
                         when "Slot"
-                            if not @hasAnotherUnoccupiedSlotLike(upgrade_obj, r[1]) then return false
+                            if not @hasAnotherUnoccupiedSlotLike(upgrade_obj, r[1]) and not upgrade_obj.occupiesAnUpgradeSlot(r[1]) then return false
                         when "AttackArc"
                             if not @data.attackb? then return false
                         when "ShieldsGreaterThan"
@@ -4649,7 +4647,7 @@ class Ship
 
     doesSlotExist: (slot) ->
         for upgrade in @upgrades
-            if slot == upgrade.slot
+            if exportObj.slotsMatching(slot, upgrade.slot)
                 return true
         false
     
@@ -5130,7 +5128,7 @@ class GenericAddon
     unequipOtherUpgrades: ->
         for slot in @data?.unequips_upgrades ? []
             for upgrade in @ship.upgrades
-                continue if upgrade.slot != slot or upgrade == this or not upgrade.isOccupied()
+                continue if not exportObj.slotsMatching(upgrade.slot, slot) or upgrade == this or not upgrade.isOccupied()
                 upgrade.setData null
                 break
 
@@ -5140,7 +5138,7 @@ class GenericAddon
     occupyOtherUpgrades: ->
         for slot in @data?.also_occupies_upgrades ? []
             for upgrade in @ship.upgrades
-                continue if upgrade.slot != slot or upgrade == this or upgrade.isOccupied()
+                continue if not exportObj.slotsMatching(upgrade.slot, slot) or upgrade == this or upgrade.isOccupied()
                 @occupy upgrade
                 break
 
@@ -5159,7 +5157,7 @@ class GenericAddon
 
     occupiesAnUpgradeSlot: (upgradeslot) ->
         for upgrade in @ship.upgrades
-            continue if upgrade.slot != upgradeslot or upgrade == this or upgrade.data?
+            continue if not exportObj.slotsMatching(upgrade.slot, upgradeslot) or upgrade == this or upgrade.data?
             if upgrade.occupied_by? and upgrade.occupied_by == this
                 return true
         false
