@@ -205,6 +205,8 @@ class exportObj.SquadBuilder
             if squad_name == default_squad_name
                 @current_squad.name = @uitranslation('Unsaved Squadron')
             @current_squad.dirty = true
+        
+        @old_version_container.toggleClass 'd-none', true
 
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
@@ -254,7 +256,7 @@ class exportObj.SquadBuilder
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left) <span class="points-destroyed red"></span></span>
                     <span class="content-warning unreleased-content-used d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Unreleased content warning"></span></span>
                     <span class="content-warning loading-failed-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Broken squad link warning"></span></span>
-                    <span class="content-warning old-version-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="This squad is using an older version of X-Wing."></span></span>
+                    <span class="content-warning old-version-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="This squad was created for an older version of X-Wing."></span></span>
                     <span class="content-warning collection-invalid d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Collection warning"></span></span>
                     <span class="content-warning ship-number-invalid-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Ship number warning"></span></span>
                     <span class="content-warning multi-faction-warning-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Multi-Faction warning"></span></span>
@@ -1772,9 +1774,13 @@ class exportObj.SquadBuilder
 
             if version < 9 # old version are no longer supported
                 @old_version_container.toggleClass 'd-none', false
+                @suppress_automatic_new_ship = false
+                @addShip()
                 return
             if !serialized_ships? # something went wrong, we can't load that serialization
                 @loading_failed_container.toggleClass 'd-none', false
+                @suppress_automatic_new_ship = false
+                @addShip()
                 return
 
             switch game_type_abbrev
