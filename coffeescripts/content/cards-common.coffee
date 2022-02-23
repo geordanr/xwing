@@ -1830,6 +1830,9 @@ exportObj.basicCardData = ->
                 "Lock"
                 "R-Coordinate"
             ]
+            autoequip: [
+                "Swivel Wing"
+            ]
             maneuvers: [
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 1, 0, 1, 0, 0, 0, 0, 0, 0 ]
@@ -24193,7 +24196,7 @@ exportObj.standardPilotExclusions = [
     # Resistance
     'Han Solo (Resistance)'
     'Vi Moradi'
-    
+
     # FO
 
     # Galactic Republic
