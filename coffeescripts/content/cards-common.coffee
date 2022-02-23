@@ -10938,7 +10938,7 @@ exportObj.basicCardData = ->
             keyword: ["Mandalorian"]
             slots: [
                 "Talent"
-                "Torpedo"
+                "Missile"
                 "Modification"
             ]
         }
