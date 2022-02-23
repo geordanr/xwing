@@ -3190,7 +3190,7 @@ exportObj.basicCardData = ->
             keyword: ["Spectre"]
             slots: [
                 "Talent"
-                "Title"
+                "Turret"
                 "Crew"
                 "Modification"
                 "Title"
@@ -5442,7 +5442,7 @@ exportObj.basicCardData = ->
             ship: "TIE Defender"
             skill: 1
             points: 7
-            pointsupg: 14
+            pointsupg: 4
             slots: [
                 "Sensor"
                 "Cannon"
