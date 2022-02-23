@@ -7116,8 +7116,8 @@ exportObj.basicCardData = ->
             charge: 1
             recurring: 1
             slots: [
-                "Astromech"
                 "Tech"
+                "Astromech"
                 "Modification"
                 "Configuration"
                 "HardpointShip"
@@ -7134,8 +7134,8 @@ exportObj.basicCardData = ->
             pointsupg: 13
             slots: [
                 "Talent"
-                "Astromech"
                 "Tech"
+                "Astromech"
                 "Modification"
                 "Modification"
                 "Configuration"
@@ -7153,11 +7153,11 @@ exportObj.basicCardData = ->
             pointsupg: 13
             slots: [
                 "Talent"
-                "Astromech"
                 "Tech"
+                "Missile"
+                "Astromech"
                 "Modification"
                 "Configuration"
-                "Missile"
                 "HardpointShip"
             ]
         }
@@ -7173,8 +7173,8 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Talent"
-                "Astromech"
                 "Tech"
+                "Astromech"
                 "Modification"
                 "Configuration"
                 "HardpointShip"
@@ -9748,9 +9748,9 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Talent"
+                "Tech"
+                "Tech"
                 "Astromech"
-                "Tech"
-                "Tech"
                 "Modification"
                 "Configuration"
                 "HardpointShip"
@@ -9769,9 +9769,9 @@ exportObj.basicCardData = ->
             pointsupg: 14
             slots: [
                 "Talent"
+                "Tech"
+                "Tech"
                 "Astromech"
-                "Tech"
-                "Tech"
                 "Modification"
                 "Configuration"
                 "HardpointShip"
