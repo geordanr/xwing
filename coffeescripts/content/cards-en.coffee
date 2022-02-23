@@ -2757,7 +2757,7 @@ exportObj.cardLoaders.English = () ->
         "Notorious":
            text: """After you defend, if the attacker is in your firing arc, you may spend 1 %CHARGE%. If you do, the attacker gains 1 strain token. %LINEBREAK% While you perform an attack, if the defender is strained, you may reroll 1 blank result."""
         "Enduring":
-           text: """While you defend, if you are not in the attacker's %BULLSEYE%, %CRIT% results are neutralized before %HIT% results. %LINEBREAK% After you suffer %CRIT% damage, you may perform a %CALCULTE% or %FOCUS% action on your action bar, even while stressed, treating that action as red."""
+           text: """While you defend, if you are not in the attacker's %BULLSEYEARC%, %CRIT% results are neutralized before %HIT% results. %LINEBREAK% After you suffer %CRIT% damage, you may perform a %CALCULATE% or %FOCUS% action on your action bar, even while stressed, treating that action as red."""
         "IG-11":
            text: """<strong>Setup:</strong> Equip this side faceup. %LINEBREAK% Before you would be dealt a faceup damage card, you <b>must</b> place 1 fuse marker on this card and gain 1 calculate token instead. Then if there are 2 fuse markers on this card, flip it. %LINEBREAK% <strong>IG-11 (Anti-Capture Protocol)</strong> %LINEBREAK% During the End Phase, remove 1 fuse marker from this card. Then, if this card has no fuse markers on it, you are destroyed and each other ship at range 0-1 suffers 1 %CRIT% damage. %LINEBREAK% <strong>Action:</strong> Place 1 fuse marker on this card."""
         "Greef Karga":
