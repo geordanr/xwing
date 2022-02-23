@@ -294,10 +294,7 @@ class exportObj.CardBrowser
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card card-viewer-placeholder info-well">
-                            <p class="translate select-a-card" defaultText="Select a card"></p>
-                        </div>
-                        <div class="card card-viewer-container">
+                        <div class="card-viewer-container">
                         </div>
                     </div>
                 </div>
@@ -306,11 +303,10 @@ class exportObj.CardBrowser
 
         @card_selector_container = $ @container.find('.xwing-card-browser .card-selector-container')
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
-        @card_viewer_container.append $.trim exportObj.builders[7].createInfoContainerUI()
+        @card_viewer_container.append $.trim exportObj.builders[0].createInfoContainerUI(false)
         @card_viewer_container.hide()
         @card_viewer_conditions_container = $ @container.find('.xwing-card-browser .card-viewer-conditions-container')
         @card_viewer_conditions_container.hide()
-        @card_viewer_placeholder = $ @container.find('.xwing-card-browser .card-viewer-placeholder')
         @advanced_search_container = $ @container.find('.xwing-card-browser .advanced-search-container')
 
         @sort_selector = $ @container.find('select.sort-by')
@@ -595,12 +591,11 @@ class exportObj.CardBrowser
             add_opts = {addon_type: orig_type}
             orig_type = 'Addon'
 
-        exportObj.builders[7].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
-        
         if orig_type == 'Pilot'
             @card_viewer_container.find('tr.info-faction').show() # this information is not shown in the builder, since the faction is clear there, but usefull here. 
 
         @card_viewer_container.show()
+        exportObj.builders[0].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
 
         # Conditions
         if data?.applies_condition?
@@ -619,8 +614,6 @@ class exportObj.CardBrowser
             @card_viewer_conditions_container.show()
         else
             @card_viewer_conditions_container.hide()
-
-        @card_viewer_placeholder.hide()
 
     addCardTo: (container, card) ->
         option = $ document.createElement('OPTION')
@@ -743,8 +736,8 @@ class exportObj.CardBrowser
 
         # check if point costs matches
         if @minimum_point_costs.value > 0 or @maximum_point_costs.value < 200
-            return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (card.data.points == "*" or not card.data.points?)
-            if card.data.pointsarray?
+            return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (card.data.variablepoints?)
+            if card.data.variablepoints?
                 matching_points = false
                 for points in card.data.pointsarray
                     if points >= @minimum_point_costs.value and points <= @maximum_point_costs.value

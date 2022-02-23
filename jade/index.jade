@@ -3,13 +3,13 @@ doctype html
 
 html
   head
-    title YASB 2.0
+    title YASB 2
     meta(charset="utf-8")
 
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(property="og:url", content="http://raithos.github.io/")
     meta(property="og:image", content="http://raithos.github.io/android-chrome-192x192.png")
-    meta(property="og:description", content="YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
+    meta(property="og:description", content="YASB 2 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
 
     link(rel="apple-touch-icon", sizes="180x180", href="apple-touch-icon.png")
     link(rel="icon", type="image/png", sizes="32x32", href="favicon-32x32.png")
@@ -30,7 +30,7 @@ html
 
   body
     // body layout
-    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-123324723-1&aip=1')
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=G-WQ43KS2P7F')
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -76,8 +76,6 @@ html
             b.caret
           ul.dropdown-menu      
         li.nav-item.float-right
-          a#aboutTab.nav-link('data-toggle'="tab", href='#aboutContent', class='translated', defaultText='About')
-        li.nav-item.float-right
           a#browserTab.nav-link('data-toggle'="tab", href='#browserContent', class='translated', defaultText='Card Browser')
         li.nav-item.float-right
           a#rulesTab.nav-link('data-toggle'="tab", href='#rulesBrowserContent', class='translated', defaultText='Rules')
@@ -103,48 +101,6 @@ html
           #card-browser
         .tab-pane.fade#rulesBrowserContent
           #rules-browser
-        .tab-pane.fade#aboutContent
-          .container-fluid
-            .row-fluid
-              .span8.about
-                .image-block
-                    img(src="android-chrome-192x192.png", height="100", width="100")
-                    h2 YASB for X-Wing 2.0
-                :markdown
-                    YASB 2.0 is a simple, fast, no-frills squad builder for [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).  
-
-                    It is pure HTML, JavaScript, and CSS and requires no backend, and can be dropped into place on any website (with maybe a few CSS tweaks).
-
-                    YASB 2.0 updated and maintained by Stephen Kim.
-
-                    2.0 launch data thanks to Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.
-                    
-                    Translation Team: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke
-
-                    Site logo by Thomas Kohler
-
-                    Based on the amazing original [Yet Another Squad Builder](https://geordanr.github.io/xwing/)
-
-                    Icons and fonts courtesy GeckoTH's excellent PSD, available on [A Few Maneuvers](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
-					
-                    X-Wing symbols font courtesy [Hinny](https://github.com/Hinny) and [Josh Derksen](https://github.com/armoredgear7).
-
-                    Fancy printout design inspired by TheKestrel on the FFG forums.
-
-                    Maneuver dial functionality by [hpanderson](https://github.com/hpanderson).
-
-                    Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
-
-                    Squad name in the permalink and obstacles choice modal by [zacharyp](https://github.com/zacharyp).
-
-                    Quick Build support by [patschke](https://github.com/patschke)
-
-                    This builder is unofficial and is not affiliated with Fantasy Flight Games, Lucasfilm Ltd., or Disney.
-
-                    Do you want to donate? Many people have bothered me to add a donate button so here it is! Please don't feel obligated to donate for using this site just because this button is here. This site will always be free, and always 100% available for all people to use.
-                p
-                    button(class='btn btn-primary paypal', onclick="window.open('https://paypal.me/raithos');") Donate?
-
     .footer
       .msie8-hax
 
@@ -195,49 +151,45 @@ html
 
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
           $('#rebelTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/rebels'
               page_title: 'Rebel Alliance'
           $('#empireTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/empire'
               page_title: 'Galactic Empire'
           $('#scumTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/scum'
               page_title: 'Scum and Villainy'
           $('#resistanceTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/resistance'
               page_title: 'Resistance'
           $('#firstorderTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/firstorder'
               page_title: 'First Order'
           $('#republicTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/republic'
               page_title: 'Galactic Republic'
           $('#separatistTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/separatist'
               page_page_title: 'Separatist Alliance'
           $('#allTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/all'
               page_page_title: 'All'
           $('#browserTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/browser'
               page_title: 'Card Browser'
           $('#rulesTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
+            gtag 'config', 'G-WQ43KS2P7F',
               page_path: '/rules-browser'
               page_title: 'Rules'
-          $('#aboutTab').click (e) ->
-            gtag 'config', 'UA-123324723-1',
-              page_path: '/about'
-              page_title: 'About'
 
           window.rebel_sb = new window.SquadBuilder
               tab: '#rebelTab'
@@ -297,53 +249,53 @@ html
 
           switch $.getParameterByName 'f'
             when 'Rebel Alliance'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/rebels'
                   page_title: 'Rebel Alliance'
                 $('#rebelTab').tab 'show'
             when 'Galactic Empire'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/empire'
                   page_title: 'Galactic Empire'
                 $('#empireTab').tab 'show'
             when 'Scum and Villainy'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/scum'
                   page_title: 'Scum and Villainy'
                 $('#scumTab').tab 'show'
             when 'Resistance'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/resistance'
                   page_title: 'Resistance'
                 $('#resistanceTab').tab 'show'
             when 'First Order'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/firstorder'
                   page_title: 'First Order'
                 $('#firstorderTab').tab 'show'
             when 'Galactic Republic'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/republic'
                   page_title: 'Galactic Republic'
                 $('#republicTab').tab 'show'
             when 'Separatist Alliance'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/separatist'
                   page_title: 'Separatist Alliance'
                 $('#separatistTab').tab 'show'
             when 'All'
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/all'
                   page_title: 'All'
                 $('#allTab').tab 'show'
             else
-                gtag 'config', 'UA-123324723-1',
+                gtag 'config', 'G-WQ43KS2P7F',
                   page_path: '/default'
                   page_title: 'Main Page'
                 $('#rebelTab').tab 'show'
 
           window.backend = new SquadBuilderBackend
-              server: 'https://yasb-backend.herokuapp.com'
+              server: 'https://login.yasb.app'
               builders: [
                 window.rebel_sb
                 window.empire_sb

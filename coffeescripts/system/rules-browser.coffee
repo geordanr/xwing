@@ -113,10 +113,9 @@ class exportObj.RulesBrowser
             text: rule.data 'text'
         orig_type = 'Rules'
 
+        @rule_viewer_container.show()
         exportObj.builders[0].showTooltip(orig_type, data, add_opts ? {}, @rule_viewer_container) # we use the render method from the squad builder, cause it works.
 
-        @rule_viewer_container.show()
-        # @rule_viewer_placeholder.hide()
 
     addRulesTo: (container, rule) ->
         option = $ document.createElement('OPTION')
