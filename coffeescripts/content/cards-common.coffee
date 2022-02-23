@@ -15991,6 +15991,7 @@ exportObj.basicCardData = ->
             points: 10
             slot: "Crew"
             unique: true
+            force: 1
             faction: "Scum and Villainy"
             restrictions: [
                 ["Slot", "Crew"]
