@@ -4596,9 +4596,8 @@ class Ship
                     meets_restrictions = meets_restrictions and upgrade?.data?.validation_func(this, upgrade)
 
                 restrictions = upgrade?.data?.restrictions ? undefined
-                if restrictions?
-                    # this will also check if we are within the max points for this pilot
-                    meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(upgrade.data), @upgrade_points_total)
+                # always perform this check, even if no special restrictions for this upgrade exists, to check for allowed points
+                meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(), @upgrade_points_total)
 
                 # ignore those checks if this is a quickbuild squad
                 if ((not meets_restrictions) or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
