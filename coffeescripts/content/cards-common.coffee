@@ -4411,6 +4411,7 @@ exportObj.basicCardData = ->
             pointsupg: 8
             slots: [
                 "Modification"
+                "HardpointShip"
             ]
         }
         {
