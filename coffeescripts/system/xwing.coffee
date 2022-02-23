@@ -1599,7 +1599,7 @@ class exportObj.SquadBuilder
         @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
         @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
         if @ships.length > 1
-            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2.0: ") + @current_squad.name + ": " + @describeSquad())
+            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2: ") + @current_squad.name + ": " + @describeSquad())
         else
             $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
         
@@ -1615,10 +1615,10 @@ class exportObj.SquadBuilder
         @squad_name_input.val @current_squad.name
         return unless $.getParameterByName('f') == @faction
         if @current_squad.name != @uitranslation("Unnamed Squadron") and @current_squad.name != @uitranslation("Unsaved Squadron")
-            if (document.title != "YASB 2.0 - " + @current_squad.name) 
-                document.title = "YASB 2.0 - " + @current_squad.name
+            if (document.title != "YASB 2 - " + @current_squad.name) 
+                document.title = "YASB 2 - " + @current_squad.name
         else
-            document.title = "YASB 2.0"
+            document.title = "YASB 2"
         @updatePrintAndExportTexts()
 
 
