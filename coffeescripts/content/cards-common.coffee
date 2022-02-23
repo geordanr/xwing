@@ -2909,7 +2909,7 @@ exportObj.basicCardData = ->
             points: 3
             pointsupg: 6
             slots: [
-                "Missile"
+                "Modification"
                 "Configuration"
             ]
         }
@@ -11060,7 +11060,7 @@ exportObj.basicCardData = ->
             id: 512
             faction: "Scum and Villainy"
             ship: "Gauntlet Fighter"
-            skill: 8
+            skill: 5
             points: 8
             pointsupg: 27
             unique: true
@@ -11270,7 +11270,7 @@ exportObj.basicCardData = ->
             points: 7
             pointsupg: 28
             unique: true
-            keyword: ["Mandelorian"]
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Talent"
