@@ -24192,7 +24192,8 @@ exportObj.standardPilotExclusions = [
 
     # Resistance
     'Han Solo (Resistance)'
-
+    'Vi Moradi'
+    
     # FO
 
     # Galactic Republic
