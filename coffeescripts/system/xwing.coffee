@@ -2571,7 +2571,12 @@ class exportObj.SquadBuilder
                     
                     
                     if (effective_stats?.force? and effective_stats.force > 0) or data.force?
-                        container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.ship_override?.force ? data.force), effective_stats, 'force') + '<sup><i class="fas fa-caret-up"></i></sup>')
+                        recurringicon = ''
+                        count = 0
+                        while count < effective_stats.forcerecurring
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                            ++count
+                        container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.ship_override?.force ? data.force), effective_stats, 'force') + recurringicon)
                         container.find('tr.info-force').show()
                     else
                         container.find('tr.info-force').hide()
@@ -2693,7 +2698,15 @@ class exportObj.SquadBuilder
                     container.find('tr.info-shields').show()
 
                     if effective_stats?.force? or data.force?
-                        container.find('tr.info-force td.info-data').html ((pilot.ship_override?.force ? pilot.force)+ '<sup><i class="fas fa-caret-up"></i></sup>')
+                        recurringicon = ''
+                        forcerecurring = 1
+                        if effective_stats.forcerecurring?
+                            forcerecurring = effective_stats.forcerecurring
+                        count = 0
+                        while count < forcerecurring
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                            ++count
+                        container.find('tr.info-force td.info-data').html ((pilot.ship_override?.force ? pilot.force)+ recurringicon)
                         container.find('tr.info-force').show()
                     else
                         container.find('tr.info-force').hide()
@@ -2859,8 +2872,16 @@ class exportObj.SquadBuilder
                     else
                         container.find('td.info-rangebonus').hide()
                         
-                        
-                    container.find('tr.info-force td.info-data').html (data.force + '<sup><i class="fas fa-caret-up"></i></sup>')
+                    if data.force?
+                        recurringicon = ''
+                        forcerecurring = 1
+                        if data.forcerecurring?
+                            forcerecurring = data.forcerecurring
+                        count = 0
+                        while count < forcerecurring
+                            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                            ++count
+                        container.find('tr.info-force td.info-data').html (data.force + recurringicon)
                     container.find('tr.info-force').toggle(data.force?)                        
 
                     container.find('tr.info-agility').hide()
@@ -4205,10 +4226,18 @@ class Ship
             <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}#{recurringicon}</span>
         """ else ''
         
-    
+
+        if effective_stats.force?
+            recurringicon = ''
+            count = 0
+            while count < effective_stats.forcerecurring 
+                recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                ++count
+        else
+            recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
         forceHTML = if (@pilot.force?) then $.trim """
             <i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i>
-            <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}<sup><i class="fas fa-caret-up"></i></sup></span>
+            <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}#{recurringicon}</span>
         """ else ''
 
         if @pilot.charge?
@@ -4492,6 +4521,7 @@ class Ship
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
             force: (@pilot.ship_override?.force ? @pilot.force) ? 0
+            forcerecurring: 1
             charge: @pilot.ship_override?.charge ? @pilot.charge
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
 
@@ -5056,10 +5086,17 @@ class GenericAddon
             else chargeHTML = $.trim ''
 
             if (@data.force?)
+                forcerecurring = 1
+                if @data.forcerecurring?
+                    forcerecurring = @data.forcerecurring
+                count = 0
+                while count < forcerecurring
+                    recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
+                    ++count
                 forceHTML = $.trim """
                     <div class="upgrade-force">
                         <span class="info-data info-force">#{@data.force}</span>
-                        <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i><sup><i class="fas fa-caret-up"></i></sup>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i>#{recurringicon}
                     </div>
                     """
             else forceHTML = $.trim ''

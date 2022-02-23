@@ -16165,8 +16165,12 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             force: 2
+            forcerecurring: 0
             faction: ["Scum and Villainy", "Rebel Alliance", "Galactic Empire"]
             applies_condition: '''Merciless Pursuit'''.canonicalize()
+            modifier_func: (stats) ->
+                stats.force += 2
+                stats.forcerecurring = 0
         }
         {
             name: "Tracking Fob"
