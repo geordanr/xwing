@@ -15970,7 +15970,7 @@ exportObj.basicCardData = ->
             recurring: 1
             slot: "Crew"
             unique: true
-            faction: ["Rebel Alliance"]
+            faction: ["Rebel Alliance", "Galactic Empire", "Scum and Villainy"]
             restrictions: [
                 ["orUnique", "Gar Saxon"]
                 ["Faction", "Rebel Alliance"]

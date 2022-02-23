@@ -4596,8 +4596,8 @@ class Ship
             if restrictions?
                 for r in restrictions
                     if r[0] == "orUnique"
-                        if not @checkListForUnique(r[1].toLowerCase().replace(/[^0-9a-z]/gi, '').replace(/\s+/g, '-'))
-                            return false
+                        if @checkListForUnique(r[1].toLowerCase().replace(/[^0-9a-z]/gi, '').replace(/\s+/g, '-'))
+                            return true
                     switch r[0]
                         when "Base"  
                             switch r[1]
