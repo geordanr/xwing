@@ -7157,6 +7157,7 @@ exportObj.basicCardData = ->
                 "Tech"
                 "Modification"
                 "Configuration"
+                "Missile"
                 "HardpointShip"
             ]
         }
