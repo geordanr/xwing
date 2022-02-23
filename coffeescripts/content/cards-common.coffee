@@ -11870,7 +11870,7 @@ exportObj.basicCardData = ->
             name: "Jyn Erso"
             id: 40
             slot: "Crew"
-            points: 3
+            points: 5
             unique: true
             faction: "Rebel Alliance"
         }
@@ -24135,6 +24135,7 @@ exportObj.standardShipInclusions = [
     {name: 'TIE/WI Whisper', faction: 'First Order'}
     {name: 'Xi-class Light Shuttle', faction: 'First Order'}
     {name: 'Delta-7 Aethersprite', faction: 'Galactic Republic'}
+    {name: 'Delta-7b Aethersprite', faction: 'Galactic Republic'}
     {name: 'ARC-170', faction: 'Galactic Republic'}
     {name: 'Naboo Royal N-1 Starfighter', faction: 'Galactic Republic'}
     {name: 'BTL-B Y-Wing', faction: 'Galactic Republic'}
