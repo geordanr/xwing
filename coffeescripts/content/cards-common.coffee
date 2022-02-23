@@ -8810,7 +8810,6 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
                 "Configuration"
-                "Title"
             ]
         }
         {
