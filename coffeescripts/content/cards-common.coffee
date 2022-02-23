@@ -16257,7 +16257,7 @@ exportObj.basicCardData = ->
             name: "Hotshot Tail Blaster"
             id: 463
             points: 2
-            attackr: 2
+            attackb: 2
             range: """0-1"""
             rangebonus: true
             charge: 2
