@@ -1131,7 +1131,7 @@ class exportObj.SquadBuilder
                             <td class="info-data"></td>
                         </tr>
                         <tr class="info-loadout">
-                            <td class="info-header translated" defaultText="Loadout Value"></td>
+                            <td class="info-header translated" defaultText="Loadout"></td>
                             <td class="info-data info-loadout"></td>
                         </tr>
                         <tr class="info-base">
