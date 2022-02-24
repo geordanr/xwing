@@ -2397,6 +2397,8 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Small")
                     container.find('tr.info-base').show()
+                    container.find('tr.info-faction td.info-data').text [exportObj.translate("faction", faction) for faction in data.factions]
+                    container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
 
                 
                 
@@ -2490,6 +2492,8 @@ class exportObj.SquadBuilder
                     ship = exportObj.ships[data.ship]
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
+                    container.find('tr.info-faction td.info-data').text exportObj.translate("faction", data.faction)
+                    container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
                     if ship.base?
                         container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", ship.base)
                     else
@@ -2642,7 +2646,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').show()
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
-                    container.find('tr.info-faction td.info-data').text data.faction 
+                    container.find('tr.info-faction td.info-data').text exportObj.translate("faction", data.faction)
                     container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
 
                     if ship.base?
