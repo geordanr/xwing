@@ -1130,6 +1130,10 @@ class exportObj.SquadBuilder
                             <td class="info-header translated" defaultText="Ship"></td>
                             <td class="info-data"></td>
                         </tr>
+                        <tr class="info-loadout">
+                            <td class="info-header translated" defaultText="Loadout Value"></td>
+                            <td class="info-data info-loadout"></td>
+                        </tr>
                         <tr class="info-base">
                             <td class="info-header translated" defaultText="Base"></td>
                             <td class="info-data"></td> 
@@ -2304,6 +2308,7 @@ class exportObj.SquadBuilder
             # we get all pilots for the ship, to display stuff like available slots which are treated as pilot properties, not ship properties (which makes sense, as they depend on the pilot, e.g. talent or force slots)
                     possible_inis = []
                     possible_costs = []
+                    possible_loadout = []
                     slot_types = {} # one number per slot: 0: not available for that ship. 1: always available for that ship. 2: available for some pilots on that ship. 3: slot two times availabel for that ship 4: slot one or two times available (depending on pilot) 5: slot zero to two times available 6: slot three times available (no mixed-case implemented) -1: undefined
                     for slot of exportObj.upgradesBySlotCanonicalName
                         slot_types[slot] = -1
@@ -2314,6 +2319,7 @@ class exportObj.SquadBuilder
                         if not (pilot.skill in possible_inis)
                             possible_inis.push(pilot.skill)
                         possible_costs.push(pilot.points)
+                        possible_loadout.push(pilot.pointsupg)
                         for slot, state of slot_types
                             switch pilot.slots.filter((item) => item == slot).length
                                 when 1
@@ -2365,11 +2371,15 @@ class exportObj.SquadBuilder
                     # display point range for that ship (and faction) 
                     point_range_text = "#{Math.min possible_costs...} - #{Math.max possible_costs...}"
                     container.find('tr.info-points td.info-data').text point_range_text
+                    loadout_range_text = "#{Math.min possible_loadout...} - #{Math.max possible_loadout...}"
+                    container.find('tr.info-loadout td.info-data').text loadout_range_text
                     # don't display point range in Quickbuild (or ToDo: Display Threat range instead)
                     if @isQuickbuild
                         container.find('tr.info-points').hide()
+                        container.find('tr.info-loadout').hide()
                     else
                         container.find('tr.info-points').show()
+                        container.find('tr.info-loadout').show()
                     
                     container.find('tr.info-engagement').hide()
                 
@@ -2397,6 +2407,8 @@ class exportObj.SquadBuilder
                     else
                         container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", "Small")
                     container.find('tr.info-base').show()
+                    container.find('tr.info-faction td.info-data').text [exportObj.translate("faction", faction) for faction in data.factions]
+                    container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
 
                 
                 
@@ -2490,6 +2502,8 @@ class exportObj.SquadBuilder
                     ship = exportObj.ships[data.ship]
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
+                    container.find('tr.info-faction td.info-data').text exportObj.translate("faction", data.faction)
+                    container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
                     if ship.base?
                         container.find('tr.info-base td.info-data').text exportObj.translate("gameterms", ship.base)
                     else
@@ -2499,6 +2513,8 @@ class exportObj.SquadBuilder
                     
                     container.find('tr.info-skill td.info-data').text data.skill
                     container.find('tr.info-skill').show()
+                    container.find('tr.info-loadout td.info-data').text data.pointsupg
+                    container.find('tr.info-loadout').show()
                     if data.engagement?
                         container.find('tr.info-engagement td.info-data').text data.engagement
                         container.find('tr.info-engagement').show()
@@ -2642,7 +2658,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').show()
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
-                    container.find('tr.info-faction td.info-data').text data.faction 
+                    container.find('tr.info-faction td.info-data').text exportObj.translate("faction", data.faction)
                     container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
 
                     if ship.base?
@@ -2654,6 +2670,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-skill td.info-data').text pilot.skill
                     container.find('tr.info-skill').show()
                     container.find('tr.info-points').hide()
+                    container.find('tr.info-loadout').hide()
                     container.find('tr.info-engagement td.info-data').text pilot.skill
                     container.find('tr.info-engagement').show()
 
@@ -2784,6 +2801,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
                     container.find('tr.info-points').hide()
+                    container.find('tr.info-loadout').hide()
                     container.find('tr.info-engagement').hide()
                     if data.energy?
                         container.find('tr.info-energy td.info-data').text data.energy
@@ -2898,6 +2916,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
                     container.find('tr.info-points').hide()
+                    container.find('tr.info-loadout').hide()
                     container.find('tr.info-agility').hide()
                     container.find('tr.info-hull').hide()
                     container.find('tr.info-shields').hide()
@@ -2940,6 +2959,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-base').hide()
                     container.find('tr.info-skill').hide()
                     container.find('tr.info-points').hide()
+                    container.find('tr.info-loadout').hide()
                     container.find('tr.info-agility').hide()
                     container.find('tr.info-hull').hide()
                     container.find('tr.info-shields').hide()
