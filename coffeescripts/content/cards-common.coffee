@@ -24216,6 +24216,7 @@ exportObj.standardUpgradeExclusions = [
 
     # Scum and Villainy
     'Boba Fett'
+    'Tobias Beckett'
     'Slave I'
 
     # Resistance
