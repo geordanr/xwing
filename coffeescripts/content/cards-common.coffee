@@ -10901,7 +10901,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Empire"
             ship: "TIE Fighter"
-            skill: 2
+            skill: 4
             charge: 2
             recurring: 1
             points: 4
@@ -16049,7 +16049,6 @@ exportObj.basicCardData = ->
             points: 4
             charge: 1
             slot: "Device"
-            unique: true
             applies_condition: '''Blazer Bomb'''.canonicalize()
         }
         {
@@ -16259,6 +16258,8 @@ exportObj.basicCardData = ->
             faction: ["Scum and Villainy","Resistance"]
             restrictions: [
                 ["Base", "Small or Medium"]
+            modifier_func: (stats) ->
+                stats.actions.push 'Slam'
             ]
         }
         {
