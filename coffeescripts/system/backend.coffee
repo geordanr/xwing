@@ -328,7 +328,7 @@ class exportObj.SquadBuilderBackend
                 tag_button = $ @squad_list_tags.find(".#{tagclean}")
                 tag_button.click (e) =>
                     button = $ e.target
-                    buttontag = button.attr('class').replace('btn ','')
+                    buttontag = button.attr('class').replace('btn ','').replace('btn-inverse ','')
                     @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
                     @squad_list_tags.find('.btn').removeClass 'btn-inverse'
                     button.addClass 'btn-inverse'
@@ -546,8 +546,8 @@ class exportObj.SquadBuilderBackend
                 </div>
                 <div class="btn-group squad-display-mode full-row">
                     <button class="btn btn-modal btn-inverse show-all-squads translated" defaultText="All"></button>
+                    <button class="btn btn-modal show-standard-squads"><span class="d-none d-lg-block translated" defaultText="Standard"></span><span class="d-lg-none translated" defaultText="Hyper"></span></button>
                     <button class="btn btn-modal show-extended-squads"><span class="d-none d-lg-block translated" defaultText="Extended"></span><span class="d-lg-none translated" defaultText="Ext"></span></button>
-                    <button class="btn btn-modal show-hyperspace-squads"><span class="d-none d-lg-block translated" defaultText="Hyperspace"></span><span class="d-lg-none translated" defaultText="Hyper"></span></button>
                     <button class="btn btn-modal show-quickbuild-squads"><span class="d-none d-lg-block translated" defaultText="Quickbuild"></span><span class="d-lg-none translated" defaultText="QB"></span></button>
                     <button class="btn btn-modal show-epic-squads translated" defaultText="Epic"></button>
                     <button class="btn btn-modal show-archived-squads translated" defaultText="Archived"></button>
@@ -692,13 +692,13 @@ class exportObj.SquadBuilderBackend
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
                     $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Ze/) != -1
 
-        @show_hyperspace_squads_button = $ @squad_list_modal.find('.show-hyperspace-squads')
-        @show_hyperspace_squads_button.click (e) =>
-            unless @squad_display_mode == 'hyperspace'
-                @squad_display_mode = 'hyperspace'
+        @show_standard_squads_button = $ @squad_list_modal.find('.show-standard-squads')
+        @show_standard_squads_button.click (e) =>
+            unless @squad_display_mode == 'standard'
+                @squad_display_mode = 'standard'
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
                 @squad_list_tags.find('.btn').removeClass 'btn-inverse'
-                @show_hyperspace_squads_button.addClass 'btn-inverse'
+                @show_standard_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
                     $(elem).toggle $(elem).data().squad.serialized.search(/v\d+Zh/) != -1
 
