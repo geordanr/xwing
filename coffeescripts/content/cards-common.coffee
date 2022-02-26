@@ -2254,7 +2254,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 3
             pointsupg: 7
-            keyword: ["Spectre"]
+            keyword: ["Spectre", "Mandalorian"]
             slots: [
                 "Talent"
                 "Missile"
@@ -24221,7 +24221,8 @@ exportObj.standardUpgradeExclusions = [
     'Slave I'
 
     # Resistance
-    
+    'Kaydel Connix'
+
     # FO
     'Supreme Leader Snoke'
 
