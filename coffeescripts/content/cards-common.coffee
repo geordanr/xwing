@@ -3101,7 +3101,7 @@ exportObj.basicCardData = ->
             keyword: ["Droid","Spectre"]
             slots: [
                 "Sensor"
-                "Crew"
+                "Turret"
                 "Torpedo"
                 "Crew"
                 "Crew"
@@ -4573,7 +4573,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Scurrg H-6 Bomber"
             skill: 2
-            points: 4
+            points: 5
             pointsupg: 7
             slots: [
                 "Turret"
@@ -16049,7 +16049,7 @@ exportObj.basicCardData = ->
             points: 4
             charge: 1
             slot: "Device"
-            applies_condition: '''Blazer Bomb'''.canonicalize()
+            applies_condition: '''Blaze Bomb'''.canonicalize()
         }
         {
             name: "Beskar Reinforced Plating"

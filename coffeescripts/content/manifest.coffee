@@ -4960,6 +4960,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Perceptive Copilot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Scimitar'
             type: 'upgrade'
             count: 1
