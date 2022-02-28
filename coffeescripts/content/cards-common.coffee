@@ -11226,6 +11226,7 @@ exportObj.basicCardData = ->
             force: 1
             points: 7
             pointsupg: 16
+            keyword: ["Light Side","Spectre"]
             unique: true
             slots: [
                 "Force"
