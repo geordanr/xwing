@@ -5042,6 +5042,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Delta-7b Aethersprite'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'V-19 Torrent'
             type: 'ship'
             count: 2
@@ -5068,6 +5073,31 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Jedi Knight'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Obi-Wan Kenobi (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Plo Koon (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Mace Windu (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Saesee Tiin (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jedi Knight (Delta-7b)'
             type: 'pilot'
             count: 1
         }
@@ -5365,6 +5395,36 @@ exportObj.manifestByExpansion =
         {
             name: 'Delta-7 Aethersprite'
             type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Delta-7b Aethersprite'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Anakin Skywalker (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ahsoka Tano (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Barriss Offee (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Luminara Unduli (Delta-7b)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jedi Knight (Delta-7b)'
+            type: 'pilot'
             count: 1
         }
         {
