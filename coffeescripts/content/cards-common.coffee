@@ -4231,6 +4231,7 @@ exportObj.basicCardData = ->
             keyword: ["Bounty Hunter","Dark Side"]
             slots: [
                 "Force"
+                "Talent"
                 "Crew"
                 "Illicit"
                 "Illicit"
@@ -11326,6 +11327,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Plo Koon (Delta-7b)"
+            xws: "plokoon-delta7baethersprite"
             id: 525
             unique: true
             faction: "Galactic Republic"
@@ -11346,6 +11348,7 @@ exportObj.basicCardData = ->
         {
             name: "Saesee Tiin (Delta-7b)"
             canonical_name: 'Saesee Tiin'.canonicalize()
+            xws: "saeseetiin-delta7baethersprite"
             id: 526
             unique: true
             faction: "Galactic Republic"
@@ -11364,6 +11367,7 @@ exportObj.basicCardData = ->
         {
             name: "Mace Windu (Delta-7b)"
             canonical_name: 'Mace Windu'.canonicalize()
+            xws: "macewindu-delta7baethersprite"
             id: 527
             unique: true
             faction: "Galactic Republic"
@@ -11383,6 +11387,7 @@ exportObj.basicCardData = ->
         {
             name: "Anakin Skywalker (Delta-7b)"
             canonical_name: 'Anakin Skywalker'.canonicalize()
+            xws: "anakinskywalker-delta7baethersprite"
             id: 528
             unique: true
             faction: "Galactic Republic"
@@ -11403,6 +11408,7 @@ exportObj.basicCardData = ->
         {
             name: "Luminara Unduli (Delta-7b)"
             canonical_name: 'Luminara Unduli'.canonicalize()
+            xws: "luminaraunduli-delta7baethersprite"
             id: 529
             unique: true
             faction: "Galactic Republic"
@@ -11421,6 +11427,7 @@ exportObj.basicCardData = ->
         {
             name: "Barriss Offee (Delta-7b)"
             canonical_name: 'Barriss Offee'.canonicalize()
+            xws: "barrissoffee-delta7baethersprite"
             id: 530
             unique: true
             faction: "Galactic Republic"
