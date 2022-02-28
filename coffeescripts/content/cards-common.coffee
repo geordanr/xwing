@@ -24203,6 +24203,7 @@ exportObj.standardPilotExclusions = [
 
     # Galactic Republic
     'Saesee Tiin'
+    'Saesee Tiin (Delta-7b)'
 
     # Separatist Alliance
     'Phlac-Arphocc Prototype'
