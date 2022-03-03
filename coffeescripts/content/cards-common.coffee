@@ -11043,7 +11043,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Night Owl Liberator"
+            name: "Nite Owl Liberator"
             id: 511
             faction: "Galactic Republic"
             ship: "Gauntlet Fighter"
@@ -11199,7 +11199,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Chopper (Gauntlet Fighter)"
+            name: '"Chopper" (Gauntlet Fighter)'
             canonical_name: 'Chopper'.canonicalize()
             xws: "chopper-gauntletfighter"
             id: 519
@@ -16149,6 +16149,7 @@ exportObj.basicCardData = ->
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnUpgradeSlot "Crew"
             also_occupies_upgrades: [ "Crew" ]
+            applies_condition: '''Clan Wren Commandos'''.canonicalize()
         }
         {
             name: "Razor Crest"
@@ -16285,6 +16286,111 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Base", "Medium or Large"]
             ]
+        }
+        {
+            name: "Combat Boarding Tube"
+            id: 464
+            points: 0
+            slot: "Command"
+            ship: "Gauntlet Fighter"
+            restrictions: [
+                ["Slot", "Configuration"]
+                ["Base", "Standard"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Configuration"
+            also_occupies_upgrades: [ "Configuration" ]
+        }
+        {
+            name: "Drop-Seat Bay"
+            id: 465
+            points: 1
+            slot: "Modification"
+            ship: "Gauntlet Fighter"
+            unequips_upgrades: [
+                'Device'
+            ]
+            also_occupies_upgrades: [
+                'Device'
+            ]
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Crew"
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Crew"
+                }
+            ]
+        }
+        {
+            name: "Mandalorian Super Commandos"
+            id: 466
+            points: 7
+            slot: "Crew"
+            unique: true
+            charge: 2
+            faction: "Scum and Villainy"
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Non-Small"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+            applies_condition: '''Mandalorian Super Commandos'''.canonicalize()
+        }
+        {
+            name: "Imperial Super Commandos"
+            id: 467
+            points: 7
+            slot: "Crew"
+            unique: true
+            charge: 2
+            faction: "Galactic Empire"
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Non-Small"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+            applies_condition: '''Imperial Super Commandos'''.canonicalize()
+        }
+        {
+            name: "Nite Owl Commandos"
+            id: 468
+            points: 7
+            slot: "Crew"
+            unique: true
+            charge: 2
+            faction: "Galactic Republic"
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Non-Small"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+            applies_condition: '''Nite Owl Commandos'''.canonicalize()
+        }
+        {
+            name: "Death Watch Commandos"
+            id: 469
+            points: 7
+            slot: "Crew"
+            unique: true
+            charge: 2
+            faction: "Separatist Alliance"
+            restrictions: [
+                ["Slot", "Crew"]
+                ["Base", "Non-Small"]
+            ]
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnUpgradeSlot "Crew"
+            also_occupies_upgrades: [ "Crew" ]
+            applies_condition: '''Death Watch Commandos'''.canonicalize()
         }
     ]
 
@@ -16439,6 +16545,26 @@ exportObj.basicCardData = ->
         {
             name: '''Marked for Elimination'''
             id: 34
+        }
+        {
+            name: '''Clan Wren Commandos'''
+            id: 35
+        }
+        {
+            name: '''Nite Owl Commandos'''
+            id: 36
+        }
+        {
+            name: '''Death Watch Commandos'''
+            id: 37
+        }
+        {
+            name: '''Imperial Super Commandos'''
+            id: 38
+        }
+        {
+            name: '''Mandalorian Super Commandos'''
+            id: 39
         }
     ]
 

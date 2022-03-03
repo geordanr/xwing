@@ -10121,6 +10121,447 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Gauntlet Fighter Expansion pack": [
+        {
+            name: 'Gauntlet Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Maul'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Bo-Katan Kryze (Republic)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Bo-Katan Kryze'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Hark'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Pre Vizsla'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Rook Kast'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ezra Bridger (Gauntlet Fighter)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Chopper" (Gauntlet Fighter)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Mandalorian Resistance Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Death Watch Warrior'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nite Owl Liberator'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gar Saxon'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Imperial Super Commando'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shadow Collective Operator'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gauntlet'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Nightbrother'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Swivel Wing'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Drop-Seat Bay'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Clan Wren Commandos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Combat Boarding Tube'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Mandalorian Super Commandos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Imperial Super Commandos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Nite Owl Commandos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Death Watch Commandos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Blazer Bomb'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    "Pride of Mandalore Reinforcements Pack": [
+        {
+            name: 'Fenn Rau (Rebel Fang)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Bodica Venj'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Dirk Ullodin'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Clan Wren Volunteer'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Mandalorian Royal Guard'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'ISB Jingoist'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Moff Gideon'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ahsoka Tano (Crew)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bo-Katan Kryze (Republic/Separatist)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bo-Katan Kryze (Rebel/Scum)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Captain Hark'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Fenn Rau'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Gar Saxon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Gar Saxon (Gunner)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Korkie Kryze'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Obi-Wan Kenobi'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Pre Vizsla'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Rook Kast'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Satine Kryze'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Savage Opress'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tal Merrik'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tiber Saxon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tristan Wren'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ursa Wren'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ursa Wren (Gunner)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Sabine Wren (Command)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Prime Minister Almec'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Maul (Mandalore)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Beskar Reinforced Plating'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Blazer Bomb'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Mandalorian Optics'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Clan Training'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Deadeye Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Limiter Override'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Compassion'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Malice'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electro-Chaff Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Suppressive Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Weapons Systems Officer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'False Transponder Codes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Delayed Fuses'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overtuned Modulators'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    "Razor Crest Expansion Pack": [
+        {
+            name: 'ST-70 Assault Ship'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'The Mandalorian'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Q9-0'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Guild Bounty Hunter'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Outer Rim Enforcer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Razor Crest'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'The Mandalorian'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'The Child'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tracking Fob'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Notorious'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Enduring'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'IG-11'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Greef Karga'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Kuiil'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Peli Motto'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Migs Mayfeld'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Burnout Thrusters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hotshot Tail Blaster'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
     'Loose Ships': [
         {
