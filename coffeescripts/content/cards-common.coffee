@@ -5119,7 +5119,7 @@ exportObj.basicCardData = ->
             pointsupg: 4
             slots: [
                 "Sensor"
-                "Missile"
+                "Modification"
                 "Modification"
             ]
         }
@@ -11664,7 +11664,7 @@ exportObj.basicCardData = ->
             name: "C-3PO"
             id: 18
             slot: "Crew"
-            points: 7
+            points: 5
             unique: true
             faction: "Rebel Alliance"
             modifier_func: (stats) ->
@@ -16267,12 +16267,12 @@ exportObj.basicCardData = ->
             id: 462
             points: 6
             slot: "Modification"
-            faction: ["Scum and Villainy","Resistance"]
+            faction: ["Scum and Villainy"]
             restrictions: [
                 ["Base", "Small or Medium"]
-            modifier_func: (stats) ->
-                stats.actions.push 'Slam'
             ]
+            modifier_func: (stats) ->
+                stats.actions.push 'Slam' if 'Slam' not in stats.actions
         }
         {
             name: "Hotshot Tail Blaster"
