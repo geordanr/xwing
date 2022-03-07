@@ -24091,10 +24091,12 @@ exportObj.setupCommonCardData = (basic_cards) ->
         throw new Error("At least one pilot shares an ID with another")
 
     exportObj.pilotsByFactionCanonicalName = {}
+    exportObj.pilotsByKeyword = {}
     # uniqueness can't be enforced just be canonical name, but by the base part
     exportObj.pilotsByUniqueName = {}
     for pilot_name, pilot of exportObj.pilots
         ((exportObj.pilotsByFactionCanonicalName[pilot.faction] ?= {})[pilot.canonical_name] ?= []).push pilot
+        ((exportObj.pilotsByKeyword[pilot.keyword] ?= {})[pilot.canonical_name] ?= []).push pilot
         (exportObj.pilotsByUniqueName[pilot.canonical_name.getXWSBaseName()] ?= []).push pilot
 
     exportObj.pilotsByFactionXWS = {}

@@ -117,6 +117,12 @@ class exportObj.CardBrowser
                                             <input type="checkbox" class="duplicate-slots-checkbox advanced-search-checkbox" /> #{exportObj.translate('ui', "Has multiple of the chosen slots")}
                                         </label>
                                     </div>
+                                    <div class = "advanced-search-keyword-available-container">
+                                        <label class = "advanced-search-label select-available-keywords">
+                                            <strong class="translated" defaultText="Keywords:"></strong>
+                                            <select class="advanced-search-selection keyword-available-selection" multiple="1" data-placeholder="#{exportObj.translate('ui', "noXYselected", "keywords")}"></select>
+                                        </label>
+                                    </div>
                                     <div class = "advanced-search-actions-available-container">
                                         <label class = "advanced-search-label select-available-actions">
                                             <strong class="translated" defaultText="Actions:"></strong>
@@ -346,6 +352,21 @@ class exportObj.CardBrowser
             @slot_available_selection.append opt
         @slot_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @keyword_available_selection = ($ @container.find('.xwing-card-browser select.keyword-available-selection'))
+        keyword_list = []
+        for keywords of exportObj.pilotsByKeyword
+            keyword_items = keywords.split(",")
+            for i in keyword_items
+                if (keyword_list.indexOf(i) < 0) and (i != "undefined")
+                    keyword_list.push(i)
+        keyword_list.sort()
+        for keyword_item in keyword_list
+            opt = $ document.createElement('OPTION')
+            opt.val keyword_item
+            opt.text exportObj.translate('keyword', keyword_item)
+            @keyword_available_selection.append opt
+        @keyword_available_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
         @duplicateslots = ($ @container.find('.xwing-card-browser .duplicate-slots-checkbox'))[0]
         @action_available_selection = ($ @container.find('.xwing-card-browser select.action-available-selection'))
         # ToDo: This does not seem like the correct place to have a list of all actions. Don't we have that elsewhere?!
@@ -444,6 +465,7 @@ class exportObj.CardBrowser
         @unique_checkbox.onclick = => @renderList @sort_selector.val()
         @non_unique_checkbox.onclick = => @renderList @sort_selector.val()
         @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
+        @keyword_available_selection[0].onchange = => @renderList @sort_selector.val()
         @duplicateslots.onclick = => @renderList @sort_selector.val()
         @action_available_selection[0].onchange = => @renderList @sort_selector.val()
         @linkedaction_available_selection[0].onchange = => @renderList @sort_selector.val()
@@ -695,14 +717,6 @@ class exportObj.CardBrowser
         required_slots = @slot_available_selection.val()
         if required_slots.length > 0
             slots = card.data.slots
-            if card.orig_type == 'Ship'
-                slots = []
-                for faction in selected_factions
-                    if faction != undefined
-                        for name, pilots of exportObj.pilotsByFactionCanonicalName[faction]
-                            for pilot in pilots # there are sometimes multiple pilots with the same name, so we have another array layer here
-                                if pilot.ship == card.data.name 
-                                    slots.push.apply(slots, pilot.slots)
             
             for slot in required_slots
                 # special case for hardpoints
@@ -713,6 +727,15 @@ class exportObj.CardBrowser
                     hasDuplicates = slots.filter (x, i, self) ->
                         (self.indexOf(x) == i && i != self.lastIndexOf(x)) and (x == slot)
                     return false if hasDuplicates.length == 0
+
+        # check for keyword requirements
+        required_keywords = @keyword_available_selection.val()
+        if required_keywords.length > 0
+            keywords = card.data.keyword
+
+            for keyword in required_keywords
+                # special case for hardpoints
+                return false unless keywords? and keyword in keywords
 
         # check for action requirements
         required_actions = @action_available_selection.val()
