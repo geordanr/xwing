@@ -1650,6 +1650,9 @@ exportObj.cardLoaders.English = () ->
         "Captain Hark":
            display_name: """Captain Hark"""
            text: """After you reveal a [0 %STOP%] maneuver, if you are equipped with <b>Swivel Wings (Down)</b>, you <b>must</b> execute a [1 %BANKLEFT%] or [1 %BANKRIGHT%] sideslip maneuver of the same difficulty instead. After you execute that maneuver, you <b>must</b> flip <b>Swivel Wings (Down)</b>."""
+        "Gar Saxon":
+           display_name: """Gar Saxon"""
+           text: """While a friendly unit at range 0-2 performs a primary attack, if the attacker is in the defender's %REARARC%, you may spend 1 %CHARGE%. If you do, the attacker rolls 1 additional die."""
         "Pre Vizsla":
            display_name: """Pre Vizsla"""
            text: """While you perform an attack, if the defender's initiative is equal to or greater than yours, you may spend 2 %CHARGE% to roll 1 additional die."""
