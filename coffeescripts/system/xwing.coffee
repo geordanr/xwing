@@ -1531,7 +1531,7 @@ class exportObj.SquadBuilder
 
             tot_points += ship.getPoints()
             if ship.destroystate == 1
-                points_dest += Math.ceil ship.getPoints() / 2
+                points_dest += Math.floor ship.getPoints() / 2
             else if ship.destroystate == 2
                 points_dest += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
@@ -4313,8 +4313,8 @@ class Ship
                 </div>
             """
         
-        HalfPoints = Math.ceil @getPoints() / 2
-        
+        HalfPoints = Math.floor @getPoints() / 2
+
         Threshold = Math.floor (effective_stats['hull'] + effective_stats['shields']) / 2
         
         html += $.trim """
@@ -4342,7 +4342,7 @@ class Ship
         # if @getPoints() != @pilot.points
         table_html += """<tr class="simple-ship-total"><td colspan="2">#{@uitranslation("Ship Total")}: #{@getPoints()}</td></tr>"""
         
-        halfPoints = Math.ceil @getPoints() / 2        
+        halfPoints = Math.floor @getPoints() / 2        
         threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
         table_html += """<tr class="simple-ship-half-points"><td colspan="2">#{@uitranslation("Half Points")}: #{halfPoints} #{@uitranslation("Threshold")}: #{threshold}</td></tr>"""
@@ -4363,7 +4363,7 @@ class Ship
             simplecopy += simplecopy_upgrades.join "    "
             simplecopy += """    \n"""
 
-        halfPoints = Math.ceil @getPoints() / 2        
+        halfPoints = Math.floor @getPoints() / 2        
         threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
         simplecopy += """#{@uitranslation("Ship total")}: #{@getPoints()}  #{@uitranslation("Half Points")}: #{halfPoints}  #{@uitranslation("Threshold")}: #{threshold}    \n    \n"""

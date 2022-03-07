@@ -11095,6 +11095,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 7
             pointsupg: 10
+            keyword: ["Mandalorian"]
             slots: [
                 "Crew"
                 "Gunner"
@@ -11114,6 +11115,7 @@ exportObj.basicCardData = ->
             points: 7
             pointsupg: 18
             unique: true
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
@@ -11151,6 +11153,7 @@ exportObj.basicCardData = ->
             points: 7
             pointsupg: 10
             unique: true
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
@@ -11170,6 +11173,7 @@ exportObj.basicCardData = ->
             points: 8
             pointsupg: 20
             unique: true
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
@@ -11189,6 +11193,7 @@ exportObj.basicCardData = ->
             points: 7
             pointsupg: 10
             unique: true
+            keyword: ["Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
