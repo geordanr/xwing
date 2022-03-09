@@ -4723,6 +4723,7 @@ exportObj.basicCardData = ->
                 "Gunner"
                 "Illicit"
                 "Modification"
+                "Title"
             ]
         }
         {
