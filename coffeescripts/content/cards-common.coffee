@@ -11457,6 +11457,7 @@ exportObj.basicCardData = ->
         {
             name: "Ahsoka Tano (Delta-7b)"
             canonical_name: 'Ahsoka Tano'.canonicalize()
+            xws: "ahsokatano-delta7baethersprite"
             id: 531
             unique: true
             faction: "Galactic Republic"
@@ -11475,6 +11476,7 @@ exportObj.basicCardData = ->
         {
             name: "Jedi Knight (Delta-7b)"
             canonical_name: 'Jedi Knight'.canonicalize()
+            xws: "jediknight-delta7baethersprite"
             id: 532
             faction: "Galactic Republic"
             ship: "Delta-7b Aethersprite"
@@ -11492,6 +11494,7 @@ exportObj.basicCardData = ->
         {
             name: "Obi-Wan Kenobi (Delta-7b)"
             canonical_name: 'Obi-Wan Kenobi'.canonicalize()
+            xws: "obiwankenobi-delta7baethersprite"
             id: 533
             unique: true
             faction: "Galactic Republic"
