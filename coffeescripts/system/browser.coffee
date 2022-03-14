@@ -510,7 +510,7 @@ class exportObj.CardBrowser
             if type == 'upgrades'
                 @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
             else
-                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('singular', type), data: card_data, orig_type: exportObj.translate('singular', type) } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('singular', type), data: card_data, orig_type: exportObj.translateToLang('English','singular', type) } for card_name, card_data of exportObj[type] )
 
         @types = (exportObj.translate('types', type) for type in [ 'Pilot', 'Ship' ])
         for card_name, card_data of exportObj.upgrades
