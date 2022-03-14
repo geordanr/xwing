@@ -309,7 +309,7 @@ class exportObj.CardBrowser
 
         @card_selector_container = $ @container.find('.xwing-card-browser .card-selector-container')
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
-        @card_viewer_container.append $.trim exportObj.builders[0].createInfoContainerUI(false)
+        @card_viewer_container.append $.trim exportObj.builders[7].createInfoContainerUI(false)
         @card_viewer_container.hide()
         @card_viewer_conditions_container = $ @container.find('.xwing-card-browser .card-viewer-conditions-container')
         @card_viewer_conditions_container.hide()
@@ -617,7 +617,7 @@ class exportObj.CardBrowser
             @card_viewer_container.find('tr.info-faction').show() # this information is not shown in the builder, since the faction is clear there, but usefull here. 
 
         @card_viewer_container.show()
-        exportObj.builders[0].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
+        exportObj.builders[7].showTooltip(orig_type, data, add_opts ? {}, @card_viewer_container) # we use the render method from the squad builder, cause it works.
 
         # Conditions
         if data?.applies_condition?
