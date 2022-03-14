@@ -11264,8 +11264,6 @@ exportObj.basicCardData = ->
             unique: true
             keyword: ["Droid"]
             slots: [
-                "Talent"
-                "Talent"
                 "Crew"
                 "Crew"
                 "Cannon"
