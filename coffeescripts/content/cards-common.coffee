@@ -11140,6 +11140,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Crew"
                 "Gunner"
+                "Device"
                 "Modification"
                 "Configuration"
             ]
@@ -14602,7 +14603,7 @@ exportObj.basicCardData = ->
             name: "Coaxium Hyperfuel"
             id: 310
             slot: "Illicit"
-            points: 1
+            points: 4
             restrictions: [
                 ["Action", "Slam"]
             ]
