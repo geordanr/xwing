@@ -1,7 +1,7 @@
 ###
-    X-Wing Squad Builder 2.0
+    X-Wing Squad Builder 2.5
     Stephen Kim <raithos@gmail.com>
-    https://raithos.github.io
+    https://yasb.app
     Japanese translation by
     - k-keisuke
 ###

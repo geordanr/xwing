@@ -122,8 +122,8 @@ exportObj.translations.English =
         "Choose obstacles dialog": "Choose up to three obstacles, to include in the permalink for use in external programs"
         "Mark obstacles": "Mark the three obstacles you are using."
         "Scan QR-Code": "Scan to open this list in the builder"
-        "View in YASB": "View in Yet Another Squad Builder 2.0"
-        "YASB advertisment": "YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games."
+        "View in YASB": "View in Yet Another Squad Builder 2.5"
+        "YASB advertisment": "YASB 2.5 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games."
         collectionContentShips: (translator, number) ->
             "You have #{number} ship #{if number == 1 then 'model' else 'models'} in your collection."
         collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
