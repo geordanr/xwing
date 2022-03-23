@@ -12,6 +12,8 @@ module.exports = (grunt) ->
                     'app/javascripts/xwingcontent.js': ['coffeescripts/content/*.coffee']
                     'app/javascripts/translations.js': ['coffeescripts/translations/*.coffee']
         sass:
+            options:
+                implementation: require('node-sass') 
             compile:
                 expand: true
                 cwd: 'stylesheets/'
@@ -29,8 +31,9 @@ module.exports = (grunt) ->
             install:
                 options:
                     targetDir: 'app/bower_components'
-                    cleanTargetDir: true
-                    cleanBowerDir: true
+                    verbose: true
+                    cleanTargetDir: false 
+                    cleanBowerDir: false 
                     layout: 'byComponent'
         uglify:
             compile:
