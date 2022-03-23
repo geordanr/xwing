@@ -4247,7 +4247,7 @@ exportObj.basicCardData = ->
             skill: 5
             points: 7
             pointsupg: 15
-            keyword: ["Bounty Hunter"]
+            keyword: ["Bounty Hunter","Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
@@ -4267,7 +4267,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 6
             pointsupg: 9
-            keyword: ["Mandalorian"]
+            keyword: ["Bounty Hunter","Mandalorian"]
             slots: [
                 "Talent"
                 "Crew"
