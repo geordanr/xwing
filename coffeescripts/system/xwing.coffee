@@ -411,7 +411,7 @@ class exportObj.SquadBuilder
                             <span class="translated" defaultText="Include QR codes"></span> <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                         </label><br />
                         <label class="obstacles-checkbox">
-                            <span class="translated" defaultText="Include Obstacle Choices"></span> <input type="checkbox" class="toggle-obstacles" />
+                            <span class="translated" defaultText="Include Obstacle Choices"></span> <input type="checkbox" class="toggle-obstacles" checked="checked" />
                         </label>
                     </div>
                 </div>
@@ -939,6 +939,12 @@ class exportObj.SquadBuilder
                         <option class="gascloud4-select translated" value="gascloud4" defaultText="Gas Cloud 4"></option>
                         <option class="gascloud5-select translated" value="gascloud5" defaultText="Gas Cloud 5"></option>
                         <option class="gascloud6-select translated" value="gascloud6" defaultText="Gas Cloud 6"></option>
+                        <option class="pomasteroid1-select translated" value="pomasteroid1" defaultText="Pride of Mandalore Rock 1"></option>
+                        <option class="pomasteroid2-select translated" value="pomasteroid2" defaultText="Pride of Mandalore Rock 2"></option>
+                        <option class="pomasteroid3-select translated" value="pomasteroid3" defaultText="Pride of Mandalore Rock 3"></option>
+                        <option class="pomdebris1-select translated" value="pomdebris1" defaultText="Pride of Mandalore Debris 1"></option>
+                        <option class="pomdebris2-select translated" value="pomdebris2" defaultText="Pride of Mandalore Debris 2"></option>
+                        <option class="pomdebris3-select translated" value="pomdebris3" defaultText="Pride of Mandalore Debris 3"></option>
                     </select>
                 </div>
                 <div>
@@ -1379,7 +1385,7 @@ class exportObj.SquadBuilder
                     
             # Notes, if present
             @printable_container.find('.printable-body').append $.trim """
-                <div class="version"><span class="translated" defaultText="Points Version:"></span> 2.5.0 03/01/2022</div>
+                <div class="version">Points Version: 2.5.0 03/01/2022</div>
             """
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
@@ -1394,13 +1400,18 @@ class exportObj.SquadBuilder
                 <div class="print-conditions"></div>
             """
             @printable_container.find('.printable-body .print-conditions').html @condition_container.html()
-                
+
             # Obstacles
             if @list_modal.find('.toggle-obstacles').prop('checked')
+                obstacles = @getObstacles()
+                obstaclelist = ""
+                for obstaclename in obstacles
+                    obstaclelist += """<img class="obstacle" src="images/#{obstaclename}.png" />"""
+
                 @printable_container.find('.printable-body').append $.trim """
                     <div class="obstacles">
-                        <div class="translated" defaultText="Mark obstacles"></div>
-                        <img class="obstacle-silhouettes" src="images/xws-obstacles.png" />
+                        <div>Chosen Obstacles:</div>
+                        #{obstaclelist}
                     </div>
                 """
 
