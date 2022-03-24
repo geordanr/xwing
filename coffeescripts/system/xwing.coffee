@@ -2332,8 +2332,8 @@ class exportObj.SquadBuilder
                     container.find('tr.info-faction td.info-data').text [exportObj.translate("faction", faction) for faction in data.factions]
                     container.find('tr.info-faction').hide() # this information is clear from the context, unless we are in card browser
 
-                
-                
+                    container.find('p.info-restrictions').hide()
+
                     for cls in container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
                         container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
                     container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.attack_icon ? 'xwing-miniatures-font-attack')
