@@ -182,6 +182,9 @@ class exportObj.CardBrowser
                                         <label class = "advanced-search-label toggle-large-base">
                                             <input type="checkbox" class="large-base-checkbox advanced-search-checkbox" checked="checked"/> <span class="translated" defaultText="Large"></span>
                                         </label>
+                                        <label class = "advanced-search-label toggle-large-base">
+                                            <input type="checkbox" class="huge-base-checkbox advanced-search-checkbox" checked="checked"/> <span class="translated" defaultText="Huge"></span>
+                                        </label>
                                     </div>
                                     <div class = "advanced-search-attack-container">
                                         <strong><i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>:</strong>
@@ -341,6 +344,7 @@ class exportObj.CardBrowser
         @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
         @non_unique_checkbox = ($ @container.find('.xwing-card-browser .non-unique-checkbox'))[0]
         @base_size_checkboxes = 
+            huge: ($ @container.find('.xwing-card-browser .huge-base-checkbox'))[0]
             large: ($ @container.find('.xwing-card-browser .large-base-checkbox'))[0]
             medium: ($ @container.find('.xwing-card-browser .medium-base-checkbox'))[0]
             small: ($ @container.find('.xwing-card-browser .small-base-checkbox'))[0]
@@ -831,14 +835,17 @@ class exportObj.CardBrowser
         if not (@base_size_checkboxes['small'].checked and @base_size_checkboxes['medium'].checked and @base_size_checkboxes['large'].checked)
             size_matches = false
             if card.orig_type == 'Ship'
-                size_matches = size_matches or card.data.medium and @base_size_checkboxes['medium'].checked
-                size_matches = size_matches or card.data.large and @base_size_checkboxes['large'].checked
-                size_matches = size_matches or not card.data.medium and not card.data.large and @base_size_checkboxes['small'].checked
+                if card.data.base?
+                    size_matches = size_matches or @base_size_checkboxes[card.data.base.toLowerCase()].checked
+                else
+                    size_matches = size_matches or @base_size_checkboxes['small'].checked
             else if card.orig_type == 'Pilot'
                 ship = exportObj.ships[card.data.ship]
-                size_matches = size_matches or ship.medium and @base_size_checkboxes['medium'].checked
-                size_matches = size_matches or ship.large and @base_size_checkboxes['large'].checked
-                size_matches = size_matches or not ship.medium and not ship.large and @base_size_checkboxes['small'].checked
+                if ship.base?
+                    size_matches = size_matches or @base_size_checkboxes[ship.base.toLowerCase()].checked
+                else
+                    size_matches = size_matches or @base_size_checkboxes['small'].checked
+
             return false unless size_matches
 
         # check for hull
