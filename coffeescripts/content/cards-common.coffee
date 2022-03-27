@@ -16074,7 +16074,7 @@ exportObj.basicCardData = ->
             points: 4
             charge: 1
             slot: "Device"
-            applies_condition: '''Blaze Bomb'''.canonicalize()
+            applies_condition: '''Blazer Bomb'''.canonicalize()
         }
         {
             name: "Beskar Reinforced Plating"
@@ -16549,7 +16549,7 @@ exportObj.basicCardData = ->
             unique: true
         }
         {
-            name: '''Blaze Bomb'''
+            name: '''Blazer Bomb'''
             id: 32
         }
         {
