@@ -24438,6 +24438,12 @@ exportObj.standardCheck = (data, faction='', shipCheck=false) ->
 exportObj.standardCheckBrowser = (data, faction='', type) ->
     # check ship/pilot first
     if type == 'Pilot'
+        check = false
+        for ship in exportObj.standardShipInclusions
+            if (data.faction == ship.faction && (data.ship == ship.name))
+                check = true
+        if check == false
+            return false
         return data.name not in exportObj.standardPilotExclusions
     else if type == 'Ship'
         for ship in exportObj.standardShipInclusions
