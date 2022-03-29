@@ -31,10 +31,11 @@ module.exports = (grunt) ->
             install:
                 options:
                     targetDir: 'app/bower_components'
-                    verbose: true
+                    verbose: false 
                     cleanTargetDir: false 
                     cleanBowerDir: false 
                     layout: 'byComponent'
+                    copy: true
         uglify:
             compile:
                 options:
