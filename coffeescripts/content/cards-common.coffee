@@ -11216,6 +11216,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 7
             pointsupg: 18
+            keyword: ["Droid","Spectre"]
             unique: true
             slots: [
                 "Crew"
