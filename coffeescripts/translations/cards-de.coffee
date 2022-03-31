@@ -2554,7 +2554,7 @@ sie überschneiden."""
         "Sabine Wren":
            display_name: """Sabine Wren"""
            text: """<strong>Aufbau:</strong> Platziere 1 Ionen-, 1 Störsignal-, 1 Stress- und 1 Fangstrahlmarker auf dieser Karte. %LINEBREAK%Nachdem ein Schiff den Effekt einer befreundeten Bombe erlitten hat, darfst du 1 Ionen-, Störsignal-, Stress- oder Fangstrahlmarker von dieser Karte entfernen. Falls du das tust, erhält jenes Schiff einen passenden Marker."""
-        "Sabine Wren":
+        "Sabine Wren (Gunner)":
            display_name: """Sabine Wren"""
            text: """Nachdem du einen Spezialangriff durchgeführt hast, darfst du bis zu X befreundete Schiffe in Reichweite 0-3 des Verteidigers wählen. X ist die Anzahl Schadenskarten, die dem Verteidiger während jenes Angriffs zugeteilt worden sind. Jedes gewählte Schiff darf 1 Anstrengungs- oder Stressmarker entfernen."""
         "Saboteur's Map":
