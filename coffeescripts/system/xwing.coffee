@@ -2036,7 +2036,7 @@ class exportObj.SquadBuilder
                     added_dials[ship.data.name] = (added_dials[ship.data.name] ? []).concat [maneuvers_modified.toString()] # save maneuver as string, as that is easier to compare than arrays (if e.g. two ships of same type, one with and one without R4 are in a squad, we add 2 dials)
                     dialHTML += '<div class="fancy-dial">' + 
                                 """<h4 class="ship-name-dial">#{if ship.data.display_name? then ship.data.display_name else ship.data.name}""" +
-                                """#{if maneuvers_modified.toString() != maneuvers_unmodified.toString() then " (" + @uitranslation(modified) + ")" else ""}</h4>""" +
+                                """#{if maneuvers_modified.toString() != maneuvers_unmodified.toString() then " (" + @uitranslation("modified") + ")" else ""}</h4>""" +
                                 @getManeuverTableHTML(maneuvers_modified, maneuvers_unmodified) + '</div>'
 
         return """
