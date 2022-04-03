@@ -10866,7 +10866,7 @@ exportObj.basicCardData = ->
             id: 501
             faction: "Rebel Alliance"
             canonical_name: 'Fenn Rau'.canonicalize()
-            xws: "fennrau-rebelfangfighter"
+            xws: "fennrau-rebel-fang"
             unique: true
             ship: "Fang Fighter"
             skill: 6
@@ -11972,8 +11972,7 @@ exportObj.basicCardData = ->
             faction: ["Scum and Villainy", "Rebel Alliance"]
             force: 1
             restrictions: [
-                ["orUnique", "Ezra Bridger"]
-                ["Faction", "Scum and Villainy"]
+                ["FactionOrUnique", "Ezra Bridger", "Scum and Villainy"]
             ]
             modifier_func: (stats) ->
                 stats.force += 1
@@ -12112,8 +12111,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: ["Scum and Villainy", "Galactic Empire"]
             restrictions: [
-                ["orUnique", "Darth Vader"]
-                ["Faction", "Scum and Villainy"]
+                ["FactionOrUnique", "Darth Vader", "Scum and Villainy"]
             ]
         }
         {
@@ -12243,8 +12241,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: ["Scum and Villainy", "Galactic Empire"]
             restrictions: [
-                ["orUnique", "Darth Vader"]
-                ["Faction", "Scum and Villainy"]
+                ["FactionOrUnique", "Darth Vader", "Scum and Villainy"]
             ]
         }
         {
@@ -12357,7 +12354,7 @@ exportObj.basicCardData = ->
             unique: true
             charge: 2
             restrictions: [
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
         }
         {
@@ -12393,7 +12390,7 @@ exportObj.basicCardData = ->
             charge: 1
             applies_condition: '''Loose Cargo'''.canonicalize()
             restrictions: [
-                ["Base", "Medium or Large"]
+                ["Base", "Medium", "Large"]
             ]
         }
         {
@@ -12469,7 +12466,7 @@ exportObj.basicCardData = ->
             points: 4
             charge: 2
             restrictions: [
-                ["Base", "Medium or Large"]
+                ["Base", "Medium", "Large"]
             ]
         }
         {
@@ -12526,7 +12523,7 @@ exportObj.basicCardData = ->
             slot: "Modification"
             points: 2
             restrictions: [
-                ["Base", "Medium or Large"]
+                ["Base", "Medium", "Large"]
             ]
         }
         {
@@ -12586,7 +12583,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 6
             restrictions: [
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
             modifier_func: (stats) ->
                 stats.actions.push 'R-Evade' if 'R-Evade' not in stats.actions
@@ -12598,7 +12595,7 @@ exportObj.basicCardData = ->
             points: 2
             charge: 1
             restrictions: [
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
         }
         {
@@ -12631,7 +12628,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 7
             restrictions: [
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
         }
         {
@@ -13819,7 +13816,7 @@ exportObj.basicCardData = ->
             points: 4
             restrictions: [
                 ["ShieldsGreaterThan", 0]
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
             modifier_func: (stats) ->
                 stats.shields -= 1
@@ -14826,7 +14823,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 1
             restrictions: [
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
         }
         {
@@ -14943,7 +14940,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 1
             restrictions: [
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
         }
         {
@@ -14996,7 +14993,7 @@ exportObj.basicCardData = ->
             slot: "Tech"
             points: 4
             restrictions: [
-                ["Base", "Medium or Large"]
+                ["Base", "Medium", "Large"]
             ]
             applies_condition: 'Sensor Buoy'.canonicalize()
         }
@@ -15998,8 +15995,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: ["Rebel Alliance", "Galactic Empire", "Scum and Villainy"]
             restrictions: [
-                ["orUnique", "Gar Saxon"]
-                ["Faction", "Rebel Alliance"]
+                ["FactionOrUnique", "Gar Saxon", "Rebel Alliance"]
             ]
         }
         {
@@ -16046,7 +16042,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             restrictions: [
-                ["Base", "Large or Huge"]
+                ["Base", "Large", "Huge"]
             ]
         }
         {
@@ -16266,7 +16262,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             restrictions: [
-                ["Base", "Medium or Large"]
+                ["Base", "Medium", "Large"]
             ]
         }
         {
@@ -16284,7 +16280,7 @@ exportObj.basicCardData = ->
             slot: "Modification"
             faction: ["Scum and Villainy"]
             restrictions: [
-                ["Base", "Small or Medium"]
+                ["Base", "Small", "Medium"]
             ]
             modifier_func: (stats) ->
                 stats.actions.push 'Slam' if 'Slam' not in stats.actions
@@ -16299,7 +16295,7 @@ exportObj.basicCardData = ->
             charge: 2
             slot: "Illicit"
             restrictions: [
-                ["Base", "Medium or Large"]
+                ["Base", "Medium", "Large"]
             ]
         }
         {
@@ -24126,10 +24122,12 @@ exportObj.setupCommonCardData = (basic_cards) ->
     exportObj.upgradesBySlotCanonicalName = {}
     exportObj.upgradesBySlotXWSName = {}
     exportObj.upgradesBySlotUniqueName = {}
+    exportObj.upgradesByUniqueName = {}
     for upgrade_name, upgrade of exportObj.upgrades
         (exportObj.upgradesBySlotCanonicalName[upgrade.slot] ?= {})[upgrade.canonical_name] = upgrade
         (exportObj.upgradesBySlotXWSName[upgrade.slot] ?= {})[upgrade.xws] = upgrade
         (exportObj.upgradesBySlotUniqueName[upgrade.slot] ?= {})[upgrade.canonical_name.getXWSBaseName()] = upgrade
+        (exportObj.upgradesByUniqueName[upgrade.canonical_name.getXWSBaseName()] ?= []).push upgrade
 
     exportObj.conditionsById = {}
     for condition_name, condition of exportObj.conditions

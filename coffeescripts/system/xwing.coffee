@@ -1766,15 +1766,12 @@ class exportObj.SquadBuilder
                     else
                         throw new Error("Unique #{type} '#{unique.name}' already claimed as pilot")
 
-            # Claim other upgrades with the same canonical name
-            for otherslot, bycanonical of exportObj.upgradesBySlotUniqueName
-                for canonical, other of bycanonical
-                    if canonical.getXWSBaseName() == unique.canonical_name.getXWSBaseName() and unique != other
-                        if @uniqueIndex(other, 'Upgrade') < 0
-                            # console.log "Also claiming unique #{other.canonical_name} (#{otherslot}) in use"
-                            @uniques_in_use['Upgrade'].push other
-                        # else
-                        #     throw new Error("Unique #{type} '#{unique.name}' already claimed as #{otherslot}")
+            for other in (exportObj.upgradesByUniqueName[unique.canonical_name.getXWSBaseName()] or [])
+                if @uniqueIndex(other, 'Upgrade') < 0
+                    # console.log "Also claiming unique pilot #{other.canonical_name} in use"
+                    @uniques_in_use['Upgrade'].push other
+                else
+                    throw new Error("Unique #{type} '#{other.name}' already claimed as pilot")
 
             # Solitary Check
             if unique.solitary?
@@ -2003,16 +2000,13 @@ class exportObj.SquadBuilder
 
         points_without_include_upgrade = ship.upgrade_points_total - this_upgrade_obj.getPoints(include_upgrade)
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (ship.restriction_check((if upgrade.restrictions then upgrade.restrictions else undefined),this_upgrade_obj, this_upgrade_obj.getPoints(upgrade), points_without_include_upgrade)) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
-        
-        
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and ship.restriction_check((if upgrade.restrictions then upgrade.restrictions else undefined),this_upgrade_obj, this_upgrade_obj.getPoints(upgrade), points_without_include_upgrade) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
             eligible_upgrades.removeItem equipped_upgrade
 
         # Re-enable selected upgrade
-        if include_upgrade? and ((( @matcher(include_upgrade.name, term) or (include_upgrade.display_name and @matcher(include_upgrade.display_name, term))) ))# or current_upgrade_forcibly_removed)
-            # available_upgrades.push include_upgrade
+        if include_upgrade? and ((( @matcher(include_upgrade.name, term) or (include_upgrade.display_name and @matcher(include_upgrade.display_name, term)))))
             eligible_upgrades.push include_upgrade
 
         retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{this_upgrade_obj.getPoints(upgrade)}#{if upgrade.variablepoints then '*' else ''})", points: this_upgrade_obj.getPoints(upgrade), name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades)
@@ -3108,12 +3102,17 @@ class exportObj.SquadBuilder
         uniquetext = comma = othertext = text = ''
         if card.restrictions
             for r in card.restrictions
-                if r[0] == "orUnique"
-                    uniquetext = exportObj.translate('restrictions', " or Squad Including") + " #{r[1]}"
-                    continue
                 switch r[0]
+                    when "FactionOrUnique"
+                        othertext += comma + exportObj.translate('faction', "#{r[2]}")                
+                        uniquetext = exportObj.translate('restrictions', " or Squad Including") + " #{r[1]}"
                     when "Base"
-                        text += comma + "#{r[1]} " + exportObj.translate('restrictions', "Ship")
+                        for b, index in r
+                            if b == "Base" 
+                                text += comma
+                                continue
+                            text += "#{r[1]} "
+                            if r.length - 1 < index then text += "or " else text += exportObj.translate('restrictions', "Ship")
                     when "Action"
                         array = [r[1]]
                         text += comma + @formatActions(array,"", [])
@@ -4509,27 +4508,24 @@ class Ship
         else
             if restrictions?
                 for r in restrictions
-                    if r[0] == "orUnique"
-                        if @checkListForUnique(r[1].toLowerCase().replace(/[^0-9a-z]/gi, '').replace(/\s+/g, '-'))
-                            return true
                     switch r[0]
-                        when "Base"  
-                            switch r[1]
-                                when "Small"
-                                    if @data.base? then return false
-                                when "Non-Small"
-                                    if not @data.base? then return false
-                                when "Small or Medium"
-                                    if not ((@data.base? and @data.base == "Medium") or not @data.base?) then return false
-                                when "Medium or Large"
-                                    if not (@data.base? and (@data.base == "Medium" or @data.base == "Large")) then return false
-                                when "Large or Huge" 
-                                    if not (@data.base? and (@data.base == "Large" or @data.base == "Huge")) then return false
-                                when "Standard"
-                                    if (@data.base? and @data.base == "Huge") then return false
-                                else
-                                    if not (@data.base? and @data.base == r[1]) then return false
-
+                        when "FactionOrUnique"
+                            if @pilot.faction != r[2] and not @checkListForUnique(r[1].toLowerCase().replace(/[^0-9a-z]/gi, '').replace(/\s+/g, '-')) then return false
+                        when "Base"
+                            check = false
+                            for b in r
+                                if b == "Base" then continue
+                                if b.startsWith("Non-") then base = b.substring(4) else base = b # check if its an non- case then remove the non-
+                                switch base
+                                    when "Small"
+                                        if not @data.base? then check = true
+                                    when "Standard"
+                                        if not (@data.base? and @data.base == "Huge") then check = true
+                                    else
+                                        if @data.base? and @data.base == base then check = true
+                                if b != base then check = !check # invert results for non- result
+                                if check == true then break
+                            return check
                         when "Action"
                             if r[1].startsWith("W-")
                                 w = r[1].substring(2)
@@ -4566,8 +4562,6 @@ class Ship
                                     if not (@data.name in exportObj.epicExclusionsList) then return false
                                 when "Standard"
                                     if @data.name in exportObj.epicExclusionsList then return false
-                        when "Faction"
-                            if @pilot.faction != r[1] then return false
             return true
 
     doesSlotExist: (slot) ->
