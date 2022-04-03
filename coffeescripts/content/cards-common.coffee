@@ -24122,10 +24122,12 @@ exportObj.setupCommonCardData = (basic_cards) ->
     exportObj.upgradesBySlotCanonicalName = {}
     exportObj.upgradesBySlotXWSName = {}
     exportObj.upgradesBySlotUniqueName = {}
+    exportObj.upgradesByUniqueName = {}
     for upgrade_name, upgrade of exportObj.upgrades
         (exportObj.upgradesBySlotCanonicalName[upgrade.slot] ?= {})[upgrade.canonical_name] = upgrade
         (exportObj.upgradesBySlotXWSName[upgrade.slot] ?= {})[upgrade.xws] = upgrade
         (exportObj.upgradesBySlotUniqueName[upgrade.slot] ?= {})[upgrade.canonical_name.getXWSBaseName()] = upgrade
+        (exportObj.upgradesByUniqueName[upgrade.canonical_name.getXWSBaseName()] ?= []).push upgrade
 
     exportObj.conditionsById = {}
     for condition_name, condition of exportObj.conditions
