@@ -10885,7 +10885,7 @@ exportObj.basicCardData = ->
             id: 502
             faction: "Rebel Alliance"
             ship: "Fang Fighter"
-            skill: 2
+            skill: 3
             points: 5
             pointsupg: 10
             max_per_squad: 2
