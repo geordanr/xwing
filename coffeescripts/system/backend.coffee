@@ -970,7 +970,7 @@ class exportObj.SquadBuilderBackend
                     else
                         language_code = language_tag.split('-')[0]
                         # check if the language code is available
-                        if langc of exportObj.codeToLanguage
+                        if language_code of exportObj.codeToLanguage
                             # yep - use as language with reasonable priority
                             cb(exportObj.codeToLanguage[language_code], 8)
                         else
