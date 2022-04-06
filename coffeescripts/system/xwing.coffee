@@ -3450,22 +3450,24 @@ class Ship
         #console.log "Attempt to copy #{other?.pilot?.name}"
         return unless other.pilot? and other.data?
         #console.log "Setting pilot to ID=#{other.pilot.id}"
-        if @builder.isQuickbuild        
-            if not (other.pilot.unique or (other.pilot.max_per_squad? and @builder.countPilots(other.pilot.canonical_name) >= other.pilot.max_per_squad))
-                # check if any upgrades are unique. In that case the whole ship may not be copied
-                no_uniques_involved = true
+        if @builder.isQuickbuild
+            # check if pilot is unique. In that case the whole ship may not be copied, but the cheapest alternative will be selected
+            no_uniques_involved = not (other.pilot.unique or (other.pilot.max_per_squad? and @builder.countPilots(other.pilot.canonical_name) >= other.pilot.max_per_squad))
+            if no_uniques_involved
+                # also check all upgrades
                 for upgrade in other.upgrades
                     if (upgrade.data?.unique? and upgrade.data.unique) or (upgrade.data?.max_per_squad? and @builder.countUpgrades(upgrade.data.canonical_name) >= upgrade.data.max_per_squad) or upgrade.data?.solitary?
-                        no_uniques_involved = false
-                        # select cheapest generic like above
-                        available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
-                        if available_pilots.length > 0
-                            @setPilotById available_pilots[0].id, true
-                            break
-                        else
-                            return
-                if no_uniques_involved
-                    @setPilotById other.quickbuildId
+                        no_uniques_involved = false                
+            if no_uniques_involved
+                # still no uniques, so we can copy that ship as is
+                @setPilotById other.quickbuildId
+            else
+                # try to select another pilot for the same ship instead
+                available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
+                if available_pilots.length > 0
+                    @setPilotById available_pilots[0].id, true
+                else
+                    return
         else 
             if other.pilot.unique or (other.pilot.max_per_squad? and @builder.countPilots(other.pilot.canonical_name) >= other.pilot.max_per_squad)
                 # Look for cheapest generic or available unique, otherwise do nothing
@@ -3624,6 +3626,7 @@ class Ship
 
                 else
                     @copy_button.hide()
+                @row.removeClass('unsortable')
                 @builder.container.trigger 'xwing:pointsUpdated'
                 @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
 
