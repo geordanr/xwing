@@ -2782,7 +2782,7 @@ exportObj.cardLoaders.English = () ->
         "Burnout Thrusters":
            text: """After you perform a %SLAM% action, lose 1 %CHARGE%. Then you may gain 1 deplete token to remove 1 disarm token. %LINEBREAK% If your %CHARGE% is inactive, you cannot perform the %SLAM% action."""
         "Hotshot Tail Blaster":
-           text: """This attack can be performed at range 0. %LINEBREAK% <strong>Action:</strong> Spend 1 %CHARGE%."""
+           text: """This attack can be performed at range 0. %LINEBREAK% <strong>Attack:</strong> Spend 1 %CHARGE%."""
         "Drop-Seat Bay":
            text: """If you would drop a %CREW% remote using a [%STRAIGHT%] template, you may use a bank [%BANKLEFT% or %BANKRIGHT%] tempalte of the same speed instead and can alighn that template's middle line with the hashmark on your ship's left or right side instead of your rear guides."""
         "Combat Boarding Tube":
