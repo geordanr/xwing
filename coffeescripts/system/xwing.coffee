@@ -3111,8 +3111,8 @@ class exportObj.SquadBuilder
                             if b == "Base" 
                                 text += comma
                                 continue
-                            text += "#{r[1]} "
-                            if r.length - 1 < index then text += "or " else text += exportObj.translate('restrictions', "Ship")
+                            text += "#{b} "
+                            if index < r.length - 1 then text += "or " else text += exportObj.translate('restrictions', "Ship")
                     when "Action"
                         array = [r[1]]
                         text += comma + @formatActions(array,"", [])
