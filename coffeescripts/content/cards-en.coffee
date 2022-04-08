@@ -164,6 +164,24 @@ exportObj.translations.English =
                         For more information, check out this <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">introduction to OAuth</a>.
                     </p>
                     """
+        "Intro Card YASB": """
+                    <h2>YASB 2 for X-Wing (Version 2.5) </h2>
+                    <p>YASB (Yet Another Squad Builder) is a simple, fast, squad builder for X-Wing Miniatures by <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.</p>
+                    <h5>Credits</h5>
+                    <p>Built upon the amazing original <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a>.</p>
+                    <p>YASB is updated and maintained by Stephen Kim.</p>
+                    <p>Additional credits to:<br>
+                    2.5 Update Data: Devon Monkhouse, Perry Low, Andrew Oehler.<br>
+                    2.0 launch data: Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.<br>
+                    Translation Team: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke<br>
+                    Site logo: Thomas Kohler<br>
+                    Quick Build Support: Patrick Mischke</p>
+
+                    <p>This builder is unofficial and is not affiliated with Atomic Mass Games, Lucasfilm Ltd., or Disney.</p>
+
+                    <p>This site will always be free, and always 100% available for all people to use. However, if you want to donate, a button is prepared for you.</p>
+                    <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Donate</button></p>
+        """
         "Continue to OAuth provider": "This will open a new window to let you authenticate with the chosen provider. You may have to allow pop ups for this site."
         "iOS requires cross-site control": """Due to a new feature in iOS systems OAuth won't work unless you enable "cross-site control"."""
         "login in progress": "OAuth login is in progress. Please finish authorization at the specified provider using the window that was just created."
