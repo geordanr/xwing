@@ -10252,6 +10252,11 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 2
         }
+        {
+            name: 'Enduring'
+            type: 'upgrade'
+            count: 1
+        }
     ]
     "Pride of Mandalore Reinforcements Pack": [
         {
