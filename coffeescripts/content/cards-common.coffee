@@ -23994,6 +23994,233 @@ exportObj.basicCardData = ->
                 "Ion Cannon Turret"
             ]
         }
+        {
+            id: 603
+            faction: "Scum and Villainy"
+            pilot: "Outer Rim Enforcer"
+            ship: "ST-70 Assault Ship"
+            threat: 2
+            upgrades: [
+                "Tracking Fob"
+            ]
+        }
+        {
+            id: 604
+            faction: "Scum and Villainy"
+            pilot: "Q9-0"
+            ship: "ST-70 Assault Ship"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "The Mandalorian"
+                "The Child"
+                "Migs Mayfeld"
+                "Tracking Fob"
+                "Burnout Thrusters"
+                "Razor Crest"
+            ]
+        }
+        {
+            id: 605
+            faction: "Scum and Villainy"
+            pilot: "Guild Bounty Hunter"
+            ship: "ST-70 Assault Ship"
+            threat: 3
+            upgrades: [
+                "Peli Motto"
+                "IG-11"
+                "Hotshot Tail Blaster"
+                "Tracking Fob"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 606
+            faction: "Scum and Villainy"
+            pilot: "Maul"
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Heightened Perception"
+                "Nightbrother"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 607
+            faction: "Scum and Villainy"
+            pilot: "Rook Kast"
+            ship: "Gauntlet Fighter"
+            threat: 4
+            upgrades: [
+                "Elusive"
+                "Mandalorian Super Commandos"
+                "Drop-Seat Bay"
+                "Nightbrother"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 608
+            faction: "Scum and Villainy"
+            pilot: "Shadow Collective Operator"
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Enduring"
+                "Blazer Bomb"
+                "Overtuned Modulators"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 609
+            faction: "Galactic Republic"
+            pilot: "Bo-Katan Kryze (Republic)"
+            ship: "Gauntlet Fighter"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "Nite Owl Commandos"
+                "Veteran Tail Gunner"
+                "Drop-Seat Bay"
+                "Hull Upgrade"
+                "Gauntlet"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 610
+            faction: "Galactic Republic"
+            pilot: "Nite Owl Liberator"
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Enduring"
+                "Veteran Tail Gunner"
+                "Concussion Bombs"
+                "Hull Upgrade"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 611
+            faction: "Separatist Alliance"
+            pilot: "Pre Vizsla"
+            ship: "Gauntlet Fighter"
+            threat: 4
+            upgrades: [
+                "Predator"
+                "Death Watch Commandos"
+                "Blazer Bomb"
+                "Shield Upgrade"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 612
+            faction: "Separatist Alliance"
+            pilot: "Bo-Katan Kryze"
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Veteran Tail Gunner"
+                "Swivel Wing"
+            ]
+        }       
+        {
+            id: 613
+            faction: "Separatist Alliance"
+            pilot: "Death Watch Warrior"
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Hull Upgrade"
+                "Shield Upgrade"
+                "Concussion Bombs"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 614
+            faction: "Rebel Alliance"
+            pilot: "Ezra Bridger (Gauntlet Fighter)"
+            ship: "Gauntlet Fighter"
+            threat: 4
+            upgrades: [
+                "Shattering Shot"
+                "Clan Wren Commandos"
+                "Shield Upgrade"
+                "Nightbrother"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 615
+            faction: "Rebel Alliance"
+            pilot: '"Chopper" (Gauntlet Fighter)'
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Veteran Tail Gunner"
+                "Hull Upgrade"
+                "Nightbrother"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 616
+            faction: "Rebel Alliance"
+            pilot: "Mandalorian Resistance Pilot"
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Enduring"
+                "Clan Wren Commandos"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 617
+            faction: "Galactic Empire"
+            pilot: "Gar Saxon"
+            ship: "Gauntlet Fighter"
+            threat: 4
+            upgrades: [
+                "Imperial Super Commandos"
+                "Drop-Seat Bay"
+                "Hull Upgrade"
+                "Shield Upgrade"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 618
+            faction: "Galactic Empire"
+            pilot: "Captain Hark"
+            ship: "Gauntlet Fighter"
+            threat: 3
+            upgrades: [
+                "Combat Boarding Tube"
+                "Imperial Super Commandos"
+                "Swivel Wing"
+            ]
+        }
+        {
+            id: 619
+            faction: "Galactic Empire"
+            pilot: "Imperial Super Commando"
+            ship: "Gauntlet Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Veteran Tail Gunner"
+                "Concussion Bombs"
+                "Hull Upgrade"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
