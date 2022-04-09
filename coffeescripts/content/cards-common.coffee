@@ -16278,6 +16278,7 @@ exportObj.basicCardData = ->
             id: 462
             points: 6
             slot: "Modification"
+            charge: 1
             faction: ["Scum and Villainy"]
             restrictions: [
                 ["Base", "Small", "Medium"]
