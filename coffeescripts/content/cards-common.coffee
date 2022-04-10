@@ -24038,6 +24038,22 @@ exportObj.basicCardData = ->
         {
             id: 606
             faction: "Scum and Villainy"
+            pilot: "The Mandalorian"
+            ship: "ST-70 Assault Ship"
+            threat: 4
+            upgrades: [
+                "Notorious"
+                "Burnout Thrusters"
+                "Kuiil"
+                "The Child"
+                "Hull Upgrade"
+                "Tracking Fob"
+                "Razor Crest"
+            ]
+        }
+        {
+            id: 607
+            faction: "Scum and Villainy"
             pilot: "Maul"
             ship: "Gauntlet Fighter"
             threat: 3
@@ -24048,7 +24064,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 607
+            id: 608
             faction: "Scum and Villainy"
             pilot: "Rook Kast"
             ship: "Gauntlet Fighter"
@@ -24062,7 +24078,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 608
+            id: 609
             faction: "Scum and Villainy"
             pilot: "Shadow Collective Operator"
             ship: "Gauntlet Fighter"
@@ -24075,7 +24091,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 609
+            id: 610
             faction: "Galactic Republic"
             pilot: "Bo-Katan Kryze (Republic)"
             ship: "Gauntlet Fighter"
@@ -24091,7 +24107,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 610
+            id: 611
             faction: "Galactic Republic"
             pilot: "Nite Owl Liberator"
             ship: "Gauntlet Fighter"
@@ -24105,7 +24121,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 611
+            id: 612
             faction: "Separatist Alliance"
             pilot: "Pre Vizsla"
             ship: "Gauntlet Fighter"
@@ -24119,7 +24135,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 612
+            id: 613
             faction: "Separatist Alliance"
             pilot: "Bo-Katan Kryze"
             ship: "Gauntlet Fighter"
@@ -24131,7 +24147,7 @@ exportObj.basicCardData = ->
             ]
         }       
         {
-            id: 613
+            id: 614
             faction: "Separatist Alliance"
             pilot: "Death Watch Warrior"
             ship: "Gauntlet Fighter"
@@ -24144,7 +24160,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 614
+            id: 615
             faction: "Rebel Alliance"
             pilot: "Ezra Bridger (Gauntlet Fighter)"
             ship: "Gauntlet Fighter"
@@ -24158,7 +24174,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 615
+            id: 616
             faction: "Rebel Alliance"
             pilot: '"Chopper" (Gauntlet Fighter)'
             ship: "Gauntlet Fighter"
@@ -24172,7 +24188,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 616
+            id: 617
             faction: "Rebel Alliance"
             pilot: "Mandalorian Resistance Pilot"
             ship: "Gauntlet Fighter"
@@ -24184,7 +24200,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 617
+            id: 618
             faction: "Galactic Empire"
             pilot: "Gar Saxon"
             ship: "Gauntlet Fighter"
@@ -24198,7 +24214,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 618
+            id: 619
             faction: "Galactic Empire"
             pilot: "Captain Hark"
             ship: "Gauntlet Fighter"
@@ -24210,7 +24226,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            id: 619
+            id: 620
             faction: "Galactic Empire"
             pilot: "Imperial Super Commando"
             ship: "Gauntlet Fighter"
