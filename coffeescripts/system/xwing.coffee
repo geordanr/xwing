@@ -1023,23 +1023,7 @@ class exportObj.SquadBuilder
     createInfoContainerUI: (include_intro = true) ->
         if include_intro == true
             intro = """
-                <div class="card intro">
-                    <h2>YASB 2 for X-Wing (Version 2.5) </h2>
-                    <p>YASB (Yet Another Squad Builder) is a simple, fast, squad builder for X-Wing Miniatures by <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.</p>
-                    <h5>Credits</h5>
-                    <p>Built upon the amazing original <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a>.</p>
-                    <p>YASB is updated and maintained by Stephen Kim.</p>
-                    <p>Additional credits to:<br>
-                    2.5 Update Data: Devon Monkhouse, Perry Low, Andrew Oehler.<br>
-                    2.0 launch data: Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.<br>
-                    Translation Team: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke<br>
-                    Site logo: Thomas Kohler<br>
-                    Quick Build Support: Patrick Mischke</p>
-
-                    <p>This builder is unofficial and is not affiliated with Atomic Mass Games, Lucasfilm Ltd., or Disney.</p>
-
-                    <p>This site will always be free, and always 100% available for all people to use. However, if you want to donate, a button is prepared for you.</p>
-                    <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Donate</button></p>
+                <div class="card intro translated" defaultText="Intro Card YASB">
                 </div>
             """
         else

@@ -223,7 +223,25 @@ is an authorization system which lets you prove your identity at a web site with
                         Wenn du lieber gar keinen Account nutzen möchtest, kannst du eine Staffeln übrigens auch einfach speichern, indem du ein Lesezeichen setzt - und diese sogar über den Link teilen. Achtung: Du musst das Lesezeichen jedes mal erneuern, wenn du deine Staffel bearbeitest. 
                     </p>
                     """
-        "Continue to OAuth provider": "This will open a new window to let you authenticate with the chosen provider. You may have to allow pop ups for this site."
+        "Intro Card YASB": """
+                    <h2>YASB 2 für X-Wing (Version 2.5) </h2>
+                    <p>YASB (engl. Yet Another Squad Builder, dt. Noch ein Staffel-Bauer) hilft dir, einfach und unkompliziert deine Staffeln für das X-Wing Miniaturenspiel von <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a> zu erstellen.</p>
+                    <h5>Impressum</h5>
+                    <p>Eine Weiterentwicklung des hervorragenden <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a> für die erste Edition.</p>
+                    <p>YASB wird von Stephen Kim und Patrick Mischke gepflegt.</p>
+                    <p>Besonderes Dankeschön an:<br>
+                    Server (-kosten) und Federführung seit der zweiten Edition: Stephen Kim. <br>
+                    2.5 Datenupdate: Devon Monkhouse, Perry Low, Andrew Oehler.<br>
+                    2.0 Datenupdate: Evan Cameron, Jonathan Hon, Devon Monkhouse und Mark Stewart.<br>
+                    Übersetzungen: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke<br>
+                    Logo: Thomas Kohler<br>
+                    Quick Build Funktionalität: Patrick Mischke</p>
+
+                    <p>Diese Seite ist inoffiziell und nicht lizensiert von oder sonst irgendwie mit Atomic Mass Games, Lucasfilm Ltd. oder Disney verbunden.</p>
+
+                    <p>Diese Seite steht dir dauerhaft kostenfrei zur Verfügung. YASB ist ein Open-Source Projekt, wenn du etwas beitragen möchtest, ist Hilfe immer willkommen. Aufgrund wiederholter Fragen hier ein Paypal-Link von Stephen Kim.</p>
+                    <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Über Paypal unterstützen</button></p>
+        """
         "Continue to OAuth provider": "Dies wird ein neues Fenster beim gewählten Anbieter öffnen. Es kann sein, dass du Pop-Ups erlauben musst."
         "iOS requires cross-site control": """Unter iOS musst du eventuell erst "cross-site control" aktivieren, damit OAuth nutzen kannst."""
         "select OAuth provider": "Wähle einen der untentstehenden OAuth Anbieter um dich einzuloggen und Staffeln speichern zu können."
@@ -388,10 +406,35 @@ is an authorization system which lets you prove your identity at a web site with
         "Gas Cloud 4": "Gaswolke 4"
         "Gas Cloud 5": "Gaswolke 5"
         "Gas Cloud 6": "Gaswolke 6"
+        "Pride of Mandalore Debris 1": "Stolz von Mandalore Trümmerwolke 1"
+        "Pride of Mandalore Debris 2": "Stolz von Mandalore Trümmerwolke 2"
+        "Pride of Mandalore Debris 3": "Stolz von Mandalore Trümmerwolke 3"
+        "Pride of Mandalore Rock 1": "Stolz von Mandalore Asteroid 1"
+        "Pride of Mandalore Rock 2": "Stolz von Mandalore Asteroid 2"
+        "Pride of Mandalore Rock 3": "Stolz von Mandalore Asteroid 3"
         adds: (translator, data) -> # data will most likely be a string of some symbols, but you never know
             "Fügt #{translator('ui', data)} hinzu"
         removes: (translator, data) -> # data will most likely be a string of some symbols, but you never know
             "Entfernt #{translator('ui', data)}"
+        "Undamaged": "Unbeschädigt"
+        "Standard": "Standard"
+        "Faction": "Fraktion"
+        "Loadout": "Ausrüstung" 
+        "Standard legal": "In Standard erlaubt"
+        "Keywords:": "Schlüsselwörter:"
+        "Show Points Destroyed": "Zerstörte Punkte anzeigen"
+        "Hide Points Destroyed": "Zerstörte Punkte verbergen"
+        "This squad was created for an older version of X-Wing.": "Diese Staffel wurde für eine älteren Version von X-Wing erstellt."
+        "Damage Threshold": "Schadensgrenzwert"
+        "X-Wing Squadron by YASB 2: ": "X-Wing Staffel erstellt mit YASB 2.5: "
+        "Ship Cost": "Schiffskosten"
+        "Paste XWS here": "XWS einfügen"
+        "All sets and expansions": "Alle Erweiterungen"
+        "All factions": "Alle Fraktionen"
+        "Has multiple of the chosen slots": "Hat mehrere der gewählten Slots"
+        "keywords":"Schlüsselwörter"
+        "Checking auth status...": "Prüfe Anmeldestatus..."
+        
 
     singular:
         'pilots': 'Pilot'
@@ -418,10 +461,21 @@ is an authorization system which lets you prove your identity at a web site with
         "First Order": "Erste Ordnung"
         "Galactic Republic": "Galaktische Republik"
         "Separatist Alliance": "Separatisten-Allianz"
+        "Factionless":"Fraktionslos"
 
     action:
         "Barrel Roll": "Fassrolle"
         "Focus": "Fokus"
+        "Boost": "Schub"
+        "Calculate": "Berechnung"
+        "Coordinate": "Koordinieren"
+        "Evade": "Ausweichen"
+        "Jam": "Stören"
+        "Reinforce": "Verstärken"
+        "Reload": "Nachladen"
+        "Rotate Arc": "Feuerwinkel drehen"
+        "Lock": "Zielerfassung"
+        "Reinforce": "Verstärken"
 
     restrictions:
         "Restrictions": "Einschränkungen"
@@ -1972,7 +2026,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Solange du eine weiße %BOOST%-Aktion durchführst, darfst du sie behandeln, als wäre sie rot, um stattdessen die [1 %TURNLEFT%]- oder [1 %TURNRIGHT%]-Schablone zu verwenden."""
         "Emperor Palpatine":
            display_name: """Kanzler Palpatine"""
-           text: """Kanzler Palpatine:%LINEBREAK%Aufbau: Rüste diese Seite offen aus.%LINEBREAK%Nachdem du verteidigt hast, falls der Angreifer in Reichweite 0-2 ist, darfst du 1 %FORCE% ausgeben. Falls du das tust, erhält der Angreifer 1 Stressmarker.Während der Endphase darfst du diese Karte umdrehen. %LINEBREAK%Nachdem du eine violette %COORDINATE% -Aktion durchgeführt hast, erhält das von dir koordinierte Schiff 1 Stressmarker. Dann erhält es 1 Fokusmarker oder es stellt 1 %FORCE% wieder her."""
+           text: """Kanzler Palpatine:%LINEBREAK%Aufbau: Rüste diese Seite offen aus.%LINEBREAK%Nachdem du verteidigt hast, falls der Angreifer in Reichweite 0-2 ist, darfst du 1 %FORCE% ausgeben. Falls du das tust, erhält der Angreifer 1 Stressmarker.Während der Endphase darfst du diese Karte umdrehen. %LINEBREAK%Darth Sidious:%LINEBREAK%Nachdem du eine violette %COORDINATE% -Aktion durchgeführt hast, erhält das von dir koordinierte Schiff 1 Stressmarker. Dann erhält es 1 Fokusmarker oder es stellt 1 %FORCE% wieder her."""
         "Darth Vader":
            display_name: """Darth Vader"""
            text: """Zu Beginn der Kampfphase darfst du 1 Schiff in deinem Feuerwinkel in Reichweite 0-2 wählen und 1 %FORCE% ausgeben. Falls du das tust, erleidet jenes Schiff 1 %HIT%-Schaden, es sei denn, es entscheidet sich dafür, 1 grünen Marker zu"""
@@ -2368,8 +2422,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Nachdem du ein blaues Manöver ausgeführt hast, stelle 1&nbsp;%ENERGY% wieder her."""
         "Ordnance Team":
            display_name: """Munitionsteam"""
-           text: """Solange du eine %RELOAD%-
-Aktion durchführst, darfst du bis zu 3&nbsp;%ENERGY% ausgeben, um ebenso viele zusätzliche %CHARGE% auf deinen aus-gerüsteten %MISSILE%/%TORPEDO%-Aufwertungen nachzuladen.%LINEBREAK%Nachdem du eine %RELOAD%-Aktion durchgeführt hast, darfst du 1&nbsp;%ENERGY%ausgeben, um 1 Entwaffnet- Marker zu entfernen."""
+           text: """Solange du eine %RELOAD%-Aktion durchführst, darfst du bis zu 3&nbsp;%ENERGY% ausgeben, um ebenso viele zusätzliche %CHARGE% auf deinen aus-gerüsteten %MISSILE%/%TORPEDO%-Aufwertungen nachzuladen.%LINEBREAK%Nachdem du eine %RELOAD%-Aktion durchgeführt hast, darfst du 1&nbsp;%ENERGY%ausgeben, um 1 Entwaffnet- Marker zu entfernen."""
         "Ordnance Tubes":
            display_name: """Abschussrohre"""
            text: """<strong>Online: </strong> Setup: Equip this side faceup. %LINEBREAK% You can perform %TORPEDO% and %MISSILE% attacks only as bonus attacks. You <strong>must</strong> treat the %FRONTARC% requirement of your equipped %TORPEDO% and %MISSILE% upgrades as %FULLFRONTARC%. %LINEBREAK% Bonus Attack: Perform a %TORPEDO% attack. %LINEBREAK% Bonus Attack: Perform a %MISSILE% attack. %LINEBREAK%<strong>Offline</strong>%LINEBREAK%Du musst die%FRONTARC%&nbsp;-Bedingung deiner ausgerüsteten %TORPEDO%&nbsp;- und %MISSILE%&nbsp;-Aufwertungen behandeln, als wäre sie %BULLSEYEARC%. %LINEBREAK%<strong>Aktion:</strong> Gib 2&nbsp;%ENERGY% aus, um diese Karte umzudrehen."""
@@ -2453,8 +2506,7 @@ Aktion durchführst, darfst du bis zu 3&nbsp;%ENERGY% ausgeben, um ebenso viele
            text: """<strong>Mine</strong>%LINEBREAK%Während der Systemphase darfst du 1 %CHARGE% ausgeben, um unter Verwendung der [1 %STRAIGHT%]-Schablone eine Annäherungsmine abzuwerfen.%LINEBREAK%Die %CHARGE% dieser Karte können nicht wiederhergestellt werden."""
         "Q7 Astromech":
            display_name: """Q7-Astromechdroide"""
-           text: """Solange du eine Fassrolle fliegst oder Schub gibst, kannst du dich durch Hindernisse hindurchbewegen und 
-sie überschneiden."""
+           text: """Solange du eine Fassrolle fliegst oder Schub gibst, kannst du dich durch Hindernisse hindurchbewegen und sie überschneiden."""
         "Qi'ra":
            display_name: """Qi’ra"""
            text: """Solange du dich bewegst und Angriffe durchführst, ignorierst du Hindernisse, die du als Ziel erfasst hast."""
