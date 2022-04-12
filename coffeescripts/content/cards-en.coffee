@@ -316,7 +316,7 @@ exportObj.cardLoaders.English = () ->
            text: """Before you reveal your maneuver, you may spend 1 %FORCE% to barrel roll (this is not an action): %LINEBREAK%<strong>Full Throttle:</strong> After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Arvel Crynyd":
            display_name: """Arvel Crynyd"""
-           text: """If you would fail a 󲁃 action by overlapping another ship, you may resolve it as though you were partially executing a maneuver instead. While you perform an attack at attack range 0, treat it as an attack at attack range 1." %LINEBREAK%<strong>Vectored Thrusters:</strong> After you perform an action, you may perform a red %BOOST% action. %LINEBREAK%<i>Errata (since rules reference 1.4): Changed the second portion of the ability.</i>"""
+           text: """If you would fail a %BOOST% action by overlapping another ship, you may resolve it as though you were partially executing a maneuver instead. While you perform an attack at attack range 0, treat it as an attack at attack range 1." %LINEBREAK%<strong>Vectored Thrusters:</strong> After you perform an action, you may perform a red %BOOST% action. %LINEBREAK%<i>Errata (since rules reference 1.4): Changed the second portion of the ability.</i>"""
         "Asajj Ventress":
            display_name: """Asajj Ventress"""
            text: """At the start of the Engagement Phase, you may choose 1 enemy ship in your %SINGLETURRETARC% at range 0-2 and spend 1&nbsp;%FORCE%. If you do, that ship gains 1 stress token unless it removes 1 green token."""
