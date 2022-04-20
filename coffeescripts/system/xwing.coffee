@@ -26,9 +26,11 @@ exportObj.toTTS = (txt) ->
 
 exportObj.slotsMatching = (slota, slotb) ->
     return true if slota == slotb
-    return false if slota != 'HardpointShip' and slotb != 'HardpointShip'
-    return true if slota == 'Torpedo' or slota == 'Cannon' or slota == 'Missile'
-    return true if slotb == 'Torpedo' or slotb == 'Cannon' or slotb == 'Missile'
+    switch slotb
+        when 'HardpointShip'
+            return true if slota == 'Torpedo' or slota == 'Cannon' or slota == 'Missile'
+        when 'VersitileShip'
+            return true if slota == 'Torpedo' or slota == 'Missile'
     return false
 
 $.isMobile = ->
@@ -4553,7 +4555,7 @@ class Ship
 
     doesSlotExist: (slot) ->
         for upgrade in @upgrades
-            if exportObj.slotsMatching(slot, upgrade.slot)
+            if exportObj.slotsMatching(upgrade.slot, slot)
                 return true
         false
     
