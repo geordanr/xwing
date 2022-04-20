@@ -4022,7 +4022,7 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Device"
                 "Illicit"
-                "Modification"
+                "Illicit"
                 "Modification"
             ]
         }
