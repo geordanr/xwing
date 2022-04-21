@@ -3330,8 +3330,8 @@ class exportObj.SquadBuilder
                 success = true
                 error = ""
 
-                serialized_squad = "v9ZsZ20Z" # serialization v9, extended squad, 20 points
-                # serialization schema SHIPID:UPGRADEID,UPGRADEID,...,UPGRADEID:;SHIPID:UPGRADEID,...
+                if @isStandard then gamemode = 'h' else gamemode = 's'
+                serialized_squad = ""
 
                 for pilot in xws.pilots
                     new_ship = @addShip()
@@ -3342,7 +3342,7 @@ class exportObj.SquadBuilder
                     if pilot.id
                         pilotxws = pilot.id
                     else if pilot.name
-                       pilotxws = pilot.name
+                        pilotxws = pilot.name
                     else
                         success = false
                         error = "Pilot without identifier"
@@ -3360,6 +3360,10 @@ class exportObj.SquadBuilder
                                 if (possible_pilot.xws and possible_pilot.xws == pilotxws) or (not possible_pilot.xws and key == pilotxws)
                                     serialized_squad += possible_pilot.id
                                     break
+
+                    # game mode version check: pilot and ship
+                    if not exportObj.standardCheck(pilot, true) and gamemode == 'h'
+                        gamemode = 's'
 
                     serialized_squad += "X"
 
@@ -3380,7 +3384,14 @@ class exportObj.SquadBuilder
                                     continue
                                 serialized_squad += upgrade.id
                                 serialized_squad += "W"
+                                if not exportObj.standardCheck(upgrade, true) and gamemode == 'h'
+                                    gamemode = 's'
                     serialized_squad += "XY"
+
+                serialized_squad_intro = "v9Z" + gamemode + "Z20Z" # serialization v9, extended squad, 20 points
+                # serialization schema SHIPID:UPGRADEID,UPGRADEID,...,UPGRADEID:;SHIPID:UPGRADEID,...
+
+                serialized_squad = serialized_squad_intro + serialized_squad
 
                 @loadFromSerialized(serialized_squad)
 
