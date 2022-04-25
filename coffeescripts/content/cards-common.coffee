@@ -11133,7 +11133,7 @@ exportObj.basicCardData = ->
             id: 515
             faction: "Galactic Empire"
             ship: "Gauntlet Fighter"
-            skill: 2
+            skill: 3
             points: 7
             pointsupg: 15
             unique: true
