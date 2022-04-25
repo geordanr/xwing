@@ -4139,7 +4139,7 @@ class Ship
                     ++count
             else
                 recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
-        forceHTML = if (effective_stats.force?) then $.trim """
+        forceHTML = if (effective_stats.force? and effective_stats.force > 0) then $.trim """
             <i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i>
             <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force ? 0), effective_stats, 'force')}#{recurringicon}</span>
         """ else ''
