@@ -10257,6 +10257,11 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 1
         }
+        {
+            name: 'Shattering Shot'
+            type: 'upgrade'
+            count: 1
+        }
     ]
     "Pride of Mandalore Reinforcements Pack": [
         {
