@@ -11002,6 +11002,8 @@ exportObj.basicCardData = ->
             skill: 4
             points: 7
             pointsupg: 24
+            charge: 1
+            recurring: 1
             unique: true
             keyword: ["Mandalorian"]
             slots: [
