@@ -153,7 +153,7 @@ exportObj.translations.Deutsch =
         "Unsaved Squadron": "Nicht gespeicherte Staffel"
         "New Squadron": "Neue Staffel"
         "Name your squad...": "Gib einen Namen ein…"
-        "Ship number warning": "Eine turnierlegale Staffel muss aus 2-8 Schiffen bestehen!"
+        "Ship number warning": "Eine turnierlegale Staffel muss aus 3-8 Schiffen bestehen!"
         "Your Collection": "Deine Sammlung"
         "Only available from 1st edition": "Nur aus der ersten Edition verfügbar"
         "Randomize!": "Zufall!"
