@@ -374,7 +374,7 @@ class exportObj.CardBrowser
         @duplicateslots = ($ @container.find('.xwing-card-browser .duplicate-slots-checkbox'))[0]
         @action_available_selection = ($ @container.find('.xwing-card-browser select.action-available-selection'))
         # ToDo: This does not seem like the correct place to have a list of all actions. Don't we have that elsewhere?!
-        for action in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam"].sort()
+        for action in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam","Cloak"].sort()
             opt = $ document.createElement('OPTION')
             opt.text exportObj.translate('action', action)
             opt.val action
@@ -382,7 +382,7 @@ class exportObj.CardBrowser
         @action_available_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @linkedaction_available_selection = ($ @container.find('.xwing-card-browser select.linkedaction-available-selection'))
-        for linkedaction in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam"].sort()
+        for linkedaction in ["Evade","Focus","Lock","Boost","Barrel Roll","Calculate","Reinforce","Rotate Arc","Coordinate","Slam","Reload","Jam","Cloak"].sort()
             opt = $ document.createElement('OPTION')
             opt.text exportObj.translate('action', linkedaction)
             opt.val linkedaction
