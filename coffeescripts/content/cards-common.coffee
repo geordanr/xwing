@@ -15173,6 +15173,7 @@ exportObj.basicCardData = ->
             ship: "Droid Tri-Fighter"
             faction: "Separatist Alliance"
             charge: 3
+            recurring: -1
             modifier_func: (stats) ->
                 stats.actions.push 'Slam'
                 stats.actions.push 'R-> Lock'
