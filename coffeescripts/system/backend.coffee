@@ -192,13 +192,13 @@ class exportObj.SquadBuilderBackend
                         </div>
                     </div>
                     <div class="row squad-delete-confirm">
-                        <div class="col-md-9">
+                        <div class="col-md-6">
                             #{exportObj.translate('ui', 'reallyDeleteSquadXY', "<em>#{squad.name}</em>")}
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 btn-group">
                             <button class="btn btn-danger confirm-delete-squad translated" defaultText="Delete"></button>
-                            &nbsp;
-                            <button class="btn btn-modal cancel-delete-squad translated" defaultText="Cancel"></button>
+                            <button class="btn confirm-archive-squad translated" defaultText="Archive"></button>
+                            <button class="btn btn-modal cancel-delete-squad translated" defaultText="Unselect"></button>
                         </div>
                     </div>
                 """
@@ -312,6 +312,34 @@ class exportObj.SquadBuilderBackend
                             li.html $.trim """
                                 Error deleting #{li.data('squad').name}: <em>#{results.error}</em>
                             """
+
+                li.find('button.confirm-archive-squad').click (e) =>
+                    e.preventDefault()
+                    button = $ e.target
+                    li = button.closest 'li'
+                    builder = li.data('builder')
+                    li.find('.confirm-delete-squad').addClass 'disabled'
+                    li.find('.confirm-delete-squad').text exportObj.translate('ui', 'Archiving...')
+                    @archive li.data('squad'), li.data('builder').faction, (results) =>
+                        if results.success
+                            li.slideUp 'fast', ->
+                                $(li).hide()
+                                $(li).find('.confirm-delete-squad').removeClass 'disabled'
+                                $(li).find('.confirm-delete-squad').text exportObj.translate('ui', 'Delete')
+                                $(li).data 'selectedForDeletion', false
+                                $(li).find('.squad-delete-confirm').fadeOut 'fast', ->
+                                    $(li).find('.squad-description').fadeIn 'fast'
+                            # decrement counter
+                            @number_of_selected_squads_to_be_deleted -= 1
+                            # hide delete multiple section if this was the last selected squad
+                            if not @number_of_selected_squads_to_be_deleted
+                                @squad_list_modal.find('div.delete-multiple-squads').hide()
+                        else
+                            li.html $.trim """
+                                Error archiving #{li.data('squad').name}: <em>#{results.error}</em>
+                            """
+
+
             if not hasNotArchivedSquads
                 list_ul.append $.trim """
                     <li class="translated" defaultText="No saved squads"></li>
