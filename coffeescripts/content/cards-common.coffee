@@ -5091,6 +5091,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Force"
                 "Force"
+                "Talent"
                 "Tech"
                 "Sensor"
                 "Missile"

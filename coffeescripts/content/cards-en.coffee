@@ -418,7 +418,7 @@ exportObj.cardLoaders.English = () ->
            text: """While a friendly ship at range 1-2 with lower initiative than you defends or performs an attack, if you have at least 1&nbsp;%CHARGE%, that ship may reroll 1 %FOCUS% result.%LINEBREAK%After an enemy ship at range 0-3 is destroyed, lose 1&nbsp;%CHARGE%.%LINEBREAK%<strong>Linked Battery:</strong> While you perform a %CANNON% attack, roll 1 additional die."""
         "Captain Feroph":
            display_name: """Captain Feroph"""
-           text: """While you defend, if the attacker does not have any green tokens, you may change 1 of your blank or %FOCUS% results to an %EVADE% result.%LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you <b>must</b> boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
+           text: """While you defend, if the attacker does not have any green tokens, you may change 1 of your blank or %FOCUS% results to an %EVADE% result.%LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you may boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
         "Captain Jonus":
            display_name: """Captain Jonus"""
            text: """While a friendly ship at range 0-1 performs a %TORPEDO% or %MISSILE% attack, that ship may reroll up to 2 attack dice. %LINEBREAK%<strong>Nimble Bomber:</strong> If you would drop a device using a %STRAIGHT% template, you may use a %BANKLEFT% or %BANKRIGHT% template of the same speed instead."""
@@ -859,7 +859,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you coordinate or resolve the effect of one of your upgrades, you may treat friendly ships at range 2-3 as being at range 0 or range 1.%LINEBREAK%<strong>Linked Battery:</strong> While you perform a %CANNON% attack, roll 1 additional die."""
         "Major Vermeil":
            display_name: """Major Vermeil"""
-           text: """While you perform an attack, if the defender does not have any green tokens, you may change 1 of your blank or %FOCUS% results to a %HIT% result.%LINEBREAK% %LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you <b>must</b> boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
+           text: """While you perform an attack, if the defender does not have any green tokens, you may change 1 of your blank or %FOCUS% results to a %HIT% result.%LINEBREAK% %LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you may boost. %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
         "Major Vynder":
            display_name: """Major Vynder"""
            text: """While you defend, if you are disarmed, roll 1 additional defense die."""
@@ -1025,7 +1025,7 @@ exportObj.cardLoaders.English = () ->
            text: """While a damaged friendly ship at range 0-3 performs an attack, it may reroll 1 attack die."""
         "Scarif Base Pilot":
            display_name: """Scarif Base Pilot"""
-           text: """<i class = flavor_text>The TIE reaper was designed to ferry elite troops to flashpoints on the battlefield, notably carrying Director Krennic’s dreaded death troopers at the Battle of Scarif.</i>%LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you <b>must</b> boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
+           text: """<i class = flavor_text>The TIE reaper was designed to ferry elite troops to flashpoints on the battlefield, notably carrying Director Krennic’s dreaded death troopers at the Battle of Scarif.</i>%LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you may boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
         "Scimitar Squadron Pilot":
            display_name: """Scimitar Squadron Pilot"""
            text: """<i class = flavor_text>The TIE/sa is exceptionally nimble for a bomber, allowing it to pinpoint its target while avoiding excessive collateral damage to the surrounding area.</i> %LINEBREAK%<strong>Nimble Bomber:</strong> If you would drop a device using a %STRAIGHT% template, you may use a %BANKLEFT% or %BANKRIGHT% template of the same speed instead."""
@@ -1289,7 +1289,7 @@ exportObj.cardLoaders.English = () ->
            text: """After a friendly ship at range&nbsp;1-2 performs an attack against an enemy ship in your %FRONTARC%, you may perform a %FOCUS%&nbsp;action."""
         '"Vizier"':
            display_name: """“Vizier”"""
-           text: """After you fully execute a speed 1 maneuver using your <strong>Controlled Ailerons</strong> ship ability, you may perform a %COORDINATE% action. If you do, skip your Perform Action step.%LINEBREAK%<strong>Adaptive Ailerons:</strong> Before you reveal your dial, if you are not stressed, you <b>must</b> boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
+           text: """After you fully execute a speed 1 maneuver using your <strong>Controlled Ailerons</strong> ship ability, you may perform a %COORDINATE% action. If you do, skip your Perform Action step.%LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you may boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
         '"Wampa"':
            display_name: """“Wampa”"""
            text: """While you perform an attack, you may spend 1&nbsp;%CHARGE% to roll 1 additional attack die.%LINEBREAK%After defending, lose 1&nbsp;%CHARGE%."""
