@@ -2129,7 +2129,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "X-Wing"
             skill: 4
-            points: 4
+            points: 5
             loadout: 15
             slots: [
                 "Talent"
@@ -4801,8 +4801,8 @@ exportObj.basicCardData = ->
             loadout: 7
             slots: [
                 "Talent"
-                "Cannon"
-                "Cannon"
+                "Missile"
+                "Missile"
                 "Illicit"
             ]
         }
@@ -5967,9 +5967,11 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Fighter"
             skill: 2
-            points: 2
-            loadout: 0
+            points: 3
+            loadout: 4
             slots: [
+                "Talent"
+                "Talent"
             ]
         }
         {
@@ -7437,7 +7439,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Talent"
                 "Astromech"
-                "Missile"
                 "Modification"
                 "Configuration"
             ]
@@ -7541,7 +7542,6 @@ exportObj.basicCardData = ->
             keyword: ["Clone"]
             slots: [
                 "Talent"
-                "Missile"
                 "Missile"
                 "Modification"
             ]
@@ -10533,7 +10533,7 @@ exportObj.basicCardData = ->
             ship: "BTA-NR2 Y-Wing"
             skill: 3
             points: 3
-            loadout: 7
+            loadout: 13
             slots: [
                 "Talent"
                 "Tech"
@@ -10986,9 +10986,7 @@ exportObj.basicCardData = ->
             loadout: 3
             max_per_squad: 2
             slots: [
-                "Talent"
                 "Illicit"
-                "Modification"
             ]
         }
         {
@@ -11508,7 +11506,6 @@ exportObj.basicCardData = ->
             keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
-                "Missile"
                 "Astromech"
                 "Modification"
             ]
@@ -11774,7 +11771,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Sensor"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11795,7 +11792,7 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Modification"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11815,7 +11812,7 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Modification"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11833,7 +11830,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Sensor"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11851,7 +11848,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Sensor"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11868,7 +11865,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Sensor"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11885,7 +11882,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Sensor"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11904,7 +11901,7 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Cannon"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11919,7 +11916,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Sensor"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
         {
@@ -11934,7 +11931,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Sensor"
                 "Modification"
-                "VersitileShip"
+                "VersatileShip"
             ]
         }
     ]

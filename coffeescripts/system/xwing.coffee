@@ -29,12 +29,12 @@ exportObj.slotsMatching = (slota, slotb) ->
     switch slota
         when 'HardpointShip'
             return true if slotb == 'Torpedo' or slotb == 'Cannon' or slotb == 'Missile'
-        when 'VersitileShip'
+        when 'VersatileShip'
             return true if slotb == 'Torpedo' or slotb == 'Missile'
     switch slotb
         when 'HardpointShip'
             return true if slota == 'Torpedo' or slota == 'Cannon' or slota == 'Missile'
-        when 'VersitileShip'
+        when 'VersatileShip'
             return true if slota == 'Torpedo' or slota == 'Missile'
     return false
 
