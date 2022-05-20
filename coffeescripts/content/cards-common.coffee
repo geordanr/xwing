@@ -16836,7 +16836,7 @@ exportObj.basicCardData = ->
             slot: "Cannon"
             points: 4
             attackbull: 4
-            range: """1-2"""
+            range: """2-3"""
             rangebonus: true
             charge: 2
             recurring: 1
