@@ -1299,7 +1299,7 @@ class exportObj.SquadBuilder
                     
             # Notes, if present
             @printable_container.find('.printable-body').append $.trim """
-                <div class="version">Points Version: 2.5.0 03/01/2022</div>
+                <div class="version">Points Version: 06/15/2022</div>
             """
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
@@ -1525,7 +1525,7 @@ class exportObj.SquadBuilder
         @backend_save_list_as_button.toggleClass 'disabled', @total_points == 0
         @backend_delete_list_button.toggleClass 'disabled', not @current_squad.id?
         if @ships.length > 1
-            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB 2: ") + @current_squad.name + ": " + @describeSquad())
+            $('meta[property="og:description"]').attr("content", @uitranslation("X-Wing Squadron by YASB: ") + @current_squad.name + ": " + @describeSquad())
         else
             $('meta[property="og:description"]').attr("content", @uitranslation("YASB advertisment"))
         
@@ -1541,10 +1541,10 @@ class exportObj.SquadBuilder
         @squad_name_input.val @current_squad.name
         return unless $.getParameterByName('f') == @faction
         if @current_squad.name != @uitranslation("Unnamed Squadron") and @current_squad.name != @uitranslation("Unsaved Squadron")
-            if (document.title != "YASB 2 - " + @current_squad.name) 
-                document.title = "YASB 2 - " + @current_squad.name
+            if (document.title != "YASB - " + @current_squad.name) 
+                document.title = "YASB - " + @current_squad.name
         else
-            document.title = "YASB 2"
+            document.title = "YASB"
         @updatePrintAndExportTexts()
 
 
@@ -3236,10 +3236,10 @@ class exportObj.SquadBuilder
             points: @total_points
             vendor:
                 yasb:
-                    builder: 'YASB 2.5'
+                    builder: 'YASB - X-Wing 2.5'
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
-            version: '2.5.0'
+            version: '06/15/2022'
             # there is no point to have this version identifier, if we never actually increase it, right?
 
         for ship in @ships
