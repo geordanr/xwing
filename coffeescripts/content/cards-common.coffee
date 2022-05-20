@@ -2147,7 +2147,7 @@ exportObj.basicCardData = ->
             skill: 5
             keyword: ["Light Side"]
             force: 2
-            points: 8
+            points: 6
             loadout: 22
             slots: [
                 "Force"
@@ -9412,6 +9412,7 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Missile"
                 "Modification"
+                "Modification"
                 "Configuration"
             ]
             applies_condition: '''Fearful Prey'''.canonicalize()
@@ -9464,6 +9465,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Sensor"
                 "Missile"
+                "Modification"
                 "Modification"
                 "Configuration"
             ]
@@ -13564,7 +13566,7 @@ exportObj.basicCardData = ->
             name: "Targeting Synchronizer"
             id: 177
             slot: "Tech"
-            points: 1
+            points: 3
             restrictions: [
                 ["Action", "Lock"]
             ]
@@ -14255,7 +14257,7 @@ exportObj.basicCardData = ->
             name: "Targeting Computer"
             id: 249
             slot: "Modification"
-            points: 3
+            points: 1
             modifier_func: (stats) ->
                 stats.actions.push 'Lock' if 'Lock' not in stats.actions
         }
