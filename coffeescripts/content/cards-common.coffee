@@ -3830,7 +3830,7 @@ exportObj.basicCardData = ->
             keyword: ["Mandalorian"]
             slots: [
                 "Talent"
-                "Misssile"
+                "Missile"
                 "Torpedo"
                 "Modification"
             ]
@@ -4476,7 +4476,7 @@ exportObj.basicCardData = ->
             ship: "M3-A Interceptor"
             skill: 2
             points: 3
-            loadout: 16
+            loadout: 6
             slots: [
                 "Modification"
                 "HardpointShip"
@@ -10326,6 +10326,7 @@ exportObj.basicCardData = ->
             loadout: 14
             slots: [
                 "Force"
+                "Talent"
                 "Tech"
                 "Cannon"
                 "Missile"            
