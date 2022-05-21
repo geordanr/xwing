@@ -8753,8 +8753,8 @@ exportObj.basicCardData = ->
             unique: true
             skill: 2
             ship: "TIE/VN Silencer"
-            points: 6
-            loadout: 10
+            points: 5
+            loadout: 7
             slots: [
                 "Talent"
                 "Talent"
