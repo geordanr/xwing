@@ -3809,8 +3809,8 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Fang Fighter"
             skill: 4
-            points: 4
-            loadout: 4
+            points: 5
+            loadout: 12
             keyword: ["Mandalorian"]
             slots: [
                 "Talent"
@@ -4252,8 +4252,9 @@ exportObj.basicCardData = ->
             ship: "Kihraxz Fighter"
             skill: 3
             points: 4
-            loadout: 0
+            loadout: 3
             slots: [
+                "Talent"
             ]
         }
         {
@@ -6806,7 +6807,7 @@ exportObj.basicCardData = ->
             skill: 3
             force: 2
             points: 4
-            loadout: 9
+            loadout: 7
             keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
@@ -9376,6 +9377,7 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Cannon"
                 "Cannon"
+                "Gunner"
                 "Modification"
                 "Modification"
                 "Configuration"
@@ -9394,6 +9396,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Cannon"
                 "Cannon"
+                "Gunner"
                 "Modification"
                 "Modification"
                 "Configuration"
@@ -11524,7 +11527,7 @@ exportObj.basicCardData = ->
             skill: 3
             force: 2
             points: 6
-            loadout: 7
+            loadout: 10
             keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
