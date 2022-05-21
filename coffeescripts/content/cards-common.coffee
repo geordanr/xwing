@@ -5045,6 +5045,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Force"
                 "Talent"
+                "Talent"
                 "Sensor"
                 "Missile"
             ]
@@ -5193,7 +5194,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Modification"
-                "Modification"
                 "Configuration"
             ]
         }
@@ -5210,7 +5210,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Modification"
-                "Modification"
                 "Configuration"
             ]
         }
@@ -5224,8 +5223,6 @@ exportObj.basicCardData = ->
             loadout: 3
             slots: [
                 "Talent"
-                "Missile"
-                "Modification"
                 "Configuration"
             ]
         }
@@ -5239,7 +5236,6 @@ exportObj.basicCardData = ->
             loadout: 2
             slots: [
                 "Talent"
-                "Modification"
                 "Configuration"
             ]
         }
@@ -5834,8 +5830,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Modification"
-                "Modification"
-                "Modification"
             ]
         }
         {
@@ -5852,7 +5846,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Cannon"
-                "Torpedo"
                 "Missile"
                 "Modification"
             ]
@@ -5868,8 +5861,7 @@ exportObj.basicCardData = ->
             loadout: 4
             slots: [
                 "Talent"
-                "Talent"
-                "Modification"
+                "Cannon"
             ]
         }
         {
@@ -5883,8 +5875,6 @@ exportObj.basicCardData = ->
             loadout: 3
             slots: [
                 "Talent"
-                "Talent"
-                "Modification"
             ]
         }
         {
@@ -5900,8 +5890,6 @@ exportObj.basicCardData = ->
             loadout: 2
             slots: [
                 "Talent"
-                "Talent"
-                "Modification"
             ]
         }
         {
@@ -5915,8 +5903,7 @@ exportObj.basicCardData = ->
             loadout: 6
             slots: [
                 "Talent"
-                "Talent"
-                "Modification"
+                "Cannon"
             ]
         }
         {
@@ -5931,6 +5918,8 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Talent"
+                "Missile"
+                "Modification"
             ]
         }
         {
@@ -5944,7 +5933,7 @@ exportObj.basicCardData = ->
             loadout: 3
             slots: [
                 "Talent"
-                "Talent"
+                "Modification"
             ]
         }
         {
@@ -5958,7 +5947,6 @@ exportObj.basicCardData = ->
             loadout: 1
             slots: [
                 "Talent"
-                "Modification"
             ]
         }
         {
@@ -5985,7 +5973,6 @@ exportObj.basicCardData = ->
             loadout: 2
             slots: [
                 "Talent"
-                "Modification"
             ]
         }
         {
@@ -7434,7 +7421,7 @@ exportObj.basicCardData = ->
             skill: 5
             force: 2
             points: 5
-            loadout: 12
+            loadout: 8
             keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
@@ -10086,7 +10073,8 @@ exportObj.basicCardData = ->
             loadout: 12
             slots: [
                 "Talent"
-                "Modification"
+                "Talent"
+                "Missile"
                 "Modification"
                 "Configuration"
             ]
@@ -10257,7 +10245,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
-                "Modification"
                 "Configuration"
             ]
         }
@@ -10275,7 +10262,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Missile"
                 "Modification"
-                "Modification"
                 "Configuration"
             ]
         }
@@ -10290,8 +10276,6 @@ exportObj.basicCardData = ->
             loadout: 6
             slots: [
                 "Talent"
-                "Modification"
-                "Modification"
                 "Modification"
                 "Configuration"
             ]
@@ -10311,7 +10295,6 @@ exportObj.basicCardData = ->
             loadout: 6
             slots: [
                 "Talent"
-                "Modification"
                 "Modification"
                 "Configuration"
             ]
@@ -11598,7 +11581,9 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Viktor Hel"
+            name: "Viktor Hel (Rogue)"
+            canonical_name: 'Viktor Hel'.canonicalize()
+            xws: "viktorhel-rogueclassstarfighter"
             id: 535
             unique: true
             faction: "Scum and Villainy"
