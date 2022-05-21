@@ -8655,7 +8655,7 @@ exportObj.basicCardData = ->
             ship: "Fireball"
             skill: 2
             points: 3
-            loadout: 2
+            loadout: 5
             slots: [
                 "Missile"
                 "Modification"
