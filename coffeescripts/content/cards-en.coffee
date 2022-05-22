@@ -176,7 +176,7 @@ exportObj.translations.English =
                     <p>Additional credits to:<br>
                     2.5 Update Data: Devon Monkhouse, Perry Low, Andrew Oehler.<br>
                     2.0 launch data: Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.<br>
-                    Translation Team: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke<br>
+                    Translation Team: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke, kksuke<br>
                     Site logo: Thomas Kohler<br>
                     Quick Build Support: Patrick Mischke</p>
 
