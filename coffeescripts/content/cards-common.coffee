@@ -4447,8 +4447,8 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "M3-A Interceptor"
             skill: 3
-            points: 4
-            loadout: 11
+            points: 3
+            loadout: 7
             keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
@@ -7860,8 +7860,9 @@ exportObj.basicCardData = ->
             keyword: ["Droid"]
             slots: [
                 "Missile"
-                "Configuration"
                 "Modification"
+                "Modification"
+                "Configuration"
             ]
         }
         {
