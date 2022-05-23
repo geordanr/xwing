@@ -1289,7 +1289,7 @@ exportObj.cardLoaders.English = () ->
            text: """After a friendly ship at range&nbsp;1-2 performs an attack against an enemy ship in your %FRONTARC%, you may perform a %FOCUS%&nbsp;action."""
         '"Vizier"':
            display_name: """“Vizier”"""
-           text: """After you fully execute a speed 1 maneuver using your <strong>Controlled Ailerons</strong> ship ability, you may perform a %COORDINATE% action. If you do, skip your Perform Action step.%LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you may boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
+           text: """After you move using your <strong>Controlled Ailerons</strong> ship ability, you may perform a %COORDINATE% action. If you do, skip your Perform Action step.%LINEBREAK%<strong>Controlled Ailerons:</strong> Before you reveal your dial, if you are not stressed, you may boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
         '"Wampa"':
            display_name: """“Wampa”"""
            text: """While you perform an attack, you may spend 1&nbsp;%CHARGE% to roll 1 additional attack die.%LINEBREAK%After defending, lose 1&nbsp;%CHARGE%."""
