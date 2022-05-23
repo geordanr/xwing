@@ -9438,7 +9438,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Sensor"
-                "Missile"
+                "Cannon"
                 "Modification"
                 "Modification"
                 "Configuration"
@@ -11819,6 +11819,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Sensor"
+                "Modification"
                 "VersatileShip"
             ]
         }
