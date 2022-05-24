@@ -4815,7 +4815,7 @@ exportObj.basicCardData = ->
             ship: "Z-95 Headhunter"
             skill: 3
             points: 3
-            loadout: 8
+            loadout: 11
             keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
