@@ -1704,7 +1704,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform an attack that hits, you may spend 2 %CHARGE% to transfer 1 of your non-lock red or orange tokens to the defender. %LINEBREAK% <strong>Dead to Rights:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
         "Cad Bane (Separatist)":
            display_name: """Cad Bane"""
-           text: """During the Engagement Phase, after another ship at range 0-3 is destroyed, you may spend 1 [Charge] to perform an action, even while stressed. %LINEBREAK% <strong>Dead to Rights:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
+           text: """During the Engagement Phase, after another ship at range 0-3 is destroyed, you may spend 1 %CHARGE% to perform an action, even while stressed. %LINEBREAK% <strong>Dead to Rights:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
         "Viktor Hel (Rogue)":
            display_name: """Viktor Hel"""
            text: """After you defend, if you did not roll exactly 2 defense dice, the attacker gains 1 stress token. %LINEBREAK% <strong>Dead to Rights:</strong> While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
