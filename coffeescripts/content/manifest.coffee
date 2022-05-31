@@ -10273,6 +10273,118 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Rogue-class Starfighter Expansion pack": [
+        {
+            name: 'Rogue-class Starfighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Cad Bane (Separatist)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-101'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-102'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-111'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'MagnaGuard Executioner'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'MagnaGuard Protector'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Cad Bane'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Viktor Hel (Rogue)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nom Lumb (Rogue)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Outer Rim Hunter'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Enduring'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Notorious'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Freelance Slicer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Cannons'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Synced Laser Cannons'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Blazer Bomb'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Independent Calculations'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tracking Fob'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overtuned Modulators'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Xanadu Blood'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
     "Pride of Mandalore Reinforcements Pack": [
         {
             name: 'Fenn Rau (Rebel Fang)'
