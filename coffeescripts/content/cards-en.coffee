@@ -2811,7 +2811,7 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Setup:</strong> Before placing forces, assign the <b>Trials of the Darksaber</b> condition to yourself. %LINEBREAK% While you perform a %COORDINATE% action, you may coordinate 1 additional friendly ship."""
         "Prime Minister Almec":
            display_name: """Prime Minister Almec"""
-           text: """<strong>Setup:</strong> Equip this side faceup. %LINEBREAK% After a friendly ship at range 0-2 reveals a white maneuver, if it has no green tokens, it may gain 1 stress token to gain 1 calculate token. %LINEBREAK% During the End Phase, iif you have 2 or more stress tokens, flip this card. %LINEBREAK% <strong>Almec, Maul's Puppet</strong> %LINEBREAK% After a friendly ship at range 0-2 fully executes a red maneuver, that ship may perform a %CALCULATE% or %FOCUS% action on its action bar, even while stressed."""
+           text: """<strong>Setup:</strong> Equip this side faceup. %LINEBREAK% After a friendly ship at range 0-2 reveals a white maneuver, if it has no green tokens, it may gain 1 stress token to gain 1 calculate token. %LINEBREAK% During the End Phase, if you have 2 or more stress tokens, flip this card. %LINEBREAK% <strong>Almec, Maul's Puppet</strong> %LINEBREAK% After a friendly ship at range 0-2 fully executes a red maneuver, that ship may perform a %CALCULATE% or %FOCUS% action on its action bar, even while stressed."""
         "Beskar Reinforced Plating":
            text: """While you defend, if the attacker is in your %FRONTARC%, before you would be dealt a faceup damage card, you may spend 1 %CHARGE% to be dealt that card facedown instead, or spend 2 %CHARGE% to discard it instead."""
         "Blazer Bomb":
@@ -2819,7 +2819,7 @@ exportObj.cardLoaders.English = () ->
         "Mandalorian Optics":
            text: """During the System Phase, you may spend 1 %CHARGE% to acquire a lock on an object in your %FRONTARC%. %LINEBREAK% While you perform a primary attack, if you have a lock on the defender, ignore obstacles beyond range 0 obstructing the attack."""
         "Clan Training":
-           text: """Before you engage, iif you are not focused and there is an enemy ship in your %FRONTARC% at range 1, you may spend 1 %CHARGE% to perform a red %FOCUS% action. %LINEBREAK% After you perform an attack, if the defender is destroyed, recover 1 %CHARGE%."""
+           text: """Before you engage, if you are not focused and there is an enemy ship in your %FRONTARC% at range 1, you may spend 1 %CHARGE% to perform a red %FOCUS% action. %LINEBREAK% After you perform an attack, if the defender is destroyed, recover 1 %CHARGE%."""
         "Gauntlet":
            text: """During the System Phase, you may spend 1 %CHARGE% to repair 1 faceup <b>Ship</b> damage card."""
         "Nightbrother":
