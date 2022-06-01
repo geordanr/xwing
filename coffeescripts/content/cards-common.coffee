@@ -16852,7 +16852,7 @@ exportObj.basicCardData = ->
             points: 0
             ship: ["Rogue-class Starfighter"]
             modifier_func: (stats) ->
-                stats.actions.push 'Cloak' if 'Cloak' not in stats.actions
+                stats.actions.push 'R-Cloak' if 'R-Cloak' not in stats.actions
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -23181,7 +23181,7 @@ exportObj.basicCardData = ->
         {
             id: 503
             faction: "Rebel Alliance"
-            pilot: "Hera Syndulla"
+            pilot: "Hera Syndulla (VCX-100)"
             ship: "VCX-100"
             threat: [6, 7, 8, 9]
             wingmates: [1, 2, 3, 4]
