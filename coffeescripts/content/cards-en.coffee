@@ -1741,13 +1741,13 @@ exportObj.cardLoaders.English = () ->
         '"Stub"':
            display_name: """“Stub”"""
            text: """While you defend, if the speed of your revealed maneuver is even, roll 1 additional defende die. While you perform a primary attack, if the speed of your revealed maneuver is odd, roll 1 additional attack die. %LINEBREAK%<strong>Versatile Frame:</strong> You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
-        '"Hawk (Z-95)"':
+        '"Hawk" (Z-95)':
            display_name: """“Hawk”"""
            text: """At the start of the End Phase, each friendly ship at range 0-1 that has a revealed maneuver of speed 3-5 may gain 1 strain token to perform a %BARRELROLL% or %BOOST% action.  %LINEBREAK%<strong>Versatile Frame:</strong> You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
         '"Slider"':
            display_name: """“Slider”"""
            text: """When you reveal a [2 %BANKLEFT%] or [2 %BANKRIGHT%] maneuver, you may spend 2 %CHARGE% to execute it as a sideslip. %LINEBREAK%<strong>Versatile Frame:</strong> You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
-        '"Warthog (Z-95)"':
+        '"Warthog" (Z-95)':
            display_name: """“Warthog”"""
            text: """After you or a friendly non-limited ship at range 0-2 are destroyed during the Engagement Phase, that ship is not removed until the end of that phase. %LINEBREAK%<strong>Versatile Frame:</strong> You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
         '"Knack"':

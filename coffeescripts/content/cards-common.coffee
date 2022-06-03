@@ -11785,7 +11785,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Hawk (Z-95)"'
+            name: '"Hawk" (Z-95)'
             canonical_name: '"Hawk"'.canonicalize()
             xws: "hawk-clonez95headhunter"
             id: 546
@@ -11805,7 +11805,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Warthog (Z-95)"'
+            name: '"Warthog" (Z-95)'
             canonical_name: '"Warthog"'.canonicalize()
             xws: "warthog-clonez95headhunter"
             id: 547

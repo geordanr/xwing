@@ -10385,6 +10385,113 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Clone Z-95 Headhunter Expansion pack": [
+        {
+            name: 'Clone Z-95 Headhunter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: '"Boost"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Drift"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Hawk" (Z-95)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Killer"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Knack"'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: '"Slider"'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: '"Stub"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Warthog" (Z-95)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '7th Sky Corps Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Reaper Squadron Scout'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Enduring'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Angled Deflectors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fire-Control System'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Homing Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Mag-Pulse Warheads'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'XX-23 S-Thread Tracers'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
     "Pride of Mandalore Reinforcements Pack": [
         {
             name: 'Fenn Rau (Rebel Fang)'
