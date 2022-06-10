@@ -1888,7 +1888,7 @@ class exportObj.SquadBuilder
             if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
                 eligible_faction_pilots.push include_pilot
 
-            retval = ({ id: pilot.id, text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then pilot.skill + ' - ' else ''}#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points}/#{pilot.loadout})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots)
+            retval = ({ id: pilot.id, text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then pilot.skill + ' - ' else ''}#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points}#{if pilot.loadout? then "/#{pilot.loadout}" else ""})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots)
         else
             # select according to quickbuild cards
             # filter for faction and ship
@@ -2189,7 +2189,7 @@ class exportObj.SquadBuilder
             color = ""
             prefix = seperation
             if "Droid" in keyword
-                action = action.replace('Focus', 'Calculate')
+                showTooltipaction = action.replace('Focus', 'Calculate')
             # Search and filter each type of action by its prefix and then reformat it for html
             if action.search('> ') != -1
                 action = action.replace(/> /gi, '')
@@ -2226,35 +2226,36 @@ class exportObj.SquadBuilder
                         if not (pilot.skill in possible_inis)
                             possible_inis.push(pilot.skill)
                         possible_costs.push(pilot.points)
-                        possible_loadout.push(pilot.loadout)
-                        for slot, state of slot_types
-                            switch pilot.slots.filter((item) => item == slot).length
-                                when 1
-                                    switch state
-                                        when -1
-                                            slot_types[slot] = 1
-                                        when 0
-                                            slot_types[slot] = 2
-                                        when 3
-                                            slot_types[slot] = 4
-                                when 0
-                                    switch state
-                                        when -1
-                                            slot_types[slot] = 0
-                                        when 1
-                                            slot_types[slot] = 2
-                                        when 3,4
-                                            slot_types[slot] = 5
-                                when 2
-                                    switch state
-                                        when -1
-                                            slot_types[slot] = 3
-                                        when 0,2
-                                            slot_types[slot] = 5
-                                        when 1
-                                            slot_types[slot] = 4
-                                when 3
-                                    slot_types[slot] = 6
+                        if pilot.loadout? then possible_loadout.push(pilot.loadout)
+                        if pilot.slots?
+                            for slot, state of slot_types
+                                switch pilot.slots.filter((item) => item == slot).length
+                                    when 1
+                                        switch state
+                                            when -1
+                                                slot_types[slot] = 1
+                                            when 0
+                                                slot_types[slot] = 2
+                                            when 3
+                                                slot_types[slot] = 4
+                                    when 0
+                                        switch state
+                                            when -1
+                                                slot_types[slot] = 0
+                                            when 1
+                                                slot_types[slot] = 2
+                                            when 3,4
+                                                slot_types[slot] = 5
+                                    when 2
+                                        switch state
+                                            when -1
+                                                slot_types[slot] = 3
+                                            when 0,2
+                                                slot_types[slot] = 5
+                                            when 1
+                                                slot_types[slot] = 4
+                                    when 3
+                                        slot_types[slot] = 6
                                 
                     possible_inis.sort()
         
@@ -2527,7 +2528,7 @@ class exportObj.SquadBuilder
                         container.find('tr.info-upgrades').hide()
                     else
                         container.find('tr.info-upgrades').show()
-                        container.find('tr.info-upgrades td.info-data').html((exportObj.translate('sloticon', slot) for slot in data.slots).join(' ') or 'None')
+                        container.find('tr.info-upgrades td.info-data').html(if data.slots? then (exportObj.translate('sloticon', slot) for slot in data.slots).join(' ') or 'None' else "Standardized")
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats?.maneuvers ? ship.maneuvers, ship.maneuvers))
                 when 'Quickbuild'
@@ -2911,23 +2912,24 @@ class exportObj.SquadBuilder
                     
                 for ship in @ships
                     expensive_slots = []
-                    while ship.upgrade_points_total < ship.pilot.loadout
-                        # we wan't to utilize newly added upgrade slots, so we will check for slots iteratively
-                        unused_addons = []
-                        for upgrade in ship.upgrades
-                            unused_addons.push upgrade unless upgrade.data? or (upgrade.occupied_by? and upgrade.occupied_by != null) or upgrade in expensive_slots
-                        if unused_addons.length == 0
-                            break # it's fine to not spend all points - otherwise few-slot ships will always receive the same upgrade(s)
-                        # select random slot
-                        addon = unused_addons[$.randomInt unused_addons.length]
-                        # select and equip random upgrade
-                        available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, ship, addon,'', @dfl_filter_func, sorted = false) when (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('upgrade', upgrade.name))) and not upgrade.disabled)
-                        if available_upgrades.length > 0
-                            upgrade =  available_upgrades[$.randomInt available_upgrades.length] 
-                            addon.setById upgrade.id
-                        else
-                            # that slot has only expensive stuff. ignore it in the future!
-                            expensive_slots.push addon
+                    if ship.pilot.loadout?
+                        while ship.upgrade_points_total < ship.pilot.loadout
+                            # we wan't to utilize newly added upgrade slots, so we will check for slots iteratively
+                            unused_addons = []
+                            for upgrade in ship.upgrades
+                                unused_addons.push upgrade unless upgrade.data? or (upgrade.occupied_by? and upgrade.occupied_by != null) or upgrade in expensive_slots
+                            if unused_addons.length == 0
+                                break # it's fine to not spend all points - otherwise few-slot ships will always receive the same upgrade(s)
+                            # select random slot
+                            addon = unused_addons[$.randomInt unused_addons.length]
+                            # select and equip random upgrade
+                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, ship, addon,'', @dfl_filter_func, sorted = false) when (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources) and ((not data.collection_only) or @collection.checkShelf('upgrade', upgrade.name))) and not upgrade.disabled)
+                            if available_upgrades.length > 0
+                                upgrade =  available_upgrades[$.randomInt available_upgrades.length] 
+                                addon.setById upgrade.id
+                            else
+                                # that slot has only expensive stuff. ignore it in the future!
+                                expensive_slots.push addon
                         
             else if @total_points < data.max_points
                 # need to add more ships
@@ -3699,12 +3701,25 @@ class Ship
 
     setupAddons: ->
         if not @builder.isQuickbuild
-            # Upgrades from pilot
-            for slot in @pilot.slots ? []
-                @upgrades.push new exportObj.Upgrade
-                    ship: this
-                    container: @addon_container
-                    slot: slot
+            if @pilot.upgrades?
+                for upgrade_name in @pilot.slots ? []
+                    upgrade_data = exportObj.upgrades[upgrade_name]
+                    if not upgrade_data?
+                        console.log("Unknown Upgrade: " + upgrade_name)
+                        continue
+                    upgrade = new exportObj.QuickbuildUpgrade
+                        ship: this
+                        container: @addon_container
+                        slot: upgrade_data.slot
+                        upgrade: upgrade_data
+                    upgrade.setData upgrade_data
+                    @upgrades.push upgrade
+            else
+                for slot in @pilot.slots ? []
+                    @upgrades.push new exportObj.Upgrade
+                        ship: this
+                        container: @addon_container
+                        slot: slot
         else 
             # Upgrades from quickbuild
             for upgrade_name in exportObj.quickbuildsById[@quickbuildId].upgrades ? []
@@ -3729,9 +3744,8 @@ class Ship
     getPoints: ->
         if not @builder.isQuickbuild
             points = @pilot?.points ? 0
-            total_upgrades = @pilot?.loadout ? "N/A"
             @points_container.find('div').text "#{points}"
-            @points_container.find('.upgrade-points').text "(#{@upgrade_points_total}/#{total_upgrades})"
+            @points_container.find('.upgrade-points').text if @pilot?.loadout? then "(#{@upgrade_points_total}/#{@pilot.loadout})" else ""
             if points > 0
                 @points_container.fadeTo 'fast', 1
             else
@@ -3812,7 +3826,7 @@ class Ship
 
             @pilot_selector.select2 'data',
                 id: @pilot.id
-                text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then @pilot.skill + ' - ' else ''}#{if @pilot.display_name then @pilot.display_name else @pilot.name}#{if @quickbuildId != -1 then exportObj.quickbuildsById[@quickbuildId].suffix else ""} (#{if @quickbuildId != -1 then (if @primary then exportObj.quickbuildsById[@quickbuildId].threat else 0) else @pilot.points}/#{if @quickbuildId != -1 then "" else @pilot.loadout})"
+                text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then @pilot.skill + ' - ' else ''}#{if @pilot.display_name then @pilot.display_name else @pilot.name}#{if @quickbuildId != -1 then exportObj.quickbuildsById[@quickbuildId].suffix else ""} (#{if @quickbuildId != -1 then (if @primary then exportObj.quickbuildsById[@quickbuildId].threat else 0) else @pilot.points}#{if (@quickbuildId != -1 or not @pilot.loadout?) then "" else "/#{@pilot.loadout}"})"
             @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
                 points = upgrade.getPoints()
@@ -4244,7 +4258,7 @@ class Ship
         
         html += $.trim """
             <div class="ship-points-total">
-                <strong>#{@uitranslation("Ship Cost")}: #{@getPoints()}, #{@uitranslation("Loadout")}: (#{@upgrade_points_total}/#{@pilot.loadout}), #{@uitranslation("Half Points")}: #{HalfPoints}, #{@uitranslation("Damage Threshold")}: #{Threshold}</strong> 
+                <strong>#{@uitranslation("Ship Cost")}: #{@getPoints()}, #{@uitranslation("Loadout")}: (#{@upgrade_points_total}#{if @pilot.loadout? then "/#{@pilot.loadout}" else ""}), #{@uitranslation("Half Points")}: #{HalfPoints}, #{@uitranslation("Damage Threshold")}: #{Threshold}</strong> 
             </div>
         """
 
@@ -4270,7 +4284,7 @@ class Ship
         halfPoints = Math.floor @getPoints() / 2        
         threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
-        table_html += """<tr class="simple-ship-half-points"><td colspan="2">#{@uitranslation("Loadout")}: (#{@upgrade_points_total}/#{@pilot.loadout}) #{@uitranslation("Half Points")}: #{halfPoints} #{@uitranslation("Damage Threshold")}: #{threshold}</td></tr>"""
+        table_html += """<tr class="simple-ship-half-points"><td colspan="2">#{@uitranslation("Loadout")}: (#{@upgrade_points_total}#{if @pilot.loadout? then "/#{@pilot.loadout}" else ""}) #{@uitranslation("Half Points")}: #{halfPoints} #{@uitranslation("Damage Threshold")}: #{threshold}</td></tr>"""
 
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
@@ -4291,7 +4305,7 @@ class Ship
         halfPoints = Math.floor @getPoints() / 2        
         threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
 
-        simplecopy += """#{@uitranslation("Ship Cost")}: #{@getPoints()}  #{@uitranslation("Loadout")}: (#{@upgrade_points_total}/#{@pilot.loadout})  #{@uitranslation("Half Points")}: #{halfPoints}  #{@uitranslation("Damage Threshold")}: #{threshold}    \n    \n"""
+        simplecopy += """#{@uitranslation("Ship Cost")}: #{@getPoints()}  #{@uitranslation("Loadout")}: (#{@upgrade_points_total}#{if @pilot.loadout? then "/#{@pilot.loadout}" else ""})  #{@uitranslation("Half Points")}: #{halfPoints}  #{@uitranslation("Damage Threshold")}: #{threshold}    \n    \n"""
 
         simplecopy
         
@@ -4309,7 +4323,7 @@ class Ship
                 upgrade_reddit = upgrade.toRedditText points
                 reddit_upgrades.push upgrade_reddit if upgrade_reddit?
             reddit += reddit_upgrades.join "    "
-            reddit += """&nbsp;*#{@uitranslation("Ship Cost")}: #{@getPoints()}  #{@uitranslation("Loadout")}: (#{@upgrade_points_total}/#{@pilot.loadout})  #{@uitranslation("Half Points")}: #{halfPoints}  #{@uitranslation("Damage Threshold")}: #{threshold}*    \n"""
+            reddit += """&nbsp;*#{@uitranslation("Ship Cost")}: #{@getPoints()}  #{@uitranslation("Loadout")}: (#{@upgrade_points_total}#{if @pilot.loadout? then "/#{@pilot.loadout}" else ""})  #{@uitranslation("Half Points")}: #{halfPoints}  #{@uitranslation("Damage Threshold")}: #{threshold}*    \n"""
         reddit
 
     toTTSText: ->

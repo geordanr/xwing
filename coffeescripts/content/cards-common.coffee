@@ -2496,7 +2496,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Turret"
                 "Torpedo"
-                "Missile"
                 "Astromech"
                 "Modification"
                 "Device"
@@ -16975,6 +16974,7 @@ exportObj.basicCardData = ->
         {
             name: 'Fearful Prey'
             id: 24
+            unique: true
         }
         {
             name: 'You Should Thank Me'
@@ -17017,6 +17017,7 @@ exportObj.basicCardData = ->
         {
             name: '''Marked for Elimination'''
             id: 34
+            unique: true
         }
         {
             name: '''Clan Wren Commandos'''
