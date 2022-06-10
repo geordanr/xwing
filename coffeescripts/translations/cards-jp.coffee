@@ -3155,4 +3155,9 @@ exportObj.cardLoaders.日本語 = () ->
         '''Guarded''':
            text: '''君が防御する際、もし君が攻撃者の %BULLSEYEARC% 内にいないなら、友軍のカリキュレートあるいは回避状態の <b>MagnaGuard Protector</b> につき1つ、防御ダイスを追加で振る。'''
 
-    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
+    chassis_translations = 
+        "Versatile Frame":
+           text: """You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
+
+
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations

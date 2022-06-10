@@ -70,7 +70,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 2
             shields: 2
-            keyword: ["Vectored Thrusters"]
+            chassis: "Vectored Thrusters"
             actions: [
                 "Focus"
                 "Evade"
@@ -162,6 +162,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 2
+            chassis: "Advanced Targeting Computer"
             actions: [
                 "Focus"
                 "R-> Barrel Roll"
@@ -185,7 +186,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 0
-            keyword: ["Autothrusters"]
+            chassis: "Autothrusters"
             actions: [
                 "Focus"
                 "Barrel Roll"
@@ -302,6 +303,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 6
             shields: 0
+            chassis: "Nimble Bomber"
             actions: [
                 "Focus"
                 "Lock"
@@ -345,6 +347,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 4
+            chassis: "Full Throttle"
             actions: [
                 "Focus"
                 "Evade"
@@ -368,6 +371,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 3
+            chassis: "Experimental Scanners"
             actions: [
                 "Focus"
                 "Evade"
@@ -393,6 +397,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 2
+            chassis: "Stygium Array"
             actions: [
                 "Focus"
                 "Evade"
@@ -415,6 +420,7 @@ exportObj.basicCardData = ->
             hull: 6
             shields: 4
             keyword: ["Freighter"]
+            chassis: "Sensor Blindspot"
             actions: [
                 "Focus"
                 "Lock"
@@ -460,6 +466,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 4
             shields: 1
+            chassis: "Microthrusters"
             actions: [
                 "Focus"
                 "Lock"
@@ -483,6 +490,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 1
+            chassis: "Weapon Hardpoint"
             actions: [
                 "Focus"
                 "Evade"
@@ -505,6 +513,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 5
             shields: 3
+            chassis: "Advanced Droid Brain"
             actions: [
                 "Calculate"
                 "Evade"
@@ -616,6 +625,7 @@ exportObj.basicCardData = ->
             shields: 4
             base: "Large"
             keyword: ["Freighter"]
+            chassis: "Tail Gun"
             actions: [
                 "Focus"
                 "Lock"
@@ -636,6 +646,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 1
+            chassis: "Locked and Loaded"
             actions: [
                 "Focus"
                 "Evade"
@@ -748,6 +759,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 4
             shields: 0
+            chassis: "Concordia Faceoff"
             actions: [
                 "Focus"
                 "Lock"
@@ -796,6 +808,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 5
             shields: 0
+            chassis: "Spacetug Tractor Array"
             actions: [
                 "Focus"
                 "R-Evade"
@@ -839,6 +852,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 4
             shields: 0
+            chassis: "Adaptive Ailerons"
             actions: [
                 "Focus"
                 "Evade"
@@ -942,6 +956,7 @@ exportObj.basicCardData = ->
             hull: 7
             shields: 2
             base: "Medium"
+            chassis: "Dead to Rights"
             actions: [
                 "Focus"
                 "Lock"
@@ -964,6 +979,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 4
             shields: 1
+            chassis: "Comms Shuttle"
             actions: [
                 "Focus"
                 "Coordinate"
@@ -984,6 +1000,7 @@ exportObj.basicCardData = ->
             hull: 6
             shields: 2
             base: "Medium"
+            chassis: "Controlled Ailerons"
             actions: [
                 "Focus"
                 "Evade"
@@ -1004,6 +1021,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 2
             shields: 2
+            chassis: "Co-Pilot"
             actions: [
                 "Focus"
                 "Barrel Roll"
@@ -1023,6 +1041,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 4
             shields: 3
+            chassis: "Weapon Hardpoint"
             actions: [
                 "Focus"
                 "Lock"
@@ -1046,6 +1065,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 2
             shields: 2
+            chassis: "Refined Gyrostabilizers"
             actions: [
                 "Focus"
                 "Evade"
@@ -1091,7 +1111,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 4
             shields: 2
-            keyword: ["Autothrusters"]
+            chassis: "Autothrusters"
             actions: [
                 "Focus"
                 "Boost"
@@ -1115,6 +1135,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 3
+            chassis: "Heavy Weapon Turret"
             actions: [
                 "Focus"
                 "> Rotate Arc"
@@ -1141,6 +1162,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 6
             shields: 6
+            chassis: "Linked Battery"
             actions: [
                 "Focus"
                 "Lock"
@@ -1213,6 +1235,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 0
+            chassis: "Notched Stabilizers"
             actions: [
                 "Focus"
                 "Barrel Roll"
@@ -1257,6 +1280,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 1
+            chassis: "Fine-Tuned Controls"
             actions: [
                 "Focus"
                 "F-Evade"
@@ -1281,6 +1305,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 3
+            chassis: "Fine-Tuned Controls"
             actions: [
                 "Focus"
                 "F-Evade"
@@ -1326,7 +1351,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 0
-            keyword: ["Networked Calculations"]
+            chassis: "Networked Calculations"
             actions: [
                 "Calculate"
                 "Lock"
@@ -1376,6 +1401,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 2
+            chassis: "Full Throttle"
             actions: [
                 "Focus"
                 "Lock"
@@ -1398,7 +1424,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 5
             shields: 0
-            keyword: ["Networked Calculations"]
+            chassis: "Networked Calculations"
             actions: [
                 "Calculate"
                 "Lock"
@@ -1468,6 +1494,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 4
             shields: 0
+            chassis: "Pinpoint Tractor Array"
             actions: [
                 "Focus"
                 "Evade"
@@ -1488,6 +1515,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 5
             shields: 3
+            chassis: "Plated Hull"
             actions: [
                 "Focus"
                 "Lock"
@@ -1510,6 +1538,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 6
             shields: 0
+            chassis: "Explosion with Wings"
             actions: [
                 "Focus"
                 "Evade"
@@ -1532,6 +1561,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 2
             shields: 2
+            chassis: "Fine-Tuned Thrusters"
             actions: [
                 "Focus"
                 "Evade"
@@ -1578,6 +1608,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 5
             shields: 3
+            chassis: "Networked Aim"
             actions: [
                 "Calculate"
                 "Lock"
@@ -1605,6 +1636,7 @@ exportObj.basicCardData = ->
             hull: 8
             shields: 2
             base: "Medium"
+            chassis: "Fire Convergence"
             actions: [
                 "Focus"
                 "Lock"
@@ -1629,6 +1661,7 @@ exportObj.basicCardData = ->
             hull: 8
             shields: 0
             base: "Medium"
+            chassis: "Rotating Cannons"
             actions: [
                 "Focus"
                 "Reinforce"
@@ -1645,9 +1678,6 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-            autoequip: [
-                'Maneuver-Assist MGK-300'
-            ]
         "Droid Tri-Fighter":
             name: "Droid Tri-Fighter"
             xws: "Droid Tri-Fighter".canonicalize()
@@ -1656,7 +1686,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 0
-            keyword: ["Networked Calculations"]
+            chassis: "Networked Calculations"
             actions: [
                 "Calculate"
                 "Evade"
@@ -1683,6 +1713,7 @@ exportObj.basicCardData = ->
             hull: 2
             shields: 2
             keyword: ["TIE"]
+            chassis: "Twin Ion Engines"
             actions: [
                 "Focus"
                 "Lock"
@@ -1698,9 +1729,6 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-            autoequip: [
-                'Alpha-3E "Esk"'
-            ]
         "Eta-2 Actis":
             name: "Eta-2 Actis"
             xws: "Eta-2 Actis".canonicalize()
@@ -1710,6 +1738,7 @@ exportObj.basicCardData = ->
             agility: 3
             hull: 3
             shields: 0
+            chassis: "Intuitive Controls"
             actions: [
                 "Focus"
                 "Evade"
@@ -1745,6 +1774,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 4
             shields: 3
+            chassis: "Intuitive Interface"
             actions: [
                 "Focus"
                 "R-Lock"
@@ -1768,6 +1798,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 3
             shields: 2
+            chassis: "Heavy Weapon Turret"
             actions: [
                 "Focus"
                 "> Rotate Arc"
@@ -1797,6 +1828,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 4
             shields: 2
+            chassis: "Pursuit Thrusters"
             actions: [
                 "Focus"
                 "Lock"
@@ -1872,6 +1904,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 2
             shields: 2
+            chassis: "Versatile Frame"
             actions: [
                 "Focus"
                 "Lock"
@@ -1892,6 +1925,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 5
             shields: 2
+            chassis: "Dead to Rights"
             actions: [
                 "Focus"
                 "R-> Boost"
@@ -3764,6 +3798,7 @@ exportObj.basicCardData = ->
             points: 2
             loadout: 0
             keyword: ["Droid"]
+            chassis: "Rigged Energy Cells"
             slots: [
             ]
         }
@@ -8990,6 +9025,7 @@ exportObj.basicCardData = ->
             points: 3
             loadout: 10
             keyword: ["Bounty Hunter"]
+            chassis: "Pursuit Craft"
             slots: [
                 "Talent"
                 "Talent"
@@ -11669,7 +11705,8 @@ exportObj.basicCardData = ->
             skill: 4
             points: 5
             loadout: 19
-            keyword: ["Droid", "Networked Calculations"]
+            chassis: "Networked Calculations"
+            keyword: ["Droid"]
             slots: [
                 "Cannon"
                 "Cannon"
@@ -11686,7 +11723,8 @@ exportObj.basicCardData = ->
             skill: 4
             points: 5
             loadout: 19
-            keyword: ["Droid", "Networked Calculations"]
+            chassis: "Networked Calculations"
+            keyword: ["Droid"]
             slots: [
                 "Cannon"
                 "Cannon"
@@ -11703,7 +11741,8 @@ exportObj.basicCardData = ->
             skill: 1
             points: 5
             loadout: 21
-            keyword: ["Droid", "Networked Calculations"]
+            chassis: "Networked Calculations"
+            keyword: ["Droid"]
             slots: [
                 "Cannon"
                 "Cannon"
@@ -11720,7 +11759,8 @@ exportObj.basicCardData = ->
             skill: 4
             points: 5
             loadout: 18
-            keyword: ["Droid", "Networked Calculations"]
+            chassis: "Networked Calculations"
+            keyword: ["Droid"]
             slots: [
                 "Cannon"
                 "Cannon"
@@ -11737,7 +11777,8 @@ exportObj.basicCardData = ->
             skill: 3
             points: 4
             loadout: 4
-            keyword: ["Droid", "Networked Calculations"]
+            chassis: "Networked Calculations"
+            keyword: ["Droid"]
             slots: [
                 "Cannon"
                 "Cannon"
@@ -11923,6 +11964,7 @@ exportObj.basicCardData = ->
                 "VersatileShip"
             ]
         }
+
     ]
 
     upgradesById: [
@@ -13225,10 +13267,9 @@ exportObj.basicCardData = ->
         {
             name: "L3-37's Programming"
             id: 145
-            skip: true
-            points: 0
+            standard: true
+            unique: true
             slot: "Configuration"
-            faction: "Scum and Villainy"
         }
         {
             name: "Andrasta"
@@ -15638,6 +15679,8 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Keyword", "Vectored Thrusters"]
             ]
+            modifier_func: (stats) ->
+                stats.chassis = "Vectored Cannons"
         }
         {
             name: "B6 Blade Wing Prototype"
@@ -15681,6 +15724,8 @@ exportObj.basicCardData = ->
             restrictions: [
                 ["Keyword", "Autothrusters"]
             ]
+            modifier_func: (stats) ->
+                stats.chassis = "Sensitive Controls"
         }
         {
             name: "Cutthroat"
@@ -16106,6 +16151,7 @@ exportObj.basicCardData = ->
                 stats.actions.push 'Lock'
                 stats.actions.push 'Reload'
                 stats.shields += 2
+                stats.chassis = "Devastating Barrage"
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -16863,6 +16909,20 @@ exportObj.basicCardData = ->
                 }
             ]
         }
+        {
+            name: "Fanatic"
+            id: 473
+            slot: "Talent"
+            standard: true
+        }
+        {
+            name: "Chewbacca (BoY)"
+            canonical_name: 'Chewbacca'.canonicalize()
+            id: 474
+            slot: "Crew"
+            standard: true
+            unique: true
+        }
     ]
 
 
@@ -17042,6 +17102,193 @@ exportObj.basicCardData = ->
         {
             name: '''Guarded'''
             id: 40
+        }
+    ]
+
+    chassisById: [
+        {
+            name: "Hope"
+            id: 0
+        }
+        {
+            name: "Autothrusters"
+            id: 1
+        }
+        {
+            name: "Microthrusters"
+            id: 2
+        }
+        {
+            name: "Sensor Blindspot"
+            id: 3
+        }
+        {
+            name: "Stygium Array"
+            id: 4
+        }
+        {
+            name: "Experimental Scanners"
+            id: 5
+        }
+        {
+            name: "Full Throttle"
+            id: 6
+        }
+        {
+            name: "Nimble Bomber"
+            id: 7
+        }
+        {
+            name: "Weapon Hardpoint"
+            id: 8
+        }
+        {
+            name: "Advanced Targeting Computer"
+            id: 9
+        }
+        {
+            name: "Vectored Thrusters"
+            id: 10
+        }
+        {
+            name: "Advanced Fire Control"
+            id: 11
+        }
+        {
+            name: "Sensitive Controls"
+            id: 12
+        }
+        {
+            name: "Spacetug Tractor Array"
+            id: 13
+        }
+        {
+            name: "Concordia Faceoff"
+            id: 14
+        }
+        {
+            name: "Locked and Loaded"
+            id: 15
+        }
+        {
+            name: "Tail Gun"
+            id: 16
+        }
+        {
+            name: "Advanced Droid Brain"
+            id: 17
+        }     
+        {
+            name: "Vectored Cannons"
+            id: 18
+        }
+        {
+            name: "Networked Calculations"
+            id: 19
+        }
+        {
+            name: "Independent Calculations"
+            id: 20
+        }
+        {
+            name: "Linked Battery"
+            id: 21
+        }
+        {
+            name: "Heavy Weapon Turret"
+            id: 22
+        }
+        {
+            name: "Refined Gyrostabilizers"
+            id: 23
+        }
+        {
+            name: "Rigged Energy Cells"
+            id: 24
+        }
+        {
+            name: "Co-Pilot"
+            id: 25
+        }
+        {
+            name: "Controlled Ailerons"
+            id: 26
+        }
+        {
+            name: "Comms Shuttle"
+            id: 27
+        }
+        {
+            name: "Dead to Rights"
+            id: 28
+        }
+        {
+            name: "Pursuit Craft"
+            id: 29
+        }
+        {
+            name: "Adaptive Ailerons"
+            id: 30
+        }
+        {
+            name: "Fire Convergence"
+            id: 31
+        }
+        {
+            name: "Networked Aim"
+            id: 32
+        }
+        {
+            name: "Fine-Tuned Thrusters"
+            id: 33
+        }
+        {
+            name: "Explosion with Wings"
+            id: 34
+        }
+        {
+            name: "Plated Hull"
+            id: 35
+        }
+        {
+            name: "Pinpoint Tractor Array"
+            id: 36
+        }
+        {
+            name: "Fine-Tuned Controls"
+            id: 37
+        }
+        {
+            name: "Notched Stabilizers"
+            id: 38
+        }
+        {
+            name: "Rotating Cannons"
+            id: 39
+        }
+        {
+            name: "Twin Ion Engines"
+            id: 40
+        }
+        {
+            name: "Versatile Frame"
+            id: 41
+        }
+        {
+            name: "Pursuit Thrusters"
+            id: 42
+        }
+        {
+            name: "Devastating Barrage"
+            id: 43
+        }
+        {
+            name: "Intuitive Interface"
+            id: 44
+        }
+        {
+            name: "Intuitive Controls"
+            id: 45
         }
     ]
 
@@ -24716,6 +24963,9 @@ exportObj.setupCommonCardData = (basic_cards) ->
     for condition_data, i in basic_cards.conditionsById
         if condition_data.id != i
             throw new Error("ID mismatch: condition at index #{i} has ID #{condition_data.id}")
+    for chassis_data, i in basic_cards.chassisById
+        if chassis_data.id != i
+            throw new Error("ID mismatch: chassis at index #{i} has ID #{chassis_data.id}")
     for quickbuild_data, i in basic_cards.quickbuildsById
         if quickbuild_data.id != i
             throw new Error("ID mismatch: quickbuild  at index #{i} has ID #{quickbuild_data.id}")
@@ -24741,9 +24991,14 @@ exportObj.setupCommonCardData = (basic_cards) ->
     exportObj.conditions = {}
     for condition_data in basic_cards.conditionsById
         unless condition_data.skip?
-            condition_data.sources = []
             condition_data.canonical_name = condition_data.name.canonicalize() unless condition_data.canonical_name?
             exportObj.conditions[condition_data.name] = condition_data
+
+    exportObj.chassis = {}
+    for chassis_data in basic_cards.chassisById
+        unless chassis_data.skip?
+            chassis_data.canonical_name = chassis_data.name.canonicalize() unless chassis_data.canonical_name?
+            exportObj.chassis[chassis_data.name] = chassis_data
 
     exportObj.obstacles = {}
     # we just want to include obstacles in the manifest like we already do for other stuff. No information other than sources will be used
@@ -24842,20 +25097,30 @@ exportObj.setupCommonCardData = (basic_cards) ->
     for condition_name, condition of exportObj.conditions
         exportObj.fixIcons condition
         exportObj.conditionsById[condition.id] = condition
-        for source in condition.sources
-            exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.conditionsById).length != Object.keys(exportObj.conditions).length
         throw new Error("At least one condition shares an ID with another")
+
+    exportObj.chassisById = {}
+    for chassis_name, chassis of exportObj.chassis
+        exportObj.fixIcons chassis
+        exportObj.chassisById[chassis.id] = chassis
+    if Object.keys(exportObj.chassisById).length != Object.keys(exportObj.chassis).length
+        throw new Error("At least one chassis shares an ID with another")
 
     exportObj.conditionsByCanonicalName = {}
     for condition_name, condition of exportObj.conditions
         (exportObj.conditionsByCanonicalName ?= {})[condition.canonical_name] = condition
 
+    exportObj.chassisByCanonicalName = {}
+    for chassis_name, chassis of exportObj.chassis
+        (exportObj.chassisByCanonicalName ?= {})[chassis.canonical_name] = chassis
+
+
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 
 
 
-exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, condition_translations) ->
+exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, condition_translations, chassis_translations) ->
     for upgrade_name, translations of upgrade_translations
         exportObj.fixIcons translations
         for field, translation of translations
@@ -24873,6 +25138,16 @@ exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, 
             catch e
                 console.error "Cannot find translation for attribute #{field} for condition #{condition_name}. Please report this Issue. "
                 throw e
+
+    for chassis_name, translations of chassis_translations
+        exportObj.fixIcons translations
+        for field, translation of translations
+            try
+                exportObj.chassis[chassis_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for chassis #{chassis_name}. Please report this Issue. "
+                throw e
+
 
     for pilot_name, translations of pilot_translations
         exportObj.fixIcons translations
