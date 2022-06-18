@@ -2428,6 +2428,8 @@ class exportObj.SquadBuilder
                     if chassis_title != ""
                         container.find('p.info-chassis').html "<strong>#{chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}"
                         container.find('p.info-chassis').show()
+                    else
+                        container.find('p.info-chassis').hide()
 
                     container.find('tr.info-ship td.info-data').text data.ship
                     container.find('tr.info-ship').show()
@@ -4637,7 +4639,7 @@ class Ship
     checkKeyword: (keyword) ->
         if @data.name?.includes(keyword)
             return true
-        if @data.chassis? and (@data.chassis == keyword) 
+        if (@data.chassis? and @data.chassis == keyword) or (@pilot.chassis? and @pilot.chassis == keyword)
             return true
         for words in @data.keyword ? []
             if words == keyword
@@ -4646,6 +4648,8 @@ class Ship
             if words == keyword
                 return true
         for upgrade in @upgrades
+            if upgrade.chassis? and upgrade.chassis == keyword
+                return true
             for word in upgrade?.data?.keyword ? []
                 if word == keyword
                     return true
