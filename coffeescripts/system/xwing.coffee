@@ -189,7 +189,7 @@ class exportObj.SquadBuilder
         squad_obstacles = []
         if initial_load and $.trim $.getParameterByName('obs')
             squad_obstacles = ($.trim $.getParameterByName('obs')).split(",").slice(0, 3)
-            @current_obstacles = squad_obstacles
+            @updateObstacleSelect squad_obstacles
         else if @current_obstacles
             squad_obstacles = @current_obstacles
 
@@ -220,7 +220,7 @@ class exportObj.SquadBuilder
         @squad_name_input.val squad_name
         @removeAllShips()
         @addShip() if not @suppress_automatic_new_ship
-        @current_obstacles = []
+        @updateObstacleSelect []
         @resetCurrentSquad()
         @notes.val ''
         @tag.val ''
@@ -1503,7 +1503,6 @@ class exportObj.SquadBuilder
     onSquadLoadRequested: (squad) =>
         @current_squad = squad
         @backend_delete_list_button.removeClass 'disabled'
-        @current_obstacles = @current_squad.additional_data.obstacles
         @updateObstacleSelect(@current_squad.additional_data.obstacles)
         if squad.serialized.length?
             @loadFromSerialized squad.serialized
@@ -1620,7 +1619,7 @@ class exportObj.SquadBuilder
         @obstacles_select_image.show()
 
     updateObstacleSelect: (obstacles) ->
-        @current_obstacles = obstacles
+        @current_obstacles = obstacles ? []
         @obstacles_select.val(obstacles)
 
     serialize: ->
