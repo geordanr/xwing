@@ -1433,13 +1433,7 @@ class exportObj.SquadBuilder
         cb()
 
     addStandardizedToList: (ship) ->
-        if ship.data?.name?
-            idx = @standard_list['Ship'].indexOf ship.data.name
-            if idx > -1
-                for ship_upgrade in ship.upgrades
-                    if ship_upgrade.slot == @standard_list['Upgrade'][idx].slot
-                        ship_upgrade.setData @standard_list['Upgrade'][idx]
-                        break
+        ship.addStandardizedUpgrades()
 
     onPointsUpdated: (cb=$.noop) =>
         tot_points = 0
@@ -3663,12 +3657,18 @@ class Ship
                 @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
 
     addStandardizedUpgrades: ->
-        idx = @builder.standard_list['Ship'].indexOf @data.name
+        idx = @builder.standard_list['Ship'].indexOf @data?.name
         if idx > -1
+            upgrade_to_be_equipped = @builder.standard_list['Upgrade'][idx]
             for upgrade in @upgrades
                 if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
-                    upgrade.setData @builder.standard_list['Upgrade'][idx]
-                    break
+                    # according to https://forums.atomicmassgames.com/topic/6374-cis-rogue-class-and-independent-calculations/ it's fine
+                    # to have some ships ignore standardized upgrades, if they are unable to equip them. 
+                    restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
+                    allowed_to_equip = @restriction_check(restrictions,upgrade, 0, 0)
+                    if allowed_to_equip
+                        upgrade.setData upgrade_to_be_equipped
+                        break
 
     setPilot: (new_pilot, noautoequip = false) ->
         # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
