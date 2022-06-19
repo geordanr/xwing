@@ -189,7 +189,7 @@ class exportObj.SquadBuilder
         squad_obstacles = []
         if initial_load and $.trim $.getParameterByName('obs')
             squad_obstacles = ($.trim $.getParameterByName('obs')).split(",").slice(0, 3)
-            @current_obstacles = squad_obstacles
+            @updateObstacleSelect squad_obstacles
         else if @current_obstacles
             squad_obstacles = @current_obstacles
 
@@ -220,7 +220,7 @@ class exportObj.SquadBuilder
         @squad_name_input.val squad_name
         @removeAllShips()
         @addShip() if not @suppress_automatic_new_ship
-        @current_obstacles = []
+        @updateObstacleSelect []
         @resetCurrentSquad()
         @notes.val ''
         @tag.val ''
@@ -1433,13 +1433,7 @@ class exportObj.SquadBuilder
         cb()
 
     addStandardizedToList: (ship) ->
-        if ship.data?.name?
-            idx = @standard_list['Ship'].indexOf ship.data.name
-            if idx > -1
-                for ship_upgrade in ship.upgrades
-                    if ship_upgrade.slot == @standard_list['Upgrade'][idx].slot
-                        ship_upgrade.setData @standard_list['Upgrade'][idx]
-                        break
+        ship.addStandardizedUpgrades()
 
     onPointsUpdated: (cb=$.noop) =>
         tot_points = 0
@@ -1509,7 +1503,6 @@ class exportObj.SquadBuilder
     onSquadLoadRequested: (squad) =>
         @current_squad = squad
         @backend_delete_list_button.removeClass 'disabled'
-        @current_obstacles = @current_squad.additional_data.obstacles
         @updateObstacleSelect(@current_squad.additional_data.obstacles)
         if squad.serialized.length?
             @loadFromSerialized squad.serialized
@@ -1626,7 +1619,7 @@ class exportObj.SquadBuilder
         @obstacles_select_image.show()
 
     updateObstacleSelect: (obstacles) ->
-        @current_obstacles = obstacles
+        @current_obstacles = obstacles ? []
         @obstacles_select.val(obstacles)
 
     serialize: ->
@@ -2366,7 +2359,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').hide()
 
                     container.find('p.info-chassis').show()
-                    container.find('p.info-chassis').html if data.chassis? then "<strong>#{data.chassis}:</strong> #{exportObj.chassis[data.chassis].text}" else ""
+                    container.find('p.info-chassis').html if data.chassis? then "<strong>#{exportObj.chassis[data.chassis]?.display_name ? data.chassis}:</strong> #{exportObj.chassis[data.chassis].text}" else ""
 
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
@@ -2426,7 +2419,7 @@ class exportObj.SquadBuilder
                         chassis_title = ""
 
                     if chassis_title != ""
-                        container.find('p.info-chassis').html "<strong>#{chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}"
+                        container.find('p.info-chassis').html "<strong>#{exportObj.chassis[chassis_title]?.display_name ? chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}"
                         container.find('p.info-chassis').show()
                     else
                         container.find('p.info-chassis').hide()
@@ -2588,7 +2581,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').html pilot.text ? ''
                     container.find('p.info-text').show()
 
-                    container.find('p.info-chassis').html if pilot.chassis? then "<strong>#{pilot.chassis}:</strong> #{exportObj.chassis[pilot.chassis].text}" else (if ship.chassis?then "<strong>#{ship.chassis}:</strong> #{exportObj.chassis[ship.chassis].text}" else "")
+                    container.find('p.info-chassis').html if pilot.chassis? then "<strong>#{exportObj.chassis[pilot.chassis]?.display_name ? pilot.chassis}:</strong> #{exportObj.chassis[pilot.chassis].text}" else (if ship.chassis?then "<strong>#{ship.chassis}:</strong> #{exportObj.chassis[ship.chassis].text}" else "")
                     container.find('p.info-chassis').show()
 
                     container.find('tr.info-ship td.info-data').text data.ship
@@ -3663,12 +3656,18 @@ class Ship
                 @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
 
     addStandardizedUpgrades: ->
-        idx = @builder.standard_list['Ship'].indexOf @data.name
+        idx = @builder.standard_list['Ship'].indexOf @data?.name
         if idx > -1
+            upgrade_to_be_equipped = @builder.standard_list['Upgrade'][idx]
             for upgrade in @upgrades
                 if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
-                    upgrade.setData @builder.standard_list['Upgrade'][idx]
-                    break
+                    # according to https://forums.atomicmassgames.com/topic/6374-cis-rogue-class-and-independent-calculations/ it's fine
+                    # to have some ships ignore standardized upgrades, if they are unable to equip them. 
+                    restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
+                    allowed_to_equip = @restriction_check(restrictions,upgrade, 0, 0)
+                    if allowed_to_equip
+                        upgrade.setData upgrade_to_be_equipped
+                        break
 
     setPilot: (new_pilot, noautoequip = false) ->
         # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
@@ -4273,7 +4272,7 @@ class Ship
             chassis_title = ""
         if chassis_title != ""
             html += $.trim """
-                <div class="fancy-pilot-chassis"><strong>#{chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}</div>
+                <div class="fancy-pilot-chassis"><strong>#{exportObj.chassis[chassis_title]?.display_name ? chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}</div>
             """
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)

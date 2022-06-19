@@ -960,10 +960,10 @@ class exportObj.SquadBuilderBackend
             await @getHeaders defer(headers)
             if headers?.HTTP_ACCEPT_LANGUAGE?
                 # Need to parse out language preferences
-                console.log "#{headers.HTTP_ACCEPT_LANGUAGE}"
+                # console.log "#{headers.HTTP_ACCEPT_LANGUAGE}"
                 for language_range in headers.HTTP_ACCEPT_LANGUAGE.split(',')
                     [ language_tag, quality ] = language_range.split ';'
-                    console.log "#{language_tag}, #{quality}"
+                    # console.log "#{language_tag}, #{quality}"
                     if language_tag == '*'
                         # let's give that half priority
                         cb 'English', -0.5

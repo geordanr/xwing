@@ -3184,96 +3184,142 @@ exportObj.cardLoaders.English = () ->
 
     chassis_translations =
         "Vectored Thrusters":
+           display_name: "Vectored Thrusters"
            text: """After you perform an action, you may perform a red %BOOST% action."""
         "Advanced Targeting Computer":
+           display_name: "Advanced Targeting Computer"
            text: """While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Autothrusters":
+           display_name: "Autothrusters"
            text: """After you perform an action, you may perform a red %BARRELROLL% or red %BOOST% action."""
         "Nimble Bomber":
+           display_name: "Nimble Bomber"
            text: """If you would drop a device using a %STRAIGHT% template, you may use a %BANKLEFT% or %BANKRIGHT% template of the same speed instead."""
         "Full Throttle":
+           display_name: "Full Throttle"
            text: """After you fully execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Experimental Scanners":
+           display_name: "Experimental Scanners"
            text: """You can acquire locks beyond range 3. You cannot acquire locks at range 1."""
         "Stygium Array":
+           display_name: "Stygium Array"
            text: """After you decloak, you may perform an %EVADE% action. At the start of the End Phase, you may spend 1 evade token to gain 1 cloak token."""
         "Sensor Blindspot":
+           display_name: "Sensor Blindspot"
            text: """While you perform a primary attack at attack range 0-1, do not apply the range 0-1 bonus and roll 1 fewer attack die."""
         "Microthrusters":
+           display_name: "Microthrusters"
            text: """While you perform a barrel roll, you <b>must</b> use the %BANKLEFT% or %BANKRIGHT% template instead of the %STRAIGHT% template."""
         "Weapon Hardpoint":
+           display_name: "Weapon Hardpoint"
            text: """You can equip 1 %CANNON%, %TORPEDO%, or %MISSILE% upgrade."""
         "Advanced Droid Brain":
+           display_name: "Advanced Droid Brain"
            text: """After you perform a %CALCULATE% action, gain 1 calculate token."""
         "Tail Gun":
+           display_name: "Tail Gun"
            text: """While you have a docked ship, you have a primary %REARARC% weapon with an attack value equal to your docked ship's primary %FRONTARC% attack value."""
         "Locked and Loaded":
+           display_name: "Locked and Loaded"
            text: """While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus primary %REARARC% attack."""
         "Concordia Faceoff":
+           display_name: "Concordia Faceoff"
            text: """While you defend, if the attack range is 1 and you are in the attacker's %FRONTARC%, change 1 result to an %EVADE% result."""
         "Spacetug Tractor Array":
+           display_name: "Spacetug Tractor Array"
            text: """ <strong>Action:</strong> Choose a ship in your %FRONTARC% at range 1. That ship gains 1 tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1."""
         "Hope":
+           display_name: "Hope"
            text: """After another friendly ship at range 0-3 is destroyed, you may perform a %FOCUS% or %BOOST% action."""
         "Sensitive Controls":
+           display_name: "Sensitive Controls"
            text: """During the System Phase, you may perform a red %BARRELROLL% or red %BOOST% action."""
         "Vectored Cannons":
+           display_name: "Vectored Cannons"
            text: """During the System Phase, you may perform a red %BOOST% or red %ROTATEARC% action. You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%."""
         "Advanced Fire Control":
+           display_name: "Advanced Fire Control"
            text: """After you perform a %CANNON% or %MISSILE% attack, if you have a lock on the defender, you may perform a bonus primary attack against the defender."""
         "Networked Calculations":
+           display_name: "Networked Calculations"
            text: """While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result."""
         "Independent Calculations":
+           display_name: "Independent Calculations"
            text: """While you perform a white %CALCULATE% action, you may treat it as red to gain 1 additional calculate token. Other ships cannot spend your calculate tokens using the <strong>Networked Calculations</strong> ship ability."""
         "Adaptive Ailerons":
+           display_name: "Adaptive Ailerons"
            text: """Before you reveal your dial, if you are not stressed, you <b>must</b> boost.  %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
         "Pursuit Craft":
+           display_name: "Pursuit Craft"
            text: """After you deploy, you may acquire a lock on a ship the friendly <strong>Hound's Tooth</strong> has locked."""
         "Dead to Rights":
+           display_name: "Dead to Rights"
            text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
         "Comms Shuttle":
+           display_name: "Comms Shuttle"
            text: """While you are docked, your carrier ship gains %COORDINATE%. Before your carrier ship activates, it may perform a %COORDINATE% action."""
         "Controlled Ailerons":
+           display_name: "Controlled Ailerons"
            text: """Before you reveal your dial, if you are not stressed, you may boost. %LINEBREAK% <i>Errata (since rules reference 1.4.2): Changed ship ability</i>"""
         "Co-Pilot":
+           display_name: "Co-Pilot"
            text: """While you are docked, your carrier ship has your pilot ability in addition to its own."""
         "Rigged Energy Cells":
+           display_name: "Rigged Energy Cells"
            text: """During the System Phase, if you are not docked, lose 1 %CHARGE%. At the end of the Activation Phase, if you have 0 %CHARGE%, you are destroyed. Before you are removed, each ship at range 0-1 suffers 1 %CRIT% damage."""
         "Refined Gyrostabilizers":
+           display_name: "Refined Gyrostabilizers"
            text: """You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. After you perform an action, you may perform a red %BOOST% or red %ROTATEARC% action."""
         "Heavy Weapon Turret":
+           display_name: "Heavy Weapon Turret"
            text: """You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You <b>must</b> treat the %FRONTARC% requirement of your equipped %MISSILE% upgrades as %SINGLETURRETARC%."""
         "Linked Battery":
+           display_name: "Linked Battery"
            text: """While you perform a %CANNON% attack, roll 1 additional die."""
         "Notched Stabilizers":
+           display_name: "Notched Stabilizers"
            text: """While you move, you ignore asteroids."""
         "Fine-Tuned Controls":
+           display_name: "Fine-Tuned Controls"
            text: """After you fully execute a maneuver, you may spend 1 %FORCE% to perform a %BOOST% or %BARRELROLL% action."""
         "Pinpoint Tractor Array":
+           display_name: "Pinpoint Tractor Array"
            text: """You cannot rotate your %SINGLETURRETARC% to your %REARARC%. After you fully execute a maneuver, you may gain 1 tractor token to perform a %ROTATEARC% action. %LINEBREAK%<i>Errata (since rules reference 1.4): added "fully"</i>"""
         "Plated Hull":
+           display_name: "Plated Hull"
            text: """While you defend, if you are not critically damaged, change 1 %CRIT% to a %HIT% result."""
         "Explosion with Wings":
+           display_name: "Explosion with Wings"
            text: """You are dealt 1 facedown damage card. After you perform a %SLAM% action, you may expose 1 damage card to remove 1 disarm token."""
         "Fine-Tuned Thrusters":
+           display_name: "Fine-Tuned Thrusters"
            text: """After you fully execute a maneuver, if you are not depleted or strained, you may gain 1 deplete or strain token to perform a %LOCK% or %BARRELROLL% action."""
         "Networked Aim":
+           display_name: "Networked Aim"
            text: """You cannot spend your locks to reroll attack dice. While you perform an attack, you may reroll a number of attack dice up to the number of friendly locks on the defender."""
         "Fire Convergence":
+           display_name: "Fire Convergence"
            text: """While a friendly ship performs a non-%SINGLETURRETARC% attack, if the defender is in your turret arc you may spend 1 charge token, if you do the attacker may reroll up to 2 results."""
         "Rotating Cannons":
+           display_name: "Rotating Cannons"
            text: """You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You must treat the %FRONTARC% requirement of your equipped %CANNON% upgrades as %SINGLETURRETARC%."""
         "Twin Ion Engines":
+           display_name: "Twin Ion Engines"
            text: """Ignore the "TIE" ship restriction on upgrade cards."""
         "Intuitive Controls":
+           display_name: "Intuitive Controls"
            text: """During the System Phase, you may perform a purple %BARRELROLL% or purple %BOOST% action."""
         "Intuitive Interface":
+           display_name: "Intuitive Interface"
            text: """After you perform an action added to your action bar by a %TALENT%, %ILLICIT%, or %MODIFICATION% upgrade, you may perform a %CALCULATE% action."""
         "Devastating Barrage":
+           display_name: "Devastating Barrage"
            text: """While you perform a %TORPEDO% or %MISSILE% attack, if the defender is in your %BULLSEYEARC%, your %CRIT% results cannot be cancelled by %EVADE% results."""
         "Pursuit Thrusters":
+           display_name: "Pursuit Thrusters"
            text: """During the System Phase, you may perform a %BOOST% action."""
         "Versatile Frame":
+           display_name: "Versatile Frame"
            text: """You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
 
     # in this file the display_name is often omitted, if it is identical to the name. I am too lazy to add those manually (though running the translation script would automatically do so). As this will pop up with every new card, I add those tags here
