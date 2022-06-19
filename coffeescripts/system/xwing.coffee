@@ -2359,7 +2359,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').hide()
 
                     container.find('p.info-chassis').show()
-                    container.find('p.info-chassis').html if data.chassis? then "<strong>#{data.chassis}:</strong> #{exportObj.chassis[data.chassis].text}" else ""
+                    container.find('p.info-chassis').html if data.chassis? then "<strong>#{exportObj.chassis[data.chassis]?.display_name ? data.chassis}:</strong> #{exportObj.chassis[data.chassis].text}" else ""
 
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(data.maneuvers, data.maneuvers))
@@ -2419,7 +2419,7 @@ class exportObj.SquadBuilder
                         chassis_title = ""
 
                     if chassis_title != ""
-                        container.find('p.info-chassis').html "<strong>#{chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}"
+                        container.find('p.info-chassis').html "<strong>#{exportObj.chassis[chassis_title]?.display_name ? chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}"
                         container.find('p.info-chassis').show()
                     else
                         container.find('p.info-chassis').hide()
@@ -2581,7 +2581,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-text').html pilot.text ? ''
                     container.find('p.info-text').show()
 
-                    container.find('p.info-chassis').html if pilot.chassis? then "<strong>#{pilot.chassis}:</strong> #{exportObj.chassis[pilot.chassis].text}" else (if ship.chassis?then "<strong>#{ship.chassis}:</strong> #{exportObj.chassis[ship.chassis].text}" else "")
+                    container.find('p.info-chassis').html if pilot.chassis? then "<strong>#{exportObj.chassis[pilot.chassis]?.display_name ? pilot.chassis}:</strong> #{exportObj.chassis[pilot.chassis].text}" else (if ship.chassis?then "<strong>#{ship.chassis}:</strong> #{exportObj.chassis[ship.chassis].text}" else "")
                     container.find('p.info-chassis').show()
 
                     container.find('tr.info-ship td.info-data').text data.ship
@@ -4272,7 +4272,7 @@ class Ship
             chassis_title = ""
         if chassis_title != ""
             html += $.trim """
-                <div class="fancy-pilot-chassis"><strong>#{chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}</div>
+                <div class="fancy-pilot-chassis"><strong>#{exportObj.chassis[chassis_title]?.display_name ? chassis_title}:</strong> #{exportObj.chassis[chassis_title].text}</div>
             """
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
