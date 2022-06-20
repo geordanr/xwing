@@ -581,6 +581,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Airen Cracken":
            display_name: """Airen Cracken"""
            text: """Nachdem du einen Angriff durchgeführt hast, darfst du 1 befreundetes Schiff in Reichweite 1 wählen. Jenes Schiff darf eine Aktion durchführen, die es als rot behandelt."""
+         "Alexsandr Kallus":
+           display_name: """Alexsandr Kallus"""
+           text: """Solange du verteidigst, falls der Angreifer irgendwelche Angriffswürfel modifiziert hat, darfst du 1 zusätzlichen Verteidigungswürfel werfen.%LINEBREAK%<i>Errata (since rules reference 1.2.0): Fehlende Schiffsfähigkeit ergänzt"""
         "Alpha Squadron Pilot":
            display_name: """Pilot der Alpha-Staffel"""
            text: """<i class = flavor_text>Sienar Flottensysteme konzipierte den TIE-Abfangjäger mit vier Laserkanonen an den Tragflächenspitzen. Dadurch ist er seinen Vorgängermodellen waffentechnisch weit überlegen.</i>"""
@@ -593,6 +596,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Anakin Skywalker (Y-Wing)":
            display_name: """Anakin Skywalker"""
            text: """Nachdem du ein Manöver vollständig ausgeführt hast, falls ein feindliches Schiff in deinem %FRONTARC% in Reichweite&nbsp;0-1 oder in deinem %BULLSEYEARC%, ist, darfst du 1&nbsp;%FORCE% ausgeben, um 1&nbsp;Stressmarker zu entfernen."""
+        "Arliz Hadrassian":
+           display_name: """Arliz Hadrassian"""
+           text: """Solange du einen %FRONTARC%-Angriff durchführst, falls du beschädigt bist, darfst du 1 deiner %FOCUS%-Ergebnisse in ein %CRIT%-Ergebnis ändern. %LINEBREAK% Solange du verteidigst, falls du beschädigt bist, <b>musst</b> du vor dem Schritt „Verteidigungswürfel modifizieren“ 1 deiner %FOCUS%-Ergebnisse in ein Leerseiten-Ergebnis ändern.. %LINEBREAK% <i>Errata (RR: 1.2.0 [06/14/2021]): Timingfenster vor dem Schritt „Verteidigungswürfel modifizieren“ ergänzt</i>"""
         "Arvel Crynyd":
            display_name: """Arvel Crynyd"""
            text: """Falls du durch Überschneidung mit einem anderen Schiff an einer %BOOST%-Aktion scheitern würdest, darfst du sie stattdessen so abhandeln, als würdest du ein Manöver teilweise ausführen.%LINEBREAK% Solange du einen Angriff in Angriffsreichweite 0 durchführst, behandle ihn als Angriff in Angriffsreichweite 1.%LINEBREAK%<i>Errata: Ersten Satz entfernt und dafür neuen letzten Satz ergänzt. Die andere Fähigkeit optional gemacht („darfst du...“) </i>"""
@@ -1729,12 +1735,10 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um eine rote %BOOST%-Aktion durchzuführen.%LINEBREAK%Füge den %MODIFICATION%-Slot hinzu."""
         "Assailer":
            display_name: """Sturmbringer"""
-           text: """Füge den&nbsp;%GUNNER%-
-Slot hinzu.%LINEBREAK%Solange du verteidigst, falls die Angriffs-reichweite 1 ist, darfst du 1 zusätzlichen Verteidi-gungs würfel werfen."""
+           text: """Füge den&nbsp;%GUNNER%-Slot hinzu.%LINEBREAK%Solange du verteidigst, falls die Angriffs-reichweite 1 ist, darfst du 1 zusätzlichen Verteidi-gungs würfel werfen."""
         "Blood Crow":
            display_name: """Blood Crow"""
-           text: """Füge den&nbsp;%GUNNER%-
-Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchführst, darfst du 1&nbsp;%FOCUS%-Ergebnis hinzufügen."""
+           text: """Füge den&nbsp;%GUNNER%-Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchführst, darfst du 1&nbsp;%FOCUS%-Ergebnis hinzufügen."""
         "Bright Hope":
            display_name: """Bright Hope"""
            text: """Du kannst nur deinen %FULLFRONTARC% verstärken.%LINEBREAK%Solange du verteidigst, falls du verstärkt bist und der Angreifer in deinem %FULLFRONTARC% ist, darfst du 1 zusätzlichen Verteidigungs würfel werfen."""
@@ -1831,9 +1835,6 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
         "Ahsoka Tano":
            display_name: """Ahsoka Tano"""
            text: """Nachdem du ein Manöver ausgeführt hast, darfst du 1&nbsp;%FORCE% ausgeben und 1&nbsp;befreundetes Schiff in Reichweite&nbsp;1-3 in deinem Feuerwinkel wählen. Falls du das tust, darf es eine rote&nbsp;%FOCUS%&nbsp;-Aktion durchführen, auch solange es gestresst ist."""
-        "Alexsandr Kallus":
-           display_name: """Alexsandr Kallus"""
-           text: """Solange du verteidigst, falls der Angreifer irgendwelche Angriffswürfel modifiziert hat, darfst du 1 zusätzlichen Verteidigungswürfel werfen.%LINEBREAK%<i>Errata (since rules reference 1.2.0): Fehlende Schiffsfähigkeit ergänzt"""
         'Alpha-3B "Besh"':
            display_name: """Alpha-3B „Besh“"""
            text: """Solange du einen Primärangriff durchführst, darfst du deine Zielerfassung auf dem Verteidiger ausgeben, um 1 deiner Leerseiten- oder%FOCUS%-Ergebnisse in ein&nbsp;%HIT%&nbsp;-Ergebnis zu ändern.%LINEBREAK%Füge den %DEVICE%-Slot hinzu."""
@@ -1846,9 +1847,6 @@ Slot hinzu.%LINEBREAK%Solange du einen Angriff in Angriffsreichweite 1-2 durchfu
         "Angled Deflectors":
            display_name: """Ausgerichtete Deflektoren"""
            text: """<i class = flavor_text>Sternenjägerschilde haben oft manuelle Überbrückungsschalter, mit denen die Energie in bestimmte Richtungen umgeleitet werden kann, um Front oder Heck besser zu schützen. Ein Pilot, der seine Situation nicht richtig überblickt, kann jedoch seinem Feind eine offene Flanke bieten.</i>"""
-        "Arliz Hadrassian":
-           display_name: """Arliz Hadrassian"""
-           text: """Solange du einen %FRONTARC%-Angriff durchführst, falls du beschädigt bist, darfst du 1 deiner %FOCUS%-Ergebnisse in ein %CRIT%-Ergebnis ändern. %LINEBREAK% Solange du verteidigst, falls du beschädigt bist, <b>musst</b> du vor dem Schritt „Verteidigungswürfel modifizieren“ 1 deiner %FOCUS%-Ergebnisse in ein Leerseiten-Ergebnis ändern.. %LINEBREAK% <i>Errata (RR: 1.2.0 [06/14/2021]): Timingfenster vor dem Schritt „Verteidigungswürfel modifizieren“ ergänzt</i>"""
         "Asajj Ventress (Command)":
            display_name: """Asajj Ventress"""
            text: """Während der Systemphase darfst du 1 %FORCE% ausgeben. Falls du das tust, erhält jedes feindliche Schiff in deinem %FRONTARC% in Reichweite 0-1 1 Anstrengungsmarker, es sei denn, es entscheidet sich dafür, 1 Störsignalmarker zu erhalten."""
