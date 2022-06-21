@@ -1296,6 +1296,9 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0]
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0]
             ]
+            autoequip: [
+                "Calibrated Laser Targeting"
+            ]
         "Delta-7b Aethersprite":
             name: "Delta-7b Aethersprite"
             icon: "delta7aethersprite"
