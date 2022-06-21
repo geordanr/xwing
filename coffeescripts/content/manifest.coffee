@@ -4877,17 +4877,17 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'gascloud0'
-            type: 'obstacle'
-            count: 1
-        }
-        {
             name: 'gascloud1'
             type: 'obstacle'
             count: 1
         }
         {
             name: 'gascloud2'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud3'
             type: 'obstacle'
             count: 1
         }
@@ -5302,17 +5302,17 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'gascloud0'
-            type: 'obstacle'
-            count: 1
-        }
-        {
             name: 'gascloud1'
             type: 'obstacle'
             count: 1
         }
         {
             name: 'gascloud2'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud3'
             type: 'obstacle'
             count: 1
         }
@@ -10116,17 +10116,17 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'gascloud3'
-            type: 'obstacle'
-            count: 1
-        }
-        {
             name: 'gascloud4'
             type: 'obstacle'
             count: 1
         }
         {
             name: 'gascloud5'
+            type: 'obstacle'
+            count: 1
+        }
+        {
+            name: 'gascloud6'
             type: 'obstacle'
             count: 1
         }
@@ -10271,6 +10271,225 @@ exportObj.manifestByExpansion =
             name: 'Shattering Shot'
             type: 'upgrade'
             count: 1
+        }
+    ]
+    "Rogue-class Starfighter Expansion pack": [
+        {
+            name: 'Rogue-class Starfighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Cad Bane (Separatist)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-101'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-102'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-111'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'MagnaGuard Executioner'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'MagnaGuard Protector'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Cad Bane'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Viktor Hel (Rogue)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nom Lumb (Rogue)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Outer Rim Hunter'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Enduring'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Notorious'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Freelance Slicer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Cannons'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Synced Laser Cannons'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Blazer Bomb'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Independent Calculations'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tracking Fob'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overtuned Modulators'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Xanadu Blood'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Clone Z-95 Headhunter Expansion pack": [
+        {
+            name: 'Clone Z-95 Headhunter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: '"Boost"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Drift"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Hawk" (Z-95)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Killer"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Knack"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Slider"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Stub"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Warthog" (Z-95)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '7th Sky Corps Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Reaper Squadron Scout'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Enduring'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Angled Deflectors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fire-Control System'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Homing Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Mag-Pulse Warheads'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Marg Sabl Closure'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'XX-23 S-Thread Tracers'
+            type: 'upgrade'
+            count: 2
         }
     ]
     "Pride of Mandalore Reinforcements Pack": [
@@ -10998,7 +11217,7 @@ class exportObj.Collection
                     <div class="col">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="pilot-name">#{if exportObj.pilots[pilot].display_name then exportObj.pilots[pilot].display_name else pilot}</span>
+                            <span class="pilot-name"><i class="xwing-miniatures-ship xwing-miniatures-ship-#{if exportObj.ships[exportObj.pilots[pilot].ship].icon then exportObj.ships[exportObj.pilots[pilot].ship].icon else exportObj.ships[exportObj.pilots[pilot].ship].xws}"></i> #{if exportObj.pilots[pilot].display_name then exportObj.pilots[pilot].display_name else pilot}</span>
                         </label>
                     </div>
                 </div>
@@ -11018,7 +11237,8 @@ class exportObj.Collection
                     <div class="col">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="upgrade-name">#{if exportObj.upgrades[upgrade].display_name then exportObj.upgrades[upgrade].display_name else upgrade}</span>
+                            <span class="upgrade-name">#{if exportObj.upgrades[upgrade].slot then exportObj.translate('sloticon', exportObj.upgrades[upgrade].slot)} #{if exportObj.upgrades[upgrade].display_name then exportObj.upgrades[upgrade].display_name else upgrade} 
+                            #{if exportObj.upgrades[upgrade].faction then "(#{exportObj.upgrades[upgrade].faction})" else ''}</span>
                         </label>
                     </div>
                 </div>

@@ -75,12 +75,21 @@ class exportObj.CardBrowser
                                         </label>
                                     </div>
                                     <div class = "advanced-search-point-selection-container">
-                                        <strong class="translated" defaultText="Point costs:"></strong>
+                                        <strong class="translated" defaultText="Point cost:"></strong>
                                         <label class = "advanced-search-label set-minimum-points">
                                             <span class="translated" defaultText="from"></span> <input type="number" class="minimum-point-cost advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-points">
-                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-point-cost advanced-search-number-input" value="200" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-point-cost advanced-search-number-input" value="20" /> 
+                                        </label>
+                                    </div>
+                                    <div class = "advanced-search-loadout-selection-container">
+                                        <strong class="translated" defaultText="Loadout cost:"></strong>
+                                        <label class = "advanced-search-label set-minimum-loadout">
+                                            <span class="translated" defaultText="from"></span> <input type="number" class="minimum-loadout-cost advanced-search-number-input" value="0" /> 
+                                        </label>
+                                        <label class = "advanced-search-label set-maximum-loadout">
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-loadout-cost advanced-search-number-input" value="99" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-collection-container">
@@ -89,7 +98,7 @@ class exportObj.CardBrowser
                                             <span class="translated" defaultText="from"></span> <input type="number" class="minimum-owned-copies advanced-search-number-input" value="0" /> 
                                         </label>
                                         <label class = "advanced-search-label set-maximum-owened-copies">
-                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-owned-copies advanced-search-number-input" value="100" /> 
+                                            <span class="translated" defaultText="to"></span> <input type="number" class="maximum-owned-copies advanced-search-number-input" value="99" /> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-misc-container">
@@ -340,6 +349,8 @@ class exportObj.CardBrowser
         
         @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
+        @minimum_loadout_costs = ($ @container.find('.xwing-card-browser .minimum-loadout-cost'))[0]
+        @maximum_loadout_costs = ($ @container.find('.xwing-card-browser .maximum-loadout-cost'))[0]
         @standard_checkbox = ($ @container.find('.xwing-card-browser .standard-checkbox'))[0]
         @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
         @non_unique_checkbox = ($ @container.find('.xwing-card-browser .non-unique-checkbox'))[0]
@@ -462,9 +473,11 @@ class exportObj.CardBrowser
         
         @faction_selection[0].onchange = => @renderList @sort_selector.val()
         for basesize, checkbox of @base_size_checkboxes
-            checkbox.onclick = => @renderList @sort_selector.val()            
+            checkbox.onclick = => @renderList @sort_selector.val()
         @minimum_point_costs.oninput = => @renderList @sort_selector.val()
         @maximum_point_costs.oninput = => @renderList @sort_selector.val()
+        @minimum_loadout_costs.oninput = => @renderList @sort_selector.val()
+        @maximum_loadout_costs.oninput = => @renderList @sort_selector.val()
         @standard_checkbox.onclick = => @renderList @sort_selector.val()
         @unique_checkbox.onclick = => @renderList @sort_selector.val()
         @non_unique_checkbox.onclick = => @renderList @sort_selector.val()
@@ -643,7 +656,7 @@ class exportObj.CardBrowser
 
     addCardTo: (container, card) ->
         option = $ document.createElement('OPTION')
-        option.text "#{if card.display_name then card.display_name else card.name} (#{if card.data.points? then card.data.points else '*'}#{if card.data.pointsupg? then "/#{card.data.pointsupg}" else ''})"
+        option.text "#{if card.display_name then card.display_name else card.name} (#{if card.data.points? then card.data.points else '*'}#{if card.data.loadout? then "/#{card.data.loadout}" else ''})"
         option.data 'name', card.name
         option.data 'display_name', card.display_name
         option.data 'type', card.type
@@ -671,7 +684,7 @@ class exportObj.CardBrowser
     checkSearchCriteria: (card) ->
         # check for text search
         search_text = @card_search_text.value.toLowerCase()
-        text_search = card.name.toLowerCase().indexOf(search_text) > -1 or (card.data.text and card.data.text.toLowerCase().indexOf(search_text)) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
+        text_search = card.name.toLowerCase().indexOf(search_text) > -1 or (card.data.text and card.data.text.toLowerCase().indexOf(search_text) > -1) or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
         
         if not text_search
             return false unless card.data.ship
@@ -762,7 +775,7 @@ class exportObj.CardBrowser
             return false unless actions? and ((("R> " + action) in actions) or (("> " + action) in actions))
 
         # check if point costs matches
-        if @minimum_point_costs.value > 0 or @maximum_point_costs.value < 200
+        if @minimum_point_costs.value > 0 or @maximum_point_costs.value < 20
             return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (card.data.variablepoints?)
             if card.data.variablepoints?
                 matching_points = false
@@ -783,6 +796,22 @@ class exportObj.CardBrowser
                         break if matching_points
                     break if matching_points            
                 return false unless matching_points
+
+        # check if loadout costs matches
+        if @minimum_loadout_costs.value > 0 or @maximum_loadout_costs.value < 99
+            return false unless (card.data.loadout >= @minimum_loadout_costs.value and card.data.loadout <= @maximum_loadout_costs.value)
+            if card.orig_type == 'Ship' # check if pilot matching points exist
+                matching_loadout = false
+                for faction in selected_factions
+                    for name, pilots of exportObj.pilotsByFactionCanonicalName[faction]
+                        for pilot in pilots
+                            if pilot.ship == card.data.name
+                                if pilot.loadout >= @minimum_point_costs.value and pilot.loadout <= @maximum_loadout_costs.value
+                                    matching_loadout = true
+                                    break
+                        break if matching_loadout
+                    break if matching_loadout
+                return false unless matching_loadout
 
         # check if used slot matches
         used_slots = @slot_used_selection.val()

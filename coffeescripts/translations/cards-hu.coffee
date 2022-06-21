@@ -2707,4 +2707,9 @@ exportObj.cardLoaders.Magyar = () ->
            text: """INIT: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, RANGE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Típusok:</strong> eszköz, távérzékelő<br>Mmiután egy ellenséges hajó átfedésbe kerül veled, kap egy 'strain' jelzőt<br><strong>Aktivációs fázis:</strong> A fázis kezdetén előre helyezheted a [1 %TURNLEFT%], [2 %STRAIGHT%] vagy [1 %TURNRIGHT%] segítségével.<br><strong>Ütközet fázis:</strong> nem támadhatsz 0-ás távolságban. A támadáshoz el kell költs 1 %CHARGE% jelzőt. Amikor végrehajtasz egy támadást megváltoztathatsz 1 %FOCUS% eredményt %HIT% eredményre."""
 
 
-    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
+    chassis_translations =
+        "Versatile Frame":
+           text: """You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
+
+
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations
