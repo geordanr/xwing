@@ -1740,7 +1740,7 @@ exportObj.cardLoaders.English = () ->
            text: """At the start of the Engagement Phase, if there is a friendly ship at range 0-1 whose revealed maneuver is blue, you may perform a %BOOST% action."""
         '"Stub"':
            display_name: """“Stub”"""
-           text: """While you defend, if the speed of your revealed maneuver is even, roll 1 additional defende die. While you perform a primary attack, if the speed of your revealed maneuver is odd, roll 1 additional attack die. """
+           text: """While you defend, if the speed of your revealed maneuver is even, roll 1 additional defense die. While you perform a primary attack, if the speed of your revealed maneuver is odd, roll 1 additional attack die. """
         '"Hawk" (Z-95)':
            display_name: """“Hawk”"""
            text: """At the start of the End Phase, each friendly ship at range 0-1 that has a revealed maneuver of speed 3-5 may gain 1 strain token to perform a %BARRELROLL% or %BOOST% action.  """
@@ -2737,7 +2737,7 @@ exportObj.cardLoaders.English = () ->
         "Sensor Scramblers":
            text: """<strong>Setup:</strong> Gain 1 Cloak token. %LINEBREAK% While you are cloaked, other ships cannot acquire locks on you. %LINEBREAK% During the End Phase, if you are cloaked and there is an enemy ship at range 0-3, you must decloak. If you do and that decloak fails, lose 1 cloak token."""
         "Enhanced Jamming Suite":
-           text: """While you jam, you can choose yourself or another friendly ship. %LINEBREAK% While you defend, if the attacker has no green tokens or there is a jammed ship in the attack arc, you may roll 1 additional defence die."""
+           text: """While you jam, you can choose yourself or another friendly ship. %LINEBREAK% While you defend, if the attacker has no green tokens or there is a jammed ship in the attack arc, you may roll 1 additional defense die."""
         "Compassion":
            text: """Before another friendly ship at range 0-2 would be dealt a faceup <b>Pilot</b> or <b>Crew</b> damage card, you may spend 1 %FORCE%. If you do, that damage card is discarded instead, and you are dealt 1 facedown damage card. Then, if  you have 2 or more damage cards, recover 2 %FORCE%."""
         "Malice":
