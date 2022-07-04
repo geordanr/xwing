@@ -14904,9 +14904,6 @@ exportObj.basicCardData = ->
             ship: "Gozanti-class Cruiser"
             faction: "Galactic Empire"
             points: 7
-            modifier_func: (stats) ->
-                stats.hull -= 1
-                stats.energy += 1
         }
         {
             name: "Suppressor"

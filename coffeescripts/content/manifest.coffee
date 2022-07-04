@@ -10263,6 +10263,11 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
+            name: 'Veteran Tail Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Enduring'
             type: 'upgrade'
             count: 1
