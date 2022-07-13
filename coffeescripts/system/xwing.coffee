@@ -1042,96 +1042,110 @@ class exportObj.SquadBuilder
                 <div class="info-name"></div>
                 <div class="info-type"></div>
                 <span class="info-collection"></span>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <table class="table-sm">
+                            <tbody>
+                                <tr class="info-attack-bullseye">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-attack">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-attack-fullfront">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-attack-left">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-leftarc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-attack-right">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-rightarc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-attack-back">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-attack-turret">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-attack-doubleturret">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i></td>
+                                    <td class="info-data info-attack"></td>
+                                </tr>
+                                <tr class="info-agility">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i></td>
+                                    <td class="info-data info-agility"></td>
+                                </tr>
+                                <tr class="info-hull">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i></td>
+                                    <td class="info-data info-hull"></td>
+                                </tr>
+                                <tr class="info-shields">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i></td>
+                                    <td class="info-data info-shields"></td>
+                                </tr>
+                                <tr class="info-force">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i></td>
+                                    <td class="info-data info-force"></td>
+                                </tr>
+                                <tr class="info-charge">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
+                                    <td class="info-data info-charge"></td>
+                                </tr>
+                                <tr class="info-energy">
+                                    <td class="info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
+                                    <td class="info-data info-energy"></td>
+                                </tr>
+                                <tr class="info-range">
+                                    <td class="info-header translated" defaultText="Range"></td>
+                                    <td class="info-data info-range"></td><td class="info-rangebonus"><i class="xwing-miniatures-font red header-range xwing-miniatures-font-rangebonusindicator"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-7">
+                        <table class="table-sm">
+                            <tbody>
+                                <tr class="info-skill">
+                                    <td class="info-header translated" defaultText="Initiative"></td>
+                                    <td class="info-data info-skill"></td>
+                                </tr>
+                                <tr class="info-engagement">
+                                    <td class="info-header translated" defaultText="Engagement"></td>
+                                    <td class="info-data info-engagement"></td>
+                                </tr>
+                                <tr class="info-ship">
+                                    <td class="info-header translated" defaultText="Ship"></td>
+                                    <td class="info-data"></td>
+                                </tr>
+                                <tr class="info-faction">
+                                    <td class="info-header translated" defaultText="Faction"></td>
+                                    <td class="info-data"></td>
+                                </tr>
+                                <tr class="info-base">
+                                    <td class="info-header translated" defaultText="Base"></td>
+                                    <td class="info-data"></td> 
+                                </tr>
+                                <tr class="info-points">
+                                    <td class="info-header translated" defaultText="Points"></td>
+                                    <td class="info-data info-points"></td>
+                                </tr>
+                                <tr class="info-loadout">
+                                    <td class="info-header translated" defaultText="Loadout"></td>
+                                    <td class="info-data info-loadout"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <table class="table-sm">
                     <tbody>
-                        <tr class="info-faction">
-                            <td class="info-header translated" defaultText="Faction"></td>
-                            <td class="info-data"></td>
-                        </tr>
-                        <tr class="info-ship">
-                            <td class="info-header translated" defaultText="Ship"></td>
-                            <td class="info-data"></td>
-                        </tr>
-                        <tr class="info-loadout">
-                            <td class="info-header translated" defaultText="Loadout"></td>
-                            <td class="info-data info-loadout"></td>
-                        </tr>
-                        <tr class="info-base">
-                            <td class="info-header translated" defaultText="Base"></td>
-                            <td class="info-data"></td> 
-                        </tr>
-                        <tr class="info-skill">
-                            <td class="info-header translated" defaultText="Initiative"></td>
-                            <td class="info-data info-skill"></td>
-                        </tr>
-                        <tr class="info-points">
-                            <td class="info-header translated" defaultText="Points"></td>
-                            <td class="info-data info-points"></td>
-                        </tr>
-                        <tr class="info-engagement">
-                            <td class="info-header translated" defaultText="Engagement"></td>
-                            <td class="info-data info-engagement"></td>
-                        </tr>
-                        <tr class="info-attack-bullseye">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack-fullfront">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack-left">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-leftarc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack-right">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-rightarc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack-back">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack-turret">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-attack-doubleturret">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
-                        <tr class="info-agility">
-                            <td class="info-header"><i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i></td>
-                            <td class="info-data info-agility"></td>
-                        </tr>
-                        <tr class="info-hull">
-                            <td class="info-header"><i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i></td>
-                            <td class="info-data info-hull"></td>
-                        </tr>
-                        <tr class="info-shields">
-                            <td class="info-header"><i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i></td>
-                            <td class="info-data info-shields"></td>
-                        </tr>
-                        <tr class="info-force">
-                            <td class="info-header"><i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i></td>
-                            <td class="info-data info-force"></td>
-                        </tr>
-                        <tr class="info-charge">
-                            <td class="info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
-                            <td class="info-data info-charge"></td>
-                        </tr>
-                        <tr class="info-energy">
-                            <td class="info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
-                            <td class="info-data info-energy"></td>
-                        </tr>
-                        <tr class="info-range">
-                            <td class="info-header translated" defaultText="Range"></td>
-                            <td class="info-data info-range"></td><td class="info-rangebonus"><i class="xwing-miniatures-font red header-range xwing-miniatures-font-rangebonusindicator"></i></td>
-                        </tr>
                         <tr class="info-actions">
                             <td class="info-header translated" defaultText="Actions"></td>
                             <td class="info-data"></td>
@@ -2437,6 +2451,10 @@ class exportObj.SquadBuilder
                     
                     container.find('tr.info-skill td.info-data').text data.skill
                     container.find('tr.info-skill').show()
+
+                    container.find('tr.info-points td.info-data').text data.points
+                    container.find('tr.info-points').show()
+
                     container.find('tr.info-loadout td.info-data').text data.loadout
                     container.find('tr.info-loadout').show()
                     if data.engagement?
@@ -2444,7 +2462,6 @@ class exportObj.SquadBuilder
                         container.find('tr.info-engagement').show()
                     else
                         container.find('tr.info-engagement').hide()
-                    container.find('tr.info-points').hide()
                     
                     
 #                    for cls in container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
