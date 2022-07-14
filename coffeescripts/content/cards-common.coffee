@@ -16870,7 +16870,6 @@ exportObj.basicCardData = ->
             points: 4
             attackbull: 4
             range: """2-3"""
-            rangebonus: true
             charge: 2
             recurring: 1
             restrictions: [
