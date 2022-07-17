@@ -11968,7 +11968,341 @@ exportObj.basicCardData = ->
                 "VersatileShip"
             ]
         }
-
+        {
+            name: "Garven Dreis (BoY)"
+            canonical_name: 'Garven Dreis'.canonicalize()
+            xws: "garvendreis-battleofyavin"
+            unique: true
+            id: 554
+            faction: "Rebel Alliance"
+            ship: "X-Wing"
+            skill: 4
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+            ]
+        }
+        {
+            name: "Luke Skywalker (BoY)"
+            canonical_name: 'Luke Skywalker'.canonicalize()
+            xws: "lukeskywalker-battleofyavin"
+            unique: true
+            id: 555
+            faction: "Rebel Alliance"
+            ship: "X-Wing"
+            skill: 5
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+                "Instinctive Aim"
+                "Attack Speed (BoY)"
+                "Proton Torpedoes"
+                "R2-D2 (BoY)"
+            ]
+        }
+        {
+            name: "Jek Porkins (BoY)"
+            canonical_name: 'Jek Porkins'.canonicalize()
+            xws: "jekporkins-battleofyavin"
+            unique: true
+            id: 556
+            faction: "Rebel Alliance"
+            ship: "X-Wing"
+            skill: 4
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+                "Adv. Proton Torpedoes"
+                "R5-D8"
+                "Unstable Engines (BoY)"
+            ]
+        }
+        {
+            name: "Biggs Darklighter (BoY)"
+            canonical_name: 'Biggs Darklighter'.canonicalize()
+            xws: "biggsdarklighter-battleofyavin"
+            unique: true
+            id: 557
+            faction: "Rebel Alliance"
+            ship: "X-Wing"
+            skill: 3
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+                "Attack Speed (BoY)"
+                "Selfless"
+                "Proton Torpedoes"
+                "R2-F2 (BoY)"
+            ]
+        }
+        {
+            name: "Wedge Antilles (BoY)"
+            canonical_name: 'Wedge Antilles'.canonicalize()
+            xws: "wedgeantilles-battleofyavin"
+            unique: true
+            id: 558
+            faction: "Rebel Alliance"
+            ship: "X-Wing"
+            skill: 5
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+                "Attack Speed (BoY)"
+                "Marksmanship"
+                "Proton Torpedoes"
+                "R2-A3 (BoY)"
+            ]
+        }
+        {
+            name: "Han Solo (BoY)"
+            canonical_name: 'Han Solo'.canonicalize()
+            xws: "hansolo-battleofyavin"
+            unique: true
+            id: 559
+            faction: "Rebel Alliance"
+            ship: "YT-1300"
+            skill: 6
+            points: 20
+            charge: 4
+            upgrades: [
+                "Chewbacca (BoY)"
+                "Rigged Cargo Chute"
+                "Millennium Falcon"
+                "L3-37's Programming (BoY)"
+            ]
+        }
+        {
+            name: 'Jon "Dutch" Vander'
+            canonical_name: '"Dutch" Vander'.canonicalize()
+            xws: "jondutchvader-battleofyavin"
+            unique: true
+            id: 560
+            faction: "Rebel Alliance"
+            ship: "Y-Wing"
+            skill: 4
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+            ]
+        }
+        {
+            name: "Dex Tiree"
+            unique: true
+            id: 561
+            faction: "Rebel Alliance"
+            ship: "Y-Wing"
+            skill: 2
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+                "Dorsal Turret"
+                "Adv. Proton Torpedoes"
+                "R4 Astromech"
+            ]
+        }
+        {
+            name: '"Pops" Krail'
+            unique: true
+            id: 562
+            faction: "Rebel Alliance"
+            ship: "Y-Wing"
+            skill: 4
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+                "Ion Cannon Turret"
+                "Adv. Proton Torpedoes"
+                "R4 Astromech"
+            ]
+        }
+        {
+            name: "Hol Okland"
+            unique: true
+            id: 563
+            faction: "Rebel Alliance"
+            ship: "Y-Wing"
+            skill: 4
+            points: 20
+            chassis: "Hope"
+            upgrades: [
+                "Dorsal Turret (BoY)"
+                "Adv. Proton Torpedoes"
+                "Precise Astromech (BoY)"
+            ]
+        }
+        {
+            name: "Darth Vader (BoY)"
+            canonical_name: 'Darth Vader'.canonicalize()
+            xws: "darthvader-battleofyavin"
+            unique: true
+            id: 564
+            faction: "Galactic Empire"
+            ship: "TIE Advanced"
+            skill: 6
+            points: 20
+            force: 3
+            keyword: ["Dark Side", "Sith"]
+            ship_override:
+                shields: 3
+            upgrades: [
+                "Marksmanship"
+                "Hate"
+                "Afterburners"
+            ]
+        }
+        {
+            name: '"Backstabber"'
+            unique: true
+            id: 565
+            faction: "Galactic Empire"
+            ship: "TIE Fighter"
+            skill: 5
+            points: 20
+            ship_override:
+                hull: 4
+            upgrades: [
+                "Crack Shot"
+                "Disciplined"
+                "Afterburners"
+            ]
+        }
+        {
+            name: '"Mauler" Mithel (BoY)'
+            canonical_name: '"Mauler" Mithel'.canonicalize()
+            xws: "maulermithel-battleofyavin"
+            unique: true
+            id: 566
+            faction: "Galactic Empire"
+            ship: "TIE Fighter"
+            skill: 5
+            points: 20
+            ship_override:
+                hull: 4
+            upgrades: [
+                "Predator"
+                "Afterburners"
+            ]
+        }
+        {
+            name: '"Dark Curse"'
+            unique: true
+            id: 567
+            faction: "Galactic Empire"
+            ship: "TIE Fighter"
+            skill: 6
+            points: 20
+            ship_override:
+                hull: 4
+            upgrades: [
+                "Ruthless"
+                "Precision Ion Engines"
+            ]
+        }
+        {
+            name: '"Wampa" (BoY)'
+            canonical_name: '"Wampa"'.canonicalize()
+            xws: "wampa-battleofyavin"
+            unique: true
+            id: 568
+            faction: "Galactic Empire"
+            ship: "TIE Fighter"
+            skill: 1
+            charge: 1
+            recurring: 1
+            points: 20
+            ship_override:
+                hull: 4
+            upgrades: [
+                "Elusive"
+                "Vengeful (BoY)"
+            ]
+        }
+        {
+            name: "Iden Versio (BoY)"
+            canonical_name: 'Iden Versio'.canonicalize()
+            xws: "idenversio-battleofyavin"
+            unique: true
+            id: 569
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 4
+            points: 20
+            charge: 2
+            recurring: 1
+            chassis: "Sensitive Controls"
+            ship_override:
+                shields: 1
+            upgrades: [
+                "Predator"
+                "Fanatic (BoY)"
+            ]
+        }
+        {
+            name: "Sigma 4"
+            unique: true
+            id: 570
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 4
+            points: 20
+            charge: 2
+            chassis: "Sensitive Controls"
+            ship_override:
+                hull: 4
+            upgrades: [
+                "Disciplined"
+                "Primed Thrusters"
+            ]
+        }
+        {
+            name: "Sigma 5"
+            unique: true
+            id: 571
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 4
+            points: 20
+            chassis: "Sensitive Controls"
+            upgrades: [
+                "Fanatic (BoY)"
+            ]
+        }
+        {
+            name: "Sigma 6"
+            unique: true
+            id: 572
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 4
+            points: 20
+            chassis: "Sensitive Controls"
+            upgrades: [
+                "Fanatic (BoY)"
+            ]
+        }
+        {
+            name: "Sigma 7"
+            unique: true
+            id: 573
+            faction: "Galactic Empire"
+            ship: "TIE Interceptor"
+            skill: 4
+            points: 20
+            charge: 2
+            chassis: "Sensitive Controls"
+            ship_override:
+                actions: [
+                    "Focus"
+                    "Evade"
+                    "Barrel Roll"
+                    "Boost"
+                    "Lock"
+                ]
+            upgrades: [
+                "Marksmanship"
+                "Fire-Control System"
+            ]
+        }
     ]
 
     upgradesById: [
@@ -13269,7 +13603,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "L3-37's Programming"
+            name: "L3-37's Programming (BoY)"
             id: 145
             standard: true
             unique: true
@@ -16910,7 +17244,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Fanatic"
+            name: "Fanatic (BoY)"
             id: 473
             slot: "Talent"
             standard: true
@@ -16922,6 +17256,68 @@ exportObj.basicCardData = ->
             slot: "Crew"
             standard: true
             unique: true
+        }
+        {
+            name: "Attack Speed (BoY)"
+            id: 475
+            slot: "Talent"
+            standard: true
+        }
+        {
+            name: "Unstable Engines (BoY)"
+            id: 476
+            slot: "Modification"
+            standard: true
+        }
+        {
+            name: "R2-D2 (BoY)"
+            canonical_name: 'R2-D2'.canonicalize()
+            id: 477
+            standard: true
+            unique: true
+            slot: "Astromech"
+            charge: 2
+        }
+        {
+            name: "Dorsal Turret (BoY)"
+            id: 478
+            standard: true
+            slot: "Turret"
+            attackt: 3
+            range: """1-2"""
+            modifier_func: (stats) ->
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
+        }
+        {
+            name: "R2-F2 (BoY)"
+            canonical_name: 'R2-F2'.canonicalize()
+            id: 479
+            standard: true
+            unique: true
+            slot: "Astromech"
+            charge: 2
+        }
+        {
+            name: "Precise Astromech (BoY)"
+            id: 480
+            standard: true
+            slot: "Astromech"
+            charge: 2
+        }
+        {
+            name: "R2-A3 (BoY)"
+            canonical_name: 'R2-A3'.canonicalize()
+            id: 481
+            standard: true
+            unique: true
+            slot: "Astromech"
+            charge: 2
+        }
+        {
+            name: "Vengeful (BoY)"
+            id: 482
+            standard: true
+            slot: "Talent"
         }
     ]
 

@@ -1757,7 +1757,52 @@ exportObj.cardLoaders.English = () ->
            display_name: """Reaper Squadron Scout"""
            text: """"""
 
-
+        # Standard Pilots
+        "Garven Dreis (BoY)":
+           display_name: """Garven Dreis (BoY)"""
+           text: """After you spend a focus token, you may choose 1 friendly ship at range 1-3. That ship gains 1 focus token."""
+        "Luke Skywalker (BoY)":
+           display_name: """Luke Skywalker (BoY)"""
+           text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
+        "Wedge Antilles (BoY)":
+           display_name: """Wedge Antilles (BoY)"""
+           text: """While you perform a primary attack, if there is another friendly ship in the defender's firing arc, the defender rolls 1 lesss defense dice."""
+        "Biggs Darklighter (BoY)":
+           display_name: """Biggs Darklighter (BoY)"""
+           text: """During the System Phase, you may choose 1 friendly ship at range 1. If you do, treat your initiative as equal to the chosen ship's initiative until the end of the Activation Phase."""
+        "Jek Porkins (BoY)":
+           display_name: """Jek Porkins (BoY)"""
+           text: """After you receive a stress token, you may roll 1 attack die to remove it. On a %HIT% result, suffer 1 %HIT% damage."""
+        "Hol Okland":
+           display_name: """Hol Okland"""
+           text: """During the System Phasse, if there are no enemy ships at range 1-2, you may recover 1 %CHARGE% on any upgrade."""
+        "Dex Tiree":
+           display_name: """Dex Tiree"""
+           text: """While you defend, if there is at least 1 other friendly ship at range 0-1, you may roll 1 additional defense die."""
+        '"Wampa" (BoY)':
+           display_name: """“Wampa” (BoY)"""
+           text: """While you perform an attack, you may spend 1 %CHARGE% to roll 1 additional attack die.%LINEBREAK%After defending, lose 1 %CHARGE%."""
+        '"Dark Curse"':
+           display_name: """“Dark Curse”"""
+           text: """While you defend, the attacker's dice cannot be modified."""
+        "Darth Vader (BoY)":
+           display_name: """Darth Vader (BoY)"""
+           text: """While you perform an attack, you may spend 1 %FORCE% to change 1 blank result to a %HIT% result."""
+        "Iden Versio (BoY)": 
+           display_name: """Iden Versio"""
+           text: """Before a friendly TIE at range 0-1 would suffer damage, you may spend 2 %CHARGE%. If you do, prevent 1 %HIT% or %CRIT%. """
+        '"Backstabber"': 
+           display_name: """“Backstabber”"""
+           text: """While you perform a primary attack, if a friendly Darth Vader or "Mauler" Mithel is in your %LEFTARC% or %RIGHTARC% at range 0-1, roll 1 additional attack die."""
+        "Sigma 4":
+           display_name: """Sigma 4"""
+           text: """After you perform a %BARRELROLL% action, you may spend 1 %CHARGE% to perform a %BOOST% action."""
+        "Sigma 7":
+           display_name: """Sigma 7"""
+           text: """During the System Phase, you may spend 1 %CHARGE% to acquire a lock on an enemy ship at range 0-1."""
+        '"Mauler" Mithel (BoY)':
+           display_name: """“Mauler” Mithel"""
+           text: """While you perform a primary attack, if a friendly Darth Vader or "Backstabber" is in your %LEFTARC% or %RIGHTARC% at range 0-1, roll 1 additional attack die."""
 
         # Epic Ships
         "Republic Judiciary":
@@ -2214,9 +2259,6 @@ exportObj.cardLoaders.English = () ->
         "L3-37":
            display_name: """L3-37"""
            text: """<strong>Setup:</strong> Equip this side faceup.%LINEBREAK%While you defend, you may flip this card. If you do, the attacker must reroll all attack dice.%LINEBREAK%<strong>L3-37's Programming:</strong> If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
-        "L3-37's Programming":
-           display_name: """L3-37's Programming"""
-           text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "Kylo Ren":
            display_name: """Kylo Ren"""
            text: """<strong>Action:</strong> Choose 1 enemy ship at range 1-3. If you do, spend 1 %FORCE% to assign the <strong>I'll Show You the Dark Side</strong> condition to that ship."""
@@ -2877,12 +2919,36 @@ exportObj.cardLoaders.English = () ->
            text: """Add %CREW% and %DEVICE% slots."""
 
         # Standardized upgrades
-        "Fanatic":
+        "Fanatic (BoY)":
            display_name: """Fanatic"""
            text: """While you perform a primary attack, if you are damaged, you may change 1 %FOCUS% result to a %HIT% result."""
+        "Vengeful (BoY)":
+           display_name: """Vengeful"""
+           text: """After a friendly ship at range 0-3 is destroyed, if that ship is limited, you may remove 1 of your red tokens or recover 1 recurring charge on your ship card."""
         "Chewbacca (BoY)":
            display_name: """Chewbacca"""
            text: """After you perform an %EVADE% action, you may gain 1 focus token."""
+        "L3-37's Programming (BoY)":
+           display_name: """L3-37's Programming"""
+           text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
+        "Attack Speed (BoY)":
+           display_name: """Attack Speed"""
+           text: """After you fully execute a [3 %STRAIGHT%] or [4 %STRAIGHT%] maneuver, you may perform a boost using the [1 %STRAIGHT%] template. (This is not an action)."""
+        "R2-D2 (BoY)":
+           display_name: """R2-D2"""
+           text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
+        "R2-F2 (BoY)":
+           display_name: """R2-F2"""
+           text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
+        "R2-A3 (BoY)":
+           display_name: """R2-A3"""
+           text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
+        "Precise Astromech (BoY)":
+           display_name: """Precise Astromech"""
+           text: """After you perform an action, you may spend 1 %CHARGE% to perform a red %LOCK% action."""
+        "Dorsal Turret (BoY)":
+           display_name: """Dorsal Turret"""
+           text: """<strong>Attack</strong>"""
 
 
         # Epic upgrades
