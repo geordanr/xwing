@@ -392,9 +392,6 @@ class exportObj.SquadBuilder
                         <label class="color-skip-text-checkbox">
                             <span class="translated" defaultText="Skip Card Text"></span> <input type="checkbox" class="toggle-skip-text-print" />
                         </label><br />
-                        <label class="vertical-space-checkbox">
-                            <span class="translated" defaultText="Space for Cards"></span> <input type="checkbox" class="toggle-vertical-space" />
-                        </label><br />
                         <label class="maneuver-print-checkbox">
                             <span class="translated" defaultText="Include Maneuvers Chart"></span> <input type="checkbox" class="toggle-maneuver-print" />
                         </label><br />
@@ -1274,7 +1271,6 @@ class exportObj.SquadBuilder
                 else
                     for ship in @ships
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
-                    @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
                     @printable_container.find('.printable-body').toggleClass 'bw', not @list_modal.find('.toggle-color-print').prop('checked')
                     if @list_modal.find('.toggle-skip-text-print').prop('checked')
                         for text in @printable_container.find('.upgrade-text, .fancy-pilot-text')
@@ -1304,6 +1300,10 @@ class exportObj.SquadBuilder
                             'separatists'
                         when 'All'
                             'first-player-4'
+
+                    if @list_modal.find('.toggle-color-print').prop('checked')then @printable_container.find('.fancy-header').addClass(faction)
+                    if @list_modal.find('.toggle-color-print').prop('checked')then @printable_container.find('.fancy-pilot-header').addClass("#{faction}-pilot")
+
                     @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
             # List type
             if @isStandard
