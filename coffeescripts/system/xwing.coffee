@@ -1311,11 +1311,12 @@ class exportObj.SquadBuilder
             if @isEpic
                 @printable_container.find('.squad-name').append """ <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>""" 
 
-                    
-            # Notes, if present
-            @printable_container.find('.printable-body').append $.trim """
+            # Version number
+            @printable_container.find('.fancy-under-header').append $.trim """
                 <div class="version">Points Version: 06/15/2022</div>
             """
+                    
+            # Notes, if present
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
                     <h5 class="print-notes translated" defaultText="Notes:"></h5>

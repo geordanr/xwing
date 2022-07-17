@@ -119,17 +119,18 @@ body
 
     .squad-name
       position: absolute
-      font-size: $fancy-header-height * 0.75
-      margin-top: $fancy-header-height * 0.1
+      font-size: 0.3in
       font-weight: 100
     
       .xwing-miniatures-font
-        font-size: $fancy-header-height * 0.7
+        position: relative
+        bottom: 0.04in
+        font-size: 0.24in
 
     .squad-faction
       position: absolute
-      margin-top: 0
-      right: $header-circle-diameter * 1.75
+      margin-top: 0.04in
+      right: 0.7in
       font-weight: 100
 
       .xwing-miniatures-font
@@ -137,7 +138,7 @@ body
 
     .mask
       position: absolute
-      right: 0
+      right: -0.25in
       width: $header-circle-diameter
       background-color: white
       height: $header-circle-diameter
@@ -238,11 +239,11 @@ body
       border-left-color: transparent
       border-bottom-color: transparent
       border-right-color: transparent
-      margin-bottom: -$fancy-pilot-header-height * 2
+      margin-bottom: -0.5in
 
       .pilot-stats-content
         position: relative
-        margin-top: -$fancy-pilot-header-height + 0.1
+        margin-top: -0.27in
         
         .xwing-miniatures-font
           vertical-align: middle
@@ -257,20 +258,28 @@ body
       margin-left: $fancy-pilot-header-height * 2
       padding: 5px
       color: black
+      font-size: 0.18in
+      margin-bottom: 0.2in
 
     .fancy-upgrade-container
       color: black
       position: relative
+      margin-left: 0.365in
+      margin-right: 0.365in
       // margin-left: $fancy-pilot-header-height
-      // margin-bottom: 10px
+      margin-bottom: 10px
       // padding-top: 10px
       // padding-bottom: 1px
 
       .upgrade-container
+        width: 49%
+        display: inline-block
+        vertical-align: top
         position: relative
+        margin-left: 0.04in
+        margin-right: 0.04in
         margin-bottom: 0.04in
-        margin-left: 0.75in
-        margin-right: 0.365in
+        font-size: 0.163in
         border: 1px dotted lightgray
         clear: both
 
@@ -354,7 +363,7 @@ body
             margin-right: 0.02in
 
         .upgrade-text
-          padding-right: $upgrade-circle-diameter
+          padding-right: 0.1in
           padding-left: 0.27in
           margin-left: 0.10in
 
@@ -433,7 +442,9 @@ body
     color: black
     
   .version
-    color: black
+    position: relative
+    bottom: 0.2in
+    color: white
 
   .qrcode-container
     color: black
