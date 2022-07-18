@@ -392,6 +392,9 @@ class exportObj.SquadBuilder
                         <label class="color-skip-text-checkbox">
                             <span class="translated" defaultText="Skip Card Text"></span> <input type="checkbox" class="toggle-skip-text-print" />
                         </label><br />
+                        <label class="horizontal-space-checkbox">
+                            <span class="translated" defaultText="Space for Cards"></span> <input type="checkbox" class="toggle-horizontal-space" />
+                        </label><br />
                         <label class="maneuver-print-checkbox">
                             <span class="translated" defaultText="Include Maneuvers Chart"></span> <input type="checkbox" class="toggle-maneuver-print" />
                         </label><br />
@@ -439,7 +442,7 @@ class exportObj.SquadBuilder
         @xws_container = $ @list_modal.find('div.modal-body .xws-list')
         @xws_textarea = $ @xws_container.find('textarea')
         @xws_textarea.attr 'readonly', 'readonly'
-        @toggle_vertical_space_container = $ @list_modal.find('.vertical-space-checkbox')
+        @toggle_vertical_space_container = $ @list_modal.find('.horizontal-space-checkbox')
         @toggle_color_print_container = $ @list_modal.find('.color-print-checkbox')
         @toggle_color_skip_text = $ @list_modal.find('.color-skip-text-checkbox')
         @toggle_maneuver_dial_container = $ @list_modal.find('.maneuver-print-checkbox')
@@ -1271,6 +1274,7 @@ class exportObj.SquadBuilder
                 else
                     for ship in @ships
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
+                    if @list_modal.find('.toggle-horizontal-space').prop('checked')then @printable_container.find('.upgrade-container').addClass('wide')
                     @printable_container.find('.printable-body').toggleClass 'bw', not @list_modal.find('.toggle-color-print').prop('checked')
                     if @list_modal.find('.toggle-skip-text-print').prop('checked')
                         for text in @printable_container.find('.upgrade-text, .fancy-pilot-text')
