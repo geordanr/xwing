@@ -12125,7 +12125,7 @@ exportObj.basicCardData = ->
             points: 20
             chassis: "Hope"
             upgrades: [
-                "Dorsal Turret (BoY)"
+                "Dorsal Turret"
                 "Adv. Proton Torpedoes"
                 "Precise Astromech (BoY)"
             ]
