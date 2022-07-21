@@ -7324,7 +7324,7 @@ exportObj.basicCardData = ->
             recurring: 1
             points: 3
             slots: [
-                "Missile"
+                "Talent"
                 "Modification"
             ]
         }
