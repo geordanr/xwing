@@ -760,7 +760,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Zu Beginn der Aktivierungsphase darfst du 1 %CHARGE% ausgeben. Falls du das tust, <b>müssen</b> befreundete Schiffe, solange sie in dieser Runde Ziele erfassen, Ziele jenseits von Reichweite 3 erfassen, anstatt in Reichweite 0-3."""
         "Colonel Vessery":
            display_name: """Colonel Vessery"""
-           text: """Solange du einen Angriff gegen ein erfasstes Schiff durchführst, nachdem du Angriffswürfel geworfen hast, darfst du den Verteidiger als Ziel erfassen.%LINEBREAK%<strong>Vollgas:</strong> Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
+           text: """Solange du einen Angriff gegen ein erfasstes Schiff durchführst, nachdem du Angriffswürfel geworfen hast, darfst du den Verteidiger als Ziel erfassen."""
         "Commandant Goran":
            display_name: "Kommandant Goran"
            text: """Wähle zu Beginn der Kampfphase ein befreundetes Schiff in Reichweite 0–3, dessen Initiative niedriger als deine ist. Das gewählte Schiff erhält 1 Ausweichmarker und entfernt 1 roten Nicht-Stressmarker.%LINEBREAK%<i>Errata (since rules reference 1.4): Komplett überarbeitet</i>"""
@@ -784,7 +784,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Nachdem du verteidigt hast, falls der Angreifer in deinem Feuerwinkel ist, darfst du 1 %FORCE% ausgeben, um 1 deiner blauen oder roten Marker zu entfernen.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du 1 %FORCE% ausgeben, um eine Aktion durchzuführen."""
         "Countess Ryad":
            display_name: """Gräfin Ryad"""
-           text: """Solange du ein %STRAIGHT%-Manöver ausführen würdest, darfst du die Schwierigkeit des Manövers erhöhen. Falls du das tust, führe es stattdessen als %KTURN%-Manöver aus.%LINEBREAK%<strong>Vollgas:</strong> Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
+           text: """Solange du ein %STRAIGHT%-Manöver ausführen würdest, darfst du die Schwierigkeit des Manövers erhöhen. Falls du das tust, führe es stattdessen als %KTURN%-Manöver aus."""
         "Cova Nell":
            display_name: """Cova Nell"""
            text: """Solange du verteidigst oder einen Primärangriff durchführst, falls dein aufgedecktes Manöver rot ist, wirf 1&nbsp;zusätzlichen Würfel."""
@@ -832,7 +832,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange ein befreundetes Schiff in Reichweite 0-2 gegen einen beschädigten Angreifer verteidigt, darf der Verteidiger 1 Verteidigungswürfel neu werfen."""
         "Delta Squadron Pilot":
            display_name: """Pilot der Delta-Staffel"""
-           text: """<i class = flavor_text>Der TIE-Abwehrjäger ist nicht nur mit Raketenwerfern und sechs Kanonen an den Tragflächenspitzen, sondern auch mit Deflektorschilden und einem Hyperantrieb ausgestattet.</i>%LINEBREAK%<strong>Vollgas:</strong> Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
+           text: """<i class = flavor_text>Der TIE-Abwehrjäger ist nicht nur mit Raketenwerfern und sechs Kanonen an den Tragflächenspitzen, sondern auch mit Deflektorschilden und einem Hyperantrieb ausgestattet.</i>"""
         "Dengar":
            display_name: """Dengar"""
            text: """Nachdem du verteidigt hast, falls der Angreifer in deinem %FRONTARC% ist, darfst du 1 %CHARGE% ausgeben, um einen Bonusangriff gegen den Angreifer durchzuführen."""
@@ -1219,7 +1219,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i class = flavor_text>Die Raumfähre der Lambda-Klasse zeichnet sich durch ihre außergewöhnliche Drei-Tragflächen-Form und modernste Sensortechnologie aus. Als leichtes Multifunktionsschiff übernimmt sie eine wichtige Rolle in der Imperialen Flotte.</i>"""
         "Onyx Squadron Ace":
            display_name: """Fliegerass der Onyx-Staffel"""
-           text: """<i class = flavor_text>Der experimentelle TIE-Abwehrjäger stellt alle anderen modernen Sternenjäger in den Schatten, wenngleich Größe, Schubkraft und Bewaffnung das Gewicht und den Preis des Modells in die Höhe treiben.</i>%LINEBREAK%<strong>Vollgas:</strong> Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
+           text: """<i class = flavor_text>Der experimentelle TIE-Abwehrjäger stellt alle anderen modernen Sternenjäger in den Schatten, wenngleich Größe, Schubkraft und Bewaffnung das Gewicht und den Preis des Modells in die Höhe treiben.</i>"""
         "Onyx Squadron Scout":
            display_name: """Aufklärer der Onyx-Staffel"""
            text: """<i class = flavor_text>Der für den Langzeiteinsatz konzipierte TIE/ag wird in erster Linie von Elitepiloten geflogen, die das Potential des schwer bewaffneten und wendigen Jägers voll ausschöpfen können.</i>"""
@@ -1294,7 +1294,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i class = flavor_text>Nach der Zerstörung des Hosnian-Systems stellten viele Raumfahrer bereitwillig ihre Schiffe dem Widerstand zur Verfügung.</i>"""
         "Rexler Brath":
            display_name: """Rexler Brath"""
-           text: """Nachdem du einen Angriff durchgeführt hast, der getroffen hat, falls du ausweichst, lege 1 der Schadenskarten des Verteidigers offen.%LINEBREAK%<strong>Vollgas:</strong> Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
+           text: """Nachdem du einen Angriff durchgeführt hast, der getroffen hat, falls du ausweichst, lege 1 der Schadenskarten des Verteidigers offen."""
         "Rey":
            display_name: """Rey"""
            text: """Solange du verteidigst oder einen Angriff durchführst, falls das feindliche Schiff in deinem %FRONTARC% ist, darfst du 1 %FORCE% ausgeben, um 1 deiner Leerseiten-Ergebnisse in ein %EVADE%- oder %HIT%-Ergebnis zu ändern."""
@@ -2276,7 +2276,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Solange du einen Spezialangriff durchführst, darfst du 1 %FORCE% ausgeben, um die %FOCUS%- oder %LOCK%-Voraussetzung zu ignorieren."""
         "Integrated S-Foils":
            display_name: """Integrierte S-Flügel"""
-           text: """<strong>Geschlossen: </strong>Solange du einen Primärangriff durchführst, falls der Verteidiger nicht in deinem %BULLSEYEARC% ist, wirf 1 Angriffswürfel weniger. Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Geöffnet:</strong> (Keine %BARRELROLL, %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BARRELROLL%</r>)  Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+           text: """<strong>Geschlossen: </strong>Solange du einen Primärangriff durchführst, falls der Verteidiger nicht in deinem %BULLSEYEARC% ist, wirf 1 Angriffswürfel weniger. Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Geöffnet:</strong> (Keine %BARRELROLL%, %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BARRELROLL%</r>)  Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Intercept Booster":
            display_name: """Abfang-Booster"""
            text: """<strong>Attached:</strong> Equip this side faceup. (Added Actions available on this side only) During the System Phase, gain 1 disarm token unless you flip this card. At the end of the End Phase, if you have no active %CHARGE%, flip this card. %LINEBREAK%<strong>Ausgeklinkt:</strong> (Die Aktionen stehen nicht zur Verfügung))<i class = flavor_text>Ohne auf die Zerbrechlichkeit eines organischen Piloten Rücksicht nehmen zu müssen, können Tri-Droidenjäger enorme Beschleunigungen aushalten und punktgenaue Manöver fliegen. Sie sind mit Booster-Raketen ausgestattet und werden aus den Abschussrohren von Großkampfschiffen der Separatisten abgefeuert, um so feindliche Schiffe jenseits der Reichweite eines normal gestarteten Sternenjägers abzufangen.</i>"""
@@ -2693,7 +2693,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Solange du koordinierst, kann das von dir gewählte Schiff eine Aktion nur dann durchführen, falls jene Aktion auch in deiner Aktionsleiste ist."""
         "Stabilized S-Foils":
            display_name: """Stabilisierte S-Flügel"""
-           text: """<strong>Geschlossen:</strong> Fügt <r>%RELOAD%</r> und %BARRELROLL%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"><r>%EVADE%</r></i> hinzu. Before you activate, if you are not critically damaged, you may flip this card. %LINEBREAK%<strong>Geöffnet:</strong><i>Fügt %BARRELROLL%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%LOCK%</r> hinzu</i>%LINEBREAK% Nachdem du einen Angriff durchgeführt hast, darfst du deine Zielerfassung auf dem Verteidiger ausgeben, um unter Verwendung einer %CANNON%-Aufwertung, mit der du in diesem Zug noch nicht angegriffen hast, einen Bonus-%CANNON%-Angriff gegen jenes Schiff durchzuführen.%LINEBREAK% Bevor du aktiviert wirst, falls du nicht kritisch beschädigt bist, darfst du diese Karte umdrehen."""
+           text: """<strong>Geschlossen:</strong> Fügt <r>%RELOAD%</r> und %BARRELROLL%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i><r>%EVADE%</r> hinzu. Bevor du aktiviert wirst, falls du nicht kritisch beschädigt bist, darfst du diese Karte umdrehen. %LINEBREAK%<strong>Geöffnet:</strong><i>Fügt %BARRELROLL%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%LOCK%</r> hinzu</i>%LINEBREAK% Nachdem du einen Angriff durchgeführt hast, darfst du deine Zielerfassung auf dem Verteidiger ausgeben, um unter Verwendung einer %CANNON%-Aufwertung, mit der du in diesem Zug noch nicht angegriffen hast, einen Bonus-%CANNON%-Angriff gegen jenes Schiff durchzuführen.%LINEBREAK% Bevor du aktiviert wirst, falls du nicht kritisch beschädigt bist, darfst du diese Karte umdrehen."""
         "Stalwart Captain":
            display_name: """Standhafter Captain"""
            text: """Nachdem du zerstört worden bist, wirst du bis zum Ende der Endphase nicht entfernt."""
