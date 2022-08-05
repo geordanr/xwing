@@ -9462,6 +9462,7 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Missile"
                 "Modification"
+                "Modification"
                 "Configuration"
             ]
         }
