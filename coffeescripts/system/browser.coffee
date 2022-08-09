@@ -191,7 +191,7 @@ class exportObj.CardBrowser
                                         <label class = "advanced-search-label toggle-large-base">
                                             <input type="checkbox" class="large-base-checkbox advanced-search-checkbox" checked="checked"/> <span class="translated" defaultText="Large"></span>
                                         </label>
-                                        <label class = "advanced-search-label toggle-large-base">
+                                        <label class = "advanced-search-label toggle-huge-base">
                                             <input type="checkbox" class="huge-base-checkbox advanced-search-checkbox" checked="checked"/> <span class="translated" defaultText="Huge"></span>
                                         </label>
                                     </div>
@@ -355,10 +355,10 @@ class exportObj.CardBrowser
         @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
         @non_unique_checkbox = ($ @container.find('.xwing-card-browser .non-unique-checkbox'))[0]
         @base_size_checkboxes = 
-            huge: ($ @container.find('.xwing-card-browser .huge-base-checkbox'))[0]
-            large: ($ @container.find('.xwing-card-browser .large-base-checkbox'))[0]
-            medium: ($ @container.find('.xwing-card-browser .medium-base-checkbox'))[0]
-            small: ($ @container.find('.xwing-card-browser .small-base-checkbox'))[0]
+            Small: ($ @container.find('.xwing-card-browser .small-base-checkbox'))[0]
+            Medium: ($ @container.find('.xwing-card-browser .medium-base-checkbox'))[0]
+            Large: ($ @container.find('.xwing-card-browser .large-base-checkbox'))[0]
+            Huge: ($ @container.find('.xwing-card-browser .huge-base-checkbox'))[0]
         @slot_available_selection = ($ @container.find('.xwing-card-browser select.slot-available-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
@@ -862,19 +862,19 @@ class exportObj.CardBrowser
             return false unless @minimum_ini.value <= 0 and @maximum_ini.value >= 6
 
         # check for base size
-        if not (@base_size_checkboxes['small'].checked and @base_size_checkboxes['medium'].checked and @base_size_checkboxes['large'].checked)
+        if not (@base_size_checkboxes['Small'].checked and @base_size_checkboxes['Medium'].checked and @base_size_checkboxes['Large'].checked and @base_size_checkboxes['Huge'].checked)
             size_matches = false
             if card.orig_type == 'Ship'
                 if card.data.base?
-                    size_matches = size_matches or @base_size_checkboxes[card.data.base.toLowerCase()].checked
+                    size_matches = size_matches or @base_size_checkboxes[card.data.base].checked
                 else
-                    size_matches = size_matches or @base_size_checkboxes['small'].checked
+                    size_matches = size_matches or @base_size_checkboxes['Small'].checked
             else if card.orig_type == 'Pilot'
                 ship = exportObj.ships[card.data.ship]
                 if ship.base?
-                    size_matches = size_matches or @base_size_checkboxes[ship.base.toLowerCase()].checked
+                    size_matches = size_matches or @base_size_checkboxes[ship.base].checked
                 else
-                    size_matches = size_matches or @base_size_checkboxes['small'].checked
+                    size_matches = size_matches or @base_size_checkboxes['Small'].checked
 
             return false unless size_matches
 
