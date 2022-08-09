@@ -5,7 +5,6 @@ _vimrc_local.vim
 app
 images
 backgrounds.*
-casperjs.png
 xwing.history
 coffeelint.json
 node_modules
