@@ -724,6 +724,7 @@ class exportObj.CardBrowser
 
         # check if standard only matches
         if @standard_checkbox.checked
+            standard_legal = false
             # check all factions specified by the card (which might be a single faction or an array of factions), or all selected factions if card does not specify any
             for faction in (if card.data.faction? then (if Array.isArray(card.data.faction) then card.data.faction else [card.data.faction]) else selected_factions)
                 continue unless faction in selected_factions # e.g. ships should only be displayed if a legal faction is selected
