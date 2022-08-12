@@ -10,13 +10,8 @@
   "license": "MIT",
   "main": "app/index.html",
   "private": "true",
-  "scripts": {
-    "noisy-test": "casperjs --verbose --log-level=debug test tests/test*.coffee",
-    "test": "casperjs test tests/test*.coffee"
-  },
   "devDependencies": {
     "bower": "*",
-    "casperjs": "*",
     "coffeescript": "*",
     "grunt": "*",
     "grunt-bower-task": "*",

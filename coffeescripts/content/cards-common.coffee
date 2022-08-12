@@ -5153,7 +5153,6 @@ exportObj.basicCardData = ->
                 "Sensor"
                 "Missile"
                 "Modification"
-                "Modification"
             ]
         }
         {
@@ -5167,10 +5166,8 @@ exportObj.basicCardData = ->
             loadout: 8
             slots: [
                 "Talent"
-                "Talent"
                 "Sensor"
                 "Missile"
-                "Modification"
                 "Modification"
             ]
         }
@@ -5184,7 +5181,6 @@ exportObj.basicCardData = ->
             points: 4
             loadout: 6
             slots: [
-                "Talent"
                 "Sensor"
                 "Missile"
                 "Modification"
@@ -5199,8 +5195,8 @@ exportObj.basicCardData = ->
             points: 4
             loadout: 2
             slots: [
+                "Talent"
                 "Sensor"
-                "Missile"
                 "Modification"
             ]
         }
@@ -5214,7 +5210,6 @@ exportObj.basicCardData = ->
             loadout: 4
             slots: [
                 "Sensor"
-                "Modification"
                 "Modification"
             ]
         }
@@ -5747,7 +5742,6 @@ exportObj.basicCardData = ->
                 "Gunner"
                 "Device"
                 "Modification"
-                "Modification"
             ]
         }
         {
@@ -5764,7 +5758,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Gunner"
                 "Device"
-                "Modification"
                 "Modification"
             ]
         }
@@ -9406,7 +9399,6 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Gunner"
                 "Modification"
-                "Modification"
                 "Configuration"
             ]
         }
@@ -9424,7 +9416,6 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Cannon"
                 "Gunner"
-                "Modification"
                 "Modification"
                 "Configuration"
             ]
