@@ -5380,6 +5380,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Seventh Fleet Gunner'
             type: 'upgrade'
             count: 1
@@ -5396,6 +5401,26 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Veteran Tail Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R3 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Novice Technician'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Perceptive Copilot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seasoned Navigator'
             type: 'upgrade'
             count: 1
         }
