@@ -34,12 +34,12 @@ exportObj.manifestByExpansion =
     # the original name in 1.0 YASB was "Core". we could use that for compatibility, but it might be confusing - so I opted against it
     'First Edition Core Set': [
         {
-            name: 'X-Wing'
+            name: 'T-65 X-wing'
             type: 'ship'
             count: 1
         }
         {
-            name: 'TIE Fighter'
+            name: 'TIE/ln Fighter'
             type: 'ship'
             count: 2
         }
@@ -77,12 +77,12 @@ exportObj.manifestByExpansion =
     # the original name in 1.0 YASB was "The Force Awakens Core Set". we could use that for compatibility, but it might be confusing - so I opted against it
     'First Edition Force Awakens Core Set': [
         {
-            name: 'TIE/FO Fighter'
+            name: 'TIE/fo Fighter'
             type: 'ship'
             count: 2
         }
         {
-            name: 'T-70 X-Wing'
+            name: 'T-70 X-wing'
             type: 'ship'
             count: 1
         }
@@ -141,7 +141,7 @@ exportObj.manifestByExpansion =
     ]
     'First Edition YT-2400 Freighter Expansion Pack': [
         {
-            name: 'YT-2400'
+            name: 'YT-2400 Light Freighter'
             type: 'ship'
             count: 1
         }
@@ -193,12 +193,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'X-Wing'
+            name: 'T-65 X-wing'
             type: 'ship'
             count: 1
         }
         {
-            name: 'TIE Fighter'
+            name: 'TIE/ln Fighter'
             type: 'ship'
             count: 2
         }
@@ -340,12 +340,12 @@ exportObj.manifestByExpansion =
     ]
     "Saw's Renegades Expansion Pack" : [
         {
-            name: 'U-Wing'
+            name: 'UT-60D U-wing'
             type: 'ship'
             count: 1
         }
         {
-            name: 'X-Wing'
+            name: 'T-65 X-wing'
             type: 'ship'
             count: 1
         }
@@ -2860,7 +2860,7 @@ exportObj.manifestByExpansion =
     ]
     'T-65 X-Wing Expansion Pack' : [
         {
-            name: 'X-Wing'
+            name: 'T-65 X-wing'
             type: 'ship'
             count: 1
         }
@@ -2922,7 +2922,7 @@ exportObj.manifestByExpansion =
     ]
     'BTL-A4 Y-Wing Expansion Pack' : [
         {
-            name: 'Y-Wing'
+            name: 'BTL-A4 Y-wing'
             type: 'ship'
             count: 1
         }
@@ -2989,7 +2989,7 @@ exportObj.manifestByExpansion =
     ]
     'TIE/ln Fighter Expansion Pack': [
         {
-            name: 'TIE Fighter'
+            name: 'TIE/ln Fighter'
             type: 'ship'
             count: 1
         }
@@ -3066,7 +3066,7 @@ exportObj.manifestByExpansion =
     ]
     'TIE Advanced x1 Expansion Pack': [
         {
-            name: 'TIE Advanced'
+            name: 'TIE Advanced x1'
             type: 'ship'
             count: 1
         }
@@ -3133,7 +3133,7 @@ exportObj.manifestByExpansion =
     ]
     'Slave I Expansion Pack': [
         {
-            name: 'Firespray-31'
+            name: 'Firespray-class Patrol Craft'
             type: 'ship'
             count: 1
         }
@@ -3287,7 +3287,7 @@ exportObj.manifestByExpansion =
     ]
     "Lando's Millennium Falcon Expansion Pack": [
         {
-            name: 'Customized YT-1300'
+            name: 'Customized YT-1300 Light Freighter'
             type: 'ship'
             count: 1
         }
@@ -3931,7 +3931,7 @@ exportObj.manifestByExpansion =
     ]
     'T-70 X-Wing Expansion Pack': [
         {
-            name: 'T-70 X-Wing'
+            name: 'T-70 X-wing'
             type: 'ship'
             count: 1
         }
@@ -4028,7 +4028,7 @@ exportObj.manifestByExpansion =
     ]
     'RZ-2 A-Wing Expansion Pack': [
         {
-            name: 'RZ-2 A-Wing'
+            name: 'RZ-2 A-wing'
             type: 'ship'
             count: 1
         }
@@ -4090,7 +4090,7 @@ exportObj.manifestByExpansion =
     ]
     'Mining Guild TIE Expansion Pack': [
         {
-            name: 'Mining Guild TIE Fighter'
+            name: 'Modified TIE/ln Fighter'
             type: 'ship'
             count: 1
         }
@@ -4594,7 +4594,7 @@ exportObj.manifestByExpansion =
     ]
     'TIE/FO Fighter Expansion Pack': [
         {
-            name: 'TIE/FO Fighter'
+            name: 'TIE/fo Fighter'
             type: 'ship'
             count: 1
         }
@@ -5057,7 +5057,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'V-19 Torrent'
+            name: 'V-19 Torrent Starfighter'
             type: 'ship'
             count: 2
         }
@@ -5320,7 +5320,7 @@ exportObj.manifestByExpansion =
 
     'ARC-170 Starfighter Expansion': [
         {
-            name: 'ARC-170'
+            name: 'ARC-170 Starfighter'
             type: 'ship'
             count: 1
         }
@@ -5561,7 +5561,7 @@ exportObj.manifestByExpansion =
 
     'Z-95-AF4 Headhunter Expansion Pack': [
         {
-            name: 'Z-95 Headhunter'
+            name: 'Z-95-AF4 Headhunter'
             type: 'ship'
             count: 1
         }
@@ -5614,7 +5614,7 @@ exportObj.manifestByExpansion =
 
     'TIE/sk Striker Expansion Pack': [
         {
-            name: 'TIE Striker'
+            name: 'TIE/sk Striker'
             type: 'ship'
             count: 1
         }
@@ -5839,7 +5839,7 @@ exportObj.manifestByExpansion =
 
     'A/SF-01 B-Wing Expansion Pack': [
         {
-            name: 'B-Wing'
+            name: 'A/SF-01 B-wing'
             type: 'ship'
             count: 1
         }
@@ -5907,7 +5907,7 @@ exportObj.manifestByExpansion =
 
     'Millennium Falcon Expansion Pack': [
         {
-            name: 'YT-1300'
+            name: 'Modified YT-1300 Light Freighter'
             type: 'ship'
             count: 1
         }
@@ -6093,7 +6093,7 @@ exportObj.manifestByExpansion =
 
     'TIE/VN Silencer Expansion Pack': [
         {
-            name: 'TIE/VN Silencer'
+            name: 'TIE/vn Silencer'
             type: 'ship'
             count: 1
         }
@@ -6156,7 +6156,7 @@ exportObj.manifestByExpansion =
 
     'TIE/SF Fighter Expansion Pack': [
         {
-            name: 'TIE/SF Fighter'
+            name: 'TIE/sf Fighter'
             type: 'ship'
             count: 1
         }
@@ -6351,7 +6351,7 @@ exportObj.manifestByExpansion =
     ]
     'BTL-B Y-Wing Expansion Pack': [
         {
-            name: 'BTL-B Y-Wing'
+            name: 'BTL-B Y-wing'
             type: 'ship'
             count: 1
         }
@@ -6674,7 +6674,7 @@ exportObj.manifestByExpansion =
     ]
     'Ghost Expansion Pack': [
         {
-            name: 'VCX-100'
+            name: 'VCX-100 Light Freighter'
             type: 'ship'
             count: 1
         }
@@ -6806,7 +6806,7 @@ exportObj.manifestByExpansion =
     ]
     "Inquisitors' TIE Expansion Pack": [
         {
-            name: 'TIE Advanced Prototype'
+            name: 'TIE Advanced v1'
             type: 'ship'
             count: 1
         }
@@ -7552,7 +7552,7 @@ exportObj.manifestByExpansion =
     ]
     "Major Vonreg's TIE Expansion Pack": [
         {
-            name: 'TIE/Ba Interceptor'
+            name: 'TIE/ba Interceptor'
             type: 'ship'
             count: 1
         }
@@ -7671,7 +7671,7 @@ exportObj.manifestByExpansion =
     ]
     "RZ-1 A-Wing Expansion Pack": [
         {
-            name: 'A-Wing'
+            name: 'RZ-1 A-wing'
             type: 'ship'
             count: 1
         }
@@ -7723,7 +7723,7 @@ exportObj.manifestByExpansion =
     ]
     "TIE/D Defender Expansion Pack": [
         {
-            name: 'TIE Defender'
+            name: 'TIE/d Defender'
             type: 'ship'
             count: 1
         }
@@ -7775,7 +7775,7 @@ exportObj.manifestByExpansion =
     ]
     "TIE/in Interceptor Expansion Pack": [
         {
-            name: 'TIE Interceptor'
+            name: 'TIE/in Interceptor'
             type: 'ship'
             count: 1
         }
@@ -7822,12 +7822,12 @@ exportObj.manifestByExpansion =
     ]
     "Hound's Tooth Expansion Pack": [
         {
-            name: 'YV-666'
+            name: 'YV-666 Light Freighter'
             type: 'ship'
             count: 1
         }
         {
-            name: 'Z-95 Headhunter'
+            name: 'Z-95-AF4 Headhunter'
             type: 'ship'
             count: 1
         }
@@ -8190,12 +8190,12 @@ exportObj.manifestByExpansion =
     ]
     "Heralds of Hope Expansion Pack": [
         {
-            name: 'T-70 X-Wing'
+            name: 'T-70 X-wing'
             type: 'ship'
             count: 2
         }
         {
-            name: 'RZ-2 A-Wing'
+            name: 'RZ-2 A-wing'
             type: 'ship'
             count: 1
         }
@@ -8424,7 +8424,7 @@ exportObj.manifestByExpansion =
     ]
     "Jango Fett's Slave I Expansion Pack": [
         {
-            name: 'Firespray-31'
+            name: 'Firespray-class Patrol Craft'
             type: 'ship'
             count: 1
         }
@@ -8727,12 +8727,12 @@ exportObj.manifestByExpansion =
     ]
     "Phoenix Cell Squadron Pack": [
         {
-            name: 'A-Wing'
+            name: 'RZ-1 A-wing'
             type: 'ship'
             count: 2
         }
         {
-            name: 'B-Wing'
+            name: 'A/SF-01 B-wing'
             type: 'ship'
             count: 1
         }
@@ -8924,12 +8924,12 @@ exportObj.manifestByExpansion =
     ]
     "Skystrike Academy Squadron Pack": [
         {
-            name: 'TIE Interceptor'
+            name: 'TIE/in Interceptor'
             type: 'ship'
             count: 2
         }
         {
-            name: 'TIE Defender'
+            name: 'TIE/d Defender'
             type: 'ship'
             count: 1
         }
@@ -9111,12 +9111,12 @@ exportObj.manifestByExpansion =
     ]
     "Fugitives and Collaborators Squadron Pack": [
         {
-            name: 'Y-Wing'
+            name: 'BTL-A4 Y-wing'
             type: 'ship'
             count: 2
         }
         {
-            name: 'HWK-290'
+            name: 'HWK-290 Light Freighter'
             type: 'ship'
             count: 1
         }
@@ -9313,12 +9313,12 @@ exportObj.manifestByExpansion =
     ]
     "Fury of the First Order": [
         {
-            name: 'TIE/Se Bomber'
+            name: 'TIE/se Bomber'
             type: 'ship'
             count: 2
         }
         {
-            name: 'TIE/WI Whisper'
+            name: 'TIE/wi Whisper Modified Interceptor'
             type: 'ship'
             count: 1
         }
@@ -9485,7 +9485,7 @@ exportObj.manifestByExpansion =
     ]
     "BTA-NR2 Y-Wing Pack": [
         {
-            name: 'BTA-NR2 Y-Wing'
+            name: 'BTA-NR2 Y-wing'
             type: 'ship'
             count: 2
         }
@@ -10869,17 +10869,12 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'E-Wing'
+            name: 'E-wing'
             type: 'ship'
             count: 2
         }
         {
-            name: 'HWK-290'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'K-Wing'
+            name: 'BTL-S8 K-wing'
             type: 'ship'
             count: 2
         }
@@ -10889,7 +10884,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'YT-2400'
+            name: 'YT-2400 Light Freighter'
             type: 'ship'
             count: 2
         }
@@ -10899,27 +10894,27 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'Lambda-Class Shuttle'
+            name: 'Lambda-class T-4a Shuttle'
             type: 'ship'
             count: 2
         }
         {
-            name: 'TIE Aggressor'
+            name: 'TIE/ag Aggressor'
             type: 'ship'
             count: 3
         }
         {
-            name: 'TIE Bomber'
+            name: 'TIE/sa Bomber'
             type: 'ship'
             count: 3
         }
         {
-            name: 'TIE Phantom'
+            name: 'TIE/ph Phantom'
             type: 'ship'
             count: 2
         }
         {
-            name: 'TIE Punisher'
+            name: 'TIE/ca Punisher'
             type: 'ship'
             count: 2
         }
@@ -10929,12 +10924,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'Aggressor'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'HWK-290'
+            name: 'Aggressor Assault Fighter'
             type: 'ship'
             count: 2
         }
@@ -10949,7 +10939,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Quadjumper'
+            name: 'Quadrijet Transfer Spacetug'
             type: 'ship'
             count: 3
         }
@@ -10964,7 +10954,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'StarViper'
+            name: 'StarViper-class Attack Platform'
             type: 'ship'
             count: 2
         }

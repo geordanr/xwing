@@ -18,9 +18,8 @@ String::canonicalize = ->
 # modules.
 exportObj.basicCardData = ->
     ships:
-        "X-Wing":
-            name: "X-Wing"
-            xws: "T-65 X-wing".canonicalize()
+        "T-65 X-wing":
+            name: "T-65 X-wing"
             factions: [ "Rebel Alliance" ]
             attack: 3
             agility: 2
@@ -41,9 +40,8 @@ exportObj.basicCardData = ->
             autoequip: [
                 "Servomotor S-Foils"
             ]
-        "Y-Wing":
-            name: "Y-Wing"
-            xws: "BTL-A4 Y-wing".canonicalize()
+        "BTL-A4 Y-wing":
+            name: "BTL-A4 Y-wing"
             factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attack: 2
             agility: 1
@@ -62,9 +60,8 @@ exportObj.basicCardData = ->
                 [ 3, 2, 2, 2, 3, 0]
                 [ 0, 0, 3, 0, 0, 3]
             ]
-        "A-Wing":
-            name: "A-Wing"
-            xws: "RZ-1 A-wing".canonicalize()
+        "RZ-1 A-wing":
+            name: "RZ-1 A-wing"
             factions: [ "Rebel Alliance" ]
             attack: 2
             agility: 3
@@ -86,9 +83,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0, 0, 0]
                 [ 0, 0, 1, 0, 0, 3, 0, 0]
             ]
-        "YT-1300":
-            name: "YT-1300"
-            xws: "Modified YT-1300 Light Freighter".canonicalize()
+        "Modified YT-1300 Light Freighter":
+            name: "Modified YT-1300 Light Freighter"
             factions: [ "Rebel Alliance" ]
             attackdt: 3
             agility: 1
@@ -109,10 +105,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0]
             ]
             base: "Large"
-        "Customized YT-1300":
-            name: "Customized YT-1300"
-            canonical_name: 'Customized YT-1300'.canonicalize()
-            xws: "Customized YT-1300 Light Freighter".canonicalize()
+        "Customized YT-1300 Light Freighter":
+            name: "Customized YT-1300 Light Freighter"
             factions: [ "Scum and Villainy" ]
             attackdt: 2
             agility: 1
@@ -133,9 +127,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0]
             ]
             base: "Large"
-        "TIE Fighter":
-            name: "TIE Fighter"
-            xws: "TIE/ln Fighter".canonicalize()
+        "TIE/ln Fighter":
+            name: "TIE/ln Fighter"
             factions: ["Rebel Alliance", "Galactic Empire"]
             attack: 2
             agility: 3
@@ -154,9 +147,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3]
                 [ 0, 0, 2, 0, 0, 0]
             ]
-        "TIE Advanced":
-            name: "TIE Advanced"
-            xws: "TIE Advanced x1".canonicalize()
+        "TIE Advanced x1":
+            name: "TIE Advanced x1"
             factions: [ "Galactic Empire" ]
             attack: 2
             agility: 3
@@ -177,10 +169,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
             ]
-        "TIE Interceptor":
-            name: "TIE Interceptor"
-            icon: "tieinterceptor"
-            xws: "TIE/IN Interceptor".canonicalize()
+        "TIE/in Interceptor":
+            name: "TIE/in Interceptor"
             factions: [ "Galactic Empire" ]
             attack: 3
             agility: 3
@@ -201,9 +191,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 3, 0, 0]
                 [ 0, 0, 2, 0, 0, 0, 0, 0]
             ]
-        "Firespray-31":
-            name: "Firespray-31"
-            xws: "Firespray-class Patrol Craft".canonicalize()
+        "Firespray-class Patrol Craft":
+            name: "Firespray-class Patrol Craft"
             factions: [ "Scum and Villainy", "Separatist Alliance"]
             attack: 3
             attackb: 3
@@ -224,9 +213,8 @@ exportObj.basicCardData = ->
                 [ 0, 2, 1, 2, 0, 0, 0, 0, 3, 3]
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0]
             ]
-        "HWK-290":
-            name: "HWK-290"
-            xws: "HWK-290 Light Freighter".canonicalize()
+        "HWK-290 Light Freighter":
+            name: "HWK-290 Light Freighter"
             factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attackt: 2
             agility: 2
@@ -249,9 +237,8 @@ exportObj.basicCardData = ->
                 [ 3, 2, 1, 2, 3]
                 [ 0, 0, 2, 0, 0]
             ]
-        "Lambda-Class Shuttle":
-            name: "Lambda-Class Shuttle"
-            xws: "Lambda-class T-4a Shuttle".canonicalize()
+        "Lambda-class T-4a Shuttle":
+            name: "Lambda-class T-4a Shuttle"
             factions: [ "Galactic Empire" ]
             attack: 3
             attackb: 2
@@ -271,9 +258,8 @@ exportObj.basicCardData = ->
                 [ 0, 3, 2, 3, 0]
             ]
             base: "Large"
-        "B-Wing":
-            name: "B-Wing"
-            xws: "A/SF-01 B-wing".canonicalize()
+        "A/SF-01 B-wing":
+            name: "A/SF-01 B-wing"
             factions: [ "Rebel Alliance" ]
             attack: 3
             agility: 1
@@ -295,9 +281,8 @@ exportObj.basicCardData = ->
             autoequip: [
                 'Stabilized S-Foils'
             ]
-        "TIE Bomber":
-            name: "TIE Bomber"
-            xws: "TIE/sa Bomber".canonicalize()
+        "TIE/sa Bomber":
+            name: "TIE/sa Bomber"
             factions: [ "Galactic Empire" ]
             attack: 2
             agility: 2
@@ -319,9 +304,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0]
                 [ 0, 0, 0, 0, 0, 3]
             ]
-        "Z-95 Headhunter":
-            name: "Z-95 Headhunter"
-            xws: "Z-95-AF4 Headhunter".canonicalize()
+        "Z-95-AF4 Headhunter":
+            name: "Z-95-AF4 Headhunter"
             factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attack: 2
             agility: 2
@@ -339,9 +323,8 @@ exportObj.basicCardData = ->
                 [ 2, 2, 1, 2, 2, 3]
                 [ 0, 0, 2, 0, 0, 3]
             ]
-        "TIE Defender":
-            name: "TIE Defender"
-            xws: "TIE/D Defender".canonicalize()
+        "TIE/d Defender":
+            name: "TIE/d Defender"
             factions: [ "Galactic Empire" ]
             attack: 3
             agility: 3
@@ -363,9 +346,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 2]
                 [ 0, 0, 1, 0, 0, 0]
             ]
-        "E-Wing":
-            name: "E-Wing"
-            xws: "E-wing".canonicalize()
+        "E-wing":
+            name: "E-wing"
             factions: [ "Rebel Alliance" ]
             attack: 3
             agility: 3
@@ -389,9 +371,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 3, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 0, 0, 0 ]
             ]
-        "TIE Phantom":
-            name: "TIE Phantom"
-            xws: "TIE/ph Phantom".canonicalize()
+        "TIE/ph Phantom":
+            name: "TIE/ph Phantom"
             factions: [ "Galactic Empire" ]
             attack: 3
             agility: 2
@@ -411,9 +392,8 @@ exportObj.basicCardData = ->
                 [ 2, 2, 1, 2, 2, 3]
                 [ 0, 0, 2, 0, 0, 3]
             ]
-        "YT-2400":
-            name: "YT-2400"
-            xws: "YT-2400 Light Freighter".canonicalize()
+        "YT-2400 Light Freighter":
+            name: "YT-2400 Light Freighter"
             factions: [ "Rebel Alliance" ]
             attackdt: 4
             agility: 2
@@ -437,7 +417,6 @@ exportObj.basicCardData = ->
             ]
         "VT-49 Decimator":
             name: "VT-49 Decimator"
-            xws: "VT-49 Decimator".canonicalize()
             factions: [ "Galactic Empire" ]
             attackdt: 3
             agility: 0
@@ -458,9 +437,8 @@ exportObj.basicCardData = ->
                 [ 2, 2, 2, 2, 2, 0]
                 [ 0, 0, 2, 0, 0, 0]
             ]
-        "StarViper":
-            name: "StarViper"
-            xws: "StarViper-class Attack Platform".canonicalize()
+        "StarViper-class Attack Platform":
+            name: "StarViper-class Attack Platform"
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 3
@@ -484,7 +462,6 @@ exportObj.basicCardData = ->
             ]
         "M3-A Interceptor":
             name: "M3-A Interceptor"
-            xws: "M3-A Interceptor".canonicalize()
             factions: [ "Scum and Villainy" ]
             attack: 2
             agility: 3
@@ -505,9 +482,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 3 ]
             ]
-        "Aggressor":
-            name: "Aggressor"
-            xws: "Aggressor Assault Fighter".canonicalize()
+        "Aggressor Assault Fighter":
+            name: "Aggressor Assault Fighter"
             factions: [ "Scum and Villainy" ]
             attack: 3
             agility: 3
@@ -528,9 +504,8 @@ exportObj.basicCardData = ->
                 [ 0, 1, 1, 1, 0, 0, 3, 3 ]
                 [ 0, 0, 2, 0, 0, 3, 0, 0 ]
             ]
-        "YV-666":
-            name: "YV-666"
-            xws: "YV-666 Light Freighter".canonicalize()
+        "YV-666 Light Freighter":
+            name: "YV-666 Light Freighter"
             factions: [ "Scum and Villainy" ]
             attackf: 3
             agility: 1
@@ -551,7 +526,6 @@ exportObj.basicCardData = ->
             ]
         "Kihraxz Fighter":
             name: "Kihraxz Fighter"
-            xws: "Kihraxz Fighter".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 2
@@ -569,9 +543,8 @@ exportObj.basicCardData = ->
                 [ 0, 2, 1, 2, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
             ]
-        "K-Wing":
-            name: "K-Wing"
-            xws: "BTL-S8 K-wing".canonicalize()
+        "BTL-S8 K-wing":
+            name: "BTL-S8 K-wing"
             factions: ["Rebel Alliance"]
             attackdt: 2
             agility: 1
@@ -591,9 +564,8 @@ exportObj.basicCardData = ->
                 [ 2, 2, 1, 2, 2, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
             ]
-        "TIE Punisher":
-            name: "TIE Punisher"
-            xws: "TIE/ca Punisher".canonicalize()
+        "TIE/ca Punisher":
+            name: "TIE/ca Punisher"
             factions: ["Galactic Empire"]
             attack: 2
             agility: 1
@@ -615,9 +587,8 @@ exportObj.basicCardData = ->
                 [ 3, 2, 2, 2, 3, 0 ]
                 [ 0, 0, 0, 0, 0, 3 ]
             ]
-        "VCX-100":
-            name: "VCX-100"
-            xws: "VCX-100 Light Freighter".canonicalize()
+        "VCX-100 Light Freighter":
+            name: "VCX-100 Light Freighter"
             factions: ["Rebel Alliance"]
             attack: 4
             agility: 0
@@ -640,7 +611,6 @@ exportObj.basicCardData = ->
             ]
         "Attack Shuttle":
             name: "Attack Shuttle"
-            xws: "Attack Shuttle".canonicalize()
             factions: ["Rebel Alliance"]
             attack: 3
             agility: 2
@@ -660,9 +630,8 @@ exportObj.basicCardData = ->
                 [ 3, 2, 2, 2, 3, 0 ]
                 [ 0, 0, 2, 0, 0, 3 ]
             ]
-        "TIE Advanced Prototype":
-            name: "TIE Advanced Prototype"
-            xws: "TIE Advanced v1".canonicalize()
+        "TIE Advanced v1":
+            name: "TIE Advanced v1"
             factions: ["Galactic Empire"]
             attack: 2
             agility: 3
@@ -687,7 +656,6 @@ exportObj.basicCardData = ->
             ]
         "G-1A Starfighter":
             name: "G-1A Starfighter"
-            xws: "G-1A Starfighter".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 1
@@ -708,7 +676,6 @@ exportObj.basicCardData = ->
             ]
         "JumpMaster 5000":
             name: "JumpMaster 5000"
-            xws: "JumpMaster 5000".canonicalize()
             factions: ["Scum and Villainy"]
             base: "Large"
             attackt: 2
@@ -729,9 +696,8 @@ exportObj.basicCardData = ->
                 [ 0, 1, 1, 2, 0, 0, 3, 0 ]
                 [ 0, 0, 2, 0, 0, 3, 0, 0 ]
             ]
-        "ARC-170":
-            name: "ARC-170"
-            xws: "ARC-170 Starfighter".canonicalize()
+        "ARC-170 Starfighter":
+            name: "ARC-170 Starfighter"
             factions: ["Rebel Alliance","Galactic Republic"]
             attack: 3
             attackb: 2
@@ -753,7 +719,6 @@ exportObj.basicCardData = ->
             ]
         "Fang Fighter":
             name: "Fang Fighter"
-            xws: "Fang Fighter".canonicalize()
             factions: ["Scum and Villainy", "Rebel Alliance"]
             attack: 3
             agility: 3
@@ -778,7 +743,6 @@ exportObj.basicCardData = ->
             ]
         "Lancer-Class Pursuit Craft":
             name: "Lancer-Class Pursuit Craft"
-            xws: "Lancer-class Pursuit Craft".canonicalize()
             factions: ["Scum and Villainy"]
             base: "Large"
             attack: 3
@@ -800,9 +764,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0]
                 [ 0, 0, 2, 0, 0, 3]
             ]
-        "Quadjumper":
-            name: "Quadjumper"
-            xws: "Quadrijet Transfer Spacetug".canonicalize()
+        "Quadrijet Transfer Spacetug":
+            name: "Quadrijet Transfer Spacetug"
             factions: ["Scum and Villainy"]
             attack: 2
             agility: 2
@@ -820,9 +783,8 @@ exportObj.basicCardData = ->
                 [ 2, 1, 1, 1, 2, 0, 3, 3, 0, 0, 0, 3, 0 ]
                 [ 0, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "U-Wing":
-            name: "U-Wing"
-            xws: "UT-60D U-wing".canonicalize()
+        "UT-60D U-wing":
+            name: "UT-60D U-wing"
             factions: ["Rebel Alliance"]
             base: "Medium"
             attack: 3
@@ -844,9 +806,8 @@ exportObj.basicCardData = ->
             autoequip: [
                 "Pivot Wing"
             ]
-        "TIE Striker":
-            name: "TIE Striker"
-            xws: "TIE/sk Striker".canonicalize()
+        "TIE/sk Striker":
+            name: "TIE/sk Striker"
             factions: ["Galactic Empire"]
             attack: 3
             agility: 2
@@ -866,7 +827,6 @@ exportObj.basicCardData = ->
             ]
         "Auzituck Gunship":
             name: "Auzituck Gunship"
-            xws: "Auzituck Gunship".canonicalize()
             factions: ["Rebel Alliance"]
             attackf: 3
             agility: 1
@@ -886,7 +846,6 @@ exportObj.basicCardData = ->
             ]
         "Scurrg H-6 Bomber":
             name: "Scurrg H-6 Bomber"
-            xws: "Scurrg H-6 Bomber".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 1
@@ -905,9 +864,8 @@ exportObj.basicCardData = ->
                 [ 3, 2, 2, 2, 3, 0, 0, 0, 3, 3 ]
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "TIE Aggressor":
-            name: "TIE Aggressor"
-            xws: "TIE/ag Aggressor".canonicalize()
+        "TIE/ag Aggressor":
+            name: "TIE/ag Aggressor"
             factions: ["Galactic Empire"]
             attack: 2
             agility: 2
@@ -928,7 +886,6 @@ exportObj.basicCardData = ->
             ]
         "Alpha-Class Star Wing":
             name: "Alpha-Class Star Wing"
-            xws: "Alpha-class Star Wing".canonicalize()
             factions: ["Galactic Empire"]
             attack: 2
             agility: 2
@@ -949,7 +906,6 @@ exportObj.basicCardData = ->
             ]
         "M12-L Kimogila Fighter":
             name: "M12-L Kimogila Fighter"
-            xws: "M12-L Kimogila Fighter".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 1
@@ -972,7 +928,6 @@ exportObj.basicCardData = ->
             ]
         "Sheathipede-Class Shuttle":
             name: "Sheathipede-Class Shuttle"
-            xws: "Sheathipede-class Shuttle".canonicalize()
             factions: ["Rebel Alliance"]
             attack: 2
             attackb: 2
@@ -993,7 +948,6 @@ exportObj.basicCardData = ->
             ]
         "TIE Reaper":
             name: "TIE Reaper"
-            xws: "TIE Reaper".canonicalize()
             factions: ["Galactic Empire"]
             attack: 3
             agility: 1
@@ -1015,7 +969,6 @@ exportObj.basicCardData = ->
             ]
         "Escape Craft":
             name: "Escape Craft"
-            xws: "Escape Craft".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 2
             agility: 2
@@ -1033,9 +986,8 @@ exportObj.basicCardData = ->
                 [ 3, 2, 1, 2, 3, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 3, 0, 0 ]
             ]
-        "T-70 X-Wing":
-            name: "T-70 X-Wing"
-            xws: "T-70 X-wing".canonicalize()
+        "T-70 X-wing":
+            name: "T-70 X-wing"
             factions: [ "Resistance"]
             attack: 3
             agility: 2
@@ -1057,9 +1009,8 @@ exportObj.basicCardData = ->
             autoequip: [
                 "Integrated S-Foils"
             ]
-        "RZ-2 A-Wing":
-            name: "RZ-2 A-Wing"
-            xws: "RZ-2 A-wing".canonicalize()
+        "RZ-2 A-wing":
+            name: "RZ-2 A-wing"
             factions: ["Resistance"]
             attackt: 2
             agility: 3
@@ -1081,9 +1032,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0, 0, 0]
                 [ 0, 0, 1, 0, 0, 3, 0, 0]
             ]
-        "TIE/FO Fighter":
-            name: "TIE/FO Fighter"
-            xws: "TIE/fo Fighter".canonicalize()
+        "TIE/fo Fighter":
+            name: "TIE/fo Fighter"
             factions: ["First Order"]
             attack: 2
             agility: 3
@@ -1103,9 +1053,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 3, 0, 0]
                 [ 0, 0, 2, 0, 0, 0, 0, 0]
             ]
-        "TIE/VN Silencer":
-            name: "TIE/VN Silencer"
-            xws: "TIE/vn Silencer".canonicalize()
+        "TIE/vn Silencer":
+            name: "TIE/vn Silencer"
             factions: ["First Order"]
             attack: 3
             agility: 3
@@ -1126,9 +1075,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
                 [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
             ]
-        "TIE/SF Fighter":
-            name: "TIE/SF Fighter"
-            xws: "TIE/sf Fighter".canonicalize()
+        "TIE/sf Fighter":
+            name: "TIE/sf Fighter"
             factions: ["First Order"]
             attack: 2
             attackt: 2
@@ -1156,7 +1104,6 @@ exportObj.basicCardData = ->
             ]
         "Upsilon-Class Command Shuttle":
             name: "Upsilon-Class Command Shuttle"
-            xws: "Upsilon-class command shuttle".canonicalize()
             factions: ["First Order"]
             attack: 4
             agility: 1
@@ -1181,7 +1128,6 @@ exportObj.basicCardData = ->
             base: "Large"
         "MG-100 StarFortress":
             name: "MG-100 StarFortress"
-            xws: "MG-100 StarFortress".canonicalize()
             factions: ["Resistance"]
             attack: 3
             attackdt: 2
@@ -1205,8 +1151,6 @@ exportObj.basicCardData = ->
             base: "Large"
         "Scavenged YT-1300":
             name: "Scavenged YT-1300"
-            canonical_name: 'Scavenged YT-1300'.canonicalize()
-            xws: "Scavenged YT-1300".canonicalize()
             factions: [ "Resistance" ]
             attackdt: 3
             agility: 1
@@ -1227,9 +1171,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 3, 0, 0, 0, 0, 0]
             ]
             base: "Large"
-        "Mining Guild TIE Fighter":
-            name: "Mining Guild TIE Fighter"
-            xws: "Modified TIE/ln Fighter".canonicalize()
+        "Modified TIE/ln Fighter":
+            name: "Modified TIE/ln Fighter"
             factions: ["Scum and Villainy"]
             attack: 2
             agility: 3
@@ -1249,9 +1192,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0]
                 [ 0, 0, 3, 0, 0, 0]
             ]
-        "V-19 Torrent":
-            name: "V-19 Torrent"
-            xws: "V-19 Torrent Starfighter".canonicalize()
+        "V-19 Torrent Starfighter":
+            name: "V-19 Torrent Starfighter"
             factions: ["Galactic Republic"]
             attack: 2
             agility: 2
@@ -1274,7 +1216,6 @@ exportObj.basicCardData = ->
             ]
         "Delta-7 Aethersprite":
             name: "Delta-7 Aethersprite"
-            xws: "Delta-7 Aethersprite".canonicalize()
             factions: ["Galactic Republic"]
             attack: 2
             agility: 3
@@ -1302,7 +1243,6 @@ exportObj.basicCardData = ->
         "Delta-7b Aethersprite":
             name: "Delta-7b Aethersprite"
             icon: "delta7aethersprite"
-            xws: "Delta-7b Aethersprite".canonicalize()
             factions: ["Galactic Republic"]
             attack: 3
             agility: 2
@@ -1326,7 +1266,6 @@ exportObj.basicCardData = ->
             ]
         "Sith Infiltrator":
             name: "Sith Infiltrator"
-            xws: "Sith Infiltrator".canonicalize()
             factions: ["Separatist Alliance"]
             attack: 3
             agility: 1
@@ -1348,7 +1287,6 @@ exportObj.basicCardData = ->
             ]
         "Vulture-class Droid Fighter":
             name: "Vulture-class Droid Fighter"
-            xws: "Vulture-class Droid Fighter".canonicalize()
             factions: ["Separatist Alliance"]
             attack: 2
             agility: 2
@@ -1374,7 +1312,6 @@ exportObj.basicCardData = ->
             ]
         "Belbullab-22 Starfighter":
             name: "Belbullab-22 Starfighter"
-            xws: "Belbullab-22 Starfighter".canonicalize()
             factions: ["Separatist Alliance"]
             attack: 3
             agility: 2
@@ -1398,7 +1335,6 @@ exportObj.basicCardData = ->
             ]
         "Naboo Royal N-1 Starfighter":
             name: "Naboo Royal N-1 Starfighter"
-            xws: "Naboo Royal N-1 Starfighter".canonicalize()
             factions: ["Galactic Republic"]
             attack: 2
             agility: 2
@@ -1421,7 +1357,6 @@ exportObj.basicCardData = ->
             ]
         "Hyena-Class Droid Bomber":
             name: "Hyena-Class Droid Bomber"
-            xws: "Hyena-Class Droid Bomber".canonicalize()
             factions: ["Separatist Alliance"]
             attack: 2
             agility: 2
@@ -1448,7 +1383,6 @@ exportObj.basicCardData = ->
             ]
         "Resistance Transport Pod":
             name: "Resistance Transport Pod"
-            xws: "Resistance Transport Pod".canonicalize()
             factions: ["Resistance"]
             attack: 2
             agility: 2
@@ -1469,7 +1403,6 @@ exportObj.basicCardData = ->
             ]
         "Resistance Transport":
             name: "Resistance Transport"
-            xws: "Resistance Transport".canonicalize()
             factions: ["Resistance"]
             attack: 2
             agility: 1
@@ -1490,7 +1423,6 @@ exportObj.basicCardData = ->
             ]
         "Nantex-Class Starfighter":
             name: "Nantex-Class Starfighter"
-            xws: "Nantex-Class Starfighter".canonicalize()
             factions: ["Separatist Alliance"]
             attackbull: 3
             attackt: 2
@@ -1510,9 +1442,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0, 0, 0]
                 [ 0, 0, 2, 0, 0, 3, 0, 0]
             ]
-        "BTL-B Y-Wing":
-            name: "BTL-B Y-Wing"
-            xws: "BTL-B Y-Wing".canonicalize()
+        "BTL-B Y-wing":
+            name: "BTL-B Y-wing"
             factions: ["Galactic Republic"]
             attack: 2
             agility: 1
@@ -1535,7 +1466,6 @@ exportObj.basicCardData = ->
             ]
         "Fireball":
             name: "Fireball"
-            xws: "Fireball".canonicalize()
             factions: ["Resistance"]
             attack: 2
             agility: 2
@@ -1556,9 +1486,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "TIE/Ba Interceptor":
-            name: "TIE/Ba Interceptor"
-            xws: "TIE/Ba Interceptor".canonicalize()
+        "TIE/ba Interceptor":
+            name: "TIE/ba Interceptor"
             factions: ["First Order"]
             attack: 3
             agility: 3
@@ -1582,7 +1511,6 @@ exportObj.basicCardData = ->
             ]
         "Xi-class Light Shuttle":
             name: "Xi-class Light Shuttle"
-            xws: "Xi-class Light Shuttle".canonicalize()
             factions: ["First Order"]
             attack: 2
             agility: 2
@@ -1605,7 +1533,6 @@ exportObj.basicCardData = ->
             ]
         "HMP Droid Gunship":
             name: "HMP Droid Gunship"
-            xws: "HMP Droid Gunship".canonicalize()
             factions: ["Separatist Alliance"]
             attackf: 2
             agility: 1
@@ -1632,7 +1559,6 @@ exportObj.basicCardData = ->
             ]
         "LAAT/i Gunship":
             name: "LAAT/i Gunship"
-            xws: "LAAT/i Gunship".canonicalize()
             factions: ["Galactic Republic"]
             attackdt: 2
             agility: 1
@@ -1657,7 +1583,6 @@ exportObj.basicCardData = ->
             ]
         "TIE/rb Heavy":
             name: "TIE/rb Heavy"
-            xws: "TIE/rb Heavy".canonicalize()
             factions: ["Galactic Empire"]
             attackt: 2
             agility: 1
@@ -1683,7 +1608,6 @@ exportObj.basicCardData = ->
             ]
         "Droid Tri-Fighter":
             name: "Droid Tri-Fighter"
-            xws: "Droid Tri-Fighter".canonicalize()
             factions: ["Separatist Alliance"]
             attack: 3
             agility: 3
@@ -1709,7 +1633,6 @@ exportObj.basicCardData = ->
             ]
         "Nimbus-class V-Wing":
             name: "Nimbus-class V-Wing"
-            xws: "Nimbus-class V-Wing".canonicalize()
             factions: ["Galactic Republic"]
             attack: 2
             agility: 3
@@ -1734,7 +1657,6 @@ exportObj.basicCardData = ->
             ]
         "Eta-2 Actis":
             name: "Eta-2 Actis"
-            xws: "Eta-2 Actis".canonicalize()
             factions: ["Galactic Republic"]
             attackbull: 3
             attack: 2
@@ -1759,7 +1681,6 @@ exportObj.basicCardData = ->
             ]
         "Syliure-class Hyperspace Ring":
             name: "Syliure-class Hyperspace Ring"
-            xws: "Syliure-class Hyperspace Ring".canonicalize()
             factions: ["Galactic Republic"]
             agility: 1
             hull: 1
@@ -1769,9 +1690,8 @@ exportObj.basicCardData = ->
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "BTA-NR2 Y-Wing":
-            name: "BTA-NR2 Y-Wing"
-            xws: "BTA-NR2 Y-Wing".canonicalize()
+        "BTA-NR2 Y-wing":
+            name: "BTA-NR2 Y-wing"
             factions: ["Resistance"]
             attack: 2
             agility: 1
@@ -1792,9 +1712,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 3, 0, 0, 0]
                 [ 0, 0, 0, 0, 0, 3]
             ]
-        "TIE/WI Whisper":
-            name: "TIE/WI Whisper"
-            xws: "TIE/Wi Whisper Modified Interceptor".canonicalize()
+        "TIE/wi Whisper Modified Interceptor":
+            name: "TIE/wi Whisper Modified Interceptor"
             factions: ["First Order"]
             attackbull: 3
             attackt: 2
@@ -1823,9 +1742,8 @@ exportObj.basicCardData = ->
             autoequip: [
                 "Enhanced Jamming Suite"
             ]
-        "TIE/Se Bomber":
-            name: "TIE/Se Bomber"
-            xws: "TIE/Se Bomber".canonicalize()
+        "TIE/se Bomber":
+            name: "TIE/se Bomber"
             factions: ["First Order"]
             attack: 2
             agility: 2
@@ -1851,7 +1769,6 @@ exportObj.basicCardData = ->
             ]
         "Gauntlet Fighter":
             name: "Gauntlet Fighter"
-            xws: "Gauntlet Fighter".canonicalize()
             factions: ["Rebel Alliance", "Galactic Empire", "Scum and Villainy", "Galactic Republic", "Separatist Alliance"]
             attack: 3
             attackb: 2
@@ -1878,7 +1795,6 @@ exportObj.basicCardData = ->
             ]
         "ST-70 Assault Ship":
             name: "ST-70 Assault Ship"
-            xws: "ST-70 Assault Ship".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 2
@@ -1901,7 +1817,6 @@ exportObj.basicCardData = ->
             ]
         "Clone Z-95 Headhunter":
             name: "Clone Z-95 Headhunter"
-            xws: "Clone Z-95 Headhunter".canonicalize()
             factions: [ "Galactic Republic" ]
             attack: 2
             agility: 2
@@ -1922,7 +1837,6 @@ exportObj.basicCardData = ->
             ]
         "Rogue-class Starfighter":
             name: "Rogue-class Starfighter"
-            xws: "Rogue-class Starfighter".canonicalize()
             factions: [ "Separatist Alliance", "Scum and Villainy" ]
             attack: 2
             agility: 2
@@ -1951,7 +1865,6 @@ exportObj.basicCardData = ->
         # Epic Section
         "CR90 Corellian Corvette":
             name: "CR90 Corellian Corvette"
-            xws: "CR90 Corellian Corvette".canonicalize()
             icon: "cr90corvette"
             factions: ["Galactic Republic", "Rebel Alliance"]
             base: "Huge"
@@ -1980,7 +1893,6 @@ exportObj.basicCardData = ->
             ]
         "Raider-class Corvette":
             name: "Raider-class Corvette"
-            xws: "Raider-class Corvette".canonicalize()
             factions: ["Galactic Empire", "First Order"]
             base: "Huge"
             attackf: 4
@@ -2007,7 +1919,6 @@ exportObj.basicCardData = ->
             ]
         "GR-75 Medium Transport":
             name: "GR-75 Medium Transport"
-            xws: "GR-75 Medium Transport".canonicalize()
             factions: ["Rebel Alliance", "Resistance"]
             base: "Huge"
             attack: 2
@@ -2033,7 +1944,6 @@ exportObj.basicCardData = ->
             ]
         "Gozanti-class Cruiser":
             name: "Gozanti-class Cruiser"
-            xws: "Gozanti-class Cruiser".canonicalize()
             factions: ["Galactic Empire", "First Order"]
             base: "Huge"
             attack: 3
@@ -2059,7 +1969,6 @@ exportObj.basicCardData = ->
             ]
         "C-ROC Cruiser":
             name: "C-ROC Cruiser"
-            xws: "C-ROC Cruiser".canonicalize()
             factions: ["Separatist Alliance", "Scum and Villainy"]
             base: "Huge"
             attack: 3
@@ -2086,7 +1995,6 @@ exportObj.basicCardData = ->
             ]
         "Trident-class Assault Ship":
             name: "Trident-class Assault Ship"
-            xws: "Trident-class Assault Ship".canonicalize()
             factions: ["Separatist Alliance", "Scum and Villainy"]
             base: "Huge"
             attack: 3
@@ -2121,7 +2029,7 @@ exportObj.basicCardData = ->
             name: "Cavern Angels Zealot"
             id: 0
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             keyword: ["Partisan"]
             skill: 1
             points: 5
@@ -2136,7 +2044,7 @@ exportObj.basicCardData = ->
             name: "Blue Squadron Escort"
             id: 1
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 2
             points: 5
             loadout: 4
@@ -2149,7 +2057,7 @@ exportObj.basicCardData = ->
             name: "Red Squadron Veteran"
             id: 2
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 3
             points: 5
             loadout: 3
@@ -2164,7 +2072,7 @@ exportObj.basicCardData = ->
             id: 3
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 4
             points: 5
             loadout: 15
@@ -2180,7 +2088,7 @@ exportObj.basicCardData = ->
             id: 4
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 5
             keyword: ["Light Side"]
             force: 2
@@ -2200,7 +2108,7 @@ exportObj.basicCardData = ->
             id: 5
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 6
             points: 6
             loadout: 18
@@ -2220,7 +2128,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "garvendreis-t65xwing"
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 4
             points: 5
             loadout: 16
@@ -2237,7 +2145,7 @@ exportObj.basicCardData = ->
             id: 7
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 3
             points: 5
             loadout: 18
@@ -2253,7 +2161,7 @@ exportObj.basicCardData = ->
             id: 8
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 2
             points: 4
             loadout: 10
@@ -2269,7 +2177,7 @@ exportObj.basicCardData = ->
             id: 9
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 5
             points: 5
             loadout: 14
@@ -2285,7 +2193,7 @@ exportObj.basicCardData = ->
             id: 10
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 3
             points: 4
             loadout: 8
@@ -2308,7 +2216,7 @@ exportObj.basicCardData = ->
             id: 12
             unique: true
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 4
             points: 4
             loadout: 7
@@ -2328,7 +2236,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "sabinewren-tielnfighter"
             faction: "Rebel Alliance"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 3
             points: 3
             loadout: 7
@@ -2346,7 +2254,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "ezrabridger-tielnfighter"
             faction: "Rebel Alliance"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 3
             force: 1
             points: 3
@@ -2365,7 +2273,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "zeborrelios-tielnfighter"
             faction: "Rebel Alliance"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 2
             points: 3
             loadout: 8
@@ -2380,7 +2288,7 @@ exportObj.basicCardData = ->
             id: 16
             unique: true
             faction: "Rebel Alliance"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 2
             points: 3
             loadout: 8
@@ -2397,7 +2305,7 @@ exportObj.basicCardData = ->
             id: 17
             unique: true
             faction: "Rebel Alliance"
-            ship: "K-Wing"
+            ship: "BTL-S8 K-wing"
             skill: 4
             points: 5
             loadout: 14
@@ -2416,7 +2324,7 @@ exportObj.basicCardData = ->
             id: 18
             unique: true
             faction: "Rebel Alliance"
-            ship: "K-Wing"
+            ship: "BTL-S8 K-wing"
             skill: 3
             points: 5
             loadout: 16
@@ -2439,7 +2347,7 @@ exportObj.basicCardData = ->
             name: "Warden Squadron Pilot"
             id: 20
             faction: "Rebel Alliance"
-            ship: "K-Wing"
+            ship: "BTL-S8 K-wing"
             skill: 2
             points: 5
             loadout: 7
@@ -2456,7 +2364,7 @@ exportObj.basicCardData = ->
             id: 21
             unique: true
             faction: "Rebel Alliance"
-            ship: "E-Wing"
+            ship: "E-wing"
             skill: 5
             points: 7
             loadout: 20
@@ -2475,7 +2383,7 @@ exportObj.basicCardData = ->
             id: 22
             unique: true
             faction: "Rebel Alliance"
-            ship: "E-Wing"
+            ship: "E-wing"
             skill: 4
             points: 6
             loadout: 18
@@ -2492,7 +2400,7 @@ exportObj.basicCardData = ->
             name: "Rogue Squadron Escort"
             id: 23
             faction: "Rebel Alliance"
-            ship: "E-Wing"
+            ship: "E-wing"
             skill: 4
             points: 6
             loadout: 12
@@ -2507,7 +2415,7 @@ exportObj.basicCardData = ->
             name: "Knave Squadron Escort"
             id: 24
             faction: "Rebel Alliance"
-            ship: "E-Wing"
+            ship: "E-wing"
             skill: 2
             points: 6
             loadout: 14
@@ -2525,7 +2433,7 @@ exportObj.basicCardData = ->
             canonical_name: 'Norra Wexley'.canonicalize()
             xws: "norrawexley-btla4ywing"
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 5
             points: 5
             loadout: 18
@@ -2543,7 +2451,7 @@ exportObj.basicCardData = ->
             id: 26
             unique: true
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 4
             points: 4
             loadout: 14
@@ -2562,7 +2470,7 @@ exportObj.basicCardData = ->
             id: 27
             unique: true
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 4
             points: 4
             loadout: 12
@@ -2582,7 +2490,7 @@ exportObj.basicCardData = ->
             id: 28
             unique: true
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 3
             points: 4
             loadout: 15
@@ -2601,7 +2509,7 @@ exportObj.basicCardData = ->
             name: "Gold Squadron Veteran"
             id: 29
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 3
             points: 4
             loadout: 6
@@ -2615,7 +2523,7 @@ exportObj.basicCardData = ->
             name: "Gray Squadron Bomber"
             id: 30
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 2
             points: 4
             loadout: 8
@@ -2630,7 +2538,7 @@ exportObj.basicCardData = ->
             id: 31
             unique: true
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 4
             points: 5
             loadout: 10
@@ -2647,7 +2555,7 @@ exportObj.basicCardData = ->
             id: 32
             unique: true
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 3
             points: 5
             loadout: 12
@@ -2664,7 +2572,7 @@ exportObj.basicCardData = ->
             id: 33
             unique: true
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 2
             points: 5
             loadout: 9
@@ -2682,7 +2590,7 @@ exportObj.basicCardData = ->
             id: 34
             unique: true
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 3
             points: 5
             loadout: 14
@@ -2702,7 +2610,7 @@ exportObj.basicCardData = ->
             id: 35
             unique: true
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 4
             points: 5
             loadout: 18
@@ -2722,7 +2630,7 @@ exportObj.basicCardData = ->
             id: 36
             unique: true
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 2
             points: 5
             loadout: 16
@@ -2741,7 +2649,7 @@ exportObj.basicCardData = ->
             name: "Blue Squadron Scout"
             id: 37
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 2
             points: 5
             loadout: 6
@@ -2754,7 +2662,7 @@ exportObj.basicCardData = ->
             name: "Partisan Renegade"
             id: 38
             faction: "Rebel Alliance"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             skill: 1
             points: 5
             loadout: 6
@@ -2769,7 +2677,7 @@ exportObj.basicCardData = ->
             id: 39
             unique: true
             faction: "Rebel Alliance"
-            ship: "YT-2400"
+            ship: "YT-2400 Light Freighter"
             skill: 5
             points: 10
             loadout: 22
@@ -2788,7 +2696,7 @@ exportObj.basicCardData = ->
             id: 40
             unique: true
             faction: "Rebel Alliance"
-            ship: "YT-2400"
+            ship: "YT-2400 Light Freighter"
             skill: 3
             points: 8
             loadout: 16
@@ -2806,7 +2714,7 @@ exportObj.basicCardData = ->
             name: "Wild Space Fringer"
             id: 41
             faction: "Rebel Alliance"
-            ship: "YT-2400"
+            ship: "YT-2400 Light Freighter"
             skill: 1
             points: 8
             loadout: 7
@@ -2821,7 +2729,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "hansolo-modifiedyt1300lightfreighter"
             faction: "Rebel Alliance"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             skill: 6
             points: 8
             loadout: 20
@@ -2843,7 +2751,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "landocalrissian-modifiedyt1300lightfreighter"
             faction: "Rebel Alliance"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             skill: 5
             points: 8
             loadout: 21
@@ -2864,7 +2772,7 @@ exportObj.basicCardData = ->
             id: 44
             unique: true
             faction: "Rebel Alliance"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             skill: 4
             charge: 1
             recurring: 1
@@ -2886,7 +2794,7 @@ exportObj.basicCardData = ->
             name: "Outer Rim Smuggler"
             id: 45
             faction: "Rebel Alliance"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             skill: 1
             points: 7
             loadout: 6
@@ -2900,7 +2808,7 @@ exportObj.basicCardData = ->
             id: 46
             unique: true
             faction: "Rebel Alliance"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 5
             points: 6
             loadout: 10
@@ -2919,7 +2827,7 @@ exportObj.basicCardData = ->
             id: 47
             unique: true
             faction: "Rebel Alliance"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 4
             points: 6
             loadout: 15
@@ -2937,7 +2845,7 @@ exportObj.basicCardData = ->
             id: 48
             unique: true
             faction: "Rebel Alliance"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 3
             points: 6
             loadout: 12
@@ -2954,7 +2862,7 @@ exportObj.basicCardData = ->
             name: "Rebel Scout"
             id: 49
             faction: "Rebel Alliance"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 2
             points: 4
             loadout: 6
@@ -2968,7 +2876,7 @@ exportObj.basicCardData = ->
             id: 50
             unique: true
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 4
             points: 4
             loadout: 8
@@ -2985,7 +2893,7 @@ exportObj.basicCardData = ->
             id: 51
             unique: true
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 3
             points: 3
             loadout: 5
@@ -2999,7 +2907,7 @@ exportObj.basicCardData = ->
             name: "Green Squadron Pilot"
             id: 52
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 3
             points: 4
             loadout: 4
@@ -3013,7 +2921,7 @@ exportObj.basicCardData = ->
             name: "Phoenix Squadron Pilot"
             id: 53
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 1
             points: 4
             loadout: 3
@@ -3027,7 +2935,7 @@ exportObj.basicCardData = ->
             id: 54
             unique: true
             faction: "Rebel Alliance"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 5
             points: 3
             loadout: 9
@@ -3043,7 +2951,7 @@ exportObj.basicCardData = ->
             id: 55
             unique: true
             faction: "Rebel Alliance"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 4
             points: 3
             loadout: 6
@@ -3057,7 +2965,7 @@ exportObj.basicCardData = ->
             name: "Tala Squadron Pilot"
             id: 56
             faction: "Rebel Alliance"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 2
             points: 3
             loadout: 4
@@ -3070,7 +2978,7 @@ exportObj.basicCardData = ->
             name: "Bandit Squadron Pilot"
             id: 57
             faction: "Rebel Alliance"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 1
             points: 3
             loadout: 5
@@ -3131,7 +3039,7 @@ exportObj.basicCardData = ->
             canonical_name: 'Hera Syndulla'.canonicalize()
             xws: "herasyndulla-vcx100lightfreighter"
             faction: "Rebel Alliance"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             skill: 5
             points: 7
             loadout: 20
@@ -3153,7 +3061,7 @@ exportObj.basicCardData = ->
             id: 62
             unique: true
             faction: "Rebel Alliance"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             skill: 3
             keyword: ["Light Side", "Jedi", "Spectre"]
             force: 2
@@ -3176,7 +3084,7 @@ exportObj.basicCardData = ->
             id: 63
             unique: true
             faction: "Rebel Alliance"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             skill: 2
             points: 7
             loadout: 18
@@ -3196,7 +3104,7 @@ exportObj.basicCardData = ->
             name: "Lothal Rebel"
             id: 64
             faction: "Rebel Alliance"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             skill: 2
             points: 7
             loadout: 8
@@ -3364,7 +3272,7 @@ exportObj.basicCardData = ->
             id: 73
             unique: true
             faction: "Rebel Alliance"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             skill: 4
             points: 5
             loadout: 12
@@ -3384,7 +3292,7 @@ exportObj.basicCardData = ->
             id: 74
             unique: true
             faction: "Rebel Alliance"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             skill: 4
             points: 5
             loadout: 14
@@ -3403,7 +3311,7 @@ exportObj.basicCardData = ->
             name: "Blade Squadron Veteran"
             id: 75
             faction: "Rebel Alliance"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             skill: 3
             points: 5
             loadout: 6
@@ -3419,7 +3327,7 @@ exportObj.basicCardData = ->
             name: "Blue Squadron Pilot"
             id: 76
             faction: "Rebel Alliance"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             skill: 2
             points: 5
             loadout: 6
@@ -3436,7 +3344,7 @@ exportObj.basicCardData = ->
             id: 77
             unique: true
             faction: "Rebel Alliance"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 5
             points: 6
             loadout: 16
@@ -3455,7 +3363,7 @@ exportObj.basicCardData = ->
             id: 78
             unique: true
             faction: "Rebel Alliance"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 4
             points: 5
             loadout: 12
@@ -3475,7 +3383,7 @@ exportObj.basicCardData = ->
             id: 79
             unique: true
             faction: "Rebel Alliance"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 4
             points: 5
             loadout: 11
@@ -3495,7 +3403,7 @@ exportObj.basicCardData = ->
             id: 80
             unique: true
             faction: "Rebel Alliance"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 3
             points: 5
             loadout: 14
@@ -3514,7 +3422,7 @@ exportObj.basicCardData = ->
             id: 81
             unique: true
             faction: "Scum and Villainy"
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             skill: 4
             points: 7
             loadout: 16
@@ -3535,7 +3443,7 @@ exportObj.basicCardData = ->
             id: 82
             unique: true
             faction: "Scum and Villainy"
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             skill: 4
             points: 7
             loadout: 16
@@ -3556,7 +3464,7 @@ exportObj.basicCardData = ->
             id: 83
             unique: true
             faction: "Scum and Villainy"
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             skill: 4
             points: 7
             loadout: 16
@@ -3577,7 +3485,7 @@ exportObj.basicCardData = ->
             id: 84
             unique: true
             faction: "Scum and Villainy"
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             skill: 4
             points: 6
             loadout: 13
@@ -3598,7 +3506,7 @@ exportObj.basicCardData = ->
             id: 85
             unique: true
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 5
             points: 5
             loadout: 18
@@ -3618,7 +3526,7 @@ exportObj.basicCardData = ->
             id: 86
             unique: true
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 4
             points: 5
             loadout: 10
@@ -3637,7 +3545,7 @@ exportObj.basicCardData = ->
             name: "Hired Gun"
             id: 87
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 2
             points: 4
             loadout: 6
@@ -3653,7 +3561,7 @@ exportObj.basicCardData = ->
             name: "Crymorah Goon"
             id: 88
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 1
             points: 4
             loadout: 4
@@ -3670,7 +3578,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "hansolo"
             faction: "Scum and Villainy"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             skill: 6
             points: 6
             loadout: 20
@@ -3691,7 +3599,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "landocalrissian"
             faction: "Scum and Villainy"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             skill: 4
             points: 6
             loadout: 17
@@ -3711,7 +3619,7 @@ exportObj.basicCardData = ->
             id: 91
             unique: true
             faction: "Scum and Villainy"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             skill: 2
             points: 6
             loadout: 15
@@ -3730,7 +3638,7 @@ exportObj.basicCardData = ->
             name: "Freighter Captain"
             id: 92
             faction: "Scum and Villainy"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             skill: 1
             points: 6
             loadout: 6
@@ -3905,7 +3813,7 @@ exportObj.basicCardData = ->
             id: 103
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             skill: 5
             points: 9
             loadout: 22
@@ -3927,7 +3835,7 @@ exportObj.basicCardData = ->
             id: 104
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             skill: 4
             points: 7
             loadout: 17
@@ -3947,7 +3855,7 @@ exportObj.basicCardData = ->
             id: 105
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             skill: 4
             points: 7
             loadout: 18
@@ -3967,7 +3875,7 @@ exportObj.basicCardData = ->
             id: 106
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             skill: 3
             points: 7
             loadout: 16
@@ -3988,7 +3896,7 @@ exportObj.basicCardData = ->
             id: 107
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             skill: 3
             points: 7
             loadout: 18
@@ -4008,7 +3916,7 @@ exportObj.basicCardData = ->
             name: "Bounty Hunter"
             id: 108
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             skill: 2
             points: 7
             loadout: 10
@@ -4077,7 +3985,7 @@ exportObj.basicCardData = ->
             id: 112
             unique: true
             faction: "Scum and Villainy"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 3
             points: 5
             loadout: 10
@@ -4096,7 +4004,7 @@ exportObj.basicCardData = ->
             id: 113
             unique: true
             faction: "Scum and Villainy"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 4
             charge: 3
             recurring: 1
@@ -4117,7 +4025,7 @@ exportObj.basicCardData = ->
             id: 114
             unique: true
             faction: "Scum and Villainy"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 2
             points: 4
             loadout: 10
@@ -4552,7 +4460,7 @@ exportObj.basicCardData = ->
             id: 140
             unique: true
             faction: "Scum and Villainy"
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             skill: 4
             points: 4
             loadout: 13
@@ -4570,7 +4478,7 @@ exportObj.basicCardData = ->
             id: 141
             unique: true
             faction: "Scum and Villainy"
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             skill: 2
             points: 4
             loadout: 6
@@ -4589,7 +4497,7 @@ exportObj.basicCardData = ->
             id: 142
             unique: true
             faction: "Scum and Villainy"
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             skill: 2
             points: 4
             loadout: 7
@@ -4605,7 +4513,7 @@ exportObj.basicCardData = ->
             name: "Jakku Gunrunner"
             id: 143
             faction: "Scum and Villainy"
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             skill: 1
             points: 4
             loadout: 4
@@ -4676,7 +4584,7 @@ exportObj.basicCardData = ->
             id: 147
             unique: true
             faction: "Scum and Villainy"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             skill: 5
             points: 7
             loadout: 20
@@ -4694,7 +4602,7 @@ exportObj.basicCardData = ->
             id: 148
             unique: true
             faction: "Scum and Villainy"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             skill: 4
             points: 5
             loadout: 7
@@ -4713,7 +4621,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "dalanoberos-starviperclassattackplatform"
             faction: "Scum and Villainy"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             skill: 4
             points: 5
             loadout: 10
@@ -4729,7 +4637,7 @@ exportObj.basicCardData = ->
             name: "Black Sun Assassin"
             id: 150
             faction: "Scum and Villainy"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             skill: 3
             points: 5
             loadout: 6
@@ -4741,7 +4649,7 @@ exportObj.basicCardData = ->
             name: "Black Sun Enforcer"
             id: 151
             faction: "Scum and Villainy"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             skill: 2
             points: 5
             loadout: 6
@@ -4754,7 +4662,7 @@ exportObj.basicCardData = ->
             id: 152
             unique: true
             faction: "Scum and Villainy"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             skill: 4
             charge: 2
             points: 7
@@ -4775,7 +4683,7 @@ exportObj.basicCardData = ->
             id: 153
             unique: true
             faction: "Scum and Villainy"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             skill: 4
             points: 7
             loadout: 22
@@ -4797,7 +4705,7 @@ exportObj.basicCardData = ->
             id: 154
             unique: true
             faction: "Scum and Villainy"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             skill: 3
             points: 6
             loadout: 16
@@ -4818,7 +4726,7 @@ exportObj.basicCardData = ->
             name: "Trandoshan Slaver"
             id: 155
             faction: "Scum and Villainy"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             skill: 2
             points: 6
             loadout: 6
@@ -4833,7 +4741,7 @@ exportObj.basicCardData = ->
             id: 156
             unique: true
             faction: "Scum and Villainy"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 4
             points: 3
             loadout: 7
@@ -4849,7 +4757,7 @@ exportObj.basicCardData = ->
             id: 157
             unique: true
             faction: "Scum and Villainy"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 3
             points: 3
             loadout: 11
@@ -4865,7 +4773,7 @@ exportObj.basicCardData = ->
             name: "Black Sun Soldier"
             id: 158
             faction: "Scum and Villainy"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 3
             points: 3
             loadout: 4
@@ -4879,7 +4787,7 @@ exportObj.basicCardData = ->
             name: "Binayre Pirate"
             id: 159
             faction: "Scum and Villainy"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: 1
             points: 3
             loadout: 2
@@ -4892,7 +4800,7 @@ exportObj.basicCardData = ->
             id: 160
             unique: true
             faction: "Scum and Villainy"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             skill: "*"
             points: 1
             loadout: 0
@@ -4985,7 +4893,7 @@ exportObj.basicCardData = ->
             id: 165
             unique: true
             faction: "Galactic Empire"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             skill: 4
             points: 6
             loadout: 22
@@ -5003,7 +4911,7 @@ exportObj.basicCardData = ->
             id: 166
             unique: true
             faction: "Galactic Empire"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             skill: 3
             points: 5
             loadout: 14
@@ -5021,7 +4929,7 @@ exportObj.basicCardData = ->
             id: 167
             unique: true
             faction: "Galactic Empire"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             skill: 3
             charge: 2
             points: 6
@@ -5039,7 +4947,7 @@ exportObj.basicCardData = ->
             name: "Omicron Group Pilot"
             id: 168
             faction: "Galactic Empire"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             skill: 1
             points: 5
             loadout: 8
@@ -5054,7 +4962,7 @@ exportObj.basicCardData = ->
             id: 169
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             skill: 5
             points: 6
             loadout: 17
@@ -5073,7 +4981,7 @@ exportObj.basicCardData = ->
             id: 170
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             skill: 4
             points: 5
             loadout: 14
@@ -5091,7 +4999,7 @@ exportObj.basicCardData = ->
             name: "Inquisitor"
             id: 171
             faction: "Galactic Empire"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             skill: 3
             points: 4
             loadout: 5
@@ -5106,7 +5014,7 @@ exportObj.basicCardData = ->
             name: "Baron of the Empire"
             id: 172
             faction: "Galactic Empire"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             skill: 3
             points: 4
             loadout: 4
@@ -5121,7 +5029,7 @@ exportObj.basicCardData = ->
             id: 173
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             skill: 6
             keyword: ["Dark Side","Sith"]
             points: 7
@@ -5143,7 +5051,7 @@ exportObj.basicCardData = ->
             id: 174
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             skill: 5
             points: 5
             loadout: 14
@@ -5160,7 +5068,7 @@ exportObj.basicCardData = ->
             id: 175
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             skill: 4
             points: 4
             loadout: 8
@@ -5176,7 +5084,7 @@ exportObj.basicCardData = ->
             id: 176
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             skill: 3
             points: 4
             loadout: 6
@@ -5190,7 +5098,7 @@ exportObj.basicCardData = ->
             name: "Storm Squadron Ace"
             id: 177
             faction: "Galactic Empire"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             skill: 3
             points: 4
             loadout: 2
@@ -5204,7 +5112,7 @@ exportObj.basicCardData = ->
             name: "Tempest Squadron Pilot"
             id: 178
             faction: "Galactic Empire"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             skill: 2
             points: 4
             loadout: 4
@@ -5218,7 +5126,7 @@ exportObj.basicCardData = ->
             id: 179
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 6
             points: 6
             loadout: 15
@@ -5234,7 +5142,7 @@ exportObj.basicCardData = ->
             id: 180
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 4
             loadout: 9
@@ -5249,7 +5157,7 @@ exportObj.basicCardData = ->
             name: "Saber Squadron Ace"
             id: 181
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 4
             loadout: 3
@@ -5262,7 +5170,7 @@ exportObj.basicCardData = ->
             name: "Alpha Squadron Pilot"
             id: 182
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 1
             points: 4
             loadout: 2
@@ -5336,7 +5244,7 @@ exportObj.basicCardData = ->
             id: 187
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             skill: 4
             points: 5
             loadout: 19
@@ -5355,7 +5263,7 @@ exportObj.basicCardData = ->
             id: 188
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             skill: 2
             points: 4
             loadout: 13
@@ -5372,7 +5280,7 @@ exportObj.basicCardData = ->
             name: "Onyx Squadron Scout"
             id: 189
             faction: "Galactic Empire"
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             skill: 3
             points: 4
             loadout: 12
@@ -5387,7 +5295,7 @@ exportObj.basicCardData = ->
             name: "Sienar Specialist"
             id: 190
             faction: "Galactic Empire"
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             skill: 2
             points: 4
             loadout: 8
@@ -5403,7 +5311,7 @@ exportObj.basicCardData = ->
             id: 191
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             skill: 5
             points: 7
             loadout: 25
@@ -5423,7 +5331,7 @@ exportObj.basicCardData = ->
             id: 192
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             skill: 4
             points: 6
             loadout: 20
@@ -5442,7 +5350,7 @@ exportObj.basicCardData = ->
             name: "Cutlass Squadron Pilot"
             id: 193
             faction: "Galactic Empire"
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             skill: 2
             points: 5
             loadout: 6
@@ -5460,7 +5368,7 @@ exportObj.basicCardData = ->
             id: 194
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             skill: 4
             points: 7
             loadout: 10
@@ -5477,7 +5385,7 @@ exportObj.basicCardData = ->
             id: 195
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             skill: 4
             points: 7
             loadout: 12
@@ -5495,7 +5403,7 @@ exportObj.basicCardData = ->
             id: 196
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             skill: 5
             points: 7
             loadout: 13
@@ -5512,7 +5420,7 @@ exportObj.basicCardData = ->
             name: "Onyx Squadron Ace"
             id: 197
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             skill: 4
             points: 7
             loadout: 6
@@ -5528,7 +5436,7 @@ exportObj.basicCardData = ->
             name: "Delta Squadron Pilot"
             id: 198
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             skill: 1
             points: 7
             loadout: 4
@@ -5543,7 +5451,7 @@ exportObj.basicCardData = ->
             id: 199
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             skill: 5
             points: 7
             loadout: 15
@@ -5560,7 +5468,7 @@ exportObj.basicCardData = ->
             id: 200
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             skill: 4
             points: 6
             loadout: 11
@@ -5576,7 +5484,7 @@ exportObj.basicCardData = ->
             name: "Sigma Squadron Ace"
             id: 201
             faction: "Galactic Empire"
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             skill: 4
             points: 6
             loadout: 9
@@ -5591,7 +5499,7 @@ exportObj.basicCardData = ->
             name: "Imdaar Test Pilot"
             id: 202
             faction: "Galactic Empire"
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             skill: 3
             points: 5
             loadout: 6
@@ -5606,7 +5514,7 @@ exportObj.basicCardData = ->
             id: 203
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             skill: 4
             points: 5
             loadout: 10
@@ -5626,7 +5534,7 @@ exportObj.basicCardData = ->
             id: 204
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             skill: 4
             points: 5
             loadout: 12
@@ -5646,7 +5554,7 @@ exportObj.basicCardData = ->
             id: 205
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             skill: 5
             points: 4
             loadout: 10
@@ -5666,7 +5574,7 @@ exportObj.basicCardData = ->
             id: 206
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             skill: 2
             points: 4
             loadout: 11
@@ -5683,7 +5591,7 @@ exportObj.basicCardData = ->
             name: "Gamma Squadron Ace"
             id: 207
             faction: "Galactic Empire"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             skill: 3
             points: 4
             loadout: 10
@@ -5699,7 +5607,7 @@ exportObj.basicCardData = ->
             name: "Scimitar Squadron Pilot"
             id: 208
             faction: "Galactic Empire"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             skill: 2
             points: 4
             loadout: 6
@@ -5716,7 +5624,7 @@ exportObj.basicCardData = ->
             id: 209
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             skill: 4
             points: 4
             loadout: 8
@@ -5733,7 +5641,7 @@ exportObj.basicCardData = ->
             id: 210
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             skill: 4
             points: 4
             loadout: 7
@@ -5749,7 +5657,7 @@ exportObj.basicCardData = ->
             id: 211
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             skill: 5
             points: 5
             loadout: 15
@@ -5765,7 +5673,7 @@ exportObj.basicCardData = ->
             name: "Black Squadron Scout"
             id: 212
             faction: "Galactic Empire"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             skill: 3
             points: 4
             loadout: 5
@@ -5779,7 +5687,7 @@ exportObj.basicCardData = ->
             name: "Planetary Sentinel"
             id: 213
             faction: "Galactic Empire"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             skill: 1
             points: 4
             loadout: 4
@@ -5852,7 +5760,7 @@ exportObj.basicCardData = ->
             id: 217
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 5
             points: 4
             loadout: 8
@@ -5867,7 +5775,7 @@ exportObj.basicCardData = ->
             id: 218
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 4
             charge: 1
             points: 3
@@ -5885,7 +5793,7 @@ exportObj.basicCardData = ->
             id: 219
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 5
             points: 3
             loadout: 4
@@ -5899,7 +5807,7 @@ exportObj.basicCardData = ->
             id: 220
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 5
             points: 3
             loadout: 3
@@ -5912,7 +5820,7 @@ exportObj.basicCardData = ->
             id: 221
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 1
             recurring: 1
             charge: 1
@@ -5927,7 +5835,7 @@ exportObj.basicCardData = ->
             id: 222
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 4
             points: 3
             loadout: 6
@@ -5941,7 +5849,7 @@ exportObj.basicCardData = ->
             id: 223
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 4
             points: 3
             loadout: 8
@@ -5957,7 +5865,7 @@ exportObj.basicCardData = ->
             id: 224
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 4
             points: 3
             loadout: 8
@@ -5971,7 +5879,7 @@ exportObj.basicCardData = ->
             id: 225
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 3
             points: 2
             loadout: 1
@@ -5984,7 +5892,7 @@ exportObj.basicCardData = ->
             id: 226
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 2
             points: 3
             loadout: 4
@@ -5997,7 +5905,7 @@ exportObj.basicCardData = ->
             name: "Black Squadron Ace"
             id: 227
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 3
             points: 2
             loadout: 2
@@ -6009,7 +5917,7 @@ exportObj.basicCardData = ->
             name: "Obsidian Squadron Pilot"
             id: 228
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 2
             points: 2
             loadout: 0
@@ -6020,7 +5928,7 @@ exportObj.basicCardData = ->
             name: "Academy Pilot"
             id: 229
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 1
             points: 2
             loadout: 3
@@ -6032,7 +5940,7 @@ exportObj.basicCardData = ->
             name: "Spice Runner"
             id: 230
             faction: "Scum and Villainy"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 1
             points: 3
             loadout: 4
@@ -6046,7 +5954,7 @@ exportObj.basicCardData = ->
             id: 231
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 6
             points: 7
             loadout: 25
@@ -6073,7 +5981,7 @@ exportObj.basicCardData = ->
             id: 233
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 6
             points: 4
             loadout: 15
@@ -6092,7 +6000,7 @@ exportObj.basicCardData = ->
             skip: true
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 3
             points: 3
             loadout: 3
@@ -6108,7 +6016,7 @@ exportObj.basicCardData = ->
             id: 235
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 2
             points: 3
             loadout: 9
@@ -6122,7 +6030,7 @@ exportObj.basicCardData = ->
             id: 236
             unique: true
             faction: "First Order"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             skill: 5
             force: 2
             keyword: ["Dark Side"]
@@ -6142,7 +6050,7 @@ exportObj.basicCardData = ->
             id: 237
             unique: true
             faction: "First Order"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             skill: 5
             points: 6
             loadout: 20
@@ -6181,7 +6089,7 @@ exportObj.basicCardData = ->
             id: 239
             unique: true
             faction: "Resistance"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             skill: 5
             points: 5
             loadout: 16
@@ -6197,7 +6105,7 @@ exportObj.basicCardData = ->
             id: 240
             unique: true
             faction: "Resistance"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             skill: 5
             charge: 1
             recurring: 1
@@ -6222,7 +6130,7 @@ exportObj.basicCardData = ->
             id: 242
             unique: true
             faction: "First Order"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             skill: 4
             points: 4
             loadout: 12
@@ -6240,7 +6148,7 @@ exportObj.basicCardData = ->
             id: 243
             unique: true
             faction: "First Order"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             skill: 6
             charge: 1
             recurring: 1
@@ -6328,7 +6236,7 @@ exportObj.basicCardData = ->
             id: 247
             unique: true
             faction: "Scum and Villainy"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             skill: 3
             charge: 1
             recurring: 1
@@ -6345,7 +6253,7 @@ exportObj.basicCardData = ->
             name: "Mining Guild Surveyor"
             id: 248
             faction: "Scum and Villainy"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             skill: 2
             points: 3
             loadout: 1
@@ -6358,7 +6266,7 @@ exportObj.basicCardData = ->
             id: 249
             unique: true
             faction: "Scum and Villainy"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             skill: 3
             points: 3
             loadout: 8
@@ -6415,7 +6323,7 @@ exportObj.basicCardData = ->
             id: 252
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 4
             points: 5
             loadout: 10
@@ -6434,7 +6342,7 @@ exportObj.basicCardData = ->
             id: 253
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 3
             points: 5
             loadout: 9
@@ -6452,7 +6360,7 @@ exportObj.basicCardData = ->
             id: 254
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 2
             points: 5
             loadout: 10
@@ -6469,7 +6377,7 @@ exportObj.basicCardData = ->
             id: 255
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 1
             points: 5
             loadout: 13
@@ -6486,7 +6394,7 @@ exportObj.basicCardData = ->
             id: 256
             faction: "Resistance"
             xws: "blacksquadronace-t70xwing"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 4
             points: 5
             loadout: 10
@@ -6503,7 +6411,7 @@ exportObj.basicCardData = ->
             name: "Red Squadron Expert"
             id: 257
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 3
             points: 5
             loadout: 2
@@ -6520,7 +6428,7 @@ exportObj.basicCardData = ->
             name: "Blue Squadron Rookie"
             id: 258
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 1
             points: 5
             loadout: 4
@@ -6536,7 +6444,7 @@ exportObj.basicCardData = ->
             name: "Zeta Squadron Survivor"
             id: 259
             faction: "First Order"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             skill: 2
             points: 4
             loadout: 4
@@ -6570,7 +6478,7 @@ exportObj.basicCardData = ->
             id: 261
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 2
             points: 3
             loadout: 5
@@ -6584,7 +6492,7 @@ exportObj.basicCardData = ->
             id: 262
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 4
             points: 3
             loadout: 8
@@ -6600,7 +6508,7 @@ exportObj.basicCardData = ->
             id: 263
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 3
             points: 3
             loadout: 8
@@ -6616,7 +6524,7 @@ exportObj.basicCardData = ->
             id: 264
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 4
             points: 3
             loadout: 8
@@ -6633,7 +6541,7 @@ exportObj.basicCardData = ->
             id: 265
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 1
             points: 3
             loadout: 4
@@ -6648,7 +6556,7 @@ exportObj.basicCardData = ->
             id: 266
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 5
             points: 3
             loadout: 5
@@ -6665,7 +6573,7 @@ exportObj.basicCardData = ->
             name: "Omega Squadron Ace"
             id: 267
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 3
             points: 3
             loadout: 4
@@ -6680,7 +6588,7 @@ exportObj.basicCardData = ->
             name: "Zeta Squadron Pilot"
             id: 268
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 2
             points: 3
             loadout: 3
@@ -6693,7 +6601,7 @@ exportObj.basicCardData = ->
             name: "Epsilon Squadron Cadet"
             id: 269
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 1
             points: 3
             loadout: 2
@@ -6706,7 +6614,7 @@ exportObj.basicCardData = ->
             id: 270
             unique: true
             faction: "Resistance"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             skill: 4
             points: 4
             loadout: 7
@@ -6722,7 +6630,7 @@ exportObj.basicCardData = ->
             id: 271
             unique: true
             faction: "Resistance"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             skill: 3
             points: 5
             loadout: 11
@@ -6890,7 +6798,7 @@ exportObj.basicCardData = ->
             id: 280
             unique: true
             faction: "Galactic Republic"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 3
             points: 6
             loadout: 18
@@ -6955,7 +6863,7 @@ exportObj.basicCardData = ->
             id: 283
             unique: true
             faction: "First Order"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             skill: 3
             points: 5
             loadout: 6
@@ -6972,7 +6880,7 @@ exportObj.basicCardData = ->
             id: 284
             unique: true
             faction: "First Order"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             skill: 4
             points: 5
             loadout: 6
@@ -6988,7 +6896,7 @@ exportObj.basicCardData = ->
             name: "Omega Squadron Expert"
             id: 285
             faction: "First Order"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             skill: 3
             points: 4
             loadout: 10
@@ -7004,7 +6912,7 @@ exportObj.basicCardData = ->
             name: "Sienar-Jaemus Engineer"
             id: 286
             faction: "First Order"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             skill: 1
             points: 5
             loadout: 5
@@ -7020,7 +6928,7 @@ exportObj.basicCardData = ->
             name: "First Order Test Pilot"
             id: 287
             faction: "First Order"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             skill: 4
             points: 5
             loadout: 5
@@ -7076,7 +6984,7 @@ exportObj.basicCardData = ->
             id: 290
             unique: true
             faction: "First Order"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             skill: 0
             points: 3
             loadout: 5
@@ -7192,7 +7100,7 @@ exportObj.basicCardData = ->
             id: 296
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 3
             points: 5
             loadout: 11
@@ -7211,7 +7119,7 @@ exportObj.basicCardData = ->
             id: 297
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 4
             points: 5
             loadout: 11
@@ -7230,7 +7138,7 @@ exportObj.basicCardData = ->
             id: 298
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 5
             points: 5
             loadout: 10
@@ -7249,7 +7157,7 @@ exportObj.basicCardData = ->
             id: 299
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 5
             points: 5
             loadout: 11
@@ -7267,7 +7175,7 @@ exportObj.basicCardData = ->
             name: "Green Squadron Expert"
             id: 300
             faction: "Resistance"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             skill: 3
             points: 4
             loadout: 2
@@ -7281,7 +7189,7 @@ exportObj.basicCardData = ->
             name: "Blue Squadron Recruit"
             id: 301
             faction: "Resistance"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             skill: 1
             points: 4
             loadout: 4
@@ -7295,7 +7203,7 @@ exportObj.basicCardData = ->
             id: 302
             unique: true
             faction: "Scum and Villainy"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             skill: 4
             points: 3
             loadout: 6
@@ -7310,7 +7218,7 @@ exportObj.basicCardData = ->
             id: 303
             unique: true
             faction: "Scum and Villainy"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             skill: 2
             loadout: 6
             charge: 1
@@ -7325,7 +7233,7 @@ exportObj.basicCardData = ->
             name: "Mining Guild Sentry"
             id: 304
             faction: "Scum and Villainy"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             skill: 1
             points: 3
             loadout: 3
@@ -7504,7 +7412,7 @@ exportObj.basicCardData = ->
             id: 315
             unique: true
             faction: "Galactic Republic"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             skill: 4
             points: 3
             loadout: 8
@@ -7520,7 +7428,7 @@ exportObj.basicCardData = ->
             id: 316
             unique: true
             faction: "Galactic Republic"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             skill: 5
             points: 4
             loadout: 16
@@ -7537,7 +7445,7 @@ exportObj.basicCardData = ->
             id: 317
             unique: true
             faction: "Galactic Republic"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             skill: 3
             points: 4
             loadout: 13
@@ -7554,7 +7462,7 @@ exportObj.basicCardData = ->
             id: 318
             unique: true
             faction: "Galactic Republic"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             skill: 3
             points: 3
             loadout: 8
@@ -7570,7 +7478,7 @@ exportObj.basicCardData = ->
             id: 319
             unique: true
             faction: "Galactic Republic"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             skill: 2
             points: 4
             loadout: 13
@@ -7586,7 +7494,7 @@ exportObj.basicCardData = ->
             name: "Blue Squadron Protector"
             id: 320
             faction: "Galactic Republic"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             skill: 3
             points: 4
             loadout: 4
@@ -7600,7 +7508,7 @@ exportObj.basicCardData = ->
             name: "Gold Squadron Trooper"
             id: 321
             faction: "Galactic Republic"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             skill: 2
             points: 4
             loadout: 6
@@ -7903,7 +7811,7 @@ exportObj.basicCardData = ->
             canonical_name: '"Odd Ball"'.canonicalize()
             unique: true
             faction: "Galactic Republic"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 5
             points: 5
             loadout: 15
@@ -7924,7 +7832,7 @@ exportObj.basicCardData = ->
             id: 339
             unique: true
             faction: "Galactic Republic"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 3
             points: 5
             loadout: 14
@@ -7943,7 +7851,7 @@ exportObj.basicCardData = ->
             name: "Squad Seven Veteran"
             id: 340
             faction: "Galactic Republic"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 3
             points: 5
             loadout: 10
@@ -7960,7 +7868,7 @@ exportObj.basicCardData = ->
             name: "104th Battalion Pilot"
             id: 341
             faction: "Galactic Republic"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 2
             points: 5
             loadout: 8
@@ -7978,7 +7886,7 @@ exportObj.basicCardData = ->
             id: 342
             unique: true
             faction: "Galactic Republic"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             skill: 4
             charge: 1
             points: 5
@@ -8256,7 +8164,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 359
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 6
             force: 3
             points: 6
@@ -8276,7 +8184,7 @@ exportObj.basicCardData = ->
             name: "Shadow Squadron Veteran"
             id: 360
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 3
             points: 4
             loadout: 4
@@ -8294,7 +8202,7 @@ exportObj.basicCardData = ->
             name: "Red Squadron Bomber"
             id: 361
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 2
             points: 4
             loadout: 6
@@ -8312,7 +8220,7 @@ exportObj.basicCardData = ->
             id: 362
             unique: true
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 2
             points: 4
             loadout: 14
@@ -8333,7 +8241,7 @@ exportObj.basicCardData = ->
             id: 363
             unique: true
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 2
             points: 4
             loadout: 12
@@ -8354,7 +8262,7 @@ exportObj.basicCardData = ->
             id: 364
             unique: true
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 3
             points: 4
             loadout: 13
@@ -8374,7 +8282,7 @@ exportObj.basicCardData = ->
             id: 365
             unique: true
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 4
             points: 5
             loadout: 18
@@ -8396,7 +8304,7 @@ exportObj.basicCardData = ->
             unique: true
             canonical_name: '"Odd Ball"'.canonicalize()
             faction: "Galactic Republic"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             skill: 5
             points: 4
             loadout: 15
@@ -8699,7 +8607,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             unique: true
             skill: 6
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             points: 6
             loadout: 18
             slots: [
@@ -8717,7 +8625,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             unique: true
             skill: 5
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             points: 5
             loadout: 12
             slots: [
@@ -8734,7 +8642,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             unique: true
             skill: 4
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             points: 4
             loadout: 7
             slots: [
@@ -8750,7 +8658,7 @@ exportObj.basicCardData = ->
             id: 384
             faction: "First Order"
             skill: 3
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             points: 5
             loadout: 3
             slots: [
@@ -8765,7 +8673,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             unique: true
             skill: 4
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             points: 4
             loadout: 14
             slots: [
@@ -8784,7 +8692,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             unique: true
             skill: 2
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             points: 5
             loadout: 7
             slots: [
@@ -8803,7 +8711,7 @@ exportObj.basicCardData = ->
             skill: 5
             charge: 1
             recurring: 1
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             points: 5
             loadout: 15
             slots: [
@@ -8820,7 +8728,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             unique: true
             skill: 2
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             points: 4
             loadout: 8
             slots: [
@@ -8858,7 +8766,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             unique: true
             skill: 3
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             points: 5
             loadout: 10
             keyword: ["Droid"]
@@ -8876,7 +8784,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             unique: true
             skill: 5
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             points: 5
             loadout: 16
             slots: [
@@ -8896,7 +8804,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             unique: true
             skill: 4
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             points: 7
             loadout: 16
             keyword: ["Spectre"]
@@ -8918,7 +8826,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             unique: true
             skill: 5
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             keyword: ["Light Side"]
             points: 8
             loadout: 24
@@ -8941,7 +8849,7 @@ exportObj.basicCardData = ->
             unique: true
             skill: 4
             keyword: ["Dark Side"]
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             points: 5
             loadout: 10
             force: 2
@@ -8958,7 +8866,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             unique: true
             skill: 2
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             points: 4
             loadout: 10
             slots: [
@@ -8997,7 +8905,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             unique: true
             skill: 5
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             points: 5
             loadout: 18
             slots: [
@@ -9018,7 +8926,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             unique: true
             skill: 4
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             points: 3
             loadout: 10
             keyword: ["Bounty Hunter"]
@@ -9527,7 +9435,7 @@ exportObj.basicCardData = ->
             id: 426
             faction: "Separatist Alliance"
             skill: 2
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             points: 7
             loadout: 10
             slots: [
@@ -9544,7 +9452,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             unique: true
             skill: 3
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             points: 7
             loadout: 16
             keyword: ["Bounty Hunter"]
@@ -9565,7 +9473,7 @@ exportObj.basicCardData = ->
             unique: true
             skill: 5
             charge: 4
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             points: 9
             loadout: 22
             keyword: ["Bounty Hunter"]
@@ -9587,7 +9495,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             skill: 6
             unique: true
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             points: 8
             loadout: 27
             keyword: ["Bounty Hunter"]
@@ -9830,7 +9738,7 @@ exportObj.basicCardData = ->
             id: 442
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 6
             points: 6
             loadout: 19
@@ -9854,7 +9762,7 @@ exportObj.basicCardData = ->
             id: 443
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 4
             points: 6
             loadout: 17
@@ -9874,7 +9782,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             unique: true
             skill: 1
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             points: 4
             loadout: 7
             slots: [
@@ -9890,7 +9798,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             unique: true
             skill: 3
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             points: 4
             loadout: 10
             slots: [
@@ -9907,7 +9815,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             unique: true
             skill: 4
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             points: 4
             loadout: 7
             slots: [
@@ -9923,7 +9831,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             unique: true
             skill: 5
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             points: 4
             loadout: 5
             slots: [
@@ -9939,7 +9847,7 @@ exportObj.basicCardData = ->
             id: 448
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 2
             points: 5
             loadout: 10
@@ -9956,7 +9864,7 @@ exportObj.basicCardData = ->
             id: 449
             unique: true
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             skill: 4
             points: 5
             loadout: 13
@@ -9977,7 +9885,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             keyword: ["Spectre"]
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             skill: 6
             points: 6
             loadout: 20
@@ -10001,7 +9909,7 @@ exportObj.basicCardData = ->
             id: 451
             unique: true
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             keyword: ["Spectre"]
             skill: 6
             points: 5
@@ -10022,7 +9930,7 @@ exportObj.basicCardData = ->
             id: 452
             unique: true
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 4
             points: 4
             loadout: 10
@@ -10042,7 +9950,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             keyword: ["Mandalorian"]
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 3
             points: 4
             loadout: 11
@@ -10058,7 +9966,7 @@ exportObj.basicCardData = ->
             id: 454
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             skill: 5
             charge: 1
             recurring: -1
@@ -10078,7 +9986,7 @@ exportObj.basicCardData = ->
             id: 455
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 6
             points: 5
             loadout: 10
@@ -10096,7 +10004,7 @@ exportObj.basicCardData = ->
             id: 456
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 5
             loadout: 12
@@ -10116,7 +10024,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             keyword: ["Light Side", "Jedi"]
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 3
             force: 1
             points: 4
@@ -10135,7 +10043,7 @@ exportObj.basicCardData = ->
             id: 458
             unique: true
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 5
             points: 4
             loadout: 14
@@ -10154,7 +10062,7 @@ exportObj.basicCardData = ->
             id: 459
             unique: true
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 4
             points: 4
             loadout: 13
@@ -10173,7 +10081,7 @@ exportObj.basicCardData = ->
             id: 460
             unique: true
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 3
             points: 4
             loadout: 10
@@ -10193,7 +10101,7 @@ exportObj.basicCardData = ->
             id: 461
             unique: true
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 3
             points: 3
             loadout: 6
@@ -10210,7 +10118,7 @@ exportObj.basicCardData = ->
             id: 462
             unique: true
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             skill: 4
             points: 4
             loadout: 7
@@ -10227,7 +10135,7 @@ exportObj.basicCardData = ->
             id: 463
             unique: true
             faction: "Rebel Alliance"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             keyword: ["Light Side"]
             skill: 5
             force: 3
@@ -10247,7 +10155,7 @@ exportObj.basicCardData = ->
             id: 464
             unique: true
             faction: "Rebel Alliance"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             skill: 3
             points: 5
             loadout: 18
@@ -10267,7 +10175,7 @@ exportObj.basicCardData = ->
             id: 465
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 4
             loadout: 8
@@ -10282,7 +10190,7 @@ exportObj.basicCardData = ->
             id: 466
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 2
             charge: 1
             recurring: 1
@@ -10299,7 +10207,7 @@ exportObj.basicCardData = ->
             id: 467
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 3
             points: 4
             loadout: 6
@@ -10316,7 +10224,7 @@ exportObj.basicCardData = ->
             id: 468
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 5
             charge: 1
             recurring: -1
@@ -10335,7 +10243,7 @@ exportObj.basicCardData = ->
             id: 469
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             keyword: ["Dark Side", "Sith"]
             skill: 6
             force: 3
@@ -10355,7 +10263,7 @@ exportObj.basicCardData = ->
             id: 470
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             skill: 3
             points: 7
             loadout: 15
@@ -10371,7 +10279,7 @@ exportObj.basicCardData = ->
             name: "Jinata Security Officer"
             id: 471
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 2
             points: 4
             loadout: 5
@@ -10386,7 +10294,7 @@ exportObj.basicCardData = ->
             name: "Amaxine Warrior"
             id: 472
             faction: "Scum and Villainy"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 3
             points: 4
             loadout: 6
@@ -10403,7 +10311,7 @@ exportObj.basicCardData = ->
             id: 473
             unique: true
             faction: "Scum and Villainy"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 3
             charge: 2
             recurring: 1
@@ -10424,7 +10332,7 @@ exportObj.basicCardData = ->
             id: 474
             unique: true
             faction: "Scum and Villainy"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             skill: 5
             charge: 2
             recurring: 1
@@ -10486,7 +10394,7 @@ exportObj.basicCardData = ->
             id: 477
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 5
             points: 5
             loadout: 24
@@ -10508,7 +10416,7 @@ exportObj.basicCardData = ->
             id: 478
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 4
             points: 4
             loadout: 17
@@ -10528,7 +10436,7 @@ exportObj.basicCardData = ->
             id: 479
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 4
             points: 3
             loadout: 14
@@ -10548,7 +10456,7 @@ exportObj.basicCardData = ->
             id: 480
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 3
             points: 3
             loadout: 13
@@ -10568,7 +10476,7 @@ exportObj.basicCardData = ->
             id: 481
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 3
             points: 4
             loadout: 19
@@ -10589,7 +10497,7 @@ exportObj.basicCardData = ->
             id: 482
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 2
             points: 4
             loadout: 18
@@ -10609,7 +10517,7 @@ exportObj.basicCardData = ->
             id: 483
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 1
             points: 4
             loadout: 20
@@ -10631,7 +10539,7 @@ exportObj.basicCardData = ->
             id: 484
             unique: true
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 2
             points: 3
             loadout: 15
@@ -10650,7 +10558,7 @@ exportObj.basicCardData = ->
             name: "New Republic Patrol"
             id: 485
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 3
             points: 4
             loadout: 7
@@ -10668,7 +10576,7 @@ exportObj.basicCardData = ->
             name: "Kijimi Spice Runner"
             id: 486
             faction: "Resistance"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             skill: 2
             points: 4
             loadout: 4
@@ -10689,7 +10597,7 @@ exportObj.basicCardData = ->
             id: 487
             unique: true
             faction: "First Order"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             keyword: ["Dark Side", "Light Side"]
             skill: 5
             force: 3
@@ -10711,7 +10619,7 @@ exportObj.basicCardData = ->
             id: 488
             unique: true
             faction: "First Order"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             skill: 5
             points: 5
             loadout: 15
@@ -10729,7 +10637,7 @@ exportObj.basicCardData = ->
             id: 489
             unique: true
             faction: "First Order"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             skill: 4
             points: 4
             loadout: 10
@@ -10746,7 +10654,7 @@ exportObj.basicCardData = ->
             id: 490
             unique: true
             faction: "First Order"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             skill: 3
             points: 4
             loadout: 12
@@ -10763,7 +10671,7 @@ exportObj.basicCardData = ->
             name: "709th Legion Ace"
             id: 491
             faction: "First Order"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             skill: 4
             points: 4
             loadout: 10
@@ -10779,7 +10687,7 @@ exportObj.basicCardData = ->
             name: "Red Fury Zealot"
             id: 492
             faction: "First Order"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             skill: 2
             points: 4
             loadout: 3
@@ -10796,7 +10704,7 @@ exportObj.basicCardData = ->
             id: 493
             unique: true
             faction: "First Order"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             skill: 5
             points: 5
             loadout: 18
@@ -10819,7 +10727,7 @@ exportObj.basicCardData = ->
             id: 494
             unique: true
             faction: "First Order"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             skill: 4
             points: 4
             loadout: 10
@@ -10839,7 +10747,7 @@ exportObj.basicCardData = ->
             id: 495
             unique: true
             faction: "First Order"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             skill: 3
             points: 4
             loadout: 12
@@ -10858,7 +10766,7 @@ exportObj.basicCardData = ->
             id: 496
             unique: true
             faction: "First Order"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             skill: 2
             points: 4
             loadout: 15
@@ -10876,7 +10784,7 @@ exportObj.basicCardData = ->
             name: "First Order Cadet"
             id: 497
             faction: "First Order"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             skill: 3
             points: 4
             loadout: 7
@@ -10894,7 +10802,7 @@ exportObj.basicCardData = ->
             name: "Sienar-Jaemus Test Pilot"
             id: 498
             faction: "First Order"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             skill: 2
             points: 4
             loadout: 8
@@ -10980,7 +10888,7 @@ exportObj.basicCardData = ->
             id: 503
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 4
             charge: 2
             recurring: 1
@@ -10998,7 +10906,7 @@ exportObj.basicCardData = ->
             name: "ISB Jingoist"
             id: 504
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 4
             points: 2
             loadout: 3
@@ -11967,7 +11875,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 554
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 4
             points: 20
             chassis: "Hope"
@@ -11981,7 +11889,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 555
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 5
             points: 20
             chassis: "Hope"
@@ -11999,7 +11907,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 556
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 4
             points: 20
             chassis: "Hope"
@@ -12016,7 +11924,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 557
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 3
             points: 20
             chassis: "Hope"
@@ -12034,7 +11942,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 558
             faction: "Rebel Alliance"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             skill: 5
             points: 20
             chassis: "Hope"
@@ -12052,7 +11960,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 559
             faction: "Rebel Alliance"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             skill: 6
             points: 20
             charge: 4
@@ -12070,7 +11978,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 560
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 4
             points: 20
             chassis: "Hope"
@@ -12082,7 +11990,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 561
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 2
             points: 20
             chassis: "Hope"
@@ -12097,7 +12005,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 562
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 4
             points: 20
             chassis: "Hope"
@@ -12112,7 +12020,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 563
             faction: "Rebel Alliance"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             skill: 4
             points: 20
             chassis: "Hope"
@@ -12129,7 +12037,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 564
             faction: "Galactic Empire"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             skill: 6
             points: 20
             force: 3
@@ -12147,7 +12055,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 565
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 5
             points: 20
             ship_override:
@@ -12165,7 +12073,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 566
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 5
             points: 20
             ship_override:
@@ -12180,7 +12088,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 567
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 6
             points: 20
             ship_override:
@@ -12197,7 +12105,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 568
             faction: "Galactic Empire"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             skill: 1
             charge: 1
             recurring: 1
@@ -12216,7 +12124,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 569
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 20
             charge: 2
@@ -12234,7 +12142,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 570
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 20
             charge: 2
@@ -12251,7 +12159,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 571
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 20
             chassis: "Sensitive Controls"
@@ -12264,7 +12172,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 572
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 20
             chassis: "Sensitive Controls"
@@ -12277,7 +12185,7 @@ exportObj.basicCardData = ->
             unique: true
             id: 573
             faction: "Galactic Empire"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             skill: 4
             points: 20
             charge: 2
@@ -13557,7 +13465,7 @@ exportObj.basicCardData = ->
             id: 140
             points: 0
             slot: "Configuration"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
         }
         {
             name: "Pivot Wing (Open)"
@@ -13570,7 +13478,7 @@ exportObj.basicCardData = ->
             id: 142
             points: 0
             slot: "Configuration"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             modifier_func: (stats) ->
                 stats.actions.push 'Boost'
                 stats.actions.push '*Focus'
@@ -13608,7 +13516,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -13634,7 +13542,7 @@ exportObj.basicCardData = ->
             unique: true
             points: 0
             faction: "Rebel Alliance"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
         }
         {
             name: "Havoc"
@@ -13668,7 +13576,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Scum and Villainy"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
         }
         {
             name: "IG-2000"
@@ -13676,7 +13584,7 @@ exportObj.basicCardData = ->
             slot: "Title"
             points: 0
             faction: "Scum and Villainy"
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
         }
         {
             name: "Lando's Millennium Falcon"
@@ -13685,7 +13593,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Scum and Villainy"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
         }
         {
             name: "Marauder"
@@ -13694,7 +13602,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -13709,7 +13617,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Rebel Alliance"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             modifier_func: (stats) ->
                 stats.actions.push 'Evade' if 'Evade' not in stats.actions
         }
@@ -13737,7 +13645,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: ["Rebel Alliance", "Scum and Villainy"]
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             modifier_func: (stats) ->
                 stats.attack = 3
         }
@@ -13748,7 +13656,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Rebel Alliance"
-            ship: "YT-2400"
+            ship: "YT-2400 Light Freighter"
         }
         {
             id: 158
@@ -13791,7 +13699,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Scum and Villainy"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -13806,7 +13714,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "Galactic Empire"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
         }
         {
             name: "Virago"
@@ -13815,7 +13723,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             charge: 2
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             modifier_func: (stats) ->
                 stats.shields += 1
             confersAddons: [
@@ -13877,7 +13785,7 @@ exportObj.basicCardData = ->
             charge: 1
             points: 0
             faction: "Resistance"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             modifier_func: (stats) ->
                 stats.actions.push 'Slam' if 'Slam' not in stats.actions
         }
@@ -13909,7 +13817,7 @@ exportObj.basicCardData = ->
             id: 175
             slot: "Configuration"
             points: 0
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             modifier_func: (stats) ->
                 stats.actions.push 'Barrel Roll'
                 stats.actions.push '*Focus'
@@ -13974,7 +13882,7 @@ exportObj.basicCardData = ->
             slot: "Gunner"
             points: 5
             faction: "First Order"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
         }
         {
             name: "Captain Phasma"
@@ -14692,7 +14600,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             slot: "Command"
             points: 4
-            ship: ["TIE Advanced","TIE Advanced Prototype"]
+            ship: ["TIE Advanced x1","TIE Advanced v1"]
             restrictions: [
                 ["Base", "Small"]
             ]
@@ -14703,7 +14611,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             slot: "Command"
-            ship: ["TIE/SF Fighter","TIE/VN Silencer"]
+            ship: ["TIE/sf Fighter","TIE/vn Silencer"]
             points: 4
             restrictions: [
                 ["Base", "Small"]
@@ -15408,7 +15316,7 @@ exportObj.basicCardData = ->
             name: "Stabilized S-Foils"
             id: 313
             slot: "Configuration"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             points: 0
             modifier_func: (stats) ->
                 stats.actions.push '*Barrel Roll'
@@ -15734,7 +15642,7 @@ exportObj.basicCardData = ->
         {
             name: "Overdrive Thruster"
             id: 345
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             unique: true
             slot: "Modification"
             points: 5
@@ -15989,7 +15897,7 @@ exportObj.basicCardData = ->
             slot: "Title"
             unique: true
             faction: ["Scum and Villainy", "Separatist Alliance"]
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -16015,7 +15923,7 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             slot: "Title"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             faction: "Rebel Alliance"
             confersAddons: [
                 {
@@ -16030,7 +15938,7 @@ exportObj.basicCardData = ->
             points: 0
             slot: "Configuration"
             faction: "Galactic Empire"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             standardized: true
             modifier_func: (stats) ->
                 if stats.maneuvers[1]?
@@ -16078,7 +15986,7 @@ exportObj.basicCardData = ->
             points: 4
             unique: true
             slot: "Command"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             faction: "Rebel Alliance"
             attack: 3
             range: """2-4"""
@@ -16116,7 +16024,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Command"
             faction: "Rebel Alliance"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
         }
         {
             name: "Disciplined"
@@ -16132,7 +16040,7 @@ exportObj.basicCardData = ->
             max_per_squad: 2
             slot: "Command"
             faction: "Galactic Empire"
-            ship: ["TIE Fighter", "TIE Interceptor"]
+            ship: ["TIE/ln Fighter", "TIE/in Interceptor"]
         }
         {
             name: "Shadow Wing"
@@ -16141,7 +16049,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Command"
             faction: "Galactic Empire"
-            ship: ["TIE Fighter", "TIE Interceptor", "TIE Bomber"]
+            ship: ["TIE/ln Fighter", "TIE/in Interceptor", "TIE/sa Bomber"]
         }
         {
             name: "In It For The Money"
@@ -16181,7 +16089,7 @@ exportObj.basicCardData = ->
             points: 1
             slot: "Talent"
             recurring: 1
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
         }
         {
             name: "Protectorate Gleb"
@@ -16466,7 +16374,7 @@ exportObj.basicCardData = ->
             id: 409
             slot: "Configuration"
             points: 10
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             standardized: true
             restrictions: [
                 ["Slot", "Modification"]
@@ -16516,7 +16424,7 @@ exportObj.basicCardData = ->
             id: 413
             slot: "Configuration"
             points: 0
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             restrictions: [
                 ["Slot", "Tech"]
             ]
@@ -16545,7 +16453,7 @@ exportObj.basicCardData = ->
         {
             name: "Sensor Scramblers"
             id: 415
-            ship: ["TIE/VN Silencer", "TIE/WI Whisper"]
+            ship: ["TIE/vn Silencer", "TIE/wi Whisper Modified Interceptor"]
             slot: "Tech"
             points: 1
         }
@@ -17685,7 +17593,7 @@ exportObj.basicCardData = ->
             id: 0
             faction: "Galactic Empire"
             pilot: "Valen Rudor"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -17696,7 +17604,7 @@ exportObj.basicCardData = ->
             id: 1
             faction: "Galactic Empire"
             pilot: "Black Squadron Ace"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -17708,14 +17616,14 @@ exportObj.basicCardData = ->
             id: 2
             faction: "Galactic Empire"
             pilot: "Academy Pilot"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 1
         }
         {
             id: 3
             faction: "Galactic Empire"
             pilot: "Iden Versio"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -17726,7 +17634,7 @@ exportObj.basicCardData = ->
             id: 4
             faction: "Galactic Empire"
             pilot: '"Night Beast"'
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Predator"
@@ -17738,14 +17646,14 @@ exportObj.basicCardData = ->
             id: 5
             faction: "Galactic Empire"
             pilot: "Obsidian Squadron Pilot"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 1
         }
         {
             id: 6
             faction: "Galactic Empire"
             pilot: '"Scourge" Skutu'
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Predator"
@@ -17756,7 +17664,7 @@ exportObj.basicCardData = ->
             id: 7
             faction: "Galactic Empire"
             pilot: '"Wampa"'
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -17768,7 +17676,7 @@ exportObj.basicCardData = ->
             id: 8
             faction: "Galactic Empire"
             pilot: "Black Squadron Ace"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -17780,7 +17688,7 @@ exportObj.basicCardData = ->
             id: 9
             faction: "Galactic Empire"
             pilot: "Gideon Hask"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -17791,7 +17699,7 @@ exportObj.basicCardData = ->
             id: 10
             faction: "Galactic Empire"
             pilot: "Del Meeko"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Juke"
@@ -17802,7 +17710,7 @@ exportObj.basicCardData = ->
             id: 11
             faction: "Galactic Empire"
             pilot: "Obsidian Squadron Pilot"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 1
             skip: true
         }
@@ -17810,7 +17718,7 @@ exportObj.basicCardData = ->
             id: 12
             faction: "Galactic Empire"
             pilot: '"Howlrunner"'
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Juke"
@@ -17821,7 +17729,7 @@ exportObj.basicCardData = ->
             id: 13
             faction: "Galactic Empire"
             pilot: "Seyn Marana"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Marksmanship"
@@ -17834,7 +17742,7 @@ exportObj.basicCardData = ->
             pilot: "Black Squadron Ace"
             suffix: " (x2)"
             linkedId: 14
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 3
             upgrades: [
                 "Juke"
@@ -17847,7 +17755,7 @@ exportObj.basicCardData = ->
             pilot: "Obsidian Squadron Pilot"
             suffix: " (x2)"
             linkedId: 15
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -17860,14 +17768,14 @@ exportObj.basicCardData = ->
             pilot: "Academy Pilot"
             suffix: " (x2)"
             linkedId: 16
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
         }
         {
             id: 17
             faction: "Galactic Empire"
             pilot: "Academy Pilot"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 1
             skip: true
         }
@@ -17875,7 +17783,7 @@ exportObj.basicCardData = ->
             id: 18
             faction: "Galactic Empire"
             pilot: "Darth Vader"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             threat: 4
             upgrades: [
                 "Supernatural Reflexes"
@@ -17889,7 +17797,7 @@ exportObj.basicCardData = ->
             id: 19
             faction: "Galactic Empire"
             pilot: "Maarek Stele"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             threat: 3
             upgrades: [
                 "Ruthless"
@@ -17902,7 +17810,7 @@ exportObj.basicCardData = ->
             id: 20
             faction: "Galactic Empire"
             pilot: "Storm Squadron Ace"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             threat: 2
             upgrades: [
                 "Fire-Control System"
@@ -17912,7 +17820,7 @@ exportObj.basicCardData = ->
             id: 21
             faction: "Galactic Empire"
             pilot: "Ved Foslo"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -17925,7 +17833,7 @@ exportObj.basicCardData = ->
             id: 22
             faction: "Galactic Empire"
             pilot: "Zertik Strom"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             threat: 3
             upgrades: [
                 "Squad Leader"
@@ -17938,7 +17846,7 @@ exportObj.basicCardData = ->
             id: 23
             faction: "Galactic Empire"
             pilot: "Tempest Squadron Pilot"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             threat: 2
             upgrades: [
                 "Cluster Missiles"
@@ -17948,7 +17856,7 @@ exportObj.basicCardData = ->
             id: 24
             faction: "Galactic Empire"
             pilot: "Colonel Jendon"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             threat: 3
             upgrades: [
                 "Collision Detector"
@@ -17962,7 +17870,7 @@ exportObj.basicCardData = ->
             id: 25
             faction: "Galactic Empire"
             pilot: "Captain Kagi"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             threat: 3
             upgrades: [
                 "Collision Detector"
@@ -17976,7 +17884,7 @@ exportObj.basicCardData = ->
             id: 26
             faction: "Galactic Empire"
             pilot: "Lieutenant Sai"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             threat: 3
             upgrades: [
                 "Ciena Ree"
@@ -17989,7 +17897,7 @@ exportObj.basicCardData = ->
             id: 27
             faction: "Galactic Empire"
             pilot: "Omicron Group Pilot"
-            ship: "Lambda-Class Shuttle"
+            ship: "Lambda-class T-4a Shuttle"
             threat: 2
             upgrades: [
                 "Admiral Sloane"
@@ -18000,7 +17908,7 @@ exportObj.basicCardData = ->
             id: 28
             faction: "Galactic Empire"
             pilot: "Lieutenant Kestal"
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -18012,7 +17920,7 @@ exportObj.basicCardData = ->
             id: 29
             faction: "Galactic Empire"
             pilot: "Onyx Squadron Scout"
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -18024,7 +17932,7 @@ exportObj.basicCardData = ->
             id: 30
             faction: "Galactic Empire"
             pilot: '"Double Edge"'
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             threat: 2
             upgrades: [
                 "Ion Cannon Turret"
@@ -18036,7 +17944,7 @@ exportObj.basicCardData = ->
             id: 31
             faction: "Galactic Empire"
             pilot: "Sienar Specialist"
-            ship: "TIE Aggressor"
+            ship: "TIE/ag Aggressor"
             threat: 2
             upgrades: [
                 "Ion Cannon Turret"
@@ -18049,7 +17957,7 @@ exportObj.basicCardData = ->
             id: 32
             faction: "Galactic Empire"
             pilot: '"Whisper"'
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             threat: 3
             upgrades: [
                 "Juke"
@@ -18062,7 +17970,7 @@ exportObj.basicCardData = ->
             id: 33
             faction: "Galactic Empire"
             pilot: "Sigma Squadron Ace"
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             threat: 3
             upgrades: [
                 "Predator"
@@ -18074,7 +17982,7 @@ exportObj.basicCardData = ->
             id: 34
             faction: "Galactic Empire"
             pilot: '"Echo"'
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             threat: 3
             upgrades: [
                 "Lone Wolf"
@@ -18087,7 +17995,7 @@ exportObj.basicCardData = ->
             id: 35
             faction: "Galactic Empire"
             pilot: "Imdaar Test Pilot"
-            ship: "TIE Phantom"
+            ship: "TIE/ph Phantom"
             threat: 2
             upgrades: [
                 "Moff Jerjerrod"
@@ -18097,7 +18005,7 @@ exportObj.basicCardData = ->
             id: 36
             faction: "Galactic Empire"
             pilot: '"Duchess"'
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Trick Shot"
@@ -18108,7 +18016,7 @@ exportObj.basicCardData = ->
             id: 37
             faction: "Galactic Empire"
             pilot: "Black Squadron Scout"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Skilled Bombardier"
@@ -18120,7 +18028,7 @@ exportObj.basicCardData = ->
             id: 38
             faction: "Galactic Empire"
             pilot: '"Countdown"'
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Shield Upgrade"
@@ -18132,7 +18040,7 @@ exportObj.basicCardData = ->
             pilot: "Planetary Sentinel"
             suffix: " x2"
             linkedId: 39
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 3
             upgrades: [
                 "Conner Nets"
@@ -18142,7 +18050,7 @@ exportObj.basicCardData = ->
             id: 40
             faction: "Galactic Empire"
             pilot: '"Pure Sabacc"'
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Stealth Device"
@@ -18152,7 +18060,7 @@ exportObj.basicCardData = ->
             id: 41
             faction: "Galactic Empire"
             pilot: "Black Squadron Scout"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Skilled Bombardier"
@@ -18165,7 +18073,7 @@ exportObj.basicCardData = ->
             id: 42
             faction: "Galactic Empire"
             pilot: "Countess Ryad"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Outmaneuver"
@@ -18176,14 +18084,14 @@ exportObj.basicCardData = ->
             id: 43
             faction: "Galactic Empire"
             pilot: "Onyx Squadron Ace"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 3
         }
         {
             id: 44
             faction: "Galactic Empire"
             pilot: "Rexler Brath"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Juke"
@@ -18195,7 +18103,7 @@ exportObj.basicCardData = ->
             id: 45
             faction: "Galactic Empire"
             pilot: "Colonel Vessery"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Juke"
@@ -18207,7 +18115,7 @@ exportObj.basicCardData = ->
             id: 46
             faction: "Galactic Empire"
             pilot: "Onyx Squadron Ace"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Elusive"
@@ -18219,7 +18127,7 @@ exportObj.basicCardData = ->
             id: 47
             faction: "Galactic Empire"
             pilot: "Tomax Bren"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -18231,7 +18139,7 @@ exportObj.basicCardData = ->
             id: 48
             faction: "Galactic Empire"
             pilot: '"Deathfire"'
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             threat: 2
             upgrades: [
                 "Cluster Missiles"
@@ -18245,7 +18153,7 @@ exportObj.basicCardData = ->
             id: 49
             faction: "Galactic Empire"
             pilot: "Major Rhymer"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             threat: 2
             upgrades: [
                 "Intimidation"
@@ -18259,7 +18167,7 @@ exportObj.basicCardData = ->
             pilot: "Scimitar Squadron Pilot"
             suffix: " x2"
             linkedId: 50
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             threat: 3
             upgrades: [
                 "Ion Missiles"
@@ -18270,7 +18178,7 @@ exportObj.basicCardData = ->
             id: 51
             faction: "Galactic Empire"
             pilot: "Captain Jonus"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             threat: 2
             upgrades: [
                 "Proton Torpedoes"
@@ -18281,7 +18189,7 @@ exportObj.basicCardData = ->
             id: 52
             faction: "Galactic Empire"
             pilot: "Gamma Squadron Ace"
-            ship: "TIE Bomber"
+            ship: "TIE/sa Bomber"
             threat: 2
             upgrades: [
                 "Concussion Missiles"
@@ -18294,7 +18202,7 @@ exportObj.basicCardData = ->
             id: 53
             faction: "Galactic Empire"
             pilot: "Grand Inquisitor"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 3
             upgrades: [
                 "Supernatural Reflexes"
@@ -18305,7 +18213,7 @@ exportObj.basicCardData = ->
             id: 54
             faction: "Galactic Empire"
             pilot: "Inquisitor"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 2
             upgrades: [
                 "Instinctive Aim"
@@ -18317,7 +18225,7 @@ exportObj.basicCardData = ->
             id: 55
             faction: "Galactic Empire"
             pilot: "Seventh Sister"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 2
             upgrades: [
                 "Homing Missiles"
@@ -18327,7 +18235,7 @@ exportObj.basicCardData = ->
             id: 56
             faction: "Galactic Empire"
             pilot: "Baron of the Empire"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -18339,7 +18247,7 @@ exportObj.basicCardData = ->
             id: 57
             faction: "Galactic Empire"
             pilot: "Soontir Fel"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -18353,7 +18261,7 @@ exportObj.basicCardData = ->
             pilot: "Alpha Squadron Pilot"
             suffix: " x2"
             linkedId: 58
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 3
             upgrades: [
                 "Ablative Plating"
@@ -18363,7 +18271,7 @@ exportObj.basicCardData = ->
             id: 59
             faction: "Galactic Empire"
             pilot: "Turr Phennir"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Daredevil"
@@ -18374,7 +18282,7 @@ exportObj.basicCardData = ->
             id: 60
             faction: "Galactic Empire"
             pilot: "Saber Squadron Ace"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Predator"
@@ -18438,7 +18346,7 @@ exportObj.basicCardData = ->
             id: 65
             faction: "Galactic Empire"
             pilot: '"Deathrain"'
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             threat: 2
             upgrades: [
                 "Trajectory Simulator"
@@ -18452,7 +18360,7 @@ exportObj.basicCardData = ->
             skip: true
             faction: "Galactic Empire"
             pilot: '"Deathrain"'
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             threat: 2
             upgrades: [
                 "Trajectory Simulator"
@@ -18465,7 +18373,7 @@ exportObj.basicCardData = ->
             id: 67
             faction: "Galactic Empire"
             pilot: "Cutlass Squadron Pilot"
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             threat: 2
             upgrades: [
                 "Trajectory Simulator"
@@ -18478,7 +18386,7 @@ exportObj.basicCardData = ->
             id: 68
             faction: "Galactic Empire"
             pilot: '"Redline"'
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             threat: 2
             upgrades: [
                 "Debris Gambit"
@@ -18489,7 +18397,7 @@ exportObj.basicCardData = ->
             id: 69
             faction: "Galactic Empire"
             pilot: "Cutlass Squadron Pilot"
-            ship: "TIE Punisher"
+            ship: "TIE/ca Punisher"
             threat: 2
             upgrades: [
                 "Advanced Sensors"
@@ -18580,7 +18488,7 @@ exportObj.basicCardData = ->
             id: 77
             faction: "Rebel Alliance"
             pilot: "Luke Skywalker"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 3
             upgrades: [
                 "Instinctive Aim"
@@ -18593,7 +18501,7 @@ exportObj.basicCardData = ->
             id: 78
             faction: "Rebel Alliance"
             pilot: "Red Squadron Veteran"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 2
             upgrades: [
                 "Predator"
@@ -18605,7 +18513,7 @@ exportObj.basicCardData = ->
             id: 79
             faction: "Rebel Alliance"
             pilot: "Jek Porkins"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -18619,7 +18527,7 @@ exportObj.basicCardData = ->
             id: 80
             faction: "Rebel Alliance"
             pilot: "Blue Squadron Escort"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 2
             upgrades: [
                 "Proton Torpedoes"
@@ -18631,7 +18539,7 @@ exportObj.basicCardData = ->
             id: 81
             faction: "Rebel Alliance"
             pilot: "Wedge Antilles"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -18645,7 +18553,7 @@ exportObj.basicCardData = ->
             id: 82
             faction: "Rebel Alliance"
             pilot: "Biggs Darklighter"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 2
             upgrades: [
                 "Selfless"
@@ -18656,7 +18564,7 @@ exportObj.basicCardData = ->
             id: 83
             faction: "Rebel Alliance"
             pilot: "Thane Kyrell"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -18671,7 +18579,7 @@ exportObj.basicCardData = ->
             id: 84
             faction: "Rebel Alliance"
             pilot: "Garven Dreis (X-Wing)"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 2
             upgrades: [
                 "Servomotor S-Foils"
@@ -18681,7 +18589,7 @@ exportObj.basicCardData = ->
             id: 85
             faction: "Rebel Alliance"
             pilot: "Norra Wexley (Y-Wing)"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -18694,7 +18602,7 @@ exportObj.basicCardData = ->
             id: 86
             faction: "Rebel Alliance"
             pilot: "Evaan Verlaine"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Expert Handling"
@@ -18705,7 +18613,7 @@ exportObj.basicCardData = ->
             id: 87
             faction: "Rebel Alliance"
             pilot: "Gold Squadron Veteran"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Expert Handling"
@@ -18717,7 +18625,7 @@ exportObj.basicCardData = ->
             id: 88
             faction: "Rebel Alliance"
             pilot: "Horton Salm"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -18730,7 +18638,7 @@ exportObj.basicCardData = ->
             id: 89
             faction: "Rebel Alliance"
             pilot: '"Dutch" Vander'
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Proton Torpedoes"
@@ -18741,7 +18649,7 @@ exportObj.basicCardData = ->
             id: 90
             faction: "Rebel Alliance"
             pilot: "Gray Squadron Bomber"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Ion Cannon Turret"
@@ -18753,7 +18661,7 @@ exportObj.basicCardData = ->
             id: 91
             faction: "Rebel Alliance"
             pilot: "Esege Tuketu"
-            ship: "K-Wing"
+            ship: "BTL-S8 K-wing"
             threat: 3
             upgrades: [
                 "Trajectory Simulator"
@@ -18768,7 +18676,7 @@ exportObj.basicCardData = ->
             id: 92
             faction: "Rebel Alliance"
             pilot: "Miranda Doni"
-            ship: "K-Wing"
+            ship: "BTL-S8 K-wing"
             threat: 2
             upgrades: [
                 "Proton Bombs"
@@ -18779,7 +18687,7 @@ exportObj.basicCardData = ->
             id: 93
             faction: "Rebel Alliance"
             pilot: "Warden Squadron Pilot"
-            ship: "K-Wing"
+            ship: "BTL-S8 K-wing"
             threat: 2
             upgrades: [
                 "Barrage Rockets"
@@ -18790,7 +18698,7 @@ exportObj.basicCardData = ->
             id: 94
             faction: "Rebel Alliance"
             pilot: "Braylen Stramm"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Trick Shot"
@@ -18801,7 +18709,7 @@ exportObj.basicCardData = ->
             id: 95
             faction: "Rebel Alliance"
             pilot: "Blade Squadron Veteran"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -18812,7 +18720,7 @@ exportObj.basicCardData = ->
             id: 96
             faction: "Rebel Alliance"
             pilot: "Ten Numb"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 3
             upgrades: [
                 "Squad Leader"
@@ -18825,7 +18733,7 @@ exportObj.basicCardData = ->
             id: 97
             faction: "Rebel Alliance"
             pilot: "Blue Squadron Pilot"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Advanced Sensors"
@@ -18835,7 +18743,7 @@ exportObj.basicCardData = ->
             id: 98
             faction: "Rebel Alliance"
             pilot: "Norra Wexley"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -18850,7 +18758,7 @@ exportObj.basicCardData = ->
             id: 99
             faction: "Rebel Alliance"
             pilot: "Garven Dreis"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -18863,7 +18771,7 @@ exportObj.basicCardData = ->
             id: 100
             faction: "Rebel Alliance"
             pilot: "Shara Bey"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -18876,7 +18784,7 @@ exportObj.basicCardData = ->
             id: 101
             faction: "Rebel Alliance"
             pilot: "Ibtisam"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -18920,7 +18828,7 @@ exportObj.basicCardData = ->
             id: 106
             faction: "Rebel Alliance"
             pilot: "Corran Horn"
-            ship: "E-Wing"
+            ship: "E-wing"
             threat: 4
             upgrades: [
                 "Outmaneuver"
@@ -18934,7 +18842,7 @@ exportObj.basicCardData = ->
             id: 107
             faction: "Rebel Alliance"
             pilot: "Rogue Squadron Escort"
-            ship: "E-Wing"
+            ship: "E-wing"
             threat: 3
             upgrades: [
                 "Predator"
@@ -18947,7 +18855,7 @@ exportObj.basicCardData = ->
             id: 108
             faction: "Rebel Alliance"
             pilot: "Gavin Darklighter"
-            ship: "E-Wing"
+            ship: "E-wing"
             threat: 3
             upgrades: [
                 "Crack Shot"
@@ -18960,14 +18868,14 @@ exportObj.basicCardData = ->
             id: 109
             faction: "Rebel Alliance"
             pilot: "Knave Squadron Escort"
-            ship: "E-Wing"
+            ship: "E-wing"
             threat: 2
         }
         {
             id: 110
             faction: "Rebel Alliance"
             pilot: "Jan Ors"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 3
             upgrades: [
                 "Trick Shot"
@@ -18982,7 +18890,7 @@ exportObj.basicCardData = ->
             id: 111
             faction: "Rebel Alliance"
             pilot: "Roark Garnet"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -18995,7 +18903,7 @@ exportObj.basicCardData = ->
             id: 112
             faction: "Rebel Alliance"
             pilot: "Kyle Katarn"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Moldy Crow"
@@ -19005,7 +18913,7 @@ exportObj.basicCardData = ->
             id: 113
             faction: "Rebel Alliance"
             pilot: "Rebel Scout"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Proton Bombs"
@@ -19018,7 +18926,7 @@ exportObj.basicCardData = ->
             id: 114
             faction: "Rebel Alliance"
             pilot: "Arvel Crynyd"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Intimidation"
@@ -19030,7 +18938,7 @@ exportObj.basicCardData = ->
             id: 115
             faction: "Rebel Alliance"
             pilot: "Green Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Daredevil"
@@ -19042,7 +18950,7 @@ exportObj.basicCardData = ->
             id: 116
             faction: "Jake Farrell"
             pilot: "Green Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -19055,7 +18963,7 @@ exportObj.basicCardData = ->
             pilot: "Phoenix Squadron Pilot"
             suffix: " x2"
             linkedId: 117
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 3
             upgrades: [
                 "Proton Rockets"
@@ -19092,7 +19000,7 @@ exportObj.basicCardData = ->
             id: 120
             faction: "Rebel Alliance"
             pilot: "Captain Rex"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -19104,7 +19012,7 @@ exportObj.basicCardData = ->
             id: 121
             faction: "Rebel Alliance"
             pilot: "Sabine Wren (TIE Fighter)"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -19116,7 +19024,7 @@ exportObj.basicCardData = ->
             id: 122
             faction: "Rebel Alliance"
             pilot: "Ezra Bridger (TIE Fighter)"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Supernatural Reflexes"
@@ -19128,14 +19036,14 @@ exportObj.basicCardData = ->
             id: 123
             faction: "Rebel Alliance"
             pilot: '"Zeb" Orrelios (TIE Fighter)'
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 1
         }
         {
             id: 124
             faction: "Rebel Alliance"
             pilot: "Cassian Andor"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 3
             upgrades: [
                 "Fire-Control System"
@@ -19148,7 +19056,7 @@ exportObj.basicCardData = ->
             id: 125
             faction: "Rebel Alliance"
             pilot: "Bodhi Rook"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 2
             upgrades: [
                 "Cassian Andor"
@@ -19159,7 +19067,7 @@ exportObj.basicCardData = ->
             id: 126
             faction: "Rebel Alliance"
             pilot: "Heff Tobber"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 3
             upgrades: [
                 "Fire-Control System"
@@ -19173,7 +19081,7 @@ exportObj.basicCardData = ->
             id: 127
             faction: "Rebel Alliance"
             pilot: "Blue Squadron Scout"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 2
             upgrades: [
                 "Advanced Sensors"
@@ -19185,7 +19093,7 @@ exportObj.basicCardData = ->
             id: 128
             faction: "Rebel Alliance"
             pilot: "Han Solo"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             threat: 4
             upgrades: [
                 "Lone Wolf"
@@ -19197,7 +19105,7 @@ exportObj.basicCardData = ->
             id: 129
             faction: "Rebel Alliance"
             pilot: "Chewbacca"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             threat: 6
             upgrades: [
                 "Predator"
@@ -19214,7 +19122,7 @@ exportObj.basicCardData = ->
             id: 130
             faction: "Rebel Alliance"
             pilot: "Lando Calrissian"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             threat: 5
             upgrades: [
                 "Swarm Tactics"
@@ -19228,7 +19136,7 @@ exportObj.basicCardData = ->
             id: 131
             faction: "Rebel Alliance"
             pilot: "Outer Rim Smuggler"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             threat: 4
             upgrades: [
                 "Homing Missiles"
@@ -19242,7 +19150,7 @@ exportObj.basicCardData = ->
             id: 132
             faction: "Rebel Alliance"
             pilot: "Airen Cracken"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Swarm Tactics"
@@ -19254,14 +19162,14 @@ exportObj.basicCardData = ->
             id: 133
             faction: "Rebel Alliance"
             pilot: "Bandit Squadron Pilot"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 1
         }
         {
             id: 134
             faction: "Rebel Alliance"
             pilot: "Lieutenant Blount"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -19273,7 +19181,7 @@ exportObj.basicCardData = ->
             id: 135
             faction: "Rebel Alliance"
             pilot: "Tala Squadron Pilot"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 1
             upgrades: [
                 "Selfless"
@@ -19307,7 +19215,7 @@ exportObj.basicCardData = ->
             id: 138
             faction: "Rebel Alliance"
             pilot: "Dash Rendar"
-            ship: "YT-2400"
+            ship: "YT-2400 Light Freighter"
             threat: 5
             upgrades: [
                 "Expert Handling"
@@ -19321,7 +19229,7 @@ exportObj.basicCardData = ->
             id: 139
             faction: "Rebel Alliance"
             pilot: '"Leebo"'
-            ship: "YT-2400"
+            ship: "YT-2400 Light Freighter"
             threat: 4
             upgrades: [
                 "Outrider"
@@ -19332,7 +19240,7 @@ exportObj.basicCardData = ->
             id: 140
             faction: "Rebel Alliance"
             pilot: "Wild Space Fringer"
-            ship: "YT-2400"
+            ship: "YT-2400 Light Freighter"
             threat: 4
             upgrades: [
                 "Concussion Missiles"
@@ -19344,7 +19252,7 @@ exportObj.basicCardData = ->
             id: 141
             faction: "Rebel Alliance"
             pilot: "Magva Yarro"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -19358,7 +19266,7 @@ exportObj.basicCardData = ->
             id: 142
             faction: "Rebel Alliance"
             pilot: "Saw Gerrera"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 2
             upgrades: [
                 "Magva Yarro"
@@ -19369,7 +19277,7 @@ exportObj.basicCardData = ->
             id: 143
             faction: "Rebel Alliance"
             pilot: "Benthic Two Tubes"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 2
             upgrades: [
                 "Advanced Sensors"
@@ -19380,7 +19288,7 @@ exportObj.basicCardData = ->
             id: 144
             faction: "Rebel Alliance"
             pilot: "Partisan Renegade"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 2
             upgrades: [
                 "Advanced Sensors"
@@ -19392,7 +19300,7 @@ exportObj.basicCardData = ->
             id: 145
             faction: "Rebel Alliance"
             pilot: "Kullbee Sperado"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -19407,7 +19315,7 @@ exportObj.basicCardData = ->
             id: 146
             faction: "Rebel Alliance"
             pilot: "Edrio Two Tubes"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 2
             upgrades: [
                 "Trick Shot"
@@ -19420,7 +19328,7 @@ exportObj.basicCardData = ->
             id: 147
             faction: "Rebel Alliance"
             pilot: "Leevan Tenza"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -19435,7 +19343,7 @@ exportObj.basicCardData = ->
             id: 148
             faction: "Rebel Alliance"
             pilot: "Cavern Angels Zealot"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 2
             upgrades: [
                 "R2 Astromech"
@@ -19449,7 +19357,7 @@ exportObj.basicCardData = ->
             pilot: "Kanan Jarrus"
             suffix: " + Phantom"
             linkedId: 150
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             threat: 6
             upgrades: [
                 "Ion Cannon Turret"
@@ -19477,7 +19385,7 @@ exportObj.basicCardData = ->
             pilot: "Hera Syndulla (VCX-100)"
             suffix: " + Phantom"
             linkedId: 152
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             threat: 6
             upgrades: [
                 "Elusive"
@@ -19506,7 +19414,7 @@ exportObj.basicCardData = ->
             pilot: '"Chopper"'
             suffix: " + Phantom"
             linkedId: 154
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             threat: 6
             upgrades: [
                 "Ion Cannon Turret"
@@ -19533,7 +19441,7 @@ exportObj.basicCardData = ->
             pilot: "Lothal Rebel"
             suffix: " + Phantom"
             linkedId: 156
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             threat: 4
             upgrades: [
                 "Dorsal Turret"
@@ -19558,7 +19466,7 @@ exportObj.basicCardData = ->
             id: 157
             faction: "First Order"
             pilot: '"Midnight"'
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Afterburners"
@@ -19568,7 +19476,7 @@ exportObj.basicCardData = ->
             id: 158
             faction: "First Order"
             pilot: '"Static"'
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -19578,7 +19486,7 @@ exportObj.basicCardData = ->
             id: 159
             faction: "First Order"
             pilot: "Omega Squadron Ace"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -19590,7 +19498,7 @@ exportObj.basicCardData = ->
             id: 160
             faction: "First Order"
             pilot: '"Scorch"'
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Fanatical"
@@ -19601,7 +19509,7 @@ exportObj.basicCardData = ->
             id: 161
             faction: "First Order"
             pilot: '"Longshot"'
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -19612,7 +19520,7 @@ exportObj.basicCardData = ->
             id: 162
             faction: "First Order"
             pilot: "Zeta Squadron Pilot"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Advanced Optics"
@@ -19623,7 +19531,7 @@ exportObj.basicCardData = ->
             id: 163
             faction: "First Order"
             pilot: '"Muse"'
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Squad Leader"
@@ -19634,7 +19542,7 @@ exportObj.basicCardData = ->
             id: 164
             faction: "First Order"
             pilot: '"Null"'
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Swarm Tactics"
@@ -19646,7 +19554,7 @@ exportObj.basicCardData = ->
             id: 165
             faction: "First Order"
             pilot: "Epsilon Squadron Cadet"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Targeting Synchronizer"
@@ -19657,7 +19565,7 @@ exportObj.basicCardData = ->
             id: 166
             faction: "First Order"
             pilot: "Commander Malarus"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Advanced Optics"
@@ -19667,7 +19575,7 @@ exportObj.basicCardData = ->
             id: 167
             faction: "First Order"
             pilot: "TN-3465"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 2
             upgrades: [
                 "Targeting Synchronizer"
@@ -19678,7 +19586,7 @@ exportObj.basicCardData = ->
             id: 168
             faction: "First Order"
             pilot: "Lieutenant Rivas"
-            ship: "TIE/FO Fighter"
+            ship: "TIE/fo Fighter"
             threat: 1
             upgrades: [
             ]
@@ -19687,7 +19595,7 @@ exportObj.basicCardData = ->
             id: 169
             faction: "First Order"
             pilot: '"Quickdraw"'
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             threat: 3
             upgrades: [
                 "Juke"
@@ -19701,7 +19609,7 @@ exportObj.basicCardData = ->
             id: 170
             faction: "First Order"
             pilot: "Zeta Squadron Survivor"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             threat: 2
             upgrades: [
                 "Pattern Analyzer"
@@ -19713,7 +19621,7 @@ exportObj.basicCardData = ->
             id: 171
             faction: "First Order"
             pilot: '"Backdraft"'
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             threat: 3
             upgrades: [
                 "Pattern Analyzer"
@@ -19727,7 +19635,7 @@ exportObj.basicCardData = ->
             id: 172
             faction: "First Order"
             pilot: "Omega Squadron Expert"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             threat: 2
             upgrades: [
                 "Juke"
@@ -19738,7 +19646,7 @@ exportObj.basicCardData = ->
             id: 173
             faction: "First Order"
             pilot: "Kylo Ren"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 4
             upgrades: [
                 "Hate"
@@ -19751,7 +19659,7 @@ exportObj.basicCardData = ->
             id: 174
             faction: "First Order"
             pilot: '"Recoil"'
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Predator"
@@ -19762,7 +19670,7 @@ exportObj.basicCardData = ->
             id: 175
             faction: "First Order"
             pilot: "First Order Test Pilot"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -19773,7 +19681,7 @@ exportObj.basicCardData = ->
             id: 176
             faction: "First Order"
             pilot: '"Blackout"'
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -19784,7 +19692,7 @@ exportObj.basicCardData = ->
             id: 177
             faction: "First Order"
             pilot: '"Avenger"'
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Primed Thrusters"
@@ -19795,7 +19703,7 @@ exportObj.basicCardData = ->
             id: 178
             faction: "First Order"
             pilot: "Sienar-Jaemus Engineer"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 2
         }
         {
@@ -19871,7 +19779,7 @@ exportObj.basicCardData = ->
             id: 185
             faction: "Scum and Villainy"
             pilot: "Boba Fett"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 4
             upgrades: [
                 "Lone Wolf"
@@ -19885,7 +19793,7 @@ exportObj.basicCardData = ->
             id: 186
             faction: "Scum and Villainy"
             pilot: "Kath Scarlet"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 3
             upgrades: [
                 "Marauder"
@@ -19895,7 +19803,7 @@ exportObj.basicCardData = ->
             id: 187
             faction: "Scum and Villainy"
             pilot: "Krassis Trelix"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 3
             upgrades: [
                 "Concussion Missiles"
@@ -19905,7 +19813,7 @@ exportObj.basicCardData = ->
             id: 188
             faction: "Scum and Villainy"
             pilot: "Emon Azzameen"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 4
             upgrades: [
                 "Elusive"
@@ -19920,7 +19828,7 @@ exportObj.basicCardData = ->
             id: 189
             faction: "Scum and Villainy"
             pilot: "Koshka Frost"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 3
             upgrades: [
                 "Perceptive Copilot"
@@ -19930,7 +19838,7 @@ exportObj.basicCardData = ->
             id: 190
             faction: "Scum and Villainy"
             pilot: "Bounty Hunter"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 3
             upgrades: [
                 "Perceptive Copilot"
@@ -20004,7 +19912,7 @@ exportObj.basicCardData = ->
             id: 197
             faction: "Scum and Villainy"
             pilot: "Ahhav"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -20016,7 +19924,7 @@ exportObj.basicCardData = ->
             id: 198
             faction: "Scum and Villainy"
             pilot: "Mining Guild Surveyor"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Swarm Tactics"
@@ -20029,14 +19937,14 @@ exportObj.basicCardData = ->
             id: 199
             faction: "Scum and Villainy"
             pilot: "Overseer Yushyn"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             threat: 1
         }
         {
             id: 200
             faction: "Scum and Villainy"
             pilot: "Captain Seevor"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -20047,7 +19955,7 @@ exportObj.basicCardData = ->
             id: 201
             faction: "Scum and Villainy"
             pilot: "Foreman Proach"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Predator"
@@ -20059,7 +19967,7 @@ exportObj.basicCardData = ->
             id: 202
             faction: "Scum and Villainy"
             pilot: "Mining Guild Sentry"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             threat: 1
         }
         {
@@ -20188,7 +20096,7 @@ exportObj.basicCardData = ->
             id: 213
             faction: "Scum and Villainy"
             pilot: "Kavil"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -20202,7 +20110,7 @@ exportObj.basicCardData = ->
             id: 214
             faction: "Scum and Villainy"
             pilot: "Hired Gun"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -20216,7 +20124,7 @@ exportObj.basicCardData = ->
             id: 215
             faction: "Scum and Villainy"
             pilot: "Drea Renthal"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Expert Handling"
@@ -20228,7 +20136,7 @@ exportObj.basicCardData = ->
             id: 216
             faction: "Scum and Villainy"
             pilot: "Crymorah Goon"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Dorsal Turret"
@@ -20242,7 +20150,7 @@ exportObj.basicCardData = ->
             id: 217
             faction: "Scum and Villainy"
             pilot: "Dace Bonearm"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Feedback Array"
@@ -20254,7 +20162,7 @@ exportObj.basicCardData = ->
             id: 218
             faction: "Scum and Villainy"
             pilot: "Palob Godalhi"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Debris Gambit"
@@ -20267,7 +20175,7 @@ exportObj.basicCardData = ->
             id: 219
             faction: "Scum and Villainy"
             pilot: "Torkil Mux"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Cloaking Device"
@@ -20279,7 +20187,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             pilot: "Spice Runner"
             suffix: " (x2)"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 3
             linkedId: 220
             upgrades: [
@@ -20292,7 +20200,7 @@ exportObj.basicCardData = ->
             id: 221
             faction: "Scum and Villainy"
             pilot: "Constable Zuvio"
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -20307,7 +20215,7 @@ exportObj.basicCardData = ->
             pilot: "Jakku Gunrunner"
             suffix: " (x2)"
             linkedId: 222
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             threat: 3
             upgrades: [
                 "Novice Technician"
@@ -20319,7 +20227,7 @@ exportObj.basicCardData = ->
             id: 223
             faction: "Scum and Villainy"
             pilot: "Sarco Plank"
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             threat: 2
             upgrades: [
                 "Unkar Plutt"
@@ -20333,7 +20241,7 @@ exportObj.basicCardData = ->
             id: 224
             faction: "Scum and Villainy"
             pilot: "Unkar Plutt"
-            ship: "Quadjumper"
+            ship: "Quadrijet Transfer Spacetug"
             threat: 2
             upgrades: [
                 "Novice Technician"
@@ -20346,7 +20254,7 @@ exportObj.basicCardData = ->
             id: 225
             faction: "Scum and Villainy"
             pilot: "Prince Xizor"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             threat: 3
             upgrades: [
                 "Predator"
@@ -20359,7 +20267,7 @@ exportObj.basicCardData = ->
             id: 226
             faction: "Scum and Villainy"
             pilot: "Black Sun Enforcer"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             threat: 2
             upgrades: [
                 "Collision Detector"
@@ -20369,7 +20277,7 @@ exportObj.basicCardData = ->
             id: 227
             faction: "Scum and Villainy"
             pilot: "Guri"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             threat: 3
             upgrades: [
                 "Daredevil"
@@ -20381,7 +20289,7 @@ exportObj.basicCardData = ->
             id: 228
             faction: "Scum and Villainy"
             pilot: "Dalan Oberos (StarViper)"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -20394,7 +20302,7 @@ exportObj.basicCardData = ->
             id: 229
             faction: "Scum and Villainy"
             pilot: "Black Sun Assassin"
-            ship: "StarViper"
+            ship: "StarViper-class Attack Platform"
             threat: 2
             upgrades: [
                 "Fearless"
@@ -20553,7 +20461,7 @@ exportObj.basicCardData = ->
             id: 242
             faction: "Scum and Villainy"
             pilot: "N'dru Suhlak"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Lone Wolf"
@@ -20568,7 +20476,7 @@ exportObj.basicCardData = ->
             pilot: "Black Sun Soldier"
             suffix: " (x2)"
             linkedId: 243
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -20581,7 +20489,7 @@ exportObj.basicCardData = ->
             id: 244
             faction: "Scum and Villainy"
             pilot: "Kaa'to Leeachos"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Expert Handling"
@@ -20594,7 +20502,7 @@ exportObj.basicCardData = ->
             id: 245
             faction: "Scum and Villainy"
             pilot: "Binayre Pirate"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 1
         }
         {
@@ -20642,7 +20550,7 @@ exportObj.basicCardData = ->
             id: 249
             faction: "Scum and Villainy"
             pilot: "Moralo Eval"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             threat: 4
             upgrades: [
                 "Outmaneuver"
@@ -20656,7 +20564,7 @@ exportObj.basicCardData = ->
             id: 250
             faction: "Scum and Villainy"
             pilot: "Latts Razzi"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             threat: 3
             upgrades: [
                 "Boba Fett"
@@ -20670,7 +20578,7 @@ exportObj.basicCardData = ->
             id: 251
             faction: "Scum and Villainy"
             pilot: "Trandoshan Slaver"
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             threat: 3
             upgrades: [
                 "Hotshot Gunner"
@@ -20685,7 +20593,7 @@ exportObj.basicCardData = ->
             pilot: "Bossk"
             suffix: " + Nashtah Pup"
             linkedId: 253
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             threat: 3
             upgrades: [
                 "Marksmanship"
@@ -20699,7 +20607,7 @@ exportObj.basicCardData = ->
             pilot: "Nashtah Pup"
             suffix: " + Bossk"
             linkedId: 252
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 3
         }
         {
@@ -20708,7 +20616,7 @@ exportObj.basicCardData = ->
             pilot: "Trandoshan Slaver"
             suffix: " + Nashtah Pup"
             linkedId: 255
-            ship: "YV-666"
+            ship: "YV-666 Light Freighter"
             threat: 3
             upgrades: [
                 "Deadman's Switch"
@@ -20721,7 +20629,7 @@ exportObj.basicCardData = ->
             pilot: "Nashtah Pup"
             suffix: " + Trandoshan Slaver"
             linkedId: 254
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 3
             upgrades: [
                 "Proton Rockets"
@@ -20823,7 +20731,7 @@ exportObj.basicCardData = ->
             pilot: "IG-88A"
             suffix: " + IG-88D"
             linkedId: 264
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             threat: 6
             upgrades: [
                 "Advanced Sensors"
@@ -20836,7 +20744,7 @@ exportObj.basicCardData = ->
             pilot: "IG-88D"
             suffix: " + IG-88A"
             linkedId: 263
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             threat: 6
             upgrades: [
                 "Advanced Sensors"
@@ -20849,7 +20757,7 @@ exportObj.basicCardData = ->
             pilot: "IG-88B"
             suffix: " + IG-88C"
             linkedId: 266
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             threat: 6
             upgrades: [
                 "Fire-Control System"
@@ -20863,7 +20771,7 @@ exportObj.basicCardData = ->
             pilot: "IG-88C"
             suffix: " + IG-88B"
             linkedId: 265
-            ship: "Aggressor"
+            ship: "Aggressor Assault Fighter"
             threat: 6
             upgrades: [
                 "Fire-Control System"
@@ -20875,7 +20783,7 @@ exportObj.basicCardData = ->
             id: 267
             faction: "Resistance"
             pilot: "L'ulo L'ampar"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Primed Thrusters"
@@ -20886,7 +20794,7 @@ exportObj.basicCardData = ->
             id: 268
             faction: "Resistance"
             pilot: "Greer Sonnel"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -20897,7 +20805,7 @@ exportObj.basicCardData = ->
             id: 269
             faction: "Resistance"
             pilot: "Green Squadron Expert"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Heroic"
@@ -20909,7 +20817,7 @@ exportObj.basicCardData = ->
             id: 270
             faction: "Resistance"
             pilot: "Tallissan Lintra"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Predator"
@@ -20920,7 +20828,7 @@ exportObj.basicCardData = ->
             id: 271
             faction: "Resistance"
             pilot: "Zari Bangel"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -20931,7 +20839,7 @@ exportObj.basicCardData = ->
             id: 272
             faction: "Resistance"
             pilot: "Blue Squadron Recruit"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Primed Thrusters"
@@ -20943,7 +20851,7 @@ exportObj.basicCardData = ->
             id: 273
             faction: "Resistance"
             pilot: "Poe Dameron"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 4
             upgrades: [
                 "Proton Torpedoes"
@@ -20957,7 +20865,7 @@ exportObj.basicCardData = ->
             id: 274
             faction: "Resistance"
             pilot: "Jessika Pava"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "R5 Astromech"
@@ -20969,7 +20877,7 @@ exportObj.basicCardData = ->
             id: 275
             faction: "Resistance"
             pilot: "Black Squadron Ace (T-70)"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Proton Torpedoes"
@@ -20981,7 +20889,7 @@ exportObj.basicCardData = ->
             id: 276
             faction: "Resistance"
             pilot: "Ello Asty"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -20993,7 +20901,7 @@ exportObj.basicCardData = ->
             id: 277
             faction: "Resistance"
             pilot: "Joph Seastriker"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "R2 Astromech"
@@ -21005,14 +20913,14 @@ exportObj.basicCardData = ->
             id: 278
             faction: "Resistance"
             pilot: "Jaycris Tubbs"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 2
         }
         {
             id: 279
             faction: "Resistance"
             pilot: "Nien Nunb"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -21024,7 +20932,7 @@ exportObj.basicCardData = ->
             id: 280
             faction: "Resistance"
             pilot: "Lieutenant Bastian"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Targeting Synchronizer"
@@ -21037,14 +20945,14 @@ exportObj.basicCardData = ->
             id: 281
             faction: "Resistance"
             pilot: "Red Squadron Expert"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 2
         }
         {
             id: 282
             faction: "Resistance"
             pilot: "Temmin Wexley"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -21056,7 +20964,7 @@ exportObj.basicCardData = ->
             id: 283
             faction: "Resistance"
             pilot: "Kare Kun"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Predator"
@@ -21068,7 +20976,7 @@ exportObj.basicCardData = ->
             id: 284
             faction: "Resistance"
             pilot: "Blue Squadron Rookie"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 2
             upgrades: [
                 "BB Astromech"
@@ -21203,7 +21111,7 @@ exportObj.basicCardData = ->
             id: 295
             faction: "Rebel Alliance"
             pilot: "Thane Kyrell"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: 2
             upgrades: [
                 "Stealth Device"
@@ -21214,7 +21122,7 @@ exportObj.basicCardData = ->
             id: 296
             faction: "Galactic Empire"
             pilot: "Iden Versio"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Proton Torpedoes"
@@ -21238,7 +21146,7 @@ exportObj.basicCardData = ->
             id: 298
             faction: "Scum and Villainy"
             pilot: "Foreman Proach"
-            ship: "Mining Guild TIE Fighter"
+            ship: "Modified TIE/ln Fighter"
             threat: 2
             upgrades: [
                 "Fearless"
@@ -21249,7 +21157,7 @@ exportObj.basicCardData = ->
             id: 299
             faction: "First Order"
             pilot: '"Blackout"'
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Trick Shot"
@@ -21259,7 +21167,7 @@ exportObj.basicCardData = ->
             id: 300
             faction: "Resistance"
             pilot: "Greer Sonnel"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Marksmanship"
@@ -21270,7 +21178,7 @@ exportObj.basicCardData = ->
             id: 301
             faction: "Scum and Villainy"
             pilot: "Han Solo (Scum)"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             linkedId: 302
             suffix: " + Escape craft"
             threat: 5
@@ -21299,7 +21207,7 @@ exportObj.basicCardData = ->
             id: 303
             faction: "Scum and Villainy"
             pilot: "Lando Calrissian (Scum)"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             linkedId: 304
             suffix: " + L3-37"
             threat: 4
@@ -21324,7 +21232,7 @@ exportObj.basicCardData = ->
             id: 305
             faction: "Scum and Villainy"
             pilot: "L3-37"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             linkedId: 306
             suffix: " + Lando Calrissian"
             threat: 5
@@ -21353,7 +21261,7 @@ exportObj.basicCardData = ->
             id: 307
             faction: "Scum and Villainy"
             pilot: "Freighter Captain"
-            ship: "Customized YT-1300"
+            ship: "Customized YT-1300 Light Freighter"
             linkedId: 308
             suffix: " + Autopilot drone"
             threat: 3
@@ -21439,7 +21347,7 @@ exportObj.basicCardData = ->
             id: 314
             faction: "Galactic Republic"
             pilot: '"Tucker"'
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             threat: 2
             upgrades: [
                 "Concussion Missiles"
@@ -21450,7 +21358,7 @@ exportObj.basicCardData = ->
             id: 315
             faction: "Galactic Republic"
             pilot: "Gold Squadron Trooper"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             threat: 2
             upgrades: [
                 "Cluster Missiles"
@@ -21461,7 +21369,7 @@ exportObj.basicCardData = ->
             id: 316
             faction: "Galactic Republic"
             pilot: '"Swoop"'
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             threat: 2
             upgrades: [
                 "Composure"
@@ -21473,7 +21381,7 @@ exportObj.basicCardData = ->
             id: 317
             faction: "Galactic Republic"
             pilot: "Blue Squadron Protector"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             threat: 2
             upgrades: [
                 "Dedicated"
@@ -21484,7 +21392,7 @@ exportObj.basicCardData = ->
             id: 318
             faction: "Galactic Republic"
             pilot: '"Odd Ball"'
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             threat: 3
             upgrades: [
                 "Saturation Salvo"
@@ -21497,7 +21405,7 @@ exportObj.basicCardData = ->
             id: 319
             faction: "Galactic Republic"
             pilot: '"Kickback"'
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -21508,7 +21416,7 @@ exportObj.basicCardData = ->
             id: 320
             faction: "Galactic Republic"
             pilot: '"Axe"'
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             threat: 2
             upgrades: [
                 "Juke"
@@ -21519,7 +21427,7 @@ exportObj.basicCardData = ->
             id: 321
             faction: "Galactic Republic"
             pilot: '"Wolffe"'
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -21532,7 +21440,7 @@ exportObj.basicCardData = ->
             id: 322
             faction: "Galactic Republic"
             pilot: '"Sinker"'
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 2
             upgrades: [
                 "Expert Handling"
@@ -21542,7 +21450,7 @@ exportObj.basicCardData = ->
             id: 323
             faction: "Galactic Republic"
             pilot: "104th Battalion Pilot"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 2
             upgrades: [
                 "Dedicated"
@@ -21553,7 +21461,7 @@ exportObj.basicCardData = ->
             id: 324
             faction: "Galactic Republic"
             pilot: '"Odd Ball" (ARC-170)'
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -21566,7 +21474,7 @@ exportObj.basicCardData = ->
             id: 325
             faction: "Galactic Republic"
             pilot: '"Jag"'
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 3
             upgrades: [
                 "Predator"
@@ -21580,7 +21488,7 @@ exportObj.basicCardData = ->
             id: 326
             faction: "Galactic Republic"
             pilot: "Squad Seven Veteran"
-            ship: "ARC-170"
+            ship: "ARC-170 Starfighter"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -21594,7 +21502,7 @@ exportObj.basicCardData = ->
             id: 327
             faction: "Scum and Villainy"
             pilot: "Black Sun Soldier"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -21607,7 +21515,7 @@ exportObj.basicCardData = ->
             id: 328
             faction: "Scum and Villainy"
             pilot: "Binayre Pirate"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 1
             upgrades: [
                 "Deadman's Switch"
@@ -21617,7 +21525,7 @@ exportObj.basicCardData = ->
             id: 329
             faction: "Scum and Villainy"
             pilot: "N'dru Suhlak"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Crack Shot"
@@ -21630,7 +21538,7 @@ exportObj.basicCardData = ->
             id: 330
             faction: "Scum and Villainy"
             pilot: "Kaa'to Leeachos"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Saturation Salvo"
@@ -21644,7 +21552,7 @@ exportObj.basicCardData = ->
             id: 331
             faction: "Galactic Empire"
             pilot: "Black Squadron Scout"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Predator"
@@ -21655,7 +21563,7 @@ exportObj.basicCardData = ->
             id: 332
             faction: "Galactic Empire"
             pilot: "Planetary Sentinel"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Proton Bombs"
@@ -21667,7 +21575,7 @@ exportObj.basicCardData = ->
             id: 333
             faction: "Galactic Empire"
             pilot: '"Duchess"'
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -21680,7 +21588,7 @@ exportObj.basicCardData = ->
             id: 334
             faction: "Galactic Empire"
             pilot: '"Countdown"'
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -21693,7 +21601,7 @@ exportObj.basicCardData = ->
             id: 335
             faction: "Galactic Empire"
             pilot: '"Pure Sabacc"'
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Trick Shot"
@@ -21705,7 +21613,7 @@ exportObj.basicCardData = ->
             skip: true
             faction: "Galactic Empire"
             pilot: "Planetary Sentinel"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Proton Bombs"
@@ -22162,7 +22070,7 @@ exportObj.basicCardData = ->
             id: 374
             faction: "Galactic Republic"
             pilot: "Gold Squadron Trooper"
-            ship: "V-19 Torrent"
+            ship: "V-19 Torrent Starfighter"
             suffix: ", Plo Koons wing"
             threat: '*'
             upgrades: [
@@ -22328,7 +22236,7 @@ exportObj.basicCardData = ->
             id: 385
             faction: "First Order"
             pilot: "Major Vonreg"
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             threat: 3
             upgrades: [
                 "Mag-Pulse Warheads"
@@ -22340,7 +22248,7 @@ exportObj.basicCardData = ->
             id: 386
             faction: "First Order"
             pilot: '"Holo"'
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             threat: 3
             upgrades: [
                 "Hull Upgrade"
@@ -22353,7 +22261,7 @@ exportObj.basicCardData = ->
             id: 387
             faction: "First Order"
             pilot: '"Ember"'
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             threat: 3
             upgrades: [
                 "Afterburners"
@@ -22366,7 +22274,7 @@ exportObj.basicCardData = ->
             id: 388
             faction: "First Order"
             pilot: "First Order Provocateur"
-            ship: "TIE/Ba Interceptor"
+            ship: "TIE/ba Interceptor"
             threat: 2
             upgrades: [
                 "Snap Shot"
@@ -22406,7 +22314,7 @@ exportObj.basicCardData = ->
             id: 391
             faction: "Galactic Republic"
             pilot: "Shadow Squadron Veteran"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 3
             upgrades: [
                 "R5 Astromech"
@@ -22419,7 +22327,7 @@ exportObj.basicCardData = ->
             id: 392
             faction: "Galactic Republic"
             pilot: "Anakin Skywalker (Y-Wing)"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 4
             upgrades: [
                 "Proton Bombs"
@@ -22434,7 +22342,7 @@ exportObj.basicCardData = ->
             id: 393
             faction: "Galactic Republic"
             pilot: "R2-D2"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 2
             upgrades: [
                 "Proton Bombs"
@@ -22446,7 +22354,7 @@ exportObj.basicCardData = ->
             id: 394
             faction: "Galactic Republic"
             pilot: '"Odd Ball" (Y-Wing)'
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 3
             upgrades: [
                 "Hull Upgrade"
@@ -22460,7 +22368,7 @@ exportObj.basicCardData = ->
             id: 395
             faction: "Galactic Republic"
             pilot: '"Matchstick"'
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 3
             upgrades: [
                 "Shield Upgrade"
@@ -22475,7 +22383,7 @@ exportObj.basicCardData = ->
             id: 396
             faction: "Galactic Republic"
             pilot: '"Broadside"'
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 2
             upgrades: [
                 "Hull Upgrade"
@@ -22488,7 +22396,7 @@ exportObj.basicCardData = ->
             id: 397
             faction: "Galactic Republic"
             pilot: '"Goji"'
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 2
             upgrades: [
                 "Afterburners"
@@ -22499,7 +22407,7 @@ exportObj.basicCardData = ->
             id: 398
             faction: "Galactic Republic"
             pilot: "Red Squadron Bomber"
-            ship: "BTL-B Y-Wing"
+            ship: "BTL-B Y-wing"
             threat: 2
             upgrades: [
                 "Delayed Fuses"
@@ -22608,7 +22516,7 @@ exportObj.basicCardData = ->
             id: 406
             faction: "Galactic Empire"
             pilot: "Darth Vader"
-            ship: "TIE Advanced"
+            ship: "TIE Advanced x1"
             threat: [6,7,8,9]
             wingmates: [2,3,4,5]
             suffix: " and his wing"
@@ -22625,7 +22533,7 @@ exportObj.basicCardData = ->
             id: 407
             faction: "Galactic Empire"
             pilot: "Black Squadron Ace"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             suffix: ", Darth Vaders wing"
             threat: '*'
             upgrades: [
@@ -22638,7 +22546,7 @@ exportObj.basicCardData = ->
             id: 408
             faction: "Resistance"
             pilot: "Poe Dameron"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: [9,11,13,15]
             wingmates: [2,3,4,5]
             suffix: " and his wing"
@@ -22655,7 +22563,7 @@ exportObj.basicCardData = ->
             id: 409
             faction: "Resistance"
             pilot: "Black Squadron Ace (T-70)"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             suffix: ", Poe Damerons wing"
             threat: '*'
             upgrades: [
@@ -22668,7 +22576,7 @@ exportObj.basicCardData = ->
             id: 410
             faction: "First Order"
             pilot: "Kylo Ren"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: [6,8]
             wingmates: [2,3]
             suffix: " and his wing"
@@ -22685,7 +22593,7 @@ exportObj.basicCardData = ->
             id: 411
             faction: "First Order"
             pilot: "Omega Squadron Expert"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             suffix: ", Kylo Rens wing"
             threat: '*'
             upgrades: [
@@ -22729,7 +22637,7 @@ exportObj.basicCardData = ->
             id: 414
             faction: "Rebel Alliance"
             pilot: "Luke Skywalker"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             threat: [8,10,12,14]
             wingmates: [2,3,4,5]
             suffix: " and his wing"
@@ -22747,7 +22655,7 @@ exportObj.basicCardData = ->
             id: 415
             faction: "Rebel Alliance"
             pilot: "Red Squadron Veteran"
-            ship: "X-Wing"
+            ship: "T-65 X-wing"
             suffix: ", Luke Skywalkers wing"
             threat: '*'
             upgrades: [
@@ -22790,7 +22698,7 @@ exportObj.basicCardData = ->
             id: 418
             faction: "Rebel Alliance"
             pilot: "Gina Moonsong"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -22804,7 +22712,7 @@ exportObj.basicCardData = ->
             id: 419
             faction: "Rebel Alliance"
             pilot: "Leia Organa"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             threat: 4
             upgrades: [
                 "Chewbacca"
@@ -22818,7 +22726,7 @@ exportObj.basicCardData = ->
             id: 420
             faction: "Rebel Alliance"
             pilot: "Blue Squadron Pilot"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Passive Sensors"
@@ -22830,7 +22738,7 @@ exportObj.basicCardData = ->
             id: 421
             faction: "Rebel Alliance"
             pilot: "Blade Squadron Veteran"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 3
             upgrades: [
                 "Snap Shot"
@@ -22844,7 +22752,7 @@ exportObj.basicCardData = ->
             id: 422
             faction: "Rebel Alliance"
             pilot: "Outer Rim Smuggler"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             threat: 3
             upgrades: [
                 "Homing Missiles"
@@ -22855,7 +22763,7 @@ exportObj.basicCardData = ->
             id: 423
             faction: "Rebel Alliance"
             pilot: "Alexsandr Kallus"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             threat: 4
             upgrades: [
                 "Passive Sensors"
@@ -22869,7 +22777,7 @@ exportObj.basicCardData = ->
             id: 424
             faction: "Rebel Alliance"
             pilot: "Lothal Rebel"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             threat: 3
             upgrades: [
                 "Passive Sensors"
@@ -22880,7 +22788,7 @@ exportObj.basicCardData = ->
             id: 425
             faction: "Rebel Alliance"
             pilot: "Partisan Renegade"
-            ship: "U-Wing"
+            ship: "UT-60D U-wing"
             threat: 3
             upgrades: [
                 "Magva Yarro"
@@ -22893,7 +22801,7 @@ exportObj.basicCardData = ->
             id: 426
             faction: "Resistance"
             pilot: "Blue Squadron Recruit"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Primed Thrusters"
@@ -22905,7 +22813,7 @@ exportObj.basicCardData = ->
             id: 427
             faction: "Resistance"
             pilot: "Ronith Blario"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Mag-Pulse Warheads"
@@ -22917,7 +22825,7 @@ exportObj.basicCardData = ->
             id: 428
             faction: "Resistance"
             pilot: "Zizi Tlo"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -22955,7 +22863,7 @@ exportObj.basicCardData = ->
             id: 431
             faction: "Scum and Villainy"
             pilot: "Bossk"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Predator"
@@ -22967,7 +22875,7 @@ exportObj.basicCardData = ->
             id: 432
             faction: "Scum and Villainy"
             pilot: "Binayre Pirate"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 2
             upgrades: [
                 "Concussion Missiles"
@@ -22979,7 +22887,7 @@ exportObj.basicCardData = ->
             id: 433
             faction: "Scum and Villainy"
             pilot: "Black Sun Soldier"
-            ship: "Z-95 Headhunter"
+            ship: "Z-95-AF4 Headhunter"
             threat: 1
             upgrades: [
                 "Composure"
@@ -23074,7 +22982,7 @@ exportObj.basicCardData = ->
             id: 441
             faction: "Galactic Empire"
             pilot: "Black Squadron Scout"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Snap Shot"
@@ -23085,7 +22993,7 @@ exportObj.basicCardData = ->
             id: 442
             faction: "Galactic Empire"
             pilot: '"Vagabond"'
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -23098,7 +23006,7 @@ exportObj.basicCardData = ->
             id: 443
             faction: "Galactic Empire"
             pilot: "Planetary Sentinel"
-            ship: "TIE Striker"
+            ship: "TIE/sk Striker"
             threat: 2
             upgrades: [
                 "Conner Nets"
@@ -23109,7 +23017,7 @@ exportObj.basicCardData = ->
             id: 444
             faction: "Galactic Empire"
             pilot: "Inquisitor"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 2
             upgrades: [
                 "Brilliant Evasion"
@@ -23120,7 +23028,7 @@ exportObj.basicCardData = ->
             id: 445
             faction: "Galactic Empire"
             pilot: "Baron of the Empire"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 2
             upgrades: [
                 "Snap Shot"
@@ -23131,7 +23039,7 @@ exportObj.basicCardData = ->
             id: 446
             faction: "Galactic Empire"
             pilot: "Fifth Brother"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 2
             upgrades: [
                 "Foresight"
@@ -23141,7 +23049,7 @@ exportObj.basicCardData = ->
             id: 447
             faction: "First Order"
             pilot: "Zeta Squadron Survivor"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             threat: 2
             upgrades: [
                 "Passive Sensors"
@@ -23153,7 +23061,7 @@ exportObj.basicCardData = ->
             id: 448
             faction: "First Order"
             pilot: "Lieutenant LeHuse"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -23165,7 +23073,7 @@ exportObj.basicCardData = ->
             id: 449
             faction: "First Order"
             pilot: "Captain Phasma"
-            ship: "TIE/SF Fighter"
+            ship: "TIE/sf Fighter"
             threat: 3
             upgrades: [
                 "Advanced Optics"
@@ -23179,7 +23087,7 @@ exportObj.basicCardData = ->
             id: 450
             faction: "First Order"
             pilot: "First Order Test Pilot"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Proud Tradition"
@@ -23191,7 +23099,7 @@ exportObj.basicCardData = ->
             id: 451
             faction: "First Order"
             pilot: "Sienar-Jaemus Engineer"
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Afterburners"
@@ -23204,7 +23112,7 @@ exportObj.basicCardData = ->
             id: 452
             faction: "First Order"
             pilot: '"Rush"'
-            ship: "TIE/VN Silencer"
+            ship: "TIE/vn Silencer"
             threat: 3
             upgrades: [
                 "Primed Thrusters"
@@ -23216,7 +23124,7 @@ exportObj.basicCardData = ->
             id: 453
             faction: "Galactic Empire"
             pilot: "Seventh Sister"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 3
             upgrades: [
                 "Predictive Shot"
@@ -23229,7 +23137,7 @@ exportObj.basicCardData = ->
             id: 454
             faction: "Galactic Empire"
             pilot: "Inquisitor"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 2
             upgrades: [
                 "Heightened Perception"
@@ -23240,7 +23148,7 @@ exportObj.basicCardData = ->
             id: 455
             faction: "Galactic Empire"
             pilot: "Grand Inquisitor"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 3
             upgrades: [
                 "Hate"
@@ -23252,7 +23160,7 @@ exportObj.basicCardData = ->
             id: 456
             faction: "Galactic Empire"
             pilot: "Baron of the Empire"
-            ship: "TIE Advanced Prototype"
+            ship: "TIE Advanced v1"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -23538,7 +23446,7 @@ exportObj.basicCardData = ->
             id: 479
             faction: "Rebel Alliance"
             pilot: "Han Solo"
-            ship: "YT-1300"
+            ship: "Modified YT-1300 Light Freighter"
             threat: 5
             upgrades: [
                 "C-3PO"
@@ -23552,7 +23460,7 @@ exportObj.basicCardData = ->
             id: 480 
             faction: "Rebel Alliance"
             pilot: "Blade Squadron Veteran"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Predator"
@@ -23564,7 +23472,7 @@ exportObj.basicCardData = ->
             id: 481 
             faction: "Rebel Alliance"
             pilot: "Blue Squadron Pilot"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Fire-Control System"
@@ -23575,7 +23483,7 @@ exportObj.basicCardData = ->
             id: 482 
             faction: "Rebel Alliance"
             pilot: "Blue Squadron Pilot"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Passive Sensors"
@@ -23587,7 +23495,7 @@ exportObj.basicCardData = ->
             id: 483 
             faction: "Rebel Alliance"
             pilot: "Netrem Pollard"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Debris Gambit"
@@ -23599,7 +23507,7 @@ exportObj.basicCardData = ->
             id: 484
             faction: "Rebel Alliance"
             pilot: "Ten Numb"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -23610,7 +23518,7 @@ exportObj.basicCardData = ->
             id: 485
             faction: "Rebel Alliance"
             pilot: "Blade Squadron Veteran"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 3
             upgrades: [
                 "Saturation Salvo"
@@ -23625,7 +23533,7 @@ exportObj.basicCardData = ->
             id: 486
             faction: "Rebel Alliance"
             pilot: "Braylen Stramm"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 3
             upgrades: [
                 "Squad Leader"
@@ -23638,7 +23546,7 @@ exportObj.basicCardData = ->
             id: 487
             faction: "Rebel Alliance"
             pilot: "Hera Syndulla (B-Wing)"
-            ship: "B-Wing"
+            ship: "A/SF-01 B-wing"
             threat: 3
             upgrades: [
                 "B6 Blade Wing Prototype (Epic)"
@@ -23651,7 +23559,7 @@ exportObj.basicCardData = ->
             id: 488
             faction: "Rebel Alliance"
             pilot: "Phoenix Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 1
             upgrades: [
                 "Hopeful"
@@ -23661,7 +23569,7 @@ exportObj.basicCardData = ->
             id: 489
             faction: "Rebel Alliance"
             pilot: "Phoenix Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 1
             upgrades: [
                 "Elusive"
@@ -23671,7 +23579,7 @@ exportObj.basicCardData = ->
             id: 490
             faction: "Rebel Alliance"
             pilot: "Phoenix Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 1
             upgrades: [
                 "Marg Sabl Closure"
@@ -23681,7 +23589,7 @@ exportObj.basicCardData = ->
             id: 491
             faction: "Rebel Alliance"
             pilot: "Ahsoka Tano (A-Wing)"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Marg Sabl Closure"
@@ -23693,7 +23601,7 @@ exportObj.basicCardData = ->
             id: 492
             faction: "Rebel Alliance"
             pilot: "Arvel Crynyd"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Intimidation"
@@ -23705,7 +23613,7 @@ exportObj.basicCardData = ->
             id: 493
             faction: "Rebel Alliance"
             pilot: "Derek Klivian"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -23716,7 +23624,7 @@ exportObj.basicCardData = ->
             id: 494
             faction: "Rebel Alliance"
             pilot: "Green Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Juke"
@@ -23728,7 +23636,7 @@ exportObj.basicCardData = ->
             id: 495
             faction: "Rebel Alliance"
             pilot: "Green Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Starbird Slash"
@@ -23740,7 +23648,7 @@ exportObj.basicCardData = ->
             id: 496
             faction: "Rebel Alliance"
             pilot: "Hera Syndulla (A-Wing)"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Hopeful"
@@ -23750,7 +23658,7 @@ exportObj.basicCardData = ->
             id: 497
             faction: "Rebel Alliance"
             pilot: "Jake Farrell"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Cluster Missiles"
@@ -23761,7 +23669,7 @@ exportObj.basicCardData = ->
             id: 498
             faction: "Rebel Alliance"
             pilot: "Jake Farrell"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Daredevil"
@@ -23773,7 +23681,7 @@ exportObj.basicCardData = ->
             id: 499
             faction: "Rebel Alliance"
             pilot: "Phoenix Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Daredevil"
@@ -23785,7 +23693,7 @@ exportObj.basicCardData = ->
             id: 500
             faction: "Rebel Alliance"
             pilot: "Sabine Wren (A-Wing)"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -23795,7 +23703,7 @@ exportObj.basicCardData = ->
             id: 501
             faction: "Rebel Alliance"
             pilot: "Shara Bey (A-Wing)"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Marg Sabl Closure"
@@ -23807,7 +23715,7 @@ exportObj.basicCardData = ->
             id: 502
             faction: "Rebel Alliance"
             pilot: "Wedge Antilles (A-Wing)"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             threat: 2
             upgrades: [
                 "Deadeye Shot"
@@ -23818,7 +23726,7 @@ exportObj.basicCardData = ->
             id: 503
             faction: "Rebel Alliance"
             pilot: "Hera Syndulla (VCX-100)"
-            ship: "VCX-100"
+            ship: "VCX-100 Light Freighter"
             threat: [6, 7, 8, 9]
             wingmates: [1, 2, 3, 4]
             suffix: " + Phantom and her wing"
@@ -23836,7 +23744,7 @@ exportObj.basicCardData = ->
             id: 504
             faction: "Rebel Alliance"
             pilot: "Phoenix Squadron Pilot"
-            ship: "A-Wing"
+            ship: "RZ-1 A-wing"
             suffix: ", Heras wing"
             threat: '*'
             upgrades: [
@@ -23862,7 +23770,7 @@ exportObj.basicCardData = ->
             id: 506
             faction: "Galactic Empire"
             pilot: "Captain Dobbs"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 3 
             upgrades: [
                 "Disciplined"
@@ -23874,7 +23782,7 @@ exportObj.basicCardData = ->
             id: 507
             faction: "Galactic Empire"
             pilot: "Delta Squadron Pilot"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 3 
             upgrades: [
                 "Ion Cannon"
@@ -23884,7 +23792,7 @@ exportObj.basicCardData = ->
             id: 508
             faction: "Galactic Empire"
             pilot: "Delta Squadron Pilot"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 3 
             upgrades: [
                 "Autoblasters"
@@ -23895,7 +23803,7 @@ exportObj.basicCardData = ->
             id: 509
             faction: "Galactic Empire"
             pilot: "Onyx Squadron Ace"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 3 
             upgrades: [
                 "Interloper Turn"
@@ -23907,7 +23815,7 @@ exportObj.basicCardData = ->
             id: 510
             faction: "Galactic Empire"
             pilot: "Colonel Vessery"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Outmaneuver"
@@ -23919,7 +23827,7 @@ exportObj.basicCardData = ->
             id: 511
             faction: "Galactic Empire"
             pilot: "Countess Ryad"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Predator"
@@ -23932,7 +23840,7 @@ exportObj.basicCardData = ->
             id: 512
             faction: "Galactic Empire"
             pilot: "Onyx Squadron Ace"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Outmaneuver"
@@ -23944,7 +23852,7 @@ exportObj.basicCardData = ->
             id: 513
             faction: "Galactic Empire"
             pilot: "Rexler Brath"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Elusive"
@@ -23956,7 +23864,7 @@ exportObj.basicCardData = ->
             id: 514
             faction: "Galactic Empire"
             pilot: "Vult Skerris"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 4
             upgrades: [
                 "Daredevil"
@@ -23969,7 +23877,7 @@ exportObj.basicCardData = ->
             id: 515
             faction: "Galactic Empire"
             pilot: "Darth Vader (TIE Defender)"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 5
             upgrades: [
                 "Sense"
@@ -23981,7 +23889,7 @@ exportObj.basicCardData = ->
             id: 516
             faction: "Galactic Empire"
             pilot: "Alpha Squadron Pilot"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Hull Upgrade"
@@ -23992,7 +23900,7 @@ exportObj.basicCardData = ->
             id: 517
             faction: "Galactic Empire"
             pilot: "Alpha Squadron Pilot"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Disciplined"
@@ -24004,7 +23912,7 @@ exportObj.basicCardData = ->
             id: 518
             faction: "Galactic Empire"
             pilot: "Alpha Squadron Pilot"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Shield Upgrade"
@@ -24016,7 +23924,7 @@ exportObj.basicCardData = ->
             id: 519
             faction: "Galactic Empire"
             pilot: "Ciena Ree"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Disciplined"
@@ -24027,7 +23935,7 @@ exportObj.basicCardData = ->
             id: 520
             faction: "Galactic Empire"
             pilot: "Commandant Goran"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Disciplined"
@@ -24039,7 +23947,7 @@ exportObj.basicCardData = ->
             id: 521
             faction: "Galactic Empire"
             pilot: "Lieutenant Lorrir"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -24050,7 +23958,7 @@ exportObj.basicCardData = ->
             id: 522
             faction: "Galactic Empire"
             pilot: "Nash Windrider"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Daredevil"
@@ -24062,7 +23970,7 @@ exportObj.basicCardData = ->
             id: 523
             faction: "Galactic Empire"
             pilot: "Saber Squadron Ace"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Predator"
@@ -24073,7 +23981,7 @@ exportObj.basicCardData = ->
             id: 524
             faction: "Galactic Empire"
             pilot: "Saber Squadron Ace"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Daredevil"
@@ -24085,7 +23993,7 @@ exportObj.basicCardData = ->
             id: 525
             faction: "Galactic Empire"
             pilot: "Turr Phennir"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -24095,7 +24003,7 @@ exportObj.basicCardData = ->
             id: 526
             faction: "Galactic Empire"
             pilot: "Gideon Hask (TIE Interceptor)"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 3
             upgrades: [
                 "Disciplined"
@@ -24109,7 +24017,7 @@ exportObj.basicCardData = ->
             id: 527
             faction: "Galactic Empire"
             pilot: "Soontir Fel"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 3
             upgrades: [
                 "Daredevil"
@@ -24122,7 +24030,7 @@ exportObj.basicCardData = ->
             id: 528
             faction: "Galactic Empire"
             pilot: "Vult Skerris (TIE Interceptor)"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: 3
             upgrades: [
                 "Daredevil"
@@ -24135,7 +24043,7 @@ exportObj.basicCardData = ->
             id: 529
             faction: "Galactic Empire"
             pilot: "Commandant Goran"
-            ship: "TIE Interceptor"
+            ship: "TIE/in Interceptor"
             threat: [4,5,6,7]
             wingmates: [2,3,4,5]
             suffix: " and his wing"
@@ -24152,7 +24060,7 @@ exportObj.basicCardData = ->
             id: 530
             faction: "Galactic Republic"
             pilot: "Academy Pilot"
-            ship: "TIE Fighter"
+            ship: "TIE/ln Fighter"
             suffix: ", Commandant Gorans wing"
             threat: '*'
             upgrades: [
@@ -24165,7 +24073,7 @@ exportObj.basicCardData = ->
             id: 531
             faction: "Scum and Villainy"
             pilot: "Gamut Key"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -24177,7 +24085,7 @@ exportObj.basicCardData = ->
             id: 532
             faction: "Scum and Villainy"
             pilot: "Kanan Jarrus (HWK-290)"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Patience"
@@ -24188,7 +24096,7 @@ exportObj.basicCardData = ->
             id: 533
             faction: "Scum and Villainy"
             pilot: "Spice Runner"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Hondo Ohnaka"
@@ -24201,7 +24109,7 @@ exportObj.basicCardData = ->
             id: 534
             faction: "Scum and Villainy"
             pilot: "Tápusk"
-            ship: "HWK-290"
+            ship: "HWK-290 Light Freighter"
             threat: 2
             upgrades: [
                 "Cutthroat"
@@ -24212,7 +24120,7 @@ exportObj.basicCardData = ->
             id: 535
             faction: "Scum and Villainy"
             pilot: "Amaxine Warrior"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Cutthroat"
@@ -24224,7 +24132,7 @@ exportObj.basicCardData = ->
             id: 536
             faction: "Scum and Villainy"
             pilot: "Arliz Hadrassian"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Predator"
@@ -24237,7 +24145,7 @@ exportObj.basicCardData = ->
             id: 537
             faction: "Scum and Villainy"
             pilot: "Jinata Security Officer"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Automated Target Priority"
@@ -24250,7 +24158,7 @@ exportObj.basicCardData = ->
             id: 538
             faction: "Scum and Villainy"
             pilot: "Padric"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 2
             upgrades: [
                 "Dorsal Turret"
@@ -24262,7 +24170,7 @@ exportObj.basicCardData = ->
             id: 539
             faction: "Scum and Villainy"
             pilot: "Leema Kai"
-            ship: "Y-Wing"
+            ship: "BTL-A4 Y-wing"
             threat: 3
             upgrades: [
                 "Marg Sabl Closure"
@@ -24279,7 +24187,7 @@ exportObj.basicCardData = ->
             id: 540 
             faction: "Resistance"
             pilot: "Blue Squadron Rookie"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 2
             upgrades: [
                 "Automated Target Priority"
@@ -24291,7 +24199,7 @@ exportObj.basicCardData = ->
             id: 541 
             faction: "Resistance"
             pilot: "Nimi Chireen"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 2
             upgrades: [
                 "Automated Target Priority"
@@ -24303,7 +24211,7 @@ exportObj.basicCardData = ->
             id: 542 
             faction: "Resistance"
             pilot: "Red Squadron Expert"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 2
             upgrades: [
                 "Predator"
@@ -24315,7 +24223,7 @@ exportObj.basicCardData = ->
             id: 543 
             faction: "Resistance"
             pilot: "Black Squadron Ace (T-70)"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Deadeye Shot"
@@ -24330,7 +24238,7 @@ exportObj.basicCardData = ->
             id: 544 
             faction: "Resistance"
             pilot: "C'ai Threnalli"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Backwards Tailslide"
@@ -24344,7 +24252,7 @@ exportObj.basicCardData = ->
             id: 545 
             faction: "Resistance"
             pilot: "Poe Dameron (HoH)"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Backwards Tailslide"
@@ -24359,7 +24267,7 @@ exportObj.basicCardData = ->
             id: 546 
             faction: "Resistance"
             pilot: "Temmin Wexley (HoH)"
-            ship: "T-70 X-Wing"
+            ship: "T-70 X-wing"
             threat: 3
             upgrades: [
                 "Snap Shot"
@@ -24373,7 +24281,7 @@ exportObj.basicCardData = ->
             id: 547 
             faction: "Resistance"
             pilot: "Blue Squadron Recruit"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Snap Shot"
@@ -24385,7 +24293,7 @@ exportObj.basicCardData = ->
             id: 548 
             faction: "Resistance"
             pilot: "Green Squadron Expert"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Snap Shot"
@@ -24397,7 +24305,7 @@ exportObj.basicCardData = ->
             id: 549 
             faction: "Resistance"
             pilot: "Merl Cobben"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Deadeye Shot"
@@ -24410,7 +24318,7 @@ exportObj.basicCardData = ->
             id: 550 
             faction: "Resistance"
             pilot: "Seftin Vanik"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Daredevil"
@@ -24422,7 +24330,7 @@ exportObj.basicCardData = ->
             id: 551 
             faction: "Resistance"
             pilot: "Suralinda Javos"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Starbird Slash"
@@ -24435,7 +24343,7 @@ exportObj.basicCardData = ->
             id: 552 
             faction: "Resistance"
             pilot: "Wrobie Tyce"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Starbird Slash"
@@ -24447,7 +24355,7 @@ exportObj.basicCardData = ->
             id: 553 
             faction: "Resistance"
             pilot: "Wrobie Tyce"
-            ship: "RZ-2 A-Wing"
+            ship: "RZ-2 A-wing"
             threat: 2
             upgrades: [
                 "Starbird Slash"
@@ -24590,7 +24498,7 @@ exportObj.basicCardData = ->
             id: 564 
             faction: "Separatist Alliance" 
             pilot: "Zam Wesell"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 4
             upgrades: [
                 "Deadeye Shot"
@@ -24604,7 +24512,7 @@ exportObj.basicCardData = ->
             id: 565 
             faction: "Separatist Alliance" 
             pilot: "Separatist Racketeer"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 3
             upgrades: [
                 "Jamming Beam"
@@ -24617,7 +24525,7 @@ exportObj.basicCardData = ->
             id: 566 
             faction: "Separatist Alliance" 
             pilot: "Jango Fett"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 4
             upgrades: [
                 "Zam Wesell"
@@ -24630,7 +24538,7 @@ exportObj.basicCardData = ->
             id: 567 
             faction: "Separatist Alliance" 
             pilot: "Boba Fett (Separatist)"
-            ship: "Firespray-31"
+            ship: "Firespray-class Patrol Craft"
             threat: 3
             upgrades: [
                 "Debris Gambit"
@@ -24711,7 +24619,7 @@ exportObj.basicCardData = ->
             id: 574
             faction: "Galactic Empire"
             pilot: "Delta Squadron Pilot"
-            ship: "TIE Defender"
+            ship: "TIE/d Defender"
             threat: 3 
             upgrades: [
                 "Tractor Beam"
@@ -24815,7 +24723,7 @@ exportObj.basicCardData = ->
             id: 581
             faction: "First Order"
             pilot: "Kylo Ren (TIE Whisper)"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             threat: 3
             upgrades: [
                 "Predator"
@@ -24828,7 +24736,7 @@ exportObj.basicCardData = ->
             id: 582
             faction: "First Order"
             pilot: '"Wrath"'
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -24840,7 +24748,7 @@ exportObj.basicCardData = ->
             id: 583
             faction: "First Order"
             pilot: '"Whirlwind"'
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -24854,7 +24762,7 @@ exportObj.basicCardData = ->
             id: 584
             faction: "First Order"
             pilot: "709th Legion Ace"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             threat: 3
             upgrades: [
                 "Predator"
@@ -24866,7 +24774,7 @@ exportObj.basicCardData = ->
             id: 585
             faction: "First Order"
             pilot: '"Nightfall"'
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             threat: 2
             upgrades: [
                 "Ion Limiter Override"
@@ -24877,7 +24785,7 @@ exportObj.basicCardData = ->
             id: 586
             faction: "First Order"
             pilot: "Red Fury Zealot"
-            ship: "TIE/WI Whisper"
+            ship: "TIE/wi Whisper Modified Interceptor"
             threat: 2
             upgrades: [
                 "Predator"
@@ -24888,7 +24796,7 @@ exportObj.basicCardData = ->
             id: 587
             faction: "First Order"
             pilot: '"Breach"'
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             threat: 3
             upgrades: [
                 "Elusive"
@@ -24901,7 +24809,7 @@ exportObj.basicCardData = ->
             id: 588
             faction: "First Order"
             pilot: '"Scorch"'
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             threat: 3
             upgrades: [
                 "Predator"
@@ -24914,7 +24822,7 @@ exportObj.basicCardData = ->
             id: 589
             faction: "First Order"
             pilot: '"Dread"'
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             threat: 3
             upgrades: [
                 "Feedback Ping"
@@ -24928,7 +24836,7 @@ exportObj.basicCardData = ->
             id: 590
             faction: "First Order"
             pilot: '"Grudge"'
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -24941,7 +24849,7 @@ exportObj.basicCardData = ->
             id: 591
             faction: "First Order"
             pilot: "First Order Cadet"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             threat: 2
             upgrades: [
                 "Feedback Ping"
@@ -24953,7 +24861,7 @@ exportObj.basicCardData = ->
             id: 592
             faction: "First Order"
             pilot: "Sienar-Jaemus Test Pilot"
-            ship: "TIE/Se Bomber"
+            ship: "TIE/se Bomber"
             threat: 2
             upgrades: [
                 "Cluster Missiles"
@@ -24964,7 +24872,7 @@ exportObj.basicCardData = ->
             id: 593
             faction: "Resistance"
             pilot: "Zorii Bliss"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 3
             upgrades: [
                 "Outmaneuver"
@@ -24978,7 +24886,7 @@ exportObj.basicCardData = ->
             id: 594
             faction: "Resistance"
             pilot: "Teza Nasz"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 3
             upgrades: [
                 "Expert Handling"
@@ -24993,7 +24901,7 @@ exportObj.basicCardData = ->
             id: 595
             faction: "Resistance"
             pilot: "Lega Fossang"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 2
             upgrades: [
                 "Proton Torpedoes"
@@ -25005,7 +24913,7 @@ exportObj.basicCardData = ->
             id: 596
             faction: "Resistance"
             pilot: "Shasa Zaro"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 2
             upgrades: [
                 "Ion Cannon Turret"
@@ -25018,7 +24926,7 @@ exportObj.basicCardData = ->
             id: 597
             faction: "Resistance"
             pilot: "C'ai Threnalli"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 2
             upgrades: [
                 "Expert Handling"
@@ -25032,7 +24940,7 @@ exportObj.basicCardData = ->
             id: 598
             faction: "Resistance"
             pilot: "Aftab Ackbar"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -25044,7 +24952,7 @@ exportObj.basicCardData = ->
             id: 599
             faction: "Resistance"
             pilot: "Corus Kapellim"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 2
             upgrades: [
                 "Ion Cannon Turret"
@@ -25057,7 +24965,7 @@ exportObj.basicCardData = ->
             id: 600 
             faction: "Resistance"
             pilot: "New Republic Patrol"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -25071,7 +24979,7 @@ exportObj.basicCardData = ->
             id: 601
             faction: "Resistance"
             pilot: "Kijimi Spice Runner"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 2
             upgrades: [
                 "Tierfon Belly Run"
@@ -25085,7 +24993,7 @@ exportObj.basicCardData = ->
             id: 602
             faction: "Resistance"
             pilot: "Wilsa Teshlo"
-            ship: "BTA-NR2 Y-Wing"
+            ship: "BTA-NR2 Y-wing"
             threat: 3
             upgrades: [
                 "Predator"
@@ -25635,79 +25543,85 @@ exportObj.randomizer = (faction_name, points) ->
         #append.shiplistmaster.pilotsbyid.xws ? shiplistmaster.pilotsbyid.canonical_name ? shiplistmaster.pilotsbyid.name.canonicalize())
 
 exportObj.standardShipInclusions = [
-    {name: 'X-Wing', faction: 'Rebel Alliance'}
-    {name: 'YT-1300', faction: 'Rebel Alliance'}
-    {name: 'B-Wing', faction: 'Rebel Alliance'}
-    {name: 'A-Wing', faction: 'Rebel Alliance'}
-    {name: 'Y-Wing', faction: 'Rebel Alliance'}
-    {name: 'VCX-100', faction: 'Rebel Alliance'}
+    {name: 'T-65 X-wing', faction: 'Rebel Alliance'}
+    {name: 'Modified YT-1300 Light Freighter', faction: 'Rebel Alliance'}
+    {name: 'A/SF-01 B-wing', faction: 'Rebel Alliance'}
+    {name: 'RZ-1 A-wing', faction: 'Rebel Alliance'}
+    {name: 'BTL-A4 Y-wing', faction: 'Rebel Alliance'}
+    {name: 'VCX-100 Light Freighter', faction: 'Rebel Alliance'}
     {name: 'Sheathipede-Class Shuttle', faction: 'Rebel Alliance'}
-    {name: 'TIE Advanced', faction: 'Galactic Empire'}
-    {name: 'TIE Advanced Prototype', faction: 'Galactic Empire'}
-    {name: 'TIE Fighter', faction: 'Galactic Empire'}
-    {name: 'TIE Interceptor', faction: 'Galactic Empire'}
+    {name: 'ARC-170 Starfighter', faction: 'Rebel Alliance'}
+    {name: 'Fang Fighter', faction: 'Rebel Alliance'}
+    {name: 'TIE/ln Fighter', faction: 'Rebel Alliance'}
+    {name: 'HWK-290 Light Freighter', faction: 'Rebel Alliance'}
+    {name: 'UT-60D U-Wing', faction: 'Rebel Alliance'}
+    {name: 'Z-95-AF4 Headhunter', faction: 'Rebel Alliance'}
+    {name: 'Gauntlet Fighter', faction: 'Rebel Alliance'}
+
+    {name: 'TIE Advanced x1', faction: 'Galactic Empire'}
+    {name: 'TIE Advanced v1', faction: 'Galactic Empire'}
+    {name: 'TIE/ln Fighter', faction: 'Galactic Empire'}
+    {name: 'TIE/in Interceptor', faction: 'Galactic Empire'}
     {name: 'TIE Reaper', faction: 'Galactic Empire'}
-    {name: 'TIE Defender', faction: 'Galactic Empire'}
-    {name: 'TIE Striker', faction: 'Galactic Empire'}
+    {name: 'TIE/d Defender', faction: 'Galactic Empire'}
+    {name: 'TIE/sk Striker', faction: 'Galactic Empire'}
     {name: 'TIE/rb Heavy', faction: 'Galactic Empire'}
     {name: 'VT-49 Decimator', faction: 'Galactic Empire'}
-    {name: 'Firespray-31', faction: 'Scum and Villainy'}
-    {name: 'Y-Wing', faction: 'Scum and Villainy'}
-    {name: 'Mining Guild TIE Fighter', faction: 'Scum and Villainy'}
+    {name: 'Gauntlet Fighter', faction: 'Galactic Empire'}
+
+    {name: 'Firespray-class Patrol Craft', faction: 'Scum and Villainy'}
+    {name: 'BTL-A4 Y-wing', faction: 'Scum and Villainy'}
+    {name: 'Modified TIE/ln Fighter', faction: 'Scum and Villainy'}
     {name: 'Fang Fighter', faction: 'Scum and Villainy'}
     {name: 'JumpMaster 5000', faction: 'Scum and Villainy'}
     {name: 'M3-A Interceptor', faction: 'Scum and Villainy'}
-    {name: 'Customized YT-1300', faction: 'Scum and Villainy'}
+    {name: 'Customized YT-1300 Light Freighter', faction: 'Scum and Villainy'}
     {name: 'Escape Craft', faction: 'Scum and Villainy'}
-    {name: 'YV-666', faction: 'Scum and Villainy'}
-    {name: 'Z-95 Headhunter', faction: 'Scum and Villainy'}
-    {name: 'HWK-290', faction: 'Scum and Villainy'}
+    {name: 'YV-666 Light Freighter', faction: 'Scum and Villainy'}
+    {name: 'Z-95-AF4 Headhunter', faction: 'Scum and Villainy'}
+    {name: 'HWK-290 Light Freighter', faction: 'Scum and Villainy'}
+    {name: 'ST-70 Assault Ship', faction: 'Scum and Villainy'}
+    {name: 'Rogue-class Starfighter', faction: 'Scum and Villainy'}
+    {name: 'Gauntlet Fighter', faction: 'Scum and Villainy'}
+
     {name: 'Fireball', faction: 'Resistance'}
-    {name: 'T-70 X-Wing', faction: 'Resistance'}
-    {name: 'RZ-2 A-Wing', faction: 'Resistance'}
-    {name: 'BTA-NR2 Y-Wing', faction: 'Resistance'}
+    {name: 'T-70 X-wing', faction: 'Resistance'}
+    {name: 'RZ-2 A-wing', faction: 'Resistance'}
+    {name: 'BTA-NR2 Y-wing', faction: 'Resistance'}
     {name: 'Resistance Transport', faction: 'Resistance'}
     {name: 'Resistance Transport Pod', faction: 'Resistance'}
-    {name: 'TIE/Ba Interceptor', faction: 'First Order'}
-    {name: 'TIE/FO Fighter', faction: 'First Order'}
-    {name: 'TIE/VN Silencer', faction: 'First Order'}
-    {name: 'TIE/SF Fighter', faction: 'First Order'}
-    {name: 'TIE/Se Bomber', faction: 'First Order'}
-    {name: 'TIE/WI Whisper', faction: 'First Order'}
+    {name: 'Scavenged YT-1300', faction: 'Resistance'}
+
+    {name: 'TIE/ba Interceptor', faction: 'First Order'}
+    {name: 'TIE/fo Fighter', faction: 'First Order'}
+    {name: 'TIE/vn Silencer', faction: 'First Order'}
+    {name: 'TIE/sf Fighter', faction: 'First Order'}
+    {name: 'TIE/se Bomber', faction: 'First Order'}
+    {name: 'TIE/wi Whisper', faction: 'First Order'}
     {name: 'Xi-class Light Shuttle', faction: 'First Order'}
+
     {name: 'Delta-7 Aethersprite', faction: 'Galactic Republic'}
     {name: 'Delta-7b Aethersprite', faction: 'Galactic Republic'}
-    {name: 'ARC-170', faction: 'Galactic Republic'}
+    {name: 'ARC-170 Starfighter', faction: 'Galactic Republic'}
     {name: 'Naboo Royal N-1 Starfighter', faction: 'Galactic Republic'}
-    {name: 'BTL-B Y-Wing', faction: 'Galactic Republic'}
-    {name: 'V-19 Torrent', faction: 'Galactic Republic'}
+    {name: 'BTL-B Y-wing', faction: 'Galactic Republic'}
+    {name: 'V-19 Torrent Starfighter', faction: 'Galactic Republic'}
     {name: 'Eta-2 Actis', faction: 'Galactic Republic'}
     {name: 'Nimbus-class V-Wing', faction: 'Galactic Republic'}
     {name: 'LAAT/i Gunship', faction: 'Galactic Republic'}
+    {name: 'Gauntlet Fighter', faction: 'Galactic Republic'}
+    {name: 'Clone Z-95 Headhunter', faction: 'Galactic Republic'}
+
     {name: 'Vulture-class Droid Fighter', faction: 'Separatist Alliance'}
     {name: 'Hyena-Class Droid Bomber', faction: 'Separatist Alliance'}
     {name: 'Droid Tri-Fighter', faction: 'Separatist Alliance'}
-    {name: 'Firespray-31', faction: 'Separatist Alliance'}
+    {name: 'Firespray-class Patrol Craft', faction: 'Separatist Alliance'}
     {name: 'Sith Infiltrator', faction: 'Separatist Alliance'}
     {name: 'Nantex-Class Starfighter', faction: 'Separatist Alliance'}
     {name: 'HMP Droid Gunship', faction: 'Separatist Alliance'}
     {name: 'Belbullab-22 Starfighter', faction: 'Separatist Alliance'}
-    {name: 'ARC-170', faction: 'Rebel Alliance'}
-    {name: 'Fang Fighter', faction: 'Rebel Alliance'}
-    {name: 'TIE Fighter', faction: 'Rebel Alliance'}
-    {name: 'HWK-290', faction: 'Rebel Alliance'}
-    {name: 'U-Wing', faction: 'Rebel Alliance'}
-    {name: 'Z-95 Headhunter', faction: 'Rebel Alliance'}
-    {name: 'ST-70 Assault Ship', faction: 'Scum and Villainy'}
-    {name: 'Scavenged YT-1300', faction: 'Resistance'}
-    {name: 'Gauntlet Fighter', faction: 'Galactic Empire'}
-    {name: 'Gauntlet Fighter', faction: 'Rebel Alliance'}
-    {name: 'Gauntlet Fighter', faction: 'Scum and Villainy'}
     {name: 'Gauntlet Fighter', faction: 'Separatist Alliance'}
-    {name: 'Gauntlet Fighter', faction: 'Galactic Republic'}
-    {name: 'Clone Z-95 Headhunter', faction: 'Galactic Republic'}
     {name: 'Rogue-class Starfighter', faction: 'Separatist Alliance'}
-    {name: 'Rogue-class Starfighter', faction: 'Scum and Villainy'}
 ]
 
 # Used to exclude pilots from included ships

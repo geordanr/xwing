@@ -1120,10 +1120,6 @@ class exportObj.SquadBuilder
                                     <td class="info-header translated" defaultText="Engagement"></td>
                                     <td class="info-data info-engagement"></td>
                                 </tr>
-                                <tr class="info-ship">
-                                    <td class="info-header translated" defaultText="Ship"></td>
-                                    <td class="info-data"></td>
-                                </tr>
                                 <tr class="info-faction">
                                     <td class="info-header translated" defaultText="Faction"></td>
                                     <td class="info-data"></td>
@@ -1146,6 +1142,10 @@ class exportObj.SquadBuilder
                 </div>
                 <table class="table-sm">
                     <tbody>
+                        <tr class="info-ship">
+                            <td class="info-header translated" defaultText="Ship"></td>
+                            <td class="info-data"></td>
+                        </tr>
                         <tr class="info-actions">
                             <td class="info-header translated" defaultText="Actions"></td>
                             <td class="info-data"></td>
@@ -1872,8 +1872,8 @@ class exportObj.SquadBuilder
                             name: ship_data.name
                             display_name: ship_data.display_name
                             canonical_name: ship_data.canonical_name
-                            xws: ship_data.xws
-                            icon: if ship_data.icon then ship_data.icon else ship_data.xws
+                            xws: ship_data.name.canonicalize()
+                            icon: if ship_data.icon then ship_data.icon else ship_data.name.canonicalize()
         if sorted
             ships.sort exportObj.sortHelper
         return ships
@@ -3871,8 +3871,8 @@ class Ship
                 id: @pilot.ship
                 text: if exportObj.ships[@pilot.ship].display_name then exportObj.ships[@pilot.ship].display_name else @pilot.ship
                 chassis: if exportObj.ships[@pilot.ship].chassis then exportObj.ships[@pilot.ship].chassis else ""
-                xws: exportObj.ships[@pilot.ship].xws
-                icon: if exportObj.ships[@pilot.ship].icon then exportObj.ships[@pilot.ship].icon else exportObj.ships[@pilot.ship].xws
+                xws: exportObj.ships[@pilot.ship].name.canonicalize()
+                icon: if exportObj.ships[@pilot.ship].icon then exportObj.ships[@pilot.ship].icon else exportObj.ships[@pilot.ship].name.canonicalize()
 
             @pilot_selector.select2 'data',
                 id: @pilot.id
@@ -3897,9 +3897,6 @@ class Ship
         @row.addClass 'row ship mb-5 mb-sm-0 unsortable'
         @row.insertBefore @builder.notes_container
 
-        #if @pilot?
-        #    shipicon = if exportObj.ships[@pilot.ship].icon then exportObj.ships[@pilot.ship].icon else exportObj.ships[@pilot.ship].xws
-        
         @row.append $.trim """
             <div class="col-md-3">
                 <div class="form-group d-flex">
@@ -4247,7 +4244,7 @@ class Ship
 
         html = $.trim """
             <div class="fancy-pilot-header">
-                <div class="pilot-header-text">#{if @pilot.display_name then @pilot.display_name else @pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.xws}"></i><span class="fancy-ship-type"> #{if @data.display_name then @data.display_name else @data.name}</span></div>
+                <div class="pilot-header-text">#{if @pilot.display_name then @pilot.display_name else @pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.name.canonicalize()}"></i><span class="fancy-ship-type"> #{if @data.display_name then @data.display_name else @data.name}</span></div>
                 <div class="mask">
                     <div class="outer-circle">
                         <div class="inner-circle pilot-points">#{if @quickbuildId != -1 then (if @primary then @getPoints() else '*') else @pilot.points}</div>
@@ -4688,7 +4685,7 @@ class Ship
             name: (@pilot.xws ? @pilot.canonical_name) # name is no longer part of xws 2.0.0, and was replaced by id. However, we will add it here for some kind of backward compatibility. May be removed, as soon as everybody is using id. 
             points: @getPoints()
             #ship: @data.canonical_name
-            ship: @data.xws.canonicalize()
+            ship: @data.name.canonicalize()
 
         if @data.multisection
             xws.multisection = @data.multisection.slice 0
