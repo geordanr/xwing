@@ -25597,7 +25597,7 @@ exportObj.standardShipInclusions = [
     {name: 'TIE/vn Silencer', faction: 'First Order'}
     {name: 'TIE/sf Fighter', faction: 'First Order'}
     {name: 'TIE/se Bomber', faction: 'First Order'}
-    {name: 'TIE/wi Whisper', faction: 'First Order'}
+    {name: 'TIE/wi Whisper Modified Interceptor', faction: 'First Order'}
     {name: 'Xi-class Light Shuttle', faction: 'First Order'}
 
     {name: 'Delta-7 Aethersprite', faction: 'Galactic Republic'}
