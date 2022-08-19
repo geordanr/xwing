@@ -15636,7 +15636,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 1
             restrictions: [
-                ["Keyword", "A-Wing"]
+                ["Keyword", "A-wing"]
             ]
         }
         {
@@ -15775,7 +15775,7 @@ exportObj.basicCardData = ->
             slot: "Talent"
             points: 2
             restrictions: [
-                ["Keyword", "X-Wing"]
+                ["Keyword", "X-wing"]
                 ["Equipped", "Configuration"]
             ]
         }
@@ -15808,7 +15808,7 @@ exportObj.basicCardData = ->
             rangebonus: true
             faction: "Resistance"
             restrictions: [
-                ["Keyword", "X-Wing"]
+                ["Keyword", "X-wing"]
             ]
             modifier_func: (stats) ->
                 stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
@@ -15975,7 +15975,7 @@ exportObj.basicCardData = ->
             points: 0
             slot: "Talent"
             restrictions: [
-                ["Keyword", "Y-Wing"]
+                ["Keyword", "Y-wing"]
             ]
         }
         {
