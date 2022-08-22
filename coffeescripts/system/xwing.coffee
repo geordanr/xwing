@@ -3698,7 +3698,7 @@ class Ship
             @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
             old_upgrades = {}
-            if same_ship
+            if same_ship and not @pilot.upgrades?
                 # track addons and try to reassign them
                 for upgrade in @upgrades
                     if upgrade?.data?
@@ -4372,7 +4372,7 @@ class Ship
         reddit = """**#{@pilot.name} (#{if @quickbuildId != -1 then (if @primary then exportObj.quickbuildsById[@quickbuildId].threat else 0) else @pilot.points})**    \n"""
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
         if slotted_upgrades.length > 0
-            halfPoints = Math.floor @getPoints() / 2        
+            halfPoints = Math.floor @getPoints() / 2
             threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
             reddit +="    "
             reddit_upgrades= []
@@ -4387,7 +4387,7 @@ class Ship
     toTTSText: ->
         tts = """#{exportObj.toTTS(@pilot.name)}"""
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
-        if slotted_upgrades.length > 0
+        if slotted_upgrades.length > 0 and not @pilot.upgrades?
             for upgrade in slotted_upgrades
                 upgrade_tts = upgrade.toTTSText()
                 tts += (" + " + upgrade_tts) if upgrade_tts?

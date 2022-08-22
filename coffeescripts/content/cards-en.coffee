@@ -1720,6 +1720,9 @@ exportObj.cardLoaders.English = () ->
         "Hol Okland":
            display_name: """Hol Okland"""
            text: """During the System Phasse, if there are no enemy ships at range 1-2, you may recover 1 %CHARGE% on any upgrade."""
+        '"Pops" Krail':
+           display_name: """“Pops” Krail"""
+           text: """While you perform a %SINGLETURRETARC% attack, you may reroll up to 2 attack dice."""
         "Dex Tiree":
            display_name: """Dex Tiree"""
            text: """While you defend, if there is at least 1 other friendly ship at range 0-1, you may roll 1 additional defense die."""
@@ -2887,6 +2890,12 @@ exportObj.cardLoaders.English = () ->
         "R2-A3 (BoY)":
            display_name: """R2-A3"""
            text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
+        "R5-D8 (BoY)":
+           display_name: """R5-D8"""
+           text: """<strong>Action:</strong> Spend 1 %CHARGE% to repair 1 facedown damage card. %LINEBREAK% <strong>Action:</strong> Repair 1 faceup <strong>Ship</strong> damage card."""
+        "R5-K6 (BoY)":
+           display_name: """R5-K6"""
+           text: """<strong>Action:</strong> Spend 1 %CHARGE% to repair 1 facedown damage card. %LINEBREAK% <strong>Action:</strong> Repair 1 faceup <strong>Ship</strong> damage card."""
         "Precise Astromech (BoY)":
            display_name: """Precise Astromech"""
            text: """After you perform an action, you may spend 1 %CHARGE% to perform a red %LOCK% action."""

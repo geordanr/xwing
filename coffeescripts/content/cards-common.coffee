@@ -171,6 +171,7 @@ exportObj.basicCardData = ->
             ]
         "TIE/in Interceptor":
             name: "TIE/in Interceptor"
+            icon: "tieinterceptor"
             factions: [ "Galactic Empire" ]
             attack: 3
             agility: 3
@@ -11913,7 +11914,7 @@ exportObj.basicCardData = ->
             chassis: "Hope"
             upgrades: [
                 "Adv. Proton Torpedoes"
-                "R5-D8"
+                "R5-D8 (BoY)"
                 "Unstable Engines (BoY)"
             ]
         }
@@ -17218,6 +17219,24 @@ exportObj.basicCardData = ->
             id: 482
             standard: true
             slot: "Talent"
+        }
+        {
+            name: "R5-D8 (BoY)"
+            canonical_name: 'R5-D8'.canonicalize()
+            id: 483
+            standard: true
+            unique: true
+            slot: "Astromech"
+            charge: 2
+        }
+        {
+            name: "R5-K6 (BoY)"
+            canonical_name: 'R5-K6'.canonicalize()
+            id: 484
+            standard: true
+            unique: true
+            slot: "Astromech"
+            charge: 2
         }
     ]
 
