@@ -12165,6 +12165,8 @@ exportObj.basicCardData = ->
             points: 20
             charge: 2
             chassis: "Sensitive Controls"
+            ship_override:
+                hull: 4
             upgrades: [
                 "Sensor Jammer (BoY)"
                 "Elusive"
@@ -12180,6 +12182,8 @@ exportObj.basicCardData = ->
             points: 20
             charge: 2
             chassis: "Sensitive Controls"
+            ship_override:
+                hull: 4
             upgrades: [
                 "Daredevil"
                 "Afterburners"
@@ -12196,6 +12200,7 @@ exportObj.basicCardData = ->
             charge: 2
             chassis: "Sensitive Controls"
             ship_override:
+                hull: 4
                 actions: [
                     "Focus"
                     "Evade"
