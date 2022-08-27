@@ -1744,6 +1744,12 @@ exportObj.cardLoaders.English = () ->
         "Sigma 4":
            display_name: """Sigma 4"""
            text: """After you perform a %BARRELROLL% action, you may spend 1 %CHARGE% to perform a %BOOST% action."""
+        "Sigma 5":
+           display_name: """Sigma 5"""
+           text: """After you perform an attack that hits, you may spend 1 %CHARGE% to perform an %EVADE% action."""
+        "Sigma 6":
+           display_name: """Sigma 6"""
+           text: """After you fully execute a speed 3-5 maneuver, you may spend 1 %CHARGE% to perform a %SLAM% action."""
         "Sigma 7":
            display_name: """Sigma 7"""
            text: """During the System Phase, you may spend 1 %CHARGE% to acquire a lock on an enemy ship at range 0-1."""
@@ -2902,6 +2908,9 @@ exportObj.cardLoaders.English = () ->
         "Dorsal Turret (BoY)":
            display_name: """Dorsal Turret"""
            text: """<strong>Attack</strong>"""
+        "Sensor Jammer (BoY)":
+           display_name: """Sensor Jammer"""
+           text: """While defending, if there is a friendly lock on the attacker, you may change 1 of the attacker's %HIT% results to a %FOCUS% result."""
 
 
         # Epic upgrades

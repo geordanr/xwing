@@ -12163,9 +12163,11 @@ exportObj.basicCardData = ->
             ship: "TIE/in Interceptor"
             skill: 4
             points: 20
+            charge: 2
             chassis: "Sensitive Controls"
             upgrades: [
-                "Fanatic (BoY)"
+                "Sensor Jammer (BoY)"
+                "Elusive"
             ]
         }
         {
@@ -12176,9 +12178,11 @@ exportObj.basicCardData = ->
             ship: "TIE/in Interceptor"
             skill: 4
             points: 20
+            charge: 2
             chassis: "Sensitive Controls"
             upgrades: [
-                "Fanatic (BoY)"
+                "Daredevil"
+                "Afterburners"
             ]
         }
         {
@@ -17237,6 +17241,12 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Astromech"
             charge: 2
+        }
+        {
+            name: "Sensor Jammer (BoY)"
+            id: 485
+            standard: true
+            slot: "Sensor"
         }
     ]
 
