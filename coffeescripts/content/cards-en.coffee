@@ -1360,7 +1360,7 @@ exportObj.cardLoaders.English = () ->
         "Fifth Brother":
            text: """While you perform an attack, after the Neutralize Results step, if the attack hit, you may spend 2 %FORCE% to add 1 %CRIT% result."""
         '"Vagabond"':
-           text: """After you fully execute a maneuver using your <strong>Adaptive Ailerons</strong>, if you are not stressed you may drop 1 device. """
+           text: """After you move using your <strong>Adaptive Ailerons</strong>, if you are not stressed you may drop 1 device. """
         "Morna Kee":
            text: """During the End Phase, you may spend 1 %CHARGE% to flip 1 of your reinforce tokens to the other full arc instead of removing it."""
         "Lieutenant LeHuse":
