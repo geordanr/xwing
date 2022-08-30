@@ -1474,7 +1474,7 @@ class exportObj.SquadBuilder
                 points_dest += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
-        
+
 
         @total_points = tot_points
         @points_destroyed = points_dest
@@ -3669,8 +3669,6 @@ class Ship
                         @setWingmates quickbuild.wingmates[0]
                     @builder.isUpdatingPoints = false
                     @builder.container.trigger 'xwing:pointsUpdated'
-
-
                 else
                     @copy_button.hide()
                 @row.removeClass('unsortable')
@@ -3683,13 +3681,11 @@ class Ship
             upgrade_to_be_equipped = @builder.standard_list['Upgrade'][idx]
             for upgrade in @upgrades
                 if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
-                    # according to https://forums.atomicmassgames.com/topic/6374-cis-rogue-class-and-independent-calculations/ it's fine
-                    # to have some ships ignore standardized upgrades, if they are unable to equip them. 
-                    restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
-                    allowed_to_equip = @restriction_check(restrictions,upgrade, 0, 0)
-                    if allowed_to_equip
-                        upgrade.setData upgrade_to_be_equipped
-                        break
+                        restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
+                        allowed_to_equip = @restriction_check(restrictions,upgrade)
+                        if allowed_to_equip and not upgrade.data?
+                            upgrade.setData upgrade_to_be_equipped
+                            break
 
     setPilot: (new_pilot, noautoequip = false) ->
         # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
@@ -4579,7 +4575,7 @@ class Ship
         false
 
 
-    restriction_check: (restrictions, upgrade_obj, points, current_upgrade_points) ->
+    restriction_check: (restrictions, upgrade_obj, points = 0, current_upgrade_points = 0) ->
         effective_stats = @effectiveStats()
         if @pilot.loadout? and (points + current_upgrade_points > @pilot.loadout)
             return false
@@ -4895,11 +4891,9 @@ class GenericAddon
                 # now remove all upgrades of the same name
                 nameToRemove = @data.name
                 for ship in @ship.builder.ships
-                    if ship.data?.name == @ship.data.name
+                    if ship.data?.name == @ship.data.name and ship != @ship
                         for upgrade in ship.upgrades
                             if upgrade.data?.name == nameToRemove
-                                # we can (and should) savely call setData to remove the Upgrade, to handle e.g. removal of added slots
-                                # infinite loop recursion is prevented since it's removed from standard_list already
                                 upgrade.setData null
                                 break
 
