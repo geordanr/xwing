@@ -1356,8 +1356,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
             ]
-        "Hyena-Class Droid Bomber":
-            name: "Hyena-Class Droid Bomber"
+        "Hyena-class Droid Bomber":
+            name: "Hyena-class Droid Bomber"
             factions: ["Separatist Alliance"]
             attack: 2
             agility: 2
@@ -1607,8 +1607,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "Droid Tri-Fighter":
-            name: "Droid Tri-Fighter"
+        "Droid Tri-fighter":
+            name: "Droid Tri-fighter"
             factions: ["Separatist Alliance"]
             attack: 3
             agility: 3
@@ -1632,8 +1632,8 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
             ]
-        "Nimbus-class V-Wing":
-            name: "Nimbus-class V-Wing"
+        "Nimbus-class V-wing":
+            name: "Nimbus-class V-wing"
             factions: ["Galactic Republic"]
             attack: 2
             agility: 3
@@ -7558,7 +7558,7 @@ exportObj.basicCardData = ->
             name: "Techno Union Bomber"
             id: 324
             faction: "Separatist Alliance"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             skill: 1
             points: 3
             loadout: 6
@@ -7574,7 +7574,7 @@ exportObj.basicCardData = ->
             name: "Bombardment Drone"
             id: 325
             faction: "Separatist Alliance"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             skill: 3
             max_per_squad: 3
             keyword: ["Droid"]
@@ -7592,7 +7592,7 @@ exportObj.basicCardData = ->
             id: 326
             unique: true
             faction: "Separatist Alliance"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             skill: 4
             points: 4
             loadout: 10
@@ -7609,7 +7609,7 @@ exportObj.basicCardData = ->
             name: "Separatist Bomber"
             id: 327
             faction: "Separatist Alliance"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             skill: 3
             points: 3
             loadout: 4
@@ -7626,7 +7626,7 @@ exportObj.basicCardData = ->
             id: 328
             unique: true
             faction: "Separatist Alliance"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             skill: 3
             points: 4
             loadout: 16
@@ -7651,7 +7651,7 @@ exportObj.basicCardData = ->
             id: 329
             max_per_squad: 2
             faction: "Separatist Alliance"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             skill: 1
             points: 3
             loadout: 9
@@ -7739,7 +7739,6 @@ exportObj.basicCardData = ->
             ship: "Sith Infiltrator"
             skill: 3
             force: 3
-            keyword: ["Dark Side","Sith"]
             points: 7
             loadout: 24
             slots: [
@@ -9335,7 +9334,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             max_per_squad: 3
             skill: 3
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             points: 4
             loadout: 16
             slots: [
@@ -9354,7 +9353,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             skill: 3
             unique: true
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             points: 4
             loadout: 14
             slots: [
@@ -9372,7 +9371,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             skill: 4
             unique: true
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             points: 4
             loadout: 12
             slots: [
@@ -9390,7 +9389,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             skill: 5
             max_per_squad: 2
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             points: 4
             loadout: 14
             slots: [
@@ -9407,7 +9406,7 @@ exportObj.basicCardData = ->
             id: 424
             faction: "Separatist Alliance"
             skill: 1
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             points: 4
             loadout: 4
             slots: [
@@ -9421,7 +9420,7 @@ exportObj.basicCardData = ->
             id: 425
             faction: "Separatist Alliance"
             skill: 3
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             points: 4
             loadout: 3
             slots: [
@@ -9517,7 +9516,7 @@ exportObj.basicCardData = ->
             id: 430
             faction: "Galactic Republic"
             skill: 2
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 3
             loadout: 4
             slots: [
@@ -9530,7 +9529,7 @@ exportObj.basicCardData = ->
             id: 431
             faction: "Galactic Republic"
             skill: 3
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 3
             loadout: 3
             keyword: ["Clone"]
@@ -9545,7 +9544,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 3
             unique: true
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 3
             loadout: 8
             slots: [
@@ -9562,7 +9561,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 4
             unique: true
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 3
             loadout: 8
             charge: 1
@@ -9581,7 +9580,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             skill: 5
             unique: true
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 3
             loadout: 11
             keyword: ["Clone"]
@@ -9593,14 +9592,14 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Odd Ball" (V-Wing)'
+            name: '"Odd Ball" (V-wing)'
             canonical_name: '"Oddball"'.canonicalize()
             xws: "oddball-nimbusclassvwing"
             id: 435
             faction: "Galactic Republic"
             skill: 5
             unique: true
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 4
             loadout: 12
             keyword: ["Clone"]
@@ -11881,6 +11880,8 @@ exportObj.basicCardData = ->
             points: 20
             chassis: "Hope"
             upgrades: [
+                "Adv. Proton Torpedoes"
+                "R5-K6 (BoY)"
             ]
         }
         {
@@ -11973,7 +11974,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: 'Jon "Dutch" Vander'
+            name: 'Jon "Dutch" Vander (BoY)'
             canonical_name: '"Dutch" Vander'.canonicalize()
             xws: "jondutchvader-battleofyavin"
             unique: true
@@ -11987,7 +11988,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Dex Tiree"
+            name: "Dex Tiree (BoY)"
             unique: true
             id: 561
             faction: "Rebel Alliance"
@@ -12002,7 +12003,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Pops" Krail'
+            name: '"Pops" Krail (BoY)'
             unique: true
             id: 562
             faction: "Rebel Alliance"
@@ -12017,7 +12018,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Hol Okland"
+            name: "Hol Okland (BoY)"
             unique: true
             id: 563
             faction: "Rebel Alliance"
@@ -12052,7 +12053,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Backstabber"'
+            name: '"Backstabber" (BoY)'
             unique: true
             id: 565
             faction: "Galactic Empire"
@@ -12085,7 +12086,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Dark Curse"'
+            name: '"Dark Curse" (BoY)'
             unique: true
             id: 567
             faction: "Galactic Empire"
@@ -12139,7 +12140,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Sigma 4"
+            name: "Sigma 4 (BoY)"
             unique: true
             id: 570
             faction: "Galactic Empire"
@@ -12156,7 +12157,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Sigma 5"
+            name: "Sigma 5 (BoY)"
             unique: true
             id: 571
             faction: "Galactic Empire"
@@ -12173,7 +12174,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Sigma 6"
+            name: "Sigma 6 (BoY)"
             unique: true
             id: 572
             faction: "Galactic Empire"
@@ -12190,7 +12191,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Sigma 7"
+            name: "Sigma 7 (BoY)"
             unique: true
             id: 573
             faction: "Galactic Empire"
@@ -12211,6 +12212,274 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Marksmanship"
                 "Fire-Control System"
+            ]
+        }
+        {
+            name: "Anakin Skywalker (SoC)"
+            unique: true
+            id: 574
+            faction: "Galactic Republic"
+            ship: "Eta-2 Actis"
+            skill: 6
+            points: 20
+            force: 3
+            chassis: "Intuitive Controls"
+            keyword: ["Dark Side"]
+            upgrades: [
+                "Malice"
+                "Ancillary Ion Weapons (SoC)"
+                "R2-D2 (Republic)"
+            ]
+        }
+        {
+            name: "Obi-Wan Kenobi (SoC)"
+            unique: true
+            id: 575
+            faction: "Galactic Republic"
+            ship: "Eta-2 Actis"
+            skill: 5
+            points: 20
+            force: 3
+            chassis: "Intuitive Controls"
+            upgrades: [
+            ]
+        }
+        {
+            name: "Shaak Ti (SoC)"
+            unique: true
+            id: 576
+            faction: "Galactic Republic"
+            ship: "Eta-2 Actis"
+            skill: 4
+            points: 20
+            force: 2
+            chassis: "Intuitive Controls"
+            upgrades: [
+                "Marksmanship"
+                "Brilliant Evasion"
+                "Ancillary Ion Weapons (SoC)"
+                "R4-P Astromech"
+            ]
+        }
+        {
+            name: '"Odd Ball" (SoC)'
+            unique: true
+            id: 577
+            faction: "Galactic Republic"
+            ship: "ARC-170 Starfighter"
+            skill: 5
+            points: 20
+            chassis: "Born for This"
+            upgrades: [
+            ]
+        }
+        {
+            name: '"Wolffe" (SoC)'
+            unique: true
+            id: 578
+            faction: "Galactic Republic"
+            ship: "ARC-170 Starfighter"
+            skill: 4
+            points: 20
+            chassis: "Born for This"
+            upgrades: [
+            ]
+        }
+        {
+            name: '"Jag" (SoC)'
+            unique: true
+            id: 579
+            faction: "Galactic Republic"
+            ship: "ARC-170 Starfighter"
+            skill: 3
+            points: 20
+            chassis: "Born for This"
+            upgrades: [
+            ]
+        }
+        {
+            name: '"Contrail" (SoC)'
+            unique: true
+            id: 580
+            faction: "Galactic Republic"
+            ship: "Nimbus-class V-wing"
+            skill: 5
+            points: 20
+            chassis: "Born for This"
+            upgrades: [
+            ]
+        }
+        {
+            name: '"Klick" (SoC)'
+            unique: true
+            id: 581
+            faction: "Galactic Republic"
+            ship: "Nimbus-class V-wing"
+            skill: 4
+            points: 20
+            chassis: "Born for This"
+            upgrades: [
+            ]
+        }
+        {
+            name: '"Kickback" (SoC)'
+            unique: true
+            id: 582
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent Starfighter"
+            skill: 4
+            points: 20
+            chassis: "Born for This"
+            upgrades: [
+            ]
+        }
+        {
+            name: '"Axe" (SoC)'
+            unique: true
+            id: 583
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent Starfighter"
+            skill: 3
+            points: 20
+            chassis: "Born for This"
+            upgrades: [
+                "Deadeye Shot"
+                "Barrage Rockets"
+            ]
+        }
+        {
+            name: "Count Dooku (SoC)"
+            unique: true
+            id: 584
+            faction: "Separatist Alliance"
+            ship: "Sith Infiltrator"
+            skill: 3
+            points: 20
+            force: 3
+            keyword: ["Dark Side"]
+            upgrades: [
+                "Malice"
+                "Roiling Anger (SoC)"
+                "Scimitar"
+            ]
+        }
+        {
+            name: "DBS-32C (SoC)"
+            unique: true
+            id: 585
+            faction: "Separatist Alliance"
+            ship: "Hyena-class Droid Bomber"
+            skill: 3
+            points: 20
+            chassis: "Networked Calculations"
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Lock"
+                    "R-Jam"
+                ]
+            upgrades: [
+                "Plasma Torpedoes"
+                "Contingency Protocol (SoC)"
+                "Strut-Lock Override (SoC)"
+            ]
+        }
+        {
+            name: "DBS-404 (SoC)"
+            unique: true
+            id: 586
+            faction: "Separatist Alliance"
+            ship: "Hyena-class Droid Bomber"
+            skill: 4
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
+            ]
+        }
+        {
+            name: "Baktoid Prototype (SoC)"
+            id: 587
+            faction: "Separatist Alliance"
+            ship: "Hyena-class Droid Bomber"
+            skill: 1
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
+            ]
+        }
+        {
+            name: "DIS-347 (SoC)"
+            unique: true
+            id: 588
+            faction: "Separatist Alliance"
+            ship: "Droid Tri-fighter"
+            skill: 3
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
+            ]
+        }
+        {
+            name: "DIS-T81 (SoC)"
+            unique: true
+            id: 589
+            faction: "Separatist Alliance"
+            ship: "Droid Tri-fighter"
+            skill: 4
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
+                "Outmaneuver"
+                "Afterburners"
+                "Contingency Protocol (SoC)"
+            ]
+        }
+        {
+            name: "Phlac-Arphocc Prototype (SoC)"
+            id: 590
+            faction: "Separatist Alliance"
+            ship: "Droid Tri-fighter"
+            skill: 1
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
+            ]
+        }
+        {
+            name: "DFS-081 (SoC)"
+            unique: true
+            id: 591
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 3
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
+            ]
+        }
+        {
+            name: "DFS-311 (SoC)"
+            unique: true
+            id: 592
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 1
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
+            ]
+        }
+        {
+            name: "Haor Chall Prototype (SoC)"
+            id: 593
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 1
+            points: 20
+            chassis: "Networked Calculations"
+            upgrades: [
             ]
         }
     ]
@@ -14410,7 +14679,7 @@ exportObj.basicCardData = ->
         {
             name: "Landing Struts"
             id: 237
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             slot: "Configuration"
             points: 0
         }
@@ -15573,7 +15842,7 @@ exportObj.basicCardData = ->
             name: 'Alpha-3B "Besh"'
             id: 337
             slot: "Configuration"
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 0
             confersAddons: [
                 {
@@ -15841,7 +16110,7 @@ exportObj.basicCardData = ->
             name: 'Alpha-3E "Esk"'
             id: 363
             slot: "Configuration"
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             points: 0
             charge: 2
             recurring: 1
@@ -15867,7 +16136,7 @@ exportObj.basicCardData = ->
             id: 366
             points: 0
             slot: "Configuration"
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             faction: "Separatist Alliance"
             charge: 3
             recurring: -1
@@ -17253,6 +17522,33 @@ exportObj.basicCardData = ->
             standard: true
             slot: "Sensor"
         }
+        {
+            name: "Ancillary Ion Weapons (SoC)"
+            id: 486
+            standard: true
+            slot: "Cannon"
+            charge: 2
+            recurring: 1
+        }
+        {
+            name: "Roiling Anger (SoC)"
+            id: 487
+            standard: true
+            slot: "Force"
+        }
+        {
+            name: "Contingency Protocol (SoC)"
+            id: 488
+            standard: true
+            slot: "Modification"
+        }
+        {
+            name: "Strut-Lock Override (SoC)"
+            id: 489
+            standard: true
+            charge: 2
+            slot: "Configuration"
+        }
     ]
 
 
@@ -17619,6 +17915,10 @@ exportObj.basicCardData = ->
         {
             name: "Intuitive Controls"
             id: 45
+        }
+        {
+            name: "Born for This"
+            id: 46
         }
     ]
 
@@ -22015,7 +22315,7 @@ exportObj.basicCardData = ->
             id: 367
             faction: "Separatist Alliance"
             pilot: "Baktoid Prototype"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             threat: 2
             upgrades: [
                 "Passive Sensors"
@@ -22027,7 +22327,7 @@ exportObj.basicCardData = ->
             id: 368
             faction: "Separatist Alliance"
             pilot: "Bombardment Drone"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             threat: 2
             upgrades: [
                 "Trajectory Simulator"
@@ -22039,7 +22339,7 @@ exportObj.basicCardData = ->
             id: 369
             faction: "Separatist Alliance"
             pilot: "DBS-32C"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             threat: 2
             upgrades: [
                 "TA-175"
@@ -22051,7 +22351,7 @@ exportObj.basicCardData = ->
             id: 370
             faction: "Separatist Alliance"
             pilot: "DBS-404"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             threat: 2
             upgrades: [
                 "Predator"
@@ -22064,7 +22364,7 @@ exportObj.basicCardData = ->
             id: 371
             faction: "Separatist Alliance"
             pilot: "Separatist Bomber"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             threat: 2
             upgrades: [
                 "Passive Sensors"
@@ -22075,7 +22375,7 @@ exportObj.basicCardData = ->
             id: 372
             faction: "Separatist Alliance"
             pilot: "Techno Union Bomber"
-            ship: "Hyena-Class Droid Bomber"
+            ship: "Hyena-class Droid Bomber"
             threat: 2
             upgrades: [
                 "Proton Torpedoes"
@@ -23309,7 +23609,7 @@ exportObj.basicCardData = ->
             id: 465
             faction: "Galactic Republic"
             pilot: '"Odd Ball"'
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             threat: 2
             upgrades: [
                 "Elusive"
@@ -23322,7 +23622,7 @@ exportObj.basicCardData = ->
             id: 466
             faction: "Galactic Republic"
             pilot: "Wilhuff Tarkin"
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             threat: 2
             upgrades: [
                 "R3 Astromech"
@@ -23333,14 +23633,14 @@ exportObj.basicCardData = ->
             id: 467
             faction: "Galactic Republic"
             pilot: "Loyalist Volunteer"
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             threat: 1
         }
         {
             id: 468
             faction: "Galactic Republic"
             pilot: '"Contrail"'
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             threat: 4
             upgrades: [
                 "Ion Limiter Override"
@@ -23352,7 +23652,7 @@ exportObj.basicCardData = ->
             id: 469
             faction: "Galactic Republic"
             pilot: '"Klick"'
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             threat: 4
             upgrades: [
                 "R3 Astromech" 
@@ -23364,7 +23664,7 @@ exportObj.basicCardData = ->
             id: 470
             faction: "Galactic Republic"
             pilot: "Shadow Squadron Escort"
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             threat: 2
             upgrades: [
                 "Outmaneuver" 
@@ -23466,7 +23766,7 @@ exportObj.basicCardData = ->
             id: 478
             faction: "Galactic Republic"
             pilot: "Shadow Squadron Escort"
-            ship: "Nimbus-class V-Wing"
+            ship: "Nimbus-class V-wing"
             suffix: ", Aayla Secura's wing"
             threat: '*'
             upgrades: [
@@ -24584,7 +24884,7 @@ exportObj.basicCardData = ->
             id: 568 
             faction: "Separatist Alliance" 
             pilot: "Colicoid Interceptor"
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             threat: 2
             upgrades: [
                 "Fire-Control System"
@@ -24596,7 +24896,7 @@ exportObj.basicCardData = ->
             id: 569 
             faction: "Separatist Alliance" 
             pilot: "DIS-347"
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             threat: 2
             upgrades: [
                 "Fire-Control System"
@@ -24608,7 +24908,7 @@ exportObj.basicCardData = ->
             id: 570 
             faction: "Separatist Alliance" 
             pilot: "DIS-T81"
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             threat: 2
             upgrades: [
                 "Marg Sabl Closure"
@@ -24619,7 +24919,7 @@ exportObj.basicCardData = ->
             id: 571 
             faction: "Separatist Alliance" 
             pilot: "Fearsome Predator"
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             threat: 2
             upgrades: [
                 "Fire-Control System"
@@ -24630,7 +24930,7 @@ exportObj.basicCardData = ->
             id: 572 
             faction: "Separatist Alliance" 
             pilot: "Phlac-Arphocc Prototype"
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             threat: 2
             upgrades: [
                 "XX-23 S-Thread Tracers"
@@ -24641,7 +24941,7 @@ exportObj.basicCardData = ->
             id: 573
             faction: "Separatist Alliance" 
             pilot: "Separatist Interceptor"
-            ship: "Droid Tri-Fighter"
+            ship: "Droid Tri-fighter"
             threat: 2
             upgrades: [
                 "Outmaneuver"
@@ -25641,14 +25941,14 @@ exportObj.standardShipInclusions = [
     {name: 'BTL-B Y-wing', faction: 'Galactic Republic'}
     {name: 'V-19 Torrent Starfighter', faction: 'Galactic Republic'}
     {name: 'Eta-2 Actis', faction: 'Galactic Republic'}
-    {name: 'Nimbus-class V-Wing', faction: 'Galactic Republic'}
+    {name: 'Nimbus-class V-wing', faction: 'Galactic Republic'}
     {name: 'LAAT/i Gunship', faction: 'Galactic Republic'}
     {name: 'Gauntlet Fighter', faction: 'Galactic Republic'}
     {name: 'Clone Z-95 Headhunter', faction: 'Galactic Republic'}
 
     {name: 'Vulture-class Droid Fighter', faction: 'Separatist Alliance'}
-    {name: 'Hyena-Class Droid Bomber', faction: 'Separatist Alliance'}
-    {name: 'Droid Tri-Fighter', faction: 'Separatist Alliance'}
+    {name: 'Hyena-class Droid Bomber', faction: 'Separatist Alliance'}
+    {name: 'Droid Tri-fighter', faction: 'Separatist Alliance'}
     {name: 'Firespray-class Patrol Craft', faction: 'Separatist Alliance'}
     {name: 'Sith Infiltrator', faction: 'Separatist Alliance'}
     {name: 'Nantex-Class Starfighter', faction: 'Separatist Alliance'}

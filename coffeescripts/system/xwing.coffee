@@ -4520,6 +4520,7 @@ class Ship
         for i in [0...max_checks]
             valid = true
             pilot_func = @pilot?.validation_func ? @pilot?.restriction_func ? undefined
+            pilot_upgrades_check = @pilot.upgrades?
             if (pilot_func? and not pilot_func(this, @pilot)) or not (@builder.isItemAvailable(@pilot, true))
                 # we go ahead and happily remove ourself. Of course, when calling a method like validate on an object, you have to expect that it will dissappear, right?
                 @builder.removeShip this 
@@ -4529,15 +4530,17 @@ class Ship
             @upgrade_points_total = 0
             for upgrade in @upgrades
                 meets_restrictions = true
-                func = upgrade?.data?.validation_func ? undefined
-                if func?
-                    meets_restrictions = meets_restrictions and upgrade?.data?.validation_func(this, upgrade)
-                restrictions = upgrade?.data?.restrictions ? undefined
-                # always perform this check, even if no special restrictions for this upgrade exists, to check for allowed points
-                meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(), @upgrade_points_total)
-                # ignore those checks if this is a quickbuild squad
-                if ((not meets_restrictions) or (not @pilot.upgrades? and (upgrade?.data? and upgrade.data.standard?)) or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
-                    #console.log "Invalid upgrade: #{upgrade?.data?.name}"
+                if not pilot_upgrades_check
+                    func = upgrade?.data?.validation_func ? undefined
+                    if func?
+                        meets_restrictions = meets_restrictions and upgrade?.data?.validation_func(this, upgrade)
+                    restrictions = upgrade?.data?.restrictions ? undefined
+                    # always perform this check, even if no special restrictions for this upgrade exists, to check for allowed points
+                    meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(), @upgrade_points_total)
+
+                # ignore those checks if this is a pilot with upgrades or quickbuild
+                if (not meets_restrictions or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not pilot_upgrades_check and not @builder.isQuickbuild
+                    console.log "Invalid upgrade: #{upgrade?.data?.name}, check #{@pilot.upgrades?}"
                     upgrade.setById null
                     valid = false
                     unchanged = false
