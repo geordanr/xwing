@@ -183,7 +183,7 @@ exportObj.translations.English =
                     <p>This builder is unofficial and is not affiliated with Atomic Mass Games, Lucasfilm Ltd., or Disney.</p>
 
                     <p>This site will always be free, and always 100% available for all people to use. However, if you want to donate, a button is prepared for you.</p>
-                    <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Donate</button></p>
+                    <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Donate</button> <button class="btn btn-primary paypal" onclick="window.open('https://www.patreon.com/raithos');">Patreon</button></p>
         """
         "Continue to OAuth provider": "This will open a new window to let you authenticate with the chosen provider. You may have to allow pop ups for this site."
         "iOS requires cross-site control": """Due to a new feature in iOS systems OAuth won't work unless you enable "cross-site control"."""
