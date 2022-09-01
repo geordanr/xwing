@@ -7741,6 +7741,7 @@ exportObj.basicCardData = ->
             force: 3
             points: 7
             loadout: 24
+            keyword: ["Dark Side","Sith"]
             slots: [
                 "Force"
                 "Cannon"
