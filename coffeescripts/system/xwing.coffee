@@ -2005,7 +2005,7 @@ class exportObj.SquadBuilder
 
         points_without_include_upgrade = ship.upgrade_points_total - this_upgrade_obj.getPoints(include_upgrade)
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and ship.restriction_check((if upgrade.restrictions then upgrade.restrictions else undefined),this_upgrade_obj, this_upgrade_obj.getPoints(upgrade), points_without_include_upgrade) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and ship.restriction_check((if upgrade.restrictions then upgrade.restrictions else undefined),this_upgrade_obj, this_upgrade_obj.getPoints(upgrade), points_without_include_upgrade, upgrade) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
             eligible_upgrades.removeItem equipped_upgrade
@@ -3677,10 +3677,11 @@ class Ship
 
     addStandardizedUpgrades: ->
         if @hasFixedUpgrades
-            return # we are one of those weired fixed upgrade combo ship thingies that do whatever they like
+            return # standard ships bypass
         idx = @builder.standard_list['Ship'].indexOf @data?.name
         if idx > -1
             upgrade_to_be_equipped = @builder.standard_list['Upgrade'][idx]
+            restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
             # first check if we already have that upgrade equipped. No need to do anything if we do. 
             for upgrade in @upgrades
                 if upgrade.data?.name == upgrade_to_be_equipped.name
@@ -3688,19 +3689,9 @@ class Ship
             # now look for empty slots that could be equipped
             for upgrade in @upgrades
                 if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
-                        restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
-                        allowed_to_equip = @restriction_check(restrictions,upgrade)
-                        if allowed_to_equip and not upgrade.data?
-                            upgrade.setData upgrade_to_be_equipped
-                            return
-            # there were no empty slots, remove another upgrade if needed
-            for upgrade in @upgrades
-                if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
-                        restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
-                        allowed_to_equip = @restriction_check(restrictions,upgrade)
-                        if allowed_to_equip
-                            upgrade.setData upgrade_to_be_equipped
-                            return
+                    if @restriction_check(restrictions,upgrade) and not upgrade.data?
+                        upgrade.setData upgrade_to_be_equipped
+                        return
 
     setPilot: (new_pilot, noautoequip = false) ->
         # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
@@ -4602,7 +4593,7 @@ class Ship
         false
 
 
-    restriction_check: (restrictions, upgrade_obj, points = 0, current_upgrade_points = 0) ->
+    restriction_check: (restrictions, upgrade_obj, points = 0, current_upgrade_points = 0, upgrade_data = undefined) ->
         effective_stats = @effectiveStats()
         if @pilot.loadout? and (points + current_upgrade_points > @pilot.loadout)
             return false
@@ -4663,6 +4654,16 @@ class Ship
                                     if not (@data.name in exportObj.epicExclusionsList) then return false
                                 when "Standard"
                                     if @data.name in exportObj.epicExclusionsList then return false
+            # Standardized test
+            if upgrade_data?.standardized?
+                for ship in @builder.ships
+                    if ship?.data? and ship.data.name == @data.name
+                        slotfree = false
+                        for upgrade in ship.upgrades
+                            if upgrade_obj.slot == upgrade.slot and not upgrade.data?
+                                slotfree = true
+                        if slotfree == false
+                            return false
             return true
 
     doesSlotExist: (slot) ->
