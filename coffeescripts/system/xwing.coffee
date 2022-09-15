@@ -2005,7 +2005,7 @@ class exportObj.SquadBuilder
 
         points_without_include_upgrade = ship.upgrade_points_total - this_upgrade_obj.getPoints(include_upgrade)
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and ship.restriction_check((if upgrade.restrictions then upgrade.restrictions else undefined),this_upgrade_obj, this_upgrade_obj.getPoints(upgrade), points_without_include_upgrade, upgrade) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and ship.standardized_check(upgrade) and ship.restriction_check((if upgrade.restrictions then upgrade.restrictions else undefined),this_upgrade_obj, this_upgrade_obj.getPoints(upgrade), points_without_include_upgrade, upgrade) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad) and (not upgrade.solitary? or (upgrade.slot not in @uniques_in_use['Slot'] or include_upgrade?.solitary?)))
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
             eligible_upgrades.removeItem equipped_upgrade
@@ -3530,7 +3530,7 @@ class Ship
             # filter out upgrades that can be copied
             other_upgrades = {}
             for upgrade in other.upgrades
-                if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
+                if upgrade?.data? and not upgrade.data.standardized? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
                     other_upgrades[upgrade.slot] ?= []
                     other_upgrades[upgrade.slot].push upgrade
             # set them aside any upgrades that don't fill requirements due to additional slots and then attempt to fill them
@@ -4654,17 +4654,20 @@ class Ship
                                     if not (@data.name in exportObj.epicExclusionsList) then return false
                                 when "Standard"
                                     if @data.name in exportObj.epicExclusionsList then return false
-            # Standardized test
-            if upgrade_data?.standardized?
-                for ship in @builder.ships
-                    if ship?.data? and ship.data.name == @data.name
+        return true
+
+    standardized_check: (upgrade_data) ->
+        if upgrade_data.standardized?
+            for ship in @builder.ships
+                if ship?.data? and ship.data.name == @data.name
+                    if upgrade_data.restrictions? and ship.restriction_check(upgrade_data.restrictions?, upgrade_data)
                         slotfree = false
                         for upgrade in ship.upgrades
-                            if upgrade_obj.slot == upgrade.slot and not upgrade.data?
+                            if upgrade_data.slot == upgrade.slot and not upgrade.data?
                                 slotfree = true
                         if slotfree == false
                             return false
-            return true
+        return true
 
     doesSlotExist: (slot) ->
         for upgrade in @upgrades
