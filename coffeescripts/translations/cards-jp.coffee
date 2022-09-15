@@ -1512,7 +1512,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がロックしたレンジ1-3の宇宙船が防御あるいは攻撃を実行する際、君は%CHARGE%を1つ消費してレンジ・ボーナスが適用されるのを妨げても良い。"""
         '"Contrail"':
            text: """君が防御するか攻撃を実行する際、もし君が公開したマニューバの方向が敵の公開したマニューバのものと同じなら、君は敵の%FOCUS%の結果のうち1つを空白の結果に変更しても良い。"""
-        '"Odd Ball" (V-Wing)':
+        '"Odd Ball" (V-wing)':
            display_name: """“Odd Ball”"""
            text: """君が赤のマニューバを完全に実行するか赤のアクションを実行した後に、君の%BULLSEYEARC%内に敵宇宙船がいるなら、君はその宇宙船へのロックを得ても良い。"""
         "Boba Fett (Separatist)":
@@ -1743,7 +1743,7 @@ exportObj.cardLoaders.日本語 = () ->
            display_name: """Reaper Squadron Scout"""
            text: """"""
 
-        # Standard Pilots
+        # Battle of Yavin Pilots
         "Garven Dreis (BoY)":
            display_name: """Garven Dreis (BoY)"""
            text: """君がフォーカス・トークンを消費した後、君はレンジ1-3の友軍宇宙船を1つ選んでも良い。その宇宙船はフォーカス・トークンを1つ得る。"""
@@ -1759,17 +1759,20 @@ exportObj.cardLoaders.日本語 = () ->
         "Jek Porkins (BoY)":
            display_name: """Jek Porkins (BoY)"""
            text: """君がストレス・トークンを受け取った後、君は攻撃ダイスを1つ振り、それを取り除いても良い。%HIT% の結果の場合、%HIT% ダメージを1つ受ける。"""
-        "Hol Okland":
-           display_name: """Hol Okland"""
+        "Hol Okland (BoY)":
+           display_name: """Hol Okland (BoY)"""
            text: """システム・フェイズの間、もしレンジ1-2に敵宇宙船がいないなら、君は任意のアップグレードの %CHARGE% を1つ回復しても良い。"""
-        "Dex Tiree":
-           display_name: """Dex Tiree"""
+        '"Pops" Krail (BoY)':
+           display_name: """“Pops” Krail (BoY)"""
+           text: """君が %SINGLETURRETARC% 攻撃を実行する際、君は攻撃ダイスを2つまで振り直しても良い。"""
+        "Dex Tiree (BoY)":
+           display_name: """Dex Tiree (BoY)"""
            text: """君が防御する際、もしレンジ0-1に他の友軍宇宙船が1つ以上いるなら、君は防御ダイスを1つ追加で振っても良い。"""
         '"Wampa" (BoY)':
            display_name: """“Wampa” (BoY)"""
            text: """君が攻撃を実行する際、君は %CHARGE% を1つ消費し、攻撃ダイスを追加で1つ振っても良い。%LINEBREAK% 防御の後、%CHARGE% を1つ失う。"""
-        '"Dark Curse"':
-           display_name: """“Dark Curse”"""
+        '"Dark Curse" (BoY)':
+           display_name: """“Dark Curse (BoY)”"""
            text: """君が防御する際、攻撃者のダイスは修正できない。"""
         "Darth Vader (BoY)":
            display_name: """Darth Vader (BoY)"""
@@ -1777,18 +1780,86 @@ exportObj.cardLoaders.日本語 = () ->
         "Iden Versio (BoY)": 
            display_name: """Iden Versio"""
            text: """レンジ0-1の友軍のTIEがダメージを受けようとする前に、君は %CHARGE% を2つ消費しても良い。もし君がそうするなら、%HIT% あるいは %CRIT% を1つなくす。"""
-        '"Backstabber"': 
-           display_name: """“Backstabber”"""
+        '"Backstabber" (BoY)': 
+           display_name: """“Backstabber” (BoY)"""
            text: """君が主武装攻撃を実行する際、もし友軍の Darth Vader あるいは "Mauler" Mithel が君の %LEFTARC% あるいは %RIGHTARC% 内レンジ0-1にいるなら、攻撃ダイスを1つ追加で振る。"""
-        "Sigma 4":
-           display_name: """Sigma 4"""
+        "Sigma 4 (BoY)":
+           display_name: """Sigma 4 (BoY)"""
            text: """君が %BARRELROLL% アクションを実行した後、君は %CHARGE% を1つ消費して %BOOST% アクションを実行しても良い。"""
-        "Sigma 7":
-           display_name: """Sigma 7"""
+        "Sigma 5 (BoY)":
+           display_name: """Sigma 5 (BoY)"""
+           text: """君が攻撃を実行しそれが命中した後、君は %CHARGE% を1つ消費して、 %EVADE% アクションを実行しても良い。"""
+        "Sigma 6 (BoY)":
+           display_name: """Sigma 6 (BoY)"""
+           text: """君が速度 3-5 のマニューバを完全に実行した後、君は %CHARGE% を1つ消費し、 %SLAM% アクションを実行しても良い。"""
+        "Sigma 7 (BoY)":
+           display_name: """Sigma 7 (BoY)"""
            text: """システム・フェイズの間、君は %CHARGE% を1つ消費し、レンジ0-1の敵宇宙船へのロックを得ても良い。"""
         '"Mauler" Mithel (BoY)':
-           display_name: """“Mauler” Mithel"""
+           display_name: """“Mauler” Mithel (BoY)"""
            text: """君が主武装攻撃を実行する際、もし友軍の Darth Vader あるいは "Backstabber" が君の %LEFTARC% あるいは %RIGHTARC% 内レンジ0-1にいるなら、攻撃ダイスを1つ追加で振る。"""
+
+        # Siege of Coruscant Pilots
+        "Anakin Skywalker (SoC)":
+           display_name: """Anakin Skywalker (SoC)"""
+           text: """君かレンジ 0-3 の友軍の<b>Obi-Wan Kenobi</b>宇宙船がマニューバを実行した後、もしその宇宙船のレンジ 0-1 の敵宇宙船が他の友軍宇宙船よりも多いとき、君は %FORCE% を1つ消費しても良い。もし君がそうするなら、その宇宙船は %BARRELROLL% アクションを実行しても良い。"""
+        "Obi-Wan Kenobi (SoC)":
+           display_name: """Obi-Wan Kenobi (SoC)"""
+           text: """ """
+        "Shaak Ti (SoC)":
+           display_name: """Shaak Ti (SoC)"""
+           text: "終了フェイズの開始時、君は紫の %COORDINATE% アクションを、たとえストレス状態でも実行しても良い。%LINEBREAK% 君が %COORDINATE% アクションを実行した後、もし選んだ宇宙船が <b>Born for This</b> 宇宙船能力を持っているなら、君は追加で宇宙船1つをコーディネートしても良い。"
+        '"Odd Ball" (SoC)':
+           display_name: """“Odd Ball” (SoC)"""
+           text: """  """
+        '"Wolffe" (SoC)':
+           display_name: """“Wolffe” (SoC)"""
+           text: """  """
+        '"Jag" (SoC)':
+           display_name: """“Jag” (SoC)"""
+           text: """  """
+        '"Contrail" (SoC)':
+           display_name: """“Contrail” (SoC)"""
+           text: """  """
+        '"Klick" (SoC)':
+           display_name: """“Klick” (SoC)"""
+           text: """  """
+        '"Kickback" (SoC)':
+           display_name: """“Kickback” (SoC)"""
+           text: """  """
+        '"Axe" (SoC)':
+           display_name: """“Axe” (SoC)"""
+           text: """君が攻撃を実行した後、君は <b>Born for This</b> 能力を持った君の %LEFTARC% あるいは %RIGHTARC% 内のレンジ 0-2 の友軍宇宙船を選択しても良い。選んだ宇宙船は防御者へのロックを得る。"""
+        "Count Dooku (SoC)":
+           display_name: """Count Dooku (SoC)"""
+           text: """攻撃の間、レンジ 0-2 の宇宙船が攻撃あるいは防御ダイスを振る前に、もし君の %FORCE% が全てアクティブ状態なら、君は %FORCE% を1つ消費して、結果を1つ宣言しても良い。もし振った結果に宣言した結果が含まれないなら、その宇宙船はダイスを1つその結果に変更しなければならない。"""
+        "DBS-32C (SoC)":
+           display_name: """DBS-32C (SoC)"""
+           text: """君が %CALCULATE% アクションを実行した後、君は %CHARGE% を1つ消費し、 %JAM% アクションを実行しても良い。"""
+        "DBS-404 (SoC)":
+           display_name: """DBS-404 (SoC)"""
+           text: """  """
+        "Baktoid Prototype (SoC)":
+           display_name: """Baktoid Prototype (SoC)"""
+           text: """  """
+        "DIS-347 (SoC)":
+           display_name: """DIS-347 (SoC)"""
+           text: """  """
+        "DIS-T81 (SoC)":
+           display_name: """DIS-T81 (SoC)"""
+           text: """君が防御するか攻撃を実行する際、君が君のダイスを好きな数振り直しても良い。その後、もし君が防御していたなら、振り直したダイスごとにストレイン・トークンを1つ得る。もし君が攻撃していたなら、振り直したダイスごとにデプリート・トークンを1つ得る。"""
+        "Phlac-Arphocc Prototype (SoC)":
+           display_name: """Phlac-Arphocc Prototype (SoC)"""
+           text: """  """
+        "DFS-081 (SoC)":
+           display_name: """DFS-081 (SoC)"""
+           text: """  """
+        "DFS-311 (SoC)":
+           display_name: """DFS-311 (SoC)"""
+           text: """  """
+        "Haor Chall Prototype (SoC)":
+           display_name: """Haor Chall Prototype (SoC)"""
+           text: """  """
 
         # Epic Ships
         "Republic Judiciary":
@@ -2934,6 +3005,21 @@ exportObj.cardLoaders.日本語 = () ->
         "Dorsal Turret (BoY)":
            display_name: """Dorsal Turret"""
            text: """<b>攻撃</b>"""
+        "Sensor Jammer (BoY)":
+           display_name: """Sensor Jammer"""
+           text: """防御の際、もし攻撃者に友軍のロックがついているなら、君は %CHARGE% を1つ消費し、攻撃者の %HIT% の結果を1つ %FOCUS% の結果に変更しても良い。"""
+        "Ancillary Ion Weapons (SoC)":
+           display_name: """Ancillary Ion Weapons"""
+           text: """君が主武装の %FRONTARC% 攻撃を実行する際、攻撃ダイスを振る前に、君は %CHARGE% を2つ消費しても良い。もし君がそうするなら、君の %CRIT% の結果はダメージの代わりにイオン・トークンを与える。"""
+        "Roiling Anger (SoC)":
+           display_name: """Roiling Anger"""
+           text: """エンゲージメント・フェイズの開始時、もし君が敵宇宙船の %FRONTARC% 内にいるなら、君はストレイン・トークンを1つ得て、 %FORCE% を1つ回復しても良い。"""
+        "Contingency Protocol (SoC)":
+           display_name: """Contingency Protocol"""
+           text: """この宇宙船が破壊された後、レンジ 0-3 の <b>Contingency Protocol</b> を持っている他の友軍宇宙船は、たとえストレス状態でも、アクションを実行しても良い。"""
+        "Strut-Lock Override (SoC)":
+           display_name: """Strut-Lock Override"""
+           text: """君のアクティベーションの開始時、君は %CHARGE% を1つ消費しても良い。もし君がそうするなら、このラウンド、君が障害物を通り抜ける際、それを無視する。"""
 
         # Epic upgrades
         "Admiral Ozzel":
@@ -3373,5 +3459,8 @@ exportObj.cardLoaders.日本語 = () ->
         "Versatile Frame":
            display_name: "Versatile Frame"
            text: """君は %TORPEDO% あるいは %MISSILE% を1つ装備できる。君が青のマニューバを公開した際、君のアクション・バーに白の %BOOST% を追加する。"""
+        "Born for This":
+           display_name: "Born for This"
+           text: """レンジ 0-2 の他の友軍宇宙船が防御する際、もし君がストレイン状態でないなら、それは君のフォーカスおよび回避トークンを、その宇宙船が持っているかのように消費しても良い。もしそれがそうするなら、君はストレイン・トークンを1つ得る。"""
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations

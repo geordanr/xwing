@@ -5750,7 +5750,7 @@ exportObj.manifestByExpansion =
 
     'Hyena-Class Droid Bomber Expansion Pack': [
         {
-            name: 'Hyena-Class Droid Bomber'
+            name: 'Hyena-class Droid Bomber'
             type: 'ship'
             count: 1
         }
@@ -8588,7 +8588,7 @@ exportObj.manifestByExpansion =
     ]
     "Droid Tri-Fighter Expansion Pack": [
         {
-            name: 'Droid Tri-Fighter'
+            name: 'Droid Tri-fighter'
             type: 'ship'
             count: 1
         }
@@ -8655,7 +8655,7 @@ exportObj.manifestByExpansion =
     ]
     "Nimbus-class V-Wing Expansion Pack": [
         {
-            name: 'Nimbus-class V-Wing'
+            name: 'Nimbus-class V-wing'
             type: 'ship'
             count: 1
         }
@@ -8665,7 +8665,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: '"Odd Ball" (V-Wing)'
+            name: '"Odd Ball" (V-wing)'
             type: 'pilot'
             count: 1
         }

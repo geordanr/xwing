@@ -1474,7 +1474,7 @@ class exportObj.SquadBuilder
                 points_dest += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
-        
+
 
         @total_points = tot_points
         @points_destroyed = points_dest
@@ -3669,8 +3669,6 @@ class Ship
                         @setWingmates quickbuild.wingmates[0]
                     @builder.isUpdatingPoints = false
                     @builder.container.trigger 'xwing:pointsUpdated'
-
-
                 else
                     @copy_button.hide()
                 @row.removeClass('unsortable')
@@ -3683,13 +3681,11 @@ class Ship
             upgrade_to_be_equipped = @builder.standard_list['Upgrade'][idx]
             for upgrade in @upgrades
                 if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
-                    # according to https://forums.atomicmassgames.com/topic/6374-cis-rogue-class-and-independent-calculations/ it's fine
-                    # to have some ships ignore standardized upgrades, if they are unable to equip them. 
-                    restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
-                    allowed_to_equip = @restriction_check(restrictions,upgrade, 0, 0)
-                    if allowed_to_equip
-                        upgrade.setData upgrade_to_be_equipped
-                        break
+                        restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
+                        allowed_to_equip = @restriction_check(restrictions,upgrade)
+                        if allowed_to_equip and not upgrade.data?
+                            upgrade.setData upgrade_to_be_equipped
+                            break
 
     setPilot: (new_pilot, noautoequip = false) ->
         # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
@@ -3698,7 +3694,7 @@ class Ship
             @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
             old_upgrades = {}
-            if same_ship
+            if same_ship and not @pilot.upgrades?
                 # track addons and try to reassign them
                 for upgrade in @upgrades
                     if upgrade?.data?
@@ -4372,7 +4368,7 @@ class Ship
         reddit = """**#{@pilot.name} (#{if @quickbuildId != -1 then (if @primary then exportObj.quickbuildsById[@quickbuildId].threat else 0) else @pilot.points})**    \n"""
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
         if slotted_upgrades.length > 0
-            halfPoints = Math.floor @getPoints() / 2        
+            halfPoints = Math.floor @getPoints() / 2
             threshold = Math.floor (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
             reddit +="    "
             reddit_upgrades= []
@@ -4387,7 +4383,7 @@ class Ship
     toTTSText: ->
         tts = """#{exportObj.toTTS(@pilot.name)}"""
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
-        if slotted_upgrades.length > 0
+        if slotted_upgrades.length > 0 and not @pilot.upgrades?
             for upgrade in slotted_upgrades
                 upgrade_tts = upgrade.toTTSText()
                 tts += (" + " + upgrade_tts) if upgrade_tts?
@@ -4524,6 +4520,7 @@ class Ship
         for i in [0...max_checks]
             valid = true
             pilot_func = @pilot?.validation_func ? @pilot?.restriction_func ? undefined
+            pilot_upgrades_check = @pilot.upgrades?
             if (pilot_func? and not pilot_func(this, @pilot)) or not (@builder.isItemAvailable(@pilot, true))
                 # we go ahead and happily remove ourself. Of course, when calling a method like validate on an object, you have to expect that it will dissappear, right?
                 @builder.removeShip this 
@@ -4533,15 +4530,17 @@ class Ship
             @upgrade_points_total = 0
             for upgrade in @upgrades
                 meets_restrictions = true
-                func = upgrade?.data?.validation_func ? undefined
-                if func?
-                    meets_restrictions = meets_restrictions and upgrade?.data?.validation_func(this, upgrade)
-                restrictions = upgrade?.data?.restrictions ? undefined
-                # always perform this check, even if no special restrictions for this upgrade exists, to check for allowed points
-                meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(), @upgrade_points_total)
-                # ignore those checks if this is a quickbuild squad
-                if ((not meets_restrictions) or (not @pilot.upgrades? and (upgrade?.data? and upgrade.data.standard?)) or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not @builder.isQuickbuild
-                    #console.log "Invalid upgrade: #{upgrade?.data?.name}"
+                if not pilot_upgrades_check
+                    func = upgrade?.data?.validation_func ? undefined
+                    if func?
+                        meets_restrictions = meets_restrictions and upgrade?.data?.validation_func(this, upgrade)
+                    restrictions = upgrade?.data?.restrictions ? undefined
+                    # always perform this check, even if no special restrictions for this upgrade exists, to check for allowed points
+                    meets_restrictions = meets_restrictions and @restriction_check(restrictions, upgrade, upgrade.getPoints(), @upgrade_points_total)
+
+                # ignore those checks if this is a pilot with upgrades or quickbuild
+                if (not meets_restrictions or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not pilot_upgrades_check and not @builder.isQuickbuild
+                    console.log "Invalid upgrade: #{upgrade?.data?.name}, check #{@pilot.upgrades?}"
                     upgrade.setById null
                     valid = false
                     unchanged = false
@@ -4579,7 +4578,7 @@ class Ship
         false
 
 
-    restriction_check: (restrictions, upgrade_obj, points, current_upgrade_points) ->
+    restriction_check: (restrictions, upgrade_obj, points = 0, current_upgrade_points = 0) ->
         effective_stats = @effectiveStats()
         if @pilot.loadout? and (points + current_upgrade_points > @pilot.loadout)
             return false
@@ -4895,11 +4894,9 @@ class GenericAddon
                 # now remove all upgrades of the same name
                 nameToRemove = @data.name
                 for ship in @ship.builder.ships
-                    if ship.data?.name == @ship.data.name
+                    if ship.data?.name == @ship.data.name and ship != @ship
                         for upgrade in ship.upgrades
                             if upgrade.data?.name == nameToRemove
-                                # we can (and should) savely call setData to remove the Upgrade, to handle e.g. removal of added slots
-                                # infinite loop recursion is prevented since it's removed from standard_list already
                                 upgrade.setData null
                                 break
 
