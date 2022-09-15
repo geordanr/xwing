@@ -3676,6 +3676,8 @@ class Ship
                 @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
 
     addStandardizedUpgrades: ->
+        if @hasFixedUpgrades
+            return # we are one of those weired fixed upgrade combo ship thingies that do whatever they like
         idx = @builder.standard_list['Ship'].indexOf @data?.name
         if idx > -1
             upgrade_to_be_equipped = @builder.standard_list['Upgrade'][idx]
@@ -3760,6 +3762,7 @@ class Ship
     setupAddons: ->
         if not @builder.isQuickbuild
             if @pilot.upgrades?
+                @hasFixedUpgrades = true
                 for upgrade_name in @pilot.upgrades ? []
                     upgrade_data = exportObj.upgrades[upgrade_name]
                     if not upgrade_data?
@@ -3773,6 +3776,7 @@ class Ship
                     upgrade.setData upgrade_data
                     @upgrades.push upgrade
             else
+                @hasFixedUpgrades = false
                 for slot in @pilot.slots ? []
                     @upgrades.push new exportObj.Upgrade
                         ship: this
@@ -4863,7 +4867,7 @@ class GenericAddon
         if new_data?.id != @data?.id
             if @data?.unique? or @data?.solitary?
                 await @ship.builder.container.trigger 'xwing:releaseUnique', [ @unadjusted_data, @type, defer() ]
-            if @data?.standardized?
+            if @data?.standardized? and not @ship.hasFixedUpgrades
                 @removeStandardized()
             @rescindAddons()
             @deoccupyOtherUpgrades()
@@ -4885,7 +4889,7 @@ class GenericAddon
                 @unequipOtherUpgrades()
                 @occupyOtherUpgrades()
                 @conferAddons()
-                if @data.standardized?
+                if @data.standardized? and not @ship.hasFixedUpgrades
                     @addToStandardizedList()
             else
                 @deoccupyOtherUpgrades()
