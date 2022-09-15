@@ -3679,13 +3679,26 @@ class Ship
         idx = @builder.standard_list['Ship'].indexOf @data?.name
         if idx > -1
             upgrade_to_be_equipped = @builder.standard_list['Upgrade'][idx]
+            # first check if we already have that upgrade equipped. No need to do anything if we do. 
+            for upgrade in @upgrades
+                if upgrade.data?.name == upgrade_to_be_equipped.name
+                    return
+            # now look for empty slots that could be equipped
             for upgrade in @upgrades
                 if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
                         restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
                         allowed_to_equip = @restriction_check(restrictions,upgrade)
                         if allowed_to_equip and not upgrade.data?
                             upgrade.setData upgrade_to_be_equipped
-                            break
+                            return
+            # there were no empty slots, remove another upgrade if needed
+            for upgrade in @upgrades
+                if exportObj.slotsMatching(upgrade.slot, @builder.standard_list['Upgrade'][idx].slot)
+                        restrictions = (if upgrade_to_be_equipped.restrictions then upgrade_to_be_equipped.restrictions else undefined)
+                        allowed_to_equip = @restriction_check(restrictions,upgrade)
+                        if allowed_to_equip
+                            upgrade.setData upgrade_to_be_equipped
+                            return
 
     setPilot: (new_pilot, noautoequip = false) ->
         # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
@@ -3710,7 +3723,6 @@ class Ship
                 @setupAddons() if @pilot?
                 @copy_button.show()
                 @setShipType @pilot.ship
-                @addStandardizedUpgrades()
                 if (@pilot.autoequip? or (exportObj.ships[@pilot.ship].autoequip? and not same_ship)) and not noautoequip
                     autoequip = (@pilot.autoequip ? []).concat(exportObj.ships[@pilot.ship].autoequip ? [])
                     for upgrade_name in autoequip
@@ -3733,6 +3745,7 @@ class Ship
                                     delayed_upgrades[old_upgrade] = upgrade
                         for id, upgrade of delayed_upgrades
                             upgrade.setById id
+                #@addStandardizedUpgrades()
             else
                 @copy_button.hide()
             @row.removeClass('unsortable')
@@ -4427,6 +4440,7 @@ class Ship
                 if !@builder.isQuickbuild
                     # iterate over upgrades to be added, and remove all that have been successfully added
                     for _ in [1 ... 3] # try adding each upgrade a few times, as the required slots might be added in by titles etc and are not yet available on the first try
+                        `upgradeloop: //` 
                         for i in [upgrade_ids.length - 1 ... -1]
                             upgrade_id = upgrade_ids[i]
                             upgrade = exportObj.upgradesById[upgrade_id]
@@ -4436,6 +4450,12 @@ class Ship
                                     console.log("Unknown upgrade id " + upgrade_id + " could not be added. Please report that error")
                                     everythingadded = false
                                 continue
+                            for upgrade_selection in @upgrades
+                                if upgrade_selection?.data?.name == upgrade.name
+                                    # for some reason the correct upgrade already was equipped (e.g. an earlier ship alread had a standardized that was added on creation here)
+                                    upgrade_ids.splice(i,1) # was already added successfully, remove from list
+                                    `continue upgradeloop`
+
                             for upgrade_selection in @upgrades
                                 if exportObj.slotsMatching(upgrade.slot, upgrade_selection.slot) and not upgrade_selection.isOccupied()
                                     upgrade_selection.setById upgrade_id
@@ -4540,7 +4560,7 @@ class Ship
 
                 # ignore those checks if this is a pilot with upgrades or quickbuild
                 if (not meets_restrictions or (upgrade?.data? and (upgrade.data in equipped_upgrades or (upgrade.data.faction? and not @builder.isOurFaction(upgrade.data.faction,@pilot.faction)) or not @builder.isItemAvailable(upgrade.data)))) and not pilot_upgrades_check and not @builder.isQuickbuild
-                    console.log "Invalid upgrade: #{upgrade?.data?.name}, check #{@pilot.upgrades?}"
+                    console.log "Invalid upgrade: #{upgrade?.data?.name}, check #{@pilot?.upgrades} on pilot #{@pilot?.name}"
                     upgrade.setById null
                     valid = false
                     unchanged = false
