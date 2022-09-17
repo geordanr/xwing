@@ -11064,8 +11064,8 @@ class exportObj.Collection
                 """
                 ul = $ contents.find("ul#counts-#{type}")
                 for thing in Object.keys(things).sort((a,b) -> sortWithoutQuotes(a,b,type))
-                    card_totals_by_type[type] += things[thing]
                     if thing in singletonsByType[type]
+                        card_totals_by_type[type] += things[thing]
                         card_different_by_type[type]++
                         if type == 'pilot'
                             ul.append """<li>#{if exportObj.pilots[thing].display_name then exportObj.pilots[thing].display_name else thing} - #{things[thing]}</li>"""
