@@ -11917,7 +11917,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Adv. Proton Torpedoes"
                 "R5-D8 (BoY)"
-                "Unstable Engines (BoY)"
+                "Unstable Sublight Engines (BoY)"
             ]
         }
         {
@@ -17948,7 +17948,7 @@ exportObj.basicCardData = ->
             standard: true
         }
         {
-            name: "Unstable Engines (BoY)"
+            name: "Unstable Sublight Engines (BoY)"
             id: 476
             slot: "Modification"
             standard: true
