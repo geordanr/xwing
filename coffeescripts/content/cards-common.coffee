@@ -11967,6 +11967,7 @@ exportObj.basicCardData = ->
             skill: 6
             points: 20
             charge: 4
+            chassis: "Solo"
             upgrades: [
                 "Chewbacca (BoY)"
                 "Rigged Cargo Chute"
@@ -18437,6 +18438,10 @@ exportObj.basicCardData = ->
                                 stats.maneuvers[3][turn]--
                         if (turn == 0 or turn == 4) and stats.maneuvers[3][turn] < 3
                             stats.maneuvers[3][turn]++
+        }
+        {
+            name: "Solo"
+            id: 48
         }
     ]
 
