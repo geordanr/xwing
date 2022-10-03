@@ -4486,7 +4486,7 @@ class Ship
             forcerecurring: 1
             charge: @pilot.ship_override?.charge ? @pilot.charge
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
-            chassis: @pilot.ship_override?.chassis ? @pilot.chassis ? ""
+            chassis: @pilot.chassis ? @data.chassis ? ""
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
@@ -4501,8 +4501,13 @@ class Ship
             stats.actions = new_stats
 
         for upgrade in @upgrades
+            if upgrade?.data?.chassis? then stats.chassis = upgrade.data.chassis
             upgrade.data.modifier_func(stats) if upgrade?.data?.modifier_func?
         @pilot.modifier_func(stats) if @pilot?.modifier_func?
+
+        if exportObj.chassis[stats.chassis]? and exportObj.chassis[stats.chassis].modifier_func?
+            exportObj.chassis[stats.chassis].modifier_func(stats)
+
         stats
 
     validate: ->
@@ -4684,8 +4689,12 @@ class Ship
     checkKeyword: (keyword) ->
         if @data.name?.includes(keyword)
             return true
-        if (@data.chassis? and @data.chassis == keyword) or (@pilot.chassis? and @pilot.chassis == keyword)
-            return true
+        if @pilot.chassis?
+            if @pilot.chassis == keyword
+                return true
+        else 
+            if @data.chassis? and @data.chassis == keyword
+                return true
         for words in @data.keyword ? []
             if words == keyword
                 return true
@@ -4946,6 +4955,22 @@ class GenericAddon
                 else
                     throw new Error("Unexpected addon type for addon #{addon}")
                 @conferredAddons.push addon
+                for addon in exportObj.chassis[@data.chassis].conferredAddons
+                    cls = addon.type
+                    args =
+                        ship: @ship
+                        container: @container
+                    args.slot = addon.slot if addon.slot?
+                    args.adjustment_func = addon.adjustment_func if addon.adjustment_func?
+                    args.filter_func = addon.filter_func if addon.filter_func?
+                    args.auto_equip = addon.auto_equip if addon.auto_equip?
+                    args.placeholderMod_func = addon.placeholderMod_func if addon.placeholderMod_func?
+                    addon = new cls args
+                    if addon instanceof exportObj.Upgrade
+                        @ship.upgrades.push addon
+                    else
+                        throw new Error("Unexpected addon type for addon #{addon}")
+                    @conferredAddons.push addon
                 
     rescindAddons: ->
         await

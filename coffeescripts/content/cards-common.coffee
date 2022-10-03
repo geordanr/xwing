@@ -11990,6 +11990,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Dex Tiree (BoY)"
+            canonical_name: 'Dex Tiree'.canonicalize()
+            xws: "dextiree-battleofyavin"
             unique: true
             id: 561
             faction: "Rebel Alliance"
@@ -12005,6 +12007,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Pops" Krail (BoY)'
+            canonical_name: '"Pops" Krail'.canonicalize()
+            xws: "popskrail-battleofyavin"
             unique: true
             id: 562
             faction: "Rebel Alliance"
@@ -12020,6 +12024,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Hol Okland (BoY)"
+            canonical_name: 'Hol Okland'.canonicalize()
+            xws: "holokland-battleofyavin"
             unique: true
             id: 563
             faction: "Rebel Alliance"
@@ -12055,6 +12061,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Backstabber" (BoY)'
+            canonical_name: '"Backstabber"'.canonicalize()
+            xws: "dextiree-battleofyavin"
             unique: true
             id: 565
             faction: "Galactic Empire"
@@ -12088,6 +12096,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Dark Curse" (BoY)'
+            xws: "darkcurse-battleofyavin"
             unique: true
             id: 567
             faction: "Galactic Empire"
@@ -12142,6 +12151,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 4 (BoY)"
+            canonical_name: 'Sigma 4'.canonicalize()
+            xws: "sigma4-battleofyavin"
             unique: true
             id: 570
             faction: "Galactic Empire"
@@ -12159,6 +12170,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 5 (BoY)"
+            canonical_name: 'Sigma 5'.canonicalize()
+            xws: "sigma5-battleofyavin"
             unique: true
             id: 571
             faction: "Galactic Empire"
@@ -12176,6 +12189,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 6 (BoY)"
+            canonical_name: 'Sigma 6'.canonicalize()
+            xws: "sigma6-battleofyavin"
             unique: true
             id: 572
             faction: "Galactic Empire"
@@ -12193,6 +12208,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 7 (BoY)"
+            canonical_name: 'Sigma 7'.canonicalize()
+            xws: "sigma7-battleofyavin"
             unique: true
             id: 573
             faction: "Galactic Empire"
@@ -12217,6 +12234,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (SoC)"
+            canonical_name: 'Anakin Skywalker'.canonicalize()
+            xws: "anakinskywalker-siegeofcoruscant"
             unique: true
             id: 574
             faction: "Galactic Republic"
@@ -12234,6 +12253,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Obi-Wan Kenobi (SoC)"
+            canonical_name: 'Obi-Wan Kenobi'.canonicalize()
+            xws: "obiwankenobi-siegeofcoruscant"
             unique: true
             id: 575
             faction: "Galactic Republic"
@@ -12247,6 +12268,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Shaak Ti (SoC)"
+            canonical_name: 'Shaak Ti'.canonicalize()
+            xws: "shaakti-siegeofcoruscant"
             unique: true
             id: 576
             faction: "Galactic Republic"
@@ -12264,6 +12287,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Odd Ball" (SoC)'
+            canonical_name: 'Odd Ball'.canonicalize()
+            xws: "oddball-siegeofcoruscant"
             unique: true
             id: 577
             faction: "Galactic Republic"
@@ -12276,6 +12301,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Wolffe" (SoC)'
+            canonical_name: 'Wolffe'.canonicalize()
+            xws: "wolffe-siegeofcoruscant"
             unique: true
             id: 578
             faction: "Galactic Republic"
@@ -12288,6 +12315,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Jag" (SoC)'
+            canonical_name: 'Jag'.canonicalize()
+            xws: "jag-siegeofcoruscant"
             unique: true
             id: 579
             faction: "Galactic Republic"
@@ -12300,6 +12329,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Contrail" (SoC)'
+            canonical_name: 'Contrail'.canonicalize()
+            xws: "contrail-siegeofcoruscant"
             unique: true
             id: 580
             faction: "Galactic Republic"
@@ -12312,6 +12343,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Klick" (SoC)'
+            canonical_name: 'Klick'.canonicalize()
+            xws: "klick-siegeofcoruscant"
             unique: true
             id: 581
             faction: "Galactic Republic"
@@ -12324,6 +12357,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Kickback" (SoC)'
+            canonical_name: 'Kickback'.canonicalize()
+            xws: "kickback-siegeofcoruscant"
             unique: true
             id: 582
             faction: "Galactic Republic"
@@ -12336,6 +12371,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Axe" (SoC)'
+            canonical_name: 'Axe'.canonicalize()
+            xws: "axe-siegeofcoruscant"
             unique: true
             id: 583
             faction: "Galactic Republic"
@@ -12350,6 +12387,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Count Dooku (SoC)"
+            canonical_name: 'Count Dooku'.canonicalize()
+            xws: "countdooku-siegeofcoruscant"
             unique: true
             id: 584
             faction: "Separatist Alliance"
@@ -12366,6 +12405,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "DBS-32C (SoC)"
+            canonical_name: 'DBS-32C'.canonicalize()
+            xws: "dbs32c-siegeofcoruscant"
             unique: true
             id: 585
             faction: "Separatist Alliance"
@@ -12389,6 +12430,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "DBS-404 (SoC)"
+            canonical_name: 'DBS-404'.canonicalize()
+            xws: "dbs404-siegeofcoruscant"
             unique: true
             id: 586
             faction: "Separatist Alliance"
@@ -12401,6 +12444,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Baktoid Prototype (SoC)"
+            canonical_name: 'Baktoid Prototype'.canonicalize()
+            xws: "baktoidprototype-siegeofcoruscant"
             id: 587
             faction: "Separatist Alliance"
             ship: "Hyena-class Droid Bomber"
@@ -12412,6 +12457,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "DIS-347 (SoC)"
+            canonical_name: 'DIS-347'.canonicalize()
+            xws: "dis347-siegeofcoruscant"
             unique: true
             id: 588
             faction: "Separatist Alliance"
@@ -12424,6 +12471,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "DIS-T81 (SoC)"
+            canonical_name: 'DIS-T81'.canonicalize()
+            xws: "dist81-siegeofcoruscant"
             unique: true
             id: 589
             faction: "Separatist Alliance"
@@ -12439,6 +12488,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Phlac-Arphocc Prototype (SoC)"
+            canonical_name: 'Phlac-Arphocc Prototype'.canonicalize()
+            xws: "phlacarphoccprototype-siegeofcoruscant"
             id: 590
             faction: "Separatist Alliance"
             ship: "Droid Tri-fighter"
@@ -12450,6 +12501,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "DFS-081 (SoC)"
+            canonical_name: 'DFS-081'.canonicalize()
+            xws: "dfs081-siegeofcoruscant"
             unique: true
             id: 591
             faction: "Separatist Alliance"
@@ -12462,6 +12515,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "DFS-311 (SoC)"
+            canonical_name: 'DFS-311'.canonicalize()
+            xws: "dfs311-siegeofcoruscant"
             unique: true
             id: 592
             faction: "Separatist Alliance"
@@ -12474,6 +12529,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Haor Chall Prototype (SoC)"
+            canonical_name: 'Haor Chall Prototype'.canonicalize()
+            xws: "haorchallprototype-siegeofcoruscant"
             id: 593
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
@@ -12481,6 +12538,449 @@ exportObj.basicCardData = ->
             points: 20
             chassis: "Networked Calculations"
             upgrades: [
+            ]
+        }
+        {
+            name: "Corran Horn"
+            id: 594
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "T-65 X-wing"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Wes Janson"
+            id: 595
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "T-65 X-wing"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Tycho Celchu"
+            id: 596
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "RZ-1 A-wing"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Keo Venzee"
+            id: 597
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "RZ-1 A-wing"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Pops" Krail'
+            id: 598
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "T-65 X-wing"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Flight Leader Ubbel"
+            id: 599
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE/rb Heavy"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Juno Eclipse"
+            id: 600
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE/x1 Advanced"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Second Sister"
+            id: 601
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE/in Interceptor"
+            skill: 4
+            force: 2
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Magna Tolvan"
+            id: 602
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE/ln Fighter"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Yrica Quell"
+            id: 603
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE/ln Fighter"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Poe Dameron (YT-1300)"
+            canonical_name: 'Poe Dameron'.canonicalize()
+            xws: "poedameron-scavengedyt1300"
+            id: 604
+            unique: true
+            faction: "Resistance"
+            ship: "Scavenged YT-1300"
+            skill: 6
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Lando Calrissian (Resistance)"
+            xws: "landocalrissian-scavengedyt1300"
+            id: 605
+            unique: true
+            faction: "Resistance"
+            ship: "Scavenged YT-1300"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Venisa Doza"
+            id: 606
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-wing"
+            skill: 4
+            points: 20
+            slots: [
+                "Modification"
+                "HardpointShip"
+            ]
+        }
+        {
+            name: "Zay Versio"
+            id: 607
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-wing"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
+                "HardpointShip"
+            ]
+        }
+        {
+            name: "Taka Jamoreesa"
+            id: 608
+            unique: true
+            faction: "Resistance"
+            ship: "Resistance Transport"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Hondo Ohnaka"
+            id: 609
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "Firespray-class Patrol Craft"
+            skill: 1
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Tor Phun"
+            id: 610
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "Fang Fighter"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Durge"
+            id: 611
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "Rogue-class Starfighter"
+            skill: 1
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Doctor Aphra"
+            id: 612
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "YV-666 Light Freighter"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Lapin"
+            id: 613
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "Modified TIE/ln Fighter"
+            skill: 1
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Volan Das"
+            id: 614
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Droid Tri-fighter"
+            skill: 5
+            points: 20
+            chassis: "Modified for Organics"
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Aurra Sing"
+            id: 615
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Firespray-class Patrol Craft"
+            skill: 4
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Durge (Separatist)"
+            xws: "durge-separatistalliance"
+            id: 616
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Rogue-class Starfighter"
+            skill: 1
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "The Iron Assembler"
+            id: 617
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 1
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Kelrodo-Ai Holdout"
+            id: 618
+            faction: "Separatist Alliance"
+            ship: "Droid Tri-fighter"
+            skill: 1
+            points: 20
+            chassis: "Modified for Organics"
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Adi Gallia"
+            id: 619
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Adi Gallia (Delta-7B)"
+            canonical_name: 'Adi Gallia'.canonicalize()
+            xws: "adigallia-delta7baethersprite"
+            id: 620
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7b Aethersprite"
+            skill: 5
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Sicko"'
+            id: 621
+            unique: true
+            faction: "Galactic Republic"
+            ship: "LAAT/i Gunship"
+            skill: 2
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Kit Fisto"
+            id: 622
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Eta-2 Actis"
+            skill: 4
+            force: 2
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Slammer"'
+            id: 623
+            unique: true
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent Starfighter"
+            skill: 4
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Gavyn Sykes"
+            id: 624
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Naboo Royal N-1 Starfighter"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Lieutenant Galek"
+            id: 625
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Jul Jerjerrod"
+            id: 626
+            unique: true
+            faction: "First Order"
+            ship: "TIE/se Bomber"
+            skill: 4
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "DT-798"
+            id: 627
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Lin Gaava"
+            id: 628
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Agent Tierny"
+            id: 629
+            unique: true
+            faction: "First Order"
+            ship: "Xi-class Light Shuttle"
+            skill: 3
+            points: 20
+            slots: [
+                "Modification"
             ]
         }
     ]
@@ -16151,6 +16651,7 @@ exportObj.basicCardData = ->
             points: 0
             standardized: true
             slot: "Modification"
+            chassis: "Independent Calculations"
             restrictions: [
                 ["Keyword", "Networked Calculations"]
             ]
@@ -16191,11 +16692,13 @@ exportObj.basicCardData = ->
             points: 0
             slot: "Configuration"
             standardized: true
+            chassis: "Vectored Cannons"
             restrictions: [
                 ["Keyword", "Vectored Thrusters"]
             ]
             modifier_func: (stats) ->
-                stats.chassis = "Vectored Cannons"
+                stats.attackt = stats.attack
+                stats.attack = 0 
         }
         {
             name: "B6 Blade Wing Prototype"
@@ -16220,6 +16723,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/d Defender"
             standardized: true
+            chassis: "Advanced Fire Control"
             modifier_func: (stats) ->
                 if stats.maneuvers[1]?
                     for s in (stats.maneuvers)
@@ -16236,11 +16740,10 @@ exportObj.basicCardData = ->
             points: 0
             slot: "Configuration"
             standardized: true
+            chassis: "Sensitive Controls"
             restrictions: [
                 ["Keyword", "Autothrusters"]
             ]
-            modifier_func: (stats) ->
-                stats.chassis = "Sensitive Controls"
         }
         {
             name: "Cutthroat"
@@ -16656,6 +17159,7 @@ exportObj.basicCardData = ->
             points: 10
             ship: "BTA-NR2 Y-wing"
             standardized: true
+            chassis: "Devastating Barrage"
             restrictions: [
                 ["Slot", "Modification"]
             ]
@@ -16666,7 +17170,6 @@ exportObj.basicCardData = ->
                 stats.actions.push 'Lock'
                 stats.actions.push 'Reload'
                 stats.shields += 2
-                stats.chassis = "Devastating Barrage"
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -17920,6 +18423,20 @@ exportObj.basicCardData = ->
         {
             name: "Born for This"
             id: 46
+        }
+        {
+            name: "Modified for Organics"
+            id: 47
+            modifier_func: (stats) ->
+                if stats.maneuvers[2]?
+                    for turn in [0 ... 5]
+                        if (turn == 1 or turn == 3)
+                            if stats.maneuvers[2][turn] > 1
+                                stats.maneuvers[2][turn]--
+                            if stats.maneuvers[3][turn] > 1
+                                stats.maneuvers[3][turn]--
+                        if (turn == 0 or turn == 4) and stats.maneuvers[3][turn] < 3
+                            stats.maneuvers[3][turn]++
         }
     ]
 
@@ -25748,8 +26265,6 @@ exportObj.setupCommonCardData = (basic_cards) ->
 
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
-
-
 
 exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, condition_translations, chassis_translations) ->
     for upgrade_name, translations of upgrade_translations

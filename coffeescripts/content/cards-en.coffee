@@ -1710,7 +1710,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
         "Wedge Antilles (BoY)":
            display_name: """Wedge Antilles (BoY)"""
-           text: """While you perform a primary attack, if there is another friendly ship in the defender's firing arc, the defender rolls 1 lesss defense dice."""
+           text: """While you perform a primary attack, if there is another friendly ship in the defender's firing arc, the defender rolls 1 less defense dice."""
         "Biggs Darklighter (BoY)":
            display_name: """Biggs Darklighter (BoY)"""
            text: """During the System Phase, you may choose 1 friendly ship at range 1. If you do, treat your initiative as equal to the chosen ship's initiative until the end of the Activation Phase."""
@@ -1818,6 +1818,117 @@ exportObj.cardLoaders.English = () ->
         "Haor Chall Prototype (SoC)":
            display_name: """Haor Chall Prototype (SoC)"""
            text: """  """
+
+        # Hotshots and Aces 2
+        "Corran Horn":
+           display_name: """Corran Horn"""
+           text: """After you declare the defender of an attack, if you have a lock on the defender, a friendly ship may transfer their lock token from you to the defender."""
+        "Wes Janson":
+           display_name: """Wes Janson"""
+           text: """  """
+        "Tycho Celchu":
+           display_name: """Tycho Celchu"""
+           text: """While you have 2 or fewer stress tokens, you may perform actions, even while stressed."""
+        "Keo Venzee":
+           display_name: """Keo Venzee"""
+           text: """  """
+        '"Pops" Krail':
+           display_name: """“Pops” Krail"""
+           text: """  """
+        "Flight Leader Ubbel":
+           display_name: """Flight Leader Ubbel"""
+           text: """  """
+        "Juno Eclipse":
+           display_name: """Juno Eclipse"""
+           text: """After you perform an action, you may perform a red %BOOST% action."""
+        "Second Sister":
+           display_name: """Second Sister"""
+           text: """While you perform an attack, after the Neutralize Results step, if the attack hit, you may spend 2 %FORCE%. If you do, change all of your %HIT% results to %CRIT% results."""
+        "Magna Tolvan":
+           display_name: """Magna Tolvan"""
+           text: """  """
+        "Yrica Quell":
+           display_name: """Yrica Quell"""
+           text: """  """
+        "Poe Dameron (YT-1300)":
+           display_name: """Poe Dameron"""
+           text: """  """
+        "Lando Calrissian (Resistance)":
+           display_name: """Lando Calrissian"""
+           text: """  """
+        "Venisa Doza":
+           display_name: """Venisa Doza"""
+           text: """  """
+        "Zay Versio":
+           display_name: """Zay Versio"""
+           text: """While you defend, if the attacker is damaged, you may reroll 1 defense die."""
+        "Taka Jamoreesa":
+           display_name: """Taka Jamoreesa"""
+           text: """  """
+        "Hondo Ohnaka":
+           display_name: """Hondo Ohnaka"""
+           text: """<strong>Action:</strong> Choose 2 non-huge ships at range 0-3 of you that are not friendly to each other. Each chosen ship may perform an action that is on your action bar, even while stressed, in the order of your choice. Then, gain 1 calculate token."""
+        "Tor Phun":
+           display_name: """Tor Phun"""
+           text: """After you perform an attack, if the defender was destroyed, you may perform an action, even while stressed. Then you may gain 2 strain tokens to perform a bonus attack."""
+        "Durge":
+           display_name: """Durge"""
+           text: """  """
+        "Doctor Aphra":
+           display_name: """Doctor Aphra"""
+           text: """  """
+        "Lapin":
+           display_name: """Lapin"""
+           text: """  """
+        "Volan Das":
+           display_name: """Volan Das"""
+           text: """After you fully execute a red maneuver, you may chose an enemy ship at range 1. The chosen ship gains 1 strain token and you may remove 1 stress token."""
+        "Aurra Sing":
+           display_name: """Aurra Sing"""
+           text: """  """
+        "Durge (Separatist)":
+           display_name: """Durge"""
+           text: """  """
+        "The Iron Assembler":
+           display_name: """The Iron Assembler"""
+           text: """  """
+        "Kelrodo-Ai Holdout":
+           display_name: """Kelrodo-Ai Holdout"""
+           text: """  """
+        "Lieutenant Galek":
+           display_name: """Lieutenant Galek"""
+           text: """  """
+        "Jul Jerjerrod":
+           display_name: """Jul Jerjerrod"""
+           text: """  """
+        "DT-798":
+           display_name: """DT-798"""
+           text: """  """
+        "Lin Gaava":
+           display_name: """Lin Gaava"""
+           text: """  """
+        "Agent Tierny":
+           display_name: """Agent Tierny"""
+           text: """<strong>Setup:</strong> After placing forces, you <b>must</b> assign the <strong>Broken Trust</strong> condition to an enemy ship."""
+        "Adi Gallia":
+           display_name: """Adi Gallia"""
+           text: """While you defend at attack range 1, you may spend 1 %FORCE%. If you do, the attacker cannot apply the range bonus. %LINEBREAK% While you perform an attack against a defender at attack range 3, you may spend 1 %FORCE%, the defender cannot apply the range bonus."""
+        "Adi Gallia (Delta-7B)":
+           display_name: """Adi Gallia"""
+           text: """While you defend at attack range 1, you may spend 1 %FORCE%. If you do, the attacker cannot apply the range bonus. %LINEBREAK% While you perform an attack against a defender at attack range 3, you may spend 1 %FORCE%, the defender cannot apply the range bonus."""
+        '"Sicko"':
+           display_name: """“Sicko”"""
+           text: """After you execute a basic maneuver, you may assign the <strong>Sickening Maneuver</strong> condition to yourself."""
+        "Kit Fisto":
+           display_name: """Kit Fisto"""
+           text: """While another friendly ship defends, if the attacker is in its %BULLSEYEARC%, you may spend 1 %FORCE% to change 1 of the defender's blank results to a %FOCUS% result."""
+        '"Slammer"':
+           display_name: """“Slammer”"""
+           text: """  """
+        "Gavyn Sykes":
+           display_name: """Gavyn Sykes"""
+           text: """While you defend or perfrom an attack, if the speed of your revealed maneuver is greater than the enemy ship's, you may reroll your blank results."""
+
 
         # Epic Ships
         "Republic Judiciary":
@@ -3426,6 +3537,9 @@ exportObj.cardLoaders.English = () ->
         "Born for This":
            display_name: "Born for This"
            text: """While another friendly ship at range 0-2 defends, if you are not strained, it may spend your focus and evade tokens as if that ship has them. If it does, you gain 1 strain token."""
+        "Modified for Organics":
+           display_name: "Modified for Organics"
+           text: """This ship is not affected by the <strong>Standardized</strong> restriction. Reduce the difficulty of your speed 2 and 3 bank [%BANKLEFT% or %BANKRIGHT%] maneuvers. Increase the difficulty of your speed 3 turn [%TURNLEFT% or %TURNRIGHT%] maneuvers."""
 
     # in this file the display_name is often omitted, if it is identical to the name. I am too lazy to add those manually (though running the translation script would automatically do so). As this will pop up with every new card, I add those tags here
     for name, data of pilot_translations
