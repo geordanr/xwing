@@ -4955,22 +4955,23 @@ class GenericAddon
                 else
                     throw new Error("Unexpected addon type for addon #{addon}")
                 @conferredAddons.push addon
-                for addon in exportObj.chassis[@data.chassis].conferredAddons
-                    cls = addon.type
-                    args =
-                        ship: @ship
-                        container: @container
-                    args.slot = addon.slot if addon.slot?
-                    args.adjustment_func = addon.adjustment_func if addon.adjustment_func?
-                    args.filter_func = addon.filter_func if addon.filter_func?
-                    args.auto_equip = addon.auto_equip if addon.auto_equip?
-                    args.placeholderMod_func = addon.placeholderMod_func if addon.placeholderMod_func?
-                    addon = new cls args
-                    if addon instanceof exportObj.Upgrade
-                        @ship.upgrades.push addon
-                    else
-                        throw new Error("Unexpected addon type for addon #{addon}")
-                    @conferredAddons.push addon
+    
+            for addon in exportObj.chassis[@data.chassis].conferredAddons
+                cls = addon.type
+                args =
+                    ship: @ship
+                    container: @container
+                args.slot = addon.slot if addon.slot?
+                args.adjustment_func = addon.adjustment_func if addon.adjustment_func?
+                args.filter_func = addon.filter_func if addon.filter_func?
+                args.auto_equip = addon.auto_equip if addon.auto_equip?
+                args.placeholderMod_func = addon.placeholderMod_func if addon.placeholderMod_func?
+                addon = new cls args
+                if addon instanceof exportObj.Upgrade
+                    @ship.upgrades.push addon
+                else
+                    throw new Error("Unexpected addon type for addon #{addon}")
+                @conferredAddons.push addon
                 
     rescindAddons: ->
         await
