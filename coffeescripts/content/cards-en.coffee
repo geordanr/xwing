@@ -1823,7 +1823,7 @@ exportObj.cardLoaders.English = () ->
            text: """  """
 
         # Hotshots and Aces 2
-        "Corran Horn":
+        "Corran Horn (X-Wing)":
            display_name: """Corran Horn"""
            text: """After you declare the defender of an attack, if you have a lock on the defender, a friendly ship may transfer their lock token from you to the defender."""
         "Wes Janson":

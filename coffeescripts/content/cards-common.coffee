@@ -12542,9 +12542,10 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Corran Horn"
+            name: "Corran Horn (X-Wing)"
             id: 594
             unique: true
+            xws: "corranhorn-t65xwing"
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 5
