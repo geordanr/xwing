@@ -4955,7 +4955,7 @@ class GenericAddon
                 else
                     throw new Error("Unexpected addon type for addon #{addon}")
                 @conferredAddons.push addon
-        if @data.chassis? and !@ship.builder.isQuickbuild
+        if @data.chassis? and !@ship.builder.isQuickbuild and exportObj.chassis[@data.chassis].conferredAddons?
             for addon in exportObj.chassis[@data.chassis].conferredAddons
                 cls = addon.type
                 args =
