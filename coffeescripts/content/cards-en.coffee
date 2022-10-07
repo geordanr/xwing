@@ -1720,8 +1720,8 @@ exportObj.cardLoaders.English = () ->
         "Jek Porkins (BoY)":
            display_name: """Jek Porkins (BoY)"""
            text: """After you receive a stress token, you may roll 1 attack die to remove it. On a %HIT% result, suffer 1 %HIT% damage."""
-        "Hol Okland (BoY)":
-           display_name: """Hol Okland (BoY)"""
+        "Hol Okand (BoY)":
+           display_name: """Hol Okand (BoY)"""
            text: """During the System Phasse, if there are no enemy ships at range 1-2, you may recover 1 %CHARGE% on any upgrade."""
         '"Pops" Krail (BoY)':
            display_name: """“Pops” Krail (BoY)"""

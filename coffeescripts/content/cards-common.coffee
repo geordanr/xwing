@@ -12024,9 +12024,9 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Hol Okland (BoY)"
-            canonical_name: 'Hol Okland'.canonicalize()
-            xws: "holokland-battleofyavin"
+            name: "Hol Okand (BoY)"
+            canonical_name: 'Hol Okand'.canonicalize()
+            xws: "holokand-battleofyavin"
             unique: true
             id: 563
             faction: "Rebel Alliance"
