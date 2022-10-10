@@ -12619,7 +12619,7 @@ exportObj.basicCardData = ->
             id: 600
             unique: true
             faction: "Galactic Empire"
-            ship: "TIE/x1 Advanced"
+            ship: "TIE Advanced x1"
             skill: 5
             points: 20
             slots: [
