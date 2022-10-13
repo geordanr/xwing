@@ -2940,7 +2940,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you fully execute a red maneuver, if you are not focused, you may spend 1 %CHARGE% to gain 1 focus token."""
         "Gar Saxon":
            display_name: """Gar Saxon"""
-           text: """While a friendly ship at range 1-3 with an initiative of 4 or lower performs an attack against a defender you have locked, the attacker may change 1 %FOCUS% result to a %HIT% result."""
+           text: """While a friendly unit at range 1-3 with an initiative of 4 or lower performs an attack against a defender you have locked, the attacker may change 1 %FOCUS% result to a %HIT% result."""
         "Gar Saxon (Gunner)":
            display_name: """Gar Saxon"""
            text: """While you perform the %LOCK% action, you can only choose an object in your %FRONTARC% or %REARARC%. %LINEBREAK% While you perform a primary attack, if the defender is in your %FRONTARC% or %REARARC%, you may remove 1 orange or red token from the defender to roll 1 additional die, to a maximum of 4."""
