@@ -12672,6 +12672,8 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "Scavenged YT-1300"
             skill: 6
+            charge: 2
+            recurring: 1
             points: 20
             slots: [
                 "Modification"

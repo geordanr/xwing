@@ -1855,7 +1855,7 @@ exportObj.cardLoaders.English = () ->
            text: """  """
         "Poe Dameron (YT-1300)":
            display_name: """Poe Dameron"""
-           text: """  """
+           text: """Before you execute a maneuver, you may spend 1 %CHARGE%. If you do, ignore obstacles during that maneuver.%LINEBREAK% After you fully execute a maneuver, you may spend 2 %CHARGE% to perform a white %BOOST% or red %BARRELROLL% action. Then if you performed a red %BARRELROLL% action, expose 1 damage card, if able."""
         "Lando Calrissian (Resistance)":
            display_name: """Lando Calrissian"""
            text: """  """
