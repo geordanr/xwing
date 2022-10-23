@@ -11976,17 +11976,20 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: 'Jon "Dutch" Vander (BoY)'
+            name: '"Dutch" Vander (BoY)'
             canonical_name: '"Dutch" Vander'.canonicalize()
-            xws: "jondutchvader-battleofyavin"
+            xws: "dutchvader-battleofyavin"
             unique: true
             id: 560
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
-            skill: 4
+            skill: 5
             points: 20
             chassis: "Hope"
             upgrades: [
+                "Ion Cannon Turret"
+                "Adv. Proton Torpedoes"
+                "Targeting Astromech (BoY)"
             ]
         }
         {
@@ -12265,6 +12268,9 @@ exportObj.basicCardData = ->
             force: 3
             chassis: "Intuitive Controls"
             upgrades: [
+                "Patience"
+                "Ancillary Ion Weapons (SoC)"
+                "R4-P17 (SoC)"
             ]
         }
         {
@@ -12802,6 +12808,16 @@ exportObj.basicCardData = ->
             slots: [
                 "Modification"
             ]
+            ship_override:
+                actions: [
+                    "Focus"
+                    "Evade"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Evade"
+                    "Boost"
+                    "R-> Focus"
+                ]
         }
         {
             name: "Aurra Sing"
@@ -12851,6 +12867,16 @@ exportObj.basicCardData = ->
             slots: [
                 "Modification"
             ]
+            ship_override:
+                actions: [
+                    "Focus"
+                    "Evade"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Evade"
+                    "Boost"
+                    "R-> Focus"
+                ]
         }
         {
             name: "Adi Gallia"
@@ -18056,6 +18082,19 @@ exportObj.basicCardData = ->
             standard: true
             charge: 2
             slot: "Configuration"
+        }
+        {
+            name: "R4-P17 (SoC)"
+            id: 490
+            standard: true
+            charge: 2
+            slot: "Astromech"
+        }
+        {
+            name: "Targeting Astromech (BoY)"
+            id: 491
+            standard: true
+            slot: "Astromech"
         }
     ]
 
@@ -26607,3 +26646,4 @@ exportObj.standardCheckBrowser = (data, faction='', type) ->
         return false
     else
         return data.name not in exportObj.standardUpgradeExclusions
+
