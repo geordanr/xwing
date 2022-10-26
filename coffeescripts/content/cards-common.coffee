@@ -12601,7 +12601,7 @@ exportObj.basicCardData = ->
             id: 598
             unique: true
             faction: "Rebel Alliance"
-            ship: "T-65 X-wing"
+            ship: "BTL-A4 Y-wing"
             skill: 5
             points: 20
             slots: [
