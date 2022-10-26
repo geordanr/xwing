@@ -11984,7 +11984,7 @@ exportObj.basicCardData = ->
             id: 560
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
-            skill: 5
+            skill: 4
             points: 4
             chassis: "Hope"
             upgrades: [

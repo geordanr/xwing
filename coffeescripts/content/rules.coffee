@@ -4,8 +4,8 @@ exportObj = exports ? this
 # Returns an independent copy of the data which can be modified by translation modules.
 exportObj.rulesEntries = ->
     version:
-        number: "1.4.31"
-        date: "06/15/22"
+        number: "1.4.4"
+        date: "10/28/22"
     glossary:
         "ABILITIES":
             name: "Abilities"
@@ -207,7 +207,7 @@ exportObj.rulesEntries = ->
             text: """ID markers relate ships in the play area to their respective ship card and any locks they have. Players must assign ID markers to each of their ships during setup. <br><br>To assign an ID marker to a ship, the player places one ID marker on the ship’s card. Then they insert the two corresponding ID markers into the tower of the ship’s base. The color of the number on the sides that face outward must match the color of the faceup marker on the ship card. <br>• Players can color their ID markers, (using a marker, brush, etc.) so long as all of their fielded ships match. <br>• During setup, players must be able to clearly differentiate which ships are on each side by using differently colored ID markers."""
         "ION":
             name: "Ion"
-            text: """A ship is <strong>ionized</strong> while it has a number of ion tokens relative to its size: at least one for a small ship, two or more for a medium ship, and three or more for a large ship. Ion tokens are red tokens. <br><br>A ship that is ionized cannot acquire or maintain locks. When a ship becomes ionized, it breaks all locks it is maintaining.<br><br>During the Activation Phase, an ionized ship activates as normal, with the following exceptions: <br><br>1. During the Execute Maneuver step, the ionized ship flips its maneuver dial faceup and executes an <strong>ion maneuver</strong> with the same direction shown on the dial. An ion maneuver is a blue speed 1 bank or straight [%BANKLEFT%, %STRAIGHT%, %BANKRIGHT%] maneuver.<br> • If an ionized ship's dial shows a stop [%STOP%] maneuver, they perform their ion maneuver as a [1 %STRAIGHT%] maneuver.<br>• The bearing, difficulty, and speed of this maneuver cannot be changed unless an ability explicitly affects the ion maneuver.<br>2. During the Perform Action step, the ship can perform only the %FOCUS% action. <br>3. At the end of a ship's activation, if it executed an ion maneuver, it removes all of its ion tokens. <br><br>Additionally: <br>• An ionized ship cannot perform any action except the %FOCUS% action. <br>• Ships cannot use abilities that trigger from an ionized ship revealing its dial.<br>• If a ship that was ionized during the Planning Phase is no longer ionized at the beginning of its activation, it activates as normal."""
+            text: """A ship is <strong>ionized</strong> while it has a number of ion tokens relative to its size: at least one for a small ship, two or more for a medium ship, and three or more for a large ship. Ion tokens are red tokens. <br><br>A ship that is ionized cannot acquire or maintain locks. When a ship becomes ionized, it breaks all locks it is maintaining.<br><br>During the Activation Phase, an ionized ship activates as follows: <br><br>1. The ionized ship reveals its dial as normal <br><br>2. During the Execute Maneuver step, the ionized ship flips its maneuver dial faceup and executes an <strong>ion maneuver</strong> with the same direction shown on the dial. An ion maneuver is a blue speed 1 bank or straight [%BANKLEFT%, %STRAIGHT%, %BANKRIGHT%] maneuver.<br> • If an ionized ship's dial shows a stop [%STOP%] maneuver, they perform their ion maneuver as a [1 %STRAIGHT%] maneuver.<br>• The bearing, difficulty, and speed of this maneuver cannot be changed unless an ability explicitly affects the ion maneuver.<br>3. During the Perform Action step, the ship can perform only the %FOCUS% action. <br>4. At the end of a ship's activation, if it executed an ion maneuver, it removes all of its ion tokens. <br><br>Additionally: <br>• An ionized ship cannot perform any action except the %FOCUS% action. <br>• Ships cannot use abilities that trigger from an ionized ship revealing its dial.<br>• If a ship that was ionized during the Planning Phase is no longer ionized at the beginning of its activation, it activates as normal."""
         "INFLICT":
             name: "Inflict"
             text: """Some special weapons inflict tokens instead of dealing damage. If an attack inflicts tokens, the defender gains the number and type of tokens specified."""
@@ -381,10 +381,13 @@ exportObj.rulesEntries = ->
             text: """Each ship card and upgrade card has a squad point cost associated with it. This value is used during squad building in order to build lists that are legal for different game modes. These values are available from the <strong>X-Wing Squad Builder</strong> and are also available at X-Wing.com."""
         "STANDARDIZED":
             name: "Standardized"
-            text: """Some upgrade cards have the <strong>standardized</strong> restriction. During squad building, if a player selects a ship with a standardized card equipped, each ship of that ship type (i.e., full ship name) in that player's squad must be equipped with a copy of that standardized card."""
+            text: """Some upgrade cards have the <strong>standardized</strong> restriction. During squad building, if a player selects a ship with a standardized card equipped, each ship of that ship type included in that player's squad must be equipped with a copy of that standardized card if it has the ship ability referenced by that card.<br><br>• Standard loadouts cannot equip additional upgrades and ignore the standardized restriction."""
         "STANDARD ARC":
             name: "Standard Arc"
             text: """See Arc."""
+        "STANDARD LOADOUTS":
+            name: "Standard Arc"
+            text: """Some ship cards are <b>standard loadouts</b>. Standard loadout cards are larger than normal ship cards and list all the ship's equipped upgrades. Some standard loadouts have unique ship abilities, upgrade abilities, and action bars. Standard loadout ships cannot equip any additional upgrades."""
         "STANDARD SHIP":
             name: "Standard Ship"
             text: """A standard ship is any non-huge ship (see Appendix: Huge Ships)."""

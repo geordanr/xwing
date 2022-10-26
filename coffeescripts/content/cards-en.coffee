@@ -1728,7 +1728,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform a %SINGLETURRETARC% attack, you may reroll up to 2 attack dice."""
         '"Dutch" Vander (BoY)':
            display_name: """“Dutch” Vander (BoY)"""
-           text: """After you spend a %LOCK%, you may choose 1 friendly ship at range 1-3. That ship may acquire a lock on the defender."""
+           text: """After you spend a lock during an attack, choose a friendly ship at range 1-3. The chosen ship may acquire a lock on the defender.<i>Errata (since rules reference 1.4.4): Corrected pilot ability and adjusted initiative value</i>"""
         "Dex Tiree (BoY)":
            display_name: """Dex Tiree (BoY)"""
            text: """While you defend, if there is at least 1 other friendly ship at range 0-1, you may roll 1 additional defense die."""
@@ -1743,7 +1743,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform an attack, you may spend 1 %FORCE% to change 1 blank result to a %HIT% result."""
         "Iden Versio (BoY)": 
            display_name: """Iden Versio (BoY)"""
-           text: """Before a friendly TIE at range 0-1 would suffer damage, you may spend 2 %CHARGE%. If you do, prevent 1 %HIT% or %CRIT%. """
+           text: """Before a friendly TIE at range 0-1 would suffer damage, you may spend 2 %CHARGE%. If you do, prevent 1 damage. <i>Errata (since rules reference 1.4.4): Corrected pilot ability</i>"""
         '"Backstabber" (BoY)': 
            display_name: """“Backstabber” (BoY)"""
            text: """While you perform a primary attack, if a friendly Darth Vader or "Mauler" Mithel is in your %LEFTARC% or %RIGHTARC% at range 0-1, roll 1 additional attack die."""
