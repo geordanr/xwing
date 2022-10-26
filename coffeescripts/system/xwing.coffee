@@ -4668,7 +4668,7 @@ class Ship
         if upgrade_data.standardized?
             for ship in @builder.ships
                 if ship?.data? and ship.data.name == @data.name
-                    if upgrade_data.restrictions? and ship.restriction_check(upgrade_data.restrictions?, upgrade_data)
+                    if upgrade_data.restrictions? and ship.restriction_check(upgrade_data.restrictions?, upgrade_data) and not (ship.pilot?.upgrades?)
                         slotfree = false
                         for upgrade in ship.upgrades
                             if upgrade_data.slot == upgrade.slot and not upgrade.data?
