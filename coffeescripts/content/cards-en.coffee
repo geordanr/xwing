@@ -3065,7 +3065,7 @@ exportObj.cardLoaders.English = () ->
            text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "Unstable Sublight Engines (BoY)":
            display_name: """Unstable Sublight Engines"""
-           text: """After you are destroyed, you <b>must</b> execute a [1 %STRAIGHT%] maneuver"""
+           text: """After you are destroyed, you <b>must</b> execute a [1 %STRAIGHT%] maneuver, then each other ship at range 0-1 suffers 1 %HIT% damage."""
         "Attack Speed (BoY)":
            display_name: """Attack Speed"""
            text: """After you fully execute a [3 %STRAIGHT%] or [4 %STRAIGHT%] maneuver, you may perform a boost using the [1 %STRAIGHT%] template. (This is not an action)."""
