@@ -5825,10 +5825,11 @@ exportObj.basicCardData = ->
             skill: 1
             recurring: 1
             charge: 1
-            points: 2
-            loadout: 2
+            points: 3
+            loadout: 5
             slots: [
                 "Talent"
+                "Modification"
             ]
         }
         {
@@ -5882,9 +5883,10 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
             skill: 3
-            points: 2
-            loadout: 1
+            points: 3
+            loadout: 5
             slots: [
+                "Talent"
                 "Talent"
             ]
         }
@@ -5909,9 +5911,8 @@ exportObj.basicCardData = ->
             ship: "TIE/ln Fighter"
             skill: 3
             points: 2
-            loadout: 2
+            loadout: 0
             slots: [
-                "Talent"
             ]
         }
         {
@@ -5932,9 +5933,8 @@ exportObj.basicCardData = ->
             ship: "TIE/ln Fighter"
             skill: 1
             points: 2
-            loadout: 3
+            loadout: 0
             slots: [
-                "Modification"
             ]
         }
         {
@@ -6560,7 +6560,7 @@ exportObj.basicCardData = ->
             ship: "TIE/fo Fighter"
             skill: 5
             points: 3
-            loadout: 5
+            loadout: 4
             charge: 2
             slots: [
                 "Talent"
@@ -9204,8 +9204,8 @@ exportObj.basicCardData = ->
             charge: 2
             recurring: 1
             ship: "LAAT/i Gunship"
-            points: 5
-            loadout: 23
+            points: 6
+            loadout: 20
             keyword: ["Clone"]
             slots: [
                 "Sensor"
@@ -9251,7 +9251,7 @@ exportObj.basicCardData = ->
             unique: true
             ship: "LAAT/i Gunship"
             points: 5
-            loadout: 20
+            loadout: 12
             keyword: ["Clone"]
             slots: [
                 "Talent"
@@ -10398,7 +10398,7 @@ exportObj.basicCardData = ->
             ship: "BTA-NR2 Y-wing"
             skill: 5
             points: 5
-            loadout: 24
+            loadout: 19
             charge: 1
             recurring: 1
             slots: [
@@ -10420,7 +10420,7 @@ exportObj.basicCardData = ->
             ship: "BTA-NR2 Y-wing"
             skill: 4
             points: 4
-            loadout: 17
+            loadout: 12
             slots: [
                 "Talent"
                 "Tech"
@@ -10439,8 +10439,8 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "BTA-NR2 Y-wing"
             skill: 4
-            points: 3
-            loadout: 14
+            points: 4
+            loadout: 12
             slots: [
                 "Tech"
                 "Turret"
@@ -10459,7 +10459,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "BTA-NR2 Y-wing"
             skill: 3
-            points: 3
+            points: 4
             loadout: 13
             slots: [
                 "Talent"
@@ -10480,7 +10480,7 @@ exportObj.basicCardData = ->
             ship: "BTA-NR2 Y-wing"
             skill: 3
             points: 4
-            loadout: 19
+            loadout: 14
             slots: [
                 "Talent"
                 "Tech"
@@ -10501,7 +10501,7 @@ exportObj.basicCardData = ->
             ship: "BTA-NR2 Y-wing"
             skill: 2
             points: 4
-            loadout: 18
+            loadout: 13
             slots: [
                 "Talent"
                 "Talent"
@@ -10521,7 +10521,7 @@ exportObj.basicCardData = ->
             ship: "BTA-NR2 Y-wing"
             skill: 1
             points: 4
-            loadout: 20
+            loadout: 15
             slots: [
                 "Tech"
                 "Turret"
@@ -10542,8 +10542,8 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "BTA-NR2 Y-wing"
             skill: 2
-            points: 3
-            loadout: 15
+            points: 4
+            loadout: 10
             slots: [
                 "Talent"
                 "Tech"
@@ -10909,10 +10909,11 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
             skill: 4
-            points: 2
-            loadout: 3
+            points: 3
+            loadout: 5
             max_per_squad: 2
             slots: [
+                "Talent"
                 "Illicit"
             ]
         }
@@ -11878,7 +11879,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 4
-            points: 20
+            points: 4
             chassis: "Hope"
             upgrades: [
                 "Adv. Proton Torpedoes"
@@ -11894,7 +11895,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 5
-            points: 20
+            points: 6
             chassis: "Hope"
             upgrades: [
                 "Instinctive Aim"
@@ -11912,7 +11913,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 4
-            points: 20
+            points: 4
             chassis: "Hope"
             upgrades: [
                 "Adv. Proton Torpedoes"
@@ -11929,7 +11930,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 3
-            points: 20
+            points: 5
             chassis: "Hope"
             upgrades: [
                 "Attack Speed (BoY)"
@@ -11947,7 +11948,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 5
-            points: 20
+            points: 5
             chassis: "Hope"
             upgrades: [
                 "Attack Speed (BoY)"
@@ -11965,7 +11966,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Modified YT-1300 Light Freighter"
             skill: 6
-            points: 20
+            points: 7
             charge: 4
             chassis: "Solo"
             upgrades: [
@@ -11984,7 +11985,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
             skill: 5
-            points: 20
+            points: 4
             chassis: "Hope"
             upgrades: [
                 "Ion Cannon Turret"
@@ -12001,7 +12002,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
             skill: 2
-            points: 20
+            points: 4
             chassis: "Hope"
             upgrades: [
                 "Dorsal Turret"
@@ -12018,7 +12019,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
             skill: 4
-            points: 20
+            points: 4
             chassis: "Hope"
             upgrades: [
                 "Ion Cannon Turret"
@@ -12035,7 +12036,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
             skill: 4
-            points: 20
+            points: 4
             chassis: "Hope"
             upgrades: [
                 "Dorsal Turret"
@@ -12052,7 +12053,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Advanced x1"
             skill: 6
-            points: 20
+            points: 6
             force: 3
             keyword: ["Dark Side", "Sith"]
             ship_override:
@@ -12072,7 +12073,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
             skill: 5
-            points: 20
+            points: 4
             ship_override:
                 hull: 4
             upgrades: [
@@ -12090,7 +12091,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
             skill: 5
-            points: 20
+            points: 3
             ship_override:
                 hull: 4
             upgrades: [
@@ -12106,7 +12107,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
             skill: 6
-            points: 20
+            points: 4
             ship_override:
                 hull: 4
             upgrades: [
@@ -12125,7 +12126,7 @@ exportObj.basicCardData = ->
             skill: 1
             charge: 1
             recurring: 1
-            points: 20
+            points: 3
             ship_override:
                 hull: 4
             upgrades: [
@@ -12142,7 +12143,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/in Interceptor"
             skill: 4
-            points: 20
+            points: 6
             charge: 2
             recurring: 1
             chassis: "Sensitive Controls"
@@ -12162,7 +12163,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/in Interceptor"
             skill: 4
-            points: 20
+            points: 4
             charge: 2
             chassis: "Sensitive Controls"
             ship_override:
@@ -12181,7 +12182,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/in Interceptor"
             skill: 4
-            points: 20
+            points: 4
             charge: 2
             chassis: "Sensitive Controls"
             ship_override:
@@ -12200,7 +12201,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/in Interceptor"
             skill: 4
-            points: 20
+            points: 4
             charge: 2
             chassis: "Sensitive Controls"
             ship_override:
@@ -12219,7 +12220,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/in Interceptor"
             skill: 4
-            points: 20
+            points: 4
             charge: 2
             chassis: "Sensitive Controls"
             ship_override:
@@ -12245,7 +12246,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "Eta-2 Actis"
             skill: 6
-            points: 20
+            points: 5
             force: 3
             chassis: "Intuitive Controls"
             keyword: ["Dark Side"]
@@ -12264,7 +12265,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "Eta-2 Actis"
             skill: 5
-            points: 20
+            points: 4
             force: 3
             chassis: "Intuitive Controls"
             upgrades: [
@@ -12282,7 +12283,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "Eta-2 Actis"
             skill: 4
-            points: 20
+            points: 4
             force: 2
             chassis: "Intuitive Controls"
             upgrades: [
@@ -12301,7 +12302,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "ARC-170 Starfighter"
             skill: 5
-            points: 20
+            points: 5
             chassis: "Born for This"
             upgrades: [
             ]
@@ -12315,7 +12316,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "ARC-170 Starfighter"
             skill: 4
-            points: 20
+            points: 4
             chassis: "Born for This"
             upgrades: [
             ]
@@ -12329,7 +12330,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "ARC-170 Starfighter"
             skill: 3
-            points: 20
+            points: 4
             chassis: "Born for This"
             upgrades: [
             ]
@@ -12343,7 +12344,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "Nimbus-class V-wing"
             skill: 5
-            points: 20
+            points: 3
             chassis: "Born for This"
             upgrades: [
             ]
@@ -12357,7 +12358,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "Nimbus-class V-wing"
             skill: 4
-            points: 20
+            points: 3
             chassis: "Born for This"
             upgrades: [
             ]
@@ -12371,7 +12372,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "V-19 Torrent Starfighter"
             skill: 4
-            points: 20
+            points: 3
             chassis: "Born for This"
             upgrades: [
             ]
@@ -12385,7 +12386,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "V-19 Torrent Starfighter"
             skill: 3
-            points: 20
+            points: 4
             chassis: "Born for This"
             upgrades: [
                 "Deadeye Shot"
@@ -12401,7 +12402,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Sith Infiltrator"
             skill: 3
-            points: 20
+            points: 6
             force: 3
             keyword: ["Dark Side"]
             upgrades: [
@@ -12419,7 +12420,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Hyena-class Droid Bomber"
             skill: 3
-            points: 20
+            points: 3
             chassis: "Networked Calculations"
             ship_override:
                 actions: [
@@ -12444,7 +12445,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Hyena-class Droid Bomber"
             skill: 4
-            points: 20
+            points: 3
             chassis: "Networked Calculations"
             upgrades: [
             ]
@@ -12471,7 +12472,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Droid Tri-fighter"
             skill: 3
-            points: 20
+            points: 4
             chassis: "Networked Calculations"
             upgrades: [
             ]
@@ -12485,7 +12486,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Droid Tri-fighter"
             skill: 4
-            points: 20
+            points: 5
             chassis: "Networked Calculations"
             upgrades: [
                 "Outmaneuver"
@@ -12501,7 +12502,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Droid Tri-fighter"
             skill: 1
-            points: 20
+            points: 4
             chassis: "Networked Calculations"
             upgrades: [
             ]
@@ -12515,7 +12516,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
             skill: 3
-            points: 20
+            points: 2
             chassis: "Networked Calculations"
             upgrades: [
             ]
@@ -12529,7 +12530,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
             skill: 1
-            points: 20
+            points: 3
             chassis: "Networked Calculations"
             upgrades: [
             ]
@@ -12542,7 +12543,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
             skill: 1
-            points: 20
+            points: 2
             chassis: "Networked Calculations"
             upgrades: [
             ]
@@ -13053,13 +13054,13 @@ exportObj.basicCardData = ->
             name: "R3 Astromech"
             id: 4
             slot: "Astromech"
-            points: 3
+            points: 4
         }
         {
             name: "R4 Astromech"
             id: 5
             slot: "Astromech"
-            points: 2
+            points: 3
             restrictions: [
                 ["Base", "Small"]
             ]
@@ -13673,7 +13674,7 @@ exportObj.basicCardData = ->
             name: "Proximity Mines"
             id: 70
             slot: "Device"
-            points: 6
+            points: 8
             charge: 2
             applies_condition: 'Proximity Mine'.canonicalize()
         }
@@ -16160,7 +16161,7 @@ exportObj.basicCardData = ->
             id: 316
             slot: "Device"
             charge: 1
-            points: 5
+            points: 7
             applies_condition: 'Cluster Mine'.canonicalize()
         }
         {
@@ -17186,7 +17187,7 @@ exportObj.basicCardData = ->
             name: "Wartime Loadout"
             id: 409
             slot: "Configuration"
-            points: 10
+            points: 5
             ship: "BTA-NR2 Y-wing"
             standardized: true
             chassis: "Devastating Barrage"
@@ -17306,7 +17307,7 @@ exportObj.basicCardData = ->
         {
             name: "Electro-Chaff Missiles"
             id: 420
-            points: 4
+            points: 9
             slot: "Missile"
             max_per_squad: 2
             charge: 1
@@ -17717,7 +17718,7 @@ exportObj.basicCardData = ->
         {
             name: "Notorious"
             id: 455
-            points: 2
+            points: 5
             charge: 2
             recurring: 1
             slot: "Talent"
