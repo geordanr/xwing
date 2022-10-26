@@ -10861,6 +10861,108 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Battle of Yavin Battle Pack": [
+        {
+            name: 'Garven Dreis (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Luke Skywalker (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jek Porkins (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Biggs Darklighter (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wedge Antilles (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Han Solo (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dutch" Vander (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Dex Tiree (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Pops" Krail (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Hol Okand (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Darth Vader (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Backstabber" (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Mauler" Mithel (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dark Curse" (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Wampa" (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Iden Versio (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sigma 4 (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sigma 5 (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sigma 6 (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sigma 7 (BoY)'
+            type: 'pilot'
+            count: 1
+        }
+    ]
 
     'Loose Ships': [
         {
