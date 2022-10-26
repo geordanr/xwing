@@ -4731,9 +4731,10 @@ class Ship
 
         upgrade_obj = {}
 
-        for upgrade in @upgrades
-            if upgrade?.data?
-                upgrade.toXWS upgrade_obj
+        if not @pilot.upgrades
+            for upgrade in @upgrades
+                if upgrade?.data?
+                    upgrade.toXWS upgrade_obj
 
         if Object.keys(upgrade_obj).length > 0
             xws.upgrades = upgrade_obj
