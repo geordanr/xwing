@@ -1317,7 +1317,7 @@ class exportObj.SquadBuilder
 
             # Version number
             @printable_container.find('.fancy-under-header').append $.trim """
-                <div class="version">Points Version: 06/15/2022</div>
+                <div class="version">Points Version: 10/28/2022</div>
             """
                     
             # Notes, if present
