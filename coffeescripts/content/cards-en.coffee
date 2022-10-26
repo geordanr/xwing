@@ -1736,7 +1736,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """“Wampa” (BoY)"""
            text: """While you perform an attack, you may spend 1 %CHARGE% to roll 1 additional attack die.%LINEBREAK%After defending, lose 1 %CHARGE%."""
         '"Dark Curse" (BoY)':
-           display_name: """“Dark Curse (BoY)”"""
+           display_name: """“Dark Curse” (BoY)"""
            text: """While you defend, the attacker's dice cannot be modified."""
         "Darth Vader (BoY)":
            display_name: """Darth Vader (BoY)"""
