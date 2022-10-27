@@ -3348,9 +3348,9 @@ exportObj.cardLoaders.English = () ->
         'Bomblet':
            text: '''<strong>Types:</strong> Device, Bomb %LINEBREAK% At the end of the Activation Phase this device detonates. When this device detonates, each ship and remote at range 0-1 rolls 2 attack dice. Each ship and remote suffers 1 %HIT% damage for each %HIT%/%CRIT% result.%LINEBREAK%<i>Errata (Official Rulings Thread 03/2019): Added: "and remote"</i>'''
         'Loose Cargo':
-           text: '''<strong>Types:</strong> Obstacle, Placed %LINEBREAK% Loose cargo is a debris cloud.'''
+           text: '''<strong>Types:</strong> Obstacle, Placed %LINEBREAK% '''
         'Spare Parts':
-           text: '''<strong>Types:</strong> Obstacle, Placed %LINEBREAK% Spare parts is a debris cloud. %LINEBREAK% When this object is dropped, fit the tab between the ship's rear guides.'''
+           text: '''<strong>Types:</strong> Obstacle, Placed %LINEBREAK% When this object is dropped, fit the tab between the ship's rear guides.'''
         'Conner Net':
            text: '''<strong>Types:</strong> Device, Mine %LINEBREAK% After a ship overlaps or moves through this device, it detonates. When this device detonates, the ship suffers 1 %HIT% damage and gains 3 ion tokens.'''
         'Proximity Mine':
