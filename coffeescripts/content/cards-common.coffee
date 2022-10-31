@@ -11979,7 +11979,7 @@ exportObj.basicCardData = ->
         {
             name: '"Dutch" Vander (BoY)'
             canonical_name: '"Dutch" Vander'.canonicalize()
-            xws: "dutchvader-battleofyavin"
+            xws: "dutchvander-battleofyavin"
             unique: true
             id: 560
             faction: "Rebel Alliance"
@@ -12067,7 +12067,7 @@ exportObj.basicCardData = ->
         {
             name: '"Backstabber" (BoY)'
             canonical_name: '"Backstabber"'.canonicalize()
-            xws: "dextiree-battleofyavin"
+            xws: "backstabber-battleofyavin"
             unique: true
             id: 565
             faction: "Galactic Empire"
