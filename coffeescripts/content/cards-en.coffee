@@ -1831,16 +1831,16 @@ exportObj.cardLoaders.English = () ->
            text: """After you declare the defender of an attack, if you have a lock on the defender, a friendly ship may transfer their lock token from you to the defender."""
         "Wes Janson":
            display_name: """Wes Janson"""
-           text: """  """
+           text: """After you perform an attack, you may spend 1 %CHARGE% to assign the defender 1 jam token. %LINEBREAK% After you defend, you may spend 1 %CHARGE% to assign the attacker 1 jam token."""
         "Tycho Celchu":
            display_name: """Tycho Celchu"""
            text: """While you have 2 or fewer stress tokens, you may perform actions, even while stressed."""
         "Keo Venzee":
            display_name: """Keo Venzee"""
-           text: """  """
+           text: """If you have no active %FORCE%, after you reveal a bank [%BANKLEFT% or %BANKRIGHT%] or turn [%TURNLEFT% or %TURNRIGHT%] maneuver, you may increase the difficulty of the maneuver. If yo udo, perform that maneuver as a sideslip and recover 1 %FORCE%."""
         '"Pops" Krail':
            display_name: """“Pops” Krail"""
-           text: """  """
+           text: """After you fully execute a white maneuver, you may choose a friendly ship at range 0-1. If you do, it may perform a %FOCUS% action."""
         "Flight Leader Ubbel":
            display_name: """Flight Leader Ubbel"""
            text: """  """

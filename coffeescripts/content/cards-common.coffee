@@ -12568,6 +12568,8 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 5
+            charge: 1
+            recurring: 1
             points: 20
             slots: [
                 "Modification"
@@ -12591,8 +12593,10 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             ship: "RZ-1 A-wing"
-            skill: 5
+            skill: 3
             points: 20
+            force: 1
+            forcerecurring: 0
             slots: [
                 "Modification"
             ]
@@ -12603,7 +12607,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
-            skill: 5
+            skill: 3
             points: 20
             slots: [
                 "Modification"
