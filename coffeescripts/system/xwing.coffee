@@ -3726,7 +3726,7 @@ class Ship
                         for upgrade in @upgrades
                             if exportObj.slotsMatching(upgrade.slot, auto_equip_upgrade.slot)
                                 upgrade.setData auto_equip_upgrade
-                if same_ship
+                if same_ship and not @pilot.upgrades?
                     # two cycles, in case an old upgrade is adding slots that are required for other old upgrades
                     for _ in [1..2]
                         delayed_upgrades = {}
