@@ -12358,7 +12358,7 @@ exportObj.basicCardData = ->
             chassis: "Born for This"
             upgrades: [
                 "Ion Limiter Override"
-                "Precise Astromech"
+                "Precise Astromech (BoY)"
                 "Ion Bombs"
                 'Alpha-3B "Besh"'
             ]
@@ -12379,7 +12379,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "R3 Astromech"
                 "Precision Ion Engines"
-                'Alpha-3E "ESK"'
+                'Alpha-3E "Esk"'
             ]
         }
         {

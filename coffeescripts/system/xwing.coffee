@@ -4903,9 +4903,10 @@ class GenericAddon
                     return @setById @data.superseded_by_id
                 if @adjustment_func?
                     @data = @adjustment_func(@data)
-                @unequipOtherUpgrades()
-                @occupyOtherUpgrades()
-                @conferAddons()
+                if not @ship.pilot?.upgrades?
+                    @unequipOtherUpgrades()
+                    @occupyOtherUpgrades()
+                    @conferAddons()
                 if @data.standardized? and not @ship.hasFixedUpgrades
                     @addToStandardizedList()
             else
