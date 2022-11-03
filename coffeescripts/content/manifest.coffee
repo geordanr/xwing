@@ -10963,6 +10963,290 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Siege of Coruscant Battle Pack": [
+        {
+            name: 'Anakin Skywalker (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Obi-Wan Kenobi (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shaak Ti (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Odd Ball" (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Wolffe" (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Jag" (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Contrail" (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Klick" (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Kickback" (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Axe" (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Count Dooku (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DBS-32C (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DBS-404 (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Baktoid Prototype (SoC)'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'DIS-347 (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DIS-T81 (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Phlac-Arphocc Prototype (SoC)'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'DFS-081 (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DFS-311 (SoC)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Haor Chall Prototype (SoC)'
+            type: 'pilot'
+            count: 2
+        }
+    ]
+    "Hotshots and Aces II Reinforcements Pack": [
+        {
+            name: 'Corran Horn (X-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wes Janson'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tycho Celchu'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Keo Venzee'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Pops" Krail'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Flight Leader Ubbel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Juno Eclipse'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Second Sister'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Magna Tolvan'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Yrica Quell'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Poe Dameron (YT-1300)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lando Calrissian (Resistance)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Venisa Doza'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zay Versio'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Taka Jamoreesa'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Hondo Ohnaka'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tor Phun'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Durge'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Doctor Aphra'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lapin'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Volan Das'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Aurra Sing'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Durge (Separatist)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'The Iron Assembler'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kelrodo-Ai Holdout'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Adi Gallia'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Adi Gallia (Delta-7B)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Sicko"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kit Fisto'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Slammer"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gavyn Sykes'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Galek'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jul Jerjerrod'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'DT-798'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lin Gaava'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Agent Tierny'
+            type: 'pilot'
+            count: 1
+        }
+    ]
 
     'Loose Ships': [
         {

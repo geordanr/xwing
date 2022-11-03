@@ -1843,7 +1843,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you fully execute a white maneuver, you may choose a friendly ship at range 0-1. If you do, it may perform a %FOCUS% action."""
         "Flight Leader Ubbel":
            display_name: """Flight Leader Ubbel"""
-           text: """  """
+           text: """After a friendly ship at range 0-2 defends, if it was dealt a damage card, you may perform a bonus attack against the attacker."""
         "Juno Eclipse":
            display_name: """Juno Eclipse"""
            text: """After you perform an action, you may perform a red %BOOST% action."""
@@ -1852,10 +1852,10 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform an attack, after the Neutralize Results step, if the attack hit, you may spend 2 %FORCE%. If you do, change all of your %HIT% results to %CRIT% results."""
         "Magna Tolvan":
            display_name: """Magna Tolvan"""
-           text: """  """
+           text: """While you have 2 or fewer stress tokens, you can perform white actions, even while stressed. %LINEBREAK% After you gain a stress token, you may perform a white action, if able."""
         "Yrica Quell":
            display_name: """Yrica Quell"""
-           text: """  """
+           text: """After you fully execute a maneuver, you may acquire a lock on an enemy ship in your %BULLSEYEARC%."""
         "Poe Dameron (YT-1300)":
            display_name: """Poe Dameron"""
            text: """Before you execute a maneuver, you may spend 1 %CHARGE%. If you do, ignore obstacles during that maneuver.%LINEBREAK% After you fully execute a maneuver, you may spend 2 %CHARGE% to perform a white %BOOST% or red %BARRELROLL% action. Then if you performed a red %BARRELROLL% action, expose 1 damage card, if able."""
