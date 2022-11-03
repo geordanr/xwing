@@ -1775,22 +1775,22 @@ exportObj.cardLoaders.English = () ->
            text: """At the start of the End Phase, you may perfrom a purple %COORDINATE% action, even while stressed %LINEBREAK% After you perform a %COORDINATE% action, if the chosen ship has the <b>Born for This</b> ship ability, you may coordinate 1 additional ship."""
         '"Odd Ball" (SoC)':
            display_name: """“Odd Ball” (SoC)"""
-           text: """  """
+           text: """After you fully execute a red maneuver or perform a red action, you camy choose a friendly ship at range 0-3 and an enemy at range 0-1. The chosen frendly ship gains a lock on the enemy ship."""
         '"Wolffe" (SoC)':
            display_name: """“Wolffe” (SoC)"""
-           text: """  """
+           text: """While you perform a primary %FRONTARC% attack, you may spend 1 %CHARGE% to reroll 1 attack die. While you perform a primary %REARARC% attack, you may recover 1 %CHARGE% to roll 1 additional die."""
         '"Jag" (SoC)':
            display_name: """“Jag” (SoC)"""
-           text: """  """
+           text: """After a friendly ship at range 0-2 in your %LEFTARC% or %RIGHTARC% performs an attack, if you are not strained, you may acquire a lock on the defender."""
         '"Contrail" (SoC)':
            display_name: """“Contrail” (SoC)"""
-           text: """  """
+           text: """While you defend or perform an attack, if the bearing of your revealed maneuver is the same as the enemy ship's, you may change 1 of the enemy ship's %FOCUS% results to a blank result. """
         '"Klick" (SoC)':
            display_name: """“Klick” (SoC)"""
-           text: """  """
+           text: """While a ship that you have locked at range 1-3 defends or performs an attack, you may spend 1 %CHARGE% to prevent range bonuses from being applied. """
         '"Kickback" (SoC)':
            display_name: """“Kickback” (SoC)"""
-           text: """  """
+           text: """After you perform a %BARRELROLL% action, you may perform a red %LOCK% action. If you do, before you perfrom the %LOCK% action, you may gain 1 strain to treat it as white."""
         '"Axe" (SoC)':
            display_name: """“Axe” (SoC)"""
            text: """After you perform an attack, you may choose another friendly ship with the <b>Born for This</b> ability at range 0-2 in your %LEFTARC% or %RIGHTARC%. The chosen ship gains a lock on the defender."""
@@ -3111,6 +3111,9 @@ exportObj.cardLoaders.English = () ->
         "R4-P17 (SoC)":
            display_name: """R4-P17"""
            text: """When you would be dealt a damage card, if you are not defending, you may spend 1 %CHARGE% and gain 1 strain to discard it instead."""
+        "Wolfpack (SoC)":
+           display_name: """Wolfpack"""
+           text: """While you perform an attack, you may spend a lock belonging to a friendly <b>Plo Koon</b> ship or ship with the <b>Born for This</b> ability that is on the defender to reroll any number of attack dice."""
 
 
         # Epic upgrades

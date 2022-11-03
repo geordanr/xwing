@@ -12305,6 +12305,9 @@ exportObj.basicCardData = ->
             points: 5
             chassis: "Born for This"
             upgrades: [
+                "Selfless"
+                "Veteran Tail Gunner"
+                "R4-P Astromech"
             ]
         }
         {
@@ -12316,9 +12319,13 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "ARC-170 Starfighter"
             skill: 4
+            charge: 1
             points: 4
             chassis: "Born for This"
             upgrades: [
+                "Wolfpack (SoC)"
+                "Veteran Tail Gunner"
+                "Q7 Astromech"
             ]
         }
         {
@@ -12333,6 +12340,9 @@ exportObj.basicCardData = ->
             points: 4
             chassis: "Born for This"
             upgrades: [
+                "Veteran Tail Gunner"
+                "R4-P Astromech"
+                "Synchronized Console"
             ]
         }
         {
@@ -12347,6 +12357,10 @@ exportObj.basicCardData = ->
             points: 3
             chassis: "Born for This"
             upgrades: [
+                "Ion Limiter Override"
+                "Precise Astromech (BoY)"
+                "Ion Bombs"
+                'Alpha-3B "Besh"'
             ]
         }
         {
@@ -12359,8 +12373,13 @@ exportObj.basicCardData = ->
             ship: "Nimbus-class V-wing"
             skill: 4
             points: 3
+            charge: 1
+            recurring: 1
             chassis: "Born for This"
             upgrades: [
+                "R3 Astromech"
+                "Precision Ion Engines"
+                'Alpha-3E "Esk"'
             ]
         }
         {
@@ -12375,6 +12394,8 @@ exportObj.basicCardData = ->
             points: 3
             chassis: "Born for This"
             upgrades: [
+                "Diamond-Boron Missiles"
+                "Munitions Failsafe"
             ]
         }
         {
@@ -18136,6 +18157,14 @@ exportObj.basicCardData = ->
             id: 491
             standard: true
             slot: "Astromech"
+        }
+        {
+            name: "Wolfpack (SoC)"
+            canonical_name: 'Wolfpack'.canonicalize()
+            id: 492
+            unique: true
+            standard: true
+            slot: "Crew"
         }
     ]
 
