@@ -12422,7 +12422,7 @@ exportObj.basicCardData = ->
             id: 584
             faction: "Separatist Alliance"
             ship: "Sith Infiltrator"
-            skill: 3
+            skill: 5
             points: 6
             force: 3
             keyword: ["Dark Side"]
@@ -12537,9 +12537,13 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
             skill: 3
+            charge: 2
             points: 2
             chassis: "Networked Calculations"
             upgrades: [
+                "Discord Missiles"
+                "Contingency Protocol (SoC)"
+                "Strut-Lock Override (SoC)"
             ]
         }
         {
@@ -12554,6 +12558,9 @@ exportObj.basicCardData = ->
             points: 3
             chassis: "Networked Calculations"
             upgrades: [
+                "Discord Missiles"
+                "Contingency Protocol (SoC)"
+                "Strut-Lock Override (SoC)"
             ]
         }
         {
@@ -12567,6 +12574,9 @@ exportObj.basicCardData = ->
             points: 2
             chassis: "Networked Calculations"
             upgrades: [
+                "Ion Missiles"
+                "Contingency Protocol (SoC)"
+                "Strut-Lock Override (SoC)"
             ]
         }
         {
