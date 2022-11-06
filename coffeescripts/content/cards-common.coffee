@@ -12304,6 +12304,8 @@ exportObj.basicCardData = ->
             skill: 5
             points: 5
             chassis: "Born for This"
+            ship_override:
+                shields: 4
             upgrades: [
                 "Selfless"
                 "Veteran Tail Gunner"
@@ -12376,6 +12378,8 @@ exportObj.basicCardData = ->
             charge: 1
             recurring: 1
             chassis: "Born for This"
+            ship_override:
+                shields: 3
             upgrades: [
                 "R3 Astromech"
                 "Precision Ion Engines"
@@ -12390,9 +12394,11 @@ exportObj.basicCardData = ->
             id: 582
             faction: "Galactic Republic"
             ship: "V-19 Torrent Starfighter"
-            skill: 4
+            skill: 5
             points: 3
             chassis: "Born for This"
+            ship_override:
+                hull: 6
             upgrades: [
                 "Diamond-Boron Missiles"
                 "Munitions Failsafe"
@@ -12409,6 +12415,8 @@ exportObj.basicCardData = ->
             skill: 3
             points: 4
             chassis: "Born for This"
+            ship_override:
+                hull: 6
             upgrades: [
                 "Deadeye Shot"
                 "Barrage Rockets"
