@@ -1879,13 +1879,13 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform an attack, if the defender was destroyed, you may perform an action, even while stressed. Then you may gain 2 strain tokens to perform a bonus attack."""
         "Durge":
            display_name: """Durge"""
-           text: """  """
+           text: """While you defend, after the Neutralize Results step, if there are more %HIT%/%CRIT% results than your active %SHIELD%, you may change 1 %HIT% result to a %CRIT% and cancel 1 %HIT% result."""
         "Doctor Aphra":
            display_name: """Doctor Aphra"""
-           text: """  """
+           text: """Before you engage, you may spend 1 green token and 1 %CHARGE%. If you do, you may choose another ship at range 0-1 that is not stressed. The chosen ship gains 1 stress token."""
         "Lapin":
            display_name: """Lapin"""
-           text: """  """
+           text: """While you defend or perform an attack, if the enemy ship is stressed, that ship's dice cannot be modified."""
         "Volan Das":
            display_name: """Volan Das"""
            text: """After you fully execute a red maneuver, you may chose an enemy ship at range 1. The chosen ship gains 1 strain token and you may remove 1 stress token."""

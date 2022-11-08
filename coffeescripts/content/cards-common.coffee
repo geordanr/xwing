@@ -12828,7 +12828,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             ship: "Rogue-class Starfighter"
-            skill: 1
+            skill: 5
             points: 20
             loadout: 99
             slots: [
@@ -12844,6 +12844,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 20
             loadout: 99
+            charge: 3
             slots: [
                 "Modification"
             ]
@@ -12854,7 +12855,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             ship: "Modified TIE/ln Fighter"
-            skill: 1
+            skill: 2
             points: 20
             loadout: 99
             slots: [
