@@ -12957,6 +12957,7 @@ exportObj.basicCardData = ->
             ship: "Delta-7 Aethersprite"
             skill: 5
             points: 20
+            force: 2
             loadout: 99
             slots: [
                 "Modification"
@@ -12971,6 +12972,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "Delta-7b Aethersprite"
             skill: 5
+            force: 2
             points: 20
             loadout: 99
             slots: [
@@ -12984,11 +12986,14 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "LAAT/i Gunship"
             skill: 2
+            charge: 2
+            recurring: 1
             points: 20
             loadout: 99
             slots: [
                 "Modification"
             ]
+            applies_condition: 'Sickening Maneuver'.canonicalize()
         }
         {
             name: "Kit Fisto"
@@ -13010,7 +13015,9 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Republic"
             ship: "V-19 Torrent Starfighter"
-            skill: 4
+            skill: 1
+            charge: 2
+            recurring: 1
             points: 20
             loadout: 99
             slots: [
@@ -18365,6 +18372,10 @@ exportObj.basicCardData = ->
         {
             name: '''Guarded'''
             id: 40
+        }
+        {
+            name: '''Sickening Maneuver'''
+            id: 41
         }
     ]
 
@@ -26809,7 +26820,7 @@ String::serialtoxws = ->
                 builder: 'YASB - X-Wing 2.5'
                 builder_url: window.location.href.split('?')[0]
                 link: @getPermaLink()
-        version: '06/15/2022'
+        version: '10/28/2022'
         # there is no point to have this version identifier, if we never actually increase it, right?
 
     # create xws entry

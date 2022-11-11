@@ -3287,7 +3287,7 @@ class exportObj.SquadBuilder
                     builder: 'YASB - X-Wing 2.5'
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
-            version: '06/15/2022'
+            version: '10/28/2022'
             # there is no point to have this version identifier, if we never actually increase it, right?
 
         for ship in @ships

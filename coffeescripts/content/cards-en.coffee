@@ -1930,7 +1930,7 @@ exportObj.cardLoaders.English = () ->
            text: """While another friendly ship defends, if the attacker is in its %BULLSEYEARC%, you may spend 1 %FORCE% to change 1 of the defender's blank results to a %FOCUS% result."""
         '"Slammer"':
            display_name: """“Slammer”"""
-           text: """  """
+           text: """After you fully execute a maneuver, you may spend 2 %CHARGE% to peform a %SLAM% action, even while stressed."""
         "Gavyn Sykes":
            display_name: """Gavyn Sykes"""
            text: """While you defend or perfrom an attack, if the speed of your revealed maneuver is greater than the enemy ship's, you may reroll your blank results."""
@@ -3412,6 +3412,8 @@ exportObj.cardLoaders.English = () ->
            text: '''INIT: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, RANGE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Types:</strong> Device, Remote %LINEBREAK% After an enemy ship overlaps you, it gains 1 strain token.%LINEBREAK% <strong>Activation Phase:</strong> At the start of this phase, you may relocate forward using a [1 %TURNLEFT%], [2 %STRAIGHT%], or [1 %TURNRIGHT%] template.%LINEBREAK% <strong>Engagement Phase:</strong> You cannot attack if there are enemy ships at range 0. To perform an attack, you must spend 1 %CHARGE%. While you perform an attack, you may change 1 %FOCUS% result to a %HIT% result.'''
         '''Guarded''':
            text: '''While you defend, if you are not in the attacker's %BULLSEYEARC%, roll 1 additional defense die for each friendly calculating or evading <b>MagnaGuard Protector</b> in the attack arc.'''
+        '''Sickening Maneuver''':
+           text: '''You can execute red maneuvers even while stressed. %LINEBREAK% After you reveal a bank [%BANKLEFT% or %BANKRIGHT%] or turn [%TURNLEFT% or %TURNRIGHT%] maneuver, you <b>must</b> gain 1 strain and execute the maneuver as a slideslip.%LINEBREAK% After you reveal a straight [%STRAIGHT%] maneuver, you must execute that maneuver as a red koiogran turn [%KTURN%]. %LINEBREAK% After you execute a maneuver, remove this condition.'''
 
     chassis_translations =
         "Vectored Thrusters":
