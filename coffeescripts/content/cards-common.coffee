@@ -26260,6 +26260,101 @@ exportObj.basicCardData = ->
                 "Hull Upgrade"
             ]
         }
+        {
+            id: 621
+            faction: "Rebel Alliance"
+            pilot: "Fenn Rau (Rebel Fang)"
+            ship: "Fang Fighter"
+            threat: 3
+            upgrades: [
+                "Clan Training"
+                "Ion Torpedoes"    
+                "Afterburners"
+            ]
+        }
+        {
+            id: 622
+            faction: "Rebel Alliance"
+            pilot: "Clan Wren Volunteer"
+            ship: "Fang Fighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+            ]
+        }
+        {
+            id: 623
+            faction: "Rebel Alliance"
+            pilot: "Bodica Venj"
+            ship: "Fang Fighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Beskar Reinforced Plating"
+                "Mandalorian Optics"
+            ]
+        }
+        {
+            id: 624
+            faction: "Rebel Alliance"
+            pilot: "Dirk Ullodin"
+            ship: "Fang Fighter"
+            threat: 3
+            upgrades: [
+                "Clan Training"
+                "Proton Torpedoes"
+                "Hull Upgrade"
+                "Mandalorian Optics"
+            ]
+        }
+        {
+            id: 625
+            faction: "Galactic Empire"
+            pilot: "Moff Gideon"
+            ship: "TIE/ln Fighter"
+            threat: 2
+            upgrades: [
+                "Deadeye Shot"
+                "Outmaneuver"
+                "Overtuned Modulators"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 626
+            faction: "Galactic Empire"
+            pilot: "ISB Jingoist"
+            ship: "TIE/ln Fighter"
+            threat: 2
+            upgrades: [
+                "Ion Limiter Override"
+                "False Transponder Codes"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 627
+            faction: "Scum and Villainy"
+            pilot: "Mandalorian Royal Guard"
+            ship: "Fang Fighter"
+            threat: 2
+            upgrades: [
+                "Afterburners"
+                "Beskar Reinforced Plating"
+            ]
+        }
+        {
+            id: 628
+            faction: "Scum and Villainy"
+            pilot: "Mandalorian Royal Guard"
+            ship: "Fang Fighter"
+            threat: 2
+            upgrades: [
+                "Clan Training"
+                "Mandalorian Optics"
+            ]
+        }
     ]
 
 exportObj.setupCommonCardData = (basic_cards) ->
