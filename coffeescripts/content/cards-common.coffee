@@ -12488,7 +12488,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Hyena-class Droid Bomber"
             skill: 1
-            points: 20
+            points: 3
             chassis: "Networked Calculations"
             upgrades: [
             ]
@@ -12749,6 +12749,8 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "Scavenged YT-1300"
             skill: 5
+            charge: 3
+            recurring: 1
             points: 20
             loadout: 99
             slots: [
@@ -12789,7 +12791,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Resistance"
             ship: "Resistance Transport"
-            skill: 5
+            skill: 2
             points: 20
             loadout: 99
             slots: [
@@ -12893,6 +12895,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Firespray-class Patrol Craft"
             skill: 4
+            force: 1
             points: 20
             loadout: 99
             slots: [
@@ -12907,6 +12910,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Rogue-class Starfighter"
             skill: 1
+            charge: 1
             points: 20
             loadout: 99
             slots: [
@@ -12920,6 +12924,7 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
             skill: 1
+            charge: 3
             points: 20
             loadout: 99
             slots: [
@@ -12931,8 +12936,9 @@ exportObj.basicCardData = ->
             id: 618
             faction: "Separatist Alliance"
             ship: "Droid Tri-fighter"
-            skill: 1
+            skill: 2
             points: 20
+            max_per_squad: 3
             loadout: 99
             chassis: "Modified for Organics"
             slots: [
@@ -12940,12 +12946,9 @@ exportObj.basicCardData = ->
             ]
             ship_override:
                 actions: [
-                    "Focus"
-                    "Evade"
+                    "Calculate"
                     "Lock"
                     "Barrel Roll"
-                    "R-> Evade"
-                    "Boost"
                     "R-> Focus"
                 ]
         }
@@ -13043,7 +13046,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/fo Fighter"
-            skill: 3
+            skill: 5
             points: 20
             loadout: 99
             slots: [
@@ -13057,6 +13060,7 @@ exportObj.basicCardData = ->
             faction: "First Order"
             ship: "TIE/se Bomber"
             skill: 4
+            charge: 3
             points: 20
             loadout: 99
             slots: [
@@ -13069,7 +13073,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/fo Fighter"
-            skill: 3
+            skill: 4
             points: 20
             loadout: 99
             slots: [
@@ -13088,6 +13092,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Modification"
             ]
+            applies_condition: '''Primed For Speed'''.canonicalize()
         }
         {
             name: "Agent Tierny"
@@ -13101,6 +13106,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Modification"
             ]
+            applies_condition: '''Broken Trust'''.canonicalize()
         }
     ]
 
@@ -18376,6 +18382,14 @@ exportObj.basicCardData = ->
         {
             name: '''Sickening Maneuver'''
             id: 41
+        }
+        {
+            name: '''Primed For Speed'''
+            id: 42
+        }
+        {
+            name: '''Broken Trust'''
+            id: 43
         }
     ]
 
