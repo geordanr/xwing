@@ -1253,7 +1253,7 @@ exportObj.cardLoaders.English = () ->
            display_name: """“Zeb” Orrelios"""
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
         "Bombardment Drone":
-           text: """If you would drop a device, you may launch that device instead, using the same template. %LINEBREAK% NETWORKED CALCULATIONS: While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result."""
+           text: """If you would drop a device, you may launch that device instead, using the same template."""
         "Haor Chall Prototype":
            display_name: """Haor Chall Prototype"""
            text: """After an enemy ship in your %BULLSEYEARC% at range 0-2 declares another friendly ship as the defender, you may perform a %CALCULATE% or %LOCK% action."""
@@ -1802,19 +1802,19 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform a %CALCULATE% action, you may spend 1 %CHARGE% to perform a %JAM% action."""
         "DBS-404 (SoC)":
            display_name: """DBS-404 (SoC)"""
-           text: """  """
+           text: """While you perform an attack at range 1, you <b>must</b> roll 1 additional die. After the attack hits, suffer 1 %CRIT% damage."""
         "Baktoid Prototype (SoC)":
            display_name: """Baktoid Prototype (SoC)"""
-           text: """  """
+           text: """While you perform a special attack, if a friendly ship with the <strong>Networked Calculations</strong> ship ability has a lock on the defender, you may ingore the %FOCUS%, %CALCULATE% or %LOCK% requirement of the attack."""
         "DIS-347 (SoC)":
            display_name: """DIS-347 (SoC)"""
-           text: """  """
+           text: """At the start of the Engagement Phase, you may acquire a lock on an object at range 1-3 that has a friendly lock."""
         "DIS-T81 (SoC)":
            display_name: """DIS-T81 (SoC)"""
            text: """While you defend or perform an attack, you may reroll any number of your dice. Then if you were defending, gain 1 strain token for each die that was rerolled. If you were attacking, gain 1 deplete token for each die that was rerolled instead."""
         "Phlac-Arphocc Prototype (SoC)":
            display_name: """Phlac-Arphocc Prototype (SoC)"""
-           text: """  """
+           text: """At the start of the Engagement Phase, if there is an enemy ship in your %BULLSEYEARC%, gain a calculate token"""
         "DFS-081 (SoC)":
            display_name: """DFS-081 (SoC)"""
            text: """While defending, you may spend 1 %CHARGE% and 1 calculate token to cancel 1 %CRIT% result."""
@@ -3105,6 +3105,9 @@ exportObj.cardLoaders.English = () ->
         "Contingency Protocol (SoC)":
            display_name: """Contingency Protocol"""
            text: """After this ship is destroyed another friendly ship at range 0-3 with <b>Contingency Protocol</b> may perform an action, even while stressed."""
+        "Evasion Sequence 7 (SoC)":
+           display_name: """Evasion Sequence 7"""
+           text: """While you perform a red %EVADE% action, if there is an obstacle or scenario feature at range 1, treat the action as white, instead."""
         "Strut-Lock Override (SoC)":
            display_name: """Strut-Lock Override"""
            text: """At the start of your activation, you may spend 1 %CHARGE%. If you do, ignore obstacles while you move through them this round."""

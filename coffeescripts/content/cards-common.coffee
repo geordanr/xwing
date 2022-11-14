@@ -12451,7 +12451,6 @@ exportObj.basicCardData = ->
             ship: "Hyena-class Droid Bomber"
             skill: 3
             points: 3
-            chassis: "Networked Calculations"
             ship_override:
                 actions: [
                     "Calculate"
@@ -12476,8 +12475,10 @@ exportObj.basicCardData = ->
             ship: "Hyena-class Droid Bomber"
             skill: 4
             points: 3
-            chassis: "Networked Calculations"
             upgrades: [
+                "Adv. Proton Torpedoes"
+                "Contingency Protocol (SoC)"
+                "Strut-Lock Override (SoC)"
             ]
         }
         {
@@ -12488,9 +12489,12 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Hyena-class Droid Bomber"
             skill: 1
+            max_per_squad: 2
             points: 3
-            chassis: "Networked Calculations"
             upgrades: [
+                "Homing Missiles"
+                "Contingency Protocol (SoC)"
+                "Strut-Lock Override (SoC)"
             ]
         }
         {
@@ -12503,8 +12507,10 @@ exportObj.basicCardData = ->
             ship: "Droid Tri-fighter"
             skill: 3
             points: 4
-            chassis: "Networked Calculations"
             upgrades: [
+                "Marksmanship"
+                "Afterburners"
+                "Contingency Protocol (SoC)"
             ]
         }
         {
@@ -12517,7 +12523,6 @@ exportObj.basicCardData = ->
             ship: "Droid Tri-fighter"
             skill: 4
             points: 5
-            chassis: "Networked Calculations"
             upgrades: [
                 "Outmaneuver"
                 "Afterburners"
@@ -12531,10 +12536,13 @@ exportObj.basicCardData = ->
             id: 590
             faction: "Separatist Alliance"
             ship: "Droid Tri-fighter"
-            skill: 1
+            skill: 5
             points: 4
-            chassis: "Networked Calculations"
+            max_per_squad: 2
             upgrades: [
+                "Afterburners"
+                "Contingency Protocol (SoC)"
+                "Evasion Sequence 7 (SoC)"
             ]
         }
         {
@@ -12548,7 +12556,6 @@ exportObj.basicCardData = ->
             skill: 3
             charge: 2
             points: 2
-            chassis: "Networked Calculations"
             upgrades: [
                 "Discord Missiles"
                 "Contingency Protocol (SoC)"
@@ -12565,7 +12572,6 @@ exportObj.basicCardData = ->
             ship: "Vulture-class Droid Fighter"
             skill: 1
             points: 3
-            chassis: "Networked Calculations"
             upgrades: [
                 "Discord Missiles"
                 "Contingency Protocol (SoC)"
@@ -12580,8 +12586,8 @@ exportObj.basicCardData = ->
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
             skill: 1
+            max_per_squad: 2
             points: 2
-            chassis: "Networked Calculations"
             upgrades: [
                 "Ion Missiles"
                 "Contingency Protocol (SoC)"
@@ -18198,6 +18204,12 @@ exportObj.basicCardData = ->
             unique: true
             standard: true
             slot: "Crew"
+        }
+        {
+            name: "Evasion Sequence 7 (SoC)"
+            id: 493
+            standard: true
+            slot: "Modification"
         }
     ]
 
