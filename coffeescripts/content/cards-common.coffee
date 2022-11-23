@@ -13067,7 +13067,7 @@ exportObj.basicCardData = ->
             name: "Kelrodo-Ai Holdout"
             id: 618
             faction: "Separatist Alliance"
-            ship: "Droid Tri-fighter"
+            ship: "Vulture-class Droid Fighter"
             skill: 2
             max_per_squad: 3
             points: 2
