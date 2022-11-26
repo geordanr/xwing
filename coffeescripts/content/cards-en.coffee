@@ -263,7 +263,7 @@ exportObj.cardLoaders.English = () ->
            text: """Before you reveal your maneuver, you may spend 1 %FORCE% to barrel roll (this is not an action)."""
         "Arvel Crynyd":
            display_name: """Arvel Crynyd"""
-           text: """If you would fail a %BOOST% action by overlapping another ship, you may resolve it as though you were partially executing a maneuver instead. While you perform an attack at attack range 0, treat it as an attack at attack range 1."  %LINEBREAK%<i>Errata (since rules reference 1.4): Changed the second portion of the ability.</i>"""
+           text: """If you would fail a %BOOST% action by overlapping another ship, you may resolve it as though you were partially executing a maneuver instead. While you perform an attack at attack range 0, treat it as an attack at attack range 1. %LINEBREAK%<i>Errata (since rules reference 1.4): Changed the second portion of the ability.</i>"""
         "Asajj Ventress":
            display_name: """Asajj Ventress"""
            text: """At the start of the Engagement Phase, you may choose 1 enemy ship in your %SINGLETURRETARC% at range 0-2 and spend 1 %FORCE%. If you do, that ship gains 1 stress token unless it removes 1 green token."""
@@ -1728,7 +1728,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform a %SINGLETURRETARC% attack, you may reroll up to 2 attack dice."""
         '"Dutch" Vander (BoY)':
            display_name: """“Dutch” Vander (BoY)"""
-           text: """After you spend a lock during an attack, choose a friendly ship at range 1-3. The chosen ship may acquire a lock on the defender.<i>Errata (since rules reference 1.4.4): Corrected pilot ability and adjusted initiative value</i>"""
+           text: """After you spend a lock during an attack, choose a friendly ship at range 1-3. The chosen ship may acquire a lock on the defender. %LINEBREAK% <i>Errata (since rules reference 1.4.4): Corrected pilot ability and adjusted initiative value</i>"""
         "Dex Tiree (BoY)":
            display_name: """Dex Tiree (BoY)"""
            text: """While you defend, if there is at least 1 other friendly ship at range 0-1, you may roll 1 additional defense die."""
@@ -1837,7 +1837,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you have 2 or fewer stress tokens, you may perform actions, even while stressed."""
         "Keo Venzee":
            display_name: """Keo Venzee"""
-           text: """If you have no active %FORCE%, after you reveal a bank [%BANKLEFT% or %BANKRIGHT%] or turn [%TURNLEFT% or %TURNRIGHT%] maneuver, you may increase the difficulty of the maneuver. If yo udo, perform that maneuver as a sideslip and recover 1 %FORCE%."""
+           text: """If you have no active %FORCE%, after you reveal a bank [%BANKLEFT% or %BANKRIGHT%] or turn [%TURNLEFT% or %TURNRIGHT%] maneuver, you may increase the difficulty of the maneuver. If you do, perform that maneuver as a sideslip and recover 1 %FORCE%."""
         '"Pops" Krail':
            display_name: """“Pops” Krail"""
            text: """After you fully execute a white maneuver, you may choose a friendly ship at range 0-1. If you do, it may perform a %FOCUS% action."""
