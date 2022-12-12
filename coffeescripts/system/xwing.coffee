@@ -1263,6 +1263,7 @@ class exportObj.SquadBuilder
             e.preventDefault()
             @showTextListModal()
 
+        #Print Button
         @print_list_button.click (e) =>
             e.preventDefault()
             # Copy text list to printable
@@ -1348,23 +1349,24 @@ class exportObj.SquadBuilder
                     </div>
                 """
 
-            # Add List Juggler QR code
+            # Add QR code
             query = @getPermaLinkParams(['sn', 'obs'])
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
                 <div class="qrcode-container">
                     <div class="permalink-container">
-                        <div class="qrcode"></div>
+                        <div class="qrcode">YASB Link</div>
                         <div class="qrcode-text translated" defaultText="Scan QR-Code"></div>
                     </div>
-                    <div class="juggler-container">
-                        <div class="qrcode"></div>
-                        <div class="qrcode-text translated" defaultText="List Juggler QR-Code"></div>
+                    <div class="xws-container">
+                        <div class="qrcode">XWS Data</div>
+                        <div class="qrcode-text translated" defaultText="XWS QR-Code"></div>
                     </div>
                 </div>
                 """
-                text = "https://yasb-xws.herokuapp.com/juggler#{query}"
-                @printable_container.find('.juggler-container .qrcode').qrcode
+                text = JSON.stringify(@toXWS())
+                console.log "#{text}"
+                @printable_container.find('.xws-container .qrcode').qrcode
                     render: 'div'
                     ec: 'M'
                     size: if text.length < 144 then 144 else 160
@@ -1375,6 +1377,16 @@ class exportObj.SquadBuilder
                     ec: 'M'
                     size: if text.length < 144 then 144 else 160
                     text: text
+
+            #Trigger List
+            triggertext = "while you perform"
+            sectiontext = ""
+            for ship in @ships
+                if (ship.pilot?.text?) and (ship.pilot.text.match(triggertext) > -1)
+                    sectiontext = sectiontext + "#{ship.pilot.name} <br><br>"
+                for upgrade in ship.upgrades
+                    if (upgrade.text?) and (upgrade.text.match(triggertext) > -1)
+                        sectiontext = sectiontext + "#{upgrade.name} <br><br>"
 
             window.print()
 
