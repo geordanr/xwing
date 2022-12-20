@@ -12453,6 +12453,7 @@ exportObj.basicCardData = ->
             ship: "Hyena-class Droid Bomber"
             skill: 3
             points: 3
+            charge: 2
             ship_override:
                 actions: [
                     "Calculate"
