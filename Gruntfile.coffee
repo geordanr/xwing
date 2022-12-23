@@ -9,7 +9,11 @@ module.exports = (grunt) ->
                     sourceMap: true
                 files:
                     'app/javascripts/xwing.js': ['coffeescripts/system/*.coffee']
-                    'app/javascripts/xwingcontent.js': ['coffeescripts/content/*.coffee']
+                    'app/javascripts/xwingcontent.js': ['coffeescripts/content/cards-common.coffee']
+                    'app/javascripts/manifest.js': ['coffeescripts/content/manifest.coffee']
+                    'app/javascripts/translation-en.js': ['coffeescripts/content/cards-en.coffee']
+                    'app/javascripts/xwingquickbuilds.js': ['coffeescripts/content/cards-quickbuilds.coffee']
+                    'app/javascripts/xwingrules.js': ['coffeescripts/content/rules.coffee']
                     'app/javascripts/translations.js': ['coffeescripts/translations/*.coffee']
         sass:
             options:
@@ -43,7 +47,11 @@ module.exports = (grunt) ->
                     sourceMapIn: 'app/javascripts/xwing.js.map'
                 files:
                     'app/javascripts/xwing.min.js': 'app/javascripts/xwing.js'
+                    'app/javascripts/manifest.min.js': 'app/javascripts/manifest.js'
                     'app/javascripts/xwingcontent.min.js': 'app/javascripts/xwingcontent.js'
+                    'app/javascripts/translation-en.min.js': 'app/javascripts/translation-en.js'
+                    'app/javascripts/xwingquickbuilds.min.js': 'app/javascripts/xwingquickbuilds.js'
+                    'app/javascripts/xwingrules.min.js': 'app/javascripts/xwingrules.js'
                     'app/javascripts/translations.min.js': 'app/javascripts/translations.js'
         copy:
             main:

@@ -107,11 +107,13 @@ exportObj.setupTranslationSupport = ->
 
     # Load cards one time
     basic_cards = exportObj.basicCardData()
+    quick_builds = exportObj.basicQuickBuilds()
     exportObj.canonicalizeShipNames basic_cards
     exportObj.ships = basic_cards.ships
 
     # Set up the common card data (e.g. stats)
     exportObj.setupCommonCardData basic_cards
+    exportObj.setupQuickBuilds quick_builds
 
     # do we need to load dfl as well? Not sure...
     exportObj.loadCards DFL_LANGUAGE
