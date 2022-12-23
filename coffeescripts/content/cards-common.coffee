@@ -19290,99 +19290,111 @@ exportObj.standardCheckBrowser = (data, faction='', type) ->
     else
         return data.name not in exportObj.standardUpgradeExclusions
 
-#not functional yet
+String::ParseParameter = (name) ->
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
+    regexS = "[\\?&]" + name + "=([^&#]*)"
+    regex = new RegExp(regexS)
+    results = regex.exec(this)
+    if results == null
+        return ""
+    else
+        return decodeURIComponent(results[1].replace(/\+/g, " "))
+
 String::serialtoxws = ->
-    list = this.getParameterByName('d')
-    re = if "Z" in list then /^v(\d+)Z(.*)/ else /^v(\d+)!(.*)/
-    matches = re.exec list
-    if matches? and version > 7 and !serialized_ships?
+    xws =
+        description: ""
+        faction: this.ParseParameter('f').canonicalize()
+        name: this.ParseParameter('sn')
+        pilots: []
+        points: 20
+        vendor:
+            yasb:
+                builder: 'YASB - X-Wing 2.5'
+                builder_url: "https://yasb.app"
+                link: "https://yasb.app/index.html#{this}" 
+        version: '11/25/2022'
+
+    serialized = this.ParseParameter('d')
+    re = if "Z" in serialized then /^v(\d+)Z(.*)/ else /^v(\d+)!(.*)/
+    matches = re.exec serialized
+    if matches?
+        # Parsing extra data in case we need it later
         version = parseInt matches[1]
         ship_splitter = 'Y'
         [g, p, s] = matches[2].split('Z')
         [ game_type_abbrev, desired_points, serialized_ships ] = [g, parseInt(p), s]
 
-        ships_with_unmet_dependencies = []
+        switch game_type_abbrev
+            when 's'
+                gamemode = 'extended'
+            when 'h'
+                gamemode = 'standard'
+            when 'e'
+                return "error: game mode not supported"
+            when 'q'
+                return "error: game mode not supported"
+
+        if !serialized_ships? # something went wrong, we can't load that serialization
+            return "error: serialization read failed"
+
+        #independantly setting up basic card data for xws output
+        card_data = exportObj.basicCardData()
+
+        card_pilots = {}
+        for pilot_data in card_data.pilotsById
+            unless pilot_data.skip?
+                pilot_data.canonical_name = pilot_data.name.canonicalize() unless pilot_data.canonical_name?
+                card_pilots[pilot_data.id] = pilot_data
+
+        cards_upgrades = {}
+        for upgrade_data in card_data.upgradesById
+            unless upgrade_data.skip?
+                upgrade_data.canonical_name = upgrade_data.name.canonicalize() unless upgrade_data.canonical_name?
+                cards_upgrades[upgrade_data.id] = upgrade_data
+                
+
         if serialized_ships.length?
+            # Ship loop
             for serialized_ship in serialized_ships.split(ship_splitter)
-                unless serialized_ship == ''
-                    new_ship = @addShip()
-                    if (not new_ship.fromSerialized version, serialized_ship) or not new_ship.pilot # also check, if the pilot has been set (the pilot himself was not invalid)
-                        ships_with_unmet_dependencies.push [new_ship, serialized_ship]
-            for ship in ships_with_unmet_dependencies
-                # 2nd attempt to load ships with unmet dependencies.
-                if not ship[0].pilot
-                    # create ship, if the ship was so invalid, that it in fact decided to not exist
-                    ship[0] = @addShip()
-                ship[0].fromSerialized version, ship[1]
+                pilot_splitter = 'X'
+                upgrade_splitter = 'W'
+                
+                [ pilot_id, upgrade_ids ] = serialized_ship.split pilot_splitter
+                # pilot_data is the pilot info
+                pilot_data = card_pilots[parseInt(pilot_id)]
+                if pilot_data
+                    pilot_xws =
+                        id: (pilot_data.xws ? pilot_data.canonical_name)
+                        name: (pilot_data.xws ? pilot_data.canonical_name)
+                        points: pilot_data.points
+                        ship: pilot_data.ship.canonicalize()
+                        upgrades: []
 
-    @suppress_automatic_new_ship = false
-    # Finally, the unassigned ship
+                    if not pilot_data.upgrades?
+                        upgrade_ids = upgrade_ids.split upgrade_splitter
 
-    pilot_splitter = 'X'
-    upgrade_splitter = 'W'
-    [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split pilot_splitter
-    upgrade_ids = upgrade_ids.split upgrade_splitter
-    # set the pilot
-    @setPilotById parseInt(pilot_id), true
-    # make sure the pilot is valid 
-    
-    for _ in [1 ... 3] # try adding each upgrade a few times, as the required slots might be added in by titles etc and are not yet available on the first try
-        `upgradeloop: //` 
-        for i in [upgrade_ids.length - 1 ... -1]
-            upgrade_id = upgrade_ids[i]
-            upgrade = exportObj.upgradesById[upgrade_id]
-            if not upgrade? 
-                upgrade_ids.splice(i,1) # Remove unknown or empty ID
-                if upgrade_id != ""
-                    console.log("Unknown upgrade id " + upgrade_id + " could not be added. Please report that error")
-                    everythingadded = false
-                continue
-            for upgrade_selection in @upgrades
-                if upgrade_selection?.data?.name == upgrade.name
-                    # for some reason the correct upgrade already was equipped (e.g. an earlier ship alread had a standardized that was added on creation here)
-                    upgrade_ids.splice(i,1) # was already added successfully, remove from list
-                    `continue upgradeloop`
+                        upgrade_obj = {}
 
-            for upgrade_selection in @upgrades
-                if exportObj.slotsMatching(upgrade.slot, upgrade_selection.slot) and not upgrade_selection.isOccupied()
-                    upgrade_selection.setById upgrade_id
-                    if upgrade_selection.lastSetValid
-                        upgrade_ids.splice(i,1) # added successfully, remove from list
-                    break    
+                        for i in [upgrade_ids.length - 1 ... -1]
+                            upgrade_id = upgrade_ids[i]
+                            # upgrade_data is the pilot info
+                            upgrade_data = cards_upgrades[parseInt(upgrade_id)]
+                            if upgrade_data
+                                switch upgrade_data.slot
+                                    when 'Force'
+                                        slot = 'force-power'
+                                    when 'Tactical Relay'
+                                        slot = 'tactical-relay'
+                                    else
+                                        slot = upgrade_data.slot.canonicalize()
+                                
+                                (upgrade_obj[slot] ?= []).push (upgrade_data.xws ? upgrade_data.canonical_name)
 
-    # create the xws json now that ships/pilots have been made
-    xws =
-        description: "List generated by yasb.app URL"
-        faction: this.getParameterByName('f')
-        name: this.getParameterByName('sn') ? ""
-        pilots: []
-        points: desired_points
-        vendor:
-            yasb:
-                builder: 'YASB - X-Wing 2.5'
-                builder_url: window.location.href.split('?')[0]
-                link: @getPermaLink()
-        version: '10/28/2022'
-        # there is no point to have this version identifier, if we never actually increase it, right?
+                        pilot_xws.upgrades = upgrade_obj
+                
+                    xws.pilots.push pilot_xws
 
-    # create xws entry
-    for ship in @ships
-        if ship.pilot?
-            xwsship =
-                id: (ship.pilot.xws ? ship.pilot.canonical_name)
-                name: (ship.pilot.xws ? ship.pilot.canonical_name) 
-                points: ship.getPoints()
-                ship: ship.data.name.canonicalize()
+    else
+        return "error: could not read URL"
 
-            upgrade_obj = {}
-
-            for upgrade in ship.upgrades
-                if upgrade?.data?
-                    upgrade.toXWS 
-                    (upgrade_obj[exportObj.toXWSUpgrade[@data.slot] ? @data.slot.canonicalize()] ?= []).push (@data.xws ? @data.canonical_name)
-
-            if Object.keys(upgrade_obj).length > 0
-                xwsship.upgrades = upgrade_obj
-
-            xwsship.pilots.push = xws
-    xwsship
+    return JSON.stringify(xws)
