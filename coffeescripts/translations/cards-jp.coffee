@@ -1891,7 +1891,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がアクションを実行した後、君は赤の %BOOST% アクションを実行しても良い。"""
         "Second Sister":
            display_name: """Second Sister"""
-           text: """君が攻撃を実行する際、結果の相殺ステップの後、もし攻撃が命中したいたなら、君は %FORCE% を2つ消費しても良い。もし君がそうするなら、君も %HIT% の結果を全て %CRIT% の結果に変更する。"""
+           text: """君が攻撃を実行する際、結果の相殺ステップの後、もし攻撃が命中していたなら、君は %FORCE% を2つ消費しても良い。もし君がそうするなら、君の %HIT% の結果を全て %CRIT% の結果に変更する。"""
         "Magna Tolvan":
            display_name: """Magna Tolvan"""
            text: """君が持っているストレス・トークンが2個以下の際、君は白のアクションを、たとえストレス状態でも実行できる。%LINEBREAK%君がストレス・トークンを得た後、君は可能なら白のアクションを実行しても良い。"""
@@ -1969,7 +1969,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が基本マニューバを実行した後、君は君自身に <strong>Sickening Maneuver</strong> コンディションを付けても良い。"""
         "Kit Fisto":
            display_name: """Kit Fisto"""
-           text: """他の友軍宇宙船の防御の際、もし攻撃者がその友軍宇宙船の %BULLSEYEARC% の中にいるなら、君は %FORCE% を1つ消費し、防御者の空白の結果を %FORCUS% の結果に変更しても良い。"""
+           text: """他の友軍宇宙船の防御の際、もし攻撃者がその友軍宇宙船の %BULLSEYEARC% の中にいるなら、君は %FORCE% を1つ消費し、防御者の空白の結果を %FOCUS% の結果に変更しても良い。"""
         '"Slammer"':
            display_name: """“Slammer”"""
            text: """君がマニューバを完全に実行した後、君はたとえストレス状態でも、 %CHARGE% を2つ消費し、 %SLAM% アクションを実行しても良い。"""
@@ -3466,7 +3466,7 @@ exportObj.cardLoaders.日本語 = () ->
     chassis_translations =
         "Vectored Thrusters":
            display_name: "Vectored Thrusters"
-           text: """君がアクションを実行した後、君は %BOOST% アクションを実行しても良い。"""
+           text: """君がアクションを実行した後、君は赤の %BOOST% アクションを実行しても良い。"""
         "Advanced Targeting Computer":
            display_name: "Advanced Targeting Computer"
            text: """君がロックしている防御者に対し、君が主武装攻撃を実行する際、攻撃ダイスを1つ追加で振り、 %HIT% の結果1つを %CRIT% の結果に変更する。"""
