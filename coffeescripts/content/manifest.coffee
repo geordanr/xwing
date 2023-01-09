@@ -10674,6 +10674,16 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Concussion Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thermal Detonators'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Mandalorian Optics'
             type: 'upgrade'
             count: 3
