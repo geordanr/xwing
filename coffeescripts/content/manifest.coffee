@@ -11189,7 +11189,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Kelrodo-Ai Holdout'
             type: 'pilot'
-            count: 1
+            count: 3
         }
         {
             name: 'Adi Gallia'
