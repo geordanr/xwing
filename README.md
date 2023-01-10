@@ -3,7 +3,7 @@ Yet Another Squad Builder 2.0
 
 What?
 -----
-This is a squad builder for the Second Edition of the X-Wing Miniatures game by Atomic Mass Games (Formally owned by Fantasy Flight Games), completely in HTML and JavaScript.  No backend is necessary.
+This is a squad builder for the Second Edition of the X-Wing Miniatures game by Atomic Mass Games (formerly owned by Fantasy Flight Games), completely in HTML and JavaScript.  No backend is necessary.
 It can theoretically be dropped into any existing site, but since it uses a lot of styling from [Twitter Bootstrap](http://twitter.github.com/bootstrap/) it may require some CSS trickery if you're using some other incompatible framework (e.g. [Foundation](http://foundation.zurb.com)).
 
 Isn't there already an Official Squadbuilder out?
@@ -37,7 +37,7 @@ Wanna help translating YASB into your language? You're welcome to do so! Write a
 
 Credits
 -------
-[X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).
+[X-Wing Miniatures](https://www.atomicmassgames.com/xwing-documents) is by [Atomic Mass Games](https://www.atomicmassgames.com/) (until 2022 it was by Fantasy Flight Games). 
 Icons and fonts originally from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/topic/122-hi-res-photoshop-templates/).
 X-Wing symbols and ships fonts courtesy [Hinny](https://github.com/Hinny) and [Josh Derksen](https://github.com/armoredgear7) and are available as a [Bower package](https://github.com/geordanr/xwing-miniatures-font).
 Maneuver dial support by @hpanderson.
