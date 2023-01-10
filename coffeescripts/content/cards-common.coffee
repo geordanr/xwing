@@ -11935,7 +11935,7 @@ exportObj.basicCardData = ->
             chassis: "Hope"
             upgrades: [
                 "Attack Speed (BoY)"
-                "Selfless"
+                "Selfless (BoY)"
                 "Proton Torpedoes"
                 "R2-F2 (BoY)"
             ]
@@ -16000,8 +16000,12 @@ exportObj.basicCardData = ->
             points: 7
         }
         {
+            name: "Selfless (BoY)"
+            canonical_name: 'Selfless'.canonicalize()
+            unique: true
             id: 284
-            skip: true
+            slot: "Talent"
+            standard: true
         }
         {
             name: "Tibanna Reserves"
