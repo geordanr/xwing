@@ -14,6 +14,15 @@ exportObj.codeToLanguage.fr = 'Français'
 
 exportObj.translations ?= {}
 exportObj.translations['Français'] =
+    faction:
+        "Rebel Alliance": "Alliance Rebelle"
+        "Galactic Empire": "Empire Galactique"
+        "Scum and Villainy": "Racailles et Scélérats"
+        "Resistance": "Résistance"
+        "First Order": "Premier Ordre"
+        "Galactic Republic": "Grande Armée de la République"
+        "Separatist Alliance": "Alliance Séparatiste"
+
     slot:
         "Astromech": "Astromech"
         "Force": "Pouvoir de la Force"
@@ -33,6 +42,10 @@ exportObj.translations['Français'] =
         "Device": "Engin"
         "Tech": "Technologie"
         "Title": "Titre"
+        "Tactical Relay": "Relais Tactique"
+        "Command": "Commandement"
+        "Team": "Équipe"
+        "Cargo": "Cargaison"
     sources:
         "Second Edition Core Set": "Boîte de base 2.0"
         "Rebel Alliance Conversion Kit": "Kit de Conversion Alliance Rebelle"
@@ -49,7 +62,7 @@ exportObj.translations['Français'] =
         "TIE Reaper Expansion Pack": "Paquet d'extension TIE Reaper"
     ui:
         shipSelectorPlaceholder: "Choisissez un vaisseau"
-        pilotSelectorPlaceholder: "Choisissez un pilot"
+        pilotSelectorPlaceholder: "Choisissez un pilote"
         upgradePlaceholder: (translator, slot) ->
             "#{translator 'slot', slot} (sans amélioration)"
         modificationPlaceholder: "Pas de modification"
@@ -116,13 +129,13 @@ exportObj.translations['Français'] =
     singular:
         'pilots': 'Pilote'
         'modifications': 'Modification'
-        'titles': 'Titres'
-        'ships' : 'Ship'
+        'titles': 'Titre'
+        'ships' : 'Vaisseau'
     types:
         'Pilot': 'Pilote'
         'Modification': 'Modification'
         'Title': 'Titre'
-        'Ship': 'Ship'
+        'Ship': 'Vaisseau'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Français'] = () ->
@@ -131,33 +144,84 @@ exportObj.cardLoaders['Français'] = () ->
     exportObj.renameShip """Modified YT-1300 Light Freighter""", """Cargo Léger YT-1300 modifié"""
     exportObj.renameShip """StarViper-class Attack Platform""", """StarViper"""
     exportObj.renameShip """Scurrg H-6 Bomber""", """Bombardier Scurrg H-6"""
-    exportObj.renameShip """YT-2400 Light Freighter""", """Cargo YT-2400"""
+    exportObj.renameShip """YT-2400 Light Freighter""", """Cargo léger YT-2400"""
     exportObj.renameShip """Auzituck Gunship""", """Canonnière Auzituck"""
     exportObj.renameShip """Kihraxz Fighter""", """Chasseur Kihraxz"""
     exportObj.renameShip """Sheathipede-Class Shuttle""", """Navette de classe Sheathipede"""
     exportObj.renameShip """Quadrijet Transfer Spacetug""", """Quad jumper"""
-    exportObj.renameShip """Firespray-class Patrol Craft""", """Vaisseau de Patrouille de classe Firespray"""
+    exportObj.renameShip """Firespray-class Patrol Craft""", """Patrouilleur de Classe Firespray"""
     exportObj.renameShip """TIE/ln Fighter""", """Chasseur TIE/ln"""
     exportObj.renameShip """BTL-A4 Y-wing""", """Y-wing BTL-A4"""
     exportObj.renameShip """TIE Advanced x1""", """TIE Advanced x1"""
     exportObj.renameShip """Alpha-Class Star Wing""", """Star Wing de classe Alpha"""
-    exportObj.renameShip """TIE/d Defender""", """Défenseur TIE"""
-    exportObj.renameShip """TIE/sa Bomber""", """Bombardier TIE"""
+    exportObj.renameShip """TIE/d Defender""", """Défenseur TIE/d"""
+    exportObj.renameShip """TIE/sa Bomber""", """Bombardier TIE/sa"""
     exportObj.renameShip """G-1A Starfighter""", """Chasseur G-1A"""
-    exportObj.renameShip """Lambda-class T-4a Shuttle""", """Navette de classe Lambda"""
-    exportObj.renameShip """TIE/ph Phantom""", """TIE Fantôme"""
+    exportObj.renameShip """Lambda-class T-4a Shuttle""", """Navette T-4a de Classe Lambda"""
+    exportObj.renameShip """TIE/ph Phantom""", """TIE/ph Fantôme"""
     exportObj.renameShip """VT-49 Decimator""", """Décimateur VT-49"""
     exportObj.renameShip """Attack Shuttle""", """Navette d’Attaque"""
     exportObj.renameShip """T-65 X-wing""", """X-wing T-65"""
     exportObj.renameShip """Fang Fighter""", """Chasseur Fang"""
-    exportObj.renameShip """Z-95-AF4 Headhunter""", """Chasseur de Têtes Z-95"""
+    exportObj.renameShip """Z-95-AF4 Headhunter""", """Chasseur de Têtes Z-95-AF4"""
     exportObj.renameShip """M12-L Kimogila Fighter""", """Chasseur M12-L Kimogila"""
-    exportObj.renameShip """TIE/in Interceptor""", """Intercepteur TIE"""
-    exportObj.renameShip """Lancer-Class Pursuit Craft""", """Vaisseau de poursuite de classe Lancer"""
+    exportObj.renameShip """TIE/in Interceptor""", """Intercepteur TIE/in"""
+    exportObj.renameShip """Lancer-Class Pursuit Craft""", """Appareil de Poursuite de Classe Lancer"""
     exportObj.renameShip """M3-A Interceptor""", """Intercepteur M3-A"""
     exportObj.renameShip """JumpMaster 5000""", """JumpMaster 5000"""
     exportObj.renameShip """Customized YT-1300 Light Freighter""", """Cargo léger YT-1300 personnalisé"""
     exportObj.renameShip """Escape Craft""", """Vaisseau de secours"""
+    exportObj.renameShip """RZ-1 A-wing""", """A-wing RZ-1"""
+    exportObj.renameShip """HWK-290 Light Freighter""", """Cargo léger HWK-290"""
+    exportObj.renameShip """A/SF-01 B-wing""", """B-wing A/SF-01"""
+    exportObj.renameShip """Aggressor Assault Fighter""", """Chasseur d’Assaut Aggressor"""
+    exportObj.renameShip """YV-666 Light Freighter""", """Cargo léger YV-666"""
+    exportObj.renameShip """BTL-S8 K-wing""", """K-wing BTL-S8"""
+    exportObj.renameShip """VCX-100 Light Freighter""", """Cargo léger VCX-100"""
+    exportObj.renameShip """ARC-170 Starfighter""", """Chasseur ARC-170"""
+    exportObj.renameShip """UT-60D U-wing""", """U-wing UT-60D"""
+    exportObj.renameShip """T-70 X-wing""", """X-Wing T-70"""
+    exportObj.renameShip """RZ-2 A-wing""", """A-Wing RZ-2"""
+    exportObj.renameShip """TIE/fo Fighter""", """Chasseur TIE/fo"""
+    exportObj.renameShip """TIE/sf Fighter""", """Chasseur TIE/sf"""
+    exportObj.renameShip """Upsilon-Class Command Shuttle""", """Navette de Commandement de Classe Upsilon"""
+    exportObj.renameShip """MG-100 StarFortress""", """Forteresse Stellaire MG-100"""
+    exportObj.renameShip """Scavenged YT-1300""", """YT-1300 Récupéré"""
+    exportObj.renameShip """Modified TIE/ln Fighter""", """Chasseur TIE/ln modifié"""
+    exportObj.renameShip """V-19 Torrent Starfighter""", """Chasseur Torrent V-19"""
+    exportObj.renameShip """Delta-7 Aethersprite""", """Aethersprite Delta-7"""
+    exportObj.renameShip """Delta-7b Aethersprite""", """Aethersprite Delta-7b"""
+    exportObj.renameShip """Sith Infiltrator""", """Infiltrateur Sith"""
+    exportObj.renameShip """Vulture-class Droid Fighter""", """Chasseur Droïde de Classe Vulture"""
+    exportObj.renameShip """Belbullab-22 Starfighter""", """Chasseur Belbullab-22"""
+    exportObj.renameShip """Naboo Royal N-1 Starfighter""", """Chasseur Royal Naboo N-1"""
+    exportObj.renameShip """Hyena-class Droid Bomber""", """Bombardier Droïde de Classe Hyena"""
+    exportObj.renameShip """Resistance Transport Pod""", """Module de Transport de la Résistance"""
+    exportObj.renameShip """Resistance Transport""", """Transport de la Résistance"""
+    exportObj.renameShip """Nantex-Class Starfighter""", """Chasseur de Classe Nantex"""
+    exportObj.renameShip """BTL-B Y-wing""", """Y-wing BTL-B"""
+    exportObj.renameShip """TIE/ba Interceptor""", """Intercepteur TIE/ba"""
+    exportObj.renameShip """Xi-class Light Shuttle""", """Navette Légère de Classe Xi"""
+    exportObj.renameShip """HMP Droid Gunship""", """Canonnière Droïde PML"""
+    exportObj.renameShip """LAAT/i Gunship""", """Canonnière TABA/i"""
+    exportObj.renameShip """TIE/rb Heavy""", """TIE/rb Lourd"""
+    exportObj.renameShip """Droid Tri-fighter""", """Tri-Chasseur Droïde"""
+    exportObj.renameShip """Nimbus-class V-wing""", """V-Wing de Classe Nimbus"""
+    exportObj.renameShip """Eta-2 Actis""", """Actis Eta-2"""
+    exportObj.renameShip """Syliure-class Hyperspace Ring""", """Anneau d’Hyperpropulsion de Classe Syliure"""
+    exportObj.renameShip """BTA-NR2 Y-wing""", """Y-Wing BTA-NR2"""
+    exportObj.renameShip """TIE/wi Whisper Modified Interceptor""", """Intercepteur Modifié TIE/wi Whisper"""
+    exportObj.renameShip """TIE/se Bomber""", """Bombardier TIE/se"""
+    exportObj.renameShip """Gauntlet Fighter""", """Chasseur Gauntlet"""
+    exportObj.renameShip """ST-70 Assault Ship""", """Vaisseau d'Assaut ST-70"""
+    exportObj.renameShip """Clone Z-95 Headhunter""", """Chasseur de Têtes Z-95 Clone"""
+    exportObj.renameShip """Rogue-class Starfighter""", """Chasseur de Classe Rogue"""
+    exportObj.renameShip """CR90 Corellian Corvette""", """Corvette Corellienne CR90"""
+    exportObj.renameShip """Raider-class Corvette""", """Corvette de Classe Raider"""
+    exportObj.renameShip """GR-75 Medium Transport""", """Transport Moyen GR-75"""
+    exportObj.renameShip """Gozanti-class Cruiser""", """Croiseur de Classe Gozanti"""
+    exportObj.renameShip """C-ROC Cruiser""", """Croiseur C-ROC"""
+    exportObj.renameShip """Trident-class Assault Ship""", """Vaisseau d'Assaut de Classe Trident"""
 
 
     pilot_translations =
@@ -303,16 +367,16 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: """Braylen Stramm"""
            text: """Tant que vous défendez ou effectuez une attaque, si vous êtes stressé, vous pouvez relancer jusqu’à 2 de vos dés."""
         "Captain Cardinal":
-           display_name: """Captain Cardinal"""
+           display_name: """Capitaine Cardinal"""
            text: """Tant qu’un vaisseau allié à portée 1-2 avec une initiative inférieure à la vôtre défend ou effectue une attaque, si vous avez au moins 1&nbsp;%CHARGE%, ce vaisseau allié peut relancer 1 résultat %FOCUS%.%LINEBREAK%Après qu’un vaisseau ennemi à portée 0-3 a été détruit, perdez 1&nbsp;%CHARGE%.%LINEBREAK%<strong>Batteries Jumelées:</strong> tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
         "Captain Feroph":
            display_name: """Capitaine Feroph"""
            text: """Tant que vous défendez, si l’attaquant n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou %FOCUS% en un résultat %EVADE%.%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], ou [1&nbsp;%BANKRIGHT%]."""
         "Captain Jonus":
-           display_name: """Captain Jonus"""
+           display_name: """Capitaine Jonus"""
            text: """Tant qu’un vaisseau allié à portée 0-1 effectue une attaque %TORPEDO% ou %MISSILE%, il peut relancer jusqu’à 2 dés d’attaque. %LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
         "Captain Jostero":
-           display_name: """Captain Jostero"""
+           display_name: """Capitaine Jostero"""
            text: """Après qu’un vaisseau ennemi a subi des dégâts, s’il n’est pas en train de défendre, vous pouvez effectuer une attaque bonus contre ce vaisseau."""
         "Captain Kagi":
            display_name: """Capitaine Kagi"""
@@ -587,6 +651,28 @@ exportObj.cardLoaders['Français'] = () ->
         "Hera Syndulla (VCX-100)":
            display_name: """Hera Syndulla"""
            text: """Après avoir révélé une manœuvre bleue ou rouge, vous pouvez régler votre cadran sur une autre manœuvre de même difficulté.%LINEBREAK%<strong>Artillerie de Poupe :</strong> tant que vous avez un vaisseau arrimé, vous bénéficiez d’une arme principale %REARARC% avec une valeur d’attaque égale à celle de l’attaque principale %FRONTARC% du vaisseau arrimé."""
+        "Hera Syndulla (B-Wing)":
+           display_name: """Hera Syndulla"""
+           text: """Tant qu'un autre vaisseau allié à portée 1-2 défend ou effectue une attaque, vous pouvez transférer 1 de vos marqueurs de concentration, d'évasion ou de verrouillage à ce vaisseau."""
+        "Hera Syndulla (A-Wing)":
+           display_name: """Hera Syndulla"""
+           text: """Tant qu'un autre vaisseau allié à portée 1-2 défend ou effectue une attaque, vous pouvez transférer 1 de vos marqueurs de concentration, d'évasion ou de verrouillage à ce vaisseau."""
+        "Netrem Pollard":
+           text: """Après avoir effectué un tonneau, vous pouvez choisir 1 vaisseau allié qui n'est pas stressé à portée 0-1. Ce vaisseau gagne 1 marqueur de stress, puis vous pouvez pivoter à 180°."""
+        "Ahsoka Tano (A-Wing)":
+           display_name: """Ahsoka Tano"""
+           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez choisir un vaisseau allié à portée 1-2 et dépenser 2 %FORCE%. Ce vaisseau peut effectuer une action, même s'il est stressé."""
+        "Shara Bey (A-Wing)":
+           display_name: """Shara Bey"""
+           text: """Tant que vous défendez ou effectuez une attaque principale, vous pouvez dépenser 1 verrouillage que vous avez sur le vaisseau ennemi pour ajouter 1 résultat %FOCUS% aux résultats de vos dés."""
+        "Wedge Antilles (A-Wing)":
+           display_name: """Wedge Antilles"""
+           text: """Tant que vous effectuez une attaque principale, si le défenseur est dans votre %FRONTARC%, il lance 1 dé de défense en moins."""
+        "Derek Klivian":
+           text: """Après avoir verrouillé ou avoir dépensé un verrouillage, vous pouvez vous retirer 1 marqueur rouge."""
+        "Sabine Wren (A-Wing)":
+           display_name: """Sabine Wren"""
+           text: """Tant que vous défendez ou effectuez une attaque, si la portée d'attaque est de 1 et que vous êtes dans le %FRONTARC% du vaisseau ennemi, vous pouvez changer 1 de vos résultats en un résultat %EVADE% ou %HIT%."""
         "Hired Gun":
            display_name: """ Soudard"""
            text: """<i class = flavor_text>La simple évocation de crédits Impériaux peut attirer toutes sortes d’individus totalement amoraux dans votre camp.</i>"""
@@ -1319,6 +1405,28 @@ exportObj.cardLoaders['Français'] = () ->
         "Precise Hunter":
            display_name: """Chasseur Méticuleux"""
            text: """Tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez relancer 1 résultat vierge.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+        "Darth Vader (TIE Defender)":
+           display_name: """Dark Vador"""
+           text: """Vous ne pouvez pas dépenser de %FORCE% sauf lorsque vous attaquez. %LINEBREAK% Tant que vous effectuez une attaque, vous pouvez dépenser 1 %FORCE% pour changer 1 résultat vierge en un résultat %HIT%."""
+        "Vult Skerris":
+           text: """<strong>Action :</strong> Gagnez 1 marqueur de contrainte pour récupérer 1 %CHARGE%. %LINEBREAK% Avant de vous engager, vous pouvez dépenser 1 %CHARGE% pour effectuer une action."""
+        "Vult Skerris (TIE Interceptor)":
+           display_name: """Vult Skerris"""
+           text: """<strong>Action :</strong> Gagnez 1 marqueur de contrainte pour récupérer 1 %CHARGE%. %LINEBREAK% Avant de vous engager, vous pouvez dépenser 1 %CHARGE% pour effectuer une action."""
+        "Captain Dobbs":
+           display_name: """Capitaine Dobbs"""
+           text: """Tant qu'un autre vaisseau allié à portée 0-1 défend, avant l'étape 'Neutraliser les résultats', si vous êtes dans l'arc d'attaqueet n'êtes pas ionisé, vous pouvez gagner 1 marqueur ionique pour annuler 1 résultat %HIT%."""
+        "Ciena Ree":
+           text: """Après que vous avez effectué une attaque, si le défenseur a été détruit, gagnez 1 marqueur de stress. %LINEBREAK% Après qu'un vaisseau allié à portée 0-3 a été détruit, retirez 1 marqueur de stress."""
+        "Commandant Goran":
+           text: """Au début de la Phase d'Engagement, choisissez un vaisseau allié à portée 0–3 avec une initiative plus faible que la vôtre. Le vaisseau choisi gagne 1 marqueur d'évasion et retire 1 marqueur rouge non-stress.%LINEBREAK%<i>Errata (depuis les références de règles 1.4): capacité modifiée</i>"""
+        "Gideon Hask (TIE Interceptor)":
+           display_name: """Gideon Hask"""
+           text: """Tant que vous effectuez une attaque contre un défenseur endommagé, lancez 1 dé d’attaque supplémentaire."""
+        "Lieutenant Lorrir":
+           text: """Tant que vous effectuez un tonneau, vous <b>devez</b> utiliser le gabarit (%BANKLEFT% ou %BANKRIGHT%) à la place du gabarit (%STRAIGHT%). """
+        "Nash Windrider":
+           text: """Pendant la phase d’engagement, après qu’un petit vaisseau allié à portée 0–3 a été détruit, s’il ne s’était pas déjà engagé à cette phase, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, il s’engage à l’initiative actuelle."""
 
 
 
@@ -2100,7 +2208,72 @@ exportObj.cardLoaders['Français'] = () ->
         "Discord Missiles":
            display_name: """Missiles Discorde"""
            text: """<i>Separatist Alliance uniquement</i>%LINEBREAK%Au début de la phase d’engagement, vous pouvez dépenser 1 marqueur de calcul et 1&nbsp;%CHARGE% pour lancer 1 nuée de droïdes buzz en utilisant le gabarit [3&nbsp;%BANKLEFT%], [3&nbsp;%STRAIGHT%] ou [3&nbsp;%BANKRIGHT%.%LINEBREAK%La %CHARGE% de cette carte ne peut pas être récupérée."""
-                    
+        "B6 Blade Wing Prototype (Epic)":
+           display_name: """Prototype Blade Wing B6 (Epique)"""
+           text: """Attaque (%LOCK%): Gagnez 1 marqueur ionique pour effectuer cette attaque. Si l'attaque touche, le défenseur subit 1 dégât %HIT%/%CRIT% supplémentaire pour chaque résultat correspondant non-annulé au-delà du premier."""
+        "Phoenix Squadron":
+           display_name: """Escadron Phœnix"""
+           text: """<strong>Face Mise en place :</strong>%LINEBREAK%Mise en place : à équiper avec cette face visible. %LINEBREAK% Vous êtes le <b>leader</b>. Vos ailiers doivent être 2-5 vaisseaux parmi les suivants : %LINEBREAK% - 0-1 Navette d'Attaque %LINEBREAK% - 0-1 Navette de classe Sheathipede %LINEBREAK% - 0-5 A-wings RZ-1 %LINEBREAK% Après avoir été placé, retournez cette carte. %LINEBREAK% <strong>Face Jeu:</strong>%LINEBREAK% Au début de la phase de préparation, 1 de vos ailiers qui est arrimé à vous peut rejoindre votre patrouille sans gagner un marqueur de stress. %LINEBREAK% Tant que vous, ou votre ailier Navette d'Attaque ou Navette de classe Sheathipede, défendez, jusqu'à 2 de vos ailiers A-wing RZ-1 dans l'arc d'attaque peuvent chacun subir 1 dégât %HIT%/%CRIT pour annuler 1 résultat correspondant."""
+        "Deadeye Shot":
+           display_name: """Tir assuré"""
+           text: """Tant que vous effectuez une attaque principale, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez dépenser 1 résultat %HIT% ou changer 1 résultat %CRIT% en un résultat %HIT%. Dans ce cas, le défenseur expose 1 de ses cartes de dégât."""
+        "Hopeful":
+           display_name: """Optimiste"""
+           text: """Après qu'un autre vaisseau allié à portée 0-3 a été détruit, si ce vaisseau était limité ou qu'il avait l'amélioration <strong>Optimiste</strong>, vous pouvez effectuer une action %FOCUS% ou %BOOST%."""
+        "Marg Sabl Closure":
+           display_name: """Encerclement Marg Sabl"""
+           text: """Après avoir entièrement exécuté une manœuvre, si vous vous êtes déplacé à travers un obstacle, une structure ou un vaisseau immense, ou si vous étiez déployé, vous pouvez choisir un vaisseau ennemi dans votre %FRONTARC% à portée 1-2. Ce vaisseau gagne 1 marqueur de contrainte."""
+        "Starbird Slash":
+           display_name: """Balafre du Phénix"""
+           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez choisir un vaisseau ennemi que vous avez traversé. Ce dernier gagne 1 marqueur de contrainte. Puis, si vous êtes dans son arc de tir, vous gagnez 1 marqueur de contrainte."""
+        "Tierfon Belly Run":
+           display_name: """Rase-Mottes de Tierfon"""
+           text: """Vous pouvez effectuer des attaques spéciales même si vous êtes à portée 0 d'astéroïdes. %LINEBREAK% Tant que vous défendez, si vous êtes à portée 0 d'un obstacle, les dés d'attaque ne peuvent pas être relancés."""
+        "Extreme Maneuvers":
+           display_name: """Manœuvres Extrêmes"""
+           text: """Tant que vous effectuez une action %BOOST%, vous pouvez dépenser 1 %FORCE% pour utiliser le gabarit de virage (%TURNLEFT% or %TURNRIGHT%) à la place."""
+        "Patience":
+           text: """Au début de la phase d'engagement, s'il y a un vaisseau ennemi dans votre %FRONTARC%, vous pouvez gagner 1 marqueur d'épuisement pour récupérer 1 %FORCE%."""
+        "Synced Laser Cannons":
+           display_name: """Canons Lasers Synchronisés"""
+           text: """<strong>Attaque :</strong> Si vous êtes calculateur, le défenseur n'applique pas le bonus de portée."""
+        "XX-23 S-Thread Tracers":
+           display_name: """Traceurs XX-23 S"""
+           text: """<strong>Attaque [%FOCUS%, %CALCULATE%, or %LOCK%] :</strong>Dépensez 1 %CHARGE%. Si cette attaque touche, chaque vaisseau allié à portée 1-3 du défenseur peut verrouiller le défenseur. Puis annulez tous les résultats des dés."""
+        "Sabine Wren (Gunner)":
+           display_name: """Sabine Wren"""
+           text: """Après avoir effectué une attaque spéciale, vous pouvez choisir un nombre de vaisseaux alliés, à portée 0-3 du défenseur, inférieur ou égal au nombre de cartes de dégât attribuées au défenseur lors de cette attaque. Chaque vaisseau choisi peut retirer 1 marqueur de stress ou de contrainte."""
+        "Suppressive Gunner":
+           display_name: """Artilleur Répressif"""
+           text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 résultat %FOCUS%. Dans ce cas, le défenseur gagne 1 marqueur d'épuisement, sauf s'il choisit de subir 1 dégât %HIT%."""
+        "Weapons Systems Officer":
+           display_name: """Officier des Systèmes d'Armement"""
+           text: """Après avoir effectué une attaque spéciale qui a le prérequis %LOCK%, vous pouvez verrouiller le défenseur."""
+        "Vectored Cannons (RZ-1)":
+           display_name: """Canons Vectoriels (RZ-1)"""
+           text: """Gagnez un indicateur %SINGLETURRETARC%. Considérez le prérequis d'arc de vos attaques principales %FRONTARC% comme étant %SINGLETURRETARC%. %LINEBREAK% Remplcez votre capacité de vaisseau <strong>Propulseurs Vectoriels</strong> par la suivante : %LINEBREAK%<strong>Canons Vectoriels:</strong> Pendant la phase de système, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge. Vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%."""
+        "Shadow Wing":
+           display_name: """Escadre de l'Ombre"""
+           text: """<strong>Face Mise en Place :</strong>%LINEBREAK%Mise en Place: à équiper avec cette face visible. %LINEBREAK% Vous êtes le <b> leader</b>. Vos ailiers doivent être 2–5 autres vaisseaux du même type de vaisseau que le vôtre. %LINEBREAK% Après avoir été placé, retournez cette carte. %LINEBREAK% <strong>Face Jeu:</strong>%LINEBREAK% Vos ailiers peuvent effectuer des actions %BARRELROLL% ou %BOOST%. S’ils le font, ils sont volontairement séparés de la patrouille. %LINEBREAK% Tant que vous défendez, jusqu’à 2 de vos ailiers dans l’arc d’attaque peuvent chacun subir 1 dégât %HIT%/%CRIT% pour annuler 1 résultat correspondant."""
+        "Skystrike Academy Class":
+           display_name: """Promotion de l’Académie Skystrike"""
+           text: """<strong>Face Mise en Place:</strong>%LINEBREAK%Mise en Place: à équiper avec cette face visible. %LINEBREAK% Vous êtes le <b>leader</b>. Vos ailiers doivent être 2–5 chasseurs TIE/ln avec une initiative inférieure à la vôtre. %LINEBREAK% Après avoir été placé, retournez cette carte. %LINEBREAK% <strong>Face Jeu:</strong>%LINEBREAK% Après que vous avez effectué un tonneau ou une accélération, chacun de vos ailiers est forcé de se séparer de la patrouille. %LINEBREAK% Tant que vous défendez, jusqu’à 5 de vos ailiers dans l’arc d’attaque peuvent chacun subir 1 dégât %HIT%/%CRIT% pour annuler 1 résultat correspondant."""
+        "Disciplined":
+           display_name: """Discipliné"""
+           text: """Après qu’un autre vaisseau allié à portée 0–3 a été détruit, si ce vaisseau était limité ou qu’il avait l’amélioration <strong>Discipliné</strong>, vous pouvez effectuer une action %LOCK% ou %BARRELROLL%."""
+        "Interloper Turn":
+           display_name: """Virage Incongru"""
+           text: """Avant d’exécuter une manœuvre de virage (%TURNLEFT% or %TURNRIGHT%) à vitesse 1–2 ou un Virage Koiogran (%KTURN%) à vitesse 1–2, si vous êtes à portée 0–1 d’un astéroïde, d’une structure ou d’un vaisseau immense, vous pouvez gagner 1 marqueur de rayon tracteur."""
+        "Precision Ion Engines":
+           display_name: """Moteurs Ioniques de Précision"""
+           text: """Avant d’exécuter une manœuvre de Virage Koiogran [%KTURN%] à vitesse 1–3, vous pouvez dépenser 1 %CHARGE% pour exécuter cette manœuvre en tant que Boucle de Segnor [%SLOOPLEFT% or %SLOOPRIGHT%] à la place."""
+        "Sensitive Controls":
+           display_name: """Contrôles Sensibles"""
+           text: """Remplacez votre capacité de vaisseau <strong>Autopropulseurs</strong> par la suivante : %LINEBREAK% <strong>Contrôles Sensibles</strong> : pendant la phase de système, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+        "TIE Defender Elite":
+           display_name: """Défenseur Tie d’Élite"""
+           text: """Diminuez la difficulté de vos manœuvres de virage (%TURNLEFT% or %TURNRIGHT%). Augmentez la difficulté de vos manœuvres de Virage Koiogran (%KTURN%). Remplacez votre capacité de vaisseau <strong>Plein Gaz</strong> par la suivante : %LINEBREAK% <strong>Commande De Tir Avancée :</strong> après avoir effectué une attaque %CANNON% ou %MISSILE%, si vous avez un verrouillage sur le défenseur, vous pouvez effectuer une attaque principale bonus contre le défenseur."""
+
     condition_translations =
         'Suppressive Fire':
            text: '''While you perform an attack against a ship other than <strong>Captain Rex</strong>, roll 1 fewer attack die. %LINEBREAK% After <strong>Captain Rex</strong> defends, remove this card.  %LINEBREAK% At the end of the Combat Phase, if <strong>Captain Rex</strong> did not perform an attack this phase, remove this card. %LINEBREAK% After <strong>Captain Rex</strong> is destroyed, remove this card.'''
@@ -2130,8 +2303,150 @@ exportObj.cardLoaders['Français'] = () ->
            text: '''(Mine) - Après qu'un vaisseau a chevauché ou s'est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau lance 2 dés d'attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
 
     chassis_translations =
+        "Vectored Thrusters":
+           display_name: "Propulseurs Vectoriels"
+           text: """Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
+        "Advanced Targeting Computer":
+           display_name: "Ordinateur De Visée Avancé"
+           text: """tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+        "Autothrusters":
+           display_name: "Autopropulseurs"
+           text: """Après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+        "Nimble Bomber":
+           display_name: "Bombardier Agile"
+           text: """si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+        "Full Throttle":
+           display_name: "Plein Gaz"
+           text: """Après avoir entièrement exécuté une manœuvre à vitesse 3–5, vous pouvez effectuer une action %EVADE%."""
+        "Experimental Scanners":
+           display_name: "Scanners Expérimentaux"
+           text: """vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
+        "Stygium Array":
+           display_name: "Réseau De Stygium"
+           text: """après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d’évasion pour gagner 1 marqueur d’occultation."""
+        "Sensor Blindspot":
+           display_name: "Angle Mort Des Senseurs"
+           text: """tant que vous effectuez une attaque principale à portée d’attaque 0–1, n’appliquez pas le bonus de portée 0–1 et lancez 1 dé d’attaque en moins."""
+        "Microthrusters":
+           display_name: "Micropropulseurs"
+           text: """tant que vous effectuez un tonneau, vous <b>devez</b> utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+        "Weapon Hardpoint":
+           display_name: "Emplacement D’arme"
+           text: """vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        "Advanced Droid Brain":
+           display_name: "Cerveau Droïde Avancé"
+           text: """après avoir effectué une action %CALCULATE%, gagnez 1 marqueur de calcul."""
+        "Tail Gun":
+           display_name: "Artillerie De Poupe"
+           text: """tant que vous avez un vaisseau arrimé, vous bénéficiez d’une arme principale %REARARC% avec une valeur d’attaque égale à celle de l’attaque principale %FRONTARC% du vaisseau arrimé."""
+        "Locked and Loaded":
+           display_name: "Chargé et Prêt à Tirer"
+           text: """tant que vous êtes arrimé, après que votre vaisseau porteur a effectué une attaque principale %FRONTARC% ou %TURRET%, il peut effectuer une attaque principale %REARARC% bonus."""
+        "Concordia Faceoff":
+           display_name: "Opposition Concordia"
+           text: """tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC%de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
+        "Spacetug Tractor Array":
+           display_name: "Dispositif Tracteur De Remorqueur Spatial"
+           text: """ <strong>Action :</strong> Choisissez un vaisseau dans votre %FRONTARC% à portée 1. Il gagne 1 marqueur de rayon tracteur, ou 2 marqueurs de rayon tracteur s’il est dans votre %BULLSEYEARC% à portée 1."""
+        "Hope":
+           display_name: "Espoir"
+           text: """Après qu'un autre vaisseau allié à portée 0-3 a été détruit, vous pouvez effectuer une action %FOCUS% ou %BOOST%."""
+        "Solo":
+           display_name: "Solo"
+           text: """tant que vous défendez ou effectuez une attaque, s'il n'y a aucun autre vaisseau allié à portée O-1, vous pouvez dépenser 1 %CHARGE% pour relancer 1 de vos dés."""
+        "Sensitive Controls":
+           display_name: "Contrôles Sensibles"
+           text: """pendant la phase de système, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+        "Vectored Cannons":
+           display_name: "Canons Vectoriels"
+           text: """pendant la phase de système, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge. Vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% oo %REARARC%."""
+        "Advanced Fire Control":
+           display_name: "Commande De Tir Avancée"
+           text: """après avoir effectué une attaque %CANNON% ou %MISSILE%, si vous avez un verrouillage sur le défenseur, vous pouvez effectuer une attaque principale bonus contre le défenseur."""
+        "Networked Calculations":
+           display_name: "Calculs En Réseau"
+           text: """tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée 0–1 pour changer 1 résultat %FOCUS% en un résultat %EVADE% ou %HIT%."""
+        "Independent Calculations":
+           display_name: "Calculs Indépendants"
+           text: """tant que vous effectuez une action blanche %CALCULATE%, vous pouvez la considérer comme rouge pour gagner 1 marqueur de calcul supplémentaire. Les autres vaisseaux ne peuvent pas dépenser vos marqueurs de calcul en utilisant la capacité de vaisseau <strong>Calculs en Réseau</strong>."""
+        "Adaptive Ailerons":
+           display_name: "Ailerons Adaptables"
+           text: """avant de révéler votre cadran, si vous n’êtes pas stressé, vous <b>devez</b> accélérer. %LINEBREAK% <i>Errata (depuis les règles 1.4.2): capacité du vaisseau modifiée</i>"""
+        "Pursuit Craft":
+           display_name: "Appareil De Poursuite"
+           text: """après avoir été déployé, vous pouvez verrouiller un vaisseau que le <strong>Hound’s Tooth</strong> allié a verrouillé."""
+        "Dead to Rights":
+           display_name: "Dans Le Mille"
+           text: """Tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, les dés de défense ne peuvent pas être modifiés en utilisant des marqueurs verts."""
+        "Comms Shuttle":
+           display_name: "Navette De Communication"
+           text: """tant que vous êtes arrimé, votre vaisseau porteur gagne %COORDINATE%. Avant que votre vaisseau porteur ne s’active, il peut effectuer une action %COORDINATE%."""
+        "Controlled Ailerons":
+           display_name: "Ailerons Contrôlables"
+           text: """avant de révéler votre cadran, si vous n’êtes pas stressé, vous pouvez accélérer. %LINEBREAK% <i>Errata (depuis les règles 1.4.2): Capacité du vaisseau modifiée</i>"""
+        "Co-Pilot":
+           display_name: "Copilote"
+           text: """tant que vous êtes arrimé, votre vaisseau porteur bénéficie de votre capacité de pilote en plus de la sienne."""
+        "Rigged Energy Cells":
+           display_name: "Cellules Énergétiques Bidouillées"
+           text: """Pendant la phase de système, si vous n’êtes pas arrimé, perdez 1 %CHARGE%. À la fin de la phase d’activation, vous êtes détruit si vous avez 0 %CHARGE%. Avant de retirer votre figurine, chaque vaisseau à portée 0–1 subit 1 dégât %CRIT%."""
+        "Refined Gyrostabilizers":
+           display_name: "Gyrostabilisateurs Perfectionnés"
+           text: """vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge."""
+        "Heavy Weapon Turret":
+           display_name: "Tourelle D’arme Lourde"
+           text: """vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous <b>devez</b> considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
+        "Linked Battery":
+           display_name: "Batteries Jumelées"
+           text: """tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
+        "Notched Stabilizers":
+           display_name: "Stabilisateurs Crantés"
+           text: """tant que vous vous déplacez, ignorez les astéroïdes."""
+        "Fine-Tuned Controls":
+           display_name: "Commandes Réactives"
+           text: """après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1 %FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+        "Pinpoint Tractor Array":
+           display_name: "Dispositif Tracteur De Précision"
+           text: """vous ne pouvez pas faire pivoter votre %SINGLETURRETARC% vers votre %REARARC%. Après avoir entièrement exécuté une manœuvre, vous pouvez gagner 1 marqueur de rayon tracteur pour effectuer une action %ROTATEARC%. %LINEBREAK%<i>Errata (depuis les règles 1.4): ajout de "entièrement"</i>"""
+        "Plated Hull":
+           display_name: "Coque Blindée"
+           text: """Tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat %CRIT% en un résultat %HIT%."""
+        "Explosion with Wings":
+           display_name: "Explosion en Vol"
+           text: """<strong>Mise en Place</strong> : 1 carte de dégât face cachée vous est attribuée. Après avoir effectué une action %SLAM%, vous pouvez exposer 1 carte de dégât pour retirer 1 marqueur de désarmement."""
+        "Fine-Tuned Thrusters":
+           display_name: "Propulseurs Réactifs"
+           text: """après avoir entièrement exécuté une manœuvre, si vous n’êtes pas épuisé ou contraint, vous pouvez gagner 1 marqueur d’épuisement ou de contrainte pour effectuer une action %LOCK% ou %BARRELROLL%."""
+        "Networked Aim":
+           display_name: "Visée Interconnectée"
+           text: """vous ne pouvez pas dépenser vos verrouillages pour relancer des dés d’attaque. Tant que vous effectuez une attaque, vous pouvez relancer un nombre de dés d’attaque inférieur ou égal au nombre de verrouillages alliés sur le défenseur."""
+        "Fire Convergence":
+           display_name: "Convergence Des Tirs"
+           text: """Tant qu’un vaisseau allié effectue une attaque non-%SINGLETURRETARC%, si le défenseur est dans votre %SINGLETURRETARC% vous pouvez dépenser 1 %CHARGE%. Dans ce cas, l’attaquant relance jusqu’à 2 dés d’attaque."""
+        "Rotating Cannons":
+           display_name: "Canons Rotatifs"
+           text: """vous pouvez pivoter votre indicateur %SINGLETURRETARC%  uniquement vers votre %FRONTARC% ou %REARARC%. Vous <b>devez</b> considérer le prérequis %FRONTARC% de vos améliorations %CANNON% équipées comme étant %SINGLETURRETARC%."""
+        "Twin Ion Engines":
+           display_name: "Moteurs Ioniques Jumelés"
+           text: """ignorez la restriction de vaisseau « TIE » sur les cartes d’amélioration."""
+        "Intuitive Controls":
+           display_name: "Contrôles Intuitifs"
+           text: """Pendant la phase de système, vous pouvez effectuer une action %BARRELROLL% violette ou %BOOST% violette."""
+        "Intuitive Interface":
+           display_name: "Interface Intuitive"
+           text: """après avoir effectué une action ajoutée à votre barre d'action par une amélioration %TALENT%, %ILLICIT%, ou %MODIFICATION%, vous pouvez effectuer une action %CALCULATE%."""
+        "Devastating Barrage":
+           display_name: "Tir de Barrage Dévastateur"
+           text: """tant que vous effectuez une attaque %TORPEDO% ou %MISSILE%, si le défenseur est dans votre %BULLSEYEARC%, vos résultats %CRIT% ne peuvent pas être annulés par des résultats %EVADE%."""
+        "Pursuit Thrusters":
+           display_name: "Propulseurs de Poursuite"
+           text: """pendant la Phase de Système, vous pouvez effectuer une action %BOOST%."""
         "Versatile Frame":
-           text: """You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
+           display_name: "Châssis Polyvalent"
+           text: """vous pouvez vous équiper de 1 amélioration %TORPEDO% ou %MISSILE%. Tant que votre manœuvre révélée est bleue, ajoutez l'action blanche %BOOST% à votre barre d'action."""
+        "Born for This":
+           display_name: "Né pour Ça"
+           text: """Tant qu’un autre vaisseau allié à portée 0–2 défend, si vous n’êtes pas contraint, il peut dépenser vos marqueurs de concentration et d'évasion comme s'ils étaient à lui. Dans ce cas, vous gagnez 1 marqueur de contrainte."""
 
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations
