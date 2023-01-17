@@ -5517,46 +5517,6 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 1
         }
-        {
-            name: 'Composure'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Dedicated'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Expert Handling'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Juke'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Saturation Salvo'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Swarm Tactics'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Cluster Missiles'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Concussion Missiles'
-            type: 'upgrade'
-            count: 1
-        }
     ]
 
     'Z-95-AF4 Headhunter Expansion Pack': [
