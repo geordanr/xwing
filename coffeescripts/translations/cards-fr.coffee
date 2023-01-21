@@ -245,7 +245,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Produit en masse, rapide et maniable, le TIE/ln développé par Sienar Fleet Systems est le principal chasseur de l’Empire Galactique.</i>"""
         "Ahhav":
            display_name: """Ahhav"""
-           text: """Tant que vous défendez ou effectuez une attaque, si le vaisseau ennemi a une taille supérieure à la vôtre, lancez 1 dé supplémentaire.%LINEBREAK%<strong>Notched Stabilizers:</strong> While you move, you ignore asteroids."""
+           text: """Tant que vous défendez ou effectuez une attaque, si le vaisseau ennemi a une taille supérieure à la vôtre, lancez 1 dé supplémentaire."""
         "Ahsoka Tano":
            display_name: """Ahsoka Tano"""
            text: """Après avoir entièrement exécuté une manœuvre, vous pouvez choisir un vaisseau allié à portée&nbsp;0-1 et dépenser 1&nbsp;%FORCE%. Ce vaisseau peut effectuer une action, même s’il est stressé.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
@@ -807,7 +807,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Au début de la phase d’engagement, vous pouvez choisir un vaisseau à portée 1 et dépenser un marqueur de verrouillage que vous avez sur ce vaisseau. Dans ce cas, ce vaisseau gagne 1 marqueur de rayon tracteur."""
         "Leevan Tenza":
            display_name: """Leevan Tenza"""
-           text: """Après avoir effectué une action %BARRELROLL% ou %BOOST%, vous pouvez effectuer une action %EVADE% rogue."""
+           text: """Après avoir effectué une action %BARRELROLL% ou %BOOST%, vous pouvez effectuer une action %EVADE% rouge."""
         "Leia Organa":
            display_name: """Leia Organa"""
            text: """Après qu’un vaisseau allié a entièrement exécuté une manœuvre rouge, s’il est à portée&nbsp;0-3, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, ce vaisseau gagne 1&nbsp;marqueur de concentration ou récupère 1&nbsp;%FORCE%."""
@@ -1113,7 +1113,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Les as de l’Escadron Skull privilégient une approche agressive, profitant de la technologie d’ailes montées sur pivot de leurs appareils, ce qui leur confère une maniabilité exceptionnelle quand ils poursuivent leurs proies. </i>%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
         "Sol Sixxa":
            display_name: """Sol Sixxa"""
-           text: """Si vous êtes censé larguer un engin en utilisant un gabarit [1&nbsp;%STRAIGHT%], vous pouvez le larguer en utilisant n’importe quel autre gabarit de vitess﻿e 1 à la place."""
+           text: """Si vous êtes censé larguer un engin en utilisant un gabarit [1&nbsp;%STRAIGHT%], vous pouvez le larguer en utilisant n’importe quel autre gabarit de vitesse 1 à la place."""
         "Soontir Fel":
            display_name: """Soontir Fel"""
            text: """Au début de la phase d’engagement, si un vaisseau ennemi est dans votre %BULLSEYEARC%, gagnez 1 marqueur de concentration. %LINEBREAK%<strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
@@ -1415,7 +1415,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<strong>Action :</strong> Gagnez 1 marqueur de contrainte pour récupérer 1 %CHARGE%. %LINEBREAK% Avant de vous engager, vous pouvez dépenser 1 %CHARGE% pour effectuer une action."""
         "Captain Dobbs":
            display_name: """Capitaine Dobbs"""
-           text: """Tant qu'un autre vaisseau allié à portée 0-1 défend, avant l'étape 'Neutraliser les résultats', si vous êtes dans l'arc d'attaqueet n'êtes pas ionisé, vous pouvez gagner 1 marqueur ionique pour annuler 1 résultat %HIT%."""
+           text: """Tant qu'un autre vaisseau allié à portée 0-1 défend, avant l'étape 'Neutraliser les résultats', si vous êtes dans l'arc d'attaque et n'êtes pas ionisé, vous pouvez gagner 1 marqueur ionique pour annuler 1 résultat %HIT%."""
         "Ciena Ree":
            text: """Après que vous avez effectué une attaque, si le défenseur a été détruit, gagnez 1 marqueur de stress. %LINEBREAK% Après qu'un vaisseau allié à portée 0-3 a été détruit, retirez 1 marqueur de stress."""
         "Commandant Goran":
@@ -1693,7 +1693,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir entièrement exécuté une manœuvre, vous pouvez gagne 1 marqueur d'épuisement pour choisir un objet dans votre %FRONTARC% à portée 1-2. Dans ce cas un autre vaisseau allié peut effectuer une action %LOCK% pour verrouiller cet objet."""
         "Nite Owl Liberator":
            display_name: """Libérateur Nite Owl"""
-           text: """<i class = flavor_text>Suivant Bo-Katan Kryze, d'anciens membres de la Death Watch ont rejeté la gouvernance de Maul sur Mandalore et ont créé une alliance réfractaire avec la République. Les Chasseurs Gauntlet conservés par les Nite Owl sont essentiels pour mener la lutte qui libèrera leur monde</i>"""
+           text: """<i class = flavor_text>Suivant Bo-Katan Kryze, d'anciens membres de la Death Watch ont rejeté la gouvernance de Maul sur Mandalore et ont créé une alliance réfractaire avec la République. Les Chasseurs Gauntlet conservés par les Nite Owl sont essentiels pour mener la lutte qui libérera leur monde</i>"""
         "Maul":
            text: """Tant que vous effectuez une action %COORDINATE%, si vous choisissez un vaisseau ayant une initiative plus faible que la vôtre, vous pouvez dépenser 1 %FORCE%. Dans ce cas, considérez cette action comme blanche et vous pouvez coordonner 1 vaisseau allié supplémentaire ayant une initiative plus faible que la vôtre ; chaque vaisseau allié que vous coordonnez ainsi gagne 1 marqueur de contrainte."""
         "Shadow Collective Operator":
@@ -1923,7 +1923,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Venisa Doza":
            text: """Tant que vous effectuez une attaque %TORPEDO% ou %MISSILE%, vous pouvez considérer le prérequis %FRONTARC% comme étant %REARARC% pour cette attaque. Dans ce cas, considérez le prérequis de portée comme étant 1-2."""
         "Zay Versio":
-           text: """Tant que vous défendez, si l'attaquant est endommagé, vous pouvez relancer 1 dé de defense."""
+           text: """Tant que vous défendez, si l'attaquant est endommagé, vous pouvez relancer 1 dé de défense."""
         "Taka Jamoreesa":
            text: """Après avoir brouillé, vous devez assigner 1 marqueur de brouillage à un autre vaisseau situé à portée 0-1 du vaisseau brouillé, si possible."""
         "Hondo Ohnaka":
@@ -1938,7 +1938,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Lapin":
            text: """Tant que vous défendez ou effectuez une attaque, les dés du vaisseau ennemi ne peuvent pas être modifiés s'il est stressé."""
         "Volan Das":
-           text: """Après avoir entièrement exécuté une manceuvre rouge, vous pouvez choisir un vaisseau ennemi à portée 1. Le vaisseau choisi gagne 1 marqueur de contrainte et vous pouvez retirer 1 marqueur de stress."""
+           text: """Après avoir entièrement exécuté une manœuvre rouge, vous pouvez choisir un vaisseau ennemi à portée 1. Le vaisseau choisi gagne 1 marqueur de contrainte et vous pouvez retirer 1 marqueur de stress."""
         "Aurra Sing":
            text: """Avant de vous engager, vous pouvez dépenser 1 %FORCE% pour choisir 2 vaisseaux ennemis à portée 0-1. Transférez n'importe quel nombre de marqueurs orange et rouges entre ces 2 vaisseaux."""
         "Durge (Separatist)":
@@ -1956,7 +1956,7 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: """Adi Gallia"""
            text: """Tant que vous défendez à portée d'attaque 1, vous pouvez dépenser 1 %FORCE%. Dans ce cas, l'attaquant ne peut pas appliquer le bonus de portée. %LINEBREAK% Tant que vous effectuez une attaque contre un défenseur à portée d'attaque 3, vous pouvez dépenser 1 %FORCE%. Dans ce cas, le défenseur ne peut pas appliquer le bonus de portée."""
         '"Sicko"':
-           text: """Apres avoir execute une manœuvre de base, vous pouvez vous assigner l'état <b>•Manœuvre Écœurante</b>."""
+           text: """Après avoir exécuté une manœuvre de base, vous pouvez vous assigner l'état <b>•Manœuvre Écœurante</b>."""
         "Kit Fisto":
            text: """Tant qu'un autre vaisseau allié défend, si l'attaquant est dans son %BULLSEYEARC% vous pouvez dépenser 1 %FORCE% pour changer 1 des résultats vierges du défenseur en un résultat %FOCUS%."""
         '"Slammer"':
