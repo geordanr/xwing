@@ -4814,7 +4814,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Trick Shot'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Concussion Missiles'
@@ -4922,12 +4922,17 @@ exportObj.manifestByExpansion =
         {
             name: 'Brilliant Evasion'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Hate'
             type: 'upgrade'
-            count: 1
+            count: 2
+        }
+        {
+            name: 'Predictive Shot'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'Ion Torpedoes'
@@ -4941,6 +4946,16 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tractor Beam'
             type: 'upgrade'
             count: 1
         }
@@ -4981,6 +4996,11 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Novice Technician'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seasoned Navigator'
             type: 'upgrade'
             count: 1
         }
