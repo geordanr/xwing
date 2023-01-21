@@ -239,7 +239,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Vous ne pouvez être déployé que par un déploiement d’urgence, et vous avez le nom, l’initiative, la capacité de pilote, et les %CHARGE% du vaisseau allié Hound’s Tooth qui a été détruit.%LINEBREAK%Vaisseau de Secours : Mise en Place : nécessite le Hound’s Tooth. Vous devez commencer la partie arrimé au Hound’s Tooth."""
         "AP-5":
            display_name: """AP-5"""
-           text: """Tant que vous coordonnez, si vous choisissez un vaisseau qui a exactement 1 marqueur de stress, il peut effectuer des actions. %LINEBREAK%<strong>Navette de Communication :</strong> tant que vous êtes arrimé, votre vaisseau porteur gagne %COORDINATE%. Avant que votre vaisseau porteur ne s’active, il peut effectuer une action %COORDINATE%."""
+           text: """Tant que vous coordonnez, si vous choisissez un vaisseau qui a exactement 1 marqueur de stress, il peut effectuer des actions."""
         "Academy Pilot":
            display_name: """Pilote de l’Académie"""
            text: """<i class = flavor_text>Produit en masse, rapide et maniable, le TIE/ln développé par Sienar Fleet Systems est le principal chasseur de l’Empire Galactique.</i>"""
@@ -248,7 +248,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous défendez ou effectuez une attaque, si le vaisseau ennemi a une taille supérieure à la vôtre, lancez 1 dé supplémentaire."""
         "Ahsoka Tano":
            display_name: """Ahsoka Tano"""
-           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez choisir un vaisseau allié à portée&nbsp;0-1 et dépenser 1&nbsp;%FORCE%. Ce vaisseau peut effectuer une action, même s’il est stressé.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez choisir un vaisseau allié à portée&nbsp;0-1 et dépenser 1&nbsp;%FORCE%. Ce vaisseau peut effectuer une action, même s’il est stressé."""
         "Airen Cracken":
            display_name: """Airen Cracken"""
            text: """Après avoir effectué une attaque, vous pouvez choisir 1 vaisseau allié à portée 1. Ce vaisseau peut effectuer une action, en la considérant comme rouge."""
@@ -257,25 +257,25 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous défendez, si l’attaquant a modifié n’importe quel dé d’attaque, vous pouvez lancer 1&nbsp;dé de défense supplémentaire."""
         "Alpha Squadron Pilot":
            display_name: """Pilote de l’Escadron Alpha"""
-           text: """<i class = flavor_text>Sienar Fleet Systems a doté les ailes de l’intercepteur TIE de quatre canons laser qui lui confèrent une puissance de feu bien supérieure à celle des précédents modèles.</i>%LINEBREAK%<strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+           text: """<i class = flavor_text>Sienar Fleet Systems a doté les ailes de l’intercepteur TIE de quatre canons laser qui lui confèrent une puissance de feu bien supérieure à celle des précédents modèles.</i>"""
         "Anakin Skywalker":
            display_name: """Anakin Skywalker"""
-           text: """Après avoir entièrement exécuté une manœuvre, s'il y a un vaisseau ennemi dans votre %FRONTARC% à portée&nbsp;0-1 ou dans votre %BULLSEYEARC%, vous pouvez dépenser 1&nbsp;%FORCE% pour retirer 1 marqueur de stress.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Après avoir entièrement exécuté une manœuvre, s'il y a un vaisseau ennemi dans votre %FRONTARC% à portée&nbsp;0-1 ou dans votre %BULLSEYEARC%, vous pouvez dépenser 1&nbsp;%FORCE% pour retirer 1 marqueur de stress."""
         "Anakin Skywalker (N-1 Starfighter)":
            display_name: """Anakin Skywalker"""
-           text: """Avant de révéler votre manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer un tonneau (ce n’est pas une action).%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action&nbsp;%EVADE%."""
+           text: """Avant de révéler votre manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer un tonneau (ce n’est pas une action)."""
         "Anakin Skywalker (Y-Wing)":
            display_name: """Anakin Skywalker"""
-           text: """Après avoir entièrement exécuté une manœuvre, s’il y a un vaisseau ennemi dans votre %FRONTARC% à portée&nbsp;0-1 ou dans votre %BULLSEYEARC%, vous pouvez dépenser 1&nbsp;%FORCE% pour retirer 1&nbsp;marqueur de stress.%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """Après avoir entièrement exécuté une manœuvre, s’il y a un vaisseau ennemi dans votre %FRONTARC% à portée&nbsp;0-1 ou dans votre %BULLSEYEARC%, vous pouvez dépenser 1&nbsp;%FORCE% pour retirer 1&nbsp;marqueur de stress."""
         "Arvel Crynyd":
            display_name: """Arvel Crynyd"""
-           text: """Vous pouvez effectuer des attaques principales à portée 0.%LINEBREAK%Si vous deviez échouer à une action %BOOST% qui vous amènerait à chevaucher un autre vaisseau, résolvez-la comme si vous exécutiez partiellement une manœuvre à la place.%LINEBREAK%<strong>Propulseurs Vectoriels :</strong> après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
+           text: """Vous pouvez effectuer des attaques principales à portée 0.%LINEBREAK%Si vous deviez échouer à une action %BOOST% qui vous amènerait à chevaucher un autre vaisseau, résolvez-la comme si vous exécutiez partiellement une manœuvre à la place."""
         "Asajj Ventress":
            display_name: """Asajj Ventress"""
            text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau ennemi dans votre %SINGLETURRETARC% à portée 0-2 et dépenser 1 %FORCE%. Dans ce cas, ce vaisseau gagne 1 marqueur de stress sauf s’il retire 1 marqueur vert."""
         "Autopilot Drone":
            display_name: """Drone Automatique"""
-           text: """<i class = flavor_text>Il est parfois utile d’ignorer les avertissements de sécurité préconisés par les fabricants…</i>%LINEBREAK%Cellules Énergétiques Bidouillées&nbsp;: pendant la phase de système, si vous n’êtes pas arrimé, perdez 1 &nbsp;%CHARGE%. À la fin de la phase d’activation, vous êtes détruit si vous avez 0 %CHARGE%. Avant de retirer votre figurine, chaque vaisseau à porté 0-1 subit 1 dégât %CRIT%."""
+           text: """<i class = flavor_text>Il est parfois utile d’ignorer les avertissements de sécurité préconisés par les fabricants…</i>"""
         "BB-8":
            display_name: """BB-8"""
            text: """Pendant la phase de système, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
@@ -287,7 +287,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Le TIE Advanced v1 de Sienar Fleet Systems est un chasseur révolutionnaire, pourvu de moteurs améliorés, d’un lance-missiles et d’ailes mobiles.</i>"""
         "Barriss Offee":
            display_name: """Barriss Offee"""
-           text: """Tant qu’un vaisseau allié à portée&nbsp;0-2 effectue une attaque, si le défenseur est dans son %BULLSEYEARC%, vous pouvez dépenser 1&nbsp;%FORCE% pour changer 1 résultat %FOCUS% en un résultat %HIT% ou 1 résultat %HIT% en un résultat %CRIT%.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Tant qu’un vaisseau allié à portée&nbsp;0-2 effectue une attaque, si le défenseur est dans son %BULLSEYEARC%, vous pouvez dépenser 1&nbsp;%FORCE% pour changer 1 résultat %FOCUS% en un résultat %HIT% ou 1 résultat %HIT% en un résultat %CRIT%."""
         "Ben Teene":
            display_name: """Ben Teene"""
            text: """Après avoir effectué une attaque, si le défenseur est dans votre %SINGLETURRETARC%, assignez-lui l’état Ébranlé."""
@@ -296,7 +296,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir effectué une action %FOCUS%, vous pouvez transférer 1 de vos marqueurs de concentration à un vaisseau allié à portée 1-2."""
         "Berwer Kret":
            display_name: """Berwer Kret"""
-           text: """Après que vous avez effectué une attaque qui touche, chaque vaisseau allié avec %CALCULATE% dans sa barre d’action et un verrouillage sur le défenseur peut effectuer une action&nbsp;%CALCULATE%&nbsp;rouge.%LINEBREAK%<strong>Dispositif Tracteur de Précision :</strong> vous ne pouvez pas faire pivoter votre %SINGLETURRETARC% vers votre %REARARC%. Après avoir exécuté une manœuvre, vous pouvez gagner 1&nbsp;marqueur de rayon tracteur pour effectuer une action&nbsp;%ROTATEARC%."""
+           text: """Après que vous avez effectué une attaque qui touche, chaque vaisseau allié avec %CALCULATE% dans sa barre d’action et un verrouillage sur le défenseur peut effectuer une action&nbsp;%CALCULATE%&nbsp;rouge."""
         "Biggs Darklighter":
            display_name: """Biggs Darklighter"""
            text: """Tant qu’un autre vaisseau allié à portée 0-1 défend, avant l’étape «&nbsp;Neutraliser les résultats&nbsp;», si vous êtes dans l’arc de l’attaque, vous pouvez subir 1 dégât&nbsp;%HIT% ou %CRIT% pour annuler 1 dégât correspondant."""
@@ -308,19 +308,19 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Au cours de la Bataille de Yavin, les pilotes d’élite des chasseurs TIE/ln de l’Escadron Noir escortèrent Dark Vador lors d’une attaque dévastatrice contre les forces Rebelles.</i>"""
         "Black Squadron Ace (T-70)":
            display_name: """As de l’Escadron Noir"""
-           text: """<i class = flavor_text>Lors de la Guerre Froide, l’Escadron Noir de Poe Dameron entreprit d’audacieuses missions secrètes contre le Premier Ordre, sans tenir compte des traités ratifiés par le Sénat de la Nouvelle République.</i>%LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration&nbsp;%CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """<i class = flavor_text>Lors de la Guerre Froide, l’Escadron Noir de Poe Dameron entreprit d’audacieuses missions secrètes contre le Premier Ordre, sans tenir compte des traités ratifiés par le Sénat de la Nouvelle République.</i>"""
         "Black Squadron Scout":
            display_name: """Éclaireur de l’Escadron Noir"""
-           text: """<i class = flavor_text>Ce vaisseau atmosphérique lourdement armé se sert de ses ailes mobiles pour gagner en vitesse et manœuvrabilité.</i>%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
+           text: """<i class = flavor_text>Ce vaisseau atmosphérique lourdement armé se sert de ses ailes mobiles pour gagner en vitesse et manœuvrabilité.</i>"""
         "Black Sun Ace":
            display_name: """As du Soleil Noir"""
            text: """<i class = flavor_text>Le chasseur d’assaut Kihraxz fut développé expressément pour l’organisation criminelle du Soleil Noir, dont les as, très généreusement payés, exigeaient des appareils agiles et puissants, à la hauteur de leur talent.</i>"""
         "Black Sun Assassin":
            display_name: """Assassin du Soleil Noir"""
-           text: """<i class = flavor_text>Abattre sa cible au coin d’une ruelle sombre ou ajouter une goutte de poison à une boisson sont des méthodes courantes d’assassinat, mais une navette en feu s’écrasant au sol fait passer un tout autre message. </i>%LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+           text: """<i class = flavor_text>Abattre sa cible au coin d’une ruelle sombre ou ajouter une goutte de poison à une boisson sont des méthodes courantes d’assassinat, mais une navette en feu s’écrasant au sol fait passer un tout autre message.</i>"""
         "Black Sun Enforcer":
            display_name: """Homme de Main du Soleil Noir"""
-           text: """<i class = flavor_text>Le prince Xizor en personne collabora avec MandalMotors pour concevoir la plateforme d’attaque de classe StarViper, l’un des plus redoutables chasseurs de la galaxie. </i>%LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+           text: """<i class = flavor_text>Le prince Xizor en personne collabora avec MandalMotors pour concevoir la plateforme d’attaque de classe StarViper, l’un des plus redoutables chasseurs de la galaxie. </i>"""
         "Black Sun Soldier":
            display_name: """Soldat du Soleil Noir"""
            text: """<i class = flavor_text>La vaste et influente organisation criminelle du Soleil Noir a toujours besoin de pilotes de talent, pourvu qu’ils ne soient pas trop regardants sur l’origine de leur paye.</i>"""
@@ -338,10 +338,10 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Les pilotes d’élite clones de l’Escadron Bleu sont capables de faire voler leur V-19 conjointement avec les appareils des Jedi et servent le plus souvent de soutien auprès d’illustres commandants comme Anakin Skywalker et Ahsoka Tano.</i>"""
         "Blue Squadron Recruit":
            display_name: """Recrue de l’Escadron Bleu"""
-           text: """<i class = flavor_text>Toute une génération a grandi avec des récits d’exploits héroïques lors de la Guerre Civile Galactique, et nombreux sont ceux qui ont appris à piloter dans les mêmes cockpits qui avaient accueilli leurs parents dans leur combat contre l’Empire.</i>%LINEBREAK%<strong>Gyrostabilisateurs Perfectionnés:</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%.Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge.."""
+           text: """<i class = flavor_text>Toute une génération a grandi avec des récits d’exploits héroïques lors de la Guerre Civile Galactique, et nombreux sont ceux qui ont appris à piloter dans les mêmes cockpits qui avaient accueilli leurs parents dans leur combat contre l’Empire.</i>"""
         "Blue Squadron Rookie":
            display_name: """Pilote débutant de l’Escadron Bleu"""
-           text: """<i class = flavor_text>Le X-wing T-70 d’Incom-FreiTek a été conçu pour être plus polyvalent que son prédécesseur, le X-wing T-65. L’emplacement du droïde a été amélioré et permet de recevoir un large éventail d’astromechs, et les points d’emport modulaires permettent au personnel au sol d’adapter l’armement du T-70 en fonction de ses missions.</i>%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """<i class = flavor_text>Le X-wing T-70 d’Incom-FreiTek a été conçu pour être plus polyvalent que son prédécesseur, le X-wing T-65. L’emplacement du droïde a été amélioré et permet de recevoir un large éventail d’astromechs, et les points d’emport modulaires permettent au personnel au sol d’adapter l’armement du T-70 en fonction de ses missions.</i>"""
         "Blue Squadron Scout":
            display_name: """Éclaireur de l’Escadron Bleu"""
            text: """<i class = flavor_text>Utilisé pour déployer des troupes sous couvert de l’obscurité ou sur les théâtres d’opérations les plus dangereux, le U-wing UT-60D rendit de fiers services à l’Alliance Rebelle qui avait désespérément besoin de transports résistants.</i>"""
@@ -356,25 +356,25 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque principale, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», vous pouvez dépenser 1 résultat %CRIT% pour ajouter 2 résultats&nbsp;%HIT%."""
         "Bossk":
            display_name: """Bossk"""
-           text: """Tant que vous effectuez une attaque principale, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», vous pouvez dépenser 1&nbsp;résultat %CRIT% pour ajouter 2 résultats %HIT%.%LINEBREAK%<strong>Appareil de Poursuite :</strong> après avoir été déployé, vous pouvez verrouiller un vaisseau que le <strong>Hound’s&nbsp;Tooth</strong> allié a verrouillé."""
+           text: """Tant que vous effectuez une attaque principale, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», vous pouvez dépenser 1&nbsp;résultat %CRIT% pour ajouter 2 résultats %HIT%."""
         "Bounty Hunter":
            display_name: """Chasseur de Primes"""
            text: """<i class = flavor_text>La sinistre réputation du Patrouilleur de Classe Firespray a pour origine les chasseurs de primes Jango Fett et Boba Fett, qui modifièrent leur appareil avec d’innombrables armes terrifiantes.</i>"""
         "Bravo Flight Officer":
            display_name: """Officier de l’Escadron Bravo"""
-           text: """<i class = flavor_text>Les pilotes volontaires des Forces Royales de Sécurité de Naboo sont déterminés à protéger le peuple et les idéaux de leur monde natal, et font confiance à leur Reine pour les envoyer au combat seulement quand toutes les autres options ont échoué.</i>%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action&nbsp;%EVADE%."""
+           text: """<i class = flavor_text>Les pilotes volontaires des Forces Royales de Sécurité de Naboo sont déterminés à protéger le peuple et les idéaux de leur monde natal, et font confiance à leur Reine pour les envoyer au combat seulement quand toutes les autres options ont échoué.</i>"""
         "Braylen Stramm":
            display_name: """Braylen Stramm"""
            text: """Tant que vous défendez ou effectuez une attaque, si vous êtes stressé, vous pouvez relancer jusqu’à 2 de vos dés."""
         "Captain Cardinal":
            display_name: """Capitaine Cardinal"""
-           text: """Tant qu’un vaisseau allié à portée 1-2 avec une initiative inférieure à la vôtre défend ou effectue une attaque, si vous avez au moins 1&nbsp;%CHARGE%, ce vaisseau allié peut relancer 1 résultat %FOCUS%.%LINEBREAK%Après qu’un vaisseau ennemi à portée 0-3 a été détruit, perdez 1&nbsp;%CHARGE%.%LINEBREAK%<strong>Batteries Jumelées:</strong> tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
+           text: """Tant qu’un vaisseau allié à portée 1-2 avec une initiative inférieure à la vôtre défend ou effectue une attaque, si vous avez au moins 1&nbsp;%CHARGE%, ce vaisseau allié peut relancer 1 résultat %FOCUS%.%LINEBREAK%Après qu’un vaisseau ennemi à portée 0-3 a été détruit, perdez 1&nbsp;%CHARGE%."""
         "Captain Feroph":
            display_name: """Capitaine Feroph"""
-           text: """Tant que vous défendez, si l’attaquant n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou %FOCUS% en un résultat %EVADE%.%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], ou [1&nbsp;%BANKRIGHT%]."""
+           text: """Tant que vous défendez, si l’attaquant n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou %FOCUS% en un résultat %EVADE%."""
         "Captain Jonus":
            display_name: """Capitaine Jonus"""
-           text: """Tant qu’un vaisseau allié à portée 0-1 effectue une attaque %TORPEDO% ou %MISSILE%, il peut relancer jusqu’à 2 dés d’attaque. %LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """Tant qu’un vaisseau allié à portée 0-1 effectue une attaque %TORPEDO% ou %MISSILE%, il peut relancer jusqu’à 2 dés d’attaque."""
         "Captain Jostero":
            display_name: """Capitaine Jostero"""
            text: """Après qu’un vaisseau ennemi a subi des dégâts, s’il n’est pas en train de défendre, vous pouvez effectuer une attaque bonus contre ce vaisseau."""
@@ -389,7 +389,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Vous pouvez effectuer vos attaques principales à portée 0."""
         "Captain Phasma":
            display_name: """Capitaine Phasma"""
-           text: """Tant que vous défendez, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», un autre vaisseau allié à portée&nbsp;0-1 <b>doit</b> subir 1 dégât %HIT%/%CRIT% pour annuler 1 résultat correspondant.%LINEBREAK%<strong>Tourelle d’Arme lourde :</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous <b>devez</b> considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
+           text: """Tant que vous défendez, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», un autre vaisseau allié à portée&nbsp;0-1 <b>doit</b> subir 1 dégât %HIT%/%CRIT% pour annuler 1 résultat correspondant."""
         "Captain Rex":
            display_name: """Capitaine Rex"""
            text: """Après avoir effectué une attaque, assignez l’état Tir de Suppression au défenseur."""
@@ -398,16 +398,16 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant qu’un vaisseau allié à portée&nbsp;0-3 effectue une attaque principale, si le défenseur est dans son %BULLSEYEARC%, avant l’étape «&nbsp;Neutraliser les résultats&nbsp;», le vaisseau allié peut dépenser 1 marqueur de calcul pour annuler 1 résultat %EVADE%."""
         "Captain Seevor":
            display_name: """Capitaine Seevor"""
-           text: """Tant que vous défendez ou effectuez une attaque, avant de lancer les dés d’attaque, si vous n’êtes pas dans le %BULLSEYEARC% du vaisseau ennemi, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, le vaisseau ennemi gagne 1 marqueur de brouillage.%LINEBREAK%<strong>Stabilisateurs Crantés</strong> tant que vous vous déplacez, ignorez les astéroïdes.."""
+           text: """Tant que vous défendez ou effectuez une attaque, avant de lancer les dés d’attaque, si vous n’êtes pas dans le %BULLSEYEARC% du vaisseau ennemi, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, le vaisseau ennemi gagne 1 marqueur de brouillage."""
         "Cartel Executioner":
            display_name: """Exécuteur du Cartel"""
-           text: """<i class = flavor_text>De nombreux pilotes chevronnés au service des kajidics Hutt et d’autres organisations criminelles utilisent le chasseur M12-L Kimogila à cause de sa puissance de feu et de la peur qu’il inspire.</i>%LINEBREAK%<strong>Dans le Mille :</strong> tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, les dés de défense ne peuvent pas être modifiés en utilisant des marqueurs verts."""
+           text: """<i class = flavor_text>De nombreux pilotes chevronnés au service des kajidics Hutt et d’autres organisations criminelles utilisent le chasseur M12-L Kimogila à cause de sa puissance de feu et de la peur qu’il inspire.</i>"""
         "Cartel Marauder":
            display_name: """Marauder du Cartel"""
            text: """<i class = flavor_text>Le polyvalent Kihraxz fut inspiré du très populaire chasseur X-wing d’Incom, mais toutes sortes d’options permettaient de le personnaliser à loisir. </i>"""
         "Cartel Spacer":
            display_name: """Astropilote du Cartel"""
-           text: """<i class = flavor_text>L’Intercepteur « Scyk » M3-A de MandalMotors est acheté en grande quantité par le Cartel Hutt et les contrebandiers Car’das en raison de son prix bas et de ses nombreuses possibilités de personnalisation. </i>%LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """<i class = flavor_text>L’Intercepteur « Scyk » M3-A de MandalMotors est acheté en grande quantité par le Cartel Hutt et les contrebandiers Car’das en raison de son prix bas et de ses nombreuses possibilités de personnalisation.</i>"""
         "Cassian Andor":
            display_name: """Cassian Andor"""
            text: """Au début de la phase d’activation, vous pouvez choisir 1 vaisseau allié à portée 1-3. Dans ce cas, ce vaisseau allié retire 1 marqueur de stress."""
@@ -419,7 +419,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Contrairement à la plupart des cellules Rebelles, les Partisans de Saw Gerrera utilisèrent des méthodes jugées trop radicales pour lutter contre l’Empire Galactique, au cours des sanglants combats qui ravagèrent Géonosis et Jedha.</i>"""
         "Chertek":
            display_name: """Chertek"""
-           text: """Tant que vous effectuez une attaque principale, si le défenseur est tracté, vous pouvez relancer jusqu’à 2 dés d’attaque.%LINEBREAK%<strong>Dispositif Tracteur de Précision :</strong> vous ne pouvez pas faire pivoter votre %SINGLETURRETARC% vers votre %REARARC%. Après avoir exécuté une manœuvre, vous pouvez gagner 1&nbsp;marqueur de rayon tracteur pour effectuer une action&nbsp;%ROTATEARC%."""
+           text: """Tant que vous effectuez une attaque principale, si le défenseur est tracté, vous pouvez relancer jusqu’à 2 dés d’attaque."""
         "Chewbacca":
            display_name: """Chewbacca"""
            text: """Avant qu’une carte de dégât ne vous soit attribuée face visible, vous pouvez dépenser 1 %CHARGE% pour qu’elle vous soit attribuée face cachée à la place."""
@@ -428,34 +428,34 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après qu’un vaisseau allié à portée 0-3 a été détruit, vous pouvez effectuer une action. Puis vous pouvez effectuer une attaque bonus."""
         "Cobalt Squadron Bomber":
            display_name: """Bombardier de l’Escadron Cobalt"""
-           text: """<i class = flavor_text>Peu importe que les silos d’artillerie de leurs forteresses stellaires soient chargés de bombes à protons ou de matériel de première nécessité, les valeureux équipages de l’Escadron Cobalt consacrent leur vie à changer la face de la galaxie..</i>"""
+           text: """<i class = flavor_text>Peu importe que les silos d’artillerie de leurs forteresses stellaires soient chargés de bombes à protons ou de matériel de première nécessité, les valeureux équipages de l’Escadron Cobalt consacrent leur vie à changer la face de la galaxie.</i>"""
         "Colonel Jendon":
            display_name: """Colonel Jendon"""
            text: """Au début de la phase d’activation, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, lorsqu’un vaisseau allié verrouille une cible à ce round, il doit le faire au-delà de la portée 3 à la place de la portée 0-3."""
         "Colonel Vessery":
            display_name: """Colonel Vessery"""
-           text: """Tant que vous effectuez une attaque contre un vaisseau verrouillé, après avoir lancé vos dés d’attaque, vous pouvez verrouiller le défenseur. %LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
+           text: """Tant que vous effectuez une attaque contre un vaisseau verrouillé, après avoir lancé vos dés d’attaque, vous pouvez verrouiller le défenseur."""
         "Colossus Station Mechanic":
            display_name: """Mécanicien de la Station Colossus"""
-           text: """<i class = flavor_text>Certains pilotes ambitieux et talentueux commencent leur carrière en tant qu’équipier au sol, travaillant sans relâche pour permettre à des vaisseaux rafistolés de voler dans les cieux de mondes éloignés comme Castilon.</i>%LINEBREAK%<strong>Explosion En Vol :</strong> <strong>Mise en Place :</strong> 1&nbsp;carte de dégât face cachée vous est attribuée. Après avoir effectué une action <SLAM>, vous pouvez exposer 1&nbsp;carte de dégât pour retirer 1 marqueur de désarmement."""
+           text: """<i class = flavor_text>Certains pilotes ambitieux et talentueux commencent leur carrière en tant qu’équipier au sol, travaillant sans relâche pour permettre à des vaisseaux rafistolés de voler dans les cieux de mondes éloignés comme Castilon.</i>"""
         "Commander Malarus":
            display_name: """Commander Malarus"""
            text: """Au début de la phase d’engagement, vous pouvez dépenser 1&nbsp;%CHARGE% et gagner 1 marqueur de stress. Dans ce cas, jusqu’à la fin du round, tant que vous défendez ou effectuez une attaque, vous pouvez changer tous vos résultats %FOCUS% en résultats %EVADE% ou %HIT%"""
         "Constable Zuvio":
            display_name: """Officier Zuvio"""
-           text: """Si vous êtes censé larguer un engin, vous pouvez le lancer en utilisant un gabarit [1&nbsp;%STRAIGHT%] à la place.%LINEBREAK%<strong>Dispositif Tracteur de Remorqueur Spatial :</strong> <strong>Action :</strong> choisissez un vaisseau dans votre %FRONTARC% à portée 1. Il gagne 1 marqueur de rayon tracteur, ou 2 marqueurs de rayon tracteur s’il est dans votre %BULLSEYEARC% à portée 1."""
+           text: """Si vous êtes censé larguer un engin, vous pouvez le lancer en utilisant un gabarit [1&nbsp;%STRAIGHT%] à la place."""
         "Contracted Scout":
            display_name: """Éclaireur Sous Contrat"""
            text: """<i class = flavor_text>Conçu pour les missions de reconnaissance de long cours et le calcul de nouveaux itinéraires hyperspatiaux, le JumpMaster 5000, pourvu d’un armement léger, est souvent réaménagé par ses propriétaires.</i>"""
         "Corran Horn":
            display_name: """Corran Horn"""
-           text: """À l’initiative 0, vous pouvez effectuer une attaque principale bonus contre un vaisseau ennemi situé dans votre %BULLSEYEARC%. Dans ce cas, au début de la prochaine phase de préparation, gagnez 1 marqueur de désarmement. %LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
+           text: """À l’initiative 0, vous pouvez effectuer une attaque principale bonus contre un vaisseau ennemi situé dans votre %BULLSEYEARC%. Dans ce cas, au début de la prochaine phase de préparation, gagnez 1 marqueur de désarmement."""
         "Count Dooku":
            display_name: """Comte Dooku"""
            text: """Après avoir défendu, si l’attaquant est dans votre arc de tir, vous pouvez dépenser 1&nbsp;%FORCE% pour retirer 1 de vos marqueurs bleus ou rouges.%LINEBREAK%Après avoir effectué une attaque qui touche, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action."""
         "Countess Ryad":
            display_name: """Comtesse Ryad"""
-           text: """Tant que vous exécutez une manœuvre %STRAIGHT%, vous pouvez augmenter la difficulté de la manœuvre. Dans ce cas, exécutez-la comme une manœuvre %KTURN% à la place.%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
+           text: """Tant que vous exécutez une manœuvre %STRAIGHT%, vous pouvez augmenter la difficulté de la manœuvre. Dans ce cas, exécutez-la comme une manœuvre %KTURN% à la place."""
         "Cova Nell":
            display_name: """Cova Nell"""
            text: """Tant que vous défendez ou effectuez une attaque principale, si votre manœuvre révélée est rouge, lancez 1 dé supplémentaire."""
@@ -467,25 +467,25 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Le TIE Punisher a été conçu après le bombardier TIE, qui connut un grand succès. Il est pourvu de boucliers, d’une seconde trappe de largage et de trois nacelles d’artillerie supplémentaires, toutes équipées de moteurs ioniques jumelés.</i>"""
         "DBS-32C":
            display_name: """DBS-32C"""
-           text: """Au début de la phase d’engagement, vous pouvez dépenser 1 marqueur de calcul pour effectuer une action %COORDINATE%. Vous ne pouvez pas coordonner des vaisseaux qui n’ont pas la capacité de vaisseau <strong>Calculs en Réseau</strong>.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Au début de la phase d’engagement, vous pouvez dépenser 1 marqueur de calcul pour effectuer une action %COORDINATE%. Vous ne pouvez pas coordonner des vaisseaux qui n’ont pas la capacité de vaisseau <strong>Calculs en Réseau</strong>."""
         "DBS-404":
            display_name: """DBS-404"""
-           text: """Vous pouvez effectuer des attaques principales à portée&nbsp;0. Tant que vous effectuez une attaque à portée d’attaque&nbsp;0-1, vous <b>devez</b> lancer 1&nbsp;dé supplémentaire. Après que l’attaque a touché, subissez 1 dégât&nbsp;%CRIT%.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Vous pouvez effectuer des attaques principales à portée&nbsp;0. Tant que vous effectuez une attaque à portée d’attaque&nbsp;0-1, vous <b>devez</b> lancer 1&nbsp;dé supplémentaire. Après que l’attaque a touché, subissez 1 dégât&nbsp;%CRIT%."""
         "DFS-081":
            display_name: """DFS-081"""
-           text: """Tant qu’un vaisseau allié à portée&nbsp;0-1 défend, il peut dépenser 1 marqueur de calcul pour changer tous les résultats %CRIT% en résultats %HIT%.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Tant qu’un vaisseau allié à portée&nbsp;0-1 défend, il peut dépenser 1 marqueur de calcul pour changer tous les résultats %CRIT% en résultats %HIT%."""
         "DFS-311":
            display_name: """DFS-311"""
-           text: """Au début de la phase d’engagement, vous pouvez transférer 1 de vos marqueurs de calcul à un autre vaisseau allié à portée&nbsp;0-3.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Au début de la phase d’engagement, vous pouvez transférer 1 de vos marqueurs de calcul à un autre vaisseau allié à portée&nbsp;0-3."""
         "Dace Bonearm":
            display_name: """Dace Bonearm"""
            text: """Après qu’un vaisseau ennemi à portée 0-3 a reçu au moins 1 marqueur ionique, vous pouvez dépenser 3 %CHARGE%. Dans ce cas, ce vaisseau ennemi gagne 2 marqueurs ioniques supplémentaires."""
         "Dalan Oberos (StarViper)":
            display_name: """Dalan Oberos"""
-           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez gagner 1 marqueur de stress pour pivoter votre vaisseau de 90°. %LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez gagner 1 marqueur de stress pour pivoter votre vaisseau de 90°."""
         "Dalan Oberos":
            display_name: """Dalan Oberos"""
-           text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau protégé dans votre %BULLSEYEARC% et dépenser 1 %CHARGE%. Dans ce cas, ce vaisseau perd 1 bouclier et vous récupérez 1 bouclier. %LINEBREAK%<strong>Dans le Mille :</strong> tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, les dés de défense ne peuvent pas être modifiés en utilisant des marqueurs verts."""
+           text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau protégé dans votre %BULLSEYEARC% et dépenser 1 %CHARGE%. Dans ce cas, ce vaisseau perd 1 bouclier et vous récupérez 1 bouclier."""
         "Dark Courier":
            display_name: """Messager Noir"""
            text: """<i class = flavor_text>Le Scimitar est un appareil lourdement modifié, équipé de technologies furtives et de dispositifs de surveillance avancés, afin de mener des missions d’infiltration et d’assassinat.</i>"""
@@ -494,22 +494,22 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir effectué une attaque, vous pouvez dépenser 2&nbsp;%FORCE% pour effectuer une attaque principale bonus contre une cible différente. Si votre attaque était ratée, vous pouvez effectuer cette attaque principale bonus contre la même cible à la place."""
         "Darth Vader":
            display_name: """Darth Vader"""
-           text: """Après avoir effectué une action, vous pouvez dépenser 1 %FORCE% pour effectuer une action.%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """Après avoir effectué une action, vous pouvez dépenser 1 %FORCE% pour effectuer une action."""
         "Dash Rendar":
            display_name: """Dash Rendar"""
-           text: """Tant que vous vous déplacez, ignorez les obstacles. %LINEBREAK%<strong>Angle Mort des Senseurs :</strong> tant que vous effectuez une attaque principale à portée d’attaque 0-1, n’appliquez pas le bonus de portée 0-1 et lancez 1 dé d’attaque en moins."""
+           text: """Tant que vous vous déplacez, ignorez les obstacles."""
         "Del Meeko":
            display_name: """Del Meeko"""
            text: """Tant qu’un vaisseau allié à portée 0-2 défend contre un attaquant endommagé, le défenseur peut relancer 1 dé de défense."""
         "Delta Squadron Pilot":
            display_name: """Pilote de l’Escadron Delta"""
-           text: """<i class = flavor_text>En plus de ses six canons laser et de ses lance-missiles, le redoutable défenseur TIE est équipé d’écrans déflecteurs et d’un hyperdrive.</i>%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
+           text: """<i class = flavor_text>En plus de ses six canons laser et de ses lance-missiles, le redoutable défenseur TIE est équipé d’écrans déflecteurs et d’un hyperdrive.</i>"""
         "Dengar":
            display_name: """Dengar"""
            text: """Après avoir défendu, si l’attaquant est dans votre %FRONTARC%, vous pouvez dépenser 1 %CHARGE% pour effectuer une attaque bonus contre cet attaquant."""
         "Dineé Ellberger":
            display_name: """Dineé Ellberger"""
-           text: """Tant que vous défendez ou effectuez une attaque, si la vitesse de votre manœuvre révélée est identique à celle du vaisseau ennemi, les dés de ce vaisseau ennemi ne peuvent pas être modifiés.%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action&nbsp;%EVADE%."""
+           text: """Tant que vous défendez ou effectuez une attaque, si la vitesse de votre manœuvre révélée est identique à celle du vaisseau ennemi, les dés de ce vaisseau ennemi ne peuvent pas être modifiés."""
         "Drea Renthal":
            display_name: """Drea Renthal"""
            text: """Tant qu’un vaisseau allié non-limité effectue une attaque, si le défenseur est dans votre arc de tir, l’attaquant peut relancer 1 dé d’attaque."""
@@ -521,13 +521,13 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Avant votre activation, si vous êtes concentré, vous pouvez effectuer une action."""
         "Ello Asty":
            display_name: """Ello Asty"""
-           text: """Après avoir révélé une manœuvre rouge Tonneau de Tallon (%TROLLLEFT% ou %TROLLRIGHT%), si vous avez 2 marqueurs de stress ou moins, considérez cette manœuvre comme blanche. %LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir révélé une manœuvre rouge Tonneau de Tallon (%TROLLLEFT% ou %TROLLRIGHT%), si vous avez 2 marqueurs de stress ou moins, considérez cette manœuvre comme blanche."""
         "Emon Azzameen":
            display_name: """Emon Azzameen"""
            text: """Si vous êtes censé larguer un engin en utilisant un gabarit [1&nbsp;%STRAIGHT%], vous pouvez utiliser le gabarit [3&nbsp;%TURNLEFT%], [3&nbsp;%STRAIGHT%] ou [3&nbsp;%TURNRIGHT%] à la place."""
         "Epsilon Squadron Cadet":
            display_name: """Cadet de l’Escadron Epsilon"""
-           text: """<i class = flavor_text>Formés depuis le plus jeune âge au cœur des Star Destroyers de classe Resurgent, de nombreux pilotes de TIE du Premier Ordre n’ont jamais foulé le sol d’une planète..</i>"""
+           text: """<i class = flavor_text>Formés depuis le plus jeune âge au cœur des Star Destroyers de classe Resurgent, de nombreux pilotes de TIE du Premier Ordre n’ont jamais foulé le sol d’une planète.</i>"""
         "Esege Tuketu":
            display_name: """Esege Tuketu"""
            text: """Tant qu’un vaisseau allié à portée 0-2 défend ou effectue une attaque, il peut dépenser vos marqueurs de concentration comme s’ils étaient à lui."""
@@ -536,10 +536,10 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Au début de la phase d’engagement, vous pouvez dépenser 1 marqueur de concentration pour choisir un vaisseau allié à portée 0-1. Dans ce cas, ce vaisseau allié lance 1 dé de défense supplémentaire tant qu’il défend, jusqu’à la fin du round."""
         "Ezra Bridger":
            display_name: """Ezra Bridger"""
-           text: """Tant que vous défendez ou effectuez une attaque, si vous êtes stressé, vous pouvez dépenser 1 %FORCE% pour changer jusqu’à 2 de vos résultats %FOCUS% en résultats %EVADE% ou %HIT%.%LINEBREAK%<strong>Chargé et Prêt à Tirer :</strong> tant que vous êtes arrimé, après que votre vaisseau porteur a effectué une attaque principale %FRONTARC% ou %TURRET%, il peut effectuer une attaque principale %REARARC% bonus."""
+           text: """Tant que vous défendez ou effectuez une attaque, si vous êtes stressé, vous pouvez dépenser 1 %FORCE% pour changer jusqu’à 2 de vos résultats %FOCUS% en résultats %EVADE% ou %HIT%."""
         "Ezra Bridger (Sheathipede)":
            display_name: """Ezra Bridger"""
-           text: """Tant que vous défendez ou effectuez une attaque, si vous êtes stressé, vous pouvez dépenser 1 %FORCE% pour changer jusqu’à 2 de vos résultats %FOCUS% en résultats %EVADE% ou %HIT%.%LINEBREAK%<strong>Navette de Communication :</strong> tant que vous êtes arrimé, votre vaisseau porteur gagne %COORDINATE%. Avant que votre vaisseau porteur ne s’active, il peut effectuer une action %COORDINATE%."""
+           text: """Tant que vous défendez ou effectuez une attaque, si vous êtes stressé, vous pouvez dépenser 1 %FORCE% pour changer jusqu’à 2 de vos résultats %FOCUS% en résultats %EVADE% ou %HIT%."""
         "Ezra Bridger (TIE Fighter)":
            display_name: """Ezra Bridger"""
            text: """Tant que vous défendez ou effectuez une attaque, si vous êtes stressé, vous pouvez dépenser 1 %FORCE% pour changer jusqu’à 2 de vos résultats %FOCUS% en résultats %EVADE% ou %HIT%."""
@@ -548,10 +548,10 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Contrairement aux chasseurs de conception fragile mais facilement remplaçables construits pour les Séparatistes, Feethan Ottraw Scalable Assemblies a également conçu le Belbullab-22, un appareil qui allie puissance de feu, résistance et vitesse.</i>"""
         "Fenn Rau (Sheathipede)":
            display_name: """Fenn Rau"""
-           text: """Après qu’un vaisseau ennemi situé dans votre arc de tir vous a engagé, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress. Dans ce cas, ce vaisseau ennemi ne peut pas dépenser de marqueur pour modifier des dés tant qu’il effectue une attaque pendant cette phase. %LINEBREAK%<strong>Navette de Communication :</strong> tant que vous êtes arrimé, votre vaisseau porteur gagne %COORDINATE%. Avant que votre vaisseau porteur ne s’active, il peut effectuer une action %COORDINATE%."""
+           text: """Après qu’un vaisseau ennemi situé dans votre arc de tir vous a engagé, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress. Dans ce cas, ce vaisseau ennemi ne peut pas dépenser de marqueur pour modifier des dés tant qu’il effectue une attaque pendant cette phase."""
         "Fenn Rau":
            display_name: """Fenn Rau"""
-           text: """Tant que vous défendez ou effectuez une attaque, si la portée d’attaque est 1, vous pouvez lancer 1 dé supplémentaire. %LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """Tant que vous défendez ou effectuez une attaque, si la portée d’attaque est 1, vous pouvez lancer 1 dé supplémentaire."""
         "Fifth Brother":
            display_name: """Le Cinquième Frère"""
            text: """Tant que vous effectuez une attaque, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», si l’attaque touche, vous pouvez dépenser 2&nbsp;%FORCE% pour ajouter 1&nbsp;résultat&nbsp;%CRIT%."""
@@ -563,22 +563,22 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous défendez ou effectuez une attaque, vous pouvez ajouter 1&nbsp;résultat vierge, ou vous pouvez gagner 1&nbsp;marqueur de contrainte pour ajouter 1&nbsp;résultat concentration à la place."""
         "First Order Provocateur":
            display_name: """Provocateur du Premier Ordre"""
-           text: """<i class = flavor_text>Les idées du Major Vonreg ont guidé l’amélioration de modèles déjà éprouvés lors de la conception de cet appareil unique en son genre, précis et mortel, par Sienar-Jaemus Fleet Systems.</i>%LINEBREAK%<strong>Propulseurs Réactifs :</strong> après avoir entièrement exécuté une manœuvre, si vous n’êtes pas épuisé ou contraint, vous pouvez gagner 1&nbsp;marqueur d’épuisement ou de contrainte pour effectuer une action %LOCK% ou %BARRELROLL%."""
+           text: """<i class = flavor_text>Les idées du Major Vonreg ont guidé l’amélioration de modèles déjà éprouvés lors de la conception de cet appareil unique en son genre, précis et mortel, par Sienar-Jaemus Fleet Systems.</i>"""
         "First Order Test Pilot":
            display_name: """Pilote d’Essai du Premier Ordre"""
-           text: """<i class = flavor_text>Conçu pour la vitesse et particulièrement maniable, le TIE Silencer est un appareil dévastateur entre les mains des pilotes qui savent en tirer tout son potentiel. Des pilotes moins talentueux seraient incapables de maîtriser la vélocité de ce vaisseau.</i>%LINEBREAK%<strong>Autopropulseurs:</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou une action %BOOST% rouge."""
+           text: """<i class = flavor_text>Conçu pour la vitesse et particulièrement maniable, le TIE Silencer est un appareil dévastateur entre les mains des pilotes qui savent en tirer tout son potentiel. Des pilotes moins talentueux seraient incapables de maîtriser la vélocité de ce vaisseau.</i>"""
         "Foreman Proach":
            display_name: """Contremaître Proach"""
-           text: """Avant de vous engager, vous pouvez choisir 1 vaisseau ennemi dans votre %BULLSEYEARC% à portée 1-2 et gagner 1 marqueur de désarmement. Dans ce cas, ce vaisseau ennemi gagne 1 marqueur de rayon tracteur.%LINEBREAK%<strong>Stabilisateurs Crantés</strong> tant que vous vous déplacez, ignorez les astéroïdes.."""
+           text: """Avant de vous engager, vous pouvez choisir 1 vaisseau ennemi dans votre %BULLSEYEARC% à portée 1-2 et gagner 1 marqueur de désarmement. Dans ce cas, ce vaisseau ennemi gagne 1 marqueur de rayon tracteur."""
         "Freighter Captain":
            display_name: """Capitaine de Cargo"""
            text: """<i class = flavor_text>De nombreux astropilotes gagnent leur vie en parcourant la Bordure Extérieure, un secteur où la différence entre contrebandier et marchand honnête est souvent ténue. Aux frontières de la civilisation, les clients sont beaucoup moins exigeants sur l’origine des marchandises, tant que les prix sont suffisamment attractifs.</i>"""
         "G4R-GOR V/M":
            display_name: """G4R-G0R V/M"""
-           text: """Après que vous avez défendu, chaque autre vaisseau à portée&nbsp;0 subit 1 dégât&nbsp;%CRIT%.%LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après que vous avez défendu, chaque autre vaisseau à portée&nbsp;0 subit 1 dégât&nbsp;%CRIT%."""
         "Gamma Squadron Ace":
            display_name: """As de l’Escadron Gamma"""
-           text: """<i class = flavor_text>Bien qu’il ne soit pas aussi maniable et rapide qu’un TIE/ln, le Bombardier TIE a une puissance de feu suffisante pour détruire à peu près n’importe quelle cible. </i>%LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """<i class = flavor_text>Bien qu’il ne soit pas aussi maniable et rapide qu’un TIE/ln, le Bombardier TIE a une puissance de feu suffisante pour détruire à peu près n’importe quelle cible.</i>"""
         "Gand Findsman":
            display_name: """Trouveur Gand"""
            text: """<i class = flavor_text>Les légendaires Trouveurs de Gand vouaient un véritable culte aux brumes qui recouvraient leur planète natale et se servaient de signes, d’augures et de rituels mystiques pour traquer leurs proies.</i>"""
@@ -590,13 +590,13 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir dépensé un marqueur de concentration, vous pouvez choisir 1 vaisseau allié à portée 1-3. Ce vaisseau allié gagne 1 marqueur de concentration."""
         "Gavin Darklighter":
            display_name: """Gavin Darklighter"""
-           text: """Tant qu’un vaisseau allié effectue une attaque, si le défenseur est dans votre %FRONTARC%, l’attaquant peut changer 1 résultat&nbsp;%HIT% en un résultat %CRIT%.%LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
+           text: """Tant qu’un vaisseau allié effectue une attaque, si le défenseur est dans votre %FRONTARC%, l’attaquant peut changer 1 résultat&nbsp;%HIT% en un résultat %CRIT%."""
         "General Grievous":
            display_name: """Général Grievous"""
            text: """Tant que vous effectuez une attaque principale, si vous n’est pas dans l’arc de tir du défenseur, vous pouvez relancer jusqu’à 2 dés d’attaque."""
         "Genesis Red":
            display_name: """Genesis Red"""
-           text: """Après avoir verrouillé une cible, vous devez retirer tous vos marqueurs de concentration et d’évasion. Puis, gagnez autant de marqueurs de concentration et d’évasion qu’a le vaisseau verrouillé. %LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir verrouillé une cible, vous devez retirer tous vos marqueurs de concentration et d’évasion. Puis, gagnez autant de marqueurs de concentration et d’évasion qu’a le vaisseau verrouillé."""
         "Gideon Hask":
            display_name: """Gideon Hask"""
            text: """Tant que vous effectuez une attaque contre un défenseur endommagé, lancez 1 dé d’attaque supplémentaire."""
@@ -611,7 +611,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Sous le commandement de Jon «Dutch» Vander, l’Escadron Or a joué un rôle déterminant au cours des Batailles de Scarif et de Yavin.</i>"""
         "Gorgol":
            display_name: """Gorgol"""
-           text: """Pendant la phase de système, vous pouvez gagner 1&nbsp;marqueur de désarmement et choisir un vaisseau allié à porté&nbsp;1-2. Dans ce cas, il gagne 1&nbsp;marqueur de rayon tracteur, puis il répare 1 de ses cartes de dégât face visible <strong> Vaisseau</strong>.%LINEBREAK%<strong>Dispositif Tracteur de Précision :</strong> vous ne pouvez pas faire pivoter votre %SINGLETURRETARC% vers votre %REARARC%. Après avoir exécuté une manœuvre, vous pouvez gagner 1&nbsp;marqueur de rayon tracteur pour effectuer une action&nbsp;%ROTATEARC%."""
+           text: """Pendant la phase de système, vous pouvez gagner 1&nbsp;marqueur de désarmement et choisir un vaisseau allié à porté&nbsp;1-2. Dans ce cas, il gagne 1&nbsp;marqueur de rayon tracteur, puis il répare 1 de ses cartes de dégât face visible <strong> Vaisseau</strong>."""
         "Grand Inquisitor":
            display_name: """Grand Inquisiteur"""
            text: """Tant que vous défendez à portée d’attaque 1, vous pouvez dépenser 1 %FORCE% pour prévenir le bonus de portée 1. %LINEBREAK%Tant que vous effectuez une attaque contre un défenseur à portée d’attaque 2-3, vous pouvez dépenser 1 %FORCE% pour appliquer le bonus de portée 1."""
@@ -623,16 +623,16 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous défendez, si vous êtes derrière l’attaquant, lancez 1 dé de défense supplémentaire. %LINEBREAK%Tant que vous effectuez une attaque, si vous êtes derrière le défenseur, lancez 1 dé d’attaque supplémentaire."""
         "Green Squadron Expert":
            display_name: """Green Squadron Expert"""
-           text: """<i class = flavor_text>Le RZ-2 intègre en série les modifications apportées au fil des ans à son prédécesseur. Les pilotes les plus audacieux considèrent que la meilleure fiabilité de ce modèle les autorise à repousser encore plus les limites de l’appareil.</i>%LINEBREAK%<strong>Gyrostabilisateurs Perfectionnés:</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%.Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge.."""
+           text: """<i class = flavor_text>Le RZ-2 intègre en série les modifications apportées au fil des ans à son prédécesseur. Les pilotes les plus audacieux considèrent que la meilleure fiabilité de ce modèle les autorise à repousser encore plus les limites de l’appareil.</i>"""
         "Green Squadron Pilot":
            display_name: """Pilote de l’Escadron Vert"""
-           text: """<i class = flavor_text>À cause de ses commandes sensibles et de son extrême manœuvrabilité, seuls les meilleurs pilotes﻿ osent prendre place dans le cockpit d’un A-wing.</i>%LINEBREAK%<strong>Propulseurs Vectoriels :</strong> après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
+           text: """<i class = flavor_text>À cause de ses commandes sensibles et de son extrême manœuvrabilité, seuls les meilleurs pilotes osent prendre place dans le cockpit d’un A-wing.</i>"""
         "Greer Sonnel":
            display_name: """Greer Sonnel"""
-           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez pivoter votre %SINGLETURRETARC%.%LINEBREAK%<strong>Gyrostabilisateurs Perfectionnés:</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%.Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge.."""
+           text: """Après avoir entièrement exécuté une manœuvre, vous pouvez pivoter votre %SINGLETURRETARC%."""
         "Guri":
            display_name: """Guri"""
-           text: """Au début de la phase d’engagement, s’il y a au moins 1 vaisseau ennemi à portée 0-1, vous pouvez gagner 1 marqueur de concentration. %LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+           text: """Au début de la phase d’engagement, s’il y a au moins 1 vaisseau ennemi à portée 0-1, vous pouvez gagner 1 marqueur de concentration."""
         "Han Solo":
            display_name: """Han Solo"""
            text: """Après avoir lancé des dés, si vous êtes à portée 0-1 d’un obstacle, vous pouvez relancer tous vos dés. Cela n’est pas considéré comme une relance pour les autres effets."""
@@ -647,10 +647,10 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après qu’un vaisseau ennemi a exécuté une manœuvre, s’il est à portée 0, vous pouvez effectuer une action."""
         "Hera Syndulla":
            display_name: """Hera Syndulla"""
-           text: """Après avoir révélé une manœuvre bleue ou rouge, vous pouvez régler votre cadran sur une autre manœuvre de même difficulté.%LINEBREAK%<strong>Chargé et Prêt à Tirer :</strong> tant que vous êtes arrimé, après que votre vaisseau porteur a effectué une attaque principale %FRONTARC% ou %TURRET%, il peut effectuer une attaque principale %REARARC% bonus."""
+           text: """Après avoir révélé une manœuvre bleue ou rouge, vous pouvez régler votre cadran sur une autre manœuvre de même difficulté."""
         "Hera Syndulla (VCX-100)":
            display_name: """Hera Syndulla"""
-           text: """Après avoir révélé une manœuvre bleue ou rouge, vous pouvez régler votre cadran sur une autre manœuvre de même difficulté.%LINEBREAK%<strong>Artillerie de Poupe :</strong> tant que vous avez un vaisseau arrimé, vous bénéficiez d’une arme principale %REARARC% avec une valeur d’attaque égale à celle de l’attaque principale %FRONTARC% du vaisseau arrimé."""
+           text: """Après avoir révélé une manœuvre bleue ou rouge, vous pouvez régler votre cadran sur une autre manœuvre de même difficulté."""
         "Hera Syndulla (B-Wing)":
            display_name: """Hera Syndulla"""
            text: """Tant qu'un autre vaisseau allié à portée 1-2 défend ou effectue une attaque, vous pouvez transférer 1 de vos marqueurs de concentration, d'évasion ou de verrouillage à ce vaisseau."""
@@ -681,16 +681,16 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque, vous pouvez relancer 1 dé d’attaque pour chaque autre vaisseau allié à portée 0-1 du défenseur."""
         "IG-88A":
            display_name: """IG-88A"""
-           text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau allié à portée 1-3 avec %CALCULATE% dans sa barre d’action. Dans ce cas, transférez-lui 1 de vos marqueurs de calcul. %LINEBREAK%<strong>Cerveau Droïde Avancé :</strong> après avoir effectué une action %CALCULATE%, gagnez 1 marqueur de calcul."""
+           text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau allié à portée 1-3 avec %CALCULATE% dans sa barre d’action. Dans ce cas, transférez-lui 1 de vos marqueurs de calcul."""
         "IG-88B":
            display_name: """IG-88B"""
-           text: """Après avoir effectué une attaque ratée, vous pouvez effectuer une attaque bonus %CANNON%.%LINEBREAK%<strong>Cerveau Droïde Avancé :</strong> après avoir effectué une action %CALCULATE%, gagnez 1 marqueur de calcul."""
+           text: """Après avoir effectué une attaque ratée, vous pouvez effectuer une attaque bonus %CANNON%."""
         "IG-88C":
            display_name: """IG-88C"""
-           text: """Après avoir effectué une action %BOOST%, vous pouvez effectuer une action %EVADE%.%LINEBREAK%<strong>Cerveau Droïde Avancé :</strong> après avoir effectué une action %CALCULATE%, gagnez 1 marqueur de calcul."""
+           text: """Après avoir effectué une action %BOOST%, vous pouvez effectuer une action %EVADE%."""
         "IG-88D":
            display_name: """IG-88D"""
-           text: """Tant que vous exécutez une manœuvre Boucle de Segnor (%SLOOPLEFT% ou %SLOOPRIGHT%), vous pouvez utiliser un autre gabarit de même vitesse à la place : soit le gabarit de virage (%TURNLEFT% ou %TURNRIGHT%) de même direction, soit le gabarit de ligne droite (%STRAIGHT%).%LINEBREAK%<strong>Cerveau Droïde Avancé :</strong> après avoir effectué une action %CALCULATE%, gagnez 1 marqueur de calcul."""
+           text: """Tant que vous exécutez une manœuvre Boucle de Segnor (%SLOOPLEFT% ou %SLOOPRIGHT%), vous pouvez utiliser un autre gabarit de même vitesse à la place : soit le gabarit de virage (%TURNLEFT% ou %TURNRIGHT%) de même direction, soit le gabarit de ligne droite (%STRAIGHT%)."""
         "Ibtisam":
            display_name: """Ibtisam"""
            text: """Après avoir entièrement exécuté une manœuvre, si vous êtes stressé, vous pouvez lancer 1 dé d’attaque. Sur un résultat %HIT% ou %CRIT%, retirez 1 marqueur de stress."""
@@ -699,43 +699,43 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Avant qu’un chasseur TIE/ln allié à portée 0-1 ne subisse 1 ou plusieurs dégâts, vous pouvez dépenser 1&nbsp;%CHARGE%. Dans ce cas, prévenez ce dégât."""
         "Imdaar Test Pilot":
            display_name: """Pilote d’Essai Imdaar"""
-           text: """<i class = flavor_text>Conçu dans un centre de recherches secret sur Imdaar Alpha, le TIE Fantôme concrétise ce qui semblait impossible : un petit chasseur furtif équipé d’un système d’occultation avancé.</i>%LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d’évasion pour gagner 1 marqueur d’occultation. """
+           text: """<i class = flavor_text>Conçu dans un centre de recherches secret sur Imdaar Alpha, le TIE Fantôme concrétise ce qui semblait impossible : un petit chasseur furtif équipé d’un système d’occultation avancé.</i>"""
         "Inaldra":
            display_name: """Inaldra"""
-           text: """Tant que vous défendez ou effectuez une attaque, vous pouvez subir 1 dégât&nbsp;%HIT% pour relancer n’importe quel nombre de vos dés. %LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Tant que vous défendez ou effectuez une attaque, vous pouvez subir 1 dégât&nbsp;%HIT% pour relancer n’importe quel nombre de vos dés."""
         "Inquisitor":
            display_name: """Inquisiteur"""
            text: """<i class = flavor_text>Les redoutables Inquisiteurs bénéficient d’une grande autonomie et ont accès aux technologies les plus récentes de l’Empire, comme le prototype TIE Advanced v1.</i>"""
         "Jake Farrell":
            display_name: """Jake Farrell"""
-           text: """Après avoir effectué une action %BARRELROLL% ou %BOOST%, vous pouvez choisir un vaisseau allié à portée 0-1. Ce vaisseau peut effectuer une action %FOCUS%.%LINEBREAK%Propulseurs Vectoriels : après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
+           text: """Après avoir effectué une action %BARRELROLL% ou %BOOST%, vous pouvez choisir un vaisseau allié à portée 0-1. Ce vaisseau peut effectuer une action %FOCUS%."""
         "Jakku Gunrunner":
            display_name: """Trafiquant d’Armes de Jakku"""
-           text: """<i class = flavor_text>Le Remorqueur Spatial de Transfert Quadrimoteur, surnommé « Quad jumper », était aussi manœuvrable sous atmosphère que dans l’espace, ce qui le rendait extrêmement populaire auprès des contrebandiers et des explorateurs. </i>%LINEBREAK%<strong>Dispositif Tracteur de Remorqueur Spatial :</strong> <strong>Action :</strong> choisissez un vaisseau dans votre %FRONTARC% à portée 1. Il gagne 1 marqueur de rayon tracteur, ou 2 marqueurs de rayon tracteur s’il est dans votre %BULLSEYEARC% à portée 1."""
+           text: """<i class = flavor_text>Le Remorqueur Spatial de Transfert Quadrimoteur, surnommé « Quad jumper », était aussi manœuvrable sous atmosphère que dans l’espace, ce qui le rendait extrêmement populaire auprès des contrebandiers et des explorateurs. </i>"""
         "Jan Ors":
            display_name: """Jan Ors"""
            text: """Tant qu’un vaisseau allié situé dans votre arc de tir effectue une attaque principale, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress. Dans ce cas, ce vaisseau peut lancer 1 dé d’attaque supplémentaire."""
         "Jarek Yeager":
            display_name: """Jarek Yeager"""
-           text: """Tant que vous avez 2 marqueurs de stress ou moins, si vous êtes endommagé, vous pouvez exécuter des manœuvres basiques rouges, même si vous êtes stressé ; si vous êtes critiquement endommagé, vous pouvez exécuter des manœuvres avancées rouges, même si vous êtes stressé.%LINEBREAK%<strong>Explosion En Vol :</strong> <strong>Mise en Place :</strong> 1&nbsp;carte de dégât face cachée vous est attribuée. Après avoir effectué une action <SLAM>, vous pouvez exposer 1&nbsp;carte de dégât pour retirer 1 marqueur de désarmement."""
+           text: """Tant que vous avez 2 marqueurs de stress ou moins, si vous êtes endommagé, vous pouvez exécuter des manœuvres basiques rouges, même si vous êtes stressé ; si vous êtes critiquement endommagé, vous pouvez exécuter des manœuvres avancées rouges, même si vous êtes stressé."""
         "Jaycris Tubbs":
            display_name: """Jaycris Tubbs"""
-           text: """Après avoir entièrement exécuté une manœuvre bleue, vous pouvez choisir un vaisseau allié à portée 0-1. Dans ce cas, ce vaisseau allié retire 1 marqueur de stress.%LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration&nbsp;%CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir entièrement exécuté une manœuvre bleue, vous pouvez choisir un vaisseau allié à portée 0-1. Dans ce cas, ce vaisseau allié retire 1 marqueur de stress."""
         "Jedi Knight":
            display_name: """Chevalier Jedi"""
-           text: """<i class = flavor_text>Lorsque la Guerre des Clones débuta, les chevaliers Jedi rallièrent la cause de la sauvegarde de la République, prenant le commandement de légions composées de soldats clones et les menant au combat.</i>%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """<i class = flavor_text>Lorsque la Guerre des Clones débuta, les chevaliers Jedi rallièrent la cause de la sauvegarde de la République, prenant le commandement de légions composées de soldats clones et les menant au combat.</i>"""
         "Jek Porkins":
            display_name: """Jek Porkins"""
            text: """Après avoir reçu un marqueur de stress, vous pouvez lancer 1 dé d’attaque pour le retirer.%LINEBREAK%Sur un résultat %HIT%, subissez 1 dégât %HIT%."""
         "Jessika Pava":
            display_name: """Jessika Pava"""
-           text: """Tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 %CHARGE% ou 1 %CHARGE% non-récurrente de votre amélioration %ASTROMECH% équipée pour relancer jusqu’à 1 de vos dés pour chaque autre vaisseau allié à portée 0-1%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 %CHARGE% ou 1 %CHARGE% non-récurrente de votre amélioration %ASTROMECH% équipée pour relancer jusqu’à 1 de vos dés pour chaque autre vaisseau allié à portée 0-1."""
         "Joph Seastriker":
            display_name: """Joph Seastriker"""
-           text: """Après avoir perdu 1 bouclier, gagnez 1 marqueur d’évasion..%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir perdu 1 bouclier, gagnez 1 marqueur d’évasion."""
         "Joy Rekkoff":
            display_name: """Joy Rekkoff"""
-           text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 %CHARGE% d’une amélioration %TORPEDO% équipée. Dans ce cas, le défenseur lance 1 dé de défense en moins. %LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 %CHARGE% d’une amélioration %TORPEDO% équipée. Dans ce cas, le défenseur lance 1 dé de défense en moins."""
         "K-2SO":
            display_name: """K-2SO"""
            text: """Après avoir gagné un marqueur de stress, gagnez 1&nbsp;marqueur de calcul."""
@@ -744,13 +744,13 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau allié à portée 0-2. Dans ce cas, transférez 1 marqueur de concentration ou d’évasion de ce vaisseau au vôtre."""
         "Kad Solus":
            display_name: """Kad Solus"""
-           text: """Après avoir entièrement exécuté une manœuvre rouge, gagnez 2 marqueurs de concentration.%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """Après avoir entièrement exécuté une manœuvre rouge, gagnez 2 marqueurs de concentration."""
         "Kanan Jarrus":
            display_name: """Kanan Jarrus"""
-           text: """Tant qu’un vaisseau allié situé dans votre arc de tir défend, vous pouvez dépenser 1 %FORCE%. Dans ce cas, l’attaquant lance 1 dé d’attaque en moins.%LINEBREAK%<strong>Artillerie de Poupe :</strong> tant que vous avez un vaisseau arrimé, vous bénéficiez d’une arme principale %REARARC% avec une valeur d’attaque égale à celle de l’attaque principale %FRONTARC% du vaisseau arrimé."""
+           text: """Tant qu’un vaisseau allié situé dans votre arc de tir défend, vous pouvez dépenser 1 %FORCE%. Dans ce cas, l’attaquant lance 1 dé d’attaque en moins."""
         "Kare Kun":
            display_name: """Kare Kun"""
-           text: """Tant que vous accélérez, vous pouvez utiliser le gabarit [1 %TURNLEFT%] ou [1 %TURNRIGHT%] à la place.%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Tant que vous accélérez, vous pouvez utiliser le gabarit [1 %TURNLEFT%] ou [1 %TURNRIGHT%] à la place."""
         "Kashyyyk Defender":
            display_name: """Défenseur de Kashyyyk"""
            text: """<i class = flavor_text>Équipée de trois canons laser jumelés Sureggi longue portée, la canonnière Auzituck donnait du fil à retordre aux esclavagistes dans le système de Kashyyyk.</i>"""
@@ -762,13 +762,13 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque non-%FRONTARC%, lancez 1 dé d’attaque supplémentaire."""
         "Kazuda Xiono":
            display_name: """Kazuda Xiono"""
-           text: """Tant que vous défendez ou effectuez une attaque principale, si l’initiative du vaisseau ennemi est plus élevée que le nombre de cartes de dégât que vous avez, vous pouvez lancer 1 dé supplémentaire.%LINEBREAK%<strong>Explosion En Vol :</strong> <strong>Mise en Place :</strong> 1&nbsp;carte de dégât face cachée vous est attribuée. Après avoir effectué une action <SLAM>, vous pouvez exposer 1&nbsp;carte de dégât pour retirer 1 marqueur de désarmement."""
+           text: """Tant que vous défendez ou effectuez une attaque principale, si l’initiative du vaisseau ennemi est plus élevée que le nombre de cartes de dégât que vous avez, vous pouvez lancer 1 dé supplémentaire."""
         "Ketsu Onyo":
            display_name: """Ketsu Onyo"""
            text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau à portée 0-1 qui est à la fois dans votre %FRONTARC% et dans votre %SINGLETURRETARC%. Dans ce cas, ce vaisseau gagne 1 marqueur de rayon tracteur."""
         "Knave Squadron Escort":
            display_name: """Escorte de l’Escadron Knave"""
-           text: """<i class = flavor_text>Conçu pour combiner les meilleurs atouts de l’A-wing et du X-wing, l’E-wing dispose d’une puissance de feu, d’une vitesse et d’une manœuvrabilité supérieures.</i>%LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
+           text: """<i class = flavor_text>Conçu pour combiner les meilleurs atouts de l’A-wing et du X-wing, l’E-wing dispose d’une puissance de feu, d’une vitesse et d’une manœuvrabilité supérieures.</i>"""
         "Koshka Frost":
            display_name: """Koshka Frost"""
            text: """Tant que vous défendez ou effectuez une attaque, si le vaisseau ennemi est stressé, vous pouvez relancer 1 de vos dés."""
@@ -783,16 +783,16 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Au début de la phase d’engagement, vous pouvez transférer 1 de vos marqueurs de concentration à un vaisseau allié situé dans votre arc de tir."""
         "Kylo Ren":
            display_name: """Kylo Ren"""
-           text: """Après avoir défendu, vous pouvez dépenser 1 %FORCE% pour assigner l’état <strong>Je Vous Montrerai le Côté Obscur</strong> à l’attaquant.%LINEBREAK%<strong>Autopropulseurs:</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou une action %BOOST% rouge."""
+           text: """Après avoir défendu, vous pouvez dépenser 1 %FORCE% pour assigner l’état <strong>Je Vous Montrerai le Côté Obscur</strong> à l’attaquant."""
         "L3-37":
            display_name: """L3-37"""
            text: """Si vous n'êtes pas protégé, diminuez la difficulté de vos manœuvres de virages sur l’aile (%BANKLEFT% et %BANKRIGHT%)."""
         "L3-37 (Escape Craft)":
            display_name: """L3-37"""
-           text: """Si vous n'êtes pas protégé, diminuez la difficulté de vos manœuvres de virages sur l’aile (%BANKLEFT% et %BANKRIGHT%).%LINEBREAK%Copilote : tant que vous êtes arrimé, votre vaisseau porteur bénéficie de votre capacité de pilote en plus de la sienne."""
+           text: """Si vous n'êtes pas protégé, diminuez la difficulté de vos manœuvres de virages sur l’aile (%BANKLEFT% et %BANKRIGHT%)."""
         "Laetin A'shera":
            display_name: """Laetin A’shera"""
-           text: """Après avoir défendu ou effectué une attaque, si l’attaque est ratée, gagnez 1 marqueur d’évasion. %LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir défendu ou effectué une attaque, si l’attaque est ratée, gagnez 1 marqueur d’évasion."""
         "Lando Calrissian":
            display_name: """Lando Calrissian"""
            text: """Après avoir entièrement exécuté une manœuvre bleue, vous pouvez choisir un vaisseau allié à portée 0-3. Ce vaisseau peut effectuer une action."""
@@ -801,7 +801,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir lancé des dés, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress pour relancer tous vos résultats vierges."""
         "Lando Calrissian (Scum) (Escape Craft)":
            display_name: """Lando Calrissian"""
-           text: """Après avoir lancé des dés, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress pour relancer tous vos résultats vierges.%LINEBREAK%<strong>Copilote :</strong> tant que vous êtes arrimé, votre vaisseau porteur bénéficie de votre capacité de pilote en plus de la sienne."""
+           text: """Après avoir lancé des dés, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress pour relancer tous vos résultats vierges."""
         "Latts Razzi":
            display_name: """Latts Razzi"""
            text: """Au début de la phase d’engagement, vous pouvez choisir un vaisseau à portée 1 et dépenser un marqueur de verrouillage que vous avez sur ce vaisseau. Dans ce cas, ce vaisseau gagne 1 marqueur de rayon tracteur."""
@@ -813,13 +813,13 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après qu’un vaisseau allié a entièrement exécuté une manœuvre rouge, s’il est à portée&nbsp;0-3, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, ce vaisseau gagne 1&nbsp;marqueur de concentration ou récupère 1&nbsp;%FORCE%."""
         "Lieutenant Bastian":
            display_name: """Lieutenant Bastian"""
-           text: """Après qu’une carte de dégât a été attribuée à un vaisseau à portée 1-2, vous pouvez verrouiller ce vaisseau.%LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration&nbsp;%CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après qu’une carte de dégât a été attribuée à un vaisseau à portée 1-2, vous pouvez verrouiller ce vaisseau."""
         "Lieutenant Blount":
            display_name: """Lieutenant Blount"""
            text: """Tant que vous effectuez une attaque principale, si au moins 1 autre vaisseau allié est à portée 0-1 du défenseur, vous pouvez lancer 1 dé d’attaque supplémentaire."""
         "Lieutenant Dormitz":
            display_name: """Lieutenant Dormitz"""
-           text: """<strong>Setup</strong>: après vous être placé, les autres vaisseaux alliés peuvent être placés n’importe où dans la zone de jeu à portée 0-2 de vous..%LINEBREAK%<strong>Batteries Jumelées:</strong> tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
+           text: """<strong>Setup</strong>: après vous être placé, les autres vaisseaux alliés peuvent être placés n’importe où dans la zone de jeu à portée 0-2 de vous."""
         "Lieutenant Karsabi":
            display_name: """Lieutenant Karsabi"""
            text: """Après avoir gagné un marqueur de désarmement, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress pour retirer 1 marqueur de désarmement."""
@@ -828,7 +828,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque, après que le défenseur a lancé les dés de défense, vous pouvez dépenser 1 marqueur de concentration pour annuler tous les résultats Vierge/%FOCUS% du défenseur."""
         "Lieutenant LeHuse":
            display_name: """Lieutenant LeHuse"""
-           text: """Tant que vous effectuez une attaque, vous pouvez dépenser le verrouillage d’un autre vaisseau allié sur le défenseur pour relancer n’importe quel nombre de vos résultats.%LINEBREAK%<strong>Tourelle d’Arme lourde :</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous <b>devez</b> considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
+           text: """Tant que vous effectuez une attaque, vous pouvez dépenser le verrouillage d’un autre vaisseau allié sur le défenseur pour relancer n’importe quel nombre de vos résultats."""
         "Lieutenant Rivas":
            display_name: """Lieutenant Rivas"""
            text: """Après qu’un vaisseau à portée 1-2 a gagné un marqueur rouge ou orange, si vous n’avez pas de verrouillage sur ce vaisseau, vous pouvez le verrouiller."""
@@ -837,7 +837,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir effectué une action %COORDINATE%, si le vaisseau que vous avez choisi effectue une action de votre barre d’action, vous pouvez effectuer cette action."""
         "Lieutenant Tavson":
            display_name: """Lieutenant Tavson"""
-           text: """Après avoir subi des dégâts, vous pouvez dépenser 1 %CHARGE% pour effectuer une action.%LINEBREAK%<strong>Batteries Jumelées:</strong> tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
+           text: """Après avoir subi des dégâts, vous pouvez dépenser 1 %CHARGE% pour effectuer une action."""
         "Logistics Division Pilot":
            display_name: """Pilote de la Division Logistique"""
            text: """<i class = flavor_text>En l’absence de soutien de la Nouvelle République, les membres de la Résistance ont souvent une double fonction en tant que pilote de transport et mécanicien, mettant à profit leurs compétences et leur savoir technique au service du combat contre le Premier Ordre. </i>"""
@@ -846,7 +846,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Le Collectif de Conception Nubien créa le Bombardier Scurrg H-6 en songeant avant tout à sa polyvalence au combat, l’équipant de puissants boucliers et d’un large éventail d’armes destructrices.</i>"""
         "Lothal Rebel":
            display_name: """Rebelle de Lothal"""
-           text: """<i class = flavor_text>Autre réussite commerciale de la Corporation Technique Corellienne, le cargo VCX-100 est plus gros que les légendaires appareils de la série YT, et propose un espace de vie plus volumineux et de meilleures possibilités de personnalisation.</i>%LINEBREAK%<strong>Artillerie de Poupe :</strong> tant que vous avez un vaisseau arrimé, vous bénéficiez d’une arme principale %REARARC% avec une valeur d’attaque égale à celle de l’attaque principale %FRONTARC% du vaisseau arrimé."""
+           text: """<i class = flavor_text>Autre réussite commerciale de la Corporation Technique Corellienne, le cargo VCX-100 est plus gros que les légendaires appareils de la série YT, et propose un espace de vie plus volumineux et de meilleures possibilités de personnalisation.</i>"""
         "Lowhhrick":
            display_name: """Lowhhrick"""
            text: """Après qu’un vaisseau allié à portée 0-1 est devenu le défenseur, vous pouvez dépenser 1 marqueur de renforcement. Dans ce cas, le vaisseau défenseur gagne 1 marqueur d’évasion."""
@@ -855,31 +855,31 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après être devenu le défenseur (avant que les dés ne soient lancés), vous pouvez récupérer 1 %FORCE%."""
         "Luminara Unduli":
            display_name: """Luminara Unduli"""
-           text: """Tant qu’un vaisseau allié à portée&nbsp;0-2 défend, s’il n’est pas dans l’%BULLSEYEARC% de l’attaquant, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, changez 1 résultat %CRIT% en un résultat %HIT% ou 1 résultat %HIT% en un résultat %FOCUS%.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Tant qu’un vaisseau allié à portée&nbsp;0-2 défend, s’il n’est pas dans l’%BULLSEYEARC% de l’attaquant, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, changez 1 résultat %CRIT% en un résultat %HIT% ou 1 résultat %HIT% en un résultat %FOCUS%."""
         "L'ulo L'ampar":
            display_name: """L’ulo L’ampar"""
-           text: """Tant que vous défendez ou effectuez une attaque principale, si vous êtes stressé, vous <b>devez</b> lancer 1 dé de défense en moins ou 1 dé d’attaque supplémentaire.%LINEBREAK%<strong>Gyrostabilisateurs Perfectionnés:</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%.Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge.."""
+           text: """Tant que vous défendez ou effectuez une attaque principale, si vous êtes stressé, vous <b>devez</b> lancer 1 dé de défense en moins ou 1 dé d’attaque supplémentaire."""
         "Maarek Stele":
            display_name: """Maarek Stele"""
-           text: """Tant que vous effectuez une attaque, si une carte de dégât devrait être attribuée face visible au défenseur, piochez 3 cartes de dégât à la place, choisissez-en 1, et défaussez les autres. %LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """Tant que vous effectuez une attaque, si une carte de dégât devrait être attribuée face visible au défenseur, piochez 3 cartes de dégât à la place, choisissez-en 1, et défaussez les autres."""
         "Mace Windu":
            display_name: """Mace Windu"""
-           text: """Après avoir entièrement exécuté une manœuvre rouge, récupérez 1&nbsp;%FORCE%.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Après avoir entièrement exécuté une manœuvre rouge, récupérez 1&nbsp;%FORCE%."""
         "Magva Yarro":
            display_name: """Magva Yarro"""
            text: """Tant qu’un vaisseau allié à portée 0-2 défend, l’attaquant ne peut pas relancer plus de 1 dé d’attaque."""
         "Major Rhymer":
            display_name: """Major Rhymer"""
-           text: """Tant que vous effectuez une attaque %TORPEDO% ou %MISSILE%, vous pouvez augmenter ou réduire de 1 le prérequis de portée, dans une limite de 0-3. %LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """Tant que vous effectuez une attaque %TORPEDO% ou %MISSILE%, vous pouvez augmenter ou réduire de 1 le prérequis de portée, dans une limite de 0-3."""
         "Major Stridan":
            display_name: """Major Stridan"""
-           text: """Tant que vous coordonnez ou résolvez l’effet d’une de vos améliorations, vous pouvez considérer les vaisseaux alliés à portée 2-3 comme étant à portée 0 ou à portée 1.%LINEBREAK%<strong>Batteries Jumelées:</strong> tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
+           text: """Tant que vous coordonnez ou résolvez l’effet d’une de vos améliorations, vous pouvez considérer les vaisseaux alliés à portée 2-3 comme étant à portée 0 ou à portée 1."""
         "Major Vermeil":
            display_name: """Major Vermeil"""
-           text: """Tant que vous effectuez une attaque, si le défenseur n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou %FOCUS% en un résultat %HIT%.%LINEBREAK% %LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], ou [1&nbsp;%BANKRIGHT%]."""
+           text: """Tant que vous effectuez une attaque, si le défenseur n’a aucun marqueur vert, vous pouvez changer 1 de vos résultats Vierge ou %FOCUS% en un résultat %HIT%."""
         "Major Vonreg":
            display_name: """Major Vonreg"""
-           text: """Pendant la phase de système, vous pouvez choisir 1&nbsp;vaisseau ennemi dans votre&nbsp;%BULLSEYEARC%. Ce vaisseau ennemi gagne 1&nbsp;marqueur d’épuisement ou de contrainte (vous choisissez) .%LINEBREAK%<strong>Propulseurs Réactifs :</strong> après avoir entièrement exécuté une manœuvre, si vous n’êtes pas épuisé ou contraint, vous pouvez gagner 1&nbsp;marqueur d’épuisement ou de contrainte pour effectuer une action %LOCK% ou %BARRELROLL%."""
+           text: """Pendant la phase de système, vous pouvez choisir 1&nbsp;vaisseau ennemi dans votre&nbsp;%BULLSEYEARC%. Ce vaisseau ennemi gagne 1&nbsp;marqueur d’épuisement ou de contrainte (vous choisissez) ."""
         "Major Vynder":
            display_name: """Major Vynder"""
            text: """Tant que vous défendez, si vous êtes désarmé, lancez 1 dé de défense supplémentaire."""
@@ -888,10 +888,10 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Au début de la phase d’engagement, vous pouvez choisir un vaisseau allié à portée 0-1. Dans ce cas, transférez à ce vaisseau tous vos marqueurs verts."""
         "Mining Guild Sentry":
            display_name: """Guetteur de la Guilde Minière"""
-           text: """<i class = flavor_text>Dans le cadre de ses accords avec l’Empire, la Guilde Minière a obtenu des chasseurs TIE/ln modifiés pour protéger ses installations. Le retrait de deux panneaux solaires améliore la vision périphérique de l’appareil et l’ajout d’un équipement de survie perfectionné est très prisé des pilotes de la corporation.</i>%LINEBREAK%<strong>Stabilisateurs Crantés</strong> tant que vous vous déplacez, ignorez les astéroïdes.."""
+           text: """<i class = flavor_text>Dans le cadre de ses accords avec l’Empire, la Guilde Minière a obtenu des chasseurs TIE/ln modifiés pour protéger ses installations. Le retrait de deux panneaux solaires améliore la vision périphérique de l’appareil et l’ajout d’un équipement de survie perfectionné est très prisé des pilotes de la corporation.</i>"""
         "Mining Guild Surveyor":
            display_name: """Prospecteur de la Guilde Minière"""
-           text: """<i class = flavor_text>Les projets impériaux consommant de plus en plus de matières premières, la Guilde Minière exploite avidement les gisements de minerai de doonium récemment mis au jour sur des planètes telles que Batonn, Lothal ou Umbara..</i>%LINEBREAK%<strong>Stabilisateurs Crantés</strong> tant que vous vous déplacez, ignorez les astéroïdes.."""
+           text: """<i class = flavor_text>Les projets impériaux consommant de plus en plus de matières premières, la Guilde Minière exploite avidement les gisements de minerai de doonium récemment mis au jour sur des planètes telles que Batonn, Lothal ou Umbara.</i>"""
         "Miranda Doni":
            display_name: """Miranda Doni"""
            text: """Tant que vous effectuez une attaque principale, vous pouvez soit dépenser 1 bouclier pour lancer 1 dé d’attaque supplémentaire, soit, si vous n’êtes pas protégé, vous pouvez lancer 1 dé d’attaque en moins pour récupérer 1 bouclier."""
@@ -903,7 +903,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Pendant la phase de dénouement, vous pouvez dépenser 1&nbsp;%CHARGE% pour retourner 1 de vos marqueurs de renforcement vers votre autre arc entier au lieu de le retirer."""
         "Nien Nunb":
            display_name: """Nien Nunb"""
-           text: """Après avoir gagné un marqueur de stress, si un vaisseau ennemi est dans votre %FRONTARC% à portée 0-1, vous pouvez retirer ce marqueur de stress.%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir gagné un marqueur de stress, si un vaisseau ennemi est dans votre %FRONTARC% à portée 0-1, vous pouvez retirer ce marqueur de stress."""
         "Nodin Chavdri":
            display_name: """Nodin Chavdri"""
            text: """Après avoir coordonné ou avoir été coordonné, si vous avez 2 marqueurs de stress ou moins, vous pouvez effectuer 1&nbsp;action de votre barre d’action en tant qu’action rouge, même si vous êtes stressé."""
@@ -924,40 +924,40 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque principale, si aucun autre vaisseau allié n’est à portée 0-2, lancez 1 dé d’attaque supplémentaire."""
         "Obi-Wan Kenobi":
            display_name: """Obi-Wan Kenobi"""
-           text: """Après qu’un vaisseau allié à portée&nbsp;0-2 a dépensé un marqueur de concentration, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, ce vaisseau allié gagne 1 marqueur de concentration.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Après qu’un vaisseau allié à portée&nbsp;0-2 a dépensé un marqueur de concentration, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, ce vaisseau allié gagne 1 marqueur de concentration."""
         "Obsidian Squadron Pilot":
            display_name: """Pilote de l’Escadron Obsidian"""
            text: """<i class = flavor_text>Le moteur ionique jumelé des chasseurs TIE a été conçu pour la vitesse, ce qui classe ces derniers parmi les vaisseaux les plus maniables jamais produits.</i>"""
         "Old Teroch":
            display_name: """Vieux Teroch"""
-           text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau ennemi à portée 1. Dans ce cas, si vous êtes dans son %FRONTARC%, il retire tous ses marqueurs verts.%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau ennemi à portée 1. Dans ce cas, si vous êtes dans son %FRONTARC%, il retire tous ses marqueurs verts."""
         "Omega Squadron Ace":
            display_name: """As de l’Escadron Omega"""
            text: """<i class = flavor_text>Seuls les pilotes qui ont fait la démonstration de leur talent et d’un dévouement sans faille peuvent accéder aux postes privilégiés des escadrons du Premier Ordre et mener des missions secrètes contre la Nouvelle République.</i>"""
         "Omega Squadron Expert":
            display_name: """Expert de l’Escadron Omega"""
-           text: """<i class = flavor_text>Le TIE/sf est un appareil polyvalent qui embarque de l’armement spécialisé et des systèmes expérimentaux utilisés lors des opérations à long rayon d’action des Forces spéciales du Premier Ordre..</i>%LINEBREAK%<strong>Tourelle d’Arme Lourde: </strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous devez considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
+           text: """<i class = flavor_text>Le TIE/sf est un appareil polyvalent qui embarque de l’armement spécialisé et des systèmes expérimentaux utilisés lors des opérations à long rayon d’action des Forces spéciales du Premier Ordre.</i>"""
         "Omicron Group Pilot":
            display_name: """Pilote du Groupe Omicron"""
            text: """<i class = flavor_text>Appareil utilitaire léger, la navette de classe Lambda, reconnaissable à sa triple aile caractéristique, joue un rôle de premier plan dans la Marine Impériale, grâce à ses senseurs avancés.</i>"""
         "Onyx Squadron Ace":
            display_name: """As de l’Escadron Onyx"""
-           text: """<i class = flavor_text>L’appareil expérimental qu’est le défenseur TIE surclasse tous les vaisseaux de sa génération, mais sa taille, sa vitesse et son arsenal augmentent considérablement son coût de fabrication.</i>%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
+           text: """<i class = flavor_text>L’appareil expérimental qu’est le défenseur TIE surclasse tous les vaisseaux de sa génération, mais sa taille, sa vitesse et son arsenal augmentent considérablement son coût de fabrication.</i>"""
         "Onyx Squadron Scout":
            display_name: """Éclaireur de l’Escadron Onyx"""
            text: """<i class = flavor_text>Conçu pour les engagements de longue haleine, le TIE/ag est habituellement confié aux pilotes d’élite entraînés pour tirer le meilleur parti de son armement et de sa manœuvrabilité.</i>"""
         "Outer Rim Pioneer":
            display_name: """Colon de la Bordure Extérieure"""
-           text: """Les vaisseaux alliés à portée 0-1 peuvent effectuer des attaques en étant à portée 0 des obstacles.%LINEBREAK%Copilote : tant que vous êtes arrimé, votre vaisseau porteur bénéficie de votre capacité de pilote en plus de la sienne."""
+           text: """Les vaisseaux alliés à portée 0-1 peuvent effectuer des attaques en étant à portée 0 des obstacles."""
         "Outer Rim Smuggler":
            display_name: """Contrebandier de la Bordure Extérieure"""
            text: """<i class = flavor_text>Connu pour sa robustesse et sa conception modulaire, le YT-1300 est l’un des cargos les plus populaires et répandus de la galaxie.</i>"""
         "Overseer Yushyn":
            display_name: """Superviseur Yushyn"""
-           text: """Avant qu’un vaisseau allié à portée 1 ne gagne un marqueur de désarmement, si ce vaisseau allié n’est pas stressé, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, le vaisseau allié gagne 1 marqueur de stress à la place..%LINEBREAK%<strong>Stabilisateurs Crantés</strong> tant que vous vous déplacez, ignorez les astéroïdes.."""
+           text: """Avant qu’un vaisseau allié à portée 1 ne gagne un marqueur de désarmement, si ce vaisseau allié n’est pas stressé, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, le vaisseau allié gagne 1 marqueur de stress à la place."""
         "Padmé Amidala":
            display_name: """Padmé Amidala"""
-           text: """Tant qu’un vaisseau ennemi dans votre %FRONTARC% défend ou effectue une attaque, ce vaisseau ennemi ne peut modifier que 1 seul résultat&nbsp;%FOCUS% (les autres résultats peuvent toujours être modifiés).%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action&nbsp;%EVADE%."""
+           text: """Tant qu’un vaisseau ennemi dans votre %FRONTARC% défend ou effectue une attaque, ce vaisseau ennemi ne peut modifier que 1 seul résultat&nbsp;%FOCUS% (les autres résultats peuvent toujours être modifiés)."""
         "Paige Tico":
            display_name: """Paige Tico"""
            text: """Après avoir largué un engin, vous pouvez dépenser 1&nbsp;%CHARGE% pour larguer un engin supplémentaire."""
@@ -975,34 +975,34 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Recevoir le commandement d’un Décimateur VT-49 est une promotion de taille pour un officier moyen de la Marine Impériale.</i>"""
         "Petranaki Arena Ace":
            display_name: """As de l’Arène Petranaki"""
-           text: """<i class = flavor_text>L’Arène de Petranaki est un gigantesque édifice de Géonosis qui a été le lieu principal de la première bataille de la Guerre des Clones.</i>%LINEBREAK%<strong>Dispositif Tracteur de Précision :</strong> vous ne pouvez pas faire pivoter votre %SINGLETURRETARC% vers votre %REARARC%. Après avoir exécuté une manœuvre, vous pouvez gagner 1&nbsp;marqueur de rayon tracteur pour effectuer une action&nbsp;%ROTATEARC%."""
+           text: """<i class = flavor_text>L’Arène de Petranaki est un gigantesque édifice de Géonosis qui a été le lieu principal de la première bataille de la Guerre des Clones.</i>"""
         "Petty Officer Thanisson":
            display_name: """Petty Officer Thanisson"""
-           text: """Pendant la phase d’activation ou d’engagement, après qu’un vaisseau dans votre %FRONTARC% à portée 0-2 a gagné 1 marqueur de stress, vous pouvez dépenser 1&nbsp;%CHARGE%. Dans ce cas, ce vaisseau gagne 1 marqueur de rayon tracteur..%LINEBREAK%<strong>Batteries Jumelées:</strong> tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
+           text: """Pendant la phase d’activation ou d’engagement, après qu’un vaisseau dans votre %FRONTARC% à portée 0-2 a gagné 1 marqueur de stress, vous pouvez dépenser 1&nbsp;%CHARGE%. Dans ce cas, ce vaisseau gagne 1 marqueur de rayon tracteur."""
         "Phoenix Squadron Pilot":
            display_name: """Pilote de l’Escadron Phœnix"""
-           text: """<i class = flavor_text>Dirigés par le commandant Jun Sato et malgré leur manque d’expérience, les courageux pilotes de l’Escadron Phœnix firent face à des défis complexes dans leur lutte contre l’Empire Galactique.</i>%LINEBREAK%<strong>Propulseurs Vectoriels :</strong> après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
+           text: """<i class = flavor_text>Dirigés par le commandant Jun Sato et malgré leur manque d’expérience, les courageux pilotes de l’Escadron Phœnix firent face à des défis complexes dans leur lutte contre l’Empire Galactique.</i>"""
         "Planetary Sentinel":
            display_name: """Sentinelle Planétaire"""
-           text: """<i class = flavor_text>Pour protéger ses installations militaires, l’Empire a besoin d’une force de défense rapide et vigilante.</i>%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
+           text: """<i class = flavor_text>Pour protéger ses installations militaires, l’Empire a besoin d’une force de défense rapide et vigilante.</i>"""
         "Plo Koon":
            display_name: """Plo Koon"""
-           text: """Au début de la phase d’engagement, vous pouvez dépenser 1&nbsp;%FORCE% et choisir un autre vaisseau allié à portée&nbsp;0-2. Dans ce cas, vous pouvez transférer 1 marqueur vert à ce vaisseau ou transférer 1 marqueur orange de ce vaisseau au vôtre.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Au début de la phase d’engagement, vous pouvez dépenser 1&nbsp;%FORCE% et choisir un autre vaisseau allié à portée&nbsp;0-2. Dans ce cas, vous pouvez transférer 1 marqueur vert à ce vaisseau ou transférer 1 marqueur orange de ce vaisseau au vôtre."""
         "Poe Dameron":
            display_name: """Poe Dameron"""
-           text: """Après avoir effectué une action, vous pouvez dépenser 1 %CHARGE% pour effectuer une action blanche, en la considérant comme rouge.%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir effectué une action, vous pouvez dépenser 1 %CHARGE% pour effectuer une action blanche, en la considérant comme rouge."""
         "Prince Xizor":
            display_name: """Prince Xizor"""
-           text: """Tant que vous défendez, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», un autre vaisseau allié à portée 0-1 et dans l’arc de l’attaque peut subir 1 dégât&nbsp;%HIT% ou %CRIT%. Dans ce cas, annulez 1 dégât correspondant.%LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+           text: """Tant que vous défendez, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», un autre vaisseau allié à portée 0-1 et dans l’arc de l’attaque peut subir 1 dégât&nbsp;%HIT% ou %CRIT%. Dans ce cas, annulez 1 dégât correspondant."""
         "Quinn Jast":
            display_name: """Quinn Jast"""
-           text: """Au début de la phase d’engagement, vous pouvez gagner 1 marqueur de désarmement pour récupérer 1 %CHARGE% sur 1 de vos améliorations équipées.%LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Au début de la phase d’engagement, vous pouvez gagner 1 marqueur de désarmement pour récupérer 1 %CHARGE% sur 1 de vos améliorations équipées."""
         "R1-J5":
            display_name: """R1-J5"""
-           text: """Avant d’exposer 1 de vos cartes de dégât, vous pouvez regarder vos cartes de dégât face cachée, en choisir 1 et l’exposer à la place.%LINEBREAK%<strong>Explosion En Vol :</strong> <strong>Mise en Place :</strong> 1&nbsp;carte de dégât face cachée vous est attribuée. Après avoir effectué une action <SLAM>, vous pouvez exposer 1&nbsp;carte de dégât pour retirer 1 marqueur de désarmement."""
+           text: """Avant d’exposer 1 de vos cartes de dégât, vous pouvez regarder vos cartes de dégât face cachée, en choisir 1 et l’exposer à la place."""
         "R2-D2":
            display_name: """R2-D2"""
-           text: """Au début de la phase d’engagement, s’il y a un vaisseau ennemi dans votre %REARARC%, gagnez 1 marqueur de calcul.%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """Au début de la phase d’engagement, s’il y a un vaisseau ennemi dans votre %REARARC%, gagnez 1 marqueur de calcul."""
         "Rear Admiral Chiraneau":
            display_name: """Vice-Amiral Chiraneau"""
            text: """Tant que vous effectuez une attaque, si vous êtes renforcé et si le défenseur est dans l’arc %FULLFRONTARC% ou %FULLREARARC% correspondant à votre marqueur de renforcement, vous pouvez changer 1 de vos résultats %FOCUS% en un résultat %CRIT%."""
@@ -1011,10 +1011,10 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Conçue par la Corporation Technique Corellienne et inspirée d’un oiseau  en vol, la série « hawk » a produit d’excellents cargos légers. Rapide et résistant, le HWK-290 est souvent utilisé par les agents Rebelles en tant que base mobile d’opérations.</i>"""
         "Red Squadron Bomber":
            display_name: """Bombardier de l’Escadron Rouge"""
-           text: """<i class = flavor_text>Durant la bataille de Géonosis, l’Escadron Rouge a fourni une couverture indispensable aux canonnières TO/BA déployées pour sécuriser la surface.</i>%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """<i class = flavor_text>Durant la bataille de Géonosis, l’Escadron Rouge a fourni une couverture indispensable aux canonnières TO/BA déployées pour sécuriser la surface.</i>"""
         "Red Squadron Expert":
            display_name: """Expert de l’Escadron Rouge"""
-           text: """<i class = flavor_text>Le Corps des Chasseurs de la Résistance est en grande partie constitué de jeunes volontaires issus de la Nouvelle République, mais aussi de vétérans de la Guerre Civile Galactique déterminés à terminer ce qu’ils ont commencé quelques décennies plus tôt.</i>%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """<i class = flavor_text>Le Corps des Chasseurs de la Résistance est en grande partie constitué de jeunes volontaires issus de la Nouvelle République, mais aussi de vétérans de la Guerre Civile Galactique déterminés à terminer ce qu’ils ont commencé quelques décennies plus tôt.</i>"""
         "Red Squadron Veteran":
            display_name: """Vétéran de l’Escadron Rouge"""
            text: """<i class = flavor_text>Conçu comme une unité d’élite pour les combats spatiaux, l’Escadron Rouge comprend certains des meilleurs pilotes de l’Alliance Rebelle.</i>"""
@@ -1023,7 +1023,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Après avoir assisté au Cataclysme Hosnien, nombreux furent les astropilotes à mettre leurs vaisseaux à la disposition de la Résistance.</i>"""
         "Rexler Brath":
            display_name: """Rexler Brath"""
-           text: """Après avoir effectué une attaque qui touche, si vous avez un marqueur d’évasion, exposez 1 des cartes de dégât du défenseur.%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
+           text: """Après avoir effectué une attaque qui touche, si vous avez un marqueur d’évasion, exposez 1 des cartes de dégât du défenseur."""
         "Rey":
            display_name: """Rey"""
            text: """Tant que vous défendez ou effectuez une attaque, si le vaisseau ennemi est dans votre %FRONTARC%, vous pouvez dépenser 1 %FORCE% pour changer 1 de vos résultats vierges en un résultat %EVADE% ou %HIT%."""
@@ -1032,25 +1032,25 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Les pilotes d’élite de l’escadron Rho distillent la peur au sein de la Rébellion, la configuration d’assaut Xg-1 et l’arsenal Os-1 embarqué du Star Wing de classe Alpha ayant des effets dévastateurs.</i>"""
         "Ric Olié":
            display_name: """Ric Olié"""
-           text: """Tant que vous défendez ou effectuez une attaque principale, si la vitesse de votre manœuvre révélée est plus élevée que celle du vaisseau ennemi, lancez 1&nbsp;dé supplémentaire.%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action&nbsp;%EVADE%."""
+           text: """Tant que vous défendez ou effectuez une attaque principale, si la vitesse de votre manœuvre révélée est plus élevée que celle du vaisseau ennemi, lancez 1&nbsp;dé supplémentaire."""
         "Roark Garnet":
            display_name: """Roark Garnet"""
            text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau situé dans votre arc de tir. Dans ce cas, pendant cette phase, il s’engage à l’initiative 7 au lieu de le faire à sa valeur d’initiative standard."""
         "Rogue Squadron Escort":
            display_name: """Escorte de l’Escadron Rogue"""
-           text: """<i class = flavor_text>Les pilotes d’élite de l’Escadron Rogue font partie des meilleurs pilotes de la Rébellion.</i>%LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
+           text: """<i class = flavor_text>Les pilotes d’élite de l’Escadron Rogue font partie des meilleurs pilotes de la Rébellion.</i>"""
         "Ronith Blario":
            display_name: """Ronith Blario"""
-           text: """Tant que vous défendez ou effectuez une attaque, si le vaisseau ennemi est dans l’&nbsp;%SINGLETURRETARC% d’un autre vaisseau allié, vous pouvez dépenser 1&nbsp;marqueur de concentration de ce vaisseau allié pour changer 1 de vos résultats %FOCUS% en un résultat %EVADE% ou %HIT%.%LINEBREAK%<strong> Gyrostabilisateurs Perfectionnés :</strong> vous pouvez pivoter votre indicateur%SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge."""
+           text: """Tant que vous défendez ou effectuez une attaque, si le vaisseau ennemi est dans l’&nbsp;%SINGLETURRETARC% d’un autre vaisseau allié, vous pouvez dépenser 1&nbsp;marqueur de concentration de ce vaisseau allié pour changer 1 de vos résultats %FOCUS% en un résultat %EVADE% ou %HIT%."""
         "Rose Tico":
            display_name: """Rose Tico"""
            text: """Tant que vous défendez ou effectuez une attaque, vous pouvez relancer jusqu’à 1&nbsp;de vos dés pour chaque autre vaisseau allié situé dans l’arc d’attaque."""
         "Saber Squadron Ace":
            display_name: """As de l’Escadron Sabre"""
-           text: """<i class = flavor_text>Dirigés par le Baron Fel Soontir, les pilotes de l’escadron Sabre sont parmi les meilleurs de l’Empire. Leurs Intercepteurs TIE sont marqués avec des bandes rouges pour désigner les pilotes ayant au moins dix victoires confirmées.</i>%LINEBREAK% <strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+           text: """<i class = flavor_text>Dirigés par le Baron Fel Soontir, les pilotes de l’escadron Sabre sont parmi les meilleurs de l’Empire. Leurs Intercepteurs TIE sont marqués avec des bandes rouges pour désigner les pilotes ayant au moins dix victoires confirmées.</i>"""
         "Sabine Wren":
            display_name: """Sabine Wren"""
-           text: """Avant votre activation, vous pouvez effectuer une action %BARRELROLL% ou %BOOST%.%LINEBREAK%<strong>Chargé et Prêt à Tirer :</strong> tant que vous êtes arrimé, après que votre vaisseau porteur a effectué une attaque principale %FRONTARC% ou %TURRET%, il peut effectuer une attaque principale %REARARC% bonus."""
+           text: """Avant votre activation, vous pouvez effectuer une action %BARRELROLL% ou %BOOST%."""
         "Sabine Wren (TIE Fighter)":
            display_name: """Sabine Wren"""
            text: """Avant votre activation, vous pouvez effectuer une action %BARRELROLL% ou %BOOST%."""
@@ -1059,28 +1059,28 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous défendez, si l’attaquant est dans votre %SINGLETURRETARC% à portée 0-2, vous pouvez ajouter 1 résultat %FOCUS% aux résultat de vos dés."""
         "Saesee Tiin":
            display_name: """Saesee Tiin"""
-           text: """Après qu’un vaisseau allié à portée&nbsp;0-2 a révélé son cadran, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, réglez son cadran sur une autre manœuvre de même vitesse et de même difficulté.%LINEBREAK%<strong>Commandes Réactives :</strong> après avoir entièrement exécuté une manœuvre, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une action %BOOST% ou %BARRELROLL%."""
+           text: """Après qu’un vaisseau allié à portée&nbsp;0-2 a révélé son cadran, vous pouvez dépenser 1&nbsp;%FORCE%. Dans ce cas, réglez son cadran sur une autre manœuvre de même vitesse et de même difficulté."""
         "Sarco Plank":
            display_name: """Sarco Plank"""
-           text: """Tant que vous défendez, vous pouvez considérer que votre valeur d’agilité est égale à la vitesse de la manœuvre que vous exécutez à ce round.%LINEBREAK%<strong>Dispositif Tracteur de Remorqueur Spatial :</strong> <strong>Action :</strong> choisissez un vaisseau dans votre %FRONTARC% à portée 1. Il gagne 1 marqueur de rayon tracteur, ou 2 marqueurs de rayon tracteur s’il est dans votre %BULLSEYEARC% à portée 1."""
+           text: """Tant que vous défendez, vous pouvez considérer que votre valeur d’agilité est égale à la vitesse de la manœuvre que vous exécutez à ce round."""
         "Saw Gerrera":
            display_name: """Saw Gerrera"""
            text: """Tant qu’un vaisseau allié endommagé à portée 0-3 effectue une attaque, il peut relancer 1 dé d’attaque."""
         "Scarif Base Pilot":
            display_name: """Pilote de la Base de Scarif"""
-           text: """<i class = flavor_text>Le TIE Reaper fut conçu pour déposer des troupes d’élite sur les points chauds des champs de bataille, comme les terrifiants Death Troopers du Directeur Krennic lors de la Bataille de Scarif.</i>%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], ou [1&nbsp;%BANKRIGHT%]."""
+           text: """<i class = flavor_text>Le TIE Reaper fut conçu pour déposer des troupes d’élite sur les points chauds des champs de bataille, comme les terrifiants Death Troopers du Directeur Krennic lors de la Bataille de Scarif.</i>"""
         "Scimitar Squadron Pilot":
            display_name: """Scimitar Squadron Pilot"""
-           text: """<i class = flavor_text>Le TIE/sa est particulièrement précis pour un bombardier, lui permettant des frappes ciblées tout en évitant d’infliger des dommages collatéraux excessifs à la zone environnante.</i>%LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """<i class = flavor_text>Le TIE/sa est particulièrement précis pour un bombardier, lui permettant des frappes ciblées tout en évitant d’infliger des dommages collatéraux excessifs à la zone environnante.</i>"""
         "Separatist Bomber":
            display_name: """Bombardier Séparatiste"""
-           text: """<i class = flavor_text>Les armées droïdes des Séparatistes sont insensibles à la détresse des civils et ne font aucun effort pour limiter les dommages collatéraux.</i>%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """<i class = flavor_text>Les armées droïdes des Séparatistes sont insensibles à la détresse des civils et ne font aucun effort pour limiter les dommages collatéraux.</i>"""
         "Separatist Drone":
            display_name: """Drone Séparatiste"""
-           text: """<i class = flavor_text>Alors que la Guerre des Clones s’intensifie, l’Alliance Séparatiste continue d’améliorer la technologie des chasseurs droïdes, ainsi que les droïdes tactiques qui les dirigent.</i>%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """<i class = flavor_text>Alors que la Guerre des Clones s’intensifie, l’Alliance Séparatiste continue d’améliorer la technologie des chasseurs droïdes, ainsi que les droïdes tactiques qui les dirigent.</i>"""
         "Serissu":
            display_name: """Serissu"""
-           text: """Tant qu’un vaisseau allié à portée 0-1 défend, il peut relancer 1 de ses dés. %LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Tant qu’un vaisseau allié à portée 0-1 défend, il peut relancer 1 de ses dés."""
         "Seventh Sister":
            display_name: """La Septième Sœur"""
            text: """Tant que vous effectuez une attaque principale, avant l’étape «&nbsp;Neutraliser les résultats&nbsp;», vous pouvez dépenser 2 %FORCE% pour annuler 1 résultat %EVADE%."""
@@ -1089,7 +1089,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 résultat %CRIT%. Dans ce cas, attribuez 1 carte de dégât face cachée au défenseur, puis annuler vos résultats restants."""
         "Shadow Squadron Veteran":
            display_name: """Vétéran de l’Escadron Shadow"""
-           text: """<i class = flavor_text>l’Escadron Shadow, actif depuis les tout premiers jours de la Guerre des Clones, a remporté des victoires prestigieuses à Kadavo et contre le vaisseau amiral de Grievous, le Malveillance.</i>%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """<i class = flavor_text>l’Escadron Shadow, actif depuis les tout premiers jours de la Guerre des Clones, a remporté des victoires prestigieuses à Kadavo et contre le vaisseau amiral de Grievous, le Malveillance.</i>"""
         "Shadowport Hunter":
            display_name: """Chasseur des Ports Fantômes"""
            text: """<i class = flavor_text>Les organisations criminelles confient à leurs agents loyaux des vaisseaux disposant de la meilleure technologie possible, comme le véloce et redoutable Appareil de Poursuite de Classe Lancer, afin de renforcer leurs aptitudes létales.</i>"""
@@ -1101,22 +1101,22 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Lors du développement du TIE Aggressor, Sienar Fleet Systems accorda d’avantage d’importance aux performances et à la polyvalence qu’à la maîtrise des coûts.</i>"""
         "Sienar-Jaemus Engineer":
            display_name: """Ingénieur Sienar-Jaemus"""
-           text: """<i class = flavor_text>Conçu par Sienar-Jaemus Fleet Systems pour succéder au fameux TIE Defender, le TIE/vn Silencer intègre des technologies de pointe développées par des centres de recherche dissimulés dans les Régions Inconnues.</i>%LINEBREAK%<strong>Autopropulseurs:</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou une action %BOOST% rouge."""
+           text: """<i class = flavor_text>Conçu par Sienar-Jaemus Fleet Systems pour succéder au fameux TIE Defender, le TIE/vn Silencer intègre des technologies de pointe développées par des centres de recherche dissimulés dans les Régions Inconnues.</i>"""
         "Sigma Squadron Ace":
            display_name: """As de l’Escadron Sigma"""
-           text: """<i class = flavor_text>Équipé d’un hyperdrive et de boucliers, le TIE Fantôme dispose également de cinq canons laser qui lui confèrent une puissance de feu inouïe pour un chasseur Impérial.</i>%LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d’évasion pour gagner 1 marqueur d’occultation. """
+           text: """<i class = flavor_text>Équipé d’un hyperdrive et de boucliers, le TIE Fantôme dispose également de cinq canons laser qui lui confèrent une puissance de feu inouïe pour un chasseur Impérial.</i>"""
         "Skakoan Ace":
            display_name: """As Skakoan"""
            text: """<i class = flavor_text>Doté de propulseurs puissants, armé de triples canons laser dévastateurs et modifiable à volonté, le chasseur Belbullab-22 a été adopté par de nombreux pilotes d'élite de l’Alliance Séparatiste, dont le tristement célèbre Général Grievous.</i>"""
         "Skull Squadron Pilot":
            display_name: """Pilote de l’Escadron Skull"""
-           text: """<i class = flavor_text>Les as de l’Escadron Skull privilégient une approche agressive, profitant de la technologie d’ailes montées sur pivot de leurs appareils, ce qui leur confère une maniabilité exceptionnelle quand ils poursuivent leurs proies. </i>%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """<i class = flavor_text>Les as de l’Escadron Skull privilégient une approche agressive, profitant de la technologie d’ailes montées sur pivot de leurs appareils, ce qui leur confère une maniabilité exceptionnelle quand ils poursuivent leurs proies. </i>"""
         "Sol Sixxa":
            display_name: """Sol Sixxa"""
            text: """Si vous êtes censé larguer un engin en utilisant un gabarit [1&nbsp;%STRAIGHT%], vous pouvez le larguer en utilisant n’importe quel autre gabarit de vitesse 1 à la place."""
         "Soontir Fel":
            display_name: """Soontir Fel"""
-           text: """Au début de la phase d’engagement, si un vaisseau ennemi est dans votre %BULLSEYEARC%, gagnez 1 marqueur de concentration. %LINEBREAK%<strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+           text: """Au début de la phase d’engagement, si un vaisseau ennemi est dans votre %BULLSEYEARC%, gagnez 1 marqueur de concentration."""
         "Spice Runner":
            display_name: """Trafiquant d’Épice"""
            text: """<i class = flavor_text>Bien que ses soutes soient plus étroites que celles d’autres cargos légers, le petit mais véloce HWK-290 est un vaisseau de prédilection pour ceux qui se spécialisent dans le transport discret de biens précieux.</i>"""
@@ -1125,19 +1125,19 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>Le Vol Clone Sept en tant qu’unité de la flotte Open Circle a servi auprès de généraux Jedi légendaires comme Plo Koon ou Obi-Wan Kenobi et a obtenu ses titres de gloire au cours des batailles de Coruscant et de Cato Neimoidia.</i>"""
         "Stalgasin Hive Guard":
            display_name: """Garde de la Ruche Stalgasin"""
-           text: """<i class = flavor_text>Conçu pour la physiologie spécifique des pilotes Géonosiens, les chasseurs de classe Nantex sont capables de manœuvres qui briseraient la plupart des vaisseaux et des pilotes.</i>%LINEBREAK%<strong>Dispositif Tracteur de Précision :</strong> vous ne pouvez pas faire pivoter votre %SINGLETURRETARC% vers votre %REARARC%. Après avoir exécuté une manœuvre, vous pouvez gagner 1&nbsp;marqueur de rayon tracteur pour effectuer une action&nbsp;%ROTATEARC%."""
+           text: """<i class = flavor_text>Conçu pour la physiologie spécifique des pilotes Géonosiens, les chasseurs de classe Nantex sont capables de manœuvres qui briseraient la plupart des vaisseaux et des pilotes.</i>"""
         "Starkiller Base Pilot":
            display_name: """Pilote de la Base Starkiller"""
-           text: """<i class = flavor_text>La navette de commandement de classe <unitalic>Upsilon</unitalic> sert de base d’opérations pour de nombreux agents et officiers d’élite du Premier Ordre. Ils peuvent facilement semer l’effroi à travers la galaxie grâce à ses équipements de communication et senseurs avancés..</i>%LINEBREAK%<strong>Batteries Jumelées:</strong> tant que vous effectuez une attaque %CANNON%, lancez 1 dé supplémentaire."""
+           text: """<i class = flavor_text>La navette de commandement de classe <unitalic>Upsilon</unitalic> sert de base d’opérations pour de nombreux agents et officiers d’élite du Premier Ordre. Ils peuvent facilement semer l’effroi à travers la galaxie grâce à ses équipements de communication et senseurs avancés.</i>"""
         "Storm Squadron Ace":
            display_name: """As de l’Escadron Storm"""
-           text: """<i class = flavor_text>Le Tie Advanced x1 a été produit en quantités limitées, mais les ingénieurs de Sienar incorporèrent la plus grande partie de ses innovations dans leur nouveau modèle de TIE : l’Intercepteur TIE.</i>%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """<i class = flavor_text>Le Tie Advanced x1 a été produit en quantités limitées, mais les ingénieurs de Sienar incorporèrent la plus grande partie de ses innovations dans leur nouveau modèle de TIE : l’Intercepteur TIE.</i>"""
         "Sun Fac":
            display_name: """Sun Fac"""
-           text: """Tant que vous effectuez une attaque principale, si le défenseur est tracté, lancez 1&nbsp;dé d’attaque supplémentaire.%LINEBREAK%<strong>Dispositif Tracteur de Précision :</strong> vous ne pouvez pas faire pivoter votre %SINGLETURRETARC% vers votre %REARARC%. Après avoir exécuté une manœuvre, vous pouvez gagner 1&nbsp;marqueur de rayon tracteur pour effectuer une action&nbsp;%ROTATEARC%."""
+           text: """Tant que vous effectuez une attaque principale, si le défenseur est tracté, lancez 1&nbsp;dé d’attaque supplémentaire."""
         "Sunny Bounder":
            display_name: """Sunny Bounder"""
-           text: """Tant que vous défendez ou effectuez une attaque, après avoir lancé ou relancé vos dés, si vous obtenez le même résultat sur chacun de vos dés, vous pouvez ajouter 1 résultat correspondant. %LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Tant que vous défendez ou effectuez une attaque, après avoir lancé ou relancé vos dés, si vous obtenez le même résultat sur chacun de vos dés, vous pouvez ajouter 1 résultat correspondant."""
         "TN-3465":
            display_name: """TN-3465"""
            text: """Tant qu’un autre vaisseau allié effectue une attaque, si vous êtes à portée 0-1 du défenseur, vous pouvez subir 1 dégât&nbsp;%CRIT% pour changer 1 des résultats de l’attaquant en un résultat %CRIT%."""
@@ -1146,25 +1146,25 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i class = flavor_text>L’AF4 est la toute dernière génération du modèle Chasseur de Têtes. Robuste et bon marché, il est très populaire auprès des organisations indépendantes comme la Rébellion.</i>"""
         "Tallissan Lintra":
            display_name: """Tallissan Lintra"""
-           text: """Tant qu’un vaisseau ennemi dans votre %BULLSEYEARC% effectue une attaque, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, le défenseur lance 1 dé supplémentaire..%LINEBREAK%<strong>Gyrostabilisateurs Perfectionnés:</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%.Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge.."""
+           text: """Tant qu’un vaisseau ennemi dans votre %BULLSEYEARC% effectue une attaque, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, le défenseur lance 1 dé supplémentaire."""
         "Talonbane Cobra":
            display_name: """Talonbane Cobra"""
            text: """Tant que vous défendez à portée d’attaque 3 ou effectuez une attaque à portée d’attaque 1, lancez 1 dé supplémentaire."""
         "Tansarii Point Veteran":
            display_name: """Vétéran de Tansarii Point"""
-           text: """<i class = flavor_text>La défaite de l’as du Soleil Noir, Talonbane Cobra, abattu par des contrebandiers Car’das, changea le cours de la bataille de la station Tansarii Point. Les survivants de cet affrontement sont respectés dans tout le secteur. </i>%LINEBREAK%<strong>Emplacement d’Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """<i class = flavor_text>La défaite de l’as du Soleil Noir, Talonbane Cobra, abattu par des contrebandiers Car’das, changea le cours de la bataille de la station Tansarii Point. Les survivants de cet affrontement sont respectés dans tout le secteur."""
         "Techno Union Bomber":
            display_name: """Bombardier du Techno-Syndicat"""
-           text: """<i class = flavor_text>Les Armureries Baktoid ont développé le Hyena comme un vaisseau d’assaut compatible avec les tactiques de nuée des chasseurs Vulture de la Fédération du Commerce.</i>%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """<i class = flavor_text>Les Armureries Baktoid ont développé le Hyena comme un vaisseau d’assaut compatible avec les tactiques de nuée des chasseurs Vulture de la Fédération du Commerce.</i>"""
         "Tel Trevura":
            display_name: """Tel Trevura"""
            text: """Si vous devez être détruit, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, défaussez toutes vos cartes de dégât, subissez 5 dégâts&nbsp;%HIT%, et placez-vous en réserve à la place. Au début de la prochaine phase de préparation, placez-vous intégralement à portée 1 de votre bord Joueur."""
         "Temmin Wexley":
            display_name: """Temmin Wexley"""
-           text: """Après avoir entièrement exécuté une manœuvre à vitesse 2-4, vous pouvez effectuer une action %BOOST%%LINEBREAK%<strong>Emplacement d’Arme:</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """Après avoir entièrement exécuté une manœuvre à vitesse 2-4, vous pouvez effectuer une action %BOOST%."""
         "Tempest Squadron Pilot":
            display_name: """Pilote de l’Escadron Tempest"""
-           text: """<i class = flavor_text>Le TIE Advanced est une version améliorée du célèbre chasseur TIE/ln disposant de boucliers, d’un meilleur système d’armement, de panneaux solaires incurvés et d’un hyperdrive.</i>%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """<i class = flavor_text>Le TIE Advanced est une version améliorée du célèbre chasseur TIE/ln disposant de boucliers, d’un meilleur système d’armement, de panneaux solaires incurvés et d’un hyperdrive.</i>"""
         "Ten Numb":
            display_name: """Ten Numb"""
            text: """Tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de stress pour changer tous vos résultats %FOCUS% en résultats %EVADE% ou %HIT%."""
@@ -1173,31 +1173,31 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque, vous pouvez dépense 1 résultat %FOCUS%, %HIT% ou %CRIT% pour regarder les cartes de dégât face cachée du défenseur, en choisir 1 et l’exposer."""
         "Tomax Bren":
            display_name: """Tomax Bren"""
-           text: """Après avoir effectué une action %RELOAD%, vous pouvez récupérer 1 marqueur %CHARGE% sur 1 de vos cartes d’amélioration %TALENT% équipée. %LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """Après avoir effectué une action %RELOAD%, vous pouvez récupérer 1 marqueur %CHARGE% sur 1 de vos cartes d’amélioration %TALENT% équipée."""
         "Torani Kulda":
            display_name: """Torani Kulda"""
-           text: """Après avoir effectué une attaque, chaque vaisseau ennemi dans votre %BULLSEYEARC% subit 1 dégât&nbsp;%HIT% sauf s’il retire 1 marqueur vert. %LINEBREAK%<strong>Dans le Mille :</strong> tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, les dés de défense ne peuvent pas être modifiés en utilisant des marqueurs verts."""
+           text: """Après avoir effectué une attaque, chaque vaisseau ennemi dans votre %BULLSEYEARC% subit 1 dégât&nbsp;%HIT% sauf s’il retire 1 marqueur vert."""
         "Torkil Mux":
            display_name: """Torkil Mux"""
            text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau dans votre arc de tir. Dans ce cas, ce vaisseau s’engage à ce round à l’initiative 0 à la place de sa valeur d'initiative standard."""
         "Trade Federation Drone":
            display_name: """Drone de la Fédération du Commerce"""
-           text: """<i class = flavor_text>La Fédération du Commerce a déployé d’innombrables droïdes Vulture lors de la Bataille de Naboo, et continue d’utiliser ces chasseurs peu coûteux durant la Guerre des Clones.</i>%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """<i class = flavor_text>La Fédération du Commerce a déployé d’innombrables droïdes Vulture lors de la Bataille de Naboo, et continue d’utiliser ces chasseurs peu coûteux durant la Guerre des Clones.</i>"""
         "Trandoshan Slaver":
            display_name: """Esclavagiste Trandosien"""
            text: """<i class = flavor_text>Le spacieux YV-666 est très populaire auprès des chasseurs de primes et des esclavagistes avec ses trois ponts, dont l’un était souvent aménagé pour le transport de prisonniers.</i>"""
         "Turr Phennir":
            display_name: """Turr Phennir"""
-           text: """Après avoir effectué une attaque, vous pouvez effectuer une action %BARRELROLL% ou %BOOST%, même si vous êtes stressé.%LINEBREAK%<strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+           text: """Après avoir effectué une attaque, vous pouvez effectuer une action %BARRELROLL% ou %BOOST%, même si vous êtes stressé."""
         "Unkar Plutt":
            display_name: """Unkar Plutt"""
-           text: """Au début de la phase d’engagement, si un ou plusieurs autres vaisseaux sont à portée 0, vous et chaque autre vaisseau à portée 0 gagnez 1 marqueur de rayon tracteur. %LINEBREAK%<strong>Dispositif Tracteur de Remorqueur Spatial :</strong> <strong>Action :</strong> choisissez un vaisseau dans votre %FRONTARC% à portée 1. Il gagne 1 marqueur de rayon tracteur, ou 2 marqueurs de rayon tracteur s’il est dans votre %BULLSEYEARC% à portée 1."""
+           text: """Au début de la phase d’engagement, si un ou plusieurs autres vaisseaux sont à portée 0, vous et chaque autre vaisseau à portée 0 gagnez 1 marqueur de rayon tracteur."""
         "Valen Rudor":
            display_name: """Valen Rudor"""
            text: """Après qu’un vaisseau allié à portée 0-1 a défendu (après la résolution des dégâts, s’il y en a), vous pouvez effectuer une action."""
         "Ved Foslo":
            display_name: """Ved Foslo"""
-           text: """Tant que vous exécutez une manœuvre, vous pouvez exécuter une manœuvre de même direction et de même difficulté mais avec une vitesse supérieure ou inférieure de 1 à la place.%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """Tant que vous exécutez une manœuvre, vous pouvez exécuter une manœuvre de même direction et de même difficulté mais avec une vitesse supérieure ou inférieure de 1 à la place."""
         "Vennie":
            display_name: """Vennie"""
            text: """Tant que vous défendez, si l’attaquant est dans le %SINGLETURRETARC% d’un vaisseau allié, vous pouvez ajouter 1 résultat %FOCUS% à votre lancer."""
@@ -1218,55 +1218,55 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque, le défenseur lance 1 dé de défense en moins."""
         "Wild Space Fringer":
            display_name: """Frontalier de l’Espace Sauvage"""
-           text: """<i class = flavor_text>Certes, le cargo léger YT-2400 possédait une soute de bonne taille, mais celle-ci était souvent encombrée de systèmes d’armement modifiés et de moteurs énormes.</i>%LINEBREAK%<strong>Angle Mort des Senseurs :</strong> tant que vous effectuez une attaque principale à portée d’attaque 0-1, n’appliquez pas le bonus de portée 0-1 et lancez 1 dé d’attaque en moins."""
+           text: """<i class = flavor_text>Certes, le cargo léger YT-2400 possédait une soute de bonne taille, mais celle-ci était souvent encombrée de systèmes d’armement modifiés et de moteurs énormes.</i>"""
         "Wullffwarro":
            display_name: """Wullffwarro"""
            text: """Tant que vous effectuez une attaque principale, si vous êtes endommagé, vous pouvez lancer 1 dé d’attaque supplémentaire."""
         "Zari Bangel":
            display_name: """Zari Bangel"""
-           text: """Vous ne sautez pas votre étape «&nbsp;Effectuer une action&nbsp;» après avoir partiellement exécuté une manœuvre. %LINEBREAK%<strong>Gyrostabilisateurs Perfectionnés:</strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%.Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge.."""
+           text: """Vous ne sautez pas votre étape «&nbsp;Effectuer une action&nbsp;» après avoir partiellement exécuté une manœuvre."""
         "Zealous Recruit":
            display_name: """Recrue Zélée"""
-           text: """<i class = flavor_text>Les pilotes de Chasseur Fang Mandalorien doivent maîtriser la manœuvre dite de l’Opposition Concordia, profitant du profil de leurs appareils pour mener des charges sans concession. </i>%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """<i class = flavor_text>Les pilotes de Chasseur Fang Mandalorien doivent maîtriser la manœuvre dite de l’Opposition Concordia, profitant du profil de leurs appareils pour mener des charges sans concession. </i>"""
         "Zertik Strom":
            display_name: """Zertik Strom"""
-           text: """Pendant la phase de dénouement, vous pouvez dépenser un marqueur de verrouillage que vous avez sur un vaisseau ennemi pour exposer 1 carte de dégât de ce dernier. %LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """Pendant la phase de dénouement, vous pouvez dépenser un marqueur de verrouillage que vous avez sur un vaisseau ennemi pour exposer 1 carte de dégât de ce dernier."""
         "Zeta Squadron Pilot":
            display_name: """Pilote de l’Escadron Zeta"""
            text: """<i class = flavor_text>Libérées des lourdeurs administratives de la bureaucratie galactique, les technologies qui furent développées par l’Empire pour le programme TIE Advanced peuvent désormais être produites en série sur les chasseurs du Premier Ordre. Les taux de survie des pilotes de TIE/fo sont par conséquent plus élevés que ceux de leurs prédécesseurs de l’Empire Galactique.</i>"""
         "Zeta Squadron Survivor":
            display_name: """Survivant de l’Escadron Zeta"""
-           text: """<i class = flavor_text>Humiliés par leur défaite, les pilotes rescapés de la base Starkiller sont impatients de démontrer leur talent face aux combattants de la Résistance.</i>%LINEBREAK%<strong>Tourelle d’Arme Lourde: </strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous devez considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
+           text: """<i class = flavor_text>Humiliés par leur défaite, les pilotes rescapés de la base Starkiller sont impatients de démontrer leur talent face aux combattants de la Résistance.</i>"""
         "Zizi Tlo":
            display_name: """Zizi Tlo"""
-           text: """Après avoir défendu ou effectué une attaque, vous pouvez dépenser 1&nbsp;%CHARGE% pour gagner 1&nbsp;marqueur de concentration ou d’évasion.%LINEBREAK%<strong> Gyrostabilisateurs Perfectionnés :</strong> vous pouvez pivoter votre indicateur%SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge."""
+           text: """Après avoir défendu ou effectué une attaque, vous pouvez dépenser 1&nbsp;%CHARGE% pour gagner 1&nbsp;marqueur de concentration ou d’évasion."""
         "Zuckuss":
            display_name: """Zuckuss"""
            text: """Tant que vous effectuez une attaque principale, vous pouvez lancer 1 dé d’attaque supplémentaire. Dans ce cas, le défenseur lance 1 dé de défense supplémentaire."""
         '"Avenger"':
            display_name: """“Avenger”"""
-           text: """Après qu’un autre vaisseau allié a été détruit, vous pouvez effectuer une action, même si vous êtes stressé.%LINEBREAK%%LINEBREAK%<strong>Autopropulseurs:</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou une action %BOOST% rouge."""
+           text: """Après qu’un autre vaisseau allié a été détruit, vous pouvez effectuer une action, même si vous êtes stressé."""
         '"Axe"':
            display_name: """“Axe”"""
            text: """Après avoir défendu ou effectué une attaque, vous pouvez choisir un vaisseau allié à portée&nbsp;1-2 situé dans votre %LEFTARC% ou %RIGHTARC%. Dans ce cas, transférez 1 marqueur vert à ce vaisseau."""
         '"Backdraft"':
            display_name: """“Backdraft”"""
-           text: """Tant que vous effectuez une attaque principale %SINGLETURRETARC%, si le défenseur est dans votre %REARARC%, lancez 1 dé supplémentaire..%LINEBREAK%<strong>Tourelle d’Arme Lourde: </strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous devez considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
+           text: """Tant que vous effectuez une attaque principale %SINGLETURRETARC%, si le défenseur est dans votre %REARARC%, lancez 1 dé supplémentaire."""
         '"Blackout"':
            display_name: """“Blackout”"""
-           text: """Tant que vous effectuez une attaque, si elle est gênée par un obstacle, le défenseur lance 2 dés de défense en moins..%LINEBREAK%<strong>Autopropulseurs:</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou une action %BOOST% rouge."""
+           text: """Tant que vous effectuez une attaque, si elle est gênée par un obstacle, le défenseur lance 2 dés de défense en moins."""
         '"Broadside"':
            display_name: """“Broadside”"""
-           text: """Tant que vous effectuez une attaque&nbsp;%SINGLETURRETARC%, si votre indicateur&nbsp;%SINGLETURRETARC% est dans votre %LEFTARC%&nbsp;ou&nbsp;%RIGHTARC%, vous pouvez changer 1 résultat vierge en un résultat %FOCUS%.%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """Tant que vous effectuez une attaque&nbsp;%SINGLETURRETARC%, si votre indicateur&nbsp;%SINGLETURRETARC% est dans votre %LEFTARC%&nbsp;ou&nbsp;%RIGHTARC%, vous pouvez changer 1 résultat vierge en un résultat %FOCUS%."""
         '"Chopper"':
            display_name: """“Chopper”"""
-           text: """Au début de la phase d’engagement, chaque vaisseau ennemi à portée 0 gagne 2 marqueurs de brouillage. %LINEBREAK%<strong>Artillerie de Poupe :</strong> tant que vous avez un vaisseau arrimé, vous bénéficiez d’une arme principale %REARARC% avec une valeur d’attaque égale à celle de l’attaque principale %FRONTARC% du vaisseau arrimé."""
+           text: """Au début de la phase d’engagement, chaque vaisseau ennemi à portée 0 gagne 2 marqueurs de brouillage."""
         '"Countdown"':
            display_name: """“Countdown”"""
-           text: """Tant que vous défendez, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», si vous n’êtes pas stressé, vous pouvez subit 1 dégât %HIT% et gagner 1 marqueur de stress. Dans ce cas, annulez tous les résultats des dés.%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
+           text: """Tant que vous défendez, après l’étape «&nbsp;Neutraliser les résultats&nbsp;», si vous n’êtes pas stressé, vous pouvez subit 1 dégât %HIT% et gagner 1 marqueur de stress. Dans ce cas, annulez tous les résultats des dés."""
         '"Deathfire"':
            display_name: """“Deathfire”"""
-           text: """Après avoir été détruit et avant de retirer votre figurine, vous pouvez effectuer une attaque et larguer ou lancer 1 engin. %LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """Après avoir été détruit et avant de retirer votre figurine, vous pouvez effectuer une attaque et larguer ou lancer 1 engin."""
         '"Deathrain"':
            display_name: """“Deathrain”"""
            text: """Après avoir largué ou lancé un engin, vous pouvez effectuer une action."""
@@ -1275,22 +1275,22 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir effectué une attaque %TURRET% ou %MISSILE% ratée, vous pouvez effectuer une attaque bonus en utilisant une arme différente."""
         '"Duchess"':
            display_name: """“Duchess”"""
-           text: """Vous pouvez choisir de ne pas utiliser vos Ailerons Adaptables. %LINEBREAK%Vous pouvez utiliser vos Ailerons Adaptables même si vous êtes stressé.%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
+           text: """Vous pouvez choisir de ne pas utiliser vos Ailerons Adaptables. %LINEBREAK%Vous pouvez utiliser vos Ailerons Adaptables même si vous êtes stressé."""
         '"Dutch" Vander':
            display_name: """“Dutch” Vander"""
            text: """Après avoir effectué l’action %LOCK%, vous pouvez choisir 1 vaisseau allié à portée 1-3. Ce vaisseau allié peut verrouiller l’objet que vous avez verrouillé, en ignorant les restrictions de portée."""
         '"Echo"':
            display_name: """“Echo”"""
-           text: """Lorsque vous vous désoccultez, vous devez utiliser le gabarit [2&nbsp;%BANKLEFT%] ou [2&nbsp;%BANKRIGHT%] à la place du gabarit [2&nbsp;%STRAIGHT%].%LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d’évasion pour gagner 1 marqueur d’occultation. """
+           text: """Lorsque vous vous désoccultez, vous devez utiliser le gabarit [2&nbsp;%BANKLEFT%] ou [2&nbsp;%BANKRIGHT%] à la place du gabarit [2&nbsp;%STRAIGHT%]."""
         '"Ember"':
            display_name: """“Ember”"""
-           text: """Tant que vous effectuez une attaque, si un vaisseau endommagé, allié du défenseur, est à portée&nbsp;0-1 de ce dernier, le défenseur ne peut pas dépenser de marqueur de concentration ou de calcul.%LINEBREAK%<strong>Propulseurs Réactifs :</strong> après avoir entièrement exécuté une manœuvre, si vous n’êtes pas épuisé ou contraint, vous pouvez gagner 1&nbsp;marqueur d’épuisement ou de contrainte pour effectuer une action %LOCK% ou %BARRELROLL%."""
+           text: """Tant que vous effectuez une attaque, si un vaisseau endommagé, allié du défenseur, est à portée&nbsp;0-1 de ce dernier, le défenseur ne peut pas dépenser de marqueur de concentration ou de calcul."""
         '"Goji"':
            display_name: """“Goji”"""
-           text: """Tant qu’un vaisseau allié à portée&nbsp;0-3 défend, il peut lancer 1 dé de défense supplémentaire pour chaque bombe ou mine alliée à portée&nbsp;0-1 de lui.%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """Tant qu’un vaisseau allié à portée&nbsp;0-3 défend, il peut lancer 1 dé de défense supplémentaire pour chaque bombe ou mine alliée à portée&nbsp;0-1 de lui."""
         '"Holo"':
            display_name: """“Holo”"""
-           text: """Au début de la phase d’engagement, vous <b>devez</b> transférer 1 de vos marqueurs à un autre vaisseau allié à portée 0-2.%LINEBREAK%<strong>Propulseurs Réactifs :</strong> après avoir entièrement exécuté une manœuvre, si vous n’êtes pas épuisé ou contraint, vous pouvez gagner 1&nbsp;marqueur d’épuisement ou de contrainte pour effectuer une action %LOCK% ou %BARRELROLL%."""
+           text: """Au début de la phase d’engagement, vous <b>devez</b> transférer 1 de vos marqueurs à un autre vaisseau allié à portée 0-2."""
         '"Howlrunner"':
            display_name: """“Howlrunner”"""
            text: """Tant qu’un vaisseau allié à portée 0-1 effectue une attaque principale, il peut relancer 1 dé d’attaque."""
@@ -1302,13 +1302,13 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir effectué une action %BARRELROLL%, vous pouvez effectuer une action %LOCK% rouge."""
         '"Leebo"':
            display_name: """“Leebo”"""
-           text: """Après avoir défendu ou effectué une attaque, si vous avez dépensé un marqueur de calcul, gagnez 1 marqueur de calcul.%LINEBREAK%<strong>Angle Mort des Senseurs :</strong> tant que vous effectuez une attaque principale à portée d’attaque 0-1, n’appliquez pas le bonus de portée 0-1 et lancez 1 dé d’attaque en moins."""
+           text: """Après avoir défendu ou effectué une attaque, si vous avez dépensé un marqueur de calcul, gagnez 1 marqueur de calcul."""
         '"Longshot"':
            display_name: """“Longshot”"""
            text: """Tant que vous effectuez une attaque principale à portée d’attaque 3, lancez 1 dé d’attaque supplémentaire."""
         '"Matchstick"':
            display_name: """“Matchstick”"""
-           text: """Tant que vous effectuez une attaque principale ou une attaque %SINGLETURRETARC%, vous pouvez relancer 1&nbsp;dé d’attaque pour chaque marqueur rouge que vous avez.%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """Tant que vous effectuez une attaque principale ou une attaque %SINGLETURRETARC%, vous pouvez relancer 1&nbsp;dé d’attaque pour chaque marqueur rouge que vous avez."""
         '"Mauler" Mithel':
            display_name: """“Mauler” Mithel"""
            text: """Tant que vous effectuez une attaque à portée d’attaque 1, lancez 1 dé d’attaque supplémentaire."""
@@ -1332,22 +1332,22 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir entièrement exécuté une manœuvre rouge ou effectué une action rouge, s'il y a un vaisseau ennemi dans votre %BULLSEYEARC%, vous pouvez verrouiller ce vaisseau."""
         '"Odd Ball" (Y-Wing)':
            display_name: """“Oddball”"""
-           text: """Après avoir entièrement exécuté une manœuvre rouge ou effectué une action rouge, s’il y a un vaisseau ennemi dans votre %BULLSEYEARC%, vous pouvez verrouiller ce vaisseau.%LINEBREAK%<strong>Coque Blindée :</strong> tant que vous défendez, si vous n’êtes pas critiquement endommagé, changez 1 résultat&nbsp;%CRIT% en un résultat&nbsp;%HIT%."""
+           text: """Après avoir entièrement exécuté une manœuvre rouge ou effectué une action rouge, s’il y a un vaisseau ennemi dans votre %BULLSEYEARC%, vous pouvez verrouiller ce vaisseau."""
         '"Pure Sabacc"':
            display_name: """“Pure Sabacc”"""
-           text: """Tant que vous effectuez une attaque, si vous avez 1 carte de dégât ou moins, vous pouvez lancer 1 dé d’attaque supplémentaire. %LINEBREAK%Ailerons Adaptables : avant de révéler votre cadran, si vous n’êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
+           text: """Tant que vous effectuez une attaque, si vous avez 1 carte de dégât ou moins, vous pouvez lancer 1 dé d’attaque supplémentaire."""
         '"Quickdraw"':
            display_name: """“Quickdraw”"""
-           text: """Après avoir perdu un bouclier, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, vous pouvez effectuer une attaque principale bonus.%LINEBREAK%<strong>Tourelle d’Arme Lourde: </strong> vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous devez considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
+           text: """Après avoir perdu un bouclier, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, vous pouvez effectuer une attaque principale bonus."""
         '"Recoil"':
            display_name: """“Recoil”"""
-           text: """Tant que vous êtes stressé, vous pouvez considérer les vaisseaux ennemis dans votre %FRONTARC% à portée 0-1 comme étant dans votre %BULLSEYEARC%.%LINEBREAK%<strong>Autopropulseurs:</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou une action %BOOST% rouge."""
+           text: """Tant que vous êtes stressé, vous pouvez considérer les vaisseaux ennemis dans votre %FRONTARC% à portée 0-1 comme étant dans votre %BULLSEYEARC%."""
         '"Redline"':
            display_name: """“Redline”"""
            text: """Vous pouvez maintenir jusqu’à 2 cibles verrouillées.%LINEBREAK% Après avoir effectué une action, vous pouvez verrouiller une cible."""
         '"Rush"':
            display_name: """“Rush”"""
-           text: """Tant que vous êtes endommagé, considérez votre initiative comme étant de 6.%LINEBREAK%<strong> Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou une action %BOOST% rouge."""
+           text: """Tant que vous êtes endommagé, considérez votre initiative comme étant de 6."""
         '"Scorch"':
            display_name: """“Scorch”"""
            text: """Tant que vous effectuez une attaque principale, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress pour lancer 1 dé d’attaque supplémentaire."""
@@ -1368,43 +1368,43 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après qu’un vaisseau allié à portée&nbsp;1-2 a effectué une attaque contre un vaisseau ennemi dans votre %FRONTARC%, vous pouvez effectuer une action&nbsp;%FOCUS%."""
         '"Vagabond"':
            display_name: """“Vagabond”"""
-           text: """Après avoir entièrement exécuté une manœuvre en utilisant vos <strong>Ailerons Adaptables</strong>, si vous n’êtes pas stressé, vous pouvez larguer 1&nbsp;engin.%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1 %BANKLEFT%], [1 %STRAIGHT%] ou [1 %BANKRIGHT%]."""
+           text: """Après avoir entièrement exécuté une manœuvre en utilisant vos <strong>Ailerons Adaptables</strong>, si vous n’êtes pas stressé, vous pouvez larguer 1&nbsp;engin."""
         '"Vizier"':
            display_name: """“Vizier”"""
-           text: """Après avoir entièrement exécuté une manœuvre à vitesse 1 en utilisant votre capacité <strong>Ailerons Adaptables</strong>, vous pouvez effectuer une action %COORDINATE%. Dans ce cas, sautez votre étape “Effectuer une action”.%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n’êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], ou [1&nbsp;%BANKRIGHT%]."""
+           text: """Après avoir entièrement exécuté une manœuvre à vitesse 1 en utilisant votre capacité <strong>Ailerons Adaptables</strong>, vous pouvez effectuer une action %COORDINATE%. Dans ce cas, sautez votre étape “Effectuer une action”."""
         '"Wampa"':
            display_name: """“Wampa”"""
            text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 %CHARGE% pour lancer 1 dé d’attaque supplémentaire%LINEBREAK%Après avoir défendu, perdez 1 %CHARGE%."""
         '"Whisper"':
            display_name: """“Whisper”"""
-           text: """Après avoir effectué une attaque qui touche, gagnez 1 marqueur d’évasion. %LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d’évasion pour gagner 1 marqueur d’occultation. """
+           text: """Après avoir effectué une attaque qui touche, gagnez 1 marqueur d’évasion."""
         '"Wolffe"':
            display_name: """“Wolffe”"""
            text: """Tant que vous effectuez une attaque principale %FRONTARC%, vous pouvez dépenser 1&nbsp;%CHARGE% pour relancer 1 dé d’attaque. Tant que vous effectuez une attaque principale %REARARC%, vous pouvez récupérer 1&nbsp;%CHARGE% pour lancer 1 dé d’attaque supplémentaire."""
         '"Zeb" Orrelios':
            display_name: """“Zeb” Orrelios"""
-           text: """Tant que vous défendez, les résultats %CRIT% sont neutralisés avant les résultats %HIT%.%LINEBREAK%<strong>Chargé et Prêt à Tirer :</strong> tant que vous êtes arrimé, après que votre vaisseau porteur a effectué une attaque principale %FRONTARC% ou %TURRET%, il peut effectuer une attaque principale %REARARC% bonus."""
+           text: """Tant que vous défendez, les résultats %CRIT% sont neutralisés avant les résultats %HIT%."""
         '"Zeb" Orrelios (Sheathipede)':
            display_name: """“Zeb” Orrelios"""
-           text: """Tant que vous défendez, les résultats %CRIT% sont neutralisés avant les résultats %HIT%.%LINEBREAK%<strong>Navette de Communication :</strong> tant que vous êtes arrimé, votre vaisseau porteur gagne %COORDINATE%. Avant que votre vaisseau porteur ne s’active, il peut effectuer une action %COORDINATE%."""
+           text: """Tant que vous défendez, les résultats %CRIT% sont neutralisés avant les résultats %HIT%."""
         '"Zeb" Orrelios (TIE Fighter)':
            display_name: """“Zeb” Orrelios"""
            text: """Tant que vous défendez, les résultats %CRIT% sont neutralisés avant les résultats %HIT%."""
         "Baktoid Prototype":
            display_name: """Prototype Baktoid"""
-           text: """Tant que vous effectuez une attaque spéciale, si un vaisseau allié avec la capacité de vaisseau <strong>Calculs en Réseau</strong> a un verrouillage sur le défenseur, vous pouvez ignorer les prérequis %FOCUS%, %CALCULATE% ou %LOCK% de cette attaque.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Tant que vous effectuez une attaque spéciale, si un vaisseau allié avec la capacité de vaisseau <strong>Calculs en Réseau</strong> a un verrouillage sur le défenseur, vous pouvez ignorer les prérequis %FOCUS%, %CALCULATE% ou %LOCK% de cette attaque."""
         "Haor Chall Prototype":
            display_name: """Prototype Haor Chall"""
-           text: """Après qu’un vaisseau ennemi dans votre %BULLSEYEARC% à portée&nbsp;0-2 a déclaré un autre vaisseau allié pour être le défenseur, vous pouvez effectuer une action %CALCULATE% ou %LOCK%.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Après qu’un vaisseau ennemi dans votre %BULLSEYEARC% à portée&nbsp;0-2 a déclaré un autre vaisseau allié pour être le défenseur, vous pouvez effectuer une action %CALCULATE% ou %LOCK%."""
         "Naboo Handmaiden":
            display_name: """Servante de Naboo"""
-           text: """<strong>Mise en Place :</strong> après avoir placé les forces, assignez l’état <strong>Dupé</strong> à 1&nbsp;vaisseau allié autre que <strong>Servante de Naboo</strong>.%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action&nbsp;%EVADE%."""
+           text: """<strong>Mise en Place :</strong> après avoir placé les forces, assignez l’état <strong>Dupé</strong> à 1&nbsp;vaisseau allié autre que <strong>Servante de Naboo</strong>."""
         "Bombardment Drone":
            display_name: """Drone de Bombardement"""
-           text: """Si vous êtes censé larguer un engin, vous pouvez le lancer à la place, en utilisant le même gabarit.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Si vous êtes censé larguer un engin, vous pouvez le lancer à la place, en utilisant le même gabarit."""
         "Precise Hunter":
            display_name: """Chasseur Méticuleux"""
-           text: """Tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez relancer 1 résultat vierge.%LINEBREAK%<strong>Calculs en Réseau :</strong> tant que vous défendez ou effectuez une attaque, vous pouvez dépenser 1 marqueur de calcul d’un vaisseau allié à portée&nbsp;0-1 pour changer 1 résultat&nbsp;%FOCUS% en un résultat %EVADE% ou %HIT%."""
+           text: """Tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez relancer 1 résultat vierge."""
         "Darth Vader (TIE Defender)":
            display_name: """Dark Vador"""
            text: """Vous ne pouvez pas dépenser de %FORCE% sauf lorsque vous attaquez. %LINEBREAK% Tant que vous effectuez une attaque, vous pouvez dépenser 1 %FORCE% pour changer 1 résultat vierge en un résultat %HIT%."""
@@ -2940,7 +2940,7 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: "Gyrostabilisateurs Perfectionnés"
            text: """vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge ou %ROTATEARC% rouge."""
         "Heavy Weapon Turret":
-           display_name: "Tourelle D’arme Lourde"
+           display_name: "Tourelle d’Arme Lourde"
            text: """vous pouvez pivoter votre indicateur %SINGLETURRETARC% uniquement vers votre %FRONTARC% ou %REARARC%. Vous <b>devez</b> considérer le prérequis %FRONTARC% de vos améliorations %MISSILE% équipées comme étant %SINGLETURRETARC%."""
         "Linked Battery":
            display_name: "Batteries Jumelées"
