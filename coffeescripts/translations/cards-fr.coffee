@@ -354,9 +354,6 @@ exportObj.cardLoaders['Français'] = () ->
         "Bossk":
            display_name: """Bossk"""
            text: """Tant que vous effectuez une attaque principale, après l’étape « Neutraliser les résultats », vous pouvez dépenser 1 résultat %CRIT% pour ajouter 2 résultats %HIT%."""
-        "Bossk":
-           display_name: """Bossk"""
-           text: """Tant que vous effectuez une attaque principale, après l’étape « Neutraliser les résultats », vous pouvez dépenser 1 résultat %CRIT% pour ajouter 2 résultats %HIT%."""
         "Bounty Hunter":
            display_name: """Chasseur de Primes"""
            text: """<i class = flavor_text>La sinistre réputation du Patrouilleur de Classe Firespray a pour origine les chasseurs de primes Jango Fett et Boba Fett, qui modifièrent leur appareil avec d’innombrables armes terrifiantes.</i>"""
@@ -1686,8 +1683,6 @@ exportObj.cardLoaders['Français'] = () ->
         "Death Watch Warrior":
            display_name: """Guerrier de la Death Watch"""
            text: """<i class = flavor_text>Malgré le soutien incertain des Séparatistes, la Death Watch envisage de restaurer le passé guerrier et les traditions de Mandalore. Extrêmement manœuvrable et équipé d'une baie de largage, le Chasseur Gauntlet est une excellente plateforme pour déployer ces fiers commandos au combat.</i>"""
-        "Bo-Katan Kryze":
-           text: """Avant qu'un vaisseau allié à portée 0-2 ne s'active, vous pouvez dépenser 1 %CHARGE%. Dans ce cas. Il peut gagner 1 marqueur de contrainte pour retirer 1 marqueur rouge non-stress ou 1 marqueur orange."""
         "Bo-Katan Kryze (Republic)":
            display_name: """Bo-Katan Kryze"""
            text: """Après avoir entièrement exécuté une manœuvre, vous pouvez gagne 1 marqueur d'épuisement pour choisir un objet dans votre %FRONTARC% à portée 1-2. Dans ce cas un autre vaisseau allié peut effectuer une action %LOCK% pour verrouiller cet objet."""
