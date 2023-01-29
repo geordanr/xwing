@@ -7785,6 +7785,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Daredevil'
             type: 'upgrade'
             count: 1
