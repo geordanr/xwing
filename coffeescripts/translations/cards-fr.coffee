@@ -14,13 +14,22 @@ exportObj.codeToLanguage.fr = 'Français'
 
 exportObj.translations ?= {}
 exportObj.translations['Français'] =
+    restrictions:
+        "Restrictions": "Restrictions"
+        "Initiative": "Initiative"
+        "Agility": "Agilité"
+        "Non-Limited": "Non-Limité"
+        " or Squad Including": " ou Escadron incluant"
+        "Ship": "Vaisseau"
+        "Extra": "Extra"
+
     faction:
         "Rebel Alliance": "Alliance Rebelle"
         "Galactic Empire": "Empire Galactique"
         "Scum and Villainy": "Racailles et Scélérats"
         "Resistance": "Résistance"
         "First Order": "Premier Ordre"
-        "Galactic Republic": "Grande Armée de la République"
+        "Galactic Republic": "République Galactique"
         "Separatist Alliance": "Alliance Séparatiste"
 
     slot:
