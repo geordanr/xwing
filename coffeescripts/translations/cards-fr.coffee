@@ -140,70 +140,298 @@ exportObj.translations['Français'] =
         "Loose Ships": "Vaisseaux en vrac"
 
     ui:
-        shipSelectorPlaceholder: "Choisissez un vaisseau"
-        pilotSelectorPlaceholder: "Choisissez un pilote"
+        "shipSelectorPlaceholder": "Choisissez un vaisseau"
+        "pilotSelectorPlaceholder": "Choisissez un pilote"
         upgradePlaceholder: (translator, slot) ->
             "#{translator 'slot', slot} (sans amélioration)"
-        modificationPlaceholder: "Pas de modification"
-        titlePlaceholder: "Pas de titre"
+        "modificationPlaceholder": "Pas de modification"
+        "titlePlaceholder": "Pas de titre"
         upgradeHeader: (translator, slot) ->
             "#{translator 'slot', slot}"
-        unreleased: "inédit"
-        epic: "épique"
-        limited: "limité"
-    byCSSSelector:
-        # Warnings
-        'Unreleased content warning': 'Cet escadron utilise du contenu inédit !'
-        'Collection warning': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
-        # Type selector
-        'Extended': 'Standard'
-        'Hyperspace': 'Hyperspace'
-        'Epic': 'Epic'
-        'Quickbuild': 'Quick Build'
-        # Card browser
-        'Name': 'Nom'
-        'Source': 'Source'
-        'Type (by Points)': 'Type (par points)'
-        'Type (by Name)': 'Type (par nom)'
-        'Select a card': 'Sélectionnez une carte dans la liste à gauche.'
-        'Sort cards by': 'Trier les cartes par'
-        'Sort by': 'Trier par'
-        # Info well
-        'Ship': 'Vaisseau'
-        'Initiative': 'Initiative'
-        'Actions': 'Actions'
-        'Upgrades': 'Améliorations'
-        'Range': 'Portée'
-        # Squadron edit buttons
-        'New Squad' : 'Nouvel escadron'
-        'Save' : 'Enregistrer'
-        'Save As...' : 'Enregistrer sous…'
-        'Delete' : 'Supprimer'
-        'Load Squad' : 'Charger un escadron'
-        'Print/Export' : 'Imprimer/Exporter'
-        'Your Collection': 'Votre collection'
-        'Randomize!' : 'Aléatoire !'
-        'Randomizer Options' : 'Options…'
-        'Squad Notes:' : 'Notes sur l\'escadron:'
-        'Tag:' : 'Tag:'        
-        # Print/View modal
-        'Copy below BBCode' : '<p>Copiez le BBCode ci-dessous et collez-le dans votre post.</p>'
-        'Copy' : 'Copiez'
-        'Space for Cards' : """Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression"""
-        'Print Color' : """Imprimer en couleur"""
-        'Print' : 'Imprimer'
-        # Randomizer options
-        'Roll!' : 'Générer aléatoirement!'
-        # Top tab bar
-        'Card Browser' : 'Cartes'
-        'About' : 'À propos'
-        # Obstacles
-        'Choose Obstacles' : 'Choisir des obstacles'
-        'Choose obstacles dialog' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.)'
-        'Core Asteroid' : 'Core Asteroid'
-        'YT2400 Debris' : 'YT2400 Debris'
-        'VT49 Debris' : 'VT49 Debris'
-        'Force Awakens Asteroid' : 'Force Awakens Asteroid'
+        "unreleased": "non-publié"
+        "epic": "épique"
+        "Quickbuild": "Formation rapide"
+        "limited": "limité"
+        "Unreleased content warning": "Cette escadron utilise du contenu non-publié !"
+        "Broken squad link warning": "Lien cassé. Aucun escadron ne peut être chargé !"
+        "Collection warning": "Vous ne pouvez pas constituer cette liste avec votre collection !"
+        "Ship number warning": "Un escadron légal en tournoi doit contenir 3 à 8 vaisseaux !"
+        "Multi-Faction warning": "Les listes multi-factions ne sont JAMAIS légales en tournoi !"
+        "XWS Import Dialog": "Importez votre liste via XWS dans YASB.<br><i>XWS est un format commun pour partager des listes entre applications.</i>"
+        "Copy below simple text": "<p>Copiez le texte ci-dessous et collez-le ailleurs.</p>"
+        "Copy below markdown": "<p>Copiez le texte ci-dessous et collez-le dans votre message reddit.</p><p>Assurez-vous que l'éditeur de message est réglé sur le mode markdown.</p>"
+        "Copy below TTS": "<p>Copiez le texte ci-dessous et collez-le dans Tabletop Simulator.</p>"
+        "Copy below BBCode": "<p>Copiez le BBCode ci-dessous et collez-le dans votre message de forum.</p>"
+        "Copy below HTML": "<p>Copiez le texte ci-dessous et collez-le ailleurs.</p>"
+        "Copy below XWS":"<p>Copiez et collez ceci dans une application compatible avec XWS.</p>"
+        "Use INI prefix": "Mettez INI comme préfixe devant les noms."
+        "Choose obstacles dialog": "Choisissez jusqu'à trois obstacles, à inclure dans le permalien pour une utilisation dans des programmes externes."
+        "Mark obstacles": "Marquez les trois obstacles que vous utilisez."
+        "Scan QR-Code": "Scanner pour ouvrir cette liste dans le constructeur"
+        "View in YASB": "Voir dans YASB 2"
+        "YASB advertisment": "YASB 2 est un constructeur d'escadron simple, rapide et facile pour X-Wing Miniatures de Atomic Mass Games."
+        collectionContentShips: (translator, number) ->
+            "Vous avez #{number} #{if number == 1 then 'exemplaire' else 'exemplaires'} de ce vaisseau dans votre collection."
+        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
+            "Vous avez #{data[0]} #{if data[0] == 1 then 'exemplaire' else 'exemplaires'} de ce vaisseau et #{data[1]} #{if data[1] == 1 then 'carte' else 'cartes'} de ce pilote dans votre collection."
+        collectionContentUpgrades: (translator, number) ->
+            "Vous en avez #{number} dans votre collection."
+        varPointCostsPoints: (translator, points) ->
+            "<b>Coût :</b> #{points} si "
+        varPointCostsConditionAgility: (translator, values) ->
+            "l'agilité est #{values}"
+        varPointCostsConditionIni: (translator, values) ->
+            "l'initiative est #{values}"
+        varPointCostsConditionBase: (translator, values) ->
+            "la base est petite, moyenne, grande ou immense"
+        "Missing Item List:": "Pour constituer cet escadron, vous avez besoin des éléments supplémentaires suivants :" 
+        pilotFlyingShip: (translator, pilot, ship) ->
+            "Le pilote #{pilot} volant avec #{ship}"
+        "Placeholder Textsearch Browser": "Recherche par nom, texte ou vaisseau"
+        noXYselected: (translator, xy) ->
+            "Pas de #{translator('ui', xy)} sélectionné"
+        "Select a card": "Sélectionnez une carte dans la liste à gauche."
+        yourXYsquads: (translator, faction) ->
+            "Vos escadrons de #{translator('faction', faction)}"
+        reallyDeleteSquadXY: (translator, squadname) -> 
+            "Voulez-vous vraiment supprimer #{squadname} ?"
+        "No saved squads": "Rien ici. Allez sauvegarder un escadron !"
+        "name required": "Un nom est requis"
+        "Name in use": "Vous avez déjà un escadron avec ce nom"
+        "select OAuth provider": "Sélectionnez l'un des fournisseurs OAuth ci-dessous pour vous connecter et commencer à enregistrer des escadrons."
+        "OAuth explanation" : """
+                    <p>
+                        <a href="http://fr.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> est un système d'autorisation qui vous permet de prouver votre identité sur un site web sans avoir à créer un nouveau compte. Au lieu de cela, vous demandez à un fournisseur avec lequel vous avez déjà un compte (par exemple Google ou Facebook) de prouver à ce site web qui vous êtes. Ainsi, lors de votre prochaine visite, ce site se souviendra que vous êtes cet utilisateur de Google.
+                    </p>
+                    <p>
+                        Le plus intéressant, c'est que vous n'avez pas à créer un nouveau nom d'utilisateur et un nouveau mot de passe à retenir. Et ne vous inquiétez pas, je ne collecte aucune donnée sur vous auprès des fournisseurs. J'ai essayé de définir la portée des données pour qu'elles soient aussi petites que possible, mais certains endroits envoient un tas de données au minimum. Je le jette. Tout ce que je regarde, c'est un identifiant unique (généralement un énorme numéro).
+                    </p>
+                    """
+        "Intro Card YASB": """
+                    <h2>YASB pour X-Wing 2.5</h2>
+                    <p>YASB (Yet Another Squad Builder) est un constructeur d'escadrons simple, rapide et facile pour X-Wing Miniatures par <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.</p>
+                    <p>Version actuelle: 25/11/2022</p>
+                    <h5>Crédits</h5>
+                    <p>Construit à partir de l'incroyable et original <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a>.</p>
+                    <p>YASB est mis à jour et maintenu par Stephen Kim.</p>
+                    <p>Crédits supplémentaires pour :<br>
+                    Données de mise à jour 2.5 : Devon Monkhouse, Perry Low, Andrew Oehler.<br>
+                    Données de lancement 2.0 : Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.<br>
+                    Equipe de traduction : Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke, kksuke<br>
+                    Logo du site : Thomas Kohler<br>
+                    Support de Formation Rapide : Patrick Mischke</p>
+
+                    <p>Ce constructeur n'est pas officiel et n'est pas affilié à Atomic Mass Games, Lucasfilm Ltd. ou Disney.</p>
+
+                    <p>Ce site sera toujours gratuit, et toujours disponible à 100% pour que tout le monde puisse l'utiliser. Cependant, si vous voulez faire un don, un bouton est préparé pour vous.</p>
+                    <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Faire un don</button> <button class="btn btn-primary paypal" onclick="window.open('https://www.patreon.com/raithos');">Patreon</button></p>
+        """
+        "Continue to OAuth provider": "Cela ouvrira une nouvelle fenêtre qui vous permettra de vous authentifier auprès du fournisseur choisi. Il se peut que vous deviez autoriser les pop ups pour ce site."
+        "iOS requires cross-site control": """En raison d'une nouvelle fonctionnalité des systèmes iOS, OAuth ne fonctionnera pas si vous n'activez pas le "contrôle intersite"."""
+        "login in progress": "La connexion OAuth est en cours. Veuillez terminer l'autorisation auprès du fournisseur spécifié en utilisant la fenêtre qui vient d'être créée."
+        "Squads reloaded": "Tous les escadrons de cette faction ont été rechargés."
+        "Sure to delete?": "Êtes-vous sûr de vouloir supprimer cet escadron ?"
+        "Unsaved Changes Warning": "Vous n'avez pas enregistré les modifications apportées à cet escadron. Voulez-vous revenir en arrière et sauvegarder ?"
+        adds: (translator, data) -> # data will most likely be a string of some symbols, but you never know
+            "Ajoute : #{translator('ui', data)}"
+        removes: (translator, data) -> # data will most likely be a string of some symbols, but you never know
+            "Enlève : #{translator('ui', data)}"
+        "Less upgrades": "Moins d'améliorations"
+        "Epic": "Épique"
+        "Hyperspace": "Hyperespace"
+        "Extended": "Étendu"
+        "Unnamed Squadron": "Escadron sans nom"
+        "Unsaved Squadron": "Escadron non enregistré"
+        "New Squadron": "Nouvel escadron"
+        "Name your squad...": "Nommez votre escadron..."
+        "Your Collection": "Votre Collection"
+        "Only available from 1st edition": "Disponible uniquement dans la 1ère édition"
+        "Randomize!": "Aléatoire"
+        "Copy": "Copier"
+        "Print": "Imprimer"
+        "Random Squad Builder Options": "Options de création d'escadrons aléatoires"
+        "Miscellaneous Settings": "Paramètres divers"
+        "Card Search": "Recherche de cartes"
+        "from": "de"
+        "to": "à"
+        "Submit Bug/Feature Request": "Soumettre un bug ou une demande de fonctionnalité"
+        "Card Browser": "Navigateur de cartes"
+        "Rules": "Règles"
+        "About": "À propos"
+        "Remove Pilot": "Retirer le pilote"
+        "Clone Pilot": "Dupliquer le pilote"
+        "Wingmates": "Coéquipiers"
+        "Total": "Total"
+        "X-Wing Squadron by YASB 2.0: ": "Escadron X-Wing par YASB 2.0"
+        "Points Destroyed": "Points détruits"
+        "Half Points": "Moitié des points"
+        "Threshold": "Seuil"
+        "Yes, Delete": "Oui, supprimer"
+        "Cancel": "Annuler"
+        "Never Mind": "Annuler"
+        "Really Delete": "Oui, supprimer"
+        "Save": "Enregistrer"
+        "Unsaved Changes": "Modifications non enregistrées"
+        "Name is available": "Nom disponible"
+        "Checking name availability...": "Vérification de la disponibilité du nom..."
+        "Go Back": "Revenir en arrière"
+        "Save Squad As...": "Enregistrer l'escadron en tant que..."
+        "Convert": "Convertir"
+        "Convert to Extended?": "Convertir en Étendu ?"
+        "Recalculate Points": "Recalculer les points"
+        "Archived": "Archivé"
+        "QB": "FR"
+        "Hyper": "Hyper"
+        "Ext": "Ét"
+        "All": "Tout"
+        "Delete Selected": "Supprimer la sélection"
+        "Archive Selected": "Archiver la sélection"
+        "Select All": "Sélectionner tout"
+        "Fetching squads...": "Récupération des escadrons..."
+        "Well done!": "Bien joué !"
+        "Log in with OAuth": "Se connecter avec OAuth"
+        "Log In": "Connexion"
+        "Log Out": "Déconnexion"
+        "What's this?": "Qu'est-ce que c'est ?"
+        "Close": "Fermer"
+        "Roll!": "Générer !"
+        "Maximum Seconds to Spend Randomizing": "Nombre maximum de secondes pour le calcul aléatoire"
+        "Always fill 0-point slots": "Toujours remplir les emplacements à 0 point"
+        "Sets and Expansions": "Paquets et extensions"
+        "Limit to collection": "Limiter à la collection"
+        "More upgrades": "Plus d'améliorations"
+        "Maximum Ship Count": "Nombre maximum de vaisseaux"
+        "Upgrades": "Améliorations"
+        "Range": "Portée"
+        "Actions": "Actions"
+        "Sources:": "Sources"
+        "Source": "Source"
+        "Engagement": "Engagement"
+        "Rules search": "Recherche de règles"
+        "Rules Search": "Recherche de règles"
+        "Base": "Base"
+        "Ship": "Vaisseau"
+        "Points": "Points"
+        "Initiative": "Initiative"
+        "Force:": "Force"
+        "Name": "Nom"
+        "Sort by": "Trier par"
+        "Type (by Points)": "Type (par points)"
+        "Type (by Name)": "Type (par nom)"
+        "Recurring": "Récurrente"
+        "Not recurring": "Non récurrente"
+        "Charges:": "Charges :"
+        "Only upgrades requiring multiple slots": "Uniquement les améliorations nécessitant plusieurs emplacements"
+        "Used double-slot:": "Double emplacement utilisé :"
+        "Used slot:": "Emplacement utilisé :"
+        "Large": "Grand"
+        "Medium": "Moyen"
+        "Small": "Petit"
+        "Huge": "Immense"
+        "Base size:": "Taille :"
+        "Agility:": "Agilité :"
+        "Shields:": "Boucliers :"
+        "Hull:": "Coque :"
+        "Initiative:": "Initiative :"
+        "Linked actions:": "Actions jumelées :"
+        "Actions:": "Actions :"
+        "Actions": "Actions"
+        "actions": "actions"
+        "Slots:": "Emplacements :"
+        "slots": "emplacements"
+        "Ships and Pilots": "Vaisseaux et Pilotes"
+        "General": "Général"
+        "Hyperspace legal": "Légal en Hyperespace"
+        "Is not unique": "Non-limité"
+        "Is unique": "Limité"
+        "Misc:": "Divers"
+        "Owned copies:": "Quantité possédée :"
+        "Point costs:": "Coût :"
+        "Factions:": "Factions :"
+        "Textsearch:": "Recherche :"
+        "Squad Notes:": "Notes d'escadron :"
+        "Tag:": "Étiquette :"
+        "Choose Obstacles": "Choisir les obstacles"
+        "XWS": "XWS"
+        "HTML": "HTML"
+        "TTS": "TTS"
+        "Text": "Texte"
+        "Reddit": "Reddit"
+        "BBCode": "BBCode"
+        "Fancy": "Joli"
+        "Simple": "Simple"
+        "Include QR codes": "Inclure les QR codes"
+        "Include Obstacle Choices": "Inclure les choix d'obstacles"
+        "Print Color": "En couleur"
+        "Expand Shield and Hull": "Étendre les boucliers et coques"
+        "Space for Cards": "Espace pour les cartes"
+        "Include Maneuvers Chart": "Inclure les manœuvres"
+        "Skip Card Text": "Exclure les textes de cartes"
+        "XWS Import": "Import XWS"
+        "New Squad": "Nouvel escadron"
+        "Load Squad": "Charger escadron"
+        "Delete": "Supprimer"
+        "Save As...": "Enregistrer en tant que..."
+        "Misc Settings": "Paramètres divers"
+        "Randomizer Options": "Options d'aléatoire"
+        "Print/Export": "Imprimer/Exporter"
+        "Discard Changes": "Annuler les modifications"
+        "Got it!": "Bien reçu !"
+        "Term:": "Terme"
+        "Version": "Version"
+        "New Squad Name": "Nom du nouvel escadron"
+        "Import": "Importer"
+        "Other Stuff": "Autres"
+        "MultiFaction": "Multi-Faction"
+        "Search for game term or card": "Rechercher un terme de jeu ou de carte"
+        "Core Asteroid 0": "Astéroïde de base 0"
+        "Core Asteroid 1": "Astéroïde de base 1"
+        "Core Asteroid 2": "Astéroïde de base 2"
+        "Core Asteroid 3": "Astéroïde de base 3"
+        "Core Asteroid 4": "Astéroïde de base 4"
+        "Core Asteroid 5": "Astéroïde de base 5"
+        "VT49 Debris 0": "Débris VT49 0"
+        "VT49 Debris 1": "Débris VT49 1"
+        "VT49 Debris 2": "Débris VT49 2"
+        "YT2400 Debris 0": "Débris YT2400 0"
+        "YT2400 Debris 1": "Débris YT2400 1"
+        "YT2400 Debris 2": "Débris YT2400 2"
+        "Force Awakens Asteroid 0": "Astéroïde Réveil de la Force 0"
+        "Force Awakens Asteroid 1": "Astéroïde Réveil de la Force 1"
+        "Force Awakens Asteroid 2": "Astéroïde Réveil de la Force 2"
+        "Force Awakens Asteroid 3": "Astéroïde Réveil de la Force 3"
+        "Force Awakens Asteroid 4": "Astéroïde Réveil de la Force 4"
+        "Force Awakens Asteroid 5": "Astéroïde Réveil de la Force 5"
+        "Gas Cloud 1": "Nuage de gaz 1"
+        "Gas Cloud 2": "Nuage de gaz 2"
+        "Gas Cloud 3": "Nuage de gaz 3"
+        "Gas Cloud 4": "Nuage de gaz 4"
+        "Gas Cloud 5": "Nuage de gaz 5"
+        "Gas Cloud 6": "Nuage de gaz 6"
+        "Pride of Mandalore Debris 1": "Débris Orgueil des Mandaloriens 1"
+        "Pride of Mandalore Debris 2": "Débris Orgueil des Mandaloriens 2"
+        "Pride of Mandalore Debris 3": "Débris Orgueil des Mandaloriens 3"
+        "Pride of Mandalore Rock 1": "Rocher Orgueil des Mandaloriens 1"
+        "Pride of Mandalore Rock 2": "Rocher Orgueil des Mandaloriens 2"
+        "Pride of Mandalore Rock 3": "Rocher Orgueil des Mandaloriens 3"
+        "Undamaged": "Non-endommagé"
+        "Standard": "Standard"
+        "Faction": "Faction"
+        "Loadout": "Chargement"
+        "Standard legal": "Légal en Standard"
+        "Keywords:": "Mots clés"
+        "Show Points Destroyed": "Afficher les points détruits"
+        "Hide Points Destroyed": "Masquer les points détruits"
+        "This squad was created for an older version of X-Wing.": "Cet escadron a été créé pour une ancienne version de X-Wing."
+        "Damage Threshold": "Seuil de dégât"
+        "X-Wing Squadron by YASB 2: ": "Escadron X-Wing par YASB"
+        "Ship Cost": "Coût du vaisseau"
+        "Paste XWS here": "Collez le XWS ici"
+        "All sets and expansions": "Tous les paquets et extensions"
+        "All factions": "Toutes les factions"
+        "Has multiple of the chosen slots": "A plusieurs des emplacements choisis"
+        "keywords": "mots clés"
+        "Checking auth status...": "Vérification du statut d'authentification"
 
     singular:
         'pilots': 'Pilote'
