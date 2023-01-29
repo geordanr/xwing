@@ -444,6 +444,29 @@ exportObj.translations['Français'] =
         'Title': 'Titre'
         'Ship': 'Vaisseau'
 
+    gameterms:
+        'Small': 'Petit'
+        'Medium': 'Moyen'
+        'Large': 'Grand'
+        'Huge': 'Immense'
+
+    action:
+        "Barrel Roll": "Tonneau"
+        "Focus": "Concentration"
+        "Boost": "Accélération"
+        "Calculate": "Calcul"
+        "Coordinate": "Coordination"
+        "Evade": "Évasion"
+        "Jam": "Brouillage"
+        "Reinforce": "Renforcement"
+        "Reload": "Rechargement"
+        "Rotate Arc": "Rotation d'arc"
+        "Lock": "Verrouillage"
+
+    rulestypes:
+        "faq": "FAQ"
+        "glossary": "Glossaire"
+
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Français'] = () ->
     exportObj.cardLanguage = 'Français'
