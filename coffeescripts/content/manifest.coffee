@@ -4842,11 +4842,6 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Cluster Missiles'
-            type: 'upgrade'
-            count: 1
-        }
-        {
             name: 'Afterburners'
             type: 'upgrade'
             count: 3
