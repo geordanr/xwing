@@ -143,7 +143,7 @@ exportObj.translations['Français'] =
         "shipSelectorPlaceholder": "Choisissez un vaisseau"
         "pilotSelectorPlaceholder": "Choisissez un pilote"
         upgradePlaceholder: (translator, slot) ->
-            "#{translator 'slot', slot} (sans amélioration)"
+            "#{translator 'slot', slot} (vide)"
         "modificationPlaceholder": "Pas de modification"
         "titlePlaceholder": "Pas de titre"
         upgradeHeader: (translator, slot) ->
@@ -165,7 +165,7 @@ exportObj.translations['Français'] =
         "Copy below HTML": "<p>Copiez le texte ci-dessous et collez-le ailleurs.</p>"
         "Copy below XWS":"<p>Copiez et collez ceci dans une application compatible avec XWS.</p>"
         "Use INI prefix": "Mettez INI comme préfixe devant les noms."
-        "Choose obstacles dialog": "Choisissez jusqu'à trois obstacles, à inclure dans le permalien pour une utilisation dans des programmes externes."
+        "Choose obstacles dialog": "Choisissez jusqu'à trois obstacles, à inclure dans le lien permanent à utiliser dans des programmes externes."
         "Mark obstacles": "Marquez les trois obstacles que vous utilisez."
         "Scan QR-Code": "Scanner pour ouvrir cette liste dans le constructeur"
         "View in YASB": "Voir dans YASB 2"
