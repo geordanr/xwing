@@ -3688,31 +3688,134 @@ exportObj.cardLoaders['Français'] = () ->
 
     condition_translations =
         'Suppressive Fire':
-           text: '''While you perform an attack against a ship other than <strong>Captain Rex</strong>, roll 1 fewer attack die. %LINEBREAK% After <strong>Captain Rex</strong> defends, remove this card.  %LINEBREAK% At the end of the Combat Phase, if <strong>Captain Rex</strong> did not perform an attack this phase, remove this card. %LINEBREAK% After <strong>Captain Rex</strong> is destroyed, remove this card.'''
+           display_name: 'Tir de Suppression'
+           text: '''Tant que vous effectuez une attaque contre un vaisseau autre que le <strong>Capitaine Rex</strong>, lancez 1 dé d'attaque an moins. %LINEBREAK% Après que le <strong>Capitaine Rex</strong> a défendu, retirez cette carte. %LINEBREAK% A la fin de la phase d’engagement, si le <strong>Capitaine Rex</strong> n'a pas effectué d'attaque à cette phase, retirez cette carte. %LINEBREAK% Après que le <strong>Capitaine Rex</strong> a été détruit, retirez cette carte.'''
         'Hunted':
-           text: '''After you are destroyed, you must choose another friendly ship and assign this condition to it, if able.'''
+           display_name: 'Traqué'
+           text: '''Après avoir été détruit, vous devez choisir un autre vaisseau allié et lui assigner cet état, si possible.'''
         'Listening Device':
-           text: '''During the System Phase, if an enemy ship with the <strong>Informant</strong> upgrade is at range 0-2, flip your dial faceup.'''
+           display_name: 'Dispositif d’Écoute'
+           text: '''Pendant la phase de système, si un vaisseau ennemi avec une amélioration <strong>Informateur</strong> est à portée 0-2, retournez votre cadran face visible.'''
+        'Rattled':
+           display_name: 'Ébranlé'
+           text: '''Après qu'une bombe ou mine à portée 0-1 a explosé, subissez 1 dégât %CRIT%. Puis, retirez cette carte. %LINEBREAK% <strong>Action :</strong> s'il n'y a aucune bombe ou mine à portée 0-1, retirez cette carte.'''
         'Optimized Prototype':
-           text: '''While you perform a %FRONTARC% primary attack against a ship locked by a friendly ship with the <strong>Director Krennic</strong> upgrade, you may spend 1 %HIT%/%CRIT%/%FOCUS% result. If you do, choose one: the defender loses 1 shield or the defender flips 1 of its facedown damage cards.'''
+           display_name: 'Prototype Optimisé'
+           text: '''Tant que vous effectuez une attaque principale %FRONTARC% contre un vaisseau verrouillé par un vaisseau allié qui possède l'amélioration <strong>Directeur Krennic</strong>, vous pouvez dépenser 1 résultat %HIT%, %CRIT%, ou %FOCUS%. %LINEBREAK%Dans ce cas, choisissez une des options suivantes : le défenseur perd 1 bouclier ou le défenseur retourne 1 de ses cartes Dégât face cachée.'''
+        '''I'll Show You the Dark Side''':
+           display_name: 'Je Vous Montrerai le Côté Obscur'
+           text: '''Quand cette carte est assignée, s'il n'y a pas de carte de dégât face visible sur elle, le joueur qui l'a assignée cherche 1 carte de dégât <strong>Pilote</strong> dans le paquet de dégâts et la place face visible sur cette carte. Puis mélangez le paquet de dégâts. %LINEBREAK%Lorsque vous êtes censé subir 1 dégât %CRIT%, vous vous voyez attribuer la carte dégât face visible qui est sur cette carte à la place. Puis retirez cette carte d'état.'''
         'Proton Bomb':
            display_name: "Bombe à protons"
-           text: '''(Bombe) - À la fin de la Phase d'activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, chaque vaisseau à portée 0–1 subit 1 dégât %CRIT%.'''
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK%À la fin de la Phase d'activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, chaque vaisseau et engin distant à portée 0–1 subit 1 dégât %CRIT%.'''
         'Seismic Charge':
            display_name: 'Charges sismiques'
-           text: '''(Bombe) - À la fin de la Phase d'activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, choisissez 1 obstacle à portée 0–1. Chaque vaisseau à portée 0–1 de cet obstacle subit 1 dégât %HIT%. Puis retirez cet obstacle'''
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK%À la fin de la Phase d'activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, choisissez 1 obstacle à portée 0–1. Chaque vaisseau et engin distant à portée 0–1 de cet obstacle subit 1 dégât %HIT%. Puis retirez cet obstacle'''
         'Bomblet':
            display_name: 'Sous-munitions'
-           text: '''(Bombe) - À la fin de la Phase d'activation, cet engin explose. %LINEBREAK% Lorsque l'engin explose, chaque vaisseau à portée 0–1 lance 2 dés d'attaque. Chaque vaisseau subit 1 dégât %HIT% pour chaque résultat %HIT%/%CRIT% obtenu.'''
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK%À la fin de la Phase d'activation, cet engin explose. %LINEBREAK% Lorsque l'engin explose, chaque vaisseau et engin distant à portée 0–1 lance 2 dés d'attaque. Chaque vaisseau et engin distant subit 1 dégât %HIT% pour chaque résultat %HIT%/%CRIT% obtenu.'''
         'Loose Cargo':
            display_name: 'Cargaison égarée'
-           text: '''(Débris) - La cargaison égarée est considérée comme un nuage de débris.'''
+           text: '''<strong>Type :</strong> Obstacle, Placé'''
+        'Spare Parts':
+           display_name: 'Pièces détachées'
+           text: '''<strong>Type :</strong> Obstacle, Placé'''
         'Conner Net':
            display_name: 'Filet Conner'
-           text: '''(Mine) - Après qu'un vaisseau a chevauché ou s'est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau subit 1 dégât %HIT% et gagne 3 marqueurs ioniques.'''
+           text: '''<strong>Types :</strong> Engin, Mine %LINEBREAK%Après qu'un vaisseau a chevauché ou s'est déplacé à travers cet engin, ce dernier explose. %LINEBREAK%Lorsque cet engin explose, le vaisseau subit 1 dégât %HIT% et gagne 3 marqueurs ioniques.'''
         'Proximity Mine':
            display_name: 'Mine de proximité'
-           text: '''(Mine) - Après qu'un vaisseau a chevauché ou s'est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau lance 2 dés d'attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
+           text: '''<strong>Types :</strong> Engin, Mine %LINEBREAK%Après qu'un vaisseau a chevauché ou s'est déplacé à travers cet engin, ce dernier explose. %LINEBREAK%Lorsque cet engin explose, le vaisseau lance 2 dés d’attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu. %LINEBREAK%<i>Errata (1.0.1): Ajout d'un dégât %HIT%.</i>'''
+        'DRK-1 Probe Droid':
+           display_name: 'Droïde Sondes DRK-1'
+           text: '''Initiative : 0 <br>%AGILITY%: 3 <br>%HULL%: 1 %LINEBREAK% <strong>Types :</strong> Engin, Distant %LINEBREAK%<strong>Phase de système:</strong> Le joueur qui contrôle le droïde sonde DRK-1 peut choisir un gabarit [2 %BANKLEFT%], [2 %STRAIGHT%] ou [2 %BANKRIGHT%] et le caler contre n'importe quelle série de glissières du DRK-1. Le joueur repositionne ensuite le DRK-1, en le plaçant à l'autre extrémité du gabarit. Il peut être placé en chevauchant un objet. S'il chevauche un vaisseau, utilisez le marqueur de position pour symboliser la position du vaisseau, puis placez le vaisseau sur l'engin distant. %LINEBREAK%<strong>Phase d'activation, d'engagement et de dénouement :</strong> Pas d'effet. %LINEBREAK%<strong>Autres règles :</strong> Tant qu'un vaisseau verrouille un objet ou brouille un vaisseau ennemi, il peut mesurer la portée à partir d'un droïde sonde DRK-1 allié. %LINEBREAK% Après qu'un vaisseau ennemi a exécuté une manœuvre et qu'il se retrouve à chevaucher un droïde sonde DRK-1, le contrôleur du vaisseau lance 1 dé d'attaque. Sur un résultat %FOCUS%, le droïde sonde DRK-1 subit 1 dégât %HIT%.'''
+        'Buzz Droid Swarm':
+           display_name: 'Nuée De Droïdes Buzz'
+           text: '''Initiative : 0 <br>%AGILITY%: 1 <br>%HULL%: 1 %LINEBREAK% <strong>Types :</strong> Engin, Distant %LINEBREAK% <strong>Phase de système, d'activation et de dénouement :</strong> Pas d'effet. %LINEBREAK%<strong>Phase d'engagement :</strong> Lorsque vous vous engagez, chaque vaisseau ennemi à portée 0 de la Nuée de Droïde Buzz subit 1 %CRIT%. %LINEBREAK%<strong>Autres règles :</strong> Après qu'un vaisseau ennemi a chevauché ou s'est déplacé à travers une nuée de droïdes buzz, le joueur contrôlant la nuée la repositionne en calant sa languette entre les glissières avant ou arrière de ce vaisseau (le vaisseau est à portée 0 de la nuée). La nuée ne peut pas être calée entre une paire de glissières si cela l'amène à chevaucher un objet. Si elle ne peut pas être placée entre les glissières d'un vaisseau, son contrôleur doit la placer entre la paire de glissières située de l'autre côté du vaisseau. Si elle ne peut pas être placée entre cette autre paire de glissières, la nuée et le vaisseau qui l'a chevauchée ou qui s'est déplacé à travers subissent chacun 1 dégât %HIT%. %LINEBREAK%<i>Errata (1.4): Agilité montée à 3.</i>'''
+        '''It's the Resistance''':
+           display_name: 'C’est la Résistance'
+           text: '''<strong>Mise en place :</strong> Débutez en réserve. %LINEBREAK%Lorsque vous vous déployez, placez-vous intégralement à portée 1 de n'importe quel bord de la zone de jeu et au-delà de la portée 3 de tout vaisseau ennemi. %LINEBREAK%Au début du round, si toutes les %CHARGE% du <b>GA-97</b> allié sont actives, vous devez vous déployer. Puis retirez cette carte. %LINEBREAK%Après que le <b>GA-97</b> allié a été détruit, vous <b>devez</b> vous déployer. Puis gagner 1 marqueur de désarmement et retirez cette carte.'''
+        'Electro-Proton Bomb':
+           display_name: 'Bombe Électro-Protonique'
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK%À la fin de la Phase d’activation, cet engin explose. %LINEBREAK%Lorsque cet engin explose, chaque vaisseau et engin distant à portée 0–2 lance 4 dés d’attaque. Chaque vaisseau perd 1 bouclier pour chaque résultat vierge, gagne 1 marqueur ionique pour chaque résultat %FOCUS%/%HIT% et gagne 1 marqueur de désarmement pour chaque résultat %CRIT%. Chaque engin distant perd 1 bouclier pour chaque résultat vierge et subit 1 dégât pour chaque %FOCUS%/%HIT%.'''
+        'Decoyed':
+           display_name: 'Dupé'
+           text: '''Tant que vous défendez, chaque vaisseau allié <b>Servante de Naboo</b> situé dans l'arc d'attaque peut dépenser 1 marqueur d'évasion pour changer un de vos résultats en un résultat %EVADE%. %LINEBREAK%Si vous êtes un Chasseur Royal Naboo N-1, chaque vaisseau allié <b>Servante de Naboo</b> situé dans l'arc d'attaque peut dépenser 1 marqueur d'évasion pour ajouter un résultat %EVADE% à la place.'''
+        'Compromising Intel':
+           display_name: 'Information Compromettante'
+           text: '''Pendant la phase de système, si l'ennemi <b>Vi Moradi</b> est à portée 0-3, retournez votre cadran face visible. %LINEBREAK%Tant que vous défendez ou effectuez une attaque contre l'ennemi <b>Vi Moradi</b>, vous ne pouvez pas dépenser de marqueur de concentration.'''
+        'Cluster Mine':
+           display_name: 'Mines Groupées'
+           text: '''<strong>Types :</strong> Engin, Mine %LINEBREAK%Une série de mines groupées consiste en 3 engins « Mine Groupée » individuels. %LINEBREAK%Lorsqu’une série de mines groupées est placée, la Mine Centrale est placée normalement, puis les deux Mines supplémentaires sont placées contre les encoches sur les côtés. %LINEBREAK%Après qu’un vaisseau a chevauché ou s’est déplacé à travers n’importe quelle « Mine Groupée » individuelle, elle explose. Les autres Mines Groupées de la série, qui n’ont pas été chevauchées ou traversées par un vaisseau, n’explosent pas. %LINEBREAK%Lorsque chacun de ces engins explose, le vaisseau lance 2 dés d’attaque. Puis ce vaisseau subit 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
+        'Ion Bomb':
+           display_name: 'Bombe Ionique'
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK%À la fin de la Phase d’activation, cet engin explose. %LINEBREAK%Lorsque cet engin explose, chaque vaisseau à portée 0–1 gagne 3 marqueurs ioniques et chaque engin distant à portée 0–1 subit 1 dégât %HIT%.'''
+        'Concussion Bomb':
+           display_name: 'Bombes à Concussion'
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK% À la fin de la Phase d’activation, cet engin explose. %LINEBREAK%Lorsque cet engin explose, chaque vaisseau et engin distant à portée 0–1 se voit attribuer 1 carte de dégât face cachée. Puis chaque vaisseau à portée 0–1 <b>doit</b> exposer 1 carte de dégât sauf s’il choisit de gagner 1 marqueur de contrainte.'''
+        'Thermal Detonator':
+           display_name: 'Détonateurs Thermiques'
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK% À la fin de la Phase d’activation, cet engin explose. %LINEBREAK%Lorsque cet engin explose, chaque vaisseau et engin distant à portée 0–1 lance 1 dé d’attaque. Chaque vaisseau gagne 1 marqueur de contrainte pour chaque résultat %FOCUS% et chaque vaisseau et engin distant subit 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
+        'Sensor Buoy':
+           display_name: 'Balises Dérivantes de Détection'
+           text: '''Initiative : 0 <br>%AGILITY%: 3 <br>%HULL%: 2 %LINEBREAK%<strong>Types :</strong> Engin, Distant %LINEBREAK%Les balises dérivantes de détection sont des engins distants qui arrivent par paire et sont placées par la carte d'amélioration <b>Balises Dérivantes de Détection</b>. À part respecter les règles normales des engins distants et d'interagir avec cette carte, ces balises n'ont aucune règle supplémentaire.'''
+        'Electro-Chaff Cloud':
+           display_name: 'Nuage de Paillettes Électriques'
+           text: '''<strong>Types :</strong> Engin (neutre), Obstacle %LINEBREAK%Pendant la phase de dénouement, retirez chaque nuage de paillettes électriques qui n’a pas de marqueur d’amorce dessus, puis retirez un marqueur d’amorce de chaque nuage de paillettes électriques. Un nuage de paillettes électriques ne peut jamais avoir plus d’un marqueur d’amorce sur lui.'''
+        'Tracking Torpedoes':
+           display_name: 'Torpilles Auto-Guidées'
+           text: '''Initiative : 0 <br>%AGILITY%: 3 <br>%HULL%: 3 %LINEBREAK%<strong>Types :</strong> Engin, DIstant %LINEBREAK%<strong>Phase de système :</strong> à l’initiative de l’engin distant, son contrôleur le repositionne en avant, en utilisant un gabarit [3 %BANKLEFT%], [3 %BANKRIGHT%], ou [4 %STRAIGHT%]. %LINEBREAK%<strong>Phase d’activation :</strong> Pas d'effet. %LINEBREAK%<strong>Phase d’engagement :</strong> à l’initiative de l’engin distant, si un objet sur lequel il a un verrouillage est dans son %FRONTARC% à portée 0–1, cet engin distant explose. %LINEBREAK%<strong>Phase de dénouement :</strong> durant cette phase, si cet engin distant n’a aucun verrouillage sur un objet, il doit verrouiller un objet dans son %FRONTARC% à portée 1–3, si possible. %LINEBREAK% <strong>Autres règles :</strong> après que cet engin distant a été détruit, lancez 1 dé d’attaque. Sur un résultat %HIT% ou %CRIT%, il explose. %LINEBREAK%Lorsque cet engin distant explose, chaque vaisseau, engin distant et structure à portée 0 ou dans son %FRONTARC% à portée 1 lance 4 dés d’attaque et subit 1 dégât correspondant pour chaque résultat %HIT% ou %CRIT% obtenu.'''
+        'Fearful Prey':
+           display_name: 'Proie effrayée'
+           text: '''Après avoir défendu contre un ennemi <b>Prédateur Effrayant</b>, si vous n'avez pas dépensé au moins 1 marqueur vert durant l'attaque, gagnez 1 marqueur de contrainte.'''
+        'You Should Thank Me':
+           display_name: 'Vous Devriez me Remercier'
+           text: '''Cet état est assigné face cachée. Révélez le après avoir défendu. %LINEBREAK%Après avoir défendu, <b>Zam Wesell</b> récupère 1 %CHARGE%. Puis vous pouvez verrouiller l'attaquant. %LINEBREAK% À la fin de la phase d’engagement, si cette carte est face cachée et si vous êtes dans un arc de tir d'un vaisseau ennemi, vous pouvez révéler cette carte et dépenser 2 %CHARGE% de <b>Zam Wesell</b>. Dans ce cas, vous pouvez effectuer une attaque bonus. %LINEBREAK%Au début de la phase de système, retirez cet état.'''
+        '''You'd Better Mean Business''':
+           display_name: 'Vous Devriez Faire des Affaires'
+           text: '''Cet état est assigné face cachée. Révélez le après avoir défendu. %LINEBREAK%Après avoir défendu, vous pouvez dépenser 2 %CHARGE% de <b>Zam Wesell</b>. Dans ce cas, effectuez une attaque bonus contre l'attaquant. %LINEBREAK%À la fin de la phase d’engagement, si cette carte est face cachée et si vous êtes dans un arc de tir d'un vaisseau ennemi, vous pouvez révéler cette carte. Dans ce cas <b>Zam Wesell</b> récupère 2 %CHARGE%. %LINEBREAK%Au début de la phase de système, retirez cet état.'''
+        '''Merciless Pursuit''':
+           display_name: 'Poursuite Impitoyable'
+           text: '''Après que vous avez effectué une attaque, si le défenseur est équipé avec <b>L'Enfant</b>, vous pouvez verrouiller le défenseur.'''
+        '''Marked for Elimination''':
+           display_name: 'Désigné pour Mourir'
+           text: '''Tant que vous défendez, si l'attaquant est équipé d'un <b>Capteur de Positionnement</b> et a un verrouillage sur vous, vous ne pouvez pas dépenser de marqueurs verts.'''
+        '''False Friend''':
+           display_name: 'Faux Frère'
+           text: '''Pendant la phase de système, si un vaisseau ennemi ayant l'amélioration <b>Tal Merrik</b> est à portée 0-2 ou si un engin distant ennemi est à portée 0-2, retournez face visible votre cadran. %LINEBREAK%<strong>Action :</strong> gagnez 1 marqueur d'épuisement et 1 marqueur de stress pour défausser cet état.'''
+        '''Trials of the Darksaber''':
+           display_name: 'Épreuves du Sabre Noir'
+           text: '''Tant que vous effectuez une attaque à portée d'attaque 0-2, vous pouvez dépenser 1 résultat %CRIT%. Dans ce cas, si le joueur du vaisseau défenseur a plus de %POINT% marqué que vous, il perd 1 %POINT% marqué. Placez ce %POINT% sur cette carte. %LINEBREAK%Après avoir défendu, si vous êtes détruit par un vaisseau ennemi à portée d'attaque O-2, assignez à l'attaquant l'état <b>Épreuves du Sabre Noir</b> (tous les %POINT% restent sur cette carte). %LINEBREAK%À la fin de la partie, ce vaisseau marque tous les %POINT% sur cette carte.'''
+        '''Blazer Bomb''':
+           display_name: 'Bombe Incendiaire'
+           text: '''<strong>Types :</strong> Engin, Bombe %LINEBREAK%À la fin de la phase d'activation, cet engin explose. %LINEBREAK%Lorsque cet engin explose, chaque vaisseau et engin distant à portée O-1 lance 1 dé d'attaque. Chaque vaisseau ou engin distant subit 1 dégât %HIT% pour chaque résultat %HIT%/%CRIT% obtenu. %LINEBREAK%Après que cet engin a explosé, placez un Brasier en calant ses glissières contre la languette de l'engin distant. %LINEBREAK%Un Brasier est un obstacle. Après le placement de cet obstacle, posez un marqueur d'amorce dessus. %LINEBREAK%Pendant la phase de dénouement, retirez chaque Brasier sans marqueur d'amorce dessus, puis retirez un marqueur d'amorce de chaque Brasier.'''
+        '''Clan Wren Commandos''':
+           display_name: 'Commandos du Clan Wren'
+           text: '''Initiative : 2 <br> %FRONTARC%: 2 %RANGEBONUS%, Portée: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Types :</strong> Engin, Distant %LINEBREAK%Après qu'un vaisseau ennemi vous a chevauché, il gagne 1 marqueur de contrainte. %LINEBREAK% <strong>Phase d'Activation :</strong> au début de cette phase, vous pouvez vous repositionner en avant en utilisant un gabarit [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK%<strong>Phase d'Engagement :</strong> vous ne pouvez pas attaquer s'il y a des vaisseaux ennemis à portée 0. Pour effectuer une attaque vous devez dépenser 1 %CHARGE%. Tant que vous effectuez une attaque, vous pouvez changer 1 résultat %FOCUS% en un résultat %HIT%.'''
+        '''Death Watch Commandos''':
+           display_name: 'Commandos de la Death Watch'
+           text: '''Initiative : 2 <br> %FRONTARC%: 2 %RANGEBONUS%, Portée: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Types :</strong> Engin, Distant %LINEBREAK%Après qu'un vaisseau ennemi vous a chevauché, il gagne 1 marqueur de contrainte. %LINEBREAK% <strong>Phase d'Activation :</strong> au début de cette phase, vous pouvez vous repositionner en avant en utilisant un gabarit [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK%<strong>Phase d'Engagement :</strong> vous ne pouvez pas attaquer s'il y a des vaisseaux ennemis à portée 0. Pour effectuer une attaque vous devez dépenser 1 %CHARGE%. Tant que vous effectuez une attaque, vous pouvez changer 1 résultat %FOCUS% en un résultat %HIT%.'''
+        '''Nite Owl Commandos''':
+           display_name: 'Commandos des Nite Owl'
+           text: '''Initiative : 2 <br> %FRONTARC%: 2 %RANGEBONUS%, Portée: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Types :</strong> Engin, Distant %LINEBREAK%Après qu'un vaisseau ennemi vous a chevauché, il gagne 1 marqueur de contrainte. %LINEBREAK% <strong>Phase d'Activation :</strong> au début de cette phase, vous pouvez vous repositionner en avant en utilisant un gabarit [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK%<strong>Phase d'Engagement :</strong> vous ne pouvez pas attaquer s'il y a des vaisseaux ennemis à portée 0. Pour effectuer une attaque vous devez dépenser 1 %CHARGE%. Tant que vous effectuez une attaque, vous pouvez changer 1 résultat %FOCUS% en un résultat %HIT%.'''
+        '''Imperial Super Commandos''':
+           display_name: 'Super Commandos Impériaux'
+           text: '''Initiative : 2 <br> %FRONTARC%: 2 %RANGEBONUS%, Portée: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Types :</strong> Engin, Distant %LINEBREAK%Après qu'un vaisseau ennemi vous a chevauché, il gagne 1 marqueur de contrainte. %LINEBREAK% <strong>Phase d'Activation :</strong> au début de cette phase, vous pouvez vous repositionner en avant en utilisant un gabarit [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK%<strong>Phase d'Engagement :</strong> vous ne pouvez pas attaquer s'il y a des vaisseaux ennemis à portée 0. Pour effectuer une attaque vous devez dépenser 1 %CHARGE%. Tant que vous effectuez une attaque, vous pouvez changer 1 résultat %FOCUS% en un résultat %HIT%.'''
+        '''Mandalorian Super Commandos''':
+           display_name: 'Super Commandos Mandaloriens'
+           text: '''Initiative : 2 <br> %FRONTARC%: 2 %RANGEBONUS%, Portée: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Types :</strong> Engin, Distant %LINEBREAK%Après qu'un vaisseau ennemi vous a chevauché, il gagne 1 marqueur de contrainte. %LINEBREAK% <strong>Phase d'Activation :</strong> au début de cette phase, vous pouvez vous repositionner en avant en utilisant un gabarit [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK%<strong>Phase d'Engagement :</strong> vous ne pouvez pas attaquer s'il y a des vaisseaux ennemis à portée 0. Pour effectuer une attaque vous devez dépenser 1 %CHARGE%. Tant que vous effectuez une attaque, vous pouvez changer 1 résultat %FOCUS% en un résultat %HIT%.'''
+        '''Guarded''':
+           display_name: 'Sous Protection'
+           text: '''Tant que vous défendez, si vous n'êtes pas dans le %BULLSEYEARC% de l'attaquant, lancez 1 dé de défense supplémentaire pour chaque allié <b>Protecteur Magna Garde</b> calculateur ou esquivant situé dans l'arc d'attaque.'''
+        '''Sickening Maneuver''':
+           display_name: 'Manœuvre Écœurante'
+           text: '''Vous pouvez exécuter des manœuvres rouges, même si vous êtes stressé. %LINEBREAK%Après avoir révélé une manœuvre de virage sur l'aile [%BANKLEFT% ou %BANKRIGHT%] ou de virage [%TURNLEFT% ou %TURNRIGHT%], vous devez gagner 1 marqueur de contrainte et exécuter cette manœuvre comme un dérapage. %LINEBREAK%Après avoir révélé une manœuvre en ligne droite [%STRAIGHT%], vous <b>devez</b> exécuter cette manœuvre comme un virage Koiogran [%KTURN%] rouge. %LINEBREAK% Après avoir exécuté une manœuvre, retirez cet état.'''
+        '''Primed For Speed''':
+           display_name: 'Ivre de Vitesse'
+           text: '''Ajoutez une action %SLAM% blanche à votre barre d'action. %LINEBREAK%Après avoir effectué une action %SLAM%, vous <b>devez</b> subir 1 dégât %HIT% pour retirer 1 marqueur de désarmement.'''
+        '''Broken Trust''':
+           display_name: 'Confiance Brisée'
+           text: '''Considérez les vaisseaux alliés comme étant amicaux. %LINEBREAK%Les vaisseaux non-ennemis vous considèrent comme étant amical. %LINEBREAK%Tant que vous effectuez une attaque, avant de déclarer le défenseur, chaque vaisseau amical situé dans l'arc d'attaque et qui n'est pas stressé, gagne 1 marqueur de stress. %LINEBREAK%Après que vous avez défendu ou effectué une attaque, si au moins 1 carte de dégât face visible a été attribuée au défenseur ou s'il a été détruit, retirez cet état.'''
 
     chassis_translations =
         "Vectored Thrusters":
