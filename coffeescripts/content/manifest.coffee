@@ -10808,7 +10808,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Tracking Fob'
             type: 'upgrade'
-            count: 1
+            count: 3
         }
         {
             name: 'Notorious'
@@ -10847,6 +10847,11 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Burnout Thrusters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overtuned Modulators'
             type: 'upgrade'
             count: 1
         }
