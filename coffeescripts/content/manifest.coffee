@@ -10808,7 +10808,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Tracking Fob'
             type: 'upgrade'
-            count: 3
+            count: 1
         }
         {
             name: 'Notorious'
