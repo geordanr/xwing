@@ -10851,6 +10851,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Overtuned Modulators'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Hotshot Tail Blaster'
             type: 'upgrade'
             count: 1
