@@ -12130,6 +12130,12 @@ exportObj.basicCardData = ->
             points: 3
             ship_override:
                 hull: 4
+                actions: [
+                    "Focus"
+                    "Lock"
+                    "Evade"
+                    "Barrel Roll"
+                ]
             upgrades: [
                 "Elusive"
                 "Vengeful (BoY)"
