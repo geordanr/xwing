@@ -8484,6 +8484,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Jamming Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Slave I (Separatist)'
             type: 'upgrade'
             count: 1
