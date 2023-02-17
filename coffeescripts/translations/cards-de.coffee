@@ -1688,7 +1688,16 @@ exportObj.cardLoaders.Deutsch = () ->
         "Precise Hunter":
            display_name: """Präzisionsjäger"""
            text: """Solange du einen Angriff durchführst, falls der Verteidiger in deinem %BULLSEYEARC% ist, darfst du 1 Leerseiten-Ergebnis neu werfen."""
-
+        "Captain Hark":
+           display_name: "Captain Hark"
+           text: """Nachdem du ein [0%STOP%] -Manöverr aufgedeckt hast, falls du <b>bewegliche Flügel [UNTEN]</b> ausgerüstet hast, <b> musst</b> du stattdessen ein [1%BANKLEFT%] oder [1%BANKRIGHT%] Slip Manöver mit derselben Schwierigkeiten ausführen. Nachdem du jenes Manöver ausgeführt hast, <b>musst</b> du <strong>BEWEGLICHE FLÜGEL [UNTEN]</strong> umdrehen."""
+        "Ezra Bridger (Gauntlet Fighter)":
+           display_name: "Ezra Bridger"
+           text: """Solange du verteidigst oder einen Angriff durchführst, falls du gestresst bist, darfst du 1 %FORCE% ausgeben, um bis zu 2 deiner %FOCUS% -Ergebnisse in %EVADE%- oder %HIT% -Ergebnisse zu ändern."""
+        '"Chopper" (Gauntlet Fighter)':
+           display_name: "„Chopper“"
+           text: """Zu Beginn der Kampfphase erhält jedes feindliche Schiff in Reichweite 0 2 Störsignalmarker."""
+           
 
     upgrade_translations =
         "0-0-0":
