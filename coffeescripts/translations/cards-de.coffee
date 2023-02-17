@@ -37,6 +37,7 @@ exportObj.translations.Deutsch =
         "Cargo": '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>'
         "Command": '<i class="xwing-miniatures-font xwing-miniatures-font-command"></i>'
         "HardpointShip": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
+        "VersatileShip": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
         "Tactical Relay": '<i class="xwing-miniatures-font xwing-miniatures-font-tacticalrelay"></i>'
 
     slot:
@@ -62,8 +63,11 @@ exportObj.translations.Deutsch =
         "Cargo": "Fracht"
         "Team": "Team"
         "Tactical Relay": "Taktische Leitung"
+        "Upgrade": "Aufwertungskarte"
     sources: 
         "Second Edition Core Set": "Grundspiel zweite Edition"
+        "First Edition Core Set": "Grundspiel erste Edition"
+        "First Edition Force Awakens Core Set": "Das Erwachen der Macht Grundspiel erste Edition"
         "Rebel Alliance Conversion Kit": "Konvertierungsset „Rebellenallianz“"
         "Galactic Empire Conversion Kit": "Konvertierungsset „Galaktisches Imperium“"
         "Scum and Villainy Conversion Kit": "Konvertierungsset „Abschaum und Kriminelle“"
@@ -118,6 +122,8 @@ exportObj.translations.Deutsch =
         "Xi-class Light Shuttle Expansion Pack":"Leichtes Shuttle der Xi-Klasse Erweiterung"
         "Phoenix Cell Squadron Pack":"Phoenix-Staffel Staffelpack"
         "VT-49 Decimator Expansion Pack":"VT-49-Decimator Erweiterung"
+        "First Edition VT-49 Decimator Expansion Pack":"Erste Edition VT-49-Decimator Erweiterung"
+        "First Edition YT-2400 Freighter Expansion Pack":"Erste Edition YT-2400 Erweiterung"
         "Ghost Expansion Pack":"Ghost Erweiterung"
         "M3-A Interceptor Expansion Pack":"M3-A-Abfangjäger Erweiterung"
         "T-70 X-Wing Expansion Pack":"T-70 X-Wing Erweiterung"
@@ -128,11 +134,21 @@ exportObj.translations.Deutsch =
         "Fury of the First Order":"Zorn der Ersten Ordnung Erweiterungspack"
         "Trident-class Assault Ship Expansion Pack":"Angriffsschiff der Trident-Klasse Erweiterung"
         "RZ-1 A-Wing Expansion Pack":"RZ1 A-Flügler Erweiterung"
-        "BTA-NR2 Y-Wing Pack":"BTA-NR2-Y-Flügler | Erweiterungspack"
+        "BTA-NR2 Y-Wing Pack":"BTA-NR2-Y-Flügler Erweiterungspack"
         "TIE/D Defender Expansion Pack":"TIE/D-Abwehrjäger Erweiterung"
         "TIE/in Interceptor Expansion Pack":"TIE/in Abfangjäger Erweiterung"
         "Hound's Tooth Expansion Pack":"Reißzahn Erweiterung"
         "C-ROC Cruiser Expansion Pack":"C-ROC Kreuzer Erweiterung"
+        "Gauntlet Fighter Expansion pack":"Gauntlet-Jäger Erweiterung"
+        "Clone Z-95 Headhunter Expansion pack":"Klon-Z-95-Sternenjäger Erweiterungspack"
+        "Hotshots and Aces II Reinforcements Pack":"Draufgänger und Fliegerasse II Erweiterungspack"
+        "Siege of Coruscant Battle Pack":"Die Schlacht von Coruscant Szenariopack"
+        "Tantive IV Expansion Pack":"Tantive IV Erweiterung"
+        "Rogue-class Starfighter Expansion pack":"Sternenjäger der Renegat-Klasse Erweiterungspack"
+        "Razor Crest Expansion Pack":"Razor Crest Erweiterung"
+        "Pride of Mandalore Reinforcements Pack":"Stolz von Mandalore Verstärkungspack"
+        "Battle of Yavin Battle Pack":"Die Schlacht von Yavin Szenariopack"
+
     ui:
         "shipSelectorPlaceholder": "Wähle ein Schiff"
         "pilotSelectorPlaceholder": "Wähle einen Piloten"
@@ -305,6 +321,8 @@ is an authorization system which lets you prove your identity at a web site with
         "Misc:": "Sonstiges:"
         "Owned copies:": "Expemlare in deiner Sammlung:"
         "Point costs:": "Kommandopunktekosten"
+        "Point cost:": "Kommandopunktekosten"
+        "Loadout cost:": "Ausrüstungspunktekosten"
         "Factions:": "Fraktionen"
         "Textsearch:": "Volltextsuche"
         "Squad Notes:": "Staffelnotizen"
@@ -427,6 +445,7 @@ is an authorization system which lets you prove your identity at a web site with
         "This squad was created for an older version of X-Wing.": "Diese Staffel wurde für eine älteren Version von X-Wing erstellt."
         "Damage Threshold": "Schadensgrenzwert"
         "X-Wing Squadron by YASB 2: ": "X-Wing Staffel erstellt mit YASB 2.5: "
+        "X-Wing Squadron by YASB: ": "X-Wing Staffel erstellt mit YASB: "
         "Ship Cost": "Schiffskosten"
         "Paste XWS here": "XWS einfügen"
         "All sets and expansions": "Alle Erweiterungen"
@@ -444,6 +463,7 @@ is an authorization system which lets you prove your identity at a web site with
     types:
         'Pilot': 'Pilot'
         'Modification': 'Modifikation'
+        'Upgrade': 'Aufwertungskarte'
         'Title': 'Titel'
         'Ship': 'Schiff'
 
@@ -452,6 +472,8 @@ is an authorization system which lets you prove your identity at a web site with
         'Medium': 'Mittel'
         'Large': 'Groß'
         'Huge': 'Riesig'
+        'Solitary': 'Einzigartig'
+        'Standardized': 'Standardisiert'
 
     faction:
         "Rebel Alliance": "Rebellen-Allianz"
@@ -485,6 +507,19 @@ is an authorization system which lets you prove your identity at a web site with
         " or Squad Including": " oder Staffel mit"
         "Ship": "Schiff"
         "Extra": "Extra"
+        "Vectored Thrusters": "Schwenkbare Schubdüsen"
+        "Autothrusters": "Automatische Schubdüsen"
+        "Networked Calculations":"Vernetzte Berechnungssysteme"
+        "X-wing":"X-Flügler"
+        "Limited":"limitiert"
+        "Light Side":"Helle Seite"
+        "Dark Side":"Dunkle Seite"
+        "Mandalorian":"Mandalorianer"
+        "TIE":"TIE"
+        "Bounty Hunter":"Kopfgeldjäger"
+        "Clone":"Klon"
+        "A-wing":"A-Flügler"
+        "Y-wing":"Y-Flügler"
     rulestypes:
         "faq": "FAQ"
         "glossary": "Referenzhandbuch"
