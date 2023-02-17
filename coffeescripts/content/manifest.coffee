@@ -4814,7 +4814,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Trick Shot'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Concussion Missiles'
@@ -4840,11 +4840,6 @@ exportObj.manifestByExpansion =
             name: 'Energy-Shell Charges'
             type: 'upgrade'
             count: 2
-        }
-        {
-            name: 'Cluster Missiles'
-            type: 'upgrade'
-            count: 1
         }
         {
             name: 'Afterburners'
@@ -4922,12 +4917,17 @@ exportObj.manifestByExpansion =
         {
             name: 'Brilliant Evasion'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Hate'
             type: 'upgrade'
-            count: 1
+            count: 2
+        }
+        {
+            name: 'Predictive Shot'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'Ion Torpedoes'
@@ -4941,6 +4941,16 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tractor Beam'
             type: 'upgrade'
             count: 1
         }
@@ -4981,6 +4991,11 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Novice Technician'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seasoned Navigator'
             type: 'upgrade'
             count: 1
         }
@@ -5514,46 +5529,6 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Battle Meditation'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Composure'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Dedicated'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Expert Handling'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Juke'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Saturation Salvo'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Swarm Tactics'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Cluster Missiles'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Concussion Missiles'
             type: 'upgrade'
             count: 1
         }
@@ -7805,6 +7780,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Daredevil'
             type: 'upgrade'
             count: 1
@@ -8500,6 +8480,11 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jamming Beam'
             type: 'upgrade'
             count: 1
         }
@@ -10862,6 +10847,11 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Burnout Thrusters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overtuned Modulators'
             type: 'upgrade'
             count: 1
         }

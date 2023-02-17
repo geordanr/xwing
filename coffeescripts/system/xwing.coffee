@@ -845,36 +845,36 @@ class exportObj.SquadBuilder
             <div class="modal-body">
                 <div class="obstacle-select-container" style="float:left">
                     <select multiple class='obstacle-select' size="18">
-                        <option class="coreasteroid0-select translated" value="coreasteroid0" defaultText="Core Asteroid 0"></option>
-                        <option class="coreasteroid1-select translated" value="coreasteroid1" defaultText="Core Asteroid 1"></option>
-                        <option class="coreasteroid2-select translated" value="coreasteroid2" defaultText="Core Asteroid 2"></option>
-                        <option class="coreasteroid3-select translated" value="coreasteroid3" defaultText="Core Asteroid 3"></option>
-                        <option class="coreasteroid4-select translated" value="coreasteroid4" defaultText="Core Asteroid 4"></option>
-                        <option class="coreasteroid5-select translated" value="coreasteroid5" defaultText="Core Asteroid 5"></option>
-                        <option class="yt2400debris0-select translated" value="yt2400debris0" defaultText="YT2400 Debris 0"></option>
-                        <option class="yt2400debris1-select translated" value="yt2400debris1" defaultText="YT2400 Debris 1"></option>
-                        <option class="yt2400debris2-select translated" value="yt2400debris2" defaultText="YT2400 Debris 2"></option>
-                        <option class="vt49decimatordebris0-select translated" value="vt49decimatordebris0" defaultText="VT49 Debris 0"></option>
-                        <option class="vt49decimatordebris1-select translated" value="vt49decimatordebris1" defaultText="VT49 Debris 1"></option>
-                        <option class="vt49decimatordebris2-select translated" value="vt49decimatordebris2" defaultText="VT49 Debris 2"></option>
-                        <option class="core2asteroid0-select translated" value="core2asteroid0" defaultText="Force Awakens Asteroid 0"></option>
-                        <option class="core2asteroid1-select translated" value="core2asteroid1" defaultText="Force Awakens Asteroid 1"></option>
-                        <option class="core2asteroid2-select translated" value="core2asteroid2" defaultText="Force Awakens Asteroid 2"></option>
-                        <option class="core2asteroid3-select translated" value="core2asteroid3" defaultText="Force Awakens Asteroid 3"></option>
-                        <option class="core2asteroid4-select translated" value="core2asteroid4" defaultText="Force Awakens Asteroid 4"></option>
-                        <option class="core2asteroid5-select translated" value="core2asteroid5" defaultText="Force Awakens Asteroid 5"></option>
-                        <option class="gascloud1-select translated" value="gascloud1" defaultText="Gas Cloud 1"></option>
-                        <option class="gascloud2-select translated" value="gascloud2" defaultText="Gas Cloud 2"></option>
-                        <option class="gascloud3-select translated" value="gascloud3" defaultText="Gas Cloud 3"></option>
-                        <option class="gascloud4-select translated" value="gascloud4" defaultText="Gas Cloud 4"></option>
-                        <option class="gascloud5-select translated" value="gascloud5" defaultText="Gas Cloud 5"></option>
-                        <option class="gascloud6-select translated" value="gascloud6" defaultText="Gas Cloud 6"></option>
-                        <option class="pomasteroid1-select translated" value="pomasteroid1" defaultText="Pride of Mandalore Rock 1"></option>
-                        <option class="pomasteroid2-select translated" value="pomasteroid2" defaultText="Pride of Mandalore Rock 2"></option>
-                        <option class="pomasteroid3-select translated" value="pomasteroid3" defaultText="Pride of Mandalore Rock 3"></option>
-                        <option class="pomdebris1-select translated" value="pomdebris1" defaultText="Pride of Mandalore Debris 1"></option>
-                        <option class="pomdebris2-select translated" value="pomdebris2" defaultText="Pride of Mandalore Debris 2"></option>
-                        <option class="pomdebris3-select translated" value="pomdebris3" defaultText="Pride of Mandalore Debris 3"></option>
+                        <option class="coreasteroid0-select obstacle-option translated" value="coreasteroid0" defaultText="Core Asteroid 0"></option>
+                        <option class="coreasteroid1-select obstacle-option translated" value="coreasteroid1" defaultText="Core Asteroid 1"></option>
+                        <option class="coreasteroid2-select obstacle-option translated" value="coreasteroid2" defaultText="Core Asteroid 2"></option>
+                        <option class="coreasteroid3-select obstacle-option translated" value="coreasteroid3" defaultText="Core Asteroid 3"></option>
+                        <option class="coreasteroid4-select obstacle-option translated" value="coreasteroid4" defaultText="Core Asteroid 4"></option>
+                        <option class="coreasteroid5-select obstacle-option translated" value="coreasteroid5" defaultText="Core Asteroid 5"></option>
+                        <option class="yt2400debris0-select obstacle-option translated" value="yt2400debris0" defaultText="YT2400 Debris 0"></option>
+                        <option class="yt2400debris1-select obstacle-option translated" value="yt2400debris1" defaultText="YT2400 Debris 1"></option>
+                        <option class="yt2400debris2-select obstacle-option translated" value="yt2400debris2" defaultText="YT2400 Debris 2"></option>
+                        <option class="vt49decimatordebris0-select obstacle-option translated" value="vt49decimatordebris0" defaultText="VT49 Debris 0"></option>
+                        <option class="vt49decimatordebris1-select obstacle-option translated" value="vt49decimatordebris1" defaultText="VT49 Debris 1"></option>
+                        <option class="vt49decimatordebris2-select obstacle-option translated" value="vt49decimatordebris2" defaultText="VT49 Debris 2"></option>
+                        <option class="core2asteroid0-select obstacle-option translated" value="core2asteroid0" defaultText="Force Awakens Asteroid 0"></option>
+                        <option class="core2asteroid1-select obstacle-option translated" value="core2asteroid1" defaultText="Force Awakens Asteroid 1"></option>
+                        <option class="core2asteroid2-select obstacle-option translated" value="core2asteroid2" defaultText="Force Awakens Asteroid 2"></option>
+                        <option class="core2asteroid3-select obstacle-option translated" value="core2asteroid3" defaultText="Force Awakens Asteroid 3"></option>
+                        <option class="core2asteroid4-select obstacle-option translated" value="core2asteroid4" defaultText="Force Awakens Asteroid 4"></option>
+                        <option class="core2asteroid5-select obstacle-option translated" value="core2asteroid5" defaultText="Force Awakens Asteroid 5"></option>
+                        <option class="gascloud1-select obstacle-option translated" value="gascloud1" defaultText="Gas Cloud 1"></option>
+                        <option class="gascloud2-select obstacle-option translated" value="gascloud2" defaultText="Gas Cloud 2"></option>
+                        <option class="gascloud3-select obstacle-option translated" value="gascloud3" defaultText="Gas Cloud 3"></option>
+                        <option class="gascloud4-select obstacle-option translated" value="gascloud4" defaultText="Gas Cloud 4"></option>
+                        <option class="gascloud5-select obstacle-option translated" value="gascloud5" defaultText="Gas Cloud 5"></option>
+                        <option class="gascloud6-select obstacle-option translated" value="gascloud6" defaultText="Gas Cloud 6"></option>
+                        <option class="pomasteroid1-select obstacle-option translated" value="pomasteroid1" defaultText="Pride of Mandalore Rock 1"></option>
+                        <option class="pomasteroid2-select obstacle-option translated" value="pomasteroid2" defaultText="Pride of Mandalore Rock 2"></option>
+                        <option class="pomasteroid3-select obstacle-option translated" value="pomasteroid3" defaultText="Pride of Mandalore Rock 3"></option>
+                        <option class="pomdebris1-select obstacle-option translated" value="pomdebris1" defaultText="Pride of Mandalore Debris 1"></option>
+                        <option class="pomdebris2-select obstacle-option translated" value="pomdebris2" defaultText="Pride of Mandalore Debris 2"></option>
+                        <option class="pomdebris3-select obstacle-option translated" value="pomdebris3" defaultText="Pride of Mandalore Debris 3"></option>
                     </select>
                 </div>
                 <div>
@@ -882,13 +882,13 @@ class exportObj.SquadBuilder
                         <img class="obstacle-image" src="images/core2asteroid0.png" />
                     </div>
                     <div class="obstacle-sources-container">
-                        <span class="info-header obstacle-sources translated" defaultText="Sources:"></span> 
-                        <span class="info-data obstacle-sources"></span>
+                        <span class="info-header obstacle-sources translated" defaultText="Sources:" style="padding-left: 8px;"></span> <br>
+                        <span class="info-data obstacle-sources" style="padding-left: 8px;"></span>
                     </div>
                 </div>
             </div>
             <div class="modal-footer d-print-none">
-                <button class="btn close-print-dialog translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
+                <button class="btn btn-danger close-print-dialog translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
             </div>
         </div>
     </div>
@@ -1243,21 +1243,31 @@ class exportObj.SquadBuilder
             @updateShipOrder(@oldIndex, ui.item.index())
 
         @obstacles_select.change (e) =>
-            if @obstacles_select.val().length > 3
-                @obstacles_select.val(@current_squad.additional_data.obstacles)
+            previous_obstacles = @current_squad.additional_data.obstacles
+            obst_changes = (o for o in @obstacles_select.val())
+            # parse changes from previous obstacles
+            intersect = (a, b) ->
+                [a, b] = [b, a] if a.length > b.length
+                value for value in a when value in b
+
+            intersection = intersect previous_obstacles,obst_changes
+            if intersection.length > 0
+                for x in obst_changes
+                    previous_obstacles.splice(previous_obstacles.indexOf(x), 1)
             else
-                previous_obstacles = @current_squad.additional_data.obstacles
-                @current_obstacles = (o for o in @obstacles_select.val())
-                if (previous_obstacles?)
-                    new_selection = @current_obstacles.filter((element) => return previous_obstacles.indexOf(element) == -1)
-                else
-                    new_selection = @current_obstacles
-                if new_selection.length > 0
-                    @showChooseObstaclesSelectInformation(new_selection[0])
-                @current_squad.additional_data.obstacles = @current_obstacles
-                @current_squad.dirty = true
-                @container.trigger 'xwing-backend:squadDirtinessChanged'
-                @container.trigger 'xwing:pointsUpdated'
+                for x in obst_changes
+                    if previous_obstacles.length < 3
+                        previous_obstacles.push(x)
+            @current_obstacles = previous_obstacles
+
+            @current_squad.additional_data.obstacles = @current_obstacles
+            @current_squad.dirty = true
+            @obstacles_select.val(@current_obstacles)
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
+            @container.trigger 'xwing:pointsUpdated'
+
+        $('option.obstacle-option').on 'mousemove', (e) =>
+            @showChooseObstaclesSelectInformation(e.target.getAttribute("value"))
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -1908,7 +1918,7 @@ class exportObj.SquadBuilder
             # select available pilots according to ususal pilot selection
             available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and (@matcher(pilot_name, term) or (pilot.display_name and @matcher(pilot.display_name, term)) ) and (@isItemAvailable(pilot, true)))
 
-            eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.max_per_squad? or @countPilots(pilot.canonical_name) < pilot.max_per_squad or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.restriction_func? or pilot.restriction_func((builder: @) , pilot)))
+            eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.max_per_squad? or @countPilots(pilot.canonical_name) < pilot.max_per_squad or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.upgrades? or @standard_restriction_check(pilot)) and (not pilot.restriction_func? or pilot.restriction_func((builder: @) , pilot)))
 
             # Re-add selected pilot
             if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
@@ -1973,6 +1983,17 @@ class exportObj.SquadBuilder
             retval = retval.sort exportObj.sortHelper
         retval
 
+
+    standard_restriction_check: (pilot) ->
+        if pilot.upgrades?
+            for upgrade in pilot.upgrades
+                upgrade_data = exportObj.upgrades[upgrade]
+                if upgrade_data.unique == true
+                    for ship in @ships
+                        for shipupgrade in ship.upgrades
+                            if shipupgrade?.data?.canonical_name == upgrade_data.canonical_name
+                                return false
+        return true
 
     dfl_filter_func = ->
         true

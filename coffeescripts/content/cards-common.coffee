@@ -12130,6 +12130,12 @@ exportObj.basicCardData = ->
             points: 3
             ship_override:
                 hull: 4
+                actions: [
+                    "Focus"
+                    "Lock"
+                    "Evade"
+                    "Barrel Roll"
+                ]
             upgrades: [
                 "Elusive"
                 "Vengeful (BoY)"
@@ -18382,8 +18388,10 @@ exportObj.basicCardData = ->
         }
         {
             name: "R4-P17 (SoC)"
+            canonical_name: 'R4-P17'.canonicalize()
             id: 490
             standard: true
+            unique: true
             charge: 2
             slot: "Astromech"
         }
