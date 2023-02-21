@@ -2306,7 +2306,7 @@ class exportObj.SquadBuilder
                                 
                     possible_inis.sort()
         
-                    container.find('.info-type').text type
+                    container.find('.info-type').text exportObj.translate("types", type)
                     container.find('.info-name').html """#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{@uitranslation('unreleased')})"}"""
                     if @collection?.counts?
                         ship_count = @collection.counts?.ship?[data.name] ? 0
@@ -2420,7 +2420,7 @@ class exportObj.SquadBuilder
                     container.find('.info-sources.info-data').text if (sources.length > 1) or (not (exportObj.translate('sources', 'Loose Ships') in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
                     container.find('.info-sources').show()
                 when 'Pilot'
-                    container.find('.info-type').text type
+                    container.find('.info-type').text exportObj.translate("types", type)
                     container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
                     container.find('.info-sources').show()
                     if @collection?.counts?
@@ -2737,7 +2737,7 @@ class exportObj.SquadBuilder
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
-                    container.find('.info-type').text additional_opts.addon_type
+                    container.find('.info-type').text exportObj.translate("slot", additional_opts.addon_type)
                     container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
                     container.find('.info-sources').show()
                     
@@ -3237,10 +3237,10 @@ class exportObj.SquadBuilder
                     othertext += comma + card.ship
                 comma = ', '
             if card.solitary
-                othertext += comma + exportObj.translate('faction', "Solitary")
+                othertext += comma + exportObj.translate('gameterms', "Solitary")
                 comma = ', '
             if card.standardized
-                othertext += comma + exportObj.translate('faction', "Standardized")
+                othertext += comma + exportObj.translate('gameterms', "Standardized")
                 comma = ', '
         text += othertext + uniquetext
         if text != ''
