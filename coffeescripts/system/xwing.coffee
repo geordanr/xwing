@@ -3638,7 +3638,7 @@ class Ship
                 if @wingmates? and @wingmates.length > 0
                     # remove any wingmates, as the wing leader was just removed from the list
                     @setWingmates(0)
-                    @linkedShip = null
+                    # @linkedShip = null the ghost hera has wingmates and a linked phantom. We can't assume that we are done here...
                 @quickbuildId = id
                 @builder.current_squad.dirty = true
                 @resetPilot()
