@@ -4779,7 +4779,6 @@ exportObj.basicCardData = ->
             points: 3
             loadout: 4
             slots: [
-                "Missile"
                 "Illicit"
                 "Modification"
             ]
