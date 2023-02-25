@@ -123,7 +123,7 @@ class exportObj.CardBrowser
                                         </label>
                                         <br />
                                         <label class = "advanced-search-label toggle-unique">
-                                            <input type="checkbox" class="duplicate-slots-checkbox advanced-search-checkbox" /> #{exportObj.translate('ui', "Has multiple of the chosen slots")}
+                                            <input type="checkbox" class="duplicate-slots-checkbox advanced-search-checkbox" /> <span class="translated" defaultText="Has multiple of the chosen slots"></span> 
                                         </label>
                                     </div>
                                     <div class = "advanced-search-keyword-available-container">
