@@ -3778,6 +3778,51 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
         "Proud Tradition":
            display_name: "Stolze Tradition"
            text: "<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK%Solange du 2 oder weniger Stressmarker hast, darfst du %FOCUS% -Aktionen durchführen, auch solange du gestresst bist.%LINEBREAK%NAchdem du einen Angriff durchgeführt hast, falls du gestresst bist, darf der Verteidiger 1 Fokusmarker ausgeben oder 1 %CRIT% -Schaden erleiden, um diese Karte umzudrehen.%LINEBREAK%Falsche Tradition (Rückseite):%LINEBREAK%Behandle deine %FOCUS%-Aktionen, als wären sie rot."
+        "Selfless (BoY)":
+           display_name: "Selbstlos"
+           text: 'Solange ein anderes befreundetes Schiff in Reichweite 0-1 verteidigt, vor dem Schritt "Ergebnisse neutraliesieren", falls du im Angriffswinkel bist, darfst du 1 %CRIT%-Schaden erleiden, um 1%CRIT% Ergebnis zu negieren.'
+        "B6 Blade Wing Prototype (Epic)":
+           display_name: "Blatt-Flügler-Prototyp B6"
+           text: "Füge den %Gunner%-Slot hinzu.%LINEBREAK%<b>Angriff [%LOCK%]:</b> ERhalte 1 Ionenmarker, um diesen Angriff durchzuführen. Falls dieser Angriff trifft, erleidet der Verteidiger 1 zusätzlichen %HIT% / %CRIT% -Schaden für jedes passende nicht-negierte Ergebnis nach dem ersten."
+        "Hotshot Tail Blaster":
+           display_name: "Erstklassiker Heckblaster"
+           text: "Dieser Angriff kann in Reichweite 0 durchgeführt werden. %LINEBREAK%<b>Angriff:</b> Gib 1 %CHARGE% aus."
+        "Xanadu Blood":
+           display_name: "Xanadu Blut"
+           text: "Füge den %CREW%- und den %DEVICE%- Slot hinzu."
+        "Fanatic (BoY)":
+           display_name: "Besessen"
+           text: "Solange du einen Primärangriff durchführst, falls du beschädigt bist, darfst du 1 %FOCUS% - in ein %HIT% - Ergebnis ändern."
+        "R2-A3 (BoY)":
+           display_name: "R2-A3"
+           text: "Nachdem du dein Rad aufgedeckt hast,darfst du 1 %CHARGE% ausgeben und 1 Entwaffnet-Marker erhalten, um 1 Schild wiederherzustellen."
+        "Sensor Jammer (BoY)":
+           display_name: "Störsender"
+           text: "Solange du verteidigst, falls auf dem Angreifer eine befreundete Zielerfassung ist, darfst du 1 %HIT% -Ergebnis des Angreifers in ein %FOCUS% - Ergebnis ändern."
+        "Ancillary Ion Weapons (SoC)":
+           display_name: "Zusatz-Ionenwaffen (SoC)"
+           text: "Solange du einen %FRONTARC% - Primärangriff durchführst, bevor du einen Angriffswürfel wirfst, darfst du 2 %CHARGE% ausgeben. Falls du das tust, fügen deine %CRIT% - Ergebnisse Ionenmarker statt Schaden zu."
+        "Roiling Anger (SoC)":
+           display_name: "Kochende Wut (SoC)"
+           text: "FAlls du zu Beginn der Kampfphase im %FRONTARC% eines feindlichen Schiffes bist, darfst du 1 Anstrengungsmarker erhalten, um 1 %FORCE% wiederherzustellen."
+        "Contingency Protocol (SoC)":
+           display_name: "Notfallprotokoll (SoC)"
+           text: "Nachdem diese Schiff zerstört worden ist, darf ein anderes befreundetes Schiff in Reichweite 0-3 mit der Aufwertung <strong>NOTFALLPROTOKOLL</strong> eine Aktion durchführen, auch solange es gestresst ist."
+        "Evasion Sequence 7 (SoC)":
+           display_name: "Ausweichmanöver 7 (SoC)"
+           text: "Solange du eine rote %EVADE% -Aktion durchführst, falls du in Reichweite 1 ein Hindernis oder Szenario-Merkmal ist,behandle die Aktion stattdessen , als wäre sie weiß."
+        "Strut-Lock Override (SoC)":
+           display_name: "Überbrückte Krallenverriegelung (SoC)"
+           text: "Zu Beginn deiner Aktivierung darfst du 1 %CHARGE% ausgeben. Falls du das tust, ignorierst du in dieser Runde Hindernisse, solange du dich durch sie hindurchbewegst."
+        "R4-P17 (SoC)":
+           display_name: "R4-P17 (SoC)"
+           text: "Sobald dir eine Schadenskarte zugeteilt werden würde, falls du nicht verteidigst, darfst du 1 %CHARGE% ausgeben und 1 Anstrengungsmarker erhalten, um jene Schadenskarte stattdessen abzulegen."
+        "Wolfpack (SoC)":
+           display_name: "Wolfsrudel (SoC)"
+           text: "Solange du einen Angriff durchführst, darfst du die Zielerfassung eines befreundeten <strong>PLO-KOON</strong>-Schiffes oder eines Schiffes mit der Schiffsfähigkeit <strong>DAFÜR GEBOREN</strong> auf dem Verteidiger ausgeben, um beliebig viele Angriffswürfel neu zu werfen."
+        "R5-K6 (BoY)":
+           display_name: "R5-K6 (BoY)"
+           text: "<b>Aktion:</b> Gib 1 %CHARGE% aus, um 1 verdeckte Schadenskarte zu reparieren.<LINEBREAK><b>Aktion:</b> Repariere 1 offene <strong> Schiff- </strong> Schadenskarte."
 
     condition_translations =
         'Suppressive Fire':
