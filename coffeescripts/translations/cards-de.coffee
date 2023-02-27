@@ -1197,7 +1197,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange du verteidigst oder einen Primärangriff durchführst, falls du gestresst bist, <b>musst</b> du 1 Verteidigungswürfel weniger oder 1 zusätzlichen Angriffswürfel werfen."""
         "Maarek Stele":
            display_name: """Maarek Stele"""
-           text: """Solange du einen Angriff durchführst, falls dem Verteidiger eine offene Scha­dens­karte zugeteilt werden würde, ziehe stattdessen 3 Schadenskarten, wähle 1 und lege die übrigen ab.%LINEBREAK%<strong>Verbesserter Zielcomputer:</strong> Solange du einen Primärangriff gegen einen Ver­tei­diger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen An­griffs­würfel und ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
+           text: """Solange du einen Angriff durchführst, falls dem Verteidiger eine offene Scha­dens­karte zugeteilt werden würde, ziehe stattdessen 3 Schadenskarten, wähle 1 und lege die übrigen ab."""
         "Mace Windu":
            display_name: """Mace Windu"""
            text: """Nachdem du ein rotes Manöver vollständig ausgeführt hast, stelle 1 %FORCE% wieder her. """
@@ -3853,7 +3853,6 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            display_name: 'Elektrodüppel-Wolke'
            text: '''<strong>Typ:</strong>Hindernis, Gerät %LINEBREAK% Während der Endphase wird jede Elektrodüppel-Wolke ohne Zeitzünder entfernt, dann wird ein Zeitzünder von jeder Elektrodüppel-Wolke entfernt. Eine Elektrodüppel-Wolke kann nie mehr als 1 Zeitzünder haben.'''
 
-    
     chassis_translations =
         "Vectored Thrusters":
            display_name: 'Schwenkbare Schubdüsen'
@@ -3957,5 +3956,44 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
         "Plated Hull":
            display_name: "Gepanzerte Hülle"
            text: """Solange du verteidigst, falls du nicht kritisch beschädigt bist, ändere 1&nbsp;%CRIT%&nbsp;-Ergebnis in ein&nbsp;%HIT%&nbsp;-Ergebnis."""
+        "Solo":
+           display_name: "Solo"
+           text: "Solange du verteidigst oder einen Angriff durchführst, falls kein anderes befreundetes Schiff in Reichweite 0-1 ist, darfst du 1 %CHARGE% ausgeben, um 1 deiner Würfel neu zu werfen."
+        "Pursuit Craft":
+           display_name: "Jagdschiff"
+           text: "Nachdem du absetzt worden bist, darfst du ein Schiff als Ziel erfassen, das von der befreundeten <strong>REISSZAHN</strong> als Ziel erfasst ist."
+        "Explosion with Wings":
+           display_name: "Explosion mit Flügeln"
+           text: "<b>Aufbau:</b> Dir wird 1 verdeckte Schadenskarte zugeteilt. Nachdem du eine %SLAM%-Aktion durchgeführt hast, darfst du 1 Schadenskarte offenlegen, um 1 Entwaffnetmarker zu entfernen."
+        "Fine-Tuned Thrusters":
+           display_name: "Präzisionsdüsen"
+           text: "Nachdem du ein Manöver vollständig ausgeführt hast, falls du nicht erschöpft oder angestrengt bist, darfst du 1 Erschöpfungs- oder Anstrengungsmarker erhalten, um eine %LOCK%- oder %BARRELROLL%-Aktion durchzuführen."
+        "Fire Convergence":
+           display_name: "Gebündeltes Feuer"
+           text: "Solange ein befreundetes Schiff einen Nicht-%ROTATEARC%-Angriff durchführt, falls der Verteidiger in deinem %ROTATEARC% ist, darfst du 1 %CHARGE% ausgeben. Falls du das tust, darf der Angreifer bis zu 2 Angriffswürfel neu werfen."
+        "Rotating Cannons":
+           display_name: "Drehgeschütz"
+           text: "Du kannst deinen %ROTATEARC%-Anzeiger nur auf deinen %FRONTARC% oder %REARARC% rotieren. Du <strong>musst</strong> die %FRONTARC%-Vorraussetzung deiner ausgerüsteten %CANNON%-Aufwertungen behandeln, als wäre sie %ROTATEARC%."
+        "Twin Ion Engines":
+           display_name: "Zwillings-Ionenantrieb"
+           text: 'Ignoriere die Schiffsbeschränkung "TIE" auf Aufwertungskarten.'
+        "Intuitive Controls":
+           display_name: "Intuitive Steuerung"
+           text: "Während der Systemphase darfst du eine violette %BARRELROLL% oder eine violette %BOOST%-Aktion durchführen."
+        "Intuitive Interface":
+           display_name: "Intuitive Schnittstelle"
+           text: "Nachdem du eine Aktion durchgeführt hast, die deiner Aktionsleiste durch eine %TALENT%-,%ILLICIT%- oder %MODIFICATION%-Aufwertung hinzugefügt wurde, darfst du eine %CALCULATE%-Aktion durchführen."
+        "Pursuit Thrusters":
+           display_name: "Jagddüsen"
+           text: "Während der Systemphase darfst du eine %BOOST%-Aktion durchführen."
+        "Versatile Frame":
+           display_name: "Vielseitige Konstruktion"
+           text: "Du kannst 1 %TORPEDO% oder %MISSILES%-Aufweertung ausrüsten. Solange dein aufgedecktes Manöver blau ist, füge deiner Aktionsleiste einen weißen %BOOST% hinzu."
+        "Born for This":
+           display_name: "Dafür geboren"
+           text: "Solange ein anderes befreundetes SChiff inReichweite 0-2 verteidigt, falls du nicht angestrengt bist, darf jenes Schiff deine Fokus- und Ausweichmarker ausgeben, als hätte es sie selbst. Falls es das tut, erhältst du 1 Anstrengungsmarker."
+        "Modified for Organics":
+           display_name: "auf organische Piloten angepasst"
+           text: "Dieses Schiff ist nicht von der Beschränkung <strong>GENORMT</strong> betroffen. Verringere die Schwierigkeit deiner Drehmanöver [%TURNLEFT% oder %TURNRIGHT%] mit Geschwindigkeit 2-3. Erhöhe die Schwierigkeit deiner Wendemanöver [%BANKLEFT% oder %BANKRIGHT%] mit Geschwindigkeit 3."
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations
