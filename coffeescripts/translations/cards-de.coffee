@@ -3852,6 +3852,45 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
         'Electro-Chaff Cloud':
            display_name: 'Elektrodüppel-Wolke'
            text: '''<strong>Typ:</strong>Hindernis, Gerät %LINEBREAK% Während der Endphase wird jede Elektrodüppel-Wolke ohne Zeitzünder entfernt, dann wird ein Zeitzünder von jeder Elektrodüppel-Wolke entfernt. Eine Elektrodüppel-Wolke kann nie mehr als 1 Zeitzünder haben.'''
+        "It's the Resistance":
+           display_name: "Das ist der Widerstand"
+           text: "<b>Aufbau:</b> Beginne in der Reserve. %LINEBREAK% Sobald du abgesetzt wirst, wirst du innerhalb von Reichweite 1 eines beliebigen Spielflächenrandes und jenseits von Reichweite 3 aller feindlichen Schiffe platziert.%LINEBREAK%Zu Beginn der Runde, falls alle %CHARGE% des befreundeten <strong>GA-97</strong> aktiv sind, <strong>musst</stong> du abgesetzt werden. Dann erhalte 1 Entwaffnet-Msrker und entferne die Karte."
+        "Decoyed":
+           display_name: "Durch ein Double geschützt"
+           text: "Solange du verteidigst, darf jede befreundete <strong>Zofe von Naboo</strong> im Angriffswinkel 1 Ausweichmarker ausgeben, um 1 deiner Ergebniss in ein %EVADE% - Ergebnis zu ändern. %LINEBREAK% Falls du ein Könglicher N-1 Sternjäger von Naboo bist, darf stattdessen jede befreundete <strong>Zofe von Naboo</strong> im Angriffswinkel 1 Ausweichmarker ausgebe, um 1 %EVADE% -Ergebnis hinzuzufügen."
+        "Compromising Intel":
+           display_name: "Kompromittierende Information"
+           text: "Während der Systemphase, falls die feindliche <strong> Vi Moradi</strong> in Reichweite 0-3 ist, drehe dein Rad auf die offene Seite.%LINEBREAK% Solange du gegen die feindliche <strong> Vi Moradi </strong> verteidigst oder einen Angriff gegen sie durchführst, kannst du keine Fokusmarker ausgeben."
+        "You Should Thank Me":
+           display_name: "Du solltest mir danken"
+           text: "Dieser Zustand wird verdeckt zugeordnet. Decke ihn auf, nachdem du verteidigt hast.%LINEBREAK% Nachdem du verteidigt hast, stellt <strong>Zam Wesell</strong> 1 %CHARGE% wieder her. Dann darfst du den Angreifer als Ziel erfassen. %LINEBREAK% Am Ende der Kampfphase, falls diese Karte verdeckt ist und im Feuerwinkel eines feindlichen Schiffes bist, darfst du diese Karte aufdecken und 2 %CHARGE% von <strong>Zam Wesell</strong> ausgeben. Falls du das tust, darfst du einen Bonusangriff durchführen.%LINEBREAK% Zu Beginn der Systemphase entferne diesen Zustand."
+        "You'd Better Mean Business":
+           display_name: "Wehe, du meinst es nicht Ernst"
+           text: "Dieser Zustand wird verdeckt zugeordnet. Decke ihn auf, nachdem du verteidigt hast. %LINEBREAK% Nachdem du verteidigt hast, darfst du 2 %CHARGE% von <strong>Zam Wesell</strong> ausgeben. FAlls du das tust, führe einen Bonusangriff gegen den Angreifer durch.%LINEBREAK% Am Ende der Kampfphase, falls diese Karte verdeckt ist und du im Feuerwinkel eines feindlichen Schiffes bist, darfst du diese Karte aufdecken. Falls du das tust, stellt <strong>Zam Wesell</strong> 2 %CHARGE% wieder her.%LINEBREAK% Zu Beginn der Systemphase entferne diesen Zustand."
+        "Merciless Pursuit":
+           display_name: "Gnadenlose Verfolgung"
+           text: "Nachdem du einen Angriff durchgeführt hast, falls der Verteidiger <strong>DAS KIND </strong> ausgerüstet hat, darfst du den Verteidiger als Ziel erfassen."
+        "Marked for Elimination":
+           display_name: "Als Beute markiert"
+           text: "Solange du verteidigst, falls der Angreifer <strong>PEILSENDER</strong> ausgerüstet hat und dich als Ziel erfasst hat, kannst du keine grünen Marker ausgeben."
+        "False Friend":
+           display_name: "Falscher Freund"
+           text: "Falls während der Systemphase ein feindliches Schiff mit der Aufwertung <strong>Tal Merrik</strong> in Reichweite 0-2 ist oder ein feindliches Remote in Reichweite 0-2 ist, drehe dein Rad auf die offene Seite.%LINEBREAK%<b>Aktion:</b> Erhalte1 Erschöpfungs- und 1 Stressmarker, um diesen Zustand abzulegen."
+        "Trials of the Darksaber":
+           display_name: "Das Dunkelschwert"
+           text: "Solange du einen Angriff in Angriffsreichweite 0-2 durchführst, darfst du 1 %CRIT%-Ergebnis ausgeben. Falls du das tust, falls der Spieler des verteidigenden Schiffes mehr verdiente %?% als du hat, verliert er 1 verdiente %?% . Platziere jene %?% auf diese Karte.%LINEBREAK% Nachdem du verteidigt hast, falls du von einem feindlichen Schiff in Angriffsreichweite 0-2 zerstört worden bist, ordne dem Angreifer den Zustand <strong>DAS DUNKELSCHWERT</strong> zu (Alle %?% bleiben auf dieser Karte.%LINEBREAK%Am Spielende verdient dieses Schiff alle %?% auf dieser KArte."
+        "Guarded":
+           display_name: "Beschützt"
+           text: "Solange du verteidigst, falls du nicht im %BULLSARC% des Angreifers bist, wirfst du 1 zusätzlichen Verteidigungswürfel für jeden befreundeten berechnenden oder ausweichenden <strong>BESCHÜTZER DER MAGNAWÄCHTER</strong> im Angriffswinkel."
+        "Sickening Maneuver":
+           display_name: "Schwindelerregendes Manöver"
+           text: "Du kannst rote Manöver ausführen, aus solange du gestresst bist.%LINEBREAK%Nachdem du ein Drehmanöver [%TURNLEFT% oder %TURNRIGHT%] oder ein Wendemanöver [%BANKLEFT% oder BANKRIGHT%] aufgedeckt hast, <strong>musst</strong> du 1 Anstrengunsmarker erhalten und jenes MAnöver als Slip ausführen.%LINEBREAK% NAchdem du ein Geradenmanöver [%STRAIGHT%] aufgedeckt hast, musst du jenes Manöver als rote Koiogran.Wende [%KTURN%] ausführen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, entfernst du diesen Zustand."
+        "Primed For Speed":
+           display_name: "Bleifuss"
+           text: "Füge deiner Aktionsleiste eine weisse %SLAM% -Aktionhinzu.%LINEBREAK% NAchdem du eine %SLAM% -Aktion durchgeführt hast, <strong>musst</strong> du 1 %HIT%-Schaden erleiden, um 1 Entwaffnet-Marker zu entfernen."
+        "Broken Trust":
+           display_name: "Vertrauensbruch"
+           text: "Behandle befreundete Schiffe , als wären sie verbündet.%LINEBREAK%Nicht-feindliche Schiffe behandeln dich, als wärst du verbündet.%LINEREAK% Solange du einen Angriff durchführst, bevor du den Verteidiger deklarierst, erhält jedes verbündete Schiff im Angriffswinkel,das nicht gestresst ist, 1 Stressmarker.%LINEBREAK%Nachdem du verteidigt oder einen Angriff durchgeführt hast, falls dem Verteidiger mindestens 1 offene Schadenskarte zugeteilt oder zerstört worden ist, entfernst du diesen Zustand."
 
     chassis_translations =
         "Vectored Thrusters":
