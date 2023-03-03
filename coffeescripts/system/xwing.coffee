@@ -888,11 +888,13 @@ class exportObj.SquadBuilder
                 </div>
             </div>
             <div class="modal-footer d-print-none">
+                <button class="btn btn-danger reset-obstacles translated" defaultText="Reset Obstacles"></button>
                 <button class="btn btn-danger close-print-dialog translated" data-dismiss="modal" aria-hidden="true" defaultText="Close"></button>
             </div>
         </div>
     </div>
         """
+        @obstacles_reset = @choose_obstacles_modal.find('.reset-obstacles')
         @obstacles_select = @choose_obstacles_modal.find('.obstacle-select')
         @obstacles_select_image = @choose_obstacles_modal.find('.obstacle-image-container')
         @obstacles_select_sources = @choose_obstacles_modal.find('.info-data.obstacle-sources')
@@ -1242,7 +1244,16 @@ class exportObj.SquadBuilder
         .on 'sortstop', (e, ui) =>
             @updateShipOrder(@oldIndex, ui.item.index())
 
-        @obstacles_select.change (e) =>
+        @obstacles_reset.click (e) =>
+            if @current_obstacles != []
+                @current_obstacles = []
+                @obstacles_select.val("")
+                @current_squad.additional_data.obstacles = @current_obstacles
+                @current_squad.dirty = true
+                @container.trigger 'xwing-backend:squadDirtinessChanged'
+                @container.trigger 'xwing:pointsUpdated'        
+
+        @obstacles_select.mouseup (e) =>
             previous_obstacles = @current_squad.additional_data.obstacles
             obst_changes = (o for o in @obstacles_select.val())
             # parse changes from previous obstacles
@@ -1251,18 +1262,17 @@ class exportObj.SquadBuilder
                 value for value in a when value in b
 
             intersection = intersect previous_obstacles,obst_changes
-            if intersection.length > 0
-                for x in obst_changes
+            for x in obst_changes
+                if intersection.indexOf(x) > -1
                     previous_obstacles.splice(previous_obstacles.indexOf(x), 1)
-            else
-                for x in obst_changes
+                else
                     if previous_obstacles.length < 3
                         previous_obstacles.push(x)
-            @current_obstacles = previous_obstacles
 
-            @current_squad.additional_data.obstacles = @current_obstacles
+            @updateObstacleSelect(previous_obstacles)
+
+            @current_squad.additional_data.obstacles = previous_obstacles
             @current_squad.dirty = true
-            @obstacles_select.val(@current_obstacles)
             @container.trigger 'xwing-backend:squadDirtinessChanged'
             @container.trigger 'xwing:pointsUpdated'
 
