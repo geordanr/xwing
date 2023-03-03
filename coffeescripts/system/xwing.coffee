@@ -1389,13 +1389,13 @@ class exportObj.SquadBuilder
                 @printable_container.find('.xws-container .qrcode').qrcode
                     render: 'div'
                     ec: 'M'
-                    size: if text.length < 144 then 144 else 160
+                    size: if text.length < 144 then 144 else 256
                     text: text
                 text = "https://yasb.app/#{query}"
                 @printable_container.find('.permalink-container .qrcode').qrcode
                     render: 'div'
                     ec: 'M'
-                    size: if text.length < 144 then 144 else 160
+                    size: if text.length < 144 then 144 else 256
                     text: text
 
             #Trigger List
