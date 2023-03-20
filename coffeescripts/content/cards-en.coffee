@@ -217,7 +217,9 @@ exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.English = () ->
     exportObj.cardLanguage = 'English'
 
-    exportObj.renameShip """TIE/ba Interceptor""", """TIE/ba Interceptor"""
+    for ship of exportObj.ships
+      exportObj.renameShip ship, ship
+      # rename all ships back to their original name. Otherwise translations would stick when changing back to english. 
 
     pilot_translations =
         "0-66":
