@@ -16,7 +16,7 @@ exportObj.cardLoaders.Português = () ->
     pilot_translations =
 #Rebel Alliance Pilots
         #ARC-170       
-         "Ibtisam":
+        "Ibtisam":
            display_name: """Ibtisam"""
            text: """Após você executar completamente uma manobra, se você estiver estressado, você pode rolar 1 dado de ataque. Em um resultado %HIT% ou %CRIT%, remova 1 ficha de estresse."""
         "Garven Dreis":
@@ -363,7 +363,7 @@ exportObj.cardLoaders.Português = () ->
         '"Pops" Krail (BoY)':
            display_name: """“Pops” Krail (BdY)"""
            text: """Quando você realizar um ataque %SINGLETURRETARC%, você pode rerolar até 2 dados de ataque."""
-        'Dutch" Vander (BoY)':
+        '"Dutch" Vander (BoY)':
            display_name: """“Dutch” Vander (BdY)"""
            text: """Depois que você gastar uma mira durante um ataque, escolha uma nave amiga em alcance 1-3. A nave escolhida pode adquirir uma mira no defensor."""
 
