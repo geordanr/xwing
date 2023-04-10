@@ -842,8 +842,8 @@ class exportObj.SquadBuilder
             <div class="modal-header">
                 <label class='choose-obstacles-description translated' defaultText="Choose obstacles dialog"></label>
             </div>
-            <div class="modal-body">
-                <div class="obstacle-select-container" style="float:left">
+            <div class="modal-body row">
+                <div class="obstacle-select-container col-md-5" style="float:left">
                     <select multiple class='obstacle-select' size="18">
                         <option class="coreasteroid0-select obstacle-option translated" value="coreasteroid0" defaultText="Core Asteroid 0"></option>
                         <option class="coreasteroid1-select obstacle-option translated" value="coreasteroid1" defaultText="Core Asteroid 1"></option>
@@ -877,7 +877,7 @@ class exportObj.SquadBuilder
                         <option class="pomdebris3-select obstacle-option translated" value="pomdebris3" defaultText="Pride of Mandalore Debris 3"></option>
                     </select>
                 </div>
-                <div>
+                <div class="col-md-6">
                     <div class="obstacle-image-container" style="display:none;">
                         <img class="obstacle-image" src="images/core2asteroid0.png" />
                     </div>
@@ -4972,7 +4972,7 @@ class GenericAddon
         if new_data?.id != @data?.id
             if @data?.unique? or @data?.solitary?
                 await @ship.builder.container.trigger 'xwing:releaseUnique', [ @unadjusted_data, @type, defer() ]
-            if @data?.standardized? and not @ship.hasFixedUpgrades and (@data?.restrictions? and @ship.restriction_check(@data.restrictions,@data))
+            if @data?.standardized? and not @ship.hasFixedUpgrades and ((@data?.restrictions? and @ship.restriction_check(@data.restrictions,@data)) or not @data?.restrictions?)
                 @ship.removeStandardizedList(@data)
             @rescindAddons()
             @deoccupyOtherUpgrades()
