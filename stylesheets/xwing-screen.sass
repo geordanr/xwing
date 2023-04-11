@@ -9,6 +9,11 @@ $pilot-circle-border-width: 10px
 $upgrade-circle-diameter: $pilot-circle-diameter * 0.75
 $upgrade-circle-border-width: 5px
 
+// make sure all print options fit in one row for 360px mobile
+@media (max-width: 400px) and (min-width:350px)
+  .modal-dialog
+    margin: calc(min(.5rem, (100vw - 350px)*0.5))
+
 .text-list-modal .modal-header
   overflow: hidden
 
