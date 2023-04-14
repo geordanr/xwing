@@ -416,7 +416,7 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="row btn-group list-display-mode">
                     <button class="btn btn-modal select-simple-view translated" defaultText="Simple"></button>
-                    <button class="btn btn-modal select-fancy-view d-none d-sm-block translated" defaultText="Fancy"></button>
+                    <button class="btn btn-modal select-fancy-view translated" defaultText="Fancy"></button>
                     <button class="btn btn-modal select-simplecopy-view translated" defaultText="Text"></button>
                     <button class="btn btn-modal select-reddit-view translated" defaultText="Reddit"></button>
                     <button class="btn btn-modal select-tts-view d-none d-sm-block translated" defaultText="TTS"></button>
