@@ -457,7 +457,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Depois que você realizar um ataque, se o defensor foi destruído, você pode realizar uma ação, mesmo se estiver estressado. E então você pode receber 2 fichas de desgaste para realizar um ataque bônus."""
 
        #Kihraxz
-       "Cartel Marauder":
+        "Cartel Marauder":
            display_name: """Saqueador de Cartel"""
            text: """<i class = flavor_text>A versátil Kihraxz foi projetada com base no popular caça estelar X-wing da Incom, porém uma série de kits de modificação garantiu uma gama enorme de variações.</i>"""
         "Black Sun Ace":
@@ -517,7 +517,7 @@ exportObj.cardLoaders.Português = () ->
         "Dace Bonearm":
            display_name: """Dace Bonearm"""
            text: """Após uma nave inimiga em alcance 0-3 receber ao menos 1 ficha de íon, você pode gastar 3 %CHARGE%. Se o fizer, a nave inimiga recebe 2 fichas de íon adicionais."""
-       "Gamut Key":
+        "Gamut Key":
            display_name: """Gamut Key"""
            text: """No início da Fase Final, você pode gastar 2 %CHARGE% para escolher você mesmo ou uma nave em seu %SINGLETURRETARC% com 1 ou mais fichas circulares. Durante a Fase Final, fichas circulares não são removidas da nave escolhida."""
         "Tápusk":
@@ -614,7 +614,7 @@ exportObj.cardLoaders.Português = () ->
         "Autopilot Drone":
            display_name: """Piloto Automático"""
            text: """<i class = flavor_text>Às vezes, os avisos dos fabricantes devem ser desobedecidos. %LINEBREAK%<strong>Células de Energia Viciadas:</strong> Durante a Fase de Sistema, se você não estiver acoplado, perca 1 %CHARGE%. No final da Fase de Ativação, se você tiver 0 %CHARGE%, você é destruído. Antes de você ser removido, cada nave em alcance 0-1 sofre 1 dano %CRIT%."""
-       "L3-37 (Escape Craft)":
+        "L3-37 (Escape Craft)":
            display_name: """L3-37"""
            text: """Se você não tiver escudos, diminua a dificuldade das suas manobras de curva (%BANKLEFT% e %BANKRIGHT%)."""
         "Outer Rim Pioneer":
@@ -657,7 +657,7 @@ exportObj.cardLoaders.Português = () ->
         "Ketsu Onyo":
            display_name: """Ketsu Onyo"""
            text: """No início da Fase de Engajamento, você pode escolher 1 nave que esteja tanto em seu %FRONTARC% quanto em seu %SINGLETURRETARC% em alcance 0-1. Se o fizer, a nave escolhida recebe 1 ficha de tração."""
-       "Asajj Ventress":
+        "Asajj Ventress":
            display_name: """Asajj Ventress"""
            text: """No início da Fase de Engajamento, você pode escolher 1 nave inimiga em seu %SINGLETURRETARC% em alcance 0-2 e gastar 1 %FORCE%. Se o fizer, a nave escolhida recebe 1 ficha de estresse a menos que ela remova 1 ficha verde."""
 
@@ -728,7 +728,7 @@ exportObj.cardLoaders.Português = () ->
         "Black Sun Soldier":
            display_name: """Soldado do Sol Negro"""
            text: """<i class = flavor_text>O vasto e influente sindicato criminoso Sol Negro está sempre em busca de pilotos talentosos, contanto que eles não questionem o que precisam fazer para receber seus créditos.</i>"""
-       "Nashtah Pup":
+        "Nashtah Pup":
            display_name: """Nashtah Pup"""
            text: """Você pode desacoplar apenas por uma desacoplagem de emergência e possui o nome, a iniciativa, a habilidade de piloto e a %CHARGE% da Hound’s Tooth amiga destruída.%LINEBREAK%<strong> Módulo de Fuga: Preparação:</strong: Requer a Hound’s Tooth. Você deve iniciar o jogo acoplado na <strong>Hound’s Tooth</strong>."""
         "Kaa'to Leeachos":
@@ -854,7 +854,7 @@ exportObj.cardLoaders.Português = () ->
         "Captain Kagi":
            display_name: """Capitão Kagi"""
            text: """No início da Fase de Engajamento, você pode escolher 1 ou mais naves amigas em alcance 0-3. Se o fizer, transfira todas as fichas de mira inimigas das naves escolhidas para você."""
-       "Colonel Jendon":
+        "Colonel Jendon":
            display_name: """Coronel Jendon"""
            text: """No início da Fase de Ativação, você pode gastar 1 %CHARGE%. Se o fizer, quando naves amigas adquirirem miras nessa rodada, elas devem adquirir miras além do alcance 3 ao invés de em alcance 0-3."""
 
@@ -873,7 +873,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Quando você defender, se você estiver desarmado, role 1 dado de defesa adicional."""
 
        #TIE/V1
-       "Baron of the Empire":
+        "Baron of the Empire":
            display_name: """Barão do Império"""
            text: """<i class = flavor_text>A TIE Advanced v1 da Sienar Fleet Systems é um projeto de caça estelar revolucionário, apresentando motores aprimorados, um lança-mísseis e s-foils dobráveis.</i>"""
         "Inquisitor":
@@ -893,16 +893,16 @@ exportObj.cardLoaders.Português = () ->
         "Tempest Squadron Pilot":
            display_name: """Piloto do Esquadrão Tempestade"""
            text: """<i class = flavor_text>A TIE Advanced aprimorou o projeto do popular TIE/In ao adicionar escudo, um sistema de armas mais avançado, painéis solares curvos e um hiperpropulsor."""
-       "Storm Squadron Ace":
+        "Storm Squadron Ace":
            display_name: """Ás do Esquadrão Tormenta"""
            text: """<i class = flavor_text>A TIE Advanced x1 foi produzida em quantidade limitada, porém os engenheiros da Sienar incorporaram muitas de suas melhores qualidades em seu próximo modelo de TIE: a TIE Interceptor."""
         "Zertik Strom":
            display_name: """Zertik Strom"""
            text: """Durante a Fase Final, você pode gastar uma mira que você adquiriu em uma nave inimiga para expor 1 das cartas de dano dela."""
-       "Ved Foslo":
+        "Ved Foslo":
            display_name: """Ved Foslo"""
            text: """Quando você executar uma manobra, você pode executar uma manobra de mesma direção e dificuldade com velocidade 1 maior ou menor."""
-       "Maarek Stele":
+        "Maarek Stele":
            display_name: """Maarek Stele"""
            text: """Quando você realizar um ataque, se o defensor for receber uma carta de dano virada para cima, ao invés disso, compre 3 cartas de dano, escolha 1 e descarte o resto."""
         "Darth Vader":
@@ -936,7 +936,7 @@ exportObj.cardLoaders.Português = () ->
         "Gamma Squadron Ace":
            display_name: """Ás do Esquadrão Gama"""
            text: """<i class = flavor_text>Apesar de sacrificar boa parte de sua velocidade e agilidade se comparada com uma TIE/ln, a capacidade de carga aumentada da TIE bomber pode carregar poder de fogo para destruir virtualmente qualquer alvo inimigo.</i> """
-       '"Deathfire"':
+        '"Deathfire"':
            display_name: """“Deathfire”"""
            text: """Após você ser destruído, antes de você ser removido, você pode realizar um ataque e soltar ou lançar um dispositivo."""
         "Tomax Bren":
@@ -956,16 +956,16 @@ exportObj.cardLoaders.Português = () ->
         "Onyx Squadron Ace":
            display_name: """Ás do Esquadrão Ônix"""
            text: """<i class = flavor_text>A experimental TIE defender desbanca qualquer outro caça estelar contemporâneo, porém seu tamanho, velocidade e capacidade bélica vem acompanhados de um custo à altura de sua tremenda capacidade.</i>"""
-       "Captain Dobbs":
+        "Captain Dobbs":
            display_name: """Capitão Dobbs"""
            text: """Quando outra nave aliada em alcance 0-1 defender, antes da etapa Neutralizar Resultados, se você estiver no arco de ataque e não estiver ionizado, você pode receber 1 ficha de íon para cancelar 1 resultado %HIT%."""
-       "Rexler Brath":
+        "Rexler Brath":
            display_name: """Rexler Brath"""
            text: """Após você realizar um ataque que acerte, se você estiver desviando, exponha 1 das cartas de dano do defensor."""
         "Countess Ryad":
            display_name: """Condessa Ryad"""
            text: """Quando você for executar uma manobra %STRAIGHT%, você pode aumentar a dificuldade da manobra. Se o fizer, execute-a como uma manobra %KTURN%."""
-       "Colonel Vessery":
+        "Colonel Vessery":
            display_name: """Coronel Vessery"""
            text: """Quando você realizar um ataque contra uma nave mirada, após você rolar os dados de ataque, você pode adquirir uma mira no defensor."""
         "Vult Skerris":
@@ -976,7 +976,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Você não pode gastar %FORCE%, exceto quando atacando. Quando você realizar um ataque, você pode gastar 1 %FORCE% para mudar 1 resultado em branco para um resultado %HIT%."""
 
        #TIE Heavy
-       "Carida Academy Cadet":
+        "Carida Academy Cadet":
            display_name: """Cadete da Academia Carida"""
            text: """<i class = flavor_text>Na Academia Carida, cadetes da Marinha Imperial são ensinados a serem implacáveis e leais, priorizando a vitória acima da vida de seus companheiros.</i>"""
         "Onyx Squadron Sentry":
@@ -996,7 +996,7 @@ exportObj.cardLoaders.Português = () ->
         "Alpha Squadron Pilot":
            display_name: """Piloto do Esquadrão Alfa"""
            text: """<i class = flavor_text>A Sienar Fleet Systems projetou a TIE interceptor com quatro canhões lasers em suas asas, um aumento drástico em seu poder de fogo se comparado com seus antecessores."""
-       "Saber Squadron Ace":
+        "Saber Squadron Ace":
            display_name: """Ás do Esq. Sabre"""
            text: """<i class = flavor_text>Liderados pelo Barão Soontir Fel, os pilotos do Esquadrão Sabre estão entre os melhores pilotos do Império. Suas TIE interceptors são marcadas com listras vermelhas para identificar pilotos com pelo menos dez abates confirmados."""
         "Nash Windrider":
@@ -1207,13 +1207,13 @@ exportObj.cardLoaders.Português = () ->
         "Sienar-Jaemus Engineer":
            display_name: """Engenheiro da Sienar-Jaemus"""
            text: """<i class = flavor_text>Projetada pela Sienar-Jaemus Fleet Systems como sucessora da renomada TIE Defender, a TIE/vn Silencer incorpora tecnologias de ponta desenvolvidas em laboratórios de pesquisa escondidos nas Regiões Desconhecidas.</i>"""
-       "First Order Test Pilot":
+        "First Order Test Pilot":
            display_name: """Piloto de Testes da Primeira Ordem"""
            text: """<i class = flavor_text>Projetada para altas velocidades e com uma manobrabilidade incrível, a TIE Silencer é devastadora nas mãos daqueles capazes de utilizar seu potencial máximo. Pilotos menos experientes perdem facilmente o controle desta ágil nave.</i>"""
         '"Avenger"':
            display_name: """“Avenger”"""
            text: """Após outra nave amiga ser destruída, você pode realizar uma ação, mesmo se estiver estressado."""
-       '"Recoil"':
+        '"Recoil"':
            display_name: """“Recoil”"""
            text: """Quando você estiver estressado, você pode tratar as naves inimigas em seu %FRONTARC% em alcance 0-1 como se estivessem em seu %BULLSEYEARC%."""
         '"Rush"':
@@ -1222,7 +1222,7 @@ exportObj.cardLoaders.Português = () ->
         '"Blackout"':
            display_name: """“Blackout”"""
            text: """Quando você realizar um ataque, se o ataque estiver obstruído por um obstáculo, o defensor rola 2 dados de defesa a menos."""
-       "Kylo Ren":
+        "Kylo Ren":
            display_name: """Kylo Ren"""
            text: """Após você defender, você pode gastar 1 %FORCE% para atribuir a condição <strong>Contemple o Lado Sombrio</strong> ao atacante."""
 
@@ -1264,7 +1264,7 @@ exportObj.cardLoaders.Português = () ->
         "Zeta Squadron Survivor":
            display_name: """Sobrevivente do Esquadrão Zeta"""
            text: """<i class = flavor_text>Humilhados por seu fracasso, o restante dos pilotos da Base Starkiller estão ávidos para mostrar seu valor perseguindo a Resistência."""
-       "Omega Squadron Expert":
+        "Omega Squadron Expert":
            display_name: """Perito do Esquadrão Ômega"""
            text: """<i class = flavor_text>A TIE/sf é um caça estelar versátil com arsenal especializado e sistemas experimentais para operações de longo alcance das Forças Especiais da Primeira Ordem."""
         "Captain Phasma":
@@ -1276,7 +1276,7 @@ exportObj.cardLoaders.Português = () ->
         "Lieutenant LeHuse":
            display_name: """Tenente LeHuse"""
            text: """Quando você realizar um ataque, você pode gastar a mira que outra nave amiga tenha no defensor para rerrolar qualquer número dos seus resultados."""
-       '"Quickdraw"':
+        '"Quickdraw"':
            display_name: """“Quickdraw”"""
            text: """Após você perder um escudo, você pode gastar 1 %CHARGE%. Se o fizer, você pode realizar um ataque primário bônus."""
 
@@ -1337,7 +1337,7 @@ exportObj.cardLoaders.Português = () ->
         "Luminara Unduli":
            display_name: """Luminara Unduli"""
            text: """Quando uma nave amiga em alcance 0-2 defender, se ela não estiver no %BULLSEYEARC% do atacante, você pode gastar 1 %FORCE%. Se o fizer, mude 1 resultado %CRIT% para um resultado %HIT% ou 1 resultado %HIT% para um resultado %FOCUS%."""
-       "Saesee Tiin":
+        "Saesee Tiin":
            display_name: """Saesee Tiin"""
            text: """Após uma nave amiga em alcance 0-2 revelar o disco dela, você pode gastar 1 %FORCE%. Se o fizer, coloque o disco dela em outra manobra de mesma velocidade e dificuldade."""
         "Ahsoka Tano":
@@ -1410,7 +1410,7 @@ exportObj.cardLoaders.Português = () ->
         "Anakin Skywalker (Eta-2)":
            display_name: """Anakin Skywalker"""
            text: """Após você ou uma nave amiga <b>Obi-Wan Kenobi</b> em alcance 0-3 ralizar uma manobra, se houver mais naves inimigas do que outras naves amigas em alcance 0-1 da nave, você pode gastar 1 %FORCE%. Se o fizer, a nave remove 1 ficha vermelha à sua escolha."""
-       "Kit Fisto":
+        "Kit Fisto":
            display_name: """Kit Fisto"""
            text: """Quando outra nave amiga defender, se o atacante estiver no %BULLSEYEARC% dela, você pode gastar 1 %FORCE% para mudar 1 dos resultados em branco do defensor para um resultado %FOCUS%."""
         "Obi-Wan Kenobi (SoC)":
@@ -1470,7 +1470,7 @@ exportObj.cardLoaders.Português = () ->
         '"Tucker"':
            display_name: """“Tucker”"""
            text: """Após uma nave amiga em alcance 1-2 realizar um ataque contra uma nave inimiga em seu %FRONTARC%, você pode realizar uma ação %FOCUS%."""
-       '"Axe"':
+        '"Axe"':
            display_name: """“Axe”"""
            text: """Após você defender ou realizar um ataque, você pode escolher uma nave amiga em alcance 1-2 em seu %LEFTARC% ou %RIGHTARC%. Se o fizer, transfira uma ficha verde para a nave escolhida."""
         '"Swoop"':
@@ -1576,7 +1576,7 @@ exportObj.cardLoaders.Português = () ->
            text: """<i class = flavor_text>Apesar da reputação pouco glamurosa da Z-95 Clone, o Esquadrão Reaper se tornou lendário pela sua habilidade com o caça em combates distantes, como a batalha sobre Castilon.</i>"""
 
        #Gauntlet Republic
-       "Bo-Katan Kryze (Republic)":
+        "Bo-Katan Kryze (Republic)":
            display_name: """Bo-Katan Kryze"""
            text: """Depois que você realizar completamente uma manobra, você pode receber 1 ficha de exaustão para escolher um objeto em seu %FRONTARC% em alcance 1-2. Se o fizer, outra nave amiga pode realizar uma ação %LOCK% para mirar neste objeto."""
         "Nite Owl Liberator":
@@ -1697,15 +1697,17 @@ exportObj.cardLoaders.Português = () ->
         "Red Squadron Expert":
            display_name: """Perito do Esquadrão Vermelho"""
            text: """<i class = flavor_text>Apesar da maior parte do Corpo de Caças Estelares da Resistência ser composta de jovens voluntários da Nova República, seus pelotões são reforçados por veteranos da Guerra Civil Galáctica determinados a concluir a tarefa que começaram décadas atrás.</i>"""
-       "Black Squadron Ace (T-70)":
+        "Black Squadron Ace (T-70)":
            display_name: """Ás do Esquadrão Preto"""
            text: """<i class = flavor_text>Durante a Guerra Fria, o Esquadrão Preto de Poe Dameron realizou audaciosas operações secretas contra a Primeira Ordem resistindo aos tratados promulgados pelo Senado da Nova República.</i>"""
         "Jaycris Tubbs":
            display_name: """Jaycris Tubbs"""
            text: """Após você executar completamente uma manobra azul, você pode escolher uma nave amiga em alcance 0-1. Se o fizer, a nave escolhida remove 1 ficha de estresse."""
-       "Poe Dameron (AdE)":
+        "Poe Dameron (HoH)":
+           display_name: "Poe Dameron (AdE)"
            text: """Após uma nave amiga em alcance 0-2 realizar uma ação durante a ativação dela, você pode gastar 2 %CHARGE%. Se o fizer, a nave que realizou a ação pode realizar uma ação branca, tratando-a como vermelha."""
-        "Temmin Wexley (AdE)":
+        "Temmin Wexley (HoH)":
+           display_name: "Temmin Wexley (AdE)"
            text: """No início da Fase de Engajamento, cada X-wing T-70 amiga em alcance 0-3 pode receber 1 ficha de desgaste para virar sua melhoria %CONFIGURATION% equipada. Se a nave o fizer, ela ganha 1 ficha de cálculo."""
         "C'ai Threnalli":
            display_name: """C'ai Threnalli"""
@@ -1765,7 +1767,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Antes de você realizar uma manobra, você pode gastar 1 %CHARGE%. Se você o fizer, ignore obstáculos durante essa manobra.%LINEBREAK%Depois que você realizar completamente uma manobra, você pode gastar 2 %CHARGE% para realizar uma ação %BOOST% branca ou uma ação %BARRELROLL% vermelha. Então, se você realizou uma ação %BARRELROLL% vermelha, exponha 1 carta de dano, se possível."""
 
        #Y-wing Resistance
-       "New Republic Patrol":
+        "New Republic Patrol":
            display_name: """Patrulha da Nova República"""
            text: """<i class = flavor_text>Projetada para personalizações, a Y-wing BTA-NR2 é utilizada por várias organizações militares em toda a galáxia para diferentes funções, de naves de policiamento a bombardeiros de guerra.</i>"""
         "Kijimi Spice Runner":
@@ -1798,7 +1800,7 @@ exportObj.cardLoaders.Português = () ->
 
     #Separatist
         #Belbulab
-       "Feethan Ottraw Autopilot":
+        "Feethan Ottraw Autopilot":
            display_name: """Autopiloto da Feethan Ottraw"""
            text: """<i class = flavor_text>Ao contrário dos caças mais descartáveis que também construiu para os Separatistas, a Feethan Ottraw Scalable Assemblies projetou o Belbullab-22 com uma sólida mistura de poder de fogo, durabilidade e velocidade.</i>"""
         "Skakoan Ace":
@@ -1821,7 +1823,7 @@ exportObj.cardLoaders.Português = () ->
         "Separatist Bomber":
            display_name: """Bombardeiro Separatista"""
            text: """<i class = flavor_text>Os exércitos droides dos Separatistas são insensíveis ao sofrimento dos civis e não se esforçam para limitar os danos colaterais.</i>"""
-       "Baktoid Prototype":
+        "Baktoid Prototype":
            display_name: """Protótipo da Baktoid"""
            text: """Quando você realizar um ataque especial, se uma nave amiga com a habilidade de nave <b>Cálculos Interligados</b> tiver uma mira no defensor, você pode ignorar o requisito %FOCUS%, %CALCULATE% ou %LOCK% do ataque."""
         "Bombardment Drone":
@@ -1847,7 +1849,7 @@ exportObj.cardLoaders.Português = () ->
         "Trade Federation Drone":
            display_name: """Drone da Federação do Comércio"""
            text: """<i class = flavor_text>A Federação do Comércio usou incontáveis droides Vulture na batalha de Naboo e continua a usar esses caças econômicos nas Guerras Clônicas.</i>"""
-       "Separatist Drone":
+        "Separatist Drone":
            display_name: """Drone Separatista"""
            text: """<i class = flavor_text>Com a escalada das Guerras Clônicas, a Aliança Separatista continua a desenvolver a tecnologia de caças estelares droides, assim como os droides táticos que os comandam.</i>"""
         "Haor Chall Prototype":
@@ -1985,7 +1987,7 @@ exportObj.cardLoaders.Português = () ->
         "Cad Bane (Separatist)":
            display_name: """Cad Bane"""
            text: """Durante a Fase de Engajamento, depois que outra nave em alcance 0-3 for destruída, você pode gastar 1 %CHARGE% para realizar uma ação, mesmo se estiver estressado"""
-       "Durge (Separatist)":
+        "Durge (Separatist)":
            display_name: """Durge"""
            text: """Quando você seria destruído, você pode gastar 1 %CHARGE% para revelar todas as suas cartas viradas para baixo. Se você fizer isso, descarte todos os <strong>Tiro Direto!</strong> e cada carta do tipo <strong>Piloto</strong>, e então conserte todas suas cartas de dano viradas para cima."""
         "IG-101":
@@ -2011,7 +2013,7 @@ exportObj.cardLoaders.Português = () ->
         "Death Watch Warrior":
            display_name: """Guerreiro do Olho da Morte"""
            text: """<i class = flavor_text>Apesar do apoio incerto dos Separatistas, o Olho da Morte pretende restaurar o passado guerreiro e as antigas tradições de Mandalore. A manobrabilidade e os assentos rebaixados do Caça Gauntlet o tornam uma excelente plataforma para enviar esses orgulhosos soldados em batalha.</i>"""
-       "Pre Vizsla":
+        "Pre Vizsla":
            display_name: """Pre Vizsla"""
            text: """Quando você estiver atacando, se a iniciativa do defensor for igual ou maior que a sua, você pode gastar 2 %CHARGE% para rolar 1 dado adicional."""
 
