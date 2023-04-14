@@ -422,7 +422,10 @@ class exportObj.SquadBuilder
                     <button class="btn btn-modal select-tts-view d-none translated" defaultText="TTS"></button>
                     <button class="btn btn-modal select-xws-view translated" defaultText="XWS"></button>
                 </div>
-                <button class="btn btn-modal print-list d-sm-block"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;<span class="translated" defaultText="Print"></span></span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
+                <div class="row btn-group list-display-mode">
+                    <button class="btn btn-modal copy-url translated" defaultText="Copy URL"></button>
+                    <button class="btn btn-modal print-list d-sm-block"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;<span class="translated" defaultText="Print"></span></span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
+                </div>
             </div>
         </div>
     </div>
@@ -450,6 +453,19 @@ class exportObj.SquadBuilder
         @toggle_qrcode_container = $ @list_modal.find('.qrcode-checkbox')
         @toggle_obstacle_container = $ @list_modal.find('.obstacles-checkbox')
         @btn_print_list = ($ @list_modal.find('.print-list'))[0]
+        @btn_copy_url = $ @list_modal.find('.copy-url')
+
+        @btn_copy_url.click (e) =>
+            @success =  window.navigator.clipboard.writeText(window.location.href);
+            @self = $(e.currentTarget)
+            if @success
+                @self.addClass 'btn-success'
+                setTimeout ( =>
+                    @self.removeClass 'btn-success'
+                ), 1000
+        
+        # the url copy button is only needed if the browser is hiding the address bar. This is the case for PWA links. 
+        @btn_copy_url.hide() unless ["fullscreen", "standalone", "minimal-ui"].some((displayMode) => window.matchMedia('(display-mode: ' + displayMode + ')').matches)
 
         @list_modal.on 'click', 'button.btn-copy', (e) =>
             @self = $(e.currentTarget)
@@ -1277,6 +1293,9 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing:pointsUpdated'
 
         $('option.obstacle-option').on 'mousemove', (e) =>
+            @showChooseObstaclesSelectInformation(e.target.getAttribute("value"))
+
+        $('option.obstacle-option').on 'touchmove', (e) =>
             @showChooseObstaclesSelectInformation(e.target.getAttribute("value"))
 
         @view_list_button.click (e) =>
