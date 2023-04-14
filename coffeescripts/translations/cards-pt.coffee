@@ -3354,8 +3354,8 @@ exportObj.cardLoaders.Português = () ->
         "Pursuit Thrusters":
            display_name: "Propulsores de Perseguição"
            text: """Durante a Fase de Sistema, você pode realizar uma ação %BOOST%."""
-        "Chassi Versátil":
-           display_name: "Versatile Frame"
+        "Versatile Frame":
+           display_name: "Chassi Versátil"
            text: """Você pode equipar 1 melhoria %TORPEDO% ou %MISSILE%. Quando sua manobra revelada for azul, adicione um %BOOST% branco a sua barra de ações."""
         "Born for This":
            display_name: "Nascido Para Isso"

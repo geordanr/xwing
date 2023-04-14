@@ -416,13 +416,16 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="row btn-group list-display-mode">
                     <button class="btn btn-modal select-simple-view translated" defaultText="Simple"></button>
-                    <button class="btn btn-modal select-fancy-view d-none d-sm-block translated" defaultText="Fancy"></button>
+                    <button class="btn btn-modal select-fancy-view d-sm-block translated" defaultText="Fancy"></button>
                     <button class="btn btn-modal select-simplecopy-view translated" defaultText="Text"></button>
                     <button class="btn btn-modal select-reddit-view translated" defaultText="Reddit"></button>
-                    <button class="btn btn-modal select-tts-view translated" defaultText="TTS"></button>
+                    <button class="btn btn-modal select-tts-view d-none translated" defaultText="TTS"></button>
                     <button class="btn btn-modal select-xws-view translated" defaultText="XWS"></button>
                 </div>
-                <button class="btn btn-modal print-list d-none d-sm-block"><i class="fa fa-print"></i>&nbsp;<span class="translated" defaultText="Print"></span></button>
+                <div class="row btn-group list-display-mode">
+                    <button class="btn btn-modal copy-url translated" defaultText="Copy URL"></button>
+                    <button class="btn btn-modal print-list d-sm-block"><span class="d-none d-lg-block"><i class="fa fa-print"></i>&nbsp;<span class="translated" defaultText="Print"></span></span><span class="d-lg-none"><i class="fa fa-print"></i></span></button>
+                </div>
             </div>
         </div>
     </div>
@@ -450,6 +453,19 @@ class exportObj.SquadBuilder
         @toggle_qrcode_container = $ @list_modal.find('.qrcode-checkbox')
         @toggle_obstacle_container = $ @list_modal.find('.obstacles-checkbox')
         @btn_print_list = ($ @list_modal.find('.print-list'))[0]
+        @btn_copy_url = $ @list_modal.find('.copy-url')
+
+        @btn_copy_url.click (e) =>
+            @success =  window.navigator.clipboard.writeText(window.location.href);
+            @self = $(e.currentTarget)
+            if @success
+                @self.addClass 'btn-success'
+                setTimeout ( =>
+                    @self.removeClass 'btn-success'
+                ), 1000
+        
+        # the url copy button is only needed if the browser is hiding the address bar. This is the case for PWA links. 
+        @btn_copy_url.hide() unless ["fullscreen", "standalone", "minimal-ui"].some((displayMode) => window.matchMedia('(display-mode: ' + displayMode + ')').matches)
 
         @list_modal.on 'click', 'button.btn-copy', (e) =>
             @self = $(e.currentTarget)
@@ -1277,6 +1293,9 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing:pointsUpdated'
 
         $('option.obstacle-option').on 'mousemove', (e) =>
+            @showChooseObstaclesSelectInformation(e.target.getAttribute("value"))
+
+        $('option.obstacle-option').on 'touchmove', (e) =>
             @showChooseObstaclesSelectInformation(e.target.getAttribute("value"))
 
         @view_list_button.click (e) =>
@@ -2976,6 +2995,49 @@ class exportObj.SquadBuilder
                     container.find('td.info-rangebonus').hide()
                     container.find('tr.info-range').hide()
                     container.find('tr.info-force').hide()
+                when 'Damage'
+                    container.find('.info-type').text exportObj.translate("type", data.type)
+                    container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
+                    container.find('.info-sources').show()
+
+                    if @collection?.counts?
+                        addon_count = @collection.counts?['damage']?[data.name] ? 0
+                        container.find('.info-collection').text @uitranslation("collectionContentUpgrades", addon_count)
+                        container.find('.info-collection').show()
+                    else
+                        container.find('.info-collection').hide()
+                    container.find('.info-name').html """#{if data.display_name then data.display_name else data.name} (#{data.quantity}x)"""
+                    
+                    container.find('p.info-restrictions').hide()
+                    container.find('p.info-text').html (data.text ? '')
+                    container.find('p.info-text').show()
+                    container.find('p.info-chassis').hide()
+                    container.find('tr.info-ship').hide()
+                    container.find('tr.info-faction').hide()
+                    container.find('tr.info-base').hide()
+                    container.find('tr.info-skill').hide()
+                    container.find('tr.info-points').hide()
+                    container.find('tr.info-loadout').hide()
+                    container.find('tr.info-engagement').hide()
+                    container.find('tr.info-energy').hide()
+                    container.find('tr.info-attack').hide()
+                    container.find('tr.info-attack-back').hide()
+                    container.find('tr.info-attack-turret').hide()
+                    container.find('tr.info-attack-right').hide()
+                    container.find('tr.info-attack-left').hide()
+                    container.find('tr.info-attack-doubleturret').hide()
+                    container.find('tr.info-attack-bullseye').hide()
+                    container.find('tr.info-attack-fullfront').hide()
+                    container.find('tr.info-charge').hide()
+                    container.find('tr.info-range').hide()
+                    container.find('td.info-rangebonus').hide()
+                    container.find('tr.info-force').hide()     
+                    container.find('tr.info-agility').hide()
+                    container.find('tr.info-hull').hide()
+                    container.find('tr.info-shields').hide()
+                    container.find('tr.info-actions').hide()
+                    container.find('tr.info-upgrades').hide()
+                    container.find('p.info-maneuvers').hide()
 
             if container != @mobile_tooltip_modal
                 container.find('.info-well').show()

@@ -9,7 +9,7 @@ exportObj = exports ? this
 
 # Assumes cards.js has been loaded
 
-TYPES = [ 'pilots', 'upgrades', 'ships' ]
+TYPES = [ 'pilots', 'upgrades', 'ships', 'damage' ]
 
 byName = (a, b) ->
     if a.display_name
@@ -448,7 +448,7 @@ class exportObj.CardBrowser
 
         exportObj.translateUIElements(@container)
 
-
+    
 
     setupHandlers: () ->
         @sort_selector.change (e) =>
@@ -469,54 +469,56 @@ class exportObj.CardBrowser
             @collection = null
 
         @card_search_text.oninput = => @renderList @sort_selector.val()
-        # TODO: Add a call to @renderList for added inputs, to start the actual search
-        
-        @faction_selection[0].onchange = => @renderList @sort_selector.val()
+
+        # I find myself often searching for just text. To speed this up, we skip
+        # everything else until the first one is changed        
+        @skip_nontext_search = true
+        @faction_selection[0].onchange = => @renderList_advanced @sort_selector.val()
         for basesize, checkbox of @base_size_checkboxes
-            checkbox.onclick = => @renderList @sort_selector.val()
-        @minimum_point_costs.oninput = => @renderList @sort_selector.val()
-        @maximum_point_costs.oninput = => @renderList @sort_selector.val()
-        @minimum_loadout_costs.oninput = => @renderList @sort_selector.val()
-        @maximum_loadout_costs.oninput = => @renderList @sort_selector.val()
-        @standard_checkbox.onclick = => @renderList @sort_selector.val()
-        @unique_checkbox.onclick = => @renderList @sort_selector.val()
-        @non_unique_checkbox.onclick = => @renderList @sort_selector.val()
-        @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
-        @keyword_available_selection[0].onchange = => @renderList @sort_selector.val()
-        @duplicateslots.onclick = => @renderList @sort_selector.val()
-        @action_available_selection[0].onchange = => @renderList @sort_selector.val()
-        @linkedaction_available_selection[0].onchange = => @renderList @sort_selector.val()
-        @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
-        @slot_used_second_selection[0].onchange = => @renderList @sort_selector.val()
-        @not_recurring_charge.onclick = => @renderList @sort_selector.val()
-        @recurring_charge.onclick = => @renderList @sort_selector.val()
-        @hassecondslot.onclick = => @renderList @sort_selector.val()
-        @minimum_charge.oninput = => @renderList @sort_selector.val()
-        @maximum_charge.oninput = => @renderList @sort_selector.val()
-        @minimum_ini.oninput = => @renderList @sort_selector.val()
-        @maximum_ini.oninput = => @renderList @sort_selector.val()
-        @minimum_hull.oninput = => @renderList @sort_selector.val()
-        @maximum_hull.oninput = => @renderList @sort_selector.val()
-        @minimum_force.oninput = => @renderList @sort_selector.val()
-        @maximum_force.oninput = => @renderList @sort_selector.val()
-        @minimum_shields.oninput = => @renderList @sort_selector.val()
-        @maximum_shields.oninput = => @renderList @sort_selector.val()
-        @minimum_agility.oninput = => @renderList @sort_selector.val()
-        @maximum_agility.oninput = => @renderList @sort_selector.val()
-        @minimum_attack.oninput = => @renderList @sort_selector.val()
-        @maximum_attack.oninput = => @renderList @sort_selector.val()
-        @minimum_attackt.oninput = => @renderList @sort_selector.val()
-        @maximum_attackt.oninput = => @renderList @sort_selector.val()
-        @minimum_attackdt.oninput = => @renderList @sort_selector.val()
-        @maximum_attackdt.oninput = => @renderList @sort_selector.val()
-        @minimum_attackf.oninput = => @renderList @sort_selector.val()
-        @maximum_attackf.oninput = => @renderList @sort_selector.val()
-        @minimum_attackb.oninput = => @renderList @sort_selector.val()
-        @maximum_attackb.oninput = => @renderList @sort_selector.val()
-        @minimum_attackbull.oninput = => @renderList @sort_selector.val()
-        @maximum_attackbull.oninput = => @renderList @sort_selector.val()
-        @minimum_owned_copies.oninput = => @renderList @sort_selector.val()
-        @maximum_owned_copies.oninput = => @renderList @sort_selector.val()
+            checkbox.onclick = => @renderList_advanced @sort_selector.val()
+        @minimum_point_costs.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_point_costs.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_loadout_costs.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_loadout_costs.oninput = => @renderList_advanced @sort_selector.val()
+        @standard_checkbox.onclick = => @renderList_advanced @sort_selector.val()
+        @unique_checkbox.onclick = => @renderList_advanced @sort_selector.val()
+        @non_unique_checkbox.onclick = => @renderList_advanced @sort_selector.val()
+        @slot_available_selection[0].onchange = => @renderList_advanced @sort_selector.val()
+        @keyword_available_selection[0].onchange = => @renderList_advanced @sort_selector.val()
+        @duplicateslots.onclick = => @renderList_advanced @sort_selector.val()
+        @action_available_selection[0].onchange = => @renderList_advanced @sort_selector.val()
+        @linkedaction_available_selection[0].onchange = => @renderList_advanced @sort_selector.val()
+        @slot_used_selection[0].onchange = => @renderList_advanced @sort_selector.val()
+        @slot_used_second_selection[0].onchange = => @renderList_advanced @sort_selector.val()
+        @not_recurring_charge.onclick = => @renderList_advanced @sort_selector.val()
+        @recurring_charge.onclick = => @renderList_advanced @sort_selector.val()
+        @hassecondslot.onclick = => @renderList_advanced @sort_selector.val()
+        @minimum_charge.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_charge.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_ini.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_ini.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_hull.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_hull.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_force.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_force.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_shields.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_shields.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_agility.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_agility.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_attack.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_attack.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_attackt.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_attackt.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_attackdt.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_attackdt.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_attackf.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_attackf.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_attackb.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_attackb.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_attackbull.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_attackbull.oninput = => @renderList_advanced @sort_selector.val()
+        @minimum_owned_copies.oninput = => @renderList_advanced @sort_selector.val()
+        @maximum_owned_copies.oninput = => @renderList_advanced @sort_selector.val()
 
 
 
@@ -526,6 +528,8 @@ class exportObj.CardBrowser
         for type in TYPES
             if type == 'upgrades'
                 @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
+            else if type == 'damage'
+                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('ui', 'damageHeader', card_data.type), data: card_data, orig_type: "Damage" } for card_name, card_data of exportObj[type] )
             else
                 @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('singular', type), data: card_data, orig_type: exportObj.translateToLang('English','singular', type) } for card_name, card_data of exportObj[type] )
 
@@ -533,6 +537,10 @@ class exportObj.CardBrowser
         for card_name, card_data of exportObj.upgrades
             upgrade_text = exportObj.translate 'ui', 'upgradeHeader', card_data.slot
             @types.push upgrade_text if upgrade_text not in @types
+        for card_name, card_data of exportObj.damage
+            upgrade_text = exportObj.translate 'ui', 'damageHeader', card_data.type
+            @types.push upgrade_text if upgrade_text not in @types
+        
 
         @all_cards.sort byName
 
@@ -557,6 +565,9 @@ class exportObj.CardBrowser
         for source in sorted_sources
             @cards_by_source[source] = ( card for card in @all_cards when source in card.data.sources ).sort byName
 
+    renderList_advanced: (sort_by='name') ->
+        @skip_nontext_search = false
+        @renderList sort_by
 
     renderList: (sort_by='name') ->
         # sort_by is one of `name`, `type-by-name`, `source`, `type-by-points`
@@ -571,6 +582,8 @@ class exportObj.CardBrowser
             @card_selector.addClass 'card-selector'
             @card_selector.attr 'size', 25
             @card_selector_container.append @card_selector
+
+        @setupSearch()
 
         switch sort_by
             when 'type-by-name'
@@ -626,7 +639,7 @@ class exportObj.CardBrowser
         data = card.data 'card'
         orig_type = card.data 'orig_type'
 
-        if not (orig_type in ['Pilot', 'Ship', 'Quickbuild'])
+        if not (orig_type in ['Pilot', 'Ship', 'Quickbuild', 'Damage'])
             add_opts = {addon_type: orig_type}
             orig_type = 'Addon'
 
@@ -656,7 +669,7 @@ class exportObj.CardBrowser
 
     addCardTo: (container, card) ->
         option = $ document.createElement('OPTION')
-        option.text "#{if card.display_name then card.display_name else card.name} (#{if card.data.points? then card.data.points else '*'}#{if card.data.loadout? then "/#{card.data.loadout}" else ''})"
+        option.text "#{if card.display_name then card.display_name else card.name} (#{if card.data.points? then card.data.points else (if card.data.quantity? then card.data.quantity+'x' else '*')}#{if card.data.loadout? then "/#{card.data.loadout}" else ''})"
         option.data 'name', card.name
         option.data 'display_name', card.display_name
         option.data 'type', card.type
@@ -680,30 +693,48 @@ class exportObj.CardBrowser
                 owned_copies = exportObj.builders[7].collection.counts.upgrade?[card.name] ? 0
         owned_copies
 
+    setupSearch: () ->
+        # do some stuff like fetching text inputs only once, as running it for each card is time consuming
+        @searchInputs = {
+            "text": @card_search_text.value.toLowerCase()
+            "factions": @faction_selection.val()            
+            "required_slots": @slot_available_selection.val()
+            "required_actions": @action_available_selection.val()
+            "required_linked_actions": @linkedaction_available_selection.val()
+            "required_keywords": @keyword_available_selection.val()
+            "used_slots": @slot_used_selection.val()
+            "used_second_slots": @slot_used_second_selection.val()
+        }
+
+        if "Factionless" in @searchInputs.factions
+            @searchInputs.factions.push undefined
+
 
     checkSearchCriteria: (card) ->
         # check for text search
-        search_text = @card_search_text.value.toLowerCase()
-        text_search = card.name.toLowerCase().indexOf(search_text) > -1 or (card.data.text and card.data.text.toLowerCase().indexOf(search_text) > -1) or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
-        
-        if not text_search
-            return false unless card.data.ship
-            ship = card.data.ship
-            if ship instanceof Array
-                text_in_ship = false
-                for s in ship
-                    if s.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[s].display_name and exportObj.ships[s].display_name.toLowerCase().indexOf(search_text) > -1)
-                        text_in_ship = true
-                        break
-                return false unless text_in_ship
-            else
-                return false unless ship.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[ship].display_name and exportObj.ships[ship].display_name.toLowerCase().indexOf(search_text) > -1)
+        if @searchInputs.text?
+            text_search = card.name.toLowerCase().indexOf(@searchInputs.text) > -1 or (card.data.text and card.data.text.toLowerCase().indexOf(@searchInputs.text) > -1) or (card.display_name and card.display_name.toLowerCase().indexOf(@searchInputs.text) > -1)
+            
+            if not text_search
+                return false unless card.data.ship
+                ship = card.data.ship
+                if ship instanceof Array
+                    text_in_ship = false
+                    for s in ship
+                        if s.toLowerCase().indexOf(@searchInputs.text) > -1 or (exportObj.ships[s].display_name and exportObj.ships[s].display_name.toLowerCase().indexOf(@searchInputs.text) > -1)
+                            text_in_ship = true
+                            break
+                    return false unless text_in_ship
+                else
+                    return false unless ship.toLowerCase().indexOf(@searchInputs.text) > -1 or (exportObj.ships[ship].display_name and exportObj.ships[ship].display_name.toLowerCase().indexOf(@searchInputs.text) > -1)
     
+        # if no search field has changed, we are done here. 
+        if @skip_nontext_search
+            return true
+
         all_factions = (faction for faction, pilot of exportObj.pilotsByFactionXWS)
-        selected_factions = @faction_selection.val()
+        selected_factions = @searchInputs.factions
         if selected_factions.length > 0
-            if "Factionless" in selected_factions
-                selected_factions.push undefined
             return false unless card.data.faction in selected_factions or card.orig_type == 'Ship' or card.data.faction instanceof Array
             if card.data.faction instanceof Array
                faction_matches = false
@@ -732,7 +763,7 @@ class exportObj.CardBrowser
             return false unless standard_legal
 
         # check for slot requirements
-        required_slots = @slot_available_selection.val()
+        required_slots = @searchInputs.required_slots
         if required_slots.length > 0
             slots = card.data.slots
             
@@ -747,7 +778,7 @@ class exportObj.CardBrowser
                     return false if hasDuplicates.length == 0
 
         # check for keyword requirements
-        required_keywords = @keyword_available_selection.val()
+        required_keywords = @searchInputs.required_keywords 
         if required_keywords.length > 0
             keywords = card.data.keyword
 
@@ -756,8 +787,8 @@ class exportObj.CardBrowser
                 return false unless keywords? and keyword in keywords
 
         # check for action requirements
-        required_actions = @action_available_selection.val()
-        required_linked_actions = @linkedaction_available_selection.val()
+        required_actions = @searchInputs.required_actions
+        required_linked_actions = @searchInputs.required_linked_actions
         if (required_actions.length > 0) or (required_linked_actions.length > 0)
             actions = card.data.actions ? []
             if card.orig_type == 'Pilot'
@@ -815,7 +846,7 @@ class exportObj.CardBrowser
                 return false unless matching_loadout
 
         # check if used slot matches
-        used_slots = @slot_used_selection.val()
+        used_slots = @searchInputs.used_slots
         if used_slots.length > 0
             return false unless card.data.slot?
             matches = false
@@ -826,7 +857,7 @@ class exportObj.CardBrowser
             return false unless matches
 
         # check if used second slot matches
-        used_second_slots = @slot_used_second_selection.val()
+        used_second_slots = @searchInputs.used_second_slots
         if used_second_slots.length > 0
             return false unless card.data.also_occupies_upgrades?
             matches = false
