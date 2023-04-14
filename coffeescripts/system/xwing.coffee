@@ -2995,6 +2995,49 @@ class exportObj.SquadBuilder
                     container.find('td.info-rangebonus').hide()
                     container.find('tr.info-range').hide()
                     container.find('tr.info-force').hide()
+                when 'Damage'
+                    container.find('.info-type').text exportObj.translate("type", data.type)
+                    container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
+                    container.find('.info-sources').show()
+
+                    if @collection?.counts?
+                        addon_count = @collection.counts?['damage']?[data.name] ? 0
+                        container.find('.info-collection').text @uitranslation("collectionContentUpgrades", addon_count)
+                        container.find('.info-collection').show()
+                    else
+                        container.find('.info-collection').hide()
+                    container.find('.info-name').html """#{if data.display_name then data.display_name else data.name} (#{data.quantity}x)"""
+                    
+                    container.find('p.info-restrictions').hide()
+                    container.find('p.info-text').html (data.text ? '')
+                    container.find('p.info-text').show()
+                    container.find('p.info-chassis').hide()
+                    container.find('tr.info-ship').hide()
+                    container.find('tr.info-faction').hide()
+                    container.find('tr.info-base').hide()
+                    container.find('tr.info-skill').hide()
+                    container.find('tr.info-points').hide()
+                    container.find('tr.info-loadout').hide()
+                    container.find('tr.info-engagement').hide()
+                    container.find('tr.info-energy').hide()
+                    container.find('tr.info-attack').hide()
+                    container.find('tr.info-attack-back').hide()
+                    container.find('tr.info-attack-turret').hide()
+                    container.find('tr.info-attack-right').hide()
+                    container.find('tr.info-attack-left').hide()
+                    container.find('tr.info-attack-doubleturret').hide()
+                    container.find('tr.info-attack-bullseye').hide()
+                    container.find('tr.info-attack-fullfront').hide()
+                    container.find('tr.info-charge').hide()
+                    container.find('tr.info-range').hide()
+                    container.find('td.info-rangebonus').hide()
+                    container.find('tr.info-force').hide()     
+                    container.find('tr.info-agility').hide()
+                    container.find('tr.info-hull').hide()
+                    container.find('tr.info-shields').hide()
+                    container.find('tr.info-actions').hide()
+                    container.find('tr.info-upgrades').hide()
+                    container.find('p.info-maneuvers').hide()
 
             if container != @mobile_tooltip_modal
                 container.find('.info-well').show()

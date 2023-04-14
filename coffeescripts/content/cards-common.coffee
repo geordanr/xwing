@@ -18817,6 +18817,93 @@ exportObj.basicCardData = ->
         }
     ]
 
+    damageById: [
+        {
+            name: "Panicked Pilot"
+            quantity: 2
+            type: "Pilot"
+            id: 0
+        }
+        {
+            name: "Blinded Pilot"
+            quantity: 2
+            type: "Pilot"
+            id: 1
+        }
+        {
+            name: "Wounded Pilot"
+            quantity: 2
+            type: "Pilot"
+            id: 2
+        }
+        {
+            name: "Stunned Pilot"
+            quantity: 2
+            type: "Pilot"
+            id: 3
+        }
+        {
+            name: "Console Fire"
+            quantity: 2
+            type: "Ship"
+            id: 4
+        }
+        {
+            name: "Damaged Engine"
+            quantity: 2
+            type: "Ship"
+            id: 5
+        }
+        {
+            name: "Weapons Failure"
+            quantity: 2
+            type: "Ship"
+            id: 6
+        }
+        {
+            name: "Hull Breach"
+            quantity: 2
+            type: "Ship"
+            id: 7
+        }
+        {
+            name: "Structural Damage"
+            quantity: 2
+            type: "Ship"
+            id: 8
+        }
+        {
+            name: "Damaged Sensor Array"
+            quantity: 2
+            type: "Ship"
+            id: 9
+        }
+        {
+            name: "Loose Stabilizer"
+            quantity: 2
+            type: "Ship"
+            id: 10
+        }
+        {
+            name: "Disabled Power Regulator"
+            quantity: 2
+            type: "Ship"
+            id: 11
+        }
+        {
+            name: "Fuel Leak"
+            quantity: 4
+            type: "Ship"
+            id: 12
+        }
+        {
+            name: "Direct Hit!"
+            quantity: 5
+            type: "Ship"
+            id: 13
+        }
+    ]
+
 exportObj.setupCommonCardData = (basic_cards) ->
     # assert that each ID is the index into BLAHById (should keep this, in general)
     for pilot_data, i in basic_cards.pilotsById
@@ -18831,6 +18918,9 @@ exportObj.setupCommonCardData = (basic_cards) ->
     for chassis_data, i in basic_cards.chassisById
         if chassis_data.id != i
             throw new Error("ID mismatch: chassis at index #{i} has ID #{chassis_data.id}")
+    for damage_data, i in basic_cards.damageById
+        if damage_data.id != i
+            throw new Error("ID mismatch: damage card at index #{i} has ID #{damage_data.id}")
 
 
     exportObj.pilots = {}
@@ -18862,6 +18952,13 @@ exportObj.setupCommonCardData = (basic_cards) ->
             chassis_data.canonical_name = chassis_data.name.canonicalize() unless chassis_data.canonical_name?
             exportObj.chassis[chassis_data.name] = chassis_data
 
+    exportObj.damage = {}
+    for damage_data in basic_cards.damageById
+        unless damage_data.skip?
+            damage_data.canonical_name = damage_data.name.canonicalize() unless damage_data.canonical_name?
+            exportObj.damage[damage_data.name] = damage_data
+        damage_data.sources = []
+
     exportObj.obstacles = {}
     # we just want to include obstacles in the manifest like we already do for other stuff. No information other than sources will be used
 
@@ -18882,6 +18979,8 @@ exportObj.setupCommonCardData = (basic_cards) ->
                         exportObj.upgrades[card.name].sources.push expansion
                     when 'ship'
                         exportObj.ships[card.name].sources.push expansion
+                    when 'damage'
+                        exportObj.damage[card.name].sources.push expansion
                     when 'obstacle'
                         if card.name not of exportObj.obstacles
                             exportObj.obstacles[card.name] = {sources: []}
@@ -18967,7 +19066,7 @@ exportObj.setupCommonCardData = (basic_cards) ->
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 
-exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, condition_translations, chassis_translations) ->
+exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, condition_translations, chassis_translations, damage_translations={}) ->
     for upgrade_name, translations of upgrade_translations
         exportObj.fixIcons translations
         for field, translation of translations
@@ -18993,6 +19092,16 @@ exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, 
                 exportObj.chassis[chassis_name][field] = translation
             catch e
                 console.error "Cannot find translation for attribute #{field} for chassis #{chassis_name}. Please report this Issue. "
+                throw e
+
+
+    for damage_name, translations of damage_translations
+        exportObj.fixIcons translations
+        for field, translation of translations
+            try
+                exportObj.damage[damage_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for damage card #{damage_name}. Please report this Issue. "
                 throw e
 
 

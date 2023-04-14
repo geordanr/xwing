@@ -193,6 +193,76 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Panicked Pilot'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Blinded Pilot'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Wounded Pilot'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Stunned Pilot'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Console Fire'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Damaged Engine'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Weapons Failure'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Hull Breach'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Structural Damage'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Damaged Sensor Array'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Loose Stabilizer'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Disabled Power Regulator'
+            type: 'damage'
+            count: 2
+        }
+        {
+            name: 'Fuel Leak'
+            type: 'damage'
+            count: 4
+        }
+        {
+            name: 'Direct Hit!'
+            type: 'damage'
+            count: 5
+        }
+        {
             name: 'T-65 X-wing'
             type: 'ship'
             count: 1

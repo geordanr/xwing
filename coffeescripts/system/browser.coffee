@@ -9,7 +9,7 @@ exportObj = exports ? this
 
 # Assumes cards.js has been loaded
 
-TYPES = [ 'pilots', 'upgrades', 'ships' ]
+TYPES = [ 'pilots', 'upgrades', 'ships', 'damage' ]
 
 byName = (a, b) ->
     if a.display_name
@@ -528,6 +528,8 @@ class exportObj.CardBrowser
         for type in TYPES
             if type == 'upgrades'
                 @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
+            else if type == 'damage'
+                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('ui', 'damageHeader', card_data.type), data: card_data, orig_type: "Damage" } for card_name, card_data of exportObj[type] )
             else
                 @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate('singular', type), data: card_data, orig_type: exportObj.translateToLang('English','singular', type) } for card_name, card_data of exportObj[type] )
 
@@ -535,6 +537,10 @@ class exportObj.CardBrowser
         for card_name, card_data of exportObj.upgrades
             upgrade_text = exportObj.translate 'ui', 'upgradeHeader', card_data.slot
             @types.push upgrade_text if upgrade_text not in @types
+        for card_name, card_data of exportObj.damage
+            upgrade_text = exportObj.translate 'ui', 'damageHeader', card_data.type
+            @types.push upgrade_text if upgrade_text not in @types
+        
 
         @all_cards.sort byName
 
@@ -633,7 +639,7 @@ class exportObj.CardBrowser
         data = card.data 'card'
         orig_type = card.data 'orig_type'
 
-        if not (orig_type in ['Pilot', 'Ship', 'Quickbuild'])
+        if not (orig_type in ['Pilot', 'Ship', 'Quickbuild', 'Damage'])
             add_opts = {addon_type: orig_type}
             orig_type = 'Addon'
 
@@ -663,7 +669,7 @@ class exportObj.CardBrowser
 
     addCardTo: (container, card) ->
         option = $ document.createElement('OPTION')
-        option.text "#{if card.display_name then card.display_name else card.name} (#{if card.data.points? then card.data.points else '*'}#{if card.data.loadout? then "/#{card.data.loadout}" else ''})"
+        option.text "#{if card.display_name then card.display_name else card.name} (#{if card.data.points? then card.data.points else (if card.data.quantity? then card.data.quantity+'x' else '*')}#{if card.data.loadout? then "/#{card.data.loadout}" else ''})"
         option.data 'name', card.name
         option.data 'display_name', card.display_name
         option.data 'type', card.type
