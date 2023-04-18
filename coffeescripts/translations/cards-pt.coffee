@@ -2852,7 +2852,7 @@ exportObj.cardLoaders.Português = () ->
            display_name: """Detonadores Térmicos"""
            text: """<strong>Bomba</strong>%LINEBREAK% Durante a Fase de Sistema, você pode gastar até 2 %CHARGE% para soltar a mesma quantidade de Detonadores Térmicos usando o gabarito [1 %STRAIGHT%] ou [2 %STRAIGHT%]. Cada um deve ser posicionado usando um gabarito diferente.%LINEBREAK%Quando você recarregar esta carta, recupere 1 %CHARGE% adicional."""
         "Bomblet Generator":
-           display_name: """Gerador de Mini-Bombas"""
+           display_name: """Gerador de Bombas Fragmentadas"""
            text: """<strong>Bomba</strong>%LINEBREAK%Durante a Fase de Sistema, você pode gastar 1 %CHARGE% para soltar uma Mini-bomba com o gabarito [1 %STRAIGHT%].%LINEBREAK%No começo da Fase de Ativação, você pode gastar 1 escudo para recuperar 2 %CHARGE%."""
         "Proximity Mines":
            display_name: """Minas de Proximidade"""
