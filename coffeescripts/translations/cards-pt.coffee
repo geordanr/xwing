@@ -3714,7 +3714,204 @@ exportObj.cardLoaders.Português = () ->
            display_name: """Zuckuss"""
            text: """Quando você realizar um ataque, se você não estiver estressado, você pode escolher 1 dado de defesa e receber 1 ficha de estresse. Se o fizer, o defensor deve rerrolar esse dado."""
  
-    condition_translations = {}
+       #Melhorias Standard Loadout
+        "Fanatic (BoY)":
+           display_name: """Fanático"""
+           text: """Quando você realizar um ataque primário, se você estiver danificado, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%."""
+        "Vengeful (BoY)":
+           display_name: """Vingativo"""
+           text: """Depois que uma nave amiga em alcance 0-3 for destruída, se essa nave for limitada, você pode remover 1 de suas fichas vermelhas ou recuperar 1 carga recorrente de suas cartas."""
+        "Chewbacca (BoY)":
+           display_name: """Chewbacca"""
+           text: """Depois que você fizer uma ação %EVADE%, você pode receber 1 ficha de foco."""
+        "L3-37's Programming (BoY)":
+           display_name: """Programação da L3-37"""
+           text: """Se você não possuir escudos, reduza a dificuldade das suas manobras curva (%BANKLEFT% and %BANKRIGHT%)."""
+        "Unstable Sublight Engines (BoY)":
+           display_name: """Motores Subluz Instáveis"""
+           text: """Depois que você for destruído, você <b>deve</b> realizar uma manobra [1 %STRAIGHT%], então cada nave em alcance 0-1 sofre 1 dano %HIT%."""
+        "Attack Speed (BoY)":
+           display_name: """Velocidade de Ataque"""
+           text: """Depois que você realizar completamente uma manobra [3 %STRAIGHT%] ou [4 %STRAIGHT%], Você pode realizar um boost usando o gabarito [1 %STRAIGHT%]. (Isto não é uma ação)."""
+        "R2-D2 (BoY)":
+           display_name: """R2-D2"""
+           text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
+        "R2-F2 (BoY)":
+           display_name: """R2-F2"""
+           text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
+        "R2-A3 (BoY)":
+           display_name: """R2-A3"""
+           text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
+        "R5-D8 (BoY)":
+           display_name: """R5-D8"""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+        "R5-K6 (BoY)":
+           display_name: """R5-K6"""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+        "Precise Astromech (BoY)":
+           display_name: """Astromecânico Preciso"""
+           text: """Depois que você realizar uma ação, você pode gastar 1 %CHARGE% para realizar uma ação %LOCK% vermelha."""
+        "Targeting Astromech (BoY)":
+           display_name: """Astromecânico de Mira"""
+           text: """Depois que você realizar uma ação %LOCK%, você pode realizar uma ação %ROTATEARC% vermelha."""
+        "Dorsal Turret (BoY)":
+           display_name: """Torre Dorsal"""
+           text: """<strong>Ataque</strong>"""
+        "Sensor Jammer (BoY)":
+           display_name: """Bloqueador de Sensores"""
+           text: """Quando estiver defendendo, se houver uma nave amiga no atacante, você pode mudar 1 dos resultados %HIT% do atacante para um resultado %FOCUS%."""
+        "Ancillary Ion Weapons (SoC)":
+           display_name: """Armas de Íon Auxiliares"""
+           text: """Quando você realizar um ataque primário %FRONTARC%, antes de rolar dados de ataque, você pode gastar 2 %CHARGE%. Se fizer isso, seus resultados %CRIT% causam fichas de íon ao invés de dano."""
+        "Roiling Anger (SoC)":
+           display_name: """Fúria Cegante"""
+           text: """No começo da Fase de Engajamento, se você estiver no %FRONTARC% de uma nave inimiga, você pode receber 1 ficha de desgaste para recuperar 1 %FORCE%."""
+        "Contingency Protocol (SoC)":
+           display_name: """Protocolo de Contingência"""
+           text: """Depois que esta nave for destruída outra nave amiga em alcance 0-3 com <b>Protocolo de Contingência</b> pode realizar uma ação, mes se estiver estressada."""
+        "Evasion Sequence 7 (SoC)":
+           display_name: """Sequência de Evasão 7"""
+           text: """Quando você realizar uma ação %EVADE% vermelha, se houver um obstáculo, objeto de cenário em alcance 1, trate a ação como branca."""
+        "Strut-Lock Override (SoC)":
+           display_name: """Desativar Travas de Suporte"""
+           text: """No começo da sua ativação, você pode gastar 1 %CHARGE%. Se você fizer isso, ignore obstáculos se você se mover por eles durante esta rodada."""
+        "R4-P17 (SoC)":
+           display_name: """R4-P17"""
+           text: """Quando você for receber uma carta de dano, se você não estiver defendendo, você pode gastar 1 %CHARGE% e receber 1 ficha de desgaste para descartá-la."""
+        "Wolfpack (SoC)":
+           display_name: """Matilha"""
+           text: """Quando você realizar um ataque, você pode gastar uma mira pertencente a uma nave <b>Plo Koon</b> aliada ou uma nave com a habilidade <b>Nascido para Isso</b> que esteja no defensor para rerrolar qualquer quantidade de dados de ataque."""
+    condition_translations = 
+    
+        'Suppressive Fire':
+           display_name: 'Tiro Supressivo'
+           text: '''Quando você realizar um ataque contra uma nave que não seja <strong>Capitão Rex</strong>, role 1 dado de ataque a menos.%LINEBREAK%Após <strong>Capitão Rex</strong> defender, remova essa carta. No final da Fase de Engajamento, se <strong>Capitão Rex</strong> não realizou um ataque nessa fase, remova essa carta.%LINEBREAK%Após <strong>Capitão Rex</strong> ser destruído, remova essa carta.'''
+        'Hunted':
+           display_name: 'Caçado'
+           text: '''Depois que você for destruído, você deve escolher outra nave amiga e atribuir esta condição a ela, se possível.'''
+        'Listening Dispositivo':
+           display_name: 'Dispositivo de Escuta'
+           text: '''Durante a Fase de Sistema, se uma nave inimiga com a melhoria <strong>Informante</strong> estiver em alcance 0-2 vire seu disco de manobras para cima.'''
+        'Rattled':
+           display_name: 'Aturdido'
+           text: '''Depois que uma bomba ou mina em alcance 0-1 detonar, sofra 1 %CRIT%. Then, remove this card. %LINEBREAK% <strong>Action:</strong> Se não houver bombas ou minas em alcnace 0-1, remova esta carta.'''
+        'Optimized Prototype':
+           display_name: 'Protótipo Otimizado'
+           text: '''Quando você realizar um ataque primário %FRONTARC% contra uma nave que esteja mirada por uma nave amiga com a melhoria <strong>Director Krennic</strong>, você pode gastar 1 resultado %HIT%/%CRIT%/%FOCUS%. Se você fizer isso, escolha um: o defensor perde 1 escudo ou o defensor vira uma carta de dano para cima.'''
+        '''I'll Show You the Dark Side''':
+           display_name: 'Contemple o Lado Sombrio'
+           text: '''Quando esta carta for atribuída, se não houver uma carta de dano virada para cima nela, o jogador que a atribuiu procura no baralho de dano por 1 carta de dano <strong>Piloto</strong> e a coloca virada para cima nesta carta. Então, embaralhe o baralho de dano. Quando você for sofrer 1 dano %CRIT%, você recebe a carta virada para cima sobre esta carta. Então, remova esta carta. '''
+        'Proton Bomb':
+           display_name: 'Bomba de Prótons'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bombaa %LINEBREAK% No final da Fase de Ativação, este dispositivo detona. Quando este dispositivo detona, cada nave e remoto em alcance 0-1 sofre 1 dano %CRIT.%LINEBREAK%<i>Errata (Discussão de Regras Oficial 03/2019): Adicionado: "e remoto"</i>'''
+        'Seismic Charge':
+           display_name: 'Cargas Sísmicas'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase de Ativação, este dispositivo detona. Quando este dispositivo detona, escolha 1 obstáculo em alcance 0-1. Cada nave e remoto em alcance 0-1 do obstáculo sofre 1 dano d. Então remova o obstáculo.%LINEBREAK%<i>Errata (Discussão de Regras Oficial 03/2019): Adicionado: "e remoto"</i> '''
+        'Bomblet':
+           display_name: 'Bomba Fragmentada'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase Ativação, este dispositivo detona. Quando este dispositivo detona, cada nave e remoto em alcance 0-1 rola 2 dados de ataque. Cada nave ou remoto sofre 1 dano %HIT% para cada resultado %HIT%/%CRIT%.%LINEBREAK%<i>Errata (Discussão de Regras Oficial 03/2019): Adicionado: "e remoto"</i>'''
+        'Loose Cargo':
+           display_name: 'Carregamento Solto'
+           text: '''<strong>Tipos:</strong> Obstáculo, Colocado %LINEBREAK% '''
+        'Spare Parts':
+           display_name: 'Peças Sobressalentes'
+           text: '''<strong>Tipos:</strong> Obstáculo, Colocado %LINEBREAK% Quando este objeto é solto, encaixe-o nas guias traseiras da nave.'''
+        'Conner Net':
+           display_name: 'Rede Conner'
+           text: '''<strong>Tipos:</strong> Dispositivo, Mina %LINEBREAK% Após uma nave sobrepor ou se mover através deste dispositivo, ele detona. Quando este dispositivo detona, a nave sofre 1 dano %HIT% e recebe 3 fichas de íon.'''
+        'Proximity Mine':
+           display_name: 'Minas de Proximidade'
+           text: '''<strong>Tipos:</strong> Dispositivo, Mina %LINEBREAK% Após uma nave sobrepor ou se mover através deste dispositivo, ele detona. Quando este dispositivo detona, a nave rola 2 dados de ataque. Essa nave sofre 1 dano %HIT% mais 1 dano %HIT%/%CRIT% para cada resultado correspondente.%LINEBREAK%<i>Errata (desde RR 1.0.2): Adicionado: "1 %HIT% mais"</i>'''
+        'DRK-1 Probe Droid':
+           display_name: 'Sonda Droide Dark Eye'
+           text: '''INI: 0 <br>AGILITY: 3 <br>HULL: 1 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK%  <strong>Fase de Sistema:</strong> o controlador da sonda droide DRK-1 pode escolher um gabarito [2 %BANKLEFT%], [2 STRAIGHT%] ou [2 %BANKRIGHT%] e qualquer conjunto de guias do DRK-1. O jogador então realoca o remoto, colocando o DRK-1 na outra extremidade do gabarito. Ele pode sobrepor um objeto dessa maneira.%LINEBREAK%Se o DRK-1 sobrepor uma nave, use o marcador de posição para marcar a posição da nave, então coloque a nave em cima do remoto.%LINEBREAK%<strong>Fase de Ativação, Engajamento e Final:</strong> Sem efeitos.%LINEBREAK% <strong>Outras Regras:</strong> Quando uma nave trava uma mira ou interfere uma nave inimiga, ela pode medir o alcance a partir de uma sonda droide DRK-1 amiga.%LINEBREAK%Após uma nave inimiga executar uma manobra que faz com que ela sobreponha uma sonda droide DRK-1, o controlador da nave rola um dado de ataque. Em um resultado %FOCUS%, a sonda droide DRK-1 sofre 1 dano %HIT%.'''
+        'Buzz Droid Swarm':
+           display_name: 'Enxame de Buzz Droids'
+           text: '''INI: 0 <br>AGILITY: 1 <br>HULL: 1 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% <strong>Fase de Sistema, Ativação e Final: Sem efeitos.</strong>%LINEBREAK%<strong>Fase de Engajamento:</strong> Quando você engaja, cada nave inimiga em alcance 0 do enxame de buzz droids sofre 1 dano %CRIT%.%LINEBREAK%<strong>Outras Regras:</strong> Após uma nave inimiga sobrepor ou mover através de um enxame de buzz droids, o jogador que controla o enxame realoca ele alinhando as guias do remoto com as guias frontais ou traseiras da nave (essa nave está em alcance 0 do enxame). O enxame não pode ser alinhado com as guias de uma nave, se isso fizer com que o enxame sobreponha um objeto. Se o enxame não pode ser alinhado com as guias escolhidas, o jogador controlador deve alinhá-lo com o outro conjunto de guias da nave. Se ele não pode ser alinhado nos dois conjuntos de guias, o enxame e a nave inimiga que sobrepôs ou moveu através do enxame sofrem 1 dano %HIT%. %LINEBREAK%<i>Errata (desde RR 1.4): Agilidade ajustada para equilibrio.</i>'''
+        '''It's the Resistance''':
+           display_name: 'É a Resistência'
+           text: '''<strong>Preparação:</strong> Comece na reserva. %LINEBREAK% Quando você for posicionado, você pode ser colocado no alcance 1 de qualquer borda da mesa e além do alcance 3 de qualquer nave inimiga. %LINEBREAK% No começo da rodada, se todas as %CHARGE% do <strong>GA-97</strong> amigo estiverem ativas você <strong>deve</strong> ser posicionado. Então remova esta carta. Depois que o <strong>GA-97</strong> amigo for destruído, você <strong>deve</strong> ser posicionado. Então receba 1 ficha de desarme e descarte esta carta.'''
+        'Electro-Proton Bomb':
+           display_name: 'Bomba de Elétro-Próton'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK%  No final da Fase de Ativação este dispositivo detona. Quando este dispositivo detonar, cada nave e remoto em alcance 0-2 rola 4 dados de ataque. Cada nave perde 1 escudo para cada resultado em branco, recebe 1 ficha de íon para cada resultado %FOCUS%/%HIT%, e recebe 1 ficha de desarme para cada resultado %CRIT%. Cada remoto em alcance 0-1 perde 1 escudo para cada resultado em branco, e sofre 1 dano para cada resultado %FOCUS%/%HIT%.'''
+        'Decoyed':
+           display_name: 'Chamariz'
+           text: '''Quando você defender, cada <strong>Serva de Naboo</strong> amiga no arco de ataque pode gastar 1 ficha de desvio para mudar um dos seus resultados para um resultado %EVADE%.%LINEBREAK%Se você for um Caça Estelar Real de Naboo N-1, cada <strong>Serva de Naboo</strong> amiga no arco de ataque pode gastar 1 ficha de desvio para, ao invés disso, adicionar 1 resultado %EVADE%.'''
+        'Compromising Intel':
+           display_name: 'Inteligência Comprometedora'
+           text: '''Durante a Fase de Sistema, se a <strong>Vi Moradi</strong> inimiga estiver em alcance 0-3, vire seu disco para cima.%LINEBREAK%Quando você defender ou realizar um ataque contra a <strong>Vi Moradi inimiga</strong>, você não pode gastar fichas de foco.'''
+        'Cluster Mine':
+           display_name: 'Mina Fragmentada'
+           text: '''<strong>Tipos:</strong> Dispositivo, Mina %LINEBREAK%  Um conjunto de Mina de Fragmentação consiste em 3 dispositivos Mina deFragmentação.%LINEBREAK%Quando uma Mina de Fragmentação é colocada, a peça central é colocada normalmente e as duas Minas de Fragmentação adicionais são colocadas nos espaços laterais como mostrado.%LINEBREAK%Após uma nave sobrepor ou se mover através de qualquer peça individual da Mina de Fragmentação, ela detona. Peças não sobrepostas ou que a nave não tenha movido através, não detonam.%LINEBREAK%Quando cada um destes dispositivos detona, aquela nave rola 2 dados de ataque. A nave sofre 1 dano %HIT%/%CRIT% para cada resultado correspondente.'''
+        'Ion Bomb':
+           display_name: 'Bomba de Íon'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No fim da Fase de Ativação, este dispositivo detona. Quando este dispositivo detonar, cada nave em alcance 0-1 rece 3 fichas de íon, e cada remoto em alcance 0-1 sofre 1 dano %HIT%.'''
+        'Concussion Bomb':
+           display_name: 'Bomba de Concussão'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No fim da Fase de Ativação, este dispositivo detona. Quando este dispositivo detonar, cada nave e remoto em alcance 0-1 recebe 1 carta de dano virada para baixo. Então, cada nave em alcance 0-1 deve expor 1 carta de dano, a menos que ela escolha receber 1 ficha de desgaste.'''
+        'Thermal Detonator':
+           display_name: 'Detonador Térmico'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase de Ativação, este dispositivo detona. Quando este dispositivo detonar, cada nave e remoto em alcance 0-1 rola 1 dado de ataque. Cada nave recebe 1 ficha de desgaste para cada resultado %FOCUS%, e cada nave e remoto sofre 1 dano %HIT%/%CRIT% para cada resultado correspondente.'''
+        'Sensor Buoy':
+           display_name: 'Bóia de Sensor'
+           text: '''INI: 0 <br>AGILITY: 3 <br>HULL: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% SBoias de sensores são remotos em pares (um azul e um vermelho, cada um com sua própria carta de remoto) e são colocados com a carta de melhoria <strong>Conjunto de Boias de Sensores</strong>. Além de serem remotos e interagirem com a carta, eles não possuem regras adicionais.'''
+        'Electro-Chaff Cloud':
+           display_name: 'Nuvem de Electro-Chaff'
+           text: '''An electro-chaff cloud is a device and an obstacle. %LINEBREAK% Durante a Fase Final, remova cada nuvem de electro-chaff sem marcadores de fuso, então remova um marcador de fuso de cada nuvem de electro-chaff. Uma nuvem de electro-chaff nunca pode ter mais de um marcador de fuso.'''
+        'Tracking Torpedoes':
+           display_name: 'Torpedos Rastreadores'
+           text: '''INI: 0 <br>AGILITY: 3 <br>HULL: 3 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK%<strong>Fase de sistema:</strong> na iniciativa desse remoto, o jogador que o controla realoca este remoto para frente usando o gabarito [3 %BANKLEFT%], [3 %BANKRIGHT%] ou [4 %STRAIGHT%].%LINEBREAK% <strong>Fase de Ativação:</strong> sem efeito.%LINEBREAK% <strong>Fase de Engajamento:</strong> na iniciativa do remoto, se um objeto que ele possui uma mira estiver em seu %FRONTARC% em alcance 0-1, este remoto detona.%LINEBREAK% <strong>Fase Final:</strong> durante a Fase Final, se este remoto não possuir uma mira em nenhum objeto, este remoto deve adquirir uma mira em um objeto no seu %FRONTARC% em alcance 1-3, se for possível.%LINEBREAK% <strong>Outras Regras:</strong> após este remoto ser destruído, role 1 dado de ataque. Em um resultado %HIT% ou %CRIT%, este remoto detona.%LINEBREAK% Quando este remoto detona, cada nave, remoto e estrutura em alcance 0 ou em seu %FRONTARC% em alcance 1 rola 4 dados de ataque e sofre 1 dano para cada resultado %HIT% e %CRIT%.'''
+        'Fearful Prey':
+           display_name: 'Presa Assustada'
+           text: '''Após você defender contra um <strong>Predador Terrível</strong> inimigo, se você não gastou ao menos 1 ficha verde durante o ataque, receba 1 ficha de desgaste.'''
+        'You Should Thank Me':
+           display_name: 'Você Deveria Me Agradecer'
+           text: '''Esta condição é atribuída virada para baixo. Revele-a após você defender.%LINEBREAK% Após você defender, <strong>Zam Wesell</strong> recupera 1 %CHARGE%. Então, você pode adquirir uma mira no atacante.%LINEBREAK% No final da Fase de Engajamento, se esta carta estiver virada para baixo e você estiver no arco de tiro de uma nave inimiga, você pode revelar esta carta e gastar 2 %CHARGE% de <strong>Zam Wesell</strong>. Se o fizer, você pode realizar um ataque bônus.%LINEBREAK% No início da Fase de Sistema, remova esta condição.'''
+        '''You'd Better Mean Business''':
+           display_name: 'É Melhor Falar Sério'
+           text: '''Esta condição é atribuída virada para baixo. Revele-a após você defender.%LINEBREAK% Após você defender, você pode gastar 2 %CHARGE% de <strong>Zam Wesell</strong>. Se o fizer, realize um ataque bônus contra o atacante.%LINEBREAK% No final da Fase de Engajamento, se esta carta estiver virada para baixo e você estiver no arco de tiro de uma nave inimiga, você pode revelar esta carta. Se o fizer, <strong>Zam Wesell</strong> recupera 2 %CHARGE%.%LINEBREAK% No início da Fase de Sistema, remova esta condição.'''
+        '''Merciless Pursuit''':
+           display_name: 'Perseguição Impiedosa'
+           text: '''Depois que você realizar um ataque, se o defensor estiver equipado com <strong>A Criança</strong>, você pode adquirir uma mira no defensor.'''
+        '''Marked for Elimination''':
+           display_name: 'Marcado para Eliminação'
+           text: '''Quando você defender, se o atacante estiver equipado com <strong>Fob de Rastreamento</strong> e possuir uma mira em você, você não pode gastar fichas verdes.'''
+        '''False Friend''':
+           display_name: 'Falso Amigo'
+           text: '''Durante a Fase de Sistema, se uma nave inimiga com a melhoria <strong> Tal Merrik</strong> estiver em alcance 0-2 ou um remoto inimigo estiver em alcance 0-2, Vire seu disco de manobras para cima.%LINEBREAK%<strong>Ação</strong> Receba 1 ficha de desgaste e 1 ficha de estresse para descartar esta condição.'''
+        '''Trials of the Darksaber''':
+           display_name: 'Testes do Sabre Negro'
+           text: '''Quando você realizar um ataque em alcance 0-2, você pode gastar 1 resultado %CRIT%. Se o fizer, se o jogador controlando a nave tiver mais %POINT% que você, ele perde 1 %POINT%. Posicione este %POINT% nesta carta. %LINEBREAK% Depois qeu você defender, se você for destruído por uma nave inimiga em alcance 0-2, atribua a condição <strong>Testes do Sabre Negro</strong> ao atacante (todos os %POINT% permanecem nesta carta).%LINEBREAK% No final do jogo, esta nave pontua todos os %POINT% nesta carta.'''
+        '''Blazer Bomb''':
+           display_name: 'Bomba de Labareda'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase de Ativação, este dispositivo detona.%LINEBREAK%Quando este dispositivo detona, cada nave e remoto em alcance 0-1 rolaum dado de ataque. Cada nave ou remoto sofre 1 dano %HIT% para cadaresultado %HIT%/%CRIT%.%LINEBREAK% Após este dispositivo detonar, coloque uma Labareda alinhando as guias daLabareda com o encaixe do dispositivo.%LINEBREAK%Uma Labareda é um obstáculo. Após este obstáculo ser posicionado, coloque um marcador de fuso sobre ele.%LINEBREAK%Durante a Fase Final, remova cada Labareda sem marcadores de fuso, e então remova um marcador de fuso de cada Labareda.'''
+        '''Clan Wren Commandos''':
+           display_name: 'Comandos do Clã Wren'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Death Watch Commandos''':
+           display_name: 'Comandos do Olho da Morte'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Nite Owl Commandos''':
+           display_name: 'Comandos das Corujas Noturnas'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Imperial Super Commandos''':
+           display_name: 'Super Comandos Imperiais'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Mandalorian Super Commandos''':
+           display_name: 'Super Comandos Mandalorianos'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Guarded''':
+           display_name: 'Protegido'
+           text: '''Quando você defender, se você não estiver no %BULLSEYEARC% do atacante, role 1 dado de defesa adicional para cada <b>Protetor MagnaGuard</b> calculando ou desviando no arco de ataque.'''
+        '''Sickening Maneuver''':
+           display_name: 'Manobra Nauseante'
+           text: '''Você pode realizar manobras vermelhas mesmo se estiver estressado. %LINEBREAK% Depois que você revelar uma manobra curva [%BANKLEFT% or %BANKRIGHT%] ou curva fechada [%TURNLEFT% or %TURNRIGHT%], você <b>deve</b> receber 1 ficha de desgaste e realizar a manobra como uma derrapagem.%LINEBREAK%Depois que você revelar uma manobra [%STRAIGHT%], você deve realizar esta manobra como uma manobra Koiogran vermelha [%KTURN%].%LINEBREAK% Depois que você realizar uma manobra, remova esta condição.'''
+        '''Primed For Speed''':
+           display_name: 'Preparado para Velocidade'
+           text: '''Adicione uma ação %SLAM% branca a sua barra de ações. %LINEBREAK% Depois que você realizar um %SLAM%, você deve sofrer 1 dano %HIT% para remover 1 ficha de desarme.'''
+        '''Broken Trust''':
+           display_name: 'Confiança Quebrada'
+           text: '''Trate naves amigas como aliadas.%LINEBREAK% Naves não inimigas tratam você como aliada. %LINEBREAK%Quando realizar um ataque, antes de declarar o defensor, cada nave aliada no arco de ataque que não estiver estressada recebe 1 ficha de estresse. Depois que você defender ou realizar um ataque, se o defensor recebeu pelo menos 1 carta de dano virada para cima, ou foi destruído, remova esta condição.'''
 
     chassis_translations = 
         "Vectored Thrusters":
