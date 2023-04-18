@@ -3627,7 +3627,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Depois que uma nave amiga em alcance 0-2 gastar uma ficha de foco ou desvio, você pode gastar 1 %FORCE%. Se fizer isso, aquela nave recebe 1 ficha de foco."""
         "Peli Motto":
            display_name: """Peli Motto"""
-           text: """Durante a Fase de Sistema, você pode realizar uma ação em uma de suas cartas de dano, mesmo se estiver estressado.%LINEBREAK%Depois qeu voc~e reparar uma carta virada pra cima do tipo <strong><i>Nave</i></strong>, você pode rolar 1 dado de ataque. Em um resultado %HIT%, repare outra carta virada para cima do tipo <strong><i>Nave</i></strong>. Em um resultado %CRIT%, exponha 1 carta de dano."""
+           text: """Durante a Fase de Sistema, você pode realizar uma ação em uma de suas cartas de dano, mesmo se estiver estressado.%LINEBREAK%Depois que você reparar uma carta virada pra cima do tipo <strong><i>Nave</i></strong>, você pode rolar 1 dado de ataque. Em um resultado %HIT%, repare outra carta virada para cima do tipo <strong><i>Nave</i></strong>. Em um resultado %CRIT%, exponha 1 carta de dano."""
         "Perceptive Copilot":
            display_name: """Co-Piloto Perspicaz"""
            text: """Depois que você realizar uma ação %FOCUS%, receba 1 ficha de foco."""
