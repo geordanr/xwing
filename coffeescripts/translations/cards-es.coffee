@@ -563,7 +563,7 @@ exportObj.cardLoaders['Español'] = () ->
            text: """Al comienzo de la fase de Enfrentamiento, puedes gastar 1 ficha de Cálculos para realizar una acción %COORDINATE%. No puedes coordinar naves que no tengan la capacidad de nave <strong>Procesado de cálculos en red</strong>. """
         "DBS-404":
            display_name: """DBS-404"""
-           text: """Mientras efectúas un ataque a alcance de ataque 1, <strong>debes</strong> tirar 1 dado adicional. Después de que el ataque impacte, sufres 1 de daño %CRIT%.  %LINEBREAK%<i>Errata (since rules reference 1.4): Changed the range restriction on this ability"</i>"""
+           text: """Mientras efectúas un ataque a alcance de ataque 1, <strong>debes</strong> tirar 1 dado adicional. Después de que el ataque impacte, sufres 1 de daño %CRIT%.  %LINEBREAK%<i>Errata (ya que las reglas hacen referencia a 1.4): se modificó la restricción de alcance de esta habilidad."</i>"""
         "DFS-081":
            display_name: """DFS-081"""
            text: """Mientras una nave aliada que tienes a alcance 0-1 se defiende, esa nave puede gastar 1 ficha de Cálculos para cambiar todos los resultados %CRIT% por resultados  %HIT%."""
@@ -860,7 +860,7 @@ exportObj.cardLoaders['Español'] = () ->
            text: """Mientras efectúas un ataque principal, si hay al menos 1 otra nave aliada situada a alcance 0-1 del defensor, puedes tirar 1 dado de ataque adicional."""
         "Lieutenant Dormitz":
            display_name: """Teniente Dormitz"""
-           text: """<strong>Preparación</strong>: Después de que seas colocado en la zona de juego, se pueden colocar otras naves aliadas en cualquier lugar de la zona de juego que esté situado a alcance 0-2 de ti. %LINEBREAK% <i>Errata (since rules reference 1.3.0): Replaced "other friendly ship" with "friendly small ships"</i>"""
+           text: """<strong>Preparación</strong>: Después de que seas colocado en la zona de juego, se pueden colocar otras naves aliadas en cualquier lugar de la zona de juego que esté situado a alcance 0-2 de ti. %LINEBREAK% <i>Errata (desde la referencia de reglas 1.3.0): Se reemplazó "otro barco amigo" por "pequeños barcos amigos"</i>"""
         "Lieutenant Karsabi":
            display_name: """Teniente Karsabi"""
            text: """Después de que recibas una ficha de Desarme, si no está bajo tensión, puedes recibir 1 ficha de Tensión para retirar 1 ficha de Desarme."""
@@ -1379,6 +1379,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Andrasta":
            display_name: """Andrasta"""
            text: """<i>Añade %RELOAD%</i>%LINEBREAK%<i>Sólo Escoria</i>%LINEBREAK%Añádete un espacio %DEVICE%."""
+        "Black One":
+           display_name: """Negro Uno"""
+           text: """Después de que realices una acción %SLAM%, pierdes 1 %CHARGE%. Luego puedes recibir 1 ficha de Iones para retirar 1 ficha de Desarme.%LINEBREAK%Si tu %CHARGE% está inactiva, no puedes realizar la acción %SLAM%."""
         "Dauntless":
            display_name: """Intrépido"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Después de que ejecutes parcialmente una maniobra, puedes realizar 1 acción blanca, considerando esa acción como si fuera roja."""
@@ -1418,6 +1421,9 @@ exportObj.cardLoaders['Español'] = () ->
         "ST-321":
            display_name: """ST-321"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Después de que realices una acción %COORDINATE%, puedes elegir una nave enemiga que esté situada a alcance 0-3 de la nave que has coordinado. Si lo haces, obtienes un Blanco fijado sobre esa nave enemiga, ignorando las restricciones por alcance."""
+        "Scimitar":
+           display_name: """Cimitarra"""
+           text: """<strong>Preparación:</strong> Después del paso de "Desplegar las fuerzas", puedes camuflarte.%LINEBREAK%Después de que desactives el camuflaje, puedes elegir una nave enemiga situada en tu %BULLSEYEARC%. Si lo haces, esa nave recibe 1 ficha de Interferencia."""
         "Shadow Caster":
            display_name: """Sombra Alargada"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que efectúes un ataque que impacte, si el defensor está situado en tu %SINGLETURRETARC% y tu %FRONTARC%, el defensor recibe 1 ficha de Campo de tracción."""
@@ -1427,6 +1433,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Virago":
            display_name: """Virago"""
            text: """Durante la fase Final, puedes gastar 1&nbsp;%CHARGE% para realizar 1 acción %BOOST% roja.%LINEBREAK%Añádete el espacio %MODIFICATION%."""
+        "Soulless One":
+           display_name: """Soulless One"""
+           text: """While you defend, if the attacker is outside your firing arc, you may reroll 1 defense die."""
         "Ablative Plating":
            display_name: """Blindaje ablativo"""
            text: """<i>Sólo nave grande o nave mediana</i>%LINEBREAK%Antes de que vayas a sufrir daño causado por un obstáculo o por la detonación de una bomba aliada, puedes gastar 1&nbsp;%CHARGE%. Si lo haces, evitas sufrir 1 de ese daño."""
@@ -1436,6 +1445,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Adv. Proton Torpedoes":
            display_name: """Torpedos de protones avanzados"""
            text: """<strong>Ataque (%LOCK%):</strong> Gasta 1&nbsp;%CHARGE%. Cambia 1 resultado %HIT% por un resultado %CRIT%."""
+        "Advanced Optics":
+           display_name: """Sensores ópticos avanzados"""
+           text: """Mientras efectúas un ataque, puedes gastar 1 ficha de Concentración para cambiar 1 de tus resultados de cara vacía por un resultado %HIT%."""
         "Advanced SLAM":
            display_name: """Motor sublumínico avanzado"""
            text: """<i>Necesita %SLAM%</i>%LINEBREAK%Después de que efectúes una acción %SLAM%, si has ejecutado completamente la maniobra, puedes realizar una acción blanca que figure en tu barra de acciones, considerando esa acción como si fuera roja."""
@@ -1451,15 +1463,30 @@ exportObj.cardLoaders['Español'] = () ->
         "Agile Gunner":
            display_name: """Artillero ágil"""
            text: """Durante la fase Final, puedes reorientar tu indicador %SINGLETURRETARC%."""
+        "Autoblasters":
+           display_name: """Cañones bláster automáticos"""
+           text: """<strong>Ataque:</strong>Si el defensor está en tu %BULLSEYEARC%, tiras 1 dado adicional. Durante el paso de "Neutralizar resultados", si no estás en el %FRONTARC% del defensor, los resultados %EVADE% no anulan los resultados %CRIT%."""
+        "BB Astromech":
+           display_name: """Astromecánico BB"""
+           text: """Durante la Fase de Sistemas, puedes gastar 1 %CHARGE% para realizar una acción de %BARRELROLL%. %LINEBREAK% <i>Errata (desde la referencia de reglas 1.4.2): Cambiada la temporización del efecto a la Fase de Sistemas</i>"""
+        "BB-8":
+           display_name: """BB-8"""
+           text: """Durante la Fase de Sistemas, puedes gastar 1 %CHARGE% para realizar una acción de %BARRELROLL% o %BOOST%. %LINEBREAK% <i>Errata (desde la referencia de reglas 1.4.2): Cambiada la temporización del efecto a la Fase de Sistemas</i>"""
         "BT-1":
            display_name: """BT-1"""
            text: """<i>Sólo Escoria o Escuadrón que incluya a Darth Vader</i>%LINEBREAK%Mientras efectúas un ataque, puedes cambiar 1 resultado %HIT% por un resultado%CRIT% por cada ficha de Tensión que tenga el defensor."""
         "Barrage Rockets":
            display_name: """Cohetes de saturación"""
            text: """<strong>Ataque (%FOCUS%):</strong> Gasta 1 %CHARGE%. Si el defensor está situado en tu %BULLSEYEARC%, puedes gastar 1 o más %CHARGE% para volver a tirar esa misma cantidad de dados de ataque."""
+        "Battle Meditation":
+           display_name: """Meditación de batalla"""
+           text: """No puedes coordinar naves limitadas.%LINEBREAK% Mientras realizas una acción %COORDINATE% violeta, puedes coordinar 1 nave aliada que no sea limitada adicional del mismo tipo. Ambas naves deben realizar la misma acción."""
         "Baze Malbus":
            display_name: """Baze Malbus"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Mientras efectúas una acción %FOCUS%, puedes considerarla como si fuera roja. Si lo haces, recibes 1 ficha de Concentración adicional por cada nave enemiga que tengas a alcance 0-1, hasta un máximo de 2."""
+        "Biohexacrypt Codes":
+           display_name: """Códigos biohexaencriptados"""
+           text: """Mientras realizas una coordinación o interferencia, si tienes alguna nave fijada como blanco, puedes gastar ese Blanco fijado para elegir dicha nave, ignorando las restricciones de alcance."""
         "Bistan":
            display_name: """Bistan"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Después de que efectúes un ataque principal, si estás concentrado, puedes realizar un ataque %SINGLETURRETARC% adicional contra una nave que no hayas atacado todavía en esta ronda."""
@@ -1472,12 +1499,24 @@ exportObj.cardLoaders['Español'] = () ->
         "Bossk":
            display_name: """Bossk"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que efectúes un ataque principal que falle, si no estás bajo tensión, debes recibir 1 ficha de Tensión para efectuar un ataque principal adicional contra ese mismo objetivo.%LINEBREAK%"""
+        "Brilliant Evasion":
+           display_name: """Evasión impecable"""
+           text: """Mientras te defiendes, si no estás situado en el %BULLSEYEARC% del atacante, puedes gastar 1 %FORCE% para cambiar 2 de tus resultados %FOCUS% por resultados %EVADE%."""
         "C-3PO":
            display_name: """C-3PO"""
            text: """<i>Añade %CALCULATE%</i>%LINEBREAK%<i>Sólo Rebelde</i>%LINEBREAK%Antes de tirar los dados de defensa, puedes gastar 1 ficha de Cálculos para decir en voz alta un número que sea igual o superior a 1. Si lo haces y en tu tirada de dados obtienes exactamente esa misma cantidad de resultados %EVADE%, añade 1 resultado %EVADE%.%LINEBREAK%Después de que realices la acción %CALCULATE%, recibes 1 ficha de Cálculos."""
+        "C-3PO (Resistance)":
+           display_name: """C-3PO"""
+           text: """Mientras realizas una coordinación, puedes elegir naves aliadas que tengas más allá de alcance 2 si dichas naves tienen %CALCULATE% en su barra de acciones.%LINEBREAK%Después de que realices la acción %CALCULATE% o %COORDINATE%, recibes 1 ficha de Cálculos."""
         "Cad Bane":
            display_name: """Cad Bane"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que sueltes o lances un dispositivo, puedes realizar una acción %BOOST% roja."""
+        "Calibrated Laser Targeting":
+           display_name: """Sistema de puntería láser calibrado"""
+           text: """Mientras efectúas un ataque principal, si el defensor está situado en tu %BULLSEYEARC%, añade 1 resultado %FOCUS%."""
+        "Captain Phasma":
+           display_name: """Captain Phasma"""
+           text: """Al final de la fase de Enfrentamiento, toda nave enemiga que tengas a alcance 0-1 y que no esté bajo tensión recibe 1 ficha de Tensión."""
         "Cassian Andor":
            display_name: """Cassian Andor"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Durante la fase de Sistemas, puedes elegir 1 nave enemiga que tengas a alcance 1-2 y decir en voz alta una dirección y velocidad, y luego mirar el selector de esa nave. Si tanto la dirección como la velocidad de la nave elegida coinciden con las que tú has dicho, puedes cambiar la maniobra que tienes establecida en tu selector.%LINEBREAK%"""
@@ -1487,6 +1526,12 @@ exportObj.cardLoaders['Español'] = () ->
         "Chewbacca":
            display_name: """Chewbacca"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Al comienzo de la fase de Enfrentamiento, puedes gastar 2&nbsp;%CHARGE% para reparar 1 carta de Daño boca arriba."""
+        "Chewbacca (Scum)":
+           display_name: """Chewbacca"""
+           text: """Al comienzo de la fase Final, puedes gastar 1 ficha de Concentración para reparar 1 de tus cartas de Daño boca arriba."""
+        "Chewbacca (Resistance)":
+           display_name: """Chewbacca"""
+           text: """<strong>Setup:</strong> Lose 1 %CHARGE%.%LINEBREAK%After a friendly ship at range 0-3 is dealt 1 damage card, recover 1 %CHARGE%.%LINEBREAK%While you perform an attack, you may spend 2 %CHARGE% to change 1 %FOCUS% result to a %CRIT% result."""
         "Ciena Ree":
            display_name: """Ciena Ree"""
            text: """<i>Necesita %COORDINATE% o <r>%COORDINATE%</r></i>%LINEBREAK%<i>Sólo Imperio</i>%LINEBREAK%Después de que realices una acción %COORDINATE%, si la nave que has coordinado realizó una acción %BARRELROLL% o %BOOST%, esa nave puede recibir 1 ficha de Tensión para girar 90º sobre sí misma."""
@@ -1496,6 +1541,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Cloaking Device":
            display_name: """Dispositivo de camuflaje"""
            text: """<i>Sólo nave pequeña o nave mediana</i>%LINEBREAK%<strong>Acción:</strong> Gasta 1&nbsp;%CHARGE% para realizar una acción %CLOAK%.%LINEBREAK%Al comienzo de la fase de Planificación, tira 1 dado de ataque, Si sacas un resultado %FOCUS%, desactiva el camuflaje o descarta tu ficha de Camuflaje.%LINEBREAK%"""
+         "Clone Commander Cody":
+           display_name: """Comandante clon Cody"""
+           text: """Después de que efectúes un ataque que falle, si 1 o más resultados %HIT%/%CRIT% fueron neutralizados, el defensor recibe 1 ficha de Sobresfuerzo."""
         "Cluster Missiles":
            display_name: """Misiles de racimo"""
            text: """<strong>Ataque (%LOCK%):</strong> Gasta 1&nbsp;%CHARGE%. Después de este ataque, puedes efectuar este ataque como un ataque adicional contra un objetivo diferente que esté situado a alcance 0-1 del defensor, ignorando el requisito %LOCK%."""
@@ -1514,9 +1562,15 @@ exportObj.cardLoaders['Español'] = () ->
         "Contraband Cybernetics":
            display_name: """Ciberimplantes ilícitos"""
            text: """Antes de que te actives, puedes gastar 1 ficha %CHARGE%. Si lo haces, hasta el final de la ronda, eres capaz de realizar acciones y ejecutar maniobras rojas, incluso aunque estés bajo tensión."""
+         "Count Dooku":
+           display_name: """Count Dooku"""
+           text: """Durante un ataque, antes de que una nave que tengas a alcance 0-2 tire dados de ataque o de defensa, si todas tus %FORCE% están activas, puedes gastar 1 %FORCE% y decir un resultado.Si en la tirada no sale el resultado que has dicho, la nave debe cambia 1 dado por ese resultado.%LINEBREAK%<i>Errata (desde las reglas de referencia 1.4): Se agregó "Durante un ataque"</i>"""
         "Crack Shot":
            display_name: """Tiro certero"""
            text: """Mientras efectúas un ataque principal, si el defensor está en tu %BULLSEYEARC%, antes del paso de “Neutralizar los resultados”, puedes gastar 1&nbsp;%CHARGE% para anular 1 resultado %EVADE%."""
+       "DRK-1 Probe Droids":
+           display_name: """DRK-1 Probe Droids"""
+           text: """Durante la fase Final, puedes gastar 1 %CHARGE% para soltar o lanzar 1 droide sonda DRK-1 utilizando una plantilla de velocidad 3.%LINEBREAK%Las %CHARGE% de esta carta no pueden recuperarse."""
         "Daredevil":
            display_name: """Temerario"""
            text: """<i>Necesita %BOOST%</i>%LINEBREAK%<i>Sólo nave pequeña</i>%LINEBREAK%Mientras realizas una acción %BOOST% blanca, puedes considerarla como si fuera roja para usar la plantilla [1&nbsp;%TURNLEFT%] o [1&nbsp;%TURNRIGHT%] en vez de una de las plantillas normales para esta acción."""
@@ -1532,12 +1586,27 @@ exportObj.cardLoaders['Español'] = () ->
         "Debris Gambit":
            display_name: """Treta de los desechos"""
            text: """<i>Añade <r>%EVADE%</r></i>%LINEBREAK%<i>Sólo nave pequeña o nave mediana</i>%LINEBREAK%Mientras realizas una acción %EVADE% roja, si tienes algún obstáculo a alcance 0-1, considera esa acción como blanca en vez de roja."""
+        "Dedicated":
+           display_name: """Entrega absoluta"""
+           text: """Mientras otra nave aliada que tienes en tu %LEFTARC% o %RIGHTARC% a alcance 0-2 defends, si esa nave es limitada o posee la mejora <strong>Entrega absoluta</strong> y tú no estás bajo sobresfuerzo, puedes recibir 1 ficha de Sobresfuerzo. Si lo haces, el defensor vuelve a tirar 1 de sus resultados de cara vacía.%LINEBREAK%<i>Errata (desde las reglas de referencia 1.4): Se eliminó la restricción No limitada y se agregó la restricción Clon</i>"""
+        "Delayed Fuses":
+           display_name: """Espoletas retardadas"""
+           text: """Después de que sueltes, lances o coloques una bomba o mina, puedes colocar 1 indicador de Espoleta sobre ese dispositivo."""
+        "Delta-7B":
+           display_name: """Delta-7B"""
+           text: """<i class = flavor_text>El Delta-7B fue diseñado como una variante más pesada del interceptor clase Delta-7 Duende del Éter, y es fácilmente identificable por el cambio en la posición del droide astromecánico. Muchos generales jedi prefieren esta nave por su mayor resistencia y potencia de fuego.</i>"""
         "Dengar":
            display_name: """Dengar"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que te defiendas, si el atacante está en tu arco de fuego, puedes gastar 1&nbsp;%CHARGE%. Si lo haces, tira 1 dado de ataque a menos que el defensor elija retirar 1 ficha verde. Si sacas un resultado %HIT% o %CRIT%, el atacante sufre 1 de daño %HIT%."""
+        "Diamond-Boron Missiles":
+           display_name: """Misiles de diamante-boro"""
+           text: """<strong>Ataque  (%LOCK%):</strong> Gasta 1 %CHARGE%. Después de que este ataque impacte, puedes gastar 1 %CHARGE%. Si lo haces, toda nave a alcance 0-1 del defensor con un valor de Agilidad igual o inferior al del defensor tira 1 dado de ataque y sufre 1 de daño %HIT%/%CRIT% por cada resultado equivalente."""
         "Director Krennic":
            display_name: """Director Krennic"""
            text: """<i>Añade %LOCK%</i>%LINEBREAK%<i>Sólo Imperio</i>%LINEBREAK%<strong>Preparación:</strong> Antes de desplegar las fuerzas, asigna el Estado <strong>Prototipo optimizado</strong> a otra nave aliada."""
+        "Discord Missiles":
+           display_name: """Misiles desguazadores"""
+           text: """Al comienzo de la fase de Enfrentamiento, puedes gastar 1 ficha de Cálculos y 1 %CHARGE% para lanzar 1 enjambre de droides zumbadores utilizando la plantilla [3 %BANKLEFT%], [3 %STRAIGHT%], o [3 %BANKRIGHT%].%LINEBREAK% Las %CHARGE% de esta carta no pueden recuperarse."""
         "Dorsal Turret":
            display_name: """Torreta dorsal"""
            text: """<i>Añade %ROTATEARC%</i>%LINEBREAK%<strong>Ataque</strong>"""
@@ -1550,39 +1619,65 @@ exportObj.cardLoaders['Español'] = () ->
         "Emperor Palpatine":
            display_name: """Emperador Palpatine"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Mientras otra nave aliada se defiende o efectúa un ataque, puedes gastar 1&nbsp;%FORCE% para modificar 1 de sus dados como si esa nave hubiera gastado 1&nbsp;%FORCE%."""
+        "Energy-Shell Charges":
+           display_name: """Cargas de energía concentrada"""
+           text: """<strong>Ataque (%CALCULATE%):</strong> Gasta  1 %CHARGE%.Mientras efectúas este ataque, puedes gastar 1 ficha de Cálculos para cambiar 1 resultado %FOCUS% por un resultado %CRIT%.%LINEBREAK%<strong>Acción</strong>: Recarga esta carta."""
         "Engine Upgrade":
            display_name: """Motor mejorado"""
            text: """Esta carta tiene un coste de puntos variable.%LINEBREAK%<i>Añade %BOOST%</i>%LINEBREAK%<i>Necesita <r>%BOOST%</r></i>%LINEBREAK%<i class = flavor_text>Las grandes fuerzas militares como las del Imperio Galáctico utilizan componentes de motores estandarizados, pero los pilotos individuales y las organizaciones pequeñas suelen reemplazar los acoplamientos de energía, añadir propulsores o emplear combustible de alto rendimiento para aumentar las prestaciones de sus motores.</i>"""
+        "Ensnare":
+           display_name: """Apresamiento"""
+           text: """Al final de la fase de Activación, si estás atrapado en un campo de tracción, puedes elegir 1 nave que tengas en tu arco %SINGLETURRETARC% a alcance 0-1. Transfiere 1 ficha de Campo de tracción a esa nave."""
         "Expert Handling":
            display_name: """Pericia"""
            text: """Esta carta tiene un coste de puntos variable.%LINEBREAK%<i>Añade %BARRELROLL%</i>%LINEBREAK%<i>Necesita <r>%BARRELROLL%</r></i>%LINEBREAK%<i class = flavor_text>Aunque los toneles volados suelen ser una maniobra problemática para los cazas pesados, los pilotos experimentados saben cómo realizarlos sin que sus naves sufran una tensión excesiva ni queden expuestas a posibles ataques.</i>"""
         "Ezra Bridger":
            display_name: """Ezra Bridger"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Después de que efectúes un ataque principal, puedes gastar 1 %FORCE% para efectuar un ataque %SINGLETURRETARC% adicional desde un %SINGLETURRETARC% con el que no has atacado en esta ronda. Si lo haces y estás bajo tensión, puedes volver a tirar 1 dado de ataque."""
+        "Fanatical":
+           display_name: """Fanático"""
+           text: """Mientras efectúas un ataque principal, si no estás protegido por escudos, puedes cambiar 1 resultado %FOCUS% por un resultado %HIT%."""
         "Fearless":
            display_name: """Intrépido"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Mientras efectúas un ataque principal %FRONTARC%, si el alcance de ataque es 1 y estás en el %FRONTARC% del defensor, puedes cambiar 1 de tus resultados por un resultado %HIT%."""
         "Feedback Array":
            display_name: """Transmisor de sobrecargas"""
            text: """Antes de que intervengas, puedes recibir 1 ficha de Iones y 1 ficha de Desarme. Si lo haces, toda nave que tengas a alcance 0 sufre 1 de daño %HIT%."""
+        "Ferrosphere Paint":
+           display_name: """Pintura ferrosférica"""
+           text: """Después de que una nave enemiga te fije como blanco, si no estás situado en el %BULLSEYEARC%, de esa nave, ésta recibe 1 ficha de Tensión a no ser que deje de fijarte como blanco.%LINEBREAK%<i>Errata (desde las reglas de referencia 1.4): Habilidad ajustada para permitir el contrajuego</i>"""
         "Fifth Brother":
            display_name: """Quinto Hermano"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Mientras efectúas un ataque, puedes gastar 1&nbsp;%FORCE% para cambiar 1 de tus resultados %FOCUS% por un resultado %CRIT%."""
+        "Finn":
+           display_name: """Finn"""
+           text: """Mientras te defiendes o efectúas un ataque principal, si la nave enemiga está situada en tu %FRONTARC%, puedes añadir 1 resultado de cara vacía a tu tirada (este dado puede ser vuelto a tirar o modificado de cualquier otra manera)."""
         "Fire-Control System":
            display_name: """Sistema de control de disparo"""
            text: """Mientras efectúas un ataque, si tienes al defensor fijado como blanco, puedes volver a tirar 1 dado de ataque. Si lo haces, no puedes gastar tu Blanco fijado durante este ataque."""
         "Freelance Slicer":
            display_name: """Pirata informático independiente"""
            text: """Mientras te defiendes, antes de que se tiren los dados de ataque, puedes gastar un Blanco fijado que tengas sobre el atacante para tirar 1 dado de ataque. Si lo haces, el atacante recibe 1 ficha de Interferencia. Luego, si has sacado un resultado %HIT% o %CRIT%, recibes 1 ficha de Interferencia."""
+        "GA-97":
+           text: """<strong>Preparación:</strong> Antes de desplegar las fuerzas, puedes gastar 3-5 %CHARGE%.  Si lo haces, elige otra nave aliada y asígnale el Estado <strong>Es la Resistencia</strong>."""
         'GNK "Gonk" Droid':
            display_name: """Droide GNK “Gonk”"""
            text: """<strong>Preparación:</strong> Pierdes 1 %CHARGE%.%LINEBREAK%<strong>Acción:</strong> Recupera 1&nbsp;%CHARGE%.%LINEBREAK%<strong>Acción:</strong> Gasta 1&nbsp;%CHARGE% para recuperar 1 escudo."""
+        "General Grievous":
+           display_name: """General Grievous"""
+           text: """Mientras te defiendes, después del paso de "Neutralizar los resultados", si hay 2 o más resultados  %HIT%/%CRIT%, puedes gastar 1 %CHARGE% para anular 1 resultado %HIT% o %CRIT%. %LINEBREAK%Después de que una nave aliada sea destruida, recuperas 1 %CHARGE%."""
+        "General Hux":
+           display_name: """General Hux"""
+           text: """Mientras realizas una acción %COORDINATE% blanca, puedes considerarla como si fuera roja. Si lo haces, puedes coordinar hasta 2 naves adicionales del mismo tipo de nave, y cada nave que coordines debe realizar la misma acción, considerándola como si fuera roja."""
         "Grand Inquisitor":
            display_name: """Gran Inquisidor"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Después de que una nave enemiga que tienes a alcance 0-2 revele su selector, puedes gastar 1&nbsp;%FORCE% para realizar 1 acción blanca que figure en tu barra de acciones, considerando esa acción como si fuera roja."""
         "Grand Moff Tarkin":
            display_name: """Gran Moff Tarkin"""
            text: """<i>Necesita %LOCK% o <r>%LOCK%</r></i>%LINEBREAK%<i>Sólo Imperio</i>%LINEBREAK%Durante la fase de Sistemas, puedes gastar 2&nbsp;%CHARGE%. Si lo haces, toda nave aliada puede obtener un Blanco fijado sobre una nave que tengas fijada como blanco."""
+        "Grappling Struts":
+           display_name: """Puntales de agarre"""
+           text: """Cerrada:%LINEBREAK%<strong>Preparación:</strong> Equipa esta carta con este lado boca arriba.%LINEBREAK%Mientras ejecutas una maniobra, si te solapas con un asteroide o con desechos espaciales y hay 1 o menos otras naves aliadas a alcance 0 de ese obstáculo, puedes darle la vuelta a esta carta. Si lo haces, no sufres los efectos de solapar el asteroide o desechos espaciales.%LINEBREAK% Abierta:%LINEBREAK%Ignoras los obstáculos que tienes a alcance 0. No puedes ejecutar la acción  %BARRELROLL%. Después de que reveles tu selector, si la maniobra revelada es distinta a [2%STRAIGHT%] y estás a alcance 0 de un asteroide o desechos espaciales, omite tu paso de "Ejecutar maniobra" y retira 1 ficha de Tensión. Si la maniobra revelada es hacia la izquierda o hacia la derecha, gira tu nave 90º hacia esa dirección. Después de que ejecutes una maniobra, dale la vuelta a esta carta.%LINEBREAK%<i>Errata (ya que las reglas hacen referencia a 1.4): texto actualizado para que funcione según lo previsto</i>"""
         "Greedo":
            display_name: """Greedo"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Mientras efectúas un ataque, puedes gastar 1&nbsp;%CHARGE% para cambiar 1 resultado %HIT% por un resultado %CRIT%.%LINEBREAK%Mientras te defiendes, si tu %CHARGE% está activa, el atacante puede cambiar 1 resultado %HIT% por un resultado %CRIT%."""
@@ -1592,6 +1687,12 @@ exportObj.cardLoaders['Español'] = () ->
         "Han Solo (Scum)":
            display_name: """Han Solo (Scum)"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Antes de que intervengas, puedes realizar una acción %FOCUS% roja."""
+        "Han Solo (Resistance)":
+           display_name: """Han Solo"""
+           text: """Después de que realices una acción %EVADE%, recibes tantas fichas de Evasión adicionales como la cantidad de naves enemigas que tienes a alcance 0-1."""
+        "Hate":
+           display_name: """Odio"""
+           text: """Después de que sufras 1 o más de daño, recuperas esa misma cantidad de %FORCE%."""
         "Heavy Laser Cannon":
            display_name: """Cañón láser pesado"""
            text: """<strong>Ataque:</strong> Después del paso de “Modificar dados de ataque”, cambia todos tus resultados %CRIT% por resultados %HIT%."""
@@ -1601,6 +1702,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Hera Syndulla":
            display_name: """Hera Syndulla"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Eres capaz de ejecutar maniobras rojas incluso aunque estés bajo tensión. Después de que ejecutes completamente una maniobra roja, si tienes 3 o más fichas de Tensión, retiras 1 ficha de Tensión y sufres 1 de daño %HIT%."""
+        "Heroic":
+           display_name: """Audaz"""
+           text: """Mientras te defiendes o efectúas un ataque, si sólo tienes resultados de cara vacía y tienes 2 o más resultados, puedes volver a tirar cualquier cantidad de tus dados."""
         "Homing Missiles":
            display_name: """Misiles rastreadores"""
            text: """<strong>Ataque (%LOCK%):</strong> Gasta 1&nbsp;%CHARGE%. Después de que declares quién es el defensor, éste puede elegir sufrir 1 de daño %HIT%. Si lo hace, omites los pasos de “Dados de ataque” y “Dados de defensa” y el ataque se considera que ha impactado."""
@@ -1610,12 +1714,21 @@ exportObj.cardLoaders['Español'] = () ->
         "Hull Upgrade":
            display_name: """Blindaje mejorado"""
            text: """Esta carta tiene un coste de puntos variable.%LINEBREAK%<i class = flavor_text>Para quienes no pueden permitirse instalar un generador de escudos más potente, añadir capas adicionales de blindaje al casco de una nave puede servirles de alternativa adecuada.</i>"""
+        "Hyperspace Tracking Data":
+           display_name: """Datos de rastreo hiperespacial"""
+           text: """<strong>Preparación:</strong> Antes de desplegar las fuerzas, puedes elegir un número entre 0 y 6. Durante la preparación de la partida, tu valor de Iniciativa se considera igual al número que has elegido.Después de la preparación de la partida, asigna 1 ficha de Concentración o Evasión a cada nave aliada que tengas a alcance 0-2."""
         "IG-88D":
            display_name: """IG-88D"""
            text: """<i>Añade %CALCULATE%</i>%LINEBREAK%<i>Sólo Escoria</i>%LINEBREAK%Posees la capacidad especial de piloto de cada otra nave aliada que tenga la mejora <strong>IG-2000</strong>.%LINEBREAK%Después de que realices una acción %CALCULATE%, recibes 1 ficha de Cálculos."""
+        "Ion Bombs":
+           display_name: """Ion Bombs"""
+           text: """<strong>Bomba</strong>%LINEBREAK% Durante la fase de Sistemas, puedes gastar 1 %CHARGE% para soltar una Bomba de iones utilizando la plantilla [1 %STRAIGHT%]."""
         "ISB Slicer":
            display_name: """Técnico en guerra electrónica de la OSI"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Durante la fase Final, las naves enemigas que tengas a alcance 1-2 no pueden retirar fichas de Interferencia."""
+        "Impervium Plating":
+           display_name: """Blindaje de impenetranio"""
+           text: """Antes de que vayas a recibir una carta de <strong>Daño Nave</strong> boca arriba, puedes gastar 1 %CHARGE% para descartarla en vez de recibirla."""
         "Inertial Dampeners":
            display_name: """Amortiguadores de inercia"""
            text: """Antes de que vayas a ejecutar una maniobra, puedes gastar 1 escudo. Si lo haces, ejecutas una maniobra [0 %STOP%] blanca en vez de la maniobra que has revelado, y luego recibes 1 ficha de Tensión."""
@@ -1625,6 +1738,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Instinctive Aim":
            display_name: """Puntería instintiva"""
            text: """Mientras efectúas un ataque especial, puedes gastar 1 %FORCE% para ignorar el requisito %FOCUS% o %LOCK%."""
+        "Integrated S-Foils":
+           display_name: """Alas móviles integradas"""
+           text: """<strong>Cerrada: </strong><i>%BARRELROLL%, %FOCUS% <i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <r>%BARRELROLL%</r></i>%LINEBREAK% Mientras efectúas un ataque principal, si el defensor no está situado en tu %BULLSEYEARC%, tira 1 dado de ataque menos. %LINEBREAK% Antes de que te actives, puedes darle la vuelta a esta carta. %LINEBREAK% <b>Abierta:</b> Antes de que te actives, puedes darle la vuelta a esta carta."""
         "Intimidation":
            display_name: """Intimidación"""
            text: """Mientras una nave enemiga que tienes a alcance 0 se defiende, esa nave tira 1 dado de defensa menos."""
@@ -1652,15 +1768,32 @@ exportObj.cardLoaders['Español'] = () ->
         "Jyn Erso":
            display_name: """Jyn Erso"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Si una nave aliada que tienes a alcance 0-3 va a recibir una ficha de Concentración, en vez de eso puede recibir 1 ficha de Evasión."""
+        "K2-B4":
+           display_name: """K2-B4"""
+           text: """Mientras una nave aliada que tienes a alcance 0-3 se defiende, esa nave puede gastar 1 ficha de Cálculos. Si lo hace, añade 1 resultado %EVADE% a menos que el atacante elija recibir 1 ficha de Sobresfuerzo."""
+        "Kaydel Connix":
+           text: """Después de que reveles tu selector, puedes establecer en él una maniobra básica que tenga un valor de velocidad inmediatamente superior al de la actual. Mientras ejecutas esa maniobra, incrementa su dificultad."""
         "Kanan Jarrus":
            display_name: """Kanan Jarrus"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Después de que una nave aliada que tengas a alcance 0-2 ejecute completamente una maniobra blanca, puedes gastar 1&nbsp;%FORCE% para retirar 1 ficha de Tensión de esa nave."""
         "Ketsu Onyo":
            display_name: """Ketsu Onyo"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Al comienzo de la fase Final, puedes elegir 1 nave enemiga que tengas en tu arco de fuego a alcance 0-2. Si lo haces, esa nave no retira sus fichas de Campo de tracción."""
+        "Kraken":
+           display_name: """Kraken"""
+           text: """Durante la fase Final, puedes elegir hasta 3 naves aliadas que tengas a alcance 0-3. Si lo haces, cada una de esas naves no retira 1 ficha de Cálculos."""
+        "Kylo Ren":
+           display_name: """Kylo Ren"""
+           text: """<strong>Acción:</strong> Elige 1 nave enemiga que tengas a alcance 1-3. Si lo haces, gasta 1 %FORCE% para asignar el estado <strong>Yo te mostraré el Lado Oscuro</strong> a esa nave."""
         "L3-37":
            display_name: """L3-37"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%<strong>Preparación:<strong> Equipa esta cara boca arriba.%LINEBREAK%Mientras te defiendes, puedes darle la vuelta a esta carta. Si lo haces, el atacante debe volver a tirar todos los dados de ataque.%LINEBREAK%<strong>Programación de L3-37</strong>%LINEBREAK%Si no estás protegido por escudos, reduce la dificultad de tus maniobras de inclinación (%BANKLEFT% y %BANKRIGHT%)."""
+        "Kylo Ren":
+           display_name: """Kylo Ren"""
+           text: """<strong>Action:</strong> Elige 1 nave enemiga que tengas a alcance 1-3. Si lo haces, gasta 1 %FORCE% para asignar el estado <strong>Yo te mostraré el Lado Oscuro</strong> a esa nave."""
+        "Landing Struts":
+           display_name: """Puntales de aterrizaje"""
+           text: """Cerrada:%LINEBREAK%<strong>Preparación:</strong> Equipa esta carta con este lado boca arriba. %LINEBREAK% Mientras ejecutas una maniobra, si te solapas con un asteroide o con desechos espaciales y hay 1 o menos otras naves aliadas a alcance 0 de ese obstáculo, puedes darle la vuelta a esta carta. Si lo haces, no sufres los efectos de solapar el asteroide o desechos espaciales. %LINEBREAK% Abierta:%LINEBREAK% Ignoras los obstáculos que tienes a alcance 0. No puedes ejecutar la acción %BARRELROLL%. Después de que reveles tu selector, si la maniobra revelada es distinta a [2 %STRAIGHT%] y estás a alcance 0 de un asteroide o desechos espaciales, omite tu paso de "Ejecutar maniobra" y retira 1 ficha de Tensión. Si la maniobra revelada es hacia la izquierda o hacia la derecha, gira tu nave 90º hacia esa dirección. Después de que ejecutes una maniobra, dale la vuelta a esta carta.%LINEBREAK%<i>Errata (ya que las reglas hacen referencia a 1.4): texto actualizado para que funcione según lo previsto</i>"""
         "Lando Calrissian":
            display_name: """Lando Calrissian"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%<strong>Acción:</strong> Tira 2 dados de defensa. Por cada resultado %FOCUS%, recibes 1 ficha de Concentración. Por cada resultado %EVADE%, recibes 1 ficha de Evasión. Si ambos resultados son de cara vacía, el jugador adversario elige entre concentración o evasión, y tú recibes 1 ficha del tipo que ha elegido."""
@@ -1682,6 +1815,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Luke Skywalker":
            display_name: """Luke Skywalker"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Al comienzo de la fase de Enfrentamiento, puedes gastar 1 %FORCE% para reorientar tu indicador %SINGLETURRETARC%."""
+        "M9-G8":
+           display_name: """M9-G8"""
+           text: """Mientras una nave que tienes fijada como blanco efectúa un ataque, puedes elegir 1 dado de ataque. Si lo haces, el atacante vuelve a tirar ese dado."""
         "Magva Yarro":
            display_name: """Magva Yarro"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Después de que te defiendas, si el ataque ha impactado, puedes obtener un Blanco fijado sobre el atacante."""
@@ -1712,15 +1848,33 @@ exportObj.cardLoaders['Español'] = () ->
         "Outmaneuver":
            display_name: """Superioridad táctica"""
            text: """Mientras efectúas un ataque %FRONTARC%, si no estás situado en el arco de fuego del defensor, éste tira 1 dado de defensa menos."""
+        "Paige Tico":
+           display_name: """Paige Tico"""
+           text: """Después de que efectúes un ataque principal, puedes soltar 1 bomba o reorientar tu indicador %SINGLETURRETARC%.%LINEBREAK%Después de que seas destruido, puedes soltar 1 bomba."""
+        "Pattern Analyzer":
+           display_name: """Analizador de patrones"""
+           text: """Mientras ejecutas completamente una maniobra roja, antes del paso de "Comprobar la dificultad", puedes realizar 1 acción."""
         "Perceptive Copilot":
            display_name: """Copiloto perceptivo"""
            text: """Después de que realices una acción %FOCUS%, recibes 1 ficha de Concentración."""
+        "Petty Officer Thanisson":
+           display_name: """Suboficial Thanisson"""
+           text: """Durante la fase de Activación o de Enfrentamiento, después de que una nave enemiga que tengas a alcance 0-1 y esté situada en tu %FRONTARC% reciba una ficha roja o naranja, si no estás bajo tensión, puedes recibir 1 ficha de Tensión. Si lo haces, esa nave recibe 1 ficha adicional del mismo tipo que acaba de recibir."""
+        "Plasma Torpedoes":
+           display_name: """Torpedos de plasma"""
+           text: """<strong>Ataque (%LOCK%):</strong> Gasta  1 %CHARGE%. Durante el paso de "Neutralizar resultados", los resultados %CRIT% anulados antes que los resultados %HIT%. Después de que este ataque impacte, el defensor pierde 1 escudo."""
         "Pivot Wing":
            display_name: """Ala pivotante"""
            text: """<strong>Cara A (Abierta):</strong> Antes de que te actives, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Cerrada):</strong> Mientras te defiendes, tira 1 dado de defensa menos.%LINEBREAK%Después de que ejecutes una maniobra [0&nbsp;%STOP%], puedes cambiar la orientación de tu nave en 90º o 180º.%LINEBREAK%Antes de que te actives, puedes darle la vuelta a esta carta."""
         "Predator":
            display_name: """Depredador"""
            text: """Mientras efectúas un ataque principal, si el defensor está situado en tu %BULLSEYEARC%, puedes volver a tirar 1 dado de ataque."""
+         "Predictive Shot":
+           display_name: """Tiro predictivo"""
+           text: """Después de que declares un ataque, si el defensor está en tu %BULLSEYEARC%, puedes gastar 1 %FORCE%. Si lo haces, durante el paso de "Tirar dados de defensa", el defensor no puede tirar más dados de defensa que la cantidad total de tus resultados %HIT%/%CRIT%."""
+        "Primed Thrusters":
+           display_name: """Propulsores sobrealimentados"""
+           text: """Mientras tengas 2 o menos fichas de Tensión, puedes realizar acciones %BARRELROLL% y %BOOST% incluso aunque estés bajo tensión."""
         "Proton Bombs":
            display_name: """Bombas de protones"""
            text: """<strong>Bomba</strong>%LINEBREAK%Durante la fase de Sistemas, puedes gastar 1&nbsp;%CHARGE% para soltar una Bomba de protones utilizando la plantilla [1&nbsp;%STRAIGHT%]."""
@@ -1739,18 +1893,32 @@ exportObj.cardLoaders['Español'] = () ->
         "R2 Astromech":
            display_name: """Droide astromecánico R2"""
            text: """Después de que reveles tu selector de maniobras, puedes gastar 1&nbsp;%CHARGE% y recibir 1 ficha de Desarme para recuperar 1 escudo."""
+        "R2-C4":
+           text: """Mientras efectúas un ataque, puedes gastar 1 ficha de Evasión para cambiar 1 resultado %FOCUS% por un resultado %HIT%."""
         "R2-D2 (Crew)":
            display_name: """R2-D2 (Crew)"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Durante la fase Final, si estas dañado y no estás protegido por escudos, puedes tirar 1 dado de ataque para recuperar 1 escudo. Si sacas un resultado %HIT%, expón 1 de tus cartas de Daño."""
         "R2-D2":
            display_name: """R2-D2"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Después de que reveles tu selector de maniobras, puedes gastar 1&nbsp; %CHARGE% y recibir 1 ficha de Desarme para recuperar 1 escudo."""
+        "R2-HA":
+           display_name: """R2-HA"""
+           text: """Mientras te defiendes, puedes gastar tu Blanco fijado sobre el atacante para volver a tirar cualquier cantidad de tus dados de defensa."""
         "R3 Astromech":
            display_name: """Droide astromecánico R3"""
            text: """Eres capaz de mantener hasta 2 Blancos fijados. Cada Blanco fijado debe ser mantenido sobre un objeto distinto.%LINEBREAK%Después de que realices una acción %LOCK% puedes obtener un Blanco fijado."""
         "R4 Astromech":
            display_name: """Droide astromecánico R4"""
            text: """<i>Sólo nave pequeña</i>%LINEBREAK%Reduce la dificultad de tus maniobras básicas (%TURNLEFT%, %BANKLEFT%, %STRAIGHT%, %BANKRIGHT%, %TURNRIGHT%) de velocidad 1-2."""
+        "R4-P Astromech":
+           display_name: """R4-P Astromech"""
+           text: """Before you execute a basic maneuver, you may spend 1 %CHARGE%. If you do, while you execute that maneuver, reduce its difficulty."""
+        "R4-P17":
+           display_name: """R4-P17"""
+           text: """Después de que ejecutes completamente una maniobra roja, puedes gastar 1 %CHARGE% para realizar una acción, incluso aunque estés bajo tensión."""
+        "R4-P44":
+           display_name: """R4-P44"""
+           text: """Después de que ejecutes completamente una maniobra roja, si tienes alguna nave enemiga situada en tu %BULLSEYEARC%, recibes 1 ficha de Cálculos."""
         "R5 Astromech":
            display_name: """Droide astromecánico R5"""
            text: """<strong>Acción:</strong> Gasta 1 %CHARGE% para reparar 1 carta de Daño boca abajo.%LINEBREAK%<strong>Acción:</strong> Repara 1 carta de Daño Nave boca arriba."""
@@ -1763,9 +1931,21 @@ exportObj.cardLoaders['Español'] = () ->
         "R5-TK":
            display_name: """R5-TK"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Puedes efectuar ataques contra naves aliadas."""
+        "R5-X3":
+           display_name: """R5-X3"""
+           text: """Antes de que te actives o intervengas, puedes gastar 1 %CHARGE% para ignorar los obstáculos hasta el final de esta fase."""
+        "Rey":
+           display_name: """Rey"""
+           text: """Mientras te defiendes o efectúas un ataque, si la nave enemiga está situada en tu %SINGLETURRETARC%, puedes gastar 1 %FORCE% para cambiar 1 de tus resultados de cara vacía por un resultado %EVADE% o %HIT%."""
+        "Rey's Millennium Falcon":
+           display_name: """Rey's Millennium Falcon"""
+           text: """Si tienes 2 o menos fichas de Tensión, puedes ejecutar maniobras de giro de Segnor [%SLOOPLEFT% o %SLOOPRIGHT%] rojas y realizar acciones %BOOST% y %ROTATEARC% incluso aunque estés bajo tensión."""
         "Rigged Cargo Chute":
            display_name: """Tolva de evacuación de carga"""
            text: """<i>Sólo nave grande o nave mediana</i>%LINEBREAK%<strong>Acción:</strong> Gasta 1 %CHARGE%. Suelta 1 Cargamento expulsado utilizando la plantilla [1 %STRAIGHT%]."""
+        "Rose Tico":
+           display_name: """Rose Tico"""
+           text: """Mientras te defiendes o efectúas un ataque, puedes gastar 1 de tus resultados para obtener un Blanco fijado sobre la nave enemiga."""
         "Ruthless":
            display_name: """Cruel"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Mientras efectúas un ataque, puedes elegir otra nave aliada que esté situada a alcance 0-1 del defensor. Si lo haces, esa nave sufre 1 de daño %HIT% y puedes cambiar 1 de tus resultados de dado por un resultado %HIT%."""
@@ -1787,12 +1967,18 @@ exportObj.cardLoaders['Español'] = () ->
         "Selfless":
            display_name: """Autosacrificio"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Mientras otra nave aliada que tienes a alcance 0-1 se defiende, antes del paso de “Neutralizar los resultados”, si estás en el arco de ataque, puedes sufrir 1 de daño %CRIT% para anular 1 resultado %CRIT%."""
+        "Selfless (BoY)":
+           display_name: """Autosacrificio"""
+           text: """Mientras otra nave aliada que tienes a alcance 0-1 se defiende, antes del paso de Neutralizar los resultados, si estás en el arco de ataque, puedes sufrir 1 de daño %CRIT% para anular 1 resultado %CRIT%."""
         "Sense":
            display_name: """Sentir"""
            text: """Durante la fase de Sistemas, puedes elegir 1 nave que tengas a alcance 0-1 y mirar su selector de maniobras. Si gastas 1&nbsp;%FORCE%, en vez de eso puedes elegir una nave que tengas a alcance 0-3."""
         "Servomotor S-Foils":
            display_name: """Alas móviles"""
            text: """<strong>Cara A (Abiertas):</strong> Antes de que te actives, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Cerradas):</strong> <i>Añade %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BOOST%</r></i>%LINEBREAK%Mientras efectúas un ataque principal, tira 1 dado de ataque menos.%LINEBREAK%Antes de que te actives, puedes darle la vuelta a esta carta."""
+        "Seventh Fleet Gunner":
+           display_name: """Artillero de la Séptima Flota"""
+           text: """Mientras otra nave aliada efectúa un ataque principal, si el defensor está situado en tu arco de fuego, puedes gastar 1 %CHARGE%. Si lo haces, el atacante tira 1 dado adicional, hasta un máximo de 4. Durante la fase de Sistemas, puedes recibir 1 ficha de Desarme para recuperar 1 %CHARGE%."""
         "Seventh Sister":
            display_name: """Séptima Hermana"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Si una nave enemiga que tienes a alcance 0-1 va a recibir una ficha de Tensión, puedes gastar 1&nbsp;%FORCE% para que en vez de eso la nave reciba 1 ficha de Interferencia o de Campo de tracción."""
@@ -1802,6 +1988,12 @@ exportObj.cardLoaders['Español'] = () ->
         "Skilled Bombardier":
            display_name: """Oficial de bombardeo experimentado"""
            text: """Si vas a soltar o lanzar un dispositivo, puedes utilizar una plantilla con esa misma dirección y una velocidad superior o inferior en 1 punto."""
+        "Spare Parts Canisters":
+           display_name: """Contenedores de recambios"""
+           text: """<strong>Acción:</strong> Gasta  1 %CHARGE% para recuperar 1 carga sobre una de tus mejoras %ASTROMECH% equipadas. %LINEBREAK%<strong>Acción:</strong> Gasta  1 %CHARGE% para soltar 1 ficha de Piezas de recambio y luego interrumpe todos los Blancos fijados asignados a ti."""
+        "Special Forces Gunner":
+           display_name: """Artillero de las Fuerzas Especiales"""
+           text: """Mientras efectúas un ataque principal %FRONTARC%, si tu %SINGLETURRETARC% está situado en tu %FRONTARC%, puedes tirar 1 dado de ataque adicional.%LINEBREAK%Después de que efectúes un ataque principal %FRONTARC%, si tu %SINGLETURRETARC% está situado en tu %REARARC%, puedes efectuar un ataque principal %SINGLETURRETARC% adicional."""
         "Squad Leader":
            display_name: """Jefe de escuadrón"""
            text: """<i>Añade <r>%COORDINATE%</r></i>%LINEBREAK%Mientras realizas una coordinación, la nave que eliges sólo es capaz de realizar una acción si dicha acción figura también en tu barra de acciones."""
@@ -1814,15 +2006,33 @@ exportObj.cardLoaders['Español'] = () ->
         "Supernatural Reflexes":
            display_name: """Reflejos sobrenaturales"""
            text: """<i>Sólo nave pequeña</i>%LINEBREAK%Antes de que te actives, puedes gastar 1&nbsp;%FORCE% para realizar una acción %BARRELROLL% o %BOOST%. Luego, si la acción que has realizado no figura en tu barra de acciones, sufres 1 de daño %HIT%."""
+        "Supreme Leader Snoke":
+           display_name: """Líder Supremo Snoke"""
+           text: """Durante la fase de Sistemas, puedes elegir cualquier cantidad de naves enemigas que tengas más allá de alcance 1. Si lo haces, gasta esa misma cantidad de %FORCE% para poner boca arriba todos los selectores de las naves elegidas."""
         "Swarm Tactics":
            display_name: """Tácticas de enjambre"""
            text: """Al comienzo de la fase de Enfrentamiento, puedes elegir 1 nave aliada que tengas a alcance 1. Si lo haces, esa nave considera su Iniciativa como idéntica a la tuya hasta el final de la ronda."""
+        "Synchronized Console":
+           display_name: """Panel de mandos sincronizado"""
+           text: """Después de que efectúes un ataque, puedes elegir una nave aliada que tengas a alcance 1 o una nave aliada con la mejora <strong>Panel de mandos sincronizado</strong> que tengas a alcance 1-3 y gastar un Blanco fijado que tengas sobre el defensor. Si lo haces, la nave aliada que elegiste puede obtener un Blanco fijado sobre el defensor."""
+        "TA-175":
+           display_name: """TA-175"""
+           text: """Después de que una nave aliada que tengas a alcance 0-3 con %CALCULATE% en su barra de acciones sea destruida, toda nave aliada que tengas a alcance 0-3 con %CALCULATE% en su barra de acciones recibe 1 ficha de Cálculos."""
+        "TV-94":
+           display_name: """TV-94"""
+           text: """Mientras una nave aliada que tienes a alcance 0-3 efectúa un ataque principal contra un defensor situado en su %BULLSEYEARC%, si hay 2 o menos dados de ataque, la nave aliada puede gastar 1 ficha de Cálculos para añadir 1 resultado %HIT%."""
         "Tactical Officer":
            display_name: """Oficial táctico"""
            text: """<i>Añade %COORDINATE%</i>%LINEBREAK%<i>Necesita <r>%COORDINATE%</r></i>%LINEBREAK%<i class = flavor_text>En el caos de una batalla de cazas estelares, una simple orden puede suponer la diferencia entre una victoria y una masacre.</i>"""
         "Tactical Scrambler":
            display_name: """Inhibidor táctico"""
            text: """<i>Sólo nave grande o nave mediana</i>%LINEBREAK%Mientras obstruyes el ataque de una nave enemiga, el defensor tira 1 dado de defensa adicional."""
+        "Targeting Computer":
+           display_name: """Computadora de selección de blancos"""
+           text: """Las computadoras de selección de blancos son componentes habituales en muchas naves, sobre todo en aquellas diseñadas para disparar cabezas explosivas. Algunos cazas estelares y transportes pequeños carecen de estos sistemas de guiado de armas, aunque eso no impide instalárselos como una modificación ulterior."""
+        "Targeting Synchronizer":
+           display_name: """Sincronizador de disparos"""
+           text: """Mientras una nave aliada que tienes a alcance 1-2 efectúa un ataque contra un objetivo que tienes fijado como blanco, esa nave aliada ignora el requisito de ataque %LOCK%."""
         "Tobias Beckett":
            display_name: """Tobias Beckett"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%<strong>Preparación:</strong> Después de desplegar las fuerzas, puedes elegir 1 obstáculo en la zona de juego. Si lo haces, colócalo en cualquier sitio en la zona de juego más allá de alcance 2 de cualquier borde del tablero o nave y más allá de alcance 1 de los demás obstáculos."""
@@ -1832,6 +2042,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Trajectory Simulator":
            display_name: """Simulador de trayectorias"""
            text: """Durante la fase de Sistemas, si vas a soltar o lanzar una bomba, puedes lanzarla utilizando la plantilla [5 %STRAIGHT%] en vez de la plantilla habitual."""
+        "Treacherous":
+           display_name: """Traicionero"""
+           text: """Mientras te defiendes, puedes elegir una nave que obstruya el ataque y gastar 1 %CHARGE%. Si lo haces, anula 1 resultado %HIT% o %CRIT%, y la nave elegida recibe 1 ficha de Sobresfuerzo.Después de que una nave que tengas a alcance 0-3 sea destruida, recuperas 1 %CHARGE%."""
         "Trick Shot":
            display_name: """Disparo inverosímil"""
            text: """Mientras estás efectuando un ataque que está obstruido por un obstáculo, tira 1 dado de ataque adicional."""
