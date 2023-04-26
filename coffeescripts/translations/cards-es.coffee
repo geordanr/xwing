@@ -23,6 +23,19 @@ exportObj.translations['Español'] =
         " or Squad Including": " o incluye a escuadrón"
         "Ship": "Nave"
         "Extra": "Extra"
+        "Vectored Thrusters": "Cañones vectoriales"
+        "Autothrusters": "Autopropulsores"
+        "Networked Calculations": "Procesado de cálculos en red"
+        "X-wing": "Ala-X"
+        "Limited": "Limitada"
+        "Light Side": "Lado luminoso"
+        "Dark Side": "Lado oscuro"
+        "Mandalorian": "Mandaloriano"
+        "TIE": "TIE"
+        "Bounty Hunter": "Cazarrecompensas"
+        "Clone": "Clon"
+        "A-wing": "Ala-A"
+        "Y-wing": "Ala-Y"
 
     faction:
         "Rebel Alliance": "Alianza rebelde"
@@ -155,7 +168,7 @@ exportObj.translations['Español'] =
                     """
         "Intro Card YASB": """
                      <h2>YASB para X-Wing 2.5</h2>
-                     <p>YASB (Yet Another Squad Builder) es un creador de escuadrones simple y rápido para X-Wing Miniatures de <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.< /p>
+                     <p>YASB (Yet Another Squad Builder) es un creador de escuadrones simple y rápido para X-Wing Miniatures de <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.</p>
                      <p>Versión actual: 25/11/2022</p>
                      <h5>Créditos</h5>
                      <p>Desarrollado sobre el increíble <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a> original.</p>
@@ -273,13 +286,33 @@ exportObj.translations['Español'] =
     types:
         'Pilot': 'Piloto'
         'Modification': 'Modificación'
+        'Upgrade': 'Mejora'
         'Title': 'Título'
         'Ship': 'Ship'
+    gameterms:
+        'Small': 'Pequeña'
+        'Medium': 'Mediana'
+        'Large': 'Grande'
+        'Huge': 'Enorme'
+        'Solitary': 'Solitairo'
+        'Standardized': 'Estandarizada'
+
+    action:
+        "Barrel Roll": "Tonel volado"
+        "Focus": "Concentración"
+        "Boost": "Impulso"
+        "Calculate": "Cálculos"
+        "Coordinate": "Coordinación"
+        "Evade": "Evasión"
+        "Jam": "Interferencia"
+        "Reinforce": "Refuerzo"
+        "Reload": "Recarga"
+        "Rotate Arc": "Reorientación"
+        "Lock": "Fijar blanco"
+
     rulestypes:
         'glossary': 'Glosario'
         'faq': 'FAQ'
-    action:
-        'Boost': 'Boost'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Español'] = () ->
@@ -299,39 +332,80 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip """BTL-A4 Y-wing""", """BTL-A4 Ala-Y"""
     exportObj.renameShip """TIE Advanced x1""", """TIE Avanzado x1"""
     exportObj.renameShip """Alpha-Class Star Wing""", """Ala Estelar clase Alfa"""
-    exportObj.renameShip """UT-60D U-wing""", """UT-60D Ala-U"""
-    exportObj.renameShip """TIE/sk Striker""", """Fustigador TIE/sk"""
-    exportObj.renameShip """A/SF-01 B-wing""", """A/SF-01 Ala-B"""
     exportObj.renameShip """TIE/d Defender""", """Defensor TIE/d"""
     exportObj.renameShip """TIE/sa Bomber""", """Bombardero TIE/sa"""
-    exportObj.renameShip """TIE/ca Punisher""", """Castigador TIE/ca"""
-    exportObj.renameShip """Aggressor Assault Fighter""", """Caza de asalto Agresor"""
     exportObj.renameShip """G-1A Starfighter""", """Caza estelar G-1A"""
-    exportObj.renameShip """VCX-100 Light Freighter""", """Carguero ligero VCX-100"""
-    exportObj.renameShip """YV-666 Light Freighter""", """Carguero ligero YV-666"""
-    exportObj.renameShip """TIE Advanced v1""", """TIE Avanzado v1"""
     exportObj.renameShip """Lambda-class T-4a Shuttle""", """Lanzadera T-4A clase Lambda"""
     exportObj.renameShip """TIE/ph Phantom""", """TIE/ph Fantasma"""
     exportObj.renameShip """VT-49 Decimator""", """VT-49 Diezmador"""
-    exportObj.renameShip """TIE/ag Aggressor""", """TIE/ag Agresor"""
-    exportObj.renameShip """BTL-S8 K-wing""", """BTL-S8 Ala-K"""
-    exportObj.renameShip """ARC-170 Starfighter""", """Caza estelar ARC-170"""
     exportObj.renameShip """Attack Shuttle""", """Lanzadera de ataque"""
     exportObj.renameShip """T-65 X-wing""", """T-65 Ala-X"""
-    exportObj.renameShip """HWK-290 Light Freighter""", """Carguero ligero HWK-290"""
-    exportObj.renameShip """RZ-1 A-wing""", """RZ-1 Ala-A"""
     exportObj.renameShip """Fang Fighter""", """Caza Colmillo"""
     exportObj.renameShip """Z-95-AF4 Headhunter""", """Z-95-AF4 Cazacabezas"""
     exportObj.renameShip """M12-L Kimogila Fighter""", """Caza M12-L Kimogila"""
-    exportObj.renameShip """E-wing""", """Ala-E"""
     exportObj.renameShip """TIE/in Interceptor""", """Interceptor TIE/in"""
     exportObj.renameShip """Lancer-Class Pursuit Craft""", """Nave de persecución clase Lancero"""
-    exportObj.renameShip """TIE Reaper""", """Segador TIE"""
-    exportObj.renameShip """JumpMaster 5000""", """Saltador Maestro 5000"""
     exportObj.renameShip """M3-A Interceptor""", """Interceptor M3-A"""
+    exportObj.renameShip """JumpMaster 5000""", """Saltador Maestro 5000"""
     exportObj.renameShip """Customized YT-1300 Light Freighter""", """Carguero ligero YT-1300 personalizado"""
     exportObj.renameShip """Escape Craft""", """Nave de escape"""
-
+    exportObj.renameShip """RZ-1 A-wing""", """RZ-1 Ala-A"""
+    exportObj.renameShip """HWK-290 Light Freighter""", """Carguero ligero HWK-290"""
+    exportObj.renameShip """A/SF-01 B-wing""", """A/SF-01 Ala-B"""
+    exportObj.renameShip """Aggressor Assault Fighter""", """Caza de asalto Agresor"""
+    exportObj.renameShip """YV-666 Light Freighter""", """Carguero ligero YV-666"""
+    exportObj.renameShip """BTL-S8 K-wing""", """BTL-S8 Ala-K"""
+    exportObj.renameShip """VCX-100 Light Freighter""", """Carguero ligero VCX-100"""
+    exportObj.renameShip """ARC-170 Starfighter""", """Caza estelar ARC-170"""
+    exportObj.renameShip """UT-60D U-wing""", """UT-60D Ala-U"""
+    exportObj.renameShip """TIE/sk Striker""", """Fustigador TIE/sk"""
+    exportObj.renameShip """TIE/ca Punisher""", """Castigador TIE/ca"""
+    exportObj.renameShip """TIE Advanced v1""", """TIE Avanzado v1"""
+    exportObj.renameShip """TIE/ag Aggressor""", """TIE/ag Agresor"""
+    exportObj.renameShip """E-wing""", """Ala-E"""
+    exportObj.renameShip """TIE Reaper""", """Segador TIE"""
+    exportObj.renameShip """T-70 X-wing""", """Ala-X T-70"""
+    exportObj.renameShip """RZ-2 A-wing""", """Ala-A RZ-2"""
+    exportObj.renameShip """TIE/fo Fighter""", """Caza TIE/fo"""
+    exportObj.renameShip """TIE/sf Fighter""", """Caza TIE/sf"""
+    exportObj.renameShip """Upsilon-Class Command Shuttle""", """Lanzadera de mando clase Ípsilon"""
+    exportObj.renameShip """MG-100 StarFortress""", """MG-100 Fortaleza estelar"""
+    exportObj.renameShip """Scavenged YT-1300""", """YT-1300 recuperado"""
+    exportObj.renameShip """Modified TIE/ln Fighter""", """Caza TIE/ln modificado"""
+    exportObj.renameShip """V-19 Torrent Starfighter""", """Caza Torrente V-19"""
+    exportObj.renameShip """Delta-7 Aethersprite""", """Duende del éter Delta-7"""
+    exportObj.renameShip """Delta-7b Aethersprite""", """Duende del éter Delta-7b"""
+    exportObj.renameShip """Sith Infiltrator""", """Infiltrador Sith"""
+    exportObj.renameShip """Vulture-class Droid Fighter""", """Caza droide clase buitre"""
+    exportObj.renameShip """Belbullab-22 Starfighter""", """Caza Belbullab-22"""
+    exportObj.renameShip """Naboo Royal N-1 Starfighter""", """Caza Royal Naboo N-1"""
+    exportObj.renameShip """Hyena-class Droid Bomber""", """Bombardero  droide clase hiena"""
+    exportObj.renameShip """Resistance Transport Pod""", """Cápsula de transporte de la Resistencia"""
+    exportObj.renameShip """Resistance Transport""", """Transporte de la Resistencia"""
+    exportObj.renameShip """Nantex-Class Starfighter""", """Caza estelar clase Nantex"""
+    exportObj.renameShip """BTL-B Y-wing""", """Ala-Y BTL-B"""
+    exportObj.renameShip """TIE/ba Interceptor""", """Interceptor TIE/ba"""
+    exportObj.renameShip """Xi-class Light Shuttle""", """Lanzadera ligera clase Xi"""
+    exportObj.renameShip """HMP Droid Gunship""", """Cañonera droide HMP"""
+    exportObj.renameShip """LAAT/i Gunship""", """Cañonera LAAT/i"""
+    exportObj.renameShip """TIE/rb Heavy""", """TIE/rb pesado"""
+    exportObj.renameShip """Droid Tri-fighter""", """Tri-caza droide"""
+    exportObj.renameShip """Nimbus-class V-wing""", """Ala-V clase Nimbus"""
+    exportObj.renameShip """Eta-2 Actis""", """Eta-2 Actis"""
+    exportObj.renameShip """Syliure-class Hyperspace Ring""", """Anillo hiperespacial de clase Siluro"""
+    exportObj.renameShip """BTA-NR2 Y-wing""", """Ala-Y BTA-NR2"""
+    exportObj.renameShip """TIE/wi Whisper Modified Interceptor""", """Interceptor modificado TIE/wi Whisper"""
+    exportObj.renameShip """TIE/se Bomber""", """Bombardero TIE/se"""
+    exportObj.renameShip """Gauntlet Fighter""", """Caza Guantelete"""
+    exportObj.renameShip """ST-70 Assault Ship""", """Nave de asalto ST-70"""
+    exportObj.renameShip """Clone Z-95 Headhunter""", """Caza cazacabezas clon Z-95"""
+    exportObj.renameShip """Rogue-class Starfighter""", """Caza estelar clase pícaro"""
+    exportObj.renameShip """CR90 Corellian Corvette""", """Corveta coreliana CR90"""
+    exportObj.renameShip """Raider-class Corvette""", """Corveta de clase Raider"""
+    exportObj.renameShip """GR-75 Medium Transport""", """Transporte medio GR-75"""
+    exportObj.renameShip """Gozanti-class Cruiser""", """Crucero de clase Gozanti"""
+    exportObj.renameShip """C-ROC Cruiser""", """Crucero C-ROC"""
+    exportObj.renameShip """Trident-class Assault Ship""", """Nave de asalto clase Tridente"""
 
     pilot_translations =
         "0-66":
@@ -2087,9 +2161,15 @@ exportObj.cardLoaders['Español'] = () ->
         'Listening Device':
            display_name: """Dispositivo de escucha"""
            text: '''Durante la fase de Sistemas, si hay alguna nave enemiga con la mejora <strong>Confidente</strong> situada a alcance 0-2 de ti, dale la vuelta a tu selector para dejarlo boca arriba.'''
+        'Rattled':
+           display_name: """Estremecido"""
+           text: '''Después de que detona una bomba o mina en el rango 0-1, sufre 1% CRIT%. Luego, retire esta carta. %LINEBREAK% Acción: si no hay bombas ni minas en el rango 0-1, retira esta carta.'''
         'Optimized Prototype':
            display_name: """Prototipo optimizado"""
            text: '''Cuando estés efectuando un ataque de armamento principal %FRONTARC% contra una nave que esté fijada como blanco por una nave aliada equipada con la mejora <strong>Director Krennic</strong> puedes gastar 1 resultado %HIT%, %CRIT% o %FOCUS%. Si lo haces, elige entre: el defensor pierde 1 ficha de Escudos, o el defensor le da la vuelta a 1 de sus cartas de Daño que tenga boca abajo.'''
+        '''I'll Show You the Dark Side''':
+           display_name: """Yo te mostraré el Lado Oscuro"""
+           text: '''Cuando se asigna esta carta, si no hay ninguna carta de daño boca arriba, el jugador que la asignó busca en el mazo de daños 1 carta de daño de piloto y la coloca boca arriba sobre esta carta. Luego baraja el mazo de daños. Cuando vas a sufrir 1 %CRIT% de daño, en su lugar recibes la carta de daño boca arriba en esta carta. Luego, retire esta carta.'''
         'Proton Bomb':
            display_name: """Bomba de protones"""
            text: '''(Ficha de Bomba) - Al final de la fase de Activación, este dispositivo se detona.%LINEBREAK%Cuando este dispositivo se detona, toda nave que tenga a alcance 0-1 sufre 1 de daño %CRIT%.'''
