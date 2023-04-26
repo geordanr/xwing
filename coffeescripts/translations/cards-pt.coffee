@@ -6,11 +6,495 @@ exportObj.codeToLanguage.pt = 'Português'
 exportObj.translations ?= {}
 exportObj.translations.Português =
 # ui translation goes here
+    restrictions:
+        "Restrictions": "Restrições"
+        "Initiative": "Iniciativa"
+        "Agility": "Agilidade"
+        "Non-Limited": "Não-Limitado"
+        " or Squad Including": " ou Squadrão Incluindo"
+        "Ship": "Nave"
+        "Extra": "Extra"
+        "Vectored Thrusters": "Propulsores Vetorizados"
+        "Autothrusters": "Autopropulsores"
+        "Networked Calculations": "Cálculos Interligados"
+        "X-wing": "X-wing"
+        "Limited": "Limitado"
+        "Light Side": "Lado da Luz"
+        "Dark Side": "Lado Sombrio"
+        "Mandalorian": "Mandaloriano"
+        "TIE": "TIE"
+        "Bounty Hunter": "Caçador de Recompensas"
+        "Clone": "Clone"
+        "A-wing": "A-wing"
+        "Y-wing": "Y-wing"
+    faction:
+        "Rebel Alliance": "Aliança Rebelde"
+        "Galactic Empire": "Império Galático"
+        "Scum and Villainy": "Escória e Vilania"
+        "Resistance": "Resistência"
+        "First Order": "Primeira Ordem"
+        "Galactic Republic": "República Galática"
+        "Separatist Alliance": "Aliança Separatista"
+
+    slot:
+        "Astromech": "Astromecânico"
+        "Force": "Força"
+        "Bomb": "Bomba"
+        "Cannon": "Canhão"
+        "Crew": "Tripulação"
+        "Missile": "Míssil"
+        "Sensor": "Sensor"
+        "Torpedo": "Torpedo"
+        "Turret": "Torre"
+        "HardpointShip": "Encaixe de Arma"
+        "VersatileShip": "Chassi Versátil"
+        "Hardpoint": "Hardpoint"
+        "Illicit": "Ilícito"
+        "Configuration": "Configuração"
+        "Talent": "Talento"
+        "Modification": "Modificação"
+        "Gunner": "Atirador"
+        "Device": "Dispositivo"
+        "Tech": "Tecnologia"
+        "Title": "Título"
+        "Tactical Relay": "Central Tática"
+        "Command": "Comando"
+        "Hyperdrive": "Hyperdrive"
+        "Team": "Equipe"
+        "Cargo": "Carga"
+
+
+    sources: 
+        "Second Edition Core Set": "Caixa Base Segunda Edição"
+        "Rebel Alliance Conversion Kit": "Kit de Conversão Aliança Rebelde"
+        "Galactic Empire Conversion Kit": "Kit de Conversão Império Galático"
+        "Scum and Villainy Conversion Kit": "Kit de Conversão Escória e Vilania"
+        "T-65 X-Wing Expansion Pack": "Pacote de Expansão X-Wing T-65"
+        "BTL-A4 Y-Wing Expansion Pack": "Pacote de Expansão BTL-A4 Y-Wing"
+        "TIE/ln Fighter Expansion Pack": "Pacote de Expansão TIE/ln Fighter"
+        "TIE Advanced x1 Expansion Pack": "Pacote de Expansão TIE Advanced x1 "
+        "Slave 1 Expansion Pack": "Pacote de Expansão Slave 1 "
+        "Fang Fighter Expansion Pack": "Pacote de Expansão Fang Fighter "
+        "Lando's Millennium Falcon Expansion Pack": "Pacote de Expansão Lando's Millennium Falcon "
+        "Saw's Renegades Expansion Pack": "Pacote de Expansão Renegados de Saw"
+        "TIE Reaper Expansion Pack": "Pacote de Expansão TIE Reaper "
+        "ARC-170 Starfighter Expansion": "Pacote de Expansão ARC-170 Starfighter Expansion"
+        "Fugitives and Collaborators Squadron Pack": "Pacote de Esquadrão Fugitivos e Colaboradores"
+        "First Order Conversion Kit": "Kit de Conversão Primeira Ordem"
+        "M3-A Interceptor Expansion Pack": "Pacote de Expansão M3-A Interceptor "
+        "Loose Ships": "Naves Soltas"
+    ui:
+        "shipSelectorPlaceholder": "Selecione uma Nave"
+        "pilotSelectorPlaceholder": "Selecione um Piloto"
+        upgradePlaceholder: (translator, slot) ->
+            "Sem #{translator 'slot', slot} Melhoria"
+        "modificationPlaceholder": "Sem Modificação"
+        "titlePlaceholder": "Sem Título"
+        upgradeHeader: (translator, slot) ->
+            "#{translator 'slot', slot} Melhoria"
+        "unreleased": "Não Lançado"
+        "epic": "épico"
+        "Quickbuild": "Construção Rápida"
+        "limited": "limitado"
+        "Unreleased content warning": "Este esquadrão usa conteúdo não lançado!"
+        "Broken squad link warning": "Parece que você seguiu um link quebrado. Nenhum esquadrão pôde ser carregado!"
+        "Collection warning": "Você não consegue preencher essa lista usando sua coleção!"
+        "Ship number warning": "Um esquadrão legal para torneios deve conter 3-8 naves!"
+        "Multi-Faction warning": "Listas Multi-Facção NUNCA são legais para torneios!"
+        "XWS Import Dialog": "Importe sua lista por XWS no YASB.<br><i>XWS é um formato comum para compartilhar listas entre aplicativos.</i>"
+        "Copy below simple text": "<p>Copie o texto abaixo e cole em outro lugar.</p>"
+        "Copy below markdown": "<p>Copie o texto abaixo e cole em sua postagem do reddit.</p><p>Confira que o editor de postagem esteja definido no modo markdown.</p>"
+        "Copy below TTS": "<p>Copie o texto abaixo e cole no Tabletop Simulator.</p>"
+        "Copy below BBCode": "<p>Copie o BBcode abaixo e cole em sua postagem de fórum.</p>"
+        "Copy below HTML": "<p>Copie o texto abaixo e cole em outro lugar.</p>"
+        "Copy below XWS":"<p>Copie o texto abaixo e cole em um aplicativo compátivel com XWS.</p>"
+        "Use INI prefix": "Coloque INI como prefixo na frente dos nomes."
+        "Choose obstacles dialog": "Escolha até três obstáculos, para incluí-los no permalink para uso em softwares externos"
+        "Mark obstacles": "Marque os três obstáculos que você está usando."
+        "Scan QR-Code": "Escaneie para abrir a sua lista no construtor"
+        "View in YASB": "Ver no YASB 2"
+        "YASB advertisment": "YASB 2 é uma forma simples, rápida e fácil de construir esquadrões para o X-Wing Miniatures da Atomic Mass Games."
+        collectionContentShips: (translator, number) ->
+            "You have #{number} #{if number == 1 then 'modelo' else 'modelos'} de nave na sua coleção."
+        collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
+            "You have #{data[0]} ship #{if data[0] == 1 then 'model' else 'models'} and #{data[1]} pilot #{if data[1] == 1 then 'card' else 'cards'} in your collection."
+        collectionContentUpgrades: (translator, number) ->
+            "You have #{number} in your collection."
+        varPointCostsPoints: (translator, points) ->
+            "<b>Custo em Pontos:</b> #{points} when "
+        varPointCostsConditionAgility: (translator, values) ->
+            "agilidade é #{values}"
+        varPointCostsConditionIni: (translator, values) ->
+            "iniciativa é #{values}"
+        varPointCostsConditionBase: (translator, values) ->
+            "tamanho de base é pequeno, médio, grande ou enrome"
+        "Missing Item List:": "Para montar este esquadrão você precisa dos seguintes itens adicionais:" 
+        pilotFlyingShip: (translator, pilot, ship) ->
+            "Piloto #{pilot} pilotando #{ship}"
+        "Placeholder Textsearch Browser": "Procure por nome, texto ou nave"
+        noXYselected: (translator, xy) ->
+            "No #{translator('ui', xy)} selected"
+        "Select a card": "Selecione uma carta da lista a esquerda."
+        yourXYsquads: (translator, faction) ->
+            "Seus Esquadrões #{translator('faction', faction)}"
+        reallyDeleteSquadXY: (translator, squadname) -> 
+            "Deletar #{squadname}?"
+        "No saved squads": "Não tem nada aqui. Vá salvar um esquadrão!"
+        "name required": "É necessário um nome"
+        "Name in use": "Você já possui um esquadrão com esse nome"
+        "select OAuth provider": "Selecione um dos provedores Oauth para entrar e começar a salvar esquadrões."
+        "OAuth explanation" : """
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> é um sistema de de autorização que permite que você prove sua identeidade em um site sem precisar criar uma nova conta. Ao invés disso, você pede para que algum provedor em que já possua uma conta (ex. Google ou Facebook) prove para este site que você é quem diz ser. Dessa forma, da próxima vez que você visitar, este site vai se lembrar que você é aquele usuário do Google.
+                    </p>
+                    <p>
+                        A melhor parte disso é que você não precisa criar um novo nome de usuário ou se lembrar de outra senha. e não se preocupe, eu não vou coletar quaisquer dados seus do provedors about you. Eu defini o escopo de dados para o menor possível, mas alguns lugares enviam no mínimo um punhado de dados. Eu os descarto. Tudo o que eu olho é um identificador único (normalmente um número gigante).
+                    </p>
+                    <p>
+                        Para mais informações, leia isso <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">introduction to OAuth</a>.
+                    </p>
+                    """
+        "Intro Card YASB": """
+                    <h2>YASB para X-Wing 2.5</h2>
+                    <p>YASB (Yet Another Squad Builder) é uma forma simples, rápida e fácil de construir esquadrões para o X-Wing Miniatures da <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.</p>
+                    <p>Current Version: 11/25/2022</p>
+                    <h5>Creditos</h5>
+                    <p>Feito a partir do maravilhoso original <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a>.</p>
+                    <p>YASB é atualizado e mantido por Stephen Kim.</p>
+                    <p>Créditos adicionais:<br>
+                    Dados de Atualização 2.5: Devon Monkhouse, Perry Low, Andrew Oehler.<br>
+                    Dados de Lançamento 2.0: Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.<br>
+                    Equipe de Tradução: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke, kksuke<br>
+                    Logo do site: Thomas Kohler<br>
+                    Suporte de Quick Build: Patrick Mischke</p>
+                    <p>Este construtor não é oficial e não está afiliado a Atomic Mass Games, Lucasfilm Ltd., ou Disney.</p>
+                    <p>Este site sempre será gratuito, e sempre estára 100% para que todos possam usá-lo. Entretanto, se você quiser doar, há um botão preparado para você.</p>
+                    <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Faça uma Doação</button> <button class="btn btn-primary paypal" onclick="window.open('https://www.patreon.com/raithos');">Patreon</button></p>
+        """
+        "Continue to OAuth provider": "Isto abrirá uma nova janela para permitir que você autentique com o provedor escolhido. Você talvez precise permitir pop ups para este site."
+        "iOS requires cross-site control": """Devido a um novo recurso no sistema iOS o OAuth não irá funcionar a menos que você habilite "cross-site control"."""
+        "login in progress": "OAuth login em progresso. Por favor finalize a autorização no provedor específico usando a janela que acabou de ser criada."
+        "Squads reloaded": "Todos os Esquadrões Desta Facção Foram Recarregados."
+        "Sure to delete?": "Tem certeza que deseja excluir este esquadrão?"
+        "Unsaved Changes Warning": "Você não salvou as alterações neste esquadrão. Deseja voltar e salvar?"
+        adds: (translator, data) -> # data will most likely be a string of some symbols, but you never know
+            "Adds: #{translator('ui', data)}"
+        removes: (translator, data) -> # data will most likely be a string of some symbols, but you never know
+            "Removes: #{translator('ui', data)}"
+        "Less upgrades": "Menos melhorias"
+        "Epic": "Épico"
+        "Hyperspace": "Hyperespace"
+        "Extended": "Estendido"
+        "Unnamed Squadron": "Esquadrão Sem Nome"
+        "Unsaved Squadron": "Esquadrão não Salvo"
+        "New Squadron": "Novo Esquadrão"
+        "Name your squad...": "Nomeie seu Esquadrão..."
+        "Your Collection": "Sua Coleção"
+        "Only available from 1st edition": "Disponível apenas na 1ª edição"
+        "Randomize!": "Aleatório!"
+        "Copy": "Copiar"
+        "Print": "Imprimir"
+        "Random Squad Builder Options": "Opções de Construção Aleatória"
+        "Miscellaneous Settings": "Configurações Diversas"
+        "Card Search": "Busca de Cartas"
+        "from": "de"
+        "to": "para"
+        "Submit Bug/Feature Request": "Enviar alerta de Bug/Pedido de recurso"
+        "Card Browser": "Procurar Cartas"
+        "Rules": "Regras"
+        "About": "Sobre"
+        "Remove Pilot": "Remover Piloto"
+        "Clone Pilot": "Duplicar Piloto"
+        "Wingmates": "Companheiro"
+        "Total": "Total"
+        "X-Wing Squadron by YASB 2.0: ": "Esquadrão de X-Wing por YASB 2.0"
+        "Points Destroyed": "Pontos Destruidos"
+        "Half Points": "Metade de Pontos"
+        "Threshold": "Limite"
+        "Yes, Delete": "Sim, Exclua"
+        "Cancel": "Cancelar"
+        "Never Mind": "Cancelar"
+        "Really Delete": "Sim, Exclua"
+        "Save": "Salvar"
+        "Unsaved Changes": "Modificações Não Salvas"
+        "Name is available": "O nome está disponível"
+        "Checking name availability...": "Verificando disponibilidade do nome..."
+        "Go Back": "Voltar"
+        "Save Squad As...": "Salvar esquadrão como..."
+        "Convert": "Converter"
+        "Convert to Extended?": "Converter para Estendido?"
+        "Recalculate Points": "Recalcular Pontos"
+        "Archived": "Arquivado"
+        "Archive": "Arquivar"
+        "QB": "QB"
+        "Hyper": "Hiper"
+        "Ext": "Ext"
+        "All": "Tudo"
+        "Delete Selected": "Excluir Selecionado"
+        "Archive Selected": "Arquivar Selecionado"
+        "Select All": "Selecionar Tudo"
+        "Fetching squads...": "Procurando Esquadrões..."
+        "Well done!": "Muito bem!"
+        "Log in with OAuth": "Conectando-se com o OAuth"
+        "Log In": "Log In"
+        "Log Out": "Log Out"
+        "What's this?": "O que é isso?"
+        "Close": "Fechar"
+        "Roll!": "Gerar!"
+        "Maximum Seconds to Spend Randomizing": "Quantidade Máxima de Segundos Gastos para Randomizar"
+        "Always fill 0-point slots": "Sempre preencher espaços de 0 pontos"
+        "Sets and Expansions": "Kits e Expansões"
+        "Limit to collection": "Limitar à Coleção"
+        "More upgrades": "Mais melhorias"
+        "Maximum Ship Count": "Quantidade Máxima de Naves"
+        "Upgrades": "Melhorias"
+        "Range": "Alcance"
+        "Actions": "Ações"
+        "Sources:": "Fontes"
+        "Source": "Fonte"
+        "Engagement": "Engajamento"
+        "Rules search": "Buscar Regras"
+        "Rules Search": "Buscar Regras"
+        "Base": "Base"
+        "Ship": "Nave"
+        "Points": "Pontos"
+        "Initiative": "Iniciativa"
+        "Force:": "Força:"
+        "Name": "Nome"
+        "Sort by": "Ordenar Por"
+        "Type (by Points)": "Tipo (por pontos)"
+        "Type (by Name)": "Tipo (por nome)"
+        "Recurring": "Recursiva"
+        "Not recurring": "Recursão Negativa"
+        "Charges:": "Cargas :"
+        "Only upgrades requiring multiple slots": "Apenas melhorias que utilizam vários espaços"
+        "Used double-slot:": "Espaços duplos utilizados:"
+        "Used slot:": "Espaços utilizados:"
+        "Large": "Grande"
+        "Medium": "Média"
+        "Small": "Pequena"
+        "Huge": "Enorme"
+        "Base size:": "Tamanho da Base:"
+        "Agility:": "Agilidade:"
+        "Shields:": "Escudos:"
+        "Hull:": "Casco:"
+        "Initiative:": "Iniciativa:"
+        "Linked actions:": "Ações Vinculadas:"
+        "Actions:": "Ações:"
+        "Actions": "Ações"
+        "actions": "ações"
+        "Slots:": "Espaços:"
+        "slots": "espaços"
+        "Ships and Pilots": "Naves e Pilotos"
+        "General": "Geral"
+        "Hyperspace legal": "Permitido no Hyperspace"
+        "Is not unique": "Não é único"
+        "Is unique": "É único"
+        "Misc:": "Diversos:"
+        "Owned copies:": "Cópias possuídas:"
+        "Point costs:": "Custo em Pontos:"
+        "Point cost:": "Custo em Pontos:"
+        "Loadout cost:": "Custo de arsenal:"
+        "Factions:": "Facções:"
+        "Textsearch:": "Busca textual:"
+        "Squad Notes:": "Notas do Esquadrão :"
+        "Tag:": "Etiqueta:"
+        "Choose Obstacles": "Escolher Obstáculos"
+        "XWS": "XWS"
+        "HTML": "HTML"
+        "TTS": "TTS"
+        "Text": "Texto"
+        "Reddit": "Reddit"
+        "BBCode": "BBCode"
+        "Fancy": "Bonitinho"
+        "Simple": "Simples"
+        "Include QR codes": "Incluir QR codes"
+        "Include Obstacle Choices": "Incluir Obstáculos Escolhidos"
+        "Print Color": "Impressão Colorida"
+        "Expand Shield and Hull": "Expandir Escudos e Casco"
+        "Space for Cards": "Espaço para as Cartas"
+        "Include Maneuvers Chart": "Incluir Lista de Manobras"
+        "Skip Card Text": "Remover Texto da Carta"
+        "XWS Import": "Importar XWS"
+        "New Squad": "Novo Esquadrão"
+        "Load Squad": "Carregar Esquadrão"
+        "Delete": "Excluir"
+        "Save As...": "Salvar Como..."
+        "Misc Settings": "Configurações Diversas"
+        "Randomizer Options": "Opções do Aleatório"
+        "Print/Export": "Imprimir/Exportar"
+        "Discard Changes": "Descartar Mudanças"
+        "Got it!": "Entendi!"
+        "Term:": "Termo"
+        "Version": "Versão"
+        "New Squad Name": "Nome do Novo Esquadrão"
+        "Import": "Importar"
+        "Other Stuff": "Outras Coisas"
+        "MultiFaction": "Multi-Facção"
+        "Search for game term or card": "Procurar por termo de jogo ou carta"
+        "Core Asteroid 0": "Asteróide base 0"
+        "Core Asteroid 1": "Asteróide base 1"
+        "Core Asteroid 2": "Asteróide base 2"
+        "Core Asteroid 3": "Asteróide base 3"
+        "Core Asteroid 4": "Asteróide base 4"
+        "Core Asteroid 5": "Asteróide base 5"
+        "VT49 Debris 0": "Destroços VT49 0"
+        "VT49 Debris 1": "Destroços VT49 1"
+        "VT49 Debris 2": "Destroços VT49 2"
+        "YT2400 Debris 0": "Destroços YT2400 0"
+        "YT2400 Debris 1": "Destroços YT2400 1"
+        "YT2400 Debris 2": "Destroços YT2400 2"
+        "Force Awakens Asteroid 0": "Asteróide Despertar da Força 0"
+        "Force Awakens Asteroid 1": "Asteróide Despertar da Força 1"
+        "Force Awakens Asteroid 2": "Asteróide Despertar da Força 2"
+        "Force Awakens Asteroid 3": "Asteróide Despertar da Força 3"
+        "Force Awakens Asteroid 4": "Asteróide Despertar da Força 4"
+        "Force Awakens Asteroid 5": "Asteróide Despertar da Força 5"
+        "Gas Cloud 1": "Nuvem de gás 1"
+        "Gas Cloud 2": "Nuvem de gás 2"
+        "Gas Cloud 3": "Nuvem de gás 3"
+        "Gas Cloud 4": "Nuvem de gás 4"
+        "Gas Cloud 5": "Nuvem de gás 5"
+        "Gas Cloud 6": "Nuvem de gás 6"
+        "Pride of Mandalore Debris 1": "Destroços Orgulho de Mandalore 1"
+        "Pride of Mandalore Debris 2": "Destroços Orgulho de Mandalore 2"
+        "Pride of Mandalore Debris 3": "Destroços Orgulho de Mandalore 3"
+        "Pride of Mandalore Rock 1": "Pedra Orgulho de Mandalore 1"
+        "Pride of Mandalore Rock 2": "Pedra Orgulho de Mandalore 2"
+        "Pride of Mandalore Rock 3": "Pedra Orgulho de Mandalore 3"
+        "Undamaged": "Não-Danificado"
+        "Standard": "Padrão"
+        "Faction": "Fação"
+        "Loadout": "Arsenal"
+        "Standard legal": "Legal no Standard"
+        "Keywords:": "Palavras Chave:"
+        "Show Points Destroyed": "Mostrar Pontos Destruídos"
+        "Hide Points Destroyed": "Ocultar Pontos Destruídos"
+        "This squad was created for an older version of X-Wing.": "Este Esquadrão foi Criado para uma versão anterior do X-Wing."
+        "Damage Threshold": "Limite de Dano"
+        "X-Wing Squadron by YASB 2: ": "Esquadrão de X-Wing por YASB2"
+        "Ship Cost": "Custo da Nave"
+        "Paste XWS here": "Cole o XWS aqui"
+        "All sets and expansions": "Todos os kits e expansões"
+        "All factions": "Todas as Facções"
+        "Has multiple of the chosen slots": "Possui vários do espaço escolhido"
+        "keywords": "palavras chave"
+        "Checking auth status...": "Verificando estado de autenticação"
+        "New squad saved successfully.": "Novo esquadrão salvo com sucesso."
+        "Squad updated successfully.": "Esquadrão atualizado com sucesso."
+        "Unselect": "Desmarcar"
+        "Sort cards by": "Organizar cartas por"
+        "Saving squad...": "salvando esquadrão..."
+        "Notes:": "Notas :"
+        "XWS QR-Code": "XWS QR-Code"
+
+    singular:
+        'pilots': 'Piloto'
+        'modifications': 'Modificação'
+        'titles': 'Título'
+        'ships' : 'Nave'
+    types:
+        'Pilot': 'Piloto'
+        'Modification': 'Modificação'
+        'Title': 'Título'
+        'Ship': 'Nave'
+    rulestypes:
+        'glossary': 'Glossário'
+        'faq': 'FAQ'
+    action:
+        'Boost': 'Impulso'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Português = () ->
     exportObj.cardLanguage = 'Português'
-
+ # Rename ships
+    exportObj.renameShip """Modified YT-1300 Light Freighter""", """Cargueiro Leve YT-1300 Modificado"""
+    exportObj.renameShip """StarViper-class Attack Platform""", """Plataforma de Ataque Classe Starviper"""
+    exportObj.renameShip """Scurrg H-6 Bomber""", """Bombardeiro Scurrg-H-6"""
+    exportObj.renameShip """YT-2400 Light Freighter""", """Cargueiro Leve YT-2400"""
+    exportObj.renameShip """Auzituck Gunship""", """Nave de Ataque Auzituck"""
+    exportObj.renameShip """Kihraxz Fighter""", """Caça Kihraxz"""
+    exportObj.renameShip """Sheathipede-Class Shuttle""", """Transporte Classe Sheathipede"""
+    exportObj.renameShip """Quadrijet Transfer Spacetug""", """Rebocador Orbital Quadrijet"""
+    exportObj.renameShip """Firespray-class Patrol Craft""", """Nave de Patrulha Classe Firespray"""
+    exportObj.renameShip """TIE/ln Fighter""", """Caça TIE/ln"""
+    exportObj.renameShip """BTL-A4 Y-wing""", """Y-Wing BTL-A4"""
+    exportObj.renameShip """TIE Advanced x1""", """TIE Advanced x1"""
+    exportObj.renameShip """Alpha-Class Star Wing""", """Star Wing Classe Alfa"""
+    exportObj.renameShip """UT-60D U-wing""", """U-Wing UT-60D"""
+    exportObj.renameShip """TIE/sk Striker""", """TIE/sk Striker"""
+    exportObj.renameShip """A/SF-01 B-wing""", """B-Wing A/SF-01"""
+    exportObj.renameShip """TIE/d Defender""", """TIE/d Defender"""
+    exportObj.renameShip """TIE/sa Bomber""", """TIE/sa Bomber"""
+    exportObj.renameShip """TIE/ca Punisher""", """TIE/ca Punisher"""
+    exportObj.renameShip """Aggressor Assault Fighter""", """Caça de Assalto Aggressor"""
+    exportObj.renameShip """G-1A Starfighter""", """Caça Estelar G-1A"""
+    exportObj.renameShip """VCX-100 Light Freighter""", """Cargueiro Leve VCX-100"""
+    exportObj.renameShip """YV-666 Light Freighter""", """Cargueiro Leve YV-666"""
+    exportObj.renameShip """TIE Advanced v1""", """TIE Advanced v1"""
+    exportObj.renameShip """Lambda-class T-4a Shuttle""", """Transporte T-4A Classe Lambda"""
+    exportObj.renameShip """TIE/ph Phantom""", """TIE/ph Phantom"""
+    exportObj.renameShip """VT-49 Decimator""", """VT-49 Decimator"""
+    exportObj.renameShip """TIE/ag Aggressor""", """TIE/ag Agressor"""
+    exportObj.renameShip """BTL-S8 K-wing""", """K-Wing BTL-S8"""
+    exportObj.renameShip """ARC-170 Starfighter""", """Caça Estelar ARC-170"""
+    exportObj.renameShip """Attack Shuttle""", """Transporte de Ataque"""
+    exportObj.renameShip """T-65 X-wing""", """X-Wing T-65"""
+    exportObj.renameShip """HWK-290 Light Freighter""", """Cargueiro Leve HWK-290"""
+    exportObj.renameShip """RZ-1 A-wing""", """A-Wing RZ-1"""
+    exportObj.renameShip """Fang Fighter""", """Caça Fang"""
+    exportObj.renameShip """Z-95-AF4 Headhunter""", """Z-95-AF4 Headhunter"""
+    exportObj.renameShip """M12-L Kimogila Fighter""", """Caça Kimogila M12-L"""
+    exportObj.renameShip """E-wing""", """E-Wing"""
+    exportObj.renameShip """TIE/in Interceptor""", """TIE/in Interceptor"""
+    exportObj.renameShip """Lancer-Class Pursuit Craft""", """Nave de Perseguição Classe Lancer"""
+    exportObj.renameShip """TIE Reaper""", """TIE Reaper"""
+    exportObj.renameShip """M3-A Interceptor""", """M3-A Interceptor"""
+    exportObj.renameShip """JumpMaster 5000""", """JumpMaster 5000"""
+    exportObj.renameShip """Customized YT-1300 Light Freighter""", """Cargueiro Leve YT-1300 Customizado"""
+    exportObj.renameShip """Escape Craft""", """Nave de Fuga"""
+    exportObj.renameShip """TIE/fo Fighter""", """Caça TIE/fo"""
+    exportObj.renameShip """TIE/sf Fighter""", """Caça TIE/sf"""
+    exportObj.renameShip """Upsilon-Class Command Shuttle""", """Transporte de Comando Classe Ípsilon"""
+    exportObj.renameShip """TIE/vn Silencer""", """TIE/vn Silencer"""
+    exportObj.renameShip """T-70 X-wing""", """X-Wing T-70"""
+    exportObj.renameShip """RZ-2 A-wing""", """A-Wing RZ-2"""
+    exportObj.renameShip """MG-100 StarFortress""", """MG-100 StarFortress"""
+    exportObj.renameShip """Modified TIE/ln Fighter""", """Caça TIE/ln Modificado"""
+    exportObj.renameShip """Scavenged YT-1300""", """YT-1300 Recuperada"""
+    exportObj.renameShip """V-19 Torrent Starfighter""", """Caça Estelar V-19 Torrent"""    
+    exportObj.renameShip """Belbullab-22 Starfighter""", """Caça Estelar Bellbullab-22"""
+    exportObj.renameShip """Vulture-class Droid Fighter""", """Caça Dróide Classe Vulture"""
+    exportObj.renameShip """Sith Infiltrator""", """Sith-Infiltrator"""
+    exportObj.renameShip """Delta-7 Aethersprite""", """Delta-7 Aethersprite"""
+    exportObj.renameShip """Delta-7b Aethersprite""", """Delta-7b Aethersprite"""
+    exportObj.renameShip """Naboo Royal N-1 Starfighter""", """Caça Estelar Real de Naboo N-1"""
+    exportObj.renameShip """Hyena-class Droid Bomber""", """Bombardeiro Dróide Classe Hyena"""
+    exportObj.renameShip """Resistance Transport Pod""", """Módulo de Transporte da Resistência"""
+    exportObj.renameShip """Resistance Transport""", """Transporte da Resistência"""
+    exportObj.renameShip """Nantex-Class Starfighter""", """Caça Estelar Classe Nantex"""
+    exportObj.renameShip """TIE/ba Interceptor""", """TIE/ba Interceptor"""
+    exportObj.renameShip """Xi-class Light Shuttle""", """Transporte Leve Classe Xi"""
+    exportObj.renameShip """HMP Droid Gunship""", """Nave de Ataque Droide HMP"""
+    exportObj.renameShip """LAAT/i Gunship""", """Nave de Ataque LAAT/i"""
+    exportObj.renameShip """TIE/rb Heavy""", """TIE/rb Heavy"""
+    exportObj.renameShip """Droid Tri-fighter""", """Dróide Tri-fighter"""
+    exportObj.renameShip """Nimbus-class V-wing""", """V-Wing Classe Nimbus"""
+    exportObj.renameShip """Eta-2 Actis""", """Actis Eta-2"""
+    exportObj.renameShip """Syliure-class Hyperspace Ring""", """Anel de Hiperespaço classe Syliure"""
+    exportObj.renameShip """BTA-NR2 Y-wing""", """Y-Wing BTA-NR2"""
+    exportObj.renameShip """TIE/wi Whisper Modified Interceptor""", """Interceptador Modificado TIE/wi Whisper"""
+    exportObj.renameShip """TIE/se Bomber""", """Bombardeiro TIE/se"""
+    exportObj.renameShip """Gauntlet Fighter""", """Caça Gauntlet"""
+    exportObj.renameShip """ST-70 Assault Ship""", """Nave de Assalto ST-70"""
+    exportObj.renameShip """Clone Z-95 Headhunter""", """Z-95 Headhunter Clone"""
+    exportObj.renameShip """Rogue-class Starfighter""", """Caça Estelar Classe Rogue"""
+    exportObj.renameShip """CR90 Corellian Corvette""", """Corveta Coreliana CR90"""
+    exportObj.renameShip """Raider-class Corvette""", """Corveta Classe Raider"""
+    exportObj.renameShip """GR-75 Medium Transport""", """Transporte Médio GR-75"""
+    exportObj.renameShip """Gozanti-class Cruiser""", """Cruzador Classe Gozanti"""
+    exportObj.renameShip """C-ROC Cruiser""", """Cruzador C-ROC"""
+    exportObj.renameShip """Trident-class Assault Ship""", """Nave de Assalto Classe Trident"""
  
 
     pilot_translations =
@@ -766,6 +1250,18 @@ exportObj.cardLoaders.Português = () ->
            display_name: """Cad Bane"""
            text: """Depois que você realizar um ataque que acertou, você pode gastar 2 %CHARGE% para transferir 1 de suas fichas laranjas ou vermelhas que não seja uma mira para o defensor."""
 
+                  #ST-70
+        "Outer Rim Enforcer":
+           display_name: """Executor da Orla Exterior"""
+           text: """<i class = flavor_text>Designada como uma nave militar, a Nave de Ataque ST70 é uma nave durável e versátil. Para alguem viajando pela Orla Exterior, esta nave pode ser um transporte, nave de combate, e casa, tudo em um lugar só.</i>"""
+        "Guild Bounty Hunter":
+           display_name: """Caçador de Recompensas da Guilda"""
+           text: """Quando você realizar um ataque em alcance 1-2, você pode gastar 1 %CHARGE% não recursiva de 1 de suas melhorias %ILLICIT% equipadas para mudar 1 resultado %FOCUS% para um resultado %CRIT%"""
+        "Q9-0":
+           text: """Depois que você completar uma manobra avançada, você pode realizar uma ação %CALCULATE% ou %BARRELROLL%, mesmo se estiver estressado. Se o fizer, receba uma ficha de desgaste."""
+        "The Mandalorian":
+           display_name: """O Mandaloriano"""
+           text: """Quando você defender ou realizar um ataque, se você estiver no %FRONTARC% em alcance 1-2 de 2 ou mais naves inimigas, você pode mudar 1 resultado em branco para um resultado %FOCUS%."""
     #Imperial Pilots
        #TIE/ln
         "Academy Pilot":
@@ -1942,6 +2438,9 @@ exportObj.cardLoaders.Português = () ->
         "Count Dooku":
            display_name: """Conde Dookan"""
            text: """Após você defender, se o atacante estiver em seu arco de tiro, você pode gastar 1 %FORCE% para remover 1 de suas fichas azuis ou vermelhas.%LINEBREAK%Após você realizar um ataque que acerte, você pode gastar 1 %FORCE% para realizar uma ação."""
+        "Count Dooku (SoC)":
+           display_name: """Conde Dookan (CdC)"""
+           text: """Durante um ataque, antes que uma nave em alcance 0-2 role dados de ataque ou dados de defesa, se todas as suas %FORCE% estiverem ativas, você pode gastar 1 %FORCE% e nomear um resultado, se a rolagem não contiver o resultado nomeado, a nave deve mudar 1 dado para aquele resultado."""
         "Darth Maul":
            display_name: """Darth Maul"""
            text: """Após você realizar um ataque, você pode gastar 2 %FORCE% para realizar um ataque primário bônus contra um alvo diferente. Se o seu ataque errou, você pode realizar o ataque primário bônus, ao invés disso, contra o mesmo alvo."""
@@ -2353,7 +2852,7 @@ exportObj.cardLoaders.Português = () ->
            display_name: """Detonadores Térmicos"""
            text: """<strong>Bomba</strong>%LINEBREAK% Durante a Fase de Sistema, você pode gastar até 2 %CHARGE% para soltar a mesma quantidade de Detonadores Térmicos usando o gabarito [1 %STRAIGHT%] ou [2 %STRAIGHT%]. Cada um deve ser posicionado usando um gabarito diferente.%LINEBREAK%Quando você recarregar esta carta, recupere 1 %CHARGE% adicional."""
         "Bomblet Generator":
-           display_name: """Gerador de Mini-Bombas"""
+           display_name: """Gerador de Bombas Fragmentadas"""
            text: """<strong>Bomba</strong>%LINEBREAK%Durante a Fase de Sistema, você pode gastar 1 %CHARGE% para soltar uma Mini-bomba com o gabarito [1 %STRAIGHT%].%LINEBREAK%No começo da Fase de Ativação, você pode gastar 1 escudo para recuperar 2 %CHARGE%."""
         "Proximity Mines":
            display_name: """Minas de Proximidade"""
@@ -3128,7 +3627,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Depois que uma nave amiga em alcance 0-2 gastar uma ficha de foco ou desvio, você pode gastar 1 %FORCE%. Se fizer isso, aquela nave recebe 1 ficha de foco."""
         "Peli Motto":
            display_name: """Peli Motto"""
-           text: """Durante a Fase de Sistema, você pode realizar uma ação em uma de suas cartas de dano, mesmo se estiver estressado.%LINEBREAK%Depois qeu voc~e reparar uma carta virada pra cima do tipo <strong><i>Nave</i></strong>, você pode rolar 1 dado de ataque. Em um resultado %HIT%, repare outra carta virada para cima do tipo <strong><i>Nave</i></strong>. Em um resultado %CRIT%, exponha 1 carta de dano."""
+           text: """Durante a Fase de Sistema, você pode realizar uma ação em uma de suas cartas de dano, mesmo se estiver estressado.%LINEBREAK%Depois que você reparar uma carta virada pra cima do tipo <strong><i>Nave</i></strong>, você pode rolar 1 dado de ataque. Em um resultado %HIT%, repare outra carta virada para cima do tipo <strong><i>Nave</i></strong>. Em um resultado %CRIT%, exponha 1 carta de dano."""
         "Perceptive Copilot":
            display_name: """Co-Piloto Perspicaz"""
            text: """Depois que você realizar uma ação %FOCUS%, receba 1 ficha de foco."""
@@ -3195,7 +3694,7 @@ exportObj.cardLoaders.Português = () ->
            text: """<strong>Preparação: </strong>Depois de posicionar as forças, você pode escolher 1 obstáculo na área de jogo. Se o fizer, coloque-o em qualquer lugar da área de jogo além do alcance 2 de qualquer borda ou nave, e além do alcance 1 de qualquer outro obstáculo."""
         "Tristan Wren":
            display_name: """Tristan Wren"""
-           text: """Quando uma unidade amiga em alcance 0-3 realiza um ataque %simbolinho do missinho%, você pode gastar 1 %CHARGE%. Se o fizer, o atacante pode mudar 1 resultado %HIT% para um resultado %CRIT%."""
+           text: """Quando uma unidade amiga em alcance 0-3 realiza um ataque %RANGEBONUS%, você pode gastar 1 %CHARGE%. Se o fizer, o atacante pode mudar 1 resultado %HIT% para um resultado %CRIT%."""
         "Unkar Plutt":
            display_name: """Unkar Plutt"""
            text: """Depois que você executar parcialmente uma manobra, você pode sofrer 1 dano %HIT% para realizar 1 ação branca."""
@@ -3215,7 +3714,204 @@ exportObj.cardLoaders.Português = () ->
            display_name: """Zuckuss"""
            text: """Quando você realizar um ataque, se você não estiver estressado, você pode escolher 1 dado de defesa e receber 1 ficha de estresse. Se o fizer, o defensor deve rerrolar esse dado."""
  
-    condition_translations = {}
+       #Melhorias Standard Loadout
+        "Fanatic (BoY)":
+           display_name: """Fanático"""
+           text: """Quando você realizar um ataque primário, se você estiver danificado, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%."""
+        "Vengeful (BoY)":
+           display_name: """Vingativo"""
+           text: """Depois que uma nave amiga em alcance 0-3 for destruída, se essa nave for limitada, você pode remover 1 de suas fichas vermelhas ou recuperar 1 carga recorrente de suas cartas."""
+        "Chewbacca (BoY)":
+           display_name: """Chewbacca"""
+           text: """Depois que você fizer uma ação %EVADE%, você pode receber 1 ficha de foco."""
+        "L3-37's Programming (BoY)":
+           display_name: """Programação da L3-37"""
+           text: """Se você não possuir escudos, reduza a dificuldade das suas manobras curva (%BANKLEFT% and %BANKRIGHT%)."""
+        "Unstable Sublight Engines (BoY)":
+           display_name: """Motores Subluz Instáveis"""
+           text: """Depois que você for destruído, você <b>deve</b> realizar uma manobra [1 %STRAIGHT%], então cada nave em alcance 0-1 sofre 1 dano %HIT%."""
+        "Attack Speed (BoY)":
+           display_name: """Velocidade de Ataque"""
+           text: """Depois que você realizar completamente uma manobra [3 %STRAIGHT%] ou [4 %STRAIGHT%], Você pode realizar um boost usando o gabarito [1 %STRAIGHT%]. (Isto não é uma ação)."""
+        "R2-D2 (BoY)":
+           display_name: """R2-D2"""
+           text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
+        "R2-F2 (BoY)":
+           display_name: """R2-F2"""
+           text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
+        "R2-A3 (BoY)":
+           display_name: """R2-A3"""
+           text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
+        "R5-D8 (BoY)":
+           display_name: """R5-D8"""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+        "R5-K6 (BoY)":
+           display_name: """R5-K6"""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+        "Precise Astromech (BoY)":
+           display_name: """Astromecânico Preciso"""
+           text: """Depois que você realizar uma ação, você pode gastar 1 %CHARGE% para realizar uma ação %LOCK% vermelha."""
+        "Targeting Astromech (BoY)":
+           display_name: """Astromecânico de Mira"""
+           text: """Depois que você realizar uma ação %LOCK%, você pode realizar uma ação %ROTATEARC% vermelha."""
+        "Dorsal Turret (BoY)":
+           display_name: """Torre Dorsal"""
+           text: """<strong>Ataque</strong>"""
+        "Sensor Jammer (BoY)":
+           display_name: """Bloqueador de Sensores"""
+           text: """Quando estiver defendendo, se houver uma nave amiga no atacante, você pode mudar 1 dos resultados %HIT% do atacante para um resultado %FOCUS%."""
+        "Ancillary Ion Weapons (SoC)":
+           display_name: """Armas de Íon Auxiliares"""
+           text: """Quando você realizar um ataque primário %FRONTARC%, antes de rolar dados de ataque, você pode gastar 2 %CHARGE%. Se fizer isso, seus resultados %CRIT% causam fichas de íon ao invés de dano."""
+        "Roiling Anger (SoC)":
+           display_name: """Fúria Cegante"""
+           text: """No começo da Fase de Engajamento, se você estiver no %FRONTARC% de uma nave inimiga, você pode receber 1 ficha de desgaste para recuperar 1 %FORCE%."""
+        "Contingency Protocol (SoC)":
+           display_name: """Protocolo de Contingência"""
+           text: """Depois que esta nave for destruída outra nave amiga em alcance 0-3 com <b>Protocolo de Contingência</b> pode realizar uma ação, mes se estiver estressada."""
+        "Evasion Sequence 7 (SoC)":
+           display_name: """Sequência de Evasão 7"""
+           text: """Quando você realizar uma ação %EVADE% vermelha, se houver um obstáculo, objeto de cenário em alcance 1, trate a ação como branca."""
+        "Strut-Lock Override (SoC)":
+           display_name: """Desativar Travas de Suporte"""
+           text: """No começo da sua ativação, você pode gastar 1 %CHARGE%. Se você fizer isso, ignore obstáculos se você se mover por eles durante esta rodada."""
+        "R4-P17 (SoC)":
+           display_name: """R4-P17"""
+           text: """Quando você for receber uma carta de dano, se você não estiver defendendo, você pode gastar 1 %CHARGE% e receber 1 ficha de desgaste para descartá-la."""
+        "Wolfpack (SoC)":
+           display_name: """Matilha"""
+           text: """Quando você realizar um ataque, você pode gastar uma mira pertencente a uma nave <b>Plo Koon</b> aliada ou uma nave com a habilidade <b>Nascido para Isso</b> que esteja no defensor para rerrolar qualquer quantidade de dados de ataque."""
+    condition_translations = 
+    
+        'Suppressive Fire':
+           display_name: 'Tiro Supressivo'
+           text: '''Quando você realizar um ataque contra uma nave que não seja <strong>Capitão Rex</strong>, role 1 dado de ataque a menos.%LINEBREAK%Após <strong>Capitão Rex</strong> defender, remova essa carta. No final da Fase de Engajamento, se <strong>Capitão Rex</strong> não realizou um ataque nessa fase, remova essa carta.%LINEBREAK%Após <strong>Capitão Rex</strong> ser destruído, remova essa carta.'''
+        'Hunted':
+           display_name: 'Caçado'
+           text: '''Depois que você for destruído, você deve escolher outra nave amiga e atribuir esta condição a ela, se possível.'''
+        'Listening Dispositivo':
+           display_name: 'Dispositivo de Escuta'
+           text: '''Durante a Fase de Sistema, se uma nave inimiga com a melhoria <strong>Informante</strong> estiver em alcance 0-2 vire seu disco de manobras para cima.'''
+        'Rattled':
+           display_name: 'Aturdido'
+           text: '''Depois que uma bomba ou mina em alcance 0-1 detonar, sofra 1 %CRIT%. Then, remove this card. %LINEBREAK% <strong>Action:</strong> Se não houver bombas ou minas em alcnace 0-1, remova esta carta.'''
+        'Optimized Prototype':
+           display_name: 'Protótipo Otimizado'
+           text: '''Quando você realizar um ataque primário %FRONTARC% contra uma nave que esteja mirada por uma nave amiga com a melhoria <strong>Director Krennic</strong>, você pode gastar 1 resultado %HIT%/%CRIT%/%FOCUS%. Se você fizer isso, escolha um: o defensor perde 1 escudo ou o defensor vira uma carta de dano para cima.'''
+        '''I'll Show You the Dark Side''':
+           display_name: 'Contemple o Lado Sombrio'
+           text: '''Quando esta carta for atribuída, se não houver uma carta de dano virada para cima nela, o jogador que a atribuiu procura no baralho de dano por 1 carta de dano <strong>Piloto</strong> e a coloca virada para cima nesta carta. Então, embaralhe o baralho de dano. Quando você for sofrer 1 dano %CRIT%, você recebe a carta virada para cima sobre esta carta. Então, remova esta carta. '''
+        'Proton Bomb':
+           display_name: 'Bomba de Prótons'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bombaa %LINEBREAK% No final da Fase de Ativação, este dispositivo detona. Quando este dispositivo detona, cada nave e remoto em alcance 0-1 sofre 1 dano %CRIT.%LINEBREAK%<i>Errata (Discussão de Regras Oficial 03/2019): Adicionado: "e remoto"</i>'''
+        'Seismic Charge':
+           display_name: 'Cargas Sísmicas'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase de Ativação, este dispositivo detona. Quando este dispositivo detona, escolha 1 obstáculo em alcance 0-1. Cada nave e remoto em alcance 0-1 do obstáculo sofre 1 dano d. Então remova o obstáculo.%LINEBREAK%<i>Errata (Discussão de Regras Oficial 03/2019): Adicionado: "e remoto"</i> '''
+        'Bomblet':
+           display_name: 'Bomba Fragmentada'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase Ativação, este dispositivo detona. Quando este dispositivo detona, cada nave e remoto em alcance 0-1 rola 2 dados de ataque. Cada nave ou remoto sofre 1 dano %HIT% para cada resultado %HIT%/%CRIT%.%LINEBREAK%<i>Errata (Discussão de Regras Oficial 03/2019): Adicionado: "e remoto"</i>'''
+        'Loose Cargo':
+           display_name: 'Carregamento Solto'
+           text: '''<strong>Tipos:</strong> Obstáculo, Colocado %LINEBREAK% '''
+        'Spare Parts':
+           display_name: 'Peças Sobressalentes'
+           text: '''<strong>Tipos:</strong> Obstáculo, Colocado %LINEBREAK% Quando este objeto é solto, encaixe-o nas guias traseiras da nave.'''
+        'Conner Net':
+           display_name: 'Rede Conner'
+           text: '''<strong>Tipos:</strong> Dispositivo, Mina %LINEBREAK% Após uma nave sobrepor ou se mover através deste dispositivo, ele detona. Quando este dispositivo detona, a nave sofre 1 dano %HIT% e recebe 3 fichas de íon.'''
+        'Proximity Mine':
+           display_name: 'Minas de Proximidade'
+           text: '''<strong>Tipos:</strong> Dispositivo, Mina %LINEBREAK% Após uma nave sobrepor ou se mover através deste dispositivo, ele detona. Quando este dispositivo detona, a nave rola 2 dados de ataque. Essa nave sofre 1 dano %HIT% mais 1 dano %HIT%/%CRIT% para cada resultado correspondente.%LINEBREAK%<i>Errata (desde RR 1.0.2): Adicionado: "1 %HIT% mais"</i>'''
+        'DRK-1 Probe Droid':
+           display_name: 'Sonda Droide Dark Eye'
+           text: '''INI: 0 <br>AGILIDADE: 3 <br>CASCO: 1 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK%  <strong>Fase de Sistema:</strong> o controlador da sonda droide DRK-1 pode escolher um gabarito [2 %BANKLEFT%], [2 STRAIGHT%] ou [2 %BANKRIGHT%] e qualquer conjunto de guias do DRK-1. O jogador então realoca o remoto, colocando o DRK-1 na outra extremidade do gabarito. Ele pode sobrepor um objeto dessa maneira.%LINEBREAK%Se o DRK-1 sobrepor uma nave, use o marcador de posição para marcar a posição da nave, então coloque a nave em cima do remoto.%LINEBREAK%<strong>Fase de Ativação, Engajamento e Final:</strong> Sem efeitos.%LINEBREAK% <strong>Outras Regras:</strong> Quando uma nave trava uma mira ou interfere uma nave inimiga, ela pode medir o alcance a partir de uma sonda droide DRK-1 amiga.%LINEBREAK%Após uma nave inimiga executar uma manobra que faz com que ela sobreponha uma sonda droide DRK-1, o controlador da nave rola um dado de ataque. Em um resultado %FOCUS%, a sonda droide DRK-1 sofre 1 dano %HIT%.'''
+        'Buzz Droid Swarm':
+           display_name: 'Enxame de Buzz Droids'
+           text: '''INI: 0 <br>AGILITY: 1 <br>HULL: 1 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% <strong>Fase de Sistema, Ativação e Final: Sem efeitos.</strong>%LINEBREAK%<strong>Fase de Engajamento:</strong> Quando você engaja, cada nave inimiga em alcance 0 do enxame de buzz droids sofre 1 dano %CRIT%.%LINEBREAK%<strong>Outras Regras:</strong> Após uma nave inimiga sobrepor ou mover através de um enxame de buzz droids, o jogador que controla o enxame realoca ele alinhando as guias do remoto com as guias frontais ou traseiras da nave (essa nave está em alcance 0 do enxame). O enxame não pode ser alinhado com as guias de uma nave, se isso fizer com que o enxame sobreponha um objeto. Se o enxame não pode ser alinhado com as guias escolhidas, o jogador controlador deve alinhá-lo com o outro conjunto de guias da nave. Se ele não pode ser alinhado nos dois conjuntos de guias, o enxame e a nave inimiga que sobrepôs ou moveu através do enxame sofrem 1 dano %HIT%. %LINEBREAK%<i>Errata (desde RR 1.4): Agilidade ajustada para equilibrio.</i>'''
+        '''It's the Resistance''':
+           display_name: 'É a Resistência'
+           text: '''<strong>Preparação:</strong> Comece na reserva. %LINEBREAK% Quando você for posicionado, você pode ser colocado no alcance 1 de qualquer borda da mesa e além do alcance 3 de qualquer nave inimiga. %LINEBREAK% No começo da rodada, se todas as %CHARGE% do <strong>GA-97</strong> amigo estiverem ativas você <strong>deve</strong> ser posicionado. Então remova esta carta. Depois que o <strong>GA-97</strong> amigo for destruído, você <strong>deve</strong> ser posicionado. Então receba 1 ficha de desarme e descarte esta carta.'''
+        'Electro-Proton Bomb':
+           display_name: 'Bomba de Elétro-Próton'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK%  No final da Fase de Ativação este dispositivo detona. Quando este dispositivo detonar, cada nave e remoto em alcance 0-2 rola 4 dados de ataque. Cada nave perde 1 escudo para cada resultado em branco, recebe 1 ficha de íon para cada resultado %FOCUS%/%HIT%, e recebe 1 ficha de desarme para cada resultado %CRIT%. Cada remoto em alcance 0-1 perde 1 escudo para cada resultado em branco, e sofre 1 dano para cada resultado %FOCUS%/%HIT%.'''
+        'Decoyed':
+           display_name: 'Chamariz'
+           text: '''Quando você defender, cada <strong>Serva de Naboo</strong> amiga no arco de ataque pode gastar 1 ficha de desvio para mudar um dos seus resultados para um resultado %EVADE%.%LINEBREAK%Se você for um Caça Estelar Real de Naboo N-1, cada <strong>Serva de Naboo</strong> amiga no arco de ataque pode gastar 1 ficha de desvio para, ao invés disso, adicionar 1 resultado %EVADE%.'''
+        'Compromising Intel':
+           display_name: 'Inteligência Comprometedora'
+           text: '''Durante a Fase de Sistema, se a <strong>Vi Moradi</strong> inimiga estiver em alcance 0-3, vire seu disco para cima.%LINEBREAK%Quando você defender ou realizar um ataque contra a <strong>Vi Moradi inimiga</strong>, você não pode gastar fichas de foco.'''
+        'Cluster Mine':
+           display_name: 'Mina Fragmentada'
+           text: '''<strong>Tipos:</strong> Dispositivo, Mina %LINEBREAK%  Um conjunto de Mina de Fragmentação consiste em 3 dispositivos Mina deFragmentação.%LINEBREAK%Quando uma Mina de Fragmentação é colocada, a peça central é colocada normalmente e as duas Minas de Fragmentação adicionais são colocadas nos espaços laterais como mostrado.%LINEBREAK%Após uma nave sobrepor ou se mover através de qualquer peça individual da Mina de Fragmentação, ela detona. Peças não sobrepostas ou que a nave não tenha movido através, não detonam.%LINEBREAK%Quando cada um destes dispositivos detona, aquela nave rola 2 dados de ataque. A nave sofre 1 dano %HIT%/%CRIT% para cada resultado correspondente.'''
+        'Ion Bomb':
+           display_name: 'Bomba de Íon'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No fim da Fase de Ativação, este dispositivo detona. Quando este dispositivo detonar, cada nave em alcance 0-1 rece 3 fichas de íon, e cada remoto em alcance 0-1 sofre 1 dano %HIT%.'''
+        'Concussion Bomb':
+           display_name: 'Bomba de Concussão'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No fim da Fase de Ativação, este dispositivo detona. Quando este dispositivo detonar, cada nave e remoto em alcance 0-1 recebe 1 carta de dano virada para baixo. Então, cada nave em alcance 0-1 deve expor 1 carta de dano, a menos que ela escolha receber 1 ficha de desgaste.'''
+        'Thermal Detonator':
+           display_name: 'Detonador Térmico'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase de Ativação, este dispositivo detona. Quando este dispositivo detonar, cada nave e remoto em alcance 0-1 rola 1 dado de ataque. Cada nave recebe 1 ficha de desgaste para cada resultado %FOCUS%, e cada nave e remoto sofre 1 dano %HIT%/%CRIT% para cada resultado correspondente.'''
+        'Sensor Buoy':
+           display_name: 'Bóia de Sensor'
+           text: '''INI: 0 <br>AGILIDADE: 3 <br>CASCO: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% SBoias de sensores são remotos em pares (um azul e um vermelho, cada um com sua própria carta de remoto) e são colocados com a carta de melhoria <strong>Conjunto de Boias de Sensores</strong>. Além de serem remotos e interagirem com a carta, eles não possuem regras adicionais.'''
+        'Electro-Chaff Cloud':
+           display_name: 'Nuvem de Electro-Chaff'
+           text: '''An electro-chaff cloud is a device and an obstacle. %LINEBREAK% Durante a Fase Final, remova cada nuvem de electro-chaff sem marcadores de fuso, então remova um marcador de fuso de cada nuvem de electro-chaff. Uma nuvem de electro-chaff nunca pode ter mais de um marcador de fuso.'''
+        'Tracking Torpedoes':
+           display_name: 'Torpedos Rastreadores'
+           text: '''INI: 0 <br>AGILIDADE: 3 <br>CASCO: 3 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK%<strong>Fase de sistema:</strong> na iniciativa desse remoto, o jogador que o controla realoca este remoto para frente usando o gabarito [3 %BANKLEFT%], [3 %BANKRIGHT%] ou [4 %STRAIGHT%].%LINEBREAK% <strong>Fase de Ativação:</strong> sem efeito.%LINEBREAK% <strong>Fase de Engajamento:</strong> na iniciativa do remoto, se um objeto que ele possui uma mira estiver em seu %FRONTARC% em alcance 0-1, este remoto detona.%LINEBREAK% <strong>Fase Final:</strong> durante a Fase Final, se este remoto não possuir uma mira em nenhum objeto, este remoto deve adquirir uma mira em um objeto no seu %FRONTARC% em alcance 1-3, se for possível.%LINEBREAK% <strong>Outras Regras:</strong> após este remoto ser destruído, role 1 dado de ataque. Em um resultado %HIT% ou %CRIT%, este remoto detona.%LINEBREAK% Quando este remoto detona, cada nave, remoto e estrutura em alcance 0 ou em seu %FRONTARC% em alcance 1 rola 4 dados de ataque e sofre 1 dano para cada resultado %HIT% e %CRIT%.'''
+        'Fearful Prey':
+           display_name: 'Presa Assustada'
+           text: '''Após você defender contra um <strong>Predador Terrível</strong> inimigo, se você não gastou ao menos 1 ficha verde durante o ataque, receba 1 ficha de desgaste.'''
+        'You Should Thank Me':
+           display_name: 'Você Deveria Me Agradecer'
+           text: '''Esta condição é atribuída virada para baixo. Revele-a após você defender.%LINEBREAK% Após você defender, <strong>Zam Wesell</strong> recupera 1 %CHARGE%. Então, você pode adquirir uma mira no atacante.%LINEBREAK% No final da Fase de Engajamento, se esta carta estiver virada para baixo e você estiver no arco de tiro de uma nave inimiga, você pode revelar esta carta e gastar 2 %CHARGE% de <strong>Zam Wesell</strong>. Se o fizer, você pode realizar um ataque bônus.%LINEBREAK% No início da Fase de Sistema, remova esta condição.'''
+        '''You'd Better Mean Business''':
+           display_name: 'É Melhor Falar Sério'
+           text: '''Esta condição é atribuída virada para baixo. Revele-a após você defender.%LINEBREAK% Após você defender, você pode gastar 2 %CHARGE% de <strong>Zam Wesell</strong>. Se o fizer, realize um ataque bônus contra o atacante.%LINEBREAK% No final da Fase de Engajamento, se esta carta estiver virada para baixo e você estiver no arco de tiro de uma nave inimiga, você pode revelar esta carta. Se o fizer, <strong>Zam Wesell</strong> recupera 2 %CHARGE%.%LINEBREAK% No início da Fase de Sistema, remova esta condição.'''
+        '''Merciless Pursuit''':
+           display_name: 'Perseguição Impiedosa'
+           text: '''Depois que você realizar um ataque, se o defensor estiver equipado com <strong>A Criança</strong>, você pode adquirir uma mira no defensor.'''
+        '''Marked for Elimination''':
+           display_name: 'Marcado para Eliminação'
+           text: '''Quando você defender, se o atacante estiver equipado com <strong>Fob de Rastreamento</strong> e possuir uma mira em você, você não pode gastar fichas verdes.'''
+        '''False Friend''':
+           display_name: 'Falso Amigo'
+           text: '''Durante a Fase de Sistema, se uma nave inimiga com a melhoria <strong> Tal Merrik</strong> estiver em alcance 0-2 ou um remoto inimigo estiver em alcance 0-2, Vire seu disco de manobras para cima.%LINEBREAK%<strong>Ação</strong> Receba 1 ficha de desgaste e 1 ficha de estresse para descartar esta condição.'''
+        '''Trials of the Darksaber''':
+           display_name: 'Testes do Sabre Negro'
+           text: '''Quando você realizar um ataque em alcance 0-2, você pode gastar 1 resultado %CRIT%. Se o fizer, se o jogador controlando a nave tiver mais %POINT% que você, ele perde 1 %POINT%. Posicione este %POINT% nesta carta. %LINEBREAK% Depois qeu você defender, se você for destruído por uma nave inimiga em alcance 0-2, atribua a condição <strong>Testes do Sabre Negro</strong> ao atacante (todos os %POINT% permanecem nesta carta).%LINEBREAK% No final do jogo, esta nave pontua todos os %POINT% nesta carta.'''
+        '''Blazer Bomb''':
+           display_name: 'Bomba de Labareda'
+           text: '''<strong>Tipos:</strong> Dispositivo, Bomba %LINEBREAK% No final da Fase de Ativação, este dispositivo detona.%LINEBREAK%Quando este dispositivo detona, cada nave e remoto em alcance 0-1 rolaum dado de ataque. Cada nave ou remoto sofre 1 dano %HIT% para cadaresultado %HIT%/%CRIT%.%LINEBREAK% Após este dispositivo detonar, coloque uma Labareda alinhando as guias daLabareda com o encaixe do dispositivo.%LINEBREAK%Uma Labareda é um obstáculo. Após este obstáculo ser posicionado, coloque um marcador de fuso sobre ele.%LINEBREAK%Durante a Fase Final, remova cada Labareda sem marcadores de fuso, e então remova um marcador de fuso de cada Labareda.'''
+        '''Clan Wren Commandos''':
+           display_name: 'Comandos do Clã Wren'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Death Watch Commandos''':
+           display_name: 'Comandos do Olho da Morte'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Nite Owl Commandos''':
+           display_name: 'Comandos das Corujas Noturnas'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Imperial Super Commandos''':
+           display_name: 'Super Comandos Imperiais'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Mandalorian Super Commandos''':
+           display_name: 'Super Comandos Mandalorianos'
+           text: '''INI: 2 <br> %FRONTARC%: 2 %RANGEBONUS%, ALCANCE: 1-2 <br>%AGILITY%: 2, %HULL%: 2, %CHARGE%: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% Depois que uma nave inimiga sobrepor você, ela recebe 1 ficha de desgaste.%LINEBREAK%<strong>Fase de Ativação:</strong> No começo dessa fase, você pode realocar para frente usando o gabarito [1 %TURNLEFT%], [2 %STRAIGHT%], ou [1 %TURNRIGHT%].%LINEBREAK% <strong>Fase de Engajamento:</strong> Você não pode atacar se houver naves inimigas em alcance 0. Para realizar 1 ataque você deve gastar 1 %CHARGE%. Quando você realiza um ataque, você pode mudar 1 resultado %FOCUS% para um resultado %HIT%.'''
+        '''Guarded''':
+           display_name: 'Protegido'
+           text: '''Quando você defender, se você não estiver no %BULLSEYEARC% do atacante, role 1 dado de defesa adicional para cada <b>Protetor MagnaGuard</b> calculando ou desviando no arco de ataque.'''
+        '''Sickening Maneuver''':
+           display_name: 'Manobra Nauseante'
+           text: '''Você pode realizar manobras vermelhas mesmo se estiver estressado. %LINEBREAK% Depois que você revelar uma manobra curva [%BANKLEFT% or %BANKRIGHT%] ou curva fechada [%TURNLEFT% or %TURNRIGHT%], você <b>deve</b> receber 1 ficha de desgaste e realizar a manobra como uma derrapagem.%LINEBREAK%Depois que você revelar uma manobra [%STRAIGHT%], você deve realizar esta manobra como uma manobra Koiogran vermelha [%KTURN%].%LINEBREAK% Depois que você realizar uma manobra, remova esta condição.'''
+        '''Primed For Speed''':
+           display_name: 'Preparado para Velocidade'
+           text: '''Adicione uma ação %SLAM% branca a sua barra de ações. %LINEBREAK% Depois que você realizar um %SLAM%, você deve sofrer 1 dano %HIT% para remover 1 ficha de desarme.'''
+        '''Broken Trust''':
+           display_name: 'Confiança Quebrada'
+           text: '''Trate naves amigas como aliadas.%LINEBREAK% Naves não inimigas tratam você como aliada. %LINEBREAK%Quando realizar um ataque, antes de declarar o defensor, cada nave aliada no arco de ataque que não estiver estressada recebe 1 ficha de estresse. Depois que você defender ou realizar um ataque, se o defensor recebeu pelo menos 1 carta de dano virada para cima, ou foi destruído, remova esta condição.'''
 
     chassis_translations = 
         "Vectored Thrusters":
