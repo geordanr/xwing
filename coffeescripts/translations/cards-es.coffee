@@ -570,7 +570,7 @@ exportObj.cardLoaders['Español'] = () ->
         "DFS-311":
            display_name: """DFS-311"""
            text: """Al comienzo de la fase de Enfrentamiento, puedes transferir 1 de tus fichas de Cálculos a otra nave aliada que tengas a alcance 0-3."""
-        "Dace Bonearm"
+        "Dace Bonearm":
            display_name: """Dace Bonearm"""
            text: """Después de que una nave enemiga que tengas a alcance 0-3 reciba al menos 1 ficha de Iones, puedes gastar 3 %CHARGE%. Si lo haces, esa nave recibe 2 fichas de Iones adicionales."""
         "Dalan Oberos (StarViper)":
@@ -870,7 +870,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Lieutenant Rivas":
            display_name: """Teniente Rivas"""
            text: """Después de que una nave que tengas a alcance 1-2 reciba una ficha roja o naranja, si no tienes a esa nave fijada como blanco, puedes obtener un Blanco fijado sobre esa nave."""
-        "Lieutenant Sai"
+        "Lieutenant Sai":
            display_name: """Teniente Sai"""
            text: """Después de que realices una acción %COORDINATE%, si la nave que elegiste realizó una acción que figura en tu barra de acciones, puedes realizar esa acción."""
         "Lieutenant Tavson":
