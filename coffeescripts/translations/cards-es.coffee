@@ -56,8 +56,8 @@ exportObj.translations['Español'] =
         "Sensor": "Sensores"
         "Torpedo": "Torpedo"
         "Turret": "Torreta"
-        "HardpointShip": 'Hardpoint de arma'
-        "VersatileShip": 'Casco versatil'
+        "HardpointShip": 'Especial de arma'
+        "VersatileShip": 'Especial de casco'
         "Hardpoint": "Hardpoint"
         "Illicit": "Ilícita"
         "Configuration": "Configuración"
