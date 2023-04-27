@@ -522,7 +522,7 @@ exportObj.cardLoaders.Português = () ->
            text: """<i class = flavor_text>Devido aos seus controles sensitivos e alta manobrabilidade, somente os pilotos mais talentosos ocupavam a cabine de uma A-wing."""
         "Derek Klivian":
            display_name: """Derek Klivian"""
-           text: """<i class = flavor_text>Após você adquirir ou gastar uma mira, você pode remover 1 ficha vermelha de si mesmo."""
+           text: """Após você adquirir ou gastar uma mira, você pode remover 1 ficha vermelha de si mesmo."""
         "Arvel Crynyd":
            display_name: """Arvel Crynyd"""
            text: """Se você falharia uma ação %BOOST% por sobrepor outra nave, ao invés disso, resolva-a como se estivesse executando parcialmente uma manobra.%LINEBREAK% Quando Você realizar um ataque em alcance 0, trate-o como um ataque em alcance 1."""
