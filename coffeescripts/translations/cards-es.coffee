@@ -156,8 +156,8 @@ exportObj.translations['Español'] =
         "Hotshots and Aces II Reinforcements Pack": "Paquet de Refuerzos Hotshots and Aces 2"
         "Loose Ships": "Naves sueltas"
     ui:
-        "shipSelectorPlaceholder": "Elige una Nave"
-        "pilotSelectorPlaceholder": "Elige un Piloto"
+        "shipSelectorPlaceholder": "Elige una nave"
+        "pilotSelectorPlaceholder": "Elige un piloto"
         upgradePlaceholder: (translator, slot) ->
             "Sin #{translator 'slot', slot}"
         "modificationPlaceholder": "Sin Modificación"
@@ -189,9 +189,9 @@ exportObj.translations['Español'] =
         "View in YASB": "Ver en YASB 2"
         "YASB advertisment": "YASB 2 es un generador de escuadrones simple, rápido y fácil de usar para X-Wing Miniatures de Atomic Mass Games."
         collectionContentShips: (translator, number) ->
-            "Tienes #{number} naves #{if number == 1 then 'model' else 'models'} en tu colección."
+            "Tienes #{number} #{if number == 1 then 'modelo' else 'modelos'} de naves en tu colección."
         collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
-            "Tienes #{data[0]} naves #{if data[0] == 1 then 'model' else 'models'} y #{data[1]} pilot #{if data[1] == 1 then 'card' else 'cards'} en tu colección."
+            "Tienes #{data[0]} #{if data[0] == 1 then 'modelo' else 'modelos'} de naves y #{data[1]} #{if data[1] == 1 then 'carta' else 'cartas'} de piloto en tu colección."
         collectionContentUpgrades: (translator, number) ->
             "Tienes #{number} en tu colección."
         varPointCostsPoints: (translator, points) ->
@@ -258,75 +258,164 @@ exportObj.translations['Español'] =
         removes: (translator, data) -> # data will most likely be a string of some symbols, but you never know
             "Quita: #{translator('ui', data)}"
         "Less upgrades": "Menos mejoras"
-
-        # Type selector
-        "Extended": "Ampliada"
-        "Hyperspace": "Hiperespacio"
         "Epic": "Épico"
-                
-        # Card browser
-        'Name': 'Nombre'
-        'Source': 'Fuente'
-        'Type (by Points)': 'Tipo (por Puntos)'
-        'Type (by Name)': 'Tipo (por Nombre)'
-        'Select a card': 'Selecciona una carta de la lista de la izquierda.'
-        'Sort cards by': 'Ordena las cartas por'
-        'Sort by': 'Ordena por'
-        # Info well
-        'Ship': 'Nave'
-        'Initiative': 'Iniciativa'
-        'Actions': 'Acciones'
-        'Upgrades': 'Mejoras'
-        'Range': 'Alcance'
-        # Squadron edit buttons
-        'New Squad':'Nuevo Escuadrón'
-        'Save' : 'Grabar'
-        'Save As...' : 'Grabar como…'
-        'Delete' : 'Borrar'
-        'Load Squad' : 'Cargar Escuadrón'
-        'All' : 'Todos'
-        'Print/Export': 'Imprimir/Ver como texto'
-        'Randomize!' : 'Aleatorio!'        
-        'Randomizer Options' : 'Opciones del aleatorizador…'
-        'Squad Notes:' : 'Notas del Escuadrón:'
-        'Tag:' : 'Tag:'        
-        'Choose Obstacles' : 'Elige Obstáculos'
-        'XWS Import' : 'Importa de XWS'
-        'XWS Export' : 'Exporta a XWS'
-        # New Squadron dialog
-        'Discard' : 'Descartar cambios'
-        # Log in dialog
-        "What's this?" : '¿Qué es OAuth?'
-        # Print/View modal
-        'Copy' : 'Copiar'
-        "Copy below BBCode": "<p>Copia el BBCode de debajo y pegalo en el post de tu foro.</p>"
-        'Space for Cards' : "Añade espacio para cartas de daño/mejora cuando imprima."
-        'Print Color' : "Imprimir en color"
-        'Print' : 'Imprimir'
-        'Simple' : 'Sencilla'
-        'Fancy' : 'Elaborada'
-        'Close' : 'Cerrar'
-        # Randomizer options
-        'Roll!' : 'Aleatoriza!'
-        # Top tab bar
-        'Card Browser' : 'Explorador de Cartas'
-        'About' : 'Acerca de'
-        # Obstacles
-        'Choose Obstacles' : 'Elegir Obstáculos'
-        'Choose obstacles dialog' : 'Elige hasta tres obstáculos para incluirlos el enlace para programas externos (Aún no se muestran los obstáculos elegidos al imprimir).'
-        'Core Asteroid' : 'Asteroide del Core'
-        'YT2400 Debris' : 'Desecho del YT2400'
-        'VT49 Debris' : 'Desecho del VT49'
-        'Force Awakens Asteroid' : 'Asteroide del Despertar de la Fuerza'
-        # Collection
-        'Your Collection': 'Mi colección'
-        'Check Collection' : 'Comprobar coincidencia con colección'
-        "Core Asteroid 0": "Asteroide del Core 0"
-        "Core Asteroid 1": "Asteroide del Core 1"
-        "Core Asteroid 2": "Asteroide del Core 2"
-        "Core Asteroid 3": "Asteroide del Core 3"
-        "Core Asteroid 4": "Asteroide del Core 4"
-        "Core Asteroid 5": "Asteroide del Core 5"
+        "Hyperspace": "Hiperespacio"
+        "Extended": "Ampliada"
+        "Unnamed Squadron": "Escuadrón sin nombre"
+        "Unsaved Squadron": "Escuadrón sin guardar"
+        "New Squadron": "Nuevo Escuadrón"
+        "Name your squad...": "Nombra tu Escuadrón..."
+        "Your Collection": "Mi colección"
+        "Only available from 1st edition": "Disponible únicamente en a primera edición"
+        "Randomize!": "¡Aleatorio!"
+        "Copy": "Copiar"
+        "Print": "Imprimir"
+        "Random Squad Builder Options": "Opciones de la creación de escuadrones aleatoria"
+        "Miscellaneous Settings": "Otros parámetros"
+        "Card Search": "Buscardor de Cartas"
+        "from": "de"
+        "to": "a"
+        "Submit Bug/Feature Request": "Sube un bug o una funcionalidad"
+        "Card Browser": "Explorador de Cartas"
+        "Rules": "Reglas"
+        "About": "Acerca de"
+        "Remove Pilot": "Quitar piloto"
+        "Clone Pilot": "Piloto duplicado"
+        "Wingmates": "Compañeros de equipo"
+        "Total": "Total"
+        "X-Wing Squadron by YASB 2.0: ": "Escuadrón X-Wing para YASB 2.0"
+        "Points Destroyed": "Puntos destruidos"
+        "Half Points": "Medios puntos"
+        "Threshold": "Umbral"
+        "Yes, Delete": "Sí, eliminar"
+        "Cancel": "Cancelar"
+        "Never Mind": "No importa"
+        "Really Delete": "Sí, eliminar"
+        "Save": "Guardar"
+        "Unsaved Changes": "Cambios no guardados"
+        "Name is available": "El nombre está disponible"
+        "Checking name availability...": "Comprobando disponibilidad de nombres..."
+        "Go Back": "Volver"
+        "Save Squad As...": "Guardar escuadrón como..."
+        "Convert": "Convertir"
+        "Convert to Extended?": "¿Convertir a extendido?"
+        "Recalculate Points": "Recalcular Puntos"
+        "Archived": "Archivado"
+        "Archive": "Archivo"
+        "QB": "CR"
+        "Hyper": "Hiper"
+        "Ext": "Ext"
+        "All": "Todas"
+        "Delete Selected": "Eliminar la selección"
+        "Archive Selected": "Archivar la selección"
+        "Select All": "Seleccionar todo"
+        "Fetching squads...": "Recuperando escuadrones..."
+        "Well done!": "¡Bien hecho!"
+        "Log in with OAuth": "Iniciar sesión con OAuth"
+        "Log In": "Iniciar sesión"
+        "Log Out": "Cerrar sesión"
+        "What's this?": "¿Qué es esto?"
+        "Close": "Salir"
+        "Roll!": "¡Generar!"
+        "Maximum Seconds to Spend Randomizing": "Máximo de segundos para aleatorizar"
+        "Always fill 0-point slots": "Siempre rellenar espacios de 0 puntos"
+        "Sets and Expansions": "Paquetes y expansiones"
+        "Limit to collection": "Limitar a la colección"
+        "More upgrades": "Más mejoras"
+        "Maximum Ship Count": "Recuento máximo de envíos"
+        "Upgrades": "Mejoras"
+        "Range": "Alcance"
+        "Actions": "Acciones"
+        "Sources:": "Fuentes"
+        "Source": "Fuente"
+        "Engagement": "Compromiso"
+        "Rules search": "Búsqueda de reglas"
+        "Rules Search": "Búsqueda de reglas"
+        "Base": "Base"
+        "Ship": "Nave"
+        "Points": "Puntos"
+        "Initiative": "Iniciativa"
+        "Force:": "Fuerza :"
+        "Name": "Nombre"
+        "Sort by": "Ordena por"
+        "Type (by Points)": "Tipo (por puntos)"
+        "Type (by Name)": "Tipo (por nombre)"
+        "Select a card": "Selecciona una carta de la lista de la izquierda."
+        "Sort cards by": "Ordena las cartas por"
+        "Recurring": "Recurrente"
+        "Not recurring": "No recurrente"
+        "Charges:": "Cargas :"
+        "Only upgrades requiring multiple slots": "Solo actualizaciones que requieren varias ranuras"
+        "Used double-slot:": "Ranura doble usada:"
+        "Used slot:": "Ranura usada:"
+        "Large": "Grande"
+        "Medium": "Mediana"
+        "Small": "Pequeña"
+        "Huge": "Enorme"
+        "Base size:": "Tamaño de nave:"
+        "Agility:": "Agilidad:"
+        "Shields:": "Escudos:"
+        "Hull:": "Casco:"
+        "Initiative:": "Iniciativa:"
+        "Linked actions:": "Acciones enlazadas:"
+        "Actions:": "Acciones:"
+        "Actions": "Acciones"
+        "actions": "acción"
+        "Slots:": "Ranuras:"
+        "slots": "ranuras"
+        "Ships and Pilots": "Naves y pilotos"
+        "General": "General"
+        "Hyperspace legal": "Legal en hiperespacio"
+        "Is not unique": "No limitada"
+        "Is unique": "Limitada"
+        "Misc:": "Varios :"
+        "Owned copies:": "Cantidad en propiedad:"
+        "Point costs:": "Coste en puntos:"
+        "Point cost:": "Coste en puntos:"
+        "Loadout cost:": "Coste de equipamiento:"
+        "Factions:": "Facciones:"
+        "Textsearch:": "Buscar:"
+        "Squad Notes:": "Notas del escuadrón:"
+        "Tag:": "Etiqueta:"
+        "Choose Obstacles": "Elegir obstáculos"
+        "XWS": "XWS"
+        "HTML": "HTML"
+        "TTS": "TTS"
+        "Text": "Texto"
+        "Reddit": "Reddit"
+        "BBCode": "BBCode"
+        "Fancy": "Elaborada"
+        "Simple": "Sencilla"
+        "Include QR codes": "Incluir los códigos QR"
+        "Include Obstacle Choices": "Incluir los obstáculos"
+        "Print Color": "Imprimir en color"
+        "Expand Shield and Hull": "Expandir el casco y los escudos"
+        "Space for Cards": "Espacio para cartas"
+        "Include Maneuvers Chart": "Incluir las maniobras"
+        "Skip Card Text": "Omitir el texto de las cartas"
+        "XWS Import": "Importar XWS"
+        "New Squad": "Nuevo escuadrón"
+        "Load Squad": "Cargar escuadrón"
+        "Delete": "Borrar"
+        "Save As...": "Guardar como..."
+        "Misc Settings": "Otros parámetros"
+        "Randomizer Options": "Opciones del aleatorizador"
+        "Print/Export": "Imprimir/Exportar"
+        "Discard Changes": "Descartar cambios"
+        "Got it!": "¡Entendido!"
+        "Term:": "Término"
+        "Version": "Versión"
+        "New Squad Name": "Nueuvo nombre del escuadrón"
+        "Import": "Importar"
+        "Other Stuff": "Otras cosas"
+        "MultiFaction": "Multifacción"
+        "Search for game term or card": "Buscar término o carta del juego"
+        "Core Asteroid 0": "Asteroide de la caja básica 0"
+        "Core Asteroid 1": "Asteroide de la caja básica 1"
+        "Core Asteroid 2": "Asteroide de la caja básica 2"
+        "Core Asteroid 3": "Asteroide de la caja básica 3"
+        "Core Asteroid 4": "Asteroide de la caja básica 4"
+        "Core Asteroid 5": "Asteroide de la caja básica 5"
         "VT49 Debris 0": "Desecho del VT49 0"
         "VT49 Debris 1": "Desecho del VT49 1"
         "VT49 Debris 2": "Desecho del VT49 2"
@@ -339,6 +428,43 @@ exportObj.translations['Español'] =
         "Force Awakens Asteroid 3": "Asteroide del Despertar de la Fuerza 3"
         "Force Awakens Asteroid 4": "Asteroide del Despertar de la Fuerza 4"
         "Force Awakens Asteroid 5": "Asteroide del Despertar de la Fuerza 5"
+        "Gas Cloud 1": "Nube de gas 1"
+        "Gas Cloud 2": "Nube de gas 2"
+        "Gas Cloud 3": "Nube de gas 3"
+        "Gas Cloud 4": "Nube de gas 4"
+        "Gas Cloud 5": "Nube de gas 5"
+        "Gas Cloud 6": "Nube de gas 6"
+        "Pride of Mandalore Debris 1": "Desechos de Orgullo de Mandalore 1"
+        "Pride of Mandalore Debris 2": "Desechos de Orgullo de Mandalore 2"
+        "Pride of Mandalore Debris 3": "Desechos de Orgullo de Mandalore 3"
+        "Pride of Mandalore Rock 1": "Rocas de Orgullo de Mandalore 1"
+        "Pride of Mandalore Rock 2": "Rocas de Orgullo de Mandalore 2"
+        "Pride of Mandalore Rock 3": "Rocas de Orgullo de Mandalore 3"
+        "Undamaged": "Sin daños"
+        "Standard": "Estándar"
+        "Faction": "Facción"
+        "Loadout": "Equipamiento"
+        "Standard legal": "Legal en estándar"
+        "Keywords:": "Palabras clave:"
+        "Show Points Destroyed": "Mostrar puntos destruidos"
+        "Hide Points Destroyed": "Ocultar puntos destruidos"
+        "This squad was created for an older version of X-Wing.": "Este escuadrón se creó para una versión anterior de X-Wing."
+        "Damage Threshold": "Umbral de daño"
+        "X-Wing Squadron by YASB 2: ": "Escuadrón X-Wing por YASB"
+        "Ship Cost": "Coste de nave"
+        "Paste XWS here": "Pegar el XWS aquí"
+        "All sets and expansions": "Todos los paquetes y expansiones"
+        "All factions": "Todas las facciones"
+        "Has multiple of the chosen slots": "Tiene múltiplo de los espacios elegidos"
+        "keywords": "palabras clave"
+        "Checking auth status...": "Comprobando estado de autenticación"
+        "New squad saved successfully.": "Nuevo escuadrón guardado."
+        "Squad updated successfully.": "Escuadrón actualizado con éxito."
+        "Unselect": "Anular selección"
+        "Sort cards by": "Ordenar cartas por"
+        "Saving squad...": "Guardando escuarón..."
+        "Notes:": "Notas:"
+        "XWS QR-Code": "Código QR XWS"
 
     singular:
         'pilots': 'Piloto'
