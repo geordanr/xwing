@@ -3789,7 +3789,7 @@ exportObj.cardLoaders.Português = () ->
         'Hunted':
            display_name: 'Caçado'
            text: '''Depois que você for destruído, você deve escolher outra nave amiga e atribuir esta condição a ela, se possível.'''
-        'Listening Dispositivo':
+        'Listening Device':
            display_name: 'Dispositivo de Escuta'
            text: '''Durante a Fase de Sistema, se uma nave inimiga com a melhoria <strong>Informante</strong> estiver em alcance 0-2 vire seu disco de manobras para cima.'''
         'Rattled':
