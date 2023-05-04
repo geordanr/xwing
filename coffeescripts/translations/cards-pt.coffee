@@ -87,7 +87,7 @@ exportObj.translations.Português =
         "shipSelectorPlaceholder": "Selecione uma Nave"
         "pilotSelectorPlaceholder": "Selecione um Piloto"
         upgradePlaceholder: (translator, slot) ->
-            "Sem #{translator 'slot', slot} Melhoria"
+            "Sem Melhoria  #{translator 'slot', slot}"
         "modificationPlaceholder": "Sem Modificação"
         "titlePlaceholder": "Sem Título"
         upgradeHeader: (translator, slot) ->
