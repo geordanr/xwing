@@ -3110,7 +3110,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Quando outra nave amiga em alcance 0-1 defende, antes do passo Neutralizar Resultados, se você estiver no arco de ataque, você pode sofrer 1 dano %CRIT% para cancelar 1 resultado %CRIT%."""
         "Composure":
            display_name: """Compostura"""
-           text: """Depois que você falar uma ação, se você não possuir fichas verdes, você pode realizar uma ação %FOCUS% Se o fizer, você não pode realizar ações adicionais nesta rodada.%LINEBREAK% <i>Errata (desde RR 1.1.0): Adicionado "Se o fizer, você não pode realizar ações adicionais nesta rodada."</i>"""
+           text: """Depois que você falhar uma ação, se você não possuir fichas verdes, você pode realizar uma ação %FOCUS% Se o fizer, você não pode realizar ações adicionais nesta rodada.%LINEBREAK% <i>Errata (desde RR 1.1.0): Adicionado "Se o fizer, você não pode realizar ações adicionais nesta rodada."</i>"""
         "Debris Gambit":
            display_name: """Contornar Destroços"""
            text: """Quando Realizar uma ação %EVADE% vermelha, se houver um obstáculo em alcance 0-1, trate a ação como branca."""
