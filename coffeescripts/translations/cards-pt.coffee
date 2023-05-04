@@ -393,6 +393,15 @@ exportObj.translations.Português =
         'modifications': 'Modificação'
         'titles': 'Título'
         'ships' : 'Nave'
+    
+    gameterms:
+        'Small': 'Pequena'
+        'Medium': 'Média'
+        'Large': 'Grande'
+        'Huge': 'Enorme'
+        'Solitary': 'Solitário'
+        'Standardized': 'Padronizada'
+
     types:
         'Pilot': 'Piloto'
         'Modification': 'Modificação'
