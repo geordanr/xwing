@@ -3753,10 +3753,10 @@ exportObj.cardLoaders.Português = () ->
            text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
         "R5-D8 (BoY)":
            display_name: """R5-D8"""
-           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Nave</strong>."""
         "R5-K6 (BoY)":
            display_name: """R5-K6"""
-           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Nave</strong>."""
         "Precise Astromech (BoY)":
            display_name: """Astromecânico Preciso"""
            text: """Depois que você realizar uma ação, você pode gastar 1 %CHARGE% para realizar uma ação %LOCK% vermelha."""
