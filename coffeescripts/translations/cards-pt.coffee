@@ -164,11 +164,11 @@ exportObj.translations.Português =
                     <p>Créditos adicionais:<br>
                     Dados de Atualização 2.5: Devon Monkhouse, Perry Low, Andrew Oehler.<br>
                     Dados de Lançamento 2.0: Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.<br>
-                    Equipe de Tradução: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke, kksuke<br>
+                    Equipe de Tradução: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke, kksuke, Rodrigo Marshal, Shavarski<br>
                     Logo do site: Thomas Kohler<br>
                     Suporte de Quick Build: Patrick Mischke</p>
                     <p>Este construtor não é oficial e não está afiliado a Atomic Mass Games, Lucasfilm Ltd., ou Disney.</p>
-                    <p>Este site sempre será gratuito, e sempre estára 100% para que todos possam usá-lo. Entretanto, se você quiser doar, há um botão preparado para você.</p>
+                    <p>Este site sempre será gratuito, e sempre estára 100% disponível para que todos possam usá-lo. Entretanto, se você quiser doar, há um botão preparado para você.</p>
                     <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Faça uma Doação</button> <button class="btn btn-primary paypal" onclick="window.open('https://www.patreon.com/raithos');">Patreon</button></p>
         """
         "Continue to OAuth provider": "Isto abrirá uma nova janela para permitir que você autentique com o provedor escolhido. Você talvez precise permitir pop ups para este site."
