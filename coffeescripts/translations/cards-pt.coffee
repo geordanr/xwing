@@ -941,7 +941,7 @@ exportObj.cardLoaders.Português = () ->
            text: """No início da Fase de Engajamento, você pode escolher 1 nave inimiga em alcance 1. Se o fizer e estiver no %FRONTARC% da nave escolhida, ela remove todas as fichas verdes dela."""
         "Fenn Rau":
            display_name: """Fenn Rau"""
-           text: """Quando você defender ou realizar um ataque, se o alcance do ataque for 1, você pode rolar 1 dado de ataque adicional."""
+           text: """Quando você defender ou realizar um ataque, se o alcance do ataque for 1, você pode rolar 1 dado adicional."""
         "Mandalorian Royal Guard":
            display_name: """Guarda Real Mandaloriana"""
            text: """Quando uma nave amiga que não seja pequena defende, se você estiver no arco de ataque, você pode receber 1 ficha de de exaustão e 1 ficha de desgaste. Se o fizer, o defensor pode mudar 1 resultado para um resultado %EVADE%."""
