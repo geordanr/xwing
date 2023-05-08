@@ -4791,7 +4791,7 @@ class Ship
                         when "Equipped"
                             if not ((@doesSlotExist(r[1]) and @hasFilledSlotLike(upgrade_obj, r[1]))) then return false
                         when "Slot"
-                            if (not @hasAnotherUnoccupiedSlotLike(upgrade_obj, r[1]) and not upgrade_obj.occupiesAnUpgradeSlot(r[1])) or  upgrade_obj.slot == "HardpointShip" or  upgrade_obj.slot == "VersatileShip"  then return false
+                            if (not @hasAnotherUnoccupiedSlotLike(upgrade_obj, r[1]) and not upgrade_obj?.occupiesAnUpgradeSlot?(r[1])) or  upgrade_obj.slot == "HardpointShip" or  upgrade_obj.slot == "VersatileShip"  then return false
                         when "AttackArc"
                             if not @data.attackb? then return false
                         when "ShieldsGreaterThan"
@@ -4819,6 +4819,8 @@ class Ship
             for ship in @builder.ships
                 if ship?.data? and ship.data.name == @data.name
                     if upgrade_data.restrictions? and ship.restriction_check(upgrade_data.restrictions, upgrade_data) and not (ship.pilot?.upgrades?)
+                        if ship.pilot.loadout? and (upgrade_data.points + ship.upgrade_points_total > ship.pilot.loadout)
+                            return false
                         slotfree = false
                         for upgrade in ship.upgrades
                             if upgrade_data.slot == upgrade.slot and not upgrade.data?
@@ -5034,7 +5036,7 @@ class GenericAddon
         if new_data?.id != @data?.id
             if @data?.unique? or @data?.solitary?
                 await @ship.builder.container.trigger 'xwing:releaseUnique', [ @unadjusted_data, @type, defer() ]
-            if @data?.standardized? and not @ship.hasFixedUpgrades and ((@data?.restrictions? and @ship.restriction_check(@data.restrictions,@data)) or not @data?.restrictions?)
+            if @data?.standardized? and not @ship.hasFixedUpgrades
                 @ship.removeStandardizedList(@data)
             @rescindAddons()
             @deoccupyOtherUpgrades()
