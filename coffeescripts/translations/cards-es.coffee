@@ -23,6 +23,19 @@ exportObj.translations['Español'] =
         " or Squad Including": " o incluye a escuadrón"
         "Ship": "Nave"
         "Extra": "Extra"
+        "Vectored Thrusters": "Cañones vectoriales"
+        "Autothrusters": "Autopropulsores"
+        "Networked Calculations": "Procesado de cálculos en red"
+        "X-wing": "Ala-X"
+        "Limited": "Limitada"
+        "Light Side": "Lado luminoso"
+        "Dark Side": "Lado oscuro"
+        "Mandalorian": "Mandaloriano"
+        "TIE": "TIE"
+        "Bounty Hunter": "Cazarrecompensas"
+        "Clone": "Clon"
+        "A-wing": "Ala-A"
+        "Y-wing": "Ala-Y"
 
     faction:
         "Rebel Alliance": "Alianza rebelde"
@@ -43,8 +56,8 @@ exportObj.translations['Español'] =
         "Sensor": "Sensores"
         "Torpedo": "Torpedo"
         "Turret": "Torreta"
-        "HardpointShip": 'Hardpoint de arma'
-        "VersatileShip": 'Casco versatil'
+        "HardpointShip": 'Especial de arma'
+        "VersatileShip": 'Especial de casco'
         "Hardpoint": "Hardpoint"
         "Illicit": "Ilícita"
         "Configuration": "Configuración"
@@ -59,9 +72,11 @@ exportObj.translations['Español'] =
         "Hyperdrive": "Hipermotor"
         "Team": 'Equipos'
         "Cargo": 'Carga'
-
-
     sources: 
+        "First Edition Core Set": "Caja Básica de la Primera Edición"
+        "First Edition Force Awakens Core Set": "Caja Básica de la Primera Edición El Despertar de la Fuerza"
+        "First Edition VT-49 Decimator Expansion Pack": "Pack de Expansión del Diezamdor VT-49 1.0"
+        "First Edition YT-2400 Freighter Expansion Pack": "Pack de Expansión del Carguero ligero YT-2400 1.0"
         "Second Edition Core Set": "Caja Básica de la Segunda Edición"
         "Rebel Alliance Conversion Kit": "Kit de Conversión Alianza Rebelde"
         "Galactic Empire Conversion Kit": "Kit de Conversión Imperio Galáctico"
@@ -75,14 +90,74 @@ exportObj.translations['Español'] =
         "Lando's Millennium Falcon Expansion Pack": "Pack de Expansión Halcón Milenario de Lando"
         "Saw's Renegades Expansion Pack": "Pack de Expansión Renegados de Saw"
         "TIE Reaper Expansion Pack": "Pack de Expansión Segador TIE"
-        "ARC-170 Starfighter Expansion": "Expansión del caza estelar ARC-170"
-        "Loose Ships": "Naves sueltas"
+        "Resistance Conversion Kit": "Kit de Conversión Resistencia"
+        "T-70 X-Wing Expansion Pack": "Pack de Expansión del Ala-X T-70"
+        "RZ-2 A-Wing Expansion Pack": "Pack de Expansión del Ala-A RZ-2"
+        "Mining Guild TIE Expansion Pack": "Pack de Expansión del TIE del gremio minero"
+        "First Order Conversion Kit": "Kit de Conversión de la Primera orden"
+        "TIE/FO Fighter Expansion Pack": "Pack de Expansión del Caza TIE/fo"
+        "Servants of Strife Squadron Pack": "Pack de Expansión de Siervos de la discordia"
+        "Sith Infiltrator Expansion Pack": "Pack de Expansión del Infiltrador Sith"
+        "Vulture-class Droid Fighter Expansion": "Pack de Expansión del Caza droide clase buitre"
+        "Guardians of the Republic Squadron Pack": "Pack de Expansión de Guardianes de la República"
+        "ARC-170 Starfighter Expansion": "Pack de Expansión del caza estelar ARC-170"
+        "Delta-7 Aethersprite Expansion": "Pack de Expansión del Duende del éter Delta-7"
+        "Z-95-AF4 Headhunter Expansion Pack": "Pack de Expansión del Cazacabezas Z-95-AF4"
+        "TIE/sk Striker Expansion Pack": "Pack de Expansión del TIE/sk fustigador"
+        "Naboo Royal N-1 Starfighter Expansion Pack": "Pack de Expansión del Caza Real Naboo N-1"
+        "Hyena-Class Droid Bomber Expansion Pack": "Pack de Expansión del Bombardero droide clase hiena"
+        "A/SF-01 B-Wing Expansion Pack": "Pack de Expansión del Ala-B A/SF-01"
+        "Millennium Falcon Expansion Pack": "Pack de Expansión del Halcón Milenario"
+        "VT-49 Decimator Expansion Pack": "Pack de Expansión del Diezmador VT-49"
+        "TIE/VN Silencer Expansion Pack": "Pack de Expansión del TIE/vn Silenciador"
+        "TIE/SF Fighter Expansion Pack": "Pack de Expansión del Caza TIE/sf"
+        "Resistance Transport Expansion Pack": "Pack de Expansión del Transporte de la Resistencia"
+        "BTL-B Y-Wing Expansion Pack": "Pack de Expansión del Ala-Y BTL-B"
+        "Nantex-class Starfighter Expansion Pack": "Pack de Expansión del Caza de clase Nantex"
+        "Punishing One Expansion Pack": "Pack de Expansión del Castigador Uno"
+        "M3-A Interceptor Expansion Pack": "Paquete de expansión del interceptor M3-A"
+        "Ghost Expansion Pack": "Pack de Expansión del Espíritu"
+        "Inquisitors' TIE Expansion Pack": "Pack de Expansión del TIE de los Inquisidores"
+        "Huge Ship Conversion Kit": "Kit de Conversión de batallas épicas"
+        "Tantive IV Expansion Pack": "Pack de Expansión del Tantive IV"
+        "C-ROC Cruiser Expansion Pack": "Pack de Expansión del Crucero C-ROC"
+        "Epic Battles Multiplayer Expansion": "Batallas épicas multijugador"
+        "Major Vonreg's TIE Expansion Pack": "Pack de Expansión del TIE del Mayor Vonreg"
+        "Fireball Expansion Pack": "Pack de Expansión del Fireball"
+        "RZ-1 A-Wing Expansion Pack": "Pack de Expansión del Ala-A RZ-1"
+        "TIE/D Defender Expansion Pack": "Pack de Expansión del Defender TIE/D"
+        "TIE/in Interceptor Expansion Pack": "Pack de Expansión del Interceptor TIE/in"
+        "Hound's Tooth Expansion Pack": "Pack de Expansión del Diente de perro"
+        "Xi-class Light Shuttle Expansion Pack": "Pack de Expansión de la Lanzadera ligera clase Xi"
+        "LAAT/i Gunship Expansion Pack": "Pack de Expansión de la Cañonera LAAT/i"
+        "HMP Droid Gunship Expansion Pack": "Pack de Expansión de la Cañonera droide HMP"
+        "Heralds of Hope Expansion Pack": "Pack de Expansión del Heraldos de la Esperanza"
+        "TIE/rb Heavy Expansion Pack": "Pack de Expansión del TIE/rb pesado"
+        "Jango Fett's Slave I Expansion Pack": "Pack de Expansión del Esclavo I de Jango Fett"
+        "Eta-2 Actis Expansion Pack": "Pack de Expansión del Actis Eta-2"
+        "Droid Tri-Fighter Expansion Pack": "Pack de Expansión del Tri-caza droide"
+        "Nimbus-class V-Wing Expansion Pack": "Pack de Expansión del Ala-V clase Nimbus"
+        "Phoenix Cell Squadron Pack": "Pack de Expansión de la Célula Fénix"
+        "Skystrike Academy Squadron Pack": "Pack de Expansión de la Academia Skystrike"
         "Fugitives and Collaborators Squadron Pack": "Pack Escuadrón Fugitivos y Colaboradores"
-        "First Order Conversion Kit": "Kit de conversión de la Primera orden"
-        "M3-A Interceptor Expansion Pack": "Paquete de expansión del interceptor M3-A Interceptor"
+        "Fury of the First Order": "Pack de Expansión de la Furia de la Primera Orden "
+        "BTA-NR2 Y-Wing Pack": "Pack de Expansión del Ala-Y BTA-NR2"
+        "Trident-class Assault Ship Expansion Pack": "Pack de Expansión de la Nave de Asalto clase Tridente"
+        "Hotshots and Aces Reinforcements Pack": "Pack de Expansión de Refuerzos Hotshots and Aces"
+        "Fully Loaded Devices Pack": "Pack de Expansión Fully Loaded"
+        "Never Tell Me the Odds Obstacles Pack": "Pack de Expansión Never Tell Me the Odds"
+        "Gauntlet Fighter Expansion pack": "Pack de Expansión del Caza Guantelete"
+        "Rogue-class Starfighter Expansion pack": "Pack de Expansión del Caza de clase pícaro"
+        "Clone Z-95 Headhunter Expansion pack": "Pack de Expansión del Cazacabezas clon Z-95"
+        "Pride of Mandalore Reinforcements Pack": "Pack de Expansión de El orgullo de Mandalore"
+        "Razor Crest Expansion Pack": "Pack de Expansión de la Razor Crest"
+        "Battle of Yavin Battle Pack": "Pack de Escenarios de Batalla de Yavin"
+        "Siege of Coruscant Battle Pack": "Pack de Escenarios de Asedio de Coruscant"
+        "Hotshots and Aces II Reinforcements Pack": "Paquet de Refuerzos Hotshots and Aces 2"
+        "Loose Ships": "Naves sueltas"
     ui:
-        "shipSelectorPlaceholder": "Elige una Nave"
-        "pilotSelectorPlaceholder": "Elige un Piloto"
+        "shipSelectorPlaceholder": "Elige una nave"
+        "pilotSelectorPlaceholder": "Elige un piloto"
         upgradePlaceholder: (translator, slot) ->
             "Sin #{translator 'slot', slot}"
         "modificationPlaceholder": "Sin Modificación"
@@ -114,9 +189,9 @@ exportObj.translations['Español'] =
         "View in YASB": "Ver en YASB 2"
         "YASB advertisment": "YASB 2 es un generador de escuadrones simple, rápido y fácil de usar para X-Wing Miniatures de Atomic Mass Games."
         collectionContentShips: (translator, number) ->
-            "Tienes #{number} naves #{if number == 1 then 'model' else 'models'} en tu colección."
+            "Tienes #{number} #{if number == 1 then 'modelo' else 'modelos'} de naves en tu colección."
         collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
-            "Tienes #{data[0]} naves #{if data[0] == 1 then 'model' else 'models'} y #{data[1]} pilot #{if data[1] == 1 then 'card' else 'cards'} en tu colección."
+            "Tienes #{data[0]} #{if data[0] == 1 then 'modelo' else 'modelos'} de naves y #{data[1]} #{if data[1] == 1 then 'carta' else 'cartas'} de piloto en tu colección."
         collectionContentUpgrades: (translator, number) ->
             "Tienes #{number} en tu colección."
         varPointCostsPoints: (translator, points) ->
@@ -155,7 +230,7 @@ exportObj.translations['Español'] =
                     """
         "Intro Card YASB": """
                      <h2>YASB para X-Wing 2.5</h2>
-                     <p>YASB (Yet Another Squad Builder) es un creador de escuadrones simple y rápido para X-Wing Miniatures de <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.< /p>
+                     <p>YASB (Yet Another Squad Builder) es un creador de escuadrones simple y rápido para X-Wing Miniatures de <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a>.</p>
                      <p>Versión actual: 25/11/2022</p>
                      <h5>Créditos</h5>
                      <p>Desarrollado sobre el increíble <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a> original.</p>
@@ -183,75 +258,164 @@ exportObj.translations['Español'] =
         removes: (translator, data) -> # data will most likely be a string of some symbols, but you never know
             "Quita: #{translator('ui', data)}"
         "Less upgrades": "Menos mejoras"
-
-        # Type selector
-        "Extended": "Ampliada"
-        "Hyperspace": "Hiperespacio"
         "Epic": "Épico"
-                
-        # Card browser
-        'Name': 'Nombre'
-        'Source': 'Fuente'
-        'Type (by Points)': 'Tipo (por Puntos)'
-        'Type (by Name)': 'Tipo (por Nombre)'
-        'Select a card': 'Selecciona una carta de la lista de la izquierda.'
-        'Sort cards by': 'Ordena las cartas por'
-        'Sort by': 'Ordena por'
-        # Info well
-        'Ship': 'Nave'
-        'Initiative': 'Iniciativa'
-        'Actions': 'Acciones'
-        'Upgrades': 'Mejoras'
-        'Range': 'Alcance'
-        # Squadron edit buttons
-        'New Squad':'Nuevo Escuadrón'
-        'Save' : 'Grabar'
-        'Save As...' : 'Grabar como…'
-        'Delete' : 'Borrar'
-        'Load Squad' : 'Cargar Escuadrón'
-        'All' : 'Todos'
-        'Print/Export': 'Imprimir/Ver como texto'
-        'Randomize!' : 'Aleatorio!'        
-        'Randomizer Options' : 'Opciones del aleatorizador…'
-        'Squad Notes:' : 'Notas del Escuadrón:'
-        'Tag:' : 'Tag:'        
-        'Choose Obstacles' : 'Elige Obstáculos'
-        'XWS Import' : 'Importa de XWS'
-        'XWS Export' : 'Exporta a XWS'
-        # New Squadron dialog
-        'Discard' : 'Descartar cambios'
-        # Log in dialog
-        "What's this?" : '¿Qué es OAuth?'
-        # Print/View modal
-        'Copy' : 'Copiar'
-        "Copy below BBCode": "<p>Copia el BBCode de debajo y pegalo en el post de tu foro.</p>"
-        'Space for Cards' : "Añade espacio para cartas de daño/mejora cuando imprima."
-        'Print Color' : "Imprimir en color"
-        'Print' : 'Imprimir'
-        'Simple' : 'Sencilla'
-        'Fancy' : 'Elaborada'
-        'Close' : 'Cerrar'
-        # Randomizer options
-        'Roll!' : 'Aleatoriza!'
-        # Top tab bar
-        'Card Browser' : 'Explorador de Cartas'
-        'About' : 'Acerca de'
-        # Obstacles
-        'Choose Obstacles' : 'Elegir Obstáculos'
-        'Choose obstacles dialog' : 'Elige hasta tres obstáculos para incluirlos el enlace para programas externos (Aún no se muestran los obstáculos elegidos al imprimir).'
-        'Core Asteroid' : 'Asteroide del Core'
-        'YT2400 Debris' : 'Desecho del YT2400'
-        'VT49 Debris' : 'Desecho del VT49'
-        'Force Awakens Asteroid' : 'Asteroide del Despertar de la Fuerza'
-        # Collection
-        'Your Collection': 'Mi colección'
-        'Check Collection' : 'Comprobar coincidencia con colección'
-        "Core Asteroid 0": "Asteroide del Core 0"
-        "Core Asteroid 1": "Asteroide del Core 1"
-        "Core Asteroid 2": "Asteroide del Core 2"
-        "Core Asteroid 3": "Asteroide del Core 3"
-        "Core Asteroid 4": "Asteroide del Core 4"
-        "Core Asteroid 5": "Asteroide del Core 5"
+        "Hyperspace": "Hiperespacio"
+        "Extended": "Ampliada"
+        "Unnamed Squadron": "Escuadrón sin nombre"
+        "Unsaved Squadron": "Escuadrón sin guardar"
+        "New Squadron": "Nuevo Escuadrón"
+        "Name your squad...": "Nombra tu Escuadrón..."
+        "Your Collection": "Mi colección"
+        "Only available from 1st edition": "Disponible únicamente en a primera edición"
+        "Randomize!": "¡Aleatorio!"
+        "Copy": "Copiar"
+        "Print": "Imprimir"
+        "Random Squad Builder Options": "Opciones de la creación de escuadrones aleatoria"
+        "Miscellaneous Settings": "Otros parámetros"
+        "Card Search": "Buscardor de Cartas"
+        "from": "de"
+        "to": "a"
+        "Submit Bug/Feature Request": "Sube un bug o una funcionalidad"
+        "Card Browser": "Explorador de Cartas"
+        "Rules": "Reglas"
+        "About": "Acerca de"
+        "Remove Pilot": "Quitar piloto"
+        "Clone Pilot": "Piloto duplicado"
+        "Wingmates": "Compañeros de equipo"
+        "Total": "Total"
+        "X-Wing Squadron by YASB 2.0: ": "Escuadrón X-Wing para YASB 2.0"
+        "Points Destroyed": "Puntos destruidos"
+        "Half Points": "Medios puntos"
+        "Threshold": "Umbral"
+        "Yes, Delete": "Sí, eliminar"
+        "Cancel": "Cancelar"
+        "Never Mind": "No importa"
+        "Really Delete": "Sí, eliminar"
+        "Save": "Guardar"
+        "Unsaved Changes": "Cambios no guardados"
+        "Name is available": "El nombre está disponible"
+        "Checking name availability...": "Comprobando disponibilidad de nombres..."
+        "Go Back": "Volver"
+        "Save Squad As...": "Guardar escuadrón como..."
+        "Convert": "Convertir"
+        "Convert to Extended?": "¿Convertir a extendido?"
+        "Recalculate Points": "Recalcular Puntos"
+        "Archived": "Archivado"
+        "Archive": "Archivo"
+        "QB": "CR"
+        "Hyper": "Hiper"
+        "Ext": "Ext"
+        "All": "Todas"
+        "Delete Selected": "Eliminar la selección"
+        "Archive Selected": "Archivar la selección"
+        "Select All": "Seleccionar todo"
+        "Fetching squads...": "Recuperando escuadrones..."
+        "Well done!": "¡Bien hecho!"
+        "Log in with OAuth": "Iniciar sesión con OAuth"
+        "Log In": "Iniciar sesión"
+        "Log Out": "Cerrar sesión"
+        "What's this?": "¿Qué es esto?"
+        "Close": "Salir"
+        "Roll!": "¡Generar!"
+        "Maximum Seconds to Spend Randomizing": "Máximo de segundos para aleatorizar"
+        "Always fill 0-point slots": "Siempre rellenar espacios de 0 puntos"
+        "Sets and Expansions": "Paquetes y expansiones"
+        "Limit to collection": "Limitar a la colección"
+        "More upgrades": "Más mejoras"
+        "Maximum Ship Count": "Recuento máximo de envíos"
+        "Upgrades": "Mejoras"
+        "Range": "Alcance"
+        "Actions": "Acciones"
+        "Sources:": "Fuentes"
+        "Source": "Fuente"
+        "Engagement": "Compromiso"
+        "Rules search": "Búsqueda de reglas"
+        "Rules Search": "Búsqueda de reglas"
+        "Base": "Base"
+        "Ship": "Nave"
+        "Points": "Puntos"
+        "Initiative": "Iniciativa"
+        "Force:": "Fuerza :"
+        "Name": "Nombre"
+        "Sort by": "Ordena por"
+        "Type (by Points)": "Tipo (por puntos)"
+        "Type (by Name)": "Tipo (por nombre)"
+        "Select a card": "Selecciona una carta de la lista de la izquierda."
+        "Sort cards by": "Ordena las cartas por"
+        "Recurring": "Recurrente"
+        "Not recurring": "No recurrente"
+        "Charges:": "Cargas :"
+        "Only upgrades requiring multiple slots": "Solo actualizaciones que requieren varias ranuras"
+        "Used double-slot:": "Ranura doble usada:"
+        "Used slot:": "Ranura usada:"
+        "Large": "Grande"
+        "Medium": "Mediana"
+        "Small": "Pequeña"
+        "Huge": "Enorme"
+        "Base size:": "Tamaño de nave:"
+        "Agility:": "Agilidad:"
+        "Shields:": "Escudos:"
+        "Hull:": "Casco:"
+        "Initiative:": "Iniciativa:"
+        "Linked actions:": "Acciones enlazadas:"
+        "Actions:": "Acciones:"
+        "Actions": "Acciones"
+        "actions": "acción"
+        "Slots:": "Ranuras:"
+        "slots": "ranuras"
+        "Ships and Pilots": "Naves y pilotos"
+        "General": "General"
+        "Hyperspace legal": "Legal en hiperespacio"
+        "Is not unique": "No limitada"
+        "Is unique": "Limitada"
+        "Misc:": "Varios :"
+        "Owned copies:": "Cantidad en propiedad:"
+        "Point costs:": "Coste en puntos:"
+        "Point cost:": "Coste en puntos:"
+        "Loadout cost:": "Coste de equipamiento:"
+        "Factions:": "Facciones:"
+        "Textsearch:": "Buscar:"
+        "Squad Notes:": "Notas del escuadrón:"
+        "Tag:": "Etiqueta:"
+        "Choose Obstacles": "Elegir obstáculos"
+        "XWS": "XWS"
+        "HTML": "HTML"
+        "TTS": "TTS"
+        "Text": "Texto"
+        "Reddit": "Reddit"
+        "BBCode": "BBCode"
+        "Fancy": "Elaborada"
+        "Simple": "Sencilla"
+        "Include QR codes": "Incluir los códigos QR"
+        "Include Obstacle Choices": "Incluir los obstáculos"
+        "Print Color": "Imprimir en color"
+        "Expand Shield and Hull": "Expandir el casco y los escudos"
+        "Space for Cards": "Espacio para cartas"
+        "Include Maneuvers Chart": "Incluir las maniobras"
+        "Skip Card Text": "Omitir el texto de las cartas"
+        "XWS Import": "Importar XWS"
+        "New Squad": "Nuevo escuadrón"
+        "Load Squad": "Cargar escuadrón"
+        "Delete": "Borrar"
+        "Save As...": "Guardar como..."
+        "Misc Settings": "Otros parámetros"
+        "Randomizer Options": "Opciones del aleatorizador"
+        "Print/Export": "Imprimir/Exportar"
+        "Discard Changes": "Descartar cambios"
+        "Got it!": "¡Entendido!"
+        "Term:": "Término"
+        "Version": "Versión"
+        "New Squad Name": "Nueuvo nombre del escuadrón"
+        "Import": "Importar"
+        "Other Stuff": "Otras cosas"
+        "MultiFaction": "Multifacción"
+        "Search for game term or card": "Buscar término o carta del juego"
+        "Core Asteroid 0": "Asteroide de la caja básica 0"
+        "Core Asteroid 1": "Asteroide de la caja básica 1"
+        "Core Asteroid 2": "Asteroide de la caja básica 2"
+        "Core Asteroid 3": "Asteroide de la caja básica 3"
+        "Core Asteroid 4": "Asteroide de la caja básica 4"
+        "Core Asteroid 5": "Asteroide de la caja básica 5"
         "VT49 Debris 0": "Desecho del VT49 0"
         "VT49 Debris 1": "Desecho del VT49 1"
         "VT49 Debris 2": "Desecho del VT49 2"
@@ -264,6 +428,43 @@ exportObj.translations['Español'] =
         "Force Awakens Asteroid 3": "Asteroide del Despertar de la Fuerza 3"
         "Force Awakens Asteroid 4": "Asteroide del Despertar de la Fuerza 4"
         "Force Awakens Asteroid 5": "Asteroide del Despertar de la Fuerza 5"
+        "Gas Cloud 1": "Nube de gas 1"
+        "Gas Cloud 2": "Nube de gas 2"
+        "Gas Cloud 3": "Nube de gas 3"
+        "Gas Cloud 4": "Nube de gas 4"
+        "Gas Cloud 5": "Nube de gas 5"
+        "Gas Cloud 6": "Nube de gas 6"
+        "Pride of Mandalore Debris 1": "Desechos de Orgullo de Mandalore 1"
+        "Pride of Mandalore Debris 2": "Desechos de Orgullo de Mandalore 2"
+        "Pride of Mandalore Debris 3": "Desechos de Orgullo de Mandalore 3"
+        "Pride of Mandalore Rock 1": "Rocas de Orgullo de Mandalore 1"
+        "Pride of Mandalore Rock 2": "Rocas de Orgullo de Mandalore 2"
+        "Pride of Mandalore Rock 3": "Rocas de Orgullo de Mandalore 3"
+        "Undamaged": "Sin daños"
+        "Standard": "Estándar"
+        "Faction": "Facción"
+        "Loadout": "Equipamiento"
+        "Standard legal": "Legal en estándar"
+        "Keywords:": "Palabras clave:"
+        "Show Points Destroyed": "Mostrar puntos destruidos"
+        "Hide Points Destroyed": "Ocultar puntos destruidos"
+        "This squad was created for an older version of X-Wing.": "Este escuadrón se creó para una versión anterior de X-Wing."
+        "Damage Threshold": "Umbral de daño"
+        "X-Wing Squadron by YASB 2: ": "Escuadrón X-Wing por YASB"
+        "Ship Cost": "Coste de nave"
+        "Paste XWS here": "Pegar el XWS aquí"
+        "All sets and expansions": "Todos los paquetes y expansiones"
+        "All factions": "Todas las facciones"
+        "Has multiple of the chosen slots": "Tiene múltiplo de los espacios elegidos"
+        "keywords": "palabras clave"
+        "Checking auth status...": "Comprobando estado de autenticación"
+        "New squad saved successfully.": "Nuevo escuadrón guardado."
+        "Squad updated successfully.": "Escuadrón actualizado con éxito."
+        "Unselect": "Anular selección"
+        "Sort cards by": "Ordenar cartas por"
+        "Saving squad...": "Guardando escuarón..."
+        "Notes:": "Notas:"
+        "XWS QR-Code": "Código QR XWS"
 
     singular:
         'pilots': 'Piloto'
@@ -273,13 +474,33 @@ exportObj.translations['Español'] =
     types:
         'Pilot': 'Piloto'
         'Modification': 'Modificación'
+        'Upgrade': 'Mejora'
         'Title': 'Título'
         'Ship': 'Ship'
+    gameterms:
+        'Small': 'Pequeña'
+        'Medium': 'Mediana'
+        'Large': 'Grande'
+        'Huge': 'Enorme'
+        'Solitary': 'Solitairo'
+        'Standardized': 'Estandarizada'
+
+    action:
+        "Barrel Roll": "Tonel volado"
+        "Focus": "Concentración"
+        "Boost": "Impulso"
+        "Calculate": "Cálculos"
+        "Coordinate": "Coordinación"
+        "Evade": "Evasión"
+        "Jam": "Interferencia"
+        "Reinforce": "Refuerzo"
+        "Reload": "Recarga"
+        "Rotate Arc": "Reorientación"
+        "Lock": "Fijar blanco"
+
     rulestypes:
         'glossary': 'Glosario'
         'faq': 'FAQ'
-    action:
-        'Boost': 'Boost'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Español'] = () ->
@@ -299,39 +520,80 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip """BTL-A4 Y-wing""", """BTL-A4 Ala-Y"""
     exportObj.renameShip """TIE Advanced x1""", """TIE Avanzado x1"""
     exportObj.renameShip """Alpha-Class Star Wing""", """Ala Estelar clase Alfa"""
-    exportObj.renameShip """UT-60D U-wing""", """UT-60D Ala-U"""
-    exportObj.renameShip """TIE/sk Striker""", """Fustigador TIE/sk"""
-    exportObj.renameShip """A/SF-01 B-wing""", """A/SF-01 Ala-B"""
     exportObj.renameShip """TIE/d Defender""", """Defensor TIE/d"""
     exportObj.renameShip """TIE/sa Bomber""", """Bombardero TIE/sa"""
-    exportObj.renameShip """TIE/ca Punisher""", """Castigador TIE/ca"""
-    exportObj.renameShip """Aggressor Assault Fighter""", """Caza de asalto Agresor"""
     exportObj.renameShip """G-1A Starfighter""", """Caza estelar G-1A"""
-    exportObj.renameShip """VCX-100 Light Freighter""", """Carguero ligero VCX-100"""
-    exportObj.renameShip """YV-666 Light Freighter""", """Carguero ligero YV-666"""
-    exportObj.renameShip """TIE Advanced v1""", """TIE Avanzado v1"""
     exportObj.renameShip """Lambda-class T-4a Shuttle""", """Lanzadera T-4A clase Lambda"""
     exportObj.renameShip """TIE/ph Phantom""", """TIE/ph Fantasma"""
     exportObj.renameShip """VT-49 Decimator""", """VT-49 Diezmador"""
-    exportObj.renameShip """TIE/ag Aggressor""", """TIE/ag Agresor"""
-    exportObj.renameShip """BTL-S8 K-wing""", """BTL-S8 Ala-K"""
-    exportObj.renameShip """ARC-170 Starfighter""", """Caza estelar ARC-170"""
     exportObj.renameShip """Attack Shuttle""", """Lanzadera de ataque"""
     exportObj.renameShip """T-65 X-wing""", """T-65 Ala-X"""
-    exportObj.renameShip """HWK-290 Light Freighter""", """Carguero ligero HWK-290"""
-    exportObj.renameShip """RZ-1 A-wing""", """RZ-1 Ala-A"""
     exportObj.renameShip """Fang Fighter""", """Caza Colmillo"""
     exportObj.renameShip """Z-95-AF4 Headhunter""", """Z-95-AF4 Cazacabezas"""
     exportObj.renameShip """M12-L Kimogila Fighter""", """Caza M12-L Kimogila"""
-    exportObj.renameShip """E-wing""", """Ala-E"""
     exportObj.renameShip """TIE/in Interceptor""", """Interceptor TIE/in"""
     exportObj.renameShip """Lancer-Class Pursuit Craft""", """Nave de persecución clase Lancero"""
-    exportObj.renameShip """TIE Reaper""", """Segador TIE"""
-    exportObj.renameShip """JumpMaster 5000""", """Saltador Maestro 5000"""
     exportObj.renameShip """M3-A Interceptor""", """Interceptor M3-A"""
+    exportObj.renameShip """JumpMaster 5000""", """Saltador Maestro 5000"""
     exportObj.renameShip """Customized YT-1300 Light Freighter""", """Carguero ligero YT-1300 personalizado"""
     exportObj.renameShip """Escape Craft""", """Nave de escape"""
-
+    exportObj.renameShip """RZ-1 A-wing""", """RZ-1 Ala-A"""
+    exportObj.renameShip """HWK-290 Light Freighter""", """Carguero ligero HWK-290"""
+    exportObj.renameShip """A/SF-01 B-wing""", """A/SF-01 Ala-B"""
+    exportObj.renameShip """Aggressor Assault Fighter""", """Caza de asalto Agresor"""
+    exportObj.renameShip """YV-666 Light Freighter""", """Carguero ligero YV-666"""
+    exportObj.renameShip """BTL-S8 K-wing""", """BTL-S8 Ala-K"""
+    exportObj.renameShip """VCX-100 Light Freighter""", """Carguero ligero VCX-100"""
+    exportObj.renameShip """ARC-170 Starfighter""", """Caza estelar ARC-170"""
+    exportObj.renameShip """UT-60D U-wing""", """UT-60D Ala-U"""
+    exportObj.renameShip """TIE/sk Striker""", """Fustigador TIE/sk"""
+    exportObj.renameShip """TIE/ca Punisher""", """Castigador TIE/ca"""
+    exportObj.renameShip """TIE Advanced v1""", """TIE Avanzado v1"""
+    exportObj.renameShip """TIE/ag Aggressor""", """TIE/ag Agresor"""
+    exportObj.renameShip """E-wing""", """Ala-E"""
+    exportObj.renameShip """TIE Reaper""", """Segador TIE"""
+    exportObj.renameShip """T-70 X-wing""", """Ala-X T-70"""
+    exportObj.renameShip """RZ-2 A-wing""", """Ala-A RZ-2"""
+    exportObj.renameShip """TIE/fo Fighter""", """Caza TIE/fo"""
+    exportObj.renameShip """TIE/sf Fighter""", """Caza TIE/sf"""
+    exportObj.renameShip """Upsilon-Class Command Shuttle""", """Lanzadera de mando clase Ípsilon"""
+    exportObj.renameShip """MG-100 StarFortress""", """MG-100 Fortaleza estelar"""
+    exportObj.renameShip """Scavenged YT-1300""", """YT-1300 recuperado"""
+    exportObj.renameShip """Modified TIE/ln Fighter""", """Caza TIE/ln modificado"""
+    exportObj.renameShip """V-19 Torrent Starfighter""", """Caza Torrente V-19"""
+    exportObj.renameShip """Delta-7 Aethersprite""", """Duende del éter Delta-7"""
+    exportObj.renameShip """Delta-7b Aethersprite""", """Duende del éter Delta-7b"""
+    exportObj.renameShip """Sith Infiltrator""", """Infiltrador Sith"""
+    exportObj.renameShip """Vulture-class Droid Fighter""", """Caza droide clase buitre"""
+    exportObj.renameShip """Belbullab-22 Starfighter""", """Caza Belbullab-22"""
+    exportObj.renameShip """Naboo Royal N-1 Starfighter""", """Caza Royal Naboo N-1"""
+    exportObj.renameShip """Hyena-class Droid Bomber""", """Bombardero  droide clase hiena"""
+    exportObj.renameShip """Resistance Transport Pod""", """Cápsula de transporte de la Resistencia"""
+    exportObj.renameShip """Resistance Transport""", """Transporte de la Resistencia"""
+    exportObj.renameShip """Nantex-Class Starfighter""", """Caza estelar clase Nantex"""
+    exportObj.renameShip """BTL-B Y-wing""", """Ala-Y BTL-B"""
+    exportObj.renameShip """TIE/ba Interceptor""", """Interceptor TIE/ba"""
+    exportObj.renameShip """Xi-class Light Shuttle""", """Lanzadera ligera clase Xi"""
+    exportObj.renameShip """HMP Droid Gunship""", """Cañonera droide HMP"""
+    exportObj.renameShip """LAAT/i Gunship""", """Cañonera LAAT/i"""
+    exportObj.renameShip """TIE/rb Heavy""", """TIE/rb pesado"""
+    exportObj.renameShip """Droid Tri-fighter""", """Tri-caza droide"""
+    exportObj.renameShip """Nimbus-class V-wing""", """Ala-V clase Nimbus"""
+    exportObj.renameShip """Eta-2 Actis""", """Eta-2 Actis"""
+    exportObj.renameShip """Syliure-class Hyperspace Ring""", """Anillo hiperespacial de clase Siluro"""
+    exportObj.renameShip """BTA-NR2 Y-wing""", """Ala-Y BTA-NR2"""
+    exportObj.renameShip """TIE/wi Whisper Modified Interceptor""", """Interceptor modificado TIE/wi Whisper"""
+    exportObj.renameShip """TIE/se Bomber""", """Bombardero TIE/se"""
+    exportObj.renameShip """Gauntlet Fighter""", """Caza Guantelete"""
+    exportObj.renameShip """ST-70 Assault Ship""", """Nave de asalto ST-70"""
+    exportObj.renameShip """Clone Z-95 Headhunter""", """Caza cazacabezas clon Z-95"""
+    exportObj.renameShip """Rogue-class Starfighter""", """Caza estelar clase pícaro"""
+    exportObj.renameShip """CR90 Corellian Corvette""", """Corveta coreliana CR90"""
+    exportObj.renameShip """Raider-class Corvette""", """Corveta de clase Raider"""
+    exportObj.renameShip """GR-75 Medium Transport""", """Transporte medio GR-75"""
+    exportObj.renameShip """Gozanti-class Cruiser""", """Crucero de clase Gozanti"""
+    exportObj.renameShip """C-ROC Cruiser""", """Crucero C-ROC"""
+    exportObj.renameShip """Trident-class Assault Ship""", """Nave de asalto clase Tridente"""
 
     pilot_translations =
         "0-66":
@@ -2087,9 +2349,15 @@ exportObj.cardLoaders['Español'] = () ->
         'Listening Device':
            display_name: """Dispositivo de escucha"""
            text: '''Durante la fase de Sistemas, si hay alguna nave enemiga con la mejora <strong>Confidente</strong> situada a alcance 0-2 de ti, dale la vuelta a tu selector para dejarlo boca arriba.'''
+        'Rattled':
+           display_name: """Estremecido"""
+           text: '''Después de que detona una bomba o mina en el rango 0-1, sufre 1% CRIT%. Luego, retire esta carta. %LINEBREAK% Acción: si no hay bombas ni minas en el rango 0-1, retira esta carta.'''
         'Optimized Prototype':
            display_name: """Prototipo optimizado"""
            text: '''Cuando estés efectuando un ataque de armamento principal %FRONTARC% contra una nave que esté fijada como blanco por una nave aliada equipada con la mejora <strong>Director Krennic</strong> puedes gastar 1 resultado %HIT%, %CRIT% o %FOCUS%. Si lo haces, elige entre: el defensor pierde 1 ficha de Escudos, o el defensor le da la vuelta a 1 de sus cartas de Daño que tenga boca abajo.'''
+        '''I'll Show You the Dark Side''':
+           display_name: """Yo te mostraré el Lado Oscuro"""
+           text: '''Cuando se asigna esta carta, si no hay ninguna carta de daño boca arriba, el jugador que la asignó busca en el mazo de daños 1 carta de daño de piloto y la coloca boca arriba sobre esta carta. Luego baraja el mazo de daños. Cuando vas a sufrir 1 %CRIT% de daño, en su lugar recibes la carta de daño boca arriba en esta carta. Luego, retire esta carta.'''
         'Proton Bomb':
            display_name: """Bomba de protones"""
            text: '''(Ficha de Bomba) - Al final de la fase de Activación, este dispositivo se detona.%LINEBREAK%Cuando este dispositivo se detona, toda nave que tenga a alcance 0-1 sufre 1 de daño %CRIT%.'''
