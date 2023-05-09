@@ -2777,6 +2777,9 @@ exportObj.cardLoaders.Português = () ->
         'Alpha-3E "Esk"':
            display_name: """Alpha-3E “Esk”"""
            text: """Quando você realizar um ataque primário, antes de rolar os dados de ataque, você pode gastar 2 %CHARGE%. Se o fizer, seus resultados %CRIT% atribuem fichas de íon ao invés de causarem dano."""
+        "Swivel Wing":
+           display_name: """Asas Giratórias"""
+           text: """<strong>Asa Giratória (Abaixada)</strong> %LINEBREAK% Depois que você realizar uma manobra [0 %STOP%], você pode rotacionar sua nave 90º ou 180º. Se o fizer, você <b>deve</b> virar esta carta. %LINEBREAK% <strong>Asa Giratória (Erguida)</strong> %LINEBREAK% Quando você defender, role 1 dado de defesa a menos. %LINEBREAK% Depois que você realizar completamente uma manobra não estácionária [%STOP%], você pode virar esta carta."""
         "Pivot Wing":
            display_name: """Asas Pivotantes"""
            text: """<strong>Fechadas: </strong>Quando você defender, role 1 dado de defesa a menos. %LINEBREAK%Após você executar uma manobra (0 %STOP%), você pode rotacionar sua nave 90º ou 180º.%LINEBREAK%Antes de você ativar, você pode virar esta carta.%LINEBREAK%<strong>Abertas:</Strong> Antes de você ativar, você pode virar esta carta."""
