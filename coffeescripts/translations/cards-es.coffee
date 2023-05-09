@@ -733,7 +733,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Braylen Stramm":
            display_name: """Braylen Stramm"""
            text: """Mientras te defiendes o efectúas un ataque, si estás bajo tensión, puedes volver a tirar hasta 2 de tus dados."""
-       "Captain Cardinal":
+        "Captain Cardinal":
            display_name: """Capitán Cardenal"""
            text: """Mientras una nave aliada que tienes a alcance 1-2 y cuya Iniciativa es menor que la tuya se defiende o efectúa un ataque, si tienes al menos 1 %CHARGE%, esa nave puede volver a tirar 1 resultado %FOCUS%.%LINEBREAK%Después de que una nave enemiga que tengas a alcance 0-3 sea destruida, pierdes 1 %CHARGE%."""
         "Captain Feroph":
@@ -757,7 +757,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Captain Rex":
            display_name: """Capitán Rex"""
            text: """Después de que efectúes un ataque, asigna el Estado Fuego de supresión al defensor."""
-       "Captain Sear":
+        "Captain Sear":
            display_name: """Capitán Sear"""
            text: """Mientras una nave aliada que tienes a alcance 0-3 efectúa un ataque principal, si el defensor está situado en el %BULLSEYEARC%del atacante, antes del paso de "Neutralizar los resultados", la nave aliada puede gastar 1 ficha de Cálculos para anular 1 resultado %EVADE%."""
         "Captain Seevor":
@@ -841,7 +841,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Dalan Oberos":
            display_name: """Dalan Oberos"""
            text: """Al comienzo de la fase de Enfrentamiento, puedes elegir 1 nave que esté protegida por escudos y situada en tu %BULLSEYEARC% y gastar 1 %CHARGE%. Si lo haces, esa nave pierde 1 escudo y tú recuperas 1 escudo.%LINEBREAK%En el punto de mira: Mientras efectúas un ataque, si el defensor está situado en tu %BULLSEYEARC%, los dados de defensa no pueden ser modificados mediante fichas verdes."""
-       "Dark Courier":
+        "Dark Courier":
            display_name: """Mensajero oscuro"""
            text: """<i class = flavor_text>La nave que recibía el nombre de Cimitarra contaba con todo tipo de modificaciones y había sido equipada con tecnologías de sigilo y avanzados dispositivos de vigilancia para misiones de infiltración y asesinato.</i>"""
         "Darth Maul":
@@ -1114,7 +1114,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Leevan Tenza":
            display_name: """Leevan Tenza"""
            text: """Después de que realices una acción %BARRELROLL% o %BOOST%, puedes realizar una acción %EVADE% roja."""
-       "Lieutenant Bastian":
+        "Lieutenant Bastian":
            display_name: """Teniente Bastian"""
            text: """Después de que se le inflija una carta de Daño a una nave que tienes a alcance 1-2, puedes obtener un Blanco fijado sobre esa nave."""
         "Lieutenant Blount":
@@ -1803,7 +1803,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Cloaking Device":
            display_name: """Dispositivo de camuflaje"""
            text: """<i>Sólo nave pequeña o nave mediana</i>%LINEBREAK%<strong>Acción:</strong> Gasta 1&nbsp;%CHARGE% para realizar una acción %CLOAK%.%LINEBREAK%Al comienzo de la fase de Planificación, tira 1 dado de ataque, Si sacas un resultado %FOCUS%, desactiva el camuflaje o descarta tu ficha de Camuflaje.%LINEBREAK%"""
-         "Clone Commander Cody":
+        "Clone Commander Cody":
            display_name: """Comandante clon Cody"""
            text: """Después de que efectúes un ataque que falle, si 1 o más resultados %HIT%/%CRIT% fueron neutralizados, el defensor recibe 1 ficha de Sobresfuerzo."""
         "Cluster Missiles":
@@ -1830,7 +1830,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Crack Shot":
            display_name: """Tiro certero"""
            text: """Mientras efectúas un ataque principal, si el defensor está en tu %BULLSEYEARC%, antes del paso de “Neutralizar los resultados”, puedes gastar 1&nbsp;%CHARGE% para anular 1 resultado %EVADE%."""
-       "DRK-1 Probe Droids":
+        "DRK-1 Probe Droids":
            display_name: """DRK-1 Probe Droids"""
            text: """Durante la fase Final, puedes gastar 1 %CHARGE% para soltar o lanzar 1 droide sonda DRK-1 utilizando una plantilla de velocidad 3.%LINEBREAK%Las %CHARGE% de esta carta no pueden recuperarse."""
         "Daredevil":
@@ -2131,7 +2131,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Predator":
            display_name: """Depredador"""
            text: """Mientras efectúas un ataque principal, si el defensor está situado en tu %BULLSEYEARC%, puedes volver a tirar 1 dado de ataque."""
-         "Predictive Shot":
+        "Predictive Shot":
            display_name: """Tiro predictivo"""
            text: """Después de que declares un ataque, si el defensor está en tu %BULLSEYEARC%, puedes gastar 1 %FORCE%. Si lo haces, durante el paso de "Tirar dados de defensa", el defensor no puede tirar más dados de defensa que la cantidad total de tus resultados %HIT%/%CRIT%."""
         "Primed Thrusters":
