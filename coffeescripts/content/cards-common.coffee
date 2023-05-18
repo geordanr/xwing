@@ -6140,7 +6140,7 @@ exportObj.basicCardData = ->
             ship: "TIE/sf Fighter"
             skill: 4
             points: 4
-            loadout: 12
+            loadout: 5
             slots: [
                 "Talent"
                 "Sensor"
@@ -6906,7 +6906,7 @@ exportObj.basicCardData = ->
             ship: "TIE/sf Fighter"
             skill: 3
             points: 4
-            loadout: 10
+            loadout: 3
             slots: [
                 "Tech"
                 "Missile"
@@ -8678,7 +8678,7 @@ exportObj.basicCardData = ->
             skill: 4
             ship: "TIE/sf Fighter"
             points: 4
-            loadout: 14
+            loadout: 6
             slots: [
                 "Talent"
                 "Sensor"
@@ -8930,8 +8930,8 @@ exportObj.basicCardData = ->
             unique: true
             skill: 4
             ship: "Z-95-AF4 Headhunter"
-            points: 3
-            loadout: 10
+            points: 2
+            loadout: 3
             keyword: ["Bounty Hunter"]
             chassis: "Pursuit Craft"
             slots: [
@@ -9169,6 +9169,7 @@ exportObj.basicCardData = ->
             loadout: 15
             keyword: ["Droid"]
             slots: [
+                "Missile"
                 "Missile"
                 "Crew"
                 "Device"
@@ -9767,8 +9768,8 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "T-70 X-wing"
             skill: 4
-            points: 6
-            loadout: 17
+            points: 5
+            loadout: 13
             slots: [
                 "Talent"
                 "Tech"
@@ -9940,7 +9941,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Talent"
-                "Missile"
                 "Modification"
                 "Configuration"
             ]
@@ -11375,8 +11375,8 @@ exportObj.basicCardData = ->
             ship: "Delta-7b Aethersprite"
             skill: 4
             force: 3
-            points: 6
-            loadout: 8
+            points: 5
+            loadout: 7
             keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
@@ -12043,7 +12043,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
             skill: 4
-            points: 4
+            points: 3
             chassis: "Hope"
             upgrades: [
                 "Dorsal Turret"

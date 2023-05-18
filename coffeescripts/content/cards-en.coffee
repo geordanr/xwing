@@ -1940,6 +1940,18 @@ exportObj.cardLoaders.English = () ->
         "Gavyn Sykes":
            display_name: """Gavyn Sykes"""
            text: """While you defend or perfrom an attack, if the speed of your revealed maneuver is greater than the enemy ship's, you may reroll your blank results."""
+        "Darth Vader (SSP)":
+           display_name: """Darth Vader (SSP)"""
+           text: """After you perform an action, you may spend 1 %FORCE% to perform an action."""
+        "Maarek Stele (SSP)":
+           display_name: """Maarek Stele (SSP)"""
+           text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. """
+        "Luke Skywalker (SSP)":
+           display_name: """Luke Skywalker (SSP)"""
+           text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
+        '"Dutch" Vander (SSP)':
+           display_name: """“Dutch” Vander (SSP)"""
+           text: """After you perform the %LOCK% action, you may choose 1 friendly ship at range 1-3. That ship may acquire a lock on the object you locked, ignoring range restrictions."""
 
 
         # Epic Ships
