@@ -3350,9 +3350,8 @@ exportObj.basicCardData = ->
             loadout: 8
             slots: [
                 "Talent"
+                "Talent"
                 "Torpedo"
-                "Crew"
-                "Crew"
                 "Gunner"
                 "Astromech"
                 "Modification"
@@ -3371,8 +3370,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Torpedo"
                 "Missile"
-                "Crew"
-                "Crew"
                 "Gunner"
                 "Astromech"
                 "Modification"
@@ -3391,8 +3388,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Cannon"
                 "Missile"
-                "Crew"
-                "Crew"
                 "Gunner"
                 "Astromech"
                 "Modification"
@@ -3410,8 +3405,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Torpedo"
-                "Crew"
-                "Crew"
                 "Gunner"
                 "Astromech"
                 "Modification"
@@ -5994,7 +5987,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Talent"
-                "Missile"
                 "Tech"
                 "Modification"
                 "Modification"
@@ -10865,6 +10857,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Talent"
                 "Torpedo"
+                "Modification"
                 "Modification"
             ]
         }
