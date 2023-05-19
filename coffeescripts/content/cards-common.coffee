@@ -2440,10 +2440,10 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Turret"
-                "Torpedo"
+                "Gunner"
                 "Astromech"
-                "Modification"
                 "Device"
+                "Modification"
             ]
         }
         {
@@ -6251,7 +6251,6 @@ exportObj.basicCardData = ->
             loadout: 7
             slots: [
                 "Talent"
-                "Cannon"
                 "Missile"
                 "Modification"
             ]
@@ -9959,7 +9958,7 @@ exportObj.basicCardData = ->
             loadout: 7
             slots: [
                 "Talent"
-                "Torpedo"
+                "Modification"
                 "Modification"
                 "Configuration"
             ]
