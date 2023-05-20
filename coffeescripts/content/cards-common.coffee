@@ -4830,7 +4830,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "Alpha-Class Star Wing"
             skill: 4
-            points: 6
+            points: 5
             loadout: 16
             slots: [
                 "Talent"
@@ -10221,7 +10221,7 @@ exportObj.basicCardData = ->
             charge: 1
             recurring: -1
             points: 4
-            loadout: 7
+            loadout: 9
             slots: [
                 "Talent"
                 "Modification"
@@ -12912,7 +12912,7 @@ exportObj.basicCardData = ->
             ship: "Fang Fighter"
             skill: 3
             points: 4
-            loadout: 7
+            loadout: 11
             keyword: ["Mandalorian"]
             slots: [
                 "Talent"
