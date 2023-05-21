@@ -10949,7 +10949,6 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Crew"
                 "Gunner"
-                "Missile"
                 "Device"
                 "Illicit"
                 "Modification"
