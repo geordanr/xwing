@@ -11275,7 +11275,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Crew"
-                "Cannon"
                 "Gunner"
                 "Illicit"
                 "Illicit"
