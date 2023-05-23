@@ -13321,6 +13321,9 @@ exportObj.basicCardData = ->
             ship_override:
                 shields: 3
             upgrades: [
+                "Hate"
+                "Ion Missiles"
+                "Afterburners"
             ]
         }
         {
@@ -13332,7 +13335,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Advanced x1"
             skill: 5
-            points: 6
+            points: 5
             upgrades: [
                 "Elusive"
                 "Outmaneuver"
@@ -13349,6 +13352,9 @@ exportObj.basicCardData = ->
             skill: 4
             points: 4
             upgrades: [
+                "Feedback Ping"
+                "Plasma Torpedoes"
+                "Proton Bombs"
             ]
         }
         {
@@ -13362,6 +13368,9 @@ exportObj.basicCardData = ->
             skill: 5
             points: 5
             upgrades: [
+                "Elusive"
+                "Barrage Rockets"
+                "Proximity Mines"
             ]
         }
         {
@@ -13374,7 +13383,10 @@ exportObj.basicCardData = ->
             ship: "TIE/ln Fighter"
             skill: 4
             points: 4
+            charge: 1
             upgrades: [
+                "Disciplined"
+                "Elusive"
             ]
         }
         {
@@ -13388,6 +13400,8 @@ exportObj.basicCardData = ->
             skill: 2
             points: 3
             upgrades: [
+                "Disciplined"
+                "Predator"
             ]
         }
         {
@@ -13401,6 +13415,8 @@ exportObj.basicCardData = ->
             skill: 3
             points: 3
             upgrades: [
+                "Disciplined"
+                "Precision Ion Engines"
             ]
         }
         {
@@ -13429,6 +13445,8 @@ exportObj.basicCardData = ->
             skill: 4
             points: 4
             upgrades: [
+                "Ion Cannon Turret"
+                "Proximity Mines"
             ]
         }
         {
@@ -13442,12 +13460,14 @@ exportObj.basicCardData = ->
             skill: 3
             points: 4
             upgrades: [
+                "Predator"
+                "Afterburners"
             ]
         }
         {
-            name: "Jake Farrel (SSP)"
-            canonical_name: 'Jake Farrel'.canonicalize()
-            xws: "jakefarrel-SWZ106"
+            name: "Jake Farrell (SSP)"
+            canonical_name: 'Jake Farrell'.canonicalize()
+            xws: "jakefarrell-SWZ106"
             unique: true
             id: 640
             faction: "Rebel Alliance"
@@ -13455,6 +13475,9 @@ exportObj.basicCardData = ->
             skill: 4
             points: 5
             upgrades: [
+                "Elusive"
+                "Outmaneuver"
+                "Ion Missiles"
             ]
         }
         {
@@ -13468,6 +13491,9 @@ exportObj.basicCardData = ->
             skill: 4
             points: 5
             upgrades: [
+                "Predator"
+                "Proton Torpedoes"
+                "R5-D8"
             ]
         }
         {
@@ -13482,19 +13508,24 @@ exportObj.basicCardData = ->
             force: 2
             points: 6
             upgrades: [
+                "Instinctive Aim"
+                "Proton Torpeodes"
+                "R2-D2"
             ]
         }
         {
-            name: "Wedge Antilles (SSP)"
-            canonical_name: 'Wedge Antilles'.canonicalize()
-            xws: "wedgeantilles-SWZ106"
+            name: "Shara Bey (SSP)"
+            canonical_name: 'Shara Bey'.canonicalize()
+            xws: "sharabey-SWZ106"
             unique: true
             id: 643
             faction: "Rebel Alliance"
-            ship: "T-65 X-wing"
-            skill: 6
-            points: 5
+            ship: "RZ-1 A-wing"
+            skill: 4
+            points: 4
             upgrades: [
+                "Hopeful"
+                "Concussion Missiles"
             ]
         }
     ]

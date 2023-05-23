@@ -11317,6 +11317,181 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Galactic Empire Squadron Starter Pack": [
+        {
+            name: 'TIE Advanced x1'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE/ln Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE/sa Bomber'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Darth Vader (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Maarek Stele (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jonus (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tomax Bren (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Night Beast" (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Valen Rudor (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Iden Versio (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Darth Vader'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Maarek Stele'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jonus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tomax Bren'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Night Beast"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Valen Rudor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Iden Versio'
+            type: 'pilot'
+            count: 1
+        }
+    ]
+    "Rebel Alliance Squadron Starter Pack": [
+        {
+            name: 'T-65 X-wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'RZ-1 A-wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'BTL-A4 Y-wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Luke Skywalker (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jek Porkins (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dutch" Vander (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Horton Salm (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Arvel Crynyd (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jake Farrell (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shara Bey (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Luke Skywalker'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jek Porkins'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dutch" Vander'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Horton Salm'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Arvel Crynyd'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jake Farrell'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shara Bey (A-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+    ]
+
 
     'Loose Ships': [
         {
