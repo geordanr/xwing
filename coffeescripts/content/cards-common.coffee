@@ -13509,7 +13509,7 @@ exportObj.basicCardData = ->
             points: 6
             upgrades: [
                 "Instinctive Aim"
-                "Proton Torpeodes"
+                "Proton Torpedoes"
                 "R2-D2"
             ]
         }
