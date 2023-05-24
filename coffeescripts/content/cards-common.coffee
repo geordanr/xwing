@@ -5534,7 +5534,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
             skill: 4
-            points: 5
+            points: 3
             loadout: 12
             slots: [
                 "Talent"
@@ -19438,6 +19438,7 @@ exportObj.standardShipInclusions = [
     {name: 'TIE Advanced x1', faction: 'Galactic Empire'}
     {name: 'TIE Advanced v1', faction: 'Galactic Empire'}
     {name: 'TIE/ln Fighter', faction: 'Galactic Empire'}
+    {name: 'TIE/sa Bomber', faction: 'Galactic Empire'}
     {name: 'TIE/in Interceptor', faction: 'Galactic Empire'}
     {name: 'TIE Reaper', faction: 'Galactic Empire'}
     {name: 'TIE/d Defender', faction: 'Galactic Empire'}
