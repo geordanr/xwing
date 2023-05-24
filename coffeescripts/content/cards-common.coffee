@@ -13167,6 +13167,7 @@ exportObj.basicCardData = ->
                 "Force"
                 "Force"
                 "Talent"
+                "Cannon"
                 "Astromech"
                 "Modification"
             ]
