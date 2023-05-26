@@ -5543,7 +5543,6 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Gunner"
                 "Device"
-                "Device"
                 "Modification"
             ]
         }
@@ -7402,7 +7401,6 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
-                "Configuration"
             ]
         }
         {

@@ -1270,7 +1270,7 @@ class exportObj.SquadBuilder
                 @container.trigger 'xwing:pointsUpdated'        
 
         @obstacles_select.mouseup (e) =>
-            previous_obstacles = @current_squad.additional_data.obstacles
+            previous_obstacles = @current_squad.additional_data.obstacles ? []
             obst_changes = (o for o in @obstacles_select.val())
             # parse changes from previous obstacles
             intersect = (a, b) ->
