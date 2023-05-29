@@ -142,6 +142,8 @@ exportObj.translations.English =
             "initiative is #{values}"
         varPointCostsConditionBase: (translator, values) ->
             "base size is small, medium, large or huge"
+        varPointCostsConditionFaction: (translator, values) ->
+            "faction is #{values}"
         "Missing Item List:": "To field this squad you need the following additional items:" 
         pilotFlyingShip: (translator, pilot, ship) ->
             "Pilot #{pilot} flying #{ship}"

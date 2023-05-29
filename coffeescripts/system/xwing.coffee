@@ -2800,6 +2800,8 @@ class exportObj.SquadBuilder
                                 point_info += @uitranslation("varPointCostsConditionIni", [0..data.points.length-1])
                             when "Base"
                                 point_info += @uitranslation("varPointCostsConditionBase")
+                            when "Faction"
+                                point_info += @uitranslation("varPointCostsConditionFaction", data.faction)
                         point_info += "</i>"
 
                     restriction_info = @restriction_text(data) + @upgrade_effect(data)
@@ -3246,6 +3248,7 @@ class exportObj.SquadBuilder
 
     restriction_text: (card) ->
         uniquetext = comma = othertext = text = ''
+        ignoreShip = false
         if card.restrictions
             for r in card.restrictions
                 switch r[0]
@@ -3268,6 +3271,7 @@ class exportObj.SquadBuilder
                         text += comma + exportObj.translate('restrictions', "Extra") + " %#{r[1].toUpperCase().replace(/[^a-z0-9]/gi, '')}%"
                     when "Keyword"
                         text += comma + exportObj.translate('restrictions', "#{r[1]}")
+                        ignoreShip = true
                     when "AttackArc"
                         text += comma + "%REARARC%"
                     when "ShieldsGreaterThan"
@@ -3300,7 +3304,7 @@ class exportObj.SquadBuilder
                     else
                         othertext += comma + exportObj.translate('faction', "#{card.faction}")
                     comma = ', '
-            if card.ship
+            if card.ship and ignoreShip == false
                 if card.ship instanceof Array
                     for shipname in card.ship
                         othertext += comma + shipname
@@ -5134,6 +5138,8 @@ class GenericAddon
                         data?.points[0]
                 when "Initiative"
                     data?.points[ship.pilot.skill]
+                when "Faction"
+                    data?.points[data.faction.indexOf(ship.builder.faction)]
         else
             data?.points ? 0
             
