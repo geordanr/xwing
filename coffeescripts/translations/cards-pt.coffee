@@ -2435,7 +2435,7 @@ exportObj.cardLoaders.Português = () ->
            text: """No começo da Fase de Engajamento, se houver uma nave inimiga em seu %BULLSEYEARC%, receba uma ficha de cálculo."""
         "Volan Das":
            display_name: """Volan Das"""
-           text: """Depois que você executar completamente uma manobra, você pode escolher uma nave inimiga em alcance 1. A nave escolhida recebe 1 ficha de desgaste e você você remover 1 ficha de estresse."""
+           text: """Depois que você executar completamente uma manobra vermelha, você pode escolher uma nave inimiga em alcance 1. A nave escolhida recebe 1 ficha de desgaste e você você remover 1 ficha de estresse."""
 
        #Infiltrator
         "Dark Courier":
