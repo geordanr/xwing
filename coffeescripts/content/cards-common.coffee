@@ -13983,6 +13983,7 @@ exportObj.basicCardData = ->
             id: 48
             slot: "Crew"
             variablepoints: "Faction"
+            pointsarray: [10,12]
             points: [10,12]
             unique: true
             keyword: ["Dark Side"]
