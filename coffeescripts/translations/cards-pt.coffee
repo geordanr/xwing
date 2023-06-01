@@ -87,7 +87,7 @@ exportObj.translations.Português =
         "shipSelectorPlaceholder": "Selecione uma Nave"
         "pilotSelectorPlaceholder": "Selecione um Piloto"
         upgradePlaceholder: (translator, slot) ->
-            "Sem #{translator 'slot', slot} Melhoria"
+            "Sem Melhoria  #{translator 'slot', slot}"
         "modificationPlaceholder": "Sem Modificação"
         "titlePlaceholder": "Sem Título"
         upgradeHeader: (translator, slot) ->
@@ -164,11 +164,11 @@ exportObj.translations.Português =
                     <p>Créditos adicionais:<br>
                     Dados de Atualização 2.5: Devon Monkhouse, Perry Low, Andrew Oehler.<br>
                     Dados de Lançamento 2.0: Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.<br>
-                    Equipe de Tradução: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke, kksuke<br>
+                    Equipe de Tradução: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke, kksuke, Rodrigo Marshal, Shavarski<br>
                     Logo do site: Thomas Kohler<br>
                     Suporte de Quick Build: Patrick Mischke</p>
                     <p>Este construtor não é oficial e não está afiliado a Atomic Mass Games, Lucasfilm Ltd., ou Disney.</p>
-                    <p>Este site sempre será gratuito, e sempre estára 100% para que todos possam usá-lo. Entretanto, se você quiser doar, há um botão preparado para você.</p>
+                    <p>Este site sempre será gratuito, e sempre estára 100% disponível para que todos possam usá-lo. Entretanto, se você quiser doar, há um botão preparado para você.</p>
                     <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Faça uma Doação</button> <button class="btn btn-primary paypal" onclick="window.open('https://www.patreon.com/raithos');">Patreon</button></p>
         """
         "Continue to OAuth provider": "Isto abrirá uma nova janela para permitir que você autentique com o provedor escolhido. Você talvez precise permitir pop ups para este site."
@@ -393,6 +393,15 @@ exportObj.translations.Português =
         'modifications': 'Modificação'
         'titles': 'Título'
         'ships' : 'Nave'
+    
+    gameterms:
+        'Small': 'Pequena'
+        'Medium': 'Média'
+        'Large': 'Grande'
+        'Huge': 'Enorme'
+        'Solitary': 'Solitário'
+        'Standardized': 'Padronizada'
+
     types:
         'Pilot': 'Piloto'
         'Modification': 'Modificação'
@@ -932,7 +941,7 @@ exportObj.cardLoaders.Português = () ->
            text: """No início da Fase de Engajamento, você pode escolher 1 nave inimiga em alcance 1. Se o fizer e estiver no %FRONTARC% da nave escolhida, ela remove todas as fichas verdes dela."""
         "Fenn Rau":
            display_name: """Fenn Rau"""
-           text: """Quando você defender ou realizar um ataque, se o alcance do ataque for 1, você pode rolar 1 dado de ataque adicional."""
+           text: """Quando você defender ou realizar um ataque, se o alcance do ataque for 1, você pode rolar 1 dado adicional."""
         "Mandalorian Royal Guard":
            display_name: """Guarda Real Mandaloriana"""
            text: """Quando uma nave amiga que não seja pequena defende, se você estiver no arco de ataque, você pode receber 1 ficha de de exaustão e 1 ficha de desgaste. Se o fizer, o defensor pode mudar 1 resultado para um resultado %EVADE%."""
@@ -2768,6 +2777,9 @@ exportObj.cardLoaders.Português = () ->
         'Alpha-3E "Esk"':
            display_name: """Alpha-3E “Esk”"""
            text: """Quando você realizar um ataque primário, antes de rolar os dados de ataque, você pode gastar 2 %CHARGE%. Se o fizer, seus resultados %CRIT% atribuem fichas de íon ao invés de causarem dano."""
+        "Swivel Wing":
+           display_name: """Asas Giratórias"""
+           text: """<strong>Asa Giratória (Abaixada)</strong> %LINEBREAK% Depois que você realizar uma manobra [0 %STOP%], você pode rotacionar sua nave 90º ou 180º. Se o fizer, você <b>deve</b> virar esta carta. %LINEBREAK% <strong>Asa Giratória (Erguida)</strong> %LINEBREAK% Quando você defender, role 1 dado de defesa a menos. %LINEBREAK% Depois que você realizar completamente uma manobra não estácionária [%STOP%], você pode virar esta carta."""
         "Pivot Wing":
            display_name: """Asas Pivotantes"""
            text: """<strong>Fechadas: </strong>Quando você defender, role 1 dado de defesa a menos. %LINEBREAK%Após você executar uma manobra (0 %STOP%), você pode rotacionar sua nave 90º ou 180º.%LINEBREAK%Antes de você ativar, você pode virar esta carta.%LINEBREAK%<strong>Abertas:</Strong> Antes de você ativar, você pode virar esta carta."""
@@ -3110,7 +3122,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Quando outra nave amiga em alcance 0-1 defende, antes do passo Neutralizar Resultados, se você estiver no arco de ataque, você pode sofrer 1 dano %CRIT% para cancelar 1 resultado %CRIT%."""
         "Composure":
            display_name: """Compostura"""
-           text: """Depois que você falar uma ação, se você não possuir fichas verdes, você pode realizar uma ação %FOCUS% Se o fizer, você não pode realizar ações adicionais nesta rodada.%LINEBREAK% <i>Errata (desde RR 1.1.0): Adicionado "Se o fizer, você não pode realizar ações adicionais nesta rodada."</i>"""
+           text: """Depois que você falhar uma ação, se você não possuir fichas verdes, você pode realizar uma ação %FOCUS% Se o fizer, você não pode realizar ações adicionais nesta rodada.%LINEBREAK% <i>Errata (desde RR 1.1.0): Adicionado "Se o fizer, você não pode realizar ações adicionais nesta rodada."</i>"""
         "Debris Gambit":
            display_name: """Contornar Destroços"""
            text: """Quando Realizar uma ação %EVADE% vermelha, se houver um obstáculo em alcance 0-1, trate a ação como branca."""
@@ -3744,10 +3756,10 @@ exportObj.cardLoaders.Português = () ->
            text: """Depois que você revelar seu disco, você pode gastar 1 %CHARGE% e receber 1 ficha de desarme para recuperar 1 escudo."""
         "R5-D8 (BoY)":
            display_name: """R5-D8"""
-           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Nave</strong>."""
         "R5-K6 (BoY)":
            display_name: """R5-K6"""
-           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Ship</strong>."""
+           text: """<strong>Ação:</strong> Gaste 1 %CHARGE% para consertar 1 carta de dano virada para baixo. %LINEBREAK% <strong>Ação:</strong> Conserte 1 carta de dano virada para cima do tipo <strong>Nave</strong>."""
         "Precise Astromech (BoY)":
            display_name: """Astromecânico Preciso"""
            text: """Depois que você realizar uma ação, você pode gastar 1 %CHARGE% para realizar uma ação %LOCK% vermelha."""

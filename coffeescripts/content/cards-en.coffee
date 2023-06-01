@@ -142,6 +142,8 @@ exportObj.translations.English =
             "initiative is #{values}"
         varPointCostsConditionBase: (translator, values) ->
             "base size is small, medium, large or huge"
+        varPointCostsConditionFaction: (translator, values) ->
+            "faction is #{values}"
         "Missing Item List:": "To field this squad you need the following additional items:" 
         pilotFlyingShip: (translator, pilot, ship) ->
             "Pilot #{pilot} flying #{ship}"
@@ -1891,7 +1893,7 @@ exportObj.cardLoaders.English = () ->
            text: """Before you engage, you may spend 1 green token and 1 %CHARGE%. If you do, you may choose another ship at range 0-1 that is not stressed. The chosen ship gains 1 stress token."""
         "Lapin":
            display_name: """Lapin"""
-           text: """While you defend or perform an attack, if the enemy ship is stressed, that ship's dice cannot be modified."""
+           text: """While you defend or perform an attack, if the enemy ship is stressed, that ship's dice cannot be modified. %LINEBREAK% <i>Errata (since rules reference 1.4.5): Changed Initiative value on the card to match the correct value on the ship token."""
         "Volan Das":
            display_name: """Volan Das"""
            text: """After you fully execute a red maneuver, you may chose an enemy ship at range 1. The chosen ship gains 1 strain token and you may remove 1 stress token."""
@@ -1906,7 +1908,7 @@ exportObj.cardLoaders.English = () ->
            text: """After a friendly ship at range 0-1 skips its execute maneuver step, you may spend 1 %CHARGE%. If you do, if there is an asteroid or debris cloud at range 0 of it, that ship may repair 1 damage."""
         "Kelrodo-Ai Holdout":
            display_name: """Kelrodo-Ai Holdout"""
-           text: """After you are destroyed, you may transfer each of your locks and green tokens to another friendly Kelrodo-Ai Holdout at range 0-3"""
+           text: """After you are destroyed, you may transfer each of your locks and green tokens to another friendly Kelrodo-Ai Holdout at range 0-3 %LINEBREAK% <i>Errata (since rules reference 1.4.5): Changed Initiative value on the card to match the correct value on the ship token."""
         "Lieutenant Galek":
            display_name: """Lieutenant Galek"""
            text: """After another friendly ship at range 0-2 is destroyed, you may perform a %COORDINATE% action, even while stressed. While you coordinate, the ship you choose can perform an action only if that action is also on your action bar."""
@@ -1940,6 +1942,50 @@ exportObj.cardLoaders.English = () ->
         "Gavyn Sykes":
            display_name: """Gavyn Sykes"""
            text: """While you defend or perfrom an attack, if the speed of your revealed maneuver is greater than the enemy ship's, you may reroll your blank results."""
+
+         # Starter Packs
+        "Darth Vader (SSP)":
+           display_name: """Darth Vader (SSP)"""
+           text: """After you perform an action, you may spend 1 %FORCE% to perform an action."""
+        "Maarek Stele (SSP)":
+           display_name: """Maarek Stele (SSP)"""
+           text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. """
+        "Captain Jonus (SSP)":
+           display_name: """Captain Jonus (SSP)"""
+           text: """While a friendly ship at range 0-1 performs a %TORPEDO% or %MISSILE% attack, that ship may reroll up to 2 attack dice. """
+        "Tomax Bren (SSP)":
+           display_name: """Tomax Bren (SSP)"""
+           text: """After you perform a %RELOAD% action, you may recover 1 %CHARGE% token on 1 of your equipped %TALENT% upgrade cards. """
+        '"Night Beast" (SSP)':
+           display_name: """“Night Beast” (SSP)"""
+           text: """After you fully execute a blue maneuver, you may perform a %FOCUS% action."""
+        "Valen Rudor (SSP)":
+           display_name: """Valen Rudor (SSP)"""
+           text: """After a friendly ship at range 0-1 defends (after damage is resolved, if any), you may perform an action."""
+        "Iden Versio (SSP)":
+           display_name: """Iden Versio (SSP)"""
+           text: """Before a friendly TIE/ln fighter at range 0-1 would suffer 1 or more damage, you may spend 1 %CHARGE%. If you do, prevent that damage."""
+        "Luke Skywalker (SSP)":
+           display_name: """Luke Skywalker (SSP)"""
+           text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
+        "Jek Porkins (SSP)":
+           display_name: """Jek Porkins (SSP)"""
+           text: """After you receive a stress token, you may roll 1 attack die to remove it. On a %HIT% result, suffer 1 %HIT% damage."""
+        '"Dutch" Vander (SSP)':
+           display_name: """“Dutch” Vander (SSP)"""
+           text: """After you perform the %LOCK% action, you may choose 1 friendly ship at range 1-3. That ship may acquire a lock on the object you locked, ignoring range restrictions."""
+        "Horton Salm (SSP)":
+           display_name: """Horton Salm (SSP)"""
+           text: """While you perform an attack, you may reroll 1 attack die for each other friendly ship at range 0-1 of the defender."""
+        "Arvel Crynyd (SSP)":
+           display_name: """Arvel Crynyd (SSP)"""
+           text: """If you would fail a %BOOST% action by overlapping another ship, you may resolve it as though you were partially executing a maneuver instead. While you perform an attack at attack range 0, treat it as an attack at attack range 1."""
+        "Jake Farrell (SSP)":
+           display_name: """Jake Farrell (SSP)"""
+           text: """After you perform a %BARRELROLL% or %BOOST% action, you may choose a friendly ship at range 0-1. That ship may perform a %FOCUS% action."""
+        "Shara Bey (SSP)":
+           display_name: """Shara Bey (SSP)"""
+           text: """While you defend or perform a primary attack, you may spend 1 lock you have on the enemy ship to add 1 %FOCUS% result to your dice results. """
 
 
         # Epic Ships
@@ -3359,7 +3405,7 @@ exportObj.cardLoaders.English = () ->
         'Proton Bomb':
            text: '''<strong>Types:</strong> Device, Bomb %LINEBREAK% At the end of the Activation Phase, this device detonates. When this device detonates, each ship and remote at range 0-1 suffers 1 %CRIT% damage.%LINEBREAK%<i>Errata (Official Rulings Thread 03/2019): Added: "and remote"</i>'''
         'Seismic Charge':
-           text: '''<strong>Types:</strong> Device, Bomb %LINEBREAK% At the end of the Activation Phase this device detonates. When this device detonates, choose 1 obstacle at range 0-1. Each ship and remote at range 0-1 of the obstacle suffers 1 %HIT% damage. Then remove that obstacle.%LINEBREAK%<i>Errata (Official Rulings Thread 03/2019): Added: "and remote"</i> '''
+           text: '''<strong>Types:</strong> Device, Bomb %LINEBREAK% At the end of the Activation Phase this device detonates. When this device detonates, choose 1 obstacle at range 0-1. The obstacle deals 1 %HIT% damage to each ship and remote at range 0-1. Then remove that obstacle.%LINEBREAK%<i>Errata (Official Rulings Thread 03/2019): Added: "and remote"</i> '''
         'Bomblet':
            text: '''<strong>Types:</strong> Device, Bomb %LINEBREAK% At the end of the Activation Phase this device detonates. When this device detonates, each ship and remote at range 0-1 rolls 2 attack dice. Each ship and remote suffers 1 %HIT% damage for each %HIT%/%CRIT% result.%LINEBREAK%<i>Errata (Official Rulings Thread 03/2019): Added: "and remote"</i>'''
         'Loose Cargo':

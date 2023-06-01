@@ -11317,6 +11317,371 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Galactic Empire Squadron Starter Pack": [
+        {
+            name: 'TIE Advanced x1'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE/ln Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE/sa Bomber'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Darth Vader (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Maarek Stele (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jonus (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tomax Bren (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Night Beast" (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Valen Rudor (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Iden Versio (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Darth Vader'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Maarek Stele'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jonus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tomax Bren'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Night Beast"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Valen Rudor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Iden Versio'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Feedback Ping'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Instinctive Aim'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Barrage Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Heightened Perception'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Disciplined'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hate'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Pattern Analyzer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Precision Ion Engines'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Afterburners'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Passive Sensors'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Rebel Alliance Squadron Starter Pack": [
+        {
+            name: 'T-65 X-wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'RZ-1 A-wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'BTL-A4 Y-wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Luke Skywalker (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jek Porkins (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dutch" Vander (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Horton Salm (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Arvel Crynyd (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jake Farrell (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shara Bey (SSP)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Luke Skywalker'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jek Porkins'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dutch" Vander'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Horton Salm'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Arvel Crynyd'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jake Farrell'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shara Bey (A-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hopeful'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Cannon Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Heightened Perception'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R2-D2'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5-D8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Instinctive Aim'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'R4 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Vectored Cannons (RZ-1)'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Afterburners'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Servomotor S-Foils'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+
 
     'Loose Ships': [
         {
@@ -11356,11 +11721,6 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'TIE/ag Aggressor'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE/sa Bomber'
             type: 'ship'
             count: 3
         }
