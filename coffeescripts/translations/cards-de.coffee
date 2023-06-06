@@ -2331,7 +2331,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "<b>Aufbau:</b> Nachdem die Streitkräfte platziert worden sind, wähle eine beliebige Anzahl deiner ausgerüsteten %ILLICIT% -Aufwertungen und rüste befreundete TIE/eo oder TIE/se-Jäger mit ihnen aus. Jedem Schiff kann so nur 1 %ILLICIT% zugeordnet werden. %LINEBREAK%<b>Spielende:</b> Lege alle %ILLICIT%-Aufwertungen zurück zu ihren ursprünglichen Schiffen."
         "Gideon Hask (Xi Shuttle)":
            display_name: "Gideon Hask "
-           text: "Solange du oder ein befreundetes kleines Schiff in Reichweite 0-2 einen Primärangriff gegen einen beschädigten Verteidiger durchgeführt, falls der Angreifer 1 oder weniger Angriffswürfel geworfen hat, darf er 1 Anstrengungsmarker erhalten, um 1 zusätzlichen Angriffswürfel zu werfen."
+           text: "Solange du oder ein befreundetes kleines Schiff in Reichweite 0-2 einen Primärangriff gegen einen beschädigten Verteidiger durchgeführt, falls der Angreifer 2 oder weniger Angriffswürfel geworfen hat, darf er 1 Anstrengungsmarker erhalten, um 1 zusätzlichen Angriffswürfel zu werfen."
         "Agent Tierny":
            display_name: "Agent Tierny"
            text: "<b>Aufbau:</b> Nachdem die Streitkräfte plaziert worden sind, <strong>musst</strong> du einem feindlichen Schiff den Zustand %LINEBREAK% <strong>•VERTRUENSBRUCH</strong> zuordnen."
