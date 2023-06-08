@@ -310,7 +310,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が君のマニューバを公開する前に、君は%FORCE%を1つ消費して、バレル・ロールを実行しても良い(これはアクションではない)。"""
         "Arvel Crynyd":
            display_name: """Arvel Crynyd"""
-           text: """もし君が他の宇宙船に重なることにより%BOOST%アクションが失敗しようとする時、代わりにマニューバを部分的に実行するようにして解決する。 %LINEBREAK% 君が攻撃レンジ0で攻撃を実行する際、それを攻撃レンジ1の攻撃として扱う。"""
+           text: """もし君が他の宇宙船に重なることにより %BOOST% アクションが失敗しようとする時、代わりにマニューバを部分的に実行するようにして解決する。 %LINEBREAK% 君が攻撃レンジ0で攻撃を実行する際、それを攻撃レンジ1の攻撃として扱う。"""
         "Asajj Ventress":
            display_name: """Asajj Ventress"""
            text: """エンゲージメント・フェイズの開始時、君は君の%SINGLETURRETARC%内レンジ0-2の宇宙船を1つ選び、%FORCE%を1つ消費しても良い。もしそうするなら、その宇宙船は緑のトークンを1つ取り除かない限り、ストレス・トークンを1つ得る。"""
@@ -409,7 +409,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が防御する際、もし攻撃者が緑のトークンを全く持っていなければ、君の空白あるいは%FOCUS%の結果のうち1つを%EVADE%の結果に変えても良い。"""
         "Captain Jonus":
            display_name: """Captain Jonus"""
-           text: """レンジ0-1の友軍宇宙船が%TORPEDO%あるいは%MISSILE%による攻撃を実行する際、その宇宙船は2つまで攻撃ダイスを振り直しても良い。"""
+           text: """レンジ 0-1 の友軍宇宙船が %TORPEDO% あるいは %MISSILE% による攻撃を実行する際、その宇宙船は2つまで攻撃ダイスを振り直しても良い。"""
         "Captain Jostero":
            display_name: """Captain Jostero"""
            text: """敵宇宙船がダメージを受けた後、もしその宇宙船が防御者でなければ、君はその宇宙船に対してボーナスの攻撃を実行しても良い。"""
@@ -517,7 +517,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が攻撃を実行した後、君は違うターゲットに対しボーナスの主武装による攻撃を実行するために%FORCE%を2つ消費しても良い。もし君の攻撃が外れたなら、代わりに君は同じターゲットに対してボーナスの主武装による攻撃を実行しても良い。"""
         "Darth Vader":
            display_name: """Darth Vader"""
-           text: """君がアクションを実行した後、君は%FORCE%を1つ消費して、アクションを実行しても良い。"""
+           text: """君がアクションを実行した後、君は %FORCE% を1つ消費して、アクションを実行しても良い。"""
         "Dash Rendar":
            display_name: """Dash Rendar"""
            text: """君が移動する際、君は障害物を無視する。"""
@@ -658,7 +658,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """<i class = flavor_text>Just the mention of Imperial credits can bring a host of less-than-trustworthy individuals to your side.</i>"""
         "Horton Salm":
            display_name: """Horton Salm"""
-           text: """君が攻撃を実行する際、君は防御者のレンジ0-1にいる他の友軍宇宙船につき攻撃ダイスを1つ振り直しても良い。"""
+           text: """君が攻撃を実行する際、君は防御者のレンジ 0-1 にいる他の友軍宇宙船につき攻撃ダイスを1つ振り直しても良い。"""
         "IG-88A":
            display_name: """IG-88A"""
            text: """エンゲージメント・フェイズの開始時、君はレンジ1-3の、アクション・バーに%CALCULATE%を持つ友軍宇宙船を選んでも良い。もしそうするなら、君のカリキュレート・トークンのうち1つをそれに転送する。"""
@@ -676,7 +676,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がマニューバを完全に実行した後、もし君がストレス状態なら、君は攻撃ダイスを1つ振っても良い。%HIT%あるいは%CRIT%の結果なら、君はストレス・トークンを1つ取り除く。"""
         "Iden Versio":
            display_name: """Iden Versio"""
-           text: """レンジ0-1の友軍のTIE/ln Fighterが1つ以上のダメージを受けようとする前に、君は%CHARGE%を1つ消費しても良い。もしそうするなら、そのダメージをなくす。"""
+           text: """レンジ 0-1 の友軍の TIE/ln Fighter が1つ以上のダメージを受けようとする前に、君は %CHARGE% を1つ消費しても良い。もしそうするなら、そのダメージをなくす。"""
         "Imdaar Test Pilot":
            display_name: """Imdaar Test Pilot"""
            text: """<i class = flavor_text>The primary result of a hidden research facility on Imdaar Alpha, the TIE phantom achieves what many thought was impossible: a small starfighter equipped with an advanced cloaking device.</i>"""
@@ -688,7 +688,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """<i class = flavor_text>The fearsome Inquisitors are given a great deal of autonomy and access to the Empire’s latest technology, like the prototype TIE Advanced v1.</i>"""
         "Jake Farrell":
            display_name: """Jake Farrell"""
-           text: """君が%BARRELROLL%あるいは%BOOST%アクションを実行した後、君はレンジ0-1の友軍宇宙船を選んでも良い。その宇宙船は%FOCUS%アクションを実行しても良い。"""
+           text: """君が %BARRELROLL% あるいは %BOOST% アクションを実行した後、君はレンジ0-1の友軍宇宙船を選んでも良い。その宇宙船は %FOCUS% アクションを実行しても良い。"""
         "Jakku Gunrunner":
            display_name: """Jakku Gunrunner"""
            text: """<i class = flavor_text>The Quadrijet transfer spacetug, commonly called a "Quadjumper," is nimble in space and atmosphere alike, making it popular among both smugglers and explorers.</i>"""
@@ -706,7 +706,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """<i class = flavor_text>When the Clone Wars began, the Jedi Knights rallied to the cause of preserving the Republic, assuming command of legions of clone troopers and leading them in battle.</i>"""
         "Jek Porkins":
            display_name: """Jek Porkins"""
-           text: """君がストレス・トークンを受け取った後、君は攻撃ダイスを1つ振り、それを取り除いても良い。%HIT%の結果なら、%HIT%ダメージを1つ受ける。"""
+           text: """君がストレス・トークンを受け取った後、君は攻撃ダイスを1つ振り、それを取り除いても良い。 %HIT% の結果なら、 %HIT% ダメージを1つ受ける。"""
         "Jessika Pava":
            display_name: """Jessika Pava"""
            text: """君が防御するか攻撃を実行する際、君は%CHARGE%を1つあるいは君が装備した%ASTROMECH%の自動変化しない%CHARGE%を1つ消費して、レンジ0-1の他の友軍宇宙船につき1つまでダイスを振り直しても良い。"""
@@ -817,7 +817,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """レンジ0-1の友軍宇宙船が防御者になった後、君はリインフォース・トークンを1つ消費しても良い。もしそうするなら、その宇宙船は回避トークンを1つ得る。"""
         "Luke Skywalker":
            display_name: """Luke Skywalker"""
-           text: """君が防御者になった後(ダイスを振る前に)、君は%FORCE%を1つ回復しても良い。"""
+           text: """君が防御者になった後(ダイスを振る前に)、君は %FORCE% を1つ回復しても良い。"""
         "Luminara Unduli":
            display_name: """Luminara Unduli"""
            text: """レンジ0-2の友軍宇宙船が防御する際、それが攻撃者の%BULLSEYEARC%内にいないなら、君は%FORCE%を1つ消費しても良い。もしそうするなら、%CRIT%の結果1つを%HIT%の結果に変更するか、%HIT%の結果1つを%FOCUS%の結果に変更しても良い。"""
@@ -1037,7 +1037,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """<i class = flavor_text>Crime syndicates augment the lethal skills of their loyal contractors with the best technology available, like the fast and formidable Lancer-class pursuit craft.</i>"""
         "Shara Bey":
            display_name: """Shara Bey"""
-           text: """君が防御するか主武装による攻撃を実行する際、君はその敵へのロックを1つ消費して、君のダイスの結果に%FOCUS%を1つ追加しても良い。"""
+           text: """君が防御するか主武装による攻撃を実行する際、君はその敵へのロックを1つ消費して、君のダイスの結果に %FOCUS% を1つ追加しても良い。"""
         "Sienar Specialist":
            display_name: """Sienar Specialist"""
            text: """<i class = flavor_text>During the development of the TIE aggressor, Sienar Fleet Systems valued performance and versatility over raw cost efficiency.</i>"""
@@ -1109,7 +1109,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君が攻撃を実行する際、君は防御者の裏向きのダメージ・カードを見て、1つ選び、それをエクスポーズするために、%FOCUS%%HIT%あるいは%CRIT%の結果を1つ消費しても良い。"""
         "Tomax Bren":
            display_name: """Tomax Bren"""
-           text: """君が%RELOAD%アクションを実行した後、君は装備した%TALENT%アップグレード・カードのうちの1つの上にある%CHARGE%トークンを1つ回復しても良い。"""
+           text: """君が %RELOAD% アクションを実行した後、君は装備した %TALENT% アップグレード・カードのうちの1つの上にある %CHARGE% トークンを1つ回復しても良い。"""
         "Torani Kulda":
            display_name: """Torani Kulda"""
            text: """君が攻撃を実行する際、君の%BULLSEYEARC%内の各敵宇宙船は、緑のトークンを1つ取り除かない限り、%HIT%ダメージを1つ受ける。"""
@@ -1130,7 +1130,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """エンゲージメント・フェイズの開始時、レンジ0に他の宇宙船が1つ以上いるなら、君とレンジ0の他の各宇宙船はトラクター・トークンを1つ得る。"""
         "Valen Rudor":
            display_name: """Valen Rudor"""
-           text: """レンジ0-1の友軍宇宙船の防御の後(もしあればダメージを適用した後)、君はアクションを実行しても良い。"""
+           text: """レンジ 0-1 の友軍宇宙船の防御の後(もしあればダメージを適用した後)、君はアクションを実行しても良い。"""
         "Ved Foslo":
            display_name: """Ved Foslo"""
            text: """君がマニューバを実行する際、代わりに君は同じ向きで同じ難易度の、速度が1高いか低いマニューバを実行しても良い。"""
@@ -1205,7 +1205,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君は君の<strong>Adaptive Ailerons</strong>を使わないことを選んでも良い。%LINEBREAK%君は君の<strong>Adaptive Ailerons</strong>をストレス状態でも使っても良い。"""
         '"Dutch" Vander':
            display_name: """“Dutch” Vander"""
-           text: """君が%LOCK%アクションを実行した後、君はレンジ1-3の友軍宇宙船を選んでも良い。その宇宙船は君がロックしたオブジェクトへのロックを、距離の制限を無視して得る。"""
+           text: """君が %LOCK% アクションを実行した後、君はレンジ1-3の友軍宇宙船を選んでも良い。その宇宙船は君がロックしたオブジェクトへのロックを、距離の制限を無視して得る。"""
         '"Echo"':
            display_name: """“Echo”"""
            text: """君がデクロークする際、君は[%STRAIGHT%2]テンプレートの代わりに[%BANKLEFT%2]あるいは[%BANKRIGHT%2]テンプレートを<b>使用しなければならない</b>。"""
@@ -1235,7 +1235,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """エンゲージメント・フェイズの開始時、君はレンジ0-1の友軍宇宙船を1つ選んでも良い。もしそうするなら、その宇宙船はストレス・トークンを1つ取り除く。"""
         '"Night Beast"':
            display_name: """“Night Beast”"""
-           text: """君が青のマニューバを完全に実行した後、君は%FOCUS%アクションを実行しても良い。"""
+           text: """君が青のマニューバを完全に実行した後、君は %FOCUS% アクションを実行しても良い。"""
         '"Null"':
            display_name: """“Null”"""
            text: """君がダメージ状態ではない際、君のイニシアチブ値を7として扱う。"""
@@ -1544,7 +1544,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """君がマニューバを完全に実行した後、君はレンジ1-2の友軍宇宙船を1つ選び%FORCE%を2つ消費しても良い。その宇宙船はたとえストレス状態でもアクションを1つ実行しても良い。"""
         "Shara Bey (A-Wing)":
            display_name: """Shara Bey"""
-           text: """君が防御するか主武装攻撃を実行する際、君は君が持っているその敵宇宙船のロックを消費し、%FOCUS%の結果を1つ君のダイスの結果に追加しても良い。 """
+           text: """君が防御するか主武装攻撃を実行する際、君は君が持っているその敵宇宙船のロックを消費し、 %FOCUS% の結果を1つ君のダイスの結果に追加しても良い。 """
 
         "Darth Vader (TIE Defender)":
            display_name: """Darth Vader"""
@@ -1976,6 +1976,50 @@ exportObj.cardLoaders.日本語 = () ->
         "Gavyn Sykes":
            display_name: """Gavyn Sykes"""
            text: """君が防御するか攻撃を実行する際、もし君が公開したマニューバの速度が敵宇宙船のものより大きいなら、君は空白の結果を振り直しても良い。"""
+
+         # Starter Packs
+        "Darth Vader (SSP)":
+           display_name: """Darth Vader (SSP)"""
+           text: """君がアクションを実行した後、君は %FORCE% を1つ消費して、アクションを実行しても良い。"""
+        "Maarek Stele (SSP)":
+           display_name: """Maarek Stele (SSP)"""
+           text: """君が攻撃を実行する際、もし防御者が表向きのダメージ・カードを受け取ろうとするなら、代わりに3枚ダメージ・カードを引き、1つ選び、残りを捨て札にする。"""
+        "Captain Jonus (SSP)":
+           display_name: """Captain Jonus (SSP)"""
+           text: """レンジ 0-1 の友軍宇宙船が %TORPEDO% あるいは %MISSILE% による攻撃を実行する際、その宇宙船は2つまで攻撃ダイスを振り直しても良い。"""
+        "Tomax Bren (SSP)":
+           display_name: """Tomax Bren (SSP)"""
+           text: """君が %RELOAD% アクションを実行した後、君は装備した %TALENT% アップグレード・カードのうちの1つの上にある %CHARGE% トークンを1つ回復しても良い。"""
+        '"Night Beast" (SSP)':
+           display_name: """“Night Beast” (SSP)"""
+           text: """君が青のマニューバを完全に実行した後、君は %FOCUS% アクションを実行しても良い。"""
+        "Valen Rudor (SSP)":
+           display_name: """Valen Rudor (SSP)"""
+           text: """レンジ 0-1 の友軍宇宙船の防御の後(もしあればダメージを適用した後)、君はアクションを実行しても良い。"""
+        "Iden Versio (SSP)":
+           display_name: """Iden Versio (SSP)"""
+           text: """レンジ0-1の友軍のTIE/ln Fighterが1つ以上のダメージを受けようとする前に、君は%CHARGE%を1つ消費しても良い。もしそうするなら、そのダメージをなくす。"""
+        "Luke Skywalker (SSP)":
+           display_name: """Luke Skywalker (SSP)"""
+           text: """君が防御者になった後(ダイスを振る前に)、君は %FORCE% を1つ回復しても良い。"""
+        "Jek Porkins (SSP)":
+           display_name: """Jek Porkins (SSP)"""
+           text: """君がストレス・トークンを受け取った後、君は攻撃ダイスを1つ振り、それを取り除いても良い。 %HIT% の結果なら、 %HIT% ダメージを1つ受ける。"""
+        '"Dutch" Vander (SSP)':
+           display_name: """“Dutch” Vander (SSP)"""
+           text: """君が %LOCK% アクションを実行した後、君はレンジ1-3の友軍宇宙船を選んでも良い。その宇宙船は君がロックしたオブジェクトへのロックを、距離の制限を無視して得る。"""
+        "Horton Salm (SSP)":
+           display_name: """Horton Salm (SSP)"""
+           text: """君が攻撃を実行する際、君は防御者のレンジ 0-1 にいる他の友軍宇宙船につき攻撃ダイスを1つ振り直しても良い。"""
+        "Arvel Crynyd (SSP)":
+           display_name: """Arvel Crynyd (SSP)"""
+           text: """もし君が他の宇宙船に重なることにより %BOOST% アクションが失敗しようとする時、代わりにマニューバを部分的に実行するようにして解決する。 %LINEBREAK% 君が攻撃レンジ0で攻撃を実行する際、それを攻撃レンジ1の攻撃として扱う。"""
+        "Jake Farrell (SSP)":
+           display_name: """Jake Farrell (SSP)"""
+           text: """君が %BARRELROLL% あるいは %BOOST% アクションを実行した後、君はレンジ0-1の友軍宇宙船を選んでも良い。その宇宙船は %FOCUS% アクションを実行しても良い。"""
+        "Shara Bey (SSP)":
+           display_name: """Shara Bey (SSP)"""
+           text: """君が防御するか主武装攻撃を実行する際、君は君が持っているその敵宇宙船のロックを消費し、 %FOCUS% の結果を1つ君のダイスの結果に追加しても良い。 """
 
         # Epic Ships
         "Republic Judiciary":
@@ -2956,7 +3000,7 @@ exportObj.cardLoaders.日本語 = () ->
         "Enhanced Jamming Suite":
            text: """君がジャムする際、君は君自身あるいは君以外の友軍宇宙船をジャムできる。%LINEBREAK%君が防御する際、もし攻撃者が緑のトークンを持っていないかあるいはその攻撃アーク内にジャム状態の宇宙船がいるなら、君は防御ダイスを1つ多く振っても良い。"""
         "Compassion":
-           text: """レンジ0-2の他に友軍宇宙船が表向きの<b>パイロット</b>あるいは<b>クルー</b>のダメージ・カードを受け取ろうとする時、君は %FORCE% を1つ消費しても良い。もしそうするなら、そのダメージ・カードは代わりに捨て札にされ、そして君は裏向きのダメージ・カードを1枚受け取る。その後、もし君がダメージ・カードを2枚以上持っているなら、 %FORCE% を2つ回復する。"""
+           text: """レンジ0-2の他の友軍宇宙船が表向きの<b>パイロット</b>あるいは<b>クルー</b>のダメージ・カードを受け取ろうとする時、君は %FORCE% を1つ消費しても良い。もしそうするなら、そのダメージ・カードは代わりに捨て札にされ、そして君は裏向きのダメージ・カードを1枚受け取る。その後、もし君がダメージ・カードを2枚以上持っているなら、 %FORCE% を2つ回復する。"""
         "Malice":
            text: """君が攻撃を実行する際、君は%FORCE%を1つ消費し、%FOCUS%あるいは%HIT%の結果1つを%CRIT%に変更しても良い。もしそうするなら、君がその攻撃を実行した後、もし防御者が1枚以上の<b>パイロット</b>あるいは<b>クルー</b>ダメージ・カードを受け取ったなら、%FORCE%を2つ回復する。"""
         "Shattering Shot":
@@ -3611,5 +3655,35 @@ exportObj.cardLoaders.日本語 = () ->
         "Modified for Organics":
            display_name: "Modified for Organics"
            text: """この宇宙船は <strong>Standardized</strong> 制約を受けない。君の速度2および3のバンク [%BANKLEFT% あるいは %BANKRIGHT%] マニューバの難易度を下げる。君の速度3ターン [%TURNLEFT% あるいは %TURNRIGHT%] マニューバの難易度を上げる。"""
+
+    damage_translations =
+        "Panicked Pilot":
+           text:"ストレス・トークンを2つ得る。その後、このカードを修理する。"
+        "Blinded Pilot":
+           text:"君が攻撃を実行する際、君は君のダイスを、%FORCE% の消費による通常の効果によってのみ修正できる。 %LINEBREAK% <strong>アクション:</strong> このカードを修理する。"
+        "Wounded Pilot":
+           text:"君がアクションを実行した後、攻撃ダイスを1つ振る。 %HIT% あるいは %CRIT% の結果なら、ストレス・トークンを1つ得る。 %LINEBREAK% <strong>アクション:</strong> このカードを修理する。"
+        "Stunned Pilot":
+           text:"君がマニューバを実行した後、もし君が障害物を通過するか、重なったなら、 %HIT% ダメージを1つ受ける。"
+        "Console Fire":
+           text:"君がエンゲージする前に、攻撃ダイスを1つ振る。 %HIT% の結果なら、 %HIT% ダメージを1つ受ける。 %LINEBREAK% <strong>アクション:</strong> このカードを修理する。"
+        "Damaged Engine":
+           text:"君のターン・マニューバ(%TURNLEFT% および %TURNRIGHT%)の難易度を上げる。"
+        "Weapons Failure":
+           text:"君が攻撃を実行する際、攻撃ダイスを1つ少なく振る。 %LINEBREAK% <strong>アクション:</strong> このカードを修理する。"
+        "Hull Breach":
+           text:"君が1つ以上の %HIT% ダメージを受けようとする前に、代わりに同じ数の %CRIT% ダメージを受ける。 %LINEBREAK% <strong>アクション:</strong> このカードを修理する。"
+        "Structural Damage":
+           text:"君が防御する際、防御ダイスを1つ少なく振る。"
+        "Damaged Sensor Array":
+           text:"君は %FOCUS% アクションおよびダメージ・カードのアクションを除き、アクションを実行できない。 %LINEBREAK%<strong>アクション:</strong> このカードを修理する。"
+        "Loose Stabilizer":
+           text:"君は直進ではないマニューバ (%STRAIGHT%) を実行した後、 %HIT% ダメージを受け、このカードを修理する。 %LINEBREAK%<strong>アクション:</strong> このカードを修理する。"
+        "Disabled Power Regulator":
+           text:"君がエンゲージする前に、イオン・トークンを1つ得る。君がイオン・マニューバを実行した後、このカードを修理する。"
+        "Fuel Leak":
+           text:"%CRIT% ダメージを1つ受けた後、 %HIT% ダメージを受けこのカードを修理する。 %LINEBREAK%<strong>アクション:</strong> このカードを修理する。"
+        "Direct Hit!":
+           text:"%HIT% ダメージを1つ受ける。その後、このカードを修理する。"
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations
