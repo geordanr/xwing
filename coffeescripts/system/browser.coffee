@@ -838,7 +838,7 @@ class exportObj.CardBrowser
                     for name, pilots of exportObj.pilotsByFactionCanonicalName[faction]
                         for pilot in pilots
                             if pilot.ship == card.data.name
-                                if pilot.loadout >= @minimum_point_costs.value and pilot.loadout <= @maximum_loadout_costs.value
+                                if pilot.loadout >= @minimum_loadout_costs.value and pilot.loadout <= @maximum_loadout_costs.value
                                     matching_loadout = true
                                     break
                         break if matching_loadout
