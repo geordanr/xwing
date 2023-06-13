@@ -12104,7 +12104,7 @@ class exportObj.Collection
             # console.log "deauthed, destroying collection UI"
             @destroyUI() unless authenticated
         .on 'xwing-collection:saved', (e, collection) =>
-            @modal_status.text 'Collection saved'
+            @modal_status.text 'Saved!'
             @modal_status.fadeIn 100, =>
                 @modal_status.fadeOut 1000
                 
@@ -12145,7 +12145,7 @@ class exportObj.Collection
             $(exportObj).trigger 'xwing-collection:changed', this
 
         $ @modal.find('.reset-collection').click (e) =>
-            $ @modal.find('#reset-check').fadeIn()
+            $ @modal.find('#reset-check').fadeIn 100
 
         $ @modal.find('button.cancel-reset').click (e) =>
             $ @modal.find('#reset-check').fadeOut()
