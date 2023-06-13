@@ -2435,7 +2435,7 @@ exportObj.cardLoaders.Português = () ->
            text: """No começo da Fase de Engajamento, se houver uma nave inimiga em seu %BULLSEYEARC%, receba uma ficha de cálculo."""
         "Volan Das":
            display_name: """Volan Das"""
-           text: """Depois que você executar completamente uma manobra, você pode escolher uma nave inimiga em alcance 1. A nave escolhida recebe 1 ficha de desgaste e você você remover 1 ficha de estresse."""
+           text: """Depois que você executar completamente uma manobra vermelha, você pode escolher uma nave inimiga em alcance 1. A nave escolhida recebe 1 ficha de desgaste e você você remover 1 ficha de estresse."""
 
        #Infiltrator
         "Dark Courier":
@@ -3780,7 +3780,7 @@ exportObj.cardLoaders.Português = () ->
            text: """No começo da Fase de Engajamento, se você estiver no %FRONTARC% de uma nave inimiga, você pode receber 1 ficha de desgaste para recuperar 1 %FORCE%."""
         "Contingency Protocol (SoC)":
            display_name: """Protocolo de Contingência"""
-           text: """Depois que esta nave for destruída outra nave amiga em alcance 0-3 com <b>Protocolo de Contingência</b> pode realizar uma ação, mes se estiver estressada."""
+           text: """Depois que esta nave for destruída outra nave amiga em alcance 0-3 com <b>Protocolo de Contingência</b> pode realizar uma ação, mesmo se estiver estressada."""
         "Evasion Sequence 7 (SoC)":
            display_name: """Sequência de Evasão 7"""
            text: """Quando você realizar uma ação %EVADE% vermelha, se houver um obstáculo, objeto de cenário em alcance 1, trate a ação como branca."""
