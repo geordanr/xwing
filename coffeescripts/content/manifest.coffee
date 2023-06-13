@@ -11990,12 +11990,18 @@ class exportObj.Collection
                     Check Collection Requirements <input type="checkbox" class="check-collection"/>
                 </label>
                 &nbsp;
+                <button class="btn btn-danger reset-collection" aria-hidden="true">Reset</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+            <div id="reset-check" class="modal-footer d-print-none">
+                <button class="btn btn-modal cancel-reset translated" aria-hidden="true" defaultText="Go Back"></button>
+                <button class="btn btn-danger confirm-reset translated" aria-hidden="true" defaultText="Reset Collection"></button>
             </div>
         </div>
     </div>
         """
         @modal_status = $ @modal.find('.collection-status')
+        @modal.find('#reset-check').hide()
 
         if @checks.collectioncheck?
             if @checks.collectioncheck != "false"
@@ -12137,7 +12143,19 @@ class exportObj.Collection
             @modal_status.fadeIn 100, =>
                 @modal_status.fadeOut 1000
             $(exportObj).trigger 'xwing-collection:changed', this
-            
+
+        $ @modal.find('.reset-collection').click (e) =>
+            $ @modal.find('#reset-check').fadeIn()
+
+        $ @modal.find('button.cancel-reset').click (e) =>
+            $ @modal.find('#reset-check').fadeOut()
+
+        $ @modal.find('button.confirm-reset').click (e) =>
+            $(exportObj).trigger 'xwing-collection:reset', this
+            $ @modal.find('#reset-check').fadeOut()
+            $ @modal.find('.expansion-count').val 0
+            $ @modal.find('.singleton-count').val 0
+
     countToBackgroundColor: (count) ->
         count = parseInt(count)
         switch

@@ -455,12 +455,6 @@ class exportObj.SquadBuilderBackend
         @unsaved_modal.data 'callback', action
         @unsaved_modal.modal 'show'
 
-    warnCollectionReset: (builder, action) ->
-        @reset_collection_modal.data 'builder', builder
-        @reset_collection_modal.data 'callback', action
-        @reset_collection_modal.modal 'show'
-
-
     setupUI: () ->
         @auth_status.addClass 'disabled'
         @auth_status.click (e) =>
@@ -927,41 +921,6 @@ class exportObj.SquadBuilderBackend
             @unsaved_modal.data('callback')()
             @unsaved_modal.modal 'hide'
 
-
-        @reset_collection_modal = $ document.createElement('DIV')
-        @reset_collection_modal.addClass 'modal fade d-print-none'
-        @reset_collection_modal.tabindex = "-1"
-        @reset_collection_modal.role = "dialog"
-        $(document.body).append @reset_collection_modal
-        @reset_collection_modal.append $.trim """
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="translated" defaultText="Reset Collection"></h3>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p class="translated" defaultText="Reset Collection Warning"></p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-modal btn-primary translated" aria-hidden="true" data-dismiss="modal" defaultText="Go Back"></button>
-                <button class="btn btn-danger resetcollection translated" aria-hidden="true" defaultText="Reset Collection"></button>
-            </div>
-        </div>
-    </div>
-        """
-        @reset_collection_modal = $ @reset_collection_modal.find('button.resetcollection')
-        @reset_collection_modal.click (e) =>
-            e.preventDefault()
-            clearTimeout(@collection_reset_timer) if @collection_reset_timer?
-            @collection_reset_timer = setTimeout =>
-                @resetCollection collection, (res) ->
-                    if res
-                        $(window).trigger 'xwing-collection:saved', collection
-            , 1000
-
-
-
         # this is dynamically created UI, so we need to translate it after creation
         exportObj.translateUIElements(@unsaved_modal)
 
@@ -1000,7 +959,14 @@ class exportObj.SquadBuilderBackend
                     if res
                         $(window).trigger 'xwing-collection:saved', collection
             , 1000
-        
+        .on 'xwing-collection:reset', (e, collection) =>
+            clearTimeout(@collection_save_timer) if @collection_save_timer?
+            @collection_save_timer = setTimeout =>
+                @resetCollection collection, (res) ->
+                    if res
+                        $(window).trigger 'xwing-collection:reset', collection
+            , 1000
+
     getSettings: (cb=$.noop) ->
         $.get("#{@server}/settings").done (data, textStatus, jqXHR) =>
             cb data.settings
