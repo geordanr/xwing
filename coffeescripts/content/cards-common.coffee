@@ -5840,6 +5840,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Cannon"
+                "Modification"
             ]
         }
         {
