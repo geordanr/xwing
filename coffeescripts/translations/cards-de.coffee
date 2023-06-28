@@ -3357,7 +3357,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Deine Flügelmänner können %BARRELROLL%- oder %BOOST%-Aktionen durchführen. Falls sie das tun, trennen sie sich freiwillig vom Schwarm.%LINEBREAK%Solange du verteidigst, dürfen bis zu 2 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT%/%CRIT%-Schaden erleiden, um 1 passendes Ergebnis zu negieren."""
         "Shield Upgrade":
            display_name: """Verbesserte Schilde"""
-           text: """<i class = flavor_text>Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus """
+           text: """<i class = flavor_text>Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus lohnenswerte Investition. </i>"""
         "Skilled Bombardier":
            display_name: """Versierte Bombenschützin"""
            text: """Falls du ein Gerät abwerfen oder starten würdest, darfst du eine Schablone mit gleicher Flugrichtung und einer um 1 höheren oder niedrigeren Geschwindigkeit verwenden."""
