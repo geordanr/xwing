@@ -278,8 +278,6 @@ class exportObj.SquadBuilder
                             <li><a class="dropdown-item randomize-options translated" defaultText="Randomizer Options"></a></li>
                             <li><a class="dropdown-item misc-settings translated" defaultText="Misc Settings"></a></li>
                         </ul>
-                        
-
                     </div>
                 </div>
             </div>
@@ -2031,9 +2029,10 @@ class exportObj.SquadBuilder
         # returns number of upgrades with given canonical name equipped
         count = 0
         for ship in @ships
-            for upgrade in ship.upgrades
-                if upgrade?.data?.canonical_name == canonical_name
-                    count++
+            if not ship.pilot?.upgrades?
+                for upgrade in ship.upgrades
+                    if upgrade?.data?.canonical_name == canonical_name
+                        count++
         count
 
     countPilots: (canonical_name) ->
@@ -3067,7 +3066,7 @@ class exportObj.SquadBuilder
                     
                 for ship in @ships
                     expensive_slots = []
-                    if ship.pilot.loadout?
+                    if ship.pilot.loadout? and not ship.pilot.upgrades?
                         while ship.upgrade_points_total < ship.pilot.loadout
                             # we wan't to utilize newly added upgrade slots, so we will check for slots iteratively
                             unused_addons = []
@@ -3369,12 +3368,13 @@ class exportObj.SquadBuilder
                 validity = false unless ship_is_available and pilot_is_available
                 missingStuff.push ship.data unless ship_is_available
                 missingStuff.push ship.pilot unless pilot_is_available
-                for upgrade in ship.upgrades
-                    if upgrade.data?
-                        upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
-                        # console.log "#{@faction}: Upgrade #{upgrade.data.name} available: #{upgrade_is_available}"
-                        validity = false unless upgrade_is_available or upgrade.data.standard?
-                        missingStuff.push upgrade.data unless upgrade_is_available or upgrade.data.standard?
+                if not ship.pilot.upgrades?
+                    for upgrade in ship.upgrades
+                        if upgrade.data?
+                            upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
+                            # console.log "#{@faction}: Upgrade #{upgrade.data.name} available: #{upgrade_is_available}"
+                            validity = false unless upgrade_is_available or upgrade.data.standard?
+                            missingStuff.push upgrade.data unless upgrade_is_available or upgrade.data.standard?
         [validity, missingStuff]
 
     checkCollection: ->
