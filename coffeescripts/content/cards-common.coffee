@@ -18234,9 +18234,8 @@ exportObj.basicCardData = ->
             points: 3
             slot: "Illicit"
             max_per_squad: 3
-            faction: "Scum and Villainy"
             restrictions: [
-                ["Base", "Standard"]
+                ["Keyword", "Bounty Hunter"]
             ]
             applies_condition: '''Marked for Elimination'''.canonicalize()
         }

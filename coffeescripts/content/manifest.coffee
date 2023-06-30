@@ -12154,7 +12154,9 @@ class exportObj.Collection
             $(exportObj).trigger 'xwing-collection:reset', this
             $ @modal.find('#reset-check').fadeOut()
             $ @modal.find('.expansion-count').val 0
+            $ @modal.find('.expansion-count').css 'background-color', @countToBackgroundColor(target.val())
             $ @modal.find('.singleton-count').val 0
+            $ @modal.find('.singleton-count').css 'background-color', @countToBackgroundColor(target.val())
 
     countToBackgroundColor: (count) ->
         count = parseInt(count)
