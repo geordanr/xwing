@@ -5840,6 +5840,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Cannon"
+                "Modification"
             ]
         }
         {
@@ -18130,8 +18131,8 @@ exportObj.basicCardData = ->
             slot: "Title"
             unique: true
             charge: 2
+            faction: ["Galactic Republic", "Separatist Alliance"]
             ship: "Gauntlet Fighter"
-            # faction: ["Galactic Republic", "Separatist Alliance"]
             restrictions: [
                 ["Slot", "Modification"]
             ]
@@ -18152,9 +18153,9 @@ exportObj.basicCardData = ->
             slot: "Title"
             unique: true
             charge: 2
+            faction: ["Rebel Alliance", "Scum and Villainy"]
             recurring: 1
             ship: "Gauntlet Fighter"
-            # faction: ["Rebel Alliance", "Scum and Villainy"]
             restrictions: [
                 ["Slot", "Modification"]
             ]
