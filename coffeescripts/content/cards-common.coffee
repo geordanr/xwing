@@ -17059,7 +17059,7 @@ exportObj.basicCardData = ->
             id: 353
             charge: 3
             unique: true
-            recurring: 1
+            recurring: 3
             slot: "Tactical Relay"
             solitary: true
             faction: "Separatist Alliance"
