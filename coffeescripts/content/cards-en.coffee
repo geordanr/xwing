@@ -1833,6 +1833,20 @@ exportObj.cardLoaders.English = () ->
            display_name: """Haor Chall Prototype (SoC)"""
            text: """After an enemy ship in your %BULLSEYEARC% declares a scenario feature or another friendly ship as the defender, you may perform a %CALCULATE% or %LOCK% action."""
 
+        # TIE Bomber (TBE)
+        '"Deathfire" (TBE)':
+           display_name: """“Deathfire” (TBE)"""
+           text: """After you fully execute a speed 3-5 maneuver, if you have not dropped or launched a device this round, you may spend 2 %CHARGE% to drop or launch a bomb using the [3 %STRAIGHT%] template."""
+        "Major Rhymer (TBE)":
+           display_name: """Major Rhymer (TBE)"""
+           text: """While you perform a %TORPEDO% attack, if the defender is in your %BULLSEYEARC%, change 1 %FOCUS% result to a %CRIT% result."""
+        "Captain Jonus (TBE)":
+           display_name: """Captain Jonus (TBE)"""
+           text: """After you drop or launch a device, gain an evade token."""
+        "Tomax Bren (TBE)":
+           display_name: """Tomax Bren (TBE)"""
+           text: """After you perform a %BARRELROLL% action, you may spend 2 %CHARGE%. If you do, gain a focus token."""
+
         # Hotshots and Aces 2
         "Corran Horn (X-Wing)":
            display_name: """Corran Horn"""
@@ -3172,6 +3186,18 @@ exportObj.cardLoaders.English = () ->
         "Wolfpack (SoC)":
            display_name: """Wolfpack"""
            text: """While you perform an attack, you may spend a lock belonging to a friendly <b>Plo Koon</b> ship or ship with the <b>Born for This</b> ability that is on the defender to reroll any number of attack dice."""
+        "Swift Approach (TBE)":
+           display_name: """Swift Approach"""
+           text: """During the System Phase, after you drop or launch a device, you may perform a white %BARRELROLL% or %BOOST% action, even while stressed."""
+        "Automated Loaders (TBE)":
+           display_name: """Automated Loaders"""
+           text: """After you perform a primary attack, you may spend 1 %CHARGE% to perform a %RELOAD% action."""
+        "Top Cover (TBE)":
+           display_name: """Top Cover"""
+           text: """After a friendly ship at range 0-1 defends, if you have not dropped or launched a device this round, you may launch a device using the [3 %BANKLEFT%], [3 %STRAIGHT%], or [3 %BANKRIGHT%] template. %LINEBREAK% You ignore the effects of friendly devices."""
+        "True Grit (TBE)":
+           display_name: """True Grit"""
+           text: """At the end of the Activation Phase, if you are not strained, you may gain 1 strain token to remove 1 non-lock red or orange token."""
 
 
         # Epic upgrades
