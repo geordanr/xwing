@@ -13527,6 +13527,83 @@ exportObj.basicCardData = ->
                 "Concussion Missiles"
             ]
         }
+        {
+            name: '"Deathfire" (TBE)'
+            canonical_name: 'Deathfire'.canonicalize()
+            xws: "deathfire-swz98"
+            unique: true
+            id: 644
+            faction: "Galactic Empire"
+            ship: "TIE/sa Bomber"
+            skill: 3
+            points: 20
+            charge: 2
+            recurring: 1
+            upgrades: [
+                "Swift Approach (TBE)"
+                "Conner Nets"
+                "Proton Bombs"
+            ]
+        }
+        {
+            name: "Major Rhymer (TBE)"
+            canonical_name: 'Major Rhymer'.canonicalize()
+            xws: "majorrhymer-swz98"
+            unique: true
+            id: 645
+            faction: "Galactic Empire"
+            ship: "TIE/sa Bomber"
+            skill: 4
+            points: 20
+            upgrades: [
+                "Adv. Proton Torpedoes"
+                "Automated Loaders (TBE)"
+                "Afterburners"
+            ]
+        }
+        {
+            name: "Captain Jonus (TBE)"
+            canonical_name: 'Captain Jonus'.canonicalize()
+            xws: "captainjonus-swz98"
+            unique: true
+            id: 646
+            faction: "Galactic Empire"
+            ship: "TIE/sa Bomber"
+            skill: 4
+            points: 20
+            upgrades: [
+                "Top Cover (TBE)"
+                "Barrage Rockets"
+                "Proton Bombs"
+            ]
+            ship_override:
+                actions: [
+                    "Focus"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Lock"
+                    "Reload"
+                ]
+        }
+        {
+            name: "Tomax Bren (TBE)"
+            canonical_name: 'Tomax Bren'.canonicalize()
+            xws: "tomaxbren-swz98"
+            unique: true
+            id: 647
+            faction: "Galactic Empire"
+            ship: "TIE/sa Bomber"
+            skill: 5
+            points: 20
+            charge: 2
+            recurring: 1
+            upgrades: [
+                "True Grit (TBE)"
+                "Plasma Torpedoes"
+                "Ion Bombs"
+            ]
+        }
+
     ]
 
     upgradesById: [
@@ -18638,6 +18715,31 @@ exportObj.basicCardData = ->
             id: 493
             standard: true
             slot: "Modification"
+        }
+        {
+            name: "Swift Approach (TBE)"
+            id: 494
+            standard: true
+            slot: "Talent"
+        }
+        {
+            name: "Automated Loaders (TBE)"
+            id: 495
+            standard: true
+            charge: 1
+            slot: "Modification"
+        }
+        {
+            name: "Top Cover (TBE)"
+            id: 496
+            standard: true
+            slot: "Talent"
+        }
+        {
+            name: "True Grit (TBE)"
+            id: 497
+            standard: true
+            slot: "Talent"
         }
     ]
 
