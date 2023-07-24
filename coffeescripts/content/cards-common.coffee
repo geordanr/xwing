@@ -2124,10 +2124,9 @@ exportObj.basicCardData = ->
         }
         {
             name: "Garven Dreis (X-Wing)"
-            canonical_name: 'Garven Dreis'.canonicalize()
             id: 6
             unique: true
-            xws: "garvendreis-t65xwing"
+            xwsship: true
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 4
@@ -2232,10 +2231,9 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sabine Wren (TIE Fighter)"
-            canonical_name: 'Sabine Wren'.canonicalize()
             id: 13
             unique: true
-            xws: "sabinewren-tielnfighter"
+            xwsship: true
             faction: "Rebel Alliance"
             ship: "TIE/ln Fighter"
             skill: 3
@@ -2249,10 +2247,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ezra Bridger (TIE Fighter)"
-            canonical_name: 'Ezra Bridger'.canonicalize()
             id: 14
             unique: true
-            xws: "ezrabridger-tielnfighter"
             faction: "Rebel Alliance"
             ship: "TIE/ln Fighter"
             skill: 3
@@ -2268,10 +2264,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Zeb" Orrelios (TIE Fighter)'
-            canonical_name: '"Zeb" Orrelios'.canonicalize()
             id: 15
             unique: true
-            xws: "zeborrelios-tielnfighter"
             faction: "Rebel Alliance"
             ship: "TIE/ln Fighter"
             skill: 2
@@ -2430,8 +2424,6 @@ exportObj.basicCardData = ->
             name: "Norra Wexley (Y-Wing)"
             id: 25
             unique: true
-            canonical_name: 'Norra Wexley'.canonicalize()
-            xws: "norrawexley-btla4ywing"
             faction: "Rebel Alliance"
             ship: "BTL-A4 Y-wing"
             skill: 5
@@ -2726,7 +2718,7 @@ exportObj.basicCardData = ->
             name: "Han Solo"
             id: 42
             unique: true
-            xws: "hansolo-modifiedyt1300lightfreighter"
+            xwsaddon: "modifiedyt1300lightfreighter"
             faction: "Rebel Alliance"
             ship: "Modified YT-1300 Light Freighter"
             skill: 6
@@ -2748,7 +2740,7 @@ exportObj.basicCardData = ->
             name: "Lando Calrissian"
             id: 43
             unique: true
-            xws: "landocalrissian-modifiedyt1300lightfreighter"
+            xwsaddon: "modifiedyt1300lightfreighter"
             faction: "Rebel Alliance"
             ship: "Modified YT-1300 Light Freighter"
             skill: 5
@@ -3035,8 +3027,6 @@ exportObj.basicCardData = ->
             name: "Hera Syndulla (VCX-100)"
             id: 61
             unique: true
-            canonical_name: 'Hera Syndulla'.canonicalize()
-            xws: "herasyndulla-vcx100lightfreighter"
             faction: "Rebel Alliance"
             ship: "VCX-100 Light Freighter"
             skill: 5
@@ -3133,7 +3123,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sabine Wren"
-            canonical_name: 'Sabine Wren'.canonicalize()
             id: 66
             unique: true
             faction: "Rebel Alliance"
@@ -3192,8 +3181,6 @@ exportObj.basicCardData = ->
             name: "Fenn Rau (Sheathipede)"
             id: 69
             unique: true
-            canonical_name: 'Fenn Rau'.canonicalize()
-            xws: "fennrau-sheathipedeclassshuttle"
             faction: "Rebel Alliance"
             ship: "Sheathipede-Class Shuttle"
             skill: 6
@@ -3210,10 +3197,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ezra Bridger (Sheathipede)"
-            canonical_name: 'Ezra Bridger'.canonicalize()
             id: 70
             unique: true
-            xws: "ezrabridger-sheathipedeclassshuttle"
             faction: "Rebel Alliance"
             ship: "Sheathipede-Class Shuttle"
             skill: 3
@@ -3231,10 +3216,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Zeb" Orrelios (Sheathipede)'
-            canonical_name: '"Zeb" Orrelios'.canonicalize()
             id: 71
             unique: true
-            xws: "zeborrelios-sheathipedeclassshuttle"
             faction: "Rebel Alliance"
             ship: "Sheathipede-Class Shuttle"
             skill: 2
@@ -3642,10 +3625,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Lando Calrissian (Scum) (Escape Craft)"
-            canonical_name: 'Lando Calrissian (Scum)'.canonicalize()
             id: 93
             unique: true
-            xws: "landocalrissian-escapecraft"
             faction: "Scum and Villainy"
             ship: "Escape Craft"
             skill: 4
@@ -3674,10 +3655,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "L3-37 (Escape Craft)"
-            canonical_name: 'L3-37'.canonicalize()
             id: 95
             unique: true
-            xws: "l337-escapecraft"
             faction: "Scum and Villainy"
             ship: "Escape Craft"
             skill: 2
@@ -4253,7 +4232,6 @@ exportObj.basicCardData = ->
             name: "Sabine Wren (Scum)"
             id: 127
             unique: true
-            xws: "sabinewren-lancerclasspursuitcraft"
             faction: "Scum and Villainy"
             ship: "Lancer-Class Pursuit Craft"
             skill: 3
@@ -4615,10 +4593,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "Dalan Oberos (StarViper)"
-            canonical_name: 'Dalan Oberos'.canonicalize()
             id: 149
             unique: true
-            xws: "dalanoberos-starviperclassattackplatform"
             faction: "Scum and Villainy"
             ship: "StarViper-class Attack Platform"
             skill: 4
@@ -6188,7 +6164,6 @@ exportObj.basicCardData = ->
             name: "Han Solo (Resistance)"
             id: 245
             unique: true
-            xws: "hansolo-scavengedyt1300"
             faction: "Resistance"
             ship: "Scavenged YT-1300"
             skill: 6
@@ -6211,7 +6186,6 @@ exportObj.basicCardData = ->
             id: 246
             unique: true
             faction: "Resistance"
-            xws: "chewbacca-scavengedyt1300"
             ship: "Scavenged YT-1300"
             skill: 4
             points: 6
@@ -6390,7 +6364,6 @@ exportObj.basicCardData = ->
             name: "Black Squadron Ace (T-70)"
             id: 256
             faction: "Resistance"
-            xws: "blacksquadronace-t70xwing"
             ship: "T-70 X-wing"
             skill: 4
             points: 5
@@ -7517,8 +7490,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (N-1 Starfighter)"
-            canonical_name: 'Anakin Skywalker'.canonicalize()
-            xws: "anakinskywalker-nabooroyaln1starfighter"
             id: 322
             unique: true
             faction: "Galactic Republic"
@@ -7804,8 +7775,6 @@ exportObj.basicCardData = ->
         {
             name: '"Odd Ball" (ARC-170)'
             id: 338
-            xws: "oddball-arc170starfighter"
-            canonical_name: '"Odd Ball"'.canonicalize()
             unique: true
             faction: "Galactic Republic"
             ship: "ARC-170 Starfighter"
@@ -8156,8 +8125,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (Y-Wing)"
-            canonical_name: 'Anakin Skywalker'.canonicalize()
-            xws: "anakinskywalker-btlbywing"
             unique: true
             id: 359
             faction: "Galactic Republic"
@@ -8291,10 +8258,8 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Odd Ball" (Y-Wing)'
-            xws: "oddball-btlbywing"
             id: 366
             unique: true
-            canonical_name: '"Odd Ball"'.canonicalize()
             faction: "Galactic Republic"
             ship: "BTL-B Y-wing"
             skill: 5
@@ -8912,8 +8877,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bossk (Z-95 Headhunter)"
-            xws: "bossk-z95af4headhunter"
-            canonical_name: 'Bossk'.canonicalize()
             id: 398
             faction: "Scum and Villainy"
             unique: true
@@ -9003,8 +8966,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gideon Hask (Xi Shuttle)"
-            canonical_name: "Gideon Hask".canonicalize()
-            xws: "gideonhask-xiclasslightshuttle"
             id: 403
             faction: "First Order"
             unique: true
@@ -9024,8 +8985,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Commander Malarus (Xi Shuttle)"
-            canonical_name: "Commander Malarus".canonicalize()
-            xws: "commandermalarus-xiclasslightshuttle"
             id: 404
             faction: "First Order"
             unique: true
@@ -9439,8 +9398,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett (Separatist)"
-            canonical_name: 'Boba Fett'.canonicalize()
-            xws: "bobafett-separatistalliance"
             id: 427
             faction: "Separatist Alliance"
             unique: true
@@ -9586,8 +9543,6 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Odd Ball" (V-wing)'
-            canonical_name: '"Oddball"'.canonicalize()
-            xws: "oddball-nimbusclassvwing"
             id: 435
             faction: "Galactic Republic"
             skill: 5
@@ -9682,8 +9637,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Obi-Wan Kenobi (Eta-2)"
-            canonical_name: 'Obi-Wan Kenobi'.canonicalize()
-            xws: "obiwankenobi-eta2actis"
             id: 440
             faction: "Galactic Republic"
             skill: 5
@@ -9704,8 +9657,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (Eta-2)"
-            canonical_name: 'Anakin Skywalker'.canonicalize()
-            xws: "anakinskywalker-eta2actis"
             id: 441
             faction: "Galactic Republic"
             skill: 6
@@ -9726,8 +9677,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Poe Dameron (HoH)"
-            canonical_name: 'Poe Dameron'.canonicalize()
-            xws: 'poedameron-swz68'
+            xwsaddon: 'swz68'
             id: 442
             unique: true
             faction: "Resistance"
@@ -9750,8 +9700,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Temmin Wexley (HoH)"
-            canonical_name: 'Temmin Wexley'.canonicalize()
-            xws: 'temminwexley-swz68'
+            xwsaddon: 'swz68'
             id: 443
             unique: true
             faction: "Resistance"
@@ -9872,8 +9821,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Hera Syndulla (B-Wing)"
-            canonical_name: 'Hera Syndulla'.canonicalize()
-            xws: "herasyndulla-asf01bwing"
             id: 450
             unique: true
             faction: "Rebel Alliance"
@@ -9897,8 +9844,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Hera Syndulla (A-Wing)"
-            canonical_name: 'Hera Syndulla'.canonicalize()
-            xws: "herasyndulla-rz1awing"
             id: 451
             unique: true
             faction: "Rebel Alliance"
@@ -9918,8 +9863,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Wedge Antilles (A-Wing)"
-            canonical_name: 'Wedge Antilles'.canonicalize()
-            xws: "wedgeantilles-rz1awing"
             id: 452
             unique: true
             faction: "Rebel Alliance"
@@ -9936,8 +9879,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sabine Wren (A-Wing)"
-            canonical_name: 'Sabine Wren'.canonicalize()
-            xws: "sabinewren-rz1awing"
             id: 453
             unique: true
             faction: "Rebel Alliance"
@@ -9991,8 +9932,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gideon Hask (TIE Interceptor)"
-            canonical_name: 'Gideon Hask'.canonicalize()
-            xws: "gideonhask-tieininterceptor"
             id: 456
             unique: true
             faction: "Galactic Empire"
@@ -10010,8 +9949,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kanan Jarrus (HWK-290)"
-            canonical_name: 'Kanan Jarrus'.canonicalize()
-            xws: "kananjarrus-hwk290lightfreighter"
             id: 457
             unique: true
             faction: "Scum and Villainy"
@@ -10103,8 +10040,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Shara Bey (A-Wing)"
-            canonical_name: 'Shara Bey'.canonicalize()
-            xws: "sharabey-rz1awing"
             id: 462
             unique: true
             faction: "Rebel Alliance"
@@ -10120,8 +10055,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ahsoka Tano (A-Wing)"
-            canonical_name: 'Ahsoka Tano'.canonicalize()
-            xws: "ahsokatano-rz1awing"
             id: 463
             unique: true
             faction: "Rebel Alliance"
@@ -10209,8 +10142,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Vult Skerris (TIE Interceptor)"
-            canonical_name: 'Vult Skerris'.canonicalize()
-            xws: "vultskerris-tieininterceptor"
             id: 468
             unique: true
             faction: "Galactic Empire"
@@ -10228,8 +10159,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Darth Vader (TIE Defender)"
-            canonical_name: 'Darth Vader'.canonicalize()
-            xws: "darthvader-tieddefender"
             id: 469
             unique: true
             faction: "Galactic Empire"
@@ -10525,8 +10454,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "C'ai Threnalli (Y-Wing)"
-            canonical_name: '''C'ai Threnalli'''.canonicalize()
-            xws: "caithrenalli-btanr2ywing"
             id: 484
             unique: true
             faction: "Resistance"
@@ -10583,8 +10510,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kylo Ren (TIE Whisper)"
-            canonical_name: 'Kylo Ren'.canonicalize()
-            xws: "kyloren-tiewiwhispermodifiedinterceptor"
             id: 487
             unique: true
             faction: "First Order"
@@ -10713,8 +10638,6 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Scorch" (TIE/Se Bomber)'
-            canonical_name: '"Scorch"'.canonicalize()
-            xws: "scorch-tiesebomber"
             id: 494
             unique: true
             faction: "First Order"
@@ -10837,14 +10760,14 @@ exportObj.basicCardData = ->
             slots: [
                 "Torpedo"
                 "Modification"
+                "Modification"
             ]
         }
         {
             name: "Fenn Rau (Rebel Fang)"
             id: 501
             faction: "Rebel Alliance"
-            canonical_name: 'Fenn Rau'.canonicalize()
-            xws: "fennrau-rebel-fang"
+            xwsaddon: "rebel-fang"
             unique: true
             ship: "Fang Fighter"
             skill: 6
@@ -10977,7 +10900,7 @@ exportObj.basicCardData = ->
             name: "Bo-Katan Kryze"
             id: 509
             faction: "Separatist Alliance"
-            xws: "bokatankryze-separatistalliance"
+            xwsaddon: "separatistalliance"
             ship: "Gauntlet Fighter"
             skill: 4
             points: 6
@@ -11000,7 +10923,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bo-Katan Kryze (Republic)"
-            canonical_name: 'Bo-Katan Kryze'.canonicalize()
             xws: "bokatankryze"
             id: 510
             faction: "Galactic Republic"
@@ -11192,8 +11114,6 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Chopper" (Gauntlet Fighter)'
-            canonical_name: 'Chopper'.canonicalize()
-            xws: "chopper-gauntletfighter"
             id: 519
             faction: "Rebel Alliance"
             ship: "Gauntlet Fighter"
@@ -11215,8 +11135,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ezra Bridger (Gauntlet Fighter)"
-            canonical_name: 'Ezra Bridger'.canonicalize()
-            xws: "ezrabridger-gauntletfighter"
             id: 520
             faction: "Rebel Alliance"
             ship: "Gauntlet Fighter"
@@ -11317,7 +11235,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Plo Koon (Delta-7b)"
-            xws: "plokoon-delta7baethersprite"
             id: 525
             unique: true
             faction: "Galactic Republic"
@@ -11336,8 +11253,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Saesee Tiin (Delta-7b)"
-            canonical_name: 'Saesee Tiin'.canonicalize()
-            xws: "saeseetiin-delta7baethersprite"
             id: 526
             unique: true
             faction: "Galactic Republic"
@@ -11355,8 +11270,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Mace Windu (Delta-7b)"
-            canonical_name: 'Mace Windu'.canonicalize()
-            xws: "macewindu-delta7baethersprite"
             id: 527
             unique: true
             faction: "Galactic Republic"
@@ -11375,8 +11288,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (Delta-7b)"
-            canonical_name: 'Anakin Skywalker'.canonicalize()
-            xws: "anakinskywalker-delta7baethersprite"
             id: 528
             unique: true
             faction: "Galactic Republic"
@@ -11396,8 +11307,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Luminara Unduli (Delta-7b)"
-            canonical_name: 'Luminara Unduli'.canonicalize()
-            xws: "luminaraunduli-delta7baethersprite"
             id: 529
             unique: true
             faction: "Galactic Republic"
@@ -11415,8 +11324,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Barriss Offee (Delta-7b)"
-            canonical_name: 'Barriss Offee'.canonicalize()
-            xws: "barrissoffee-delta7baethersprite"
             id: 530
             unique: true
             faction: "Galactic Republic"
@@ -11434,8 +11341,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ahsoka Tano (Delta-7b)"
-            canonical_name: 'Ahsoka Tano'.canonicalize()
-            xws: "ahsokatano-delta7baethersprite"
             id: 531
             unique: true
             faction: "Galactic Republic"
@@ -11453,8 +11358,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Jedi Knight (Delta-7b)"
-            canonical_name: 'Jedi Knight'.canonicalize()
-            xws: "jediknight-delta7baethersprite"
             id: 532
             faction: "Galactic Republic"
             ship: "Delta-7b Aethersprite"
@@ -11471,8 +11374,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Obi-Wan Kenobi (Delta-7b)"
-            canonical_name: 'Obi-Wan Kenobi'.canonicalize()
-            xws: "obiwankenobi-delta7baethersprite"
             id: 533
             unique: true
             faction: "Galactic Republic"
@@ -11515,8 +11416,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Viktor Hel (Rogue)"
-            canonical_name: 'Viktor Hel'.canonicalize()
-            xws: "viktorhel-rogueclassstarfighter"
             id: 535
             unique: true
             faction: "Scum and Villainy"
@@ -11536,8 +11435,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Nom Lumb (Rogue)"
-            canonical_name: 'Nom Lumb'.canonicalize()
-            xws: "nomlumb-rogueclassstarfighter"
             id: 536
             unique: true
             faction: "Scum and Villainy"
@@ -11573,8 +11470,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Cad Bane (Separatist)"
-            canonical_name: 'Cad Bane'.canonicalize()
-            xws: "cadbane-separatistalliance"
+            xwsaddon: "separatistalliance"
             id: 538
             unique: true
             faction: "Separatist Alliance"
@@ -11726,8 +11622,6 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Hawk" (Z-95)'
-            canonical_name: '"Hawk"'.canonicalize()
-            xws: "hawk-clonez95headhunter"
             id: 546
             unique: true
             faction: "Galactic Republic"
@@ -11746,8 +11640,6 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Warthog" (Z-95)'
-            canonical_name: '"Warthog"'.canonicalize()
-            xws: "warthog-clonez95headhunter"
             id: 547
             unique: true
             faction: "Galactic Republic"
@@ -11866,8 +11758,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Garven Dreis (BoY)"
-            canonical_name: 'Garven Dreis'.canonicalize()
-            xws: "garvendreis-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 554
             faction: "Rebel Alliance"
@@ -11882,8 +11773,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Luke Skywalker (BoY)"
-            canonical_name: 'Luke Skywalker'.canonicalize()
-            xws: "lukeskywalker-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 555
             faction: "Rebel Alliance"
@@ -11901,8 +11791,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Jek Porkins (BoY)"
-            canonical_name: 'Jek Porkins'.canonicalize()
-            xws: "jekporkins-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 556
             faction: "Rebel Alliance"
@@ -11918,8 +11807,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Biggs Darklighter (BoY)"
-            canonical_name: 'Biggs Darklighter'.canonicalize()
-            xws: "biggsdarklighter-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 557
             faction: "Rebel Alliance"
@@ -11936,8 +11824,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Wedge Antilles (BoY)"
-            canonical_name: 'Wedge Antilles'.canonicalize()
-            xws: "wedgeantilles-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 558
             faction: "Rebel Alliance"
@@ -11954,8 +11841,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Han Solo (BoY)"
-            canonical_name: 'Han Solo'.canonicalize()
-            xws: "hansolo-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 559
             faction: "Rebel Alliance"
@@ -11973,8 +11859,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Dutch" Vander (BoY)'
-            canonical_name: '"Dutch" Vander'.canonicalize()
-            xws: "dutchvander-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 560
             faction: "Rebel Alliance"
@@ -11990,8 +11875,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Dex Tiree (BoY)"
-            canonical_name: 'Dex Tiree'.canonicalize()
-            xws: "dextiree-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 561
             faction: "Rebel Alliance"
@@ -12007,8 +11891,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Pops" Krail (BoY)'
-            canonical_name: '"Pops" Krail'.canonicalize()
-            xws: "popskrail-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 562
             faction: "Rebel Alliance"
@@ -12024,8 +11907,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Hol Okand (BoY)"
-            canonical_name: 'Hol Okand'.canonicalize()
-            xws: "holokand-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 563
             faction: "Rebel Alliance"
@@ -12041,8 +11923,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Darth Vader (BoY)"
-            canonical_name: 'Darth Vader'.canonicalize()
-            xws: "darthvader-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 564
             faction: "Galactic Empire"
@@ -12061,8 +11942,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Backstabber" (BoY)'
-            canonical_name: '"Backstabber"'.canonicalize()
-            xws: "backstabber-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 565
             faction: "Galactic Empire"
@@ -12079,8 +11959,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Mauler" Mithel (BoY)'
-            canonical_name: '"Mauler" Mithel'.canonicalize()
-            xws: "maulermithel-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 566
             faction: "Galactic Empire"
@@ -12096,7 +11975,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Dark Curse" (BoY)'
-            xws: "darkcurse-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 567
             faction: "Galactic Empire"
@@ -12112,8 +11991,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Wampa" (BoY)'
-            canonical_name: '"Wampa"'.canonicalize()
-            xws: "wampa-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 568
             faction: "Galactic Empire"
@@ -12137,8 +12015,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Iden Versio (BoY)"
-            canonical_name: 'Iden Versio'.canonicalize()
-            xws: "idenversio-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 569
             faction: "Galactic Empire"
@@ -12157,8 +12034,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 4 (BoY)"
-            canonical_name: 'Sigma 4'.canonicalize()
-            xws: "sigma4-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 570
             faction: "Galactic Empire"
@@ -12176,8 +12052,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 5 (BoY)"
-            canonical_name: 'Sigma 5'.canonicalize()
-            xws: "sigma5-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 571
             faction: "Galactic Empire"
@@ -12195,8 +12070,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 6 (BoY)"
-            canonical_name: 'Sigma 6'.canonicalize()
-            xws: "sigma6-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 572
             faction: "Galactic Empire"
@@ -12214,8 +12088,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma 7 (BoY)"
-            canonical_name: 'Sigma 7'.canonicalize()
-            xws: "sigma7-battleofyavin"
+            xwsaddon: "battleofyavin"
             unique: true
             id: 573
             faction: "Galactic Empire"
@@ -12240,8 +12113,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Anakin Skywalker (SoC)"
-            canonical_name: 'Anakin Skywalker'.canonicalize()
-            xws: "anakinskywalker-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 574
             faction: "Galactic Republic"
@@ -12259,8 +12131,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Obi-Wan Kenobi (SoC)"
-            canonical_name: 'Obi-Wan Kenobi'.canonicalize()
-            xws: "obiwankenobi-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 575
             faction: "Galactic Republic"
@@ -12278,8 +12149,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Shaak Ti (SoC)"
-            canonical_name: 'Shaak Ti'.canonicalize()
-            xws: "shaakti-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 576
             faction: "Galactic Republic"
@@ -12298,8 +12168,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Odd Ball" (SoC)'
-            canonical_name: 'Odd Ball'.canonicalize()
-            xws: "oddball-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 577
             faction: "Galactic Republic"
@@ -12317,8 +12186,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Wolffe" (SoC)'
-            canonical_name: 'Wolffe'.canonicalize()
-            xws: "wolffe-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 578
             faction: "Galactic Republic"
@@ -12335,8 +12203,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Jag" (SoC)'
-            canonical_name: 'Jag'.canonicalize()
-            xws: "jag-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 579
             faction: "Galactic Republic"
@@ -12352,8 +12219,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Contrail" (SoC)'
-            canonical_name: 'Contrail'.canonicalize()
-            xws: "contrail-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 580
             faction: "Galactic Republic"
@@ -12370,8 +12236,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Klick" (SoC)'
-            canonical_name: 'Klick'.canonicalize()
-            xws: "klick-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 581
             faction: "Galactic Republic"
@@ -12391,8 +12256,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Kickback" (SoC)'
-            canonical_name: 'Kickback'.canonicalize()
-            xws: "kickback-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 582
             faction: "Galactic Republic"
@@ -12409,8 +12273,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Axe" (SoC)'
-            canonical_name: 'Axe'.canonicalize()
-            xws: "axe-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 583
             faction: "Galactic Republic"
@@ -12427,8 +12290,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Count Dooku (SoC)"
-            canonical_name: 'Count Dooku'.canonicalize()
-            xws: "countdooku-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 584
             faction: "Separatist Alliance"
@@ -12445,8 +12307,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "DBS-32C (SoC)"
-            canonical_name: 'DBS-32C'.canonicalize()
-            xws: "dbs32c-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 585
             faction: "Separatist Alliance"
@@ -12470,8 +12331,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "DBS-404 (SoC)"
-            canonical_name: 'DBS-404'.canonicalize()
-            xws: "dbs404-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 586
             faction: "Separatist Alliance"
@@ -12486,8 +12346,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Baktoid Prototype (SoC)"
-            canonical_name: 'Baktoid Prototype'.canonicalize()
-            xws: "baktoidprototype-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             id: 587
             faction: "Separatist Alliance"
             ship: "Hyena-class Droid Bomber"
@@ -12502,8 +12361,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "DIS-347 (SoC)"
-            canonical_name: 'DIS-347'.canonicalize()
-            xws: "dis347-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 588
             faction: "Separatist Alliance"
@@ -12518,8 +12376,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "DIS-T81 (SoC)"
-            canonical_name: 'DIS-T81'.canonicalize()
-            xws: "dist81-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 589
             faction: "Separatist Alliance"
@@ -12534,8 +12391,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Phlac-Arphocc Prototype (SoC)"
-            canonical_name: 'Phlac-Arphocc Prototype'.canonicalize()
-            xws: "phlacarphoccprototype-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             id: 590
             faction: "Separatist Alliance"
             ship: "Droid Tri-fighter"
@@ -12550,8 +12406,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "DFS-081 (SoC)"
-            canonical_name: 'DFS-081'.canonicalize()
-            xws: "dfs081-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 591
             faction: "Separatist Alliance"
@@ -12567,8 +12422,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "DFS-311 (SoC)"
-            canonical_name: 'DFS-311'.canonicalize()
-            xws: "dfs311-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             unique: true
             id: 592
             faction: "Separatist Alliance"
@@ -12583,8 +12437,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Haor Chall Prototype (SoC)"
-            canonical_name: 'Haor Chall Prototype'.canonicalize()
-            xws: "haorchallprototype-siegeofcoruscant"
+            xwsaddon: "siegeofcoruscant"
             id: 593
             faction: "Separatist Alliance"
             ship: "Vulture-class Droid Fighter"
@@ -12601,7 +12454,6 @@ exportObj.basicCardData = ->
             name: "Corran Horn (X-Wing)"
             id: 594
             unique: true
-            xws: "corranhorn-t65xwing"
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
             skill: 5
@@ -12773,8 +12625,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Poe Dameron (YT-1300)"
-            canonical_name: 'Poe Dameron'.canonicalize()
-            xws: "poedameron-scavengedyt1300"
             id: 604
             unique: true
             faction: "Resistance"
@@ -12797,7 +12647,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Lando Calrissian (Resistance)"
-            xws: "landocalrissian-scavengedyt1300"
             id: 605
             unique: true
             faction: "Resistance"
@@ -13026,7 +12875,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Durge (Separatist)"
-            xws: "durge-separatistalliance"
+            xwsaddon: "separatistalliance"
             id: 616
             unique: true
             faction: "Separatist Alliance"
@@ -13108,8 +12957,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Adi Gallia (Delta-7B)"
-            canonical_name: 'Adi Gallia'.canonicalize()
-            xws: "adigallia-delta7baethersprite"
             id: 620
             unique: true
             faction: "Galactic Republic"
@@ -13307,8 +13154,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Darth Vader (SSP)"
-            canonical_name: 'Darth Vader'.canonicalize()
-            xws: "darthvader-swz105"
+            xwsaddon: "swz105"
             unique: true
             id: 630
             faction: "Galactic Empire"
@@ -13327,8 +13173,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Maarek Stele (SSP)"
-            canonical_name: 'Maarek Stele'.canonicalize()
-            xws: "maarekstele-swz105"
+            xwsaddon: "swz105"
             unique: true
             id: 631
             faction: "Galactic Empire"
@@ -13342,8 +13187,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Captain Jonus (SSP)"
-            canonical_name: 'Captain Jonus'.canonicalize()
-            xws: "captainjonus-swz105"
+            xwsaddon: "swz105"
             unique: true
             id: 632
             faction: "Galactic Empire"
@@ -13358,8 +13202,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Tomax Bren (SSP)"
-            canonical_name: 'Tomax Bren'.canonicalize()
-            xws: "tomaxbren-swz105"
+            xwsaddon: "swz105"
             unique: true
             id: 633
             faction: "Galactic Empire"
@@ -13374,8 +13217,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Iden Versio (SSP)"
-            canonical_name: 'Iden Versio'.canonicalize()
-            xws: "idenversio-swz105"
+            xwsaddon: "swz105"
             unique: true
             id: 634
             faction: "Galactic Empire"
@@ -13390,8 +13232,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Night Beast" (SSP)'
-            canonical_name: '"Night Beast"'.canonicalize()
-            xws: "nightbeast-swz105"
+            xwsaddon: "swz105"
             unique: true
             id: 635
             faction: "Galactic Empire"
@@ -13405,8 +13246,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Valen Rudor (SSP)"
-            canonical_name: 'Valen Rudor'.canonicalize()
-            xws: "valenrudor-swz105"
+            xwsaddon: "swz105"
             unique: true
             id: 636
             faction: "Galactic Empire"
@@ -13420,8 +13260,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Dutch" Vander (SSP)'
-            canonical_name: '"Dutch" Vander'.canonicalize()
-            xws: "dutchvander-swz106"
+            xwsaddon: "swz106"
             unique: true
             id: 637
             faction: "Rebel Alliance"
@@ -13435,8 +13274,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Horton Salm (SSP)"
-            canonical_name: 'Horton Salm'.canonicalize()
-            xws: "hortonsalm-swz106"
+            xwsaddon: "swz106"
             unique: true
             id: 638
             faction: "Rebel Alliance"
@@ -13450,8 +13288,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Arvel Crynyd (SSP)"
-            canonical_name: 'Arvel Crynyd'.canonicalize()
-            xws: "arvelcrynyd-swz106"
+            xwsaddon: "swz106"
             unique: true
             id: 639
             faction: "Rebel Alliance"
@@ -13465,8 +13302,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Jake Farrell (SSP)"
-            canonical_name: 'Jake Farrell'.canonicalize()
-            xws: "jakefarrell-swz106"
+            xwsaddon: "swz106"
             unique: true
             id: 640
             faction: "Rebel Alliance"
@@ -13481,8 +13317,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Jek Porkins (SSP)"
-            canonical_name: 'Jek Porkins'.canonicalize()
-            xws: "jekporkins-swz106"
+            xwsaddon: "swz106"
             unique: true
             id: 641
             faction: "Rebel Alliance"
@@ -13497,8 +13332,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Luke Skywalker (SSP)"
-            canonical_name: 'Luke Skywalker'.canonicalize()
-            xws: "lukeskywalker-swz106"
+            xwsaddon: "swz106"
             unique: true
             id: 642
             faction: "Rebel Alliance"
@@ -13514,8 +13348,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Shara Bey (SSP)"
-            canonical_name: 'Shara Bey'.canonicalize()
-            xws: "sharabey-swz106"
+            xwsaddon: "swz106"
             unique: true
             id: 643
             faction: "Rebel Alliance"
@@ -13529,8 +13362,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Deathfire" (TBE)'
-            canonical_name: 'Deathfire'.canonicalize()
-            xws: "deathfire-swz98"
+            xwsaddon: "swz98"
             unique: true
             id: 644
             faction: "Galactic Empire"
@@ -13547,8 +13379,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Major Rhymer (TBE)"
-            canonical_name: 'Major Rhymer'.canonicalize()
-            xws: "majorrhymer-swz98"
+            xwsaddon: "swz98"
             unique: true
             id: 645
             faction: "Galactic Empire"
@@ -13563,8 +13394,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Captain Jonus (TBE)"
-            canonical_name: 'Captain Jonus'.canonicalize()
-            xws: "captainjonus-swz98"
+            xwsaddon: "swz98"
             unique: true
             id: 646
             faction: "Galactic Empire"
@@ -13587,8 +13417,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Tomax Bren (TBE)"
-            canonical_name: 'Tomax Bren'.canonicalize()
-            xws: "tomaxbren-swz98"
+            xwsaddon: "swz98"
             unique: true
             id: 647
             faction: "Galactic Empire"
@@ -13603,6 +13432,86 @@ exportObj.basicCardData = ->
                 "Ion Bombs"
             ]
         }
+        {
+            name: "Dash Rendar (YLF)"
+            xwsaddon: "swz103"
+            unique: true
+            id: 648
+            faction: "Rebel Alliance"
+            ship: "YT-2400 Light Freighter"
+            skill: 5
+            points: 20
+            slots: [
+                "Talent"
+                "Missile"
+                "Illicit"
+                "Illicit"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: "Dash Rendar (YLF-SL)"
+            xwsaddon: "swz103-sl-rebelalliance"
+            unique: true
+            id: 649
+            faction: "Rebel Alliance"
+            ship: "YT-2400 Light Freighter"
+            skill: 5
+            points: 20
+            upgrades: [
+                "Mercenary (YLF)"
+                "Seeker Missiles (YLF)"
+                '"Leebo" (YLF)'
+                "Outrider (YLF)"
+            ]
+        }
+        {
+            name: "Dash Rendar (Scum)"
+            xwsaddon: "swz103-sl-scumandvillainy"
+            unique: true
+            id: 650
+            faction: "Scum and Villany"
+            ship: "YT-2400 Light Freighter"
+            skill: 5
+            points: 20
+            upgrades: [
+                "Mercenary (YLF)"
+                "Seeker Missiles (YLF)"
+                '"Leebo" (YLF)'
+                "Outrider (YLF)"
+            ]
+        }
+        {
+            name: '"Leebo" (Scum)'
+            xwsaddon: "swz103-sl-rebelalliance"
+            unique: true
+            id: 651
+            faction: "Rebel Alliance"
+            ship: "YT-2400 Light Freighter"
+            skill: 3
+            points: 20
+            upgrades: [
+                "Efficient Processing (YLF)"
+                "Seeker Missiles (YLF)"
+                "Outrider (YLF)"
+            ]
+        }
+        {
+            name: '"Leebo" (Scum)'
+            xwsaddon: "swz103-sl-scumandvillainy"
+            unique: true
+            id: 652
+            faction: "Scum and Villany"
+            ship: "YT-2400 Light Freighter"
+            skill: 3
+            points: 20
+            upgrades: [
+                "Efficient Processing (YLF)"
+                "Seeker Missiles (YLF)"
+                "Outrider (YLF)"
+            ]
+        }
 
     ]
 
@@ -13611,7 +13520,6 @@ exportObj.basicCardData = ->
             name: '"Chopper" (Astromech)'
             id: 0
             slot: "Astromech"
-            canonical_name: '"Chopper"'.canonicalize()
             xws: "chopper"
             points: 2
             unique: true
@@ -13803,7 +13711,6 @@ exportObj.basicCardData = ->
             name: "Chewbacca (Scum)"
             id: 22
             slot: "Crew"
-            xws: "chewbacca-crew"
             points: 3
             unique: true
             faction: "Scum and Villainy"
@@ -13811,8 +13718,6 @@ exportObj.basicCardData = ->
         {
             name: '"Chopper" (Crew)'
             id: 23
-            canonical_name: '"Chopper"'.canonicalize()
-            xws: "chopper-crew"
             slot: "Crew"
             points: 1
             unique: true
@@ -14023,7 +13928,6 @@ exportObj.basicCardData = ->
             name: "Lando Calrissian"
             id: 44
             slot: "Crew"
-            xws: "landocalrissian"
             points: 2
             unique: true
             faction: "Rebel Alliance"
@@ -14032,7 +13936,6 @@ exportObj.basicCardData = ->
             name: "Lando Calrissian (Scum)"
             id: 45
             slot: "Crew"
-            xws: "landocalrissian-crew"
             points: 4
             unique: true
             faction: "Scum and Villainy"
@@ -14138,10 +14041,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "R2-D2 (Crew)"
-            canonical_name: 'R2-D2'.canonicalize()
             id: 56
             slot: "Crew"
-            xws: "r2d2-crew"
             points: 8
             unique: true
             faction: "Rebel Alliance"
@@ -14386,7 +14287,6 @@ exportObj.basicCardData = ->
             name: "Han Solo"
             id: 84
             slot: "Gunner"
-            xws: "hansolo"
             points: 10
             unique: true
             faction: "Rebel Alliance"
@@ -14395,7 +14295,6 @@ exportObj.basicCardData = ->
             name: "Han Solo (Scum)"
             id: 85
             slot: "Gunner"
-            xws: "hansolo-gunner"
             points: 9
             unique: true
             faction: "Scum and Villainy"
@@ -15333,7 +15232,7 @@ exportObj.basicCardData = ->
             name: "Rey"
             id: 187
             slot: "Gunner"
-            xws: "rey-gunner"
+            xwsaddon: "gunner"
             points: 10
             unique: true
             force: 1
@@ -15345,7 +15244,7 @@ exportObj.basicCardData = ->
             name: "Chewbacca (Resistance)"
             id: 188
             slot: "Crew"
-            xws: "chewbacca-crew-swz19"
+            xwsaddon: "crew-swz19"
             points: 4
             charge: 2
             unique: true
@@ -15369,10 +15268,8 @@ exportObj.basicCardData = ->
         }
         {
             name: "C-3PO (Resistance)"
-            canonical_name: 'C-3PO'.canonicalize()
             id: 191
             slot: "Crew"
-            xws: "c3po-crew"
             points: 7
             unique: true
             faction: "Resistance"
@@ -15384,7 +15281,6 @@ exportObj.basicCardData = ->
             name: "Han Solo (Resistance)"
             id: 192
             slot: "Crew"
-            xws: "hansolo-crew"
             points: 3
             unique: true
             faction: "Resistance"
@@ -15869,7 +15765,7 @@ exportObj.basicCardData = ->
         {
             name: "Leia Organa (Resistance)"
             id: 244
-            xws: "leiaorgana-resistance"
+            xwsaddon: "resistance"
             unique: true
             slot: "Crew"
             faction: "Resistance"
@@ -15971,11 +15867,10 @@ exportObj.basicCardData = ->
         }
         {
             name: "C-3PO (Republic)"
-            canonical_name: 'C-3PO'.canonicalize()
             id: 254
             unique: true
             slot: "Crew"
-            xws: "c3po-republic"
+            xwsaddon: "republic"
             points: 6
             faction: "Galactic Republic"
             modifier_func: (stats) ->
@@ -16303,7 +16198,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Selfless (BoY)"
-            canonical_name: 'Selfless'.canonicalize()
             unique: true
             id: 284
             slot: "Talent"
@@ -16941,8 +16835,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett (Separatist)"
-            canonical_name: 'Boba Fett'.canonicalize()
-            xws: 'bobafett-gunner'
             id: 334
             slot: "Gunner"
             unique: true
@@ -17001,12 +16893,11 @@ exportObj.basicCardData = ->
         }
         {
             name: "R2-D2 (Republic)"
-            canonical_name: 'R2-D2'.canonicalize()
             id: 340
             points: 8
             charge: 2
             unique: true
-            xws: "r2d2-republic"
+            xwsaddon: "republic"
             faction: "Galactic Republic"
             slot: "Astromech"
         }
@@ -17189,10 +17080,9 @@ exportObj.basicCardData = ->
         }
         {
             name: "R2-D2 (Resistance)"
-            canonical_name: 'R2-D2'.canonicalize()
             id: 358
             slot: "Astromech"
-            xws: "r2d2-resistance"
+            xwsaddon: "resistance"
             points: 6
             unique: true
             charge: 4
@@ -17299,8 +17189,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Slave I (Separatist)"
-            canonical_name: 'Slave I'.canonicalize()
-            xws: "slavei-swz82"
+            xwsaddon: "swz82"
             id: 370
             points: 0
             slot: "Title"
@@ -17393,8 +17282,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "B6 Blade Wing Prototype (Epic)"
-            canonical_name: 'B6 Blade Wing Prototype'.canonicalize()
-            xws: "b6bladewingprototype-command"
             id: 377
             points: 4
             unique: true
@@ -17422,8 +17309,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sabine Wren (Gunner)"
-            canonical_name: 'Sabine Wren'.canonicalize()
-            xws: "sabinewren-gunner"
             id: 379
             points: 2
             unique: true
@@ -17524,7 +17409,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Asajj Ventress (Command)"
-            canonical_name: 'Asajj Ventress'.canonicalize()
             id: 390
             unique: true
             slot: "Command"
@@ -17545,7 +17429,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "General Grievous (Command)"
-            canonical_name: 'General Grievous'.canonicalize()
             id: 391
             unique: true
             slot: "Command"
@@ -17561,7 +17444,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Hondo Ohnaka (Command)"
-            canonical_name: 'Hondo Ohnaka'.canonicalize()
             id: 392
             unique: true
             slot: "Command"
@@ -17930,7 +17812,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sabine Wren (Command)"
-            canonical_name: 'Sabine Wren'.canonicalize()
             id: 422
             points: 99
             slot: "Command"
@@ -17959,8 +17840,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ahsoka Tano (Crew)"
-            canonical_name: 'Ahsoka Tano'.canonicalize()
-            xws: "ahsokatano-crew"
             id: 424
             points: 10
             force: 1
@@ -17972,7 +17851,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bo-Katan Kryze (Republic/Separatist)"
-            canonical_name: 'Bo-Katan Kryze'.canonicalize()
             xws: "bokatankryze"
             id: 425
             points: 6
@@ -17982,8 +17860,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bo-Katan Kryze (Rebel/Scum)"
-            canonical_name: 'Bo-Katan Kryze'.canonicalize()
-            xws: "bokatankryze-rebel-scum"
+            xwsaddon: "rebel-scum"
             id: 426
             points: 4
             slot: "Crew"
@@ -18115,8 +17992,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Maul (Mandalore)"
-            canonical_name: 'Maul'.canonicalize()
-            xws: 'maul-crew'
             id: 440
             points: 10
             slot: "Crew"
@@ -18141,8 +18016,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gar Saxon (Gunner)"
-            canonical_name: 'Gar Saxon'.canonicalize()
-            xws: "garsaxon-gunner"
             id: 441
             points: 6
             slot: "Gunner"
@@ -18164,8 +18037,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ursa Wren (Gunner)"
-            canonical_name: 'Ursa Wren'.canonicalize()
-            xws: "ursawren-gunner"
             id: 443
             points: 4
             slot: "Gunner"
@@ -18568,7 +18439,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Chewbacca (BoY)"
-            canonical_name: 'Chewbacca'.canonicalize()
             id: 474
             slot: "Crew"
             standard: true
@@ -18588,7 +18458,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "R2-D2 (BoY)"
-            canonical_name: 'R2-D2'.canonicalize()
             id: 477
             standard: true
             unique: true
@@ -18607,7 +18476,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "R2-F2 (BoY)"
-            canonical_name: 'R2-F2'.canonicalize()
             id: 479
             standard: true
             unique: true
@@ -18623,7 +18491,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "R2-A3 (BoY)"
-            canonical_name: 'R2-A3'.canonicalize()
             id: 481
             standard: true
             unique: true
@@ -18638,7 +18505,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "R5-D8 (BoY)"
-            canonical_name: 'R5-D8'.canonicalize()
             id: 483
             standard: true
             unique: true
@@ -18647,7 +18513,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "R5-K6 (BoY)"
-            canonical_name: 'R5-K6'.canonicalize()
             id: 484
             standard: true
             unique: true
@@ -18689,7 +18554,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "R4-P17 (SoC)"
-            canonical_name: 'R4-P17'.canonicalize()
             id: 490
             standard: true
             unique: true
@@ -18704,7 +18568,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Wolfpack (SoC)"
-            canonical_name: 'Wolfpack'.canonicalize()
             id: 492
             unique: true
             standard: true
@@ -18740,6 +18603,36 @@ exportObj.basicCardData = ->
             id: 497
             standard: true
             slot: "Talent"
+        }
+        {
+            name: "Mercenary (YLF)"
+            id: 498
+            standard: true
+            slot: "Talent"
+        }
+        {
+            name: "Efficient Processing (YLF)"
+            id: 499
+            standard: true
+            slot: "Talent"
+        }
+        {
+            name: "Seeker Missiles (YLF)"
+            id: 500
+            standard: true
+            slot: "Missile"
+        }
+        {
+            name: '"Leebo" (YLF)'
+            id: 501
+            standard: true
+            slot: "Crew"
+        }
+        {
+            name: "Outrider (YLF)"
+            id: 502
+            standard: true
+            slot: "Title"
         }
     ]
 
@@ -19255,7 +19148,12 @@ exportObj.setupCommonCardData = (basic_cards) ->
     for pilot_data in basic_cards.pilotsById
         unless pilot_data.skip?
             pilot_data.sources = []
-            pilot_data.canonical_name = pilot_data.name.canonicalize() unless pilot_data.canonical_name?
+            name_parse = pilot_data.name.split("(")
+            pilot_data.canonical_name = name_parse[0].canonicalize() unless pilot_data.canonical_name?
+
+            # XWS rework
+            pilot_data.xws = if pilot_data.xws? then pilot_data.xws else (if pilot_data.xwsaddon? then (pilot_data.canonical_name + "-" + pilot_data.xwsaddon) else (pilot_data.canonical_name + (if name_parse[1]? then ("-" + pilot_data.ship.canonicalize()) else "")))
+
             exportObj.pilots[pilot_data.name] = pilot_data
     # pilot_name is the English version here as it's the common index into
     # basic card info
@@ -19264,7 +19162,13 @@ exportObj.setupCommonCardData = (basic_cards) ->
     for upgrade_data in basic_cards.upgradesById
         unless upgrade_data.skip?
             upgrade_data.sources = []
-            upgrade_data.canonical_name = upgrade_data.name.canonicalize() unless upgrade_data.canonical_name?
+            name_parse = upgrade_data.name.split("(")
+            upgrade_data.canonical_name = name_parse[0].canonicalize() unless upgrade_data.canonical_name?
+
+            # XWS rework
+            upgrade_data.xws = if upgrade_data.xws? then upgrade_data.xws else (if upgrade_data.xwsaddon? then (upgrade_data.canonical_name + "-" + upgrade_data.xwsaddon) else (upgrade_data.canonical_name + (if name_parse[1]? then ("-" + upgrade_data.slot.canonicalize()) else "")))
+
+
             exportObj.upgrades[upgrade_data.name] = upgrade_data
 
     exportObj.conditions = {}
