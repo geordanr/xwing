@@ -396,12 +396,12 @@ exportObj.basicCardData = ->
         "YT-2400 Light Freighter":
             name: "YT-2400 Light Freighter"
             factions: [ "Rebel Alliance" ]
-            attackdt: 4
+            attackdt: 3
             agility: 2
             hull: 6
             shields: 4
             keyword: ["Freighter"]
-            chassis: "Sensor Blindspot"
+            chassis: "Sensor Blackout"
             actions: [
                 "Focus"
                 "Lock"
@@ -2681,6 +2681,9 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
+            chassis: "Sensor Blindspot"
+            ship_override:
+                attackdt: 4
         }
         {
             name: '"Leebo"'
@@ -2700,6 +2703,9 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
+            chassis: "Sensor Blindspot"
+            ship_override:
+                attackdt: 4
         }
         {
             name: "Wild Space Fringer"
@@ -2713,6 +2719,9 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Illicit"
             ]
+            chassis: "Sensor Blindspot"
+            ship_override:
+                attackdt: 4
         }
         {
             name: "Han Solo"
@@ -13483,10 +13492,29 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Leebo" (Scum)'
-            xwsaddon: "swz103-sl-rebelalliance"
+            name: '"Leebo" (YLF)'
+            xwsaddon: "swz103"
             unique: true
             id: 651
+            faction: "Rebel Alliance"
+            ship: "YT-2400 Light Freighter"
+            skill: 3
+            points: 20
+            keyword: ["Droid"]
+            slots: [
+                "Talent"
+                "Missile"
+                "Illicit"
+                "Illicit"
+                "Modification"
+                "Title"
+            ]
+        }
+        {
+            name: '"Leebo" (YLF-SL)'
+            xwsaddon: "swz103-sl-rebelalliance"
+            unique: true
+            id: 652
             faction: "Rebel Alliance"
             ship: "YT-2400 Light Freighter"
             skill: 3
@@ -13496,12 +13524,20 @@ exportObj.basicCardData = ->
                 "Seeker Missiles (YLF)"
                 "Outrider (YLF)"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Lock"
+                    "R-> Rotate Arc"
+                    "R-Barrel Roll"
+                    "Rotate Arc"
+                ]
         }
         {
             name: '"Leebo" (Scum)'
             xwsaddon: "swz103-sl-scumandvillainy"
             unique: true
-            id: 652
+            id: 653
             faction: "Scum and Villany"
             ship: "YT-2400 Light Freighter"
             skill: 3
@@ -13511,8 +13547,15 @@ exportObj.basicCardData = ->
                 "Seeker Missiles (YLF)"
                 "Outrider (YLF)"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Lock"
+                    "R-> Rotate Arc"
+                    "R-Barrel Roll"
+                    "Rotate Arc"
+                ]
         }
-
     ]
 
     upgradesById: [
@@ -18621,6 +18664,11 @@ exportObj.basicCardData = ->
             id: 500
             standard: true
             slot: "Missile"
+            attack: 3
+            range: """2-3"""
+            rangebonus: true
+            charge: 4
+            
         }
         {
             name: '"Leebo" (YLF)'
@@ -19034,6 +19082,10 @@ exportObj.basicCardData = ->
         {
             name: "Solo"
             id: 48
+        }
+        {
+            name: "Sensor Blackout"
+            id: 49
         }
     ]
 
