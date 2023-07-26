@@ -4684,7 +4684,7 @@ class Ship
         max_checks = 32 # that's a lot of addons
         
         if @builder.isEpic #Command Epic adding
-            if not ("Command" in @pilot.slots)
+            if @pilot.slots? and not ("Command" in @pilot.slots)
                 addCommand = true
                 for upgrade in @upgrades
                     if ("Command" == upgrade.slot) and (this == upgrade.ship)
