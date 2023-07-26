@@ -165,7 +165,10 @@ class exportObj.SquadBuilder
         @current_obstacles = []
 
         @setupUI()
-        @game_type_selector.val (exportObj.builders[0] ? @).game_type_selector.val()
+        if @faction == "All"
+            @game_type_selector.val("epic").trigger('change')
+        else
+            @game_type_selector.val (exportObj.builders[0] ? @).game_type_selector.val()
         @setupEventHandlers()
 
         window.setInterval @updatePermaLink, 250
@@ -263,6 +266,7 @@ class exportObj.SquadBuilder
                     <span class="content-warning collection-invalid d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Collection warning"></span></span>
                     <span class="content-warning ship-number-invalid-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Ship number warning"></span></span>
                     <span class="content-warning multi-faction-warning-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Multi-Faction warning"></span></span>
+                    <span class="content-warning epic-not-legal-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Epic Unofficial"></span></span>
                 </div>
                 <div class="col-md-5 float-right button-container">
                     <div class="btn-group float-right">
@@ -653,6 +657,7 @@ class exportObj.SquadBuilder
         @old_version_container = $ @points_container.find('.old-version-container')
         @ship_number_invalid_container = $ @points_container.find('.ship-number-invalid-container')
         @multi_faction_warning_container = $ @points_container.find('.multi-faction-warning-container')
+        @epic_not_legal_container = $ @points_container.find('.epic-not-legal-container')
         @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -1478,12 +1483,14 @@ class exportObj.SquadBuilder
         @isStandard = false
         @isEpic = false
         @isQuickbuild = false
+        @epic_not_legal_container.toggleClass 'd-none', true
         switch gametype
             when 'extended'
                 @desired_points_input.val 20
             when 'epic'
                 @isEpic = true
-                @desired_points_input.val 50
+                @desired_points_input.val 40
+                @epic_not_legal_container.toggleClass 'd-none', false
             when 'quickbuild'
                 @isQuickbuild = true
                 @desired_points_input.val 8

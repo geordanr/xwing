@@ -8292,8 +8292,8 @@ exportObj.basicCardData = ->
             ship: "CR90 Corellian Corvette"
             skill: 8
             engagement: 0
-            points: 0
-            loadout: 99
+            points: 14
+            loadout: 40
             slots: [
                 "Command"
                 "Hardpoint"
@@ -8313,8 +8313,8 @@ exportObj.basicCardData = ->
             ship: "CR90 Corellian Corvette"
             skill: 8
             engagement: 0
-            points: 0
-            loadout: 99
+            points: 14
+            loadout: 40
             slots: [
                 "Command"
                 "Hardpoint"
@@ -8335,8 +8335,8 @@ exportObj.basicCardData = ->
             ship: "Raider-class Corvette"
             skill: 8
             engagement: 0
-            points: 0
-            loadout: 99
+            points: 15
+            loadout: 50
             slots: [
                 "Command"
                 "Torpedo"
@@ -8358,8 +8358,8 @@ exportObj.basicCardData = ->
             ship: "Raider-class Corvette"
             skill: 8
             engagement: 0
-            points: 0
-            loadout: 99
+            points: 15
+            loadout: 50
             slots: [
                 "Command"
                 "Torpedo"
@@ -8380,8 +8380,8 @@ exportObj.basicCardData = ->
             ship: "GR-75 Medium Transport"
             skill: 7
             engagement: 1
-            points: 0
-            loadout: 99
+            points: 10
+            loadout: 25
             slots: [
                 "Command"
                 "Hardpoint"
@@ -8401,8 +8401,8 @@ exportObj.basicCardData = ->
             ship: "GR-75 Medium Transport"
             skill: 7
             engagement: 1
-            points: 0
-            loadout: 99
+            points: 10
+            loadout: 25
             slots: [
                 "Command"
                 "Hardpoint"
@@ -8421,8 +8421,8 @@ exportObj.basicCardData = ->
             ship: "Gozanti-class Cruiser"
             skill: 7
             engagement: 1
-            points: 0
-            loadout: 99
+            points: 11
+            loadout: 40
             slots: [
                 "Command"
                 "Hardpoint"
@@ -8442,8 +8442,8 @@ exportObj.basicCardData = ->
             ship: "Gozanti-class Cruiser"
             skill: 7
             engagement: 1
-            points: 0
-            loadout: 99
+            points: 11
+            loadout: 40
             slots: [
                 "Command"
                 "Hardpoint"
@@ -8462,8 +8462,8 @@ exportObj.basicCardData = ->
             ship: "C-ROC Cruiser"
             skill: 7
             engagement: 1
-            points: 0
-            loadout: 99
+            points: 10
+            loadout: 30
             slots: [
                 "Command"
                 "Hardpoint"
@@ -8483,8 +8483,8 @@ exportObj.basicCardData = ->
             ship: "C-ROC Cruiser"
             skill: 7
             engagement: 1
-            points: 0
-            loadout: 99
+            points: 10
+            loadout: 30
             slots: [
                 "Command"
                 "Hardpoint"
@@ -10281,7 +10281,8 @@ exportObj.basicCardData = ->
             ship: "Trident-class Assault Ship"
             skill: 8
             engagement: 0
-            points: 85
+            points: 12
+            loadout: 45
             slots: [
                 "Command"
                 "Torpedo"
@@ -10302,7 +10303,8 @@ exportObj.basicCardData = ->
             ship: "Trident-class Assault Ship"
             skill: 8
             engagement: 0
-            points: 85
+            points: 12
+            loadout: 45
             slots: [
                 "Command"
                 "Torpedo"
