@@ -3114,7 +3114,7 @@ exportObj.cardLoaders.日本語 = () ->
            text: """システム・フェイズの間、君は%CHARGE%を1つ消費し、Commando Teamリモートを[1 %STRAIGHT%]テンプレートを用いて投下しても良い。君はそのデバイスを前か後のガイドを使って置くことができる。 %LINEBREAK% このカードの%CHARGE%は回復できない。"""
         "Mandalorian Super Commandos":
            text: """システム・フェイズの間、君は%CHARGE%を1つ消費し、Commando Teamリモートを[1 %STRAIGHT%]テンプレートを用いて投下しても良い。君はそのデバイスを前か後のガイドを使って置くことができる。 %LINEBREAK% このカードの%CHARGE%は回復できない。"""
-         "Razor Crest":
+        "Razor Crest":
            text: """<b>セットアップ:</b> このカードの下に、非制限の%ILLICIT%を裏向きで置く。 %LINEBREAK% システム・フェイズの間、君はその%ILLICIT%アップグレードを公開して、それがセットアップ時に装備していたように装備しても良い(そのポイントコストを支払わずに)。"""
         "The Mandalorian":
            text: """終了フェイズの間、もし君がこのラウンド防御しなかったなら、可能なら自動変化しない%FORCE%を1つ回復する。"""

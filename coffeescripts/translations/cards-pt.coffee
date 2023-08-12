@@ -2930,7 +2930,7 @@ exportObj.cardLoaders.Português = () ->
         "Inertial Dampeners":
            display_name: """Amortecedores Inerciais"""
            text: """Antes de você executar uma manobra, você pode gastar 1 escudo. Se você fizer isso, realize uma manobra [0 %STOP%] branca ao inves da manobra que você revelou, e então receba 1 ficha de estresse."""
-         "Hotshot Tail Blaster":
+        "Hotshot Tail Blaster":
            text: """Você pode realizar este ataque em alcance 0.%LINEBREAK%strong>Ataque: </strong>Gaste 1 %CHARGE%."""
         "Contraband Cybernetics":
            display_name: """Cibernética Ilegal"""
@@ -3683,7 +3683,7 @@ exportObj.cardLoaders.Português = () ->
         "Seasoned Navigator":
            display_name: """Navegador Experiente"""
            text: """Depois que você revelar seu disco de manobras, você pode colocar seu disco em outra manobra que não seja vermelha da mesma velocidade. Quando realizar essa manobra, aumente sua dificuldade."""
-         "Seventh Sister":
+        "Seventh Sister":
            display_name: """Seventh Sister"""
            text: """Quando uma nave inimiga em alcance 0-1 for receber uma ficha de estresse, você pode gastar 1 %FORCE% para que ela receba 1 ficha de interferência ou 1 ficha de tração, ao invés da ficha de estresse."""
         "Supreme Leader Snoke":

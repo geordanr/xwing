@@ -1824,7 +1824,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Contraband Cybernetics":
            display_name: """Ciberimplantes ilícitos"""
            text: """Antes de que te actives, puedes gastar 1 ficha %CHARGE%. Si lo haces, hasta el final de la ronda, eres capaz de realizar acciones y ejecutar maniobras rojas, incluso aunque estés bajo tensión."""
-         "Count Dooku":
+        "Count Dooku":
            display_name: """Count Dooku"""
            text: """Durante un ataque, antes de que una nave que tengas a alcance 0-2 tire dados de ataque o de defensa, si todas tus %FORCE% están activas, puedes gastar 1 %FORCE% y decir un resultado.Si en la tirada no sale el resultado que has dicho, la nave debe cambia 1 dado por ese resultado.%LINEBREAK%<i>Errata (desde las reglas de referencia 1.4): Se agregó "Durante un ataque"</i>"""
         "Crack Shot":
