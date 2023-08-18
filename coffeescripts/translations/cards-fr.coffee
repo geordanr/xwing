@@ -55,6 +55,8 @@ exportObj.translations['Français'] =
         "Sensor": "Senseur"
         "Torpedo": "Torpille"
         "Turret": "Tourelle"
+        "HardpointShip": "Emplacement d'arme"
+        "VersatileShip": "Châssis Polyvalent"
         "Hardpoint": "Point d’accroche"
         "Illicit": "Illégal"
         "Configuration": "Configuration"
@@ -150,6 +152,8 @@ exportObj.translations['Français'] =
         "Battle of Yavin Battle Pack": "Paquet de Scénarios Bataille de Yavin"
         "Siege of Coruscant Battle Pack": "Paquet de Scénarios Siège de Coruscant"
         "Hotshots and Aces II Reinforcements Pack": "Paquet de Renforts Pilotes Hors Pair 2"
+        "Galactic Empire Squadron Starter Pack": "Boite de Base D'Escadron Empire"
+        "Rebel Alliance Squadron Starter Pack": "Boite de Base D'Escadron Alliance Rebelle"
         "Loose Ships": "Vaisseaux en vrac"
 
     ui:
@@ -846,7 +850,7 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: """Dark Maul"""
            text: """Après avoir effectué une attaque, vous pouvez dépenser 2 %FORCE% pour effectuer une attaque principale bonus contre une cible différente. Si votre attaque était ratée, vous pouvez effectuer cette attaque principale bonus contre la même cible à la place."""
         "Darth Vader":
-           display_name: """Darth Vader"""
+           display_name: """Dark Vador"""
            text: """Après avoir effectué une action, vous pouvez dépenser 1 %FORCE% pour effectuer une action."""
         "Dash Rendar":
            display_name: """Dash Rendar"""
@@ -2325,6 +2329,50 @@ exportObj.cardLoaders['Français'] = () ->
         "Agent Tierny":
            text: """<strong>Mise En Place :</strong> après avoir placé les forces, vous <b>devez</b> assigner l'état <b>•Confiance Brisée</b> à un vaisseau ennemi."""
 
+# Starter Packs
+        "Darth Vader (SSP)":
+           display_name: """Darth Vader (Standard)"""
+           text: """Après avoir effectué une action, vous pouvez dépenser 1 %FORCE% pour effectuer une action."""
+        "Maarek Stele (SSP)":
+           display_name: """Maarek Stele (Standard)"""
+           text: """Tant que vous effectuez une attaque, si une carte de dégât devrait être attribuée face visible au défenseur, piochez 3 cartes de dégât à la place, choisissez-en 1 et défaussez les autres."""
+        "Captain Jonus (SSP)":
+           display_name: """Capitaine Jonus (Standard)"""
+           text: """Tant qu’un vaisseau allié à portée 0–1 effectue une attaque %TORPEDO% ou %MISSILE%, il peut relancer jusqu’à 2 dés d’attaque."""
+        "Tomax Bren (SSP)":
+           display_name: """Tomax Bren (Standard)"""
+           text: """Après avoir effectué une action %RELOAD%, vous pouvez récupérer 1 %CHARGE% sur 1 de vos cartes d’amélioration %TALENT% équipée."""
+        '"Night Beast" (SSP)':
+           display_name: """“Night Beast” (Standard)"""
+           text: """Après avoir entièrement exécuté une manœuvre bleue, vous pouvez effectuer une action %FOCUS%."""
+        "Valen Rudor (SSP)":
+           display_name: """Valen Rudor (Standard)"""
+           text: """Après qu’un vaisseau allié à portée 0–1 a défendu (après la résolution des dégâts, s’il y en a), vous pouvez effectuer une action."""
+        "Iden Versio (SSP)":
+           display_name: """Iden Versio (Standard)"""
+           text: """Avant qu’un chasseur TIE/ln allié à portée 0–1 ne subisse 1 ou plusieurs dégâts, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, prévenez ce(s) dégât(s)."""
+        "Luke Skywalker (SSP)":
+           display_name: """Luke Skywalker (Standard)"""
+           text: """Après que vous avez été déclaré comme défenseur (avant que les dés ne soient lancés), vous pouvez récupérer 1 %FORCE%."""
+        "Jek Porkins (SSP)":
+           display_name: """Jek Porkins (Standard)"""
+           text: """Après avoir gagné un marqueur de stress, vous pouvez lancer 1 dé d’attaque pour le retirer. Sur un résultat %HIT%, subissez 1 dégât %HIT%."""
+        '"Dutch" Vander (SSP)':
+           display_name: """“Dutch” Vander (Standard)"""
+           text: """Après avoir effectué l’action %LOCK%, vous pouvez choisir 1 vaisseau allié à portée 1–3. Il peut verrouiller l’objet que vous avez verrouillé, en ignorant les restrictions de portée."""
+        "Horton Salm (SSP)":
+           display_name: """Horton Salm (Standard)"""
+           text: """Tant que vous effectuez une attaque, vous pouvez relancer 1 dé d’attaque pour chaque autre vaisseau allié à portée 0–1 du défenseur."""
+        "Arvel Crynyd (SSP)":
+           display_name: """Arvel Crynyd (Standard)"""
+           text: """Si vous deviez échouer à une action %BOOST% qui vous amènerait à chevaucher un autre vaisseau, résolvez-la comme si vous exécutiez partiellement une manœuvre à la place.%LINEBREAK%Tant que vous effectuez une attaque à portée d’attaque 0, considérez-la comme une attaque à portée d’attaque 1."""
+        "Jake Farrell (SSP)":
+           display_name: """Jake Farrell (Standard)"""
+           text: """Après avoir effectué une action %BARRELROLL% ou %BOOST%, vous pouvez choisir un vaisseau allié à portée 0–1. Ce vaisseau peut effectuer une action %FOCUS%."""
+        "Shara Bey (SSP)":
+           display_name: """Shara Bey (Standard)"""
+           text: """Tant que vous défendez ou effectuez une attaque principale, vous pouvez dépenser 1 verrouillage que vous avez sur le vaisseau ennemi pour ajouter 1 résultat %FOCUS% aux résultats de vos dés. """
+
 
 
     upgrade_translations =
@@ -3000,7 +3048,7 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: """Artilleur de la Septième Flotte"""
            text: """Tant qu’un autre vaisseau allié effectue une attaque principale, si le défenseur est dans votre arc de tir, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, l’attaquant lance 1 dé supplémentaire, pour un maximum de 4. Pendant la phase de système, vous pouvez gagner 1 marqueur de désarmement pour récupérer 1 %CHARGE%."""
         "Seventh Sister":
-           display_name: """La Septième Sœur%LINEBREAK%"""
+           display_name: """La Septième Sœur"""
            text: """Si un vaisseau ennemi à portée 0-1 est censé gagner un marqueur de stress, vous pouvez dépenser 1 %FORCE% pour qu’il gagne 1 marqueur de brouillage ou de rayon tracteur à la place."""
         "Shield Upgrade":
            display_name: """Boucliers Améliorés"""

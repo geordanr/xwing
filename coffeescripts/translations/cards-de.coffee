@@ -619,7 +619,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Airen Cracken":
            display_name: """Airen Cracken"""
            text: """Nachdem du einen Angriff durchgeführt hast, darfst du 1 befreundetes Schiff in Reichweite 1 wählen. Jenes Schiff darf eine Aktion durchführen, die es als rot behandelt."""
-         "Alexsandr Kallus":
+        "Alexsandr Kallus":
            display_name: """Alexsandr Kallus"""
            text: """Solange du verteidigst, falls der Angreifer irgendwelche Angriffswürfel modifiziert hat, darfst du 1 zusätzlichen Verteidigungswürfel werfen.%LINEBREAK%<i>Errata (since rules reference 1.2.0): Fehlende Schiffsfähigkeit ergänzt"""
         "Alpha Squadron Pilot":
