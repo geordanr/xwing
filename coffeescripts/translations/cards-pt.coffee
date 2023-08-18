@@ -3980,6 +3980,9 @@ exportObj.cardLoaders.Português = () ->
         "Sensor Blindspot":
            display_name: "Ponto Cego nos Sensores"
            text: """Quando você realizar um ataque primário em alcance de ataque 0-1, não aplique o bônus de alcance 0-1 e role 1 dado de ataque a menos."""
+        "Sensor Blackout":
+           display_name: "Apagão nos Sensores"
+           text: """Quando você realizar um ataque primário em alcance 0-1, role 1 dado de ataque a menos. %LINEBREAK% Quando você defender em alcance 1, role 1 dado de defesa a menos."""
         "Microthrusters":
            display_name: "Micropropulsores"
            text: """Quando você realizar uma pirueta, você <b>deve</b> usar o gabarito %BANKLEFT% ou %BANKRIGHT% ao invés do gabarito %STRAIGHT%."""
