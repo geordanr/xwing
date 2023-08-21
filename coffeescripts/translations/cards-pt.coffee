@@ -3980,6 +3980,9 @@ exportObj.cardLoaders.Português = () ->
         "Sensor Blindspot":
            display_name: "Ponto Cego nos Sensores"
            text: """Quando você realizar um ataque primário em alcance de ataque 0-1, não aplique o bônus de alcance 0-1 e role 1 dado de ataque a menos."""
+        "Sensor Blackout":
+           display_name: "Apagão nos Sensores"
+           text: """Quando você realizar um ataque primário em alcance 0-1, role 1 dado de ataque a menos. %LINEBREAK% Quando você defender em alcance 1, role 1 dado de defesa a menos."""
         "Microthrusters":
            display_name: "Micropropulsores"
            text: """Quando você realizar uma pirueta, você <b>deve</b> usar o gabarito %BANKLEFT% ou %BANKRIGHT% ao invés do gabarito %STRAIGHT%."""
@@ -4149,48 +4152,4 @@ exportObj.cardLoaders.Português = () ->
            text: """Quando você defender ou realizar um ataque primário, você pode gastar 1 mira que você possua na nave inimiga e adicionar 1 resultado %FOCUS% ao resultado dos seus dados. """
 
 
-    damage_translations =
-        "Panicked Pilot":
-           display_name: """Piloto em Pânico"""
-           text:"Receba 2 fichas de estresse. Então, repare esta carta."
-        "Blinded Pilot":
-           display_name: """Piloto Cegado"""
-           text:"Quando você realizar um ataque, você pode modificar seus dados apenas gastando %FORCE% para seu efeito padrão.%LINEBREAK%<strong>Ação:</strong> Repare esta carta. "
-        "Wounded Pilot":
-           display_name: """Piloto Ferido"""
-           text:"Após você realizar uma ação, role 1 dado de ataque. Em um resultado %HIT% ou %CRIT%, receba 1 ficha de estresse.%LINEBREAK%<strong>Ação:</strong> Repare esta carta. "
-        "Stunned Pilot":
-           display_name: """Piloto Atordoado"""
-           text:"Após executar uma manobra, se você se moveu através ou sobrepôs um obstáculo, sofra 1 dano %HIT%. "
-        "Console Fire":
-           display_name: """Incêndio no Console"""
-           text:"Antes de você engajar, role 1 dado de ataque. Em um resultado %HIT%, sofra 1 dano %HIT%. %LINEBREAK%<strong>Ação:</strong> Repare esta carta. "
-        "Damaged Engine":
-           display_name: """Motor Danificado"""
-           text:"Aumente a dificuldade das suas manobras de curva acentuada (%TURNLEFT% and %TURNRIGHT%)"
-        "Weapons Failure":
-           display_name: """Falha nas Armas"""
-           text:"Quando você realizar um ataque, role 1 dado de ataque a menos. %LINEBREAK%<strong>Ação:</strong> Repare esta carta. "
-        "Hull Breach":
-           display_name: """Ruptura do Casco"""
-           text:"Antes de você sofrer 1 ou mais danos %HIT%, em vez disso, sofra a mesma quantidade de dano %CRIT%.%LINEBREAK%<strong>Ação:</strong> Repare esta carta.  "
-        "Structural Damage":
-           display_name: """Dano Estrutural"""
-           text:"Quando você defender, role 1 dado de defesa a menos."
-        "Damaged Sensor Array":
-           display_name: """Matriz de Sensores Danificada"""
-           text:"Você não pode realizar ações, exceto a ação %FOCUS% e as ações das cartas de dano.%LINEBREAK%<strong>Ação:</strong> Repare esta carta.  "
-        "Loose Stabilizer":
-           display_name: """Estabilizador Solto"""
-           text:"Após executar uma manobra não-reta (%STRAIGHT%) você sofre 1 dano %HIT% e repara esta carta. %LINEBREAK%<strong>Ação:</strong> Repare esta carta.  "
-        "Disabled Power Regulator":
-           display_name: """Regulador de Força Desativado"""
-           text:"Antes de você engajar, receba 1 ficha de íon. Após você executar uma manobra iônica, repare esta carta."
-        "Fuel Leak":
-           display_name: """Vazamento de Combustível"""
-           text:"Após você sofrer 1 dano %CRIT%, sofra 1 dano %HIT% e repare esta carta.%LINEBREAK%<strong>Ação:</strong> Repare esta carta.  "
-        "Direct Hit!":
-           display_name: """Acerto em Cheio!"""
-           text:"Sofra 1 dano %HIT%. Então, repare esta carta. "
-            
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations
