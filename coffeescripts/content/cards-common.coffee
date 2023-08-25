@@ -13476,7 +13476,7 @@ exportObj.basicCardData = ->
                 "Mercenary (YLF)"
                 "Seeker Missiles (YLF)"
                 '"Leebo" (YLF)'
-                "Outrider (YLF)"
+                "Outrider"
             ]
         }
         {
@@ -13492,7 +13492,7 @@ exportObj.basicCardData = ->
                 "Mercenary (YLF)"
                 "Seeker Missiles (YLF)"
                 '"Leebo" (YLF)'
-                "Outrider (YLF)"
+                "Outrider"
             ]
         }
         {
@@ -13527,7 +13527,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Efficient Processing (YLF)"
                 "Seeker Missiles (YLF)"
-                "Outrider (YLF)"
+                "Outrider"
             ]
             ship_override:
                 actions: [
@@ -13550,7 +13550,7 @@ exportObj.basicCardData = ->
             upgrades: [
                 "Efficient Processing (YLF)"
                 "Seeker Missiles (YLF)"
-                "Outrider (YLF)"
+                "Outrider"
             ]
             ship_override:
                 actions: [
@@ -18680,15 +18680,6 @@ exportObj.basicCardData = ->
             id: 501
             standard: true
             slot: "Crew"
-        }
-        {
-            name: "Outrider (YLF)"
-            id: 502
-            slot: "Title"
-            points: 0
-            unique: true
-            faction: "Rebel Alliance"
-            ship: "YT-2400 Light Freighter"
         }
     ]
 

@@ -2096,7 +2096,7 @@ exportObj.cardLoaders.English = () ->
            text: """Gain a %FRONTARC% primary weapon with a value of “3.”%LINEBREAK%During the End Phase, do not remove up to 2 focus tokens."""
         "Outrider":
            display_name: """Outrider"""
-           text: """ While you perform an attack that is obstructed by an obstacle, the defender rolls 1 fewer defense die. %LINEBREAK% After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens. %LINEBREAK% <i>Errata (since rules reference 1.0.2): changed "obstructed attack" to "an attack that is obstructed by an obstacle"</i>"""
+           text: """While you perform a primary attack at range 3, roll 1 additional attack die. %LINEBREAK% While you perform an attack that is obstructed by an obstacle, you may change one of the defender's %EVADE% results to a %FOCUS% result. %LINEBREAK% <i>Errata (since errata 1.8): new gametext</i>"""
         "Phantom":
            display_name: """Phantom"""
            text: """You can dock at range 0-1."""
@@ -3221,9 +3221,6 @@ exportObj.cardLoaders.English = () ->
         '"Leebo" (YLF)':
            display_name: """“Leebo”"""
            text: """After you repair a damage card, you may perform an action from your action bar."""
-        "Outrider (YLF)":
-           display_name: """Outrider"""
-           text: """While you perform a primary attack at range 3, roll 1 additional attack die. %LINEBREAK% While you perform an attack that is obstructed by an obstacle, you may change one of the defender's %EVADE% results to a %FOCUS% result."""
         "Efficient Processing (YLF)":
            display_name: """Efficient Processing"""
            text: """After you perform a %CALCULATE% action, gain 1 calculate token."""
