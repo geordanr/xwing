@@ -7383,6 +7383,7 @@ exportObj.basicCardData = ->
                 "Force"
                 "Astromech"
                 "Modification"
+                "Configuration"
             ]
         }
         {
@@ -13378,7 +13379,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
             skill: 3
-            points: 20
+            points: 3
             charge: 2
             recurring: 1
             upgrades: [
@@ -13395,7 +13396,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
             skill: 4
-            points: 20
+            points: 4
             upgrades: [
                 "Adv. Proton Torpedoes"
                 "Automated Loaders (TBE)"
@@ -13410,7 +13411,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
             skill: 4
-            points: 20
+            points: 5
             upgrades: [
                 "Top Cover (TBE)"
                 "Barrage Rockets"
@@ -13433,7 +13434,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
             skill: 5
-            points: 20
+            points: 3
             charge: 2
             recurring: 1
             upgrades: [
@@ -13450,10 +13451,12 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "YT-2400 Light Freighter"
             skill: 5
-            points: 20
+            points: 7
+            loadout: 20
             slots: [
                 "Talent"
                 "Missile"
+                "Crew"
                 "Illicit"
                 "Illicit"
                 "Modification"
@@ -13468,7 +13471,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "YT-2400 Light Freighter"
             skill: 5
-            points: 20
+            points: 7
             upgrades: [
                 "Mercenary (YLF)"
                 "Seeker Missiles (YLF)"
@@ -13481,10 +13484,10 @@ exportObj.basicCardData = ->
             xwsaddon: "swz103-sl-scumandvillainy"
             unique: true
             id: 650
-            faction: "Scum and Villany"
+            faction: "Scum and Villainy"
             ship: "YT-2400 Light Freighter"
             skill: 5
-            points: 20
+            points: 7
             upgrades: [
                 "Mercenary (YLF)"
                 "Seeker Missiles (YLF)"
@@ -13500,7 +13503,8 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "YT-2400 Light Freighter"
             skill: 3
-            points: 20
+            points: 6
+            loadout: 16
             keyword: ["Droid"]
             slots: [
                 "Talent"
@@ -13519,7 +13523,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "YT-2400 Light Freighter"
             skill: 3
-            points: 20
+            points: 6
             upgrades: [
                 "Efficient Processing (YLF)"
                 "Seeker Missiles (YLF)"
@@ -13539,10 +13543,10 @@ exportObj.basicCardData = ->
             xwsaddon: "swz103-sl-scumandvillainy"
             unique: true
             id: 653
-            faction: "Scum and Villany"
+            faction: "Scum and Villainy"
             ship: "YT-2400 Light Freighter"
             skill: 3
-            points: 20
+            points: 7
             upgrades: [
                 "Efficient Processing (YLF)"
                 "Seeker Missiles (YLF)"
@@ -18680,8 +18684,11 @@ exportObj.basicCardData = ->
         {
             name: "Outrider (YLF)"
             id: 502
-            standard: true
             slot: "Title"
+            points: 0
+            unique: true
+            faction: "Rebel Alliance"
+            ship: "YT-2400 Light Freighter"
         }
     ]
 
@@ -19499,6 +19506,7 @@ exportObj.standardShipInclusions = [
     {name: 'UT-60D U-wing', faction: 'Rebel Alliance'}
     {name: 'Z-95-AF4 Headhunter', faction: 'Rebel Alliance'}
     {name: 'Gauntlet Fighter', faction: 'Rebel Alliance'}
+    {name: 'YT-2400 Light Freighter', faction: 'Rebel Alliance'}
 
     {name: 'TIE Advanced x1', faction: 'Galactic Empire'}
     {name: 'TIE Advanced v1', faction: 'Galactic Empire'}
@@ -19526,6 +19534,7 @@ exportObj.standardShipInclusions = [
     {name: 'ST-70 Assault Ship', faction: 'Scum and Villainy'}
     {name: 'Rogue-class Starfighter', faction: 'Scum and Villainy'}
     {name: 'Gauntlet Fighter', faction: 'Scum and Villainy'}
+    {name: 'YT-2400 Light Freighter', faction: 'Scum and Villainy'}
 
     {name: 'Fireball', faction: 'Resistance'}
     {name: 'T-70 X-wing', faction: 'Resistance'}
@@ -19572,6 +19581,9 @@ exportObj.standardPilotExclusions = [
 
     # Rebel Alliance
     'Hera Syndulla (VCX-100)'
+    '"Leebo"'
+    'Dash Rendar'
+    'Wild Space Fringer'
 
     # Galactic Empire
     'Ved Foslo'
@@ -19715,8 +19727,8 @@ String::serialtoxws = ->
             yasb:
                 builder: 'YASB - X-Wing 2.5'
                 builder_url: "https://yasb.app"
-                link: "https://yasb.app/index.html#{this}" 
-        version: '11/25/2022'
+                link: "https://yasb.app/#{this}" 
+        version: '09/08/2023'
 
     serialized = this.ParseParameter('d')
     re = if "Z" in serialized then /^v(\d+)Z(.*)/ else /^v(\d+)!(.*)/
@@ -19747,15 +19759,20 @@ String::serialtoxws = ->
         card_pilots = {}
         for pilot_data in card_data.pilotsById
             unless pilot_data.skip?
-                pilot_data.canonical_name = pilot_data.name.canonicalize() unless pilot_data.canonical_name?
+                name_parse = pilot_data.name.split("(")
+                pilot_data.canonical_name = name_parse[0].canonicalize() unless pilot_data.canonical_name?
+
+                pilot_data.xws = if pilot_data.xws? then pilot_data.xws else (if pilot_data.xwsaddon? then (pilot_data.canonical_name + "-" + pilot_data.xwsaddon) else (pilot_data.canonical_name + (if name_parse[1]? then ("-" + pilot_data.ship.canonicalize()) else "")))
                 card_pilots[pilot_data.id] = pilot_data
 
         cards_upgrades = {}
         for upgrade_data in card_data.upgradesById
             unless upgrade_data.skip?
-                upgrade_data.canonical_name = upgrade_data.name.canonicalize() unless upgrade_data.canonical_name?
+                name_parse = upgrade_data.name.split("(")
+                upgrade_data.canonical_name = name_parse[0].canonicalize() unless upgrade_data.canonical_name?
+
+                upgrade_data.xws = if upgrade_data.xws? then upgrade_data.xws else (if upgrade_data.xwsaddon? then (upgrade_data.canonical_name + "-" + upgrade_data.xwsaddon) else (upgrade_data.canonical_name + (if name_parse[1]? then ("-" + upgrade_data.slot.canonicalize()) else "")))
                 cards_upgrades[upgrade_data.id] = upgrade_data
-                
 
         if serialized_ships.length?
             # Ship loop

@@ -3223,7 +3223,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you repair a damage card, you may perform an action from your action bar."""
         "Outrider (YLF)":
            display_name: """Outrider"""
-           text: """While you perform a primary attack at range 3, roll 1 additional attack die. %LINEBREAK% While you perform an attack that is obstructed by an obstacle, you may spend one of the defender's %EVADE% results to a %FOCUS% result."""
+           text: """While you perform a primary attack at range 3, roll 1 additional attack die. %LINEBREAK% While you perform an attack that is obstructed by an obstacle, you may change one of the defender's %EVADE% results to a %FOCUS% result."""
         "Efficient Processing (YLF)":
            display_name: """Efficient Processing"""
            text: """After you perform a %CALCULATE% action, gain 1 calculate token."""
