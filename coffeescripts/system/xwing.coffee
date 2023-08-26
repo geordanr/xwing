@@ -165,7 +165,10 @@ class exportObj.SquadBuilder
         @current_obstacles = []
 
         @setupUI()
-        @game_type_selector.val (exportObj.builders[0] ? @).game_type_selector.val()
+        if @faction == "All"
+            @game_type_selector.val("epic").trigger('change')
+        else
+            @game_type_selector.val (exportObj.builders[0] ? @).game_type_selector.val()
         @setupEventHandlers()
 
         window.setInterval @updatePermaLink, 250
@@ -263,6 +266,7 @@ class exportObj.SquadBuilder
                     <span class="content-warning collection-invalid d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Collection warning"></span></span>
                     <span class="content-warning ship-number-invalid-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Ship number warning"></span></span>
                     <span class="content-warning multi-faction-warning-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Multi-Faction warning"></span></span>
+                    <span class="content-warning epic-not-legal-container d-none"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated" defaultText="Epic Unofficial"></span></span>
                 </div>
                 <div class="col-md-5 float-right button-container">
                     <div class="btn-group float-right">
@@ -653,6 +657,7 @@ class exportObj.SquadBuilder
         @old_version_container = $ @points_container.find('.old-version-container')
         @ship_number_invalid_container = $ @points_container.find('.ship-number-invalid-container')
         @multi_faction_warning_container = $ @points_container.find('.multi-faction-warning-container')
+        @epic_not_legal_container = $ @points_container.find('.epic-not-legal-container')
         @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -1355,7 +1360,7 @@ class exportObj.SquadBuilder
 
             # Version number
             @printable_container.find('.fancy-under-header').append $.trim """
-                <div class="version">Points Version: 06/09/2023</div>
+                <div class="version">Points Version: 09/08/2023</div>
             """
                     
             # Notes, if present
@@ -1478,12 +1483,14 @@ class exportObj.SquadBuilder
         @isStandard = false
         @isEpic = false
         @isQuickbuild = false
+        @epic_not_legal_container.toggleClass 'd-none', true
         switch gametype
             when 'extended'
                 @desired_points_input.val 20
             when 'epic'
                 @isEpic = true
-                @desired_points_input.val 50
+                @desired_points_input.val 40
+                @epic_not_legal_container.toggleClass 'd-none', false
             when 'quickbuild'
                 @isQuickbuild = true
                 @desired_points_input.val 8
@@ -1945,7 +1952,7 @@ class exportObj.SquadBuilder
             # select available pilots according to ususal pilot selection
             available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and (@matcher(pilot_name, term) or (pilot.display_name and @matcher(pilot.display_name, term)) ) and (@isItemAvailable(pilot, true)))
 
-            eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.max_per_squad? or @countPilots(pilot.canonical_name) < pilot.max_per_squad or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.upgrades? or @standard_restriction_check(pilot)) and (not pilot.restriction_func? or pilot.restriction_func((builder: @) , pilot)))
+            eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.max_per_squad? or @countPilots(pilot.canonical_name) < pilot.max_per_squad or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.upgrades? or @standard_restriction_check(pilot, include_pilot)) and (not pilot.restriction_func? or pilot.restriction_func((builder: @) , pilot)))
 
             # Re-add selected pilot
             if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
@@ -2011,15 +2018,16 @@ class exportObj.SquadBuilder
         retval
 
 
-    standard_restriction_check: (pilot) ->
+    standard_restriction_check: (pilot, set_pilot) ->
         if pilot.upgrades?
             for upgrade in pilot.upgrades
                 upgrade_data = exportObj.upgrades[upgrade]
                 if upgrade_data.unique == true
                     for ship in @ships
-                        for shipupgrade in ship.upgrades
-                            if shipupgrade?.data?.canonical_name == upgrade_data.canonical_name
-                                return false
+                        if not (ship.pilot?.name? and set_pilot?.name? and ship.pilot.name == set_pilot.name)
+                            for shipupgrade in ship.upgrades
+                                if shipupgrade?.data?.canonical_name == upgrade_data.canonical_name
+                                    return false
         return true
 
     dfl_filter_func = ->
@@ -3398,7 +3406,7 @@ class exportObj.SquadBuilder
                     builder: 'YASB - X-Wing 2.5'
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
-            version: '06/09/2023'
+            version: '09/08/2023'
             # there is no point to have this version identifier, if we never actually increase it, right?
 
         for ship in @ships
@@ -4677,7 +4685,7 @@ class Ship
         max_checks = 32 # that's a lot of addons
         
         if @builder.isEpic #Command Epic adding
-            if not ("Command" in @pilot.slots)
+            if @pilot.slots? and not ("Command" in @pilot.slots)
                 addCommand = true
                 for upgrade in @upgrades
                     if ("Command" == upgrade.slot) and (this == upgrade.ship)
@@ -4735,7 +4743,7 @@ class Ship
             return true
 
         for upgrade in @upgrades
-            if upgrade?.data? and not exportObj.isReleased upgrade.data
+            if upgrade?.data? and (not exportObj.isReleased upgrade.data) and (not upgrade.data.standard?)
                 #console.log "#{upgrade.data.id} is unreleased"
                 return true
 

@@ -115,6 +115,7 @@ exportObj.translations.English =
         "Collection warning": "You cannot field this list with your collection!"
         "Ship number warning": "A tournament legal squad must contain 3-8 ships!"
         "Multi-Faction warning": "Multi-Faction Lists are NEVER tournament legal!"
+        "Epic Unofficial": "Epic points are unofficial and not supported, endorsed, or accepted by AMG. Also, not balanced, so don't expect updates or it to be good. Please don't make a big deal about it."
         "XWS Import Dialog": "Import your list via XWS into YASB.<br><i>XWS is a common format to share lists between applications.</i>"
         "Copy below simple text": "<p>Copy the below and paste it elsewhere.</p>"
         "Copy below markdown": "<p>Copy the below and paste it into your reddit post.</p><p>Make sure that the post editor is set to markdown mode.</p>"
@@ -1730,7 +1731,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you receive a stress token, you may roll 1 attack die to remove it. On a %HIT% result, suffer 1 %HIT% damage."""
         "Hol Okand (BoY)":
            display_name: """Hol Okand (BoY)"""
-           text: """During the System Phasse, if there are no enemy ships at range 1-2, you may recover 1 %CHARGE% on any upgrade."""
+           text: """During the System Phase, if there are no enemy ships at range 1-2, you may recover 1 %CHARGE% on any upgrade."""
         '"Pops" Krail (BoY)':
            display_name: """“Pops” Krail (BoY)"""
            text: """While you perform a %SINGLETURRETARC% attack, you may reroll up to 2 attack dice."""
@@ -1846,6 +1847,25 @@ exportObj.cardLoaders.English = () ->
         "Tomax Bren (TBE)":
            display_name: """Tomax Bren (TBE)"""
            text: """After you perform a %BARRELROLL% action, you may spend 2 %CHARGE%. If you do, gain a focus token."""
+
+        "Dash Rendar (YLF)":
+           display_name: """Dash Rendar (YLF)"""
+           text: """During the Engagement Phase, you ignore the effects of obstacles that you are overlapping."""
+        "Dash Rendar (YLF-SL)":
+           display_name: """Dash Rendar (YLF-SL)"""
+           text: """After you gain a red token as a result of moving through or overlapping an obstacle, you may transfer that red token to a friendly ship at range 0-1."""
+        "Dash Rendar (Scum)":
+           display_name: """Dash Rendar"""
+           text: """After you gain a red token as a result of moving through or overlapping an obstacle, you may transfer that red token to a friendly ship at range 0-1."""
+        '"Leebo" (YLF)':
+           display_name: """“Leebo” (YLF)"""
+           text: """After you defend or perform an attack, if you spent a calculate token, gain 1 calculate token."""
+        '"Leebo" (YLF-SL)':
+           display_name: """“Leebo” (YLF-SL)"""
+           text: """At the end of the Engagement Phase, you may spend a calculate token to acquire a lock on an enemy ship at range 2-3."""
+        '"Leebo" (Scum)':
+           display_name: """“Leebo”"""
+           text: """At the end of the Engagement Phase, you may spend a calculate token to acquire a lock on an enemy ship at range 2-3."""
 
         # Hotshots and Aces 2
         "Corran Horn (X-Wing)":
@@ -2082,7 +2102,7 @@ exportObj.cardLoaders.English = () ->
            text: """Gain a %FRONTARC% primary weapon with a value of “3.”%LINEBREAK%During the End Phase, do not remove up to 2 focus tokens."""
         "Outrider":
            display_name: """Outrider"""
-           text: """ While you perform an attack that is obstructed by an obstacle, the defender rolls 1 fewer defense die. %LINEBREAK% After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens. %LINEBREAK% <i>Errata (since rules reference 1.0.2): changed "obstructed attack" to "an attack that is obstructed by an obstacle"</i>"""
+           text: """While you perform a primary attack at range 3, roll 1 additional attack die. %LINEBREAK% While you perform an attack that is obstructed by an obstacle, you may change one of the defender's %EVADE% results to a %FOCUS% result. %LINEBREAK% <i>Errata (since errata 1.8): new gametext</i>"""
         "Phantom":
            display_name: """Phantom"""
            text: """You can dock at range 0-1."""
@@ -3198,6 +3218,18 @@ exportObj.cardLoaders.English = () ->
         "True Grit (TBE)":
            display_name: """True Grit"""
            text: """At the end of the Activation Phase, if you are not strained, you may gain 1 strain token to remove 1 non-lock red or orange token."""
+        "Mercenary (YLF)":
+           display_name: """Mercenary"""
+           text: """After another friendly ship at range 0-2 is destroyed, before it is removed from the play area, transfer one of its green tokens to yourself."""
+        "Seeker Missiles (YLF)":
+           display_name: """Seeker Missiles"""
+           text: """<strong>Attack (%LOCK%):</strong> Spend 1 %CHARGE%. During the Modify Attack Dice step, you may spend up to 2 additional %CHARGE%. Change one %FOCUS% result to a %HIT% result for each %CHARGE% spent in this way."""
+        '"Leebo" (YLF)':
+           display_name: """“Leebo”"""
+           text: """After you repair a damage card, you may perform an action from your action bar."""
+        "Efficient Processing (YLF)":
+           display_name: """Efficient Processing"""
+           text: """After you perform a %CALCULATE% action, gain 1 calculate token."""
 
 
         # Epic upgrades
@@ -3528,6 +3560,9 @@ exportObj.cardLoaders.English = () ->
         "Sensor Blindspot":
            display_name: "Sensor Blindspot"
            text: """While you perform a primary attack at attack range 0-1, do not apply the range 0-1 bonus and roll 1 fewer attack die."""
+        "Sensor Blackout":
+           display_name: "Sensor Blackout"
+           text: """While you perform a primary attack at range 0-1, you roll 1 fewer attack die. %LINEBREAK% While you defend at range 1, you roll 1 fewer defense die."""
         "Microthrusters":
            display_name: "Microthrusters"
            text: """While you perform a barrel roll, you <b>must</b> use the %BANKLEFT% or %BANKRIGHT% template instead of the %STRAIGHT% template."""
