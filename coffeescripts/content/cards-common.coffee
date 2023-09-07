@@ -13377,7 +13377,7 @@ exportObj.basicCardData = ->
             id: 644
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
-            skill: 3
+            skill: 2
             points: 3
             charge: 2
             recurring: 1
