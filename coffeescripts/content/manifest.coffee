@@ -11681,7 +11681,195 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
-
+    "YT-2400 Light Freighter Expansion Pack": [
+        {
+            name: 'YT-2400 Light Freighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Dash Rendar (YLF)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Leebo" (YLF)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Dash Rendar (YLF-SL)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Leebo" (YLF-SL)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Dash Rendar (Scum)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Leebo" (Scum)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Lando Calrissian'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hotshot Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Veteran Turret Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Rigged Cargo Chute'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Outrider'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "TIE/sa TIE Bomber Expansion Pack": [
+        {
+            name: 'TIE/sa Bomber'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: '"Deathfire"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jonus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tomax Bren'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Major Rhymer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Scimitar Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Gamma Squadron Ace'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: '"Deathfire" (TBE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jonus (TBE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tomax Bren (TBE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Major Rhymer (TBE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Conner Nets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Saturation Salvo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Skilled Bombardier'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Bombs'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Feedback Ping'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Disciplined'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
 
     'Loose Ships': [
         {
@@ -11701,11 +11889,6 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Attack Shuttle'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'YT-2400 Light Freighter'
             type: 'ship'
             count: 2
         }
