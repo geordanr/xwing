@@ -862,47 +862,12 @@ class exportObj.SquadBuilder
                 <label class='choose-obstacles-description translated' defaultText="Choose obstacles dialog"></label>
             </div>
             <div class="modal-body row">
-                <div class="obstacle-select-container col-md-5" style="float:left">
-                    <select multiple class='obstacle-select' size="18">
-                        <option class="coreasteroid0-select obstacle-option translated" value="coreasteroid0" defaultText="Core Asteroid 0"></option>
-                        <option class="coreasteroid1-select obstacle-option translated" value="coreasteroid1" defaultText="Core Asteroid 1"></option>
-                        <option class="coreasteroid2-select obstacle-option translated" value="coreasteroid2" defaultText="Core Asteroid 2"></option>
-                        <option class="coreasteroid3-select obstacle-option translated" value="coreasteroid3" defaultText="Core Asteroid 3"></option>
-                        <option class="coreasteroid4-select obstacle-option translated" value="coreasteroid4" defaultText="Core Asteroid 4"></option>
-                        <option class="coreasteroid5-select obstacle-option translated" value="coreasteroid5" defaultText="Core Asteroid 5"></option>
-                        <option class="yt2400debris0-select obstacle-option translated" value="yt2400debris0" defaultText="YT2400 Debris 0"></option>
-                        <option class="yt2400debris1-select obstacle-option translated" value="yt2400debris1" defaultText="YT2400 Debris 1"></option>
-                        <option class="yt2400debris2-select obstacle-option translated" value="yt2400debris2" defaultText="YT2400 Debris 2"></option>
-                        <option class="vt49decimatordebris0-select obstacle-option translated" value="vt49decimatordebris0" defaultText="VT49 Debris 0"></option>
-                        <option class="vt49decimatordebris1-select obstacle-option translated" value="vt49decimatordebris1" defaultText="VT49 Debris 1"></option>
-                        <option class="vt49decimatordebris2-select obstacle-option translated" value="vt49decimatordebris2" defaultText="VT49 Debris 2"></option>
-                        <option class="core2asteroid0-select obstacle-option translated" value="core2asteroid0" defaultText="Force Awakens Asteroid 0"></option>
-                        <option class="core2asteroid1-select obstacle-option translated" value="core2asteroid1" defaultText="Force Awakens Asteroid 1"></option>
-                        <option class="core2asteroid2-select obstacle-option translated" value="core2asteroid2" defaultText="Force Awakens Asteroid 2"></option>
-                        <option class="core2asteroid3-select obstacle-option translated" value="core2asteroid3" defaultText="Force Awakens Asteroid 3"></option>
-                        <option class="core2asteroid4-select obstacle-option translated" value="core2asteroid4" defaultText="Force Awakens Asteroid 4"></option>
-                        <option class="core2asteroid5-select obstacle-option translated" value="core2asteroid5" defaultText="Force Awakens Asteroid 5"></option>
-                        <option class="gascloud1-select obstacle-option translated" value="gascloud1" defaultText="Gas Cloud 1"></option>
-                        <option class="gascloud2-select obstacle-option translated" value="gascloud2" defaultText="Gas Cloud 2"></option>
-                        <option class="gascloud3-select obstacle-option translated" value="gascloud3" defaultText="Gas Cloud 3"></option>
-                        <option class="gascloud4-select obstacle-option translated" value="gascloud4" defaultText="Gas Cloud 4"></option>
-                        <option class="gascloud5-select obstacle-option translated" value="gascloud5" defaultText="Gas Cloud 5"></option>
-                        <option class="gascloud6-select obstacle-option translated" value="gascloud6" defaultText="Gas Cloud 6"></option>
-                        <option class="pomasteroid1-select obstacle-option translated" value="pomasteroid1" defaultText="Pride of Mandalore Rock 1"></option>
-                        <option class="pomasteroid2-select obstacle-option translated" value="pomasteroid2" defaultText="Pride of Mandalore Rock 2"></option>
-                        <option class="pomasteroid3-select obstacle-option translated" value="pomasteroid3" defaultText="Pride of Mandalore Rock 3"></option>
-                        <option class="pomdebris1-select obstacle-option translated" value="pomdebris1" defaultText="Pride of Mandalore Debris 1"></option>
-                        <option class="pomdebris2-select obstacle-option translated" value="pomdebris2" defaultText="Pride of Mandalore Debris 2"></option>
-                        <option class="pomdebris3-select obstacle-option translated" value="pomdebris3" defaultText="Pride of Mandalore Debris 3"></option>
-                    </select>
+                <div class="obstacle-select-container col-md-12">
                 </div>
-                <div class="col-md-6">
-                    <div class="obstacle-image-container" style="display:none;">
-                        <img class="obstacle-image" src="images/core2asteroid0.png" />
-                    </div>
+                <div>
                     <div class="obstacle-sources-container">
                         <span class="info-header obstacle-sources translated" defaultText="Sources:" style="padding-left: 8px;"></span> <br>
-                        <span class="info-data obstacle-sources" style="padding-left: 8px;"></span>
+                        <div class="info-data obstacle-sources" style="padding-left: 8px;padding-right:10px;"></div>
                     </div>
                 </div>
             </div>
@@ -914,12 +879,148 @@ class exportObj.SquadBuilder
     </div>
         """
         @obstacles_reset = @choose_obstacles_modal.find('.reset-obstacles')
-        @obstacles_select = @choose_obstacles_modal.find('.obstacle-select')
-        @obstacles_select_image = @choose_obstacles_modal.find('.obstacle-image-container')
+        @obstacles_select = @choose_obstacles_modal.find('.obstacle-select-container')
         @obstacles_select_sources = @choose_obstacles_modal.find('.info-data.obstacle-sources')
 
+        obstacleFormat = (state) ->
+            image_name = 'images/' + state.id + '.png'
+            return "<img class='obstacle' src='#{image_name}' style='height: 100px;' /></br>" + state.text
+
+        @obstacle_data = [
+            {
+                id: "coreasteroid0"
+                text: "Core Asteroid 1"
+            }
+            {
+                id: "coreasteroid1"
+                text: "Core Asteroid 2"
+            }
+            {
+                id: "coreasteroid2"
+                text: "Core Asteroid 3"
+            }
+            {
+                id: "coreasteroid3"
+                text: "Core Asteroid 4"
+            }
+            {
+                id: "coreasteroid4"
+                text: "Core Asteroid 5"
+            }
+            {
+                id: "coreasteroid5"
+                text: "Core Asteroid 6"
+            }
+            {
+                id: "yt2400debris0"
+                text: "YT2400 Debris 1"
+            }
+            {
+                id: "yt2400debris1"
+                text: "YT2400 Debris 2"
+            }
+            {
+                id: "yt2400debris2"
+                text: "YT2400 Debris 3"
+            }
+            {
+                id: "vt49decimatordebris0"
+                text: "VT49 Debris 1"
+            }
+            {
+                id: "vt49decimatordebris1"
+                text: "VT49 Debris 2"
+            }
+            {
+                id: "vt49decimatordebris2"
+                text: "VT49 Debris 3"
+            }
+            {
+                id: "core2asteroid0"
+                text: "FA Asteroid 1"
+            }
+            {
+                id: "core2asteroid1"
+                text: "FA Asteroid 2"
+            }
+            {
+                id: "core2asteroid2"
+                text: "FA Asteroid 3"
+            }
+            {
+                id: "core2asteroid3"
+                text: "FA Asteroid 4"
+            }
+            {
+                id: "core2asteroid4"
+                text: "FA Asteroid 5"
+            }
+            {
+                id: "core2asteroid5"
+                text: "FA Asteroid 6"
+            }
+            {
+                id: "gascloud1"
+                text: "Gas Cloud 1"
+            }
+            {
+                id: "gascloud2"
+                text: "Gas Cloud 2"
+            }
+            {
+                id: "gascloud3"
+                text: "Gas Cloud 3"
+            }
+            {
+                id: "gascloud4"
+                text: "Gas Cloud 4"
+            }
+            {
+                id: "gascloud5"
+                text: "Gas Cloud 5"
+            }
+            {
+                id: "gascloud6"
+                text: "Gas Cloud 6"
+            }
+            {
+                id: "pomasteroid1"
+                text: "PoM Rock 1"
+            }
+            {
+                id: "pomasteroid2"
+                text: "PoM Rock 2"
+            }
+            {
+                id: "pomasteroid3"
+                text: "PoM Rock 3"
+            }
+            {
+                id: "pomdebris1"
+                text: "PoM Debris 1"
+            }
+            {
+                id: "pomdebris2"
+                text: "PoM Debris 2"
+            }
+            {
+                id: "pomdebris3"
+                text: "PoM Debris 3"
+            }
+        ]
+
+        @obstacles_select.select2
+            data: @obstacle_data
+            width: '90%'
+            multiple: true
+            maximumSelectionSize: 3
+            placeholder: "Select an Obstacle"
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
+            formatResult: obstacleFormat
+            formatSelection: obstacleFormat
         # Backend
 
+        @obstacles_select.select2.minimumResultsForSearch = -1 if $.isMobile()
         @backend_list_squads_button = $ @container.find('button.backend-list-my-squads')
         @backend_list_squads_button.click (e) =>
             e.preventDefault()
@@ -1266,40 +1367,19 @@ class exportObj.SquadBuilder
         @obstacles_reset.click (e) =>
             if @current_obstacles != []
                 @current_obstacles = []
-                @obstacles_select.val("")
+                @obstacles_select.select2('data', null)
                 @current_squad.additional_data.obstacles = @current_obstacles
                 @current_squad.dirty = true
                 @container.trigger 'xwing-backend:squadDirtinessChanged'
                 @container.trigger 'xwing:pointsUpdated'        
 
-        @obstacles_select.mouseup (e) =>
-            previous_obstacles = @current_squad.additional_data.obstacles ? []
-            obst_changes = (o for o in @obstacles_select.val())
-            # parse changes from previous obstacles
-            intersect = (a, b) ->
-                [a, b] = [b, a] if a.length > b.length
-                value for value in a when value in b
-
-            intersection = intersect previous_obstacles,obst_changes
-            for x in obst_changes
-                if intersection.indexOf(x) > -1
-                    previous_obstacles.splice(previous_obstacles.indexOf(x), 1)
-                else
-                    if previous_obstacles.length < 3
-                        previous_obstacles.push(x)
-
-            @updateObstacleSelect(previous_obstacles)
-
-            @current_squad.additional_data.obstacles = previous_obstacles
+        @obstacles_select.change (e) =>
+            @current_obstacles = @obstacles_select.val()
+            @current_squad.additional_data.obstacles = @current_obstacles
             @current_squad.dirty = true
+            @showObstaclesSelectInfo()
             @container.trigger 'xwing-backend:squadDirtinessChanged'
             @container.trigger 'xwing:pointsUpdated'
-
-        $('option.obstacle-option').on 'mousemove', (e) =>
-            @showChooseObstaclesSelectInformation(e.target.getAttribute("value"))
-
-        $('option.obstacle-option').on 'touchmove', (e) =>
-            @showChooseObstaclesSelectInformation(e.target.getAttribute("value"))
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -1677,25 +1757,24 @@ class exportObj.SquadBuilder
         @showTextListModal()
 
     showChooseObstaclesModal: ->
-        @obstacles_select.val(@current_squad.additional_data.obstacles)
+        @obstacles_select.select2('val', @current_squad.additional_data.obstacles)
         @choose_obstacles_modal.modal 'show'
 
-    showChooseObstaclesSelectInformation: (obstacle) ->
-        @showChooseObstaclesSelectImage obstacle
-        @showChooseObstaclesSelectSources obstacle
-
-    showChooseObstaclesSelectSources: (obstacle) ->
-        sources = exportObj.obstacles[obstacle]?.sources ? []
-        @obstacles_select_sources.text if (sources.length > 1) or (not (exportObj.translate('sources', 'Loose Ships') in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition")
-
-    showChooseObstaclesSelectImage: (obstacle) ->
-        @image_name = 'images/' + obstacle + '.png'
-        @obstacles_select_image.find('.obstacle-image').attr 'src', @image_name
-        @obstacles_select_image.show()
+    showObstaclesSelectInfo: ->
+        obstacle_array = @obstacles_select.val().split(",")
+        if obstacle_array != []
+            newtext = ""
+            for obstacle in obstacle_array
+                sources = exportObj.obstacles[obstacle]?.sources ? []
+                newtext += "<u>#{obstacle}</u>: #{(if (sources.length > 1) or (not (exportObj.translate('sources', 'Loose Ships') in sources)) then (if sources.length > 0 then sources.join(', ') else exportObj.translate('ui', 'unreleased')) else @uitranslation("Only available from 1st edition"))}</br>"
+            @obstacles_select_sources.html $.trim newtext
+        else
+            @obstacles_select_sources.html ''
 
     updateObstacleSelect: (obstacles) ->
         @current_obstacles = obstacles ? []
-        @obstacles_select.val(obstacles)
+        @obstacles_select.select2('val', obstacles)
+        @showObstaclesSelectInfo()
 
     serialize: ->
 
