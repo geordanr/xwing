@@ -950,7 +950,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant qu’un vaisseau allié effectue une attaque, si le défenseur est dans votre %FRONTARC%, l’attaquant peut changer 1 résultat %HIT% en un résultat %CRIT%."""
         "General Grievous":
            display_name: """Général Grievous"""
-           text: """Tant que vous effectuez une attaque principale, si vous n’est pas dans l’arc de tir du défenseur, vous pouvez relancer jusqu’à 2 dés d’attaque."""
+           text: """Tant que vous effectuez une attaque principale, si vous n’êtes pas dans l’arc de tir du défenseur, vous pouvez relancer jusqu’à 2 dés d’attaque."""
         "Genesis Red":
            display_name: """Genesis Red"""
            text: """Après avoir verrouillé une cible, vous devez retirer tous vos marqueurs de concentration et d’évasion. Puis, gagnez autant de marqueurs de concentration et d’évasion qu’a le vaisseau verrouillé."""
@@ -2329,7 +2329,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Agent Tierny":
            text: """<strong>Mise En Place :</strong> après avoir placé les forces, vous <b>devez</b> assigner l'état <b>•Confiance Brisée</b> à un vaisseau ennemi."""
 
-# Starter Packs
+        # Starter Packs
         "Darth Vader (SSP)":
            display_name: """Darth Vader (Standard)"""
            text: """Après avoir effectué une action, vous pouvez dépenser 1 %FORCE% pour effectuer une action."""
@@ -2373,6 +2373,38 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: """Shara Bey (Standard)"""
            text: """Tant que vous défendez ou effectuez une attaque principale, vous pouvez dépenser 1 verrouillage que vous avez sur le vaisseau ennemi pour ajouter 1 résultat %FOCUS% aux résultats de vos dés. """
 
+        # TIE Bomber (TBE)
+        '"Deathfire" (TBE)':
+            display_name: """“Deathfire” (TBE)"""
+            text: """Après avoir entièrement exécuté une manœuvre à vitesse 3-5, si vous n'avez pas largué ou lancé d'engin à ce round, vous pouvez dépenser 2 %CHARGE% pour larguer ou lancer une bombe en utilisant le gabarit [3 %STRAIGHT%]."""
+        "Major Rhymer (TBE)":
+            display_name: """Major Rhymer (TBE)"""
+            text: """Tant que vous effectuez une attaque %TORPEDO%, si le défenseur est dans votre %BULLSEYEARC%, changez un résultat %FOCUS% en résultat %CRIT%."""
+        "Captain Jonus (TBE)":
+            display_name: """Capitaine Jonus (TBE)"""
+            text: """Après avoir largué ou lancé un engin, gagnez un marqueur d'évasion."""
+        "Tomax Bren (TBE)":
+            display_name: """Tomax Bren (TBE)"""
+            text: """Après avoir effectué une action %BARRELROLL%, vous pouvez dépenser 2 %CHARGE%. Dans ce cas, gagnez un marqueur de concentration."""
+
+        "Dash Rendar (YLF)":
+            display_name: """Dash Rendar (YLF)"""
+            text: """Pendant la phase d’engagement, ignorez les effets des obstacles que vous chevauchez."""
+        "Dash Rendar (YLF-SL)":
+            display_name: """Dash Rendar (YLF-SL)"""
+            text: """Après avoir gagné un marqueur rouge suite au chevauchement d’un obstacle ou d’un déplacement à travers un obstacle, vous pouvez transférer ce marqueur rouge à un vaisseau allié à portée 0–1."""
+        "Dash Rendar (Scum)":
+            display_name: """Dash Rendar"""
+            text: """Après avoir gagné un marqueur rouge suite au chevauchement d’un obstacle ou d’un déplacement à travers un obstacle, vous pouvez transférer ce marqueur rouge à un vaisseau allié à portée 0–1."""
+        '"Leebo" (YLF)':
+            display_name: """“Leebo” (YLF)"""
+            text: """Après avoir défendu ou effectué une attaque, si vous avez dépensé un marqueur de calcul, gagnez 1 marqueur de calcul."""
+        '"Leebo" (YLF-SL)':
+            display_name: """“Leebo” (YLF-SL)"""
+            text: """A la fin de la phase d’engagement, vous pouvez dépenser un marqueur de calcul pour verrouiller un vaisseau ennemi à portée 2–3."""
+        '"Leebo" (Scum)':
+            display_name: """“Leebo”"""
+            text: """A la fin de la phase d’engagement, vous pouvez dépenser un marqueur de calcul pour verrouiller un vaisseau ennemi à portée 2–3."""
 
 
     upgrade_translations =
@@ -2416,7 +2448,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Gagnez une arme principale %FRONTARC% avec une valeur de « 3 ».%LINEBREAK%Pendant la phase de dénouement, ne retirez pas jusqu’à 2 marqueurs de concentration."""
         "Outrider":
            display_name: """Outrider"""
-           text: """Tant que vous effectuez une attaque qui est gênée par un obstacle, le défenseur lance 1 dé de défense en moins.%LINEBREAK%Après avoir entièrement exécuté une manœuvre, si vous avez traversé ou chevauché un obstacle, vous pouvez retirer 1 de vos marqueurs rouges ou orange. %LINEBREAK% <i>Errata (1.0.2): Ajout de la précision « par un obstacle »</i>"""
+           text: """Tant que vous effectuez une attaque principale à portée 3, lancez 1 dé d’attaque supplémentaire.%LINEBREAK%Tant que vous effectuez une attaque qui est gênée par un obstacle, vous pouvez changer 1 résultat %EVADE% du défenseur en un résultat %FOCUS%. %LINEBREAK% <i>Errata (since errata 1.8): nouveau texte</i>"""
         "Phantom":
            display_name: """Phantom"""
            text: """Vous pouvez vous arrimer à portée 0-1."""
@@ -3151,7 +3183,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque à portée d’attaque 0, vous pouvez dépenser des marqueurs de concentration pour leur effet de base afin de modifier des résultats. Tant que vous défendez à portée d’attaque 0, l’attaquant peut dépenser des marqueurs de concentration pour leur effet de base afin de modifier des résultats. %LINEBREAK%<i>Errata (1.4): Modification de la capacité pour les nouvelles règles.</i>"""
         "Discord Missiles":
            display_name: """Missiles Discorde"""
-           text: """Au début de la phase d’engagement, vous pouvez dépenser 1 marqueur de calcul et 1 %CHARGE% pour lancer 1 nuée de droïdes buzz en utilisant le gabarit [3 %BANKLEFT%], [3 %STRAIGHT%] ou [3 %BANKRIGHT%.%LINEBREAK%La %CHARGE% de cette carte ne peut pas être récupérée."""
+           text: """Au début de la phase d’engagement, vous pouvez dépenser 1 marqueur de calcul et 1 %CHARGE% pour lancer 1 nuée de droïdes buzz en utilisant le gabarit [3 %BANKLEFT%], [3 %STRAIGHT%] ou [3 %BANKRIGHT%].%LINEBREAK%La %CHARGE% de cette carte ne peut pas être récupérée."""
         "B6 Blade Wing Prototype (Epic)":
            display_name: """Prototype Blade Wing B6 (Epique)"""
            text: """Attaque (%LOCK%): Gagnez 1 marqueur ionique pour effectuer cette attaque. Si l'attaque touche, le défenseur subit 1 dégât %HIT%/%CRIT% supplémentaire pour chaque résultat correspondant non-annulé au-delà du premier."""
