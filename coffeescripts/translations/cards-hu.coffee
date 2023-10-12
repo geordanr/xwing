@@ -1226,7 +1226,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Amikor egy hajó amit bemértél 1-3-as távolságban védekezik vaqy végrehajt egy támadást, elkölthetsz 1 %CHARGE% jelzőt, hogy megakadályozd a távolság bónusz alkalmazását.<br><strong>Twin Ion Engines:</strong> Hagyd figyelmen kívül a 'TIE' megkötést a fejlesztés kártyákon."""
         '"Contrail"':
            text: """Amikor védekezel vagy végrehajtasz egy támadást, ha a felfedett manővered iránya megegyezik az ellenséges hajóéval, az ellenséges hajó 1 %FOCUS% eredményét üres eredményre változtathatod.<br><strong>Twin Ion Engines:</strong> Hagyd figyelmen kívül a 'TIE' megkötést a fejlesztés kártyákon."""
-        '"Odd Ball" (V-Wing)':
+        '"Odd Ball" (V-wing)':
            display_name: """“Odd Ball”"""
            text: """Miután teljesen végrehajtottál egy piros manővert vagy végrehajtottál egy piros akciót, ha van egy ellenséges hajó a %BULLSEYEARC% ívedben, feltehetsz rá egy bemérőt.<br><strong>Twin Ion Engines:</strong> Hagyd figyelmen kívül a 'TIE' megkötést a fejlesztés kártyákon."""
         "Boba Fett (Separatist)":
