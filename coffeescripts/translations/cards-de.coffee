@@ -1761,7 +1761,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Solange du einen Primär- oder %TURRET% -Angriff durchführst, darfst du für jedes befreundete Gerät oder berechnende befreundete Schiff im Angriffswinkel 1 Angriffswürfel neu weerfen."
         "Shasa Zaro":
            display_name: "Shasa Zaro"
-           text: "Nachdem du verteidigt hast, darfst du ein befreundetes Schiff in deinem %REARARC% in Reichweite 0-2 sowie 1 deiner grünen Marker wählen. Falls du das tust, erhält jenes Schiff ein passenden Marker"
+           text: "Nachdem du verteidigt hast, darfst du ein befreundetes Schiff in deinem %FULLREARARC% in Reichweite 0-2 sowie 1 deiner grünen Marker wählen. Falls du das tust, erhält jenes Schiff ein passenden Marker"
         "Teza Nasz":
            display_name: "Teza Nasz"
            text: "Solange ein befreundetes Schiff in Reichweite 0-2 einen Angriff durchführt, falls der Verteidiger ein mit dem Angreifer befreundetes Schiff in jedem seiner Seitenwinkel (%LEFTARC% und %RIGHTARC%] hat, darf der Angreifer1 Angriffswürfel neu werfen."
