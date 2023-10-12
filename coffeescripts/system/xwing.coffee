@@ -50,7 +50,7 @@ $.randomInt = (n) ->
 $.isElementInView = (element, fullyInView) ->
     pageTop = $(window).scrollTop()
     pageBottom = pageTop + $(window).height()
-    elementTop = $(element).offset().top
+    elementTop = $(element)?.offset()?.top
     elementBottom = elementTop + $(element).height()
 
     if fullyInView
