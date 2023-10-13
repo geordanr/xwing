@@ -2370,6 +2370,13 @@ class exportObj.SquadBuilder
         actionlist = action_icons.join ''
         return actionlist.replace(seperation,'')
 
+    listStandardUpgrades: (upgrades) ->
+        upgrade_names = ''
+        for upgrade in upgrades
+            formattedname = upgrade.split " ("
+            upgrade_names += ', ' + formattedname[0]
+        return upgrade_names.substr 2
+        
     showTooltip: (type, data, additional_opts, container = @info_container, force_update = false) ->
         if data != @tooltip_currently_displaying or force_update
             switch type
@@ -2719,7 +2726,7 @@ class exportObj.SquadBuilder
                         container.find('tr.info-upgrades').hide()
                     else
                         container.find('tr.info-upgrades').show()
-                        container.find('tr.info-upgrades td.info-data').html(if data.slots? then (exportObj.translate('sloticon', slot) for slot in data.slots).join(' ') or 'None' else "Standardized")
+                        container.find('tr.info-upgrades td.info-data').html(if data.slots? then (exportObj.translate('sloticon', slot) for slot in data.slots).join(' ') else (if data.upgrades? then @listStandardUpgrades(data.upgrades) else 'None'))
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats?.maneuvers ? ship.maneuvers, ship.maneuvers))
                 when 'Quickbuild'
