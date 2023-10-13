@@ -802,6 +802,9 @@ class exportObj.SquadBuilder
                 <label class = "toggle-initiative-prefix-names misc-settings-label">
                     <input type="checkbox" class="initiative-prefix-names-checkbox misc-settings-checkbox" /> <span class="translated" defaultText="Use INI prefix"></span> 
                 </label><br />
+                <label class = "enable-ban-list misc-settings-label">
+                    <input type="checkbox" class="enable-ban-list-checkbox misc-settings-checkbox" /> <span class="translated" defaultText="Enable Ban List (Not Standard)"></span> 
+                </label><br />
             </div>
             <div class="modal-footer">
                 <span class="misc-settings-infoline"></span>
@@ -813,12 +816,17 @@ class exportObj.SquadBuilder
         """
         @misc_settings_infoline = $ @misc_settings_modal.find('.misc-settings-infoline')
         @misc_settings_initiative_prefix = $ @misc_settings_modal.find('.initiative-prefix-names-checkbox')
+        @misc_settings_ban_list = $ @misc_settings_modal.find('.enable-ban-list-checkbox')
         if @backend? 
             @backend.getSettings (st) =>
                 exportObj.settings ?= []
                 exportObj.settings.initiative_prefix = st.showInitiativeInFrontOfPilotName?
                 if st.showInitiativeInFrontOfPilotName? 
                     @misc_settings_initiative_prefix.prop('checked', true)
+
+                exportObj.settings.ban_list = st.enableBanList?
+                if st.enableBanList? 
+                    @misc_settings_ban_list.prop('checked', true)
         else 
             @waiting_for_backend ?= []
             @waiting_for_backend.push => 
@@ -827,6 +835,9 @@ class exportObj.SquadBuilder
                     exportObj.settings.initiative_prefix = st.showInitiativeInFrontOfPilotName?
                     if st.showInitiativeInFrontOfPilotName? 
                         @misc_settings_initiative_prefix.prop('checked', true)
+                    exportObj.settings.ban_list = st.enableBanList?
+                    if st.enableBanList? 
+                        @misc_settings_ban_list.prop('checked', true)
                         
         @misc_settings_initiative_prefix.click (e) =>
             exportObj.settings ?= []
@@ -842,6 +853,22 @@ class exportObj.SquadBuilder
                         @misc_settings_infoline.text @uitranslation("Changes Saved")
                         @misc_settings_infoline.fadeIn 100, =>
                             @misc_settings_infoline.fadeOut 3000
+
+        @misc_settings_ban_list.click (e) =>
+            exportObj.settings ?= []
+            exportObj.settings.ban_list = @misc_settings_ban_list.prop('checked')
+            if @backend? 
+                if @misc_settings_ban_list.prop('checked')
+                    @backend.set 'enableBanList', '1', (ds) =>
+                        @misc_settings_infoline.text @uitranslation("Changes Saved")
+                        @misc_settings_infoline.fadeIn 100, =>
+                            @misc_settings_infoline.fadeOut 3000
+                else 
+                    @backend.deleteSetting 'enableBanList', (dd) =>
+                        @misc_settings_infoline.text @uitranslation("Changes Saved")
+                        @misc_settings_infoline.fadeIn 100, =>
+                            @misc_settings_infoline.fadeOut 3000
+
 
         @misc_settings.click (e) =>
             e.preventDefault()
@@ -1990,8 +2017,12 @@ class exportObj.SquadBuilder
         else if @isStandard
             return exportObj.standardCheck(item_data, @faction, shipCheck)
         else if (not @isEpic)
+            if exportObj.settings?.ban_list?
+                if not exportObj.standardCheck(item_data, @faction, shipCheck, true) then return false
             return exportObj.epicExclusions(item_data)
         else
+            if exportObj.settings?.ban_list?
+                if not exportObj.standardCheck(item_data, @faction, shipCheck, true) then return false
             return true
 
     getAvailableShipsMatching: (term='',sorted = true, collection_only = false) ->
@@ -2370,6 +2401,13 @@ class exportObj.SquadBuilder
         actionlist = action_icons.join ''
         return actionlist.replace(seperation,'')
 
+    listStandardUpgrades: (upgrades) ->
+        upgrade_names = ''
+        for upgrade in upgrades
+            formattedname = upgrade.split " ("
+            upgrade_names += ', ' + formattedname[0]
+        return upgrade_names.substr 2
+        
     showTooltip: (type, data, additional_opts, container = @info_container, force_update = false) ->
         if data != @tooltip_currently_displaying or force_update
             switch type
@@ -2719,7 +2757,7 @@ class exportObj.SquadBuilder
                         container.find('tr.info-upgrades').hide()
                     else
                         container.find('tr.info-upgrades').show()
-                        container.find('tr.info-upgrades td.info-data').html(if data.slots? then (exportObj.translate('sloticon', slot) for slot in data.slots).join(' ') or 'None' else "Standardized")
+                        container.find('tr.info-upgrades td.info-data').html(if data.slots? then (exportObj.translate('sloticon', slot) for slot in data.slots).join(' ') else (if data.upgrades? then @listStandardUpgrades(data.upgrades) else 'None'))
                     container.find('p.info-maneuvers').show()
                     container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats?.maneuvers ? ship.maneuvers, ship.maneuvers))
                 when 'Quickbuild'
@@ -3762,12 +3800,7 @@ class Ship
         @pilot_selector.data('select2').container.show()
         if ship_type != @pilot?.ship
             if not @builder.isQuickbuild
-                # Ship changed; select first non-unique
-                pilot = (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not exportObj.pilotsById[result.id].unique)[0]
-                if pilot # if there is a non-unique, use this one
-                    @setPilot pilot
-                else # otherwise just set it to the first available pilot
-                    @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when ((not exportObj.pilotsById[result.id].restriction_func? or exportObj.pilotsById[result.id].restriction_func(@)) and not (exportObj.pilotsById[result.id] in @builder.uniques_in_use.Pilot)))[0]
+                @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when ((not exportObj.pilotsById[result.id].restriction_func? or exportObj.pilotsById[result.id].restriction_func(@)) and not (exportObj.pilotsById[result.id] in @builder.uniques_in_use.Pilot)))[0]
             else
                 # get the first available pilot
                 quickbuild_id = (result.id for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not result.disabled)[0]

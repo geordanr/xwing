@@ -19675,14 +19675,17 @@ exportObj.epicExclusions = (data) ->
 
 # Ships/Pilots excluded unless in the included list (with further excluded pilots list for included ships, i.e u-wing)
 # while upgrades assumed included unless on the excluded list
-exportObj.standardCheck = (data, faction='', shipCheck=false) ->
+exportObj.standardCheck = (data, faction='', shipCheck=false, onlyBanList=false) ->
     if (shipCheck)
         if (data.name in exportObj.standardPilotExclusions)
             return false
-        for ship in exportObj.standardShipInclusions
-            if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name || (Array.isArray(data.ship) and ship.name in data.ship)))
-                return true
-        return false
+        if onlyBanList == false
+            for ship in exportObj.standardShipInclusions
+                if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name || (Array.isArray(data.ship) and ship.name in data.ship)))
+                    return true
+            return false
+        else
+            return true
     else
         return data.name not in exportObj.standardUpgradeExclusions
 
