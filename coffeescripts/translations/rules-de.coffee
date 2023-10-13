@@ -106,7 +106,7 @@ exportObj.ruleLoaders.Deutsch = () ->
                 text: "Ein Schiff ist <strong>erschöpft</strong>, solange es mindestens 1 Erschöpfungsmarker (%DEPLETE%) hat. Solange ein erschöpftes Schiff einen Angriff durchführt, wirft es 1 Angriffswürfel weniger. Erschöpfungsmarker sind rote Marker. <br>• Nachdem ein erschöpftes Schiff den Effekt, 1 Angriffswürfel weniger zu werfen, angewandt hat, entfernt es 1 Erschöpfungsmarker. <br>• Nachdem ein erschöpftes Schiff ein blaues Manöver ausgeführt hat, entfernt es 1 Erschöpfungsmarker"
             "FÄHIGKEITEN":
                 name: "Fähigkeiten"
-                text: "Manche Texte von Zustands-, Schadens-, Schiffs- und Aufwertungskarten sind <strong>Fähigkeiten</strong>. Diese bestehen aus einem Zeitpunkt und einem Effekt. <br>• Kartenfähigkeiten sind verpflichtend und müssen zwangsweise abgehandelt werden, es sei denn, eine Kartenfähigkeit verwendet eine Form von „dürfen“ oder das Stichwort „<strong>Aktion</strong>“ oder „<strong>Angriff</strong>“. <br>• Ein Schiff kann keine Marker eines anderen Schiffes ausgeben oder entfernen, es sei denn, ein Effekt besagt ausdrücklich etwas anderes. Ebenso kann ein Schiff die Würfelergebnisse eines anderen Schiffes nicht ausgeben, modifizieren oder entfernen, es sei denn, ein Effekt besagt ausdrücklich etwas anderes. <br>• Falls mehrere Fähigkeiten gleichzeitig abgehandelt werden müssten, nutzt man die sogenannte Fähigkeits-Warteschlange, um die Reihenfolge ihrer Abhandlung zu bestimmen. <br>• Die Kartenfähigkeit eines zerstörten Schiffes bleibt aktiv, bis jenes Schiff entfernt wird, es sei denn, die Kartenfähigkeit gibt ausdrücklich an, zu welchem Zeitpunkt ihr Effekt endet, z. B. „bis zum Ende der Kampfphase“. Solche Effekte bleiben bis zum Ende der angegebenen Zeit aktiv. <br><h5>Piloten- und Schiffsfähigkeiten</h5> Manche Schiffskarten haben zusätzlich zu ihrem atmosphärischen Text (oder stattdessen) eine Fähigkeit. Alle limitierten Schiffe verfügen über individuelle <strong>Pilotenfähigkeiten</strong> und haben keine atmosphärischen Texte. Zudem haben manche Schiffe unterhalb ihrer Pilotenfähigkeit oder ihrem atmosphärischen Text eine <strong>Schiffsfähigkeit</strong>, die bei allen Schiffen dieses Typs gleich ist.<br><h5>Ersetzungseffekte</h5> Manche Fähigkeiten haben eine ersetzende Funktion – sie verändern die normale Abhandlung eines Effekts. Man erkennt sie an den Wörtern „anstatt“, „statt“ und „stattdessen“ sowie an der Verwendung des Konjunktivs. <br>• Ersetzungseffekte werden nicht ans Ende der Fähigkeits-Warteschlange gestellt, da sie gleichzeitig mit dem ersetzten Effekt abgehandelt werden. <br>• Wenn ein Ersetzungseffekt abgehandelt wird, behandelt man den ersetzten Effekt, als wäre er niemals eingetreten. <br>◊ Beispiel: Jyn Ersos Fähigkeit besagt: „Falls ein befreundetes Schiff in Reichweite 0–3 einen Fokusmarker erhalten würde, darf es stattdessen 1 Ausweichmarker erhalten.“ Falls diese Fähigkeit verwendet wird, kann ein Effekt, der nach dem Erhalt eines Fokusmarker ausgelöst wird, nicht ausgelöst werden. <br>• Gibt es mehrere Ersetzungseffekte, die denselben Effekt abändern, kann nur 1 Effekt den ursprünglichen Effekt ersetzen. <br>◊ Beispiel: Ein Schiff ist gerade dabei, einen Fokusmarker zu erhalten, und hat die beiden Fähigkeiten „Bevor du einen Fokusmarker erhalten würdest, erhalte stattdessen einen Ausweichmarker“ und „Bevor du einen Fokusmarker erhalten würdest, erhalte stattdessen einen Berechnungsmarker“. Nur 1 dieser Fähigkeiten kann abgehandelt werden.<br><h5>Kosten bezahlen</h5>Ein Schiff kann die Kosten eines Effekts nur dann bezahlen, wenn der Effekt auch abgehandelt werden kann. <br>• Beispiel: Die Fähigkeit des GNK-„Gonk“-Droiden besagt: „Aktion: Gib 1 %CHARGE% aus, um 1 Schild wiederherzustellen.“ Hat das Schiff keine inaktiven Schilde, kann es die Ladung nicht ausgeben. <br>• Ersetzungseffekte können die Kosten ersetzen, die ein Schiff für einen Effekt ausgeben muss. Werden Kosten so ersetzt, wird der Effekt trotzdem abgehandelt."
+                text: "Manche Texte von Zustands-, Schadens-, Schiffs- und Aufwertungskarten sind <strong>Fähigkeiten</strong>. Diese bestehen aus einem Zeitpunkt und einem Effekt. <br>• Kartenfähigkeiten sind verpflichtend und müssen zwangsweise abgehandelt werden, es sei denn, eine Kartenfähigkeit verwendet eine Form von „dürfen“ oder das Stichwort „<strong>Aktion</strong>“ oder „<strong>Angriff</strong>“. <br>• Ein Schiff kann keine Marker eines anderen Schiffes ausgeben oder entfernen, es sei denn, ein Effekt besagt ausdrücklich etwas anderes. Ebenso kann ein Schiff die Würfelergebnisse eines anderen Schiffes nicht ausgeben, modifizieren oder entfernen, es sei denn, ein Effekt besagt ausdrücklich etwas anderes. <br>• Falls mehrere Fähigkeiten gleichzeitig abgehandelt werden müssten, nutzt man die sogenannte Fähigkeits-Warteschlange, um die Reihenfolge ihrer Abhandlung zu bestimmen. <br>• Die Kartenfähigkeit eines zerstörten Schiffes bleibt aktiv, bis jenes Schiff entfernt wird, es sei denn, die Kartenfähigkeit gibt ausdrücklich an, zu welchem Zeitpunkt ihr Effekt endet, z. B. „bis zum Ende der Kampfphase“. Solche Effekte bleiben bis zum Ende der angegebenen Zeit aktiv. <br><br><h5>Piloten- und Schiffsfähigkeiten</h5> Manche Schiffskarten haben zusätzlich zu ihrem atmosphärischen Text (oder stattdessen) eine Fähigkeit. Alle limitierten Schiffe verfügen über individuelle <strong>Pilotenfähigkeiten</strong> und haben keine atmosphärischen Texte. Zudem haben manche Schiffe unterhalb ihrer Pilotenfähigkeit oder ihrem atmosphärischen Text eine <strong>Schiffsfähigkeit</strong>, die bei allen Schiffen dieses Typs gleich ist.<br><br><h5>Ersetzungseffekte</h5> Manche Fähigkeiten haben eine ersetzende Funktion – sie verändern die normale Abhandlung eines Effekts. Man erkennt sie an den Wörtern „anstatt“, „statt“ und „stattdessen“ sowie an der Verwendung des Konjunktivs. <br>• Ersetzungseffekte werden nicht ans Ende der Fähigkeits-Warteschlange gestellt, da sie gleichzeitig mit dem ersetzten Effekt abgehandelt werden. <br>• Wenn ein Ersetzungseffekt abgehandelt wird, behandelt man den ersetzten Effekt, als wäre er niemals eingetreten. <br>◊ Beispiel: Jyn Ersos Fähigkeit besagt: „Falls ein befreundetes Schiff in Reichweite 0–3 einen Fokusmarker erhalten würde, darf es stattdessen 1 Ausweichmarker erhalten.“ Falls diese Fähigkeit verwendet wird, kann ein Effekt, der nach dem Erhalt eines Fokusmarker ausgelöst wird, nicht ausgelöst werden. <br>• Gibt es mehrere Ersetzungseffekte, die denselben Effekt abändern, kann nur 1 Effekt den ursprünglichen Effekt ersetzen. <br>◊ Beispiel: Ein Schiff ist gerade dabei, einen Fokusmarker zu erhalten, und hat die beiden Fähigkeiten „Bevor du einen Fokusmarker erhalten würdest, erhalte stattdessen einen Ausweichmarker“ und „Bevor du einen Fokusmarker erhalten würdest, erhalte stattdessen einen Berechnungsmarker“. Nur 1 dieser Fähigkeiten kann abgehandelt werden.<br><br><h5>Kosten bezahlen</h5>Ein Schiff kann die Kosten eines Effekts nur dann bezahlen, wenn der Effekt auch abgehandelt werden kann. <br>• Beispiel: Die Fähigkeit des GNK-„Gonk“-Droiden besagt: „Aktion: Gib 1 %CHARGE% aus, um 1 Schild wiederherzustellen.“ Hat das Schiff keine inaktiven Schilde, kann es die Ladung nicht ausgeben. <br>• Ersetzungseffekte können die Kosten ersetzen, die ein Schiff für einen Effekt ausgeben muss. Werden Kosten so ersetzt, wird der Effekt trotzdem abgehandelt."
             "FÄHIGKEITS-WARTESCHLANGE":
                 name: "Fähigkeits-Warteschlange"
                 text: "Die <strong>Fähigkeits-Warteschlange</strong> wird verwendet, um die Abhandlungsreihenfolge von Fähigkeiten zu klären, die innerhalb desselben Zeitfensters ausgelöst werden. Fähigkeiten in der Warteschlange werden von vorne nach hinten abgehandelt. Folgende Regeln gelten für das Hinzufügen von Fähigkeiten zur Warteschlange: <br>1. Haben beide Spieler Fähigkeiten, die durch dasselbe Ereignis ausgelöst werden, werden die Fähigkeiten in Spielerreihenfolge in die Warteschlange gestellt. <br>2. Hat ein Spieler mehrere Fähigkeiten, die durch dasselbe Ereignis ausgelöst werden, bestimmt er selbst die Reihenfolge, in der die Fähigkeiten in die Warteschlange gestellt werden. <br>3. Werden durch das Abhandeln eines Effekts aus der Fähigkeits-Warteschlange weitere Effekte auslöst, werden sie gemäß den oben genannten Regeln ans vordere Ende der Warteschlange gestellt. <br>2 Beispiele für die Fähigkeits-Warteschlange finden sich im Anhang: Beispiele. <br>• Wenn ein Spieleffekt dasselbe Zeitfenster wie die Fähigkeit eines Spielers hat, wird der Spieleffekt immer zuerst abgehandelt. <br>◊ Beispiel: Ein Schiff mit einer Fähigkeit, die nach dem Durchführen einer Fassrolle ausgelöst wird, führt eine rote Fassrolle-Aktion durch. Bevor die Fähigkeit abgehandelt wird, erhält das Schiff einen Stressmarker, da es sich dabei um einen Spieleffekt handelt. <br>• Falls die Voraussetzungen einer Fähigkeit nicht erfüllt sind, kann sie der Fähigkeits-Warteschlange nicht hinzugefügt werden. Beispiel: Ein Schiff hat eine Fähigkeit, die zu Beginn der Kampfphase ausgelöst wird und voraussetzt, dass das Schiff gefangen ist. Nun beginnt die Kampfphase. Falls das Schiff nicht gefangen ist, kann es seine Fähigkeit nicht zur Warteschlange hinzufügen. Das gilt auch dann, wenn zu Beginn derselben Kampfphase eine andere Fähigkeit zur Warteschlange hinzugefügt wird, deren Abhandlung dazu führen wird, dass das Schiff gefangen wird. <br>• Falls ein Schiff entfernt würde, solange sich noch eine oder mehrere Fähigkeiten in der Warteschlange befinden, wird es nicht entfernt, bis sich keine Fähigkeiten mehr in der Warteschlange befinden"
@@ -130,7 +130,7 @@ exportObj.ruleLoaders.Deutsch = () ->
                 text: "Ein Schiff <strong>flieht</strong>, falls irgendein Teil seiner Basis zu irgendeinem Zeitpunkt außerhalb der Spielfläche ist. Ein geflohenes Schiff wird aus dem Spiel entfernt. <br>• Ein Schiff flieht nicht, falls beim Bewegen ausschließlich die Schablone über den Spielflächenrand hinausragt. <br>• Ein geflohenes Schiff kann vor seiner Entfernung aus dem Spiel nur Effekte abhandeln, die ausgelöst werden, sobald es flieht. <br>• Solange ein Schiff Schub gibt, eine Fassrolle fliegt, sich enttarnt oder SLAM abhandelt, kann es nicht zur Flucht des Schiffes kommen. <br>• Ein teilweise ausgeführtes Manöver kann zur Flucht eines Schiffes führen, falls nach dem Manöver irgendein Teil der Schiffsbasis außerhalb der Spielfläche ist."
             "FLUGRICHTUNG":
                 name: "Flugrichtung"
-                text: "Jedes Manöver besteht aus drei Elementen: Geschwindigkeit (eine Zahl zwischen 0 und 5), Schwierigkeit (rot, weiß oder blau) und Flugrichtung (ein Pfeil oder ein anderes Symbol). Jede Flugrichtung wird zudem durch eine <strong>Orientierung</strong> (z. B. links, rechts oder gerade) näher definiert. Alle Manöver sind entweder Basismanöver oder Expertenmanöver. Zudem gelten alle Manöver, die an den vorderen Stoppern beginnen, als <strong>Vorwärtsmanöver</strong>.<br><h5>Basismanöver</h5>Folgende Flugrichtungen sind <strong>Basismanöver</strong>. Für sie gelten die normalen Regeln für das Ausführen von Manövern.<br> • <strong>Gerade:</strong> Die Flugrichtung %STRAIGHT% (Gerade) lässt das Schiff geradeaus vorwärts fliegen.<br> • <strong>Drehung:</strong> Die Flugrichtungen %BANKLEFT% (linke Drehung) und %BANKRIGHT% (rechte Drehung) lassen das Schiff eine sanfte Kurve fliegen, wobei sich seine Blickrichtung um 45° ändert.<br> • <strong>Wende:</strong> Die Flugrichtungen %TURNLEFT% (linke Wende) und %TURNRIGHT% (rechte Wende) lassen das Schiff eine enge Kurve fliegen, wobei sich seine Blickrichtung um 90° ändert. <br><h5>Expertenmanöver</h5> Folgende Manöver sind <strong>Expertenmanöver</strong>. Für sie gelten die normalen Regeln für das Ausführen von Manövern mit einigen Ausnahmen.<br> • <strong>Koiogran-Wende:</strong> Die Flugrichtung %KTURN% (Koiogran-Wende) lässt das Schiff geradeaus vorwärts fliegen, und dann seine Blickrichtung um 180° drehen. Hierfür wird dieselbe Schablone wie für das %STRAIGHT%-Manöver verwendet.<br> ◊ Falls das Schiff das Manöver vollständig ausführt, schiebt man es mit den vorderen Stoppern um das Ende der Schablone anstatt mit den hinteren Stoppern.<br> • <strong>Segnor-Looping:</strong> Die Flugrichtungen %SLOOPLEFT% (linker Segnor-Looping) und %SLOOPRIGHT% (rechter Segnor-Looping) lassen das Schiff eine sanfte Kurve fliegen und dann seine Blickrichtung um 180° drehen. Hierfür wird dieselbe Schablone wie für die %BANKLEFT%- und %BANKRIGHT%-Manöver verwendet.<br> ◊ Falls das Schiff das Manöver vollständig ausführt, schiebt man es mit den vorderen Stoppern um das Ende der Schablone anstatt mit den hinteren Stoppern.<br> • <strong>Tallon-Rolle:</strong> Die Flugrichtungen %TROLLLEFT% (linke Tallon-Rolle) und %TROLLRIGHT% (rechte Tallon- Rolle) lassen das Schiff eine enge Kurve fliegen, wobei sich seine Blickrichtung um 180° ändert. Hierfür wird dieselbe Schablone wie für die %TURNLEFT%- und %TURNRIGHT%-Manöver verwendet.<br>◊ Falls das Schiff das Manöver vollständig ausführt, wird es vor seiner Platzierung am anderen Ende der Schablone um 90° gedreht (nach links für eine %TROLLLEFT%, nach rechts für eine %TROLLRIGHT%). Dann platziert man das Schiff so, dass die Markierung an der Basisseite auf einer Höhe mit der linken Kante, der Mittellinie oder der rechten Kante des Endes der Schablone ist (ähnlich wie bei einer Fassrolle).<br> Überschneidet sich ein Schiff beim Ausführen einer Koiogran-Wende, eines Segnor-Loopings oder einer Tallon-Rolle mit einem anderen Schiff, führt es das Manöver teilweise aus und verwendet dabei seine hinteren Stopper, als würde es das Basismanöver ausführen, das dieselbe Schablone verwendet.<br> • <strong>Stationär:</strong> Die Flugrichtung %STOP% (Stationär) lässt das Schiff auf seiner gegenwärtigen Position verharren. Zu dieser Flugrichtung gibt es keine Schablone.<br> ◊ Ein Schiff, das dieses Manöver ausführt, zählt, als hätte es ein Manöver ausgeführt, es überschneidet sich nicht mit irgendwelchen Schiffen, löst Effekte durch Überschneidungen mit Hindernissen in Reichweite 0 aus und es bleibt in Reichweite 0 zu allen Objekten, die es vor dem Ausführen des Manövers berührt hat.<br> ◊ Stationäre Manöver sind keine Vorwärtsmanöver.<br> ◊ Ein Schiff, das ein stationäres Manöver ausführt, führt dieses Manöver stets vollständig aus.<br> Jedes <strong>Rückwärtsmanöver</strong> beginnt damit, dass die Schablone zwischen die hinteren Stopper der Schiffsbasis geschoben wird (und nicht zwischen die vorderen). Anschließend schiebt man das Schiff mit den vorderen Stoppern um das andere Ende der Schablone (anstatt mit den hinteren).<br> • <strong>Rückwärtsgerade:</strong> Die Flugrichtung %REVERSESTRAIGHT% (Rückwärtsgerade) lässt das Schiff geradewegs nach hinten fliegen. Hierfür wird dieselbe Schablone wie für das %STRAIGHT%-Manöver verwendet.<br> ◊ Eine Rückwärtsgerade ist ein Rückwärtsmanöver und kein Vorwärtsmanöver.<br> • Rückwärtsdrehung: Die Flugrichtungen %REVERSEBANKLEFT% (linke Rückwärtsdrehung) und %REVERSEBANKRIGHT% (rechte Rückwärtsdrehung) lassen das Schiff eine sanfte Kurve fliegen, wobei sich seine Blickrichtung um 45° ändert. Hierfür werden dieselben Schablonen wie für die %BANKLEFT%- und %BANKRIGHT%-Manöver verwendet.<br> ◊ Eine Rückwärtsdrehung ist ein Rückwärtsmanöver und kein Vorwärtsmanöver."
+                text: "Jedes Manöver besteht aus drei Elementen: Geschwindigkeit (eine Zahl zwischen 0 und 5), Schwierigkeit (rot, weiß oder blau) und Flugrichtung (ein Pfeil oder ein anderes Symbol). Jede Flugrichtung wird zudem durch eine <strong>Orientierung</strong> (z. B. links, rechts oder gerade) näher definiert. Alle Manöver sind entweder Basismanöver oder Expertenmanöver. Zudem gelten alle Manöver, die an den vorderen Stoppern beginnen, als <strong>Vorwärtsmanöver</strong>.<br><br><h5>Basismanöver</h5>Folgende Flugrichtungen sind <strong>Basismanöver</strong>. Für sie gelten die normalen Regeln für das Ausführen von Manövern.<br> • <strong>Gerade:</strong> Die Flugrichtung %STRAIGHT% (Gerade) lässt das Schiff geradeaus vorwärts fliegen.<br> • <strong>Drehung:</strong> Die Flugrichtungen %BANKLEFT% (linke Drehung) und %BANKRIGHT% (rechte Drehung) lassen das Schiff eine sanfte Kurve fliegen, wobei sich seine Blickrichtung um 45° ändert.<br> • <strong>Wende:</strong> Die Flugrichtungen %TURNLEFT% (linke Wende) und %TURNRIGHT% (rechte Wende) lassen das Schiff eine enge Kurve fliegen, wobei sich seine Blickrichtung um 90° ändert. <br><br><h5>Expertenmanöver</h5> Folgende Manöver sind <strong>Expertenmanöver</strong>. Für sie gelten die normalen Regeln für das Ausführen von Manövern mit einigen Ausnahmen.<br> • <strong>Koiogran-Wende:</strong> Die Flugrichtung %KTURN% (Koiogran-Wende) lässt das Schiff geradeaus vorwärts fliegen, und dann seine Blickrichtung um 180° drehen. Hierfür wird dieselbe Schablone wie für das %STRAIGHT%-Manöver verwendet.<br> ◊ Falls das Schiff das Manöver vollständig ausführt, schiebt man es mit den vorderen Stoppern um das Ende der Schablone anstatt mit den hinteren Stoppern.<br> • <strong>Segnor-Looping:</strong> Die Flugrichtungen %SLOOPLEFT% (linker Segnor-Looping) und %SLOOPRIGHT% (rechter Segnor-Looping) lassen das Schiff eine sanfte Kurve fliegen und dann seine Blickrichtung um 180° drehen. Hierfür wird dieselbe Schablone wie für die %BANKLEFT%- und %BANKRIGHT%-Manöver verwendet.<br> ◊ Falls das Schiff das Manöver vollständig ausführt, schiebt man es mit den vorderen Stoppern um das Ende der Schablone anstatt mit den hinteren Stoppern.<br> • <strong>Tallon-Rolle:</strong> Die Flugrichtungen %TROLLLEFT% (linke Tallon-Rolle) und %TROLLRIGHT% (rechte Tallon- Rolle) lassen das Schiff eine enge Kurve fliegen, wobei sich seine Blickrichtung um 180° ändert. Hierfür wird dieselbe Schablone wie für die %TURNLEFT%- und %TURNRIGHT%-Manöver verwendet.<br>◊ Falls das Schiff das Manöver vollständig ausführt, wird es vor seiner Platzierung am anderen Ende der Schablone um 90° gedreht (nach links für eine %TROLLLEFT%, nach rechts für eine %TROLLRIGHT%). Dann platziert man das Schiff so, dass die Markierung an der Basisseite auf einer Höhe mit der linken Kante, der Mittellinie oder der rechten Kante des Endes der Schablone ist (ähnlich wie bei einer Fassrolle).<br> Überschneidet sich ein Schiff beim Ausführen einer Koiogran-Wende, eines Segnor-Loopings oder einer Tallon-Rolle mit einem anderen Schiff, führt es das Manöver teilweise aus und verwendet dabei seine hinteren Stopper, als würde es das Basismanöver ausführen, das dieselbe Schablone verwendet.<br> • <strong>Stationär:</strong> Die Flugrichtung %STOP% (Stationär) lässt das Schiff auf seiner gegenwärtigen Position verharren. Zu dieser Flugrichtung gibt es keine Schablone.<br> ◊ Ein Schiff, das dieses Manöver ausführt, zählt, als hätte es ein Manöver ausgeführt, es überschneidet sich nicht mit irgendwelchen Schiffen, löst Effekte durch Überschneidungen mit Hindernissen in Reichweite 0 aus und es bleibt in Reichweite 0 zu allen Objekten, die es vor dem Ausführen des Manövers berührt hat.<br> ◊ Stationäre Manöver sind keine Vorwärtsmanöver.<br> ◊ Ein Schiff, das ein stationäres Manöver ausführt, führt dieses Manöver stets vollständig aus.<br> Jedes <strong>Rückwärtsmanöver</strong> beginnt damit, dass die Schablone zwischen die hinteren Stopper der Schiffsbasis geschoben wird (und nicht zwischen die vorderen). Anschließend schiebt man das Schiff mit den vorderen Stoppern um das andere Ende der Schablone (anstatt mit den hinteren).<br> • <strong>Rückwärtsgerade:</strong> Die Flugrichtung %REVERSESTRAIGHT% (Rückwärtsgerade) lässt das Schiff geradewegs nach hinten fliegen. Hierfür wird dieselbe Schablone wie für das %STRAIGHT%-Manöver verwendet.<br> ◊ Eine Rückwärtsgerade ist ein Rückwärtsmanöver und kein Vorwärtsmanöver.<br> • Rückwärtsdrehung: Die Flugrichtungen %REVERSEBANKLEFT% (linke Rückwärtsdrehung) und %REVERSEBANKRIGHT% (rechte Rückwärtsdrehung) lassen das Schiff eine sanfte Kurve fliegen, wobei sich seine Blickrichtung um 45° ändert. Hierfür werden dieselben Schablonen wie für die %BANKLEFT%- und %BANKRIGHT%-Manöver verwendet.<br> ◊ Eine Rückwärtsdrehung ist ein Rückwärtsmanöver und kein Vorwärtsmanöver."
             "FOKUSSIEREN":
                 name: "Fokussieren"
                 text: "Piloten können fokussieren, um sich zu konzentrieren und ihre Kampfkraft zu stärken. Sobald ein Schiff die %FOCUS%-Aktion durchführt, erhält es 1 Fokusmarker. Solange ein Schiff mindestens 1 Fokusmarker hat, ist es <strong>fokussiert</strong>. Fokusmarker sind kreisförmige, grüne Marker. Für fokussierte Schiffe gelten folgende Regeln:<br> • Solange ein fokussiertes Schiff einen Angriff durchführt, darf es während des Schrittes „Angriffswürfel modifizieren“ einen Fokusmarker ausgeben, um alle seine %FOCUS%-Ergebnisse in %HIT%-Ergebnisse zu ändern.<br> • Solange ein fokussiertes Schiff verteidigt, darf es während des Schrittes „Verteidigungswürfel modifizieren“ einen Fokusmarker ausgeben, um alle seine %FOCUS%-Ergebnisse in %EVADE%-Ergebnisse zu ändern.<br> Außerdem gilt:<br> • Hat ein Schiff keine %FOCUS%-Ergebnisse, kann es keinen Fokusmarker ausgeben, um %FOCUS%-Ergebnisse in %EVADE%- oder %HIT%-Ergebnisse zu ändern.<br> • Wenn eine Fähigkeit besagt, dass ein Schiff einen Fokusmarker erhält, ist dies etwas anderes als das Durchführen einer %FOCUS%-Aktion. Ein Schiff, das einen Fokusmarker erhält, ohne die Aktion durchzuführen, kann in dieser Runde immer noch die %FOCUS%-Aktion durchführen."
@@ -465,7 +465,7 @@ werden die Ladungen, die zu einer Ladungskapazität ohne Symbol für
 wiederkehrende Ladungen gehören, <strong>nicht-wiederkehrende Ladungen</strong>
 genannt. Ladungen, die stattdessen über einen Zeitraum hinweg verloren
 werden, heißen <strong>negative wiederkehrende Ladungen</strong>.
-<h5>Ladungsarten</h5>
+<br><br><h5>Ladungsarten</h5>
 Es gibt vier unterschiedliche Ladungsarten:<br>
 • <strong>Standardladungen</strong> (%CHARGE%). Sie repräsentieren eine begrenzte Ressource wie
 Munition oder die Ausdauer eines Piloten und werden mit goldenen Zahlen
@@ -476,21 +476,20 @@ mit violetten Zahlen dargestellt.<br>
 Schiffes und werden mit blauen Zahlen dargestellt.<br>
 • <strong>Energie</strong> (%ENERGY%). Sie repräsentiert den Energieverbrauch der Schiffsmaschinen
 eines riesigen Schiffes (vgl. Anhang: Riesige Schiffe) und wird mit
-magentafarbenen Zahlen dargestellt.<br>
-<h5>Wiederkehrende Ladungen</h5>
+magentafarbenen Zahlen dargestellt.<br><br><h5>Wiederkehrende Ladungen</h5>
 Manche Ladungskapazitäten, Schildkapazitäten
 und alle Machtvermögen haben ein Symbol für
 wiederkehrende ladunGen. Während der Endphase
 stellt jede Karte mit einem <strong>Symbol für wiederkehrende
 Ladungen</strong> (%RECURRING%) 1 Ladung pro Symbol für wiederkehrende
 Ladungen wieder her.
-<h5>Negative wiederkehrende Ladungen</h5>
+<br><br><h5>Negative wiederkehrende Ladungen</h5>
 Manche Ladungskapazitäten haben ein Symbol für
 <strong>negative wiederkehrende Ladungen</strong> (%NEGATIVERECURRING%). Während
 der Endphase verliert jede Karte mit einem Symbol für
 negative wiederkehrende Ladungen 1 Ladung pro Symbol
 für negative wiederkehrende Ladungen.
-<h5>Standardladung (%CHARGE%)</h5>
+<br><br><h5>Standardladung (%CHARGE%)</h5>
 Standardladungen (%CHARGE%) können alles Mögliche von begrenzter Munition bis zu
 erschöpfenden Tätigkeiten darstellen.<br>
 • <strong>Schiffsladungen</strong> sind Ladungen auf Schiffen und <strong>Aufwertungsladungen</strong>
@@ -499,7 +498,7 @@ sind Ladungen auf Aufwertungskarten.<br>
 dieser Aufwertungskarte platziert (nicht oberhalb der Schiffskarte, an die sie
 angelegt ist).<br>
 ◊ Wird ein Schiff von einer Aufwertungskarte zum Ausgeben von %CHARGE% aufgefordert, werden die %CHARGE% von ebendieser Aufwertungskarte ausgegeben.
-<h5>Machtladung (%FORCE%)</h5>
+<br><br><h5>Machtladung (%FORCE%)</h5>
 Machtladungen (%FORCE%) repräsentieren das Gespür mancher Piloten und
 Crewmitglieder für die Macht.
 Solange ein Schiff einen Angriff durchführt, kann es während des Schrittes
@@ -524,7 +523,7 @@ gesamtes Machtvermögen von 2, stellt aber während der Endphase nur
 1 %FORCE% wieder her.<br>
 ◊ Wird ein Schiff von einer Aufwertungskarte zum Ausgeben von %FORCE%
 aufgefordert, werden die %FORCE% von der Schiffskarte ausgegeben.
-<h5>Schild (%SHIELD%)</h5>
+<br><br><h5>Schild (%SHIELD%)</h5>
 Schilde (%SHIELD%) stellen defensive Energiebarrieren dar. Solange ein Schiff mindestens
 einen aktiven Schildmarker hat, <strong>hat es Schilde</strong>.
 Solange ein Schiff verteidigt, bieten Schilde Schutz gegen Schaden (vgl. Schaden).
@@ -541,7 +540,7 @@ Anzahl %SHIELD% in Höhe der Anzahl an Symbolen für wiederkehrende %SHIELD% her
 riesige Schiffe haben wiederkehrende %SHIELD%, vgl. Anhang: Riesige Schiffe).
 ◊ Falls eine Aufwertungskarte das Schiff anweist, %SHIELD% auszugeben, werden
 diese %SHIELD% von der Schiffskarte ausgegeben.
-<h5>Energie (%ENERGY%)</h5>
+<br><br><h5>Energie (%ENERGY%)</h5>
 Energie (%ENERGY%) stellt eine spezielle Ladung dar und wird nur von riesigen Schiffen
 verwendet (vgl. Anhang: Riesige Schiffe)."
             "LIMITIERT":
@@ -628,7 +627,7 @@ legt man einen Marker jener Art vom Schiff in den Vorrat zurück.<br>
 Schiff zugeordnet.<br>
 ◊ Ist eines der involvierten Schiffe nicht in der Lage, den entsprechenden
 Marker zu entfernen oder zu erhalten, kann der Transfer nicht stattfinden.
-<h5>Markerfarben und -formen</h5>
+<br><br><h5>Markerfarben und -formen</h5>
 Anhand der Farben und Formen der Marker kann man sich leicht merken,
 wann ein Marker entfernt wird und ob sein Effekt positiv oder negativ ist.<br>
 • Grüne und orangefarbene Marker werden während der Endphase entfernt.
@@ -854,7 +853,7 @@ angewandt werden.<br>
                 text: "Remotes sind Geräte, die einen Initiativ-, Wendigkeits- und Hüllenwert haben und
 angegriffen werden können. Schiffe können sich durch Remotes hindurchbewegen,
 sie überschneiden oder sich in Reichweite 0 zu ihnen befinden.
-<h5>Remotes angreifen</h5>
+<br><br><h5>Remotes angreifen</h5>
 Ein Remote kann als Verteidiger deklariert werden. Solange ein Remote angegriffen
 wird, wird es wie ein Schiff behandelt, mit folgenden Ausnahmen und Hinweisen:<br>
 • Effekte, die sich auf „befreundete Schiffe“ oder „verbündete Schiffe“ beziehen,
@@ -872,7 +871,7 @@ außerhalb eines Winkels dieses Remotes befinden.<br>
 werden wie gewohnt angewendet.<br>
 • Falls die Größe eines Remotes nicht spezifiziert ist, wird es bei der Abhandlung
 von Effekten weder als kleiner noch größer als ein Schiff behandelt.
-<h5>Remotes beschädigen</h5>
+<br><br><h5>Remotes beschädigen</h5>
 Falls ein Remote 1 oder mehr %HIT%/%CRIT%-Schaden erleidet, werden ihm ebenso
 viele verdeckte Schadenskarten zugeteilt. Falls es eine Anzahl Schadenskarten in
 Höhe seines Hüllenwerts oder mehr hat, wird das Remote zerstört. Nachdem ein
@@ -880,7 +879,7 @@ Remote zerstört worden ist, wird es von der Spielfläche entfernt. Falls der An
 bei derselben Initiative wie die Initiative des Remotes stattgefunden hat, wird es
 erst entfernt, nachdem alle Effekte bei dieser Initiative abgehandelt wurden, siehe
 gleichzeitiger Angriff.
-<h5>Remotes verwenden</h5>
+<br><br><h5>Remotes verwenden</h5>
 Ein Remote handelt während der Systemphase Effekte ab, wird während der
 Aktivierungsphase aktiviert, und es kämpft in der Kampfphase bei seiner
 aufgeführten Initiative, verhält sich aber ausschließlich entsprechend der Angaben in
@@ -896,7 +895,7 @@ Remote aus. Seine Schadenskarten werden nicht entfernt.<br>
 • Manche Geräte können wie in ihren individuellen Einträgen beschrieben
 Remotes beschädigen. Falls ein Gerät nicht besagt, dass es Remotes betrifft,
 betrifft es keine Remotes.
-<h5>Remotes neu positionieren</h5>
+<br><br><h5>Remotes neu positionieren</h5>
 Wenn ein Remote durch einen Effekt neu positioniert wird, hebt der kontrollierende
 Spieler es hoch und platziert es gemäß den Anweisungen des Effekts an seiner
 neuen Position. Außerdem gilt:<br>
@@ -1261,7 +1260,7 @@ Winkel des Angreifers sein muss.<br>
 Angriffswert und der Winkelbedingung.<br>
 • Manche Angriffe haben zudem spezielle Voraussetzungen,
 die hinter dem Stichwort „<strong>Angriff:</strong>“ in Klammern stehen.<br>
-◊ Das Stichwort „<strong>Angriff (%TARGETLOCK%):</strong>“ bedeutet, dass der
+◊ Das Stichwort „<strong>Angriff (%LOCK%):</strong>“ bedeutet, dass der
 Angreifer den Verteidiger als Ziel erfasst haben muss.<br>
 ◊ Das Stichwort „<strong>Angriff (%FOCUS%):</strong>“ bedeutet, dass der Angreifer einen
 Fokusmarker haben muss.<br>
@@ -1603,7 +1602,7 @@ Schiff verteidigt, falls der Angreifer innerhalb des vollen Winkels ist, der dem
 Verstärkungsmarker entspricht (und nicht im anderen vollen Winkel), entfaltet der
 Marker seine Wirkung. Für einen Bug-Verstärkungsmarker muss der Angreifer im
 %FULLFRONTARC% des Verteidigers sein; für einen Heck-Verstärkungsmarker muss der Angreifer
-im %FULLBACKARC% des Verteidigers sein.
+im %FULLREARARC% des Verteidigers sein.
 Wenn sich während des Schrittes „Ergebnisse neutralisieren“ herausstellt,
 dass der Angriff treffen würde und mehr als 1 %HIT%/%CRIT%-Ergebnis übrig ist,
 wird 1 %EVADE%-Ergebnis hinzugefügt, um 1 Ergebnis zu negieren.<br>
@@ -1621,9 +1620,9 @@ dies etwas anderes als das Durchführen einer %REINFORCE%-Aktion. Ein Schiff, da
 Verstärkungsmarker erhält, ohne die Aktion durchzuführen, kann in dieser
 Runde immer noch die %REINFORCE%-Aktion durchführen.<br>
 • Verstärken kann auch gegen Angriffe in Reichweite 4–5 genutzt werden, selbst
-wenn sich der %FULLFRONTARC% oder %FULLBACKARC% des Verteidigers normalerweise nur bis Reichweite
+wenn sich der %FULLFRONTARC% oder %FULLREARARC% des Verteidigers normalerweise nur bis Reichweite
 3 erstreckt. Falls der Angreifer in Reichweite 4–5 ist, wird der %FULLFRONTARC%- oder
-%FULLBACKARC%-Winkel des Verteidigers behandelt, als würde er sich bis Reichweite 5
+%FULLREARARC%-Winkel des Verteidigers behandelt, als würde er sich bis Reichweite 5
 erstrecken, aber nur, um für den Verstärkungsmarker des Verteidigers zu
 bestimmen, in welchem Winkel der Angreifer ist. (nicht für andere Effekte oder
 Fähigkeiten)."
@@ -1680,7 +1679,7 @@ aufgedruckten Markierungen oder Winkellinien eines Schiffsmarkers auf Reichweite
 dieser Fläche steht.<br>
 • Winkel werden jenseits der Schiffsbasis abgemessen. Der Teil eines Objekts,
 der unter einem Schiff liegt, ist nicht in irgendeinem Winkel jenes Schiffes.
-<h5>Standardwinkel</h5>
+<br><br><h5>Standardwinkel</h5>
 Es gibt drei Arten von Standardwinkeln, die durch das Kreuz aus diagonalen
 Winkellinien gebildet werden:<br>
 1. <strong>Vorderer Winkel (%FRONTARC%):</strong> Dieser Winkel erstreckt sich in Blickrichtung des
@@ -1688,32 +1687,32 @@ Schiffes. Die meisten Schiffe haben %FRONTARC%-Primärwaffen. Beinahe alle %CANN
 und %MISSILE%-Waffen verwenden diesen Winkel.<br>
 2. <strong>Seitenwinkel:</strong> Diese beiden Winkel befinden sich auf der linken und rechten
 Seite des Schiffes.<br>
-3. <strong>Hinterer Winkel (%BACKARC%):</strong> Dieser Winkel erstreckt sich entgegengesetzt zur
-Blickrichtung des Schiffes. Manche Schiffe haben %BACKARC%-Primärwaffen.
-<h5>Zentraler Winkel</h5>
+3. <strong>Hinterer Winkel (%REARARC%):</strong> Dieser Winkel erstreckt sich entgegengesetzt zur
+Blickrichtung des Schiffes. Manche Schiffe haben %REARARC%-Primärwaffen.
+<br><br><h5>Zentraler Winkel</h5>
 Jedes Schiff hat innerhalb seines vorderen Winkels einen zentralen Winkel.<br>
 <strong>Zentraler Winkel (%BULLSEYEARC%):</strong> Dieser Winkel befindet sich innerhalb des %FRONTARC%.
 Wenn etwas im %BULLSEYEARC%  eines Schiffes ist, so ist es immer auch in seinem %FRONTARC%.<br>
 • Der %BULLSEYEARC%  hat die Breite und Länge des Maßstabes.<br>
 • Angriffe auf ein Schiff im %BULLSEYEARC% haben an sich keinen besonderen Effekt,
 jedoch können Kartenfähigkeiten darauf Bezug nehmen.
-<h5>Volle Winkel</h5>
+<br><br><h5>Volle Winkel</h5>
 Es gibt 2 <strong>volle Winkel</strong> welche die Mittellinie, anstatt der aufgedruckten
 Winkel verwenden.<br>
 1. <strong>Vorderer voller Winkel (%FULLFRONTARC%):</strong> Dieser Winkel deckt den gesamten Bereich
 vor dem Schiff ab. Manche Schiffe haben %FULLFRONTARC%-Primärwaffen.<br>
-2. <strong>Hinterer voller Winkel (%FULLBACKARC%):</strong> Dieser Winkel deckt den gesamten Bereich
+2. <strong>Hinterer voller Winkel (%FULLREARARC%):</strong> Dieser Winkel deckt den gesamten Bereich
 hinter dem Schiff ab.<br>
-Über die Winkel %FULLFRONTARC% und %FULLBACKARC% sowie eine Verlängerung der Mittelinie auf Reichweite 3
+Über die Winkel %FULLFRONTARC% und %FULLREARARC% sowie eine Verlängerung der Mittelinie auf Reichweite 3
 lässt sich das räumliche Verhältnis von Schiffen zueinander beschreiben. Dabei
 kommen folgende Begriffe zum Einsatz:<br>
-• <strong>Hinter:</strong> Wenn Schiff A im %FULLBACKARC% von Schiff B ist und Schiff A nicht über die
+• <strong>Hinter:</strong> Wenn Schiff A im %FULLREARARC% von Schiff B ist und Schiff A nicht über die
 Mittellinie von Schiff B hinausragt, dann ist Schiff A <strong>hinter</strong> Schiff B.<br>
 • <strong>Vor:</strong> Wenn Schiff A im %FULLFRONTARC% von Schiff B ist und Schiff A nicht über die
 Mittellinie von Schiff B hinausragt, dann ist Schiff A <strong>vor</strong> Schiff B.<br>
 • <strong>Flankieren:</strong> Wenn Schiff A über die Mittellinie von Schiff B hinausragt, dann
 wird Schiff B von Schiff A <strong>flankiert</strong>.
-<h5>Geschützturm-Winkel</h5>
+<br><br><h5>Geschützturm-Winkel</h5>
 Manche Waffen haben einen drehbaren Winkel, dessen Position mit einem
 Geschützturm-Winkelanzeiger markiert wird. Es gibt zwei Arten von Geschützturm-
 Winkelanzeigern: einzel (%SINGLETURRETARC%) und doppel (%DOUBLETURRETARC%). Wenn ein Schiff eine %SINGLETURRETARC%- oder %DOUBLETURRETARC%-Waffe
@@ -1725,12 +1724,12 @@ Schiffes. Dieser Winkel ist weiterhin ein Standardwinkel, aber gleichzeitig auch
 angreifen.
 Ein Schiff mit einem Doppel-Geschützturm-Winkelanzeiger
 hat zwei %SINGLETURRETARC% in entgegengesetzten Richtungen.
-Mit der Aktion „Rotieren“ (%ROTATE%) kann ein Schiff seinen
+Mit der Aktion „Rotieren“ (%ROTATEARC%) kann ein Schiff seinen
 Geschützturm-Winkelanzeiger auf einen (oder zwei) andere
 Standardwinkel drehen.
 Für riesige Schiffe gibt es Zusatzregeln für Geschützturm-
 Winkelanzeiger (vgl. Anhang: Riesige Schiffe).
-<h5>Feuerwinkel</h5>
+<br><br><h5>Feuerwinkel</h5>
 Die feuerwinkel eines Schiffes umfassen alle eingefärbten Winkel auf dem
 Schiffsmarker sowie alle %SINGLETURRETARC%, falls vorhanden.<br>
 • Wenn eine Aufwertungskarte einem Schiff einen %SINGLETURRETARC% oder eine Primärwaffe mit
@@ -1807,7 +1806,7 @@ genannt."
             "ZIELERFASSUNG":
                 name: "Zielerfassung"
                 text: "Piloten können ein Ziel erfassen, um Gefahrenstellen oder andere Schiffe vom
-Bordcomputer analysieren zu lassen. Sobald ein Schiff eine %TARGETLOCK%-Aktion durchführt,
+Bordcomputer analysieren zu lassen. Sobald ein Schiff eine %LOCK%-Aktion durchführt,
 erfasst es ein Ziel. Ein <strong>erfassendes</strong> Schiff ist ein Schiff, das in folgenden Schritten
 versucht, ein Ziel zu erfassen:<br>
 Das erfassende Schiff misst die Reichweite zu beliebig vielen Objekten ab.<br>
@@ -1830,8 +1829,8 @@ werden kann.<br>
 • Ein Schiff kann nur 1 Zielerfassung aufrechterhalten. Bevor ein Schiff ein zweites
 Objekt als Ziel erfasst, wird der bisherige Zielerfassungsmarker entfernt.<br>
 • Wenn eine Fähigkeit ein Schiff zum Erfassen eines Ziels auffordert, ist dies etwas
-anderes als das Durchführen einer %TARGETLOCK%-Aktion. Ein Schiff, das ein Ziel erfasst,
-ohne die Aktion durchzuführen, kann in dieser Runde immer noch die %TARGETLOCK%-Aktion
+anderes als das Durchführen einer %LOCK%-Aktion. Ein Schiff, das ein Ziel erfasst,
+ohne die Aktion durchzuführen, kann in dieser Runde immer noch die %LOCK%-Aktion
 durchführen.<br>
 ◊ Wird ein Schiff dazu angewiesen, ein Ziel zu erfassen, muss das erfasste Objekt
 in Reichweite 0–3 sein, es sei denn, etwas anderes ist angegeben."
@@ -1853,7 +1852,7 @@ entfernt wird.<br>
 • Ein entfernter Zustand kann erneut zugeordnet werden.<br>
 • Wird ein Schiff aus dem Spiel entfernt, werden alle Zustandskarten, die ihm
 zugeordnet waren, nicht entfernt.
-<h5>Limitierte Zustände</h5>
+<br><br><h5>Limitierte Zustände</h5>
 Manche Zustände sind limitiert. Das bedeutet, dass jeder Spieler diesen
 Zustand nur in begrenzter Ausführung im Spiel haben kann. Wenn ein Effekt eine
 neue Ausführung eines limitierten Zustands zuordnet und dadurch das Limit
@@ -1864,7 +1863,7 @@ neue Ausführung jenes limitierten Zustands zu.
 Beispiel: Ein Zustand ist Limitiert 1 und ein Spieler würde eine zweite Ausführung
 dieses Zustands zugeordnet bekommen. In diesem Fall würde die erste Ausführung
 der Zustandskarte entfernt und anschließend die zweite zugeordnet.
-<h5>Geheime Zustände</h5>
+<br><br><h5>Geheime Zustände</h5>
 <strong>Geheime Zustände</strong> sind Zustandskarten, die sich einen Zustandsmarker teilen
 und die verdeckt statt offen zugeordnet werden. Ein geheimer Zustand wird von
 einem Spieler zugeordnet und die anderen Spieler wissen nicht, welcher der
@@ -1886,7 +1885,7 @@ kann von jedem Spieler jederzeit eingesehen werden. Produkte mit geheimen
 Zuständen enthalten eine zusätzliche Kopie der geheimen Zustände zur Ansicht
 aller Spieler. Dadurch muss der Zustand, der im Spiel ist, nicht enthüllt
 werden."
-                
+     
         faq:
             "ABSETZEN":
                 name: "Absetzen"
@@ -1894,9 +1893,932 @@ werden."
             "AKTIVIERUNGSPHASE UND AKTIONEN":
                 name: "Aktivierungsphase und Aktionen"
                 text: "<strong>F: Falls ein Effekt besagt, „behandle eine Aktion als violett“ und ein anderer „behandle eine Aktion als rot“, was passiert? </strong><br>A: Aktionen haben drei Schwierigkeiten, von wenig bis sehr restriktiv: weiß, rot, violett. Falls zwei oder mehr Effekte die Ausgangsfarbe einer Aktion verändern würden, wird die restriktivste Farbe angewandt. Wenn eine Aktion also zugleich als rot und als violett behandelt wird, wird sie als violett behandelt, da dies die restrikivste Farbe darstellt. <br><br><strong>F: Was ist die Schwierigkeit einer Aktion, deren Schwierigkeit nicht angegeben ist? (Z. B. Lando Calrissians (Rebellen, %CREW%) einzigartige Aktion oder die Koordinieren-Aktion, die „Wesir“ (TIE-Schnitter) als Teil seiner Pilotenfähigkeit durchführen kann.)</strong><br>A: Weiß. Allerdings verwendet ein Schiff die Schwierigkeit einer Aktion auf der Aktionsleiste, falls es dazu angewiesen wird, eine Aktion „auf seiner Aktionsleiste“ durchzuführen <br><br><strong>F: Falls ein Schiff ein rotes Ausweichen an eine andere Aktion gekoppelt hat (wie z. B. der TIE-Aggressor oder das Jagdshuttle), Trümmertanz (%TALENT%) ausgerüstet hat und in Reichweite eines Hindernisses ist, behandelt es dann das gekoppelte rote Ausweichen als weiß? </strong><br>A: Ja. Trümmertanz verändert jede rote Ausweichen-Aktion auf der Aktionsleiste des Schiffes, dazu zählen auch gekoppelte Aktionen. <br><br><strong>F: Kann ein ionisiertes Schiff nach dem Durchführen einer %FOCUS%-Aktion eine andere Aktion durchführen, die an die %FOCUS%-Aktion gekoppelt ist?</strong><br>A: Nein. Ein ionisiertes Schiff ist auf die Durchführung seiner %FOCUS%-Aktion beschränkt.<br><br><strong>F: Kann ein ionisiertes Schiff, dem nach dem Ausführen eines Manövers eine Nicht-%FOCUS%-Aktion gewährt wird (etwa ein Delta-7-Aethersprite, der unter Verwendung seiner Präzisionssteuerung eine %BARRELROLL%- oder %BOOST%-Aktion durchführt, oder ein TIE-Abwehrjäger, der mittels Vollgas eine %EVADE%-Aktion durchführt), diese Aktion durchführen?</strong><br>A: Nein. Ein ionisiertes Schiff ist auf die Durchführung seiner %FOCUS%-Aktion beschränkt. <br><br><strong>F: Falls ein Schiff versucht, eine violette Aktion durchzuführen (etwa eine %BARRELROLL%- oder %BOOST%-Aktion), und dabei scheitert, muss es trotzdem die %FORCE% bezahlen?</strong><br>A: Ja. Die %FORCE%-Kosten einer violetten Aktion sind „Kosten für den Versuch, eine violette Aktion durchzuführen“ (vgl. Aktionen) und müssen auch bezahlt werden, wenn der Versuch scheitert. <br><br><strong>F: Falls Anakin Skywalker (Königlicher N-1-Sternenjäger von Naboo) seine Pilotenfähigkeit für eine Fassrolle nutzt (was nicht als %BARRELROLL%-Aktion zählt) und scheitert, muss er trotzdem die %FORCE% bezahlen?</strong><br>A: Nein. Eine Fassrolle kann genauso wie eine %BARRELROLL%-Aktion scheitern, da aber Anakins Fähigkeit keine Aktion ist, sind die %FORCE%-Kosten nicht als Kosten für den Versuch eine Aktion durchzuführen, sondern als Kosten zur Abhandlung des Effektes zu sehen.<br><br><strong>F: Erfordert Gespür (%FORCEPOWER%) das Ausgeben von 1 %FORCE% vor dem Abmessen der Reichweite zu anderen Schiffen?</strong><br>A: Nein. Das Messen der Reichweite zur Überprüfung, welche Schiffe in Reichweite 0–1 und welche in Reichweite 0–3 sind, erfolgt vor der Entscheidung, ob %FORCE% ausgegeben wird, um ein Schiff in Reichweite 0–3 als Ziel wählen zu können.<br><br><strong>F: Was passiert, falls ein Quadrijet-Transferschlepper seine „Schlepperstrahl“-Aktion verwendet und kein Schiff in seinem vorderen Winkel in Reichweite 1 wählen kann? </strong><br>A: Die Aktion scheitert.<br><strong>A: Solange ein Schiff eine Tallon-Rolle ausführt und nicht an der mittleren Position platziert werden kann (Markierung an der Basisseite auf einer Höhe mit der Mittellinie der Schablone), kann es dann sein Manöver vollständig ausführen? </strong><br>A: Ja, solange es eine gültige Position gibt, wo es platziert werden kann. Solange das Schiff beim Ausführen einer Tallon-Rolle an mindestens einer der drei möglichen Positionen platziert werden kann (Markierung an der Basisseite auf einer Höhe mit der linken Kante, der Mittellinie oder der rechten Kante des Endes der Schablone), muss es eine der gültigen Positionen wählen und führt damit das Manöver vollständig aus. Falls eine gültige Position existiert, kann es keine ungültige Position wählen und so das Manöver nur teilweise ausführen. Wie beim Abhandeln einer Fassrolle kann der Spieler die drei unterschiedlichen Positionen ausprobieren, bevor er sich für eine davon entscheidet. <br><br><strong>F: Kann Ved Foslo [TIE-x1-Turbojäger] seine Schiffsfähigkeit verwenden, um die Geschwindigkeit eines [1 %BANKLEFT%]- oder [1 %BANKRIGHT%]-Manövers zu reduzieren und so ein [0 %BANKLEFT%]- oder [0 %BANKRIGHT%]-Manöver auszuführen?</strong><br> A: Nein. Drehmanöver mit Geschwindigkeit 0 können nur von riesigen Schiffen ausgeführt werden. Sie können nicht von Standardschiffen ausgeführt werden, selbst wenn ein bestimmtes Schiff die Fähigkeit zum Ausführen eines Manövers besitzt, das nicht auf seinem Rad aufgeführt ist.<br><br><strong>F: Was ist der Unterschied zwischen „ein Rad umdrehen“ und „ein Rad aufdecken“ und wann tritt was davon ein? </strong><br>A: „Ein Rad umdrehen“ bezeichnet das physische Umdrehen eines Rades, sodass die Oberseite (mit den Manövern) sichtbar ist. „Ein Rad aufdecken“ ist die Spielmechanik, die während der Aktivierung eines Schiffes eintritt. Ein Schiff, das sein Rad aufdeckt, dreht es dabei um. Allerdings decken andere Effekte, die sich auf das Umdrehen eines Rades beziehen, wie der Zustand Abhörgerät der Aufwertung Informant [%CREW%], ein Rad <strong>nicht</strong> auf, sodass Fähigkeiten, die ausgelöst werden, sobald ein Rad aufgedeckt wird, durch Umdrehen nicht ausgelöst werden. Außerdem kann ein Schiff sein Rad immer noch zum passenden Zeitpunkt seiner Aktivierung „aufdecken“ (und dadurch entsprechende Effekte auslösen), obwohl das Rad bereits umgedreht ist."
-            "":
-                name: ""
-                text: ""
-            "OTHER":
-                name: "Auch hier fehlt noch was"
-                text: "Vielleicht sollte ich das noch stärker automatisieren..."
+            "FÄHIGKEITEN UND DIE FÄHIGKEITS-WARTESCHLANGE":
+                name: "Fähigkeiten und die Fähigkeits-Warteschlange"
+                text: "<strong>F: Was macht einen Effekt zur „Fähigkeit“?</strong><br>
+A: Eine Fähigkeit ist ein Text einer Karte unter der Kontrolle eines Spielers
+(wie Schiffskarten, Aufwertungskarten, Schadenskarten, Remotekarten,
+Geräte, Zustandskarten etc.).
+Einige Fähigkeiten sind dauerhaft (wie der Abschnitt „Erhalte eine
+%FRONTARC%-Primärwaffe mit einem Wert von 3.“ der Moldy Crow). Dauerhafte
+Fähigkeiten werden nicht über die Fähigkeits-Warteschlange abgehandelt.
+Die meisten Fähigkeiten werden ausgelöst und treten nur zu einem
+spezifizierten Zeitfenster auf (wie der Abschnitt „Während der Endphase
+entferne bis zu 2 Fokusmarker nicht.“ der Moldy Crow). Ausgelöste
+Fähigkeiten werden über die Fähigkeits-Warteschlange abgehandelt.
+Jede ausgelöste Fähigkeit besteht aus folgenden Teilen:<br>
+• Der Zeitpunkt (wann sie der Fähigkeits-Warteschlange hinzugefügt wird)<br>
+• Ein Effekt (was sie bewirkt)<br>
+Weiterhin kann sie einen oder mehrere der folgenden Teile aufweisen:<br>
+• Eine oder mehrere Voraussetzungen, die das Schiff erfüllen muss.<br>
+• Kosten, die das Schiff bezahlen muss.<br>
+• Eine Textbox kann mehrere Fähigkeiten enthalten, falls es mehrere
+dauerhafte Fähigkeiten oder Auslöser gibt, die eine Fähigkeit der
+Fähigkeits-Warteschlange hinzufügen (wie etwa bei der Moldy Crow).<br><br>
+<strong>F: Was ist mit einer Voraussetzung für eine Fähigkeit gemeint?</strong><br>
+A: Eine Voraussetzung für eine Fähigkeit ist eine konditionale „Falls“-
+Aussage, etwa „falls du gefangen bist“ oder „falls sich der Verteidiger in
+deinem zentralen Winkel befindet“. Dass sich ein Schiff für einen Angriff,
+der als Teil einer ausgelösten Fähigkeit durchgeführt wird, in Winkel
+und Reichweite des Angriffs befinden muss (wie bei Schnellfeuer oder
+Vorausahnung), stellt ebenfalls eine Voraussetzung für eine Fähigkeit dar.
+Falls die Voraussetzungen einer Fähigkeit zu dem Zeitpunkt, zu dem sie
+der Fähigkeits-Warteschlange hinzugefügt werden würde, nicht erfüllt sind,
+kann die Fähigkeit der Warteschlange nicht hinzugefügt werden.
+Falls die Voraussetzungen einer Fähigkeit zu dem Zeitpunkt, zu dem sie
+in der Fähigkeits-Warteschlange abgehandelt werden würde, nicht erfüllt
+sind, kann die Fähigkeit nicht abgehandelt werden und wird stattdessen aus
+der Warteschlange entfernt.
+Falls eine Fähigkeit dazu anweist, eine Wahl zu treffen, etwa ein Schiff
+auszuwählen, so stellt dies keine Voraussetzung für eine Fähigkeit dar.<br><br>
+<strong>F: Wann werden die Kosten einer Fähigkeit bezahlt?</strong><br>
+A: Die Kosten einer Fähigkeit werden bezahlt, sobald die Fähigkeit abgehandelt
+wird.
+Eine Fähigkeit kann der Warteschlange nicht hinzugefügt werden, falls die
+Kosten zum Zeitpunkt des Hinzufügens nicht bezahlt werden könnten.
+Falls die Kosten einer Fähigkeit nicht bezahlt werden können, sobald
+sie in der Warteschlange abgehandelt würde, wird die Fähigkeit nicht
+abgehandelt und stattdessen aus der Warteschlange entfernt. Die Kosten
+der Fähigkeit werden nicht bezahlt.
+Eine Fähigkeit kann mehrere Kosten haben. Falls sie dies hat, müssen
+zum Abhandeln alle Kosten bezahlt werden. Falls nicht alle Kosten bezahlt
+werden können, werden gar kein Kosten bezahlt und die Fähigkeit wird aus
+der Warteschlange entfernt, ohne abgehandelt zu werden.<br><br>
+<strong>F: Werden optionale Fähigkeiten automatisch der Fähigkeits-Warteschlange hinzugefügt, sobald sie ausgelöst werden,
+oder trifft ein Spieler seine Entscheidung, indem er sie der
+Warteschlange hinzufügt?</strong><br>
+A: Sie werden der Fähigkeits-Warteschlange automatisch hinzugefügt,
+sobald sie ausgelöst werden, solange sie die Bedingungen erfüllen, um
+hinzugefügt zu werden. Die Spieler müssen nicht jede Fähigkeit deklarieren,
+die der Warteschlange hinzugefügt wird. Falls ein Spieler jedoch eine
+Fähigkeit während des passenden Zeitfensters nicht abhandelt, verfällt die
+Möglichkeit, die Fähigkeit zu nutzen.
+Zum Beispiel sind Nachbrenner und Präzisionssteuerung beides optionale
+Fähigkeiten, die der Fähigkeits-Warteschlange hinzugefügt werden,
+„nachdem du ein Manöver vollständig ausgeführt hast“. Eine Delta-7-Aethersprite mit Nachbrenner würde beide Fähigkeiten der Warteschlange
+in beliebiger Reihenfolge hinzufügen.
+Allerdings kann eine Fähigkeit nur der Warteschlange hinzugefügt werden,
+wenn die Bedingungen erfüllt werden können. Falls z. B. Nachbrenner keine
+aktiven %CHARGE% mehr hat oder die Delta-7-Aethersprite nach dem Ausführen
+des Manövers keine aktiven %FORCE% mehr hat, können diese beiden Fähigkeiten
+nicht hinzugefügt werden.<br><br>
+F: Sind optionale Fähigkeiten verpflichtend, nachdem sie der
+Fähigkeits-Warteschlange hinzugefügt wurden?</strong><br>
+A: Nein. Erst, sobald eine Fähigkeit in der Fähigkeits-Warteschlange erreicht
+wird, trifft der Spieler alle relevanten Entscheidungen für diese Fähigkeit,
+auch, ob er sie einsetzt oder nicht.
+Falls zum Beispiel eine Delta-7-Aethersprite nach dem vollständigen
+Ausführen eines Manövers zuerst Präzisionssteuerung und dann
+Nachbrenner zur Warteschlange hinzufügt, entscheidet der Spieler erst,
+wenn die Warteschlange Präzisionssteuerung erreicht, ob er die Kosten
+zum Abhandeln der Fähigkeit bezahlen will, und falls ja, handelt er die
+Fähigkeit ab. Sobald die Warteschlange danach Nachbrenner erreicht,
+entscheidet der Spieler erneut, ob er die Kosten zum Abhandeln dieser
+Fähigkeit bezahlen will, und falls ja, handelt er sie ab.<br><br>
+F: Wie werden Fähigkeiten, durch die ein Schiff gewählt
+werden darf (z. B. K-2SO [%CREW%] oder Darth Vader [%CREW%]),
+abgehandelt, sobald sie in der Fähigkeits-Warteschlange
+erreicht werden?</strong><br>
+A: Sobald eine Fähigkeit, durch die ein Schiff gewählt werden darf, in der
+Fähigkeits-Warteschlange erreicht wird, darf der Spieler des Schiffes,
+bevor er ihre Kosten bezahlt, die Reichweite zu beliebig vielen Schiffen
+messen. Dann darf jener Spieler eines der Schiffe, die entsprechend
+der Fähigkeit gültig wären, oder kein Schiff wählen. Falls er kein Schiff
+gewählt hat, bezahlt er die Kosten nicht und die Fähigkeit wird aus der
+Warteschlange entfernt, ohne abgehandelt zu werden."
+            "KAMPFPHASE UND ANGREIFEN":
+                name: "Kampfphase und Angreifen"
+                text: "<strong>F: Wenn ein Schiff durch einen Spieleffekt zerstört wird, der
+„bevor es kämpft“ ausgelöst wird, kämpft es dann trotzdem?</strong><br>
+A: Ja. Da das Spiel bereits in diesem Initiativschritt ist, wird es nicht
+entfernt, bevor nicht alle Schiffe bei dieser Initiative gekämpft haben, siehe
+Gleichzeitiger Angriff.
+<br><br><strong>F: Wann genau während eines Angriffs werden Effekte
+angewandt, die „solange du einen Angriff durchführst“ oder
+„solange du verteidigst“ angewandt werden?</strong></br>
+A: Fähigkeiten werden in dem Schritt des Angriffs angewandt, in dem sie
+einen Effekt haben. Beispielsweise wird Jagdinstinkt, bei dem es sich
+um eine Würfelmodifikation handelt, bei „Schritt 2b: Angriffswürfel
+modifizieren“ angewandt. Beachte allerdings, dass Effekte, die während
+„Schritt 2b: Angriffswürfel modifizieren“ und „3b: Verteidigungswürfel
+modifzieren“ abgehandelt werden, nicht in die Fähigkeits-Warteschlange
+eingereiht werden, da sie in einer festgelegten Reihenfolge abgehandelt
+werden. Diese ist im entsprechenden Abschnitt des Referenzhandbuchs
+beschrieben.
+<br><br><strong>F: Falls ein Schiff zerstört wird, wann werden Effekte
+abgehandelt, die durch seine Zerstörung ausgelöst werden?</strong></br>
+A: Falls es während eines Angriff zerstört wurde, werden sie während
+„Schritt 6: Nachwirkungen“ abgehandelt. Andernfalls werden diese Effekte
+sofort in die Fähigkeits-Warteschlange eingereiht (selbst wenn das Schiff
+noch nicht sofort entfernt wird, etwa aufgrund der Regel zum Gleichzeitigen
+Angriff oder eines Karteneffekts).
+<br><br><strong>F: Falls ein Schiff zerstört wird und ein Effekt wie der von
+R1-J5 [%ASTROMECH%] eine oder mehrere seiner Schadenskarten
+repariert, bevor es entfernt wird, wird das Schiff dennoch
+zerstört (und daher doch entfernt)?</strong></br>
+A: Ja. Nachdem ein Schiff aus welchem Grund auch immer „zerstört“ worden
+ist, bleibt es auch zerstört, egal welche Effekte zwischen seiner Zerstörung
+und seiner Entfernung abgehandelt werden. Effekte können den Zeitpunkt
+der Entfernung ändern, aber nicht den Status Zerstört aufheben."
+            "LISTEN ZUSAMMENSTELLEN":
+                name: "Listen Zusammenstellen"
+                text: "<strong>F: Kann ein T-70-X-Flügler oder ein M-3A-Abfangjäger mittels
+der Schiffsfähigkeit „Waffenaufhängung“ eine Aufwertung
+ausrüsten, die einen doppelten Slot benötigt (etwa die
+Raketensalve (%MISSILE%%MISSILE%))?
+A: Nein. Die Waffenaufhängung gewährt einem Schiff einen speziellen
+Aufwertungsslot, der nur für eine Aufwertung genutzt werden kann, die
+exakt den angegeben Symbolen entspricht (in diesem Fall %CANNON%, %TORPEDO% oder %MISSILE%)."
+            "OBJEKTE":
+                name: "Objekte"
+                text: "<strong>F: Was bedeutet „Hindernisse ignorieren“? Funktionieren
+Han Solo (Pilot, Modifizierter YT-1300) und Qi’ra zusammen?
+Was ist mit Dash Rendar (YT-2400) und Outrider?
+</strong><br>A: Wenn ein Effekt besagt, dass ein Schiff „Hindernisse ignoriert“, bedeutet
+das, dass dieses Schiff „alle Effekte von Hindernissen ignoriert“. Ein Schiff,
+das „Hindernisse ignoriert“, wendet keine Hinderniseffekte an, wenn es
+Hindernisse überschneidet oder sich durch sie hindurchbewegt, und kann
+sich durch Hindernisse hindurchbewegen, indem es Schub gibt oder eine
+Fassrolle fliegt. Wenn dieses Schiff einen Angriff durchführt, der von einem
+Hindernis versperrt wird, ignoriert es die Effekte dieses Versperrens. Das
+bedeutet, dass der Verteidiger keinen zusätzlichen Verteidigungswürfel
+wirft, wenn der Angriff durch Hindernisse versperrt wird, die der Angreifer
+ignoriert.
+Allerdings gelten die Hindernisse trotzdem als auf der Spielfläche befindlich
+für Effekte, die überprüfen ob es Hindernisse gibt (z. B. Trümmertanz [󲁋]
+oder die Schadenskarte Benommener Pilot). Außerdem wird ein Angriff
+trotzdem durch ein Hindernis versperrt, auch wenn die Effekte des
+Hindernisses ignoriert werden. Das betrifft Karten wie
+Outrider, Han Solo
+(Pilot, Modifizierter YT-1300) und Trickschuss.
+Außerdem ignorieren andere Schiffe Hindernisse nicht, wenn sie Effekte
+abhandeln, die mit einem Schiff interagieren, das Hindernisse ignoriert.
+Solange zum Beispiel ein Schiff, das Hindernisse ignoriert, verteidigt
+und falls der Angriff versperrt ist, würfelt es trotzdem 1 zusätzlichen
+Verteidigungswürfel, da der Angreifer keine Effekte von Hindernissen
+ignoriert.
+<br><br><strong>F: Detoniert eine
+Mine sofort, wenn sie in der Systemphase so
+abgeworfen wird, dass sie ein Schiff überschneidet?
+</strong><br>A: Ja. Wenn ein Objekt unter einem Schiff platziert wird, wird das Schiff als
+das Objekt überschneidend gewertet.
+<br><br><strong>F: Wenn sich ein Schiff durch eine
+Mine hindurchbewegt (und
+sie überschneidet), ist das Zeitfenster von Sabine Wren
+bevor oder nachdem das Schiff die Möglichkeit hatte, eine
+Aktion durchzuführen?
+</strong><br>A: Fangfrage! Sabine beeinflusst nur Geräte, die als Bomben klassifiziert sind,
+keine anderen Geräte oder Minen wie die Annäherungsmine.
+<br><br><strong>F: Wie interagieren Zeitzünder (siehe S. 24) mit
+Minen?
+</strong><br>A: Falls sich ein Schiff durch eine gezündete
+Mine hindurchbewegen und/
+oder sie überschneiden würde, wird 1 Zeitzünder von dieser Mine entfernt
+und sie detoniert nicht, selbst falls das Schiff auf der Mine stehen bleibt,
+nachdem der Zeitzünder entfernt wurde.
+Wenn ein Schiff physisch auf einer Mine steht, die aufgrund des Effekts
+eines Zeitzünders nicht detoniert ist, und sich während einer späteren
+Bewegung erneut durch diese Mine hindurchbewegt und/oder sie
+überschneidet, detoniert die Mine wie gewohnt.
+<br><br><strong>F: Was passiert, wenn Freie Fracht von Manipulierte
+Frachtrampe oder Ersatzteile von Ersatzteilkanister ein
+anderes Schiff überschneiden?
+</strong><br>A: Die Freie Fracht oder die Ersatzteile werden unter dem Schiff platziert
+und das Schiff überschneidet sie, wobei es die Effekte der Überschneidung
+erleidet.
+<br><br><strong>F: Falls ein Remote keine Winkel hat, können Fähigkeiten
+abgehandelt werden, die abgehandelt werden, solange man
+sich nicht in einem Winkel des Verteidigers befindet?
+</strong><br>A: Nein. Ein Schiff kann nicht außerhalb eines Winkels eines Remotes sein,
+falls dieses Remote keine Winkel hat.
+<br><br><strong>F: Was passiert, wenn eine Annäherungsmine so abgeworfen
+wird, dass sie von zwei oder mehr Schiffen überschnitten
+wird?
+</strong><br>A: Der Besitzer der Annäherungsmine wählt ein Schiff, das von ihrem Effekt
+betroffen wird.
+<br><br><strong>F: Was passiert, wenn ein Clusterminenset so abgeworfen
+wird, dass es von zwei oder mehr Schiffen überschnitten
+wird?
+</strong><br>A: Zuerst wählt der Besitzer der Clusterminen je ein Schiff, das vom Effekt
+jeder einzelnen Clustermine betroffen wird. Dann bestimmt jener Spieler
+die Reihenfolge, in der die Würfel geworfen werden, um die Effekte der
+Detonationen an jedem jener Schiffe abzuhandeln.
+<br><br><strong>F: Wenn zwei oder mehr Geräte gleichzeitig detonieren, wer
+bestimmt die Reihenfolge, in der ihre Effekte abgehandelt
+werden?
+</strong><br>A: Der Startspieler handelt alle seine Geräte in beliebiger Reihenfolge ab,
+indem er jede Detonation und jeden nachfolgenden Effekt vollständig
+abhandelt (wie z. B. Sabine Wrens [%CREW%] Effekt „Nachdem ein Schiff den
+Effekt einer befreundeten Bombe erlitten hat“), bevor er zum nächsten
+übergeht. Danach handelt der zweite Spieler in Spielerreihenfolge alle
+seine Geräte in beliebiger Reihenfolge ab, indem er jede Detonation
+vollständig abhandelt, bevor er zur nächsten übergeht (und so weiter für
+Mehrspielerpartien).
+<br><br><strong>F: Wenn ein Schiff eine Elektrodüppel-Wolke überschneidet,
+wer bestimmt den Effekt des Störsignalmarkers?
+</strong><br>A: Der Spieler, dessen Schiff die Elektrodüppel-Wolke überschneidet, bestimmt,
+welcher grüne Marker entfernt / welche Zielerfassung verloren wird"
+            "SCHADENSKARTEN":
+                name: "Schadenskarten"
+                text: "<strong>F: Wird der erste Effekt der Schadenskarte Verletzter Pilot
+(„Nachdem du eine Aktion durchgeführt hast, wirf
+1 Angriffswürfel. Bei einem %HIT%- oder %CRIT%-Ergebnis erhalte
+1 Stressmarker.“) abgehandelt, wenn man sie repariert?</strong><br>
+A: Nein. Die Karte ist repariert, deswegen gibt es keinen Effekt mehr, der
+abgehandelt werden müsste.
+"
+            "WINKEL":
+                name: "Winkel"
+                text: "<strong>F: Können Schiffe, die nur %SINGLETURRETARC%- oder %FULLFRONTARC%-Angriffe verwenden,
+Effekte verwenden, die verlangen, dass das Schiff einen
+%FRONTARC%-Angriff durchführt? (z. B. Furchtlos, Ausmanövrieren)
+</strong><br>A: Nein. Beachte den Unterschied zwischen den Voraussetzungen von
+Furchtlos:
+„Solange du einen %FRONTARC%-Primärangriff durchführst, ...“
+und
+Vollstrecker Eins:
+„Solange du einen Primärangriff durchführst, falls der Verteidiger in deinem
+%FRONTARC% ist,...“
+Ein %FRONTARC%-Angriff verwendet das %FRONTARC%-Symbol über dem Angriffswert, wie auf
+der Schiffskarte angegeben. Dies unterscheidet sich von einem Angriff,
+der gegen ein Schiff in seinem %FRONTARC% durchgeführt wird.
+<br><br><strong>F: Wenn ein Schiff, dessen Geschützturm-Winkelanzeiger auf
+sein %FRONTARC% zeigt, einen %SINGLETURRETARC%-Angriff durchführt, hat es dann auch
+von seinem %FRONTARC% aus angegriffen?
+</strong><br>A: Nein. Falls beispielsweise ein Schiff, dass mit Kampferprobter
+Geschützkanonier ausgerüstet ist, einen Primär-%FRONTARC%-Angriff durchführt,
+kann es die Fähigkeit von Kampferprobter Geschützkanonier verwenden,
+um einen %SINGLETURRETARC%-Angriff durchzuführen, auch wenn der Geschützturm-
+Winkelanzeigen auf seinen %FRONTARC% zeigt.
+<br><br><strong>F: Ist ein Schiff in seinem eigenen Feuerwinkel?
+</strong><br>A: Nein.
+<br><br><strong>F: Erstreckt sich der Feuerwinkel eines Schiffes bis auf
+Reichweite 3, auch wenn das für die Waffe, die diesen
+Winkel verwendet, nicht gilt?
+</strong><br>A: Ja. Falls zum Beispiel Drea Renthal (Abschaum, BTL-A4-Y-Flügler) mit
+Dorsaler Geschützturm ausgerüstet wird, kann sie ihre Fähigkeit auf
+Schiffe mit Reichweite 1–3 in ihrem Geschützturmwinkel verwenden."
+            "WÜRFEL WERFEN UND NEU WERFEN":
+                name: "Würfel werfen und neu werfen"
+                text: "<strong>F: Gelten Neuwürfe für Effekte, die eintreten, bevor oder
+nachdem ein Spieler Würfel wirft (wie Count Dooku[%CREW%]), als
+„Würfel werfen“?
+</strong><br>A: Nein. Auch wenn man für Neuwürfe Würfel aufnimmt und sie erneut wirft,
+ist „Würfel neu werfen“ eine andere Spielmechanik als „Würfel werfen“.
+<br><br><strong>F: Wenn eine Karte wie Flächenangriff (%TALENT%) einen Spieler
+anweist, „alle Würfel“ oder eine bestimmte Anzahl von
+Würfeln erneut zu werfen, aber es nicht genügend
+geeignete Würfel gibt, was passiert dann?
+</strong><br>A: Der Spieler wirft so viele geeignete Würfel wie möglich erneut.
+Im Falle von Flächenangriff und ähnlichen Effekten, wenn ein Schiff
+Flächenangriff (das 2 Verteidigungswürfel neu wirft) gegen ein Schiff
+verwendet, das nur 1 Verteidigungswürfel wirft, kann es immer noch dazu
+führen, dass dieses Schiff seinen 1 Verteidigungswürfel neu wirft, indem
+es den Effekt so vollständig wie möglich abhandelt (gegen den 1 geeigneten
+Verteidigungswürfel).
+Beachtet, dass, wenn das Schiff Flächenangriff gegen ein Schiff verwendet,
+das 3 Verteidigungswürfel wirft (z. B.: %EVADE%, Leerseite, Leerseite), es genau
+2 dieser Würfel wählen muss, um sie neu zu werfen, da es den Effekt so
+vollständig wie möglich abhandeln muss (in diesem Fall bei 2 geeigneten
+Würfeln).
+<br><br><strong>F: Kann die Fähigkeit von Han Solo (Pilot, Modifizierter YT-1300) mit einem Würfel verwendet werden, der bereits
+neu geworfen wurde?
+</strong><br>A: Ja. Han Solos Fähigkeit wird nicht als Neuwurf behandelt, deswegen kann
+sie mit einem neu geworfenen Würfel verwendet werden."
+            "ZIEL ERFASSEN":
+                name: "Ziel erfassen"
+                text: "<strong>F: Kann ein Spieler während der Zielerfassung kein Objekt
+auswählen?
+</strong><br>A: Ja, aber nur, wenn es keine gültigen Objekte zur Auswahl gibt. Während
+der Zielerfassung muss ein Spieler ein anderes Objekt in Reichweite 0–3
+wählen, falls möglich. Folglich kann die Zielerfassung scheitern, wenn es
+in Reichweite 0–3 kein anderes Objekt gibt, sie scheitert aber nur unter
+diesem Umstand.
+<br><br><strong>F: Was passiert, wenn zwei Zielerfassungen vom gleichen
+Schiff mit einem R3-Astromechdroiden auf ein einzelnes
+Schiff transferiert werden (z. B. durch die Pilotenfähigkeit
+von Captain Kagi)?
+</strong><br>A: Der R3-Astromechdroide erlaubt es nur, zwei Zielerfassungen zu haben,
+wenn sie auf verschiedenen Schiffen sind, so dass eine der Zielerfassungen
+verloren geht, falls sie auf ein einzelnes Schiff transferiert werden.
+<br><br><strong>F: Falls ein Effekt ein Schiff dazu anweist, einen zusätzlichen
+Zielerfassungsmarker zu erhalten (z. B. Unteroffizier
+Thanisson [󲁒]), kann ein Spieler dem Schiff dann einen
+Zielerfassungsmarker mit einer anderen Nummer als der
+des ersten Zielerfassungsmarkers zuordnen?
+</strong><br>A: Nein. Es muss eine Zielerfassung mit derselben Nummer wie die erste
+erhalten (was in den meisten Fällen dazu führt, dass das Schiff die originale
+Zielerfassung verliert, wodurch es nur einen Zielerfassungsmarker hat).
+<br><br><strong>F: Unter welchen Umständen zählt eine Zielerfassung, falls
+sich ein Effekt auf „deine Marker“ bezieht, als „dein
+Marker“, und unter welchen nicht?
+</strong><br>A: Für Effekte, die sich auf „deine Marker“ beziehen, ist die Zielerfassung
+immer der rote Marker des Schiffes, dem er zugeordnet wurde. Falls zum
+Beispiel Schff A Schiff B als Ziel erfasst, ist die Zielerfassung der rote
+Marker von Schiff B und nicht von Schiff A. <strong>Kein</strong> Effekt von Schiff A, der
+sich auf „deine Marker“ bezieht, bezieht sich auf die Zielerfassung. <strong>Jeder</strong>
+Effekt von Schiff B, der sich auf „deine Marker“ bezieht, bezieht sich auf die
+Zielerfassung.
+Falls sich ein Effekt auf „deine Zielerfassung“ bezieht, bezieht er sich auf die
+Zielerfassung, die dein Schiff hat (die es also zugeordnet hat). Falls also
+Schiff A einen Effekt hat, der sich auf „deine Zielerfassung“ bezieht, bezieht
+er sich auf die Zielerfassung von Schiff A auf Schiff B. Für Effekte von Schiff
+B würde dieselbe Zielerfassung allerdings <strong>nicht</strong> unter „deine Zielerfassung“
+fallen."
+            "FRAGEN ZU SPEZIFISCHEN KARTEN":
+                name: "Fragen zu spezifischen Karten"
+                text: """<strong>F: Kann Cikatro Vizago (%CREW%) eine %ILLICIT%-Aufwertungskarte auf
+einem Schiff gegen eine Aufwertung, die es normalerweise
+nicht ausrüsten kann, austauschen (z. B. einen Z-95-Kopfjäger mit einer Tarnvorrichtung ausrüsten und dann
+gegen eine Manipulierte Frachtrampe eines YV-666
+austauschen)?
+</strong><br>A: Nein. Cikatro Vizago kann die Manipulierte Frachtrampe nicht auf den Z-95
+bewegen, da der Z-95 die "Mittleres oder großes Schiff"-Beschränkung
+der Manipulierten Frachtrampe nicht erfüllt, wie im Abschnitt
+Aufwertungskarten beschrieben.
+<br><br><strong>F: Kann der Großinquisitor [TIE-v1-Turbojäger] den Reich-
+weitenbonus anwenden, wenn er mit einer Waffe mit dem
+Raketensymbol (z. B. Protonenraketen) angreift oder sich
+gegen einen Angriff mit dem Raketensymbol verteidigt?
+</strong><br>A: Nein.
+<br><br><strong>F: Ist Han Solos [Rebellen, %GUNNER%] zusätzlicher Angriff ein
+Bonusangriff?
+</strong><br>A: Ja. Alles, was außerhalb des Standardangriffs, den ein Schiff durchführen
+darf, sobald es kämpft, einen Angriff erlaubt, ist ein Bonusangriff.
+<br><br><strong>F: Wenn ein Schiff, das mit Han Solo (Rebellen, %GUNNER%)
+ausgerüstet ist, durch eine Karte wie Roark Garnet
+(HWK-290) oder Geschärfte Sinne dazu gebracht wird,
+bei Initiative 7 zu kämpfen, muss es dann Han Solos
+Bonusangriff zuerst durchführen?
+</strong><br>A: Ja. Han Solos Effekt tritt bei Initiative 7 ein, bevor irgendein Schiff
+bei dieser Initiative kämpft (darunter auch das Schiff, das mit Han
+Solo ausgerüstet ist), deswegen wird Han Solos Bonusangriff immer
+zuerst durchgeführt. Das bedeutet, dass das Schiff nicht Han Solos
+Bonusangriff und anschließend einen weiteren Angriff aus demselben
+Geschützturmwinkel durchführen kann.
+<br><br><strong>F: Wie interagieren Effekte, die „Schaden verhindern“, wie z. B.
+Iden Versio, mit Effekten wie Ionenkanone und Fangstrahl,
+die „Marker [z. B. Ionen-, Fangstrahl- und Störsignalmarker]
+zufügen, anstatt Schaden zuzuteilen“?
+</strong><br>A: Wenn ein Effekt %HIT%/%CRIT%-Ergebnisse für einen Effekt verwendet, anstatt
+Schaden zuzuteilen (z. B. Ionen-, Fangstrahl- oder Störsignalmarker), kann
+dieser Effekt nicht durch einen Effekt verhindert werden, der “Schaden
+verhindert”.
+Beachte, dass Iden Versio den Schaden verhindern kann, den eine
+Ionenkanone verursacht, bevor sie Ionenmarkern zufügt, aber dies
+verhindert nicht, dass Iden Versio die nachfolgenden Ionenmarker erhält.
+<br><br><strong>F: Wenn der
+Nashtahwelpe abgesetzt wird, erhält er
+dann Ladungen in Höhe der Ladungskapazität von der
+Schiffskarte der
+Reißzahn?
+</strong><br>A: Nein, wenn der
+Nashtahwelpe per Notabsetzung abgesetzt wird, erhält
+er die Anzahl der aktiven und inaktiven Ladungen, die das Schiff mit der
+Reißzahn hatte, bevor es zerstört wurde.
+<br><br><strong>F: Wird die Fähigkeit von Autopilot-Drone (Rettungskapsel)
+auch ausgelöst, falls sie durch eine andere Art zerstört
+wird als durch den Verlust aller Ladungen?
+</strong><br>A: Nein.
+<br><br><strong>F: Was passiert, falls ein Schiff mit Tarngerät (%ILLICIT%) ein
+Fokusergebnis wirft und dann scheitert, während es
+versucht, sich zu enttarnen?
+</strong><br>A: Das Schiff entfernt seinen Tarnungsmarker nicht.
+<br><br><strong>F: Kann ein Schiff „Schwer zu treffen“ verwenden, um
+Ladungen auf anderen Aufwertungen wiederherzustellen,
+indem es rote Manöver vollständig ausführt?
+</strong><br>A: Nein. „Schwer zu treffen“ und andere Effekte, die mit dem Wiederherstellen
+von Ladungen zu tun haben, werden nur auf die Ladungen dieser
+spezifischen Karte angewendet, es sei denn, der Effekt besagt explizit
+etwas anderes (wie bei Chopper (Rebellen, %CREW%)).
+<br><br><strong>F: Wirft Kavil (Abschaum, BTL-A4-Y-Flügler) einen zusätzlichen
+Angriffswürfel, wenn er mit einem Geschützturm angreift
+und der Geschützturm-Winkelanzeiger auf seinen vorderen
+Winkel eingestellt ist?
+</strong><br>A: Ja. Außerdem würde Kavil auch einen zusätzlichen Angriffswürfel werfen,
+wenn er einen Angriff durchführt, der den zentralen Winkel verwendet,
+obwohl das Ziel per Definition ebenfalls in seinem vorderen Winkel ist.
+<br><br><strong>F: Kann Lieutenant Sai (Raumfähre der
+Lambda-Klasse), falls
+er ein Schiff koordiniert, das eine Aktion gefolgt von einer
+gekoppelten Aktion durchführt, die gekoppelte Aktion
+anstatt der ursprünglichen Aktion durchführen?
+</strong><br>A: Nein. Lieutenant Sai kann nur die ursprüngliche Aktion durchführen.
+<br><br><strong>F: Die Pilotenfähigkeit von Airen Cracken (Z-95-Kopfjäger)
+erlaubt einem anderen befreundeten Schiff, eine Aktion
+durchzuführen und als rote Aktion zu behandeln. Kann
+dieses Schiff eine rote Aktion durchführen und als rote
+Aktion behandeln? Kann es eine violette Aktion durchführen
+und als rote Aktion behandeln?
+</strong><br>A: Es kann eine rote Aktion durchführen und sie als rote Aktion behandeln.
+Allerdings kann es <strong>keine</strong> violette Aktion durchführen und sie als rote Aktion
+behandeln, da violette Aktionen schwieriger sind als rote.
+<br><br><strong>F: Wird die Schiffsfähigkeit der Angriffsplattform derSternenViper-Klasse (Mikrodüsen) auf die Fassrolle
+angewendet, die sie aufgrund von Fangstrahlmarkern
+durchführen muss?
+</strong><br>A: Mikrodüsen beeinflusst diese Fassrolle. Der Spieler, dessen Effekt den
+Fangstrahlmarker zugeordnet hat, bestimmt die Richtung und Position der
+Schablone.
+<br><br><strong>F: Kann ein TIE-x1-Turbojäger, der durch Verbesserter
+Zielcomputer 1 zusätzlichen Würfel geworfen hat, später
+während des Angriffs eine Zielerfassung ausgeben? Falls ja,
+kann er 1 %HIT% in 1 %CRIT% ändern?
+</strong><br>A: Während er einen Angriff durchführt, kann ein TIE-x1-Turbojäger seine
+Zielerfassung ausgeben, um Angriffswürfel neu zu werfen, nachdem er 1
+zusätzlichen Würfel geworfen hat.
+Er kann außerdem 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis ändern und dann
+die Zielerfassung ausgeben, um Angriffswürfel neu zu werfen. Allerdings
+kann er kein %HIT%-Ergebnis in ein %CRIT%-Ergebnis ändern, nachdem er die
+Zielerfassung ausgegeben hat, da er den Verteidiger nicht mehr erfasst
+hat.
+<br><br><strong>F: Kann „Todesfeuer“ (TIE-Bomber) ein Gerät starten, das
+normalerweise nicht gestartet werden kann, nachdem
+Todesfeuer zerstört wurde?
+</strong><br>A: Nein.
+<br><br><strong>F: Falls „Todesfeuer“ (TIE-Bomber) oder ein Schiff, das mit
+Paige Tico (%GUNNER%) ausgerüstet ist, ein Gerät während der
+Systemphase platziert, kann jenes Schiff nach seiner
+Zerstörung eine Bombe abwerfen?
+</strong><br>A: Ja. Ein Schiff kann nur einmal pro Systemphase ein Gerät platzieren, es
+kann jedoch durch eine Piloten- oder Aufwertungskartenfähigkeit eine
+weitere Bombe abwerfen.
+Es ist jedoch zu beachten, dass manche Karten, die das Platzieren eines
+Gerätes außerhalb der Systemphase erlauben (wie Edon Kappehl (MG-100
+MG-100-SternenFestung) und „Genie“ (%ASTROMECH%)), den Text „falls du in dieser
+Runde noch kein Gerät abgeworfen oder gestartet hast“ beinhalten, was
+das Platzieren eines weiteren Gerätes verhindert, falls das Schiff bereits
+eines in der Systemphase platziert hat.
+<br><br><strong>F: Bei welcher Schiffsinitiative wird die Zustandskarte Abhör-
+gerät ausgelöst, die durch Informant (%CREW%) zugeordnet wird?
+</strong><br>A: Der Effekt von Abhörgerät wird bei der Initiative des Schiffs, das den
+Zustand hat, ausgelöst.
+<br><br><strong>F: Wird ein Effekt auch dann abgehandelt, falls ein Schiff
+als Teil der Kosten dafür einen Entwaffnet-Marker
+erhalten würde, zum Beispiel durch Vorarbeiter Proach
+(Modifizierter TIE/ln-Jäger) oder Quinn Jast (M3-A-
+Abfangjäger), aber Raffineriebetreiber Yushyn (Modifizierter
+TIE/ln-Jäger) es stattdessen einen Stressmarker erhalten
+lässt?
+</strong><br>A: Ja. Die Fähigkeit von Raffineriebetreiber Yushyn ist ein Ersetzungseffekt,
+und falls sie einen Teil der Kosten ersetzt, die ein Schiff für einen Effekt
+bezahlen würde (in diesem Fall der Entwaffnet-Marker, den das Schiff
+erhalten würde), wird der Effekt trotzdem abgehandelt (siehe „Kosten
+bezahlen“).
+Fähigkeiten, die ausgelöst werden, „nachdem ein Schiff einen Entwaffnet-
+Marker erhalten hat“, werden dennoch nicht abgehandelt, da es sich um
+ein Zeitfenster handelt, das nicht ausgelöst wurde, und nicht um Kosten,
+die ersetzt wurden.
+<br><br><strong>F: Wann verliert der Verteidiger einen Schild, falls ein Angriff
+mit Plasmatorpedos (%TORPEDO%) trifft?
+</strong><br>A: Ob ein Angriff trifft oder nicht, wird am Ende von Schritt 4 „Ergebnisse
+neutralisieren“ bestimmt. Deswegen verliert das Schiff ein Schild am Ende
+von Schritt 4 und vor Schritt 5 „Schaden zuteilen“.
+<br><br><strong>F: Was passiert, falls ein Schiff seine eigene Zielerfassung auf
+sich selbst transferiert (etwa durch die Verwendung von
+Admiral Holdo (%CREW%))?
+</strong><br>A: Ein Schiff kann sich nicht selbst als Ziel erfasst haben (vgl. Zielerfassung),
+weshalb die Zielerfassung verloren geht.
+</strong><br>A: Wenn ein Effekt die Schwierigkeit eines aufgedeckten
+Manövers überprüft (etwa durch Cova Nells
+Pilotenfähigkeit), werden dabei Effekte berücksichtigt, die
+die Schwierigkeit des Manövers beeinflussen (etwa durch
+R4-Astromechdroide (%ASTROMECH%) oder Leia Organa
+(Widerstand, %CREW%%CREW%))?
+</strong><br>A: Nein. Die Schwierigkeit eines aufgedeckten Manövers entspricht der
+gedruckten Farbe. Geschwindigkeit und Flugrichtung eines aufgedeckten
+Manövers entsprechen ebenfalls ihrem gedruckten Wert bzw. Typ.
+<br><br><strong>F: Wenn ein Effekt (wie Erfahrener Navigator) ein Schiff
+anweist, sein Rad auf ein anderes Manöver einzustellen
+„nachdem du dein Rad aufgedeckt hast“, wird das
+ursprüngliche oder das neu eingestellte Manöver als das
+aufgedeckte Manöver behandelt?
+</strong><br>A: Das aufgedeckte Manöver eines Schiffes ist das Manöver, auf das das Rad
+eingestellt ist. Falls durch einen Effekt wie Erfahrener Navigator das Rad
+physisch auf ein neues Manöver gedreht wird, ist dieses neue Manöver
+das aufgedeckte Manöver des Schiffes. Falls mehrere Effekte das Rad
+betreffen, ist das aufgedeckte Manöver das zuletzt eingestellte, nachdem
+alle das Rad betreffende Effekte abgehandelt sind.
+<br><br><strong>F: Falls ein Schiff von Padmé Amidalas Pilotenfähigkeit
+betroffen ist und 1 seiner %FOCUS%-Ergebnisse modifizert,
+kann die Fähigkeit von Imperator Palpatine (Imperium, %CREW%)
+verwendet werden, um ein zweites %FOCUS%-Ergebnis zu
+modifizieren?
+</strong><br>A: Ja. Das mit Imperator Palpatine (Crew) ausgerüstete Schiff modifiziert das
+zweite Fokus-Ergebnis jenes Schiffes und nicht das Schiff selbst.
+<br><br><strong>F: Falls ein Effekt eine Maximalanzahl für die zu werfenden
+Würfel festlegt (etwa Kanonier der Siebten Flotte (%GUNNER%) oder
+Vorausschauender Schuss (%FORCE%)) und ein weiterer Effekt
+angibt, dass zusätzliche Würfel über dieses Maximum
+hinaus geworfen werden, spielt die Reihenfolge, in der diese
+Effekte angewandt werden, eine Rolle?
+</strong><br>A: Nein. Sobald ein Effekt eine zu werfende Maximalanzahl an Würfeln festlegt
+(„wirf 1 zusätzlichen Würfel (bis zu einem Maximum von X)“ oder „Der
+Verteidiger kann nicht mehr als X Verteidigungswürfel werfen“), wird
+dieses Maximum in Schritt „2</strong><br>A: Angriffswürfel werfen“ oder „Schritt 2b:
+Verteidigungswürfel werfen“ (vgl. Angreifen) angewandt, nachdem alle
+Effekte angewandt wurden, die das Schiff mehr oder weniger Würfel werfen
+lassen.
+<br><br><strong>F: Falls ein Schiff mit Wendigkeitswert 0 (wie der VCX-100)
+Ziel eines Effektes wird, der es 1 Verteidigungswürfel
+weniger werfen lässt, und eines anderen Effektes, der es
+1 Verteidigungswürfel mehr werfen lässt, beeinflusst die
+Reihenfolge dieser Effekte die Anzahl der tatsächlich zu
+werfenden Würfel?
+</strong><br>A: Nein. Unabhängig davon, welcher Effekt zuerst angewandt wird, das
+Schiff wirft 0 Verteidigungswürfel. Wird der negative Modifikator
+zuerst angewandt, wird sein Verteidigungspool zu „–1“ (1 negativer
+Verteidigungswürfel), dann wird der positive Modifikator angewandt, der
+den Verteidigungspool wieder auf 0 anhebt. Falls der positive Modifikator
+zuerst angewandt wird, reduziert der negative Modifikator die Anzahl im
+Anschluss auf 0.
+Es ist zu beachten, dass es nach dem Anwenden der Modifikatoren,
+bevor die Würfel geworfen werden, ein Standardminimum von 0 gibt
+(vgl. Angreifen). Deshalb wirft ein Schiff, das aufgrund von Modifikatoren
+weniger als 0 Würfel werfen würde, stattdessen immer 0 Würfel.
+B: Falls ein Schiff mit Wendigkeitswert 0 (wie der VCX-100)
+angestrengt ist und gegen einen Angriff in Angriffsreichweite
+1 verteidigt (wofür es normalerweise 0 Verteidigungswürfel
+werfen würde), entfernt es dann den Anstrengungsmarker?
+</strong><br>A: Ja. Auch wenn es aufgrund des festen Minimums von 0 Würfeln nicht
+gezwungen werden kann, weniger als 0 Würfel zu werfen, wird der Effekt
+von „wirf 1 Verteidigungswürfel weniger“ angewandt (vgl. Angreifen),
+weshalb der Anstrengungsmarker entfernt wird.
+<br><br><strong>F: Falls ein mit Kanan Jarrus (%CREW%) ausgerüstetes Schiff
+Trägheitsdämpfer (%ILLICIT%) verwendet, um ein weißes
+stationäres Manöver durchzuführen, in welcher Reihenfolge
+werden Kanans Fähigkeit und der „erhalte 1 Stressmarker“-
+Abschnitt der Trägheitsdämpfer abgehandelt?
+</strong><br>A: Beide Fähigkeiten haben dasselbe Zeitenster: nachdem das Schiff sein
+Manöver ausgeführt hat. Falls der Spieler sich also entscheidet, eine
+Machtladung auszugeben und so Kanans Fähigkeit zu aktivieren, werden
+nach dem Ausführen des weißen stationären Manövers zwei Fähigkeiten
+in die Fähigkeits-Warteschlange eingereiht: „erhalte 1 Stressmarker“
+der Trägheitsdämpfer und „entferne 1 Stressmarker“ von Kanan Jarrus.
+Der Spieler, der die beiden Effekte kontrolliert, entscheidet über die
+Reihenfolge, in der die Fähigkeiten in die Warteschlange eingereiht werden,
+und die Fähigkeiten werden in dieser Reihenfolge abgehandelt. Falls der
+Spieler beabsichtigt, dass das Schiff erst einen Stressmarker erhält und
+dann verliert, muss er die Fähigkeit der Trägheitsdämpfer vor Kanans
+Fähigkeit einreihen.
+<br><br><strong>F: Dalan Oberos [M12-L-Kimogila-Jäger] Pilotenfähigkeit
+lautet: „Zu Beginn der Kampfphase darfst du 1 Schiff, das
+Schilde hat, in deinem %BULLSEYEARC%  wählen und 1 %CHARGE% ausgeben. Falls
+du das tust, verliert jenes Schiff 1 Schild und du stellst
+1 Schild wieder her.“ Müssen beide Bestandteile des
+Effekts („verliert jenes Schiff 1 Schild“ und „du stellst 1
+Schild wieder her“) abhandelbar sein, damit ich einen davon
+abhandeln kann?
+</strong><br>A: Ja. „Verliert jenes Schiff 1 Schild und du stellst 1 Schild wieder her“ ist
+ein einzelner Effekt, daher müssen beide Teile abgehandelt werden können,
+damit er eintritt.
+<br><br><strong>F: Heben die Fähigkeiten von Paige Tico (%CREW%) und „Todesfeuer“
+(TIE-Bomber) die „ein Gerät pro Runde“-Beschränkung auf?
+</strong><br>A: Ja. Diese Fähigkeiten erlauben es einem Schiff ein zweites Gerät in
+derselben Runde abzuwerfen (zum passenden Zeitpunkt), da sie die
+Beschränkung „falls du in dieser Runde noch kein Gerät abgeworfen oder
+gestartet hast“ nicht haben (wie bei Edon Kappehl).
+<br><br><strong>F: Falls ein Effekt besagt, dass ein Schiff „einen Schild verliert“
+(oder „Schilde verliert“), hat dieses Schiff dann Schaden
+erlitten?
+</strong><br>A: Nein. Das Erleiden von Schaden kann dazu führen, dass ein Schiff Schilde
+verliert. Falls ein Effekt dazu führt, dass ein Schiff direkt einen oder
+mehrere Schilde verliert, hat es hingegen keinen Schaden genommen.
+<br><br><strong>F: Wie ist Han Solos Fähigkeit (Rebellen, Modifizierter
+leichter YT-1300-Frachter) einzuordnen? Ist sie eine
+Würfelmodifikation? Ein Neuwerfen? Wann genau wirkt der
+Effekt?
+</strong><br>A: Han Solos Fähigkeit wird als Würfelmodifikation behandelt, nicht als
+Neuwerfen. Aufgrund dieser Einordnung wird dieser Effekt während
+des Schrittes „Angriffswürfel modifizieren“ oder des Schrittes
+„Verteidigungswürfel modifizieren“ ausgelöst. Dabei ist allerdings zu
+beachten, dass er auch andere Würfelwürfe betreffen kann, etwa einen
+Wurf zur Ermittlung, ob ein Schiff durch die Überschneidung mit oder das
+Hindurchbewegen durch ein Hindernis Schaden erleidet.
+<br><br><strong>F: Wie interagiert Han Solos Fähigkeit (Rebellen, Modifizierter
+leichter YT-1300-Frachter) mit C-3PO (Rebellen, %CREW%)?
+</strong><br>A: Der Abschnitt „Falls du das tust und genau so viele Ergebnisse wirfst
+…“ von C-3POs Fähigkeit wird nach dem Würfelwurf, vor dem Schritt
+„Verteidigungswürfel modifizieren“ ausgelöst. Daher kommt Han Solos
+Effekt erst nach der Abhandlung von C-3POs Effekt zum Tragen. Falls
+Han Solo nach der Verwendung von C-3PO verwendet wird, muss der
+hinzugefügte Würfel ebenfalls neu geworfen werden.
+<br><br><strong>F: Wie interagiert Han Solos (Rebellen, Modifizierter leichter
+YT-1300-Frachter) Fähigkeit mit „Midnight“?
+</strong><br>A: „Midnight“ verhindert Würfelmodifikationen. Da Han Solos Fähigkeit eine
+Würfelmodifikation ist, verhindert „Midnight“ die Verwendung.
+<br><br><strong>F: Falls ein Schiff ein stätionäres Manöver im Winkel in
+Reichweite 2 eines feindlichen Schiffes mit Schnellfeuer
+(oder im zentralen Winkel eines feindlichen Schiffes mit
+Vorausahnung) ausführt, kann das Schiff mit Schnellfeuer
+(oder Vorausahnung) den Bonusangriff durchführen?
+</strong><br>A: Ja.
+<br><br><strong>F: Solange „Geissel“ Skutu einen Angriff unter Verwendung
+von Schnellfeuer durchführt, falls der Verteidiger sich in
+„Geissel“ Skutus zentralem Winkel befindet, fügt „Geissel“
+Skutu einen zusätzlichen Angriffswürfel hinzu?
+</strong><br>A: Ja.
+<br><br><strong>F: Falls ein Schiff mit der Schiffsfähigkeit Präzisionssteuerung
+(oder einer anderen Fähigkeit, die ausgelöst wird,
+„nachdem du ein Manöver (vollständig) ausgeführt hast“)
+ein Manöver im Winkel und in Reichweite 2 eines Schiffes
+mit Schnellfeuer vollständig ausführt, wie wird dies
+abgehandelt?
+</strong><br>A: Hier gibt es verschiedene Möglichkeiten in Abhängigkeit davon, welcher
+Spieler der Startspieler ist.
+In allen Fällen werden beide Fähigkeiten („Nachdem du ein Manöver
+vollständig ausgeführt hast, darfst du 1 Machtladung ausgeben, um Schub
+zu geben oder eine Fassrolle durchzuführen“ und „Nachdem ein feindliches
+Schiff ein Manöver ausgeführt hat, darfst du diesen Angriff gegen ihn als
+Bonusangriff durchführen“) in die Fähigkeits-Warteschlange eingereiht.
+Falls der Startspieler das Schiff mit der Präzisionssteuerung kontrolliert,
+handelt dieser Spieler diese Fähigkeit ab, bevor Schnellfeuer abgehandelt
+wird. Falls nach der Durchführung des Schubs oder der Fassrolle das Schiff
+mit der Präzisionssteuerung nicht mehr in Reichweite oder im Winkel
+ist und nicht mehr als Ziel für Schnellfeuer gewählt werden kann, wird
+Schnellfeuer nicht abgehandelt und aus der Warteschlange entfernt.
+Falls der zweite Spieler das Schiff mit der Präzisionssteuerung kontrolliert,
+handelt sein Gegner Schnellfeuer zuerst ab.
+<br><br><strong>F: Wie werden Fähigkeiten abgehandelt, die die
+Geschwindigkeit, Flugrichtung und/oder Schwierigkeit eines
+Manövers verändern, das während des Schrittes „Rad
+aufdecken“ aufgedeckt wird und während des Schrittes
+„Manöver ausführen“ ausgeführt wird? Falls z. B. Hera
+Syndulla (Jagdshuttle) mit R4-Astromechdroide und
+Erfahrener Navigator ausgerüstet ist und zusätzlich die
+Schadenskarte Triebwerksschaden hat, was passiert?
+</strong><br>A: R4-Astromechdroide und Triebwerksschaden (sowie andere dauerhafte
+Effekte, die die Schwierigkeit eines Manövers verändern, etwa
+Nien Nunb (%CREW%), Programmierung von L3-37 und Leia Organa (Rebellen und
+Widerstand, %CREW%)) werden nur während des Schrittes „Manöver ausführen“
+angewandt, für Effekte, die ausgelöst werden, bevor ein Schiff ein Manöver
+ausführt (z. B. BB-Astromechdroide) und für Effekte, die ausgelöst werden,
+nachdem ein Schiff ein Manöver ausgeführt hat (z. B. Schwer zu fassen).
+Daher kann der Spieler von Hera, nachdem Heras Rad aufgedeckt worden
+ist, ihre Pilotenfähigkeit und die Fähigkeit von Erfahrener Navigator in
+beliebiger Reihenfolge der Fähigkeits-Warteschlange hinzufügen. Beide
+Fähigkeiten werden abgehandelt und falls die Fähigkeit von Erfahrener
+Navigator abgehandelt wird, wird die Schwierigkeit des Manövers während
+des Schrittes „Manöver ausführen“ erhöht (d. h. zu dem Zeitpunkt, zu dem
+Heras Pilotenfähigkeit abgehandelt wird, ist die Schwierigkeit noch nicht
+erhöht worden).
+Während des Schrittes „Manöver ausführen“ sind dann alle Fähigkeiten, die
+die Schwierigkeit des Manöver verändern, wie üblich kumulativ.
+Es ist zu beachten, dass Fähigkeiten, die ein Manöver verändern, ohne ein
+neues Manöver auf dem Rad einzustellen, nicht das "aufgedeckte Manöver"
+des Schiffes beeinflussen, auf das Fähigkeiten wie etwa die Pilotenfähigkeit
+von Ric Olié Bezug nehmen.
+<br><br><strong>F: Angenommen, ein Sternenjäger der Nantex-Klasse führt
+ein Manöver aus. Danach benutzt er seine Fähigkeit
+Fangstrahl-Zielsystem und teilt sich dadurch selbst einen
+Fangstrahlmarker zu, um seinen Geschützturm-Winkel zu
+drehen. Nun ist er gefangen und fliegt als Konsequenz eine
+Fassrolle. Diese bringt ihn in Überschneidung mit einer
+Trümmerwolke, wodurch er einen Stressmarker erhält. Wie
+handle ich das alles ab?
+</strong><br>A: Nachdem ein Sternenjäger der
+Nantex-Klasse sein Manöver
+ausgeführt hat, hat er die Möglichkeit, eine Fähigkeit mit dem Effekt
+„erhalte 1 Fangstrahlmarker, um eine %ROTATEARC%-Aktion durchzuführen“ in die
+Warteschlange einzureihen.
+Sobald diese Fähigkeit abgehandelt wird, bezahlt der Sternenjäger der Nantex-Klasse die Kosten („erhalte 1 Fangstrahlmarker“), um diesen Effekt
+abzuhandeln. Der Sternenjäger der
+Nantex-Klasse erhält 1 Fangstrahl-
+marker und führt dann die Aktion „Rotieren“ durch. Beachte, dass er den
+Spieleffekt des Gefangenwerdens (der ausgelöst wird, sobald ein Schiff
+zum ersten Mal in einer Runde gefangen wird) erst abhandelt, nachdem
+er diese Fähigkeit mit dem Beenden der Aktion „Rotieren“ vollständig
+abgehandelt hat.
+Nachdem die Fähigkeit vollständig abgehandelt ist, wird der Spieleffekt,
+der ausgelöst wird, nachdem ein Schiff gefangen worden ist, auf den
+Sternenjäger der
+Nantex-Klasse angewandt (bevor andere Fähigkeiten
+in der Warteschlange abgehandelt werden). Dadurch wird sein Spieler
+veranlasst, das Schiff – falls gewünscht – zu bewegen. Falls er das tut und
+diese Bewegung den Sternenjäger in eine Trümmerwolke führt, handelt
+er den Effekt der Bewegung durch oder des Überschneidens mit der
+Trümmerwolke ab, einschließlich des Erhalts eines Stressmarkers.
+Abschließend werden alle anderen Fähigkeiten in der Warteschlange
+abgehandelt.
+<br><br><strong>F: Kann Schnellfeuer oder Voraussicht während der
+Kampfphase als Spezialwaffe für den Angriff eines Schiffes
+gewählt werden?
+</strong><br>A: Ja. Die Formulierung „nachdem ein feindliches Schiff ein Manöver
+ausgeführt hat, darfst du diesen Angriff als Bonusangriff gegen
+es durchführen“ erlaubt es, den Angriff als Bonusangriff unter den
+angegebenen Bedingungen zu nutzen, sie verbietet jedoch nicht, ihn
+während der Kampfphase zu verwenden.
+<br><br><strong>F: Betreffen Fähigkeiten, die sich auf Aufwertungskarten
+eines bestimmten Typs beziehen (wie Captain Jonus’
+Pilotenfähigkeit), Aufwertungen mit mehreren Typen, die
+diesen Typ beinhalten?
+</strong><br>A: Ja. Captain Jonus’ Fähigkeit kann z. B. mit der Raketensalve (%MISSILE%%MISSILE%) eines
+befreundeten Schiffes verwendet werden, und Paige Ticos (%GUNNER%) Fähigkeit
+mit einer Elektro-Protonen-Bombe (%DEVICE%%MODIFICATION%). Jede dieser Aufwertungen hat
+den notwendigen Typ (%MISSILE% bei Raketensalve, %DEVICE% bei der Elektro-Protonen-
+Bombe) und zusätzlich einen weiteren Typ.
+Beachte, dass die Fähigkeit Waffenaufhängung sich nicht so verhält, da sie
+einen speziellen Aufwertungsslot gewährt.
+<br><br><strong>F: Wenn man sich mit Kaz’
+Fireball eine Schadenskarte
+ansieht, muss man sie dem Gegner zeigen?
+</strong><br>A: Nein. Die Karte muss dem Gegner nicht gezeigt werden.
+<br><br><strong>F: Kann eine
+Fireball, die keine verdeckten Schadenskarten
+hat, mit denen sie die Kosten ihrer Schiffsfähigkeit
+„Explosion mit Flügeln“ (1 Schadenskarte offenlegen)
+bezahlen könnte, trotzdem den Effekt dieser Fähigkeit
+(1 Entwaffnet-Marker entfernen) abhandeln?
+</strong><br>A: Nein. Da das Offenlegen einer Schadenskarte die Kosten für das Entfernen
+des Entwaffnet-Markers darstellt, kann der Effekt nicht abgehandelt
+werden, wenn die Kosten nicht bezahlt werden können.
+<br><br><strong>F: Falls „Rush“ während der Kampfphase vor Beginn des
+Initativschritts 2 beschädigt wird, wodurch seine Initiative
+auf 6 erhöht wird, was passiert?
+</strong><br>A: „Rush“ kämpft beim aktuellen Initiativschritt, nachdem alle anderen Schiffe
+dieses Schrittes gekämpft haben.
+<br><br><strong>F: Erlaubt es die Schiffsfähigkeit Stabilisatorkerbe des TIE
+der Minengilde, dass er durch oder auf Asteroiden eine
+Fassrolle fliegt?
+</strong><br>A: Ja.
+<br><br><strong>F: Kann Hondo Ohnaka [%CREW%] feindliche Schiffe koordinieren?
+Falls ja, wer bestimmt die Aktion, die das Schiff durchführt?
+</strong><br>A: Ja, Hondo kann feindliche Schiffe so koordinieren. Falls er das tut,
+bestimmt der Spieler, der das koordinierte Schiff kontrolliert, welche Aktion
+das Schiff durchführt.
+<br><br><strong>F: Wann tritt Count Dookus [%CREW%] Fähigkeit in Kraft?
+</strong><br>A: Count Dookus Fähigkeit tritt in Kraft, nachdem die Würfel geworfen worden
+sind. (Vor dem Schritt „Würfel modifizieren“ eines Angriffs oder bevor
+andere Effekte, die Würfelergebnisse modifizieren, angewendet werden,
+falls die Würfel zu einem anderen Zeitpunkt gewürfelt wurden.)
+<br><br><strong>F: Was passiert, wenn zwei Spieler Count Dooku [%CREW%] beim
+selben Würfelwurf einsetzen?
+</strong><br>A: Der Startspieler handelt Count Dooku ab. Falls der Wurf nicht das
+Ergebnis enthält, das der Startspieler benannt hat, muss der Spieler, der
+das Schiff kontrolliert, ein Ergebnis in das benannte Ergebnis ändern.
+Dann handelt der zweite Spieler Count Dooku ab. Falls der Wurf nicht das
+Ergebnis enthält, das der zweite Spieler benannt hat, muss der Spieler, der
+das Schiff kontrolliert, ein Ergebnis in das benannte Ergebnis ändern.
+Das bedeutet, dass es möglich ist, dass derselbe Würfel so zwei Mal
+modifiziert wird.
+<br><br><strong>F: Kann die Schwierigkeit eines violetten Manövers erhöht
+oder verringert werden?
+</strong><br>A: Nein. Allerdings können Effekte dazu führen, dass du das Manöver als eine
+andere Farbe behandelst.
+<br><br><strong>F: In welchem Aufbauschritt tritt „Explosion mit Flügeln“
+(Fireball) in Kraft?
+</strong><br>A: Während <strong>Schritt 6: Sonstiges Material vorbereiten</strong>, nachdem
+der Schadensstapel gemischt wurde.
+<br><br><strong>F: Wie interagiert Chewbacca (Widerstand, %CREW%) mit der
+Schiffsfähigkeit „Explosion mit Flügeln“?
+</strong><br>A: Chewbaccas Fähigkeit „<strong>Aufbau</strong>: Verliere 1 %CHARGE%“ tritt in Kraft, nachdem
+das Schiff, das mit Chewbacca ausgerüstet ist, während <strong>Schritt 5:
+Streitkräfte platzieren</strong> platziert worden ist.
+„Explosion mit Flügeln“ teilt einem Schiff eine Schadenskarte während
+<strong>Schritt 6: Sonstiges Material vorbereiten</strong> zu.
+Allerdings werden ausgelöste Fähigkeiten ohne das Stichwort „<strong>Aufbau:</strong>“
+nicht während des Aufbaus ausgelöst, außer, sie erwähnen explizit einen
+Zeitpunkt während des Aufbaus. Das heißt, dass Chewbaccas zweite
+Fähigkeit („Nachdem einem befreundeten Schiff in Reichweite 0–3
+1 Schadenskarte zugeteilt worden ist, stelle 1 %CHARGE% wieder her.“), die weder
+den Aufbau erwähnt noch das entsprechende Stichwort hat, nicht durch
+„Explosion mit Flügeln“ ausgelöst wird.
+<br><br><strong>F: Kann durch „Holo“s (TIE/BA-Abfangjäger) Schiffsfähigkeit
+ein roter Zielerfassungsmarker, der „Holo“ zugeordnet
+wurde, auf ein befreundetes Schiff transferiert werden?
+</strong><br>A: Ja. Dieser rote Marker zählt als „dein Marker“, also kann „Holo“ ihn
+transferieren.
+<br><br><strong>F: Kann durch „Holo“s (TIE/BA-Abfangjäger) Schiffsfähigkeit
+ein roter Zielerfassungsmarker, der durch „Holo“ einem
+anderen Schiff zugeordnet wurde, auf ein befreundetes
+Schiff transferiert werden?
+</strong><br>A: Nein. „Holos“ Zielerfassung ist ein roter Marker, der einem anderen Schiff
+zugeordnet wurde. Er zählt nicht als „dein Marker“ für jene Fähigkeit (oder
+andere Fähigkeiten, die sich auf „deine Marker“ beziehen). Allerdings ist es
+„Holo“s Zielerfassung und zählt als „deine Zielerfassung“ für Fähigkeiten,
+die sich auf „deine Zielerfassung“ beziehen.
+<br><br><strong>F: Nachdem Leia Organa (Widerstand, %CREW%) die Schwierigkeit
+des Manövers eines Schiffes verringert hat, falls die
+verringerte Schwierigkeit blau ist, kann das Schiff den BB-
+Astromechdroiden verwenden, um eine %BARRELROLL% durchzuführen?
+</strong><br>A: Ja. Leia Organa (Widerstand, %CREW%) hat eine Fähigkeit, die in Kraft tritt,
+nachdem das Rad aufgedeckt worden ist, und die Fähigkeit von BB-
+Astromechdroide wird nachfolgend ausgelöst, bevor das Schiff sein
+Manöver ausführt.
+<br><br><strong>F: Was bedeutet es genau, wenn auf Automatisches
+Zielsystem von der „kürzesten gültigen Angriffsreichweite“
+die Rede ist?
+</strong><br>A: Die „kürzeste gültige Angriffsreichweite“ ist die kürzeste Angriffsreichweite
+eines bestimmten Angriffs, die einen oder mehrere mögliche gültige
+Verteidiger hat. Ein gültiger Verteidiger ist ein Schiff in der korrekten
+Angriffsreichweite im Winkel, das die Voraussetzungen des gewählten
+Angriffs erfüllt (wie z. B. <strong>Angriff [%LOCK%]</strong>).
+Beispiel: Ein TIE/SF-Jäger mit Erschütterung raketen hat ein feindliches
+Schiff in seinem %FRONTARC% in Reichweite 0, ein feindliches Schiff außerhalb seines %FRONTARC% 
+in Reichweite 1, zwei feindliche Schiffe in seinem %FRONTARC% in Reichweite 2
+und ein feindliches Schiff (das es als Ziel erfasst hat) in seinem %FRONTARC% in
+Reichweite 3. Sein %SINGLETURRETARC% ist in seinem %FRONTARC%.
+Der TIE/SF-Jäger misst die Reichweite (wobei er obige Informationen
+erhält) und wählt eine Waffe wie gewohnt.
+Falls er seine <strong>Primärwaffe</strong> wählt, bestimmt er die kürzeste gültige
+Angriffsreichweite wie folgt:<br>
+Reichweite 0: Reichweite 0 ist keine gültige Angriffsreichweite für seine
+Primärwaffe, also kann er das Schiff in seinem %FRONTARC% in Reichweite 0 nicht
+wählen.<br>
+Reichweite 1: Das Schiff außerhalb seines %FRONTARC% in Reichweite 1 ist
+nicht im Winkel, also kann er es nicht wählen. Es gibt keine möglichen
+gültigen Verteidiger in Reichweite 1, also ist Reichweite 1 keine gültige
+Angriffsreichweite.<br>
+Reichweite 2: Er hat 2 feindliche Schiffe in seinem %FRONTARC% in Reichweite 2. Der
+Angriff hat keine besonderen Voraussetzungen, also ist Reichweite 2 eine
+gültige Angriffsreichweite. Der angreifende Spieler kann eines der beiden
+Schiffe als Verteidiger bestimmen, unabhängig davon, welches physisch
+näher ist.<br>
+Reichweite 3: Es gab mindestens ein gültiges Ziel in Reichweite 2, also
+kann Reichweite 3 nicht die kürzeste gültige Reichweite sein. Er kann das
+Schiff in seinem %FRONTARC% in Reichweite 3 nicht wählen.<br>
+Falls er seine <strong>Erschütterungsraketen</strong> wählt, bestimmt er die
+kürzeste gültige Angriffsreichweite wie folgt:<br>
+Reichweite 0: Reichweite 0 ist keine gültige Angriffsreichweite für
+die Erschütterungsraketen, also kann er das Schiff in seinem %FRONTARC% in
+Reichweite 0 nicht wählen.<br>
+Reichweite 1: Reichweite 1 ist keine gültige Angriffsreichweite für die
+Erschütterungsraketen, also könnte er das Schiff in Reichweite 1 selbst
+dann nicht wählen, wenn es im Winkel wäre.<br>
+Reichweite 2: Er hat 2 feindliche Schiffe in seinem %FRONTARC% in Reichweite 2.
+Allerdings haben die Erschütterungsraketen die besondere Voraussetzung
+<strong>Angriff [%LOCK%]</strong> und der Angreifer hat keines der Schiffe in Reichweite 2 als
+Ziel erfasst, also ist Reichweite 2 keine gültige Angriffsreichweite für die
+Erschütterungsraketen.<br>
+Reichweite 3: Er hat ein feindliches Schiff in seinem %FRONTARC% in Reichweite 3 als
+Ziel erfasst. Also ist Reichweite 3 eine gültige Angriffsreichweite und das
+Schiff in Reichweite 3 kann als Verteidiger bestimmt werden.<br>
+Falls der TIE/SF zwei Zielerfassungen hätte, eine auf ein Schiff in
+Reichweite 2 und die andere auf das Schiff in Reichweite 3, wäre
+Reichweite 2 die kürzeste gültige Angriffsreichweite, also müsste er das
+Schiff, das er in Reichweite 2 als Ziel erfasst hat, wählen.
+<br><br><strong>F: Wie oft kann Kalani (%TACTICALRELAY%) ausgelöst werden, nachdem ein
+feindliches Schiff ein Manöver ausgeführt hat, falls es im
+Zentralen Winkel mehrerer befreundeter Schiffe ist?
+</strong><br>A: Ein Mal.
+<br><br><strong>F: Bleiben Effekte, die „solange du einen Angriff durchführst“
+angewendet werden (wie z. B. Feuerkontrollsystem),
+während des Schrittes „Nachwirkungen“ des Angriffs
+bestehen?
+</strong><br>A: Nein. Der Schritt „Nachwirkungen“ findet nach jedem einzelnen Angriff
+statt, ist aber kein Teil des Angriffs.
+Das bedeutet auch, dass ein Bonusangriff, der während des Schrittes
+„Nachwirkungen“ durchgeführt wird, nicht von „solange du einen Angriff
+durchführst“-Effekten des ursprünglichen Angriffs betroffen ist.
+<br><br><strong>F: Wenn ein Schiff angewiesen wird, durch einen einzigen
+Effekt 2 oder mehr Marker zu erhalten (wie z. B. Admiral
+Sloane), wird dies als einmaliges Erhalten von 2 oder mehr
+Markern oder als zwei- oder mehrmaliges Erhalten von
+1 Marker abgehandelt?
+</strong><br>A: Es wird als einmaliges Erhalten von 2 oder mehr Markern abgehandelt.
+Wenn ein Schiff also durch einen einzigen Effekt wie dem von Admiral
+Sloane 2 oder mehr Marker erhält, werden Fähigkeiten, die „nachdem du
+einen Marker erhalten hast“ ausgelöst werden, ein Mal ausgelöst.
+<br><br><strong>F: Kann Major Rhymer einen %TORPEDO%- oder %MISSILE%-Angriff in
+Angriffsreichweite 0 durchführen?
+</strong><br>A: Ja. Major Rhymers Pilotenfähigkeit überschreibt die Grundregel, dass
+Schiffe keine Angriffe in Reichweite 0 ausführen können.
+<br><br><strong>F: Wenn ein Schiff, das mit Thermaldetonatoren (%DEVICE%)
+ausgerüstet ist, 2 Thermaldetonatoren abwerfen will, zählt
+das als ein- oder zweimaliges Abwerfen von einem Gerät?
+</strong><br>A: Im Gegensatz zu Clusterminen (%DEVICE%) werden Thermaldetonatoren einer nach
+dem anderen abgeworfen und jeder abgeworfene Thermaldetonator zählt
+als einmaliges Abwerfen von einem Gerät. Das bedeutet Folgendes:<br>
+• Nachdem Paige Tico (MG-100-SternenFestung) einen Thermaldetonator
+abgeworfen hat, darf sie 1 %CHARGE% ausgeben, um 1 zusätzlichen Thermal-
+detonator abzuwerfen. Da sie nur 1 Ladung hat, kann sie normalerweise
+maximal 3 Thermaldetonatoren abwerfen.<br>
+• Nachdem ein Schiff mit Paige Tico (%CREW%) zerstört worden ist, darf jenes
+Schiff 1 Thermaldetonator abwerfen.<br>
+• Fähigkeiten, die ausgelöst werden, nachdem ein Gerät abgeworfen
+worden ist, werden pro abgeworfenem Thermaldetonator ausgelöst.
+Für die Reihenfolge der Effekte bedeutet das Folgendes: Der erste
+Thermaldetonator wird abgeworfen und alle Fähigkeiten, die dadurch
+ausgelöst werden (wie z. B. „Todesregen“ [TIE/CA-Vergelter] oder
+Zeitverzögerter Zünder [%MODIFICATION%]), werden der Warteschlange hinzugefügt
+und abgehandelt. Danach wird der zweite Thermaldetonator abgeworfen
+und alle Fähigkeiten, die dadurch ausgelöst werden, werden der
+Warteschlange hinzugefügt und abgehandelt.<br>
+• Flugbahnsimulator (%SENSOR%) kann für bis zu 1 Thermaldetonator verwendet
+werden, doch da die 2 Geräte mit unterschiedlichen Schablonen
+abgeworfen (oder gestartet) werden müssen, können nicht beide so
+gestartet werden.
+<br><br><strong>F: Zählen die Schablonen für linke Drehungen (oder Wenden)
+und rechte Drehungen (oder Wenden) mit derselben
+Geschwindigkeit als unterschiedliche Schablonen?
+</strong><br>A: Ja. Auch wenn die beiden Schablonen mit demselben physischen Hilfsmittel
+abgehandelt werden, zählen sie als unterschiedliche Schablonen.
+Beispielsweise zählen die [3 %TURNLEFT%]- und die [3 %TURNRIGHT%]-Schablone, obwohl
+sie dasselbe physische Hilfsmittel verwenden (nur umgedreht), als
+unterschiedliche Schablonen. Wenn also ein Effekt verlangt, dass „zwei
+unterschiedliche Schablonen“ gewählt werden, dürfen die [3 %TURNLEFT%]- und die
+[3 %TURNRIGHT%]-Schablone gewählt werden.
+<br><br><strong>F: Was ist dieses Konstrukt, das auf Marg-Sabl-Einkesselung
+(%TALENT%) erwähnt wird?
+</strong><br>A: Konstrukte sind … Moment mal, das dürft ihr noch gar nicht wissen!
+Wartet’s ab!
+"""
