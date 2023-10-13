@@ -2017,11 +2017,11 @@ class exportObj.SquadBuilder
         else if @isStandard
             return exportObj.standardCheck(item_data, @faction, shipCheck)
         else if (not @isEpic)
-            if exportObj.settings?.ban_list?
+            if exportObj.settings?.ban_list? and exportObj.settings.ban_list
                 if not exportObj.standardCheck(item_data, @faction, shipCheck, true) then return false
             return exportObj.epicExclusions(item_data)
         else
-            if exportObj.settings?.ban_list?
+            if exportObj.settings?.ban_list? and exportObj.settings.ban_list
                 if not exportObj.standardCheck(item_data, @faction, shipCheck, true) then return false
             return true
 
