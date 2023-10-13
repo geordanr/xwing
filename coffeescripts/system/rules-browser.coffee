@@ -70,6 +70,7 @@ class exportObj.RulesBrowser
 
         $(window).on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
             @language = language
+            exportObj.loadRules(language)
             @prepareRulesData()
             @renderRulesList()
         @rule_search_rules_text.oninput = => @renderRulesList()

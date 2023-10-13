@@ -13,7 +13,7 @@ module.exports = (grunt) ->
                     'app/javascripts/manifest.js': ['coffeescripts/content/manifest.coffee']
                     'app/javascripts/translation-en.js': ['coffeescripts/content/cards-en.coffee']
                     'app/javascripts/xwingquickbuilds.js': ['coffeescripts/content/cards-quickbuilds.coffee']
-                    'app/javascripts/xwingrules.js': ['coffeescripts/content/rules.coffee']
+                    'app/javascripts/xwingrules.js': ['coffeescripts/content/rules-en.coffee']
                     'app/javascripts/translations.js': ['coffeescripts/translations/*.coffee']
         sass:
             options:
