@@ -4154,7 +4154,148 @@ exportObj.cardLoaders['Español'] = () ->
 
     chassis_translations =
         "Versatile Frame":
-           text: """You can equip 1 %TORPEDO% or %MISSILE% upgrade. While your revealed maneuver is blue, add white %BOOST% to your action bar."""
-
+           display_name: "Chasis Versátil"
+           text: """Puedes equipar 1 mejora %TORPEDO% o %MISSILE%. Mientras tu maniobra revelada es azul, agrega %BOOST% blanco a tu barra de acciones."""
+        "Advanced Targeting Computer":
+           display_name: "Ordenador de Apuntado Avanzado"
+           text: """Mientras realizas un ataque principal contra un defensor al que hayas fijado blanco, lanza 1 dado de ataque adicional y cambia 1 resultado %HIT% por un resultado %CRIT%."""
+        "Autothrusters":
+           display_name: "Autopropulsores"
+           text: """Después de realizar una acción, puedes realizar una acción %BARRELROLL% roja o %BOOST% roja."""
+        "Nimble Bomber":
+           display_name: "Bombardero Ágil"
+           text: """Si debes utilizar una plantilla %STRAIGHT% para soltar un dispositivo, puedes usar una plantilla %BANKLEFT% o %BANKRIGHT% de la misma velocidad en su lugar."""
+        "Full Throttle":
+           display_name: "A Fondo"
+           text: """Después de ejecutar completamente una maniobra de velocidad 3–5, puedes realizar una acción %EVADE%."""
+        "Experimental Scanners":
+           display_name: "Escáneres Experimentales"
+           text: """Puedes fijar blanco a un objetivo más allá de alcance 3. No puedes fijar blanco a un objetivo a alcance 1."""
+        "Stygium Array":
+           display_name: "Red Stygium"
+           text: """Después de des-camuflarte, puedes realizar una acción %EVADE%. Al inicio de la fase de desenlace, puedes gastar 1 ficha de evasión para ganar 1 ficha de camuflaje."""
+        "Sensor Blindspot":
+           display_name: "Punto Ciego del Sensor"
+           text: """Mientras realizas un ataque principal a alcance 0–1, no apliques el bono de alcance 0–1 y lanza 1 dado de ataque menos."""
+        "Microthrusters":
+           display_name: "Micropropulsores"
+           text: """Mientras realizas un tonel, <b>debes</b> usar la plantilla %BANKLEFT% o %BANKRIGHT% en lugar de la plantilla %STRAIGHT%."""
+        "Weapon Hardpoint":
+           display_name: "Emplazamiento para armas"
+           text: """Puedes equiparte con 1 mejora %CANNON%, %TORPEDO%, o %MISSILE%."""
+        "Advanced Droid Brain":
+           display_name: "Cerebro de Droide Avanzado"
+           text: """Después de realizar una acción %CALCULATE%, gana 1 ficha de cálculo."""
+        "Tail Gun":
+           display_name: "Cañón de Popa"
+           text: """Mientras tengas una nave acoplada, tienes un arma principal %REARARC% con un valor de ataque igual al del arma principal %FRONTARC% de la nave acoplada."""
+        "Locked and Loaded":
+           display_name: "Cargado y Listo"
+           text: """Mientras estás acoplado, después de que tu nave portadora realice un ataque principal %FRONTARC% o %TURRET%, puede realizar un ataque principal %REARARC% adicional."""
+        "Concordia Faceoff":
+           display_name: "Enfrentamiento Concordia"
+           text: """Mientras te defiendes, si el alcance de ataque es 1 y estás en el %FRONTARC% del atacante, cambia 1 resultado en un resultado %EVADE%."""
+        "Spacetug Tractor Array":
+           display_name: "Conjunto de Tractor de Remolque Espacial"
+           text: """ <strong>Acción:</strong> Elige una nave en tu %FRONTARC% a alcance 1. Gana 1 ficha de rayo tractor, o 2 fichas de rayo tractor si está en tu %BULLSEYEARC% a alcance 1."""
+        "Hope":
+           display_name: "Esperanza"
+           text: """Después de que otra nave aliada a alcance 0-3 sea destruida, puedes realizar una acción %FOCUS% o %BOOST%."""
+        "Solo":
+           display_name: "En Solitario"
+           text: """Mientras te defiendes o realizas un ataque, si no hay otras naves aliadas a alcance 0-1, puedes gastar 1 %CHARGE% para volver a tirar 1 de tus dados."""
+        "Sensitive Controls":
+           display_name: "Controles Sensibles"
+           text: """Durante la fase de sistema, puedes realizar una acción %BARRELROLL% roja o %BOOST% roja."""
+        "Vectored Cannons":
+           display_name: "Cañones Vectoriales"
+           text: """Durante la fase de sistema, puedes realizar una acción %BOOST% roja o %ROTATEARC% roja. Puedes girar tu indicador %SINGLETURRETARC% solo hacia tu %FRONTARC% o %REARARC%."""
+        "Advanced Fire Control":
+           display_name: "Control de Fuego Avanzado"
+           text: """Después de realizar un ataque %CANNON% o %MISSILE%, si tienes un objetivo bloqueado en el defensor, puedes realizar un ataque principal adicional contra el defensor."""
+        "Networked Calculations":
+           display_name: "Cálculos en Red"
+           text: """Mientras te defiendes o realizas un ataque, puedes gastar 1 ficha de cálculo de una nave aliada a alcance 0–1 para cambiar 1 resultado %FOCUS% en un resultado %EVADE% o %HIT%."""
+        "Independent Calculations":
+           display_name: "Cálculos Independientes"
+           text: """Mientras realizas una acción de %CALCULATE% blanca, puedes considerarla como roja para ganar 1 ficha de cálculo adicional. Las demás naves no pueden gastar tus fichas de cálculo utilizando la capacidad de nave <strong>Cálculos en Red</strong>."""
+        "Adaptive Ailerons":
+           display_name: "Alerones Adaptables"
+           text: """Antes de revelar tu selector de maniobras, si no estás estresado, <b>debes</b> acelerar. %LINEBREAK% <i>Errata (1.4.2): capacidad de la nave modificada</i>"""
+        "Pursuit Craft":
+           display_name: "Nave de Persecución"
+           text: """Después de ser desplegado, puedes fijar como blanco una nave que la nave aliada <strong>Hound's Tooth</strong> haya fijado como blanco."""
+        "Dead to Rights":
+           display_name: "Muerte Segura"
+           text: """Mientras realizas un ataque, si el defensor está en tu %BULLSEYEARC%, los dados de defensa no pueden ser modificados usando fichas verdes."""
+        "Comms Shuttle":
+           display_name: "Nave de Comunicación"
+           text: """Mientras estás acoplado, tu nave portadora gana %COORDINATE%. Antes de que tu nave portadora se active, puede realizar una acción %COORDINATE%."""
+        "Controlled Ailerons":
+           display_name: "Alerones Controlados"
+           text: """Antes de revelar tu selector de maniobras, si no estás estresado, puedes acelerar. %LINEBREAK% <i>Errata (1.4.2): capacidad de la nave modificada</i>"""
+        "Co-Pilot":
+           display_name: "Copiloto"
+           text: """Mientras estás acoplado, tu nave portadora se beneficia de tu habilidad de piloto además de la suya."""
+        "Rigged Energy Cells":
+           display_name: "Celdas de Energía Trucadas"
+           text: """Durante la fase de sistema, si no estás acoplado, pierde 1 %CHARGE%. Al final de la fase de activación, eres destruido si tienes 0 %CHARGE%. Antes de retirar tu peón, cada nave a alcance 0–1 sufre 1 daño %CRIT%."""
+        "Refined Gyrostabilizers":
+           display_name: "Giroestabilizadores Perfeccionados"
+           text: """Puedes girar tu indicador %SINGLETURRETARC% solo hacia tu %FRONTARC% o %REARARC%. Después de realizar una acción, puedes realizar una acción %BOOST% roja o %ROTATEARC% roja."""
+        "Heavy Weapon Turret":
+           display_name: "Torreta de Arma Pesada"
+           text: """Puedes girar tu indicador %SINGLETURRETARC% solo hacia tu %FRONTARC% o %REARARC%. Debes considerar el requisito previo %FRONTARC% de tus mejoras de %MISSILE% equipadas como %SINGLETURRETARC%."""
+        "Linked Battery":
+           display_name: "Batería Enlazada"
+           text: """Mientras realizas un ataque %CANNON%, lanza 1 dado adicional."""
+        "Notched Stabilizers":
+           display_name: "Estabilizadores Dentados"
+           text: """Mientras te mueves, ignora los asteroides."""
+        "Fine-Tuned Controls":
+           display_name: "Controles Afinados"
+           text: """Después de ejecutar completamente una maniobra, puedes gastar 1 %FORCE% para realizar una acción %BOOST% o %BARRELROLL%."""
+        "Pinpoint Tractor Array":
+           display_name: "Dispositivo Tractor Preciso"
+           text: """No puedes girar tu %SINGLETURRETARC% hacia tu %REARARC%. Después de ejecutar completamente una maniobra, puedes ganar 1 ficha de rayo tractor para realizar una acción %ROTATEARC%. %LINEBREAK%<i>Errata (1.4): añadido "completamente"</i>"""
+        "Plated Hull":
+           display_name: "Casco Blindado"
+           text: """Mientras te defiendes, si no estás dañado críticamente, cambia 1 resultado %CRIT% por un resultado %HIT%."""
+        "Explosion with Wings":
+           display_name: "Explosión con Alas"
+           text: """<strong>Preparación</strong>: Se te asigna 1 carta de daño boca abajo. Después de realizar una acción %SLAM%, puedes exponer 1 carta de daño para quitar 1 ficha de desarme."""
+        "Fine-Tuned Thrusters":
+           display_name: "Propulsores Ajustados"
+           text: """Después de ejecutar completamente una maniobra, si no estás agotado ni bajo tensión, puedes ganar 1 ficha de agotamiento o tensión para realizar una acción %LOCK% o %BARRELROLL%."""
+        "Networked Aim":
+           display_name: "Puntería en Red"
+           text: """No puedes gastar tus bloqueos para volver a lanzar dados de ataque. Mientras realizas un ataque, puedes volver a lanzar un número de dados de ataque igual o menor al número de bloqueos aliados en el defensor."""
+        "Fire Convergence":
+           display_name: "Convergencia de Fuego"
+           text: """Mientras una nave aliada realiza un ataque que no sea %SINGLETURRETARC%, si el defensor está en tu %SINGLETURRETARC%, puedes gastar 1 %CHARGE%. En ese caso, el atacante puede volver a lanzar hasta 2 dados de ataque."""
+        "Rotating Cannons":
+           display_name: "Cañones Giratorios"
+           text: """Puedes girar tu indicador %SINGLETURRETARC% solo hacia tu %FRONTARC% o %REARARC%. Debes considerar el requisito previo %FRONTARC% de tus mejoras %CANNON% equipadas como %SINGLETURRETARC%."""
+        "Twin Ion Engines":
+           display_name: "Motores Iónicos Gemelos"
+           text: """Ignora la restricción de nave "TIE" en las cartas de mejora."""
+        "Intuitive Controls":
+           display_name: "Controles Intuitivos"
+           text: """Durante la fase de sistema, puedes realizar una acción %BARRELROLL% violeta o %BOOST% violeta."""
+        "Intuitive Interface":
+           display_name: "Interfaz Intuitiva"
+           text: """Después de realizar una acción añadida a tu barra de acción por una mejora de %TALENT%, %ILLICIT%, o %MODIFICATION%, puedes realizar una acción %CALCULATE%."""
+        "Devastating Barrage":
+           display_name: "Bombardeo Devastador"
+           text: """Mientras realizas un ataque %TORPEDO% o %MISSILE%, si el defensor está en tu %BULLSEYEARC%, tus resultados %CRIT% no pueden ser anulados por resultados %EVADE%."""
+        "Pursuit Thrusters":
+           display_name: "Propulsores de Persecución"
+           text: """Durante la Fase de Sistema, puedes realizar una acción %BOOST%."""
+        "Versatile Frame":
+           display_name: "Chasis Versátil"
+           text: """Puedes equiparte con 1 mejora %TORPEDO% o %MISSILE%. Mientras tu maniobra revelada es azul, añade la acción blanca %BOOST% a tu barra de acciones."""
+        "Born for This":
+           display_name: "Nacido para Esto"
+           text: """Mientras otra nave aliada a alcance 0–2 defiende, si no estás bajo tensión, puede gastar tus fichas de concentración y evasión como si fueran suyas. En ese caso, ganas 1 ficha de tensión."""
 
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, chassis_translations
