@@ -188,16 +188,16 @@ exportObj.translations['Español'] =
         "Copy below XWS":"<p>Copie y pegue esto en una aplicación compatible con XWS.</p>"
         "Use INI prefix": "Poner INI como prefijo delante de los nombres"
         "Choose obstacles dialog": "Elija hasta tres obstáculos, para incluir en el enlace permanente para su uso en programas externos"
-        "Mark obstacles": "Marca los tres obstáculos que estás usando."""
-        "Scan QR-Code": "Escanear para abrir esta lista en el generador."""
+        "Mark obstacles": "Marca los tres obstáculos que estás usando."
+        "Scan QR-Code": "Escanear para abrir esta lista en el generador."
         "View in YASB": "Ver en YASB 2"
-        "YASB advertisment": "YASB 2 es un generador de escuadrones simple, rápido y fácil de usar para X-Wing Miniatures de Atomic Mass Games."""
+        "YASB advertisment": "YASB 2 es un generador de escuadrones simple, rápido y fácil de usar para X-Wing Miniatures de Atomic Mass Games."
         collectionContentShips: (translator, number) ->
-            "Tienes #{number} #{if number == 1 then 'modelo' else 'modelos'} de naves en tu colección."""
+            "Tienes #{number} #{if number == 1 then 'modelo' else 'modelos'} de naves en tu colección."
         collectionContentShipsAndPilots: (translator, data) -> # data[0] is ships, data[1] is pilots
-            "Tienes #{data[0]} #{if data[0] == 1 then 'modelo' else 'modelos'} de naves y #{data[1]} #{if data[1] == 1 then 'carta' else 'cartas'} de piloto en tu colección."""
+            "Tienes #{data[0]} #{if data[0] == 1 then 'modelo' else 'modelos'} de naves y #{data[1]} #{if data[1] == 1 then 'carta' else 'cartas'} de piloto en tu colección."
         collectionContentUpgrades: (translator, number) ->
-            "Tienes #{number} en tu colección."""
+            "Tienes #{number} en tu colección."
         varPointCostsPoints: (translator, points) ->
             "<b>Coste en puntos:</b> #{points} cuando "
         varPointCostsConditionAgility: (translator, values) ->
@@ -212,7 +212,7 @@ exportObj.translations['Español'] =
         "Placeholder Textsearch Browser": "Buscar nombre, texto o nave"
         noXYselected: (translator, xy) ->
             "No #{translator('ui', xy)} seleccionada"
-        "Select a card": "Seleccione una tarjeta de la lista de la izquierda."""
+        "Select a card": "Seleccione una tarjeta de la lista de la izquierda."
         yourXYsquads: (translator, faction) ->
             "Escuadrones de tu facción #{translator('faction', faction)}"
         reallyDeleteSquadXY: (translator, squadname) -> 
@@ -220,7 +220,7 @@ exportObj.translations['Español'] =
         "No saved squads": "No hay nada que ver aquí. ¡Ve a salvar un escuadrón!"
         "name required": "Se requiere un nombre"
         "Name in use": "Ya tienes una escuadra con ese nombre"
-        "select OAuth provider": "Seleccione uno de los proveedores de OAuth a continuación para iniciar sesión y comenzar a guardar escuadrones."""
+        "select OAuth provider": "Seleccione uno de los proveedores de OAuth a continuación para iniciar sesión y comenzar a guardar escuadrones."
         "OAuth explanation" : """
                      <p>
                          <a href="http://en.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> es un sistema de autorización que le permite probar su identidad en un sitio web sin tener que crear una nueva cuenta. En su lugar, le dice a algún proveedor con el que ya tiene una cuenta (por ejemplo, Google o Facebook) para demostrarle a este sitio web que dice quién es usted. De esa forma, la próxima vez que visites, este sitio recordará que eres ese usuario de Google.
@@ -251,10 +251,10 @@ exportObj.translations['Español'] =
                      <p>Este sitio siempre será gratuito y siempre 100 % disponible para que lo usen todas las personas. Sin embargo, si desea donar, hay un botón preparado para usted.</p>
                      <p><button class="btn btn-primary paypal" onclick="window.open('https://paypal.me/raithos');">Donar</button> <button class="btn btn-primary paypal" onclick="window.open('https://www.patreon.com/raithos');">Patreon</button></p>
          """
-        "Continue to OAuth provider": "Esto abrirá una nueva ventana que le permitirá autenticarse con el proveedor elegido. Es posible que deba permitir las ventanas emergentes para este sitio."""
+        "Continue to OAuth provider": "Esto abrirá una nueva ventana que le permitirá autenticarse con el proveedor elegido. Es posible que deba permitir las ventanas emergentes para este sitio."
         "iOS requires cross-site control": """Debido a una nueva función en los sistemas iOS, OAuth no funcionará a menos que habilite el "control entre sitios"."""
-        "login in progress": "El inicio de sesión de OAuth está en progreso. Finalice la autorización en el proveedor especificado utilizando la ventana que se acaba de crear."""
-        "Squads reloaded": "Todos los escuadrones de esa facción han sido recargadas."""
+        "login in progress": "El inicio de sesión de OAuth está en progreso. Finalice la autorización en el proveedor especificado utilizando la ventana que se acaba de crear."
+        "Squads reloaded": "Todos los escuadrones de esa facción han sido recargadas."
         "Sure to delete?": "¿Estás seguro de que quieres eliminar este escuadrón?"
         "Unsaved Changes Warning": "No has guardado los cambios en este escuadrón. ¿Quieres volver y guardar?"
         adds: (translator, data) -> # data will most likely be a string of some symbols, but you never know
@@ -268,7 +268,7 @@ exportObj.translations['Español'] =
         "Unnamed Squadron": "Escuadrón sin nombre"
         "Unsaved Squadron": "Escuadrón sin guardar"
         "New Squadron": "Nuevo Escuadrón"
-        "Name your squad...""": "Nombra tu Escuadrón..."""
+        "Name your squad...": "Nombra tu Escuadrón..."
         "Your Collection": "Mi colección"
         "Only available from 1st edition": "Disponible únicamente en a primera edición"
         "Randomize!": "¡Aleatorio!"
@@ -299,9 +299,9 @@ exportObj.translations['Español'] =
         "Save": "Guardar"
         "Unsaved Changes": "Cambios no guardados"
         "Name is available": "El nombre está disponible"
-        "Checking name availability...""": "Comprobando disponibilidad de nombres..."""
+        "Checking name availability...": "Comprobando disponibilidad de nombres..."
         "Go Back": "Volver"
-        "Save Squad As...""": "Guardar escuadrón como..."""
+        "Save Squad As...": "Guardar escuadrón como..."
         "Convert": "Convertir"
         "Convert to Extended?": "¿Convertir a extendido?"
         "Recalculate Points": "Recalcular Puntos"
@@ -314,7 +314,7 @@ exportObj.translations['Español'] =
         "Delete Selected": "Eliminar la selección"
         "Archive Selected": "Archivar la selección"
         "Select All": "Seleccionar todo"
-        "Fetching squads...""": "Recuperando escuadrones..."""
+        "Fetching squads...": "Recuperando escuadrones..."
         "Well done!": "¡Bien hecho!"
         "Log in with OAuth": "Iniciar sesión con OAuth"
         "Log In": "Iniciar sesión"
@@ -345,7 +345,7 @@ exportObj.translations['Español'] =
         "Sort by": "Ordena por"
         "Type (by Points)": "Tipo (por puntos)"
         "Type (by Name)": "Tipo (por nombre)"
-        "Select a card": "Selecciona una carta de la lista de la izquierda."""
+        "Select a card": "Selecciona una carta de la lista de la izquierda."
         "Sort cards by": "Ordena las cartas por"
         "Recurring": "Recurrente"
         "Not recurring": "No recurrente"
@@ -402,7 +402,7 @@ exportObj.translations['Español'] =
         "New Squad": "Nuevo escuadrón"
         "Load Squad": "Cargar escuadrón"
         "Delete": "Borrar"
-        "Save As...""": "Guardar como..."""
+        "Save As...": "Guardar como..."
         "Misc Settings": "Otros parámetros"
         "Randomizer Options": "Opciones del aleatorizador"
         "Print/Export": "Imprimir/Exportar"
@@ -453,7 +453,7 @@ exportObj.translations['Español'] =
         "Keywords:": "Palabras clave:"
         "Show Points Destroyed": "Mostrar puntos destruidos"
         "Hide Points Destroyed": "Ocultar puntos destruidos"
-        "This squad was created for an older version of X-Wing.""": "Este escuadrón se creó para una versión anterior de X-Wing."""
+        "This squad was created for an older version of X-Wing.": "Este escuadrón se creó para una versión anterior de X-Wing."
         "Damage Threshold": "Umbral de daño"
         "X-Wing Squadron by YASB 2: ": "Escuadrón X-Wing por YASB"
         "Ship Cost": "Coste de nave"
@@ -462,12 +462,12 @@ exportObj.translations['Español'] =
         "All factions": "Todas las facciones"
         "Has multiple of the chosen slots": "Tiene múltiplo de los espacios elegidos"
         "keywords": "palabras clave"
-        "Checking auth status...""": "Comprobando estado de autenticación"
-        "New squad saved successfully.""": "Nuevo escuadrón guardado."""
-        "Squad updated successfully.""": "Escuadrón actualizado con éxito."""
+        "Checking auth status...": "Comprobando estado de autenticación"
+        "New squad saved successfully.": "Nuevo escuadrón guardado."
+        "Squad updated successfully.": "Escuadrón actualizado con éxito."
         "Unselect": "Anular selección"
         "Sort cards by": "Ordenar cartas por"
-        "Saving squad...""": "Guardando escuarón..."""
+        "Saving squad...": "Guardando escuarón..."
         "Notes:": "Notas:"
         "XWS QR-Code": "Código QR XWS"
 
@@ -1798,7 +1798,7 @@ exportObj.cardLoaders['Español'] = () ->
         '"Zeb" Orrelios (TIE Fighter)':
            display_name: """“Zeb” Orrelios (TIE Fighter)"""
            text: """Mientras te defiendes, los resultados %CRIT% se neutralizan antes que los resultados %HIT%."""
-        "Prototype Baktoid":
+        "Baktoid Prototype":
            display_name: """Prototipo baktoide"""
            text: """Mientras realizas un ataque especial, si una nave aliada con la capacidad de nave <strong>Calculos en Red</strong> tiene un objetivo trabado en el defensor, puedes ignorar los requisitos %FOCUS%, %CALCULATE% o %LOCK% de este ataque."""
         "Haor Chall Prototype":
@@ -1831,7 +1831,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Commandant Goran":
            display_name: """Comandante Goran"""
            text: """Al comienzo de la Fase de Combate, elige una nave aliada a alcance 0-3 con una iniciativa menor que la tuya. La nave elegida gana 1 ficha de evasión y retira 1 ficha roja que no sea de tensión. %LINEBREAK% <i>Errata (1.4): capacidad modificada</i>"""
-        "Gideon Hask (Interceptor TIE)":
+        "Gideon Hask (TIE Interceptor)":
            display_name: """Gideon Hask (Interceptor TIE)"""
            text: """Mientras realizas un ataque contra un defensor dañado, lanza 1 dado de ataque adicional."""
         "Lieutenant Lorrir":
@@ -3609,7 +3609,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Zam Wesell":
            display_name: """Zam Wesell"""
            text: """<strong>Preparación:</strong> Pierde 2 %CHARGE%. %LINEBREAK>Durante la fase de sistema, puedes asignarte, boca abajo, 1 de tus estados secretos: %LINEBREAK><strong>Deberías Agradecerme</strong> %LINEBREAK><strong>Deberías Hacer Negocios</strong>"""
-        '"Alpha-3B "Besh"':
+        'Alpha-3B "Besh"':
            display_name: """Alpha-3B 'Besh'"""
            text: """Mientras realizas un ataque principal, puedes gastar tu bloqueo en el defensor para cambiar 1 de tus resultados en blanco o %FOCUS% en un resultado %HIT%."""
         "Thermal Detonators":
