@@ -1401,7 +1401,7 @@ class exportObj.SquadBuilder
                 @container.trigger 'xwing:pointsUpdated'        
 
         @obstacles_select.change (e) =>
-            @current_obstacles = @obstacles_select.val()
+            @current_obstacles = @obstacles_select.val().split(',')
             @current_squad.additional_data.obstacles = @current_obstacles
             @current_squad.dirty = true
             @showObstaclesSelectInfo()
@@ -2017,11 +2017,11 @@ class exportObj.SquadBuilder
         else if @isStandard
             return exportObj.standardCheck(item_data, @faction, shipCheck)
         else if (not @isEpic)
-            if exportObj.settings?.ban_list?
+            if exportObj.settings?.ban_list? and exportObj.settings.ban_list
                 if not exportObj.standardCheck(item_data, @faction, shipCheck, true) then return false
             return exportObj.epicExclusions(item_data)
         else
-            if exportObj.settings?.ban_list?
+            if exportObj.settings?.ban_list? and exportObj.settings.ban_list
                 if not exportObj.standardCheck(item_data, @faction, shipCheck, true) then return false
             return true
 
