@@ -1881,7 +1881,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Bevor ein befreundetes Schiff in Reichweite 1-2 kämpft, falls ein feindliches Schiff in seinem %FRONTARC% in Reichweite 1 ist, darf jenes befreundete Schiff 1 roten Nicht-Zielerfassungsmarker entfernen."
         "Bodica Venj":
            display_name: "Bodica Venj"
-           text: "Nachdem ein anderes befreundetes Schiff verteidigt hat, falls du nicht erschöpft bist, darfst du einen Bonus-Primärangriff gegen denAngreifer durchführen. Falls du das tust, erhältst du, nachdem du jenen Angriff durchgeführt hast, 1 Erschöpfungsmarker."
+           text: "Nachdem ein anderes befreundetes Schiff verteidigt hat, falls du nicht erschöpft bist, darfst du einen Bonus-Primärangriff gegen den Angreifer durchführen. Falls du das tust, erhältst du, nachdem du jenen Angriff durchgeführt hast, 1 Erschöpfungsmarker."
         "Dirk Ullodin":
            display_name: "Dirk Ullodin"
            text: "Nachdem du ein rotes Manöver vollständig ausgeführt hast oder eine rote Aktion durchgeführt hast, darfst du ein feindliches Schiff in deinem %FRONTARC% in Reichweite 1 als Ziel erfassen."
@@ -2394,9 +2394,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Neimoidian Grasp":
            display_name: """Neimoidianischer Griff"""
            text: """Nachdem du einen Angriff durchgeführt hast, darfst du eine rote %EVADE%-Aktion durchführen.%LINEBREAK%Solange du verteidigst, falls du ausweichst, darfst du 1 zusätzlichen Verteidigungs­würfel werfen."""
-        "Outrider":
-           display_name: """Outrider"""
-           text: """Solange du einen Angriff durchführst, der durch ein Hindernis versperrt wird, wirft der Verteidiger 1 Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein Manöver vollständig ausgeführt hast, falls du dich durch ein Hindernis hindurchbewegt oder dich mit ihm überschnitten hast, darfst du 1 deiner roten oder orangefarbenen Marker entfernen.%LINEBREAK%<i>Umformulierung zur Klarstellung</i>"""
+#        "Outrider":
+#           display_name: """Outrider"""
+#           text: """Solange du einen Angriff durchführst, der durch ein Hindernis versperrt wird, wirft der Verteidiger 1 Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein Manöver vollständig ausgeführt hast, falls du dich durch ein Hindernis hindurchbewegt oder dich mit ihm überschnitten hast, darfst du 1 deiner roten oder orangefarbenen Marker entfernen.%LINEBREAK%<i>Umformulierung zur Klarstellung</i>"""
         "Phantom":
            display_name: """Phantom"""
            text: """Du kannst in Reichweite 0-1 andocken."""
