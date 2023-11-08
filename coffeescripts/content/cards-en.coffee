@@ -2102,7 +2102,7 @@ exportObj.cardLoaders.English = () ->
            text: """Gain a %FRONTARC% primary weapon with a value of “3.”%LINEBREAK%During the End Phase, do not remove up to 2 focus tokens."""
         "Outrider":
            display_name: """Outrider"""
-           text: """While you perform a primary attack at range 3, roll 1 additional attack die. %LINEBREAK% While you perform an attack that is obstructed by an obstacle, you may change one of the defender's %EVADE% results to a %FOCUS% result. %LINEBREAK% <i>Errata (since errata 1.8): new gametext</i>"""
+           text: """While you perform a primary attack at range 3, roll 1 additional attack die. %LINEBREAK% While you perform an attack that is obstructed by an obstacle, you may change one of the defender's %EVADE% results to a %FOCUS% result. %LINEBREAK% <i>Errata (since rules reference 1.4.6): new gametext</i>"""
         "Phantom":
            display_name: """Phantom"""
            text: """You can dock at range 0-1."""

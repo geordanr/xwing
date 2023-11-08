@@ -1860,19 +1860,19 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Solange ein feindliches Schiff, das in Reichweite 0-1 ein deinem %FRONTARC% ist, einen Angriff durchführt, darf der Verteidiger 1 Leerseiten-Egebnis in ein %FOCUS%-Ergebnis ändern."
         "Obi-Wan Kenobi (Eta-2)":
            display_name: "Obi-Wan Kenobi "
-           text: "Nachdem du oder ein befreundetes <strong>ANAKIN SKYWALKER</strong>-Schiff in Reichweite 0-3 ein Manöver ausgeführt hat, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiffe als anderes befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, erhält jenes Schiff 1 Fokusmarker."
+           text: "Nachdem du oder ein befreundetes <strong>Anakin Skywalker</strong>-Schiff in Reichweite 0-3 ein Manöver ausgeführt hat, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiffe als anderes befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, erhält jenes Schiff 1 Fokusmarker."
         "Anakin Skywalker (Eta-2)":
            display_name: "Anakin Skywalker "
-           text: "Nachdem du oder ein befreundetes <strong>OBi-WAN-KENOBI</strong>-Schiff in Reichweite 0-3 ein Manöver ausgeführt hat, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiffe als anderes befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, entfernt jenes Schiff 1 roten Marker deiner Wahl."
+           text: "Nachdem du oder ein befreundetes <strong>Obi-Wan Kenobi</strong>-Schiff in Reichweite 0-3 ein Manöver ausgeführt hat, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiffe als anderes befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, entfernt jenes Schiff 1 roten Marker deiner Wahl."
         "Anakin Skywalker (SoC)":
            display_name: "Anakin Skywalker (SoC)"
-           text: "Nachdem du oder ein befreundetes <strong>OBI-WAN KENOBI</strong>-Schiff in Reichweite 0-3 ein Manöver vollständig ausgeführt hast, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiff als andere befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, darf jenes Schiff eine %BARRELROLL%-Aktion durchführen."
+           text: "Nachdem du oder ein befreundetes <strong>Obi-Wan Kenobi</strong>-Schiff in Reichweite 0-3 ein Manöver vollständig ausgeführt hast, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiff als andere befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, darf jenes Schiff eine %BARRELROLL%-Aktion durchführen."
         "Obi-Wan Kenobi (SoC)":
            display_name: "Obi-Wan Kenobi (SoC)"
-           text: "Nachdem du oder ein befreundetes <strong>ANAKIN SKYWALKER</strong>-Schiff in Reichweite 0-3 ein Manöver vollständig ausgeführt hast, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiff als andere befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, darf jenes Schiff eine %BOOST%-Aktion durchführen."
+           text: "Nachdem du oder ein befreundetes <strong>Anakin Skywalker</strong>-Schiff in Reichweite 0-3 ein Manöver vollständig ausgeführt hast, falls in Reichweite 0-1 jenes Schiffes mehr feindliche Schiff als andere befreundete Schiffe sind, darfst du 1 %FORCE% ausgeben. Falls du das tust, darf jenes Schiff eine %BOOST%-Aktion durchführen."
         "Shaak Ti (SoC)":
            display_name: "Shaak Ti (SoC)"
-           text: "Zu Beginn der Endphase darfst du eine violette %COORDINATE% -Aktion durchführen, auch solange du gestresst bist.%LINEBREAK%Nachdem du eine %COORDINATE% -Aktion durchgeführt hast, falls die gewählte Schiffsfähigkeit <strong>DAFÜR GEBOREN</strong> hat, darfst du 1 zusätzliches Schiff koordinieren."
+           text: "Zu Beginn der Endphase darfst du eine violette %COORDINATE% -Aktion durchführen, auch solange du gestresst bist.%LINEBREAK%Nachdem du eine %COORDINATE% -Aktion durchgeführt hast, falls die gewählte Schiffsfähigkeit <strong>Dafür Geboren</strong> hat, darfst du 1 zusätzliches Schiff koordinieren."
         "Kit Fisto":
            display_name: "Kit Fisto"
            text: "Solange ein anderes befreundete Schiff verteidigt, falls der Angreifer in seinem %BULLSEYEARC% ist, darfst du 1 %FORCE% ausgeben, um 1 Leerseiten-Ergebnis des Verteidigers in ein %FOCUS%-Ergebnis zu ändern."
@@ -2058,7 +2058,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Zusätzlich zu ihrer Aufgabe , Anführer der Separatisten zu beschützen, werden Magnawächter-Droiden manchmal auch in den flinken Sternenjäger der REnegat-Klasse eingesetzt, um ihr Freinde zu vernichten."
         "MagnaGuard Protector":
            display_name: "Beschützer der Magnawächter"
-           text: "<b>Aufbau</b> Nachdem die Steitkräfte platziert worden sind, ordne 1 befreundeten Schiff ausser <b> BEschützer der Mangawächter</b> den Zustand <strong>BESCHÜTZT</strong> zu."
+           text: "<b>Aufbau</b> Nachdem die Steitkräfte platziert worden sind, ordne 1 befreundeten Schiff außer <strong>Beschützer der Mangawächter</strong> den Zustand <strong>Beschützt</strong> zu."
         "Durge":
            display_name: "Durge"
            text: 'Solange du verteidigst, darfst du nachm dem Schritt "Ergebnisse neutralisieren", falls es mehr %HIT% /%CRIT%- Ergebnisse als deine aktiven %SHIELD% gibt, 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis ändern und 1 %HIT%-Ergebnis negieren.'
@@ -2094,7 +2094,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Während eines Angriffs, bevor ein Schiff in Reichweite 0-2 Angriffs- oder Verteidigungswürfel wirft, falss alle deine %FORCE% aktiv sind, darfst du 1 %FORCE% ausgeben und ein Ergebnis benennen. Falls der Wurf das benannte Ergebnis nicht enthält, muss das Schiff 1 Würfel auf jenes Ergebnis ändern."
         "The Mandalorian":
            display_name: "Der Mandalorianer"
-           text: "Solange du verteidigst oder ein Angriff durchführst, falls du im %FORNTARC% in Reichweite 1-2 von 2 oder mehr feindlichen Schiffen bist, darfst du 1 deiner Leerseiten-Ergebnisse in ein %FOCUS% -Ergebnis ändern."
+           text: "Solange du verteidigst oder ein Angriff durchführst, falls du im %FRONTARC% in Reichweite 1-2 von 2 oder mehr feindlichen Schiffen bist, darfst du 1 deiner Leerseiten-Ergebnisse in ein %FOCUS% -Ergebnis ändern."
         "Q9-0":
            display_name: "Q9-0"
            text: "Nachdem du ein Expertenmanöver vollständig ausgeführt hast, darfst du eine %CALCULATE% oder %BARRELROLL%-Aktion durchführen , auch solange du gestresst bist. Falls du das tust, erhältst du 1 Anstrengungsmarker."
@@ -2310,10 +2310,10 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Nachdem du eine %BARRELROLL% -Aktion durchgeführt hast, darfst du eine rote %LOCK% -Aktion durchführen. Falls du das tust, bevordu die %LOCK% -Aktion durchführst, darfst du 1 Anstrengungsmarker erhalten, um sie zu behandeln, als wäre sie weiß."
         '"Axe" (SoC)':
            display_name: "„Axe“ (SoC)"
-           text: "Nachdem du einen Angriff durchgeführt hast, darfst du ein anderes befreundetes Schiff mit der Schiffsfähigkeit <strong>DAFÜR GEBOREN</strong> in Reichweite0-2 in deinem %LEFTARC% oder %RIGHTARC% wählen. Das gewählte Schiff erfasst den Verteidiger als Ziel."
+           text: "Nachdem du einen Angriff durchgeführt hast, darfst du ein anderes befreundetes Schiff mit der Schiffsfähigkeit <strong>Dafür Geboren</strong> in Reichweite0-2 in deinem %LEFTARC% oder %RIGHTARC% wählen. Das gewählte Schiff erfasst den Verteidiger als Ziel."
         '"Slammer"':
            display_name: "„Slammer“"
-           text: "NAchdem du ein Manöver vollständig ausgeführt hast, darfst du 2 %CHARGE% ausgeben, um eine %SLAM%-Aktion durchzuführen, auch solange du gestresst bist."
+           text: "Nachdem du ein Manöver vollständig ausgeführt hast, darfst du 2 %CHARGE% ausgeben, um eine %SLAM%-Aktion durchzuführen, auch solange du gestresst bist."
         "Morna Kee":
            display_name: "Morna Kee"
            text: "Während der Endphase darfst du 1 %CHARGE% ausgeben, um 1 deiner Verstärkungsmarker auf deinem anderen vollten Winkel umzudrehen, anstatt ihn zu entfernen."
@@ -2340,7 +2340,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Bevor du kämpft, darfst du 1 grünen Marker und 1 %CHARGE% ausgeben. Falls du das tust, darfst du ein anderes Schiff in Reichweite 0-1 wählen, das nicht gestresst ist. Das gewählte Schiff erhält 1 Stressmarker."
         "Bossk (Z-95 Headhunter)":
            display_name: "Bossk "
-           text: 'Solange du einen Primärangriff durchführst, nach dem Schritt „Ergebnisse neutralisieren“, darfst du 1 %CRIT%-Ergebnis ausgeben, um 2 %HIT%-Ergebniss hinzuzufügen.'
+           text: 'Solange du einen Primärangriff durchführst, nach dem Schritt „Ergebnisse neutralisieren“, darfst du 1 %CRIT%-Ergebnis ausgeben, um 2 %HIT%-Ergebnisse hinzuzufügen.'
         "7th Sky Corps Pilot":
            display_name: "Pilot des 7. Luftkorps"
            text: "Der Z-95-Sternenjäger wird für seine Anpassungs- und Widerstandsfähigkeit respektiert. Das Modell für die republikanischen Klontruppler wurde entwickelt, um den einzigartigen Fähigkeiten seiner Piloten gerecht zu werden."
@@ -2394,9 +2394,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Neimoidian Grasp":
            display_name: """Neimoidianischer Griff"""
            text: """Nachdem du einen Angriff durchgeführt hast, darfst du eine rote %EVADE%-Aktion durchführen.%LINEBREAK%Solange du verteidigst, falls du ausweichst, darfst du 1 zusätzlichen Verteidigungs­würfel werfen."""
-#        "Outrider":
-#           display_name: """Outrider"""
-#           text: """Solange du einen Angriff durchführst, der durch ein Hindernis versperrt wird, wirft der Verteidiger 1 Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein Manöver vollständig ausgeführt hast, falls du dich durch ein Hindernis hindurchbewegt oder dich mit ihm überschnitten hast, darfst du 1 deiner roten oder orangefarbenen Marker entfernen.%LINEBREAK%<i>Umformulierung zur Klarstellung</i>"""
+        "Outrider":
+           display_name: """Outrider"""
+           text: """Solange du einen Primärangriff auf Reichweite 3 durchführst, wirf 1 zusätzlichen Angriffswürfel.%LINEBREAK%Wenn du einen Angriff durchführst, der durch ein Hindernis versperrt wird, darfst du 1 der %EVADE%-Ergebnisse des Verteidigers in ein %FOCUS%-Ergebnis ändern. %LINEBREAK%<i>Inoffizielle Übersetzung der neuen englischen Fähigkeit (Rules Reference 1.4.6)</i>"""
         "Phantom":
            display_name: """Phantom"""
            text: """Du kannst in Reichweite 0-1 andocken."""
@@ -2525,7 +2525,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<strong>Setup:</strong>Equip this side faceup and place 3 calculate tokens on this card. %LINEBREAK% At the start of the Engagement Phase, you may choose a friendly ship at range 0-3 and remove 1 calculate token from this card to have that ship gain a matching token. Then, if there are no calculate tokens on this card, flip it. %LINEBREAK%<strong>Cyborg (Rückseite):</strong> Wirf während der Systemphase 1 Angriffswürfel. Bei einem %HIT%- oder %CRIT%-Ergebnis erhältst du 1 Berechnungsmarker. Ansonsten erhältst du 1 Störsignalmarker.%LINEBREAK%<strong>Aktion:</strong> Transferiere 1 Berechnungs- oder 1 Störsignalmarker auf ein Schiff in Reichweite 0-3."""
         "Agent of the Empire":
            display_name: """Agent des Imperiums"""
-           text: """Du bist ein<b>Schwarmführer</b>. Deine Flügelmänner müssen 2-5 TIE/ln-Jäger sein.%LINEBREAK%Solange du verteidigst, dürfen bis zu 2 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT% - oder %CRIT%-Schaden erleiden, um ein passendes Ergebnis zu negieren."""
+           text: """Du bist ein <strong>Schwarmführer</strong>. Deine Flügelmänner müssen 2-5 TIE/ln-Jäger sein.%LINEBREAK%Solange du verteidigst, dürfen bis zu 2 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT% - oder %CRIT%-Schaden erleiden, um ein passendes Ergebnis zu negieren."""
         "Agile Gunner":
            display_name: """Wendiger Schütze"""
            text: """Während der Endphase darfst du deinen %SINGLETURRETARC%-Anzeiger drehen."""
@@ -2561,7 +2561,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Füge den&nbsp;%GUNNER%-Slot hinzu.%LINEBREAK%<strong>Angriff (%LOCK%):</strong> Erhalte 1 Ionenmarker, um diesen Angriff durchzuführen. Falls dieser Angriff trifft, erleidet der Verteidiger 1 zusätzlichen %HIT%/%CRIT%-Schaden für jedes passende nicht-negierte Ergebnis nach dem ersten."""
         "B6 Blade Wing Prototype":
            display_name: """Blatt-Flügler-Prototyp B6"""
-           text: """Füge den &nbsp;%GUNNER%-Slot hinzu."""
+           text: """Füge den %GUNNER%-Slot hinzu."""
         "BB Astromech":
            display_name: """BB-Astromechdroide"""
            text: """Während der Systemphase darfst du 1 %CHARGE% ausgeben, um eine %BARRELROLL%-Aktion durchzuführen.%LINEBREAK%<i>Errata: Timing geändert und Bedingung entfernt</i>"""
@@ -2639,7 +2639,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Am Ende der Kampfphase erhält jedes nicht gestresste feindliche Schiff in Reichweite 0-1 1 Stressmarker."""
         "Carlist Rieekan":
            display_name: """Carlist Rieekan"""
-           text: """RieekanNachdem ein befreundetes Schiff in Reichweite 0-2 zerstört worden ist, darfst du ein befreundetes Schiff in Reichweite 0-2 wählen. Falls du das tust, darf es eine rote%EVADE%&nbsp;-Aktion durchführen."""
+           text: """Nachdem ein befreundetes Schiff in Reichweite 0-2 zerstört worden ist, darfst du ein befreundetes Schiff in Reichweite 0-2 wählen. Falls du das tust, darf es eine rote %EVADE%-Aktion durchführen."""
         "Cassian Andor":
            display_name: """Cassian Andor"""
            text: """Während der Systemphase darfst du 1 feindliches Schiff in Reichweite 1-2 wählen und laut eine Flugrichtung und Geschwindigkeit raten, dann sieh dir das Rad jenes Schiffes an. Falls du die Flugrichtung und Geschwindigkeit des gewählten Schiffes richtig geraten hast, darfst du dein Rad auf ein anderes Manöver einstellen."""
@@ -2838,7 +2838,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Solange du einen Angriff durchführst, falls du den Verteidiger als Ziel erfasst hast, darfst du 1 Angriffswürfel neu werfen. Falls du das tust, kannst du während dieses Angriffs deine Zielerfassung nicht ausgeben."""
         "First Order Elite":
            display_name: """Elite der Ersten Ordnung"""
-           text: """Du bist ein<b>Schwarmführer</b>. Deine Flügelmänner müssen 2 oder 3 TIE/eo-Jäger oder TIE/se-Jäger sein.%LINEBREAK%Solange du verteidigst, dürfen bis zu 2 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT% - oder %CRIT% -Schaden erleiden, um ein passendes Ergebnis zu negieren."""
+           text: """Du bist ein <strong>Schwarmführer</strong>. Deine Flügelmänner müssen 2 oder 3 TIE/eo-Jäger oder TIE/se-Jäger sein.%LINEBREAK%Solange du verteidigst, dürfen bis zu 2 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT% - oder %CRIT% -Schaden erleiden, um ein passendes Ergebnis zu negieren."""
         "Foresight":
            display_name: """Vorausahnung"""
            text: """Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, darfst du 1&nbsp;%FORCE% ausgeben, um diesen Angriff als Bonusangriff gegen es durchzuführen.%LINEBREAK%<strong>Angriff:</strong> Du darfst 1&nbsp;%FOCUS% -Ergebnis in ein&nbsp;%HIT%&nbsp;-Ergebnis ändern; anderweitig können deine Würfel nicht modifiziert werden."""
@@ -2857,7 +2857,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
         "General Grievous":
            display_name: """General Grievous"""
            text: """Solange du verteidigst, falls nach dem Schritt „Ergebnisse neutralisieren“ 2 oder mehr %HIT%/%CRIT%-Ergebnisse vorhanden sind, darfst du 1 %CHARGE% ausgeben, um 1 %HIT%- oder %CRIT% -Ergebnis zu negieren. %LINEBREAK%Nachdem ein befreundetes Schiff zerstört worden ist, stelle 1 %CHARGE% wieder her."""
-        "General Grievous":
+        "General Grievous (Command)":
            display_name: """General Grievous"""
            text: """Während der Kampfphase, bei Initiative 4, darfst du 1 %ENERGY% ausgeben, um einen Bonus-<hardpoint>-Angriff durchzuführen.%LINEBREAK%Du kannst Angriffe gegen befreundete Schiffe durchführen.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, falls der Verteidiger zerstört worden ist, darf jedes befreundete Schiff in Reichweite 0-2 von ihm eine %CALCULATE%-Aktion durchführen."""
         "General Hux":
@@ -2961,7 +2961,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """<strong>Geschlossen: </strong>Solange du einen Primärangriff durchführst, falls der Verteidiger nicht in deinem %BULLSEYEARC% ist, wirf 1 Angriffswürfel weniger. Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Geöffnet:</strong> (Keine %BARRELROLL%, %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BARRELROLL%</r>)  Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Intercept Booster":
            display_name: """Abfang-Booster"""
-           text: """<strong>Attached:</strong> Equip this side faceup. (Added Actions available on this side only) During the System Phase, gain 1 disarm token unless you flip this card. At the end of the End Phase, if you have no active %CHARGE%, flip this card. %LINEBREAK%<strong>Ausgeklinkt:</strong> (Die Aktionen stehen nicht zur Verfügung))<i class = flavor_text>Ohne auf die Zerbrechlichkeit eines organischen Piloten Rücksicht nehmen zu müssen, können Tri-Droidenjäger enorme Beschleunigungen aushalten und punktgenaue Manöver fliegen. Sie sind mit Booster-Raketen ausgestattet und werden aus den Abschussrohren von Großkampfschiffen der Separatisten abgefeuert, um so feindliche Schiffe jenseits der Reichweite eines normal gestarteten Sternenjägers abzufangen.</i>"""
+           text: """<strong>Attached:</strong> Equip this side faceup. (Added Actions available on this side only) During the System Phase, gain 1 disarm token unless you flip this card. At the end of the End Phase, if you have no active %CHARGE%, flip this card. %LINEBREAK%<strong>Ausgeklinkt:</strong> (Die Aktionen stehen nicht zur Verfügung))%LINEBREAK%<i class = flavor_text>Ohne auf die Zerbrechlichkeit eines organischen Piloten Rücksicht nehmen zu müssen, können Tri-Droidenjäger enorme Beschleunigungen aushalten und punktgenaue Manöver fliegen. Sie sind mit Booster-Raketen ausgestattet und werden aus den Abschussrohren von Großkampfschiffen der Separatisten abgefeuert, um so feindliche Schiffe jenseits der Reichweite eines normal gestarteten Sternenjägers abzufangen.</i>"""
         "Interloper Turn":
            display_name: """Knoten-Wende"""
            text: """Bevor du ein Wendemanöver (%TURNLEFT%&nbsp;oderr&nbsp;%TURNRIGHT%) mit Geschwindigkeit 1-2 oder eine Koiogran-Wende (%KTURN%) mit Geschwindigkeit 1-2 ausführst, falls du in Reichweite 0-1 eines Asteroiden, eines Konstrukts oder eines riesigen Schiffes bist, darfst du 1 Fangstrahlmarker erhalten.%LINEBREAK%<i>Errata: „Bevor“ statt „Nachdem“</i>"""
@@ -3495,7 +3495,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Nachdem du einen Primärangriff durchgeführt hast, darfst du unter Verwendung eines %SINGLETURRETARC%, aus dem du in dieser Runde noch nicht angegriffen hast, einen Bonus-%SINGLETURRETARC%-Angriff durchführen."""
         "Veteran Wing Leader":
            display_name: """Erfahrener Schwarmführer"""
-           text: """Du bist ein<b>Schwarmführer</b>. Deine Flügelmänner müssen 2-5 andere Schiffe deiner Schiffsart sein.%LINEBREAK%Solange du verteidigst, dürfen bis zu 2 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT%- oder %CRIT%-Schaden erleiden, um ein passendes Ergebnis zu negieren."""
+           text: """Du bist ein <strong>Schwarmführer</strong>. Deine Flügelmänner müssen 2-5 andere Schiffe deiner Schiffsart sein.%LINEBREAK%Solange du verteidigst, dürfen bis zu 2 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT%- oder %CRIT%-Schaden erleiden, um ein passendes Ergebnis zu negieren."""
         "Weapons Systems Officer":
            display_name: """Waffensystemoffizierin"""
            text: """Nachdem du einen Spezialangriff mit der %LOCK%-Voraussetzung durchgeführt hast, darfst du den Verteidiger als Ziel erfassen."""
@@ -3537,7 +3537,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: """Füge&nbsp;%CANNON%-, %TURRET%-, und %MISSILE%-Slots hinzu.%LINEBREAK%<strong>Bonusangriff:</strong> Gib 1&nbsp;%ENERGY% aus, um einen %CANNON%-, %TURRET%-, oder %MISSILE%-Angriff durchzuführen."""
         "Dreadnought Hunter":
            display_name: """Dreadnought-Jäger"""
-           text: """JägerSolange du einen Angriff gegen ein riesiges Schiff durchführst, falls der Angriff dem Verteidiger eine offene Schadenskarte zuteilt und der Verteidiger in deinem %BULLSEYEARC%, ist, darfst du den Effekt <b>Präzisionsschuss</b>  anwenden, selbst wenn du nicht in dem angegebenen Winkel bist."""
+           text: """Solange du einen Angriff gegen ein riesiges Schiff durchführst, falls der Angriff dem Verteidiger eine offene Schadenskarte zuteilt und der Verteidiger in deinem %BULLSEYEARC%, ist, darfst du den Effekt <strong>Präzisionsschuss</strong>  anwenden, selbst wenn du nicht in dem angegebenen Winkel bist."""
         "Skystrike Academy Class":
            display_name: """Schüler der Skystrike-Akademie"""
            text: """Nachdem du eine Fassrolle geflogen bist oder Schub gegeben hast, ist jeder deiner Flügelmänner gezwungen, sich vom Schwarm zu trennen.%LINEBREAK%Solange du verteidigst, dürfen bis zu 5 deiner Flügelmänner im Angriffswinkel je 1&nbsp;%HIT%/%CRIT%-Schaden erleiden, um 1 passendes Ergebnis zu negieren."""
@@ -3567,7 +3567,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Zu Beginn der Kampfphase darfst du 1 Berechnungsmarker auf ein befreundetes Schiff in deinem Feuerwinkel transferieren."
         "Overtuned Modulators":
            display_name: "übersteuerte Modulatoren"
-           text: "Während der Systemphase, falls du nicht gestresst bist, darfst du 1 %CHARGE% ausgeben, um 3 Berechnungsmarker zu erhalten.%LINEBREAK%Während der Endphase, falls deine %CHARGE% inaktiv ist, erhältst du für jeden grünen MArker , den du entfernst, 1 Anstrengungsmarker."
+           text: "Während der Systemphase, falls du nicht gestresst bist, darfst du 1 %CHARGE% ausgeben, um 3 Berechnungsmarker zu erhalten.%LINEBREAK%Während der Endphase, falls deine %CHARGE% inaktiv ist, erhältst du für jeden grünen Marker , den du entfernst, 1 Anstrengungsmarker."
         "Sensor Scramblers":
            display_name: "Sensor Scrambler"
            text: "<strong>Aufbau:</strong> Du erhältst 1 Tarnungsmarker.%LINEBREAK%Solange du getarnt bist, können dich andere Schiffe nicht als Ziel erfassen.%LINEBREAK%Während der Endphase, falls du getarnt bist und ein feindliches Schiff in Reichweiter 0-3 ist, <b>musst</b> du dich enttarnen. Falls du das tust und jenes Enttarnen scheitert, verlierst du 1 Tarnungsmarker."
@@ -3576,22 +3576,22 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Solange du ein Störsignal sendest, kannst du dich selbst oder ein anderes befreundetes Schiff wählen.%LINEBREAK% Solange du verteidigst,falls der Angreifer keine grünen Marker hat oder ein gestörtes Schiff im Angriffswinkel ist, darfst du 1 zusätzlichen Verteidigungswürfel werfen."
         "Compassion":
            display_name: "Mitgefühl"
-           text: "Bevor einem anderen befreundeten Schiff in Reichweite 0-2 eine offene <b> Pilot</b> oder <b>Crew</b> -Schadenskarte zugeteilt werden würde, darfst du 1 %FORCE% ausgeben. Falls du das tust, wird jene Schadenskarte stattdessen abgelegt und dir wird 1 verdeckte Schadenskarte zugeteilt. Falls du dann zwei oder mehr Schadenskarten hast, stelle 2 %FORCE% wieder her."
+           text: "Bevor einem anderen befreundeten Schiff in Reichweite 0-2 eine offene <strong>Pilot</strong> oder <strong>Crew</strong>-Schadenskarte zugeteilt werden würde, darfst du 1 %FORCE% ausgeben. Falls du das tust, wird jene Schadenskarte stattdessen abgelegt und dir wird 1 verdeckte Schadenskarte zugeteilt. Falls du dann zwei oder mehr Schadenskarten hast, stelle 2 %FORCE% wieder her."
         "Malice":
            display_name: "Niedertracht"
-           text: "Solange du einen Angriff durchführst, darfst du eine %FORCE% ausgeben, um 1 %FOCUS%- oder %HIT% Ergebnis in ein %CRIT% -Ergebnis zu ändern. Falls du das tust, stellst du 2 %FORCE% wieder her, nachdem du jenen Angriff durchgeführt hast, falls dem Verteidiger 1 oder mehrere offene <b>Pilot</b> oder <b>CREW</b> -Schadenskarten zugeteilt worden sind."
+           text: "Solange du einen Angriff durchführst, darfst du eine %FORCE% ausgeben, um 1 %FOCUS%- oder %HIT% Ergebnis in ein %CRIT% -Ergebnis zu ändern. Falls du das tust, stellst du 2 %FORCE% wieder her, nachdem du jenen Angriff durchgeführt hast, falls dem Verteidiger 1 oder mehrere offene <strong>Pilot</strong> oder <strong>Crew</strong> -Schadenskarten zugeteilt worden sind."
         "Shattering Shot":
            display_name: "zerschmetternder Schuss"
            text: "Solange du einen Angriff durchführst, falls der Angriff durch ein Hindernis versperrt ist oder der Verteidiger in Reichweite 0 eines Hindernisses ist, darfst du 1 %FORCE% ausgeben, um ein %FOCUS%- Ergebnis hinzufügen."
         "DT-798":
            display_name: "DT-798"
-           text: "Zu Beginn der Kampfphase darfst du ein befreundetes SChiff in deinem Feuerwinkel wählen. Falls du das tust,erhält jenes SChiff 1 Anstrengungsmarker. %LINEBREAK% Solange du einenAngriff durchführst, darfst du für jedes Schiff im Angriffswinkel mit 1 oder mehreren roten oder orangen Nicht-Zielerfassungsmarkern bis zu 1 Würfel neu werfen."
+           text: "Zu Beginn der Kampfphase darfst du ein befreundetes Schiff in deinem Feuerwinkel wählen. Falls du das tust,erhält jenes Schiff 1 Anstrengungsmarker. %LINEBREAK% Solange du einen Angriff durchführst, darfst du für jedes Schiff im Angriffswinkel mit 1 oder mehreren roten oder orangen Nicht-Zielerfassungsmarkern bis zu 1 Würfel neu werfen."
         "Feedback Ping":
            display_name: "Rückmeldungsping"
            text: "Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, falls es in Reichweite 0-1 eines befreundeten Gerätes ist, darfst du jenes Schiff als Ziel erfassen, wobei du Reichweitenbeschränkungen ignoriest."
         "Electro-Chaff Missiles":
            display_name: "Elektrodüppel-Raketen"
-           text: "Während der Systemphase darfst du 1 %CHARGE% von dieser Karte ausgeben, um unter Verwendung [3%BANKLEFT]- ,[3%BANKRIGHT%] oder [4%STRAIGHT] -Schalbone 1 Elektrodüppel-Wolke zu starten. DAnn platziere 1 Zeitzünder auf ihr.%LINEBREAK% Die %CHARGE% dieser KArte kann nicht wiederhergestellt werden."
+           text: "Während der Systemphase darfst du 1 %CHARGE% von dieser Karte ausgeben, um unter Verwendung [3%BANKLEFT]- ,[3%BANKRIGHT%] oder [4%STRAIGHT] -Schalbone 1 Elektrodüppel-Wolke zu starten. DAnn platziere 1 Zeitzünder auf ihr.%LINEBREAK% Die %CHARGE% dieser Karte kann nicht wiederhergestellt werden."
         "Babu Frik":
            display_name: "Babu Frik"
            text: "Bevor du einem roten oder orangen Nicht-Zielerfassungsmarker erhalten würdest, darfst du 1 %CHARGE% ausgeben, um ihn stattdessen auf diese Karte zu platzieren. %LINEBREAK%Während der Systemphase, falls auf dieser Karte 1 oder mehrere Marker sind, <b>musst</b> du 1 %CHARGE% ausgeben. Falls du das nicht kannst, entferne jene Marker und erhalte passende Marker."
@@ -3615,10 +3615,10 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Solange ein befreundetes Schiff in Reichweite 1-3 mit einer Initiative von 4 oder niedriger einen Angriff gegen einen Verteidiger durchgeführt, den du als Ziel erfasst hast, darf der Angreifer 1 %FOCUS%-Ergebnis in ein %HIT%-Ergebnis ändern."
         "Gar Saxon (Gunner)":
            display_name: "Gar Saxon"
-           text: "Solange du die %LOCK% -Aktion durchführst, kannst du nur ein Objekt in deinem %FRONTARC% oder %REARARC% wählen.%LINEBREAK% Solange du einen Primärangriff durchführst, falls der Verteidiger in deinem %FRONTARC% oder %REARARC% ist, darfst du 1 orangen oder roten MArker vom Verteidiger entfernen, um 1 zusätzlichen Würfel zu werfen, bis zu einem Maximum von 4."
+           text: "Solange du die %LOCK% -Aktion durchführst, kannst du nur ein Objekt in deinem %FRONTARC% oder %REARARC% wählen.%LINEBREAK% Solange du einen Primärangriff durchführst, falls der Verteidiger in deinem %FRONTARC% oder %REARARC% ist, darfst du 1 orangen oder roten Marker vom Verteidiger entfernen, um 1 zusätzlichen Würfel zu werfen, bis zu einem Maximum von 4."
         "Korkie Kryze":
            display_name: "Korkie Kryze"
-           text: "Nachdem ein befreundetes Schiff in deinem %FULLFRONTARC% in Reichweite 1-2 zum Verteidiger geworden ist, darfst du 1 grünen Marker auf jenes Schiff transferieren. %LINEBREAK% Solange ein befreundetes Schiff in deinem %FULLRONTARC% in Reichweite 1-2 verteidigt, falls du den Angriff versperrst,wirft der Verteidiger 1 zusätzlichen Verteidigungswürfel."
+           text: "Nachdem ein befreundetes Schiff in deinem %FULLFRONTARC% in Reichweite 1-2 zum Verteidiger geworden ist, darfst du 1 grünen Marker auf jenes Schiff transferieren. %LINEBREAK% Solange ein befreundetes Schiff in deinem %FULLFRONTARC% in Reichweite 1-2 verteidigt, falls du den Angriff versperrst,wirft der Verteidiger 1 zusätzlichen Verteidigungswürfel."
         "Obi-Wan Kenobi":
            display_name: "Obi-Wan Kenobi"
            text: "Nachdem ein befreundetes Schiff in Reichweiter 0-2 einen Fokus- oder Ausweichmarker ausgegeben hat, darfst du 1 %FORCE% ausgeben.%LINEBREAK%FAlls du das tust,erhält jenes Schiff 1 Fokusmarker."
@@ -3636,7 +3636,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Nachdem ein befreundetes Schiff in deinem %FRONTARC% in Reichweite 1-2 einen Stress- oder Anstrengungsmakrer erhalten hat, darfst du 1 %FORCE% ausgeben. Falls du das tust,erhält jenes Schiff 1 Fokusmarker."
         "Tal Merrik":
            display_name: "Tal Merrik"
-           text: "<strong>Aufbau:</strong> Bevor die Streitkräfte platziert werden,wähle 1 feindliches Schiff und ordner ihm den Zustand %LINEBREAK% <b>FALSCHER FREUND<7b> zu.%LINEBREAK%<strong>Aktion:</strong> Falss der Zustzand %LINEBREAK%<b>FALSCHER FREUND</b> keinen feindlichen SChiff zugeordnet ist,ordne ihn einem feindlichen Schiff in deinem %FRONTARC% in Reichweite 0-2 zu."
+           text: "<strong>Aufbau:</strong> Bevor die Streitkräfte platziert werden,wähle 1 feindliches Schiff und ordner ihm den Zustand %LINEBREAK% <strong>Falscher Freund</strong> zu.%LINEBREAK%<strong>Aktion:</strong> Falls der Zustzand %LINEBREAK%<strong>Falscher Freund</strong> keinem feindlichen Schiff zugeordnet ist, ordne ihn einem feindlichen Schiff in deinem %FRONTARC% in Reichweite 0-2 zu."
         "Tiber Saxon":
            display_name: "Tiber Saxon"
            text: "Nachdem du einen Angriff in Angriffsreichweite 1-2 durchgeführt hast, der getroffen hat, falls der Verteidiger keine offene Schadenskarten hat, darfst du 1 oder mehrere %CHARGE% ausgeben. Für jede %CHARGE%, die du ausgibst, erhält der Verteidiger 1 Anstrengungsmarker."
@@ -3648,31 +3648,31 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Nachdem du ein feindliches Schiff jenseits von Reichweite 2 als Ziel erfasst hast, falls keine befreundeten Schiffe in Reichweiter 0-1 des erfassten Schiffes sind, erhältst du 1 Berechnungsmarker."
         "Sabine Wren (Command)":
            display_name: "Sabine Wren "
-           text: "<strong>Aufbau:</strong>BEvor die Streitkräfte platziert werden, ordne dir selbst den Zustand <b>DAS DUNKELSCHWERT</b>zu.%LINEBREAK% Solange du eine %COORDINATE% -Aktion durchführst, darfst du 1 zusätzliches befreundetes Schiff koordinieren."
+           text: "<strong>Aufbau:</strong>Bevor die Streitkräfte platziert werden, ordne dir selbst den Zustand <strong>Das Dunkelschwert</strong>zu.%LINEBREAK% Solange du eine %COORDINATE% -Aktion durchführst, darfst du 1 zusätzliches befreundetes Schiff koordinieren."
         "Prime Minister Almec":
            display_name: "Premierminister Almec"
            text: "<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK% Nachdem ein befreundetes Schiff in Reichweite 0-2 ein weißes Manöver aufgedeckt hat, falls es keine grünen Marker hat,darf es 1 Stressmarker erhalten, um 1 Berechnungsmarker zu erhalten.%LINEBREAK% Falls du während der Endphase 2 oder mehr Stressmarker hast, drehe diese Karte um. %LINEBREAK%(Rückseite)Almec,Mauls Marionette%LINEBREAK% Nachdem ein befreundetes Schiff in Reichweite 0-2 ein rotes Manöver vollständig ausgeführt hat,darf jenes Schiff ein %CALCULATE% oder %FOCUS% -Aktion aus seiner Aktionsleiste durchführen,auch solange es gestresst ist."
         "Swivel Wing":
            display_name: "bewegliche Flügel"
-           text: "<strong>OBEN</strong> Solange du verteidigst ,wirfst du 1 Verteidigungswürfel weniger.%LINEBREAK% Nachdem du ein nicht-stationäres MAnöver vollständig ausgeführt hast,darfst du diese Karte umdrehen. %LINEBREAK% <strong>UNTEN</strong> NAchdem du ein [0 %STOP%] -Manöver ausgeführt hast, darfst du dein Schiff um 90° oder 180° drehen. Falls du das tust, <b>musst</b> du diese Karte drehen."
+           text: "<strong>Oben</strong> Solange du verteidigst ,wirfst du 1 Verteidigungswürfel weniger.%LINEBREAK% Nachdem du ein nicht-stationäres MAnöver vollständig ausgeführt hast,darfst du diese Karte umdrehen. %LINEBREAK% <strong>Unten</strong> Nachdem du ein [0 %STOP%] -Manöver ausgeführt hast, darfst du dein Schiff um 90° oder 180° drehen. Falls du das tust, <b>musst</b> du diese Karte drehen."
         "Razor Crest":
            display_name: "Razor Crest"
-           text: "<strong>Aufbau:</strong> Platziere 1 nicht-limitierte %ILLICIT% -Aufwertung verdeckt unter dieser KArte.%LINEBREAK% Während der Systemphase darfst du jene %ILLICIT% -Aufwertung aufdecken und sie ausrüsten,als wäre sie beim Aufbau ausgerüstet worden (ohne ihre Punktekosten zu bezahlen)"
+           text: "<strong>Aufbau:</strong> Platziere 1 nicht-limitierte %ILLICIT% -Aufwertung verdeckt unter dieser Karte.%LINEBREAK% Während der Systemphase darfst du jene %ILLICIT% -Aufwertung aufdecken und sie ausrüsten,als wäre sie beim Aufbau ausgerüstet worden (ohne ihre Punktekosten zu bezahlen)"
         "The Mandalorian":
            display_name: "Der Mandalorianer"
            text: "Während der Endphase, falls du diese Runde nicht verteidigt hast, stellst du 1 nicht-wiederkehrende %FORCE% wieder her, falls möglich."
         "The Child":
            display_name: "Das Kind"
-           text: "<strong>Aufbau:</strong> Nachdem die Streitkräfte platziert worden sind,wähle einen Gegner,der 2 seiner Schiffe den Zustand <b>GNADENLOSE VERFOLGUNG</b> zuordnet.%LINEBREAK% Deine %FORCE% verlieren das Symbol für wiederkehrende Ladungen.Nachdem du verteidigt hast, falls du während jenes Angriffs SChaden erlitten hast, stelle 1 %FORCE% wieder her."
+           text: "<strong>Aufbau:</strong> Nachdem die Streitkräfte platziert worden sind,wähle einen Gegner,der 2 seiner Schiffe den Zustand <strong>Gnadenlose Verfolgung</strong> zuordnet.%LINEBREAK% Deine %FORCE% verlieren das Symbol für wiederkehrende Ladungen.Nachdem du verteidigt hast, falls du während jenes Angriffs Schaden erlitten hast, stelle 1 %FORCE% wieder her."
         "IG-11":
            display_name: "IG 11"
-           text: "<strong>Aufbau:</strong> Rüste diese Seite offen aus. %LINEBREAK%Bevor dir einen offene Schadenskarte zugeteilt werden würde,<b>musst</b> du stattdessen 1 Zeitzünder auf diese KArte platzieren und 1 Berechnungsmarker erhalten.Falls dann 2 Zeitzünder auf dieser Karte liegen,drehe Sie um. %LINEBREAK% (Rückseite)IG-11 (Anti-Festnahme-Protokoll)%LINEBREAK%Entferne während der Endphase 1 Zeitzünder von dieser Karte.Falls dann keine Zeitzünder auf ihr liegen, wirst du zerstört und jedes andere SChiff in Reichweite 0-1 %LINEBREAK% erleidet 1 %CRIT% -Schaden. %LINEBREAK% <strong>Aktion:</strong> Platziere 1 Zeitzünder auf dieser Karte."
+           text: "<strong>Aufbau:</strong> Rüste diese Seite offen aus. %LINEBREAK%Bevor dir einen offene Schadenskarte zugeteilt werden würde,<b>musst</b> du stattdessen 1 Zeitzünder auf diese Karte platzieren und 1 Berechnungsmarker erhalten.Falls dann 2 Zeitzünder auf dieser Karte liegen,drehe Sie um. %LINEBREAK% <strong>(Rückseite)IG-11 (Anti-Festnahme-Protokoll)</strong>%LINEBREAK%Entferne während der Endphase 1 Zeitzünder von dieser Karte. Falls dann keine Zeitzünder auf ihr liegen, wirst du zerstört und jedes andere Schiff in Reichweite 0-1 %LINEBREAK% erleidet 1 %CRIT% -Schaden. %LINEBREAK% <strong>Aktion:</strong> Platziere 1 Zeitzünder auf dieser Karte."
         "Greef Karga":
            display_name: "Greef Karga"
            text: "Du kannst verbündete Schiffe koordnieren ,als wären sie befreundete Schiffe.%LINEBREAK% Nachdem du ein Schiff koordiniert hast, darf es ein Objekt als Ziel erfassen,das du als Ziel erfasst hast."
         "Kuiil":
            display_name: "Kuiil"
-           text: "<strong>Aktion:</strong> Wirf ein 1 Angriffswürfel für jede Schadenskarte,di du hast.Repariere für jedes %HIT -Ergebis 1 offene <b>Schiff</b> -Schadenskarte.Repariere dann für jedes %CRIT% -Ergebnis 1 verdeckte Schadenskarte.Entferne für jedes Leerseiten-Ergebnis 1 orangen MArker.%LINEBREAK%Dann erhältst du für jedes %FOCUS% -Ergebnis 1 Fokusmarker."
+           text: "<strong>Aktion:</strong> Wirf ein 1 Angriffswürfel für jede Schadenskarte, die du hast.Repariere für jedes %HIT% -Ergebis 1 offene <b>Schiff</b> -Schadenskarte. Repariere dann für jedes %CRIT% -Ergebnis 1 verdeckte Schadenskarte.Entferne für jedes Leerseiten-Ergebnis 1 orangen Marker.%LINEBREAK%Dann erhältst du für jedes %FOCUS% -Ergebnis 1 Fokusmarker."
         "Peli Motto":
            display_name: "Peli Motto"
            text: "Während der Systemphase darfst du eine Aktion auf 1 deiner Schadenskarten durchführen ,auch solange du gestresst bist.%LINEBREAK% Nachdem du eine offene <b>Schiff</b> -Schadenskarte repariert hast, darfst du 1 Angriffswürfel werfen. Bei einem %HIT% -Ergebnis reparierst du eine weitere offene <b>Schiff</b> -Schadenskarte. Bei einem %CRIT% -Ergebnis legst du 1 Schadenskarte offen."
@@ -3693,10 +3693,10 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Nachdem du eine [3 %STRAIGHT%] - oder [4 %STRAIGHT%]- Manöver vollständig ausgeführt hast, darfst du unter Verwendung der [1 %STRAIGHT%] -Schablone Schub geben."
         "R2-D2 (BoY)":
            display_name: "R2-D2 (BoY)"
-           text: "Nachdem du dein Rad aufgedeckt hast, darfst du 1 %CHARGE% ausgeben und 1 Entwaffnet -Marker erhalten, um 1 Schild wiederherzustellen."
+           text: "Nachdem du dein Rad aufgedeckt hast, darfst du 1 %CHARGE% ausgeben und 1 Entwaffnet-Marker erhalten, um 1 Schild wiederherzustellen."
         "R2-F2 (BoY)":
            display_name: "R2-F2 (BoY)"
-           text: "Nachdem du dein Rad aufgedeckt hast,darfst du 1 %CHARGE% ausgeben und 1 Entwaffnet-Marker erhalten, um 1 Schild wiederherzustellen."
+           text: "Nachdem du dein Rad aufgedeckt hast, darfst du 1 %CHARGE% ausgeben und 1 Entwaffnet-Marker erhalten, um 1 Schild wiederherzustellen."
         "Precise Astromech (BoY)":
            display_name: "Präziser Astromech (BoY)"
            text: "Nachdem du eine Aktion durchgeführt hast, darfst du 1 %CHARGE% ausgeben, um eine rote %LOCK% -Aktion durchzuführen."
@@ -3705,7 +3705,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "<b>Angriff</b>"
         "Commander Malarus":
            display_name: "Commander Malarus"
-           text: "<strong>Aufbau:</strong>Rüste diese Seite offen aus.%LINEBREAK%Solange ein befreundetes,nicht-limitiertes Schiff in Reichweite 0-1 einen Primärangriff durchgeführt,darf jenes Schiff 1 Leerseiten-Ergebnis neu werfen.Falls es das tut under Angriff verfehlt,<b>musst</b> du diese Karte umdrehen.%LINEBREAK%<strong>Vollendet (Rückseite):</strong>Solange du einen Angriff durchführst, falls der Verteidiger in deinem %BULLSEYEARC% ist, <b>musst</b> du alle %FOCUS%-Ergebnisse in %HIT%-Ergebnisse ändern und 1 Stressmarker erhalten. Dann, falls du 2 oder mehr Stressmarker hast, erleidest du 1&nbsp;%HIT%-Schaden."
+           text: "<strong>Aufbau:</strong>Rüste diese Seite offen aus.%LINEBREAK%Solange ein befreundetes,nicht-limitiertes Schiff in Reichweite 0-1 einen Primärangriff durchgeführt, darf jenes Schiff 1 Leerseiten-Ergebnis neu werfen.Falls es das tut under Angriff verfehlt, <b>musst</b> du diese Karte umdrehen.%LINEBREAK%<strong>Vollendet (Rückseite): </strong>Solange du einen Angriff durchführst, falls der Verteidiger in deinem %BULLSEYEARC% ist, <b>musst</b> du alle %FOCUS%-Ergebnisse in %HIT%-Ergebnisse ändern und 1 Stressmarker erhalten. Dann, falls du 2 oder mehr Stressmarker hast, erleidest du 1&nbsp;%HIT%-Schaden."
         "R5-D8 (BoY)":
            display_name: "R5-D8 (BoY)"
            text: "<b>Aktion:</b> Gib 1 %CHARGE% aus, um 1 verdeckte Schadenskarte zu reparieren. %LINEBREAK%<b>Aktion:</b> Repariere 1 offene Schiffs-Schadenskarte."
@@ -3717,7 +3717,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Nachdem du eine %LOCK% -Aktion durchgeführt hast, darfst du eine rote %RELOAD% -Aktion durchführen."
         "General Grievous (Command)":
            display_name: "General Grievous"
-           text: "Während der Kampfphase, bei Initiative 4, darfst du 1 %ENERGY% ausgeben, um einen Bonus %HARDPOINT% Angriff durchzuführen.%LINEBREAK%%LINEBREAK%Du kannst Angriffe gegen befreundete Schiffe durchführen.%LINEBREAK%%LINEBREAK%NAchdem du einen Angriffdurchgeführt hast, falls der Verteidiger zerstört worden ist, darf jedes befreundete Schiff in Reichweiter 0-2 von ihm eine %CALCULATE%-Aktion durchführen."
+           text: "Während der Kampfphase, bei Initiative 4, darfst du 1 %ENERGY% ausgeben, um einen Bonus %HARDPOINT% Angriff durchzuführen.%LINEBREAK%%LINEBREAK%Du kannst Angriffe gegen befreundete Schiffe durchführen.%LINEBREAK%%LINEBREAK%Nachdem du einen Angriffdurchgeführt hast, falls der Verteidiger zerstört worden ist, darf jedes befreundete Schiff in Reichweiter 0-2 von ihm eine %CALCULATE%-Aktion durchführen."
         "Burnout Thrusters":
            display_name: "extreme Schubdüsen"
            text: "Nachdem du eine %SLAM% -Aktion durchführt hast, verlierst du 1 %%CHARGE%. Dann darfst du 1 Erschöpfungsmarker erhalten, um 1 Entwaffnetmarker zu entferne.%LINEBREAK% Falls deine %CHARGE% inaktiv ist, kannst du eine %SLAM%- Aktion nicht durchführen."
@@ -3726,7 +3726,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "FAlls du ein %CREW%-Remote unter Verwendung einer Gerade-Schablone [%STRAIGHT%] abwerfen würdest, darfst du stattdessen eine Drehschablone {%BANKLEFT% oder %BANKRIGHT%] derselben Geschwindigkeit verwenden. Du kannst die Mittellinie jender Schalbone bündig an der Markierung an der linken oder rechten Seite deines Schiffes platzieren, stt ander den hinteren Stoppern. "
         "Combat Boarding Tube":
            display_name: "Gefechts-Ausstiegsluke"
-           text: "Falls du während der Systemphase ein %CREW% - Remote abwerfen würdest und ein feindliches mittleres ,großes oder riesiges Schiff in Reichweite 0-1 in deinem %REARARC% ist, darfst du jenes Gerät stattdessen so in deinem %REARARC% in Reichweite 0-1 auf der Spielfläche platzieren, dass es in Reichweite 10 jenes Schiffes ist. Dann erhält jenes feindliche Schiff 1 ERschöpfungs-,Anstrengungs- oder Stressmarker deiner Wahl."
+           text: "Falls du während der Systemphase ein %CREW% - Remote abwerfen würdest und ein feindliches mittleres ,großes oder riesiges Schiff in Reichweite 0-1 in deinem %REARARC% ist, darfst du jenes Gerät stattdessen so in deinem %REARARC% in Reichweite 0-1 auf der Spielfläche platzieren, dass es in Reichweite 0 jenes Schiffes ist. Dann erhält jenes feindliche Schiff 1 Erschöpfungs-,Anstrengungs- oder Stressmarker deiner Wahl."
         "Proton Cannons":
            display_name: "Protonengeschütz"
            text: "<b>Angriff:</b> Gib 2 %CHARGE% aus.Ändere 1 %FOCUS% -oder %HIT% -Ergenis in ein %CRIT%- Ergebnis."
@@ -3777,13 +3777,13 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "<b>Aktion:</b> Gib 1 %CHARGE% aus, um 1 verdeckte Schadenskarte zu reparieren.%LINEBREAK%<b>Aktion:</b> Repariere eine offene <b> Schiff</b> -Schadenskarte "
         "Proud Tradition":
            display_name: "Stolze Tradition"
-           text: "<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK%Solange du 2 oder weniger Stressmarker hast, darfst du %FOCUS% -Aktionen durchführen, auch solange du gestresst bist.%LINEBREAK%NAchdem du einen Angriff durchgeführt hast, falls du gestresst bist, darf der Verteidiger 1 Fokusmarker ausgeben oder 1 %CRIT% -Schaden erleiden, um diese Karte umzudrehen.%LINEBREAK%Falsche Tradition (Rückseite):%LINEBREAK%Behandle deine %FOCUS%-Aktionen, als wären sie rot."
+           text: "<strong>Aufbau:</strong> Rüste diese Seite offen aus.%LINEBREAK%Solange du 2 oder weniger Stressmarker hast, darfst du %FOCUS% -Aktionen durchführen, auch solange du gestresst bist.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, falls du gestresst bist, darf der Verteidiger 1 Fokusmarker ausgeben oder 1 %CRIT% -Schaden erleiden, um diese Karte umzudrehen.%LINEBREAK%Falsche Tradition (Rückseite):%LINEBREAK%Behandle deine %FOCUS%-Aktionen, als wären sie rot."
         "Selfless (BoY)":
            display_name: "Selbstlos"
            text: 'Solange ein anderes befreundetes Schiff in Reichweite 0-1 verteidigt, vor dem Schritt "Ergebnisse neutraliesieren", falls du im Angriffswinkel bist, darfst du 1 %CRIT%-Schaden erleiden, um 1%CRIT% Ergebnis zu negieren.'
         "B6 Blade Wing Prototype (Epic)":
            display_name: "Blatt-Flügler-Prototyp B6"
-           text: "Füge den %Gunner%-Slot hinzu.%LINEBREAK%<b>Angriff [%LOCK%]:</b> ERhalte 1 Ionenmarker, um diesen Angriff durchzuführen. Falls dieser Angriff trifft, erleidet der Verteidiger 1 zusätzlichen %HIT% / %CRIT% -Schaden für jedes passende nicht-negierte Ergebnis nach dem ersten."
+           text: "Füge den %GUNNER%-Slot hinzu.%LINEBREAK%<b>Angriff [%LOCK%]:</b> Erhalte 1 Ionenmarker, um diesen Angriff durchzuführen. Falls dieser Angriff trifft, erleidet der Verteidiger 1 zusätzlichen %HIT% / %CRIT% -Schaden für jedes passende nicht-negierte Ergebnis nach dem ersten."
         "Hotshot Tail Blaster":
            display_name: "Erstklassiker Heckblaster"
            text: "Dieser Angriff kann in Reichweite 0 durchgeführt werden. %LINEBREAK%<b>Angriff:</b> Gib 1 %CHARGE% aus."
@@ -3807,7 +3807,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "FAlls du zu Beginn der Kampfphase im %FRONTARC% eines feindlichen Schiffes bist, darfst du 1 Anstrengungsmarker erhalten, um 1 %FORCE% wiederherzustellen."
         "Contingency Protocol (SoC)":
            display_name: "Notfallprotokoll (SoC)"
-           text: "Nachdem diese Schiff zerstört worden ist, darf ein anderes befreundetes Schiff in Reichweite 0-3 mit der Aufwertung <strong>NOTFALLPROTOKOLL</strong> eine Aktion durchführen, auch solange es gestresst ist."
+           text: "Nachdem diese Schiff zerstört worden ist, darf ein anderes befreundetes Schiff in Reichweite 0-3 mit der Aufwertung <strong>Notfallprotokoll</strong> eine Aktion durchführen, auch solange es gestresst ist."
         "Evasion Sequence 7 (SoC)":
            display_name: "Ausweichmanöver 7 (SoC)"
            text: "Solange du eine rote %EVADE% -Aktion durchführst, falls du in Reichweite 1 ein Hindernis oder Szenario-Merkmal ist,behandle die Aktion stattdessen , als wäre sie weiß."
@@ -3819,7 +3819,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Sobald dir eine Schadenskarte zugeteilt werden würde, falls du nicht verteidigst, darfst du 1 %CHARGE% ausgeben und 1 Anstrengungsmarker erhalten, um jene Schadenskarte stattdessen abzulegen."
         "Wolfpack (SoC)":
            display_name: "Wolfsrudel (SoC)"
-           text: "Solange du einen Angriff durchführst, darfst du die Zielerfassung eines befreundeten <strong>PLO-KOON</strong>-Schiffes oder eines Schiffes mit der Schiffsfähigkeit <strong>DAFÜR GEBOREN</strong> auf dem Verteidiger ausgeben, um beliebig viele Angriffswürfel neu zu werfen."
+           text: "Solange du einen Angriff durchführst, darfst du die Zielerfassung eines befreundeten <strong>Plo-Koon</strong>-Schiffes oder eines Schiffes mit der Schiffsfähigkeit <strong>Dafür Geboren</strong> auf dem Verteidiger ausgeben, um beliebig viele Angriffswürfel neu zu werfen."
         "R5-K6 (BoY)":
            display_name: "R5-K6 (BoY)"
            text: "<b>Aktion:</b> Gib 1 %CHARGE% aus, um 1 verdeckte Schadenskarte zu reparieren.<LINEBREAK><b>Aktion:</b> Repariere 1 offene <strong> Schiff- </strong> Schadenskarte."
@@ -3914,7 +3914,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Dieser Zustand wird verdeckt zugeordnet. Decke ihn auf, nachdem du verteidigt hast. %LINEBREAK% Nachdem du verteidigt hast, darfst du 2 %CHARGE% von <strong>Zam Wesell</strong> ausgeben. FAlls du das tust, führe einen Bonusangriff gegen den Angreifer durch.%LINEBREAK% Am Ende der Kampfphase, falls diese Karte verdeckt ist und du im Feuerwinkel eines feindlichen Schiffes bist, darfst du diese Karte aufdecken. Falls du das tust, stellt <strong>Zam Wesell</strong> 2 %CHARGE% wieder her.%LINEBREAK% Zu Beginn der Systemphase entferne diesen Zustand."
         "Merciless Pursuit":
            display_name: "Gnadenlose Verfolgung"
-           text: "Nachdem du einen Angriff durchgeführt hast, falls der Verteidiger <strong>DAS KIND </strong> ausgerüstet hat, darfst du den Verteidiger als Ziel erfassen."
+           text: "Nachdem du einen Angriff durchgeführt hast, falls der Verteidiger <strong>Das Kind</strong> ausgerüstet hat, darfst du den Verteidiger als Ziel erfassen."
         "Marked for Elimination":
            display_name: "Als Beute markiert"
            text: "Solange du verteidigst, falls der Angreifer <strong>PEILSENDER</strong> ausgerüstet hat und dich als Ziel erfasst hat, kannst du keine grünen Marker ausgeben."
@@ -3923,16 +3923,16 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Falls während der Systemphase ein feindliches Schiff mit der Aufwertung <strong>Tal Merrik</strong> in Reichweite 0-2 ist oder ein feindliches Remote in Reichweite 0-2 ist, drehe dein Rad auf die offene Seite.%LINEBREAK%<b>Aktion:</b> Erhalte1 Erschöpfungs- und 1 Stressmarker, um diesen Zustand abzulegen."
         "Trials of the Darksaber":
            display_name: "Das Dunkelschwert"
-           text: "Solange du einen Angriff in Angriffsreichweite 0-2 durchführst, darfst du 1 %CRIT%-Ergebnis ausgeben. Falls du das tust, falls der Spieler des verteidigenden Schiffes mehr verdiente %?% als du hat, verliert er 1 verdiente %?% . Platziere jene %?% auf diese Karte.%LINEBREAK% Nachdem du verteidigt hast, falls du von einem feindlichen Schiff in Angriffsreichweite 0-2 zerstört worden bist, ordne dem Angreifer den Zustand <strong>DAS DUNKELSCHWERT</strong> zu (Alle %?% bleiben auf dieser Karte.%LINEBREAK%Am Spielende verdient dieses Schiff alle %?% auf dieser KArte."
+           text: "Solange du einen Angriff in Angriffsreichweite 0-2 durchführst, darfst du 1 %CRIT%-Ergebnis ausgeben. Falls du das tust, falls der Spieler des verteidigenden Schiffes mehr verdiente %?% als du hat, verliert er 1 verdiente %?% . Platziere jene %?% auf diese Karte.%LINEBREAK% Nachdem du verteidigt hast, falls du von einem feindlichen Schiff in Angriffsreichweite 0-2 zerstört worden bist, ordne dem Angreifer den Zustand <strong>DAS DUNKELSCHWERT</strong> zu (Alle %?% bleiben auf dieser Karte.%LINEBREAK%Am Spielende verdient dieses Schiff alle %?% auf dieser Karte."
         "Guarded":
            display_name: "Beschützt"
            text: "Solange du verteidigst, falls du nicht im %BULLSARC% des Angreifers bist, wirfst du 1 zusätzlichen Verteidigungswürfel für jeden befreundeten berechnenden oder ausweichenden <strong>BESCHÜTZER DER MAGNAWÄCHTER</strong> im Angriffswinkel."
         "Sickening Maneuver":
            display_name: "Schwindelerregendes Manöver"
-           text: "Du kannst rote Manöver ausführen, aus solange du gestresst bist.%LINEBREAK%Nachdem du ein Drehmanöver [%TURNLEFT% oder %TURNRIGHT%] oder ein Wendemanöver [%BANKLEFT% oder BANKRIGHT%] aufgedeckt hast, <strong>musst</strong> du 1 Anstrengunsmarker erhalten und jenes MAnöver als Slip ausführen.%LINEBREAK% NAchdem du ein Geradenmanöver [%STRAIGHT%] aufgedeckt hast, musst du jenes Manöver als rote Koiogran.Wende [%KTURN%] ausführen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, entfernst du diesen Zustand."
+           text: "Du kannst rote Manöver ausführen, aus solange du gestresst bist.%LINEBREAK%Nachdem du ein Drehmanöver [%TURNLEFT% oder %TURNRIGHT%] oder ein Wendemanöver [%BANKLEFT% oder BANKRIGHT%] aufgedeckt hast, <strong>musst</strong> du 1 Anstrengunsmarker erhalten und jenes MAnöver als Slip ausführen.%LINEBREAK% Nachdem du ein Geradenmanöver [%STRAIGHT%] aufgedeckt hast, musst du jenes Manöver als rote Koiogran.Wende [%KTURN%] ausführen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, entfernst du diesen Zustand."
         "Primed For Speed":
            display_name: "Bleifuss"
-           text: "Füge deiner Aktionsleiste eine weisse %SLAM% -Aktionhinzu.%LINEBREAK% NAchdem du eine %SLAM% -Aktion durchgeführt hast, <strong>musst</strong> du 1 %HIT%-Schaden erleiden, um 1 Entwaffnet-Marker zu entfernen."
+           text: "Füge deiner Aktionsleiste eine weisse %SLAM% -Aktionhinzu.%LINEBREAK% Nachdem du eine %SLAM% -Aktion durchgeführt hast, <strong>musst</strong> du 1 %HIT%-Schaden erleiden, um 1 Entwaffnet-Marker zu entfernen."
         "Broken Trust":
            display_name: "Vertrauensbruch"
            text: "Behandle befreundete Schiffe , als wären sie verbündet.%LINEBREAK%Nicht-feindliche Schiffe behandeln dich, als wärst du verbündet.%LINEREAK% Solange du einen Angriff durchführst, bevor du den Verteidiger deklarierst, erhält jedes verbündete Schiff im Angriffswinkel,das nicht gestresst ist, 1 Stressmarker.%LINEBREAK%Nachdem du verteidigt oder einen Angriff durchgeführt hast, falls dem Verteidiger mindestens 1 offene Schadenskarte zugeteilt oder zerstört worden ist, entfernst du diesen Zustand."
@@ -4045,7 +4045,7 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Solange du verteidigst oder einen Angriff durchführst, falls kein anderes befreundetes Schiff in Reichweite 0-1 ist, darfst du 1 %CHARGE% ausgeben, um 1 deiner Würfel neu zu werfen."
         "Pursuit Craft":
            display_name: "Jagdschiff"
-           text: "Nachdem du absetzt worden bist, darfst du ein Schiff als Ziel erfassen, das von der befreundeten <strong>REISSZAHN</strong> als Ziel erfasst ist."
+           text: "Nachdem du absetzt worden bist, darfst du ein Schiff als Ziel erfassen, das von der befreundeten <strong>Reißzahn</strong> als Ziel erfasst ist."
         "Explosion with Wings":
            display_name: "Explosion mit Flügeln"
            text: "<b>Aufbau:</b> Dir wird 1 verdeckte Schadenskarte zugeteilt. Nachdem du eine %SLAM%-Aktion durchgeführt hast, darfst du 1 Schadenskarte offenlegen, um 1 Entwaffnetmarker zu entfernen."
@@ -4072,10 +4072,10 @@ Aktion durchgeführt hast, darfst du bis zu 2&nbsp;%ENERGY% ausgeben, um ebenso
            text: "Während der Systemphase darfst du eine %BOOST%-Aktion durchführen."
         "Versatile Frame":
            display_name: "Vielseitige Konstruktion"
-           text: "Du kannst 1 %TORPEDO% oder %MISSILES%-Aufweertung ausrüsten. Solange dein aufgedecktes Manöver blau ist, füge deiner Aktionsleiste einen weißen %BOOST% hinzu."
+           text: "Du kannst 1 %TORPEDO% oder %MISSILE%-Aufwertung ausrüsten. Solange dein aufgedecktes Manöver blau ist, füge deiner Aktionsleiste einen weißen %BOOST% hinzu."
         "Born for This":
            display_name: "Dafür geboren"
-           text: "Solange ein anderes befreundetes SChiff inReichweite 0-2 verteidigt, falls du nicht angestrengt bist, darf jenes Schiff deine Fokus- und Ausweichmarker ausgeben, als hätte es sie selbst. Falls es das tut, erhältst du 1 Anstrengungsmarker."
+           text: "Solange ein anderes befreundetes Schiff inReichweite 0-2 verteidigt, falls du nicht angestrengt bist, darf jenes Schiff deine Fokus- und Ausweichmarker ausgeben, als hätte es sie selbst. Falls es das tut, erhältst du 1 Anstrengungsmarker."
         "Modified for Organics":
            display_name: "auf organische Piloten angepasst"
            text: "Dieses Schiff ist nicht von der Beschränkung <strong>GENORMT</strong> betroffen. Verringere die Schwierigkeit deiner Drehmanöver [%TURNLEFT% oder %TURNRIGHT%] mit Geschwindigkeit 2-3. Erhöhe die Schwierigkeit deiner Wendemanöver [%BANKLEFT% oder %BANKRIGHT%] mit Geschwindigkeit 3."
