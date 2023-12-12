@@ -1839,7 +1839,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Schiffe wie der C-ROC-Kreuzer erlauben kriminelle Operationen überall im Outer-Rim, bei denen Massen an illegalen Waren transportiert werden, oder Machtdemonstrationen,um kleine Kolonien zu unterdrücken."
         "Adi Gallia":
            display_name: "Adi Gallia"
-           text: "Solange du in Angriffsreichweite 1 verteidigst, darfst du 1 %8CE% ausgeben. Falls du das tust, kann der Angreifer den Reichweitenbonus nicht anwenden.%LINEBREAK%Solange du einen Angriff gegen einen Verteidiger in Angriffsreichweite 3 durchführst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Verteidiger den Reichweitenbonus nicht anwenden."
+           text: "Solange du in Angriffsreichweite 1 verteidigst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Angreifer den Reichweitenbonus nicht anwenden.%LINEBREAK%Solange du einen Angriff gegen einen Verteidiger in Angriffsreichweite 3 durchführst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Verteidiger den Reichweitenbonus nicht anwenden."
         "Adi Gallia (Delta-7B)":
            display_name: "Adi Gallia "
            text: "Solange du in Angriffsreichweite 1 verteidigst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Angreifer den Reichweitenbonus nicht anwenden.%LINEBREAK%Solange du einen Angriff gegen einen Verteidiger in Angriffsreichweite 3 durchführst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Verteidiger den Reichweitenbonus nicht anwenden."
