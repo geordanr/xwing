@@ -65,6 +65,7 @@ exportObj.translations.Deutsch =
         "Tactical Relay": "Taktische Leitung"
         "Upgrade": "Aufwertungskarte"
     sources: 
+        "Loose Ships": "Schiffsmodelle der 1. Edition"
         "Second Edition Core Set": "Grundspiel zweite Edition"
         "First Edition Core Set": "Grundspiel erste Edition"
         "First Edition Force Awakens Core Set": "Das Erwachen der Macht Grundspiel erste Edition"
@@ -148,6 +149,9 @@ exportObj.translations.Deutsch =
         "Razor Crest Expansion Pack":"Razor Crest Erweiterung"
         "Pride of Mandalore Reinforcements Pack":"Stolz von Mandalore Verstärkungspack"
         "Battle of Yavin Battle Pack":"Die Schlacht von Yavin Szenariopack"
+        "Galactic Empire Squadron Starter Pack":"Galaktisches Imperium Staffel-Starterpack"
+        "TIE/sa TIE Bomber Expansion Pack":"TIE/sa-Bomber Erweiterungspack"
+        "Rebel Alliance Squadron Starter Pack":"Rebellenallianz Staffel-Starterpack"
 
     ui:
         "shipSelectorPlaceholder": "Wähle ein Schiff"
@@ -326,7 +330,7 @@ is an authorization system which lets you prove your identity at a web site with
         "Factions:": "Fraktionen"
         "Textsearch:": "Volltextsuche"
         "Squad Notes:": "Staffelnotizen"
-        "Tag:": "Kategorien:"
+        "Tag:": "Stichwörter:"
         "Choose obstacles dialog": "Wähle bis zu drei Hindernisse."
         "Mark obstacles": "Wähle bis zu drei Hindernisse"
         "Choose Obstacles": "Hindernisse wählen"
@@ -453,7 +457,12 @@ is an authorization system which lets you prove your identity at a web site with
         "Has multiple of the chosen slots": "Hat mehrere der gewählten Slots"
         "keywords":"Schlüsselwörter"
         "Checking auth status...": "Prüfe Anmeldestatus..."
-        
+        "Copy URL": "Link kopieren"
+        "Reset Obstacles": "Alle löschen"
+        "Enable Ban List (Not Standard)": "Bannliste außerhalb von Standard"
+        "Epic Unofficial": "Von AMG wurden keine Punkte für Epische Karten veröffentlicht. Die Werte hier sind unabhängig und willkürlich gewählt, teilweise unausgewogen und werden nicht aktualisiert. "
+        damageHeader: (translator, type) ->
+            "Schadenskarte (#{translator 'types', type})"
 
     singular:
         'pilots': 'Pilot'
@@ -1740,7 +1749,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Nachdem du ein rotes Manöver vollständig ausgeführt oder eine rote Aktion durchgeführt hast, darfst du ein befreundetes Schiff in Reichweiter 0-3 und ein feindliches Schiff in Reichweite 0-1 wählen. Das gewählte befreundete Schiff erfasst das feindliche Schiff als ziel."
         '"Wolffe" (SoC)':
            display_name: "Wolffe (SoC)"
-           text: "Solange du einen %FORNTARC% -Primärangriff durchführst, darfst du 1 %CHARGE% ausgeben, um 1 Angriffswürfel neu zu werfen. Solange du einen %REARARC%-Primärangriff durchführst, darfst du 1 %CHARGE% wiederherstellen, um 1 zusätzlichen Angriffswürfel zu werfen."
+           text: "Solange du einen %FRONTARC% -Primärangriff durchführst, darfst du 1 %CHARGE% ausgeben, um 1 Angriffswürfel neu zu werfen. Solange du einen %REARARC%-Primärangriff durchführst, darfst du 1 %CHARGE% wiederherstellen, um 1 zusätzlichen Angriffswürfel zu werfen."
         '"Jag" (SoC)':
            display_name: "Jag (SoC)"
            text: "Nachdem ein befreundetes Schiff in Reichweiter 0-2 in deinem %LEFTARC% oder %RIGHTARC% einen Angriff durchgeführt hat, falls du nicht angestrengt bist, darfst du den Verteidiger als Ziel erfassen"
@@ -1830,7 +1839,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Schiffe wie der C-ROC-Kreuzer erlauben kriminelle Operationen überall im Outer-Rim, bei denen Massen an illegalen Waren transportiert werden, oder Machtdemonstrationen,um kleine Kolonien zu unterdrücken."
         "Adi Gallia":
            display_name: "Adi Gallia"
-           text: "Solange du in Angriffsreichweite 1 verteidigst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Angreifer den Reichweitenbonus nicht anwenden.%LINEBREAK%Solange du einen Angriff gegen einen Verteidiger in Angriffsreichweite 3 durchführst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Verteidiger den Reichweitenbonus nicht anwenden."
+           text: "Solange du in Angriffsreichweite 1 verteidigst, darfst du 1 %8CE% ausgeben. Falls du das tust, kann der Angreifer den Reichweitenbonus nicht anwenden.%LINEBREAK%Solange du einen Angriff gegen einen Verteidiger in Angriffsreichweite 3 durchführst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Verteidiger den Reichweitenbonus nicht anwenden."
         "Adi Gallia (Delta-7B)":
            display_name: "Adi Gallia "
            text: "Solange du in Angriffsreichweite 1 verteidigst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Angreifer den Reichweitenbonus nicht anwenden.%LINEBREAK%Solange du einen Angriff gegen einen Verteidiger in Angriffsreichweite 3 durchführst, darfst du 1 %FORCE% ausgeben. Falls du das tust, kann der Verteidiger den Reichweitenbonus nicht anwenden."

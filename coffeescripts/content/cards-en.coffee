@@ -105,7 +105,7 @@ exportObj.translations.English =
         upgradeHeader: (translator, slot) ->
             "#{translator 'slot', slot} Upgrade"
         damageHeader: (translator, type) ->
-            "Damage Card (#{translator 'type', type})"
+            "Damage Card (#{translator 'types', type})"
         "unreleased": "unreleased"
         "epic": "epic"
         "Quickbuild": "Quick Build"
