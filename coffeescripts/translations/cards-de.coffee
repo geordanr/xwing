@@ -244,7 +244,7 @@ is an authorization system which lets you prove your identity at a web site with
                     </p>
                     """
         "Intro Card YASB": """
-                    <h2>YASB 2 für X-Wing (Version 2.5) </h2>
+                    <h2>YASB für X-Wing 2.5 </h2>
                     <p>YASB (engl. Yet Another Squad Builder, dt. Noch ein Staffel-Bauer) hilft dir, einfach und unkompliziert deine Staffeln für das X-Wing Miniaturenspiel von <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a> zu erstellen.</p>
                     <h5>Impressum</h5>
                     <p>Eine Weiterentwicklung des hervorragenden <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a> für die erste Edition.</p>
