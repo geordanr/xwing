@@ -3122,7 +3122,7 @@ class exportObj.SquadBuilder
                     container.find('tr.info-range').hide()
                     container.find('tr.info-force').hide()
                 when 'Damage'
-                    container.find('.info-type').text exportObj.translate("type", data.type)
+                    container.find('.info-type').text exportObj.translate("types", data.type)
                     container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
                     container.find('.info-sources').show()
 

@@ -1,4 +1,4 @@
-Yet Another Squad Builder 2.0
+Yet Another Squad Builder 2.5
 =============================
 
 What?

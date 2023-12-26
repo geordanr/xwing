@@ -65,6 +65,7 @@ exportObj.translations.Deutsch =
         "Tactical Relay": "Taktische Leitung"
         "Upgrade": "Aufwertungskarte"
     sources: 
+        "Loose Ships": "Schiffsmodelle der 1. Edition"
         "Second Edition Core Set": "Grundspiel zweite Edition"
         "First Edition Core Set": "Grundspiel erste Edition"
         "First Edition Force Awakens Core Set": "Das Erwachen der Macht Grundspiel erste Edition"
@@ -148,6 +149,9 @@ exportObj.translations.Deutsch =
         "Razor Crest Expansion Pack":"Razor Crest Erweiterung"
         "Pride of Mandalore Reinforcements Pack":"Stolz von Mandalore Verstärkungspack"
         "Battle of Yavin Battle Pack":"Die Schlacht von Yavin Szenariopack"
+        "Galactic Empire Squadron Starter Pack":"Galaktisches Imperium Staffel-Starterpack"
+        "TIE/sa TIE Bomber Expansion Pack":"TIE/sa-Bomber Erweiterungspack"
+        "Rebel Alliance Squadron Starter Pack":"Rebellenallianz Staffel-Starterpack"
 
     ui:
         "shipSelectorPlaceholder": "Wähle ein Schiff"
@@ -240,7 +244,7 @@ is an authorization system which lets you prove your identity at a web site with
                     </p>
                     """
         "Intro Card YASB": """
-                    <h2>YASB 2 für X-Wing (Version 2.5) </h2>
+                    <h2>YASB für X-Wing 2.5 </h2>
                     <p>YASB (engl. Yet Another Squad Builder, dt. Noch ein Staffel-Bauer) hilft dir, einfach und unkompliziert deine Staffeln für das X-Wing Miniaturenspiel von <a href="https://www.atomicmassgames.com/">Atomic Mass Games</a> zu erstellen.</p>
                     <h5>Impressum</h5>
                     <p>Eine Weiterentwicklung des hervorragenden <a href="https://geordanr.github.io/xwing/">Yet Another Squad Builder</a> für die erste Edition.</p>
@@ -326,7 +330,7 @@ is an authorization system which lets you prove your identity at a web site with
         "Factions:": "Fraktionen"
         "Textsearch:": "Volltextsuche"
         "Squad Notes:": "Staffelnotizen"
-        "Tag:": "Kategorien:"
+        "Tag:": "Stichwörter:"
         "Choose obstacles dialog": "Wähle bis zu drei Hindernisse."
         "Mark obstacles": "Wähle bis zu drei Hindernisse"
         "Choose Obstacles": "Hindernisse wählen"
@@ -453,7 +457,12 @@ is an authorization system which lets you prove your identity at a web site with
         "Has multiple of the chosen slots": "Hat mehrere der gewählten Slots"
         "keywords":"Schlüsselwörter"
         "Checking auth status...": "Prüfe Anmeldestatus..."
-        
+        "Copy URL": "Link kopieren"
+        "Reset Obstacles": "Alle löschen"
+        "Enable Ban List (Not Standard)": "Bannliste außerhalb von Standard"
+        "Epic Unofficial": "Von AMG wurden keine Punkte für Epische Karten veröffentlicht. Die Werte hier sind unabhängig und willkürlich gewählt, teilweise unausgewogen und werden nicht aktualisiert. "
+        damageHeader: (translator, type) ->
+            "Schadenskarte (#{translator 'types', type})"
 
     singular:
         'pilots': 'Pilot'
@@ -1740,7 +1749,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: "Nachdem du ein rotes Manöver vollständig ausgeführt oder eine rote Aktion durchgeführt hast, darfst du ein befreundetes Schiff in Reichweiter 0-3 und ein feindliches Schiff in Reichweite 0-1 wählen. Das gewählte befreundete Schiff erfasst das feindliche Schiff als ziel."
         '"Wolffe" (SoC)':
            display_name: "Wolffe (SoC)"
-           text: "Solange du einen %FORNTARC% -Primärangriff durchführst, darfst du 1 %CHARGE% ausgeben, um 1 Angriffswürfel neu zu werfen. Solange du einen %REARARC%-Primärangriff durchführst, darfst du 1 %CHARGE% wiederherstellen, um 1 zusätzlichen Angriffswürfel zu werfen."
+           text: "Solange du einen %FRONTARC% -Primärangriff durchführst, darfst du 1 %CHARGE% ausgeben, um 1 Angriffswürfel neu zu werfen. Solange du einen %REARARC%-Primärangriff durchführst, darfst du 1 %CHARGE% wiederherstellen, um 1 zusätzlichen Angriffswürfel zu werfen."
         '"Jag" (SoC)':
            display_name: "Jag (SoC)"
            text: "Nachdem ein befreundetes Schiff in Reichweiter 0-2 in deinem %LEFTARC% oder %RIGHTARC% einen Angriff durchgeführt hat, falls du nicht angestrengt bist, darfst du den Verteidiger als Ziel erfassen"
