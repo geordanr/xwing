@@ -12242,7 +12242,7 @@ class exportObj.Collection
                     <div class="col">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="pilot-name"><i class="xwing-miniatures-ship xwing-miniatures-ship-#{if exportObj.ships[exportObj.pilots[pilot].ship].icon then exportObj.ships[exportObj.pilots[pilot].ship].icon else exportObj.ships[exportObj.pilots[pilot].ship].xws}"></i> #{if exportObj.pilots[pilot].display_name then exportObj.pilots[pilot].display_name else pilot}</span>
+                            <span class="pilot-name"><i class="xwing-miniatures-ship xwing-miniatures-ship-#{if exportObj.ships[exportObj.pilots[pilot].ship].icon then exportObj.ships[exportObj.pilots[pilot].ship].icon else exportObj.ships[exportObj.pilots[pilot].ship].canonical_name}"></i> #{if exportObj.pilots[pilot].display_name then exportObj.pilots[pilot].display_name else pilot}</span>
                         </label>
                     </div>
                 </div>
