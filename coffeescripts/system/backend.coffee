@@ -44,9 +44,6 @@ class exportObj.SquadBuilderBackend
             google_oauth2:
                 icon: 'fab fa-google'
                 text: 'Google'
-            facebook:
-                icon: 'fab fa-facebook'
-                text: 'Facebook'
             twitter:
                 icon: 'fab fa-twitter'
                 text: 'Twitter'
