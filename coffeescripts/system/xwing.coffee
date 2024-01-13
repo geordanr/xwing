@@ -2892,7 +2892,10 @@ class exportObj.SquadBuilder
                 when 'Addon'
                     container.find('.info-type').text exportObj.translate("slot", additional_opts.addon_type)
                     container.find('.info-sources.info-data').text (exportObj.translate('sources', source) for source in data.sources).sort().join(', ')
-                    container.find('.info-sources').show()
+                    if data.standard?
+                        container.find('.info-sources').hide()
+                    else
+                        container.find('.info-sources').show()
                     
                     #logic to determine how many dots to use for uniqueness
                     if data.unique?
@@ -2908,7 +2911,7 @@ class exportObj.SquadBuilder
                         uniquedots = ""
                     
                     
-                    if @collection?.counts?
+                    if @collection?.counts? and (not data.standard?)
                         addon_count = @collection.counts?['upgrade']?[data.name] ? 0
                         container.find('.info-collection').text @uitranslation("collectionContentUpgrades", addon_count)
                         container.find('.info-collection').show()
