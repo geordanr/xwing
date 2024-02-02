@@ -20258,7 +20258,7 @@ String::serialtoxws = ->
                 builder: 'YASB - X-Wing 2.5'
                 builder_url: "https://yasb.app"
                 link: "https://yasb.app/#{this}" 
-        version: '09/08/2023'
+        version: '02/23/2024'
 
     serialized = this.ParseParameter('d')
     re = if "Z" in serialized then /^v(\d+)Z(.*)/ else /^v(\d+)!(.*)/

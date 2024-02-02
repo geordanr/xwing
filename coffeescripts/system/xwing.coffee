@@ -1467,7 +1467,7 @@ class exportObj.SquadBuilder
 
             # Version number
             @printable_container.find('.fancy-under-header').append $.trim """
-                <div class="version">Points Version: 09/08/2023</div>
+                <div class="version">Points Version: 02/23/2024</div>
             """
                     
             # Notes, if present
@@ -3545,7 +3545,7 @@ class exportObj.SquadBuilder
                     builder: 'YASB - X-Wing 2.5'
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
-            version: '09/08/2023'
+            version: '02/23/2024'
             # there is no point to have this version identifier, if we never actually increase it, right?
 
         for ship in @ships
