@@ -1143,7 +1143,7 @@ exportObj.cardLoaders.English = () ->
            text: """After another friendly ship is destroyed, you may perform an action, even while stressed."""
         '"Axe"':
            display_name: """“Axe”"""
-           text: """After you defend or perform an attack, you may choose a friendly ship at range 1-2 in your %LEFTARC%  or %RIGHTARC%. If you do, transfer 1 green token to that ship."""
+           text: """After you defend or perform an attack, you may choose a friendly ship at range 1-2 in your %LEFTARC% or %RIGHTARC%. If you do, transfer 1 green token to that ship."""
         '"Backdraft"':
            display_name: """“Backdraft”"""
            text: """While you perform a %SINGLETURRETARC% primary attack, if the defender is in your %REARARC%, roll 1 additional die."""
@@ -2020,6 +2020,35 @@ exportObj.cardLoaders.English = () ->
         "Shara Bey (SSP)":
            display_name: """Shara Bey (SSP)"""
            text: """While you defend or perform a primary attack, you may spend 1 lock you have on the enemy ship to add 1 %FOCUS% result to your dice results. """
+
+        # Battle Over Endor Pilots
+        "Wedge Antilles (BoE)":
+           display_name: """Wedge Antilles (BoE)"""
+           text: """After you perform an attack that hits, gain 1 focus token."""
+        "Lando Calrissian (BoE)":
+           display_name: """Lando Calrissian (BoE)"""
+           text: """At the start of the Activation Phase, you may spend 1 %CHARGE%. If you do, choose an initiative from 1 to 6. You activate at that initiative this phase."""
+        "Tycho Celchu (BoE)":
+           display_name: """Tycho Celchu (BoE)"""
+           text: """While you are disarmed, you can still perform %MISSILE% attacks. When you perform a %MISSILE% attack while disarmed, roll a maximum of 4 dice."""
+        "Gemmer Sojan (BoE)":
+           display_name: """Gemmer Sojan (BoE)"""
+           text: """While defending, you may gain 1 strain token to change up to 2 of your blank results to %FOCUS% results."""
+        "Captain Yorr (BoE)":
+           display_name: """Captain Yorr (BoE)"""
+           text: """After you perform a primary attack that hits, you may spend 1 %CHARGE% to perform a bonus %CANNON% attack."""
+        "Colonel Jendon (BoE)":
+           display_name: """Colonel Jendon (BoE)"""
+           text: """While you defend, if you are not shielded, you may change 1 of your blank results to a %FOCUS% result."""
+        "Soontir Fel (BoE)":
+           display_name: """Soontir Fel (BoE)"""
+           text: """After you perform an attack, you may spend 1 %CHARGE% and gain 1 deplete token to boost or barrel roll."""
+        "Sapphire 2 (BoE)":
+           display_name: """Sapphire 2 (BoE)"""
+           text: """While you defend, if you are focused, roll 1 additional defense die."""
+        "Maus Monare (BoE)":
+           display_name: """Maus Monare (BoE)"""
+           text: """After you perform an %EVADE% action, gain a calculate token."""
 
 
         # Epic Ships
@@ -3230,6 +3259,75 @@ exportObj.cardLoaders.English = () ->
         "Efficient Processing (YLF)":
            display_name: """Efficient Processing"""
            text: """After you perform a %CALCULATE% action, gain 1 calculate token."""
+        "It's A Trap! (BoE)":
+           display_name: """It's A Trap!"""
+           text: """While defending, if there are more other friendly ships then enemy ships at range 0-1, you may reroll 1 of your blank results."""
+        "R2-A3 (BoE)":
+           display_name: """R2-A3"""
+           text: """After you perform an action, you may spend 1 %CHARGE% to acquire a lock."""
+        "Ace In The Hole (BoE)":
+           display_name: """Ace In The Hole"""
+           text: """At the start of the Engagement Phase, you may spend 1 %CHARGE% and gain 1 jam token to perform a %BARRELROLL% action."""
+        "Airen Cracken (BoE)":
+           display_name: """Airen Cracken"""
+           text: """After defending, if the attack hit, you may gain 1 deplete token to perform a bonus primary attack targeting the attacker."""
+        "Millennium Falcon (BoE)":
+           display_name: """Millennium Falcon"""
+           text: """While attacking or defending, if you have a non-lock red or orange token, you may reroll 1 die."""
+        "No Escape (BoE)":
+           display_name: """No Escape"""
+           text: """While you perform a primary attack, if there are more friendly ships then other enemy ships at range 0-1 of the defender, you may reroll 1 of your blank results."""
+        "Apex Predator (BoE)":
+           display_name: """Apex Predator"""
+           text: """While you perform a primary attack, if the defender's initative is lower than yours, you may reroll 1 attack die."""
+        "Push The Limit (BoE)":
+           display_name: """Push The Limit"""
+           text: """After you fully execute a red maneuver or perform a red action, if you are not strained, you may gain 1 strain token to remove 1 stress token."""
+        "Reckless (BoE)":
+           display_name: """Reckless"""
+           text: """While you perform a red %BOOST% or red %BARRELROLL% action, you may use the [1 %TURNLEFT%] or [1 %TURNRIGHT%] template instead. If you do, roll an attack die. On a %HIT%/%CRIT% result, gain a stress token."""
+        "Targeting Matrix (BoE)":
+           display_name: """Targeting Matrix"""
+           text: """While attacking, you may spend 1 %FOCUS% result at the end of the Neutralize Results step. If you do, after the attack is resolved, the defender gains a strain token."""
+        "Chaff Particles (BoE)":
+           display_name: """Chaff Particles"""
+           text: """While defending, you may spend 1 %FOCUS% result at the end of the Neutralize Results step to remove 1 red or orange token."""
+        "Computer-Assisted Handling (BoE)":
+           display_name: """Computer-Assisted Handling"""
+           text: """After you fully execute a maneuver, you may spend 1 %CHARGE% to perform a %BOOST% or %BARRELROLL% action."""
+        "Blank Signature (BoE)":
+           display_name: """Blank Signature"""
+           text: """While defending, if you are not locked by the attacker, you may spend 1 %CHARGE% to change 1 %FOCUS% result to an %EVADE% result."""
+        "Feedback Emitter (BoE)":
+           display_name: """Feedback Emitter"""
+           text: """After an object acquires a lock on you, you may spend 1 %CHARGE% to jam that object, ignoring range restrictions. This upgrade's %CHARGE% may not be recovered."""
+        "Fuel Injection Override (BoE)":
+           display_name: """Fuel Injection Override"""
+           text: """While you perform a %BOOST% or %BARRELROLL% action, you may spend 1 %CHARGE% to use a template of 1 speed higher."""
+        "Precision-Tuned Cannons (BoE)":
+           display_name: """Precision-Tuned Cannons"""
+           text: """<strong>Attack:</strong> If the defender is in your %BULLSEYEARC%, add 1 %FOCUS% result."""
+        "Target-Assist Algorithm (BoE)":
+           display_name: """Target-Assist Algorithm"""
+           text: """Before you engage, if you have no green tokens and there are 1 or more enemy objects in your %FRONTARC%, gain a calculate token."""
+        "Heroic Sacrifice (BoE)":
+           display_name: """Heroic Sacrifice"""
+           text: """After you perform a %SLAM% action, roll 5 attack dice. Each large ship, huge ship, and scenario feature at range 0 suffers 1 %HIT% damage for each %HIT%/%CRIT% result, bypassing shields. Then this ship is destroyed. %LINEBREAK% You can perform %SLAM% actions, even while stressed."""
+        "Parting Gift (BoE)":
+           display_name: """Parting Gift"""
+           text: """When you are destroyed, before you are removed, you may spend 1 %CHARGE% on an equipped %DEVICE% upgrade to drop or launch a bomb using the speed 1 straight or bank [%BANKLEFT%, %STRAIGHT%, %BANKRIGHT%] template."""
+        "Stabilizing Astromech (BoE)":
+           display_name: """Stabilizing Astromech"""
+           text: """After you fully execute a maneuver, you may spend 1 %CHARGE% to perform a white action, even while stressed."""
+        "Modified R4-P unit (BoE)":
+           display_name: """Modified R4-P unit"""
+           text: """Before you execute a red maneuver, you may spend 1 %CHARGE%. If you do, while you execute that maneuver, reduce its difficulty."""
+        "Collected (BoE)":
+           display_name: """Collected"""
+           text: """After you perform a primary attack, you may spend 1 focus token to gain 2 evade tokens."""
+        "Ion Maneuvering Jet (BoE)":
+           display_name: """Ion Maneuvering Jet"""
+           text: """After you fully execute a Koiogran Turn [%KTURN%], you may spend 1 %CHARGE% to perform an action, even while stressed."""
 
 
         # Epic upgrades
@@ -3394,7 +3492,7 @@ exportObj.cardLoaders.English = () ->
            text: """<strong>Setup:</strong> Equip this side faceup.%LINEBREAK% At the start of the End Phase, you may spend 2 %ENERGY% to execute a white [2 %STRAIGHT%], [1 %BANKLEFT%], or [1 %BANKRIGHT%] maneuver. %LINEBREAK% """
         "Drill Beak":
            display_name: """Drill Beak"""
-           text: """<strong>Setup:</strong> Equip this side faceup.%LINEBREAK% You can preform this attack at range 0.
+           text: """<strong>Setup:</strong> Equip this side faceup.%LINEBREAK% You can perform this attack at range 0.
            %LINEBREAK% <strong>Bonus Attack:</strong> Spend 1 %ENERGY%. If the attack range is 0, change all %HIT% results to %CRIT% results."""
         "Tractor Tentacles":
            display_name: """Tractor Tentacles"""
@@ -3686,6 +3784,24 @@ exportObj.cardLoaders.English = () ->
         "Modified for Organics":
            display_name: "Modified for Organics"
            text: """This ship is not affected by the <strong>Standardized</strong> restriction. Reduce the difficulty of your speed 2 and 3 bank [%BANKLEFT% or %BANKRIGHT%] maneuvers. Increase the difficulty of your speed 3 turn [%TURNLEFT% or %TURNRIGHT%] maneuvers."""
+        "Locked S-Foils":
+           display_name: "Locked S-Foils"
+           text: """After you perform a %BOOST% action, gain a deplete token."""
+        "Modulated S-Foils":
+           display_name: "Modulated S-Foils"
+           text: """After you gain a stress token, you may spend 2 %CHARGE% to gain an evade token. Before you engage, you may spend 1 evade token to gain 1 calculate token."""
+        "Gyro-Cockpit":
+           display_name: "Gyro-Cockpit"
+           text: """After you gain a stress token, you may spend 2 %CHARGE% to gain an evade token. When you drop a device, you may spend 1 %CHARGE% to set the template with its middle linie aligned with the hashmark on the base in your %LEFTARC% or %RIGHTARC%."""
+        "High Stakes":
+           display_name: "High Stakes"
+           text: """After you perform a red action, you may roll an attack die. On a %HIT%/%CRIT% result, remove 1 stress."""
+        "Chiss Engineering":
+           display_name: "Chiss Engineering"
+           text: """After you fully execute a speed 3-5 maneuver, you may perform a %LOCK% action. While attacking, if you are not stressed, you may spend 1 %SHIELD% to apply the range 1 bonus."""
+        "Formed Up":
+           display_name: "Formed Up"
+           text: """At the end of the End Phase, if there is another friendly <strong>TIE/ln Fighter</strong> ship at range 0-1, you may remove 1 stress token."""
 
 
     damage_translations =
