@@ -5540,7 +5540,7 @@ exportObj.basicCardData = ->
             ship: "TIE/sa Bomber"
             skill: 5
             points: 3
-            loadout: 10
+            loadout: 7
             slots: [
                 "Talent"
                 "Talent"
