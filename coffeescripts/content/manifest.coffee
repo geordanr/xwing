@@ -11889,12 +11889,12 @@ exportObj.manifestByExpansion =
         {
             name: 'Gemmer Sojan (BoE)'
             type: 'pilot'
-            count: 2
+            count: 1
         }
         {
             name: 'Yendor (BoE)'
             type: 'pilot'
-            count: 2
+            count: 1
         }
         {
             name: 'Kendy Idele (BoE)'
@@ -11971,7 +11971,6 @@ exportObj.manifestByExpansion =
             type: 'pilot'
             count: 1
         }
-
     ]
 
     'Loose Ships': [
