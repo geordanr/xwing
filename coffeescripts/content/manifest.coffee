@@ -11870,6 +11870,109 @@ exportObj.manifestByExpansion =
             count: 2
         }
     ]
+    "Battle Over Endor Battle Pack": [
+        {
+            name: 'Wedge Antilles (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lando Calrissian (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tycho Celchu (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gemmer Sojan (BoE)'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Yendor (BoE)'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Kendy Idele (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Arvel Crynyd (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Adon Fox (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gina Moonsong (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Braylen Stramm (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Yorr (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Colonel Jendon (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Soontir Fel (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sapphire 2 (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Maus Monare (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Major Mianda (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Hebsly (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Scythe 6 (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Scimitar 1 (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Scimitar 3 (BoE)'
+            type: 'pilot'
+            count: 1
+        }
+
+    ]
 
     'Loose Ships': [
         {

@@ -13806,6 +13806,8 @@ exportObj.basicCardData = ->
             chassis: "Sensitive Controls"
             upgrades: [
                 "No Escape (BoE)"
+                "Outmaneuver"
+                "Fuel Injection Override (BoE)"
             ]
             ship_override:
                 shields: 1
@@ -13852,22 +13854,48 @@ exportObj.basicCardData = ->
             id: 669
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
-            skill: 0
+            skill: 3
             points: 3
+            chassis: "Formed Up"
+            ship_override:
+                hull: 4
+                actions: [
+                    "Focus"
+                    "Evade"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Evade"
+                    "R-Boost"
+                ]
             upgrades: [
+                "Collected (BoE)"
+                "Elusive"
                 "No Escape (BoE)"
             ]
         }
         {
-            name: "Major Miranda (BoE)"
+            name: "Major Mianda (BoE)"
             xwsaddon: "battleoverendor"
             unique: true
             id: 670
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
-            skill: 0
+            skill: 5
             points: 4
+            chassis: "Formed Up"
+            ship_override:
+                shields: 1
+                actions: [
+                    "Focus"
+                    "Evade"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Evade"
+                    "R-Coordinate"
+                ]
             upgrades: [
+                "Ruthless"
+                "Swarm Tactics"
                 "No Escape (BoE)"
             ]
         }
@@ -13878,10 +13906,23 @@ exportObj.basicCardData = ->
             id: 671
             faction: "Galactic Empire"
             ship: "TIE/ln Fighter"
-            skill: 0
+            skill: 2
             points: 3
+            chassis: "Formed Up"
+            ship_override:
+                hull: 4
+                actions: [
+                    "Focus"
+                    "Evade"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Evade"
+                ]
             upgrades: [
                 "No Escape (BoE)"
+                "Predator"
+                "Ion Maneuvering Jet (BoE)"
+                "Targeting Matrix (BoE)"
             ]
         }
         {
@@ -13891,10 +13932,13 @@ exportObj.basicCardData = ->
             id: 672
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
-            skill: 0
+            skill: 3
             points: 4
             upgrades: [
+                "Marksmanship"
                 "No Escape (BoE)"
+                "Proton Torpedoes"
+                "Ion Bombs"
             ]
         }
         {
@@ -13904,10 +13948,14 @@ exportObj.basicCardData = ->
             id: 673
             faction: "Galactic Empire"
             ship: "TIE/sa Bomber"
-            skill: 0
+            skill: 4
             points: 4
+            charge: 2
             upgrades: [
                 "No Escape (BoE)"
+                "Parting Gift (BoE)"
+                "Proton Torpedoes"
+                "Proton Bombs"
             ]
         }
     ]
