@@ -13674,7 +13674,7 @@ exportObj.basicCardData = ->
             recurring: 1
             chassis: "Gyro-Cockpit"
             ship_override:
-                shields: 3
+                shields: 5
                 actions: [
                     "Focus"
                     "R-> Barrel Roll"
