@@ -2025,12 +2025,30 @@ exportObj.cardLoaders.English = () ->
         "Wedge Antilles (BoE)":
            display_name: """Wedge Antilles (BoE)"""
            text: """After you perform an attack that hits, gain 1 focus token."""
+        "Yendor (BoE)":
+           display_name: """Yendor (BoE)"""
+           text: """While you perform a primary attack, you may gain a strain token to reroll one of your blank results."""
+        "Kendy Idele (BoE)":
+           display_name: """Kendy Idele (BoE)"""
+           text: """After you spend a green token, you may choose a friendly ship at range 1-3 and gain a strain token. If you do, that ship may perform a red %FOCUS% or red %EVADE% action."""
         "Lando Calrissian (BoE)":
            display_name: """Lando Calrissian (BoE)"""
            text: """At the start of the Activation Phase, you may spend 1 %CHARGE%. If you do, choose an initiative from 1 to 6. You activate at that initiative this phase."""
         "Tycho Celchu (BoE)":
            display_name: """Tycho Celchu (BoE)"""
            text: """While you are disarmed, you can still perform %MISSILE% attacks. When you perform a %MISSILE% attack while disarmed, roll a maximum of 4 dice."""
+        "Arvel Crynyd (BoE)":
+           display_name: """Arvel Crynyd (BoE)"""
+           text: """While defending, you may gain 1 strain token to change 1 %FOCUS% result to a %EVADE% result."""
+        "Adon Fox (BoE)":
+           display_name: """Adon Fox (BoE)"""
+           text: """While you defend, if you are stressed, roll 1 additional die."""
+        "Gina Moonsong (BoE)":
+           display_name: """Gina Moonsong (BoE)"""
+           text: """At the start of the Engagement Phase, if a friendly <strong>Braylen Stramm</strong> ship at range 0-2 is stressed, you may acquire a lock."""
+        "Braylen Stramm (BoE)":
+           display_name: """Braylen Stramm (BoE)"""
+           text: """At the start of the Engagement Phase, if a friendly <strong>Gina Moonsong</strong> ship at range 0-2 is stressed, you may gain a focus token."""
         "Gemmer Sojan (BoE)":
            display_name: """Gemmer Sojan (BoE)"""
            text: """While defending, you may gain 1 strain token to change up to 2 of your blank results to %FOCUS% results."""
@@ -3802,9 +3820,6 @@ exportObj.cardLoaders.English = () ->
         "Locked S-Foils":
            display_name: "Locked S-Foils"
            text: """After you perform a %BOOST% action, gain a deplete token."""
-        "Modulated S-Foils":
-           display_name: "Modulated S-Foils"
-           text: """After you gain a stress token, you may spend 2 %CHARGE% to gain an evade token. Before you engage, you may spend 1 evade token to gain 1 calculate token."""
         "Gyro-Cockpit":
            display_name: "Gyro-Cockpit"
            text: """After you gain a stress token, you may spend 2 %CHARGE% to gain an evade token. When you drop a device, you may spend 1 %CHARGE% to set the template with its middle linie aligned with the hashmark on the base in your %LEFTARC% or %RIGHTARC%."""

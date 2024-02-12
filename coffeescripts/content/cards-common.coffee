@@ -13573,7 +13573,20 @@ exportObj.basicCardData = ->
             chassis: "Vectored Cannons"
             upgrades: [
                 "It's A Trap! (BoE)"
+                "Heroic Sacrifice (BoE)"
+                "Proton Rockets"
             ]
+            ship_override:
+                shields: 3
+                actions: [
+                    "Focus"
+                    "Evade"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Focus"
+                    "Boost"
+                    "Slam"
+                ]
         }
         {
             name: "Gemmer Sojan (BoE)"
@@ -13587,6 +13600,9 @@ exportObj.basicCardData = ->
             chassis: "Vectored Cannons"
             upgrades: [
                 "It's A Trap! (BoE)"
+                "Precision-Tuned Cannons (BoE)"
+                "Chaff Particles (BoE)"
+                "Target-Assist Algorithm (BoE)"
             ]
         }
         {
@@ -13624,10 +13640,25 @@ exportObj.basicCardData = ->
             id: 657
             faction: "Rebel Alliance"
             ship: "A/SF-01 B-wing"
-            skill: 0
+            skill: 1
             points: 5
+            charge: 2
+            recurring: 1
+            chassis: "Gyro-Cockpit"
+            ship_override:
+                actions: [
+                    "Focus"
+                    "R-> Barrel Roll"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Lock"
+                    "R-Reload"
+                ]
             upgrades: [
                 "It's A Trap! (BoE)"
+                "Parting Gift (BoE)"
+                "Proton Rockets"
+                "Proton Bombs"
             ]
         }
         {
@@ -13639,8 +13670,24 @@ exportObj.basicCardData = ->
             ship: "A/SF-01 B-wing"
             skill: 4
             points: 4
+            charge: 2
+            recurring: 1
+            chassis: "Gyro-Cockpit"
+            ship_override:
+                shields: 3
+                actions: [
+                    "Focus"
+                    "R-> Barrel Roll"
+                    "Lock"
+                    "Barrel Roll"            
+                    "R-> Lock"
+                    "R-Reload"
+                ]
             upgrades: [
                 "It's A Trap! (BoE)"
+                "Homing Missiles"
+                "Proton Bombs"
+                "Delayed Fuses"
             ]
         }
         {
@@ -13652,8 +13699,24 @@ exportObj.basicCardData = ->
             ship: "A/SF-01 B-wing"
             skill: 5
             points: 5
+            charge: 2
+            recurring: 1
+            chassis: "Gyro-Cockpit"
+            ship_override:
+                shields: 5
+                actions: [
+                    "Focus"
+                    "R-> Barrel Roll"
+                    "Lock"
+                    "Barrel Roll"            
+                    "R-> Lock"
+                    "R-Reload"
+                ]
             upgrades: [
                 "It's A Trap! (BoE)"
+                "Juke"
+                "Proton Torpedoes"
+                "Ion Bombs"
             ]
         }
         {
@@ -13663,11 +13726,23 @@ exportObj.basicCardData = ->
             id: 660
             faction: "Rebel Alliance"
             ship: "T-65 X-wing"
-            skill: 0
+            skill: 4
             points: 4
             chassis: "Locked S-Foils"
+            ship_override:
+                actions: [
+                    "Focus"
+                    "R-> Boost"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Focus"
+                    "Boost"
+                ]
             upgrades: [
                 "It's A Trap! (BoE)"
+                "Ion Missiles"
+                "Modified R4-P unit (BoE)"
+                "Chaff Particles (BoE)"
             ]
         }
         {
@@ -13707,8 +13782,19 @@ exportObj.basicCardData = ->
             skill: 5
             points: 5
             chassis: "Locked S-Foils"
+            ship_override:
+                actions: [
+                    "Focus"
+                    "R-> Boost"
+                    "Lock"
+                    "Barrel Roll"
+                    "R-> Focus"
+                    "Boost"
+                ]
             upgrades: [
                 "It's A Trap! (BoE)"
+                "Plasma Torpedoes"
+                "Stabilizing Astromech (BoE)"
             ]
         }
         {
@@ -19650,16 +19736,12 @@ exportObj.basicCardData = ->
             id: 52
         }
         {
-            name: "Modulated S-Foils"
+            name: "Gyro-Cockpit"
             id: 53
         }
         {
-            name: "Gyro-Cockpit"
-            id: 54
-        }
-        {
             name: "Formed Up"
-            id: 55
+            id: 54
         }
     ]
 
