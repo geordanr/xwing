@@ -13809,7 +13809,6 @@ exportObj.basicCardData = ->
             charge: 2
             chassis: "High Stakes"
             ship_override:
-                shields: 3
                 actions: [
                     "Focus"
                     "Lock"
