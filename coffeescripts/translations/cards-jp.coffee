@@ -2054,6 +2054,69 @@ exportObj.cardLoaders.日本語 = () ->
            display_name: """Shara Bey (SSP)"""
            text: """君が防御するか主武装攻撃を実行する際、君は君が持っているその敵宇宙船のロックを消費し、 %FOCUS% の結果を1つ君のダイスの結果に追加しても良い。 """
 
+
+        # Battle Over Endor Pilots
+        "Wedge Antilles (BoE)":
+           display_name: """Wedge Antilles (BoE)"""
+           text: """君が攻撃を実行しそれが命中した後、フォーカス・トークンを1つ得る。"""
+        "Yendor (BoE)":
+           display_name: """Yendor (BoE)"""
+           text: """君が主武装攻撃を実行する際、君はストレイン・トークンを得て、空白の結果のうち1つを振り直しても良い。"""
+        "Kendy Idele (BoE)":
+           display_name: """Kendy Idele (BoE)"""
+           text: """君が緑のトークンを消費した後、君はレンジ 1-3 の友軍宇宙船を選び、ストレイン・トークンを得ても良い。もし君がそうするなら、その宇宙船は赤の %FOCUS% あるいは赤の %EVADE% アクションを実行しても良い。"""
+        "Lando Calrissian (BoE)":
+           display_name: """Lando Calrissian (BoE)"""
+           text: """アクティベーション・フェイズの開始時、君は %CHARGE% を1つ消費しても良い。もし君がそうするなら、イニシアチブを1から6の範囲で選ぶ。君はこのフェイズ、そのイニシアチブでアクティベートする。"""
+        "Tycho Celchu (BoE)":
+           display_name: """Tycho Celchu (BoE)"""
+           text: """君が武装解除状態の際でも、君は %MISSILE% 攻撃を実行できる。君が武装解除状態で %MISSILE% 攻撃を実行する時、最大で4つのダイスを振る。"""
+        "Arvel Crynyd (BoE)":
+           display_name: """Arvel Crynyd (BoE)"""
+           text: """防御の際、君はストレイン・トークンを1つ得て、 %FOCUS% の結果１つを %EVADE% の結果に変更しても良い。"""
+        "Adon Fox (BoE)":
+           display_name: """Adon Fox (BoE)"""
+           text: """君が防御する際、もし君がストレス状態なら、ダイスを追加で1つ振る。"""
+        "Gina Moonsong (BoE)":
+           display_name: """Gina Moonsong (BoE)"""
+           text: """エンゲージメント・フェイズの開始時、もしレンジ0-2の友軍の <strong>Braylen Stramm</strong> 宇宙船がストレス状態なら、君はロックを得ても良い。"""
+        "Braylen Stramm (BoE)":
+           display_name: """Braylen Stramm (BoE)"""
+           text: """エンゲージメント・フェイズの開始時、もしレンジ0-2の友軍の <strong>Gina Moonsong</strong> 宇宙船がストレス状態なら、君はフォーカス・トークンを得ても良い。"""
+        "Gemmer Sojan (BoE)":
+           display_name: """Gemmer Sojan (BoE)"""
+           text: """防御の際、君はストレイン・トークンを1つ得て、2つまでの空白の結果を %FOCUS% の結果に変更しても良い。"""
+        "Captain Yorr (BoE)":
+           display_name: """Captain Yorr (BoE)"""
+           text: """君が主武装攻撃を実行しそれが命中した後、君は %CHARGE% を1つ消費し、ボーナスの %CANNON% 攻撃を実行しても良い。"""
+        "Colonel Jendon (BoE)":
+           display_name: """Colonel Jendon (BoE)"""
+           text: """君が防御する際、もし君がシールド状態でないなら、君は君の空白の結果のうち1つを %FOCUS% の結果に変更しても良い。"""
+        "Soontir Fel (BoE)":
+           display_name: """Soontir Fel (BoE)"""
+           text: """君が攻撃を実行した後、君は %CHARGE% を1つ消費し、デプリート・トークンを1つ得て、ブーストあるいはバレル・ロールを行っても良い。"""
+        "Sapphire 2 (BoE)":
+           display_name: """Sapphire 2 (BoE)"""
+           text: """君が防御する際、もし君がフォーカス状態なら、防御ダイスを1つ追加で振る。"""
+        "Maus Monare (BoE)":
+           display_name: """Maus Monare (BoE)"""
+           text: """君が %EVADE% アクションを実行した後、カリキュレート・トークンを得る。"""
+        "Major Mianda (BoE)":
+           display_name: """Major Mianda (BoE)"""
+           text: """終了フェイズの間、君はレンジ 0-2 の友軍の小型宇宙船を2つまで選んでも良い。君と選ばれた宇宙船は赤の %BARRELROLL% あるいは 赤の %BOOST% アクションを実行しても良い。"""
+        "Lieutenant Hebsly (BoE)":
+           display_name: """Lieutenant Hebsly (BoE)"""
+           text: """君が防御した後、君はたとえストレス状態でも、赤の %BOOST% アクションを実行しても良い。"""
+        "Scythe 6 (BoE)":
+           display_name: """Scythe 6 (BoE)"""
+           text: """君がレンジ 1-2 で攻撃を実行する際、攻撃ダイスを追加で1つ振る。"""
+        "Scimitar 1 (BoE)":
+           display_name: """Scimitar 1 (BoE)"""
+           text: """レンジ 0-3 の友軍宇宙船が攻撃を実行した後、君は %CHARGE% を1つ消費し防御者へのロックを得ても良い。"""
+        "Scimitar 3 (BoE)":
+           display_name: """Scimitar 3 (BoE)"""
+           text: """君が爆弾を投下した後、君は %CHARGE% トークンを1つ消費し、 %BOOST% アクションを実行しても良い。"""
+
         # Epic Ships
         "Republic Judiciary":
            display_name: """Republic Judiciary"""
@@ -3261,6 +3324,75 @@ exportObj.cardLoaders.日本語 = () ->
         "Efficient Processing (YLF)":
            display_name: """Efficient Processing"""
            text: """君が %CALCULATE% アクションを実行した後、カリキュレート・トークンを1つ得る。"""
+        "It's A Trap! (BoE)":
+           display_name: """It's A Trap!"""
+           text: """防御の際、もしレンジ0-1の友軍宇宙船の数が敵宇宙船よりも多いなら、君は空白の結果のうち1つを振り直しても良い。"""
+        "R2-A3 (BoE)":
+           display_name: """R2-A3"""
+           text: """君がアクションを実行した後、君は %CHARGE% を1つ消費してロックを得ても良い。"""
+        "Ace In The Hole (BoE)":
+           display_name: """Ace In The Hole"""
+           text: """エンゲージメント・フェイズの開始時、君は %CHARGE% を1つ消費し、ジャム・トークンを1つ得て、 %BARRELROLL% アクションを実行しても良い。"""
+        "Airen Cracken (BoE)":
+           display_name: """Airen Cracken"""
+           text: """防御の後、もし攻撃が命中したなら、君はデプリート・トークンを1つ消費して、攻撃者を対象にしてボーナスの主武装攻撃を実行しても良い。"""
+        "Millennium Falcon (BoE)":
+           display_name: """Millennium Falcon"""
+           text: """攻撃あるいは防御の際、もし君がロックではない赤あるいはオレンジのトークンを持っているなら、君はダイスを1つ振り直しても良い。"""
+        "No Escape (BoE)":
+           display_name: """No Escape"""
+           text: """君が主武装攻撃を実行する際、もし防御者のレンジ 0-1 の友軍宇宙船の数が、他の敵宇宙船よりも多いなら、君は空白の結果を1つ振り直しても良い。"""
+        "Apex Predator (BoE)":
+           display_name: """Apex Predator"""
+           text: """君が主武装攻撃を実行する際、もし防御者のイニシアチブが君のイニシアチブより低いなら、君は攻撃ダイスを1つ振り直しても良い。"""
+        "Push The Limit (BoE)":
+           display_name: """Push The Limit"""
+           text: """君が赤のマニューバを完全に実行するか、赤のアクションを実行した後、もし君がストレイン状態ではないなら、君はストレイン・トークンを1つ得て、ストレス・トークンを1つ取り除いても良い。"""
+        "Reckless (BoE)":
+           display_name: """Reckless"""
+           text: """君が赤の %BOOST% あるいは赤の %BARRELROLL% アクションを実行する際、君は代わりに [1 %TURNLEFT%] あるいは [1 %TURNRIGHT%] テンプレートを使用しても良い。もし君がそうするなら、攻撃ダイスを1つ振る。%HIT%/%CRIT% の結果なら、ストレス・トークンを得る。"""
+        "Targeting Matrix (BoE)":
+           display_name: """Targeting Matrix"""
+           text: """攻撃の際、結果の相殺フェイズの終了時に、君は %FOCUS% の結果を1つ消費しても良い。もし君がそうするなら、攻撃を解決した後、防御者はストレイン・トークンを得る。"""
+        "Chaff Particles (BoE)":
+           display_name: """Chaff Particles"""
+           text: """防御の際、結果の相殺フェイズの終了時に、君は %FOCUS% の結果を1つ消費して、赤かオレンジのトークンを1つ取り除いても良い。"""
+        "Computer-Assisted Handling (BoE)":
+           display_name: """Computer-Assisted Handling"""
+           text: """君がマニューバを完全に実行した後、君は %CHARGE% を1つ消費して、 %BOOST% あるいは %BARRELROLL% アクションを実行しても良い。"""
+        "Blank Signature (BoE)":
+           display_name: """Blank Signature"""
+           text: """防御の際、もし君が攻撃者にロックされていないなら、君は %CHARGE% を1つ消費し、 %FOCUS% の結果1つを %EVADE% の結果に変更しても良い。"""
+        "Feedback Emitter (BoE)":
+           display_name: """Feedback Emitter"""
+           text: """オブジェクトが君に対してロックした後、君は %CHARGE% を1つ消費し、距離の制限を無視してそのオブジェクトをジャムしても良い。このアップグレードの %CHARGE% は回復できない。"""
+        "Fuel Injection Override (BoE)":
+           display_name: """Fuel Injection Override"""
+           text: """君が %BOOST% あるいは %BARRELROLL% アクションを実行する際、君は %CHARGE% を1つ消費し、速度が1つ速いテンプレートを使用しても良い。"""
+        "Precision-Tuned Cannons (BoE)":
+           display_name: """Precision-Tuned Cannons"""
+           text: """<b>攻撃:</b> もし防御者が君の %BULLSEYEARC% 内にいるなら、 %FOCUS% の結果を1つ追加する。"""
+        "Target-Assist Algorithm (BoE)":
+           display_name: """Target-Assist Algorithm"""
+           text: """君がエンゲージする前に、もし君が緑のトークンを持っておらず、君の %FRONTARC% 内に敵宇宙船が1つ以上いるなら、カリキュレート・トークンを得る。"""
+        "Heroic Sacrifice (BoE)":
+           display_name: """Heroic Sacrifice"""
+           text: """君が %SLAM% アクションを実行した後、攻撃ダイスを5つ振る。レンジ0の各大型船、巨大船、シナリオ要素は %HIT%/%CRIT% の結果につき1つの %HIT% ダメージを、シールドを貫通して受ける。その後、この宇宙船は破壊される。 %LINEBREAK% 君は %SLAM% アクションを、ストレス状態でも実行できる。"""
+        "Parting Gift (BoE)":
+           display_name: """Parting Gift"""
+           text: """君が破壊された後、君が取り除かれる前に、君は装備した %DEVICE% アップグレードの上の %CHARGE% を1つ消費し、1 直進あるいはバンク [%BANKLEFT%, %STRAIGHT%, %BANKRIGHT%] テンプレートを使用して爆弾を投下あるいは投射しても良い。"""
+        "Stabilizing Astromech (BoE)":
+           display_name: """Stabilizing Astromech"""
+           text: """君がマニューバを完全に実行した後、君は %CHARGE% を1つ消費して、たとえストレス状態でも白のアクションを実行しても良い。"""
+        "Modified R4-P unit (BoE)":
+           display_name: """Modified R4-P unit"""
+           text: """君が赤のマニューバを実行する前に、君は %CHARGE% を1つ消費しても良い。もし君がそうするなら、君はそのマニューバを実行する際、それの難易度を下げる。"""
+        "Collected (BoE)":
+           display_name: """Collected"""
+           text: """君が主武装攻撃を実行した後、君はフォーカス・トークンを1つ消費し、回避トークンを2つ得ても良い。"""
+        "Ion Maneuvering Jet (BoE)":
+           display_name: """Ion Maneuvering Jet"""
+           text: """君が完全にコイオグラン・ターン [%KTURN%] を実行した後、君はたとえストレス状態でも、%CHARGE% を1つ消費してアクションを実行しても良い。"""
 
         # Epic upgrades
         "Admiral Ozzel":
@@ -3718,6 +3850,21 @@ exportObj.cardLoaders.日本語 = () ->
         "Modified for Organics":
            display_name: "Modified for Organics"
            text: """この宇宙船は <strong>Standardized</strong> 制約を受けない。君の速度2および3のバンク [%BANKLEFT% あるいは %BANKRIGHT%] マニューバの難易度を下げる。君の速度3ターン [%TURNLEFT% あるいは %TURNRIGHT%] マニューバの難易度を上げる。"""
+        "Locked S-Foils":
+           display_name: "Locked S-Foils"
+           text: """君が %BOOST% アクションを実行した後、君はデプリート・トークンを得る。"""
+        "Gyro-Cockpit":
+           display_name: "Gyro-Cockpit"
+           text: """君がストレス・トークンを得た後、君は %CHARGE% を2つ消費して回避トークンを得ても良い。君がデバイスを投下する時、君は %CHARGE% を1つ消費して、テンプレートの中間線を君のベースの %LEFTARC% あるいは %RIGHTARC% のハッシュマークに合わせてセットしても良い。"""
+        "High Stakes":
+           display_name: "High Stakes"
+           text: """君が赤のアクションを実行した後、君は攻撃ダイスを1つ振っても良い。 %HIT%/%CRIT% の結果なら、ストレスを1つ取り除く。"""
+        "Chiss Engineering":
+           display_name: "Chiss Engineering"
+           text: """君が速度 3-5 のマニューバを完全に実行した後、君は %LOCK% アクションを実行しても良い。攻撃の際、もし君がストレス状態でないなら、君は %SHIELD% を1つ消費して、レンジ1ボーナスを適用しても良い。"""
+        "Formed Up":
+           display_name: "Formed Up"
+           text: """終了フェイズの終了時、もし他の友軍 <strong>TIE/ln Fighter</strong> 宇宙船がレンジ 0-1 にいるなら、君はストレス・トークンを1つ取り除いても良い。"""
 
     damage_translations =
         "Panicked Pilot":
