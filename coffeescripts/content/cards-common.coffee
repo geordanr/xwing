@@ -14019,6 +14019,7 @@ exportObj.basicCardData = ->
             ship: "TIE/sa Bomber"
             skill: 3
             points: 4
+            charge: 2
             upgrades: [
                 "Marksmanship"
                 "No Escape (BoE)"
