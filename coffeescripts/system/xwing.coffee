@@ -1596,7 +1596,7 @@ class exportObj.SquadBuilder
                 @desired_points_input.val 20
             when 'epic'
                 @isEpic = true
-                @desired_points_input.val 40
+                @desired_points_input.val 20
                 @epic_not_legal_container.toggleClass 'd-none', false
             when 'quickbuild'
                 @isQuickbuild = true
@@ -2492,20 +2492,15 @@ class exportObj.SquadBuilder
                             inis += ", " + ini
                         first = false
                     container.find('tr.info-skill td.info-data').text inis
-                    container.find('tr.info-skill').show()
+                    container.find('tr.info-skill').toggle(ini != undefined)
 
                     # display point range for that ship (and faction) 
                     point_range_text = "#{Math.min possible_costs...} - #{Math.max possible_costs...}"
                     container.find('tr.info-points td.info-data').text point_range_text
                     loadout_range_text = "#{Math.min possible_loadout...} - #{Math.max possible_loadout...}"
                     container.find('tr.info-loadout td.info-data').text loadout_range_text
-                    # don't display point range in Quickbuild (or ToDo: Display Threat range instead)
-                    if @isQuickbuild
-                        container.find('tr.info-points').hide()
-                        container.find('tr.info-loadout').hide()
-                    else
-                        container.find('tr.info-points').show()
-                        container.find('tr.info-loadout').show()
+                    container.find('tr.info-points').toggle(possible_costs.length > 0)
+                    container.find('tr.info-loadout').toggle(possible_loadout.length > 0)
                     
                     container.find('tr.info-engagement').hide()
                 
@@ -2544,9 +2539,9 @@ class exportObj.SquadBuilder
         
                     container.find('tr.info-range').hide()
                     container.find('tr.info-agility td.info-data').text(data.agility)
-                    container.find('tr.info-agility').show()
+                    container.find('tr.info-agility').toggle(data.agility?)
                     container.find('tr.info-hull td.info-data').text(data.hull)
-                    container.find('tr.info-hull').show()
+                    container.find('tr.info-hull').toggle(data.hull?)
                     
                     recurringicon = ''
                     if data.shieldrecurr?
@@ -2555,7 +2550,7 @@ class exportObj.SquadBuilder
                             recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                             ++count
                     container.find('tr.info-shields td.info-data').html (data.shields + recurringicon)
-                    container.find('tr.info-shields').show()
+                    container.find('tr.info-shields').toggle(data.shields?)
 
                     recurringicon = ''
                     if data.energyrecurr?
@@ -2621,8 +2616,8 @@ class exportObj.SquadBuilder
                     container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate('ui', 'unreleased')})"}"""
 
                     restriction_info = @restriction_text(data) + @upgrade_effect(data)
-                    if restriction_info != ''
-                        container.find('p.info-restrictions').html restriction_info ? ''
+                    if restriction_info != '' and data.ship != "Conversion"
+                        container.find('p.info-restrictions').html restriction_info
                         container.find('p.info-restrictions').show()
                     else
                         container.find('p.info-restrictions').hide()
@@ -2659,7 +2654,7 @@ class exportObj.SquadBuilder
 
                     
                     container.find('tr.info-skill td.info-data').text data.skill
-                    container.find('tr.info-skill').show()
+                    container.find('tr.info-skill').toggle(data.skill?)
 
                     container.find('tr.info-points td.info-data').text data.points
                     container.find('tr.info-points').show()
@@ -2707,9 +2702,9 @@ class exportObj.SquadBuilder
                     container.find('tr.info-range').hide()
                     container.find('td.info-rangebonus').hide()
                     container.find('tr.info-agility td.info-data').text statAndEffectiveStat((data.ship_override?.agility ? ship.agility), effective_stats, 'agility')
-                    container.find('tr.info-agility').show()
+                    container.find('tr.info-agility').toggle(data.ship_override?.agility? or ship.agility?)
                     container.find('tr.info-hull td.info-data').text statAndEffectiveStat((data.ship_override?.hull ? ship.hull), effective_stats, 'hull')
-                    container.find('tr.info-hull').show()
+                    container.find('tr.info-hull').toggle(data.ship_override?.hull? or ship.hull?)
 
                     recurringicon = ''
                     if ship.shieldrecurr?
@@ -2718,7 +2713,7 @@ class exportObj.SquadBuilder
                             recurringicon += '<sup><i class="fas fa-caret-up"></i></sup>'
                             ++count
                     container.find('tr.info-shields td.info-data').html (statAndEffectiveStat((data.ship_override?.shields ? ship.shields), effective_stats, 'shields') + recurringicon)
-                    container.find('tr.info-shields').show()
+                    container.find('tr.info-shields').toggle(data.ship_override?.shields? or ship.shields?)
 
                     recurringicon = ''
                     if ship.energyrecurr?
@@ -4095,9 +4090,15 @@ class Ship
 
     getPoints: ->
         if not @builder.isQuickbuild
-            points = @pilot?.points ? 0
+            if @pilot?
+                effective_stats = @effectiveStats()
+                points = effective_stats?.points
+
+            else
+                points = @pilot?.points ? 0
+                loadout = @pilot?.loadout ? 0
             @points_container.find('div').text "#{points}"
-            @points_container.find('.upgrade-points').text if @pilot?.loadout? then "(#{@upgrade_points_total}/#{@pilot.loadout})" else ""
+            @points_container.find('.upgrade-points').text if (loadout > 0) then "(#{@upgrade_points_total}/#{loadout})" else ""
             if points > 0
                 @points_container.fadeTo 'fast', 1
             else
@@ -4786,6 +4787,8 @@ class Ship
             charge: @pilot.ship_override?.charge ? @pilot.charge
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
             chassis: @pilot.chassis ? @data.chassis ? ""
+            points: @pilot.points ? 0
+            loadout: @pilot.loadout ? 0
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
@@ -4952,6 +4955,7 @@ class Ship
                             if not (effective_stats.agility == r[1]) then return false
                         when "isUnique"
                             if r[1] != @pilot.unique? then return false
+                            if r[1] != @pilot.max_per_squad? then return false
                         when "Format"
                             switch r[1]
                                 when "Epic"
