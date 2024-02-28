@@ -1150,7 +1150,7 @@ exportObj.cardLoaders.Português = () ->
            text: """Quando você realizar um ataque, se a nave inimiga estiver estressada, você pode rerrolar 1 dos seus dados."""
         "Emon Azzameen":
            display_name: """Emon Azzameen"""
-           text: """Se você for soltar um dispositivo usando um gabarito [1 %STRAIGHT$], você pode usar, ao invés disso, o gabarito [3 %TURNLEFT%], [3 %STRAIGHT%], [3 %TURNRIGHT%]."""
+           text: """Se você for soltar um dispositivo usando um gabarito [1 %STRAIGHT%], você pode usar, ao invés disso, o gabarito [3 %TURNLEFT%], [3 %STRAIGHT%], [3 %TURNRIGHT%]."""
         "Kath Scarlet":
            display_name: """Kath Scarlet"""
            text: """Quando você realizar um ataque primário, se houver ao menos 1 nave amiga não limitada em alcance 0 do defensor, role 1 dado de ataque adicional."""
@@ -3874,6 +3874,139 @@ exportObj.cardLoaders.Português = () ->
         "Wolfpack (SoC)":
            display_name: """Matilha"""
            text: """Quando você realizar um ataque, você pode gastar uma mira pertencente a uma nave <b>Plo Koon</b> aliada ou uma nave com a habilidade <b>Nascido para Isso</b> que esteja no defensor para rerrolar qualquer quantidade de dados de ataque."""
+
+        "It's A Trap! (BoE)":
+           display_name: """É uma Armadilha!"""
+           text: """Quando defender, se houver mais outras naves amigas do que naves inimigas em alcance 0-1, você pode rerolar 1 de seus resultados em branco."""
+        "R2-A3 (BoE)":
+           display_name: """R2-A3"""
+           text: """Depois que você realizar uma ação, você pode gastar 1 %CHARGE% para adquirir uma mira."""
+        "Ace In The Hole (BoE)":
+           display_name: """Ás na Manga"""
+           text: """No começo da Fase de Engajamento, você pode gastar 1 %CHARGE% e receber 1 ficha de interferência para realizar uma ação %BARRELROLL%."""
+        "Airen Cracken (BoE)":
+           display_name: """Airen Cracken"""
+           text: """Depois de defender, se o ataque acertou, você pode receber 1 ficha de exaustão para realizar um ataque primário bônus contra o atacante."""
+        "Millennium Falcon (BoE)":
+           display_name: """Millennium Falcon"""
+           text: """Quando estiver atacando ou defendendo, se você possuir uma ficha vermelha que não seja mira ou uma ficha laranja, você pode rerolar 1 dado."""
+        "No Escape (BoE)":
+           display_name: """Sem Escapatória"""
+           text: """Quando você realizar um ataque primário, se houver mais naves amigas do que outras naves inimigas em alcance 0-1 do defensor, você pode rerolar 1 de seus resultados em branco."""
+        "Apex Predator (BoE)":
+           display_name: """Predador Alfa"""
+           text: """Quando você realizar um ataque primário, se a iniciativa do defensor for menor que a sua, você pode rerolar 1 dado de ataque."""
+        "Push The Limit (BoE)":
+           display_name: """Forçar o Limite"""
+           text: """Depois que você realizar completamente uma manobra vermelha ou realizar uma ação vermelha, se você não estiver desgastado, você pode receber 1 ficha de desgaste para remover 1 ficha de estresse."""
+        "Reckless (BoE)":
+           display_name: """Imprudente"""
+           text: """Quando você realizar uma ação %BOOST% vermelha ou uma ação %BARRELROLL% vermelha, você pode usar o gabarito [1 %TURNLEFT%] ou [1 %TURNRIGHT%]. Se você fizer isso, role um dado de ataque. Em um resultado %HIT%/%CRIT%, receba uma ficha de estresse."""
+        "Targeting Matrix (BoE)":
+           display_name: """Matriz de Direcionamento"""
+           text: """Quando atacar, você pode gastar um resultado %FOCUS% no fim do passo Neutralizar Resultados. Se você fizer isso, depois que o ataque for resolvido, o defensor recebe uma ficha de desgaste."""
+        "Chaff Particles (BoE)":
+           display_name: """Partículas Chaff"""
+           text: """Quando defender, você pode gastar 1 resultado %FOCUS% no fim da etapa Neutralizar Resultados para remover 1 ficha vermelha ou laranja."""
+        "Computer-Assisted Handling (BoE)":
+           display_name: """Manobra Assistida por Computador"""
+           text: """Depois que você executar completamente uma manobra, você pode gastar 1 %CHARGE% para realizar uma ação %BOOST% ou %BARRELROLL%."""
+        "Blank Signature (BoE)":
+           display_name: """Assinatura em Branco"""
+           text: """Quando defender, se você não estiver mirado pelo atacante, você pode gastar 1 %CHARGE% para mudar 1 resultado %FOCUS% para um resultado %EVADE%."""
+        "Feedback Emitter (BoE)":
+           display_name: """Emissor de Retorno"""
+           text: """Depois que um objeto adquirir uma mira em você, você pode gastar 1 %CHARGE% para interferir naquele objeto, ignorando as restrições de alcance. As %CHARGE% desta melhoria não podem ser recuperadas."""
+        "Fuel Injection Override (BoE)":
+           display_name: """Exceder Injeção de Combustível"""
+           text: """Quando você realizar uma ação %BOOST% ou %BARRELROLL%, você pode gastar 1 %CHARGE% para usar 1 gabarito 1 velocidade maior."""
+        "Precision-Tuned Cannons (BoE)":
+           display_name: """Canhões Ajustados com Precisão"""
+           text: """<strong>Ataque:</strong> Se o defensor estiver em seu %BULLSEYEARC%, adicione 1 resultado %FOCUS%."""
+        "Target-Assist Algorithm (BoE)":
+           display_name: """Algoritmo de Ajuda de Mira"""
+           text: """Antes de você engajar, se você não possuir fichas verdes e houver 1 ou mais objetos inimigos em seu %FRONTARC%, receba uma ficha de cálculo."""
+        "Heroic Sacrifice (BoE)":
+           display_name: """Sacrifício Heróico"""
+           text: """Depois que você realizar uma ação %SLAM%, role 5 dados de ataque. Cada nave grande, nave enorme e recurso de cenário em alcance 0 sofre 1 dano %HIT% para cada resultado %HIT%/%CRIT%, através do escudo. Então esta nave é destruida. %LINEBREAK% Você pode realizar ações %SLAM%, mesmo se estiver estressado."""
+        "Parting Gift (BoE)":
+           display_name: """Presente de Despedida"""
+           text: """Quando você for destruído, antes de ser removido, você pode gastar 1 %CHARGE% de uma melhoria %DEVICE% equipada para soltar ou lançar uma bomba usando o gabarito 1 reto ou curva suave [%BANKLEFT%, %STRAIGHT%, %BANKRIGHT%]."""
+        "Stabilizing Astromech (BoE)":
+           display_name: """Astromecânico de Estabilização"""
+           text: """Depois que você realizar completamente uma manobra, você pode gastar 1 %CHARGE% para realizar uma ação branco, mesmo se estiver estressado."""
+        "Modified R4-P unit (BoE)":
+           display_name: """Unidade R4-P Modificada"""
+           text: """Antes de você realizar uma manobra vermelha, você pode gastar 1 %CHARGE%. Se você fizer isso, quando realizar esta manobra, reduza sua dificuldade."""
+        "Collected (BoE)":
+           display_name: """Tranquilo"""
+           text: """Depois que você realizar um ataque primário, você pode gastar 1 ficha de foco para receber 2 fichas de desvio."""
+        "Ion Maneuvering Jet (BoE)":
+           display_name: """Jato de Manobra Iônica"""
+           text: """Depois que você executar completamente uma Manobra Koiogran [%KTURN%], você pode gastar 1 %CHARGE% para realizar uma ação, mesmo se estiver estressado."""
+
+        # Pilotos Batalha sobre Endor
+        "Wedge Antilles (BoE)":
+           display_name: """Wedge Antilles (BsE)"""
+           text: """Depois que você realizar um ataque que acertou, receba 1 ficha de foco."""
+        "Yendor (BoE)":
+           display_name: """Yendor (BsE)"""
+           text: """Quando você realizar um ataque primário, você pode receber uma ficha de desgaste para rerolar um de seus resultados em branco."""
+        "Kendy Idele (BoE)":
+           display_name: """Kendy Idele (BsE)"""
+           text: """Depois que você gastar uma ficha verde, você pode escolher uma nave amiga em alcance 1-3 e receber uma ficha de desgaste. Se você fizer isso, essa nave pode realizar uma ação %FOCUS% vermelha ou %EVADE% vermelha."""
+        "Lando Calrissian (BoE)":
+           display_name: """Lando Calrissian (BsE)"""
+           text: """No começo da Fase de Ativação, você pode gastar 1 %CHARGE%. Se você fizer isso, escolha uma iniciativa de 1 a 6. Você ativa com essa iniciativa nessa fase."""
+        "Tycho Celchu (BoE)":
+           display_name: """Tycho Celchu (BsE)"""
+           text: """Quando você estiver desarmado, você ainda pode realizar ataques %MISSILE%. Quando você realiza um ataque %MISSILE% desarmado, role um máximo de 4 dados."""
+        "Arvel Crynyd (BoE)":
+           display_name: """Arvel Crynyd (BsE)"""
+           text: """Quando se defender, você pode receber 1 ficha de desgaste para mudar um resultado %FOCUS% para um resultado %EVADE%."""
+        "Adon Fox (BoE)":
+           display_name: """Adon Fox (BsE)"""
+           text: """Quando você defender, se você estiver estressado, role 1 dado adicional."""
+        "Gina Moonsong (BoE)":
+           display_name: """Gina Moonsong (BsE)"""
+           text: """No começo da Fase de Engajamento, se uma nave amiga <strong>Braylen Stramm</strong> em alcance 0-2 estiver estressada, você pode adquirir uma mira."""
+        "Braylen Stramm (BoE)":
+           display_name: """Braylen Stramm (BsE)"""
+           text: """No começo da Fase de engajamento, se uma nave amiga <strong>Gina Moonsong</strong> em alcance 0-2 estiver estressada, você pode receber uma ficha de foco."""
+        "Gemmer Sojan (BoE)":
+           display_name: """Gemmer Sojan (BsE)"""
+           text: """Quando defender, você pode receber 1 ficha de desgaste para mudar até 2 dos seus resultados em branco para resultados %FOCUS%."""
+        "Captain Yorr (BoE)":
+           display_name: """Capitão Yorr (BsE)"""
+           text: """Depois que você realizar um ataque que acertou, você pode gastar 1 %CHARGE% para realizar um ataque %CANNON% bônus."""
+        "Colonel Jendon (BoE)":
+           display_name: """Coronel Jendon (BsE)"""
+           text: """Quando você defender, se você não tiver escudos, você pode mudar 1 de seus resultados em branco para um resultado %FOCUS%."""
+        "Soontir Fel (BoE)":
+           display_name: """Soontir Fel (BsE)"""
+           text: """Depois que você realizar um ataque, você pode gastar 1 %CHARGE% e receber 1 ficha de exaustão para realizar um impulso ou pirueta."""
+        "Sapphire 2 (BoE)":
+           display_name: """Safira 2 (BsE)"""
+           text: """Quando você defender, se você estiver focado, role um dado de defesa adicional."""
+        "Maus Monare (BoE)":
+           display_name: """Maus Monare (BsE)"""
+           text: """Depois que você realizar uma ação %EVADE%, receba uma ficha de cálculo."""
+        "Major Mianda (BoE)":
+           display_name: """Major Mianda (BsE)"""
+           text: """Durante a Fase Final, você pode escolher até 2 naves pequenas amigas, você e as naves escolhidas podem realizar uma ação %BARRELROLL% vermelha ou %BOOST% vermelha."""
+        "Lieutenant Hebsly (BoE)":
+           display_name: """Tenente Hebsly (BsE)"""
+           text: """Depois que você defender, você pode realizar uma ação %BOOST% vermelha, mesmo se estiver estressado."""
+        "Scythe 6 (BoE)":
+           display_name: """Ceifador 6 (BsE)"""
+           text: """Quando você realizar um ataque em alcance 1-2, role um dado de ataque adicional."""
+        "Scimitar 1 (BoE)":
+           display_name: """Cimitarra 1 (BsE)"""
+           text: """Depois que uma nave amiga em alcance 0-3 realizar um ataque, você pode gastar 1 %CHARGE% para adquirir uma mira no defensor."""
+        "Scimitar 3 (BoE)":
+           display_name: """Cimitarra 3 (BsE)"""
+           text: """Depois que você soltar uma bomba, você pode gastar 1 %CHARGE% para realizar uma ação %BOOST%."""
+
     condition_translations = 
     
         'Suppressive Fire':
@@ -3950,7 +4083,7 @@ exportObj.cardLoaders.Português = () ->
            text: '''INI: 0 <br>AGILIDADE: 3 <br>CASCO: 2 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK% SBoias de sensores são remotos em pares (um azul e um vermelho, cada um com sua própria carta de remoto) e são colocados com a carta de melhoria <strong>Conjunto de Boias de Sensores</strong>. Além de serem remotos e interagirem com a carta, eles não possuem regras adicionais.'''
         'Electro-Chaff Cloud':
            display_name: 'Nuvem de Electro-Chaff'
-           text: '''An electro-chaff cloud is a device and an obstacle. %LINEBREAK% Durante a Fase Final, remova cada nuvem de electro-chaff sem marcadores de fuso, então remova um marcador de fuso de cada nuvem de electro-chaff. Uma nuvem de electro-chaff nunca pode ter mais de um marcador de fuso.'''
+           text: '''Uma nuvem de electro-chaff é um dispositivo e um obstáculo. %LINEBREAK% Durante a Fase Final, remova cada nuvem de electro-chaff sem marcadores de fuso, então remova um marcador de fuso de cada nuvem de electro-chaff. Uma nuvem de electro-chaff nunca pode ter mais de um marcador de fuso.'''
         'Tracking Torpedoes':
            display_name: 'Torpedos Rastreadores'
            text: '''INI: 0 <br>AGILIDADE: 3 <br>CASCO: 3 %LINEBREAK% <strong>Tipos:</strong> Dispositivo, Remoto %LINEBREAK%<strong>Fase de sistema:</strong> na iniciativa desse remoto, o jogador que o controla realoca este remoto para frente usando o gabarito [3 %BANKLEFT%], [3 %BANKRIGHT%] ou [4 %STRAIGHT%].%LINEBREAK% <strong>Fase de Ativação:</strong> sem efeito.%LINEBREAK% <strong>Fase de Engajamento:</strong> na iniciativa do remoto, se um objeto que ele possui uma mira estiver em seu %FRONTARC% em alcance 0-1, este remoto detona.%LINEBREAK% <strong>Fase Final:</strong> durante a Fase Final, se este remoto não possuir uma mira em nenhum objeto, este remoto deve adquirir uma mira em um objeto no seu %FRONTARC% em alcance 1-3, se for possível.%LINEBREAK% <strong>Outras Regras:</strong> após este remoto ser destruído, role 1 dado de ataque. Em um resultado %HIT% ou %CRIT%, este remoto detona.%LINEBREAK% Quando este remoto detona, cada nave, remoto e estrutura em alcance 0 ou em seu %FRONTARC% em alcance 1 rola 4 dados de ataque e sofre 1 dano para cada resultado %HIT% e %CRIT%.'''
