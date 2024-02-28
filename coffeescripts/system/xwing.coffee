@@ -4098,7 +4098,7 @@ class Ship
                 points = @pilot?.points ? 0
                 loadout = @pilot?.loadout ? 0
             @points_container.find('div').text "#{points}"
-            @points_container.find('.upgrade-points').text if (loadout > 0) then "(#{@upgrade_points_total}/#{loadout})" else ""
+            @points_container.find('.upgrade-points').text if (@pilot?.loadout? and (@pilot.loadout > 0)) then "(#{@upgrade_points_total}/#{@pilot.loadout})" else ""
             if points > 0
                 @points_container.fadeTo 'fast', 1
             else
