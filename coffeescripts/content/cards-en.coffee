@@ -115,7 +115,7 @@ exportObj.translations.English =
         "Collection warning": "You cannot field this list with your collection!"
         "Ship number warning": "A tournament legal squad must contain 3-8 ships!"
         "Multi-Faction warning": "Multi-Faction Lists are NEVER tournament legal!"
-        "Epic Unofficial": "Epic points are unofficial and not supported, endorsed, or accepted by AMG. Also, not balanced, so don't expect updates or it to be good. Please don't make a big deal about it."
+        "Epic Unofficial": "Epic points are unofficial and not supported, endorsed, or accepted by AMG. Please don't make a big deal about it."
         "XWS Import Dialog": "Import your list via XWS into YASB.<br><i>XWS is a common format to share lists between applications.</i>"
         "Copy below simple text": "<p>Copy the below and paste it elsewhere.</p>"
         "Copy below markdown": "<p>Copy the below and paste it into your reddit post.</p><p>Make sure that the post editor is set to markdown mode.</p>"
@@ -240,7 +240,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you fully execute a red maneuver, gain 1 calculate token.%LINEBREAK%At the start of the End Phase, you may choose 1 ship at range 0-1. If you do, transfer 1 of your stress tokens to that ship."""
         "Nashtah Pup":
            display_name: """Nashtah Pup"""
-           text: """You can deploy only via emergency deployment, and you have the name, initiative, pilot ability, and ship %CHARGE% of the friendly, destroyed <strong>Hound's Tooth</strong>.%LINEBREAK%<strong>Escape Craft:</strong> <strong>Setup:</strong>Requires the <strong>Hound's Tooth</strong>. You <b>must</b> begin the game docked with the <strong>Hound's Tooth</strong>."""
+           text: """You can deploy only via emergency deployment, and you have the name, initiative, pilot ability, and ship %CHARGE% of the friendly, destroyed <strong>Hound's Tooth</strong>.%LINEBREAK%<strong>Escape Craft:</strong> <strong>Setup:</strong> Requires the <strong>Hound's Tooth</strong>. You <b>must</b> begin the game docked with the <strong>Hound's Tooth</strong>."""
         "AP-5":
            display_name: """AP-5"""
            text: """While you coordinate, if you chose a ship with exactly 1 stress token, it can perform actions. """
@@ -3578,6 +3578,32 @@ exportObj.cardLoaders.English = () ->
            display_name: """Neimoidian Grasp"""
            text: """After you perform an attack, you may perform a red  %EVADE% action. While you defend, if you are evading, you may roll 1 addtional defense die."""
 
+        # Upgrade Command Cards
+        "New Recruit":
+           display_name: """New Recruit"""
+           text: """<strong>Setup:</strong> Before ships are placed, discard all other upgrades equipped (except %CONFIGURATION%). %LINEBREAK% This ship costs and scores for 1 less."""
+        "Locked-Turret Specialist":
+           display_name: """Locked-Turret Specialist"""
+           text: """You must treat the %SINGLETURRETARC% requirement of your equipped %TURRET% attacks as %BULLSEYEARC%. While making a %TURRET% attack, you may add 1 %FOCUS% result. While you perform a %TURRET% attack, you may increase the range requirement by 1, to a maximum of 3. During the System Phase, you may spend one %CHARGE%. If you do, you may acquire a lock on an enemy ship in your %BULLSEYEARC%."""
+        "Heavy Reinforced Vanguard":
+           display_name: """Heavy Reinforced Vanguard"""
+           text: """After you perform a %BOOST% or %BARRELROLL%, gain 1 strain token. In the End Phase, you may gain 3 strain tokens to repair 1 faceup damage card of your choice. %LINEBREAK% This ship costs and scores for 1 more."""
+        "Evasive Interceptor":
+           display_name: """Evasive Interceptor"""
+           text: """After you perform an %EVADE% action, gain 1 stress token. Before you activate, you may expose 1 damage card to %BOOST% or %BARRELROLL%. %LINEBREAK% This ship costs and scores for 1 less."""
+        "Countermeasures Specialist":
+           display_name: """Countermeasures Specialist"""
+           text: """At the start of the Engagement Phase, you may spend 1 %CHARGE%. If you do, all ships at range 0-3 break all locks they are maintaining. %LINEBREAK% While you jam, you can choose enemy ships in your %BULLSEYEARC% at range 3."""
+        "Combat Veteran":
+           display_name: """Combat Veteran"""
+           text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be rerolled. While you defend, if you are not in the %BULLSEYEARC%, attack dice cannot be rerolled. %LINEBREAK% This ship costs and scores for 1 more."""
+        "Force Adept Pilot":
+           display_name: """Force Adept Pilot"""
+           text: """After you reveal a bank [%BANKLEFT% or %BANKRIGHT%] or turn [%TURNLEFT% or %TURNRIGHT%] maneuver, you may spend 1 %FORCE%. If you do, perform that maneuver as a red sideslip. %LINEBREAK% This ship costs and scores for 1 more."""
+        "Adaptable Pilot":
+           display_name: """Adaptable Pilot"""
+           text: """Add 10 loadout to this ship. This ship costs and scores for 1 More."""
+
     condition_translations =
         'Suppressive Fire':
            text: '''While you perform an attack against a ship other than <strong>Captain Rex</strong>, roll 1 fewer attack die. %LINEBREAK% After <strong>Captain Rex</strong> defends, remove this card.  %LINEBREAK% At the end of the Combat Phase, if <strong>Captain Rex</strong> did not perform an attack this phase, remove this card. %LINEBREAK% After <strong>Captain Rex</strong> is destroyed, remove this card.'''
@@ -3644,7 +3670,7 @@ exportObj.cardLoaders.English = () ->
         '''False Friend''':
            text: '''During the System Phase, if an enemy ship with the <b>Tal Merrik</b> upgrade is at range 0-2 or an enemy remote is at range 0-2, flip your dial faceup. %LINEBREAK% <strong>Action:</strong> Gain 1 deplete token and stress token to discard this condition.'''
         '''Trials of the Darksaber''':
-           text: '''While you perform an attack at attack range 0-2, you may spend 1 %CRIT% result. If you do, if the defending ship's player has scored more %POINT% than you, they lose 1 scored %POINT%. Place thatt %POINT% on this card. %LINEBREAK% After you defend, if you are destroyed by an enemy ship at attack range 0-2, assign the <b>Trials of the Darksaber</b> condition to the attacker (all %POINT% remain on this card). %LINEBREAK%. At the end of the game, this ship scores all %POINT% on this card.'''
+           text: '''While you perform an attack at attack range 0-2, you may spend 1 %CRIT% result. If you do, if the defending ship's player has scored more %MISSIONPOINT% than you, they lose 1 scored %MISSIONPOINT%. Place that %MISSIONPOINT% on this card. %LINEBREAK% After you defend, if you are destroyed by an enemy ship at attack range 0-2, assign the <b>Trials of the Darksaber</b> condition to the attacker (all %MISSIONPOINT% remain on this card). %LINEBREAK%. At the end of the game, this ship scores all %MISSIONPOINT% on this card.'''
         '''Blazer Bomb''':
            text: '''<strong>Types:</strong> Device, Bomb %LINEBREAK% At the end of the Activation Phase, this device detonates. %LINEBREAK% When this device detonates, each ship and remote at range 0-1 rolls 1 attack die. Each ship or remote suffers 1 %HIT% damage for each %HIT%/%CRIT% result. %LINEBREAK% After this devices detonates, place a Blaze by aligning the Blaze's guides to the device's tab. %LINEBREAK% A Blaze is an obstacle. After this obstacle is placed, place a fues marker on it. %LINEBREAK% During the End Phase, remove each Blaze with no fuse markers, then remove 1 fuse marker from each Blaze.'''
         '''Clan Wren Commandos''':

@@ -3371,7 +3371,7 @@ class exportObj.SquadBuilder
                 comma = ', '
         if card.confersAddons
             for addonname in card.confersAddons
-                text += comma + "%#{addonname.slot.toUpperCase().replace(/[^a-z0-9]/gi, '')}%" 
+                if addonname.slot == "Force" then text += comma + "%FORCEPOWER%" else text += comma + "%#{addonname.slot.toUpperCase().replace(/[^a-z0-9]/gi, '')}%" 
                 comma = ', '
         if card.unequips_upgrades
             comma = ''
@@ -3423,6 +3423,8 @@ class exportObj.SquadBuilder
                         text += comma + exportObj.translate('restrictions', "Initiative") + " > #{r[1]}"
                     when "InitiativeLessThan"
                         text += comma + exportObj.translate('restrictions', "Initiative")+ " < #{r[1]}"
+                    when "HasForce"
+                        text += comma + (if r[1] then "" else "No ") + "%FORCE%"
                     when "AgilityEquals"
                         text += comma + exportObj.translate('restrictions', "Agility") + " = #{r[1]}"
                     when "isUnique"
@@ -4093,12 +4095,13 @@ class Ship
             if @pilot?
                 effective_stats = @effectiveStats()
                 points = effective_stats?.points
+                loadout = effective_stats?.loadout
 
             else
                 points = @pilot?.points ? 0
                 loadout = @pilot?.loadout ? 0
             @points_container.find('div').text "#{points}"
-            @points_container.find('.upgrade-points').text if (@pilot?.loadout? and (@pilot.loadout > 0)) then "(#{@upgrade_points_total}/#{@pilot.loadout})" else ""
+            @points_container.find('.upgrade-points').text if (@pilot?.loadout? and (@pilot.loadout > 0)) then "(#{@upgrade_points_total}/#{loadout})" else ""
             if points > 0
                 @points_container.fadeTo 'fast', 1
             else
@@ -4789,6 +4792,7 @@ class Ship
             chassis: @pilot.chassis ? @data.chassis ? ""
             points: @pilot.points ? 0
             loadout: @pilot.loadout ? 0
+            skill: @pilot.skill ? 0
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
@@ -4902,66 +4906,73 @@ class Ship
 
     restriction_check: (restrictions, upgrade_obj, points = 0, current_upgrade_points = 0, upgrade_data = undefined) ->
         effective_stats = @effectiveStats()
-        if @pilot.loadout? and (points + current_upgrade_points > @pilot.loadout)
-            return false
-        else
-            if restrictions?
-                for r in restrictions
-                    switch r[0]
-                        when "FactionOrUnique"
-                            if @pilot.faction != r[2] and not @checkListForUnique(r[1].toLowerCase().replace(/[^0-9a-z]/gi, '').replace(/\s+/g, '-')) then return false
-                        when "Base"
-                            check = false
-                            for b in r
-                                if b == "Base" then continue
-                                if b.startsWith("Non-") then base = b.substring(4) else base = b # check if its an non- case then remove the non-
-                                switch base
-                                    when "Small"
-                                        if not @data.base? then check = true
-                                    when "Standard"
-                                        if not (@data.base? and @data.base == "Huge") then check = true
-                                    else
-                                        if @data.base? and @data.base == base then check = true
-                                if b != base then check = !check # invert results for non- result
-                                if check == true then break
-                            return check
-                        when "Action"
-                            if r[1].startsWith("W-")
-                                w = r[1].substring(2)
-                                if w not in effective_stats.actions then return false
-                            else
-                                check = false
-                                for action in effective_stats.actions
-                                    if action.includes(r[1]) and not action.includes(">")
-                                        check = true
-                                if check is false then return false
-                        when "Keyword"
-                            if not (@checkKeyword(r[1])) then return false
-                        when "Equipped"
-                            if not ((@doesSlotExist(r[1]) and @hasFilledSlotLike(upgrade_obj, r[1]))) then return false
-                        when "Slot"
-                            if (not @hasAnotherUnoccupiedSlotLike(upgrade_obj, r[1]) and not upgrade_obj?.occupiesAnUpgradeSlot?(r[1])) or  upgrade_obj.slot == "HardpointShip" or  upgrade_obj.slot == "VersatileShip"  then return false
-                        when "AttackArc"
-                            if not @data.attackb? then return false
-                        when "ShieldsGreaterThan"
-                            if not (@data.shields > r[1]) then return false
-                        when "EnergyGreatterThan"
-                            if not (effective_stats.energy > r[1]) then return false
-                        when "InitiativeGreaterThan"
-                            if not (@pilot.skill > r[1]) then return false
-                        when "InitiativeLessThan"
-                            if not (@pilot.skill < r[1]) then return false
-                        when "AgilityEquals"
-                            if not (effective_stats.agility == r[1]) then return false
-                        when "isUnique"
-                            if r[1] != @pilot.unique? then return false
-                            if r[1] != @pilot.max_per_squad? then return false
-                        when "Format"
-                            switch r[1]
-                                when "Epic"
-                                    if not (@data.name in exportObj.epicExclusionsList) then return false
+        if @pilot.loadout?
+            if effective_stats.loadout > 0
+                loadout = effective_stats.loadout
+            else
+                loadout = @pilot.loadout
+            if (points + current_upgrade_points > loadout)
+                return false
+        if restrictions?
+            for r in restrictions
+                switch r[0]
+                    when "FactionOrUnique"
+                        if @pilot.faction != r[2] and not @checkListForUnique(r[1].toLowerCase().replace(/[^0-9a-z]/gi, '').replace(/\s+/g, '-')) then return false
+                    when "Base"
+                        check = false
+                        for b in r
+                            if b == "Base" then continue
+                            if b.startsWith("Non-") then base = b.substring(4) else base = b # check if its an non- case then remove the non-
+                            switch base
+                                when "Small"
+                                    if not @data.base? then check = true
                                 when "Standard"
-                                    if @data.name in exportObj.epicExclusionsList then return false
+                                    if not (@data.base? and @data.base == "Huge") then check = true
+                                else
+                                    if @data.base? and @data.base == base then check = true
+                            if b != base then check = !check # invert results for non- result
+                            if check == true then break
+                        return check
+                    when "Action"
+                        if r[1].startsWith("W-")
+                            w = r[1].substring(2)
+                            if w not in effective_stats.actions then return false
+                        else
+                            check = false
+                            for action in effective_stats.actions
+                                if action.includes(r[1]) and not action.includes(">")
+                                    check = true
+                            if check is false then return false
+                    when "Keyword"
+                        if not (@checkKeyword(r[1])) then return false
+                    when "Equipped"
+                        if not ((@doesSlotExist(r[1]) and @hasFilledSlotLike(upgrade_obj, r[1]))) then return false
+                    when "Slot"
+                        if (not @hasAnotherUnoccupiedSlotLike(upgrade_obj, r[1]) and not upgrade_obj?.occupiesAnUpgradeSlot?(r[1])) or  upgrade_obj.slot == "HardpointShip" or  upgrade_obj.slot == "VersatileShip"  then return false
+                    when "AttackArc"
+                        if not @data.attackb? then return false
+                    when "ShieldsGreaterThan"
+                        if not (@data.shields > r[1]) then return false
+                    when "EnergyGreatterThan"
+                        if not (effective_stats.energy > r[1]) then return false
+                    when "InitiativeGreaterThan"
+                        if not (@pilot.skill > r[1]) then return false
+                    when "InitiativeLessThan"
+                        if not (@pilot.skill < r[1]) then return false
+                    when "HasForce"
+                        if @pilot.force? == r[1] then return true
+                        return false
+                    when "AgilityEquals"
+                        if not (effective_stats.agility == r[1]) then return false
+                    when "isUnique"
+                        if r[1] != (@pilot.unique? or @pilot.max_per_squad?) then return false
+                        return true
+                    when "Format"
+                        switch r[1]
+                            when "Epic"
+                                if not (@data.name in exportObj.epicExclusionsList) then return false
+                            when "Standard"
+                                if @data.name in exportObj.epicExclusionsList then return false
         return true
 
     standardized_check: (upgrade_data) ->
