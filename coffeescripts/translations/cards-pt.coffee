@@ -2606,6 +2606,67 @@ exportObj.cardLoaders.Português = () ->
            display_name: """Shara Bey (SSP)"""
            text: """Quando você defender ou realizar um ataque primário, você pode gastar 1 mira que você possua na nave inimiga e adicionar 1 resultado %FOCUS% ao resultado dos seus dados. """
 
+        # Pilotos Batalha sobre Endor
+        "Wedge Antilles (BoE)":
+           display_name: """Wedge Antilles (BsE)"""
+           text: """Depois que você realizar um ataque que acertou, receba 1 ficha de foco."""
+        "Yendor (BoE)":
+           display_name: """Yendor (BsE)"""
+           text: """Quando você realizar um ataque primário, você pode receber uma ficha de desgaste para rerolar um de seus resultados em branco."""
+        "Kendy Idele (BoE)":
+           display_name: """Kendy Idele (BsE)"""
+           text: """Depois que você gastar uma ficha verde, você pode escolher uma nave amiga em alcance 1-3 e receber uma ficha de desgaste. Se você fizer isso, essa nave pode realizar uma ação %FOCUS% vermelha ou %EVADE% vermelha."""
+        "Lando Calrissian (BoE)":
+           display_name: """Lando Calrissian (BsE)"""
+           text: """No começo da Fase de Ativação, você pode gastar 1 %CHARGE%. Se você fizer isso, escolha uma iniciativa de 1 a 6. Você ativa com essa iniciativa nessa fase."""
+        "Tycho Celchu (BoE)":
+           display_name: """Tycho Celchu (BsE)"""
+           text: """Quando você estiver desarmado, você ainda pode realizar ataques %MISSILE%. Quando você realiza um ataque %MISSILE% desarmado, role um máximo de 4 dados."""
+        "Arvel Crynyd (BoE)":
+           display_name: """Arvel Crynyd (BsE)"""
+           text: """Quando se defender, você pode receber 1 ficha de desgaste para mudar um resultado %FOCUS% para um resultado %EVADE%."""
+        "Adon Fox (BoE)":
+           display_name: """Adon Fox (BsE)"""
+           text: """Quando você defender, se você estiver estressado, role 1 dado adicional."""
+        "Gina Moonsong (BoE)":
+           display_name: """Gina Moonsong (BsE)"""
+           text: """No começo da Fase de Engajamento, se uma nave amiga <strong>Braylen Stramm</strong> em alcance 0-2 estiver estressada, você pode adquirir uma mira."""
+        "Braylen Stramm (BoE)":
+           display_name: """Braylen Stramm (BsE)"""
+           text: """No começo da Fase de engajamento, se uma nave amiga <strong>Gina Moonsong</strong> em alcance 0-2 estiver estressada, você pode receber uma ficha de foco."""
+        "Gemmer Sojan (BoE)":
+           display_name: """Gemmer Sojan (BsE)"""
+           text: """Quando defender, você pode receber 1 ficha de desgaste para mudar até 2 dos seus resultados em branco para resultados %FOCUS%."""
+        "Captain Yorr (BoE)":
+           display_name: """Capitão Yorr (BsE)"""
+           text: """Depois que você realizar um ataque que acertou, você pode gastar 1 %CHARGE% para realizar um ataque %CANNON% bônus."""
+        "Colonel Jendon (BoE)":
+           display_name: """Coronel Jendon (BsE)"""
+           text: """Quando você defender, se você não tiver escudos, você pode mudar 1 de seus resultados em branco para um resultado %FOCUS%."""
+        "Soontir Fel (BoE)":
+           display_name: """Soontir Fel (BsE)"""
+           text: """Depois que você realizar um ataque, você pode gastar 1 %CHARGE% e receber 1 ficha de exaustão para realizar um impulso ou pirueta."""
+        "Sapphire 2 (BoE)":
+           display_name: """Safira 2 (BsE)"""
+           text: """Quando você defender, se você estiver focado, role um dado de defesa adicional."""
+        "Maus Monare (BoE)":
+           display_name: """Maus Monare (BsE)"""
+           text: """Depois que você realizar uma ação %EVADE%, receba uma ficha de cálculo."""
+        "Major Mianda (BoE)":
+           display_name: """Major Mianda (BsE)"""
+           text: """Durante a Fase Final, você pode escolher até 2 naves pequenas amigas, você e as naves escolhidas podem realizar uma ação %BARRELROLL% vermelha ou %BOOST% vermelha."""
+        "Lieutenant Hebsly (BoE)":
+           display_name: """Tenente Hebsly (BsE)"""
+           text: """Depois que você defender, você pode realizar uma ação %BOOST% vermelha, mesmo se estiver estressado."""
+        "Scythe 6 (BoE)":
+           display_name: """Ceifador 6 (BsE)"""
+           text: """Quando você realizar um ataque em alcance 1-2, role um dado de ataque adicional."""
+        "Scimitar 1 (BoE)":
+           display_name: """Cimitarra 1 (BsE)"""
+           text: """Depois que uma nave amiga em alcance 0-3 realizar um ataque, você pode gastar 1 %CHARGE% para adquirir uma mira no defensor."""
+        "Scimitar 3 (BoE)":
+           display_name: """Cimitarra 3 (BsE)"""
+           text: """Depois que você soltar uma bomba, você pode gastar 1 %CHARGE% para realizar uma ação %BOOST%."""
 
     upgrade_translations =
      #Atiradores
@@ -3944,68 +4005,6 @@ exportObj.cardLoaders.Português = () ->
         "Ion Maneuvering Jet (BoE)":
            display_name: """Jato de Manobra Iônica"""
            text: """Depois que você executar completamente uma Manobra Koiogran [%KTURN%], você pode gastar 1 %CHARGE% para realizar uma ação, mesmo se estiver estressado."""
-
-        # Pilotos Batalha sobre Endor
-        "Wedge Antilles (BoE)":
-           display_name: """Wedge Antilles (BsE)"""
-           text: """Depois que você realizar um ataque que acertou, receba 1 ficha de foco."""
-        "Yendor (BoE)":
-           display_name: """Yendor (BsE)"""
-           text: """Quando você realizar um ataque primário, você pode receber uma ficha de desgaste para rerolar um de seus resultados em branco."""
-        "Kendy Idele (BoE)":
-           display_name: """Kendy Idele (BsE)"""
-           text: """Depois que você gastar uma ficha verde, você pode escolher uma nave amiga em alcance 1-3 e receber uma ficha de desgaste. Se você fizer isso, essa nave pode realizar uma ação %FOCUS% vermelha ou %EVADE% vermelha."""
-        "Lando Calrissian (BoE)":
-           display_name: """Lando Calrissian (BsE)"""
-           text: """No começo da Fase de Ativação, você pode gastar 1 %CHARGE%. Se você fizer isso, escolha uma iniciativa de 1 a 6. Você ativa com essa iniciativa nessa fase."""
-        "Tycho Celchu (BoE)":
-           display_name: """Tycho Celchu (BsE)"""
-           text: """Quando você estiver desarmado, você ainda pode realizar ataques %MISSILE%. Quando você realiza um ataque %MISSILE% desarmado, role um máximo de 4 dados."""
-        "Arvel Crynyd (BoE)":
-           display_name: """Arvel Crynyd (BsE)"""
-           text: """Quando se defender, você pode receber 1 ficha de desgaste para mudar um resultado %FOCUS% para um resultado %EVADE%."""
-        "Adon Fox (BoE)":
-           display_name: """Adon Fox (BsE)"""
-           text: """Quando você defender, se você estiver estressado, role 1 dado adicional."""
-        "Gina Moonsong (BoE)":
-           display_name: """Gina Moonsong (BsE)"""
-           text: """No começo da Fase de Engajamento, se uma nave amiga <strong>Braylen Stramm</strong> em alcance 0-2 estiver estressada, você pode adquirir uma mira."""
-        "Braylen Stramm (BoE)":
-           display_name: """Braylen Stramm (BsE)"""
-           text: """No começo da Fase de engajamento, se uma nave amiga <strong>Gina Moonsong</strong> em alcance 0-2 estiver estressada, você pode receber uma ficha de foco."""
-        "Gemmer Sojan (BoE)":
-           display_name: """Gemmer Sojan (BsE)"""
-           text: """Quando defender, você pode receber 1 ficha de desgaste para mudar até 2 dos seus resultados em branco para resultados %FOCUS%."""
-        "Captain Yorr (BoE)":
-           display_name: """Capitão Yorr (BsE)"""
-           text: """Depois que você realizar um ataque que acertou, você pode gastar 1 %CHARGE% para realizar um ataque %CANNON% bônus."""
-        "Colonel Jendon (BoE)":
-           display_name: """Coronel Jendon (BsE)"""
-           text: """Quando você defender, se você não tiver escudos, você pode mudar 1 de seus resultados em branco para um resultado %FOCUS%."""
-        "Soontir Fel (BoE)":
-           display_name: """Soontir Fel (BsE)"""
-           text: """Depois que você realizar um ataque, você pode gastar 1 %CHARGE% e receber 1 ficha de exaustão para realizar um impulso ou pirueta."""
-        "Sapphire 2 (BoE)":
-           display_name: """Safira 2 (BsE)"""
-           text: """Quando você defender, se você estiver focado, role um dado de defesa adicional."""
-        "Maus Monare (BoE)":
-           display_name: """Maus Monare (BsE)"""
-           text: """Depois que você realizar uma ação %EVADE%, receba uma ficha de cálculo."""
-        "Major Mianda (BoE)":
-           display_name: """Major Mianda (BsE)"""
-           text: """Durante a Fase Final, você pode escolher até 2 naves pequenas amigas, você e as naves escolhidas podem realizar uma ação %BARRELROLL% vermelha ou %BOOST% vermelha."""
-        "Lieutenant Hebsly (BoE)":
-           display_name: """Tenente Hebsly (BsE)"""
-           text: """Depois que você defender, você pode realizar uma ação %BOOST% vermelha, mesmo se estiver estressado."""
-        "Scythe 6 (BoE)":
-           display_name: """Ceifador 6 (BsE)"""
-           text: """Quando você realizar um ataque em alcance 1-2, role um dado de ataque adicional."""
-        "Scimitar 1 (BoE)":
-           display_name: """Cimitarra 1 (BsE)"""
-           text: """Depois que uma nave amiga em alcance 0-3 realizar um ataque, você pode gastar 1 %CHARGE% para adquirir uma mira no defensor."""
-        "Scimitar 3 (BoE)":
-           display_name: """Cimitarra 3 (BsE)"""
-           text: """Depois que você soltar uma bomba, você pode gastar 1 %CHARGE% para realizar uma ação %BOOST%."""
 
     condition_translations = 
     
