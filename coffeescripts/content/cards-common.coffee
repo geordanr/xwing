@@ -20421,6 +20421,9 @@ exportObj.standardUpgradeExclusions = [
     'Stealth Device'
     'Composure'
     'Trajectory Simulator'
+
+    # Epic
+    'Strategic Commander'
 ]
 
 exportObj.epicExclusionsList = [

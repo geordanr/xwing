@@ -3602,7 +3602,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you reveal a bank [%BANKLEFT% or %BANKRIGHT%] or turn [%TURNLEFT% or %TURNRIGHT%] maneuver, you may spend 1 %FORCE%. If you do, perform that maneuver as a red sideslip. %LINEBREAK% This ship costs and scores for 1 more."""
         "Adaptable Pilot":
            display_name: """Adaptable Pilot"""
-           text: """Add 10 loadout to this ship. This ship costs and scores for 1 More."""
+           text: """Add 10 loadout to this ship. This ship costs and scores for 1 more."""
 
     condition_translations =
         'Suppressive Fire':
