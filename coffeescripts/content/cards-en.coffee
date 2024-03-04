@@ -1781,7 +1781,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you or a friendly <b>Anakin Skywalker</b> at range 0-3 fully executes a maneuver, if there are more enemy ships than other friendly ships at range 0-1 of that ship, you may spend 1 %FORCE%. If you do, that ship may perform a %BOOST% action."""
         "Shaak Ti (SoC)":
            display_name: """Shaak Ti (SoC)"""
-           text: """At the start of the End Phase, you may perfrom a purple %COORDINATE% action, even while stressed %LINEBREAK% After you perform a %COORDINATE% action, if the chosen ship has the <b>Born for This</b> ship ability, you may coordinate 1 additional ship."""
+           text: """At the start of the End Phase, you may perform a purple %COORDINATE% action, even while stressed %LINEBREAK% After you perform a %COORDINATE% action, if the chosen ship has the <b>Born for This</b> ship ability, you may coordinate 1 additional ship."""
         '"Odd Ball" (SoC)':
            display_name: """“Odd Ball” (SoC)"""
            text: """After you fully execute a red maneuver or perform a red action, you camy choose a friendly ship at range 0-3 and an enemy at range 0-1. The chosen frendly ship gains a lock on the enemy ship."""
@@ -1799,7 +1799,7 @@ exportObj.cardLoaders.English = () ->
            text: """While a ship that you have locked at range 1-3 defends or performs an attack, you may spend 1 %CHARGE% to prevent range bonuses from being applied. """
         '"Kickback" (SoC)':
            display_name: """“Kickback” (SoC)"""
-           text: """After you perform a %BARRELROLL% action, you may perform a red %LOCK% action. If you do, before you perfrom the %LOCK% action, you may gain 1 strain to treat it as white."""
+           text: """After you perform a %BARRELROLL% action, you may perform a red %LOCK% action. If you do, before you perform the %LOCK% action, you may gain 1 strain to treat it as white."""
         '"Axe" (SoC)':
            display_name: """“Axe” (SoC)"""
            text: """After you perform an attack, you may choose another friendly ship with the <b>Born for This</b> ability at range 0-2 in your %LEFTARC% or %RIGHTARC%. The chosen ship gains a lock on the defender."""
@@ -1975,7 +1975,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you fully execute a maneuver, you may spend 2 %CHARGE% to peform a %SLAM% action, even while stressed."""
         "Gavyn Sykes":
            display_name: """Gavyn Sykes"""
-           text: """While you defend or perfrom an attack, if the speed of your revealed maneuver is greater than the enemy ship's, you may reroll your blank results."""
+           text: """While you defend or perform an attack, if the speed of your revealed maneuver is greater than the enemy ship's, you may reroll your blank results."""
 
          # Starter Packs
         "Darth Vader (SSP)":
