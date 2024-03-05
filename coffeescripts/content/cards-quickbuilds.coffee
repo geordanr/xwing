@@ -7757,6 +7757,131 @@ exportObj.basicQuickBuilds = ->
                 "Mandalorian Optics"
             ]
         }
+        {
+            id: 629
+            faction: "Separatist Alliance"
+            pilot: "Cad Bane"
+            ship: "Rogue-class Starfighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Freelance Slicer"
+                "Afterburners"
+                "Xanadu Blood"
+                "Synced Laser Cannons"
+            ]
+        }
+        {
+            id: 630
+            faction: "Separatist Alliance"
+            pilot: "IG-101"
+            ship: "Rogue-class Starfighter"
+            threat: 2
+            upgrades: [
+                "Hull Upgrade"
+                "Enduring"
+                "Proton Cannons"
+            ]
+        }
+        {
+            id: 631
+            faction: "Separatist Alliance"
+            pilot: "IG-102"
+            ship: "Rogue-class Starfighter"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Synced Laser Cannons"
+            ]
+        }
+        {
+            id: 632
+            faction: "Separatist Alliance"
+            pilot: "IG-111"
+            ship: "Rogue-class Starfighter"
+            threat: 2
+            upgrades: [
+                "Proton Cannons"
+                "Predator"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 633
+            faction: "Separatist Alliance"
+            pilot: "MagnaGuard Protector"
+            ship: "Rogue-class Starfighter"
+            threat: 2
+            upgrades: [
+                "Enduring"
+                "Proton Cannons"
+                "Independent Calculations"
+            ]
+        }
+        {
+            id: 634
+            faction: "Separatist Alliance"
+            pilot: "MagnaGuard Executioner"
+            ship: "Rogue-class Starfighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Proton Cannons"
+            ]
+        }
+        {
+            id: 635
+            faction: "Scum and Villainy"
+            pilot: "Cad Bane"
+            ship: "Rogue-class Starfighter"
+            threat: 3
+            upgrades: [
+                "Notorious"
+                "Overtuned Modulators"
+                "Xanadu Blood"
+                "Synced Laser Cannons"
+                "Shield Upgrade"
+                "Blazer Bomb"
+                "Freelance Slicer"
+            ]
+        }
+        {
+            id: 636
+            faction: "Scum and Villainy"
+            pilot: "Outer Rim Hunter"
+            ship: "Rogue-class Starfighter"
+            threat: 2
+            upgrades: [
+                "Notorious"
+                "Proton Cannons"
+                "Tracking Fob"
+            ]
+        }
+        {
+            id: 637
+            faction: "Scum and Villainy"
+            pilot: "Viktor Hel (Rogue)"
+            ship: "Rogue-class Starfighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Synced Laser Cannons"
+                "Tracking Fob"
+                "Afterburners"    
+            ]
+        }        
+        {
+            id: 638
+            faction: "Scum and Villainy"
+            pilot: "Nom Lumb (Rogue)"
+            ship: "Rogue-class Starfighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Proton Cannons"
+                "Shield Upgrade"
+            ]
+        }
     ]
 
 exportObj.setupQuickBuilds = (basic_cards) ->
