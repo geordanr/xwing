@@ -20424,6 +20424,8 @@ exportObj.standardUpgradeExclusions = [
 
     # Epic
     'Strategic Commander'
+    'In It For The Money'
+    'Bounty'
 ]
 
 exportObj.epicExclusionsList = [
