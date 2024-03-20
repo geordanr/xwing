@@ -20507,6 +20507,9 @@ String::serialtoxws = ->
                 link: "https://yasb.app/#{this}" 
         version: '02/23/2024'
 
+    if this.ParseParameter('obs')
+        xws.obstacles = this.ParseParameter('obs').split(",")
+
     serialized = this.ParseParameter('d')
     re = if "Z" in serialized then /^v(\d+)Z(.*)/ else /^v(\d+)!(.*)/
     matches = re.exec serialized
@@ -20523,7 +20526,7 @@ String::serialtoxws = ->
             when 'h'
                 gamemode = 'standard'
             when 'e'
-                return "error: game mode not supported"
+                gamemode = 'epic'
             when 'q'
                 return "error: game mode not supported"
 
