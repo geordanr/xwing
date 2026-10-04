@@ -9196,7 +9196,6 @@ exportObj.basicCardData = ->
             points: 9
             loadout: 8
             slots: [
-                "Talent"
                 "Tech"
                 "Tech"
                 "Crew"
