@@ -19901,6 +19901,7 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             points: 0
             ship: "TIE/wi Whisper Modified Interceptor"
+            standardized: true
             restrictions: [
                 ["Slot", "Tech"]
             ]
