@@ -3492,7 +3492,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Aggressor Assault Fighter"
             skill: 4
-            points: 16
+            points: 17
             loadout: 22
             keyword: ["Bounty Hunter","Droid"]
             slots: [
@@ -3513,7 +3513,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Aggressor Assault Fighter"
             skill: 4
-            points: 15
+            points: 16
             loadout: 20
             keyword: ["Bounty Hunter","Droid"]
             slots: [
@@ -3534,7 +3534,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Aggressor Assault Fighter"
             skill: 4
-            points: 15
+            points: 16
             loadout: 20
             keyword: ["Bounty Hunter","Droid"]
             slots: [
@@ -3555,7 +3555,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Aggressor Assault Fighter"
             skill: 4
-            points: 14
+            points: 15
             loadout: 18
             keyword: ["Bounty Hunter","Droid"]
             slots: [
@@ -3890,14 +3890,13 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Firespray-class Patrol Craft"
             skill: 5
-            points: 21
+            points: 20
             loadout: 20
             keyword: ["Bounty Hunter"]
             slots: [
                 "Talent"
                 "Cannon"
                 "Missile"
-                "Crew"
                 "Device"
                 "Illicit"
                 "Modification"
@@ -13188,8 +13187,8 @@ exportObj.basicCardData = ->
             ship: "Delta-7b Aethersprite"
             skill: 5
             force: 2
-            points: 13
-            loadout: 7
+            points: 14
+            loadout: 9
             keyword: ["Jedi","Light Side"]
             slots: [
                 "Force"
@@ -17135,7 +17134,7 @@ exportObj.basicCardData = ->
             name: "Marauder"
             id: 153
             slot: "Title"
-            points: 0
+            points: 2
             unique: true
             faction: "Scum and Villainy"
             ship: "Firespray-class Patrol Craft"
